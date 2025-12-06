@@ -1,0 +1,66 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
+}
+
+group = 'plugin'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven {
+        url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots'
+    }
+}
+
+// === resolutionStrategy を削除 ===
+
+dependencies {
+    // Spigot API（コンパイル時のみ）
+    compileOnly 'org.spigotmc:spigot-api:1.20.1-R0.1-SNAPSHOT'
+
+    // Lombok（コンパイル時のみ）
+    compileOnly 'org.projectlombok:lombok:1.18.32'
+    annotationProcessor 'org.projectlombok:lombok:1.18.32'
+
+    // MySQL と MyBatis
+    implementation 'mysql:mysql-connector-java:8.0.33'  // ← これだけ残す
+    implementation 'org.mybatis:mybatis:3.5.14'
+
+    // JUnit テスト
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main/java']
+        }
+        resources {
+            // plugin.yml を含む resources フォルダ
+            srcDirs = ['src/main/resources']
+        }
+    }
+}
+
+// ShadowJar 設定
+shadowJar {
+    archiveBaseName.set('TreasureRun')
+    archiveVersion.set('1.0-SNAPSHOT')
+    archiveClassifier.set('all')   // ← ここを変更
+
+    // resources を必ず Jar に含める
+    from(sourceSets.main.resources.srcDirs)
+
+    // plugin.yml が正しく配置されるようにパスを調整（念のため）
+    into('/')
+}
+
+// build タスクが実行されたときに shadowJar も実行されるように依存関係を追加
+build.dependsOn shadowJar

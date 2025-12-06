@@ -1,0 +1,41 @@
+version: '3.9'
+
+services:
+  minecraft_mysql:
+    image: mysql:8.0
+    container_name: minecraft_mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: treasureDB
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./mysql-data:/var/lib/mysql
+    networks:
+      - minecraft_network   # ←★これを追加！
+
+  minecraft_spigot:
+    image: itzg/minecraft-server:java17
+    container_name: minecraft_spigot
+    restart: unless-stopped
+    environment:
+      EULA: "TRUE"
+      TYPE: SPIGOT
+      VERSION: 1.20.1
+      MEMORY: 2G
+    ports:
+      - "25565:25565"
+    volumes:
+      - ./spigot-data:/data
+    depends_on:
+      - minecraft_mysql
+    networks:
+      - minecraft_network   # ←★これも追加！
+
+# ↓このブロックをファイルの最後に追加！
+networks:
+  minecraft_network:
+    driver: bridge

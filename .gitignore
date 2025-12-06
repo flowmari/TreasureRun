@@ -1,0 +1,27 @@
+# mac
+.DS_Store
+
+# IntelliJ / Gradle
+.idea/
+*.iml
+.gradle/
+build/
+out/
+
+# Minecraft runtime (アップしない)
+server/
+plugins/
+minecraft_data/
+spigot-data/
+logs/
+*.log
+eula.txt
+
+# DB data (絶対アップしない)
+mysql-data/
+mysql_data/
+mysql-data/
+mysql-init/
+
+# env/secrets
+.env

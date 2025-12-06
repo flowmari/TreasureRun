@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  minecraft_mysql:
+    image: mysql:8.0
+    container_name: minecraft_mysql
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: treasureDB
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    volumes:
+      - ./mysql-init:/docker-entrypoint-initdb.d
+    restart: unless-stopped
+
+  minecraft_spigot:
+    image: itzg/minecraft-server:java17
+    container_name: minecraft_spigot
+    ports:
+      - "25565:25565"
+      - "25575:25575"  # RCON用
+    environment:
+      EULA: "TRUE"
+      MEMORY: "1G"
+      MAX_MEMORY: "1G"
+    volumes:
+      - ./minecraft_data:/data
+    depends_on:
+      - minecraft_mysql
+    restart: unless-stopped

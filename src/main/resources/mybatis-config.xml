@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+  <!-- ✅ 外部プロパティ読み込み -->
+  <properties resource="db.properties"/>
+
+  <!-- ✅ マッピング補助設定 -->
+  <settings>
+    <setting name="mapUnderscoreToCamelCase" value="true"/>
+    <setting name="logImpl" value="STDOUT_LOGGING"/>
+    <setting name="cacheEnabled" value="false"/>
+    <setting name="jdbcTypeForNull" value="NULL"/>
+    <setting name="autoMappingBehavior" value="PARTIAL"/>
+  </settings>
+
+  <!-- ✅ タイプエイリアス（必要なら） -->
+  <typeAliases>
+    <package name="plugin.model"/>
+  </typeAliases>
+
+  <!-- ✅ タイプハンドラー（必要なら） -->
+  <typeHandlers>
+    <!-- 例: UUID用 -->
+    <typeHandler javaType="java.util.UUID" handler="plugin.mapper.handler.UUIDTypeHandler"/>
+  </typeHandlers>
+
+  <!-- ✅ データベース接続設定（MySQL） -->
+  <environments default="development">
+    <environment id="development">
+      <transactionManager type="JDBC"/>
+      <dataSource type="POOLED">
+        <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+        <property name="url" value="${db.url}"/>
+        <property name="username" value="${db.username}"/>
+        <property name="password" value="${db.password}"/>
+      </dataSource>
+    </environment>
+  </environments>
+
+  <!-- ✅ アノテーション方式のMapper登録 -->
+  <mappers>
+    <package name="plugin.mapper"/>
+  </mappers>
+
+</configuration>

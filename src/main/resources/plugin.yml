@@ -1,0 +1,71 @@
+name: TreasureRun
+version: 1.0
+main: plugin.TreasureRunMultiChestPlugin
+api-version: 1.20
+
+commands:
+  gameStart:
+    description: Start the treasure hunt game.
+    usage: /<command> [difficulty]
+    permission: treasure.start
+
+  gameRank:
+    description: Show the top 10 players.
+    usage: /<command>
+    permission: treasure.rank
+
+  givespecialemerald:
+    description: Give the player a special emerald.
+    usage: /<command>
+    permission: treasure.givespecialemerald
+
+  craftspecialemerald:
+    description: Craft a special emerald using 3 diamonds.
+    usage: /<command>
+    permission: treasure.craftspecialemerald
+    permission-message: "§cこのコマンドを使う権限がありません。"
+
+  checktreasureemerald:
+    description: Check if the item in main hand is Treasure Emerald (PDC).
+    usage: /checktreasureemerald
+    permission: treasure.checktreasureemerald
+    permission-message: "§cこのコマンドを使う権限がありません。"
+
+  gameMenu:
+    description: Show the TreasureRun rule menu.
+    usage: /gameMenu
+    permission: treasure.menu
+
+  clearStageBlocks:
+    description: Clear nearby difficulty blocks placed by TreasureRun.
+    usage: /clearStageBlocks
+    permission: treasure.clearstage
+
+permissions:
+  treasure.start:
+    description: /gameStart コマンドを使用できる権限
+    default: true
+
+  treasure.rank:
+    description: /gameRank コマンドを使用できる権限
+    default: true
+
+  treasure.givespecialemerald:
+    description: /givespecialemerald コマンドを使用できる権限
+    default: op
+
+  treasure.craftspecialemerald:
+    description: /craftspecialemerald コマンドを使用できる権限
+    default: true
+
+  treasure.checktreasureemerald:
+    description: /checktreasureemerald を使用できる権限
+    default: true
+
+  treasure.menu:
+    description: /gameMenu で目次を表示できる権限
+    default: true
+
+  treasure.clearstage:
+    description: /clearStageBlocks でステージの難易度ブロックを掃除できる権限
+    default: op　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
