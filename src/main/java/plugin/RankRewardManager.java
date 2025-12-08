@@ -345,7 +345,8 @@ public class RankRewardManager {
       wo.setInvulnerable(true);
       wo.setPersistent(true);
       wo.setRemoveWhenFarAway(false);
-      wo.setGlowing(true);
+
+      wo.setGlowing(false); // ★ここを false に（または行自体削除）
 
       wo.setCustomName(ChatColor.LIGHT_PURPLE + "" + ChatColor.BOLD + "Rainbow Wolf");
       wo.setCustomNameVisible(true);
