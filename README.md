@@ -72,9 +72,9 @@ Minecraft（Spigot）上で遊べる、宝探しミニゲームプラグイン�
 | `/treasurerun reload`    | 設定ファイル（config.yml）を再読み込みします          |
 | `/craftspecialemerald`   | ダイヤモンド3個から 特製エメラルド を作成します       |
 | `/checktreasureemerald`  | 所持している 特製エメラルド の数を確認します          |
-| `/gamestart easy`        | ゲームモード **easy** を開始します（やさしい難易度）  |
-| `/gamestart normal`      | ゲームモード **normal** を開始します（ふつうの難易度）|
-| `/gamestart hard`        | ゲームモード **hard** を開始します（むずかしい難易度）|
+| `/gamestart easy`        | ゲームモード **easy** を開始します（難易度：初級）  |
+| `/gamestart normal`      | ゲームモード **normal** を開始します（難易度：中級）|
+| `/gamestart hard`        | ゲームモード **hard** を開始します（難易度：上級）|
 
 ## 設定（config.yml）
 
