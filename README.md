@@ -62,16 +62,16 @@ Minecraft（Spigot）上で遊べる、宝探しミニゲームプラグイン�
 
 ---
 
-## コマンド一覧（※あなたの実装に合わせて修正してください）
+## コマンド一覧
 
-| コマンド | 説明 |
-|---|---|
-| `【/treasurerun start】` | ゲームを開始 |
-| `【/treasurerun end】` | ゲームを終了 |
-| `【/treasurerun rank】` | ランキング表示 |
-| `【/treasurerun reload】` | 設定再読み込み（ある場合） |
-
-> あなたの実際のコマンド名が決まっているなら、ここは私が整形して完成版にします（コマンドだけ教えてください）。
+| コマンド                | 説明                                               |
+|-------------------------|----------------------------------------------------|
+| `/treasurerun start`    | TreasureRun のゲームを開始します                  |
+| `/treasurerun end`      | 進行中の TreasureRun のゲームを強制終了します    |
+| `/treasurerun rank`     | 保存されたスコアからランキングを表示します        |
+| `/treasurerun reload`   | 設定ファイル（config.yml）を再読み込みします      |
+| `/craftspecialemerald`  | ダイヤモンド3個から特製エメラルドを作成します     |
+| `/checktreasureemerald` | 所持している特製エメラルドの数を確認します       |
 
 ---
 
