@@ -86,21 +86,153 @@ Minecraft（Spigot）上で遊べる、宝探しミニゲームプラグイン�
 例（※キーはあなたのconfigに合わせて変更）:
 
 ```yml
-game:
-  timeSeconds: 180
+# TreasureRunMultiChestPlugin 用 Config.yml
 
-difficulty:
-  easy:
-    chestCount: 3
-  normal:
-    chestCount: 5
-  hard:
-    chestCount: 8
+# 難易度ごとの宝箱数設定
+treasureChestCount:
+  easy: 3
+  normal: 2
+  hard: 1
 
+otherChestCount:
+  easy: 3
+  normal: 5
+  hard: 7
+
+totalChestCount:
+  easy: 20
+  normal: 30
+  hard: 40
+
+chestSpawnRadius: 20    # プレイヤー周囲の配置半径
+
+# 宝箱の総数（ゲーム1回で設置する数）
+totalChests: 10
+
+allowedDifficulties:
+  - easy
+  - normal
+  - hard
+
+# 宝物のバリエーション
+treasureItems:
+  - DIAMOND
+  - GOLD_INGOT
+  - EMERALD
+  - IRON_INGOT
+  - LAPIS_LAZULI
+  - APPLE
+  - NETHERITE_INGOT
+  - REDSTONE
+  - COAL
+  - ENCHANTED_GOLDEN_APPLE
+  - TNT
+  - DIAMOND_BLOCK
+  - GOLD_BLOCK
+  - EMERALD_BLOCK
+  - IRON_BLOCK
+
+# メッセージ設定
+messages:
+  gameStart:
+    - "&aゲーム開始！難易度: %difficulty%"
+    - "&bお宝アイテム: %treasureItem%"
+    - "&e制限時間: %timeLimit% 秒"
+  timeWarning: "&c残り1分です！急いで宝を探してください！"
+  gameEnd:
+    - "&aゲーム終了！"
+    - "&bあなたの得点: %score%"
+  chestOpened:
+    treasure: "&aお宝を発見しました！ゲームクリア！"
+    emptyEasy: "&eこのチェストにはお宝がありません。"
+    emptyNormal: "&eお宝なし。時間が減少しました。"
+    emptyHard: "&cお宝なし！時間減少＆モンスター出現！"
+
+# スコア設定
+scoring:
+  maxScore: 1000
+
+# モンスター設定
+monsters:
+  enabled: true
+  spawnCount: 3
+  spawnRadius: 10
+  monsterTypes:
+    - zombie
+    - skeleton
+    - creeper
+
+# ボスバー設定
+bossBar:
+  enabled: true
+  color: RED
+  style: PROGRESS
+  title: "制限時間"
+
+# ====================================
+# データベース設定（MySQL接続用）
+# ====================================
 database:
-  type: mysql # mysql / sqlite
-  host: localhost
+  enabled: true
+  host: minecraft_mysql   # ← Docker Compose 内で MySQL コンテナ名
   port: 3306
-  name: treasuredb
+  database: treasureDB    # MySQL 内の DB 名（TreasureRun が自動作成）
   user: root
-  password: password
+  password: your-password-here
+  # 注意: MySQL コンテナが起動していないと接続エラーになります。
+
+# ゲーム終了後にプレイヤーの状態を復元するか
+restorePlayerStatus: true
+
+# デバッグ用：当たりチェスト座標
+winningChestLocation:
+  x: 0
+  y: 0
+  z: 0
+  world: world
+
+# =============================
+# カスタムクラフトレシピ設定
+# =============================
+customRecipes:
+  - name: "special_emerald"
+    type: shaped
+    result:
+      material: EMERALD
+      amount: 1
+      displayName: "&6特製エメラルド"
+    shape:
+      - "DDD"
+      - " D "
+      - "DDD"
+    ingredients:
+      D: DIAMOND
+
+  - name: "golden_apple_custom"
+    type: shapeless
+    result:
+      material: APPLE
+      amount: 1
+      displayName: "&e特製リンゴ"
+    ingredients:
+      - GOLD_INGOT
+      - GOLD_INGOT
+      - GOLD_INGOT
+
+  - name: "special_iron_block"
+    type: shaped
+    result:
+      material: IRON_BLOCK
+      amount: 1
+      displayName: "&7特製鉄ブロック"
+    shape:
+      - "III"
+      - "III"
+      - "III"
+    ingredients:
+      I: IRON_INGOT
+
+---
+
+なスコア競争」にも対応できます。
+
