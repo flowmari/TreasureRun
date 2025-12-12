@@ -74,7 +74,7 @@ Minecraft（Spigot）上で遊べる、宝探しミニゲームプラグイン�
 | `/checktreasureemerald`  | 所持している特製エメラルドの数を確認します            |
 | `/gamestart easy`        | ゲームモードeasyを開始します（難易度：初級）          |
 | `/gamestart normal`      | ゲームモードnormalを開始します（難易度：中級）        |
-| | `/gamestart hard`        | ゲームモードhardを開始します（難易度：上級）          |          |
+| `/gamestart hard`        | ゲームモードhardを開始します（難易度：上級）          |          |
 
 ---
 
