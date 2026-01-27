@@ -826,15 +826,33 @@ public class GameStageManager implements Listener {
 
       shopDebug("OK(LATER): playing effects now");
 
-      // 演出（100%気づく版）
-      player.sendTitle(
-          ChatColor.GOLD + "Trade complete!",
-          ChatColor.AQUA + "A hidden power awakens…",
-          5,   // fadeIn (ticks)
-          40,  // stay   (ticks)
-          10   // fadeOut(ticks)
-      );
-      player.sendMessage(ChatColor.AQUA + "??? " + ChatColor.GOLD + "Treasure Shop の秘められた力を感じた…");
+      // ✅ 表示だけ：アイスランド語 ↔ 英語 を交互に（0.5秒ごと、5セット）
+      final String iceland = ChatColor.translateAlternateColorCodes('&', "&6&lKöllun úr djúpinu");
+
+      new BukkitRunnable() {
+        int n = 0; // 0..9 (10回) = 交互5セット
+
+        @Override
+        public void run() {
+          if (!plugin.isGameRunning() || !player.isOnline()) {
+            cancel();
+            return;
+          }
+
+          if (n % 2 == 0) {
+            player.sendTitle(iceland, "", 0, 8, 0);
+          } else {
+            player.sendTitle(
+                ChatColor.GOLD + "Trade complete!",
+                ChatColor.AQUA + "A hidden power awakens…",
+                0, 8, 0
+            );
+          }
+
+          n++;
+          if (n >= 10) cancel();
+        }
+      }.runTaskTimer(plugin, 0L, 10L); // 10tick ≒ 0.5秒
 
       // 音：確実に聞こえるやつ
       player.playSound(player.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0f, 1.2f);

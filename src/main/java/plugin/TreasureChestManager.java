@@ -21,8 +21,14 @@ public class TreasureChestManager {
   private final List<Material> treasurePool;
   private final int chestSpawnRadius;
 
-  /** 配置したチェストの位置を追跡 */
+  /** 配置したチェストの位置を追跡（判定用：ブロック座標） */
   private final Set<BlockKey> placedChests = new HashSet<>();
+
+  /**
+   * ✅ 追加：設置した宝箱の Location を追跡（近接サウンド用）
+   * ※ toBlockLocation() を入れて「ブロック座標だけ」で一致するようにする
+   */
+  private final Set<Location> chestLocations = new HashSet<>();
 
   public TreasureChestManager(TreasureRunMultiChestPlugin plugin,
       Map<String, Integer> treasureChestCounts,
@@ -32,6 +38,19 @@ public class TreasureChestManager {
     this.treasureChestCounts = treasureChestCounts;
     this.treasurePool = treasurePool;
     this.chestSpawnRadius = chestSpawnRadius;
+  }
+
+  /**
+   * ✅ 追加：近接サウンド側が参照する「宝箱Location一覧」
+   */
+  public Collection<Location> getChestLocations() {
+    return new ArrayList<>(chestLocations);
+  }
+
+  // ✅ 追加：Spigot互換の「ブロック座標へ丸めたLocation」を作るヘルパー
+  private static Location toBlockLocation(Location loc) {
+    if (loc == null || loc.getWorld() == null) return loc;
+    return new Location(loc.getWorld(), loc.getBlockX(), loc.getBlockY(), loc.getBlockZ());
   }
 
   /** 現在配置したチェストを全部消す（ブロックを AIR に） */
@@ -45,6 +64,9 @@ public class TreasureChestManager {
       }
     }
     placedChests.clear();
+
+    // ✅ 追加：Location追跡もクリア（ここがズレると鳴らない原因）
+    chestLocations.clear();
   }
 
   /** このブロックが自分がスポーンしたチェストかどうか */
@@ -83,18 +105,25 @@ public class TreasureChestManager {
     for (int i = 0; i < count; i++) {
       int dx = random.nextInt(chestSpawnRadius * 2) - chestSpawnRadius;
       int dz = random.nextInt(chestSpawnRadius * 2) - chestSpawnRadius;
+
       Location loc = player.getLocation().clone().add(dx, 0, dz);
       loc.setY(world.getHighestBlockYAt(loc) + 1);
 
       Block block = world.getBlockAt(loc);
       block.setType(Material.CHEST);
+
+      // ✅ 判定用（BlockKey）
       placedChests.add(new BlockKey(block.getLocation()));
+
+      // ✅ 追加：近接サウンド用（Location）
+      // 重要：ブロック座標に丸める（Spigot互換：自前ヘルパー）
+      chestLocations.add(toBlockLocation(block.getLocation()));
 
       // ★ チェストの真下に難易度カラーのブロックを設置
       Block underBlock = block.getRelative(0, -1, 0);
       underBlock.setType(floorMaterial);
 
-      // 💎 宝箱にランダムな宝物を入れる処理（ここが新しく追加）
+      // 💎 宝箱にランダムな宝物を入れる処理
       if (block.getState() instanceof Chest chest) {
         for (int j = 0; j < 1 + random.nextInt(3); j++) { // 1〜3種類
           Material itemMat = treasurePool.get(random.nextInt(treasurePool.size()));
