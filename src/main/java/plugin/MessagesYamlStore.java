@@ -1,6 +1,5 @@
 package plugin;
 
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -10,39 +9,49 @@ public class MessagesYamlStore {
 
   private final JavaPlugin plugin;
   private final File file;
-  private FileConfiguration config;
+  private YamlConfiguration yml;
 
   public MessagesYamlStore(JavaPlugin plugin) {
     this.plugin = plugin;
-    this.file = new File(plugin.getDataFolder(), "messages.yml"); // plugins/TreasureRun/messages.yml
+    this.file = new File(plugin.getDataFolder(), "messages.yml");
   }
 
-  public void load() {
-    if (!plugin.getDataFolder().exists()) {
-      plugin.getDataFolder().mkdirs();
+  public synchronized void loadOrCreate() {
+    try {
+      if (!plugin.getDataFolder().exists()) plugin.getDataFolder().mkdirs();
+      if (!file.exists()) file.createNewFile();
+    } catch (Throwable ignored) {}
+    try {
+      this.yml = YamlConfiguration.loadConfiguration(file);
+    } catch (Throwable t) {
+      this.yml = new YamlConfiguration();
     }
-
-    // ✅ なければ jar内 resources/messages.yml をコピーして生成（最強）
-    if (!file.exists()) {
-      try {
-        plugin.saveResource("messages.yml", false);
-      } catch (IllegalArgumentException ignored) {
-        // jar内に無い場合でも落ちない（超安全）
-      }
-    }
-
-    this.config = YamlConfiguration.loadConfiguration(file);
   }
 
-  public void reload() {
-    load();
+  public synchronized YamlConfiguration yaml() {
+    if (yml == null) loadOrCreate();
+    return yml;
   }
 
-  public FileConfiguration getConfig() {
-    return config;
+  public synchronized boolean contains(String path) {
+    return yaml().contains(path);
   }
 
-  public File getFile() {
-    return file;
+  public synchronized String getString(String path) {
+    return yaml().getString(path);
+  }
+
+  public synchronized java.util.List<String> getStringList(String path) {
+    return yaml().getStringList(path);
+  }
+
+  // ✅ I18n が読むための互換API
+  public synchronized org.bukkit.configuration.file.FileConfiguration getConfig() {
+    return yaml();
+  }
+
+
+  public synchronized void saveQuietly() {
+    try { yaml().save(file); } catch (Throwable ignored) {}
   }
 }

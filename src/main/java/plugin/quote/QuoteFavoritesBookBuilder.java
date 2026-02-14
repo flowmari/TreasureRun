@@ -277,4 +277,35 @@ public class QuoteFavoritesBookBuilder {
 
     return "";
   }
+
+  // =======================================================
+  // ✅ compatibility: called by QuoteFavoriteBookClickListener
+  // =======================================================
+
+  public org.bukkit.inventory.ItemStack buildEmptyFavoritesBook(org.bukkit.entity.Player player) {
+    return buildFavoritesBook(player, java.util.Collections.emptyList());
+  }
+
+  public org.bukkit.inventory.ItemStack buildFavoritesBook(org.bukkit.entity.Player player, java.util.List<String> rows) {
+    if (player == null) {
+      return buildFavoritesBook("en", new java.util.UUID(0L, 0L), 0, rows);
+    }
+
+    String lang = "en";
+    // 可能なら PlayerLanguageStore から拾う（フィールドが無くても落ちない）
+    try {
+      java.lang.reflect.Field f = this.getClass().getDeclaredField("playerLanguageStore");
+      f.setAccessible(true);
+      Object pls = f.get(this);
+      if (pls != null) {
+        java.lang.reflect.Method m = pls.getClass().getMethod("getPlayerLang", java.util.UUID.class);
+        Object r = m.invoke(pls, player.getUniqueId());
+        if (r != null) lang = String.valueOf(r);
+      }
+    } catch (Throwable ignored) {}
+
+    int count = (rows == null ? 0 : rows.size());
+    return buildFavoritesBook(lang, player.getUniqueId(), count, rows);
+  }
+
 }

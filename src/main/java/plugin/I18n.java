@@ -130,4 +130,29 @@ public class I18n {
       return new Placeholder(key, value);
     }
   }
+
+  // =======================================================
+  // ✅ compatibility bridge (auto-added)
+  // =======================================================
+
+  /** Allow: new I18n(JavaPlugin) */
+  public I18n(org.bukkit.plugin.java.JavaPlugin plugin) {
+    this(new plugin.MessagesYamlStore(plugin));
+  }
+
+  /** Old call sites expect this method. */
+  public void loadOrCreate() {
+    if (this.store != null) this.store.loadOrCreate();
+  }
+
+  /** Allow: tr(lang, key, Map.of(...)) */
+  public String tr(String lang, String key, java.util.Map<String, String> vars) {
+    if (vars == null || vars.isEmpty()) return tr(lang, key);
+    java.util.List<Placeholder> ps = new java.util.ArrayList<>();
+    for (java.util.Map.Entry<String,String> e : vars.entrySet()) {
+      ps.add(Placeholder.of(e.getKey(), e.getValue()));
+    }
+    return tr(lang, key, ps.toArray(new Placeholder[0]));
+  }
+
 }
