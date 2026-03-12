@@ -183,6 +183,7 @@ public class TreasureChestPickupListener implements Listener {
           cancel();
         }
       }
+
     }.runTaskTimer(plugin, 0L, 1L);
   }
 

@@ -1,5 +1,7 @@
 package plugin;
 
+import org.bukkit.Bukkit;
+
 import org.bukkit.*;
 import org.bukkit.block.data.BlockData;
 import org.bukkit.entity.*;
@@ -8,6 +10,7 @@ import org.bukkit.inventory.MerchantRecipe;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
+import org.bukkit.metadata.FixedMetadataValue;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Transformation;
@@ -144,6 +147,9 @@ public class UfoCaravanController {
         pdc.set(KEY_UFO_ROLE, PersistentDataType.STRING, role);
       }
     } catch (Exception ignored) {}
+
+    // ✅ MSZ用：carrier印（補充spawnのときも対象になる）
+    try { entity.setMetadata(MovingSafetyZoneTask.CARRIER_META, new FixedMetadataValue(plugin, true)); } catch (Exception ignored) {}
   }
 
   /** ✅ bind済み個体にもタグ/PDCを必ず付与して追跡可能にする */
@@ -629,6 +635,7 @@ public class UfoCaravanController {
                   cancel();
                 }
               }
+
             }.runTaskTimer(plugin, 0L, 20L);
 
             w.playSound(landing, Sound.BLOCK_BEACON_POWER_SELECT, 0.65f, 1.95f);
@@ -667,6 +674,7 @@ public class UfoCaravanController {
           cancel();
         }
       }
+
     }.runTaskTimer(plugin, 0L, 1L);
   }
 
@@ -844,6 +852,7 @@ public class UfoCaravanController {
           cancel();
         }
       }
+
     }.runTaskTimer(plugin, 0L, 1L);
   }
 

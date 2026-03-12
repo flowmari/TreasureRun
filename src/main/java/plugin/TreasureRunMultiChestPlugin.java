@@ -1,6 +1,9 @@
 package plugin;
 
+import plugin.GameStageManager;
+import plugin.MovingSafetyZoneTask;
 import plugin.RealtimeRankTicker;
+import plugin.LangCommand;
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
@@ -37,9 +40,16 @@ import org.bukkit.scheduler.BukkitTask;
 import java.sql.*;
 import java.util.*;
 import java.util.function.BooleanSupplier; // ✅ 追加（状態Supplier用）
+import plugin.UfoCaravanController;
+
+// ✅ ここに追加（Season）
+import plugin.rank.SeasonRepository;
+import plugin.rank.SeasonScoreRepository;
 
 public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener, TabExecutor {
 
+  // __MSZ_AUTO_START_ON_JOIN
+  private final java.util.concurrent.atomic.AtomicBoolean __mszAutoStarted = new java.util.concurrent.atomic.AtomicBoolean(false);
   // ================================
   // DB接続
   // ================================
@@ -82,6 +92,10 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
   private TreasureItemFactory itemFactory;
   private RankRewardManager rankRewardManager;
 
+  // ✅ ここに追加（Weekly / All-time ランキング用）
+  private SeasonRepository seasonRepository;
+  private SeasonScoreRepository seasonScoreRepository;
+
   private int easyTimeLimit;
   private int normalTimeLimit;
   private int hardTimeLimit;
@@ -123,6 +137,14 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
 
   public LanguageStore getLanguageStore() { return languageStore; }
   public LanguageSelectGui getLanguageSelectGui() { return languageSelectGui; }
+  public plugin.PlayerLanguageStore getPlayerLanguageStore() {
+    return playerLanguageStore;
+  }
+
+  // i18n getter が欲しい場合
+  public plugin.I18n getI18n() {
+    return i18n;
+  }
 
   // ✅ GUIタイトル（LanguageSelectGuiと揃える：古いGUIを閉じる判定にも使う）
   private static final String LANGUAGE_GUI_TITLE = ChatColor.DARK_AQUA + "Language / 言語";
@@ -186,6 +208,25 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
 
   @Override
   public void onEnable() {
+
+    // __MSZ_AUTO_START_ON_JOIN
+    // 最初のプレイヤーが入った瞬間に1回だけ自動で gameStart Normal を実行（RCON不要）
+    org.bukkit.Bukkit.getPluginManager().registerEvents(new org.bukkit.event.Listener() {
+      @org.bukkit.event.EventHandler
+      public void onJoin(org.bukkit.event.player.PlayerJoinEvent e) {
+        if (!__mszAutoStarted.compareAndSet(false, true)) return;
+        final org.bukkit.entity.Player p = e.getPlayer();
+        org.bukkit.Bukkit.getLogger().info("[MSZ] auto-start armed: player=" + p.getName());
+        org.bukkit.Bukkit.getScheduler().runTaskLater(TreasureRunMultiChestPlugin.this, () -> {
+          try {
+            org.bukkit.Bukkit.dispatchCommand(p, "gameStart Normal");
+            org.bukkit.Bukkit.getLogger().info("[MSZ] auto-start dispatched: gameStart Normal");
+          } catch (Throwable t) {
+            org.bukkit.Bukkit.getLogger().severe("[MSZ] auto-start failed: " + t);
+          }
+        }, 20L);
+      }
+    }, this);
     getLogger().info("🌈 TreasureRunMultiChestPlugin: 起動 🌈");
 
     saveDefaultConfig();
@@ -203,7 +244,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     languageConfigStore.reloadFromConfig(getConfig());
 
     i18n = new plugin.I18n(this);
-    i18n.loadOrCreate(); // messages.yml 読み込み（なければ生成）
+    i18n.loadOrCreate(); // languages/*.yml 読み込み（なければ生成）
 
     quoteModule = new plugin.quote.QuoteModule(this, playerLanguageStore, languageConfigStore, i18n);
     quoteModule.enable();
@@ -236,8 +277,31 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     if (getCommand("gameMenu") != null) {
       getCommand("gameMenu").setExecutor(this);
     }
+
+    // ✅ /lang：言語GUIを開く / 言語を変更する（LangCommand）
+    if (getCommand("lang") != null) {
+      getCommand("lang").setExecutor(new LangCommand(this));
+    } else {
+      getLogger().warning("⚠ /lang が plugin.yml に見つかりません");
+    }
+
+    // ✅ /lang（Language GUI を開く or 言語変更）
+    if (getCommand("lang") != null) {
+      getCommand("lang").setExecutor(new LangCommand(this));
+    } else {
+      getLogger().warning("⚠ /lang が plugin.yml に見つかりません");
+    }
+
     if (getCommand("clearStageBlocks") != null) {
       getCommand("clearStageBlocks").setExecutor(new StageCleanupCommand(this));
+    }
+
+    if (getCommand("lang") != null) {
+      getCommand("lang").setExecutor(new LangCommand(this));
+      // GUIを開くだけなら TabCompleter は不要（付けてもOK）
+      // getCommand("lang").setTabCompleter(new LangCommand(this));
+    } else {
+      getLogger().warning("⚠ /lang が plugin.yml に見つかりません");
     }
 
     // ✅ ✅ ✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅
@@ -254,8 +318,25 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     if (getCommand("treasureReload") != null) {
       getCommand("treasureReload").setExecutor(this);
     }
+    // ✅ Export: config.yml messages.translation.* → plugins/TreasureRun/languages/*.yml
+    if (getCommand("treasureExportLang") != null) {
+      getCommand("treasureExportLang").setExecutor(new TreasureExportLangCommand(this));
+    } else {
+      getLogger().warning("⚠ /treasureexportLang が plugin.yml に見つかりません");
+    }
+
+// ✅ Export: config.yml の messages.translation.* → languages/*.yml
+    if (getCommand("treasureexportLang") != null) {
+      getCommand("treasureexportLang").setExecutor(new TreasureExportLangCommand(this));
+    } else {
+      getLogger().warning("⚠ /treasureExportLang が plugin.yml に見つかりません");
+    }
 
     setupDatabase();
+
+    // ✅ ここに追加（Weekly/All-time ranking repositories）
+    this.seasonRepository = new SeasonRepository(this);
+    this.seasonScoreRepository = new SeasonScoreRepository(this);
 
     // =======================================================
     // ✅ ✅ ✅ 追加：ProverbLogRepository 生成（Favorites橋渡し）
@@ -316,6 +397,15 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     int rtWidth = getConfig().getInt("rankTicker.tickerWidth", 32);
     rankTicker = new RealtimeRankTicker(this, rtInterval, rtTopN, rtWidth);
     rankTicker.start();
+
+    try {
+      // ❌ MovingSafetyZoneTask は GameStageManager 側で「1箇所だけ」起動・停止・復元を管理する
+      //    ここで runTaskTimer(1L,1L) すると多重起動＋period不一致で床が広範囲に塗られる原因になる
+      // new MovingSafetyZoneTask(this).runTaskTimer(this, 1L, 1L);
+      getLogger().info("[MSZ] (skipped) scheduled by GameStageManager only");
+    } catch (Throwable t) {
+      getLogger().warning("[MSZ] schedule failed: " + t.getMessage());
+    }
 
     getLogger().info("✅ TreasureRunMultiChestPlugin が正常に起動しました！");
   }
@@ -399,6 +489,21 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
   public void onPlayerQuit(PlayerQuitEvent event) {
     Player player = event.getPlayer();
     if (!isRunning) return;
+
+    // ✅✅✅ 追加：落ちても保存（WIN扱いにしない）
+    try {
+      UUID uuid = player.getUniqueId();
+      int score = playerScores.getOrDefault(uuid, 0);
+      long elapsedSec = Math.max(0, (System.currentTimeMillis() - startTime) / 1000L);
+
+      saveScore(player, score, elapsedSec, difficulty);
+      addSeasonScore(player, score, false, null);
+
+      getLogger().info("[DB] saved on quit: player=" + player.getName()
+          + " score=" + score + " time=" + elapsedSec + " diff=" + difficulty);
+    } catch (Throwable t) {
+      getLogger().warning("⚠ onQuit save failed: " + t.getMessage());
+    }
 
     if (startThemePlayer != null) startThemePlayer.stop(player);
     stopVanillaMusicSuppress(player);
@@ -550,15 +655,81 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
   }
 
   private void saveScore(String playerName, int score, long timeSec, String difficulty) {
-    try (PreparedStatement ps = getConnection().prepareStatement(
-        "INSERT INTO scores (player_name, score, time, difficulty) VALUES (?, ?, ?, ?)")) {
+    // Player名しか渡されない呼び出しもあるので、onlineから拾えるなら拾う
+    Player p = Bukkit.getPlayerExact(playerName);
 
-      ps.setString(1, playerName);
-      ps.setInt(2, score);
-      ps.setLong(3, timeSec);
-      ps.setString(4, difficulty);
+    String uuidStr = null;
+    String langCode = "ja";
+
+    // uuid
+    if (p != null) {
+      uuidStr = p.getUniqueId().toString();
+    }
+
+    // lang_code（あなたの環境は playerLanguageStore があるのでそれ優先）
+    try {
+      if (p != null && playerLanguageStore != null) {
+        // ここはあなたの addSeasonScore と同じ取り方
+        langCode = playerLanguageStore.getLang(p, "ja");
+      }
+    } catch (Throwable ignored) {}
+
+    // フォールバック：beginGameStartAfterLanguageSelected で入れてる playerLastLang
+    try {
+      if ((langCode == null || langCode.isBlank()) && p != null) {
+        String v = playerLastLang.get(p.getUniqueId());
+        if (v != null && !v.isBlank()) langCode = v;
+      }
+    } catch (Throwable ignored) {}
+
+    if (langCode == null || langCode.isBlank()) langCode = "ja";
+    langCode = langCode.toLowerCase(Locale.ROOT);
+
+    try (PreparedStatement ps = getConnection().prepareStatement(
+        "INSERT INTO scores (uuid, player_name, score, time, difficulty, lang_code, played_at) " +
+            "VALUES (?, ?, ?, ?, ?, ?, NOW())"
+    )) {
+      ps.setString(1, uuidStr);
+      ps.setString(2, playerName);
+      ps.setInt(3, score);
+      ps.setLong(4, timeSec);
+      ps.setString(5, difficulty);
+      ps.setString(6, langCode);
       ps.executeUpdate();
 
+      rankDirty = true;
+
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }
+  }
+
+  // ✅ 追加：Player から確実に uuid/lang を取って scores に保存する版
+  private void saveScore(Player player, int score, long timeSec, String difficulty) {
+    if (player == null) return;
+
+    String lang = "ja";
+    try {
+      if (playerLanguageStore != null) {
+        lang = playerLanguageStore.getLang(player, "ja");
+      }
+    } catch (Throwable ignored) {}
+
+    if (lang == null || lang.isBlank()) lang = "ja";
+    lang = lang.toLowerCase(Locale.ROOT);
+
+    try (PreparedStatement ps = getConnection().prepareStatement(
+        "INSERT INTO scores (uuid, player_name, score, time, difficulty, lang_code, played_at) " +
+            "VALUES (?, ?, ?, ?, ?, ?, NOW())"
+    )) {
+      ps.setString(1, player.getUniqueId().toString());
+      ps.setString(2, player.getName());
+      ps.setInt(3, score);
+      ps.setLong(4, timeSec);
+      ps.setString(5, difficulty);
+      ps.setString(6, lang);
+
+      ps.executeUpdate();
       rankDirty = true;
 
     } catch (SQLException e) {
@@ -659,6 +830,157 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     }
   }
 
+  // ✅ weekly を「直近7日（plays）」TOP10 にする版
+  private void showWeeklyRanking(Player player) {
+    Connection conn = getConnection();
+    if (conn == null) {
+      player.sendMessage(ChatColor.RED + "DB接続がありません。");
+      return;
+    }
+
+    String sql =
+        "SELECT player_name, score, time, difficulty, lang_code, played_at " +
+            "FROM scores " +
+            "WHERE played_at >= DATE_SUB(NOW(), INTERVAL 7 DAY) " +
+            "ORDER BY score DESC, time ASC, id DESC " +
+            "LIMIT 10";
+
+    player.sendMessage(ChatColor.AQUA + "=== 🎖️Treasure Run Weekly TOP10 (Plays) ===");
+
+    try (PreparedStatement ps = conn.prepareStatement(sql);
+        ResultSet rs = ps.executeQuery()) {
+
+      int rank = 1;
+      while (rs.next()) {
+        String name = rs.getString("player_name");
+        int score = rs.getInt("score");
+        long time = rs.getLong("time");
+        String diff = rs.getString("difficulty");
+        String lang = rs.getString("lang_code");
+
+        player.sendMessage(
+            ChatColor.AQUA + "" + rank + "位 " +
+                ChatColor.WHITE + (name == null ? "unknown" : name) + "  " +
+                ChatColor.GOLD + score + "pt " +
+                ChatColor.YELLOW + time + "s " +
+                ChatColor.GRAY + "(" + (diff == null ? "-" : diff) + ") " +
+                ChatColor.LIGHT_PURPLE + "[" + (lang == null ? "ja" : lang) + "]"
+        );
+        rank++;
+      }
+
+      if (rank == 1) {
+        player.sendMessage(ChatColor.GRAY + "直近7日の記録がありません。");
+      } else {
+        player.sendMessage(ChatColor.DARK_GRAY + "表示切替: /gameRank all | /gameRank monthly");
+      }
+
+    } catch (SQLException e) {
+      e.printStackTrace();
+      player.sendMessage(ChatColor.RED + "ランキング取得中にエラーが発生しました");
+    }
+  }
+
+  private void showAllTimeRanking(Player player) {
+    Connection conn = getConnection();
+    if (conn == null) {
+      player.sendMessage(ChatColor.RED + "DB接続がありません。");
+      return;
+    }
+
+    String sql =
+        "SELECT player_name, score, time, difficulty, lang_code, played_at " +
+            "FROM scores " +
+            "ORDER BY score DESC, time ASC, id DESC " +
+            "LIMIT 10";
+
+    player.sendMessage(ChatColor.AQUA + "=== 🎖️Treasure Run All-time TOP10 (Plays) ===");
+
+    try (PreparedStatement ps = conn.prepareStatement(sql);
+        ResultSet rs = ps.executeQuery()) {
+
+      int rank = 1;
+      while (rs.next()) {
+        String name = rs.getString("player_name");
+        int score = rs.getInt("score");
+        long time = rs.getLong("time");
+        String diff = rs.getString("difficulty");
+        String lang = rs.getString("lang_code");
+
+        player.sendMessage(
+            ChatColor.AQUA + "" + rank + "位 " +
+                ChatColor.WHITE + (name == null ? "unknown" : name) + "  " +
+                ChatColor.GOLD + score + "pt " +
+                ChatColor.YELLOW + time + "s " +
+                ChatColor.GRAY + "(" + (diff == null ? "-" : diff) + ") " +
+                ChatColor.LIGHT_PURPLE + "[" + (lang == null ? "ja" : lang) + "]"
+        );
+        rank++;
+      }
+
+      if (rank == 1) {
+        player.sendMessage(ChatColor.GRAY + "まだ記録がありません。");
+      } else {
+        player.sendMessage(ChatColor.DARK_GRAY + "表示切替: /gameRank weekly | /gameRank monthly");
+      }
+
+    } catch (SQLException e) {
+      e.printStackTrace();
+      player.sendMessage(ChatColor.RED + "ランキング取得中にエラーが発生しました");
+    }
+  }
+
+  private void showMonthlyRanking(Player player) {
+    Connection conn = getConnection();
+    if (conn == null) {
+      player.sendMessage(ChatColor.RED + "DB接続がありません。");
+      return;
+    }
+
+    String sql =
+        "SELECT player_name, score, time, difficulty, lang_code, played_at " +
+            "FROM scores " +
+            "WHERE YEAR(played_at) = YEAR(NOW()) " +
+            "  AND MONTH(played_at) = MONTH(NOW()) " +
+            "ORDER BY score DESC, time ASC, id DESC " +
+            "LIMIT 10";
+
+    player.sendMessage(ChatColor.AQUA + "=== 🎖️Treasure Run Monthly TOP10 (Plays) ===");
+
+    try (PreparedStatement ps = conn.prepareStatement(sql);
+        ResultSet rs = ps.executeQuery()) {
+
+      int rank = 1;
+      while (rs.next()) {
+        String name = rs.getString("player_name");
+        int score = rs.getInt("score");
+        long time = rs.getLong("time");
+        String diff = rs.getString("difficulty");
+        String lang = rs.getString("lang_code");
+
+        player.sendMessage(
+            ChatColor.AQUA + "" + rank + "位 " +
+                ChatColor.WHITE + (name == null ? "unknown" : name) + "  " +
+                ChatColor.GOLD + score + "pt " +
+                ChatColor.YELLOW + time + "s " +
+                ChatColor.GRAY + "(" + (diff == null ? "-" : diff) + ") " +
+                ChatColor.LIGHT_PURPLE + "[" + (lang == null ? "ja" : lang) + "]"
+        );
+        rank++;
+      }
+
+      if (rank == 1) {
+        player.sendMessage(ChatColor.GRAY + "まだ記録がありません。");
+      } else {
+        player.sendMessage(ChatColor.DARK_GRAY + "表示切替: /gameRank weekly | /gameRank all");
+      }
+
+    } catch (SQLException e) {
+      e.printStackTrace();
+      player.sendMessage(ChatColor.RED + "ランキング取得中にエラーが発生しました");
+    }
+  }
+
   private void loadConfigValues() {
     easyTimeLimit   = getConfig().getInt("difficultySettings.Easy.timeLimit", 300);
     normalTimeLimit = getConfig().getInt("difficultySettings.Normal.timeLimit", 180);
@@ -707,10 +1029,15 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
   // =======================================================
   @Override
   public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-    if (!(sender instanceof Player player)) {
-      sender.sendMessage("プレイヤーのみ実行できます");
-      return true;
+    // === AUTO PATCH v6.2: allow console/RCON ===
+    Player player = null;
+    if (sender instanceof Player) { player = (Player) sender; }
+    else {
+      if (args != null && args.length >= 2) player = Bukkit.getPlayerExact(args[1]);
+      if (player == null) player = Bukkit.getOnlinePlayers().stream().findFirst().orElse(null);
+      if (player == null) { sender.sendMessage("プレイヤーのみ実行できます（オンラインプレイヤー無し）"); return true; }
     }
+// === END AUTO PATCH v6.2 ===
 
     // ✅ treasureReload
     if (cmd.getName().equalsIgnoreCase("treasureReload")) {
@@ -759,7 +1086,22 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     }
 
     if (cmd.getName().equalsIgnoreCase("gameRank")) {
-      showRanking(player);
+      // /gameRank           -> weekly
+      // /gameRank weekly    -> weekly
+      // /gameRank all       -> all-time
+      // /gameRank monthly   -> monthly
+      String mode = (args.length >= 1) ? args[0].toLowerCase(Locale.ROOT) : "weekly";
+
+      if (mode.equals("all") || mode.equals("alltime") || mode.equals("all-time")) {
+        showAllTimeRanking(player);
+
+      } else if (mode.equals("month") || mode.equals("monthly")) {
+        showMonthlyRanking(player);
+
+      } else {
+        showWeeklyRanking(player);
+      }
+
       rankDirty = true;
       return true;
     }
@@ -832,7 +1174,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
 
       player.sendMessage(ChatColor.GOLD + "ゲーム終了！合計スコア: " + ChatColor.YELLOW + score);
 
-      saveScore(player.getName(), score, elapsedSec, difficulty);
+      saveScore(player, score, elapsedSec, difficulty);
 
       if (treasureRunGameEffectsPlugin != null) treasureRunGameEffectsPlugin.stopFinalCountdownBeeps(player);
       if (heartbeatSoundService != null) heartbeatSoundService.stop(player);
@@ -1059,7 +1401,10 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     final String timeText = String.format("%d:%02d.%02d", minutes, seconds, hundredths);
     final long elapsedSec = totalSeconds;
 
-    saveScore(player.getName(), finalScore, elapsedSec, difficulty);
+    saveScore(player, finalScore, elapsedSec, difficulty);
+
+    // ✅ ここに追加（SUCCESS: weekly + alltime 加算）
+    addSeasonScore(player, finalScore, true, elapsedMs);
 
     final int rank = getRunRank(player.getName(), finalScore, elapsedSec, difficulty);
     final String rankLabel = (rank > 0) ? ("#" + rank) : "-";
@@ -1384,7 +1729,10 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
 
         int finalScore = playerScores.getOrDefault(player.getUniqueId(), 0);
         long elapsedSec = (System.currentTimeMillis() - startTime) / 1000L;
-        saveScore(player.getName(), finalScore, elapsedSec, difficulty);
+        saveScore(player, finalScore, elapsedSec, difficulty);
+
+        // ✅ ここに追加（TIME_UP: scoreだけ加算 / wins・best_timeは無し）
+        addSeasonScore(player, finalScore, false, null);
 
         if (startThemePlayer != null) startThemePlayer.stop(player);
         stopVanillaMusicSuppress(player);
@@ -1519,6 +1867,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
         yOff += 0.25;
         if (yOff > 3.5) cancel();
       }
+
     }.runTaskTimer(this, 0L, 2L);
   }
 
@@ -1544,6 +1893,10 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
   public TreasureChestManager getTreasureChestManager() { return treasureChestManager; }
   public RankRewardManager getRankRewardManager() { return rankRewardManager; }
   public TreasureRunGameEffectsPlugin getTreasureRunGameEffectsPlugin() { return treasureRunGameEffectsPlugin; }
+
+  // ✅ 追加（RankTickerが参照する）
+  public SeasonRepository getSeasonRepository() { return seasonRepository; }
+  public SeasonScoreRepository getSeasonScoreRepository() { return seasonScoreRepository; }
 
   private int getTotalEffectTicksForRank(int rank) {
     return switch (rank) {
@@ -1663,6 +2016,11 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     treasureChestManager.spawnChests(player, difficulty, currentTotalChests);
     totalChestsRemaining = currentTotalChests;
     totalChestsAtStart = currentTotalChests;
+    TreasureChestManager m = getTreasureChestManager();
+    getLogger().info("[CHEST][SPAWN] after spawn"
+        + " now=" + (m != null ? m.getTreasureLocations().size() : -1)
+        + " instance=" + (m != null ? System.identityHashCode(m) : -1)
+    );
 
     player.sendMessage(ChatColor.GREEN + "宝箱 " + currentTotalChests + " 個を配置しました！");
 
@@ -1706,10 +2064,10 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
 
               // ✅ ✅ ✅ GO! の瞬間だけ「画面が震える + 光 + 爆発風スパークル」
               Bukkit.getScheduler().runTaskLater(TreasureRunMultiChestPlugin.this, () -> {
-  if (player != null && player.isOnline()) {
-    playGoSparkleShock(player);
-  }
-}, 1L);
+                if (player != null && player.isOnline()) {
+                  playGoSparkleShock(player);
+                }
+              }, 1L);
 // ✅ ✅ ✅ 最大サイズで見せる：Title行に GO! だけ（太字）
               // ✅ 色は「白に一番近いグレー」
               player.sendTitle(
@@ -1722,6 +2080,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
               this.cancel();
             }
           }
+
         }.runTaskTimer(TreasureRunMultiChestPlugin.this, 0L, 20L);
       }
     }.runTaskLater(this, 20L);
@@ -1814,7 +2173,53 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
 
         ticks++;
       }
+
     }.runTaskTimer(this, 0L, 1L);
+  }
+
+  // =======================================================
+// ✅ Weekly + All-time スコア加算（共通）
+// - SUCCESS / TIME_UP の両方から呼べる
+// =======================================================
+  private void addSeasonScore(
+      Player player,
+      int addScore,
+      boolean isWin,
+      Long bestTimeMsOrNull
+  ) {
+    if (player == null) return;
+    if (seasonRepository == null || seasonScoreRepository == null) {
+      getLogger().warning("[RANK] season repos not initialized");
+      return;
+    }
+
+    try {
+      long seasonId = seasonRepository.getOrCreateCurrentWeeklySeasonId();
+
+      // ✅ 追加：プレイヤー言語（無ければ ja）
+      String langCode = "ja";
+      try {
+        if (playerLanguageStore != null) {
+          langCode = playerLanguageStore.getLang(player, "ja");
+        }
+      } catch (Throwable ignored) {}
+
+      seasonScoreRepository.addWeeklyAndAllTime(
+          seasonId,
+          player.getUniqueId(),
+          player.getName(),
+          addScore,
+          isWin ? 1 : 0,
+          bestTimeMsOrNull,
+          langCode
+      );
+
+      rankDirty = true;
+
+    } catch (Exception e) {
+      getLogger().warning("[RANK] addSeasonScore failed: " + e.getMessage());
+      e.printStackTrace();
+    }
   }
 
   // =======================================================

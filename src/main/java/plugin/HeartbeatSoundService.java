@@ -1,5 +1,7 @@
 package plugin;
 
+import org.bukkit.Bukkit;
+
 import org.bukkit.Sound;
 import org.bukkit.SoundCategory;
 import org.bukkit.entity.Player;
@@ -145,6 +147,7 @@ public class HeartbeatSoundService {
 
         tick++;
       }
+
     }.runTaskTimer(plugin, 0L, 1L);
 
     tasks.put(uuid, task);

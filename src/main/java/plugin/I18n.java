@@ -5,13 +5,34 @@ import org.bukkit.configuration.file.FileConfiguration;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
+/**
+ * I18n (languages/*.yml 方式)
+ *
+ * - plugins/TreasureRun/languages/<lang>.yml を読む
+ * - fallback: lang -> en -> ja -> default.unknown
+ *
+ * 互換:
+ * - new I18n(JavaPlugin) / loadOrCreate() / tr(...) / trList(...)
+ */
 public class I18n {
 
-  private final MessagesYamlStore store;
+  // ✅ languages/*.yml store
+  private final LanguagesYamlStore store;
 
-  public I18n(MessagesYamlStore store) {
-    this.store = store;
+  // ==============================
+  // ✅ 基本コンストラクタ
+  // ==============================
+  public I18n(org.bukkit.plugin.java.JavaPlugin plugin) {
+    this.store = new LanguagesYamlStore(plugin);
+  }
+
+  // ==============================
+  // ✅ 読み込み（必要ならファイル作成）
+  // ==============================
+  public void loadOrCreate() {
+    store.loadOrCreate();
   }
 
   // ==============================
@@ -53,62 +74,78 @@ public class I18n {
     }).toList();
   }
 
+  // ✅ Map 置換互換
+  public String tr(String lang, String key, Map<String, String> vars) {
+    if (vars == null || vars.isEmpty()) return tr(lang, key);
+    java.util.List<Placeholder> ps = new java.util.ArrayList<>();
+    for (Map.Entry<String, String> e : vars.entrySet()) {
+      ps.add(Placeholder.of(e.getKey(), e.getValue()));
+    }
+    return tr(lang, key, ps.toArray(new Placeholder[0]));
+  }
+
   // ==============================
   // ✅ fallback つき raw 取得
   // ==============================
   private String rawString(String lang, String key) {
-    FileConfiguration cfg = store.getConfig();
-    if (cfg == null) return "(messages.yml not loaded)";
+    // 0) store未初期化でも壊れない
+    if (key == null || key.isBlank()) return "";
 
     // 1) lang
-    String v = cfg.getString(path(lang, key));
+    String v = getStringSafe(store.get(lang), key);
     if (v != null) return v;
 
     // 2) en
-    v = cfg.getString(path("en", key));
+    v = getStringSafe(store.get("en"), key);
     if (v != null) return v;
 
     // 3) ja
-    v = cfg.getString(path("ja", key));
+    v = getStringSafe(store.get("ja"), key);
     if (v != null) return v;
 
-    // 4) default
-    v = cfg.getString("messages.default.unknown");
-    if (v != null) {
-      return v.replace("{key}", key);
-    }
-
-    // 5) unknown
-    return "(Translation missing: " + key + ")";
+    // 4) default unknown
+    String unknown = getStringSafe(store.get(lang), "default.unknown");
+    if (unknown == null) unknown = getStringSafe(store.get("en"), "default.unknown");
+    if (unknown == null) unknown = getStringSafe(store.get("ja"), "default.unknown");
+    if (unknown == null) unknown = "Translation missing: {key}";
+    return unknown.replace("{key}", key);
   }
 
   private List<String> rawStringList(String lang, String key) {
-    FileConfiguration cfg = store.getConfig();
-    if (cfg == null) return Collections.emptyList();
+    if (key == null || key.isBlank()) return Collections.emptyList();
 
     // 1) lang
-    List<String> v = cfg.getStringList(path(lang, key));
+    List<String> v = getStringListSafe(store.get(lang), key);
     if (v != null && !v.isEmpty()) return v;
 
     // 2) en
-    v = cfg.getStringList(path("en", key));
+    v = getStringListSafe(store.get("en"), key);
     if (v != null && !v.isEmpty()) return v;
 
     // 3) ja
-    v = cfg.getStringList(path("ja", key));
+    v = getStringListSafe(store.get("ja"), key);
     if (v != null && !v.isEmpty()) return v;
 
     // 4) default unknown を list として返す
-    String unknown = cfg.getString("messages.default.unknown");
-    if (unknown != null) {
-      return List.of(unknown.replace("{key}", key));
-    }
-
-    return List.of("(Translation missing: " + key + ")");
+    String unknown = getStringSafe(store.get("en"), "default.unknown");
+    if (unknown == null) unknown = "Translation missing: {key}";
+    return List.of(unknown.replace("{key}", key));
   }
 
-  private String path(String lang, String key) {
-    return "messages.translation." + lang + "." + key;
+  private String getStringSafe(FileConfiguration cfg, String path) {
+    try { return (cfg == null) ? null : cfg.getString(path); }
+    catch (Throwable ignored) { return null; }
+  }
+
+  private List<String> getStringListSafe(FileConfiguration cfg, String path) {
+    try {
+      if (cfg == null) return null;
+      if (!cfg.isList(path)) return null;  // ←これが重要
+      List<String> list = cfg.getStringList(path);
+      return (list == null || list.isEmpty()) ? null : list;
+    } catch (Throwable ignored) {
+      return null;
+    }
   }
 
   private String color(String s) {
@@ -130,29 +167,4 @@ public class I18n {
       return new Placeholder(key, value);
     }
   }
-
-  // =======================================================
-  // ✅ compatibility bridge (auto-added)
-  // =======================================================
-
-  /** Allow: new I18n(JavaPlugin) */
-  public I18n(org.bukkit.plugin.java.JavaPlugin plugin) {
-    this(new plugin.MessagesYamlStore(plugin));
-  }
-
-  /** Old call sites expect this method. */
-  public void loadOrCreate() {
-    if (this.store != null) this.store.loadOrCreate();
-  }
-
-  /** Allow: tr(lang, key, Map.of(...)) */
-  public String tr(String lang, String key, java.util.Map<String, String> vars) {
-    if (vars == null || vars.isEmpty()) return tr(lang, key);
-    java.util.List<Placeholder> ps = new java.util.ArrayList<>();
-    for (java.util.Map.Entry<String,String> e : vars.entrySet()) {
-      ps.add(Placeholder.of(e.getKey(), e.getValue()));
-    }
-    return tr(lang, key, ps.toArray(new Placeholder[0]));
-  }
-
 }

@@ -1,5 +1,7 @@
 package plugin;
 
+import org.bukkit.Bukkit;
+
 import org.bukkit.Sound;
 import org.bukkit.SoundCategory;
 import org.bukkit.entity.Player;
@@ -83,6 +85,8 @@ public class StartThemePlayer {
     s.step = 0;
     s.failStingerPlayed = false;
 
+
+
     s.task = plugin.getServer().getScheduler().runTaskTimer(plugin, () -> tick(player), 0L, STEP_TICKS);
     running.put(player.getUniqueId(), s);
   }
@@ -127,6 +131,8 @@ public class StartThemePlayer {
     s.bar = 0;
     s.step = 0;
     s.failStingerPlayed = false;
+
+
 
     s.task = plugin.getServer().getScheduler().runTaskTimer(plugin, () -> tick(player), 0L, STEP_TICKS);
     running.put(player.getUniqueId(), s);

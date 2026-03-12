@@ -1,5 +1,7 @@
 package plugin;
 
+import org.bukkit.Bukkit;
+
 import org.bukkit.*;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
@@ -973,6 +975,40 @@ public class GameStageManager implements Listener {
 
       shopDebug("OK(LATER): playing effects now");
 
+      // ✅ 表示だけ：アイスランド語 ⇔ 英語 を交互に（0.5秒ごと、5セット）
+      final String iceland = ChatColor.translateAlternateColorCodes('&', "&6&lKúl undirbúningur…");
+
+      new BukkitRunnable() {
+        int n = 0; // 0..9 (10回) = 交互5セット
+
+        @Override
+        public void run() {
+          if (!plugin.isGameRunning() || !player.isOnline()) {
+            cancel();
+            return;
+          }
+
+          if (n % 2 == 0) {
+            // アイスランド語
+            player.sendTitle(iceland, "", 0, 8, 0);
+          } else {
+            // 英語
+            player.sendTitle(
+                ChatColor.GOLD + "Trade complete!",
+                ChatColor.AQUA + "A hidden power awakens…",
+                0, 8, 0
+            );
+          }
+
+          n++;
+          if (n >= 10) {
+            cancel();
+          }
+        }
+
+      }.runTaskTimer(plugin, 0L, 10L); // 10tick ≒ 0.5秒
+
+
       // 演出（100%気づく版）
       player.sendTitle(
           ChatColor.GOLD + "Trade complete!",
@@ -1223,13 +1259,28 @@ public class GameStageManager implements Listener {
 
     try {
       // direct-new: do not use reflection
-      MovingSafetyZoneTask task = new MovingSafetyZoneTask(plugin);
 
+      // ✅ TreasureProvider を接続（宝箱接近演出を有効化）
+      MovingSafetyZoneTask.TreasureProvider treasureProvider = () -> {
+        try {
+          TreasureChestManager m = plugin.getTreasureChestManager();
+          return (m != null) ? m.getTreasureLocations() : java.util.Collections.emptyList();
+        } catch (Throwable ignored) {
+          return java.util.Collections.emptyList();
+        }
+      };
+
+      // ✅ ステージ床Yを自動で固定（誤爆ゼロ）
+      // floorY が取れない時は Integer.MIN_VALUE にして「Y固定無し」で動かす
+      int fixedY = (floorY == -999999) ? Integer.MIN_VALUE : floorY;
+
+      MovingSafetyZoneTask task = new MovingSafetyZoneTask(plugin, treasureProvider, fixedY);
+      this.movingSafetyZoneRunnable = task;
 
       // MovingSafetyZoneTask expects 2-tick period (its internal tick logic assumes period=2)
-      movingSafetyZoneHandle = task.runTaskTimer(plugin, 0L, 2L);
+      scheduleMovingSafetyZone(task, 2L);
+      plugin.getLogger().info("MovingSafetyZoneTask started (direct-new) period=2 floorY=" + fixedY);
 
-      plugin.getLogger().info("MovingSafetyZoneTask started (direct-new) period=2");
     } catch (Throwable t) {
       plugin.getLogger().severe("MovingSafetyZoneTask start failed: " + t);
       t.printStackTrace();

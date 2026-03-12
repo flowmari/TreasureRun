@@ -238,6 +238,7 @@ public class TreasureRunGameEffectsPlugin implements Listener {
 
         player.playSound(player.getLocation(), Sound.BLOCK_NOTE_BLOCK_BASS, 1.0f, 1.0f);
       }
+
     }.runTaskTimer(plugin, 0L, interval);
   }
 
@@ -302,6 +303,7 @@ public class TreasureRunGameEffectsPlugin implements Listener {
         p.playSound(p.getLocation(), Sound.BLOCK_NOTE_BLOCK_BASS, 1.0f, pitch);
         p.playSound(p.getLocation(), Sound.BLOCK_NOTE_BLOCK_DIDGERIDOO, 0.7f, pitch * 0.7f);
       }
+
     }.runTaskTimer(plugin, 0L, 6L); // 6tick間隔=テンポゆっくりめ
   }
 
@@ -341,6 +343,7 @@ public class TreasureRunGameEffectsPlugin implements Listener {
     };
 
     timeBeepTasks.put(p.getUniqueId(), task);
+
     task.runTaskTimer(plugin, 0L, 20L); // 1秒ごと
   }
 

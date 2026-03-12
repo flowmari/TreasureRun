@@ -97,6 +97,8 @@ public class ChestProximitySoundService {
     final int[] bar = {0};
     final int[] lastDebugSec = {-1};
 
+
+
     BukkitTask task = Bukkit.getScheduler().runTaskTimer(plugin, () -> {
       if (!player.isOnline() || !isRunning.getAsBoolean()) {
         stop(player);

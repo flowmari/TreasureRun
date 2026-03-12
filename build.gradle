@@ -51,16 +51,12 @@ sourceSets {
 
 // ShadowJar 設定
 shadowJar {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     archiveBaseName.set('TreasureRun')
     archiveVersion.set('1.0-SNAPSHOT')
-    archiveClassifier.set('all')   // ← ここを変更
-
-    // resources を必ず Jar に含める
-    from(sourceSets.main.resources.srcDirs)
-
-    // plugin.yml が正しく配置されるようにパスを調整（念のため）
-    into('/')
+    archiveClassifier.set('all')
 }
+
 
 // build タスクが実行されたときに shadowJar も実行されるように依存関係を追加
 build.dependsOn shadowJar

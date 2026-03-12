@@ -1,5 +1,7 @@
 package plugin;
 
+import org.bukkit.Bukkit;
+
 import org.bukkit.*;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
@@ -1306,6 +1308,8 @@ public class GameStageManager implements Listener {
 
     try {
       // direct-new: do not use reflection
+
+      Bukkit.getLogger().info("[MSZ] create callsite");
       MovingSafetyZoneTask task = new MovingSafetyZoneTask(plugin);
 
 
