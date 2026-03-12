@@ -19,10 +19,12 @@ import java.util.Random;
 
 public class TreasureRunStartCommand implements CommandExecutor {
 
-  private final TreasureRunPlugin plugin;
+  // ★修正：TreasureRunPlugin -> TreasureRunMultiChestPlugin
+  private final TreasureRunMultiChestPlugin plugin;
   private final Random random = new Random();
 
-  public TreasureRunStartCommand(TreasureRunPlugin plugin) {
+  // ★修正：コンストラクタ引数も TreasureRunMultiChestPlugin
+  public TreasureRunStartCommand(TreasureRunMultiChestPlugin plugin) {
     this.plugin = plugin;
   }
 
@@ -73,7 +75,11 @@ public class TreasureRunStartCommand implements CommandExecutor {
       }
     }
 
+    // ★追加：ゲーム開始処理内で BGM抑制 start を呼ぶ（直前/直後の位置）
+    plugin.startVanillaMusicSuppress(player);
+
     player.sendMessage("§a宝探しゲーム開始！ 難易度: " + difficulty + " 制限時間: " + timeLimit + " 秒");
+    plugin.getLanguageSelectGui().open(player, difficulty);
     plugin.getLogger().info("TreasureRun: " + chestLocations.size() + " 個のチェストを生成しました。宝物は " + treasureLocation);
 
     return true;

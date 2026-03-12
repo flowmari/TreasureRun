@@ -1,0 +1,169 @@
+# =======================================================
+# ✅ TreasureRunMultiChestPlugin : favorites_templates.yml
+#
+# ✅ Favorites 図鑑 本文テンプレ（19言語）
+# - 追加箇所は messages.translation.<lang>.favorites.chapter: の中だけ
+# - successTpl1 / successTpl2 / timeupTpl1 / timeupTpl2 を外部化
+#
+# ✅ 運用メリット
+# - config.yml が肥大化しない
+# - 本文テンプレだけ差し替え可能（世界観変更が超楽）
+#
+# ✅ 注意
+# - config.yml 側の既存 translation は消さない前提　これは「追加テンプレ用ファイル」です
+# =======================================================
+
+messages:
+  translation:
+
+    ja:
+      favorites:
+        chapter:
+          successTpl1: "🥇🥈🥉 ここに記録は残る"
+          successTpl2: "表彰台は、あなたの足跡を覚えている。"
+          timeupTpl1: "未竟の余韻が残る"
+          timeupTpl2: "静かな夜に、言葉は戻ってくる。"
+
+    en:
+      favorites:
+        chapter:
+          successTpl1: "🥇🥈🥉 Records that shine"
+          successTpl2: "The podium remembers your steps."
+          timeupTpl1: "The Unfinished Echo remains."
+          timeupTpl2: "Words return when the night is quiet."
+
+    de:
+      favorites:
+        chapter:
+          successTpl1: "🥇🥈🥉 Glänzende Aufzeichnungen"
+          successTpl2: "Das Podium erinnert sich an deine Schritte."
+          timeupTpl1: "Der unvollendete Nachhall bleibt."
+          timeupTpl2: "Wenn die Nacht still wird, kehren Worte zurück."
+
+    it:
+      favorites:
+        chapter:
+          successTpl1: "🥇🥈🥉 Tracce che brillano"
+          successTpl2: "Il podio ricorda i tuoi passi."
+          timeupTpl1: "Resta l’Eco incompiuta."
+          timeupTpl2: "Quando la notte è quieta, le parole ritornano."
+
+    sv:
+      favorites:
+        chapter:
+          successTpl1: "🥇🥈🥉 Spår som lyser"
+          successTpl2: "Prispallen minns dina steg."
+          timeupTpl1: "Det ofullbordade ekot finns kvar."
+          timeupTpl2: "När natten blir stilla återvänder orden."
+
+    es:
+      favorites:
+        chapter:
+          successTpl1: "🥇🥈🥉 Huellas que brillan"
+          successTpl2: "El podio recuerda tus pasos."
+          timeupTpl1: "Permanece el Eco inacabado."
+          timeupTpl2: "Cuando la noche está en calma, las palabras regresan."
+
+    la:
+      favorites:
+        chapter:
+          successTpl1: "🥇🥈🥉 Monumenta fulgentia"
+          successTpl2: "Podium vestigia tua meminit."
+          timeupTpl1: "Manet echo imperfectum."
+          timeupTpl2: "Cum nox quiescit, verba redeunt."
+
+    is:
+      favorites:
+        chapter:
+          successTpl1: "🥇🥈🥉 Spor sem skína"
+          successTpl2: "Verðlaunapallurinn man sporin þín."
+          timeupTpl1: "Ólokna endurómið lifir áfram."
+          timeupTpl2: "Þegar nóttin er kyrr, snúa orðin aftur."
+
+    fi:
+      favorites:
+        chapter:
+          successTpl1: "🥇🥈🥉 Jäljet, jotka loistavat"
+          successTpl2: "Palkintokoroke muistaa askeleesi."
+          timeupTpl1: "Kesken jäänyt kaiku jää jäljelle."
+          timeupTpl2: "Kun yö on hiljainen, sanat palaavat."
+
+    nl:
+      favorites:
+        chapter:
+          successTpl1: "🥇🥈🥉 Sporen die schitteren"
+          successTpl2: "Het podium herinnert zich jouw stappen."
+          timeupTpl1: "De onvoltooide echo blijft."
+          timeupTpl2: "Als de nacht stil is, keren woorden terug."
+
+    fr:
+      favorites:
+        chapter:
+          successTpl1: "🥇🥈🥉 Des traces qui brillent"
+          successTpl2: "Le podium se souvient de tes pas."
+          timeupTpl1: "L’écho inachevé demeure."
+          timeupTpl2: "Quand la nuit est calme, les mots reviennent."
+
+    ru:
+      favorites:
+        chapter:
+          successTpl1: "🥇🥈🥉 Следы, что сияют"
+          successTpl2: "Пьедестал помнит твои шаги."
+          timeupTpl1: "Незавершённое эхо остаётся."
+          timeupTpl2: "Когда ночь тиха, слова возвращаются."
+
+    ko:
+      favorites:
+        chapter:
+          successTpl1: "🥇🥈🥉 빛나는 기록"
+          successTpl2: "포디움은 당신의 발자국을 기억해요."
+          timeupTpl1: "미완의 에코가 남아요."
+          timeupTpl2: "밤이 고요해지면, 말들이 돌아와요."
+
+    zh_tw:
+      favorites:
+        chapter:
+          successTpl1: "🥇🥈🥉 閃耀的紀錄"
+          successTpl2: "頒獎台記得你的腳步。"
+          timeupTpl1: "未竟的回聲仍在。"
+          timeupTpl2: "當夜色安靜，文字會回來。"
+
+    sa:
+      favorites:
+        chapter:
+          successTpl1: "🥇🥈🥉 दीप्ताः अभिलेखाः"
+          successTpl2: "मञ्चः तव पदचिह्नानि स्मरति।"
+          timeupTpl1: "अपूर्णः प्रतिध्वनिः अवशिष्यते।"
+          timeupTpl2: "निशा शान्ता भवति चेत्, शब्दाः पुनरागच्छन्ति।"
+
+    pt:
+      favorites:
+        chapter:
+          successTpl1: "🥇🥈🥉 Rastros que brilham"
+          successTpl2: "O pódio lembra os seus passos."
+          timeupTpl1: "O Eco inacabado permanece."
+          timeupTpl2: "Quando a noite fica quieta, as palavras voltam."
+
+    hi:
+      favorites:
+        chapter:
+          successTpl1: "🥇🥈🥉 चमकते हुए रिकॉर्ड"
+          successTpl2: "पोडियम आपके कदमों को याद रखता है।"
+          timeupTpl1: "अपूर्ण प्रतिध्वनि रह जाती है।"
+          timeupTpl2: "जब रात शांत होती है, शब्द लौट आते हैं।"
+
+    lzh:
+      favorites:
+        chapter:
+          successTpl1: "🥇🥈🥉 煌然之錄"
+          successTpl2: "表彰台記汝之步。"
+          timeupTpl1: "未竟之響猶存。"
+          timeupTpl2: "夜靜則言返。"
+
+    asl_gloss:
+      favorites:
+        chapter:
+          successTpl1: "🥇🥈🥉 RECORD SHINE"
+          successTpl2: "PODIUM REMEMBER YOUR STEP."
+          timeupTpl1: "UNFINISHED ECHO STAY."
+          timeupTpl2: "NIGHT QUIET -> WORD RETURN."

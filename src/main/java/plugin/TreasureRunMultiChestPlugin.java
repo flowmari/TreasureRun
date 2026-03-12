@@ -1,6 +1,9 @@
 package plugin;
 
+import plugin.GameStageManager;
+import plugin.MovingSafetyZoneTask;
 import plugin.RealtimeRankTicker;
+import plugin.LangCommand;
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
@@ -9,6 +12,8 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.Particle;
+import org.bukkit.Sound;
+import org.bukkit.SoundCategory;
 import org.bukkit.block.Block;
 import org.bukkit.block.Chest;
 import org.bukkit.block.DoubleChest;
@@ -18,8 +23,10 @@ import org.bukkit.boss.BossBar;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabExecutor;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.HandlerList; // ✅ treasureReload: 古いListener解除
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryOpenEvent;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
@@ -28,16 +35,38 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
+import org.bukkit.scheduler.BukkitTask;
 
 import java.sql.*;
 import java.util.*;
+import java.util.function.BooleanSupplier; // ✅ 追加（状態Supplier用）
+import plugin.UfoCaravanController;
+
+// ✅ ここに追加（Season）
+import plugin.rank.SeasonRepository;
+import plugin.rank.SeasonScoreRepository;
 
 public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener, TabExecutor {
 
+  // __MSZ_AUTO_START_ON_JOIN
+  private final java.util.concurrent.atomic.AtomicBoolean __mszAutoStarted = new java.util.concurrent.atomic.AtomicBoolean(false);
   // ================================
   // DB接続
   // ================================
   private Connection connection;
+
+  // =======================================================
+  // ✅ ✅ ✅ 追加：ProverbLogRepository（Favorites機能の橋渡し）
+  // =======================================================
+  private ProverbLogRepository proverbLogRepository;
+
+  // =======================================================
+  // ✅ ✅ ✅ Favorites図鑑 + I18n + 19言語 完全対応セット
+  // =======================================================
+  private plugin.PlayerLanguageStore playerLanguageStore;
+  private plugin.LanguageConfigStore languageConfigStore;
+  private plugin.I18n i18n;
+  private plugin.quote.QuoteModule quoteModule;
 
   // ================================
   // ゲーム状態
@@ -51,13 +80,21 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
   // ✅ 終了Title維持タスク（DJ終点で止める）
   private int finishTitleTaskId = -1;
 
+  // ✅ TIME_UP用：短時間だけTitle固定表示するタスク
+  private int timeUpTitleTaskId = -1;
+
   private TreasureChestManager treasureChestManager;
   private TreasureRunGameEffectsPlugin treasureRunGameEffectsPlugin;
+  private UfoCaravanController ufo;
   private GameStageManager gameStageManager;
   private Location currentStageCenter = null;
 
   private TreasureItemFactory itemFactory;
   private RankRewardManager rankRewardManager;
+
+  // ✅ ここに追加（Weekly / All-time ランキング用）
+  private SeasonRepository seasonRepository;
+  private SeasonScoreRepository seasonScoreRepository;
 
   private int easyTimeLimit;
   private int normalTimeLimit;
@@ -79,6 +116,38 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
   public boolean rankDirty = true;
 
   private int totalChestsRemaining = 0;
+
+  // ✅ 追加：開始時の総宝箱数（TIME'S UP の 7/10 表示に使う）
+  private int totalChestsAtStart = 10;
+
+  // ✅ 追加：ゲーム1回で設置する宝箱総数（config.yml の totalChests を読む）
+  private int totalChests;
+
+  // ✅ 追加：連続TIME_UPカウント（プレイヤーごと）
+  // - 「連続で時間切れ」した回数を数える
+  // - 3回目（3の倍数回）だけ TIME'S UP! → OVERCOMING ADVERSITY に切り替える
+  private final Map<UUID, Integer> consecutiveTimeUpCounts = new HashMap<>();
+
+  // =======================================================
+  // ✅ 言語切替（LanguageStore / LanguageSelectGui）
+  // - /treasureReload で GUI を作り直して Listener 再登録するため
+  // =======================================================
+  private LanguageStore languageStore;          // ✅ final じゃなくする（安全に運用）
+  private LanguageSelectGui languageSelectGui;  // ✅ reloadで作り直す
+
+  public LanguageStore getLanguageStore() { return languageStore; }
+  public LanguageSelectGui getLanguageSelectGui() { return languageSelectGui; }
+  public plugin.PlayerLanguageStore getPlayerLanguageStore() {
+    return playerLanguageStore;
+  }
+
+  // i18n getter が欲しい場合
+  public plugin.I18n getI18n() {
+    return i18n;
+  }
+
+  // ✅ GUIタイトル（LanguageSelectGuiと揃える：古いGUIを閉じる判定にも使う）
+  private static final String LANGUAGE_GUI_TITLE = ChatColor.DARK_AQUA + "Language / 言語";
 
   private final Map<Material, String> materialJapaneseNames = new HashMap<>() {{
     put(Material.DIAMOND, "ダイヤモンド");
@@ -114,12 +183,71 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     return startThemePlayer;
   }
 
+  // =======================================================
+  // ✅ バニラMinecraft BGM抑制用（MUSICカテゴリ）
+  // =======================================================
+  private final Map<UUID, BukkitTask> vanillaMusicSuppressTasks = new HashMap<>();
+
+  // =======================================================
+  // ✅ 近接サウンド（明るくなる）サービス
+  // =======================================================
+  private ChestProximitySoundService chestSound;
+
+  // =======================================================
+  // ✅ Heartbeat（鼓動）サービス
+  // =======================================================
+  private HeartbeatSoundService heartbeatSoundService;
+
+  // ✅ Outcome（成功/時間切れ）ランダムSUBTITLE
+  private final OutcomeMessageService outcomeMessageService = new OutcomeMessageService();
+
+  // =======================================================
+  // ✅ ✅ ✅ 追加：プレイヤーが選んだ言語を保持（proverb_logs保存に使う）
+  // =======================================================
+  private final Map<UUID, String> playerLastLang = new HashMap<>();
+
   @Override
   public void onEnable() {
+
+    // __MSZ_AUTO_START_ON_JOIN
+    // 最初のプレイヤーが入った瞬間に1回だけ自動で gameStart Normal を実行（RCON不要）
+    org.bukkit.Bukkit.getPluginManager().registerEvents(new org.bukkit.event.Listener() {
+      @org.bukkit.event.EventHandler
+      public void onJoin(org.bukkit.event.player.PlayerJoinEvent e) {
+        if (!__mszAutoStarted.compareAndSet(false, true)) return;
+        final org.bukkit.entity.Player p = e.getPlayer();
+        org.bukkit.Bukkit.getLogger().info("[MSZ] auto-start armed: player=" + p.getName());
+        org.bukkit.Bukkit.getScheduler().runTaskLater(TreasureRunMultiChestPlugin.this, () -> {
+          try {
+            org.bukkit.Bukkit.dispatchCommand(p, "gameStart Normal");
+            org.bukkit.Bukkit.getLogger().info("[MSZ] auto-start dispatched: gameStart Normal");
+          } catch (Throwable t) {
+            org.bukkit.Bukkit.getLogger().severe("[MSZ] auto-start failed: " + t);
+          }
+        }, 20L);
+      }
+    }, this);
     getLogger().info("🌈 TreasureRunMultiChestPlugin: 起動 🌈");
 
     saveDefaultConfig();
+    reloadConfig();
+
     Bukkit.getPluginManager().registerEvents(this, this);
+
+    // ✅ 言語系：起動時初期化（store読み込み + GUI生成 + Listener登録）
+    initOrReloadLanguageSystem(true);
+
+    // ✅ ✅ ✅ 19言語 + Favorites図鑑 + I18n + DB自動判定 一式
+    playerLanguageStore = new plugin.PlayerLanguageStore(this);
+
+    languageConfigStore = new plugin.LanguageConfigStore();
+    languageConfigStore.reloadFromConfig(getConfig());
+
+    i18n = new plugin.I18n(this);
+    i18n.loadOrCreate(); // languages/*.yml 読み込み（なければ生成）
+
+    quoteModule = new plugin.quote.QuoteModule(this, playerLanguageStore, languageConfigStore, i18n);
+    quoteModule.enable();
 
     // ✅ StartThemePlayer を生成して保持
     startThemePlayer = new StartThemePlayer(this);
@@ -149,32 +277,109 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     if (getCommand("gameMenu") != null) {
       getCommand("gameMenu").setExecutor(this);
     }
+
+    // ✅ /lang：言語GUIを開く / 言語を変更する（LangCommand）
+    if (getCommand("lang") != null) {
+      getCommand("lang").setExecutor(new LangCommand(this));
+    } else {
+      getLogger().warning("⚠ /lang が plugin.yml に見つかりません");
+    }
+
+    // ✅ /lang（Language GUI を開く or 言語変更）
+    if (getCommand("lang") != null) {
+      getCommand("lang").setExecutor(new LangCommand(this));
+    } else {
+      getLogger().warning("⚠ /lang が plugin.yml に見つかりません");
+    }
+
     if (getCommand("clearStageBlocks") != null) {
       getCommand("clearStageBlocks").setExecutor(new StageCleanupCommand(this));
     }
 
+    if (getCommand("lang") != null) {
+      getCommand("lang").setExecutor(new LangCommand(this));
+      // GUIを開くだけなら TabCompleter は不要（付けてもOK）
+      // getCommand("lang").setTabCompleter(new LangCommand(this));
+    } else {
+      getLogger().warning("⚠ /lang が plugin.yml に見つかりません");
+    }
+
+    // ✅ ✅ ✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅
+    // ✅ QuoteFavorite command register（旧登録は削除し、新登録に統一）
+    if (getCommand("quoteFavorite") != null) {
+      getCommand("quoteFavorite").setExecutor(new plugin.quote.QuoteFavoriteCommand(this));
+      getCommand("quoteFavorite").setTabCompleter(new plugin.quote.QuoteFavoriteTabCompleter());
+    } else {
+      getLogger().warning("⚠ /quoteFavorite が plugin.yml に見つかりません");
+    }
+    // ✅ ✅ ✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅
+
+    // ✅ treasureReload コマンド（plugin.yml にあれば拾う）
+    if (getCommand("treasureReload") != null) {
+      getCommand("treasureReload").setExecutor(this);
+    }
+    // ✅ Export: config.yml messages.translation.* → plugins/TreasureRun/languages/*.yml
+    if (getCommand("treasureExportLang") != null) {
+      getCommand("treasureExportLang").setExecutor(new TreasureExportLangCommand(this));
+    } else {
+      getLogger().warning("⚠ /treasureexportLang が plugin.yml に見つかりません");
+    }
+
+// ✅ Export: config.yml の messages.translation.* → languages/*.yml
+    if (getCommand("treasureexportLang") != null) {
+      getCommand("treasureexportLang").setExecutor(new TreasureExportLangCommand(this));
+    } else {
+      getLogger().warning("⚠ /treasureExportLang が plugin.yml に見つかりません");
+    }
+
     setupDatabase();
+
+    // ✅ ここに追加（Weekly/All-time ranking repositories）
+    this.seasonRepository = new SeasonRepository(this);
+    this.seasonScoreRepository = new SeasonScoreRepository(this);
+
+    // =======================================================
+    // ✅ ✅ ✅ 追加：ProverbLogRepository 生成（Favorites橋渡し）
+    // =======================================================
+    proverbLogRepository = new ProverbLogRepository(this);
+
+    // ✅ ✅ ✅ ✅ ✅ 追加：QuoteFavoriteBookClickListener を登録（Favoritesの本クリック対応）
+    getServer().getPluginManager().registerEvents(new QuoteFavoriteBookClickListener(this), this);
+
+    // ✅ ✅ ✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅
+    // ✅ Hybrid Listener register（Sneak+RightClick shortcut）
+    getServer().getPluginManager().registerEvents(new plugin.quote.QuoteFavoriteShortcutListener(this), this);
+    // ✅ ✅ ✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅
+
     loadConfigValues();
 
     this.treasureChestManager =
         new TreasureChestManager(this, treasureChestCounts, treasurePool, chestSpawnRadius);
 
-    // ★追加：宝箱取得演出（開けた瞬間に、取得アイテムが宝箱から出る）
+    // ✅ 近接サウンドサービス生成（treasureChestManager 作成の「後」）
+    this.chestSound = new ChestProximitySoundService(
+        this,
+        this.treasureChestManager,
+        () -> this.isRunning
+    );
+
+    // ✅ Heartbeat: サービス生成（onEnableで生成）
+    this.heartbeatSoundService = new HeartbeatSoundService(this);
+
+    // 宝箱取得演出
     Bukkit.getPluginManager().registerEvents(new TreasureChestPickupListener(this), this);
 
     this.itemFactory = new TreasureItemFactory(this);
 
-    this.gameStageManager = new GameStageManager(this);
+    this.ufo = new UfoCaravanController(this);
+
+    this.gameStageManager = new GameStageManager(this, this.ufo);
     Bukkit.getPluginManager().registerEvents(this.gameStageManager, this);
     getLogger().info("[TreasureRun] GameStageManager event registered!");
 
     this.rankRewardManager = new RankRewardManager(this);
 
-    // =======================================================
-    // ✅ 追加：debug=true のときだけ /rank コマンドを有効化（撮影・動作確認用）
-    // - OP限定は RankDebugCommand 側でチェック
-    // - debug=false のときはコマンドを登録しない（本番で事故りにくい）
-    // =======================================================
+    // debug=true のときだけ /rank コマンドを有効化
     if (getConfig().getBoolean("debug")) {
       getLogger().warning("⚠ DEBUG MODE ON: /rank デバッグコマンドを有効化します");
       if (getCommand("rank") != null) {
@@ -183,7 +388,6 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
         getLogger().warning("⚠ /rank が plugin.yml に見つかりません（commands: rank を追加済みか確認してください）");
       }
     }
-    // =======================================================
 
     CustomRecipeLoader recipeLoader = new CustomRecipeLoader(this);
     recipeLoader.registerRecipes();
@@ -194,19 +398,42 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     rankTicker = new RealtimeRankTicker(this, rtInterval, rtTopN, rtWidth);
     rankTicker.start();
 
+    try {
+      // ❌ MovingSafetyZoneTask は GameStageManager 側で「1箇所だけ」起動・停止・復元を管理する
+      //    ここで runTaskTimer(1L,1L) すると多重起動＋period不一致で床が広範囲に塗られる原因になる
+      // new MovingSafetyZoneTask(this).runTaskTimer(this, 1L, 1L);
+      getLogger().info("[MSZ] (skipped) scheduled by GameStageManager only");
+    } catch (Throwable t) {
+      getLogger().warning("[MSZ] schedule failed: " + t.getMessage());
+    }
+
     getLogger().info("✅ TreasureRunMultiChestPlugin が正常に起動しました！");
   }
 
   @Override
   public void onDisable() {
-    // ✅ 停止（鳴りっぱなし防止）
     if (startThemePlayer != null) startThemePlayer.stopAll();
+    if (chestSound != null) chestSound.stopAll();
+    if (heartbeatSoundService != null) heartbeatSoundService.stopAll();
+
+    stopVanillaMusicSuppressAll();
 
     if (bossBar != null) bossBar.removeAll();
 
     if (finishTitleTaskId != -1) {
       Bukkit.getScheduler().cancelTask(finishTitleTaskId);
       finishTitleTaskId = -1;
+    }
+
+    if (timeUpTitleTaskId != -1) {
+      Bukkit.getScheduler().cancelTask(timeUpTitleTaskId);
+      timeUpTitleTaskId = -1;
+    }
+
+    // ✅ LanguageSelectGui の Listener 解除（停止時の後片付け）
+    if (languageSelectGui != null) {
+      HandlerList.unregisterAll(languageSelectGui);
+      languageSelectGui = null;
     }
 
     try {
@@ -227,7 +454,34 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
       taskId = -1;
     }
 
+    // =======================================================
+    // ✅ ✅ ✅ 追加：Repository参照を明示的に切る（安全）
+    // =======================================================
+    proverbLogRepository = null;
+
     getLogger().info("🔻 TreasureRunMultiChestPlugin: 無効化");
+  }
+
+  // =======================================================
+  // ✅ treasureReload: 言語ストア再読込 & GUI作り直し（古いListener解除）
+  // =======================================================
+  private void initOrReloadLanguageSystem(boolean registerListener) {
+    if (languageStore == null) {
+      languageStore = new LanguageStore();
+    }
+
+    // config → store
+    languageStore.reloadFromConfig(getConfig());
+
+    // 古いGUI Listener解除 → 作り直し → 再登録
+    if (languageSelectGui != null) {
+      HandlerList.unregisterAll(languageSelectGui);
+    }
+    languageSelectGui = new LanguageSelectGui(this, languageStore);
+
+    if (registerListener) {
+      getServer().getPluginManager().registerEvents(languageSelectGui, this);
+    }
   }
 
   // ✅ 追加：ゲーム中にプレイヤーが抜けても残骸が残らないように掃除
@@ -236,8 +490,26 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     Player player = event.getPlayer();
     if (!isRunning) return;
 
-    // ✅ 退出時も停止（事故防止）
+    // ✅✅✅ 追加：落ちても保存（WIN扱いにしない）
+    try {
+      UUID uuid = player.getUniqueId();
+      int score = playerScores.getOrDefault(uuid, 0);
+      long elapsedSec = Math.max(0, (System.currentTimeMillis() - startTime) / 1000L);
+
+      saveScore(player, score, elapsedSec, difficulty);
+      addSeasonScore(player, score, false, null);
+
+      getLogger().info("[DB] saved on quit: player=" + player.getName()
+          + " score=" + score + " time=" + elapsedSec + " diff=" + difficulty);
+    } catch (Throwable t) {
+      getLogger().warning("⚠ onQuit save failed: " + t.getMessage());
+    }
+
     if (startThemePlayer != null) startThemePlayer.stop(player);
+    stopVanillaMusicSuppress(player);
+    if (heartbeatSoundService != null) heartbeatSoundService.stop(player);
+    if (treasureRunGameEffectsPlugin != null) treasureRunGameEffectsPlugin.stopFinalCountdownBeeps(player);
+    if (chestSound != null) chestSound.stop(player);
 
     if (taskId != -1) {
       Bukkit.getScheduler().cancelTask(taskId);
@@ -247,6 +519,11 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     if (finishTitleTaskId != -1) {
       Bukkit.getScheduler().cancelTask(finishTitleTaskId);
       finishTitleTaskId = -1;
+    }
+
+    if (timeUpTitleTaskId != -1) {
+      Bukkit.getScheduler().cancelTask(timeUpTitleTaskId);
+      timeUpTitleTaskId = -1;
     }
 
     if (bossBar != null) bossBar.removeAll();
@@ -261,7 +538,12 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     playerScores.remove(player.getUniqueId());
     originalLocations.remove(player.getUniqueId());
 
-    // ワールド状態だけ戻す（Quit中にテレポはしない）
+    // ✅ ログアウト時：連続TIME_UPカウントは切る（事故防止）
+    consecutiveTimeUpCounts.remove(player.getUniqueId());
+
+    // ✅ ✅ ✅ 追加：ログアウト時に言語保持も消す（事故防止）
+    playerLastLang.remove(player.getUniqueId());
+
     if (previousWorldTime >= 0) {
       World w = player.getWorld();
       w.setTime(previousWorldTime);
@@ -285,6 +567,13 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
       reconnect();
     }
     return connection;
+  }
+
+  // =======================================================
+  // ✅ ✅ ✅ 追加：QuoteFavoriteCommand が呼ぶ橋渡しメソッド
+  // =======================================================
+  public Connection getMySQLConnection() {
+    return getConnection();
   }
 
   private void reconnect() {
@@ -338,6 +627,27 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
 
       getLogger().info("✅ scores テーブル準備完了");
 
+      // =======================================================
+      // ✅ ✅ ✅ 追加：proverb_logs テーブル作成（格言ログ保存用）
+      // =======================================================
+      try (Statement ps = connection.createStatement()) {
+        ps.executeUpdate(
+            "CREATE TABLE IF NOT EXISTS proverb_logs (" +
+                "id INT AUTO_INCREMENT PRIMARY KEY," +
+                "player_uuid VARCHAR(36) NOT NULL," +
+                "player_name VARCHAR(50) NOT NULL," +
+                "outcome VARCHAR(20) NOT NULL," +
+                "difficulty VARCHAR(10) NOT NULL," +
+                "lang VARCHAR(10) NOT NULL," +
+                "quote_text TEXT NOT NULL," +
+                "created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP," +
+                "INDEX idx_player_uuid_created_at (player_uuid, created_at)" +
+                ");"
+        );
+      }
+
+      getLogger().info("✅ proverb_logs テーブル準備完了");
+
     } catch (ClassNotFoundException | SQLException e) {
       getLogger().severe("❌ DB 初期化失敗");
       e.printStackTrace();
@@ -345,15 +655,81 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
   }
 
   private void saveScore(String playerName, int score, long timeSec, String difficulty) {
-    try (PreparedStatement ps = getConnection().prepareStatement(
-        "INSERT INTO scores (player_name, score, time, difficulty) VALUES (?, ?, ?, ?)")) {
+    // Player名しか渡されない呼び出しもあるので、onlineから拾えるなら拾う
+    Player p = Bukkit.getPlayerExact(playerName);
 
-      ps.setString(1, playerName);
-      ps.setInt(2, score);
-      ps.setLong(3, timeSec);
-      ps.setString(4, difficulty);
+    String uuidStr = null;
+    String langCode = "ja";
+
+    // uuid
+    if (p != null) {
+      uuidStr = p.getUniqueId().toString();
+    }
+
+    // lang_code（あなたの環境は playerLanguageStore があるのでそれ優先）
+    try {
+      if (p != null && playerLanguageStore != null) {
+        // ここはあなたの addSeasonScore と同じ取り方
+        langCode = playerLanguageStore.getLang(p, "ja");
+      }
+    } catch (Throwable ignored) {}
+
+    // フォールバック：beginGameStartAfterLanguageSelected で入れてる playerLastLang
+    try {
+      if ((langCode == null || langCode.isBlank()) && p != null) {
+        String v = playerLastLang.get(p.getUniqueId());
+        if (v != null && !v.isBlank()) langCode = v;
+      }
+    } catch (Throwable ignored) {}
+
+    if (langCode == null || langCode.isBlank()) langCode = "ja";
+    langCode = langCode.toLowerCase(Locale.ROOT);
+
+    try (PreparedStatement ps = getConnection().prepareStatement(
+        "INSERT INTO scores (uuid, player_name, score, time, difficulty, lang_code, played_at) " +
+            "VALUES (?, ?, ?, ?, ?, ?, NOW())"
+    )) {
+      ps.setString(1, uuidStr);
+      ps.setString(2, playerName);
+      ps.setInt(3, score);
+      ps.setLong(4, timeSec);
+      ps.setString(5, difficulty);
+      ps.setString(6, langCode);
       ps.executeUpdate();
 
+      rankDirty = true;
+
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }
+  }
+
+  // ✅ 追加：Player から確実に uuid/lang を取って scores に保存する版
+  private void saveScore(Player player, int score, long timeSec, String difficulty) {
+    if (player == null) return;
+
+    String lang = "ja";
+    try {
+      if (playerLanguageStore != null) {
+        lang = playerLanguageStore.getLang(player, "ja");
+      }
+    } catch (Throwable ignored) {}
+
+    if (lang == null || lang.isBlank()) lang = "ja";
+    lang = lang.toLowerCase(Locale.ROOT);
+
+    try (PreparedStatement ps = getConnection().prepareStatement(
+        "INSERT INTO scores (uuid, player_name, score, time, difficulty, lang_code, played_at) " +
+            "VALUES (?, ?, ?, ?, ?, ?, NOW())"
+    )) {
+      ps.setString(1, player.getUniqueId().toString());
+      ps.setString(2, player.getName());
+      ps.setInt(3, score);
+      ps.setLong(4, timeSec);
+      ps.setString(5, difficulty);
+      ps.setString(6, lang);
+
+      ps.executeUpdate();
       rankDirty = true;
 
     } catch (SQLException e) {
@@ -454,6 +830,157 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     }
   }
 
+  // ✅ weekly を「直近7日（plays）」TOP10 にする版
+  private void showWeeklyRanking(Player player) {
+    Connection conn = getConnection();
+    if (conn == null) {
+      player.sendMessage(ChatColor.RED + "DB接続がありません。");
+      return;
+    }
+
+    String sql =
+        "SELECT player_name, score, time, difficulty, lang_code, played_at " +
+            "FROM scores " +
+            "WHERE played_at >= DATE_SUB(NOW(), INTERVAL 7 DAY) " +
+            "ORDER BY score DESC, time ASC, id DESC " +
+            "LIMIT 10";
+
+    player.sendMessage(ChatColor.AQUA + "=== 🎖️Treasure Run Weekly TOP10 (Plays) ===");
+
+    try (PreparedStatement ps = conn.prepareStatement(sql);
+        ResultSet rs = ps.executeQuery()) {
+
+      int rank = 1;
+      while (rs.next()) {
+        String name = rs.getString("player_name");
+        int score = rs.getInt("score");
+        long time = rs.getLong("time");
+        String diff = rs.getString("difficulty");
+        String lang = rs.getString("lang_code");
+
+        player.sendMessage(
+            ChatColor.AQUA + "" + rank + "位 " +
+                ChatColor.WHITE + (name == null ? "unknown" : name) + "  " +
+                ChatColor.GOLD + score + "pt " +
+                ChatColor.YELLOW + time + "s " +
+                ChatColor.GRAY + "(" + (diff == null ? "-" : diff) + ") " +
+                ChatColor.LIGHT_PURPLE + "[" + (lang == null ? "ja" : lang) + "]"
+        );
+        rank++;
+      }
+
+      if (rank == 1) {
+        player.sendMessage(ChatColor.GRAY + "直近7日の記録がありません。");
+      } else {
+        player.sendMessage(ChatColor.DARK_GRAY + "表示切替: /gameRank all | /gameRank monthly");
+      }
+
+    } catch (SQLException e) {
+      e.printStackTrace();
+      player.sendMessage(ChatColor.RED + "ランキング取得中にエラーが発生しました");
+    }
+  }
+
+  private void showAllTimeRanking(Player player) {
+    Connection conn = getConnection();
+    if (conn == null) {
+      player.sendMessage(ChatColor.RED + "DB接続がありません。");
+      return;
+    }
+
+    String sql =
+        "SELECT player_name, score, time, difficulty, lang_code, played_at " +
+            "FROM scores " +
+            "ORDER BY score DESC, time ASC, id DESC " +
+            "LIMIT 10";
+
+    player.sendMessage(ChatColor.AQUA + "=== 🎖️Treasure Run All-time TOP10 (Plays) ===");
+
+    try (PreparedStatement ps = conn.prepareStatement(sql);
+        ResultSet rs = ps.executeQuery()) {
+
+      int rank = 1;
+      while (rs.next()) {
+        String name = rs.getString("player_name");
+        int score = rs.getInt("score");
+        long time = rs.getLong("time");
+        String diff = rs.getString("difficulty");
+        String lang = rs.getString("lang_code");
+
+        player.sendMessage(
+            ChatColor.AQUA + "" + rank + "位 " +
+                ChatColor.WHITE + (name == null ? "unknown" : name) + "  " +
+                ChatColor.GOLD + score + "pt " +
+                ChatColor.YELLOW + time + "s " +
+                ChatColor.GRAY + "(" + (diff == null ? "-" : diff) + ") " +
+                ChatColor.LIGHT_PURPLE + "[" + (lang == null ? "ja" : lang) + "]"
+        );
+        rank++;
+      }
+
+      if (rank == 1) {
+        player.sendMessage(ChatColor.GRAY + "まだ記録がありません。");
+      } else {
+        player.sendMessage(ChatColor.DARK_GRAY + "表示切替: /gameRank weekly | /gameRank monthly");
+      }
+
+    } catch (SQLException e) {
+      e.printStackTrace();
+      player.sendMessage(ChatColor.RED + "ランキング取得中にエラーが発生しました");
+    }
+  }
+
+  private void showMonthlyRanking(Player player) {
+    Connection conn = getConnection();
+    if (conn == null) {
+      player.sendMessage(ChatColor.RED + "DB接続がありません。");
+      return;
+    }
+
+    String sql =
+        "SELECT player_name, score, time, difficulty, lang_code, played_at " +
+            "FROM scores " +
+            "WHERE YEAR(played_at) = YEAR(NOW()) " +
+            "  AND MONTH(played_at) = MONTH(NOW()) " +
+            "ORDER BY score DESC, time ASC, id DESC " +
+            "LIMIT 10";
+
+    player.sendMessage(ChatColor.AQUA + "=== 🎖️Treasure Run Monthly TOP10 (Plays) ===");
+
+    try (PreparedStatement ps = conn.prepareStatement(sql);
+        ResultSet rs = ps.executeQuery()) {
+
+      int rank = 1;
+      while (rs.next()) {
+        String name = rs.getString("player_name");
+        int score = rs.getInt("score");
+        long time = rs.getLong("time");
+        String diff = rs.getString("difficulty");
+        String lang = rs.getString("lang_code");
+
+        player.sendMessage(
+            ChatColor.AQUA + "" + rank + "位 " +
+                ChatColor.WHITE + (name == null ? "unknown" : name) + "  " +
+                ChatColor.GOLD + score + "pt " +
+                ChatColor.YELLOW + time + "s " +
+                ChatColor.GRAY + "(" + (diff == null ? "-" : diff) + ") " +
+                ChatColor.LIGHT_PURPLE + "[" + (lang == null ? "ja" : lang) + "]"
+        );
+        rank++;
+      }
+
+      if (rank == 1) {
+        player.sendMessage(ChatColor.GRAY + "まだ記録がありません。");
+      } else {
+        player.sendMessage(ChatColor.DARK_GRAY + "表示切替: /gameRank weekly | /gameRank all");
+      }
+
+    } catch (SQLException e) {
+      e.printStackTrace();
+      player.sendMessage(ChatColor.RED + "ランキング取得中にエラーが発生しました");
+    }
+  }
+
   private void loadConfigValues() {
     easyTimeLimit   = getConfig().getInt("difficultySettings.Easy.timeLimit", 300);
     normalTimeLimit = getConfig().getInt("difficultySettings.Normal.timeLimit", 180);
@@ -485,7 +1012,16 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
 
     if (treasurePool.isEmpty()) treasurePool.add(Material.DIAMOND);
 
+    totalChests = getConfig().getInt("totalChests", 10);
+
     getLogger().info("✅ config.yml を読み込みました");
+  }
+
+  // =======================================================
+  // ✅ ✅ ✅ 追加：Repository getter（QuoteFavoriteCommand用）
+  // =======================================================
+  public ProverbLogRepository getProverbLogRepository() {
+    return proverbLogRepository;
   }
 
   // =======================================================
@@ -493,23 +1029,99 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
   // =======================================================
   @Override
   public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-    if (!(sender instanceof Player player)) {
-      sender.sendMessage("プレイヤーのみ実行できます");
+    // === AUTO PATCH v6.2: allow console/RCON ===
+    Player player = null;
+    if (sender instanceof Player) { player = (Player) sender; }
+    else {
+      if (args != null && args.length >= 2) player = Bukkit.getPlayerExact(args[1]);
+      if (player == null) player = Bukkit.getOnlinePlayers().stream().findFirst().orElse(null);
+      if (player == null) { sender.sendMessage("プレイヤーのみ実行できます（オンラインプレイヤー無し）"); return true; }
+    }
+// === END AUTO PATCH v6.2 ===
+
+    // ✅ treasureReload
+    if (cmd.getName().equalsIgnoreCase("treasureReload")) {
+      if (isRunning) {
+        player.sendMessage(ChatColor.RED + "ゲーム中は reload できません（安全のため）。/gameEnd してから実行してください。");
+        return true;
+      }
+
+      // 1) config再読込
+      reloadConfig();
+
+      // ✅ messages.yml / config / allowedLanguages を再読込
+      if (languageConfigStore != null) languageConfigStore.reloadFromConfig(getConfig());
+      if (i18n != null) i18n.loadOrCreate();
+      if (quoteModule != null) quoteModule.reload();
+
+      // 2) 言語ストア再読込 + GUI作り直し（Listener再登録）
+      initOrReloadLanguageSystem(true);
+
+      // 3) このプラグイン内の設定値も読み直し
+      loadConfigValues();
+
+      // 4) manager系も必要なら作り直し（安全側）
+      this.treasureChestManager =
+          new TreasureChestManager(this, treasureChestCounts, treasurePool, chestSpawnRadius);
+
+      // 近接サウンドも manager依存なので作り直す
+      this.chestSound = new ChestProximitySoundService(
+          this,
+          this.treasureChestManager,
+          () -> this.isRunning
+      );
+
+      // 旧GUIが開いてる人がいたら閉じる（古いlistener/slot対応が残らないように）
+      for (Player p : Bukkit.getOnlinePlayers()) {
+        try {
+          if (p.getOpenInventory() != null && LANGUAGE_GUI_TITLE.equals(p.getOpenInventory().getTitle())) {
+            p.closeInventory();
+            p.sendMessage(ChatColor.YELLOW + "GUIを更新しました。もう一度 /gameStart で開いてください。");
+          }
+        } catch (Throwable ignored) {}
+      }
+
+      player.sendMessage(ChatColor.GREEN + "✅ TreasureRun config を再読み込みしました（language GUI含む）。");
       return true;
     }
 
     if (cmd.getName().equalsIgnoreCase("gameRank")) {
-      showRanking(player);
+      // /gameRank           -> weekly
+      // /gameRank weekly    -> weekly
+      // /gameRank all       -> all-time
+      // /gameRank monthly   -> monthly
+      String mode = (args.length >= 1) ? args[0].toLowerCase(Locale.ROOT) : "weekly";
+
+      if (mode.equals("all") || mode.equals("alltime") || mode.equals("all-time")) {
+        showAllTimeRanking(player);
+
+      } else if (mode.equals("month") || mode.equals("monthly")) {
+        showMonthlyRanking(player);
+
+      } else {
+        showWeeklyRanking(player);
+      }
+
       rankDirty = true;
       return true;
     }
 
+    // ✅ ✅ ✅ ここが完成版 /gameMenu（格言あり本へ切替）
     if (cmd.getName().equalsIgnoreCase("gameMenu")) {
+
+      // ✅ 目次チャット表示（これはそのままでOK）
       GameMenu.showGameMenu(player, difficulty);
-      GameMenu.openRuleBook(player, difficulty);
+
+      // ✅ 現在のプレイヤー言語を解決（LanguageStore → 無ければ playerLastLang → 無ければ config default）
+      String lang = resolvePlayerLang(player);
+
+      // ✅ 格言集ページ付きルールブック（こっちが正解）
+      GameMenu.openRuleBookFromConfig(player, difficulty, this, lang);
+
       return true;
     }
 
+    // ✅ /gameStart は「GUIを出すだけ」
     if (cmd.getName().equalsIgnoreCase("gameStart")) {
 
       if (isRunning) {
@@ -517,66 +1129,40 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
         return true;
       }
 
-      // ✅ 1) gameStart の最初に「前回の残骸を必ず掃除してから生成」
+      if (treasureRunGameEffectsPlugin != null) {
+        treasureRunGameEffectsPlugin.stopFinalCountdownBeeps(player);
+      }
+
       if (gameStageManager != null) {
         gameStageManager.clearDifficultyBlocks();
         gameStageManager.clearShopEntities();
       }
-      treasureChestManager.removeAllChests();
+      if (treasureChestManager != null) treasureChestManager.removeAllChests();
 
-      // ✅ 念のため開始前に開始テーマの残タスクを止める（事故防止）
       if (startThemePlayer != null) startThemePlayer.stop(player);
+      stopVanillaMusicSuppress(player);
 
-      playerScores.put(player.getUniqueId(), 0);
+      if (heartbeatSoundService != null) heartbeatSoundService.stop(player);
+      if (chestSound != null) chestSound.stop(player);
 
-      if (treasureRunGameEffectsPlugin != null) {
-        for (Player p : Bukkit.getOnlinePlayers()) {
-          treasureRunGameEffectsPlugin.resetPlayerTreasureCount(p);
-        }
-      }
-
+      String selectedDifficulty;
       if (args.length >= 1) {
-        String diff = args[0].toLowerCase();
+        String diff = args[0].toLowerCase(Locale.ROOT);
         if (diff.equals("easy") || diff.equals("normal") || diff.equals("hard")) {
-          difficulty = diff.substring(0, 1).toUpperCase() + diff.substring(1);
+          selectedDifficulty = diff.substring(0, 1).toUpperCase() + diff.substring(1);
         } else {
           player.sendMessage(ChatColor.RED + "難易度は Easy / Normal / Hard です。");
           return true;
         }
       } else {
-        difficulty = "Normal";
+        selectedDifficulty = "Normal";
       }
 
-      originalLocations.put(player.getUniqueId(), player.getLocation().clone());
-
-      Location stage = gameStageManager.buildSeasideStageAndTeleport(player);
-      currentStageCenter = stage;
-
-      int currentTotalChests = 10;
-      treasureChestManager.spawnChests(player, difficulty, currentTotalChests);
-      totalChestsRemaining = currentTotalChests;
-
-      player.sendMessage(ChatColor.GREEN + "宝箱 " + currentTotalChests + " 個を配置しました！");
-
-      GameMenu.showGameMenu(player, difficulty);
-      GameMenu.openRuleBook(player, difficulty);
-
-      new BukkitRunnable() {
-        int count = 3;
-
-        @Override
-        public void run() {
-          if (count > 0) {
-            player.sendTitle(ChatColor.GREEN + "スタートまで…",
-                ChatColor.YELLOW + "" + count, 10, 20, 10);
-            count--;
-          } else {
-            player.sendTitle(ChatColor.GREEN + "スタート！", "", 10, 20, 10);
-            TreasureRunMultiChestPlugin.this.startGame(player);
-            this.cancel();
-          }
-        }
-      }.runTaskTimer(TreasureRunMultiChestPlugin.this, 0L, 20L);
+      if (languageSelectGui != null) {
+        languageSelectGui.open(player, selectedDifficulty);
+      } else {
+        player.sendMessage(ChatColor.RED + "Language GUI が初期化されていません。");
+      }
 
       return true;
     }
@@ -588,14 +1174,28 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
 
       player.sendMessage(ChatColor.GOLD + "ゲーム終了！合計スコア: " + ChatColor.YELLOW + score);
 
-      saveScore(player.getName(), score, elapsedSec, difficulty);
+      saveScore(player, score, elapsedSec, difficulty);
 
-      // ✅ 手動終了でも必ず停止
+      if (treasureRunGameEffectsPlugin != null) treasureRunGameEffectsPlugin.stopFinalCountdownBeeps(player);
+      if (heartbeatSoundService != null) heartbeatSoundService.stop(player);
+      if (chestSound != null) chestSound.stop(player);
+
       if (startThemePlayer != null) startThemePlayer.stop(player);
+      stopVanillaMusicSuppress(player);
 
       if (taskId != -1) {
         Bukkit.getScheduler().cancelTask(taskId);
         taskId = -1;
+      }
+
+      if (finishTitleTaskId != -1) {
+        Bukkit.getScheduler().cancelTask(finishTitleTaskId);
+        finishTitleTaskId = -1;
+      }
+
+      if (timeUpTitleTaskId != -1) {
+        Bukkit.getScheduler().cancelTask(timeUpTitleTaskId);
+        timeUpTitleTaskId = -1;
       }
 
       if (gameStageManager != null) {
@@ -605,8 +1205,11 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
 
       isRunning = false;
       if (bossBar != null) bossBar.removeAll();
-      treasureChestManager.removeAllChests();
+      if (treasureChestManager != null) treasureChestManager.removeAllChests();
       playerScores.remove(uuid);
+
+      // ✅ 手動終了は「TIME_UP連続」ではないのでリセット
+      consecutiveTimeUpCounts.put(uuid, 0);
 
       restoreWorldAndPlayer(player);
       return true;
@@ -625,13 +1228,22 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     return Collections.emptyList();
   }
 
+  // /gamestart normal と /gamestart:normal 両対応
   @EventHandler
   public void onGamestartStyleCommand(PlayerCommandPreprocessEvent event) {
-    String msg = event.getMessage().trim().toLowerCase(Locale.ROOT);
+    String raw = event.getMessage().trim();
+    String lower = raw.toLowerCase(Locale.ROOT);
 
-    if (!msg.startsWith("/gamestart:")) return;
+    String mode;
+    if (lower.startsWith("/gamestart:")) {
+      mode = raw.substring("/gamestart:".length()).trim();
+    } else if (lower.startsWith("/gamestart ")) {
+      mode = raw.substring("/gamestart".length()).trim();
+    } else {
+      return;
+    }
 
-    String mode = msg.substring("/gamestart:".length()).trim();
+    mode = mode.toLowerCase(Locale.ROOT);
     if (!(mode.equals("easy") || mode.equals("normal") || mode.equals("hard"))) return;
 
     event.setCancelled(true);
@@ -642,55 +1254,27 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
       return;
     }
 
-    // ✅ 1) gamestart: の最初に「前回の残骸を必ず掃除してから生成」
+    if (treasureRunGameEffectsPlugin != null) treasureRunGameEffectsPlugin.stopFinalCountdownBeeps(player);
+
     if (gameStageManager != null) {
       gameStageManager.clearDifficultyBlocks();
       gameStageManager.clearShopEntities();
     }
-    treasureChestManager.removeAllChests();
+    if (treasureChestManager != null) treasureChestManager.removeAllChests();
 
-    // ✅ 念のため開始前に開始テーマの残タスクを止める（事故防止）
     if (startThemePlayer != null) startThemePlayer.stop(player);
+    stopVanillaMusicSuppress(player);
 
-    playerScores.put(player.getUniqueId(), 0);
+    if (heartbeatSoundService != null) heartbeatSoundService.stop(player);
+    if (chestSound != null) chestSound.stop(player);
 
-    if (treasureRunGameEffectsPlugin != null) {
-      for (Player p : Bukkit.getOnlinePlayers()) {
-        treasureRunGameEffectsPlugin.resetPlayerTreasureCount(p);
-      }
+    String selectedDifficulty = mode.substring(0, 1).toUpperCase() + mode.substring(1);
+
+    if (languageSelectGui != null) {
+      languageSelectGui.open(player, selectedDifficulty);
+    } else {
+      player.sendMessage(ChatColor.RED + "Language GUI が初期化されていません。");
     }
-
-    difficulty = mode.substring(0, 1).toUpperCase() + mode.substring(1);
-    originalLocations.put(player.getUniqueId(), player.getLocation().clone());
-
-    Location stage = gameStageManager.buildSeasideStageAndTeleport(player);
-    currentStageCenter = stage;
-
-    int currentTotalChests = 10;
-    treasureChestManager.spawnChests(player, difficulty, currentTotalChests);
-    totalChestsRemaining = currentTotalChests;
-
-    player.sendMessage(ChatColor.GREEN + "宝箱 " + currentTotalChests + " 個を配置しました！");
-
-    GameMenu.showGameMenu(player, difficulty);
-    GameMenu.openRuleBook(player, difficulty);
-
-    new BukkitRunnable() {
-      int count = 3;
-
-      @Override
-      public void run() {
-        if (count > 0) {
-          player.sendTitle(ChatColor.GREEN + "スタートまで…",
-              ChatColor.YELLOW + "" + count, 10, 20, 10);
-          count--;
-        } else {
-          player.sendTitle(ChatColor.GREEN + "スタート！", "", 10, 20, 10);
-          TreasureRunMultiChestPlugin.this.startGame(player);
-          this.cancel();
-        }
-      }
-    }.runTaskTimer(TreasureRunMultiChestPlugin.this, 0L, 20L);
   }
 
   // =======================================================
@@ -700,6 +1284,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
   public void onInventoryOpen(InventoryOpenEvent event) {
     if (!isRunning) return;
     if (!(event.getPlayer() instanceof Player player)) return;
+    if (treasureChestManager == null) return;
 
     Inventory inv = event.getInventory();
     Object holder = inv.getHolder();
@@ -743,6 +1328,10 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
       chestState.update();
     }
 
+    if (hadAnyItem && startThemePlayer != null) {
+      startThemePlayer.playTreasureSparkle(player);
+    }
+
     int add = 0;
     if (hadAnyItem) add += 100;
     if (jackpot) add += 200;
@@ -757,6 +1346,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
 
     Location effectLoc = chestLoc.clone().add(0.5, 0.8, 0.5);
     World w = effectLoc.getWorld();
+    if (w == null) return;
 
     w.spawnParticle(Particle.END_ROD, effectLoc, 40, 0.6, 0.6, 0.6, 0.02);
     spawnRisingPillars(effectLoc, Particle.END_ROD);
@@ -770,29 +1360,34 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
       return;
     }
 
-    // =========================================================
-    // ✅ ここから「ゲーム終了演出」
-    // =========================================================
     if (!isRunning) return;
     isRunning = false;
 
-    // ✅ 最後の宝箱で終了が確定したら、開始テーマはここで止める（DJと競合させない）
-    if (startThemePlayer != null) startThemePlayer.stop(player);
+    // ✅ SUCCESS（完走）したら「TIME_UP連続」はリセット
+    consecutiveTimeUpCounts.put(player.getUniqueId(), 0);
 
-    // ✅ 2) 最後の宝箱で終了が確定した時点で、finishDelayまで待たずに難易度ブロックを先に片付ける
-    if (gameStageManager != null) {
-      gameStageManager.clearDifficultyBlocks();
-    }
+    if (heartbeatSoundService != null) heartbeatSoundService.stop(player);
+    if (chestSound != null) chestSound.stop(player);
+    if (treasureRunGameEffectsPlugin != null) treasureRunGameEffectsPlugin.stopFinalCountdownBeeps(player);
+
+    if (startThemePlayer != null) startThemePlayer.stop(player);
+    stopVanillaMusicSuppress(player);
+
+    if (gameStageManager != null) gameStageManager.clearDifficultyBlocks();
 
     if (taskId != -1) {
       Bukkit.getScheduler().cancelTask(taskId);
       taskId = -1;
     }
 
-    // 念のため（前回の終了Title維持が残っていたら止める）
     if (finishTitleTaskId != -1) {
       Bukkit.getScheduler().cancelTask(finishTitleTaskId);
       finishTitleTaskId = -1;
+    }
+
+    if (timeUpTitleTaskId != -1) {
+      Bukkit.getScheduler().cancelTask(timeUpTitleTaskId);
+      timeUpTitleTaskId = -1;
     }
 
     final int finalScore = playerScores.getOrDefault(player.getUniqueId(), 0);
@@ -806,60 +1401,57 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     final String timeText = String.format("%d:%02d.%02d", minutes, seconds, hundredths);
     final long elapsedSec = totalSeconds;
 
-    saveScore(player.getName(), finalScore, elapsedSec, difficulty);
+    saveScore(player, finalScore, elapsedSec, difficulty);
+
+    // ✅ ここに追加（SUCCESS: weekly + alltime 加算）
+    addSeasonScore(player, finalScore, true, elapsedMs);
 
     final int rank = getRunRank(player.getName(), finalScore, elapsedSec, difficulty);
     final String rankLabel = (rank > 0) ? ("#" + rank) : "-";
 
-    // =========================================================
-    // ✅ DJ総Tickを基準に「Title維持」「順位演出」「restore」を同じ終点へ揃える（完全版・互換あり）
-    // =========================================================
+    // ✅ SUCCESS用：このRunで表示する哲学SUBTITLEを1回だけ決めて保持する（チカチカ防止）
+    final String successPhiloSub = outcomeMessageService.pickSubtitle(GameOutcome.SUCCESS, difficulty);
+
+    // =======================================================
+    // ✅ ✅ ✅ 追加：SUCCESS の格言ログを MySQL に保存（proverb_logs）
+    // =======================================================
+    if (successPhiloSub != null && !successPhiloSub.isBlank()) {
+      String lang = getPlayerLangOrDefault(player.getUniqueId());
+      saveProverbLog(player.getUniqueId(), player.getName(), "SUCCESS", difficulty, lang, successPhiloSub);
+    }
+
     long djTotalTicksWork = (treasureRunGameEffectsPlugin != null)
         ? treasureRunGameEffectsPlugin.getDjTotalTicks()
         : 0L;
 
-    // 互換：もしDJ総Tickが取れない環境なら、旧見積もりへフォールバック
     if (djTotalTicksWork <= 0L) {
       djTotalTicksWork = getTotalEffectTicksForRank(rank);
     }
 
-    // ✅ ラムダ内で使えるように final 化
     final long djTotalTicksFinal = Math.max(0L, djTotalTicksWork);
 
-    final long rewardStartDelay = 65L; // DJ/順位演出スタート
+    final long rewardStartDelay = 65L;
     final long finishDelay = rewardStartDelay + djTotalTicksFinal;
 
-    // ✅ DJ + 順位演出を「同じ開始点」で開始し、どちらもDJ終点まで動かす
-    Bukkit.getScheduler().runTaskLater(this, () -> {
+    Bukkit.getScheduler().runTaskLater(TreasureRunMultiChestPlugin.this, () -> {
       if (!player.isOnline()) return;
 
-      // 1) 順位報酬＋演出（DJ終点まで動く版）
       if (rankRewardManager != null && rank > 0) {
         rankRewardManager.giveRankRewardWithEffect(player, rank, djTotalTicksFinal);
       }
 
-      // 2) DJ花火イベント（Titleは出さない：Score/Time/RankのTitle維持と競合させない）
       if (treasureRunGameEffectsPlugin != null) {
         treasureRunGameEffectsPlugin.triggerUltimateDJEvent(player, false);
-
-        // 互換で必要なら（通常は不要。DJ側がロックしてる前提）
-        // treasureRunGameEffectsPlugin.onAllTreasuresCollected(player);
       }
     }, rewardStartDelay);
 
-    // ✅ Title を DJが終わるまで「消えない + 上書きされても戻す」…0.5秒ごとに打ち直す
     final long titleStartDelay = rewardStartDelay + 1;
 
-    Bukkit.getScheduler().runTaskLater(this, () -> {
+    Bukkit.getScheduler().runTaskLater(TreasureRunMultiChestPlugin.this, () -> {
       if (!player.isOnline()) return;
 
-      // finishDelay まで維持したい（titleStartDelay からの残り）
       final long keepDuration = Math.max(0L, finishDelay - titleStartDelay);
-
-      // 10tickごとに送る（sendTitleのstay=20tickなので常に見える）
       final long period = 10L;
-
-      // 必要回数（切り上げ）。0なら1回だけ送ってすぐ終わり
       final long maxRuns = (keepDuration <= 0) ? 1 : (long) Math.ceil((double) keepDuration / period);
 
       finishTitleTaskId = Bukkit.getScheduler().scheduleSyncRepeatingTask(this, new Runnable() {
@@ -875,15 +1467,20 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
             return;
           }
 
-          // 送信
-          player.sendTitle(
-              ChatColor.AQUA + "TreasureRun Complete!",
+          String baseSub =
               ChatColor.GOLD + "Score: " + finalScore +
                   ChatColor.YELLOW + "  Time: " + timeText +
-                  ChatColor.AQUA + "  Rank: " + ChatColor.LIGHT_PURPLE + rankLabel,
-              0,
-              20,
-              0
+                  ChatColor.AQUA + "  Rank: " + ChatColor.LIGHT_PURPLE + rankLabel;
+
+          String philoPart = (successPhiloSub == null || successPhiloSub.isBlank())
+              ? ""
+              : (ChatColor.DARK_GRAY + "" + ChatColor.ITALIC + "  — " + successPhiloSub);
+
+          // ✅ DJ演出中ずっと「スコア行」だけを同じsubtitleで出し続ける（文言は出さない）
+          player.sendTitle(
+              ChatColor.AQUA + "Run Complete!",
+              baseSub,
+              0, 20, 0
           );
 
           runs++;
@@ -898,13 +1495,11 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
 
     }, titleStartDelay);
 
-    // ✅ restoreWorldAndPlayer はDJ終点の後（全部見せ切ってから）
     final String playerName = player.getName();
     final UUID playerUuid = player.getUniqueId();
 
-    Bukkit.getScheduler().runTaskLater(this, () -> {
+    Bukkit.getScheduler().runTaskLater(TreasureRunMultiChestPlugin.this, () -> {
 
-      // 念のためTitle維持タスクが残っていたら止める
       if (finishTitleTaskId != -1) {
         Bukkit.getScheduler().cancelTask(finishTitleTaskId);
         finishTitleTaskId = -1;
@@ -915,6 +1510,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
         player.sendMessage(ChatColor.AQUA + "タイム: " + ChatColor.YELLOW + timeText +
             ChatColor.GOLD + "  スコア: " + finalScore +
             ChatColor.LIGHT_PURPLE + "  ランク: " + rankLabel);
+        // ✅ ここでは哲学文を出さない（位置を下に移動するため）
       }
 
       if (gameStageManager != null) {
@@ -923,29 +1519,87 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
       }
 
       if (bossBar != null) bossBar.removeAll();
-      treasureChestManager.removeAllChests();
+      if (treasureChestManager != null) treasureChestManager.removeAllChests();
       playerScores.remove(playerUuid);
 
       Bukkit.broadcastMessage(ChatColor.AQUA + playerName +
           " が全ての宝箱を開けました！最終スコア: " + finalScore);
+
+      // ✅ ✅ ✅ 表示位置：
+      // 「broadcastの後」→「1行空けた後」→「白字」で哲学文を表示
+      // （= 画像の "The obstacle is the way." の位置）
+      if (player.isOnline()) {
+        if (successPhiloSub != null && !successPhiloSub.isBlank()) {
+
+          // ✅ 1行空ける：空文字だと潰れることがあるので " " を送る
+          player.sendMessage(" ");
+
+          // 改行が入っている場合も想定して、行ごとに送る（白字で）
+          String[] lines = successPhiloSub.split("\\R");
+          for (String line : lines) {
+            if (line == null) continue;
+            String trimmed = line.trim();
+            if (trimmed.isEmpty()) continue;
+            player.sendMessage(ChatColor.GRAY + trimmed); // ✅ ここだけ変更（WHITE → GRAY）
+          }
+        }
+      }
 
       restoreWorldAndPlayer(player);
 
     }, finishDelay);
   }
 
+  // =======================================================
+  // ✅ Outcome ランダム哲学SUBTITLE表示（SUCCESS / TIME_UP）
+  //  - 今回の完成版では:
+  //    SUCCESSは finishTitleTaskId 側で “ずっと” 見せるため、ここは主にTIME_UP用として残す
+  // =======================================================
+  private void showOutcomeSubtitle(Player player, GameOutcome outcome) {
+    String sub = outcomeMessageService.pickSubtitle(outcome, difficulty);
+    if (sub == null || sub.isBlank()) return;
+
+    String title = (outcome == GameOutcome.SUCCESS) ? "Run Complete!" : "TIME'S UP!";
+    ChatColor titleColor = (outcome == GameOutcome.SUCCESS) ? ChatColor.AQUA : ChatColor.RED;
+
+    player.sendTitle(
+        titleColor + title,
+        ChatColor.GRAY + "" + ChatColor.ITALIC + sub,
+        10, 60, 10
+    );
+
+    // 念のためチャットにも出す（不要なら削除OK）
+    player.sendMessage(ChatColor.DARK_GRAY + "" + ChatColor.ITALIC + sub);
+  }
+
   private void startGame(Player player) {
-    getLogger().info("[StartTheme] startGame called by " + player.getName()); // ★追加
+    getLogger().info("[StartTheme] startGame called by " + player.getName());
 
     isRunning = true;
     startTime = System.currentTimeMillis();
 
-    // ✅ ゲーム開始時に開始テーマを流す（ここが本命）
-    if (startThemePlayer != null) startThemePlayer.play(player);
-
-    if (gameStageManager != null && currentStageCenter != null) {
-      gameStageManager.startLoopEffects(currentStageCenter);
+    if (heartbeatSoundService != null) {
+      heartbeatSoundService.start(
+          player,
+          () -> {
+            long elapsed = (System.currentTimeMillis() - startTime) / 1000L;
+            int timeLimit = switch (difficulty) {
+              case "Easy" -> easyTimeLimit;
+              case "Normal" -> normalTimeLimit;
+              case "Hard"  -> hardTimeLimit;
+              default      -> 180;
+            };
+            long remaining = Math.max(0L, (long) timeLimit - elapsed);
+            return (int) Math.max(0L, remaining);
+          },
+          () -> this.isRunning
+      );
     }
+
+    if (startThemePlayer != null) startThemePlayer.startGameBgm(player);
+    startVanillaMusicSuppress(player);
+
+    if (chestSound != null) chestSound.start(player);
 
     World w = player.getWorld();
     previousWorldTime = w.getTime();
@@ -974,6 +1628,12 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
       player.spigot().sendMessage(ChatMessageType.ACTION_BAR,
           new TextComponent(ChatColor.YELLOW + "残り時間: " + remaining + "秒"));
 
+      if (remaining == 5) {
+        if (treasureRunGameEffectsPlugin != null) {
+          treasureRunGameEffectsPlugin.startFinalCountdownBeeps(player);
+        }
+      }
+
       if (remaining <= 0) {
         if (taskId != -1) {
           Bukkit.getScheduler().cancelTask(taskId);
@@ -985,21 +1645,184 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
           gameStageManager.clearShopEntities();
         }
 
-        player.sendMessage(ChatColor.GOLD + "時間切れ！ゲーム終了！");
+        // ✅ TIME_UP：哲学文（固定位置で最後に出すため、ここでは「保持」だけ）
+        final String timeUpPhiloSub = outcomeMessageService.pickSubtitle(GameOutcome.TIME_UP, difficulty);
+
+        // ✅ TIME_UP：連続回数カウント（ここで +1）
+        final UUID puid = player.getUniqueId();
+        final int streak = consecutiveTimeUpCounts.getOrDefault(puid, 0) + 1;
+        consecutiveTimeUpCounts.put(puid, streak);
+
+        // ✅ ✅ ✅ Easy / Normal / Hard どれでも「3回連続TIME_UP」だけで出す（3回目で発火）
+        // ★変更点：streak >= 3 ではなく「streak == 3」にする（“3回連続”を厳密に守る）
+        final boolean showAdversityAfterScene = (streak == 3);
+
+        // ✅ TIME_UP表示中のTitleは常に TIME'S UP!（ここは変えない）
+        final String timeUpTitleText = "TIME'S UP!";
+
+        // ✅ TIME_UP：しばらく固定でTitle表示（SUCCESSみたいに上書きされない、見逃しにくい）
+        // 表示時間: 4秒（80 ticks）/ 10 ticksごと更新 → 8回
+        final long period = 10L;
+        final long keepTicks = 80L;
+        final long maxRuns = Math.max(1L, (long) Math.ceil((double) keepTicks / period));
+
+        // 既にTIME_UPタスクが動いてたら止める
+        if (timeUpTitleTaskId != -1) {
+          Bukkit.getScheduler().cancelTask(timeUpTitleTaskId);
+          timeUpTitleTaskId = -1;
+        }
+
+        final int got = Math.max(0, totalChestsAtStart - totalChestsRemaining);
+        final String baseSub =
+            ChatColor.GOLD + "Got: " + got + "/" + totalChestsAtStart;
+
+        final String philoPart = (timeUpPhiloSub == null || timeUpPhiloSub.isBlank())
+            ? ""
+            : (ChatColor.DARK_GRAY + "" + ChatColor.ITALIC + "  — " + timeUpPhiloSub);
+
+        timeUpTitleTaskId = Bukkit.getScheduler().scheduleSyncRepeatingTask(this, new Runnable() {
+          long runs = 0;
+
+          @Override
+          public void run() {
+            if (!player.isOnline()) {
+              if (timeUpTitleTaskId != -1) {
+                Bukkit.getScheduler().cancelTask(timeUpTitleTaskId);
+                timeUpTitleTaskId = -1;
+              }
+              return;
+            }
+
+            player.sendTitle(
+                ChatColor.RED + timeUpTitleText,
+                baseSub,
+                0, 20, 0
+            );
+
+            runs++;
+            if (runs >= maxRuns) {
+              if (timeUpTitleTaskId != -1) {
+                Bukkit.getScheduler().cancelTask(timeUpTitleTaskId);
+                timeUpTitleTaskId = -1;
+              }
+            }
+          }
+        }, 0L, period);
+
+        // =======================================================
+        // ✅ ✅ ✅ 追加：TIME_UP の格言ログを MySQL に保存（proverb_logs）
+        // =======================================================
+        if (timeUpPhiloSub != null && !timeUpPhiloSub.isBlank()) {
+          String lang = getPlayerLangOrDefault(player.getUniqueId());
+          saveProverbLog(player.getUniqueId(), player.getName(), "TIME_UP", difficulty, lang, timeUpPhiloSub);
+        }
+
+        // ✅ ✅ ✅ ここだけ変更：
+        // 「最初のTIME'S UP画面の時だけ」日本語案内をチャットに出す（添付3枚目のイメージ）
+        // → 日本語2行の色を「白」に変更（それ以外はそのまま）
+        player.sendMessage(ChatColor.WHITE + "時間切れ！ゲーム終了！");
+        player.sendMessage(ChatColor.WHITE + "次は別のルート・攻略手順でやってみてね！やり直すなら /gamestart <easy|normal|hard> を使ってみてね！");
+
+        if (treasureRunGameEffectsPlugin != null) {
+          treasureRunGameEffectsPlugin.playTimeUpFailCue(player, got, totalChestsAtStart);
+        }
 
         int finalScore = playerScores.getOrDefault(player.getUniqueId(), 0);
         long elapsedSec = (System.currentTimeMillis() - startTime) / 1000L;
-        saveScore(player.getName(), finalScore, elapsedSec, difficulty);
+        saveScore(player, finalScore, elapsedSec, difficulty);
 
-        // ✅ 時間切れでも必ず停止
+        // ✅ ここに追加（TIME_UP: scoreだけ加算 / wins・best_timeは無し）
+        addSeasonScore(player, finalScore, false, null);
+
         if (startThemePlayer != null) startThemePlayer.stop(player);
+        stopVanillaMusicSuppress(player);
+
+        if (heartbeatSoundService != null) heartbeatSoundService.stop(player);
+
+        if (treasureRunGameEffectsPlugin != null) {
+          treasureRunGameEffectsPlugin.stopFinalCountdownBeeps(player);
+        }
+
+        if (chestSound != null) chestSound.stop(player);
 
         isRunning = false;
         if (bossBar != null) bossBar.removeAll();
-        treasureChestManager.removeAllChests();
+        if (treasureChestManager != null) treasureChestManager.removeAllChests();
         playerScores.remove(player.getUniqueId());
 
-        restoreWorldAndPlayer(player);
+        // ✅ ✅ ✅ TIME_UP の表示順（完全版）：
+        // 1) Title に Got: x/y を固定で見せる（keepTicks）
+        // 2) 画面切替（restoreWorldAndPlayer）
+        // 3) （切替後）チャットに英語メッセージ
+        // 4) 1行空けて名言（グレー）
+        // 5) ✅ 3回連続の時だけ：場面切替後に “サブタイトルの表示場所” に水色で OVERCOMING ADVERSITY を出す
+        Bukkit.getScheduler().runTaskLater(TreasureRunMultiChestPlugin.this, () -> {
+          if (!player.isOnline()) return;
+
+          // ✅ 画面切替直前：日本語案内が次画面で上のほうに残りにくいように「空行で押し上げる」
+          // （チャットを消さず、追加で流すだけ）
+          for (int i = 0; i < 6; i++) {
+            player.sendMessage(" ");
+          }
+
+          // ✅ 画面切替を先に行う（次の画面で英語が来るようにする）
+          restoreWorldAndPlayer(player);
+
+          // ✅ ✅ ✅ 3回連続TIME_UPのときだけ：場面切替後に “サブタイトル位置” へ表示（TreasureRun TOPと同系の白寄り水色）
+          if (showAdversityAfterScene) {
+            String advColor;
+            try {
+              // TreasureRun TOP に近い #55FFFF（AQUA相当の明るい水色）
+              advColor = net.md_5.bungee.api.ChatColor.of("#55FFFF").toString();
+            } catch (Throwable t) {
+              advColor = ChatColor.AQUA.toString(); // ✅ フォールバック
+            }
+
+            // 直前のTitle表示を確実に消してから上書き
+            player.sendTitle("", "", 0, 1, 0);
+
+            // ✅ ✅ ✅ サブタイトルの表示箇所へ出す（タイトル行は空）
+            // ★変更点：表示時間を長めにする（チャットが消える1.5秒前くらいまでを想定）
+            // 例：stay=170 ticks(8.5秒) + fadeOut=10 ticks(0.5秒) → 合計約9秒
+            player.sendTitle(
+                " ",
+                advColor + "OVERCOMING ADVERSITY",
+                0, 170, 10
+            );
+
+            // ✅ ここで連続カウントをリセット（次にまた3回連続で出す）
+            consecutiveTimeUpCounts.put(puid, 0);
+          }
+
+          // ✅ 次画面（添付1枚目）の英文：ベースはグレー（/gamestart と easy/normal/hard は黄色）
+          player.sendMessage(
+              ChatColor.GRAY + "Try a different route next time - or use " +
+                  ChatColor.YELLOW + "/gamestart" +
+                  ChatColor.GRAY + " <" +
+                  ChatColor.YELLOW + "easy" +
+                  ChatColor.GRAY + "|" +
+                  ChatColor.YELLOW + "normal" +
+                  ChatColor.GRAY + "|" +
+                  ChatColor.YELLOW + "hard" +
+                  ChatColor.GRAY + "> to retry."
+          );
+
+          // ✅ 名言：1行空けて、グレーで最下段へ（ここ以外は一切いじらない）
+          if (timeUpPhiloSub != null && !timeUpPhiloSub.isBlank()) {
+            player.sendMessage(" ");
+
+            String[] lines = timeUpPhiloSub.split("\\R");
+            for (String line : lines) {
+              if (line == null) continue;
+              String trimmed = line.trim();
+              if (trimmed.isEmpty()) continue;
+
+              // ✅ 変更点：格言の色を「Try a different route...」と同じグレーに統一
+              player.sendMessage(ChatColor.GRAY + trimmed);
+            }
+          }
+
+        }, keepTicks + 2L);
       }
 
     }, 0L, 20L);
@@ -1013,7 +1836,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     UUID uuid = player.getUniqueId();
 
     Location original = originalLocations.remove(uuid);
-    if (original != null) {
+    if (original != null && player.isOnline()) {
       player.teleport(original);
     }
 
@@ -1028,6 +1851,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
 
   private void spawnRisingPillars(Location center, Particle particle) {
     World w = center.getWorld();
+    if (w == null) return;
 
     new BukkitRunnable() {
       double yOff = 0;
@@ -1043,11 +1867,14 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
         yOff += 0.25;
         if (yOff > 3.5) cancel();
       }
+
     }.runTaskTimer(this, 0L, 2L);
   }
 
   public void burstStars(Location center) {
     World w = center.getWorld();
+    if (w == null) return;
+
     for (int i = 0; i < 60; i++) {
       double angle = Math.random() * Math.PI * 2;
       double speed = 0.2 + Math.random() * 0.3;
@@ -1061,33 +1888,16 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     }
   }
 
-  public GameStageManager getGameStageManager() {
-    return gameStageManager;
-  }
+  public GameStageManager getGameStageManager() { return gameStageManager; }
+  public TreasureItemFactory getItemFactory() { return itemFactory; }
+  public TreasureChestManager getTreasureChestManager() { return treasureChestManager; }
+  public RankRewardManager getRankRewardManager() { return rankRewardManager; }
+  public TreasureRunGameEffectsPlugin getTreasureRunGameEffectsPlugin() { return treasureRunGameEffectsPlugin; }
 
-  public TreasureItemFactory getItemFactory() {
-    return itemFactory;
-  }
+  // ✅ 追加（RankTickerが参照する）
+  public SeasonRepository getSeasonRepository() { return seasonRepository; }
+  public SeasonScoreRepository getSeasonScoreRepository() { return seasonScoreRepository; }
 
-  // ★追加（ここだけ追加）：
-  public TreasureChestManager getTreasureChestManager() {
-    return treasureChestManager;
-  }
-
-  // =======================================================
-  // ✅ 追加：/rank デバッグコマンドから呼ぶための getter
-  // （DB/ランキングを触らず、演出だけ発火するために RankRewardManager を渡す）
-  // =======================================================
-  public RankRewardManager getRankRewardManager() {
-    return rankRewardManager;
-  }
-
-  // ★追加（ここだけ追加）：effects の getter
-  public TreasureRunGameEffectsPlugin getTreasureRunGameEffectsPlugin() {
-    return treasureRunGameEffectsPlugin;
-  }
-
-  // ✅ 互換：残しておく（DJ総Tickが取れない場合のフォールバックにも使える）
   private int getTotalEffectTicksForRank(int rank) {
     return switch (rank) {
       case 1 -> 180;
@@ -1095,5 +1905,475 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
       case 3 -> 50;
       default -> 0;
     };
+  }
+
+  // =======================================================
+  // ✅ バニラMinecraft BGM(MUSICカテゴリ)抑制ロジック
+  // =======================================================
+  public void startVanillaMusicSuppress(Player player) {
+    stopVanillaMusicSuppress(player);
+
+    BukkitTask task = Bukkit.getScheduler().runTaskTimer(this, () -> {
+      if (!player.isOnline() || !isRunning) {
+        stopVanillaMusicSuppress(player);
+        return;
+      }
+      suppressVanillaMusicOnce(player);
+    }, 0L, 100L);
+
+    vanillaMusicSuppressTasks.put(player.getUniqueId(), task);
+  }
+
+  private void stopVanillaMusicSuppress(Player player) {
+    BukkitTask task = vanillaMusicSuppressTasks.remove(player.getUniqueId());
+    if (task != null) task.cancel();
+  }
+
+  private void stopVanillaMusicSuppressAll() {
+    for (BukkitTask task : vanillaMusicSuppressTasks.values()) {
+      task.cancel();
+    }
+    vanillaMusicSuppressTasks.clear();
+  }
+
+  private void suppressVanillaMusicOnce(Player player) {
+    player.stopSound(SoundCategory.MUSIC);
+    player.stopSound(SoundCategory.AMBIENT);
+
+    for (Sound s : Sound.values()) {
+      String name = s.name();
+      if (name.startsWith("MUSIC_")) {
+        player.stopSound(s, SoundCategory.MUSIC);
+      }
+    }
+  }
+
+  // =======================================================
+  // ✅ 言語選択後の新フロー開始
+  // =======================================================
+  public void beginGameStartAfterLanguageSelected(Player player, String selectedDifficulty, String lang) {
+
+    if (isRunning) {
+      player.sendMessage(ChatColor.RED + "ゲームは既に実行中です。");
+      return;
+    }
+
+    if (treasureRunGameEffectsPlugin != null) {
+      treasureRunGameEffectsPlugin.stopFinalCountdownBeeps(player);
+    }
+
+    if (gameStageManager != null) {
+      gameStageManager.clearDifficultyBlocks();
+      gameStageManager.clearShopEntities();
+    }
+    if (treasureChestManager != null) treasureChestManager.removeAllChests();
+
+    if (startThemePlayer != null) startThemePlayer.stop(player);
+    stopVanillaMusicSuppress(player);
+
+    if (heartbeatSoundService != null) heartbeatSoundService.stop(player);
+    if (chestSound != null) chestSound.stop(player);
+
+    // 念のため（前回TIME_UPの固定表示が残ってたら止める）
+    if (timeUpTitleTaskId != -1) {
+      Bukkit.getScheduler().cancelTask(timeUpTitleTaskId);
+      timeUpTitleTaskId = -1;
+    }
+
+    playerScores.put(player.getUniqueId(), 0);
+
+    if (treasureRunGameEffectsPlugin != null) {
+      for (Player p : Bukkit.getOnlinePlayers()) {
+        treasureRunGameEffectsPlugin.resetPlayerTreasureCount(p);
+      }
+    }
+
+    if (selectedDifficulty == null || selectedDifficulty.isBlank()) {
+      difficulty = "Normal";
+    } else {
+      difficulty = selectedDifficulty;
+    }
+
+    // =======================================================
+    // ✅ ✅ ✅ 追加：このRunで選んだ言語を保持（格言ログ保存に使う）
+    // =======================================================
+    if (lang == null || lang.isBlank()) {
+      lang = getConfig().getString("language.default", "ja");
+    }
+    playerLastLang.put(player.getUniqueId(), lang);
+
+    // ✅ ✅ ✅ 追加：Favorites図鑑側が参照する正式保存（永続）
+    if (playerLanguageStore != null) {
+      playerLanguageStore.set(player.getUniqueId(), lang);
+    }
+
+    originalLocations.put(player.getUniqueId(), player.getLocation().clone());
+
+    Location stage = gameStageManager.buildSeasideStageAndTeleport(player);
+    currentStageCenter = stage;
+
+    int currentTotalChests = totalChests;
+    treasureChestManager.spawnChests(player, difficulty, currentTotalChests);
+    totalChestsRemaining = currentTotalChests;
+    totalChestsAtStart = currentTotalChests;
+    TreasureChestManager m = getTreasureChestManager();
+    getLogger().info("[CHEST][SPAWN] after spawn"
+        + " now=" + (m != null ? m.getTreasureLocations().size() : -1)
+        + " instance=" + (m != null ? System.identityHashCode(m) : -1)
+    );
+
+    player.sendMessage(ChatColor.GREEN + "宝箱 " + currentTotalChests + " 個を配置しました！");
+
+    GameMenu.showGameMenu(player, difficulty);
+    GameMenu.openRuleBookFromConfig(player, difficulty, this, lang);
+
+    new BukkitRunnable() {
+      @Override
+      public void run() {
+        new BukkitRunnable() {
+          int count = 3;
+
+          @Override
+          public void run() {
+            if (count > 0) {
+
+              // ✅ ✅ ✅ 数字の色切り替え（3=水色、2=翠、1=黄色）
+              ChatColor numColor = switch (count) {
+                case 3 -> ChatColor.AQUA;
+                case 2 -> ChatColor.GREEN;
+                case 1 -> ChatColor.YELLOW;
+                default -> ChatColor.GRAY;
+              };
+
+              // ✅ ✅ ✅ 最大サイズで見せる：Title行に数字だけ出す（これが一番デカい）
+              // Subtitleは「白に一番近いグレー」
+              player.sendTitle(
+                  numColor + "" + ChatColor.BOLD + count,
+                  ChatColor.GRAY + "Starting in…",
+                  0, 20, 0
+              );
+
+              // ✅ 追加（3/2/1の時）
+              startThemePlayer.playCountdownTick(player, count);
+
+              count--;
+            } else {
+
+              // ✅ 追加（GO!の時）
+              startThemePlayer.playGoActivate(player);
+
+              // ✅ ✅ ✅ GO! の瞬間だけ「画面が震える + 光 + 爆発風スパークル」
+              Bukkit.getScheduler().runTaskLater(TreasureRunMultiChestPlugin.this, () -> {
+                if (player != null && player.isOnline()) {
+                  playGoSparkleShock(player);
+                }
+              }, 1L);
+// ✅ ✅ ✅ 最大サイズで見せる：Title行に GO! だけ（太字）
+              // ✅ 色は「白に一番近いグレー」
+              player.sendTitle(
+                  ChatColor.GRAY + "" + ChatColor.BOLD + "GO!",
+                  "",
+                  0, 20, 10
+              );
+
+              TreasureRunMultiChestPlugin.this.startGame(player);
+              this.cancel();
+            }
+          }
+
+        }.runTaskTimer(TreasureRunMultiChestPlugin.this, 0L, 20L);
+      }
+    }.runTaskLater(this, 20L);
+  }
+
+  // =======================================================
+  // ✅ ✅ ✅ GO! の瞬間だけ「震え + 光 + 爆発風スパークル」演出
+  // - 物理的な揺れ（小さなテレポート揺らぎ）で疑似画面シェイク
+  // - FLASH/火花/END_ROD + 爆発系SE
+  // - 視覚だけの雷（strikeLightningEffect）
+  // =======================================================
+  private void playGoSparkleShock(Player player) {
+    if (player == null || !player.isOnline()) return;
+
+    Location base = player.getLocation().clone();
+    World w = base.getWorld();
+    if (w == null) return;
+
+    // ✅ 光：フラッシュ（白い閃光）
+    try {
+      w.spawnParticle(Particle.FLASH, base.clone().add(0, 1.0, 0), 1, 0, 0, 0, 0);
+    } catch (Throwable ignored) {}
+
+    // ✅ 火花：スパーク（周囲に散る）
+    try {
+      w.spawnParticle(Particle.FIREWORKS_SPARK, base.clone().add(0, 1.0, 0),
+          90, 0.6, 0.6, 0.6, 0.25);
+    } catch (Throwable ignored) {}
+
+    // ✅ キラキラ：END_ROD（TreasureRunらしさ）
+    try {
+      w.spawnParticle(Particle.END_ROD, base.clone().add(0, 1.1, 0),
+          45, 0.45, 0.55, 0.45, 0.03);
+    } catch (Throwable ignored) {}
+
+    // ✅ 爆発風：ちょっとだけ煙っぽい演出（控えめ）
+    try {
+      w.spawnParticle(Particle.SMOKE_LARGE, base.clone().add(0, 0.9, 0),
+          14, 0.25, 0.18, 0.25, 0.01);
+    } catch (Throwable ignored) {}
+
+    // ✅ 音：爆発 + 花火（GO!の勢い）
+    w.playSound(base, Sound.ENTITY_GENERIC_EXPLODE, SoundCategory.PLAYERS, 0.65f, 1.55f);
+    w.playSound(base, Sound.ENTITY_FIREWORK_ROCKET_BLAST, SoundCategory.PLAYERS, 0.7f, 1.35f);
+    w.playSound(base, Sound.ENTITY_FIREWORK_ROCKET_TWINKLE, SoundCategory.PLAYERS, 0.8f, 1.6f);
+
+    // ✅ 見た目だけの雷（ダメージなし）
+    try {
+      w.strikeLightningEffect(base);
+    } catch (Throwable ignored) {}
+
+    // ✅ 疑似画面シェイク（短く・安全に）
+    // - 6tickだけ微小な揺れ
+    final Location origin = base.clone();
+    final Random rnd = new Random();
+
+    new BukkitRunnable() {
+      int ticks = 0;
+
+      @Override
+      public void run() {
+        if (!player.isOnline()) {
+          cancel();
+          return;
+        }
+
+        // ✅ 最後は元位置に戻して終了
+        if (ticks >= 6) {
+          try {
+            player.teleport(origin);
+          } catch (Throwable ignored) {}
+          cancel();
+          return;
+        }
+
+        double dx = (rnd.nextDouble() - 0.5) * 0.18; // 揺れ幅（x）
+        double dz = (rnd.nextDouble() - 0.5) * 0.18; // 揺れ幅（z）
+
+        Location shaken = origin.clone().add(dx, 0.0, dz);
+
+        // yaw/pitch も微妙に振って「カメラ揺れ感」を作る
+        float yaw = origin.getYaw() + (float) ((rnd.nextDouble() - 0.5) * 8.0);
+        float pitch = origin.getPitch() + (float) ((rnd.nextDouble() - 0.5) * 6.0);
+        shaken.setYaw(yaw);
+        shaken.setPitch(pitch);
+
+        try {
+          player.teleport(shaken);
+        } catch (Throwable ignored) {}
+
+        ticks++;
+      }
+
+    }.runTaskTimer(this, 0L, 1L);
+  }
+
+  // =======================================================
+// ✅ Weekly + All-time スコア加算（共通）
+// - SUCCESS / TIME_UP の両方から呼べる
+// =======================================================
+  private void addSeasonScore(
+      Player player,
+      int addScore,
+      boolean isWin,
+      Long bestTimeMsOrNull
+  ) {
+    if (player == null) return;
+    if (seasonRepository == null || seasonScoreRepository == null) {
+      getLogger().warning("[RANK] season repos not initialized");
+      return;
+    }
+
+    try {
+      long seasonId = seasonRepository.getOrCreateCurrentWeeklySeasonId();
+
+      // ✅ 追加：プレイヤー言語（無ければ ja）
+      String langCode = "ja";
+      try {
+        if (playerLanguageStore != null) {
+          langCode = playerLanguageStore.getLang(player, "ja");
+        }
+      } catch (Throwable ignored) {}
+
+      seasonScoreRepository.addWeeklyAndAllTime(
+          seasonId,
+          player.getUniqueId(),
+          player.getName(),
+          addScore,
+          isWin ? 1 : 0,
+          bestTimeMsOrNull,
+          langCode
+      );
+
+      rankDirty = true;
+
+    } catch (Exception e) {
+      getLogger().warning("[RANK] addSeasonScore failed: " + e.getMessage());
+      e.printStackTrace();
+    }
+  }
+
+  // =======================================================
+  // ✅ ✅ ✅ 追加：proverb_logs 保存（MySQL）
+  // - SUCCESS / TIME_UP のときの格言ログを保存する
+  // =======================================================
+  public void saveProverbLog(UUID playerUuid, String playerName,
+      String outcome, String difficulty,
+      String lang, String quoteText) {
+
+    if (playerUuid == null) return;
+    if (playerName == null) playerName = "unknown";
+    if (outcome == null || outcome.isBlank()) outcome = "UNKNOWN";
+    if (difficulty == null || difficulty.isBlank()) difficulty = "Normal";
+    if (lang == null || lang.isBlank()) lang = getConfig().getString("language.default", "ja");
+    if (quoteText == null || quoteText.isBlank()) return;
+
+    String sql =
+        "INSERT INTO proverb_logs (player_uuid, player_name, outcome, difficulty, lang, quote_text) " +
+            "VALUES (?, ?, ?, ?, ?, ?)";
+
+    try (PreparedStatement ps = getConnection().prepareStatement(sql)) {
+      ps.setString(1, playerUuid.toString());
+      ps.setString(2, playerName);
+      ps.setString(3, outcome);
+      ps.setString(4, difficulty);
+      ps.setString(5, lang);
+      ps.setString(6, quoteText);
+      ps.executeUpdate();
+
+    } catch (SQLException e) {
+      getLogger().warning("⚠ proverb_logs 保存失敗: " + e.getMessage());
+      e.printStackTrace();
+    }
+  }
+
+  // =======================================================
+  // ✅ 格言ログ取得（MySQL）
+  // - プレイヤーごとの最新ログを返す
+  // =======================================================
+  public List<String> getRecentProverbs(UUID playerUuid, int limit) {
+    List<String> list = new ArrayList<>();
+    if (playerUuid == null) return list;
+
+    // ✅ ✅ ✅ ここ追加（安全）
+    Connection conn = getConnection();
+    if (conn == null) return list;
+
+    String sql =
+        "SELECT outcome, difficulty, lang, quote_text, created_at " +
+            "FROM proverb_logs " +
+            "WHERE player_uuid = ? " +
+            "ORDER BY created_at DESC " +
+            "LIMIT ?";
+
+    // ✅ conn を使う
+    try (PreparedStatement ps = conn.prepareStatement(sql)) {
+      ps.setString(1, playerUuid.toString());
+      ps.setInt(2, Math.max(1, limit));
+
+      try (ResultSet rs = ps.executeQuery()) {
+        while (rs.next()) {
+          String outcome = rs.getString("outcome");
+          String diff = rs.getString("difficulty");
+          String lang = rs.getString("lang");
+          String quote = rs.getString("quote_text");
+
+          // ✅ 1行表示用フォーマット（本のページで見やすい）
+          String row = "【" + outcome + " / " + diff + " / " + lang + "】\n" + quote;
+          list.add(row);
+        }
+      }
+
+    } catch (SQLException e) {
+      getLogger().warning("⚠ proverb_logs 取得失敗: " + e.getMessage());
+      e.printStackTrace();
+    }
+
+    return list;
+  }
+
+  // =======================================================
+  // ✅ ✅ ✅ 追加：このプレイヤーの言語を取得（無ければ default）
+  // =======================================================
+  private String getPlayerLangOrDefault(UUID uuid) {
+    if (uuid == null) return getConfig().getString("language.default", "ja");
+    String v = playerLastLang.get(uuid);
+    if (v != null && !v.isBlank()) return v;
+    return getConfig().getString("language.default", "ja");
+  }
+
+  // =======================================================
+  // ✅ ✅ ✅ 追加：/gameMenu 用に「今のプレイヤー言語」を解決する
+  // 優先順位：
+  //  1) LanguageStore に入っているならそれ
+  //  2) playerLastLang（ゲーム開始時に保存した言語）
+  //  3) config の language.default
+  // =======================================================
+  private String resolvePlayerLang(Player player) {
+    if (player == null) {
+      return getConfig().getString("language.default", "ja");
+    }
+
+    UUID uuid = player.getUniqueId();
+
+    // 1) LanguageStore から取れれば最優先（※メソッド名は環境差があるので反射で安全に取得）
+    String langFromStore = tryGetLangFromLanguageStore(uuid);
+    if (langFromStore != null && !langFromStore.isBlank()) {
+      return langFromStore;
+    }
+
+    // 2) beginGameStartAfterLanguageSelected で保存した値（あなたの実装はこれが確実）
+    String fromLast = playerLastLang.get(uuid);
+    if (fromLast != null && !fromLast.isBlank()) {
+      return fromLast;
+    }
+
+    // 3) config default
+    return getConfig().getString("language.default", "ja");
+  }
+
+  // =======================================================
+  // ✅ 追加：LanguageStore から言語を “コンパイルエラー無し” で取得する（反射）
+  // - LanguageStore 側のメソッド名が何であっても対応できるようにする
+  // - 見つからない場合は null を返す
+  // =======================================================
+  private String tryGetLangFromLanguageStore(UUID uuid) {
+    if (uuid == null) return null;
+    if (languageStore == null) return null;
+
+    // ありそうなメソッド名候補（あなたのLanguageStore実装に合わせて自動で拾う）
+    String[] candidates = new String[]{
+        "getPlayerLanguage",
+        "getSelectedLanguage",
+        "getLang",
+        "getLanguage",
+        "getPlayerLang"
+    };
+
+    for (String methodName : candidates) {
+      try {
+        java.lang.reflect.Method m = languageStore.getClass().getMethod(methodName, UUID.class);
+        Object ret = m.invoke(languageStore, uuid);
+        if (ret instanceof String s) {
+          if (!s.isBlank()) return s;
+        }
+      } catch (NoSuchMethodException ignore) {
+        // 次の候補へ
+      } catch (Throwable t) {
+        // 何か例外が出ても落とさない
+        getLogger().fine("LanguageStore reflection failed: " + methodName + " (" + t.getMessage() + ")");
+      }
+    }
+
+    return null;
   }
 }

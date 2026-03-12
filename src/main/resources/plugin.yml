@@ -9,6 +9,19 @@ commands:
     usage: /<command> [difficulty]
     permission: treasure.start
 
+  gameReload:
+    description: Reload TreasureRun config.yml (including language settings)
+    usage: /<command>
+    permission: treasure.reload
+    permission-message: "§cこのコマンドを使う権限がありません。（OP限定）"
+    aliases: [treasureReload]   # ✅ 追加：/treasureReload を /gameReload の別名として有効化
+
+  treasureReload:               # ✅ 追加：別名ではなく「独立コマンド」としても定義（どちらでも動く）
+    description: Reload TreasureRun config.yml (including language settings)
+    usage: /<command>
+    permission: treasure.reload
+    permission-message: "§cこのコマンドを使う権限がありません。（OP限定）"
+
   game:
     description: TreasureRun game control
     usage: /game start | /game end
@@ -47,6 +60,26 @@ commands:
     usage: /clearStageBlocks
     permission: treasure.clearstage
 
+  quoteFavorite:
+    description: Save/List/Remove your favorite quotes
+    usage: /quoteFavorite <latest|list|remove|reread|book>
+    permission: treasure.quoteFavorite
+    permission-message: "§cこのコマンドを使う権限がありません。"
+    aliases: [qfav, quotefav, favquote]
+
+  # ✅ 追加：言語切替コマンド
+  lang:
+    description: Set your language
+    usage: /lang <code>
+    permission: treasure.lang
+    permission-message: "§cこのコマンドを使う権限がありません。"
+
+  treasureExportLang:
+    description: Export config.yml messages.translation.* to languages/*.yml
+    usage: /treasureexportLang [overwrite]
+    permission: treasure.reload
+    permission-message: "§cこのコマンドを使う権限がありません。（OP限定）"
+
   # =============================
   # ★追加：撮影・動作確認用（デバッグ）コマンド
   # =============================
@@ -60,6 +93,10 @@ permissions:
   treasure.start:
     description: /gameStart コマンドを使用できる権限
     default: true
+
+  treasure.reload:
+    description: /gameReload または /treasureReload で config.yml を再読み込みできる権限
+    default: op
 
   treasure.game:
     description: /game start|end を使用できる権限
@@ -89,9 +126,19 @@ permissions:
     description: /clearStageBlocks でステージの難易度ブロックを掃除できる権限
     default: op
 
+  treasure.quoteFavorite:
+    description: /quoteFavorite を使用できる権限（Favorites図鑑/再読）
+    default: true
+
+  # ✅ 追加：/lang 用権限
+  treasure.lang:
+    description: /lang を使用できる権限
+    default: true
+
   # =============================
   # ★追加：/rank（デバッグ）用権限
   # =============================
   treasure.debug.rank:
     description: /rank <1|2|3> を使用できる権限（撮影・動作確認用）
-    default: op　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+    default: op
+

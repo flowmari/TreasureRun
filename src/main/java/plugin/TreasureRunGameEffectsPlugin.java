@@ -10,6 +10,7 @@ import org.bukkit.event.block.Action;
 import org.bukkit.inventory.meta.FireworkMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
+import org.bukkit.Bukkit; // ✅ 追加（runTaskLater用）
 
 import java.sql.*;
 import java.util.*;
@@ -20,6 +21,9 @@ public class TreasureRunGameEffectsPlugin implements Listener {
   private final Map<Player, Integer> playerTreasureCount = new HashMap<>();
   private final int totalTreasures = 10;
   private final Random random = new Random();
+
+  // ✅ 追加：残り5秒「ピッ…」多重発火防止（プレイヤーごと）
+  private final Map<UUID, BukkitRunnable> timeBeepTasks = new HashMap<>();
 
   // DJイベントが既に走っているかどうか（多重発火ロック）
   private boolean djRunning = false;
@@ -234,6 +238,7 @@ public class TreasureRunGameEffectsPlugin implements Listener {
 
         player.playSound(player.getLocation(), Sound.BLOCK_NOTE_BLOCK_BASS, 1.0f, 1.0f);
       }
+
     }.runTaskTimer(plugin, 0L, interval);
   }
 
@@ -243,5 +248,111 @@ public class TreasureRunGameEffectsPlugin implements Listener {
   @EventHandler
   public void onPlayerInteract(PlayerInteractEvent e) {
     // ★ここはあえて何もしません（TreasureRunMultiChestPlugin の onInventoryOpen が本体）
+  }
+
+  // =========================================================
+  // ✅ ✅ ✅ ここから “追加” のみ（既存のコードは一切削除/変更なし）
+  // =========================================================
+
+  /**
+   * ✅ 0秒になった瞬間に呼ぶ想定：
+   * - Title: TIME'S UP!
+   * - Subtitle: Treasure Collected: 7/10 (3 Missing)
+   * - 0.5秒後に Tip: Try a faster route next time — or use /start to retry.
+   * - 下降ジングル（womp）
+   */
+  public void playTimeUpFailCue(Player p, int got, int total) {
+    if (p == null || !p.isOnline()) return;
+
+    // ✅ 5秒「ピッ」タスクが残っていたら止める
+    stopFinalCountdownBeeps(p);
+
+    // BGM止め（あなたの仕組みに合わせて）
+    p.stopSound(SoundCategory.MUSIC);
+
+    int missing = Math.max(0, total - got);
+
+    // 表示（パッと分かる）
+    p.sendTitle(
+        "§c§lTIME'S UP!",
+        "§7Treasures collected: §e" + got + "§7/§e" + total + " §7(" + missing + " left)",
+        0, 45, 10
+    );
+
+    // ✅ 0.5秒後に Tip を出す（10 tick = 0.5秒）
+    Bukkit.getScheduler().runTaskLater(plugin, () -> {
+      if (!p.isOnline()) return;
+      p.sendMessage("§7Try a different route next time — or use §e/gamestart §7<§eeasy§7|§enormal§7|§ehard§7> §7to retry.");
+    }, 10L);
+
+    // 下降フレーズ（womp感）
+    float[] pitches = {1.2f, 1.0f, 0.85f, 0.7f}; // 徐々に下げる
+    new BukkitRunnable() {
+      int i = 0;
+      @Override public void run() {
+        if (!p.isOnline()) {
+          cancel();
+          return;
+        }
+        if (i >= pitches.length) {
+          p.playSound(p.getLocation(), Sound.ENTITY_VILLAGER_NO, 0.9f, 0.9f); // 締め
+          cancel();
+          return;
+        }
+        float pitch = pitches[i++];
+        p.playSound(p.getLocation(), Sound.BLOCK_NOTE_BLOCK_BASS, 1.0f, pitch);
+        p.playSound(p.getLocation(), Sound.BLOCK_NOTE_BLOCK_DIDGERIDOO, 0.7f, pitch * 0.7f);
+      }
+
+    }.runTaskTimer(plugin, 0L, 6L); // 6tick間隔=テンポゆっくりめ
+  }
+
+  /**
+   * ✅ remainingSeconds==5 の瞬間に 1回だけ呼ぶ想定
+   * - 5秒前：短い警告音（UI_BUTTON_CLICK か NOTE_BLOCK_HAT）
+   */
+  public void startFinalCountdownBeeps(Player p) {
+    if (p == null || !p.isOnline()) return;
+
+    // 既に鳴らしてたら重ねない
+    if (timeBeepTasks.containsKey(p.getUniqueId())) return;
+
+    BukkitRunnable task = new BukkitRunnable() {
+      int sec = 5;
+
+      @Override
+      public void run() {
+        if (!p.isOnline()) {
+          cancel();
+          timeBeepTasks.remove(p.getUniqueId());
+          return;
+        }
+
+        if (sec <= 0) {
+          cancel();
+          timeBeepTasks.remove(p.getUniqueId());
+          return;
+        }
+
+        // ピッ…（好みで UI_BUTTON_CLICK / NOTE_BLOCK_HAT）
+        p.playSound(p.getLocation(), Sound.UI_BUTTON_CLICK, 0.75f, 1.8f);
+        // p.playSound(p.getLocation(), Sound.BLOCK_NOTE_BLOCK_HAT, 0.6f, 1.9f);
+
+        sec--;
+      }
+    };
+
+    timeBeepTasks.put(p.getUniqueId(), task);
+
+    task.runTaskTimer(plugin, 0L, 20L); // 1秒ごと
+  }
+
+  /** ✅ ゲームが早期終了した時や /start でやり直す時に止める用 */
+  public void stopFinalCountdownBeeps(Player p) {
+    if (p == null) return;
+    BukkitRunnable task = timeBeepTasks.remove(p.getUniqueId());
+    if (task != null) {
+      try { task.cancel(); } catch (Throwable ignore) {}
+    }
   }
 }

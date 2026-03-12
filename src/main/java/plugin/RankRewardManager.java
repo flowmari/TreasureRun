@@ -1,5 +1,7 @@
 package plugin;
 
+import org.bukkit.Bukkit;
+
 import org.bukkit.*;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
@@ -96,8 +98,11 @@ public class RankRewardManager {
     // ======================================================
     if (keep <= 0L) return;
 
+
+
     // オーロラ：runTaskTimer(..., 2L) なので durationTicks は keep/2
     int auroraDuration = (int) Math.max(1L, Math.min(Integer.MAX_VALUE, (keep + 1L) / 2L));
+
     // 虹：runTaskTimer(..., 1L) なので durationTicks は keep
     int rainbowDuration = (int) Math.max(1L, Math.min(Integer.MAX_VALUE, keep));
 
@@ -199,6 +204,7 @@ public class RankRewardManager {
         t++;
         if (t >= durationTicks) cancel();
       }
+
     }.runTaskTimer(plugin, 0L, 2L);
   }
 
@@ -258,6 +264,7 @@ public class RankRewardManager {
         t++;
         if (t >= durationTicks) cancel();
       }
+
     }.runTaskTimer(plugin, 0L, 1L);
   }
 
@@ -425,6 +432,7 @@ public class RankRewardManager {
         } catch (Exception ignored) {}
         cancel();
       }
+
     }.runTaskTimer(plugin, 0L, 1L);
   }
 

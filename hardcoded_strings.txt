@@ -1,0 +1,983 @@
+…
+★
+【
+】
+ ×
+• 
+✅ 
+   ・Easy  ：紫のブロック\n
+   ・Hard  ：青のブロック\n\n
+   ・Normal：緑のブロック\n
+   ・SUCCESS / TIME_UP の結果に応じて、格言が自動で保存されます。\n
+   ・すべての宝箱を開けるか、時間切れでゲーム終了です。\n\n
+   ・気に入った格言は★保存できます。\n
+   ・今の難易度: 
+   ・周りを走り回って、宝箱を見つけて右クリックで開けます。\n\n
+   ・制限時間内にできるだけ多くの宝箱を開けて、スコアを稼ぎます。\n\n
+   ・特別な宝物（ネザライト、ブロックなど）でさらにボーナス点！\n\n
+   ・普通の宝物で +100 点\n
+  (
+ → diamondに設定します
+  ・How to play\n\n
+  ・Language: 
+  Rank: 
+  ・Saved on SUCCESS / TIME_UP\n
+  ・Score & route\n\n
+  Time: 
+  ・Your ★ saved quotes\n\n
+  この本を再取得できます。\n\n
+  ジャックポット高得点！\n\n
+  スコア: 
+  ランク: 
+ - 
+ : 
+ !!
+ (
+ (player_uuid, quote_hash, outcome, difficulty, lang, quote_text) 
+ (slotType=
+ (uuid=
+▶ [ALL]
+▶ [FAVORITES]
+▶ [SUCCESS]
+▶ [TIME_UP]
+📖 [TreasureRun] Re-read Random
+ / 
+ / cursor=
+⚠ /quoteFavorite が plugin.yml に見つかりません
+⚠ /rank が plugin.yml に見つかりません（commands: rank を追加済みか確認してください）
+ + ChatColor.BOLD + 
+ + ChatColor.ITALIC + 
+ + rank + 
+ + score + 
+ <
+ = 完走 / 成功\n
+ = 時間切れ\n
+ = ★保存した格言\n\n
+ | 
+ §7(
+ action=
+ allowed=
+ amount=
+🌊 Backup 海探索で海を検出しました
+ cancelled=
+ click=
+✅ config.yml を読み込みました
+ D 
+❌ DB 初期化失敗
+ db=
+⚠ DEBUG MODE ON: /rank デバッグコマンドを有効化します
+ displayName=
+ end=
+★ Favorite removed: #
+★ Favorite saved!
+★ Favorite saved! (Latest quote)
+★ Favorite saved! (Sneak+RightClick)
+■ Favorites
+★ Favorites
+★ Favorites (latest 20): 
+★ Favorites:
+❌ getRunRank: DB接続が null です
+⚠ getRunRank: 該当行が見つかりませんでした 
+ iconMaterial=
+ in0=
+ in1=
+ isTreasureEmerald=
+ keepTicks=
+ left)
+ lore=
+※ Minecraftの本は\n
+⚠ MySQL 再接続を試みます…
+❌ MySQL 再接続失敗: 
+✅ MySQL 再接続成功！
+⚠ MySQL 接続チェック失敗: 
+ name=
+★ No favorites yet (or repository not ready)
+★ No favorites yet.
+★ No quotes yet.
+★ No quotes yet. Play a game first!
+🏆 No.
+★ Not saved (maybe duplicate / no logs yet)
+ player=
+✅ proverb_logs テーブル準備完了
+⚠ proverb_logs 取得失敗: 
+⚠ proverb_logs 保存失敗: 
+ rank=
+ rawSlot=
+◆ Re-read ◆
+✅ scores テーブル準備完了
+ shift=
+ shortLabel=
+ slot1Empty=
+ slotType=
+ So close.\nThe sound said so.\n（惜しかった。音がそう言っていた。）
+⚠ StageMobControlListener: reflection初期化に失敗。ゲーム中のみ制御します。原因: 
+⚠ StageMobControlListener: カウントダウン判定(reflection)に失敗。ゲーム中のみ制御します。原因: 
+■ SUCCESS
+ table=
+■ TIME_UP
+ topType=
+🎵 Treasure Complete! 🎵
+✅ TreasureRun config を再読み込みしました（language GUI含む）。
+✅ TreasureRunMultiChestPlugin が正常に起動しました！
+🌈 TreasureRunMultiChestPlugin: 起動 🌈
+🔻 TreasureRunMultiChestPlugin: 無効化
+ value='
+ WHERE player_uuid=?
+ WHERE player_uuid=? 
+ WHERE player_uuid=? AND id=?
+ WHERE player_uuid=? AND quote_hash=?
+ WHERE player_uuid=? AND quote_hash=? LIMIT 1
+ world=
+ x
+ が全ての宝箱を開けました！最終スコア: 
+ です。周辺を探してください！
+ に生成しました。
+ の演出だけ発動しました（ランキング/DBは変更なし）
+★ ヒント\n\n
+ または 
+⚠ ランキング計算中にエラー: 
+📖 ルールブックをホットバーに配布しました。
+ を見つけました！
+ を実行してね。
+★ 基本の流れ\n\n
+ 個
+ 個のチェストを生成しました。宝物は 
+ 個の難易度ブロックを片付けました。
+ 個の宝箱をスポーンしました（中身付き）
+ 個を配置しました！
+ 制限時間: 
+ 秒
+ 宝物: 
+❌ 無効な Material: 
+-
+- proverb_favorites (★)\n\n
+- proverb_logs (history)\n
+------------------------------
+,
+, 
+, count=
+, difficulty=
+, difficulty='
+, gameTime=
+, id=
+, killCount=
+, lang=
+, name='
+, outcome=
+, player=
+, playerName='
+, registered_dt='
+, registeredAt=
+, registeredDt=
+, rows=
+, score=
+, shift=
+, time=
+, uuid=
+:
+:3306/
+?
+?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+?useSSL=false&serverTimezone=UTC
+.
+. 
+...
+.lang
+.timeLimit
+'
+(
+（
+(count=
+（DB: proverb_favorites）
+（DB: proverb_logs）
+(empty)
+(messages.yml not loaded)
+(no text)
+(player=
+(Shift + Right Click)
+(Translation missing: 
+（あなたは辿り着いた。\n
+（この本を右クリックすると ★Latest を保存できます）
+（すべてが永遠に輝くわけじゃない。\n
+（まだ保存されていない可能性があります）\n\n
+（何も変わらない。ただ、あなたの位置だけが変わった。\n運じゃない。整いだ。\n瞬間は過ぎた。記録は残る。）
+（距離が意味になり、\n
+（結果は変わらなかった。\n
+（時間は終わった。\n
+)
+）
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+) VALUES (
+);
+)\n
+[
+[§\\n\\r\\t]
+[ALL]
+[EnemyDown] MySQL に接続しました（JDBC + MyBatis）
+[EnemyDown] MySQL は接続されています。
+[EnemyDown] MySQL は接続されていません。
+[EnemyDown] MySQL切断に失敗しました: 
+[EnemyDown] MySQL接続に失敗しました: 
+[EnemyDown] MySQL接続を切断しました。
+[FAVORITES]
+[GameMenu] Failed to load Favorites from DB: 
+[GameMenu] Failed to load Quote Collection from DB: 
+[MobControl] WOLF allowed (CUSTOM). name=
+[MobControl] WOLF allowed (name match). reason=
+[MobControl] WOLF cancelled! reason=
+[MySQLManager] MySQL 接続できていません ❌
+[MySQLManager] MySQL 接続テスト成功 ✅
+[MySQLManager] player_score テーブルが存在しない可能性があります ❌
+[MySQLManager] player_score テーブルの行数: 
+[MySQLManager] player_score テーブルを確認・作成しました ✅
+[MySQLManager] player_score テーブル作成に失敗しました ❌: 
+[PlayerLanguageStore] Failed to create/load player_languages.yml: 
+[PlayerLanguageStore] Failed to save player_languages.yml: 
+[ProverbFav] (legacy) Table ready: 
+[ProverbFav] CREATE TABLE IF NOT EXISTS failed: 
+[ProverbFav] CREATE TABLE IF NOT EXISTS success: 
+[ProverbFav] Failed to load favorites: 
+[ProverbFav] Failed to load: MySQL connection is null.
+[ProverbFav] Failed to load: UUID is null.
+[ProverbFav] Failed to remove favorite: 
+[ProverbFav] Favorite latest failed: MySQL connection is null.
+[ProverbFav] Favorite latest failed: no logs found.
+[ProverbFav] Favorite latest failed: UUID is null.
+[ProverbFav] Favorite latest failed\n
+[ProverbFav] Favorite not removed: favoriteId is invalid.
+[ProverbFav] Favorite not removed: MySQL connection is null.
+[ProverbFav] Favorite not removed: UUID is null.
+[ProverbFav] Favorite not saved (maybe duplicate): 
+[ProverbFav] Favorite not saved: MySQL connection is null.
+[ProverbFav] Favorite not saved: quote_hash is empty.
+[ProverbFav] Favorite not saved: quoteText is empty.
+[ProverbFav] Favorite not saved: UUID is null.
+[ProverbFav] Table not created: MySQL connection is null.
+[ProverbLog] CREATE TABLE IF NOT EXISTS failed: proverb_logs\n
+[ProverbLog] CREATE TABLE IF NOT EXISTS success: proverb_logs
+[ProverbLog] Failed to load proverb logs from MySQL: proverb_logs
+[ProverbLog] Failed to load: MySQL connection is null.
+[ProverbLog] Failed to load: UUID is null.
+[ProverbLog] Failed to log proverb to MySQL: proverb_logs
+[ProverbLog] Proverb not logged: MySQL connection is null.
+[ProverbLog] Proverb not logged: quoteText is empty.
+[ProverbLog] Proverb not logged: UUID is null.
+[ProverbLog] Table not created: MySQL connection is null.
+[QuoteFavoriteBook] Favorite failed: 
+[QuoteFavoriteStore] addFavorite failed: 
+[QuoteFavoriteStore] countFavorites failed: 
+[QuoteFavoriteStore] exists failed: 
+[QuoteFavoriteStore] listFavorites failed: 
+[QuoteFavoriteStore] Reloaded DB: host=
+[QuoteFavoriteStore] removeFavorite failed: 
+[QuoteFavoriteStore] removeFavoriteById failed: 
+[Reward] 
+[Reward] attemptSpawnWolf attempt=
+[Reward] attemptSpawnWolf: spawned OK uuid=
+[Reward] attemptSpawnWolf: spawnEntity threw: 
+[Reward] attemptSpawnWolf: wolf is null/invalid (maybe cancelled).
+[Reward] chunk load warning: 
+[Reward] giveRankRewardWithEffect called player=
+[Reward] rank==1 -> aurora/rainbow/wolf 유지 keepTicks=
+[Reward] setupRainbowWolf warning: 
+[Reward] spawnRainbowWolfParadeGuaranteed: start=
+[ShopDebug] 
+[StartTheme] startGame called by 
+[SUCCESS]
+[TIME_UP]
+[TreasureRun] 
+[TreasureRun] favorites_templates.yml created.
+[TreasureRun] fetchTop failed: 
+[TreasureRun] GameStageManager event registered!
+[TreasureRun] Quote Favorite Commands:
+[TreasureRun] ステージ管理が初期化されていません。
+[TreasureRun][Lang] 'language.iconMaterial:' セクションが見つかりません（全部PAPERになります）
+[TreasureRun][Lang] config.yml に 'language:' セクションが見つかりません。
+[TreasureRun][Lang] default=
+[TreasureRun][Lang] 無効なMaterial: lang=
+] 
+{key}
+/
+/gamestart
+/gamestart 
+/gamestart <easy|normal|hard>
+/gameStart <easy|normal|hard>
+/gamestart:
+/quoteFavorite book            - open catalog (full)
+/quoteFavorite book other      - open OTHER chapter
+/quoteFavorite book success    - open SUCCESS chapter
+/quoteFavorite book timeup     - open TIME_UP chapter
+/quoteFavorite book toc        - open catalog (TOC only)
+/quoteFavorite latest          - save latest quote as favorite
+/quoteFavorite latest  - save latest quote as favorite
+/quoteFavorite list            - show favorites
+/quoteFavorite list    - show favorites
+/quoteFavorite remove <id>     - remove favorite
+/quoteFavorite remove <id> - remove favorite
+/quoteFavorite reread          - random reread (chat)
+/quoteFavorite reread book     - random reread (book)
+/quoteFavorite reread title    - random reread (title)
+\\R
+\n
+】\n
+\n\n
+\r\n
+&6&lKöllun úr djúpinu
+&6特製エメラルド
+&7特製鉄ブロック
+&e特製リンゴ
+#
+★#
+#{playerName}, #{score}, #{difficulty}, #{registered_dt}, #{registeredAt}, #{gameTime}, #{uuid, jdbcType=VARCHAR}, #{killCount}
+★#1\n【SUCCESS / Normal / ja】\nThe sky didn’t change.\nYou did.
+★#123
+#55FFFF
+★#id\n【...】\nquote
+%02x
+%d:%02d.%02d
+%diffLabel%
+=== 🌟 TreasureRun ランキング TOP10（タイム優先）🌟 ===
+=== TreasureRun ランキング TOP10 ===
+===== 🌟 TreasureRun 目次 🌟 =====\n
+==================================
+>
+> \n
+> and time answered your footsteps.\n
+> But this moment did.\n
+> But your position did.\n
+> Distance became meaning,\n
+> Distance became meaning.\n
+> Not everything shines forever.\n
+> Nothing else did.\n
+> the choice was yours.\n
+> The outcome didn’t change.\n
+> The rules were simple —\n
+> Time ran out.\n
+> to retry.
+> You made it here\n
+|
+1. 
+1. /gameStart <難易度>\n
+1. ゲームの目的\n
+1) Rules / ルール\n
+127.0.0.1
+1〜3だけ使えます: /rank <1|2|3>
+2. 
+2. 現在の難易度\n
+2. 緑のマークの宝箱を探す\n
+2) Tips / ヒント\n
+3. 
+3. 開けるとスコア + アイテム\n
+3. 難易度と色\n
+3) Quote Collection\n
+4. 全て開けるとクリア！
+4. 操作方法\n
+4) Favorites\n
+5. スコア\n
+6. 終了条件\n
+§6Congratulations! 全ての宝物を見つけました！
+7. 格言集（Quote Collection）\n
+§7[ChestSound] chests=0
+§7/§e
+§7Treasures collected: §e
+§7Try a different route next time — or use §e/gamestart §7<§eeasy§7|§enormal§7|§ehard§7> §7to retry.
+8. お気に入り（Favorites）\n
+A hidden power awakens…
+A moment of silence.\nThe world steadied its breath.\n（一瞬の静寂。世界がその呼吸を整えた。）
+§aIN
+ALL
+allowedLanguages
+As the sky shifted,\none story found its final resolution.\n（空が姿を変えるとともに、一つの物語はその最終的な解決完結を見出した。）
+As the sky transformed,\nthe tale found its final resolved.\n（空が姿を変えるとともに、一つの物語はその最終的な解決完結を見出した。）
+At last,you’ve made it here.\nThe truth stands—unbowed.\n（ついに、ここへ辿り着いた。真実は屈することなく、そこに在る。）
+§a宝探しゲーム開始！ 難易度: 
+§b[ChestSound] §fD=§e%.1fm §7(%s§7) §ft=§a%.2f §7step=%d bar=%d
+§b[ChestSound] nearest=%.1fm %s  t=%.2f
+§b[ChestSound] start() called (16th-grid mode)
+Beneath a quiet sky,\nyour will held firm.\n（静かな空の下で、意志は持ちこたえた。）
+best
+best_time
+Between ice and glass,\nyou chose control.\n（氷とガラスのあいだで、あなたは制御を選んだ。）
+book
+Breathe in.\nThen again.\n（息をして。もう一度。）
+BUBBLE_COLUMN
+chat
+checktreasureemerald
+chests.otherChestCount.
+chestSpawnRadius
+clearStageBlocks
+Click to select
+§c§lTIME'S UP!
+cnt
+Complete. This path was yours\n—and yours alone.\n（完遂。この道を選んだのは他でもないあなただ。）
+config.yml の設定を読み込みました。
+config.ymlのtreasureItemが不正です: 
+CORAL
+count
+count INT NOT NULL)
+§cOUT
+craftspecialemerald
+CREATE TABLE IF NOT EXISTS 
+CREATE TABLE IF NOT EXISTS player_treasure_count (
+CREATE TABLE IF NOT EXISTS proverb_logs (
+CREATE TABLE IF NOT EXISTS scores (
+created_at
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, 
+currentStageCenter
+dbstatus
+DDD
+debug
+Debug mode is OFF. config.yml の debug: true にしてください
+DEBUG: rank 
+default
+DELETE FROM 
+DELETE FROM player_score WHERE uuid = #{uuid, jdbcType=VARCHAR}
+demo
+development
+diamond
+DIAMOND
+difficulty
+difficulty = #{difficulty}, 
+difficulty TEXT
+difficulty VARCHAR(10)
+difficulty VARCHAR(10) NOT NULL,
+difficulty VARCHAR(16) NOT NULL, 
+Difficulty: 
+difficultySettings.
+displayName
+Distance became meaning.\nTime answered your steps.\n（距離が意味になった。時間があなたの歩みに答えた。）
+DJイベントはすでに実行中のため、onAllTreasuresCollected をスキップしました。
+DJイベントはすでに実行中のため、triggerUltimateDJEvent をスキップしました。
+dummy
+easy
+Easy
+EASY
+Easy（ゆったり）
+en
+endLocationのワールドが見つかりません: 
+Even if it was only a small step,\nyou held your ground.\n（小さな一歩でも、あなたは守り抜いた。）
+Even the aurora fades.\nCome back with a new stride.\n（オーロラでさえ消える。新しい歩みで戻れ。）
+ExecutingPlayer
+FAIL
+Failed to connect to MySQL: 
+Failed to create table: 
+Failed to load proverb logs from MySQL: proverb_logs
+Failed to log proverb to MySQL: proverb_logs
+Failed to open book.
+Failed to open favorites book.
+Failed to save treasure count: 
+false
+Favorite not removed. (not found?)
+Favorite not saved. (maybe no logs yet / or duplicate)
+Favorite removed from MySQL: 
+Favorite saved to MySQL: 
+favorite_quotes
+FAVORITES
+Few things shine forever.\nbut this moment was radiant.\n（永遠に輝くものなんてほとんどないけれど、この瞬間は別格だった。）
+Finally here.\nThe truth remains unyielding.\n（ついに、ここへ辿り着いた。真実は屈することなく、そこに在る。）
+FROM 
+FROM proverb_logs 
+FROM scores 
+FROM scores GROUP BY player_name 
+full
+game_time
+game_time = #{gameTime}, 
+gameEnd
+gameMenu
+gameRank
+gameRunning=
+gameStart
+gameTime
+get
+getFavoriteLogs
+getFavoriteProverbs
+getFavoriteQuotes
+getFavorites
+getI18n
+getLang
+getLanguage
+getPlayerLang
+getPlayerLanguage
+getRecentProverbs
+getSelectedLanguage
+golden_apple_custom_recipe
+Got: 
+GUIを更新しました。もう一度 /gameStart で開いてください。
+hard
+Hard
+HARD
+Hard（高難度）
+Harmony was restored.\nEverything had been for this moment.\n（調和が訪れた。すべては、この瞬間のためにあった。）
+help
+Hint: /gameMenu で再度開けます
+i18n
+Ice takes its time.\nNeither do you.\n（氷は急がない。あなたも急ぐ必要はない。）
+iconMaterial
+iconMaterial.
+id
+id INT AUTO_INCREMENT PRIMARY KEY,
+id INT NOT NULL AUTO_INCREMENT, 
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+ID must be a number.
+id: 12\noutcome: SUCCESS\nquote: ...\ntime: 2026-01-23 12:34
+id=
+III
+In a fragile world,\nhaste shatters clarity before it can be found.\n（脆い世界では、焦りが明晰さの発見を壊してしまう。）
+In the north wind,\nclarity outlasts speed.\n（北風の中で、速さより明晰さが生き残る。）
+INDEX idx_player_uuid_created_at (player_uuid, created_at)
+ingredients snapshot
+INSERT INTO 
+INSERT INTO player_score (
+insert into player_score(player_name, score, difficulty, registered_dt) values (#{playerName}, #{score}, #{difficulty}, now())
+INSERT INTO player_treasure_count (player_name, count) VALUES (?, ?) 
+INSERT INTO proverb_logs (player_uuid, player_name, outcome, difficulty, lang, quote_text) 
+INSERT INTO scores (player_name, score, time, difficulty) VALUES (?, ?, ?, ?)
+InventoryClickEvent fired
+isTreasureEmerald = 
+It wasn’t luck.\nAlignment.\n（運じゃない。整いだ。）
+It wasn’t rejection.\nOnly silence.\n（拒絶ではない。ただ、沈黙だった。）
+items current=
+ja
+jdbc:mysql://
+jdbc:sqlite:
+KELP
+KELP_PLANT
+kill_count
+kill_count = #{killCount} 
+killCount
+kind
+lang
+lang VARCHAR(10) NOT NULL,
+lang VARCHAR(16) NOT NULL, 
+lang: 
+language
+Language / 言語
+Language GUI が初期化されていません。
+LanguageStore reflection failed: 
+latest
+Latest 20  |  lang: 
+★Latest を保存できます。
+★Latest を保存できます。\n\n
+Legend:\n
+Light fell evenly, ,\nand every shadow vanished.\n（光が等しく降り注ぎ、すべての影が消えた。）
+Like drifting clouds,\ndon’t lose your flow—like a river.\n（雲が動き続けるように。川のように、流れを失わないで。）
+limit
+LIMIT ?
+LIMIT 1
+LIMIT 10
+list
+Loaded favorites from MySQL (legacy): 
+Loaded favorites from MySQL: 
+Loaded proverb logs from MySQL: proverb_logs
+loadFavorites
+localhost
+lore
+loreDefault
+Luck fades fast.\norder endures.\n（運は速やかに消え、整い秩序は永続する。）
+Luck fades quickly.\nOrder endures.\n（運は速やかに消え、整い秩序は永続する。）
+merchant view title=
+message
+messages.translation.
+minecraft_mysql
+MUSIC_
+mybatis-config.xml
+MySQL / Repository not ready.
+MySQL connection established successfully!
+No conquest.\nUnderstanding was enough.\n（征服はない。理解で、十分だった。）
+No data.
+No favorites yet
+normal
+Normal
+NORMAL
+Normal（標準）
+Not luck.\nAlignment.\n（運じゃない。整いだ。）
+Not rejection\nJust silence.\n（拒絶ではない。ただの、沈黙。）
+Nothing changed.\n Only your position did.\nNot luck.\nAlignment.\nThe moment passed.\nThe record remains.\n
+Nothing changed.\nOnly your position did.\n（何も変わらない。ただ、あなたの位置だけが変わった。）
+null
+OK: passed all checks -> scheduling effect with runTaskLater
+OK(LATER): playing effects now
+ON DUPLICATE KEY UPDATE count = ?
+openBook() failed on this server.
+ORDER BY best DESC, best_time ASC LIMIT ?
+ORDER BY created_at DESC 
+ORDER BY created_at DESC LIMIT ?
+ORDER BY time ASC, score DESC
+ORDER BY time ASC, score DESC 
+other
+OTHER
+outcome
+【outcome / difficulty / lang】\nquote
+outcome VARCHAR(20) NOT NULL,
+outcome VARCHAR(32) NOT NULL, 
+OVERCOMING ADVERSITY
+Page 
+password
+Perfect balance.\nThe scales held level.\n（等価の均衡。天秤は水平を保った。）
+Perfect equilibrium.\nThe scales held level.\n（等価の均衡。天秤は水平を保った。）
+player_name
+player_name = #{playerName}, 
+player_name TEXT,
+player_name VARCHAR(50) NOT NULL,
+player_name VARCHAR(50) PRIMARY KEY,
+player_name VARCHAR(50),
+player_name VARCHAR(64) NOT NULL, 
+player_name, score, difficulty, registered_dt, registered_at, game_time, uuid, kill_count
+player_uuid
+player_uuid VARCHAR(36) NOT NULL,
+player_uuid VARCHAR(36) NOT NULL, 
+playerLanguageStore
+playerName
+Players only.
+players.
+PlayerScore{
+playerScores
+PlayerScoreの挿入に失敗しました: 
+PRIMARY KEY (id), 
+Proverb logged to MySQL: proverb_logs
+proverb_favorites
+quote
+quote_hash
+quote_hash VARCHAR(64) NOT NULL, 
+quote_text
+quote_text TEXT NOT NULL,
+quote_text TEXT NOT NULL, 
+quoteFavorite
+Rainbow Wolf
+Random Re-read\n\n
+rank
+Re-read Random
+Recent 20  |  lang: 
+registered_at
+registered_at = #{registeredAt}, 
+registered_dt
+registered_dt = #{registered_dt}, 
+registeredAt
+remove
+reread
+Reset treasure count for player: 
+restorePlayerStatus
+result
+RETURN: current item is AIR
+RETURN: current item is not GOLDEN_APPLE. type=
+RETURN: current item is null
+RETURN: game is not running
+RETURN: ingredient check failed (need TreasureEmerald>=5 and slot1 empty)
+RETURN: not result slot. expected rawSlot=2 but was 
+RETURN: not Treasure Shop title. plainTitle=
+RETURN: topInventory is MERCHANT but not MerchantInventory instance
+RETURN: topInventory is not MERCHANT
+RETURN: whoClicked is not Player
+RETURN(LATER): game is not running
+RETURN(LATER): not Treasure Shop title. plainTitle=
+RETURN(LATER): openInventory/topInventory is null
+RETURN(LATER): player is offline
+RETURN(LATER): topInventory is not MERCHANT. type=
+root
+ruleBook.difficultyLabel.
+ruleBook.displayName.
+ruleBook.pages.
+ruleBook.title.
+Run Complete!
+Run complete.
+RUN COMPLETE.\nA quiet result.\nThe weight of real work.\n（静かな結果。本物の積み重ね。）
+RUN COMPLETE.\nClear. Found it.\nThat's enough.\n（クリア。見つけた。それで十分。）
+RUN COMPLETE.\nThe path held.\nSo did you.\n（道は持ちこたえた。あなたも同じ。）
+RUN: runTaskLater executed
+score
+score = #{score}, 
+score INT,
+score INTEGER,
+Score: 
+SEA_PICKLE
+SEAGRASS
+SELECT * FROM player_score
+SELECT * FROM player_score ORDER BY score DESC LIMIT #{limit}
+SELECT * FROM player_score WHERE player_name = #{playerName}
+SELECT * FROM player_score WHERE player_name = #{playerName} LIMIT 1
+SELECT * FROM player_score WHERE uuid = #{uuid, jdbcType=VARCHAR}
+SELECT 1 FROM 
+SELECT COUNT(*) AS cnt FROM player_score;
+SELECT COUNT(*) FROM 
+SELECT COUNT(*) FROM player_score
+SELECT COUNT(*) FROM player_score WHERE uuid = #{uuid, jdbcType=VARCHAR}
+SELECT id, outcome, difficulty, lang, quote_text, created_at 
+SELECT id, player_uuid, quote_hash, outcome, difficulty, lang, quote_text, created_at 
+SELECT outcome, difficulty, lang, quote_text 
+SELECT outcome, difficulty, lang, quote_text, created_at 
+SELECT player_name, MAX(score) AS best, MIN(time) AS best_time 
+SELECT player_name, score, time, difficulty 
+SELECT player_name, score, time, difficulty FROM scores ORDER BY score DESC LIMIT 10
+SHA-256
+shortLabel
+Silence.\nOnly time passed through.\n（沈黙。ただ、時間だけがそこを通り過ぎた。）
+Some treasures still await.\nLet’s try a different path.\n（待つ宝もある。別の道を試そう。）
+Some treasures still await.\nNext time, a different path.\n（待つ宝もある。次は、別の道を。）
+Sound play failed: 
+special_emerald_recipe
+special_iron_block_recipe
+Starting in…
+startLocationのワールドが見つかりません: 
+Stored in MySQL DB:\n
+success
+SUCCESS
+【SUCCESS / Normal / en】\nThe obstacle is the way.
+【SUCCESS / Normal / ja】\nThe sky didn’t change.\nYou did.
+SUCCESS / TIME_UP で\n
+Tabs: 
+Tabs:\n\n
+TALL_SEAGRASS
+text
+That’s all for now.\nOn to the next step.\n（今回はここまで。次の一歩へ。）
+The axis is found.\nthe world has cased its motion.\n（軸(中心)は見出された。世界はその運動を止めた。）
+The center has been reached.\nThe world stood still.\n（中心は到達された。世界は立ち尽くし静止した。）
+The center was found.\n The world came to rest.\n（軸(中心)は見出された。世界はその運動を止めた。）
+The center was found.\nThe world came to rest.\n（軸(中心)は見出された。世界はその運動を止めた。）
+The center was reached.\nThe world stood still.\n（中心は到達された。世界は立ち尽くし静止した。）
+The destination is the same\n—but you’re no longer the traveler you once were.\n（目的地は同じだが、あなたはもう以前と同じ旅人ではない。）
+The distance closed.\nTime did not.\n（距離は縮んだ。時間は縮まらなかった。）
+The distance closed.\nTime did not.\n（距離は縮んでいた。時間は縮まらなかった。）
+The distance has found its meaning.\nTime has rewarded your journey.\n（距離が意味になった。時間があなたの歩みに答えた。）
+The distance was closing.\nTime kept its rhythm.\n（距離は縮んでいた。時間は、リズムを保った。）
+The earth did not resist.\nIt recognized you.\n（大地は抗わず、あなたを認識した。）
+The ending was the same.\nBut the one who reached it had changed.\n（結末は同じだが、そこに辿り着いた人間は変わった。）
+The footsteps ceased,\nand only the place remained.\n（歩みは途絶え、ただ場所だけがそこに在り続けた。）
+The footsteps ceased,\nonly the place remained.\n（歩みは途絶え、ただ場所だけがそこに在り続けた。）
+The footsteps stopped,\nand only the place remained.\n（歩みは止まり、場所だけがそこに残された。）
+The glass didn’t break.\nNeither did you.\n（ガラスは割れなかった。あなたも折れなかった。）
+The glass held its breath,\nand you held your ground.\n（ガラスは割れなかった。あなたも折れなかった。）
+The ground didn’t give way.\nIt trusted your steps.\n（大地は壊れなかった。あなたの足取りを、信じていた。）
+The last grains of sand fell,\nand the story quietly came to a close.\n（砂はすべて落ちきり、物語は静かに幕を閉じた。）
+The map is still open.\nCome back to it.\n（地図は開いたまま。戻っておいで。）
+The moment has passed.\nThe legacy remains.\n（瞬間は過ぎ去った。遺されたもの記録・功績は残る。）
+The moment passed.\n What remained was the record—the achievement.\n（瞬間は過ぎ去った。遺されたもの記録・功績は残る。）
+The moment passed.\nThe record remains.\n（瞬間は過ぎた。記録は残る。）
+The moment passed.\nWhat remained was order.\n（瞬間は過ぎた。整いは残った。）
+The moment slipped away,\nbut the record stayed.\n（瞬間は過ぎた。記録は残る。）
+The moment slipped away.\nThe meaning did not.\n（逃したのは瞬間。意味ではない。）
+The north has learned to wait.\nSo should you.\n（北は『待つこと』を覚えている。そこから学べ。）
+The obstacle is the way.
+The outcome didn’t change.\nStill, you moved forward.\n（結果に違いはなかった。それでも、あなたは前に進んだ。）
+The output didn’t change.\nBut you reached a new level.\n（出力は変わらないままだが、あなたは新しいレベルに到達した。）
+The path closed quietly.\nYou were already through.\n（道は静かに閉じた。あなたはもう抜けていた。）
+The path is still here.\nYou can come back—changed.\n（道は、まだここにある。違うあなたで、戻れる。）
+The path The path remains.\nOnly your steps stopped.\n（道は、まだそこにある。あなたが歩みを止めただけ。）
+The record is etched deep in the sand—\nbeyond the reach of the wind.\n（記録は砂に深く刻まれ、風もそれを動かせない。）
+The result  remained.\nThe position changed.\n（結果は残った。位置は変わった。）
+The result remained.\nThe position changed.\n（結果は残った。位置は変わった。）
+The road goes on—or it ends.\nEither way, it lies on the same earth.\n（道は続き、あるいは途切れ、どちらも同じ大地の上にある。）
+The run ended.\nYou didn’t.\n（走りは止まった。あなたは止まっていない。）
+The season closed.\nThe land remained.\n（季節は閉じた。大地は、残っている。）
+The season ended.\nThe forest remains.\n（季節は終わった。森は、残っている。）
+The sky didn’t change.\nYou did.\n（空は変わらなかった。変わったのはあなた。）
+The sky has kept moving.\nSo can you.\n（空はずっと歩み続けていた。あなたも進み続けられる。）
+The sky kept moving.\nSo can you.\n（空は動き続けた。あなたも動き続けられる。）
+The sky kept moving.\nSo will you.\n（空は進み続けた。あなたも進む。）
+The sky knows no pause in endless circle,\nnor shall you find yours.\n（空はその終わりなき循環に休止を知らぬ。汝もまた、止まらず。）
+The sky knows no rest in its endless cycle.\nNeither do you.\n（空はその終わりなき循環に休止を知らぬ。汝もまた、止まらず。）
+The sky shifted in color,\nand one story came to its end.\n（空の色が変わり、一つの物語が完結を告げた。）
+The sound was near.\nThe distance was real.\nBut that moment can’t be saved.\n（音は近かった。距離は本物だった。でも、その瞬間は保存できない。）
+The stars aligned for a moment.\nYou noticed.\n（星は束の間そろった。あなたはそれに気づいた。）
+The stars stay silent.\nYour record does the speaking.\n（星は黙っている。語るのはあなたの記録だ。）
+The stars were there, watching.\nAgain.\n（星は見守っていた。もう一度。）
+The story moves on.\nThe end is not yet.\n（叙事は頁をめくる。これは最後じゃない。）
+The sun sank,\nand shadow covered the world once again.\n（日は落ち、影は再び世界を覆った。）
+The tide came in,\nWhat once had been there returned to the sea.\n（潮が満ちた。かつてそこにあったものは、海へと還った。）
+The time is up.\nbut the rest is far from over.\n（時間は終わった。ほかは終わっていない。）
+The treasure can wait.\nSo can you.\n（宝は待っている。あなたも待てる。）
+The waters fell calm,\nand the sky once more veiled its abyss.\n（波は静まり、空は再びその深淵を覆い隠した。）
+The waves fell quiet,\nand the sea reclaimed its hidden depths.\n（波は静まり、海はその隠された深淵を再び自らのものとした。）
+The waves fell quiet,\nand the sky hid its depths once more.\n（波は静まり、空は再びその深淵を覆い隠した。）
+The waves grew calm,\nand the sea hid its depths once more.\n（波は穏やかになり、海は再びその深淵を隠した。）
+The wind fell silent.\nand everything returned to where it belonged.\n（風が止み、あるべき場所に、あるべきものが戻った。）
+The wind swept through,\nand the footprints vanished without a trace.\n（風が吹き抜け、足跡は跡形もなく消え去った。）
+The world held to its rules.\nYou touched the edge of them.\n（世界はルールを守った。あなたはその縁に触れた。）
+The world is still intact.\nYou can return—changed.\n（世界は形を保っている。変わったあなたで、戻れる。）
+The world kept its rules.\n（世界はルールを守った。）
+The world kept its rules.\nYou touched the edge.\n（世界はルールを守った。あなたは境界に触れた。）
+The world’s rules stood firm.\n And the signal of possibility was real.\n（世界のルールは、厳然としてそこにあった。可能性（信号）は本物だった。）
+The world’s rules stood firm.\nThe signal of possibility was real.\n（世界のルールは厳然としてそこにあった。可能性（信号）は本物だった。）
+There was no dialogue\n—only an exchange of facts.\n（対話はなく、ただ事実としての交換が行われた。）
+Things changed,\ntaking on new forms as they carried on.\n（物事は移ろい、形を変えて引き継がれた。）
+This is an interlude\n—It’s not over.\n（これは休止だ。終わりじゃない。）
+This moment aligned\n with the stillness of the stars.\n（この瞬間は、星々の静けさと重なった。）
+This moment aligned\nwith the stars’ ancient rhythm.\n（この瞬間は、星々の長いリズムと重なった。）
+time
+TIME
+time BIGINT,
+Time drifted into silence,\nand found its place in the deepest corners of the mind.\n（時は静寂へと漂い、精神の奥底の隅に自らの居場所を見つけた。）
+Time drifted into silence,\nfinding its place in the recesses of the mind.\n（時は静寂へと漂い、精神の奥底の隅に自らの居場所を見つけた。）
+time INTEGER,
+Time ran out.\nMeaning didn't.\n（時間は終わった。意味は終わっていない。）
+Time ran out.\nNothing else did.\n（時間は終わった。ほかは終わっていない。）
+Time slipped by in silence,\ntucked away in the corners of memory.\n（時間は静かに流れ、記憶の隅に収まった。）
+TIME UP
+TIME_UP
+TIME'S UP!
+Time's up.
+TIME'S UP.\n“So close” is real.\n（惜しい、は本物だ。）
+TIME'S UP.\nThe rules don’t change.\nAgain.\n（ルールは変わらない。もう一度。）
+TIME'S UP.\nThe run ended.\nYou didn't.\n（時間は止まった。でも、あなたは止まっていない。）
+timestamp
+timeup
+TIMEUP
+Tip: この本を右クリックで\n
+title
+TNT
+toc
+TOP
+totalChests
+totalChestsRemaining
+Trade complete!
+TRank
+treasure shop
+treasure_emerald
+treasureDB
+treasureItem
+treasureItems
+treasureReload
+TreasureRun
+TreasureRun Archive\n
+TreasureRun Favorites
+TreasureRun Re-read
+TreasureRun Rule Book
+TreasureRun TOP
+TreasureRun ルール
+TreasureRun ルールブック
+TreasureRun: 
+TreasureRun: 宝箱を 
+TreasureRunPlugin が無効化されました
+TreasureRunPlugin が有効化されました
+TreasureRunでクラフトした
+true
+Try a different route next time - or use 
+unchecked
+Under the stillness of the sky,\nyour spirit did not waver.\n（静かな空の下で、意志は持ちこたえた。）
+UNIQUE KEY uk_player_quote (player_uuid, quote_hash), 
+unknown
+UNKNOWN
+Unknown subcommand. Use: /quoteFavorite
+Unknown subcommand. Use: /quoteFavorite help
+UPDATE player_score SET 
+UPDATE player_score SET score = #{score}, registered_dt = #{registered_dt} WHERE id = #{id}
+Usage: /quoteFavorite remove <id>
+user
+uuid
+value
+VALUES (?, ?, ?, ?, ?, ?)
+Very little shines forever\n—but this moment was different.\n（永遠に輝くものなんてほとんどないけれど、この瞬間は別格だった。）
+Victory and defeat \nare nothing more than grains of sand.\n（勝利も敗北も、同じ砂の一粒に過ぎない。）
+WHERE player_uuid = ? 
+WHERE player_uuid = ? AND id = ?
+WHERE UPPER(difficulty) = UPPER(?) 
+WHERE uuid = #{uuid, jdbcType=VARCHAR}
+Winter is honest.\nSo was your run.\n（冬は正直だ。あなたの走りもそうだった。）
+Winter is patient.\nBe the same.\n（冬は忍耐強い。あなたもそうであれ。）
+You crossed fragile ground\nand left the horizon unbroken.\n（脆い地面を渡った。視界（景色）を壊さずに。）
+You didn’t claim it.\nYou were already home.\n（ここを奪ったのではない。ここに、属していた。）
+You didn’t gain a thing.\nYou only saw the truth for what it was.\n（手に入れたのは何かではない。真実を、見抜いただけだ。）
+You didn’t make it.\nBut the signal was real.\n（届かなかった。でも合図は本物だった。）
+You didn’t reach the treasure. \nBut the signal was real.\n（宝には届かなかった。でも合図は本物だった。）
+You didn’t take anything.\n You understood something.\n（何かを奪ったわけじゃない。何かを、理解した。）
+You didn’t take this place.\nYou belonged here.\n（征服したのではない。ここに、属していた。）
+You have seen it through.\nAnd mark this: it was you, and no one else, who chose this path.\n（完遂。この道を選んだのは他でもないあなただ。）
+You listened.\n The path opened.\n（耳を澄ませた。道がひらいた。）
+You made it across the fragile ground,\nholding fast to the horizon the whole way.\n（脆い地面を渡り切った。地平線景色をしっかりと握りしめたまま。）
+You only walked the path\nthe world had laid out for you.\n（世界が用意していた道を、あなたは歩いただけ。）
+You traversed the fragile earth,\nwithout losing the view.\n（脆い地面を渡り切った。地平線景色をしっかりと握りしめたまま。）
+You walked a road\nolder than memory itself.\n（記憶より古い道を、あなたは辿った。）
+You were closing in.\nOnly time wasn’t.\n（近づいていた。時間だけが近づかなかった。）
+You're still here.\nThat’s what matters.\n（まだここにいる。それが大事。）
+Your time came to a halt.\nThe sky kept moving.\n（あなたの時間は止まった。空は、止まらなかった。）
+Your time ran out.\nThe sky didn’t.\n（あなたの時間は終わった。空は、終わっていない。）
+You’ve made it.\nThe truth remains.\n（たどり着いた。正さはそのままに。）
+あと10秒です！
+エメラルド
+エメラルドブロック
+エンチャント金リンゴ
+おめでとう！ 
+かかった時間: 
+クリックで切替できないので\n
+ゲームは既に実行中です。
+ゲーム終了！合計スコア: 
+ゲーム中は reload できません（安全のため）。/gameEnd してから実行してください。
+このコマンドはプレイヤーからのみ実行できます。
+このコマンドはプレイヤーのみが実行できます。
+このコマンドはプレイヤーのみ実行できます。
+このタブには表示できる格言がありません。\n
+スコア +
+スコア: 
+スペシャルエメラルドの作成には、ダイヤモンドが3個必要です。
+すべての宝箱を開けました！ゲーム終了！
+「セクション」形式で収録します。\n\n
+それ以外は、終わっていない。）
+タイム: 
+・タイムアップに注意！
+ダイヤモンド
+ダイヤモンド3個でスペシャルエメラルドを作成しました！
+ダイヤモンドブロック
+ダイヤ獲得！
+でも、あなたの位置は変わった。）
+でも、この瞬間はそうだった。）
+・ネザライト/ブロック系は\n
+ネザライトインゴット獲得！
+ネザライトのインゴット
+プレイヤーから実行してください
+プレイヤーのみ実行できます
+まだ★お気に入りがありません。\n\n
+まだスコアがありません。
+まだ格言ログがありません。\n
+ラピスラズリ
+ランキング取得中にエラーが発生しました
+リンゴ
+ルールは単純だった。\n
+ルールブックを開けませんでした。
+レアな宝物ほど高得点です。
+レッドストーン
+許可言語が多いため、GUIには先頭 27 件のみ表示します。
+金インゴット
+金ブロック
+金リンゴ獲得！
+権限がありません（OP限定）
+言語選択をキャンセルしました。もう一度やる場合は 
+残りの宝箱: 
+残り時間
+残り時間: 
+使い方: /rank <1|2|3|demo>
+時間があなたの足取りに応えた。）
+時間切れ！ゲーム終了！
+時間切れ！宝物を見つけられませんでした。スコアは0点です。
+次は別のルート・攻略手順でやってみてね！やり直すなら /gamestart <easy|normal|hard> を使ってみてね！
+自動で保存されます。\n\n
+手に持って右クリックすると、いつでも読み直せます。
+数字で入力してください: /rank <1|2|3|demo>
+制限時間は
+制限時間内にできるだけ多くの\n
+石炭
+選んだのは、あなた自身。）
+全ての宝物を発見しました！
+鉄インゴット
+鉄ブロック
+点
+点 (
+点（累計: 
+点）
+・途中で /gameMenu を打つと\n
+特製エメラルド
+特製エメラルドのレシピを登録しました。
+特製リンゴのレシピを登録しました。
+特製鉄ブロックのレシピを登録しました。
+特別なエメラルド
+難易度: 
+難易度は Easy / Normal / Hard です。
+難易度は Easy, Normal, Hard のいずれかを指定してください。
+秒
+秒 
+秒, 難易度:
+秒です。
+別タブも見てみてください。
+宝箱 
+宝箱を開けよう！\n
+宝物は 
+本を右クリックすると\n

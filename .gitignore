@@ -25,3 +25,23 @@ mysql-init/
 
 # env/secrets
 .env
+# local backups
+*.bak
+*.bak_*
+*.bak.*
+*.bak-*
+
+# --- local markers / scripts / archives ---
+__THIS_IS_LATEST_PROJECT__.txt
+msz_run.sh
+
+# stray duplicate files (root-level)
+plugin.yml
+
+# archives
+*.zip
+
+# backup files
+*.bak
+*.bak2
+*.backup

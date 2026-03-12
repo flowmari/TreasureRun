@@ -1,0 +1,796 @@
+src/main/java/plugin/CheckTreasureEmeraldCommand.java	21	このコマンドはプレイヤーのみが実行できます。
+src/main/java/plugin/CheckTreasureEmeraldCommand.java	28	isTreasureEmerald = 
+src/main/java/plugin/ChestProximitySoundService.java	91	§b[ChestSound] start() called (16th-grid mode)
+src/main/java/plugin/ChestProximitySoundService.java	137	§7[ChestSound] chests=0
+src/main/java/plugin/ChestProximitySoundService.java	173	§b[ChestSound] §fD=§e%.1fm §7(%s§7) §ft=§a%.2f §7step=%d bar=%d
+src/main/java/plugin/ChestProximitySoundService.java	182	§b[ChestSound] nearest=%.1fm %s  t=%.2f
+src/main/java/plugin/CraftSpecialEmeraldCommand.java	18	このコマンドはプレイヤーのみが実行できます。
+src/main/java/plugin/CraftSpecialEmeraldCommand.java	27	スペシャルエメラルドの作成には、ダイヤモンドが3個必要です。
+src/main/java/plugin/CraftSpecialEmeraldCommand.java	41	&6特製エメラルド
+src/main/java/plugin/CraftSpecialEmeraldCommand.java	47	ダイヤモンド3個でスペシャルエメラルドを作成しました！
+src/main/java/plugin/CustomRecipeLoader.java	40	特製エメラルドのレシピを登録しました。
+src/main/java/plugin/CustomRecipeLoader.java	50	&e特製リンゴ
+src/main/java/plugin/CustomRecipeLoader.java	60	特製リンゴのレシピを登録しました。
+src/main/java/plugin/CustomRecipeLoader.java	70	&7特製鉄ブロック
+src/main/java/plugin/CustomRecipeLoader.java	81	特製鉄ブロックのレシピを登録しました。
+src/main/java/plugin/DBUtils.java	41	PlayerScoreの挿入に失敗しました: 
+src/main/java/plugin/FavoritesTemplatesLoader.java	42	[TreasureRun] favorites_templates.yml created.
+src/main/java/plugin/GameMenu.java	44	===== 🌟 TreasureRun 目次 🌟 =====\n
+src/main/java/plugin/GameMenu.java	45	1. ゲームの目的\n
+src/main/java/plugin/GameMenu.java	46	   ・制限時間内にできるだけ多くの宝箱を開けて、スコアを稼ぎます。\n\n
+src/main/java/plugin/GameMenu.java	48	2. 現在の難易度\n
+src/main/java/plugin/GameMenu.java	49	   ・今の難易度: 
+src/main/java/plugin/GameMenu.java	51	3. 難易度と色\n
+src/main/java/plugin/GameMenu.java	52	   ・Easy  ：紫のブロック\n
+src/main/java/plugin/GameMenu.java	53	   ・Normal：緑のブロック\n
+src/main/java/plugin/GameMenu.java	54	   ・Hard  ：青のブロック\n\n
+src/main/java/plugin/GameMenu.java	56	4. 操作方法\n
+src/main/java/plugin/GameMenu.java	57	   ・周りを走り回って、宝箱を見つけて右クリックで開けます。\n\n
+src/main/java/plugin/GameMenu.java	59	5. スコア\n
+src/main/java/plugin/GameMenu.java	60	   ・普通の宝物で +100 点\n
+src/main/java/plugin/GameMenu.java	61	   ・特別な宝物（ネザライト、ブロックなど）でさらにボーナス点！\n\n
+src/main/java/plugin/GameMenu.java	63	6. 終了条件\n
+src/main/java/plugin/GameMenu.java	64	   ・すべての宝箱を開けるか、時間切れでゲーム終了です。\n\n
+src/main/java/plugin/GameMenu.java	66	7. 格言集（Quote Collection）\n
+src/main/java/plugin/GameMenu.java	67	   ・SUCCESS / TIME_UP の結果に応じて、格言が自動で保存されます。\n
+src/main/java/plugin/GameMenu.java	68	8. お気に入り（Favorites）\n
+src/main/java/plugin/GameMenu.java	69	   ・気に入った格言は★保存できます。\n
+src/main/java/plugin/GameMenu.java	85	ルールブックを開けませんでした。
+src/main/java/plugin/GameMenu.java	89	TreasureRun ルール
+src/main/java/plugin/GameMenu.java	93	Easy（ゆったり）
+src/main/java/plugin/GameMenu.java	94	Hard（高難度）
+src/main/java/plugin/GameMenu.java	95	Normal（標準）
+src/main/java/plugin/GameMenu.java	101	TreasureRun ルール\n\n
+src/main/java/plugin/GameMenu.java	103	難易度: 
+src/main/java/plugin/GameMenu.java	104	制限時間内にできるだけ多くの\n
+src/main/java/plugin/GameMenu.java	105	宝箱を開けよう！\n
+src/main/java/plugin/GameMenu.java	106	レアな宝物ほど高得点です。
+src/main/java/plugin/GameMenu.java	110	★ 基本の流れ\n\n
+src/main/java/plugin/GameMenu.java	112	1. /gameStart <難易度>\n
+src/main/java/plugin/GameMenu.java	113	2. 緑のマークの宝箱を探す\n
+src/main/java/plugin/GameMenu.java	114	3. 開けるとスコア + アイテム\n
+src/main/java/plugin/GameMenu.java	115	4. 全て開けるとクリア！
+src/main/java/plugin/GameMenu.java	119	★ ヒント\n\n
+src/main/java/plugin/GameMenu.java	121	・ネザライト/ブロック系は\n
+src/main/java/plugin/GameMenu.java	122	  ジャックポット高得点！\n\n
+src/main/java/plugin/GameMenu.java	123	・途中で /gameMenu を打つと\n
+src/main/java/plugin/GameMenu.java	124	  この本を再取得できます。\n\n
+src/main/java/plugin/GameMenu.java	125	・タイムアップに注意！
+src/main/java/plugin/GameMenu.java	133	TreasureRun ルールブック
+src/main/java/plugin/GameMenu.java	149	TreasureRun ルールブック
+src/main/java/plugin/GameMenu.java	160	📖 ルールブックをホットバーに配布しました。
+src/main/java/plugin/GameMenu.java	161	手に持って右クリックすると、いつでも読み直せます。
+src/main/java/plugin/GameMenu.java	178	TreasureRun ルール
+src/main/java/plugin/GameMenu.java	181	TreasureRun ルールブック
+src/main/java/plugin/GameMenu.java	226	ルールブックを開けませんでした。
+src/main/java/plugin/GameMenu.java	257	TreasureRun ルールブック
+src/main/java/plugin/GameMenu.java	258	TreasureRun Rule Book
+src/main/java/plugin/GameMenu.java	287	📖 ルールブックをホットバーに配布しました。
+src/main/java/plugin/GameMenu.java	288	（この本を右クリックすると ★Latest を保存できます）
+src/main/java/plugin/GameMenu.java	296	📌 Contents\n\n
+src/main/java/plugin/GameMenu.java	299	1) Rules / ルール\n
+src/main/java/plugin/GameMenu.java	300	  ・How to play\n\n
+src/main/java/plugin/GameMenu.java	302	2) Tips / ヒント\n
+src/main/java/plugin/GameMenu.java	303	  ・Score & route\n\n
+src/main/java/plugin/GameMenu.java	305	3) Quote Collection\n
+src/main/java/plugin/GameMenu.java	306	  ・Saved on SUCCESS / TIME_UP\n
+src/main/java/plugin/GameMenu.java	307	  ・Language: 
+src/main/java/plugin/GameMenu.java	309	4) Favorites\n
+src/main/java/plugin/GameMenu.java	310	  ・Your ★ saved quotes\n\n
+src/main/java/plugin/GameMenu.java	312	Hint: /gameMenu で再度開けます
+src/main/java/plugin/GameMenu.java	354	📖 Quote Collection\n\n
+src/main/java/plugin/GameMenu.java	363	 = 完走 / 成功\n
+src/main/java/plugin/GameMenu.java	363	■ SUCCESS
+src/main/java/plugin/GameMenu.java	364	 = 時間切れ\n
+src/main/java/plugin/GameMenu.java	364	■ TIME_UP
+src/main/java/plugin/GameMenu.java	365	 = ★保存した格言\n\n
+src/main/java/plugin/GameMenu.java	365	■ Favorites
+src/main/java/plugin/GameMenu.java	367	Stored in MySQL DB:\n
+src/main/java/plugin/GameMenu.java	368	- proverb_logs (history)\n
+src/main/java/plugin/GameMenu.java	369	- proverb_favorites (★)\n\n
+src/main/java/plugin/GameMenu.java	371	※ Minecraftの本は\n
+src/main/java/plugin/GameMenu.java	372	クリックで切替できないので\n
+src/main/java/plugin/GameMenu.java	373	「セクション」形式で収録します。\n\n
+src/main/java/plugin/GameMenu.java	375	Tip: この本を右クリックで\n
+src/main/java/plugin/GameMenu.java	376	★Latest を保存できます。
+src/main/java/plugin/GameMenu.java	395	📖 Quote Collection\n\n
+src/main/java/plugin/GameMenu.java	396	No data.
+src/main/java/plugin/GameMenu.java	406	【outcome / difficulty / lang】\nquote
+src/main/java/plugin/GameMenu.java	413	[GameMenu] Failed to load Quote Collection from DB: 
+src/main/java/plugin/GameMenu.java	418	📖 Quote Collection\n\n
+src/main/java/plugin/GameMenu.java	420	Recent 20  |  lang: 
+src/main/java/plugin/GameMenu.java	424	まだ格言ログがありません。\n
+src/main/java/plugin/GameMenu.java	425	SUCCESS / TIME_UP で\n
+src/main/java/plugin/GameMenu.java	426	自動で保存されます。\n\n
+src/main/java/plugin/GameMenu.java	427	（DB: proverb_logs）
+src/main/java/plugin/GameMenu.java	461	このタブには表示できる格言がありません。\n
+src/main/java/plugin/GameMenu.java	462	（まだ保存されていない可能性があります）\n\n
+src/main/java/plugin/GameMenu.java	463	別タブも見てみてください。
+src/main/java/plugin/GameMenu.java	526	★#id\n【...】\nquote
+src/main/java/plugin/GameMenu.java	537	★ Favorites\n\n
+src/main/java/plugin/GameMenu.java	538	No data.
+src/main/java/plugin/GameMenu.java	551	[GameMenu] Failed to load Favorites from DB: 
+src/main/java/plugin/GameMenu.java	556	★ Favorites\n\n
+src/main/java/plugin/GameMenu.java	558	Latest 20  |  lang: 
+src/main/java/plugin/GameMenu.java	562	まだ★お気に入りがありません。\n\n
+src/main/java/plugin/GameMenu.java	563	本を右クリックすると\n
+src/main/java/plugin/GameMenu.java	564	★Latest を保存できます。\n\n
+src/main/java/plugin/GameMenu.java	565	（DB: proverb_favorites）
+src/main/java/plugin/GameMenu.java	624	★ Latest\n
+src/main/java/plugin/GameMenu.java	673	▶ [ALL]
+src/main/java/plugin/GameMenu.java	674	▶ [SUCCESS]
+src/main/java/plugin/GameMenu.java	675	▶ [TIME_UP]
+src/main/java/plugin/GameMenu.java	676	▶ [FAVORITES]
+src/main/java/plugin/GameMenu.java	728	【SUCCESS / Normal / ja】\nThe sky didn’t change.\nYou did.
+src/main/java/plugin/GameMenu.java	729	★#1\n【SUCCESS / Normal / ja】\nThe sky didn’t change.\nYou did.
+src/main/java/plugin/GameStageManager.java	122	🌊 Backup 海探索で海を検出しました
+src/main/java/plugin/GameStageManager.java	575	Treasure Shop
+src/main/java/plugin/GameStageManager.java	666	&6特製エメラルド
+src/main/java/plugin/GameStageManager.java	699	InventoryClickEvent fired
+src/main/java/plugin/GameStageManager.java	712	items current=
+src/main/java/plugin/GameStageManager.java	713	 / cursor=
+src/main/java/plugin/GameStageManager.java	716	RETURN: whoClicked is not Player
+src/main/java/plugin/GameStageManager.java	723	RETURN: topInventory is not MERCHANT
+src/main/java/plugin/GameStageManager.java	729	RETURN: not result slot. expected rawSlot=2 but was 
+src/main/java/plugin/GameStageManager.java	730	, shift=
+src/main/java/plugin/GameStageManager.java	735	RETURN: topInventory is MERCHANT but not MerchantInventory instance
+src/main/java/plugin/GameStageManager.java	741	merchant view title=
+src/main/java/plugin/GameStageManager.java	747	treasure shop
+src/main/java/plugin/GameStageManager.java	748	RETURN: not Treasure Shop title. plainTitle=
+src/main/java/plugin/GameStageManager.java	755	RETURN: current item is null
+src/main/java/plugin/GameStageManager.java	759	RETURN: current item is AIR
+src/main/java/plugin/GameStageManager.java	763	RETURN: current item is not GOLDEN_APPLE. type=
+src/main/java/plugin/GameStageManager.java	771	RETURN: game is not running
+src/main/java/plugin/GameStageManager.java	783	ingredients snapshot
+src/main/java/plugin/GameStageManager.java	791	RETURN: ingredient check failed (need TreasureEmerald>=5 and slot1 empty)
+src/main/java/plugin/GameStageManager.java	795	OK: passed all checks -> scheduling effect with runTaskLater
+src/main/java/plugin/GameStageManager.java	798	RUN: runTaskLater executed
+src/main/java/plugin/GameStageManager.java	801	RETURN(LATER): game is not running
+src/main/java/plugin/GameStageManager.java	805	RETURN(LATER): player is offline
+src/main/java/plugin/GameStageManager.java	811	RETURN(LATER): openInventory/topInventory is null
+src/main/java/plugin/GameStageManager.java	815	RETURN(LATER): topInventory is not MERCHANT. type=
+src/main/java/plugin/GameStageManager.java	822	treasure shop
+src/main/java/plugin/GameStageManager.java	823	RETURN(LATER): not Treasure Shop title. plainTitle=
+src/main/java/plugin/GameStageManager.java	827	OK(LATER): playing effects now
+src/main/java/plugin/GameStageManager.java	830	&6&lKöllun úr djúpinu
+src/main/java/plugin/GameStageManager.java	846	Trade complete!
+src/main/java/plugin/GameStageManager.java	847	A hidden power awakens…
+src/main/java/plugin/I18n.java	61	(messages.yml not loaded)
+src/main/java/plugin/I18n.java	82	(Translation missing: 
+src/main/java/plugin/I18n.java	107	(Translation missing: 
+src/main/java/plugin/LanguageConfigStore.java	19	Click to select
+src/main/java/plugin/LanguageConfigStore.java	29	[TreasureRun][Lang] config.yml に 'language:' セクションが見つかりません。
+src/main/java/plugin/LanguageConfigStore.java	76	Click to select
+src/main/java/plugin/LanguageConfigStore.java	85	[TreasureRun][Lang] default=
+src/main/java/plugin/LanguageSelectGui.java	29	Language / 言語
+src/main/java/plugin/LanguageSelectGui.java	61	許可言語が多いため、GUIには先頭 27 件のみ表示します。
+src/main/java/plugin/LanguageSelectGui.java	86	Click to select
+src/main/java/plugin/LanguageSelectGui.java	147	言語選択をキャンセルしました。もう一度やる場合は 
+src/main/java/plugin/LanguageSelectGui.java	148	/gameStart <easy|normal|hard>
+src/main/java/plugin/LanguageSelectGui.java	149	 または 
+src/main/java/plugin/LanguageSelectGui.java	149	/gamestart <easy|normal|hard>
+src/main/java/plugin/LanguageSelectGui.java	150	 を実行してね。
+src/main/java/plugin/LanguageStore.java	19	Click to select
+src/main/java/plugin/LanguageStore.java	33	[TreasureRun][Lang] config.yml に 'language:' セクションが見つかりません。
+src/main/java/plugin/LanguageStore.java	92	[TreasureRun][Lang] 無効なMaterial: lang=
+src/main/java/plugin/LanguageStore.java	96	[TreasureRun][Lang] 'language.iconMaterial:' セクションが見つかりません（全部PAPERになります）
+src/main/java/plugin/LanguageStore.java	100	Click to select
+src/main/java/plugin/LanguageStore.java	111	[TreasureRun][Lang] default=
+src/main/java/plugin/MySQLManager.java	62	[EnemyDown] MySQL に接続しました（JDBC + MyBatis）
+src/main/java/plugin/MySQLManager.java	69	[EnemyDown] MySQL接続に失敗しました: 
+src/main/java/plugin/MySQLManager.java	86	[EnemyDown] MySQL接続を切断しました。
+src/main/java/plugin/MySQLManager.java	88	[EnemyDown] MySQL切断に失敗しました: 
+src/main/java/plugin/MySQLManager.java	121	[MySQLManager] player_score テーブルを確認・作成しました ✅
+src/main/java/plugin/MySQLManager.java	123	[MySQLManager] player_score テーブル作成に失敗しました ❌: 
+src/main/java/plugin/MySQLManager.java	133	[MySQLManager] MySQL 接続テスト成功 ✅
+src/main/java/plugin/MySQLManager.java	138	[MySQLManager] player_score テーブルの行数: 
+src/main/java/plugin/MySQLManager.java	143	[MySQLManager] MySQL 接続できていません ❌
+src/main/java/plugin/MySQLManager.java	147	[MySQLManager] player_score テーブルが存在しない可能性があります ❌
+src/main/java/plugin/MySQLManager.java	155	[EnemyDown] MySQL は接続されています。
+src/main/java/plugin/MySQLManager.java	157	[EnemyDown] MySQL は接続されていません。
+src/main/java/plugin/OutcomeMessageService.java	94	Light fell evenly, ,\nand every shadow vanished.\n（光が等しく降り注ぎ、すべての影が消えた。）
+src/main/java/plugin/OutcomeMessageService.java	95	The wind fell silent.\nand everything returned to where it belonged.\n（風が止み、あるべき場所に、あるべきものが戻った。）
+src/main/java/plugin/OutcomeMessageService.java	96	A moment of silence.\nThe world steadied its breath.\n（一瞬の静寂。世界がその呼吸を整えた。）
+src/main/java/plugin/OutcomeMessageService.java	97	The record is etched deep in the sand—\nbeyond the reach of the wind.\n（記録は砂に深く刻まれ、風もそれを動かせない。）
+src/main/java/plugin/OutcomeMessageService.java	98	Harmony was restored.\nEverything had been for this moment.\n（調和が訪れた。すべては、この瞬間のためにあった。）
+src/main/java/plugin/OutcomeMessageService.java	102	Time slipped by in silence,\ntucked away in the corners of memory.\n（時間は静かに流れ、記憶の隅に収まった。）
+src/main/java/plugin/OutcomeMessageService.java	103	The sky shifted in color,\nand one story came to its end.\n（空の色が変わり、一つの物語が完結を告げた。）
+src/main/java/plugin/OutcomeMessageService.java	104	The waves grew calm,\nand the sea hid its depths once more.\n（波は穏やかになり、海は再びその深淵を隠した。）
+src/main/java/plugin/OutcomeMessageService.java	105	The footsteps stopped,\nand only the place remained.\n（歩みは止まり、場所だけがそこに残された。）
+src/main/java/plugin/OutcomeMessageService.java	109	The sun sank,\nand shadow covered the world once again.\n（日は落ち、影は再び世界を覆った。）
+src/main/java/plugin/OutcomeMessageService.java	110	The last grains of sand fell,\nand the story quietly came to a close.\n（砂はすべて落ちきり、物語は静かに幕を閉じた。）
+src/main/java/plugin/OutcomeMessageService.java	111	The wind swept through,\nand the footprints vanished without a trace.\n（風が吹き抜け、足跡は跡形もなく消え去った。）
+src/main/java/plugin/OutcomeMessageService.java	112	The tide came in,\nWhat once had been there returned to the sea.\n（潮が満ちた。かつてそこにあったものは、海へと還った。）
+src/main/java/plugin/OutcomeMessageService.java	113	Silence.\nOnly time passed through.\n（沈黙。ただ、時間だけがそこを通り過ぎた。）
+src/main/java/plugin/OutcomeMessageService.java	117	Perfect balance.\nThe scales held level.\n（等価の均衡。天秤は水平を保った。）
+src/main/java/plugin/OutcomeMessageService.java	118	Things changed,\ntaking on new forms as they carried on.\n（物事は移ろい、形を変えて引き継がれた。）
+src/main/java/plugin/OutcomeMessageService.java	119	There was no dialogue\n—only an exchange of facts.\n（対話はなく、ただ事実としての交換が行われた。）
+src/main/java/plugin/OutcomeMessageService.java	123	Victory and defeat \nare nothing more than grains of sand.\n（勝利も敗北も、同じ砂の一粒に過ぎない。）
+src/main/java/plugin/OutcomeMessageService.java	124	The road goes on—or it ends.\nEither way, it lies on the same earth.\n（道は続き、あるいは途切れ、どちらも同じ大地の上にある。）
+src/main/java/plugin/OutcomeMessageService.java	128	Distance became meaning.\nTime answered your steps.\n（距離が意味になった。時間があなたの歩みに答えた。）
+src/main/java/plugin/OutcomeMessageService.java	129	Time ran out.\nNothing else did.\n（時間は終わった。ほかは終わっていない。）
+src/main/java/plugin/OutcomeMessageService.java	130	The center was found.\nThe world came to rest.\n（軸(中心)は見出された。世界はその運動を止めた。）
+src/main/java/plugin/OutcomeMessageService.java	131	The glass didn’t break.\nNeither did you.\n（ガラスは割れなかった。あなたも折れなかった。）
+src/main/java/plugin/OutcomeMessageService.java	132	Beneath a quiet sky,\nyour will held firm.\n（静かな空の下で、意志は持ちこたえた。）
+src/main/java/plugin/OutcomeMessageService.java	133	Very little shines forever\n—but this moment was different.\n（永遠に輝くものなんてほとんどないけれど、この瞬間は別格だった。）
+src/main/java/plugin/OutcomeMessageService.java	134	You made it across the fragile ground,\nholding fast to the horizon the whole way.\n（脆い地面を渡り切った。地平線景色をしっかりと握りしめたまま。）
+src/main/java/plugin/OutcomeMessageService.java	135	The moment passed.\n What remained was the record—the achievement.\n（瞬間は過ぎ去った。遺されたもの記録・功績は残る。）
+src/main/java/plugin/OutcomeMessageService.java	136	Luck fades quickly.\nOrder endures.\n（運は速やかに消え、整い秩序は永続する。）
+src/main/java/plugin/OutcomeMessageService.java	137	The sky knows no rest in its endless cycle.\nNeither do you.\n（空はその終わりなき循環に休止を知らぬ。汝もまた、止まらず。）
+src/main/java/plugin/OutcomeMessageService.java	138	The center was reached.\nThe world stood still.\n（中心は到達された。世界は立ち尽くし静止した。）
+src/main/java/plugin/OutcomeMessageService.java	140	At last,you’ve made it here.\nThe truth stands—unbowed.\n（ついに、ここへ辿り着いた。真実は屈することなく、そこに在る。）
+src/main/java/plugin/OutcomeMessageService.java	141	Complete. This path was yours\n—and yours alone.\n（完遂。この道を選んだのは他でもないあなただ。）
+src/main/java/plugin/OutcomeMessageService.java	143	Time drifted into silence,\nand found its place in the deepest corners of the mind.\n（時は静寂へと漂い、精神の奥底の隅に自らの居場所を見つけた。）
+src/main/java/plugin/OutcomeMessageService.java	144	As the sky shifted,\none story found its final resolution.\n（空が姿を変えるとともに、一つの物語はその最終的な解決完結を見出した。）
+src/main/java/plugin/OutcomeMessageService.java	145	The waves fell quiet,\nand the sky hid its depths once more.\n（波は静まり、空は再びその深淵を覆い隠した。）
+src/main/java/plugin/OutcomeMessageService.java	146	The footsteps ceased,\nand only the place remained.\n（歩みは途絶え、ただ場所だけがそこに在り続けた。）
+src/main/java/plugin/OutcomeMessageService.java	160	You’ve made it.\nThe truth remains.\n（たどり着いた。正さはそのままに。）
+src/main/java/plugin/OutcomeMessageService.java	161	Even if it was only a small step,\nyou held your ground.\n（小さな一歩でも、あなたは守り抜いた。）
+src/main/java/plugin/OutcomeMessageService.java	162	You listened.\n The path opened.\n（耳を澄ませた。道がひらいた。）
+src/main/java/plugin/OutcomeMessageService.java	164	> You made it here\n
+src/main/java/plugin/OutcomeMessageService.java	166	> The rules were simple —\n
+src/main/java/plugin/OutcomeMessageService.java	168	> the choice was yours.\n
+src/main/java/plugin/OutcomeMessageService.java	170	（あなたは辿り着いた。\n
+src/main/java/plugin/OutcomeMessageService.java	172	ルールは単純だった。\n
+src/main/java/plugin/OutcomeMessageService.java	174	選んだのは、あなた自身。）
+src/main/java/plugin/OutcomeMessageService.java	176	> Distance became meaning.\n
+src/main/java/plugin/OutcomeMessageService.java	178	> and time answered your footsteps.\n
+src/main/java/plugin/OutcomeMessageService.java	180	（距離が意味になり、\n
+src/main/java/plugin/OutcomeMessageService.java	182	時間があなたの足取りに応えた。）
+src/main/java/plugin/OutcomeMessageService.java	184	> Not everything shines forever.\n
+src/main/java/plugin/OutcomeMessageService.java	186	> But this moment did.\n
+src/main/java/plugin/OutcomeMessageService.java	188	（すべてが永遠に輝くわけじゃない。\n
+src/main/java/plugin/OutcomeMessageService.java	190	でも、この瞬間はそうだった。）
+src/main/java/plugin/OutcomeMessageService.java	223	The distance has found its meaning.\nTime has rewarded your journey.\n（距離が意味になった。時間があなたの歩みに答えた。）
+src/main/java/plugin/OutcomeMessageService.java	224	The time is up.\nbut the rest is far from over.\n（時間は終わった。ほかは終わっていない。）
+src/main/java/plugin/OutcomeMessageService.java	225	The axis is found.\nthe world has cased its motion.\n（軸(中心)は見出された。世界はその運動を止めた。）
+src/main/java/plugin/OutcomeMessageService.java	226	The glass held its breath,\nand you held your ground.\n（ガラスは割れなかった。あなたも折れなかった。）
+src/main/java/plugin/OutcomeMessageService.java	227	Under the stillness of the sky,\nyour spirit did not waver.\n（静かな空の下で、意志は持ちこたえた。）
+src/main/java/plugin/OutcomeMessageService.java	228	Few things shine forever.\nbut this moment was radiant.\n（永遠に輝くものなんてほとんどないけれど、この瞬間は別格だった。）
+src/main/java/plugin/OutcomeMessageService.java	229	You traversed the fragile earth,\nwithout losing the view.\n（脆い地面を渡り切った。地平線景色をしっかりと握りしめたまま。）
+src/main/java/plugin/OutcomeMessageService.java	230	The moment has passed.\nThe legacy remains.\n（瞬間は過ぎ去った。遺されたもの記録・功績は残る。）
+src/main/java/plugin/OutcomeMessageService.java	231	Luck fades fast.\norder endures.\n（運は速やかに消え、整い秩序は永続する。）
+src/main/java/plugin/OutcomeMessageService.java	232	The sky knows no pause in endless circle,\nnor shall you find yours.\n（空はその終わりなき循環に休止を知らぬ。汝もまた、止まらず。）
+src/main/java/plugin/OutcomeMessageService.java	233	The center has been reached.\nThe world stood still.\n（中心は到達された。世界は立ち尽くし静止した。）
+src/main/java/plugin/OutcomeMessageService.java	235	Finally here.\nThe truth remains unyielding.\n（ついに、ここへ辿り着いた。真実は屈することなく、そこに在る。）
+src/main/java/plugin/OutcomeMessageService.java	236	You have seen it through.\nAnd mark this: it was you, and no one else, who chose this path.\n（完遂。この道を選んだのは他でもないあなただ。）
+src/main/java/plugin/OutcomeMessageService.java	239	Time drifted into silence,\nfinding its place in the recesses of the mind.\n（時は静寂へと漂い、精神の奥底の隅に自らの居場所を見つけた。）
+src/main/java/plugin/OutcomeMessageService.java	240	As the sky transformed,\nthe tale found its final resolved.\n（空が姿を変えるとともに、一つの物語はその最終的な解決完結を見出した。）
+src/main/java/plugin/OutcomeMessageService.java	241	The waters fell calm,\nand the sky once more veiled its abyss.\n（波は静まり、空は再びその深淵を覆い隠した。）
+src/main/java/plugin/OutcomeMessageService.java	242	The footsteps ceased,\nonly the place remained.\n（歩みは途絶え、ただ場所だけがそこに在り続けた。）
+src/main/java/plugin/OutcomeMessageService.java	252	RUN COMPLETE.\nClear. Found it.\nThat's enough.\n（クリア。見つけた。それで十分。）
+src/main/java/plugin/OutcomeMessageService.java	253	RUN COMPLETE.\nThe path held.\nSo did you.\n（道は持ちこたえた。あなたも同じ。）
+src/main/java/plugin/OutcomeMessageService.java	254	The sky has kept moving.\nSo can you.\n（空はずっと歩み続けていた。あなたも進み続けられる。）
+src/main/java/plugin/OutcomeMessageService.java	255	RUN COMPLETE.\nA quiet result.\nThe weight of real work.\n（静かな結果。本物の積み重ね。）
+src/main/java/plugin/OutcomeMessageService.java	258	You only walked the path\nthe world had laid out for you.\n（世界が用意していた道を、あなたは歩いただけ。）
+src/main/java/plugin/OutcomeMessageService.java	259	The ground didn’t give way.\nIt trusted your steps.\n（大地は壊れなかった。あなたの足取りを、信じていた。）
+src/main/java/plugin/OutcomeMessageService.java	260	This moment aligned\nwith the stars’ ancient rhythm.\n（この瞬間は、星々の長いリズムと重なった。）
+src/main/java/plugin/OutcomeMessageService.java	261	You didn’t take anything.\n You understood something.\n（何かを奪ったわけじゃない。何かを、理解した。）
+src/main/java/plugin/OutcomeMessageService.java	262	You didn’t gain a thing.\nYou only saw the truth for what it was.\n（手に入れたのは何かではない。真実を、見抜いただけだ。）
+src/main/java/plugin/OutcomeMessageService.java	263	You didn’t take this place.\nYou belonged here.\n（征服したのではない。ここに、属していた。）
+src/main/java/plugin/OutcomeMessageService.java	266	You walked a road\nolder than memory itself.\n（記憶より古い道を、あなたは辿った。）
+src/main/java/plugin/OutcomeMessageService.java	267	The earth did not resist.\nIt recognized you.\n（大地は抗わず、あなたを認識した。）
+src/main/java/plugin/OutcomeMessageService.java	268	This moment aligned\n with the stillness of the stars.\n（この瞬間は、星々の静けさと重なった。）
+src/main/java/plugin/OutcomeMessageService.java	269	No conquest.\nUnderstanding was enough.\n（征服はない。理解で、十分だった。）
+src/main/java/plugin/OutcomeMessageService.java	270	You didn’t claim it.\nYou were already home.\n（ここを奪ったのではない。ここに、属していた。）
+src/main/java/plugin/OutcomeMessageService.java	293	In the north wind,\nclarity outlasts speed.\n（北風の中で、速さより明晰さが生き残る。）
+src/main/java/plugin/OutcomeMessageService.java	294	The center was found.\n The world came to rest.\n（軸(中心)は見出された。世界はその運動を止めた。）
+src/main/java/plugin/OutcomeMessageService.java	295	The stars stay silent.\nYour record does the speaking.\n（星は黙っている。語るのはあなたの記録だ。）
+src/main/java/plugin/OutcomeMessageService.java	296	The result  remained.\nThe position changed.\n（結果は残った。位置は変わった。）
+src/main/java/plugin/OutcomeMessageService.java	297	Between ice and glass,\nyou chose control.\n（氷とガラスのあいだで、あなたは制御を選んだ。）
+src/main/java/plugin/OutcomeMessageService.java	298	The waves fell quiet,\nand the sea reclaimed its hidden depths.\n（波は静まり、海はその隠された深淵を再び自らのものとした。）
+src/main/java/plugin/OutcomeMessageService.java	299	Some treasures still await.\nNext time, a different path.\n（待つ宝もある。次は、別の道を。）
+src/main/java/plugin/OutcomeMessageService.java	300	The sky didn’t change.\nYou did.\n（空は変わらなかった。変わったのはあなた。）
+src/main/java/plugin/OutcomeMessageService.java	301	The moment passed.\nWhat remained was order.\n（瞬間は過ぎた。整いは残った。）
+src/main/java/plugin/OutcomeMessageService.java	302	Winter is honest.\nSo was your run.\n（冬は正直だ。あなたの走りもそうだった。）
+src/main/java/plugin/OutcomeMessageService.java	303	The stars aligned for a moment.\nYou noticed.\n（星は束の間そろった。あなたはそれに気づいた。）
+src/main/java/plugin/OutcomeMessageService.java	305	The distance closed.\nTime did not.\n（距離は縮んでいた。時間は縮まらなかった。）
+src/main/java/plugin/OutcomeMessageService.java	306	The world’s rules stood firm.\n And the signal of possibility was real.\n（世界のルールは、厳然としてそこにあった。可能性（信号）は本物だった。）
+src/main/java/plugin/OutcomeMessageService.java	307	The path closed quietly.\nYou were already through.\n（道は静かに閉じた。あなたはもう抜けていた。）
+src/main/java/plugin/OutcomeMessageService.java	309	Nothing changed.\nOnly your position did.\n（何も変わらない。ただ、あなたの位置だけが変わった。）
+src/main/java/plugin/OutcomeMessageService.java	310	Not luck.\nAlignment.\n（運じゃない。整いだ。）
+src/main/java/plugin/OutcomeMessageService.java	311	The moment passed.\nThe record remains.\n（瞬間は過ぎた。記録は残る。）
+src/main/java/plugin/OutcomeMessageService.java	313	The outcome didn’t change.\nStill, you moved forward.\n（結果に違いはなかった。それでも、あなたは前に進んだ。）
+src/main/java/plugin/OutcomeMessageService.java	314	The output didn’t change.\nBut you reached a new level.\n（出力は変わらないままだが、あなたは新しいレベルに到達した。）
+src/main/java/plugin/OutcomeMessageService.java	315	The ending was the same.\nBut the one who reached it had changed.\n（結末は同じだが、そこに辿り着いた人間は変わった。）
+src/main/java/plugin/OutcomeMessageService.java	316	The destination is the same\n—but you’re no longer the traveler you once were.\n（目的地は同じだが、あなたはもう以前と同じ旅人ではない。）
+src/main/java/plugin/OutcomeMessageService.java	336	> Distance became meaning,\n
+src/main/java/plugin/OutcomeMessageService.java	338	> and time answered your footsteps.\n
+src/main/java/plugin/OutcomeMessageService.java	340	（距離が意味になり、\n
+src/main/java/plugin/OutcomeMessageService.java	342	時間があなたの足取りに応えた。）
+src/main/java/plugin/OutcomeMessageService.java	344	> Not everything shines forever.\n
+src/main/java/plugin/OutcomeMessageService.java	346	> But this moment did.\n
+src/main/java/plugin/OutcomeMessageService.java	348	（すべてが永遠に輝くわけじゃない。\n
+src/main/java/plugin/OutcomeMessageService.java	350	でも、この瞬間はそうだった。）
+src/main/java/plugin/OutcomeMessageService.java	361	Run complete.
+src/main/java/plugin/OutcomeMessageService.java	376	Time ran out.\nNothing else did.\n（時間は終わった。ほかは終わっていない。）
+src/main/java/plugin/OutcomeMessageService.java	377	The treasure can wait.\nSo can you.\n（宝は待っている。あなたも待てる。）
+src/main/java/plugin/OutcomeMessageService.java	378	Breathe in.\nThen again.\n（息をして。もう一度。）
+src/main/java/plugin/OutcomeMessageService.java	379	That’s all for now.\nOn to the next step.\n（今回はここまで。次の一歩へ。）
+src/main/java/plugin/OutcomeMessageService.java	380	You're still here.\nThat’s what matters.\n（まだここにいる。それが大事。）
+src/main/java/plugin/OutcomeMessageService.java	381	The run ended.\nYou didn’t.\n（走りは止まった。あなたは止まっていない。）
+src/main/java/plugin/OutcomeMessageService.java	383	TIME'S UP.\nThe run ended.\nYou didn't.\n（時間は止まった。でも、あなたは止まっていない。）
+src/main/java/plugin/OutcomeMessageService.java	384	TIME'S UP.\nThe rules don’t change.\nAgain.\n（ルールは変わらない。もう一度。）
+src/main/java/plugin/OutcomeMessageService.java	385	TIME'S UP.\n“So close” is real.\n（惜しい、は本物だ。）
+src/main/java/plugin/OutcomeMessageService.java	411	The distance closed.\nTime did not.\n（距離は縮んだ。時間は縮まらなかった。）
+src/main/java/plugin/OutcomeMessageService.java	412	The world kept its rules.\nYou touched the edge.\n（世界はルールを守った。あなたは境界に触れた。）
+src/main/java/plugin/OutcomeMessageService.java	413	You didn’t make it.\nBut the signal was real.\n（届かなかった。でも合図は本物だった。）
+src/main/java/plugin/OutcomeMessageService.java	414	Some treasures still await.\nLet’s try a different path.\n（待つ宝もある。別の道を試そう。）
+src/main/java/plugin/OutcomeMessageService.java	415	The result remained.\nThe position changed.\n（結果は残った。位置は変わった。）
+src/main/java/plugin/OutcomeMessageService.java	416	Time ran out.\nMeaning didn't.\n（時間は終わった。意味は終わっていない。）
+src/main/java/plugin/OutcomeMessageService.java	417	 So close.\nThe sound said so.\n（惜しかった。音がそう言っていた。）
+src/main/java/plugin/OutcomeMessageService.java	418	The map is still open.\nCome back to it.\n（地図は開いたまま。戻っておいで。）
+src/main/java/plugin/OutcomeMessageService.java	420	The world’s rules stood firm.\nThe signal of possibility was real.\n（世界のルールは厳然としてそこにあった。可能性（信号）は本物だった。）
+src/main/java/plugin/OutcomeMessageService.java	422	The world kept its rules.\n（世界はルールを守った。）
+src/main/java/plugin/OutcomeMessageService.java	423	The moment passed.\nThe record remains.\n（瞬間は過ぎた。記録は残る。）
+src/main/java/plugin/OutcomeMessageService.java	437	> Time ran out.\n
+src/main/java/plugin/OutcomeMessageService.java	439	> Nothing else did.\n
+src/main/java/plugin/OutcomeMessageService.java	441	（時間は終わった。\n
+src/main/java/plugin/OutcomeMessageService.java	443	それ以外は、終わっていない。）
+src/main/java/plugin/OutcomeMessageService.java	445	> The outcome didn’t change.\n
+src/main/java/plugin/OutcomeMessageService.java	447	> But your position did.\n
+src/main/java/plugin/OutcomeMessageService.java	449	（結果は変わらなかった。\n
+src/main/java/plugin/OutcomeMessageService.java	451	でも、あなたの位置は変わった。）
+src/main/java/plugin/OutcomeMessageService.java	466	Even the aurora fades.\nCome back with a new stride.\n（オーロラでさえ消える。新しい歩みで戻れ。）
+src/main/java/plugin/OutcomeMessageService.java	467	In a fragile world,\nhaste shatters clarity before it can be found.\n（脆い世界では、焦りが明晰さの発見を壊してしまう。）
+src/main/java/plugin/OutcomeMessageService.java	468	The moment slipped away.\nThe meaning did not.\n（逃したのは瞬間。意味ではない。）
+src/main/java/plugin/OutcomeMessageService.java	469	Winter is patient.\nBe the same.\n（冬は忍耐強い。あなたもそうであれ。）
+src/main/java/plugin/OutcomeMessageService.java	470	The sky kept moving.\nSo will you.\n（空は進み続けた。あなたも進む。）
+src/main/java/plugin/OutcomeMessageService.java	471	The story moves on.\nThe end is not yet.\n（叙事は頁をめくる。これは最後じゃない。）
+src/main/java/plugin/OutcomeMessageService.java	472	The stars were there, watching.\nAgain.\n（星は見守っていた。もう一度。）
+src/main/java/plugin/OutcomeMessageService.java	473	Ice takes its time.\nNeither do you.\n（氷は急がない。あなたも急ぐ必要はない。）
+src/main/java/plugin/OutcomeMessageService.java	474	The sky kept moving.\nSo can you.\n（空は動き続けた。あなたも動き続けられる。）
+src/main/java/plugin/OutcomeMessageService.java	475	The north has learned to wait.\nSo should you.\n（北は『待つこと』を覚えている。そこから学べ。）
+src/main/java/plugin/OutcomeMessageService.java	476	This is an interlude\n—It’s not over.\n（これは休止だ。終わりじゃない。）
+src/main/java/plugin/OutcomeMessageService.java	478	Like drifting clouds,\ndon’t lose your flow—like a river.\n（雲が動き続けるように。川のように、流れを失わないで。）
+src/main/java/plugin/OutcomeMessageService.java	480	The sound was near.\nThe distance was real.\nBut that moment can’t be saved.\n（音は近かった。距離は本物だった。でも、その瞬間は保存できない。）
+src/main/java/plugin/OutcomeMessageService.java	481	You were closing in.\nOnly time wasn’t.\n（近づいていた。時間だけが近づかなかった。）
+src/main/java/plugin/OutcomeMessageService.java	482	The world held to its rules.\nYou touched the edge of them.\n（世界はルールを守った。あなたはその縁に触れた。）
+src/main/java/plugin/OutcomeMessageService.java	483	You didn’t reach the treasure. \nBut the signal was real.\n（宝には届かなかった。でも合図は本物だった。）
+src/main/java/plugin/OutcomeMessageService.java	485	Nothing changed.\nOnly your position did.\n（何も変わらない。ただ、あなたの位置だけが変わった。）
+src/main/java/plugin/OutcomeMessageService.java	486	It wasn’t luck.\nAlignment.\n（運じゃない。整いだ。）
+src/main/java/plugin/OutcomeMessageService.java	487	The moment slipped away,\nbut the record stayed.\n（瞬間は過ぎた。記録は残る。）
+src/main/java/plugin/OutcomeMessageService.java	489	You crossed fragile ground\nand left the horizon unbroken.\n（脆い地面を渡った。視界（景色）を壊さずに。）
+src/main/java/plugin/OutcomeMessageService.java	491	Nothing changed.\n Only your position did.\nNot luck.\nAlignment.\nThe moment passed.\nThe record remains.\n
+src/main/java/plugin/OutcomeMessageService.java	492	（何も変わらない。ただ、あなたの位置だけが変わった。\n運じゃない。整いだ。\n瞬間は過ぎた。記録は残る。）
+src/main/java/plugin/OutcomeMessageService.java	506	The season closed.\nThe land remained.\n（季節は閉じた。大地は、残っている。）
+src/main/java/plugin/OutcomeMessageService.java	507	The path The path remains.\nOnly your steps stopped.\n（道は、まだそこにある。あなたが歩みを止めただけ。）
+src/main/java/plugin/OutcomeMessageService.java	508	Your time ran out.\nThe sky didn’t.\n（あなたの時間は終わった。空は、終わっていない。）
+src/main/java/plugin/OutcomeMessageService.java	509	It wasn’t rejection.\nOnly silence.\n（拒絶ではない。ただ、沈黙だった。）
+src/main/java/plugin/OutcomeMessageService.java	510	The world is still intact.\nYou can return—changed.\n（世界は形を保っている。変わったあなたで、戻れる。）
+src/main/java/plugin/OutcomeMessageService.java	513	The season ended.\nThe forest remains.\n（季節は終わった。森は、残っている。）
+src/main/java/plugin/OutcomeMessageService.java	514	The distance was closing.\nTime kept its rhythm.\n（距離は縮んでいた。時間は、リズムを保った。）
+src/main/java/plugin/OutcomeMessageService.java	515	Your time came to a halt.\nThe sky kept moving.\n（あなたの時間は止まった。空は、止まらなかった。）
+src/main/java/plugin/OutcomeMessageService.java	516	Not rejection\nJust silence.\n（拒絶ではない。ただの、沈黙。）
+src/main/java/plugin/OutcomeMessageService.java	517	The path is still here.\nYou can come back—changed.\n（道は、まだここにある。違うあなたで、戻れる。）
+src/main/java/plugin/OutcomeMessageService.java	527	Time's up.
+src/main/java/plugin/OutcomeMessageService.java	557	Perfect equilibrium.\nThe scales held level.\n（等価の均衡。天秤は水平を保った。）
+src/main/java/plugin/OutcomeMessageService.java	580	Run complete.
+src/main/java/plugin/OutcomeMessageService.java	589	Run complete.
+src/main/java/plugin/PlayerLanguageStore.java	44	[PlayerLanguageStore] Failed to create/load player_languages.yml: 
+src/main/java/plugin/PlayerLanguageStore.java	85	[PlayerLanguageStore] Failed to save player_languages.yml: 
+src/main/java/plugin/ProverbLogRepository.java	21	Proverb logged to MySQL: proverb_logs
+src/main/java/plugin/ProverbLogRepository.java	22	Failed to log proverb to MySQL: proverb_logs
+src/main/java/plugin/ProverbLogRepository.java	23	Loaded proverb logs from MySQL: proverb_logs
+src/main/java/plugin/ProverbLogRepository.java	24	Failed to load proverb logs from MySQL: proverb_logs
+src/main/java/plugin/ProverbLogRepository.java	54	[ProverbLog] Table not created: MySQL connection is null.
+src/main/java/plugin/ProverbLogRepository.java	59	CREATE TABLE IF NOT EXISTS proverb_logs (
+src/main/java/plugin/ProverbLogRepository.java	60	id INT NOT NULL AUTO_INCREMENT, 
+src/main/java/plugin/ProverbLogRepository.java	61	player_uuid VARCHAR(36) NOT NULL, 
+src/main/java/plugin/ProverbLogRepository.java	62	player_name VARCHAR(64) NOT NULL, 
+src/main/java/plugin/ProverbLogRepository.java	63	outcome VARCHAR(32) NOT NULL, 
+src/main/java/plugin/ProverbLogRepository.java	64	difficulty VARCHAR(16) NOT NULL, 
+src/main/java/plugin/ProverbLogRepository.java	65	lang VARCHAR(16) NOT NULL, 
+src/main/java/plugin/ProverbLogRepository.java	66	quote_text TEXT NOT NULL, 
+src/main/java/plugin/ProverbLogRepository.java	67	created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, 
+src/main/java/plugin/ProverbLogRepository.java	68	PRIMARY KEY (id), 
+src/main/java/plugin/ProverbLogRepository.java	69	INDEX idx_player_uuid_created_at (player_uuid, created_at)
+src/main/java/plugin/ProverbLogRepository.java	70	) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+src/main/java/plugin/ProverbLogRepository.java	74	[ProverbLog] CREATE TABLE IF NOT EXISTS success: proverb_logs
+src/main/java/plugin/ProverbLogRepository.java	77	[ProverbLog] CREATE TABLE IF NOT EXISTS failed: proverb_logs\n
+src/main/java/plugin/ProverbLogRepository.java	95	[ProverbLog] Proverb not logged: MySQL connection is null.
+src/main/java/plugin/ProverbLogRepository.java	99	[ProverbLog] Proverb not logged: UUID is null.
+src/main/java/plugin/ProverbLogRepository.java	103	[ProverbLog] Proverb not logged: quoteText is empty.
+src/main/java/plugin/ProverbLogRepository.java	111	VALUES (?, ?, ?, ?, ?, ?)
+src/main/java/plugin/ProverbLogRepository.java	128	Proverb logged to MySQL: proverb_logs
+src/main/java/plugin/ProverbLogRepository.java	130	, player=
+src/main/java/plugin/ProverbLogRepository.java	131	, outcome=
+src/main/java/plugin/ProverbLogRepository.java	132	, difficulty=
+src/main/java/plugin/ProverbLogRepository.java	133	, lang=
+src/main/java/plugin/ProverbLogRepository.java	139	[ProverbLog] Failed to log proverb to MySQL: proverb_logs
+src/main/java/plugin/ProverbLogRepository.java	141	, player=
+src/main/java/plugin/ProverbLogRepository.java	142	, outcome=
+src/main/java/plugin/ProverbLogRepository.java	143	, difficulty=
+src/main/java/plugin/ProverbLogRepository.java	144	, lang=
+src/main/java/plugin/ProverbLogRepository.java	168	[ProverbLog] Failed to load: MySQL connection is null.
+src/main/java/plugin/ProverbLogRepository.java	172	[ProverbLog] Failed to load: UUID is null.
+src/main/java/plugin/ProverbLogRepository.java	180	FROM proverb_logs 
+src/main/java/plugin/ProverbLogRepository.java	181	WHERE player_uuid = ? 
+src/main/java/plugin/ProverbLogRepository.java	182	ORDER BY created_at DESC 
+src/main/java/plugin/ProverbLogRepository.java	183	LIMIT ?
+src/main/java/plugin/ProverbLogRepository.java	202	Loaded proverb logs from MySQL: proverb_logs
+src/main/java/plugin/ProverbLogRepository.java	203	, count=
+src/main/java/plugin/ProverbLogRepository.java	208	[ProverbLog] Failed to load proverb logs from MySQL: proverb_logs
+src/main/java/plugin/ProverbLogRepository.java	222	[ProverbFav] Table not created: MySQL connection is null.
+src/main/java/plugin/ProverbLogRepository.java	229	CREATE TABLE IF NOT EXISTS 
+src/main/java/plugin/ProverbLogRepository.java	230	id INT NOT NULL AUTO_INCREMENT, 
+src/main/java/plugin/ProverbLogRepository.java	231	player_uuid VARCHAR(36) NOT NULL, 
+src/main/java/plugin/ProverbLogRepository.java	232	quote_hash VARCHAR(64) NOT NULL, 
+src/main/java/plugin/ProverbLogRepository.java	233	outcome VARCHAR(32) NOT NULL, 
+src/main/java/plugin/ProverbLogRepository.java	234	difficulty VARCHAR(16) NOT NULL, 
+src/main/java/plugin/ProverbLogRepository.java	235	lang VARCHAR(16) NOT NULL, 
+src/main/java/plugin/ProverbLogRepository.java	236	quote_text TEXT NOT NULL, 
+src/main/java/plugin/ProverbLogRepository.java	237	created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, 
+src/main/java/plugin/ProverbLogRepository.java	238	PRIMARY KEY (id), 
+src/main/java/plugin/ProverbLogRepository.java	239	UNIQUE KEY uk_player_quote (player_uuid, quote_hash), 
+src/main/java/plugin/ProverbLogRepository.java	240	INDEX idx_player_uuid_created_at (player_uuid, created_at)
+src/main/java/plugin/ProverbLogRepository.java	241	) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+src/main/java/plugin/ProverbLogRepository.java	245	[ProverbFav] CREATE TABLE IF NOT EXISTS success: 
+src/main/java/plugin/ProverbLogRepository.java	248	[ProverbFav] CREATE TABLE IF NOT EXISTS failed: 
+src/main/java/plugin/ProverbLogRepository.java	267	CREATE TABLE IF NOT EXISTS 
+src/main/java/plugin/ProverbLogRepository.java	268	id INT NOT NULL AUTO_INCREMENT, 
+src/main/java/plugin/ProverbLogRepository.java	269	player_uuid VARCHAR(36) NOT NULL, 
+src/main/java/plugin/ProverbLogRepository.java	270	quote_hash VARCHAR(64) NOT NULL, 
+src/main/java/plugin/ProverbLogRepository.java	271	outcome VARCHAR(32) NOT NULL, 
+src/main/java/plugin/ProverbLogRepository.java	272	difficulty VARCHAR(16) NOT NULL, 
+src/main/java/plugin/ProverbLogRepository.java	273	lang VARCHAR(16) NOT NULL, 
+src/main/java/plugin/ProverbLogRepository.java	274	quote_text TEXT NOT NULL, 
+src/main/java/plugin/ProverbLogRepository.java	275	created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, 
+src/main/java/plugin/ProverbLogRepository.java	276	PRIMARY KEY (id), 
+src/main/java/plugin/ProverbLogRepository.java	277	UNIQUE KEY uk_player_quote (player_uuid, quote_hash), 
+src/main/java/plugin/ProverbLogRepository.java	278	INDEX idx_player_uuid_created_at (player_uuid, created_at)
+src/main/java/plugin/ProverbLogRepository.java	279	) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+src/main/java/plugin/ProverbLogRepository.java	283	[ProverbFav] (legacy) Table ready: 
+src/main/java/plugin/ProverbLogRepository.java	302	[ProverbFav] Favorite not saved: MySQL connection is null.
+src/main/java/plugin/ProverbLogRepository.java	306	[ProverbFav] Favorite not saved: UUID is null.
+src/main/java/plugin/ProverbLogRepository.java	310	[ProverbFav] Favorite not saved: quoteText is empty.
+src/main/java/plugin/ProverbLogRepository.java	318	[ProverbFav] Favorite not saved: quote_hash is empty.
+src/main/java/plugin/ProverbLogRepository.java	324	 (player_uuid, quote_hash, outcome, difficulty, lang, quote_text) 
+src/main/java/plugin/ProverbLogRepository.java	325	VALUES (?, ?, ?, ?, ?, ?)
+src/main/java/plugin/ProverbLogRepository.java	338	Favorite saved to MySQL: 
+src/main/java/plugin/ProverbLogRepository.java	340	, outcome=
+src/main/java/plugin/ProverbLogRepository.java	341	, difficulty=
+src/main/java/plugin/ProverbLogRepository.java	342	, lang=
+src/main/java/plugin/ProverbLogRepository.java	350	[ProverbFav] Favorite not saved (maybe duplicate): 
+src/main/java/plugin/ProverbLogRepository.java	364	[ProverbFav] Favorite not removed: MySQL connection is null.
+src/main/java/plugin/ProverbLogRepository.java	368	[ProverbFav] Favorite not removed: UUID is null.
+src/main/java/plugin/ProverbLogRepository.java	372	[ProverbFav] Favorite not removed: favoriteId is invalid.
+src/main/java/plugin/ProverbLogRepository.java	380	WHERE player_uuid = ? AND id = ?
+src/main/java/plugin/ProverbLogRepository.java	389	Favorite removed from MySQL: 
+src/main/java/plugin/ProverbLogRepository.java	390	, id=
+src/main/java/plugin/ProverbLogRepository.java	390	, rows=
+src/main/java/plugin/ProverbLogRepository.java	396	[ProverbFav] Failed to remove favorite: 
+src/main/java/plugin/ProverbLogRepository.java	397	, id=
+src/main/java/plugin/ProverbLogRepository.java	412	[ProverbFav] Failed to load: MySQL connection is null.
+src/main/java/plugin/ProverbLogRepository.java	416	[ProverbFav] Failed to load: UUID is null.
+src/main/java/plugin/ProverbLogRepository.java	425	WHERE player_uuid = ? 
+src/main/java/plugin/ProverbLogRepository.java	426	ORDER BY created_at DESC 
+src/main/java/plugin/ProverbLogRepository.java	427	LIMIT ?
+src/main/java/plugin/ProverbLogRepository.java	452	Loaded favorites from MySQL: 
+src/main/java/plugin/ProverbLogRepository.java	453	, count=
+src/main/java/plugin/ProverbLogRepository.java	458	[ProverbFav] Failed to load favorites: 
+src/main/java/plugin/ProverbLogRepository.java	482	WHERE player_uuid = ? 
+src/main/java/plugin/ProverbLogRepository.java	483	ORDER BY created_at DESC 
+src/main/java/plugin/ProverbLogRepository.java	484	LIMIT ?
+src/main/java/plugin/ProverbLogRepository.java	507	Loaded favorites from MySQL (legacy): 
+src/main/java/plugin/ProverbLogRepository.java	508	, count=
+src/main/java/plugin/ProverbLogRepository.java	532	[ProverbFav] Favorite latest failed: MySQL connection is null.
+src/main/java/plugin/ProverbLogRepository.java	536	[ProverbFav] Favorite latest failed: UUID is null.
+src/main/java/plugin/ProverbLogRepository.java	544	FROM proverb_logs 
+src/main/java/plugin/ProverbLogRepository.java	545	WHERE player_uuid = ? 
+src/main/java/plugin/ProverbLogRepository.java	546	ORDER BY created_at DESC 
+src/main/java/plugin/ProverbLogRepository.java	547	LIMIT 1
+src/main/java/plugin/ProverbLogRepository.java	554	[ProverbFav] Favorite latest failed: no logs found.
+src/main/java/plugin/ProverbLogRepository.java	568	[ProverbFav] Favorite latest failed\n
+src/main/java/plugin/QuoteFavoriteBookClickListener.java	74	★ No favorites yet (or repository not ready)
+src/main/java/plugin/QuoteFavoriteBookClickListener.java	82	★ Favorite saved! (Latest quote)
+src/main/java/plugin/QuoteFavoriteBookClickListener.java	84	★ Not saved (maybe duplicate / no logs yet)
+src/main/java/plugin/QuoteFavoriteBookClickListener.java	101	[QuoteFavoriteBook] Favorite failed: 
+src/main/java/plugin/QuoteFavoriteBookClickListener.java	110	No favorites yet
+src/main/java/plugin/QuoteFavoriteBookClickListener.java	155	★ No favorites yet.
+src/main/java/plugin/QuoteFavoriteBookClickListener.java	181	★ Favorites:
+src/main/java/plugin/QuoteFavoriteBookClickListener.java	270	TreasureRun Favorites
+src/main/java/plugin/QuoteFavoriteBookClickListener.java	272	TreasureRun Favorites
+src/main/java/plugin/QuoteFavoriteBookClickListener.java	296	★ Favorites
+src/main/java/plugin/QuoteFavoriteBookClickListener.java	297	(Shift + Right Click)
+src/main/java/plugin/QuoteFavoriteBookClickListener.java	355	TreasureRun ルールブック
+src/main/java/plugin/QuoteFavoriteBookClickListener.java	356	TreasureRun Rule Book
+src/main/java/plugin/QuoteFavoriteCommand.java	25	Players only.
+src/main/java/plugin/QuoteFavoriteCommand.java	37	[TreasureRun] Quote Favorite Commands:
+src/main/java/plugin/QuoteFavoriteCommand.java	38	/quoteFavorite latest  - save latest quote as favorite
+src/main/java/plugin/QuoteFavoriteCommand.java	39	/quoteFavorite list    - show favorites
+src/main/java/plugin/QuoteFavoriteCommand.java	40	/quoteFavorite remove <id> - remove favorite
+src/main/java/plugin/QuoteFavoriteCommand.java	53	★ Favorite saved!
+src/main/java/plugin/QuoteFavoriteCommand.java	55	Favorite not saved. (maybe no logs yet / or duplicate)
+src/main/java/plugin/QuoteFavoriteCommand.java	66	★ Favorites (latest 20): 
+src/main/java/plugin/QuoteFavoriteCommand.java	82	Usage: /quoteFavorite remove <id>
+src/main/java/plugin/QuoteFavoriteCommand.java	90	ID must be a number.
+src/main/java/plugin/QuoteFavoriteCommand.java	97	★ Favorite removed: #
+src/main/java/plugin/QuoteFavoriteCommand.java	99	Favorite not removed. (not found?)
+src/main/java/plugin/QuoteFavoriteCommand.java	104	Unknown subcommand. Use: /quoteFavorite
+src/main/java/plugin/QuoteRereadService.java	68	★ No quotes yet. Play a game first!
+src/main/java/plugin/QuoteRereadService.java	105	📖 [TreasureRun] Re-read Random
+src/main/java/plugin/QuoteRereadService.java	120	TreasureRun Re-read
+src/main/java/plugin/QuoteRereadService.java	147	TreasureRun Re-read
+src/main/java/plugin/QuoteRereadService.java	149	Re-read Random
+src/main/java/plugin/QuoteRereadService.java	152	TreasureRun Archive\n
+src/main/java/plugin/QuoteRereadService.java	153	Random Re-read\n\n
+src/main/java/plugin/RankDebugCommand.java	28	プレイヤーのみ実行できます
+src/main/java/plugin/RankDebugCommand.java	34	権限がありません（OP限定）
+src/main/java/plugin/RankDebugCommand.java	40	Debug mode is OFF. config.yml の debug: true にしてください
+src/main/java/plugin/RankDebugCommand.java	46	使い方: /rank <1|2|3|demo>
+src/main/java/plugin/RankDebugCommand.java	128	数字で入力してください: /rank <1|2|3|demo>
+src/main/java/plugin/RankDebugCommand.java	133	1〜3だけ使えます: /rank <1|2|3>
+src/main/java/plugin/RankDebugCommand.java	140	 の演出だけ発動しました（ランキング/DBは変更なし）
+src/main/java/plugin/RankDebugCommand.java	140	DEBUG: rank 
+src/main/java/plugin/RankRewardManager.java	49	[Reward] giveRankRewardWithEffect called player=
+src/main/java/plugin/RankRewardManager.java	57	ネザライトインゴット獲得！
+src/main/java/plugin/RankRewardManager.java	60	ダイヤ獲得！
+src/main/java/plugin/RankRewardManager.java	63	金リンゴ獲得！
+src/main/java/plugin/RankRewardManager.java	77	🏆 No.
+src/main/java/plugin/RankRewardManager.java	105	[Reward] rank==1 -> aurora/rainbow/wolf 유지 keepTicks=
+src/main/java/plugin/RankRewardManager.java	293	[Reward] spawnRainbowWolfParadeGuaranteed: start=
+src/main/java/plugin/RankRewardManager.java	299	[Reward] chunk load warning: 
+src/main/java/plugin/RankRewardManager.java	310	[Reward] attemptSpawnWolf attempt=
+src/main/java/plugin/RankRewardManager.java	316	[Reward] attemptSpawnWolf: spawnEntity threw: 
+src/main/java/plugin/RankRewardManager.java	325	[Reward] attemptSpawnWolf: wolf is null/invalid (maybe cancelled).
+src/main/java/plugin/RankRewardManager.java	335	[Reward] attemptSpawnWolf: spawned OK uuid=
+src/main/java/plugin/RankRewardManager.java	351	Rainbow Wolf
+src/main/java/plugin/RankRewardManager.java	358	[Reward] setupRainbowWolf warning: 
+src/main/java/plugin/RankRewardManager.java	462	Sound play failed: 
+src/main/java/plugin/RealtimeRankTicker.java	99	FROM scores GROUP BY player_name 
+src/main/java/plugin/RealtimeRankTicker.java	100	ORDER BY best DESC, best_time ASC LIMIT ?
+src/main/java/plugin/RealtimeRankTicker.java	115	[TreasureRun] fetchTop failed: 
+src/main/java/plugin/RealtimeRankTicker.java	125	TreasureRun TOP
+src/main/java/plugin/RealtimeRankTicker.java	207	[§\\n\r\	]
+src/main/java/plugin/StageCleanupCommand.java	21	このコマンドはプレイヤーのみ実行できます。
+src/main/java/plugin/StageCleanupCommand.java	27	[TreasureRun] ステージ管理が初期化されていません。
+src/main/java/plugin/StageCleanupCommand.java	35	 個の難易度ブロックを片付けました。
+src/main/java/plugin/StageMobControlListener.java	62	[MobControl] WOLF allowed (CUSTOM). name=
+src/main/java/plugin/StageMobControlListener.java	69	Rainbow Wolf
+src/main/java/plugin/StageMobControlListener.java	70	[MobControl] WOLF allowed (name match). reason=
+src/main/java/plugin/StageMobControlListener.java	77	[MobControl] WOLF cancelled! reason=
+src/main/java/plugin/StageMobControlListener.java	113	⚠ StageMobControlListener: カウントダウン判定(reflection)に失敗。ゲーム中のみ制御します。原因: 
+src/main/java/plugin/StageMobControlListener.java	137	⚠ StageMobControlListener: reflection初期化に失敗。ゲーム中のみ制御します。原因: 
+src/main/java/plugin/TreasureChestManager.java	136	 個の宝箱をスポーンしました（中身付き）
+src/main/java/plugin/TreasureItemFactory.java	30	特製エメラルド
+src/main/java/plugin/TreasureItemFactory.java	33	TreasureRunでクラフトした
+src/main/java/plugin/TreasureItemFactory.java	34	特別なエメラルド
+src/main/java/plugin/TreasureRunGameEffectsPlugin.java	78	MySQL connection established successfully!
+src/main/java/plugin/TreasureRunGameEffectsPlugin.java	80	Failed to connect to MySQL: 
+src/main/java/plugin/TreasureRunGameEffectsPlugin.java	86	CREATE TABLE IF NOT EXISTS player_treasure_count (
+src/main/java/plugin/TreasureRunGameEffectsPlugin.java	87	player_name VARCHAR(50) PRIMARY KEY,
+src/main/java/plugin/TreasureRunGameEffectsPlugin.java	88	count INT NOT NULL)
+src/main/java/plugin/TreasureRunGameEffectsPlugin.java	92	Failed to create table: 
+src/main/java/plugin/TreasureRunGameEffectsPlugin.java	101	Reset treasure count for player: 
+src/main/java/plugin/TreasureRunGameEffectsPlugin.java	108	DJイベントはすでに実行中のため、onAllTreasuresCollected をスキップしました。
+src/main/java/plugin/TreasureRunGameEffectsPlugin.java	135	ON DUPLICATE KEY UPDATE count = ?
+src/main/java/plugin/TreasureRunGameEffectsPlugin.java	142	Failed to save treasure count: 
+src/main/java/plugin/TreasureRunGameEffectsPlugin.java	180	DJイベントはすでに実行中のため、triggerUltimateDJEvent をスキップしました。
+src/main/java/plugin/TreasureRunGameEffectsPlugin.java	186	🎵 Treasure Complete! 🎵
+src/main/java/plugin/TreasureRunGameEffectsPlugin.java	187	全ての宝物を発見しました！
+src/main/java/plugin/TreasureRunGameEffectsPlugin.java	190	§6Congratulations! 全ての宝物を見つけました！
+src/main/java/plugin/TreasureRunGameEffectsPlugin.java	276	§c§lTIME'S UP!
+src/main/java/plugin/TreasureRunGameEffectsPlugin.java	277	§7Treasures collected: §e
+src/main/java/plugin/TreasureRunGameEffectsPlugin.java	284	§7Try a different route next time — or use §e/gamestart §7<§eeasy§7|§enormal§7|§ehard§7> §7to retry.
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	127	Language / 言語
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	130	ダイヤモンド
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	131	金インゴット
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	132	鉄インゴット
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	133	エメラルド
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	134	リンゴ
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	135	ネザライトのインゴット
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	136	ラピスラズリ
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	137	レッドストーン
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	138	石炭
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	139	エンチャント金リンゴ
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	141	ダイヤモンドブロック
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	142	金ブロック
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	143	エメラルドブロック
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	144	鉄ブロック
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	188	🌈 TreasureRunMultiChestPlugin: 起動 🌈
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	294	[TreasureRun] GameStageManager event registered!
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	300	⚠ DEBUG MODE ON: /rank デバッグコマンドを有効化します
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	317	✅ TreasureRunMultiChestPlugin が正常に起動しました！
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	369	🔻 TreasureRunMultiChestPlugin: 無効化
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	454	⚠ MySQL 再接続を試みます…
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	458	⚠ MySQL 接続チェック失敗: 
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	489	✅ MySQL 再接続成功！
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	491	❌ MySQL 再接続失敗: 
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	511	CREATE TABLE IF NOT EXISTS scores (
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	512	id INT AUTO_INCREMENT PRIMARY KEY,
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	513	player_name VARCHAR(50),
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	514	score INT,
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	515	time BIGINT,
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	516	difficulty VARCHAR(10)
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	520	✅ scores テーブル準備完了
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	527	CREATE TABLE IF NOT EXISTS proverb_logs (
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	528	id INT AUTO_INCREMENT PRIMARY KEY,
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	529	player_uuid VARCHAR(36) NOT NULL,
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	530	player_name VARCHAR(50) NOT NULL,
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	531	outcome VARCHAR(20) NOT NULL,
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	532	difficulty VARCHAR(10) NOT NULL,
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	533	lang VARCHAR(10) NOT NULL,
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	534	quote_text TEXT NOT NULL,
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	535	created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	536	INDEX idx_player_uuid_created_at (player_uuid, created_at)
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	541	✅ proverb_logs テーブル準備完了
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	544	❌ DB 初期化失敗
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	569	❌ getRunRank: DB接続が null です
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	575	FROM scores 
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	576	WHERE UPPER(difficulty) = UPPER(?) 
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	577	ORDER BY time ASC, score DESC
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	601	⚠ getRunRank: 該当行が見つかりませんでした 
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	603	, score=
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	604	, time=
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	605	, difficulty=
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	607	⚠ ランキング計算中にエラー: 
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	617	FROM scores 
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	618	ORDER BY time ASC, score DESC 
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	619	LIMIT 10
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	622	=== 🌟 TreasureRun ランキング TOP10（タイム優先）🌟 ===
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	643	難易度: 
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	650	まだスコアがありません。
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	655	ランキング取得中にエラーが発生しました
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	685	❌ 無効な Material: 
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	692	✅ config.yml を読み込みました
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	708	プレイヤーのみ実行できます
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	715	ゲーム中は reload できません（安全のため）。/gameEnd してから実行してください。
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	749	GUIを更新しました。もう一度 /gameStart で開いてください。
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	754	✅ TreasureRun config を再読み込みしました（language GUI含む）。
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	783	ゲームは既に実行中です。
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	809	難易度は Easy / Normal / Hard です。
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	819	Language GUI が初期化されていません。
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	830	ゲーム終了！合計スコア: 
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	908	ゲームは既に実行中です。
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	931	Language GUI が初期化されていません。
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	967	 宝物: 
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	997	スコア +
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	997	点（累計: 
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	997	点）
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	1013	残りの宝箱: 
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	1133	Run Complete!
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	1161	すべての宝箱を開けました！ゲーム終了！
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	1162	タイム: 
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	1163	  スコア: 
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	1164	  ランク: 
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	1178	 が全ての宝箱を開けました！最終スコア: 
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	1182	The obstacle is the way.
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	1214	Run Complete!
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	1214	TIME'S UP!
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	1228	[StartTheme] startGame called by 
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	1265	残り時間
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	1281	残り時間: 
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	1313	TIME'S UP!
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	1375	時間切れ！ゲーム終了！
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	1376	次は別のルート・攻略手順でやってみてね！やり直すなら /gamestart <easy|normal|hard> を使ってみてね！
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	1438	OVERCOMING ADVERSITY
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	1448	Try a different route next time - or use 
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	1456	> to retry.
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	1601	ゲームは既に実行中です。
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	1664	 個を配置しました！
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	1664	宝箱 
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	1691	Starting in…
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	1831	VALUES (?, ?, ?, ?, ?, ?)
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	1843	⚠ proverb_logs 保存失敗: 
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	1862	FROM proverb_logs 
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	1863	WHERE player_uuid = ? 
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	1864	ORDER BY created_at DESC 
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	1865	LIMIT ?
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	1886	⚠ proverb_logs 取得失敗: 
+src/main/java/plugin/TreasureRunMultiChestPlugin.java	1962	LanguageStore reflection failed: 
+src/main/java/plugin/TreasureRunPlugin.java	61	TreasureRunPlugin が有効化されました
+src/main/java/plugin/TreasureRunPlugin.java	72	TreasureRunPlugin が無効化されました
+src/main/java/plugin/TreasureRunPlugin.java	81	CREATE TABLE IF NOT EXISTS scores (
+src/main/java/plugin/TreasureRunPlugin.java	82	id INTEGER PRIMARY KEY AUTOINCREMENT,
+src/main/java/plugin/TreasureRunPlugin.java	83	player_name TEXT,
+src/main/java/plugin/TreasureRunPlugin.java	84	score INTEGER,
+src/main/java/plugin/TreasureRunPlugin.java	85	time INTEGER,
+src/main/java/plugin/TreasureRunPlugin.java	86	difficulty TEXT
+src/main/java/plugin/TreasureRunPlugin.java	114	=== TreasureRun ランキング TOP10 ===
+src/main/java/plugin/TreasureRunPlugin.java	118	点 (
+src/main/java/plugin/TreasureRunPlugin.java	119	秒, 難易度:
+src/main/java/plugin/TreasureRunPlugin.java	137	startLocationのワールドが見つかりません: 
+src/main/java/plugin/TreasureRunPlugin.java	145	endLocationのワールドが見つかりません: 
+src/main/java/plugin/TreasureRunPlugin.java	162	config.yml の設定を読み込みました。
+src/main/java/plugin/TreasureRunPlugin.java	168	プレイヤーから実行してください
+src/main/java/plugin/TreasureRunPlugin.java	180	ゲームは既に実行中です。
+src/main/java/plugin/TreasureRunPlugin.java	190	難易度は Easy, Normal, Hard のいずれかを指定してください。
+src/main/java/plugin/TreasureRunPlugin.java	199	 → diamondに設定します
+src/main/java/plugin/TreasureRunPlugin.java	199	config.ymlのtreasureItemが不正です: 
+src/main/java/plugin/TreasureRunPlugin.java	217	 です。周辺を探してください！
+src/main/java/plugin/TreasureRunPlugin.java	217	宝物は 
+src/main/java/plugin/TreasureRunPlugin.java	243	残り時間
+src/main/java/plugin/TreasureRunPlugin.java	263	残り時間: 
+src/main/java/plugin/TreasureRunPlugin.java	265	制限時間は
+src/main/java/plugin/TreasureRunPlugin.java	265	秒です。
+src/main/java/plugin/TreasureRunPlugin.java	267	あと10秒です！
+src/main/java/plugin/TreasureRunPlugin.java	274	時間切れ！宝物を見つけられませんでした。スコアは0点です。
+src/main/java/plugin/TreasureRunPlugin.java	295	 を見つけました！
+src/main/java/plugin/TreasureRunPlugin.java	295	おめでとう！ 
+src/main/java/plugin/TreasureRunPlugin.java	296	かかった時間: 
+src/main/java/plugin/TreasureRunPlugin.java	297	スコア: 
+src/main/java/plugin/TreasureRunPlugin.java	344	 に生成しました。
+src/main/java/plugin/TreasureRunPlugin.java	344	TreasureRun: 宝箱を 
+src/main/java/plugin/TreasureRunStartCommand.java	34	このコマンドはプレイヤーからのみ実行できます。
+src/main/java/plugin/TreasureRunStartCommand.java	81	 制限時間: 
+src/main/java/plugin/TreasureRunStartCommand.java	81	§a宝探しゲーム開始！ 難易度: 
+src/main/java/plugin/TreasureRunStartCommand.java	83	 個のチェストを生成しました。宝物は 
+src/main/java/plugin/mapper/PlayerScoreMapper.java	89	player_name, score, difficulty, registered_dt, registered_at, game_time, uuid, kill_count
+src/main/java/plugin/mapper/PlayerScoreMapper.java	90	) VALUES (
+src/main/java/plugin/mapper/PlayerScoreMapper.java	91	#{playerName}, #{score}, #{difficulty}, #{registered_dt}, #{registeredAt}, #{gameTime}, #{uuid, jdbcType=VARCHAR}, #{killCount}
+src/main/java/plugin/mapper/PlayerScoreMapper.java	96	insert into player_score(player_name, score, difficulty, registered_dt) values (#{playerName}, #{score}, #{difficulty}, now())
+src/main/java/plugin/mapper/PlayerScoreMapper.java	100	player_name = #{playerName}, 
+src/main/java/plugin/mapper/PlayerScoreMapper.java	101	score = #{score}, 
+src/main/java/plugin/mapper/PlayerScoreMapper.java	102	difficulty = #{difficulty}, 
+src/main/java/plugin/mapper/PlayerScoreMapper.java	103	registered_dt = #{registered_dt}, 
+src/main/java/plugin/mapper/PlayerScoreMapper.java	104	registered_at = #{registeredAt}, 
+src/main/java/plugin/mapper/PlayerScoreMapper.java	105	game_time = #{gameTime}, 
+src/main/java/plugin/mapper/PlayerScoreMapper.java	106	kill_count = #{killCount} 
+src/main/java/plugin/mapper/PlayerScoreMapper.java	107	WHERE uuid = #{uuid, jdbcType=VARCHAR}
+src/main/java/plugin/mapper/data/PlayerScore.java	146	, playerName='
+src/main/java/plugin/mapper/data/PlayerScore.java	147	, name='
+src/main/java/plugin/mapper/data/PlayerScore.java	148	, score=
+src/main/java/plugin/mapper/data/PlayerScore.java	149	, difficulty='
+src/main/java/plugin/mapper/data/PlayerScore.java	150	, registered_dt='
+src/main/java/plugin/mapper/data/PlayerScore.java	151	, registeredDt=
+src/main/java/plugin/mapper/data/PlayerScore.java	152	, registeredAt=
+src/main/java/plugin/mapper/data/PlayerScore.java	153	, gameTime=
+src/main/java/plugin/mapper/data/PlayerScore.java	154	, uuid=
+src/main/java/plugin/mapper/data/PlayerScore.java	155	, killCount=
+src/main/java/plugin/quote/QuoteFavoriteCommand.java	43	Players only.
+src/main/java/plugin/quote/QuoteFavoriteCommand.java	74	MySQL / Repository not ready.
+src/main/java/plugin/quote/QuoteFavoriteCommand.java	81	★ Favorite saved!
+src/main/java/plugin/quote/QuoteFavoriteCommand.java	83	Favorite not saved. (maybe no logs yet / or duplicate)
+src/main/java/plugin/quote/QuoteFavoriteCommand.java	93	MySQL / Repository not ready.
+src/main/java/plugin/quote/QuoteFavoriteCommand.java	99	★ Favorites (latest 20): 
+src/main/java/plugin/quote/QuoteFavoriteCommand.java	114	Usage: /quoteFavorite remove <id>
+src/main/java/plugin/quote/QuoteFavoriteCommand.java	119	MySQL / Repository not ready.
+src/main/java/plugin/quote/QuoteFavoriteCommand.java	127	ID must be a number.
+src/main/java/plugin/quote/QuoteFavoriteCommand.java	134	★ Favorite removed: #
+src/main/java/plugin/quote/QuoteFavoriteCommand.java	136	Favorite not removed. (not found?)
+src/main/java/plugin/quote/QuoteFavoriteCommand.java	153	★ No quotes yet.
+src/main/java/plugin/quote/QuoteFavoriteCommand.java	192	Failed to open favorites book.
+src/main/java/plugin/quote/QuoteFavoriteCommand.java	199	openBook() failed on this server.
+src/main/java/plugin/quote/QuoteFavoriteCommand.java	204	Unknown subcommand. Use: /quoteFavorite help
+src/main/java/plugin/quote/QuoteFavoriteCommand.java	209	[TreasureRun] Quote Favorite Commands:
+src/main/java/plugin/quote/QuoteFavoriteCommand.java	210	/quoteFavorite latest          - save latest quote as favorite
+src/main/java/plugin/quote/QuoteFavoriteCommand.java	211	/quoteFavorite list            - show favorites
+src/main/java/plugin/quote/QuoteFavoriteCommand.java	212	/quoteFavorite remove <id>     - remove favorite
+src/main/java/plugin/quote/QuoteFavoriteCommand.java	213	/quoteFavorite reread          - random reread (chat)
+src/main/java/plugin/quote/QuoteFavoriteCommand.java	214	/quoteFavorite reread title    - random reread (title)
+src/main/java/plugin/quote/QuoteFavoriteCommand.java	215	/quoteFavorite reread book     - random reread (book)
+src/main/java/plugin/quote/QuoteFavoriteCommand.java	216	/quoteFavorite book            - open catalog (full)
+src/main/java/plugin/quote/QuoteFavoriteCommand.java	217	/quoteFavorite book toc        - open catalog (TOC only)
+src/main/java/plugin/quote/QuoteFavoriteCommand.java	218	/quoteFavorite book success    - open SUCCESS chapter
+src/main/java/plugin/quote/QuoteFavoriteCommand.java	219	/quoteFavorite book timeup     - open TIME_UP chapter
+src/main/java/plugin/quote/QuoteFavoriteCommand.java	220	/quoteFavorite book other      - open OTHER chapter
+src/main/java/plugin/quote/QuoteFavoriteCommand.java	284	【SUCCESS / Normal / en】\nThe obstacle is the way.
+src/main/java/plugin/quote/QuoteFavoriteCommand.java	295	TIME UP
+src/main/java/plugin/quote/QuoteFavoriteRowParser.java	8	id: 12\noutcome: SUCCESS\nquote: ...\ntime: 2026-01-23 12:34
+src/main/java/plugin/quote/QuoteFavoriteShortcutListener.java	45	MySQL / Repository not ready.
+src/main/java/plugin/quote/QuoteFavoriteShortcutListener.java	53	★ Favorite saved! (Sneak+RightClick)
+src/main/java/plugin/quote/QuoteFavoriteShortcutListener.java	55	Favorite not saved. (maybe no logs yet / or duplicate)
+src/main/java/plugin/quote/QuoteFavoriteStore.java	66	[QuoteFavoriteStore] Reloaded DB: host=
+src/main/java/plugin/quote/QuoteFavoriteStore.java	98	 WHERE player_uuid=? AND quote_hash=? LIMIT 1
+src/main/java/plugin/quote/QuoteFavoriteStore.java	107	[QuoteFavoriteStore] exists failed: 
+src/main/java/plugin/quote/QuoteFavoriteStore.java	120	 (player_uuid, quote_hash, outcome, difficulty, lang, quote_text) 
+src/main/java/plugin/quote/QuoteFavoriteStore.java	121	VALUES (?, ?, ?, ?, ?, ?)
+src/main/java/plugin/quote/QuoteFavoriteStore.java	137	[QuoteFavoriteStore] addFavorite failed: 
+src/main/java/plugin/quote/QuoteFavoriteStore.java	144	 WHERE player_uuid=? AND quote_hash=?
+src/main/java/plugin/quote/QuoteFavoriteStore.java	155	[QuoteFavoriteStore] removeFavorite failed: 
+src/main/java/plugin/quote/QuoteFavoriteStore.java	162	 WHERE player_uuid=? AND id=?
+src/main/java/plugin/quote/QuoteFavoriteStore.java	173	[QuoteFavoriteStore] removeFavoriteById failed: 
+src/main/java/plugin/quote/QuoteFavoriteStore.java	183	 WHERE player_uuid=? 
+src/main/java/plugin/quote/QuoteFavoriteStore.java	184	ORDER BY created_at DESC LIMIT ?
+src/main/java/plugin/quote/QuoteFavoriteStore.java	221	[QuoteFavoriteStore] listFavorites failed: 
+src/main/java/plugin/quote/QuoteFavoriteStore.java	228	 WHERE player_uuid=?
+src/main/java/plugin/quote/QuoteFavoriteStore.java	240	[QuoteFavoriteStore] countFavorites failed: 
+src/main/java/plugin/quote/QuoteFavoritesBookBuilder.java	73	TreasureRun Favorites
+src/main/java/plugin/quote/QuoteFavoritesBookBuilder.java	187	(no text)
+src/main/java/plugin/quote/QuoteRereadService.java	46	MySQL / Repository not ready.
+src/main/java/plugin/quote/QuoteRereadService.java	65	◆ Re-read ◆
+src/main/java/plugin/quote/QuoteRereadService.java	66	★ No quotes yet.
+src/main/java/plugin/quote/QuoteRereadService.java	92	Failed to open book.
+src/main/java/plugin/quote/QuoteRereadService.java	100	openBook() failed on this server.
+src/main/java/plugin/quote/QuoteRereadService.java	186	TIME UP
