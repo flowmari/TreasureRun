@@ -45,3 +45,7 @@ plugin.yml
 *.bak
 *.bak2
 *.backup
+
+# local-only artifacts (do not commit)
+backups/
+_local_only/

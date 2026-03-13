@@ -1,0 +1,2 @@
+default:
+  unknown: 'Translation missing: {key}'

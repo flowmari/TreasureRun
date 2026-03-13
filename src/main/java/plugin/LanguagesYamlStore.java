@@ -8,7 +8,8 @@ import java.util.*;
 
 /**
  * languages/*.yml をロードするストア
- * - plugins/TreasureRun/languages/<lang>.yml
+ * - plugins/TreasureRun/languages/<lang>.yml を正とする（運用で編集可能）
+ * - 初回起動時: Jar同梱 resources/languages/<lang>.yml があれば dataFolder にコピー
  * - フォールバック: lang -> en -> ja -> default.unknown
  */
 public class LanguagesYamlStore {
@@ -45,6 +46,9 @@ public class LanguagesYamlStore {
       ensureExists(lang.trim());
     }
 
+    // ✅ 実務っぽく：allowedLanguagesに無い yml があれば警告（削除はしない）
+    warnExtraLanguageFiles(langs);
+
     // reload時はキャッシュクリア
     cache.clear();
   }
@@ -60,24 +64,77 @@ public class LanguagesYamlStore {
       if (!f.exists()) {
         // 無ければ en.yml を読む（ファイルが無い言語でも壊れない）
         f = new File(dir, "en.yml");
+        if (!f.exists()) {
+          // en.ymlすら無いのは異常なので作る
+          ensureExists("en");
+          f = new File(dir, "en.yml");
+        }
       }
       return YamlConfiguration.loadConfiguration(f);
     });
   }
 
   private void ensureExists(String lang) {
+    final String l = (lang == null ? "" : lang.trim());
+    if (l.isEmpty()) return;
+
     try {
-      File f = new File(dir, lang + ".yml");
+      File f = new File(dir, l + ".yml");
       if (f.exists()) return;
 
+      // ✅ 1) Jar同梱 resources/languages/<lang>.yml があればコピー（上書きしない）
+      // saveResource は resource が無いと例外になるので、getResourceで事前確認
+      String resourcePath = "languages/" + l + ".yml";
+      if (plugin.getResource(resourcePath) != null) {
+        plugin.saveResource(resourcePath, false);
+        plugin.getLogger().info("[Lang] copied from jar: " + resourcePath);
+        return;
+      }
+
+      // ✅ 2) 無ければ保険：空の yml を生成（最低限 unknown を入れる）
       YamlConfiguration y = new YamlConfiguration();
-      // ✅ 最低限：unknown（無いと missing の時に困る）
       y.set("default.unknown", "Translation missing: {key}");
       y.save(f);
 
-      plugin.getLogger().info("[Lang] created: languages/" + lang + ".yml");
+      plugin.getLogger().warning("[Lang] jar resource missing, created empty: languages/" + l + ".yml");
     } catch (Throwable t) {
-      plugin.getLogger().warning("[Lang] failed to create languages/" + lang + ".yml: " + t.getMessage());
+      plugin.getLogger().warning("[Lang] failed to prepare languages/" + l + ".yml: " + t.getMessage());
+    }
+  }
+
+  private void warnExtraLanguageFiles(List<String> allowedFromConfig) {
+    try {
+      if (!dir.exists()) return;
+
+      // allowedLanguages + フォールバックの en/ja を許可集合に入れる
+      Set<String> allowed = new HashSet<>();
+      if (allowedFromConfig != null) {
+        for (String s : allowedFromConfig) {
+          if (s == null) continue;
+          String v = s.trim();
+          if (!v.isEmpty()) allowed.add(v);
+        }
+      }
+      allowed.add("en");
+      allowed.add("ja");
+
+      File[] files = dir.listFiles((d, name) -> name != null && name.endsWith(".yml"));
+      if (files == null) return;
+
+      List<String> extras = new ArrayList<>();
+      for (File file : files) {
+        String name = file.getName();
+        String lang = name.substring(0, name.length() - 4); // remove .yml
+        if (!allowed.contains(lang)) extras.add(name);
+      }
+
+      if (!extras.isEmpty()) {
+        Collections.sort(extras);
+        plugin.getLogger().warning("[Lang] Extra language files exist (not in language.allowedLanguages): " + extras);
+        plugin.getLogger().warning("[Lang] If you don't need them, you can remove them manually from: " + dir.getPath());
+      }
+    } catch (Throwable t) {
+      plugin.getLogger().warning("[Lang] failed to scan extra language files: " + t.getMessage());
     }
   }
 }
