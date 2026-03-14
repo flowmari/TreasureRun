@@ -16,7 +16,7 @@ public class LanguageConfigStore {
   private final Map<String, String> shortLabel = new HashMap<>();
   private final Map<String, Material> iconMaterial = new HashMap<>();
 
-  private String loreDefault = "Click to select";
+  private String loreDefault = "";
   private final Map<String, String> lore = new HashMap<>();
 
   private String norm(String lang) {
@@ -73,7 +73,7 @@ public class LanguageConfigStore {
       }
     }
 
-    loreDefault = langSec.getString("loreDefault", "Click to select");
+    loreDefault = langSec.getString("loreDefault", "");
     ConfigurationSection lo = langSec.getConfigurationSection("lore");
     if (lo != null) {
       for (String key : lo.getKeys(false)) {

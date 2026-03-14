@@ -16,7 +16,7 @@ public class LanguageStore {
   private final Map<String, String> shortLabel = new HashMap<>();
   private final Map<String, Material> iconMaterial = new HashMap<>();
 
-  private String loreDefault = "Click to select";
+  private String loreDefault = "";
   private final Map<String, String> lore = new HashMap<>();
 
   // プレイヤーごとの選択言語（メモリ保持）
@@ -97,7 +97,7 @@ public class LanguageStore {
     }
 
     // loreDefault / lore
-    loreDefault = langSec.getString("loreDefault", "Click to select");
+    loreDefault = langSec.getString("loreDefault", "");
 
     ConfigurationSection lo = langSec.getConfigurationSection("lore");
     if (lo != null) {
@@ -153,8 +153,6 @@ public class LanguageStore {
   }
 
   public String getLoreDefault() {
-    return (loreDefault == null || loreDefault.isBlank())
-        ? "Click to select"
-        : loreDefault;
+    return (loreDefault == null) ? "" : loreDefault;
   }
 }
