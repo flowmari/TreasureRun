@@ -83,7 +83,7 @@ public class LanguageSelectGui implements Listener {
     if (mat == null) mat = Material.PAPER;
     if (langName == null || langName.isBlank()) langName = lang;
     if (label == null || label.isBlank()) label = lang.toUpperCase(Locale.ROOT);
-    if (loreLine == null || loreLine.isBlank()) loreLine = "Click to select";
+    if (loreLine == null || loreLine.isBlank()) loreLine = store.getLoreDefault();
 
     ItemStack item = new ItemStack(mat);
     ItemMeta meta = item.getItemMeta();

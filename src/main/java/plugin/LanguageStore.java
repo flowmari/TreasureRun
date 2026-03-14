@@ -151,4 +151,10 @@ public class LanguageStore {
     String k = norm(lang);
     return iconMaterial.getOrDefault(k, Material.PAPER);
   }
+
+  public String getLoreDefault() {
+    return (loreDefault == null || loreDefault.isBlank())
+        ? "Click to select"
+        : loreDefault;
+  }
 }
