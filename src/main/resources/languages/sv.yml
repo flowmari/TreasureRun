@@ -1183,24 +1183,7 @@ quotes:
   outcome:
     success:
     timeup:
-      - 'Tiden tog slut.\nInget annat gjorde det.\n（時間は終わった。ほかは終わっていない。）'
-      - 'Tiden är slut.\nMen allt annat är långt ifrån över.\n（時間は終わった。でも、ほかはまだ終わっていない。）'
-      - 'TIDEN ÄR SLUT.\nLoppet tog slut.\nDet gjorde inte du.\n（時間切れ。走りは終わった。でも、あなたは終わっていない。）'
-      - 'TIDEN ÄR SLUT.\nReglerna ändras inte.\nIgen.\n（時間切れ。ルールは変わらない。もう一度。）'
-      - 'TIDEN ÄR SLUT.\n”Så nära” är på riktigt.\n（時間切れ。「惜しい」は本物だ。）'
-      - 'Tiden tog slut.\nMeningen gjorde det inte.\n（時間は終わった。意味は終わっていない。）'
-      - 'Ögonblicket gled förbi.\nMeningen gjorde det inte.\n（逃したのは瞬間。意味ではない。）'
-      - 'Detta är en paus\n—det är inte över.\n（これは休止だ。終わりじゃない。）'
-      - 'Du var på väg att nå fram.\nBara tiden var det inte.\n（近づいていた。時間だけが近づかなかった。）'
-      - 'Ögonblicket gled förbi,\nmen spåret stannade kvar.\n（瞬間は過ぎた。記録は残る。）'
-      - 'Din tid tog slut.\nHimlen gjorde det inte.\n（あなたの時間は終わった。空は終わっていない。）'
     other:
-      - 'Perfect balance.\nThe scales held level.\n（等価の均衡。天秤は水平を保った。）'
-      - 'There was no dialogue\n—only an exchange of facts.\n（対話はなく、ただ事実としての交換が行われた。）'
-      - 'Perfect equilibrium.\nThe scales held level.\n（等価の均衡。天秤は水平を保った。）'
-      - 'Things changed,\ntaking on new forms as they carried on.\n（物事は移ろい、形を変えて引き継がれた。）'
-      - 'Victory and defeat \nare nothing more than grains of sand.\n（勝利も敗北も、同じ砂の一粒に過ぎない。）'
-      - 'The road goes on—or it ends.\nEither way, it lies on the same earth.\n（道は続き、あるいは途切れ、どちらも同じ大地の上にある。）'
   success:
     - '[TreasureRun][Lang] ''language.iconMaterial:'' セクションが見つかりません（全部PAPERになります）'
     - '⚠ /rank が plugin.yml に見つかりません（commands: rank を追加済みか確認してください）'
