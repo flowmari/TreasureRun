@@ -2516,6 +2516,9 @@ chestSound:
   debug: true          # trueにするとデバッグ表示ON（普段はfalse推奨）
   actionBarDebug: true # trueにするとActionBarに距離表示（普段はfalse推奨）
 
+rankDebug:
+  enabled: true
+
 title:
   outcomeStayTicks: 160   # TIME_UPの固定表示の長さ（160tick=8秒）
   successStayTicks: 240   # SUCCESSの固定表示の長さ（240tick=12秒）

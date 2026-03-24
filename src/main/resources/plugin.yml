@@ -55,6 +55,12 @@ commands:
     usage: /gameMenu
     permission: treasure.menu
 
+    gameEnd:
+      description: End TreasureRun game
+      usage: /gameEnd
+      permission: treasure.game
+      permission-message: "§cこのコマンドを使う権限がありません。"
+
   clearStageBlocks:
     description: Clear nearby difficulty blocks placed by TreasureRun.
     usage: /clearStageBlocks
