@@ -278,6 +278,13 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
       getCommand("gameMenu").setExecutor(this);
     }
 
+    // ✅✅✅ ここに追加：/gameEnd を有効化（MSZ停止・床復元が確実に走る）
+    if (getCommand("gameEnd") != null) {
+      getCommand("gameEnd").setExecutor(this);
+    } else {
+      getLogger().warning("⚠ /gameEnd が plugin.yml に見つかりません（commands: gameEnd を確認してください）");
+    }
+
     // ✅ /lang：言語GUIを開く / 言語を変更する（LangCommand）
     if (getCommand("lang") != null) {
       getCommand("lang").setExecutor(new LangCommand(this));
@@ -377,16 +384,17 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     Bukkit.getPluginManager().registerEvents(this.gameStageManager, this);
     getLogger().info("[TreasureRun] GameStageManager event registered!");
 
+    // ✅✅✅ 追加：サーバー起動直後に「Treasure Shop」残骸を全削除（再起動残り対策）
+    this.gameStageManager.purgeTreasureShopEntitiesOnStartup();
+
     this.rankRewardManager = new RankRewardManager(this);
 
-    // debug=true のときだけ /rank コマンドを有効化
-    if (getConfig().getBoolean("debug")) {
-      getLogger().warning("⚠ DEBUG MODE ON: /rank デバッグコマンドを有効化します");
-      if (getCommand("rank") != null) {
-        getCommand("rank").setExecutor(new RankDebugCommand(this));
-      } else {
-        getLogger().warning("⚠ /rank が plugin.yml に見つかりません（commands: rank を追加済みか確認してください）");
-      }
+    // ✅ /rank は常に登録（ON/OFFは RankDebugCommand 側で rankDebug.enabled を見る）
+    if (getCommand("rank") != null) {
+      getCommand("rank").setExecutor(new RankDebugCommand(this));
+      getLogger().info("✅ /rank executor registered");
+    } else {
+      getLogger().warning("⚠ /rank が plugin.yml に見つかりません（commands: rank を確認してください）");
     }
 
     CustomRecipeLoader recipeLoader = new CustomRecipeLoader(this);
@@ -1109,13 +1117,13 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     // ✅ ✅ ✅ ここが完成版 /gameMenu（格言あり本へ切替）
     if (cmd.getName().equalsIgnoreCase("gameMenu")) {
 
-      // ✅ 目次チャット表示（これはそのままでOK）
-      GameMenu.showGameMenu(player, difficulty);
+      // ✅ 先にプレイヤー言語を解決（lang を定義してから使う）
+      final String lang = resolvePlayerLang(player);
 
-      // ✅ 現在のプレイヤー言語を解決（LanguageStore → 無ければ playerLastLang → 無ければ config default）
-      String lang = resolvePlayerLang(player);
+      // ✅ 目次（チャット）
+      GameMenu.showGameMenu(player, difficulty, this, lang);
 
-      // ✅ 格言集ページ付きルールブック（こっちが正解）
+      // ✅ 格言集ページ付きルールブック
       GameMenu.openRuleBookFromConfig(player, difficulty, this, lang);
 
       return true;
@@ -2024,7 +2032,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
 
     player.sendMessage(ChatColor.GREEN + "宝箱 " + currentTotalChests + " 個を配置しました！");
 
-    GameMenu.showGameMenu(player, difficulty);
+    GameMenu.showGameMenu(player, difficulty, this, lang);
     GameMenu.openRuleBookFromConfig(player, difficulty, this, lang);
 
     new BukkitRunnable() {
@@ -2062,10 +2070,11 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
               // ✅ 追加（GO!の時）
               startThemePlayer.playGoActivate(player);
 
-              // ✅ ✅ ✅ GO! の瞬間だけ「画面が震える + 光 + 爆発風スパークル」
+              // ✅ ✅ ✅ GO! の瞬間だけ「バブル→震え + 光 + 爆発風スパークル」
               Bukkit.getScheduler().runTaskLater(TreasureRunMultiChestPlugin.this, () -> {
                 if (player != null && player.isOnline()) {
-                  playGoSparkleShock(player);
+                  playGoBubbleBurst(player);   // ✅ NEW：バブルが弾ける
+                  playGoSparkleShock(player);  // ✅ 既存：震え + 光 + スパークル
                 }
               }, 1L);
 // ✅ ✅ ✅ 最大サイズで見せる：Title行に GO! だけ（太字）
@@ -2178,9 +2187,60 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
   }
 
   // =======================================================
-// ✅ Weekly + All-time スコア加算（共通）
-// - SUCCESS / TIME_UP の両方から呼べる
-// =======================================================
+  // ✅ NEW：GO! の瞬間に「バブルが弾ける」演出
+  // - 空中でも見える粒子（BUBBLE_POP中心）
+  // - 1回の破裂＋短い上昇バブルで“弾けた感”を作る
+  // =======================================================
+  private void playGoBubbleBurst(Player player) {
+    if (player == null || !player.isOnline()) return;
+
+    Location base = player.getLocation().clone();
+    World w = base.getWorld();
+    if (w == null) return;
+
+    Location p = base.clone().add(0, 1.0, 0); // 胸〜顔あたりで弾ける
+
+    // ✅ 音（バブルの破裂 + 軽い水しぶき）
+    try {
+      w.playSound(p, Sound.BLOCK_BUBBLE_COLUMN_BUBBLE_POP, SoundCategory.PLAYERS, 0.9f, 1.6f);
+    } catch (Throwable ignored) {}
+    try {
+      w.playSound(p, Sound.ENTITY_PLAYER_SPLASH_HIGH_SPEED, SoundCategory.PLAYERS, 0.35f, 1.9f);
+    } catch (Throwable ignored) {}
+
+    // ✅ “破裂”の中心（バブルが弾ける）
+    try {
+      w.spawnParticle(Particle.BUBBLE_POP, p, 80, 0.55, 0.35, 0.55, 0.02);
+    } catch (Throwable ignored) {}
+
+    // ✅ しぶき（軽く）
+    try {
+      w.spawnParticle(Particle.WATER_SPLASH, p, 18, 0.35, 0.18, 0.35, 0.02);
+    } catch (Throwable ignored) {}
+
+    // ✅ 上に抜けるバブル（短い余韻）
+    new BukkitRunnable() {
+      int t = 0;
+      @Override
+      public void run() {
+        if (!player.isOnline()) { cancel(); return; }
+
+        Location up = p.clone().add(0, t * 0.12, 0);
+
+        try {
+          w.spawnParticle(Particle.BUBBLE_COLUMN_UP, up, 30, 0.28, 0.18, 0.28, 0.02);
+        } catch (Throwable ignored) {}
+
+        t++;
+        if (t >= 6) cancel(); // 約0.3秒
+      }
+    }.runTaskTimer(TreasureRunMultiChestPlugin.this, 0L, 1L);
+  }
+
+  // =======================================================
+  // ✅ Weekly + All-time スコア加算（共通）
+  // - SUCCESS / TIME_UP の両方から呼べる
+  // =======================================================
   private void addSeasonScore(
       Player player,
       int addScore,

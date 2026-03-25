@@ -178,3 +178,137 @@ quotes:
   philosophy:
     - 'Victory and defeat \nare nothing more than grains of sand.\n（勝利も敗北も、同じ砂の一粒に過ぎない。）'
     - 'The road goes on—or it ends.\nEither way, it lies on the same earth.\n（道は続き、あるいは途切れ、どちらも同じ大地の上にある。）'
+ui:
+  auto:
+    playerscore_b91d4cd3: 'PlayerScore 插入失敗:'
+    messages_yml_not_loaded_d56b1cd3: (messages.yml not loaded)
+    translation_missing_77031543: '(譯文缺失:'
+    translation_missing_77031543_107: '(譯文缺失:'
+    click_to_select_aac1569c: 點擊以選
+    treasurerun_lang_config_yml__2dde4625: "[TreasureRun][Lang] config.yml 無 'language:' 節。"
+    click_to_select_aac1569c_76: 點擊以選
+    treasurerun_lang_default_60887a83: '[TreasureRun][Lang] default='
+    click_to_select_aac1569c_19: 點擊以選
+    treasurerun_lang_config_yml__2dde4625_33: "[TreasureRun][Lang] config.yml 無 'language:' 節。"
+    treasurerun_lang_material_la_bc70a401: '[TreasureRun][Lang] 無效 Material: lang='
+    treasurerun_lang_language_ic_4bc2362d: "[TreasureRun][Lang] 無 'language.iconMaterial:' 節（皆為PAPER）"
+    click_to_select_aac1569c_100: 點擊以選
+    treasurerun_lang_default_60887a83_111: '[TreasureRun][Lang] default='
+    enemydown_mysql_jdbc_mybatis_6b5c6f68: '[EnemyDown] 已連MySQL（JDBC + MyBatis）'
+    enemydown_mysql_6cf3e29b: '[EnemyDown] MySQL連接失敗:'
+    enemydown_mysql_a18990c3: '[EnemyDown] MySQL已斷。'
+    enemydown_mysql_e097a73e: '[EnemyDown] MySQL斷接失敗:'
+    mysqlmanager_player_score_d92afff4: '[MySQLManager] player_score 表已確認 ✅'
+    mysqlmanager_player_score_21665c62: '[MySQLManager] player_score 表建立失敗 ❌:'
+    mysqlmanager_mysql_951100b9: '[MySQLManager] MySQL 測試成功 ✅'
+    mysqlmanager_player_score_a4968d00: '[MySQLManager] player_score 表行數:'
+    mysqlmanager_mysql_1763d390: '[MySQLManager] MySQL 未連 ❌'
+    mysqlmanager_player_score_2b5c8721: '[MySQLManager] player_score 表或不存 ❌'
+    enemydown_mysql_bc514e56: '[EnemyDown] MySQL 已連。'
+    enemydown_mysql_93b23ef9: '[EnemyDown] MySQL 未連。'
+    light_fell_evenly_and_every__e50aee87: "Light fell evenly, ,\nand every shadow vanished.\n（光が等しく降り注ぎ、すべての影が消えた。）"
+    the_wind_fell_silent_and_eve_a96036c1: "The wind fell silent.\nand everything returned to where it belonged.\n（風が止み、あるべき場所に、あるべきものが戻った。）"
+    time_s_up_87859973: Time's up.
+    run_complete_46d920e5: Run complete.
+    run_complete_46d920e5_580: Run complete.
+    run_complete_46d920e5_589: Run complete.
+    playerlanguagestore_failed_t_c4999402: '[PlayerLanguageStore] Failed to create/load player_languages.yml:'
+    playerlanguagestore_failed_t_b6478ec8: '[PlayerLanguageStore] Failed to save player_languages.yml:'
+    proverb_logged_to_mysql_prov_c13b5e4e: 'Proverb logged to MySQL: proverb_logs'
+    failed_to_log_proverb_to_mys_2bb4c5c3: 'Failed to log proverb to MySQL: proverb_logs'
+    loaded_proverb_logs_from_mys_b5b0f8e0: 'Loaded proverb logs from MySQL: proverb_logs'
+    failed_to_load_proverb_logs__6246be38: 'Failed to load proverb logs from MySQL: proverb_logs'
+    treasurerunmultichestplugin_4499e25c: '🌈 TreasureRunMultiChestPlugin: 起動 🌈'
+    treasurerun_gamestagemanager_3d9e7f5a: '[TreasureRun] GameStageManager event registered!'
+    treasurerunmultichestplugin_a507471a: ✅ TreasureRunMultiChestPlugin が正常に起動しました！
+    treasurerunmultichestplugin_c2111711: '🔻 TreasureRunMultiChestPlugin: 無効化'
+    language_30e61e02: 語言 / Language
+    text_4f7e7cfa: 得下界合金錠！
+    text_1a6173d3: 得鑽石！
+    text_b6568a8d: 得金蘋果！
+    no_9c0fdee6: 🏆 No.
+    gamestart_easy_normal_hard_230bd0bd: 再試他途！重試請用 /gamestart <easy|normal|hard>！
+    text_9310a1a7: 戲已進行。
+    text_9310a1a7_908: 戲已進行。
+    text_9310a1a7_1601: 戲已進行。
+    text_f9c4c4e2: '戲終！總分:'
+    run_complete_d258363d: Run Complete!
+    run_complete_d258363d_1214: Run Complete!
+    time_s_up_7441e686: TIME'S UP!
+    time_s_up_7441e686_1313: TIME'S UP!
+    text_ec39d8ad: 餘時
+    text_d6e25e00: '餘時:'
+    text_b2c59e95: '時:'
+    text_c148686b: '分:'
+    text_307fcc19: '位:'
+    starting_in_2413fc14: 即將開始…
+    easy_normal_hard_ef1ba55c: 難度為 Easy / Normal / Hard。
+    language_gui_aed4f8fc: 語言介面未啟。
+    language_gui_aed4f8fc_931: 語言介面未啟。
+    config_yml_3c6e9d15: ✅ config.yml 已載
+    treasurerun_config_language__763cf02c: ✅ TreasureRun 設定已重載（含語言介面）。
+    gui_gamestart_5870f221: 介面已更。請再執 /gameStart。
+    text_3ecbc53d: 請以玩者執之
+    text_3030fd61: 唯玩者可執
+    reload_gameend_c41d5c55: 戲中不可重載。請先執 /gameEnd。
+  menu:
+    toc:
+      message: |-
+        &6===== 🌟 TreasureRun 目次 🌟 =====
+        &b一、目的
+        &f   ・限時之內，開箱盡多。
+
+        &b二、現今難度
+        &f   ・難度: &e{difficulty}
+
+        &b三、難度與色
+        &f   ・易  ：紫石
+        &f   ・常  ：綠石
+        &f   ・難  ：藍石
+
+        &b四、操法
+        &f   ・疾走尋箱，右擊開之。
+
+        &b五、積分
+        &f   ・常寶: +百
+        &f   ・稀寶（下界合金等）: 加分！
+
+        &b六、終局之條
+        &f   ・箱盡或時盡，戲終。
+
+        &b七、語錄集
+        &f   ・勝敗皆自存語錄。
+
+        &b八、所愛
+        &f   ・以★存所愛語錄。
+
+        &6==================================
+
+    book:
+      openFailed: "&c規則書不可開。"
+      hotbarGiven: "&6📖 規則書已置於快捷欄。"
+      hotbarHint: "&e持之右擊，可隨時重讀。"
+      latestHint: "&7(右擊此書可存 &e★最新&7。)"
+
+    legacy:
+      toc:
+        message: |-
+          &6===== 🌟 TreasureRun 目次 🌟 =====
+          &b一、目的
+          &f   ・限時之內，開箱盡多。
+
+          &b二、現今難度
+          &f   ・難度: &e{difficulty}
+
+          &6==================================
+
+    gui:
+      language_30e61e02: 語言 / Language
+      gui_27_b3f3a31b: 語言過衆，介面僅示前二十七。
+      click_to_select_aac1569c: 點擊以選
+      text_fce806ed: 語言選擇已止。再試請用
+      gamestart_easy_normal_hard_35bd4a97: /gameStart <easy|normal|hard>
+      text_ff9b9417: 或
+      gamestart_easy_normal_hard_b818a2da: /gamestart <easy|normal|hard>
+      text_9822f9ec: 執之。
+

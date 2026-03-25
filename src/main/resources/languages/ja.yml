@@ -1057,118 +1057,55 @@ ui:
     openbook_failed_on_this_serv_2fbcf165: openBook() failed on this server.
     time_up_bc0cd646: TIME UP
   menu:
-    treasurerun_83530842: ===== 🌟 TreasureRun 目次 🌟 =====\n
-    1_beeb6bbe: 1. ゲームの目的\n
-    text_3451002a: ・制限時間内にできるだけ多くの宝箱を開けて、スコアを稼ぎます。\n\n
-    2_8df6ad6e: 2. 現在の難易度\n
-    text_11bc3e21: '・今の難易度:'
-    3_0a99c176: 3. 難易度と色\n
-    easy_88f2bba2: ・Easy  ：紫のブロック\n
-    normal_9077bdc7: ・Normal：緑のブロック\n
-    hard_39013198: ・Hard  ：青のブロック\n\n
-    4_1a8df439: 4. 操作方法\n
-    text_f4f8380d: ・周りを走り回って、宝箱を見つけて右クリックで開けます。\n\n
-    5_d3a27140: 5. スコア\n
-    100_cd254541: ・普通の宝物で +100 点\n
-    text_8a3b12f6: ・特別な宝物（ネザライト、ブロックなど）でさらにボーナス点！\n\n
-    6_d67f1e1e: 6. 終了条件\n
-    text_45525e68: ・すべての宝箱を開けるか、時間切れでゲーム終了です。\n\n
-    7_quote_collection_81f91422: 7. 格言集（Quote Collection）\n
-    success_time_up_182cd099: ・SUCCESS / TIME_UP の結果に応じて、格言が自動で保存されます。\n
-    8_favorites_9bd73b5a: 8. お気に入り（Favorites）\n
-    text_9870fc7a: ・気に入った格言は★保存できます。\n
-    text_6c9c0c1a: ルールブックを開けませんでした。
-    treasurerun_29f3ef4c: TreasureRun ルール
-    easy_48c719b0: Easy（ゆったり）
-    hard_cf2d62eb: Hard（高難度）
-    normal_91b05a2c: Normal（標準）
-    treasurerun_d2d53935: TreasureRun ルール\n\n
-    text_e8d373c1: '難易度:'
-    text_5a5af058: 制限時間内にできるだけ多くの\n
-    text_b588d8ff: 宝箱を開けよう！\n
-    text_45510314: レアな宝物ほど高得点です。
-    text_c8e2efcb: ★ 基本の流れ\n\n
-    1_gamestart_fa828ecb: 1. /gameStart <難易度>\n
-    2_dffc5e21: 2. 緑のマークの宝箱を探す\n
-    3_571c1bc2: 3. 開けるとスコア + アイテム\n
-    '4_57884890': 4. 全て開けるとクリア！
-    text_c701f9b7: ★ ヒント\n\n
-    text_c1c175aa: ・ネザライト/ブロック系は\n
-    text_6b19386d: ジャックポット高得点！\n\n
-    gamemenu_c317f63b: ・途中で /gameMenu を打つと\n
-    text_fbfed72f: この本を再取得できます。\n\n
-    text_676bb117: ・タイムアップに注意！
-    treasurerun_db6f3df9: TreasureRun ルールブック
-    treasurerun_db6f3df9_149: TreasureRun ルールブック
-    text_2cf4e13e: 📖 ルールブックをホットバーに配布しました。
-    text_38e5d1f6: 手に持って右クリックすると、いつでも読み直せます。
-    treasurerun_29f3ef4c_178: TreasureRun ルール
-    treasurerun_db6f3df9_181: TreasureRun ルールブック
-    text_6c9c0c1a_226: ルールブックを開けませんでした。
-    treasurerun_db6f3df9_257: TreasureRun ルールブック
-    treasurerun_rule_book_5d357e4f: TreasureRun Rule Book
-    text_2cf4e13e_287: 📖 ルールブックをホットバーに配布しました。
-    latest_d5c07445: （この本を右クリックすると ★Latest を保存できます）
-    contents_3fa7d738: 📌 Contents\n\n
-    1_rules_7fc647ea: 1) Rules / ルール\n
-    how_to_play_7894b0b2: ・How to play\n\n
-    2_tips_581a4439: 2) Tips / ヒント\n
-    score_route_2be8301b: ・Score & route\n\n
-    3_quote_collection_6eb59a8c: 3) Quote Collection\n
-    saved_on_success_time_up_49ee943c: ・Saved on SUCCESS / TIME_UP\n
-    language_8ecb7414: '・Language:'
-    4_favorites_0057c6d2: 4) Favorites\n
-    your_saved_quotes_26397ee1: ・Your ★ saved quotes\n\n
-    hint_gamemenu_8eeec59e: 'Hint: /gameMenu で再度開けます'
-    quote_collection_bbf785f9: 📖 Quote Collection\n\n
-    text_8779a1f0: = 完走 / 成功\n
-    success_f8d91a85: ■ SUCCESS
-    text_281e1a40: = 時間切れ\n
-    time_up_6d6fae0c: ■ TIME_UP
-    text_53f630c1: = ★保存した格言\n\n
-    favorites_bed265a8: ■ Favorites
-    stored_in_mysql_db_501e842f: Stored in MySQL DB:\n
-    proverb_logs_history_6f4bd1ab: '- proverb_logs (history)\n'
-    proverb_favorites_423965a3: '- proverb_favorites (★)\n\n'
-    minecraft_71ff811e: ※ Minecraftの本は\n
-    text_e3c438c5: クリックで切替できないので\n
-    text_37bab345: 「セクション」形式で収録します。\n\n
-    tip_07e061fd: 'Tip: この本を右クリックで\n'
-    latest_ce0c4580: ★Latest を保存できます。
-    quote_collection_bbf785f9_395: 📖 Quote Collection\n\n
-    no_data_944a5bba: No data.
-    outcome_difficulty_lang_quot_ae31d0d7: 【outcome / difficulty / lang】\nquote
-    gamemenu_failed_to_load_quot_7b9cf0bc: '[GameMenu] Failed to load Quote Collection
-      from DB:'
-    quote_collection_bbf785f9_418: 📖 Quote Collection\n\n
-    recent_20_lang_f160224a: 'Recent 20  |  lang:'
-    text_670d0a29: まだ格言ログがありません。\n
-    success_time_up_b7fbdd7f: SUCCESS / TIME_UP で\n
-    text_904b6d36: 自動で保存されます。\n\n
-    db_proverb_logs_a59112af: '（DB: proverb_logs）'
-    text_de13bf3c: このタブには表示できる格言がありません。\n
-    text_fee9f74e: （まだ保存されていない可能性があります）\n\n
-    text_49f150b7: 別タブも見てみてください。
-    id_quote_7bff9933: ★#id\n【...】\nquote
-    favorites_37824264: ★ Favorites\n\n
-    no_data_944a5bba_538: No data.
-    gamemenu_failed_to_load_favo_d04a00ff: '[GameMenu] Failed to load Favorites from
-      DB:'
-    favorites_37824264_556: ★ Favorites\n\n
-    latest_20_lang_fde8853b: 'Latest 20  |  lang:'
-    text_040d4ce6: まだ★お気に入りがありません。\n\n
-    text_d7d474dd: 本を右クリックすると\n
-    latest_428076d0: ★Latest を保存できます。\n\n
-    db_proverb_favorites_eba378ed: '（DB: proverb_favorites）'
-    latest_984aaade: ★ Latest\n
-    all_c18cc1a3: ▶ [ALL]
-    success_d5c257c8: ▶ [SUCCESS]
-    time_up_3a3189ee: ▶ [TIME_UP]
-    favorites_fcd02afc: ▶ [FAVORITES]
-    success_normal_ja_the_sky_di_d1f12374: 【SUCCESS / Normal / ja】\nThe sky 
-      didn’t change.\nYou did.
-    1_success_normal_ja_the_sky__2a129f90: ★#1\n【SUCCESS / Normal / ja】\nThe sky
-      didn’t change.\nYou did.
+    toc:
+      message: |-
+        &6===== 🌟 TreasureRun 目次 🌟 =====
+        &b1. ゲームの目的
+        &f   • 制限時間内にできるだけ多くの宝箱を開けて、スコアを稼ぎます。
+
+        &b2. 現在の難易度
+        &f   • 難易度: &e{difficulty}
+
+        &b3. 難易度と色
+        &f   • Easy  : 紫のブロック
+        &f   • Normal: 緑のブロック
+        &f   • Hard  : 青のブロック
+
+        &b4. 操作方法
+        &f   • 周りを走り回って宝箱を見つけ、右クリックで開けます。
+
+        &b5. スコア
+        &f   • 普通の宝物: +100
+        &f   • 特別な宝物（ネザライト、ブロックなど）: さらにボーナス！
+
+        &b6. 終了条件
+        &f   • すべての宝箱を開けるか、時間切れでゲーム終了です。
+
+        &b7. 格言集（Quote Collection）
+        &f   • 結果（SUCCESS / TIME_UP）に応じて、格言が自動で保存されます。
+
+        &b8. お気に入り（Favorites）
+        &f   • 気に入った格言は ★ で保存できます。
+
+        &6==================================
+
+    book:
+      openFailed: "&cルールブックを開けませんでした。"
+      hotbarGiven: "&6📖 ルールブックをホットバーに配布しました。"
+      hotbarHint: "&e手に持って右クリックすると、いつでも読み直せます。"
+      latestHint: "&7（この本を右クリックすると &e★Latest&7 を保存できます）"
+
+    legacy:
+      toc:
+        message: |-
+          &6===== 🌟 TreasureRun 目次 🌟 =====
+          &b1. ゲームの目的
+          &f   • 制限時間内にできるだけ多くの宝箱を開けます。
+
+          &b2. 現在の難易度
+          &f   • 難易度: &e{difficulty}
+
+          &6==================================
   gui:
     language_30e61e02: Language / 言語
     gui_27_b3f3a31b: 許可言語が多いため、GUIには先頭 27 件のみ表示します。

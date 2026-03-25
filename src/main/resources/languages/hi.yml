@@ -178,3 +178,137 @@ quotes:
   philosophy:
     - 'Victory and defeat \nare nothing more than grains of sand.\n（勝利も敗北も、同じ砂の一粒に過ぎない。）'
     - 'The road goes on—or it ends.\nEither way, it lies on the same earth.\n（道は続き、あるいは途切れ、どちらも同じ大地の上にある。）'
+ui:
+  auto:
+    playerscore_b91d4cd3: 'PlayerScore सम्मिलन विफल:'
+    messages_yml_not_loaded_d56b1cd3: (messages.yml not loaded)
+    translation_missing_77031543: '(अनुवाद नहीं मिला:'
+    translation_missing_77031543_107: '(अनुवाद नहीं मिला:'
+    click_to_select_aac1569c: चुनने के लिए क्लिक करें
+    treasurerun_lang_config_yml__2dde4625: "[TreasureRun][Lang] config.yml में 'language:' सेक्शन नहीं मिला।"
+    click_to_select_aac1569c_76: चुनने के लिए क्लिक करें
+    treasurerun_lang_default_60887a83: '[TreasureRun][Lang] default='
+    click_to_select_aac1569c_19: चुनने के लिए क्लिक करें
+    treasurerun_lang_config_yml__2dde4625_33: "[TreasureRun][Lang] config.yml में 'language:' सेक्शन नहीं मिला।"
+    treasurerun_lang_material_la_bc70a401: '[TreasureRun][Lang] अमान्य Material: lang='
+    treasurerun_lang_language_ic_4bc2362d: "[TreasureRun][Lang] 'language.iconMaterial:' सेक्शन नहीं मिला（सभी PAPER बन जाएंगे）"
+    click_to_select_aac1569c_100: चुनने के लिए क्लिक करें
+    treasurerun_lang_default_60887a83_111: '[TreasureRun][Lang] default='
+    enemydown_mysql_jdbc_mybatis_6b5c6f68: '[EnemyDown] MySQL से जुड़े（JDBC + MyBatis）'
+    enemydown_mysql_6cf3e29b: '[EnemyDown] MySQL कनेक्शन विफल:'
+    enemydown_mysql_a18990c3: '[EnemyDown] MySQL कनेक्शन बंद।'
+    enemydown_mysql_e097a73e: '[EnemyDown] MySQL डिस्कनेक्ट विफल:'
+    mysqlmanager_player_score_d92afff4: '[MySQLManager] player_score तालिका जाँची/बनाई ✅'
+    mysqlmanager_player_score_21665c62: '[MySQLManager] player_score तालिका बनाने में विफल ❌:'
+    mysqlmanager_mysql_951100b9: '[MySQLManager] MySQL कनेक्शन परीक्षण सफल ✅'
+    mysqlmanager_player_score_a4968d00: '[MySQLManager] player_score तालिका की पंक्तियाँ:'
+    mysqlmanager_mysql_1763d390: '[MySQLManager] MySQL कनेक्ट नहीं ❌'
+    mysqlmanager_player_score_2b5c8721: '[MySQLManager] player_score तालिका मौजूद नहीं हो सकती ❌'
+    enemydown_mysql_bc514e56: '[EnemyDown] MySQL जुड़ा हुआ है।'
+    enemydown_mysql_93b23ef9: '[EnemyDown] MySQL जुड़ा नहीं है।'
+    light_fell_evenly_and_every__e50aee87: "Light fell evenly, ,\nand every shadow vanished.\n（光が等しく降り注ぎ、すべての影が消えた。）"
+    the_wind_fell_silent_and_eve_a96036c1: "The wind fell silent.\nand everything returned to where it belonged.\n（風が止み、あるべき場所に、あるべきものが戻った。）"
+    time_s_up_87859973: Time's up.
+    run_complete_46d920e5: Run complete.
+    run_complete_46d920e5_580: Run complete.
+    run_complete_46d920e5_589: Run complete.
+    playerlanguagestore_failed_t_c4999402: '[PlayerLanguageStore] Failed to create/load player_languages.yml:'
+    playerlanguagestore_failed_t_b6478ec8: '[PlayerLanguageStore] Failed to save player_languages.yml:'
+    proverb_logged_to_mysql_prov_c13b5e4e: 'Proverb logged to MySQL: proverb_logs'
+    failed_to_log_proverb_to_mys_2bb4c5c3: 'Failed to log proverb to MySQL: proverb_logs'
+    loaded_proverb_logs_from_mys_b5b0f8e0: 'Loaded proverb logs from MySQL: proverb_logs'
+    failed_to_load_proverb_logs__6246be38: 'Failed to load proverb logs from MySQL: proverb_logs'
+    treasurerunmultichestplugin_4499e25c: '🌈 TreasureRunMultiChestPlugin: 起動 🌈'
+    treasurerun_gamestagemanager_3d9e7f5a: '[TreasureRun] GameStageManager event registered!'
+    treasurerunmultichestplugin_a507471a: ✅ TreasureRunMultiChestPlugin が正常に起動しました！
+    treasurerunmultichestplugin_c2111711: '🔻 TreasureRunMultiChestPlugin: 無効化'
+    language_30e61e02: भाषा / Language
+    text_4f7e7cfa: नेदराइट इंगॉट प्राप्त!
+    text_1a6173d3: हीरा प्राप्त!
+    text_b6568a8d: सोने का सेब प्राप्त!
+    no_9c0fdee6: 🏆 No.
+    gamestart_easy_normal_hard_230bd0bd: अगली बार अलग रास्ता आज़माएं! पुनः प्रयास के लिए /gamestart <easy|normal|hard> उपयोग करें!
+    text_9310a1a7: खेल पहले से चल रहा है।
+    text_9310a1a7_908: खेल पहले से चल रहा है।
+    text_9310a1a7_1601: खेल पहले से चल रहा है।
+    text_f9c4c4e2: 'खेल समाप्त! कुल स्कोर:'
+    run_complete_d258363d: Run Complete!
+    run_complete_d258363d_1214: Run Complete!
+    time_s_up_7441e686: TIME'S UP!
+    time_s_up_7441e686_1313: TIME'S UP!
+    text_ec39d8ad: बचा समय
+    text_d6e25e00: 'बचा समय:'
+    text_b2c59e95: 'समय:'
+    text_c148686b: 'स्कोर:'
+    text_307fcc19: 'रैंक:'
+    starting_in_2413fc14: शुरू होने में…
+    easy_normal_hard_ef1ba55c: कठिनाई Easy / Normal / Hard है।
+    language_gui_aed4f8fc: Language GUI आरंभ नहीं हुई।
+    language_gui_aed4f8fc_931: Language GUI आरंभ नहीं हुई।
+    config_yml_3c6e9d15: ✅ config.yml लोड हुई
+    treasurerun_config_language__763cf02c: ✅ TreasureRun config पुनः लोड हुई（language GUI सहित）।
+    gui_gamestart_5870f221: GUI अपडेट हुई। /gameStart से पुनः खोलें।
+    text_3ecbc53d: कृपया खिलाड़ी के रूप में चलाएं
+    text_3030fd61: केवल खिलाड़ी उपयोग कर सकते हैं
+    reload_gameend_c41d5c55: खेल के दौरान reload नहीं हो सकता। /gameEnd के बाद करें।
+  menu:
+    toc:
+      message: |-
+        &6===== 🌟 TreasureRun सामग्री 🌟 =====
+        &b1. लक्ष्य
+        &f   ・समय सीमा में अधिक से अधिक संदूक खोलें।
+        
+        &b2. वर्तमान कठिनाई
+        &f   ・कठिनाई: &e{difficulty}
+        
+        &b3. कठिनाई और रंग
+        &f   ・आसान ：बैंगनी ब्लॉक
+        &f   ・सामान्य：हरे ब्लॉक
+        &f   ・कठिन  ：नीले ब्लॉक
+        
+        &b4. कैसे खेलें
+        &f   ・दौड़ें, संदूक खोजें, राइट-क्लिक से खोलें।
+        
+        &b5. स्कोर
+        &f   ・सामान्य खजाना: +100
+        &f   ・विशेष खजाना (नेदराइट / ब्लॉक आदि): बोनस!
+        
+        &b6. समाप्ति की शर्तें
+        &f   ・सभी संदूक खोलें या समय समाप्त — खेल समाप्त।
+        
+        &b7. उद्धरण संग्रह
+        &f   ・SUCCESS / TIME_UP पर स्वतः सहेजा जाता है।
+        
+        &b8. पसंदीदा
+        &f   ・★ से पसंदीदा उद्धरण सहेजें।
+        
+        &6==================================
+
+    book:
+      openFailed: "&cनियम पुस्तिका खोलने में विफल।"
+      hotbarGiven: "&6📖 नियम पुस्तिका आपके हॉटबार में जोड़ दी गई है।"
+      hotbarHint: "&eइसे हाथ में लेकर राइट-क्लिक करें — कभी भी पुनः पढ़ें।"
+      latestHint: "&7(इस पुस्तक को राइट-क्लिक करने पर &e★Latest&7 सहेजा जाएगा।)"
+
+    legacy:
+      toc:
+        message: |-
+          &6===== 🌟 TreasureRun सामग्री 🌟 =====
+          &b1. लक्ष्य
+          &f   ・समय सीमा में अधिक से अधिक संदूक खोलें।
+          
+          &b2. वर्तमान कठिनाई
+          &f   ・कठिनाई: &e{difficulty}
+          
+          &6==================================
+
+    gui:
+      language_30e61e02: भाषा / Language
+      gui_27_b3f3a31b: अधिक भाषाएं हैं, GUI में केवल पहले 27 दिखाए जा रहे हैं।
+      click_to_select_aac1569c: चुनने के लिए क्लिक करें
+      text_fce806ed: भाषा चयन रद्द किया। पुनः प्रयास के लिए
+      gamestart_easy_normal_hard_35bd4a97: /gameStart <easy|normal|hard>
+      text_ff9b9417: या
+      gamestart_easy_normal_hard_b818a2da: /gamestart <easy|normal|hard>
+      text_9822f9ec: चलाएं।
+

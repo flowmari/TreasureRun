@@ -13,9 +13,9 @@ import org.bukkit.event.Listener;          // ★ 追加
 import org.bukkit.event.inventory.InventoryClickEvent; // ★ 追加
 import org.bukkit.event.inventory.InventoryType;       // ★ 追加
 import org.bukkit.inventory.ItemStack;                 // ★ 追加
-import org.bukkit.inventory.Merchant;                  // ★ 追加
 import org.bukkit.inventory.MerchantInventory;         // ★ 追加
-import org.bukkit.inventory.MerchantRecipe;            // ★ 追加
+import org.bukkit.inventory.MerchantRecipe;// ★ 追加
+import org.bukkit.metadata.FixedMetadataValue;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitTask;
 import java.lang.reflect.*;
@@ -25,16 +25,14 @@ public class GameStageManager implements Listener {
   // ✅ 多重起動防止：MovingSafetyZoneTask の実行ハンドル
   private org.bukkit.scheduler.BukkitTask movingSafetyZoneHandle;
 
+  // ✅ Runnable本体（cancel()で床復元するため保持）
+  private MovingSafetyZoneTask movingSafetyZoneRunnable;
 
   private final TreasureRunMultiChestPlugin plugin;
 
   // ✅ UFO（型が違っても壊れないように Object で保持）
   private final Object ufo;
 
-  // ✅ MovingSafetyZone のタスクを止められるように保持
-  private BukkitTask movingSafetyZoneTask;
-  private MovingSafetyZoneTask movingSafetyZoneRunnable;
-  private int floorY = -999999;
 
   // ★ 難易度ブロックだけを覚えておくリスト
   private final java.util.List<Block> difficultyBlocks = new java.util.ArrayList<>();
@@ -61,11 +59,10 @@ public class GameStageManager implements Listener {
   }
 
   public GameStageManager(TreasureRunMultiChestPlugin plugin) {
-  this(plugin, null);
-  // AUTO: ensure MovingSafetyZoneTask is running
-  startMovingSafetyZoneTask();
-}
-
+    this(plugin, null);
+    // ❌ 起動時にMSZを常時起動しない
+    // MSZは buildSeasideStageAndTeleport() のステージ生成後に startMovingSafetyZoneTask() する
+  }
 
   // =======================================================
   // ✅ Seaside Ocean "確実に海上" 補助
@@ -132,8 +129,6 @@ public class GameStageManager implements Listener {
     // base を水面位置に合わせる（この後の処理で +1 される想定）
     origin.setY(waterY - 1);
   }
-
-
 
   // ✅ UFO を渡せる版（TreasureRunMultiChestPlugin 側で new GameStageManager(this, ufo) にできる）
   public GameStageManager(TreasureRunMultiChestPlugin plugin, Object ufo) {
@@ -206,6 +201,12 @@ public class GameStageManager implements Listener {
 
   /** 海辺ステージを作ってプレイヤーをテレポートする（ネオン床＋一発ドーン演出） */
   public Location buildSeasideStageAndTeleport(Player player) {
+
+    plugin.getLogger().info("[STAGE][DEBUG] buildSeasideStageAndTeleport entered"
+        + " player=" + (player != null ? player.getName() : "null")
+        + " gsm=" + System.identityHashCode(this)
+    );
+
     // まず従来の海探索
     Location base = findNearbySeaLocation(player.getLocation(), 48);
 
@@ -236,6 +237,9 @@ public class GameStageManager implements Listener {
 
     // ✅ 追加：このステージ中心を記憶（後で難易度ブロックをスイープ掃除できる）
     rememberStageCenter(stageCenter);
+
+    // ✅ 追加：過去残骸の黄色床を先に掃除（今回のバグの本丸）
+    sweepAllLemonGlass();
 
     // ✨ ネオン床
     buildNeonFloor(stageCenter);
@@ -300,10 +304,9 @@ public class GameStageManager implements Listener {
     // ★ ネオン床ステージの上に行商人＋ラマ2頭をスポーン
     spawnTraderAndLlamas(stageCenter);
 
-    // ✅ 黄色ファイヤーボール＋床変化（MovingSafetyZone）を起動（存在すれば）
     startMovingSafetyZoneTask();
 
-    // ✅ UFO開始（存在すれば）
+    // ✅ UFO Arrival演出（商人はbind済みなのでUFOが持ち上げて降ろす）
     startUfoIfAvailable(player, stageCenter);
 
     return stageCenter.clone();
@@ -375,6 +378,7 @@ public class GameStageManager implements Listener {
           angle -= 360;
         }
       }
+
     }.runTaskTimer(plugin, 0L, 4L);
   }
 
@@ -566,6 +570,72 @@ public class GameStageManager implements Listener {
     return cleaned;
   }
 
+  // ✅ 追加：残骸の黄色ガラス（YELLOW_STAINED_GLASS）だけを回収する
+// - y==centerY（床面）→ CYAN/MAGENTA に戻す
+// - それ以外（縦に残った残骸）→ AIR にする（ステージ上空の残骸を確実除去）
+  private int sweepLemonGlassAround(Location center, int radius, int yRange) {
+    if (center == null || center.getWorld() == null) return 0;
+
+    World w = center.getWorld();
+    int cx = center.getBlockX();
+    int cy = center.getBlockY();
+    int cz = center.getBlockZ();
+
+    int cleaned = 0;
+
+    for (int dx = -radius; dx <= radius; dx++) {
+      for (int dz = -radius; dz <= radius; dz++) {
+        for (int dy = -yRange; dy <= yRange; dy++) {
+          int x = cx + dx;
+          int y = cy + dy;
+          int z = cz + dz;
+
+          Block b = w.getBlockAt(x, y, z);
+          if (b.getType() != Material.YELLOW_STAINED_GLASS) continue;
+
+          // 誤爆防止：近傍が“ステージっぽい素材”のときだけ処理
+          Material below = w.getBlockAt(x, y - 1, z).getType();
+          Material hereBelow2 = w.getBlockAt(x, y - 2, z).getType(); // 念のためもう1段
+
+          boolean looksLikeOurStage =
+              below == Material.WATER ||
+                  below == Material.PRISMARINE ||
+                  below == Material.SEA_LANTERN ||
+                  below == Material.CYAN_STAINED_GLASS ||
+                  below == Material.MAGENTA_STAINED_GLASS ||
+                  hereBelow2 == Material.WATER; // 縦残骸が浮いてても海上なら拾える
+
+          if (!looksLikeOurStage) continue;
+
+          if (y == cy) {
+            // ネオン床（上面）は CYAN/MAGENTA 市松へ戻す
+            Material restore = (((x - cx) + (z - cz)) % 2 == 0)
+                ? Material.CYAN_STAINED_GLASS
+                : Material.MAGENTA_STAINED_GLASS;
+            b.setType(restore, false);
+          } else {
+            // 縦に残った残骸は消す
+            b.setType(Material.AIR, false);
+          }
+
+          cleaned++;
+        }
+      }
+    }
+
+    return cleaned;
+  }
+
+  // ✅ 追加：最近のステージ周辺をまとめて掃除
+  private int sweepAllLemonGlass() {
+    int total = 0;
+    for (Location c : recentStageCenters) {
+      total += sweepLemonGlassAround(c, 128, 16); // ← 高さを16に上げて取りこぼし防止
+    }
+    if (total > 0) plugin.getLogger().info("[MSZ][CLEAN] lemon remnants cleaned=" + total);
+    return total;
+  }
+
   // ★ 難易度ブロックだけを全部消す（何個消したかを返す）
   public int clearDifficultyBlocks() {
     int cleaned = 0;
@@ -620,35 +690,111 @@ public class GameStageManager implements Listener {
     int removed = 0;
 
     // ✅ 先に MovingSafetyZone を止める（存在すれば）
-    stopMovingSafetyZoneIfRunning();
+    stopMovingSafetyZoneTask();
 
-    // ✅ UFO 終了（存在すれば）
+    // ✅ UFO Departure演出を試みる
+    boolean ufoDeparting = tryStartUfoDeparture();
+
+    if (ufoDeparting) {
+      stageTrader = null;
+      stageLlamas.clear();
+      plugin.getLogger().info("[UFO] Departure started - entities removed by UFO");
+    } else {
+      if (stageTrader != null) {
+        try {
+          if (!stageTrader.isDead()) {
+            stageTrader.remove();
+            removed++;
+          }
+        } catch (Exception ignored) {}
+        stageTrader = null;
+      }
+
+      for (TraderLlama l : stageLlamas) {
+        if (l == null) continue;
+        try {
+          if (!l.isDead()) {
+            try { l.setLeashHolder(null); } catch (Exception ignored2) {}
+            l.remove();
+            removed++;
+          }
+        } catch (Exception ignored) {}
+      }
+      stageLlamas.clear();
+    }
+
+    return removed;
+  }
+
+  // =======================================================
+  // ✅ サーバー起動直後に、前回残っていた Treasure Shop 残骸を掃除する
+  // - stageTrader / stageLlamas の参照が無くても、ワールドを走査して削除する
+  // - 「Treasure Shop」名の行商人と、その近くの TraderLlama を対象にする
+  // =======================================================
+  public int purgeTreasureShopEntitiesOnStartup() {
+    int removed = 0;
+
+    // 念のため、MSZ / UFO も先に止める
+    stopMovingSafetyZoneIfRunning();
     stopUfoIfAvailable();
 
-    // 行商人
-    if (stageTrader != null) {
-      try {
-        if (!stageTrader.isDead()) {
-          stageTrader.remove();
-          removed++;
-        }
-      } catch (Exception ignored) {}
-      stageTrader = null;
+    java.util.List<Location> removedTraderLocs = new java.util.ArrayList<>();
+
+    for (World w : Bukkit.getWorlds()) {
+      for (org.bukkit.entity.Entity e : w.getEntities()) {
+        if (!(e instanceof WanderingTrader trader)) continue;
+
+        String rawName = trader.getCustomName();
+        if (rawName == null) continue;
+
+        String plain = ChatColor.stripColor(rawName);
+        if (!"Treasure Shop".equalsIgnoreCase(plain)) continue;
+
+        removedTraderLocs.add(trader.getLocation().clone());
+
+        try {
+          if (!trader.isDead()) {
+            trader.remove();
+            removed++;
+          }
+        } catch (Exception ignored) {}
+      }
     }
 
-    // ラマ
-    for (TraderLlama l : stageLlamas) {
-      if (l == null) continue;
-      try {
-        if (!l.isDead()) {
-          try { l.setLeashHolder(null); } catch (Exception ignored2) {}
-          l.remove();
-          removed++;
+    // 行商人の近くにいる TraderLlama も掃除
+    for (World w : Bukkit.getWorlds()) {
+      for (org.bukkit.entity.Entity e : w.getEntities()) {
+        if (!(e instanceof TraderLlama llama)) continue;
+
+        Location loc = llama.getLocation();
+        boolean nearRemovedTrader = false;
+
+        for (Location tloc : removedTraderLocs) {
+          if (tloc.getWorld() != null
+              && loc.getWorld() != null
+              && tloc.getWorld().getUID().equals(loc.getWorld().getUID())
+              && tloc.distanceSquared(loc) <= 64.0) { // 半径8ブロック
+            nearRemovedTrader = true;
+            break;
+          }
         }
-      } catch (Exception ignored) {}
+
+        if (!nearRemovedTrader) continue;
+
+        try {
+          if (!llama.isDead()) {
+            try { llama.setLeashHolder(null); } catch (Exception ignored2) {}
+            llama.remove();
+            removed++;
+          }
+        } catch (Exception ignored) {}
+      }
     }
+
+    stageTrader = null;
     stageLlamas.clear();
 
+    plugin.getLogger().info("🧹 startup Treasure Shop purge removed=" + removed);
     return removed;
   }
 
@@ -686,6 +832,7 @@ public class GameStageManager implements Listener {
           cancel();
         }
       }
+
     }.runTaskTimer(plugin, 0L, 2L);
   }
 
@@ -706,6 +853,7 @@ public class GameStageManager implements Listener {
         yOff += 0.25;
         if (yOff > 3.5) cancel();
       }
+
     }.runTaskTimer(plugin, 0L, 2L);
   }
 
@@ -716,6 +864,38 @@ public class GameStageManager implements Listener {
     if (center == null) return;
     World w = center.getWorld();
     if (w == null) return;
+
+    // ✅ cleanup previous Treasure Shop caravan to prevent duplicates
+
+    if (stageTrader != null && stageTrader.isValid()) { try { stageTrader.remove(); } catch (Exception ignored) {} }
+
+    stageTrader = null;
+
+    for (org.bukkit.entity.TraderLlama l : new java.util.ArrayList<>(stageLlamas)) {
+
+      if (l != null && l.isValid()) { try { l.remove(); } catch (Exception ignored) {} }
+
+    }
+
+    stageLlamas.clear();
+
+    // ✅ also remove stray Treasure Shop traders/llamas left in area (radius 48)
+
+    try {
+
+      for (org.bukkit.entity.Entity e : w.getNearbyEntities(center, 48, 24, 48)) {
+
+        if (e instanceof org.bukkit.entity.WanderingTrader || e instanceof org.bukkit.entity.TraderLlama) {
+
+          String n = e.getCustomName();
+
+          if (n != null && n.contains("Treasure Shop")) { try { e.remove(); } catch (Exception ignored) {} }
+
+        }
+
+      }
+
+    } catch (Exception ignored) {}
 
     Location traderLoc = center.clone().add(0.5, 1.1, 0.5);
 
@@ -728,6 +908,8 @@ public class GameStageManager implements Listener {
     });
 
     this.stageTrader = trader;
+    // ✅ MSZが「この隊商だけ」を対象にできるように印を付ける
+    trader.setMetadata(MovingSafetyZoneTask.CARRIER_META, new FixedMetadataValue(plugin, true));
     this.stageLlamas.clear();
 
     setupTreasureShopRecipes(trader);
@@ -746,8 +928,44 @@ public class GameStageManager implements Listener {
         l.setGlowing(true);
       });
       llama.setLeashHolder(trader);
+      // ✅ MSZ用：carrier印
+      llama.setMetadata(MovingSafetyZoneTask.CARRIER_META, new FixedMetadataValue(plugin, true));
 
       stageLlamas.add(llama);
+    }
+    // ===============================
+    // ✅ UFO に「この商人＋ラマ2頭」を bind する（増殖防止の決定打）
+    //    これにより、UFO側は "trader != null && valid" ルートに入り、
+    //    追加スポーン（保険）しなくなる
+    // ===============================
+    try {
+      Object target = this.ufo;
+      if (target == null) {
+        target = tryCallGetter(plugin, "getUfo");
+        if (target == null) target = tryCallGetter(plugin, "getUfoController");
+      }
+
+      if (target != null) {
+        // bindGroup(WanderingTrader, List<TraderLlama>) を反射で呼ぶ（型違いでも壊れない）
+        Method bm = findBestMethod(
+            target.getClass(),
+            "bindGroup",
+            new Class[]{ org.bukkit.entity.WanderingTrader.class, java.util.List.class }
+        );
+
+        if (bm != null) {
+          bm.setAccessible(true);
+          bm.invoke(target, trader, new java.util.ArrayList<>(stageLlamas));
+          plugin.getLogger().info("✅ UFO bindGroup OK: trader=" + trader.getUniqueId()
+              + " llamas=" + stageLlamas.size());
+        } else {
+          plugin.getLogger().warning("⚠ UFO bindGroup method not found on " + target.getClass().getName());
+        }
+      } else {
+        plugin.getLogger().warning("⚠ UFO controller is null; skip bindGroup");
+      }
+    } catch (Throwable t) {
+      plugin.getLogger().warning("⚠ UFO bindGroup failed: " + t);
     }
 
     final Location centerLoc = traderLoc.clone();
@@ -771,7 +989,7 @@ public class GameStageManager implements Listener {
         }
 
         if (stageTrader != null && !stageTrader.isDead()) {
-          if (stageTrader.getLocation().distanceSquared(centerLoc) > 4.0) {
+          if (stageTrader.getLocation().distanceSquared(centerLoc) > 256.0) { // 16 blocks
             stageTrader.teleport(centerLoc);
           }
         }
@@ -800,6 +1018,7 @@ public class GameStageManager implements Listener {
           }
         }
       }
+
     }.runTaskTimer(plugin, 0L, 20L);
   }
 
@@ -977,40 +1196,6 @@ public class GameStageManager implements Listener {
 
       shopDebug("OK(LATER): playing effects now");
 
-      // ✅ 表示だけ：アイスランド語 ⇔ 英語 を交互に（0.5秒ごと、5セット）
-      final String iceland = ChatColor.translateAlternateColorCodes('&', "&6&lKúl undirbúningur…");
-
-      new BukkitRunnable() {
-        int n = 0; // 0..9 (10回) = 交互5セット
-
-        @Override
-        public void run() {
-          if (!plugin.isGameRunning() || !player.isOnline()) {
-            cancel();
-            return;
-          }
-
-          if (n % 2 == 0) {
-            // アイスランド語
-            player.sendTitle(iceland, "", 0, 8, 0);
-          } else {
-            // 英語
-            player.sendTitle(
-                ChatColor.GOLD + "Trade complete!",
-                ChatColor.AQUA + "A hidden power awakens…",
-                0, 8, 0
-            );
-          }
-
-          n++;
-          if (n >= 10) {
-            cancel();
-          }
-        }
-
-      }.runTaskTimer(plugin, 0L, 10L); // 10tick ≒ 0.5秒
-
-
       // 演出（100%気づく版）
       player.sendTitle(
           ChatColor.GOLD + "Trade complete!",
@@ -1069,7 +1254,7 @@ public class GameStageManager implements Listener {
           );
 
           if (ret instanceof BukkitTask bt) {
-            movingSafetyZoneTask = bt;
+            movingSafetyZoneHandle = bt;
           }
 
           plugin.getLogger().info("✅ MovingSafetyZone started via " + cn + "." + m.getName());
@@ -1092,7 +1277,7 @@ public class GameStageManager implements Listener {
           if (runTaskTimer != null) {
             runTaskTimer.setAccessible(true);
             Object ret = runTaskTimer.invoke(inst, plugin, 0L, 1L);
-            if (ret instanceof BukkitTask bt) movingSafetyZoneTask = bt;
+            if (ret instanceof BukkitTask bt) movingSafetyZoneHandle = bt;
             plugin.getLogger().info("✅ MovingSafetyZone started via new " + cn + "(...)");
             return;
           }
@@ -1102,16 +1287,11 @@ public class GameStageManager implements Listener {
 
     plugin.getLogger().warning("⚠ MovingSafetyZone class not found or could not start (kept as-is).");
   }
-
   private void stopMovingSafetyZoneIfRunning() {
-    try {
-      if (movingSafetyZoneTask != null) {
-        movingSafetyZoneTask.cancel();
-        movingSafetyZoneTask = null;
-        plugin.getLogger().info("✅ MovingSafetyZone stopped.");
-      }
-    } catch (Throwable ignored) {}
+    // ✅ 修正: stopMovingSafetyZoneTask() と同じ処理に統一
+    stopMovingSafetyZoneTask();
   }
+
 
   // =======================================================
   // ✅ UFO 開始/終了（reflectionで “実装そのまま” を温存）
@@ -1189,6 +1369,31 @@ public class GameStageManager implements Listener {
     }
   }
 
+  // ✅ UFO Departure を試みる（成功=true / UFO無しor busy=false）
+  private boolean tryStartUfoDeparture() {
+    Object target = this.ufo;
+    if (target == null) {
+      target = tryCallGetter(plugin, "getUfo");
+      if (target == null) target = tryCallGetter(plugin, "getUfoController");
+    }
+    if (target == null) return false;
+
+    try {
+      Method m = findBestMethod(target.getClass(), "tryStartDeparture",
+          new Class[]{});
+      if (m != null) {
+        m.setAccessible(true);
+        Object ret = m.invoke(target);
+        if (ret instanceof Boolean b && b) {
+          plugin.getLogger().info("✅ UFO Departure started");
+          return true;
+        }
+      }
+    } catch (Throwable ignored) {}
+
+    return false;
+  }
+
   // =======================================================
   // ✅ reflection ユーティリティ
   // =======================================================
@@ -1255,164 +1460,167 @@ public class GameStageManager implements Listener {
     return null;
   }
 
+  // =======================================================
+// ✅ 追加：stageTrader が null/invalid の時に「近くの Treasure Shop 商人」を拾って復旧する保険
+//  - 既存ロジックは一切変えず、startMovingSafetyZoneTask() の直前に呼ぶだけ
+// =======================================================
+  private void ensureStageTraderIfMissing() {
+    try {
+      if (stageTrader != null && stageTrader.isValid()) return;
 
-    private void startMovingSafetyZoneTask() {
+      // どのワールドから探す？：オンラインプレイヤーのワールドを優先
+      for (Player p : Bukkit.getOnlinePlayers()) {
+        if (p == null || !p.isOnline()) continue;
+        World w = p.getWorld();
+        if (w == null) continue;
+
+        // プレイヤー周辺を軽く探す（半径64）
+        for (org.bukkit.entity.Entity e : w.getNearbyEntities(p.getLocation(), 64, 32, 64)) {
+          if (!(e instanceof WanderingTrader wt)) continue;
+          if (!wt.isValid()) continue;
+
+          // Treasure Shop の商人っぽい条件（どれか一致でOK）
+          String nm = wt.getCustomName();
+          boolean nameOk = (nm != null && ChatColor.stripColor(nm).toLowerCase().contains("treasure shop"));
+          boolean metaOk = wt.hasMetadata(MovingSafetyZoneTask.CARRIER_META);
+
+          if (nameOk || metaOk) {
+            stageTrader = wt;
+            plugin.getLogger().info("[MSZ][GUARD] stageTrader recovered: "
+                + wt.getWorld().getName() + " "
+                + wt.getLocation().getBlockX() + "," + wt.getLocation().getBlockY() + "," + wt.getLocation().getBlockZ());
+            return;
+          }
+        }
+      }
+    } catch (Throwable t) {
+      plugin.getLogger().warning("[MSZ][GUARD] ensureStageTraderIfMissing failed: " + t);
+    }
+  }
+
+  // =======================================================
+  // ✅ MovingSafetyZoneTask 起動（置換1）
+  // =======================================================
+  private void startMovingSafetyZoneTask() {
+    // まず完全停止（残骸も戻す）
     stopMovingSafetyZoneTask();
 
-    try {
-      // direct-new: do not use reflection
+    // ✅ 追加：商人が null/invalid なら拾ってくる保険
+    ensureStageTraderIfMissing();
 
-      // ✅ TreasureProvider を接続（宝箱接近演出を有効化）
+    // ✅ 必須：この時点で商人がいなければ、MSZは起動しない（床Yも取れない）
+    if (stageTrader == null || !stageTrader.isValid()) {
+      plugin.getLogger().warning("[MSZ] stageTrader is null/invalid -> skip start");
+      return;
+    }
+
+    // ✅ ステージ床Yは「商人の足元 -1」で固定（あなたの仕様通り）
+    final int floorY = stageTrader.getLocation().getBlockY() - 1;
+
+    plugin.getLogger().info("[MSZ][Y] traderBlockY=" + stageTrader.getLocation().getBlockY()
+        + " fixedFloorY=" + floorY
+        + " world=" + stageTrader.getWorld().getName()
+    );
+
+    try {
+      // ✅ TreasureProvider（宝箱2m演出の“生存確認ログ”付き）
       MovingSafetyZoneTask.TreasureProvider treasureProvider = () -> {
         try {
           TreasureChestManager m = plugin.getTreasureChestManager();
-          return (m != null) ? new java.util.ArrayList<>(m.getTreasureLocations()) : java.util.Collections.emptyList();
-        } catch (Throwable ignored) {
+          if (m == null) {
+            plugin.getLogger().warning("[MSZ][TREASURE] TreasureChestManager is NULL");
+            return java.util.Collections.emptyList();
+          }
+
+          // ★ getTreasureLocations() は Collection を返す想定なので Collection で受ける
+          java.util.Collection<org.bukkit.Location> col = m.getTreasureLocations();
+
+          // ★ MovingSafetyZoneTask が欲しいのは List なので List に変換して返す
+          java.util.List<org.bukkit.Location> list =
+              (col == null) ? java.util.Collections.emptyList() : new java.util.ArrayList<>(col);
+
+          plugin.getLogger().info("[MSZ][TREASURE] count=" + list.size()
+              + " instance=" + System.identityHashCode(m));
+
+          return list;
+        } catch (Throwable t) {
+          plugin.getLogger().warning("[MSZ][TREASURE] provider error: " + t);
           return java.util.Collections.emptyList();
         }
       };
 
-      // ✅ ステージ床Yを自動で固定（誤爆ゼロ）
-      // floorY が取れない時は Integer.MIN_VALUE にして「Y固定無し」で動かす
-      int fixedY = (floorY == -999999) ? Integer.MIN_VALUE : floorY;
-
-      MovingSafetyZoneTask task = new MovingSafetyZoneTask(plugin, treasureProvider, fixedY);
+      // ✅ task は1回だけ生成
+      MovingSafetyZoneTask task = new MovingSafetyZoneTask(plugin, treasureProvider, floorY);
       this.movingSafetyZoneRunnable = task;
 
-      // MovingSafetyZoneTask expects 2-tick period (its internal tick logic assumes period=2)
+      // ✅ スケジュールは必ずこの1箇所で実行（period=2固定）
       scheduleMovingSafetyZone(task, 2L);
-      plugin.getLogger().info("MovingSafetyZoneTask started (direct-new) period=2 floorY=" + fixedY);
+
+      // ✅ 追加：1tick後に「本当に動いてるか」確認（最短で原因切り分けできる）
+      Bukkit.getScheduler().runTaskLater(plugin, () -> {
+        try {
+          boolean handleOk = (movingSafetyZoneHandle != null);
+          boolean runnableOk = (movingSafetyZoneRunnable != null);
+          plugin.getLogger().info("[MSZ][CHECK] handle=" + (handleOk ? movingSafetyZoneHandle.getTaskId() : "null")
+              + " runnable=" + (runnableOk ? "ok" : "null")
+              + " trader=" + (stageTrader != null && stageTrader.isValid())
+              + " online=" + Bukkit.getOnlinePlayers().size());
+        } catch (Throwable ignored) {}
+      }, 1L);
+
+      plugin.getLogger().info("[MSZ] started period=2 taskId="
+          + (movingSafetyZoneHandle != null ? movingSafetyZoneHandle.getTaskId() : -1));
 
     } catch (Throwable t) {
-      plugin.getLogger().severe("MovingSafetyZoneTask start failed: " + t);
+      plugin.getLogger().severe("[MSZ] start failed: " + t);
       t.printStackTrace();
     }
   }
 
-private void scheduleMovingSafetyZone(MovingSafetyZoneTask task, long period) {
-    movingSafetyZoneHandle = task.runTaskTimer(plugin, 0L, period);
+  // =======================================================
+  // ✅ MSZスケジュール（置換2）
+  // =======================================================
+  private void scheduleMovingSafetyZone(org.bukkit.scheduler.BukkitRunnable r, long periodTicks) {
+    if (r == null) return;
+
+    // ✅ ここは「既存が残ってたら止めて作り直す」が正解（取り残し対策）
+    if (movingSafetyZoneHandle != null) {
+      try { movingSafetyZoneHandle.cancel(); } catch (Throwable ignored) {}
+      movingSafetyZoneHandle = null;
+    }
+
+    movingSafetyZoneHandle = r.runTaskTimer(plugin, 0L, periodTicks);
+    plugin.getLogger().info("[MSZ] scheduled period=" + periodTicks
+        + " taskId=" + movingSafetyZoneHandle.getTaskId());
   }
 
+  // =======================================================
+  // ✅ MSZ停止（置換3）
+  // =======================================================
   private void stopMovingSafetyZoneTask() {
-    if (movingSafetyZoneHandle != null) {
-      movingSafetyZoneHandle.cancel();
+    try {
+      // ✅ 先に「Runnable.cancel()」を呼ぶ（restoreAllFloors を確実に走らせる）
+      if (movingSafetyZoneRunnable != null) {
+        try { movingSafetyZoneRunnable.cancel(); } catch (Throwable ignored) {}
+      }
+
+      // ✅ その後にスケジュール停止（残っててもOK）
+      if (movingSafetyZoneHandle != null) {
+        try { movingSafetyZoneHandle.cancel(); } catch (Throwable ignored) {}
+      }
+
+    } finally {
       movingSafetyZoneHandle = null;
-      plugin.getLogger().info("✅ MovingSafetyZoneTask stopped");
+      movingSafetyZoneRunnable = null;
+      plugin.getLogger().info("[MSZ] stopped");
     }
   }
-
 
   // ✅ MovingSafetyZoneTask を“直起動”する（MovingSafetyZone.class 不要）
+  // ❌ この経路は period=1 や床Y未固定など事故要因になるので完全に無効化する
   private void startMovingSafetyZoneTaskDirect(org.bukkit.Location stageCenter) {
-    // ✅ 多重起動防止
-    stopMovingSafetyZoneTask();
-
-    if (stageCenter == null || stageCenter.getWorld() == null) {
-      plugin.getLogger().warning("⚠ MovingSafetyZoneTask: stageCenter/world is null");
-      return;
-    }
-
-    final org.bukkit.World w = stageCenter.getWorld();
-
-    // ✅ 近くの行商人を1体拾う（最も近い個体）
-    org.bukkit.entity.WanderingTrader trader = w.getNearbyEntities(
-        stageCenter, 64, 24, 64,
-        e -> e instanceof org.bukkit.entity.WanderingTrader
-    ).stream()
-     .map(e -> (org.bukkit.entity.WanderingTrader) e)
-     .min(java.util.Comparator.comparingDouble(e -> e.getLocation().distanceSquared(stageCenter)))
-     .orElse(null);
-
-    if (trader == null || trader.isDead()) {
-      plugin.getLogger().warning("⚠ MovingSafetyZoneTask: WanderingTrader not found near stageCenter");
-      return;
-    }
-
-    // ✅ 近くのトレーダーラマを最大2体（優先：商人にリードで繋がってる）
-    java.util.List<org.bukkit.entity.TraderLlama> llamas = w.getNearbyEntities(
-        trader.getLocation(), 32, 16, 32,
-        e -> e instanceof org.bukkit.entity.TraderLlama
-    ).stream()
-     .map(e -> (org.bukkit.entity.TraderLlama) e)
-     .filter(l -> !l.isDead())
-     .sorted((a, b) -> {
-       boolean aLeashed = a.isLeashed() && a.getLeashHolder() != null
-           && a.getLeashHolder().getUniqueId().equals(trader.getUniqueId());
-       boolean bLeashed = b.isLeashed() && b.getLeashHolder() != null
-           && b.getLeashHolder().getUniqueId().equals(trader.getUniqueId());
-       if (aLeashed != bLeashed) return aLeashed ? -1 : 1;
-       return Double.compare(a.getLocation().distanceSquared(trader.getLocation()),
-                             b.getLocation().distanceSquared(trader.getLocation()));
-     })
-     .limit(2)
-     .collect(java.util.stream.Collectors.toList());
-
-    try {
-      // ✅ jarに存在するクラス（あなたの jar tf で確認済み）
-      Class<?> cls = Class.forName("plugin.MovingSafetyZoneTask");
-
-      // ✅ TreasureProvider があるなら “空” 実装で渡す（無くてもOK）
-      Object treasureProvider = null;
-      try {
-        Class<?> providerCls = Class.forName("plugin.TreasureProvider");
-        if (providerCls.isInterface()) {
-          treasureProvider = java.lang.reflect.Proxy.newProxyInstance(
-              cls.getClassLoader(),
-              new Class[]{ providerCls },
-              (proxy, method, args) -> java.util.Collections.emptyList()
-          );
-        }
-      } catch (ClassNotFoundException ignore) {}
-
-      Object taskObj = null;
-
-      // ✅ よくある引数順を候補にして、合うコンストラクタを自動選択
-      java.util.List<Object[]> candidates = new java.util.ArrayList<>();
-      candidates.add(new Object[]{ plugin, stageCenter, trader, llamas });
-      candidates.add(new Object[]{ plugin, trader, llamas, stageCenter });
-      if (treasureProvider != null) {
-        candidates.add(new Object[]{ plugin, stageCenter, trader, llamas, treasureProvider });
-        candidates.add(new Object[]{ plugin, trader, llamas, stageCenter, treasureProvider });
-      }
-
-      outer:
-      for (java.lang.reflect.Constructor<?> c : cls.getConstructors()) {
-        Class<?>[] pt = c.getParameterTypes();
-        for (Object[] args : candidates) {
-          if (pt.length != args.length) continue;
-
-          boolean ok = true;
-          for (int i = 0; i < pt.length; i++) {
-            if (args[i] == null) {
-              if (pt[i].isPrimitive()) { ok = false; break; }
-            } else if (!pt[i].isAssignableFrom(args[i].getClass())) {
-              ok = false; break;
-            }
-          }
-          if (!ok) continue;
-
-          taskObj = c.newInstance(args);
-          break outer;
-        }
-      }
-
-      if (taskObj == null) {
-        plugin.getLogger().severe("❌ MovingSafetyZoneTask: matching constructor not found. (check constructors)");
-        return;
-      }
-
-      if (!(taskObj instanceof org.bukkit.scheduler.BukkitRunnable runnable)) {
-        plugin.getLogger().severe("❌ MovingSafetyZoneTask is not BukkitRunnable. (cannot schedule)");
-        return;
-      }
-
-      movingSafetyZoneHandle = runnable.runTaskTimer(plugin, 0L, 1L);
-      plugin.getLogger().info("✅ MovingSafetyZoneTask started (direct) trader=" + trader.getUniqueId() + " llamas=" + llamas.size());
-
-    } catch (Throwable t) {
-      plugin.getLogger().severe("❌ MovingSafetyZoneTask start failed: " + t);
-      t.printStackTrace();
-    }
+    plugin.getLogger().info("[MSZ] startMovingSafetyZoneTaskDirect is disabled. Use startMovingSafetyZoneTask() only.");
+    // 何もしない（封印）
   }
 
 }

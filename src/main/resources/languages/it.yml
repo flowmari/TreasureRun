@@ -1057,6 +1057,54 @@ ui:
     openbook_failed_on_this_serv_2fbcf165: openBook() failed on this server.
     time_up_bc0cd646: TIME UP
   menu:
+    toc:
+      message: |-
+        &6===== 🌟 TreasureRun Indice 🌟 =====
+        &b1. Obiettivo
+        &f   • Apri quanti più forzieri possibile entro il tempo limite per ottenere punti.
+
+        &b2. Difficoltà attuale
+        &f   • Difficoltà: &e{difficulty}
+
+        &b3. Difficoltà e colori
+        &f   • Easy  : Blocchi viola
+        &f   • Normal: Blocchi verdi
+        &f   • Hard  : Blocchi blu
+
+        &b4. Come si gioca
+        &f   • Corri in giro, trova i forzieri e aprili con clic destro.
+
+        &b5. Punteggio
+        &f   • Tesoro normale: +100
+        &f   • Tesoro speciale (Netherite, blocchi, ecc.): bonus extra!
+
+        &b6. Fine partita
+        &f   • La partita termina quando tutti i forzieri sono aperti o allo scadere del tempo.
+
+        &b7. Raccolta di citazioni
+        &f   • Le citazioni si salvano automaticamente in base al risultato (SUCCESS / TIME_UP).
+
+        &b8. Preferiti
+        &f   • Salva le citazioni preferite con ★.
+
+        &6==================================
+
+    book:
+      openFailed: "&cImpossibile aprire il libro delle regole."
+      hotbarGiven: "&6📖 Il libro delle regole è stato messo nella tua hotbar."
+      hotbarHint: "&eTienilo in mano e fai clic destro per rileggerlo quando vuoi."
+      latestHint: "&7(Fai clic destro su questo libro per salvare &e★Latest&7.)"
+    legacy:
+      toc:
+        message: |-
+          &6===== 🌟 TreasureRun Indice 🌟 =====
+          &b1. Obiettivo
+          &f   • Apri quanti più forzieri possibile entro il tempo limite per ottenere punti.
+
+          &b2. Difficoltà attuale
+          &f   • Difficoltà: &e{difficulty}
+
+          &6==================================
     treasurerun_83530842: ===== 🌟 TreasureRun 目次 🌟 =====\n
     1_beeb6bbe: 1. ゲームの目的\n
     text_3451002a: ・制限時間内にできるだけ多くの宝箱を開けて、スコアを稼ぎます。\n\n

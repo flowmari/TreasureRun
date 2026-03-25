@@ -1057,6 +1057,56 @@ ui:
     openbook_failed_on_this_serv_2fbcf165: openBook() failed on this server.
     time_up_bc0cd646: TIME UP
   menu:
+    toc:
+      message: |-
+        &6===== 🌟 TreasureRun Sisällysluettelo 🌟 =====
+        &b1. Tavoite
+        &f   ・Avaa mahdollisimman monta aarrearkkua aikarajan puitteissa ja kerää pisteitä.
+
+        &b2. Nykyinen vaikeustaso
+        &f   ・Vaikeustaso: &e{difficulty}
+
+        &b3. Vaikeustasot ja värit
+        &f   ・Easy  ：violetit palikat
+        &f   ・Normal：vihreät palikat
+        &f   ・Hard  ：siniset palikat
+
+        &b4. Ohjaus
+        &f   ・Juokse ympäriinsä, etsi arkkuja ja avaa ne oikealla klikkauksella.
+
+        &b5. Pisteet
+        &f   ・Tavallinen aarre: +100 pistettä
+        &f   ・Erikoisaare (Netheriitti, palikat jne.): lisää bonuksia!
+
+        &b6. Päättymisehdot
+        &f   ・Peli päättyy, kun kaikki arkut on avattu tai aika loppuu.
+
+        &b7. Sitaattikokoelma (Quote Collection)
+        &f   ・Sitaatit tallennetaan automaattisesti tuloksen (SUCCESS / TIME_UP) mukaan.
+
+        &b8. Suosikit (Favorites)
+        &f   ・Tallenna mieluisat sitaatit ★-merkinnällä.
+
+        &6==================================
+
+    book:
+      openFailed: "&cSääntökirjaa ei voitu avata."
+      hotbarGiven: "&6📖 Sääntökirja on lisätty pikapalkkiisi."
+      hotbarHint: "&ePidä sitä kädessä ja klikkaa oikealla lukeaksesi sen uudelleen milloin tahansa."
+      latestHint: "&7(Klikkaa tätä kirjaa oikealla tallentaaksesi &e★Latest&7.)"
+
+    legacy:
+      toc:
+        message: |-
+          &6===== 🌟 TreasureRun Sisällysluettelo 🌟 =====
+          &b1. Tavoite
+          &f   ・Avaa mahdollisimman monta arkkua aikarajan puitteissa.
+
+          &b2. Nykyinen vaikeustaso
+          &f   ・Vaikeustaso: &e{difficulty}
+
+          &6==================================
+
     treasurerun_83530842: ===== 🌟 TreasureRun 目次 🌟 =====\n
     1_beeb6bbe: 1. ゲームの目的\n
     text_3451002a: ・制限時間内にできるだけ多くの宝箱を開けて、スコアを稼ぎます。\n\n

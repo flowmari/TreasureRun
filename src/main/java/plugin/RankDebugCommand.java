@@ -35,9 +35,9 @@ public class RankDebugCommand implements CommandExecutor {
       return true;
     }
 
-    // debug=true のときだけ有効（安全）
-    if (!plugin.getConfig().getBoolean("debug")) {
-      player.sendMessage("Debug mode is OFF. config.yml の debug: true にしてください");
+    // rankDebug.enabled=true のときだけ有効（安全）
+    if (!plugin.getConfig().getBoolean("rankDebug.enabled", false)) {
+      player.sendMessage("Rank debug is OFF. config.yml の rankDebug.enabled: true にしてください");
       return true;
     }
 
