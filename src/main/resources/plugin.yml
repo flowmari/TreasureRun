@@ -4,11 +4,6 @@ main: plugin.TreasureRunMultiChestPlugin
 api-version: 1.20
 
 commands:
-  gameStart:
-    description: Start the treasure hunt game.
-    usage: /<command> [difficulty]
-    permission: treasure.start
-
   gameReload:
     description: Reload TreasureRun config.yml (including language settings)
     usage: /<command>
@@ -55,11 +50,17 @@ commands:
     usage: /gameMenu
     permission: treasure.menu
 
-    gameEnd:
-      description: End TreasureRun game
-      usage: /gameEnd
-      permission: treasure.game
-      permission-message: "§cこのコマンドを使う権限がありません。"
+  gameEnd:
+    description: End TreasureRun game
+    usage: /gameEnd
+    permission: treasure.game
+    permission-message: "§cこのコマンドを使う権限がありません。"
+
+  gamestart:
+    description: Start TreasureRun game (official)
+    usage: /gamestart [easy|normal|hard]
+    permission: treasure.start
+    aliases: [ gameStart ]
 
   clearStageBlocks:
     description: Clear nearby difficulty blocks placed by TreasureRun.

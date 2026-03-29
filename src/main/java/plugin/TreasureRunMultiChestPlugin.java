@@ -209,28 +209,38 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
   @Override
   public void onEnable() {
 
-    // __MSZ_AUTO_START_ON_JOIN
-    // 最初のプレイヤーが入った瞬間に1回だけ自動で gameStart Normal を実行（RCON不要）
-    org.bukkit.Bukkit.getPluginManager().registerEvents(new org.bukkit.event.Listener() {
-      @org.bukkit.event.EventHandler
-      public void onJoin(org.bukkit.event.player.PlayerJoinEvent e) {
-        if (!__mszAutoStarted.compareAndSet(false, true)) return;
-        final org.bukkit.entity.Player p = e.getPlayer();
-        org.bukkit.Bukkit.getLogger().info("[MSZ] auto-start armed: player=" + p.getName());
-        org.bukkit.Bukkit.getScheduler().runTaskLater(TreasureRunMultiChestPlugin.this, () -> {
-          try {
-            org.bukkit.Bukkit.dispatchCommand(p, "gameStart Normal");
-            org.bukkit.Bukkit.getLogger().info("[MSZ] auto-start dispatched: gameStart Normal");
-          } catch (Throwable t) {
-            org.bukkit.Bukkit.getLogger().severe("[MSZ] auto-start failed: " + t);
-          }
-        }, 20L);
-      }
-    }, this);
     getLogger().info("🌈 TreasureRunMultiChestPlugin: 起動 🌈");
 
     saveDefaultConfig();
     reloadConfig();
+
+    // ✅ 採用向け：Join自動スタートはデフォルトOFF（必要時だけON）
+    boolean autoStart = getConfig().getBoolean("debug.autoStartOnJoin", false);
+
+    if (autoStart) {
+      // __MSZ_AUTO_START_ON_JOIN
+      // 最初のプレイヤーが入った瞬間に1回だけ自動で gameStart Normal を実行（RCON不要）
+      org.bukkit.Bukkit.getPluginManager().registerEvents(new org.bukkit.event.Listener() {
+        @org.bukkit.event.EventHandler
+        public void onJoin(org.bukkit.event.player.PlayerJoinEvent e) {
+          if (!__mszAutoStarted.compareAndSet(false, true)) return;
+          final org.bukkit.entity.Player p = e.getPlayer();
+          org.bukkit.Bukkit.getLogger().info("[MSZ] auto-start armed: player=" + p.getName());
+          org.bukkit.Bukkit.getScheduler().runTaskLater(TreasureRunMultiChestPlugin.this, () -> {
+            try {
+              org.bukkit.Bukkit.dispatchCommand(p, "gameStart Normal");
+              org.bukkit.Bukkit.getLogger().info("[MSZ] auto-start dispatched: gameStart Normal");
+            } catch (Throwable t) {
+              org.bukkit.Bukkit.getLogger().severe("[MSZ] auto-start failed: " + t);
+            }
+          }, 20L);
+        }
+      }, this);
+
+      getLogger().warning("[MSZ] debug.autoStartOnJoin=true (auto-start enabled)");
+    } else {
+      getLogger().info("[MSZ] debug.autoStartOnJoin=false (auto-start disabled)");
+    }
 
     Bukkit.getPluginManager().registerEvents(this, this);
 
@@ -261,10 +271,16 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     Bukkit.getPluginManager().registerEvents(effects, this);
     this.treasureRunGameEffectsPlugin = effects;
 
+    // ✅ gameStart / gamestart 両対応（gamestart を正式化）
     if (getCommand("gameStart") != null) {
       getCommand("gameStart").setExecutor(this);
       getCommand("gameStart").setTabCompleter(this);
     }
+    if (getCommand("gamestart") != null) {
+      getCommand("gamestart").setExecutor(this);
+      getCommand("gamestart").setTabCompleter(this);
+    }
+
     if (getCommand("gameRank") != null) {
       getCommand("gameRank").setExecutor(this);
     }
@@ -276,6 +292,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     }
     if (getCommand("gameMenu") != null) {
       getCommand("gameMenu").setExecutor(this);
+      getCommand("gameMenu").setTabCompleter(this); // ✅ 追加
     }
 
     // ✅✅✅ ここに追加：/gameEnd を有効化（MSZ停止・床復元が確実に走る）
@@ -285,30 +302,20 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
       getLogger().warning("⚠ /gameEnd が plugin.yml に見つかりません（commands: gameEnd を確認してください）");
     }
 
-    // ✅ /lang：言語GUIを開く / 言語を変更する（LangCommand）
+    // ✅ /lang：言語GUIを開く / 言語を変更する（LangCommand）※登録は1回に統一
     if (getCommand("lang") != null) {
-      getCommand("lang").setExecutor(new LangCommand(this));
+      LangCommand langCmd = new LangCommand(this);
+      getCommand("lang").setExecutor(langCmd);
+      // TabCompleter を付けたい場合だけ（LangCommand が TabExecutor 実装している前提）
+      // getCommand("lang").setTabCompleter(langCmd);
     } else {
       getLogger().warning("⚠ /lang が plugin.yml に見つかりません");
     }
 
-    // ✅ /lang（Language GUI を開く or 言語変更）
-    if (getCommand("lang") != null) {
-      getCommand("lang").setExecutor(new LangCommand(this));
-    } else {
-      getLogger().warning("⚠ /lang が plugin.yml に見つかりません");
-    }
+
 
     if (getCommand("clearStageBlocks") != null) {
       getCommand("clearStageBlocks").setExecutor(new StageCleanupCommand(this));
-    }
-
-    if (getCommand("lang") != null) {
-      getCommand("lang").setExecutor(new LangCommand(this));
-      // GUIを開くだけなら TabCompleter は不要（付けてもOK）
-      // getCommand("lang").setTabCompleter(new LangCommand(this));
-    } else {
-      getLogger().warning("⚠ /lang が plugin.yml に見つかりません");
     }
 
     // ✅ ✅ ✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅
@@ -623,21 +630,35 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
           username, password
       );
 
-      Statement stmt = connection.createStatement();
-      stmt.executeUpdate("CREATE TABLE IF NOT EXISTS scores (" +
-          "id INT AUTO_INCREMENT PRIMARY KEY," +
-          "player_name VARCHAR(50)," +
-          "score INT," +
-          "time BIGINT," +
-          "difficulty VARCHAR(10)" +
-          ");");
-      stmt.close();
+      // =========================
+      // ✅ scores (new schema)
+      // =========================
+      try (Statement stmt = connection.createStatement()) {
+        stmt.executeUpdate(
+            "CREATE TABLE IF NOT EXISTS scores (" +
+                "id INT AUTO_INCREMENT PRIMARY KEY," +
+                "uuid VARCHAR(36) NULL," +
+                "player_name VARCHAR(50) NOT NULL," +
+                "score INT NOT NULL," +
+                "time BIGINT NOT NULL," +
+                "difficulty VARCHAR(10) NOT NULL," +
+                "lang_code VARCHAR(10) NOT NULL DEFAULT 'ja'," +
+                "played_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP," +
+                "INDEX idx_scores_played_at (played_at)," +
+                "INDEX idx_scores_diff_time (difficulty, time)," +
+                "INDEX idx_scores_uuid_played (uuid, played_at)" +
+                ");"
+        );
+      }
+
+      // ✅ 既存DB（旧scores）向け migrate（列が無ければ追加）
+      migrateScoresTable(connection);
 
       getLogger().info("✅ scores テーブル準備完了");
 
-      // =======================================================
-      // ✅ ✅ ✅ 追加：proverb_logs テーブル作成（格言ログ保存用）
-      // =======================================================
+      // =========================
+      // ✅ proverb_logs
+      // =========================
       try (Statement ps = connection.createStatement()) {
         ps.executeUpdate(
             "CREATE TABLE IF NOT EXISTS proverb_logs (" +
@@ -660,6 +681,41 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
       getLogger().severe("❌ DB 初期化失敗");
       e.printStackTrace();
     }
+  }
+
+  private void migrateScoresTable(Connection conn) throws SQLException {
+    if (conn == null) return;
+
+    String existsSql =
+        "SELECT COUNT(*) " +
+            "FROM INFORMATION_SCHEMA.COLUMNS " +
+            "WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'scores' AND COLUMN_NAME = ?";
+
+    java.util.function.Predicate<String> hasColumn = (String col) -> {
+      try (PreparedStatement ps = conn.prepareStatement(existsSql)) {
+        ps.setString(1, col);
+        try (ResultSet rs = ps.executeQuery()) {
+          return rs.next() && rs.getInt(1) > 0;
+        }
+      } catch (SQLException e) {
+        getLogger().warning("⚠ migrateScoresTable column check failed: " + col + " " + e.getMessage());
+        return false;
+      }
+    };
+
+    try (Statement st = conn.createStatement()) {
+      if (!hasColumn.test("uuid")) {
+        st.executeUpdate("ALTER TABLE scores ADD COLUMN uuid VARCHAR(36) NULL");
+      }
+      if (!hasColumn.test("lang_code")) {
+        st.executeUpdate("ALTER TABLE scores ADD COLUMN lang_code VARCHAR(10) NOT NULL DEFAULT 'ja'");
+      }
+      if (!hasColumn.test("played_at")) {
+        st.executeUpdate("ALTER TABLE scores ADD COLUMN played_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP");
+      }
+    }
+
+    getLogger().info("✅ scores migration check done");
   }
 
   private void saveScore(String playerName, int score, long timeSec, String difficulty) {
@@ -1114,23 +1170,31 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
       return true;
     }
 
-    // ✅ ✅ ✅ ここが完成版 /gameMenu（格言あり本へ切替）
+    // ✅ ✅ ✅ /gameMenu
+// - /gameMenu      : チャット目次 + 本
+// - /gameMenu gui  : 言語GUIを必ず開く（/gameStart gui のショートカット）
     if (cmd.getName().equalsIgnoreCase("gameMenu")) {
 
-      // ✅ 先にプレイヤー言語を解決（lang を定義してから使う）
+      // ✅ /gameMenu gui → 言語GUIを開いて、選んだ瞬間に本まで開く
+      if (args != null && args.length >= 1 && args[0].equalsIgnoreCase("gui")) {
+        if (languageSelectGui != null) {
+          String diff = (difficulty == null || difficulty.isBlank()) ? "Normal" : difficulty;
+          languageSelectGui.openForGameMenu(player, diff); // ✅ ここが変更点
+        } else {
+          player.sendMessage(ChatColor.RED + "Language GUI が初期化されていません。");
+        }
+        return true;
+      }
+
+      // ✅ 通常の /gameMenu
       final String lang = resolvePlayerLang(player);
-
-      // ✅ 目次（チャット）
       GameMenu.showGameMenu(player, difficulty, this, lang);
-
-      // ✅ 格言集ページ付きルールブック
       GameMenu.openRuleBookFromConfig(player, difficulty, this, lang);
-
       return true;
     }
 
-    // ✅ /gameStart は「GUIを出すだけ」
-    if (cmd.getName().equalsIgnoreCase("gameStart")) {
+    // ✅ /gameStart /gamestart は「GUIを出すだけ」
+    if (cmd.getName().equalsIgnoreCase("gameStart") || cmd.getName().equalsIgnoreCase("gamestart")) {
 
       if (isRunning) {
         player.sendMessage(ChatColor.RED + "ゲームは既に実行中です。");
@@ -1153,6 +1217,17 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
       if (heartbeatSoundService != null) heartbeatSoundService.stop(player);
       if (chestSound != null) chestSound.stop(player);
 
+      // ✅✅✅ ここに追加：強制GUIオプション
+      boolean forceGui = false;
+
+      // 例: /gameStart gui normal
+      if (args.length >= 1 && args[0].equalsIgnoreCase("gui")) {
+        forceGui = true;
+
+        // difficulty は次の引数へ（args を差し替える）
+        args = (args.length >= 2) ? new String[]{ args[1] } : new String[0];
+      }
+
       String selectedDifficulty;
       if (args.length >= 1) {
         String diff = args[0].toLowerCase(Locale.ROOT);
@@ -1166,6 +1241,23 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
         selectedDifficulty = "Normal";
       }
 
+      // ✅✅✅ 保存済み言語があるなら GUI を出さずに即開始（ただし forceGui の時はGUI優先）
+      if (!forceGui) {
+        String savedLang = null;
+        try {
+          if (playerLanguageStore != null) {
+            // ✅ getLang() は locale を返す場合があるので「保存値(get)」だけを見る
+            savedLang = playerLanguageStore.getLang(player, "");
+          }
+        } catch (Throwable ignored) {}
+
+        if (savedLang != null && !savedLang.isBlank()) {
+          beginGameStartAfterLanguageSelected(player, selectedDifficulty, savedLang);
+          return true;
+        }
+      }
+
+      // ✅ 未設定 or 強制GUI の時だけ GUI
       if (languageSelectGui != null) {
         languageSelectGui.open(player, selectedDifficulty);
       } else {
@@ -1228,7 +1320,15 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
 
   @Override
   public List<String> onTabComplete(CommandSender sender, Command cmd, String alias, String[] args) {
-    if (cmd.getName().equalsIgnoreCase("gameStart")) {
+
+    // ✅ 追加：/gameMenu gui のTab補完
+    if (cmd.getName().equalsIgnoreCase("gameMenu")) {
+      if (args.length == 1) {
+        return Arrays.asList("gui");
+      }
+    }
+
+    if (cmd.getName().equalsIgnoreCase("gameStart") || cmd.getName().equalsIgnoreCase("gamestart")) {
       if (args.length == 1) {
         return Arrays.asList("easy", "normal", "hard");
       }
@@ -1278,6 +1378,20 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
 
     String selectedDifficulty = mode.substring(0, 1).toUpperCase() + mode.substring(1);
 
+    // ✅ 保存済み言語があるなら GUI を出さずに即開始（/lang en → /gamestart normal でも確定）
+    String savedLang = null;
+    try {
+      if (playerLanguageStore != null) {
+        savedLang = playerLanguageStore.getLang(player, "");
+      }
+    } catch (Throwable ignored) {}
+
+    if (savedLang != null && !savedLang.isBlank()) {
+      beginGameStartAfterLanguageSelected(player, selectedDifficulty, savedLang);
+      return;
+    }
+
+    // ✅ 未設定の時だけ GUI
     if (languageSelectGui != null) {
       languageSelectGui.open(player, selectedDifficulty);
     } else {
@@ -1956,6 +2070,31 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     }
   }
 
+  // ✅ /gameMenu gui 用：ゲーム開始せず「その言語で本だけ開く」
+  public void openGameMenuOnly(Player player, String lang) {
+    if (player == null) return;
+
+    String actualLang = lang;
+    if (actualLang == null || actualLang.isBlank()) {
+      actualLang = getConfig().getString("language.default", "ja");
+    }
+
+    // 永続保存（/lang と同じ扱い）
+    try {
+      if (playerLanguageStore != null) {
+        playerLanguageStore.set(player.getUniqueId(), actualLang);
+      }
+    } catch (Throwable ignored) {}
+
+    // このRun用の一時保持も更新（格言ログなどに使う）
+    try {
+      playerLastLang.put(player.getUniqueId(), actualLang);
+    } catch (Throwable ignored) {}
+
+    GameMenu.showGameMenu(player, difficulty, this, actualLang);
+    GameMenu.openRuleBookFromConfig(player, difficulty, this, actualLang);
+  }
+
   // =======================================================
   // ✅ 言語選択後の新フロー開始
   // =======================================================
@@ -2374,31 +2513,39 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
   // =======================================================
   // ✅ ✅ ✅ 追加：/gameMenu 用に「今のプレイヤー言語」を解決する
   // 優先順位：
-  //  1) LanguageStore に入っているならそれ
+  //  0) PlayerLanguageStore（/lang の保存先） ← 最優先に変更
+  //  1) LanguageStore（GUI由来）
   //  2) playerLastLang（ゲーム開始時に保存した言語）
   //  3) config の language.default
   // =======================================================
   private String resolvePlayerLang(Player player) {
-    if (player == null) {
-      return getConfig().getString("language.default", "ja");
-    }
+    String defaultLang = getConfig().getString("language.default", "ja");
+    if (player == null) return defaultLang;
+
+    // ✅ 0) PlayerLanguageStore（/lang の保存先）を最優先
+    try {
+      if (playerLanguageStore != null) {
+        String saved = playerLanguageStore.getLang(player, "");
+        if (saved != null && !saved.isBlank()) return saved;
+      }
+    } catch (Throwable ignored) {}
 
     UUID uuid = player.getUniqueId();
 
-    // 1) LanguageStore から取れれば最優先（※メソッド名は環境差があるので反射で安全に取得）
+    // 1) LanguageStore（GUI系）が取れれば次点（反射で安全に取得）
     String langFromStore = tryGetLangFromLanguageStore(uuid);
     if (langFromStore != null && !langFromStore.isBlank()) {
       return langFromStore;
     }
 
-    // 2) beginGameStartAfterLanguageSelected で保存した値（あなたの実装はこれが確実）
+    // 2) beginGameStartAfterLanguageSelected で保存した値
     String fromLast = playerLastLang.get(uuid);
     if (fromLast != null && !fromLast.isBlank()) {
       return fromLast;
     }
 
     // 3) config default
-    return getConfig().getString("language.default", "ja");
+    return defaultLang;
   }
 
   // =======================================================

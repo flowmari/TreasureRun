@@ -1539,7 +1539,7 @@ public class GameStageManager implements Listener {
           java.util.List<org.bukkit.Location> list =
               (col == null) ? java.util.Collections.emptyList() : new java.util.ArrayList<>(col);
 
-          plugin.getLogger().info("[MSZ][TREASURE] count=" + list.size()
+          plugin.getLogger().fine("[MSZ][TREASURE] count=" + list.size()
               + " instance=" + System.identityHashCode(m));
 
           return list;

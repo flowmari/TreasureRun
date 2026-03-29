@@ -65,7 +65,16 @@ public class GameMenu {
     }
 
     var cfg = plugin.getConfig();
-    String actualLang = cfg.getString("language.default", "ja");
+
+    // ✅ default
+    String defaultLang = cfg.getString("language.default", "ja");
+
+    // ✅ “保存済み言語” を最優先（/lang がここに入る）
+    String actualLang = defaultLang;
+    if (plugin.getPlayerLanguageStore() != null) {
+      actualLang = plugin.getPlayerLanguageStore().getLang(player, defaultLang);
+    }
+    if (actualLang == null || actualLang.isBlank()) actualLang = defaultLang;
 
     // {difficulty} は表示用ラベル（無ければそのまま）
     String diffLabel = cfg.getString(
@@ -97,9 +106,23 @@ public class GameMenu {
 
     var cfg = plugin.getConfig();
 
-    String actualLang = (lang != null && !lang.isBlank())
-        ? lang
-        : cfg.getString("language.default", "ja");
+    // ✅ default
+    String defaultLang = cfg.getString("language.default", "ja");
+
+    // ✅ “本当に保存されている言語” を最優先（/lang がここに入る）
+    // ※ getLang() は未保存でも locale を返すので使わない
+    String actualLang = null;
+    if (plugin.getPlayerLanguageStore() != null) {
+      // ✅ 未保存なら "" を返す（=保存有無判定に使える）
+      actualLang = plugin.getPlayerLanguageStore().getLang(player.getUniqueId(), "");
+    }
+
+    // ✅ 保存が無い場合だけ、引数 lang（GUI選択）を採用
+    if ((actualLang == null || actualLang.isBlank()) && lang != null && !lang.isBlank()) {
+      actualLang = lang;
+    }
+
+    if (actualLang == null || actualLang.isBlank()) actualLang = defaultLang;
 
     // {difficulty} は「表示用ラベル」を入れる（無ければ difficulty をそのまま）
     String diffLabel = cfg.getString(
@@ -113,8 +136,8 @@ public class GameMenu {
         I18n.Placeholder.of("{difficulty}", diffLabel)
     );
 
-    // & 色コード → § に変換して送る（messageは複数行）
-    player.sendMessage(colorize(raw));
+   // & 色コード → § に変換して送る（messageは複数行）
+   player.sendMessage(colorize(raw));
   }
 
   /**
@@ -217,9 +240,23 @@ public class GameMenu {
 
     var cfg = plugin.getConfig();
 
-    String actualLang = (lang != null && !lang.isBlank())
-        ? lang
-        : cfg.getString("language.default", "ja");
+    // ✅ default
+    String defaultLang = cfg.getString("language.default", "ja");
+
+    // ✅ “本当に保存されている言語” を最優先（/lang がここに入る）
+    // ※ getLang() は未保存でも locale を返すので使わない
+    String actualLang = null;
+    if (plugin.getPlayerLanguageStore() != null) {
+      // ✅ 未保存なら "" を返す（=保存有無判定に使える）
+      actualLang = plugin.getPlayerLanguageStore().getLang(player.getUniqueId(), "");
+    }
+
+    // ✅ 保存が無い場合だけ、引数 lang（GUI選択）を採用
+    if ((actualLang == null || actualLang.isBlank()) && lang != null && !lang.isBlank()) {
+      actualLang = lang;
+    }
+
+    if (actualLang == null || actualLang.isBlank()) actualLang = defaultLang;
 
     // フォールバック（その言語が無いときはja）
     String title = cfg.getString("ruleBook.title." + actualLang,
