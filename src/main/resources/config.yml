@@ -2519,6 +2519,10 @@ chestSound:
 rankDebug:
   enabled: true
 
+# ✅ 開発/デバッグ用（採用向け：デフォルトOFF）
+debug:
+  autoStartOnJoin: false
+
 title:
   outcomeStayTicks: 160   # TIME_UPの固定表示の長さ（160tick=8秒）
   successStayTicks: 240   # SUCCESSの固定表示の長さ（240tick=12秒）

@@ -32,6 +32,10 @@ public class LanguageSelectGui implements Listener {
   private final Set<UUID> closingBySelect = new HashSet<>();
   private final Map<UUID, Map<Integer, String>> slotToLangByPlayer = new HashMap<>();
 
+  // ✅ 追加：GUIの用途（gameStart用 / gameMenu用）
+  private enum PendingAction { START_GAME, GAME_MENU }
+  private final Map<UUID, PendingAction> pendingAction = new HashMap<>();
+
   public LanguageSelectGui(TreasureRunMultiChestPlugin plugin, LanguageStore store) {
     this.plugin = plugin;
     this.store = store;
@@ -40,6 +44,36 @@ public class LanguageSelectGui implements Listener {
   public void open(Player player, String difficulty) {
     UUID uuid = player.getUniqueId();
     pendingDifficulty.put(uuid, difficulty);
+    pendingAction.put(uuid, PendingAction.START_GAME); // ✅ 追加
+
+    Inventory inv = Bukkit.createInventory(null, 27, GUI_TITLE);
+
+    Map<Integer, String> slotToLang = new HashMap<>();
+    slotToLangByPlayer.put(uuid, slotToLang);
+
+    List<String> langs = new ArrayList<>(store.getAllowedLanguages());
+    if (langs.isEmpty()) langs.add(store.getDefaultLang());
+
+    int count = Math.min(langs.size(), 27);
+    for (int i = 0; i < count; i++) {
+      String lang = langs.get(i);
+      int slot = i;
+      slotToLang.put(slot, lang);
+      inv.setItem(slot, createLanguageItem(lang));
+    }
+
+    if (langs.size() > 27) {
+      player.sendMessage(ChatColor.YELLOW + "許可言語が多いため、GUIには先頭 27 件のみ表示します。");
+    }
+
+    player.openInventory(inv);
+  }
+
+  // ✅ 追加：/gameMenu gui 用（言語選択後にゲーム開始せず、本を開く）
+  public void openForGameMenu(Player player, String difficulty) {
+    UUID uuid = player.getUniqueId();
+    pendingDifficulty.put(uuid, difficulty);
+    pendingAction.put(uuid, PendingAction.GAME_MENU);
 
     Inventory inv = Bukkit.createInventory(null, 27, GUI_TITLE);
 
@@ -124,15 +158,23 @@ public class LanguageSelectGui implements Listener {
     store.set(uuid, lang);
     String diff = pendingDifficulty.getOrDefault(uuid, "Normal");
 
+    PendingAction action = pendingAction.getOrDefault(uuid, PendingAction.START_GAME);
+
     closingBySelect.add(uuid);
 
     pendingDifficulty.remove(uuid);
     slotToLangByPlayer.remove(uuid);
+    pendingAction.remove(uuid); // ✅ 追加
 
     player.closeInventory();
 
-    // ✅ 一本道で開始へ
-    plugin.beginGameStartAfterLanguageSelected(player, diff, lang);
+    if (action == PendingAction.GAME_MENU) {
+      // ✅ gameMenu用：選んだ瞬間に「その言語で本を開く」（ゲーム開始しない）
+      plugin.openGameMenuOnly(player, lang);
+    } else {
+      // ✅ 従来：言語確定 → gameStart
+      plugin.beginGameStartAfterLanguageSelected(player, diff, lang);
+    }
   }
 
   @EventHandler
@@ -142,14 +184,24 @@ public class LanguageSelectGui implements Listener {
 
     UUID uuid = player.getUniqueId();
 
+    // ✅ クリック確定で閉じた場合は何も出さない
     if (closingBySelect.remove(uuid)) return;
 
-    player.sendMessage(ChatColor.YELLOW + "言語選択をキャンセルしました。もう一度やる場合は "
-        + ChatColor.AQUA + "/gameStart <easy|normal|hard>" + ChatColor.YELLOW
-        + " または " + ChatColor.AQUA + "/gamestart <easy|normal|hard>" + ChatColor.YELLOW
-        + " を実行してね。");
+    PendingAction action = pendingAction.getOrDefault(uuid, PendingAction.START_GAME);
 
+    if (action == PendingAction.GAME_MENU) {
+      player.sendMessage(ChatColor.YELLOW + "言語選択をキャンセルしました。もう一度開く場合は "
+          + ChatColor.AQUA + "/gameMenu gui" + ChatColor.YELLOW + " を実行してね。");
+    } else {
+      player.sendMessage(ChatColor.YELLOW + "言語選択をキャンセルしました。もう一度やる場合は "
+          + ChatColor.AQUA + "/gameStart <easy|normal|hard>" + ChatColor.YELLOW
+          + " または " + ChatColor.AQUA + "/gamestart <easy|normal|hard>" + ChatColor.YELLOW
+          + " を実行してね。");
+    }
+
+    // ✅ キャンセルで閉じた場合も掃除（安全）
     pendingDifficulty.remove(uuid);
     slotToLangByPlayer.remove(uuid);
+    pendingAction.remove(uuid);
   }
 }

@@ -38,6 +38,39 @@ public class LangCommand implements CommandExecutor, TabCompleter {
 
     String sub = args[0].trim();
 
+    // ✅ reset：保存済み言語を削除して「未設定」に戻す
+    if (sub.equalsIgnoreCase("reset")) {
+      try {
+        if (plugin.getPlayerLanguageStore() != null) {
+          plugin.getPlayerLanguageStore().clear(player.getUniqueId());
+        }
+      } catch (Throwable ignored) {}
+
+      // LanguageStore 側にも残っていれば消す（任意・安全に反射）
+      try {
+        LanguageStore ls = plugin.getLanguageStore();
+        if (ls != null) {
+          String[] candidates = {"clear", "remove", "unset", "delete", "clearPlayerLanguage", "removePlayerLanguage"};
+          for (String mname : candidates) {
+            try {
+              Method m = ls.getClass().getMethod(mname, UUID.class);
+              m.invoke(ls, player.getUniqueId());
+              break;
+            } catch (NoSuchMethodException ignore) {}
+          }
+        }
+      } catch (Throwable ignored) {}
+
+      player.sendMessage(ChatColor.GREEN + "✅ 保存済み言語をリセットしました（次回はGUIが出ます）");
+      return true;
+    }
+
+    // list / current / gui
+    if (sub.equalsIgnoreCase("list")) {
+      sendLanguageList(player, allowed, defaultLang);
+      return true;
+    }
+
     // list / current / gui
     if (sub.equalsIgnoreCase("list")) {
       sendLanguageList(player, allowed, defaultLang);

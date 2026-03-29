@@ -76,6 +76,18 @@ public class PlayerLanguageStore {
     set(player.getUniqueId(), lang);
   }
 
+  /** ✅ プレイヤーの言語を削除（未設定に戻す） */
+  public void clear(UUID uuid) {
+    if (data == null) loadOrCreate();
+    String base = "players." + uuid; // players.<uuid>.lang を含むブロックごと削除
+    data.set(base, null);
+    save();
+  }
+
+  public void clear(Player player) {
+    clear(player.getUniqueId());
+  }
+
   /** ✅ 保存 */
   public void save() {
     try {
