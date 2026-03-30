@@ -62,8 +62,9 @@ public class MovingSafetyZoneTask extends BukkitRunnable {
   // ==========================
   // チューニング（まず固定値でOK）
   // ==========================
-  private static final long LOG_EVERY_TICKS = 40;     // 2秒に1回
-  private static final long TRAIL_LIFETIME_TICKS = 40; // 2秒残光
+  private static final long LOG_EVERY_TICKS = 40;       // 2秒に1回
+  private static final long HEARTBEAT_EVERY_TICKS = 40; // ✅ ゲーム内heartbeat間隔
+  private static final long TRAIL_LIFETIME_TICKS = 40;  // 2秒残光
   private static final long COLD_SOUND_COOLDOWN = 60;  // 3秒（period=2前提なら実時間は少し伸びる）
   private static final double SAFEZONE_RADIUS = 3.0;   // 近い＝安全
   private static final double COLD_START_DISTANCE = 12.0; // 離れると冷える
@@ -90,10 +91,13 @@ public class MovingSafetyZoneTask extends BukkitRunnable {
   public void run() {
     tick++;
 
-    try {
+    // ✅ debug.mszLogs=true のときだけ「デバッグ系ログ」を出す（/treasureReloadで切替可能）
+    final boolean debugLogs = plugin.getConfig().getBoolean("debug.mszLogs", false);
 
-      // ✅ 追加：run() が回っているかのハートビート（2秒に1回）
-      if (tick % LOG_EVERY_TICKS == 0) plugin.getLogger().info("[MSZ] heartbeat tick=" + tick + " fixedY=" + fixedFloorY);
+    // ✅ debug.mszHeartbeatEffect=true のときだけ「ゲーム内heartbeat演出」を出す（/treasureReloadで切替可能）
+    final boolean heartbeatFx = plugin.getConfig().getBoolean("debug.mszHeartbeatEffect", true);
+
+    try {
 
       // ✅ プレイヤーがいなければ何もしない（ただし復元はcancel時）
       Collection<? extends Player> players = Bukkit.getOnlinePlayers();
@@ -101,11 +105,21 @@ public class MovingSafetyZoneTask extends BukkitRunnable {
         return;
       }
 
+      // ✅ run() が回っているかのハートビート（2秒に1回）
+      if (debugLogs && (tick % LOG_EVERY_TICKS == 0)) {
+        plugin.getLogger().info("[MSZ] heartbeat tick=" + tick + " fixedY=" + fixedFloorY);
+      }
+      // ✅ ゲーム内演出としての heartbeat（音＋微粒子）
+      //    debug.mszHeartbeatEffect=true のときだけ（/treasureReload で切替可能）
+      if (heartbeatFx && (tick % HEARTBEAT_EVERY_TICKS == 0)) {
+        playHeartbeatEffect(players);
+      }
+
       // ✅ キャリアを集める（metadataで限定）
       List<Entity> carriers = findCarriers(players);
       if (carriers.isEmpty()) {
         // キャリアがいない＝何もできない。念のため床だけ復元し続ける
-        if (tick % LOG_EVERY_TICKS == 0) {
+        if (debugLogs && (tick % LOG_EVERY_TICKS == 0)) {
           plugin.getLogger().warning("[MSZ] carriers=0 (metadata=" + CARRIER_META + ") fixedY=" + fixedFloorY);
         }
         renderAndCleanupTrails(); // 残光掃除だけは回す
@@ -113,7 +127,7 @@ public class MovingSafetyZoneTask extends BukkitRunnable {
       }
 
       // ✅ デバッグログ（スパム防止）
-      if (tick % LOG_EVERY_TICKS == 0) {
+      if (debugLogs && (tick % LOG_EVERY_TICKS == 0)) {
         Location any = carriers.get(0).getLocation();
         plugin.getLogger().info("[MSZ] tick=" + tick
             + " players=" + players.size()
@@ -159,8 +173,8 @@ public class MovingSafetyZoneTask extends BukkitRunnable {
           spawnCracksAroundPlayer(p);
         }
 
-        // ✅ DEBUG: 最寄り宝箱距離（1秒に1回だけ）
-        if (tick % LOG_EVERY_TICKS == 0) {
+        // ✅ DEBUG: 最寄り宝箱距離（debug.mszLogs=true の時だけ / 2秒に1回）
+        if (debugLogs && (tick % LOG_EVERY_TICKS == 0)) {
           World w = pl.getWorld();
           double nearest = 9999;
           Location nearestLoc = null;
@@ -183,8 +197,8 @@ public class MovingSafetyZoneTask extends BukkitRunnable {
           spawnGlassShardDispersion(p, nearTreasure);
           applyRefractionWobble(p);
 
-          // ✅ DEBUG：宝箱演出が発火したことをログ
-          if (tick % LOG_EVERY_TICKS == 0) {
+          // ✅ DEBUG：宝箱演出が発火したことをログ（debug.mszLogs=true の時だけ）
+          if (debugLogs && (tick % LOG_EVERY_TICKS == 0)) {
             double d = nearTreasure.distance(pl);
             plugin.getLogger().info("[MSZ][FX] fire shards+sound+geo tick=" + tick
                 + " p=" + p.getName()
@@ -624,6 +638,22 @@ public class MovingSafetyZoneTask extends BukkitRunnable {
       return new Location(w, x, y, z);
     } catch (Exception e) {
       return null;
+    }
+  }
+
+  // ==========================
+  // ✅ ゲーム内 heartbeat 演出
+  // ==========================
+  private void playHeartbeatEffect(Collection<? extends Player> players) {
+    if (players == null) return;
+    for (Player p : players) {
+      if (p == null || !p.isOnline()) continue;
+      try {
+        p.playSound(p.getLocation(), Sound.ENTITY_WARDEN_HEARTBEAT, 0.25f, 1.10f);
+        World w = p.getWorld();
+        Location l = p.getLocation().clone().add(0, 0.2, 0);
+        w.spawnParticle(Particle.END_ROD, l, 1, 0.05, 0.02, 0.05, 0.0);
+      } catch (Throwable ignored) {}
     }
   }
 }

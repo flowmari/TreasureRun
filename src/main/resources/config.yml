@@ -2522,6 +2522,8 @@ rankDebug:
 # ✅ 開発/デバッグ用（採用向け：デフォルトOFF）
 debug:
   autoStartOnJoin: false
+  mszLogs: false               # MSZのデバッグログ（[MSZ] / [MSZ][DIST] / [MSZ][FX]）
+  mszHeartbeatEffect: true     # MSZのゲーム内ハートビート演出（音＋粒子）
 
 title:
   outcomeStayTicks: 160   # TIME_UPの固定表示の長さ（160tick=8秒）
