@@ -18,6 +18,10 @@ jobs:
           distribution: temurin
           java-version: "17"
 
+
+      - name: Install ripgrep (rg)
+        run: sudo apt-get update && sudo apt-get install -y ripgrep
+
       - name: Make check_keys executable
         run: chmod +x ./check_keys.sh
 
