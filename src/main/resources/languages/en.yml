@@ -24,8 +24,8 @@ gui:
     title: '&3Language / 言語'
     subtitle: '&7Select your language'
     loreDefault:
-    - '&7Click to select'
-    - '&8Your selection is saved'
+      - '&7Click to select'
+      - '&8Your selection is saved'
     selected: '&aSelected: &f{lang}'
     saved: '&aSaved your language: &f{lang}'
     reopenHint: '&7You can change anytime with &f/lang'
@@ -35,26 +35,26 @@ game:
     normal: '&eNormal'
     hard: '&cHard'
   gameStart:
-  - '&6========== &eTreasureRun &6=========='
-  - '&7Difficulty: &f{difficulty}'
-  - '&7Time Limit: &f{timeLimit}s'
-  - '&7Total Chests: &f{totalChests}'
-  - '&7Treasure Chests: &f{treasureChests}'
-  - '&7Other Chests: &f{otherChests}'
-  - '&7Multiplier: &f{xMultiplier}'
-  - '&7Penalty: &f{penalty}'
-  - '&aGood luck, {player}!'
+    - '&6========== &eTreasureRun &6=========='
+    - '&7Difficulty: &f{difficulty}'
+    - '&7Time Limit: &f{timeLimit}s'
+    - '&7Total Chests: &f{totalChests}'
+    - '&7Treasure Chests: &f{treasureChests}'
+    - '&7Other Chests: &f{otherChests}'
+    - '&7Multiplier: &f{xMultiplier}'
+    - '&7Penalty: &f{penalty}'
+    - '&aGood luck, {player}!'
   gameStartTitle:
     title: '&eTreasureRun'
     subtitle: '&7Find chests before time runs out!'
   timeWarning:
-  - '&eTime left: &f{seconds}s'
+    - '&eTime left: &f{seconds}s'
   gameEndSuccess:
-  - '&aAll treasure collected!'
-  - '&7Final Score: &f{score}'
+    - '&aAll treasure collected!'
+    - '&7Final Score: &f{score}'
   gameEndFail:
-  - "&cTime's up!"
-  - '&7Final Score: &f{score}'
+    - "&cTime's up!"
+    - '&7Final Score: &f{score}'
   rank:
     header: '&6=== Ranking ==='
     line: '&e#{rank} &f{player} &7- &b{score}'
@@ -106,27 +106,27 @@ game:
     mobcontrol_wolf_cancelled_re_1a3b2e1a: '[MobControl] WOLF cancelled! reason='
     stagemobcontrollistener_refl_08ad690a: '⚠ StageMobControlListener: カウントダウン判定(reflection)に失敗。ゲーム中のみ制御します。原因:'
     stagemobcontrollistener_refl_d8a61972: '⚠ StageMobControlListener: reflection初期化に失敗。ゲーム中のみ制御します。原因:'
-    mysql_connection_established_47452dfd: MySQL connection established 
+    mysql_connection_established_47452dfd: MySQL connection established
       successfully!
     failed_to_connect_to_mysql_95e4d50a: 'Failed to connect to MySQL:'
-    create_table_if_not_exists_p_136a7833: CREATE TABLE IF NOT EXISTS 
+    create_table_if_not_exists_p_136a7833: CREATE TABLE IF NOT EXISTS
       player_treasure_count (
     player_name_varchar_50_prima_79b8331b: player_name VARCHAR(50) PRIMARY KEY,
     count_int_not_null_660eadd8: count INT NOT NULL)
     failed_to_create_table_68199f98: 'Failed to create table:'
     reset_treasure_count_for_pla_96b152d2: 'Reset treasure count for player:'
-    dj_onalltreasurescollected_a871afdd: 
+    dj_onalltreasurescollected_a871afdd:
       DJイベントはすでに実行中のため、onAllTreasuresCollected をスキップしました。
     on_duplicate_key_update_coun_a1543779: ON DUPLICATE KEY UPDATE count = ?
     failed_to_save_treasure_coun_9d94c0cc: 'Failed to save treasure count:'
-    dj_triggerultimatedjevent_eb01ecae: DJイベントはすでに実行中のため、triggerUltimateDJEvent 
+    dj_triggerultimatedjevent_eb01ecae: DJイベントはすでに実行中のため、triggerUltimateDJEvent
       をスキップしました。
     treasure_complete_8360fbe9: 🎵 Treasure Complete! 🎵
     text_cc353737: 全ての宝物を発見しました！
     congratulations_38fd1594: §6Congratulations! 全ての宝物を見つけました！
     time_s_up_c5b3ef74: §c§lTIME'S UP!
     treasures_collected_ca7eab31: '§7Treasures collected: §e'
-    try_a_different_route_next_t_721a4d8b: §7Try a different route next time — 
+    try_a_different_route_next_t_721a4d8b: §7Try a different route next time —
       or use §e/gamestart §7<§eeasy§7|§enormal§7|§ehard§7> §7to retry.
 sound:
   sparkle: '&b* sparkle *'
@@ -135,7 +135,7 @@ sound:
 
     # =========================
     # Japanese
-    # =========================
+  # =========================
 chestSound:
   actionBarDebug: chestSound.actionBarDebug
   debug: chestSound.debug
@@ -194,13 +194,13 @@ favorites:
       created.'
     mysql_repository_not_ready_72df0af1: MySQL / Repository not ready.
     favorite_saved_sneak_rightcl_7a73eb4f: ★ Favorite saved! (Sneak+RightClick)
-    favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs 
+    favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs
       yet / or duplicate)
     quotefavoritestore_reloaded__3ba623a3: '[QuoteFavoriteStore] Reloaded DB: host='
-    where_player_uuid_and_quote__36106f85: WHERE player_uuid=? AND quote_hash=? 
+    where_player_uuid_and_quote__36106f85: WHERE player_uuid=? AND quote_hash=?
       LIMIT 1
     quotefavoritestore_exists_fa_7d08adba: '[QuoteFavoriteStore] exists failed:'
-    player_uuid_quote_hash_outco_49f06b31: (player_uuid, quote_hash, outcome, 
+    player_uuid_quote_hash_outco_49f06b31: (player_uuid, quote_hash, outcome,
       difficulty, lang, quote_text)
     values_643f4d2f: VALUES (?, ?, ?, ?, ?, ?)
     quotefavoritestore_addfavori_44fb1d75: '[QuoteFavoriteStore] addFavorite failed:'
@@ -224,13 +224,13 @@ commands:
   3_71b78a44: ダイヤモンド3個でスペシャルエメラルドを作成しました！
   players_only_10ed3cbc: Players only.
   treasurerun_quote_favorite_c_dbf690ae: '[TreasureRun] Quote Favorite Commands:'
-  quotefavorite_latest_save_la_8e4bdc46: /quoteFavorite latest  - save latest 
+  quotefavorite_latest_save_la_8e4bdc46: /quoteFavorite latest  - save latest
     quote as favorite
   quotefavorite_list_show_favo_4ebb13c4: /quoteFavorite list    - show favorites
-  quotefavorite_remove_id_remo_a6fdb289: /quoteFavorite remove <id> - remove 
+  quotefavorite_remove_id_remo_a6fdb289: /quoteFavorite remove <id> - remove
     favorite
   favorite_saved_bb0cd8a8: ★ Favorite saved!
-  favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs yet 
+  favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs yet
     / or duplicate)
   favorites_latest_20_e23c073b: '★ Favorites (latest 20):'
   usage_quotefavorite_remove_i_5324156c: 'Usage: /quoteFavorite remove <id>'
@@ -257,7 +257,7 @@ commands:
   players_only_10ed3cbc_43: Players only.
   mysql_repository_not_ready_72df0af1: MySQL / Repository not ready.
   favorite_saved_bb0cd8a8_81: ★ Favorite saved!
-  favorite_not_saved_maybe_no__8d52a118_83: Favorite not saved. (maybe no logs 
+  favorite_not_saved_maybe_no__8d52a118_83: Favorite not saved. (maybe no logs
     yet / or duplicate)
   mysql_repository_not_ready_72df0af1_93: MySQL / Repository not ready.
   favorites_latest_20_e23c073b_99: '★ Favorites (latest 20):'
@@ -272,9 +272,9 @@ commands:
   unknown_subcommand_use_quote_6a222621: 'Unknown subcommand. Use: /quoteFavorite
     help'
   treasurerun_quote_favorite_c_dbf690ae_209: '[TreasureRun] Quote Favorite Commands:'
-  quotefavorite_latest_save_la_1fb00e45: /quoteFavorite latest          - save 
+  quotefavorite_latest_save_la_1fb00e45: /quoteFavorite latest          - save
     latest quote as favorite
-  quotefavorite_list_show_favo_8a7b3640: /quoteFavorite list            - show 
+  quotefavorite_list_show_favo_8a7b3640: /quoteFavorite list            - show
     favorites
   quotefavorite_remove_id_remo_e42dbb6a: /quoteFavorite remove <id>     - remove
     favorite
@@ -284,25 +284,25 @@ commands:
     reread (title)
   quotefavorite_reread_book_ra_8c3bcedc: /quoteFavorite reread book     - random
     reread (book)
-  quotefavorite_book_open_cata_055de855: /quoteFavorite book            - open 
+  quotefavorite_book_open_cata_055de855: /quoteFavorite book            - open
     catalog (full)
-  quotefavorite_book_toc_open__c7d02ede: /quoteFavorite book toc        - open 
+  quotefavorite_book_toc_open__c7d02ede: /quoteFavorite book toc        - open
     catalog (TOC only)
-  quotefavorite_book_success_o_afe31501: /quoteFavorite book success    - open 
+  quotefavorite_book_success_o_afe31501: /quoteFavorite book success    - open
     SUCCESS chapter
-  quotefavorite_book_timeup_op_08b799b0: /quoteFavorite book timeup     - open 
+  quotefavorite_book_timeup_op_08b799b0: /quoteFavorite book timeup     - open
     TIME_UP chapter
-  quotefavorite_book_other_ope_bdcbafba: /quoteFavorite book other      - open 
+  quotefavorite_book_other_ope_bdcbafba: /quoteFavorite book other      - open
     OTHER chapter
-  success_normal_en_the_obstac_b627a544: 【SUCCESS / Normal / en】\nThe obstacle 
+  success_normal_en_the_obstac_b627a544: 【SUCCESS / Normal / en】\nThe obstacle
     is the way.
   time_up_bc0cd646: TIME UP
 debug:
   istreasureemerald_fb6fecec: isTreasureEmerald =
-  chestsound_start_called_16th_e2a7414b: §b[ChestSound] start() called 
+  chestsound_start_called_16th_e2a7414b: §b[ChestSound] start() called
     (16th-grid mode)
   chestsound_chests_0_82465b3c: §7[ChestSound] chests=0
-  chestsound_d_1fm_s_t_2f_step_6e3e0fdb: §b[ChestSound] §fD=§e%.1fm §7(%s§7) 
+  chestsound_d_1fm_s_t_2f_step_6e3e0fdb: §b[ChestSound] §fD=§e%.1fm §7(%s§7)
     §ft=§a%.2f §7step=%d bar=%d
   chestsound_nearest_1fm_s_t_2_e2465135: §b[ChestSound] nearest=%.1fm %s  t=%.2f
   reward_giverankrewardwitheff_5e361189: '[Reward] giveRankRewardWithEffect called
@@ -315,6 +315,16 @@ items:
   text_e42912c7: '&7特製鉄ブロック'
   text_c89dea57: 特製鉄ブロックのレシピを登録しました。
 ui:
+  labels:
+    tabs: '&6Tabs:&r'
+    page: '&8Page {page}/{total}&r'
+    tab:
+      all: '▶ [ALL]'
+      success: '▶ [SUCCESS]'
+      timeUp: '▶ [TIME_UP]'
+      favorites: '▶ [FAVORITES]'
+    latest: '★ Latest'
+
   auto:
     playerscore_b91d4cd3: 'PlayerScoreの挿入に失敗しました:'
     messages_yml_not_loaded_d56b1cd3: (messages.yml not loaded)
@@ -1093,7 +1103,44 @@ ui:
       openFailed: "&cFailed to open the rule book."
       hotbarGiven: "&6📖 The rule book has been placed in your hotbar."
       hotbarHint: "&eHold it and right-click anytime to reread."
-      latestHint: "&7(Right-click this book to save &e★Latest&7.)"
+      latestHint: "&7(Right-click this book to save &e{latestLabel}&7.)"
+    page:
+      contents:
+        title: '📌 Contents'
+        rulesItem: '1) Rules'
+        howToPlay: '  · How to play'
+        scoreRoute: '  · Score & route'
+        savedOn: '  · Saved on SUCCESS / TIME_UP'
+        language: '  · Language: {lang}'
+        yourQuotes: '  · Your ★ saved quotes'
+        difficulty: 'Difficulty: {difficulty}'
+        tipsItem: '2) Tips'
+      note:
+        bookFormat: "Note: Minecraft books can't switch tabs by clicking, so the content is organized into sections."
+      hint:
+        reopenMenu: "Hint: Run /gameMenu to open this again."
+  quote:
+    title: 'Quote Collection'
+    intro:
+      tabsTitle: 'Tabs:'
+      legendTitle: 'Legend:'
+      storedInDb: 'Stored in MySQL DB:'
+      db:
+        logs: 'proverb_logs (history)'
+        favorites: 'proverb_favorites (★)'
+      langLine: 'lang: {lang}'
+    headerRecent: 'Recent 20  |  lang: {lang}'
+    legend:
+      success: "= Clear / Success"
+      timeUp: "= Time up"
+      favorites: "= ★ Saved quotes"
+    noLogs: "No quote logs yet.\nThey are saved automatically on SUCCESS / TIME_UP."
+    noQuotesInTab: "No quotes to show in this tab.\n(It may not have been saved yet.)\n\nTry a different tab."
+    noFavorites: "No favorites yet.
+
+Right-click this book to save {latestLabel}."
+    tip:
+      rightClickSave: "Tip: Right-click this book to save {latestLabel}."
 
     legacy:
       toc:
@@ -1229,6 +1276,12 @@ ui:
     gamestart_easy_normal_hard_b818a2da: /gamestart <easy|normal|hard>
     text_9822f9ec: を実行してね。
 
+
+  error:
+    noData: 'No data.'
+  favorites:
+    title: '★ Favorites'
+    headerLatest: 'Latest 20  |  lang: {lang}'
 
 quotes:
   outcome:

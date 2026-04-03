@@ -311,6 +311,58 @@ items:
   text_e42912c7: '&7特製鉄ブロック'
   text_c89dea57: 特製鉄ブロックのレシピを登録しました。
 ui:
+  labels:
+    tabs: '&6TABS:&r'
+    page: '&8PAGE {page}/{total}&r'
+    tab:
+      all: '▶ [ALL]'
+      success: '▶ [FINISH]'
+      timeUp: '▶ [TIME-UP]'
+      favorites: '▶ [FAVORITE]'
+    latest: '★ RECENT'
+    page:
+      contents:
+        title: '📌 CONTENTS'
+        rulesItem: '1) RULES'
+        howToPlay: '  · HOW TO PLAY'
+        scoreRoute: '  · SCORE & ROUTE'
+        savedOn: '  · SAVED ON SUCCESS / TIME_UP'
+        language: '  · LANGUAGE: {lang}'
+        yourQuotes: '  · YOUR ★ SAVED QUOTES'
+        difficulty: 'DIFFICULTY: {difficulty}'
+        tipsItem: '2) TIPS'
+      note:
+        bookFormat: "Note: Minecraft books can't switch tabs by clicking, so content is in sections."
+      hint:
+        reopenMenu: "Hint: Run /gameMenu to open this again."
+
+  quote:
+    title: 'QUOTE COLLECTION'
+    intro:
+      tabsTitle: 'TABS:'
+      legendTitle: 'LEGEND:'
+      storedInDb: 'STORED IN MYSQL DB:'
+      db:
+        logs: 'proverb_logs (HISTORY)'
+        favorites: 'proverb_favorites (★ SAVED)'
+      langLine: 'LANG: {lang}'
+    headerRecent: 'Recent 20  |  lang: {lang}'
+    legend:
+      success: "= FINISH / CLEAR"
+      timeUp: "= TIME-UP"
+      favorites: "= ★ SAVED"
+    noLogs: "No quote logs yet.
+Saved automatically on SUCCESS / TIME_UP."
+    noQuotesInTab: "No quotes in this tab.
+(Not saved yet.)
+
+Try another tab."
+    noFavorites: "No favorites yet.
+
+Right-click this book to save {latestLabel}."
+    tip:
+      rightClickSave: "Tip: Right-click this book to save {latestLabel}."
+
   auto:
     playerscore_b91d4cd3: 'PlayerScoreの挿入に失敗しました:'
     messages_yml_not_loaded_d56b1cd3: (messages.yml not loaded)
@@ -879,7 +931,7 @@ ui:
       openFailed: "&cCAN'T OPEN RULE BOOK."
       hotbarGiven: "&6📖 RULE BOOK → HOTBAR."
       hotbarHint: "&eHOLD + RIGHT-CLICK = READ AGAIN."
-      latestHint: "&7(RIGHT-CLICK THIS BOOK = SAVE &e★LATEST&7.)"
+      latestHint: "&7(RIGHT-CLICK THIS BOOK = SAVE &e{latestLabel}&7.)"
 
     legacy:
       toc:
@@ -1010,6 +1062,12 @@ ui:
     text_ff9b9417: または
     gamestart_easy_normal_hard_b818a2da: /gamestart <easy|normal|hard>
     text_9822f9ec: を実行してね。
+
+  error:
+    noData: 'NO DATA'
+  favorites:
+    title: '★ FAVORITES'
+    headerLatest: 'Latest 20  |  lang: {lang}'
 
 quotes:
   outcome:

@@ -315,6 +315,58 @@ items:
   text_e42912c7: '&7特製鉄ブロック'
   text_c89dea57: 特製鉄ブロックのレシピを登録しました。
 ui:
+  labels:
+    tabs: '&6Välilehdet:&r'
+    page: '&8Sivu {page}/{total}&r'
+    tab:
+      all: '▶ [KAIKKI]'
+      success: '▶ [LÄPI]'
+      timeUp: '▶ [AIKA]'
+      favorites: '▶ [SUOSIKIT]'
+    latest: '★ Uusin'
+    page:
+      contents:
+        title: '📌 Sisältö'
+        rulesItem: '1) Säännöt'
+        howToPlay: '  · Kuinka pelata'
+        scoreRoute: '  · Pisteet & reitti'
+        savedOn: '  · Tallennettu SUCCESS / TIME_UP -tuloksella'
+        language: '  · Kieli: {lang}'
+        yourQuotes: '  · Tallennetut ★ lainaukset'
+        difficulty: 'Vaikeustaso: {difficulty}'
+        tipsItem: '2) Vinkit'
+      note:
+        bookFormat: "Huom: Minecraft-kirjoissa ei voi vaihtaa välilehtiä klikkaamalla, joten sisältö on jaettu osioihin."
+      hint:
+        reopenMenu: "Vinkki: Kirjoita /gameMenu avataksesi tämän uudelleen."
+
+  quote:
+    title: 'Lainauskokoelma'
+    intro:
+      tabsTitle: 'Välilehdet:'
+      legendTitle: 'Selite:'
+      storedInDb: 'Tallennettu MySQL-tietokantaan:'
+      db:
+        logs: 'proverb_logs (historia)'
+        favorites: 'proverb_favorites (★ Suosikit)'
+      langLine: 'kieli: {lang}'
+    headerRecent: 'Viimeisimmät 20  |  kieli: {lang}'
+    legend:
+      success: "= Läpäisty / Onnistui"
+      timeUp: "= Aika loppui"
+      favorites: "= ★ Tallennetut lainaukset"
+    noLogs: "Ei lainauslokeja vielä.
+Ne tallennetaan automaattisesti SUCCESS / TIME_UP -tuloksella."
+    noQuotesInTab: "Tässä välilehdessä ei ole lainauksia.
+(Niitä ei ehkä ole vielä tallennettu.)
+
+Kokeile toista välilehteä."
+    noFavorites: "Ei suosikkeja vielä.
+
+Napsauta tätä kirjaa hiiren oikealla tallentaaksesi {latestLabel}."
+    tip:
+      rightClickSave: "Vinkki: Napsauta tätä kirjaa hiiren oikealla tallentaaksesi {latestLabel}."
+
   auto:
     playerscore_b91d4cd3: 'PlayerScoreの挿入に失敗しました:'
     messages_yml_not_loaded_d56b1cd3: (messages.yml not loaded)
@@ -1093,7 +1145,7 @@ ui:
       openFailed: "&cSääntökirjaa ei voitu avata."
       hotbarGiven: "&6📖 Sääntökirja on lisätty pikapalkkiisi."
       hotbarHint: "&ePidä sitä kädessä ja klikkaa oikealla lukeaksesi sen uudelleen milloin tahansa."
-      latestHint: "&7(Klikkaa tätä kirjaa oikealla tallentaaksesi &e★Latest&7.)"
+      latestHint: "&7(Klikkaa tätä kirjaa oikealla tallentaaksesi &e{latestLabel}&7.)"
 
     legacy:
       toc:
@@ -1228,6 +1280,12 @@ ui:
     text_ff9b9417: または
     gamestart_easy_normal_hard_b818a2da: /gamestart <easy|normal|hard>
     text_9822f9ec: を実行してね。
+
+  error:
+    noData: 'Ei tietoja'
+  favorites:
+    title: '★ Suosikit'
+    headerLatest: 'Uusimmat 20  |  kieli: {lang}'
 
 quotes:
   outcome:

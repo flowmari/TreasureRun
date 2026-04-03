@@ -144,92 +144,25 @@ public class GameMenu {
    * 本(WRITTEN_BOOK)のUIで、詳しいルール説明を表示する（旧版：互換用）
    * ※本命は openRuleBookFromConfig(...) なので、ここは直書きのまま残すのが安全
    */
+  /**
+   * 本(WRITTEN_BOOK)のUIで、詳しいルール説明を表示する（旧版：互換用）
+   *
+   * ✅ 直書きゼロ方針：
+   * - 旧メソッド名は残すが、中身は i18n 本命(openRuleBookFromConfig)へ委譲する
+   * - これにより「誤って呼ばれても必ず多言語表示」になる
+   */
+  @Deprecated(since = "1.0", forRemoval = false)
   public static void openRuleBook(Player player, String difficulty) {
 
-    ItemStack book = new ItemStack(Material.WRITTEN_BOOK);
-    BookMeta meta = (BookMeta) book.getItemMeta();
+    TreasureRunMultiChestPlugin plugin =
+        (TreasureRunMultiChestPlugin) org.bukkit.Bukkit.getPluginManager().getPlugin("TreasureRun");
 
-    // ✅ ここで plugin/actualLang は使えない（互換用メソッドなので直書き）
-    if (meta == null) {
-      player.sendMessage(ChatColor.RED + "ルールブックを開けませんでした。");
-      return;
-    }
+    if (plugin == null || player == null) return;
 
-    meta.setTitle("TreasureRun ルール");
-    meta.setAuthor("TreasureRun");
-
-    String diffJP = switch (difficulty) {
-      case "Easy" -> "Easy（ゆったり）";
-      case "Hard" -> "Hard（高難度）";
-      default -> "Normal（標準）";
-    };
-
-    List<String> pages = new ArrayList<>();
-
-    pages.add(
-        ChatColor.AQUA + "" + ChatColor.BOLD + "TreasureRun ルール\n\n" +
-            ChatColor.DARK_BLUE +
-            "難易度: " + diffJP + "\n\n" +
-            "制限時間内にできるだけ多くの\n" +
-            "宝箱を開けよう！\n" +
-            "レアな宝物ほど高得点です。"
-    );
-
-    pages.add(
-        ChatColor.AQUA + "★ 基本の流れ\n\n" +
-            ChatColor.DARK_BLUE +
-            "1. /gameStart <難易度>\n" +
-            "2. 緑のマークの宝箱を探す\n" +
-            "3. 開けるとスコア + アイテム\n" +
-            "4. 全て開けるとクリア！"
-    );
-
-    pages.add(
-        ChatColor.AQUA + "★ ヒント\n\n" +
-            ChatColor.DARK_BLUE +
-            "・ネザライト/ブロック系は\n" +
-            "  ジャックポット高得点！\n\n" +
-            "・途中で /gameMenu を打つと\n" +
-            "  この本を再取得できます。\n\n" +
-            "・タイムアップに注意！"
-    );
-
-    meta.setPages(pages);
-    book.setItemMeta(meta);
-
-    ItemMeta displayMeta = book.getItemMeta();
-    if (displayMeta != null) {
-      displayMeta.setDisplayName(ChatColor.AQUA + "TreasureRun ルールブック");
-      book.setItemMeta(displayMeta);
-    }
-
-    PlayerInventory inv = player.getInventory();
-
-    for (int i = 0; i < inv.getSize(); i++) {
-      ItemStack item = inv.getItem(i);
-      if (item == null) continue;
-      if (item.getType() != Material.WRITTEN_BOOK) continue;
-      if (!item.hasItemMeta()) continue;
-
-      ItemMeta im = item.getItemMeta();
-      if (im == null || !im.hasDisplayName()) continue;
-
-      String name = ChatColor.stripColor(im.getDisplayName());
-      if ("TreasureRun ルールブック".equals(name)) {
-        inv.clear(i);
-      }
-    }
-
-    inv.setItem(0, book);
-    player.updateInventory();
-
-    player.getInventory().setHeldItemSlot(0);
-    player.openBook(book);
-
-    // ✅ 互換用は直書き
-    player.sendMessage(ChatColor.GOLD + "📖 ルールブックをホットバーに配布しました。");
-    player.sendMessage(ChatColor.YELLOW + "手に持って右クリックすると、いつでも読み直せます。");
+    // lang は未指定（保存済み言語 or default を openRuleBookFromConfig が解決）
+    openRuleBookFromConfig(player, difficulty, plugin, "");
   }
+
 
   // =========================================================
   // ✅ config.yml の ruleBook から本を生成して開く（メイン版）
@@ -289,7 +222,7 @@ public class GameMenu {
     // =========================================================
     // ✅ ✅ ✅ 作品導線：本の“最初の方”に Contents（目次ページ）を追加
     // =========================================================
-    String contentsPage = buildContentsPage(actualLang, difficulty, diffLabel);
+    String contentsPage = buildContentsPage(plugin, actualLang, difficulty, diffLabel);
     if (replaced.size() >= 1) {
       replaced.add(1, contentsPage);
     } else {
@@ -366,30 +299,62 @@ public class GameMenu {
     // ✅ メッセージ i18n 化（languages/*.yml の ui.menu.book.*）
     player.sendMessage(colorize(plugin.getI18n().tr(actualLang, GameMenuKeys.UI_MENU_BOOK_HOTBAR_GIVEN)));
     player.sendMessage(colorize(plugin.getI18n().tr(actualLang, GameMenuKeys.UI_MENU_BOOK_HOTBAR_HINT)));
+
+    // ✅ latestHint（右クリック保存のヒント）{latestLabel} を各言語のラベルで置換
+    String latestLabel = plugin.getI18n().tr(actualLang, GameMenuKeys.UI_LABEL_LATEST);
+    player.sendMessage(colorize(plugin.getI18n().tr(
+        actualLang,
+        GameMenuKeys.UI_MENU_BOOK_LATEST_HINT,
+        I18n.Placeholder.of("{latestLabel}", latestLabel)
+    )));
+
   }
 
   // =========================================================
   // ✅ ✅ ✅ 本の Contents（導線ページ）
   // =========================================================
-  private static String buildContentsPage(String actualLang, String difficulty, String diffLabel) {
-    // ※言語ごとに分岐したいならここを config にしてもOK
-    return ChatColor.AQUA + "" + ChatColor.BOLD + "📌 Contents\n\n" +
-        ChatColor.DARK_BLUE + "Difficulty: " + diffLabel + "\n\n" +
+  private static String buildContentsPage(
+      TreasureRunMultiChestPlugin plugin,
+      String actualLang,
+      String difficulty,
+      String diffLabel
+  ) {
+    String reopenHint = plugin.getI18n().tr(actualLang, GameMenuKeys.UI_MENU_PAGE_HINT_REOPEN_MENU);
 
-        ChatColor.AQUA + "1) Rules / ルール\n" +
-        ChatColor.DARK_BLUE + "  ・How to play\n\n" +
+    // ✅ i18n化：直書きをYAMLキーから取得（19言語対応）
+    String contentsTitle = plugin.getI18n().tr(actualLang, GameMenuKeys.UI_MENU_PAGE_CONTENTS_TITLE);
+    String rulesItem     = plugin.getI18n().tr(actualLang, GameMenuKeys.UI_MENU_PAGE_CONTENTS_RULES);
+    String tipsItem      = plugin.getI18n().tr(actualLang, GameMenuKeys.UI_MENU_PAGE_CONTENTS_TIPS);
+    String quoteTitle    = plugin.getI18n().tr(actualLang, GameMenuKeys.UI_QUOTE_TITLE);
+    String favTitle      = plugin.getI18n().tr(actualLang, GameMenuKeys.UI_FAVORITES_TITLE);
 
-        ChatColor.AQUA + "2) Tips / ヒント\n" +
-        ChatColor.DARK_BLUE + "  ・Score & route\n\n" +
+    // ✅ i18n化：サブ説明文もYAMLキーから取得（19言語対応）
+    String howToPlay  = plugin.getI18n().tr(actualLang, GameMenuKeys.UI_MENU_PAGE_CONTENTS_HOW_TO_PLAY);
+    String scoreRoute = plugin.getI18n().tr(actualLang, GameMenuKeys.UI_MENU_PAGE_CONTENTS_SCORE_ROUTE);
+    String savedOn    = plugin.getI18n().tr(actualLang, GameMenuKeys.UI_MENU_PAGE_CONTENTS_SAVED_ON);
+    String langLine   = plugin.getI18n().tr(actualLang, GameMenuKeys.UI_MENU_PAGE_CONTENTS_LANGUAGE,
+        I18n.Placeholder.of("{lang}", actualLang));
+    String yourQuotes = plugin.getI18n().tr(actualLang, GameMenuKeys.UI_MENU_PAGE_CONTENTS_YOUR_QUOTES);
+    String diffLine   = plugin.getI18n().tr(actualLang, GameMenuKeys.UI_MENU_PAGE_CONTENTS_DIFFICULTY,
+        I18n.Placeholder.of("{difficulty}", diffLabel));
 
-        ChatColor.AQUA + "3) Quote Collection\n" +
-        ChatColor.DARK_BLUE + "  ・Saved on SUCCESS / TIME_UP\n" +
-        ChatColor.DARK_BLUE + "  ・Language: " + ChatColor.GRAY + actualLang + "\n\n" +
+    return ChatColor.AQUA + "" + ChatColor.BOLD + tint(ChatColor.AQUA, contentsTitle) + "\n\n" +
+        ChatColor.DARK_BLUE + diffLine + "\n\n" +
 
-        ChatColor.AQUA + "4) Favorites\n" +
-        ChatColor.DARK_BLUE + "  ・Your ★ saved quotes\n\n" +
+        ChatColor.AQUA + rulesItem + "\n" +
+        ChatColor.DARK_BLUE + howToPlay + "\n\n" +
 
-        ChatColor.DARK_BLUE + "Hint: /gameMenu で再度開けます";
+        ChatColor.AQUA + tipsItem + "\n" +
+        ChatColor.DARK_BLUE + scoreRoute + "\n\n" +
+
+        ChatColor.AQUA + quoteTitle + "\n" +
+        ChatColor.DARK_BLUE + savedOn + "\n" +
+        ChatColor.DARK_BLUE + langLine + "\n\n" +
+
+        ChatColor.AQUA + favTitle + "\n" +
+        ChatColor.DARK_BLUE + yourQuotes + "\n\n" +
+
+        tint(ChatColor.DARK_BLUE, reopenHint);
   }
 
   // =========================================================
@@ -403,13 +368,10 @@ public class GameMenu {
     return buildProverbCollectionPages(player, plugin, actualLang, QuoteTab.ALL, true);
   }
 
-  // =========================================================
-  // ✅ ✅ ✅ 完全進化：Quote “タブ風UI + Page番号 + Latest固定 + Favoritesタブ”
-  // =========================================================
   private static List<String> buildQuoteTabsPages(Player player, TreasureRunMultiChestPlugin plugin, String actualLang) {
     List<String> pages = new ArrayList<>();
 
-    pages.add(buildQuoteTabsIntroPage(actualLang));
+    pages.add(buildQuoteTabsIntroPage(plugin, actualLang));
     pages.addAll(buildProverbCollectionPages(player, plugin, actualLang, QuoteTab.ALL, true));
     pages.addAll(buildProverbCollectionPages(player, plugin, actualLang, QuoteTab.SUCCESS, true));
     pages.addAll(buildProverbCollectionPages(player, plugin, actualLang, QuoteTab.TIME_UP, true));
@@ -418,30 +380,67 @@ public class GameMenu {
     return pages;
   }
 
-  private static String buildQuoteTabsIntroPage(String actualLang) {
-    return ChatColor.AQUA + "" + ChatColor.BOLD + "📖 Quote Collection\n\n" +
-        ChatColor.DARK_BLUE + "Tabs:\n\n" +
-        tabHeader(QuoteTab.ALL) + "\n" +
-        tabHeader(QuoteTab.SUCCESS) + "\n" +
-        tabHeader(QuoteTab.TIME_UP) + "\n" +
-        tabHeader(QuoteTab.FAVORITES) + "\n\n" +
+  // =========================================================
+  // ✅ ✅ ✅ 完全進化：Quote “タブ風UI + Page番号 + Latest固定 + Favoritesタブ”
+  // =========================================================
+  private static String buildQuoteTabsIntroPage(TreasureRunMultiChestPlugin plugin, String actualLang) {
 
-        ChatColor.DARK_BLUE + "Legend:\n" +
-        ChatColor.GREEN + "■ SUCCESS" + ChatColor.DARK_BLUE + " = 完走 / 成功\n" +
-        ChatColor.RED + "■ TIME_UP" + ChatColor.DARK_BLUE + " = 時間切れ\n" +
-        ChatColor.YELLOW + "■ Favorites" + ChatColor.DARK_BLUE + " = ★保存した格言\n\n" +
+    String title = plugin.getI18n().tr(actualLang, GameMenuKeys.UI_QUOTE_TITLE);
 
-        ChatColor.GRAY + "Stored in MySQL DB:\n" +
-        ChatColor.GRAY + "- proverb_logs (history)\n" +
-        ChatColor.GRAY + "- proverb_favorites (★)\n\n" +
+    String tabsTitle = plugin.getI18n().tr(actualLang, GameMenuKeys.UI_QUOTE_INTRO_TABS_TITLE);
+    String legendTitle = plugin.getI18n().tr(actualLang, GameMenuKeys.UI_QUOTE_INTRO_LEGEND_TITLE);
+    String storedTitle = plugin.getI18n().tr(actualLang, GameMenuKeys.UI_QUOTE_INTRO_STORED_IN_DB);
 
-        ChatColor.DARK_BLUE + "※ Minecraftの本は\n" +
-        ChatColor.DARK_BLUE + "クリックで切替できないので\n" +
-        ChatColor.DARK_BLUE + "「セクション」形式で収録します。\n\n" +
-        ChatColor.DARK_BLUE + "lang: " + ChatColor.GRAY + actualLang + "\n\n" +
-        ChatColor.DARK_BLUE + "Tip: この本を右クリックで\n" +
-        ChatColor.DARK_BLUE + "★Latest を保存できます。";
+    String dbLogs = plugin.getI18n().tr(actualLang, GameMenuKeys.UI_QUOTE_INTRO_DB_LOGS);
+    String dbFav = plugin.getI18n().tr(actualLang, GameMenuKeys.UI_QUOTE_INTRO_DB_FAVORITES);
+
+    String legendSuccess = plugin.getI18n().tr(actualLang, GameMenuKeys.UI_QUOTE_LEGEND_SUCCESS);
+    String legendTimeUp = plugin.getI18n().tr(actualLang, GameMenuKeys.UI_QUOTE_LEGEND_TIME_UP);
+    String legendFavorites = plugin.getI18n().tr(actualLang, GameMenuKeys.UI_QUOTE_LEGEND_FAVORITES);
+
+    // ✅ legend見出しの「SUCCESS/TIME_UP/Favorites」もキー化（ui.labels.tab.* を再利用）
+    String labSuccess = tabLabel(plugin, actualLang, QuoteTab.SUCCESS);
+    String labTimeUp  = tabLabel(plugin, actualLang, QuoteTab.TIME_UP);
+    String labFav     = tabLabel(plugin, actualLang, QuoteTab.FAVORITES);
+
+    String noteBookFormat = plugin.getI18n().tr(actualLang, GameMenuKeys.UI_MENU_PAGE_NOTE_BOOK_FORMAT);
+
+    String latestLabel = plugin.getI18n().tr(actualLang, GameMenuKeys.UI_LABEL_LATEST);
+    String tipRightClickSave = plugin.getI18n().tr(
+        actualLang,
+        GameMenuKeys.UI_QUOTE_TIP_RIGHT_CLICK_SAVE,
+        I18n.Placeholder.of("{latestLabel}", latestLabel)
+    );
+
+    String langLine = plugin.getI18n().tr(
+        actualLang,
+        GameMenuKeys.UI_QUOTE_INTRO_LANG_LINE,
+        I18n.Placeholder.of("{lang}", actualLang)
+    );
+
+    return ChatColor.AQUA + "" + ChatColor.BOLD + "📖 " + tint(ChatColor.AQUA, title) + "\n\n" +
+
+        tint(ChatColor.DARK_BLUE, tabsTitle) + "\n\n" +
+        tabHeader(plugin, actualLang, QuoteTab.ALL) + "\n" +
+        tabHeader(plugin, actualLang, QuoteTab.SUCCESS) + "\n" +
+        tabHeader(plugin, actualLang, QuoteTab.TIME_UP) + "\n" +
+        tabHeader(plugin, actualLang, QuoteTab.FAVORITES) + "\n\n" +
+
+        tint(ChatColor.DARK_BLUE, legendTitle) + "\n" +
+        ChatColor.GREEN  + "■ " + labSuccess + ChatColor.DARK_BLUE + " " + legendSuccess + "\n" +
+        ChatColor.RED    + "■ " + labTimeUp  + ChatColor.DARK_BLUE + " " + legendTimeUp + "\n" +
+        ChatColor.YELLOW + "■ " + labFav     + ChatColor.DARK_BLUE + " " + legendFavorites + "\n\n" +
+
+        tint(ChatColor.DARK_BLUE, storedTitle) + "\n" +
+        ChatColor.GRAY + "- " + dbLogs + "\n" +
+        ChatColor.GRAY + "- " + dbFav + "\n\n" +
+
+        tint(ChatColor.DARK_BLUE, noteBookFormat) + "\n\n" +
+        tint(ChatColor.DARK_BLUE, langLine) + "\n\n" +
+        tint(ChatColor.DARK_BLUE, tipRightClickSave);
   }
+
+
 
   private static List<String> buildProverbCollectionPages(
       Player player,
@@ -453,8 +452,9 @@ public class GameMenu {
     List<String> pages = new ArrayList<>();
 
     if (player == null || plugin == null) {
-      pages.add(ChatColor.AQUA + "" + ChatColor.BOLD + "📖 Quote Collection\n\n" +
-          ChatColor.DARK_BLUE + "No data.");
+      pages.add(ChatColor.AQUA + "" + ChatColor.BOLD + "📖 " +
+          tint(ChatColor.AQUA, plugin.getI18n().tr(actualLang, GameMenuKeys.UI_QUOTE_TITLE)) + "\n\n" +
+          ChatColor.DARK_BLUE + plugin.getI18n().tr(actualLang, GameMenuKeys.UI_ERROR_NO_DATA));
       return pages;
     }
 
@@ -468,17 +468,31 @@ public class GameMenu {
       logs = new ArrayList<>();
     }
 
+    // ✅ i18n化：直書きをYAMLキーから取得（19言語対応）
+    String quoteTitle = plugin.getI18n().tr(actualLang, GameMenuKeys.UI_QUOTE_TITLE);
+    String recentHeader = plugin.getI18n().tr(
+        actualLang,
+        GameMenuKeys.UI_QUOTE_HEADER_RECENT,
+        I18n.Placeholder.of("{lang}", actualLang)
+    );
     String header =
-        ChatColor.AQUA + "" + ChatColor.BOLD + "📖 Quote Collection\n\n" +
-            tabBar(tab) + "\n" +
-            ChatColor.DARK_BLUE + "Recent 20  |  lang: " + ChatColor.GRAY + actualLang + "\n\n";
+        ChatColor.AQUA + "" + ChatColor.BOLD + "📖 " + tint(ChatColor.AQUA, quoteTitle) + "\n\n" +
+            tabBar(plugin, actualLang, tab) + "\n" +
+            ChatColor.DARK_BLUE + recentHeader + "\n\n";
 
+    // ✅ logs が空なら i18n メッセージを 1ページで返す
     if (logs == null || logs.isEmpty()) {
-      pages.add(applyPageFooter(header +
-          ChatColor.DARK_BLUE + "まだ格言ログがありません。\n" +
-          ChatColor.DARK_BLUE + "SUCCESS / TIME_UP で\n" +
-          ChatColor.DARK_BLUE + "自動で保存されます。\n\n" +
-          ChatColor.GRAY + "（DB: proverb_logs）", 1, 1, showPageNumber));
+      String msg = plugin.getI18n().tr(actualLang, GameMenuKeys.UI_QUOTE_NO_LOGS);
+      pages.add(applyPageFooter(
+          plugin,
+          actualLang,
+          header +
+              tint(ChatColor.DARK_BLUE, msg) + "\n\n" +
+              ChatColor.GRAY + "（DB: proverb_logs）",
+          1,
+          1,
+          showPageNumber
+      ));
       return pages;
     }
 
@@ -507,10 +521,15 @@ public class GameMenu {
     }
 
     if (target.isEmpty()) {
-      pages.add(applyPageFooter(header +
-          ChatColor.DARK_BLUE + "このタブには表示できる格言がありません。\n" +
-          ChatColor.DARK_BLUE + "（まだ保存されていない可能性があります）\n\n" +
-          ChatColor.DARK_BLUE + "別タブも見てみてください。", 1, 1, showPageNumber));
+      String msg = plugin.getI18n().tr(actualLang, GameMenuKeys.UI_QUOTE_NO_QUOTES_IN_TAB);
+      pages.add(applyPageFooter(
+          plugin,
+          actualLang,
+          header + tint(ChatColor.DARK_BLUE, msg),
+          1,
+          1,
+          showPageNumber
+      ));
       return pages;
     }
 
@@ -521,7 +540,7 @@ public class GameMenu {
     StringBuilder sb = new StringBuilder(header);
     int lineCount = countLines(sb.toString());
 
-    String latestBlock = buildLatestBlock(latestRow);
+    String latestBlock = buildLatestBlock(plugin, actualLang, latestRow);
     int latestLines = countLines(latestBlock);
 
     if (lineCount + latestLines > 14) {
@@ -537,7 +556,7 @@ public class GameMenu {
       if (row == null || row.isBlank()) continue;
       if (row.equals(latestRow)) continue;
 
-      String block = buildNormalBlock(row, idx);
+      String block = buildNormalBlock(plugin, actualLang, row, idx);
       int blockLines = countLines(block);
 
       if (lineCount + blockLines > 14) {
@@ -555,7 +574,7 @@ public class GameMenu {
 
     int total = rawPages.size();
     for (int i = 0; i < rawPages.size(); i++) {
-      pages.add(applyPageFooter(rawPages.get(i), i + 1, total, showPageNumber));
+      pages.add(applyPageFooter(plugin, actualLang, rawPages.get(i), i + 1, total, showPageNumber));
     }
 
     return pages;
@@ -570,8 +589,9 @@ public class GameMenu {
     List<String> pages = new ArrayList<>();
 
     if (player == null || plugin == null) {
-      pages.add(ChatColor.AQUA + "" + ChatColor.BOLD + "★ Favorites\n\n" +
-          ChatColor.DARK_BLUE + "No data.");
+      pages.add(ChatColor.YELLOW + "" + ChatColor.BOLD +
+          tint(ChatColor.YELLOW, plugin.getI18n().tr(actualLang, GameMenuKeys.UI_FAVORITES_TITLE)) + "\n\n" +
+          ChatColor.DARK_BLUE + plugin.getI18n().tr(actualLang, GameMenuKeys.UI_ERROR_NO_DATA));
       return pages;
     }
 
@@ -588,17 +608,39 @@ public class GameMenu {
       favorites = new ArrayList<>();
     }
 
+    // ✅ i18n化：直書きをYAMLキーから取得（19言語対応）
+    String favoritesTitle = plugin.getI18n().tr(actualLang, GameMenuKeys.UI_FAVORITES_TITLE);
+    String latestHeader = plugin.getI18n().tr(
+        actualLang,
+        GameMenuKeys.UI_FAVORITES_HEADER_LATEST,
+        I18n.Placeholder.of("{lang}", actualLang)
+    );
     String header =
-        ChatColor.YELLOW + "" + ChatColor.BOLD + "★ Favorites\n\n" +
-            tabBar(QuoteTab.FAVORITES) + "\n" +
-            ChatColor.DARK_BLUE + "Latest 20  |  lang: " + ChatColor.GRAY + actualLang + "\n\n";
+        ChatColor.YELLOW + "" + ChatColor.BOLD + tint(ChatColor.YELLOW, favoritesTitle) + "\n\n" +
+            tabBar(plugin, actualLang, QuoteTab.FAVORITES) + "\n" +
+            ChatColor.DARK_BLUE + latestHeader + "\n\n";
 
     if (favorites == null || favorites.isEmpty()) {
-      pages.add(applyPageFooter(header +
-          ChatColor.DARK_BLUE + "まだ★お気に入りがありません。\n\n" +
-          ChatColor.DARK_BLUE + "本を右クリックすると\n" +
-          ChatColor.DARK_BLUE + "★Latest を保存できます。\n\n" +
-          ChatColor.GRAY + "（DB: proverb_favorites）", 1, 1, showPageNumber));
+      String noFav = plugin.getI18n().tr(actualLang, GameMenuKeys.UI_QUOTE_NO_FAVORITES);
+
+      String latestLabel = plugin.getI18n().tr(actualLang, GameMenuKeys.UI_LABEL_LATEST);
+      String tip = plugin.getI18n().tr(
+          actualLang,
+          GameMenuKeys.UI_QUOTE_TIP_RIGHT_CLICK_SAVE,
+          I18n.Placeholder.of("{latestLabel}", latestLabel)
+      );
+
+      pages.add(applyPageFooter(
+          plugin,
+          actualLang,
+          header +
+              tint(ChatColor.DARK_BLUE, noFav) + "\n\n" +
+              tint(ChatColor.DARK_BLUE, tip) + "\n\n" +
+              ChatColor.GRAY + "（DB: proverb_favorites）",
+          1,
+          1,
+          showPageNumber
+      ));
       return pages;
     }
 
@@ -621,7 +663,7 @@ public class GameMenu {
     for (String row : target) {
       if (row == null || row.isBlank()) continue;
 
-      String block = buildFavoriteBlock(row, idx);
+      String block = buildFavoriteBlock(plugin, actualLang, row, idx);
       int blockLines = countLines(block);
 
       if (lineCount + blockLines > 14) {
@@ -639,13 +681,13 @@ public class GameMenu {
 
     int total = rawPages.size();
     for (int i = 0; i < rawPages.size(); i++) {
-      pages.add(applyPageFooter(rawPages.get(i), i + 1, total, showPageNumber));
+      pages.add(applyPageFooter(plugin, actualLang, rawPages.get(i), i + 1, total, showPageNumber));
     }
 
     return pages;
   }
 
-  private static String buildLatestBlock(String row) {
+  private static String buildLatestBlock(TreasureRunMultiChestPlugin plugin, String lang, String row) {
     String outcome = extractOutcome(row);
     String diff = extractDifficulty(row);
     String rowLang = extractLang(row);
@@ -654,14 +696,17 @@ public class GameMenu {
     ChatColor outcomeColor = colorByOutcome(outcome);
     ChatColor diffColor = colorByDifficulty(diff);
 
-    return ChatColor.GOLD + "" + ChatColor.BOLD + "★ Latest\n" +
-        outcomeColor + "[" + safe(outcome) + "] " +
+    String latestLabel = plugin.getI18n().tr(lang, GameMenuKeys.UI_LABEL_LATEST);
+    String outcomeLabel = outcomeLabel(plugin, lang, outcome);
+
+    return ChatColor.GOLD + "" + ChatColor.BOLD + latestLabel + "\n" +
+        outcomeColor + "[" + outcomeLabel + "] " +
         diffColor + safe(diff) + " " +
         ChatColor.GRAY + "(" + safe(rowLang) + ")\n" +
         ChatColor.DARK_BLUE + safeQuote(quoteText) + "\n\n";
   }
 
-  private static String buildNormalBlock(String row, int idx) {
+  private static String buildNormalBlock(TreasureRunMultiChestPlugin plugin, String lang, String row, int idx) {
     String outcome = extractOutcome(row);
     String diff = extractDifficulty(row);
     String rowLang = extractLang(row);
@@ -669,15 +714,17 @@ public class GameMenu {
 
     ChatColor outcomeColor = colorByOutcome(outcome);
     ChatColor diffColor = colorByDifficulty(diff);
+
+    String outcomeLabel = outcomeLabel(plugin, lang, outcome);
 
     return ChatColor.AQUA + "#" + idx + "\n" +
-        outcomeColor + "[" + safe(outcome) + "] " +
+        outcomeColor + "[" + outcomeLabel + "] " +
         diffColor + safe(diff) + " " +
         ChatColor.GRAY + "(" + safe(rowLang) + ")\n" +
         ChatColor.DARK_BLUE + safeQuote(quoteText) + "\n\n";
   }
 
-  private static String buildFavoriteBlock(String row, int idx) {
+  private static String buildFavoriteBlock(TreasureRunMultiChestPlugin plugin, String lang, String row, int idx) {
     String favoriteId = extractFavoriteId(row);
 
     String outcome = extractOutcome(row);
@@ -692,36 +739,66 @@ public class GameMenu {
         ? (ChatColor.YELLOW + "★#" + favoriteId)
         : (ChatColor.YELLOW + "★");
 
+    String outcomeLabel = outcomeLabel(plugin, lang, outcome);
+
     return idLabel + ChatColor.GRAY + "  (" + idx + ")\n" +
-        outcomeColor + "[" + safe(outcome) + "] " +
+        outcomeColor + "[" + outcomeLabel + "] " +
         diffColor + safe(diff) + " " +
         ChatColor.GRAY + "(" + safe(rowLang) + ")\n" +
         ChatColor.DARK_BLUE + safeQuote(quoteText) + "\n\n";
   }
 
-  private static String tabHeader(QuoteTab current) {
-    if (current == QuoteTab.ALL) return ChatColor.AQUA + "▶ [ALL]";
-    if (current == QuoteTab.SUCCESS) return ChatColor.GREEN + "▶ [SUCCESS]";
-    if (current == QuoteTab.TIME_UP) return ChatColor.RED + "▶ [TIME_UP]";
-    return ChatColor.YELLOW + "▶ [FAVORITES]";
+  private static String tabHeader(TreasureRunMultiChestPlugin plugin, String lang, QuoteTab current) {
+    String label = tabLabel(plugin, lang, current);
+
+    if (current == QuoteTab.ALL) return ChatColor.AQUA + "▶ [" + label + "]";
+    if (current == QuoteTab.SUCCESS) return ChatColor.GREEN + "▶ [" + label + "]";
+    if (current == QuoteTab.TIME_UP) return ChatColor.RED + "▶ [" + label + "]";
+    return ChatColor.YELLOW + "▶ [" + label + "]";
   }
 
-  private static String tabBar(QuoteTab current) {
-    return ChatColor.DARK_BLUE + "Tabs: " +
-        (current == QuoteTab.ALL ? ChatColor.WHITE + "【" + ChatColor.AQUA + "ALL" + ChatColor.WHITE + "】" : ChatColor.GRAY + "[ALL]") +
+  private static String tabBar(TreasureRunMultiChestPlugin plugin, String lang, QuoteTab current) {
+    String all = tabLabel(plugin, lang, QuoteTab.ALL);
+    String success = tabLabel(plugin, lang, QuoteTab.SUCCESS);
+    String timeUp = tabLabel(plugin, lang, QuoteTab.TIME_UP);
+    String fav = tabLabel(plugin, lang, QuoteTab.FAVORITES);
+
+    // ✅ i18n: "Tabs:" 部分も言語化
+    String tabsLabel = plugin.getI18n().tr(lang, GameMenuKeys.UI_LABEL_TABS); // ui.labels.tabs
+    tabsLabel = colorize(tabsLabel);
+
+    return ChatColor.DARK_BLUE + "" + tabsLabel + " " +
+        (current == QuoteTab.ALL ? ChatColor.WHITE + "【" + ChatColor.AQUA + all + ChatColor.WHITE + "】" : ChatColor.GRAY + "[" + all + "]") +
         ChatColor.DARK_BLUE + " " +
-        (current == QuoteTab.SUCCESS ? ChatColor.WHITE + "【" + ChatColor.GREEN + "SUCCESS" + ChatColor.WHITE + "】" : ChatColor.GRAY + "[SUCCESS]") +
+        (current == QuoteTab.SUCCESS ? ChatColor.WHITE + "【" + ChatColor.GREEN + success + ChatColor.WHITE + "】" : ChatColor.GRAY + "[" + success + "]") +
         ChatColor.DARK_BLUE + " " +
-        (current == QuoteTab.TIME_UP ? ChatColor.WHITE + "【" + ChatColor.RED + "TIME_UP" + ChatColor.WHITE + "】" : ChatColor.GRAY + "[TIME_UP]") +
+        (current == QuoteTab.TIME_UP ? ChatColor.WHITE + "【" + ChatColor.RED + timeUp + ChatColor.WHITE + "】" : ChatColor.GRAY + "[" + timeUp + "]") +
         ChatColor.DARK_BLUE + " " +
-        (current == QuoteTab.FAVORITES ? ChatColor.WHITE + "【" + ChatColor.YELLOW + "FAVORITES" + ChatColor.WHITE + "】" : ChatColor.GRAY + "[FAVORITES]");
+        (current == QuoteTab.FAVORITES ? ChatColor.WHITE + "【" + ChatColor.YELLOW + fav + ChatColor.WHITE + "】" : ChatColor.GRAY + "[" + fav + "]");
   }
 
-  private static String applyPageFooter(String page, int pageIndex, int totalPages, boolean showPageNumber) {
+  private static String applyPageFooter(
+      TreasureRunMultiChestPlugin plugin,
+      String lang,
+      String page,
+      int pageIndex,
+      int totalPages,
+      boolean showPageNumber
+  ) {
     if (!showPageNumber) return page;
-    return page + ChatColor.DARK_GRAY + "Page " + pageIndex + "/" + totalPages;
+
+    // ✅ i18n: "Page 1/3" も言語化（{page}/{total} を埋める）
+    String fmt = plugin.getI18n().tr(
+        lang,
+        GameMenuKeys.UI_LABEL_PAGE, // ui.labels.page
+        I18n.Placeholder.of("{page}", String.valueOf(pageIndex)),
+        I18n.Placeholder.of("{total}", String.valueOf(totalPages))
+    );
+
+    return page + colorize(fmt);
   }
 
+  // ✅ 追加：ページ分割のための行数カウント（これが無いと大量エラーになる）
   private static int countLines(String s) {
     if (s == null || s.isEmpty()) return 0;
     return s.split("\\R", -1).length;
@@ -823,6 +900,35 @@ public class GameMenu {
   private static String colorize(String s) {
     if (s == null) return null;
     return ChatColor.translateAlternateColorCodes('&', s);
+  }
+
+  // =========================================================
+  // ✅ Phase 2 helpers: label dictionary (ui.labels.*)
+  // =========================================================
+  private static String outcomeLabel(TreasureRunMultiChestPlugin plugin, String lang, String outcome) {
+    if (plugin == null) return safe(outcome);
+
+    String o = (outcome == null) ? "" : outcome.trim().toUpperCase();
+    if (o.contains("SUCCESS")) return plugin.getI18n().tr(lang, GameMenuKeys.UI_LABEL_OUTCOME_SUCCESS);
+    if (o.contains("TIME_UP")) return plugin.getI18n().tr(lang, GameMenuKeys.UI_LABEL_OUTCOME_TIME_UP);
+    return safe(outcome);
+  }
+
+  private static String tabLabel(TreasureRunMultiChestPlugin plugin, String lang, QuoteTab tab) {
+    if (plugin == null) return tab.name();
+
+    return switch (tab) {
+      case ALL -> plugin.getI18n().tr(lang, GameMenuKeys.UI_LABEL_TAB_ALL);
+      case SUCCESS -> plugin.getI18n().tr(lang, GameMenuKeys.UI_LABEL_TAB_SUCCESS);
+      case TIME_UP -> plugin.getI18n().tr(lang, GameMenuKeys.UI_LABEL_TAB_TIME_UP);
+      case FAVORITES -> plugin.getI18n().tr(lang, GameMenuKeys.UI_LABEL_TAB_FAVORITES);
+    };
+  }
+
+  private static String tint(ChatColor color, String text) {
+    if (text == null) return color.toString();
+    // 行ごとに色を付け直して「途中で色が戻る」を防ぐ
+    return color + text.replace("\n", "\n" + color);
   }
 
   private static String normalizeName(String s) {

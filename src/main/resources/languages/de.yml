@@ -315,6 +315,16 @@ items:
   text_e42912c7: '&7特製鉄ブロック'
   text_c89dea57: 特製鉄ブロックのレシピを登録しました。
 ui:
+  labels:
+    tabs: '&6Reiter:&r'
+    page: '&8Seite {page}/{total}&r'
+    tab:
+      all: '▶ [ALLE]'
+      success: '▶ [ERFOLG]'
+      timeUp: '▶ [ZEIT]'
+      favorites: '▶ [FAVORITEN]'
+    latest: '★ Neueste'
+
   auto:
     playerscore_b91d4cd3: 'PlayerScoreの挿入に失敗しました:'
     messages_yml_not_loaded_d56b1cd3: (messages.yml not loaded)
@@ -1093,7 +1103,44 @@ ui:
       openFailed: "&cDas Regelbuch konnte nicht geöffnet werden."
       hotbarGiven: "&6📖 Das Regelbuch wurde deiner Hotbar hinzugefügt."
       hotbarHint: "&eHalte es in der Hand und klicke rechts, um es jederzeit erneut zu lesen."
-      latestHint: "&7(Rechtsklick auf dieses Buch, um &e★Latest&7 zu speichern.)"
+      latestHint: "&7(Rechtsklick auf dieses Buch, um &e{latestLabel}&7 zu speichern.)"
+    page:
+      contents:
+        title: '📌 Inhaltsverzeichnis'
+        rulesItem: '1) Regeln'
+        howToPlay: '  · Spielanleitung'
+        scoreRoute: '  · Punkte & Routen'
+        savedOn: '  · Gespeichert bei SUCCESS / TIME_UP'
+        language: '  · Sprache: {lang}'
+        yourQuotes: '  · Deine ★ gespeicherten Zitate'
+        difficulty: 'Schwierigkeit: {difficulty}'
+        tipsItem: '2) Tipps'
+      note:
+        bookFormat: "Hinweis: In Minecraft-Büchern kann man Tabs nicht per Klick wechseln, daher sind die Inhalte in Abschnitte gegliedert."
+      hint:
+        reopenMenu: "Tipp: Führe /gameMenu aus, um dieses Menü erneut zu öffnen."
+  quote:
+    title: 'Zitatsammlung'
+    intro:
+      tabsTitle: 'Reiter:'
+      legendTitle: 'Legende:'
+      storedInDb: 'In MySQL-Datenbank gespeichert:'
+      db:
+        logs: 'proverb_logs (Verlauf)'
+        favorites: 'proverb_favorites (★ Favoriten)'
+      langLine: 'Sprache: {lang}'
+    headerRecent: 'Letzte 20  |  Sprache: {lang}'
+    legend:
+      success: "= Geschafft / Erfolg"
+      timeUp: "= Zeit abgelaufen"
+      favorites: "= ★ Gespeicherte Zitate"
+    noLogs: "Noch keine Zitat-Logs.\nSie werden automatisch bei SUCCESS / TIME_UP gespeichert."
+    noQuotesInTab: "In diesem Tab gibt es keine Zitate zum Anzeigen.\n(Möglicherweise wurde noch nichts gespeichert.)\n\nProbiere einen anderen Tab."
+    noFavorites: "Noch keine Favoriten.
+
+Rechtsklicke dieses Buch, um {latestLabel} zu speichern."
+    tip:
+      rightClickSave: "Tipp: Rechtsklicke dieses Buch, um {latestLabel} zu speichern."
 
     legacy:
       toc:
@@ -1116,6 +1163,12 @@ ui:
     text_ff9b9417: または
     gamestart_easy_normal_hard_b818a2da: /gamestart <easy|normal|hard>
     text_9822f9ec: を実行してね。
+
+  error:
+    noData: 'Keine Daten'
+  favorites:
+    title: '★ Favoriten'
+    headerLatest: 'Neueste 20  |  Sprache: {lang}'
 
 quotes:
   outcome:

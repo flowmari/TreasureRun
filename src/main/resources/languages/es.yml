@@ -315,6 +315,58 @@ items:
   text_e42912c7: '&7特製鉄ブロック'
   text_c89dea57: 特製鉄ブロックのレシピを登録しました。
 ui:
+  labels:
+    tabs: '&6Pestañas:&r'
+    page: '&8Página {page}/{total}&r'
+    tab:
+      all: '▶ [TODO]'
+      success: '▶ [ÉXITO]'
+      timeUp: '▶ [TIEMPO]'
+      favorites: '▶ [FAVORITOS]'
+    latest: '★ Último'
+    page:
+      contents:
+        title: '📌 Contenido'
+        rulesItem: '1) Reglas'
+        howToPlay: '  · Cómo jugar'
+        scoreRoute: '  · Puntuación y ruta'
+        savedOn: '  · Guardado en SUCCESS / TIME_UP'
+        language: '  · Idioma: {lang}'
+        yourQuotes: '  · Tus ★ citas guardadas'
+        difficulty: 'Dificultad: {difficulty}'
+        tipsItem: '2) Consejos'
+      note:
+        bookFormat: "Nota: Los libros de Minecraft no permiten cambiar pestañas con clic, por lo que el contenido está organizado en secciones."
+      hint:
+        reopenMenu: "Consejo: Ejecuta /gameMenu para abrir esto de nuevo."
+
+  quote:
+    title: 'Colección de citas'
+    intro:
+      tabsTitle: 'Pestañas:'
+      legendTitle: 'Leyenda:'
+      storedInDb: 'Guardado en MySQL DB:'
+      db:
+        logs: 'proverb_logs (historial)'
+        favorites: 'proverb_favorites (★ Favoritos)'
+      langLine: 'idioma: {lang}'
+    headerRecent: 'Últimas 20  |  idioma: {lang}'
+    legend:
+      success: "= Completado / Éxito"
+      timeUp: "= Tiempo agotado"
+      favorites: "= ★ Citas guardadas"
+    noLogs: "Aún no hay registros de citas.
+Se guardan automáticamente al lograr SUCCESS / TIME_UP."
+    noQuotesInTab: "No hay citas en esta pestaña.
+(Puede que aún no se haya guardado nada.)
+
+Prueba otra pestaña."
+    noFavorites: "Aún no hay favoritos.
+
+Haz clic derecho en este libro para guardar {latestLabel}."
+    tip:
+      rightClickSave: "Consejo: Haz clic derecho en este libro para guardar {latestLabel}."
+
   auto:
     playerscore_b91d4cd3: 'PlayerScoreの挿入に失敗しました:'
     messages_yml_not_loaded_d56b1cd3: (messages.yml not loaded)
@@ -1093,7 +1145,7 @@ ui:
       openFailed: "&cNo se pudo abrir el libro de reglas."
       hotbarGiven: "&6📖 El libro de reglas se añadió a tu barra rápida."
       hotbarHint: "&eSosténlo en la mano y haz clic derecho para releerlo cuando quieras."
-      latestHint: "&7(Haz clic derecho en este libro para guardar &e★Latest&7.)"
+      latestHint: "&7(Haz clic derecho en este libro para guardar &e{latestLabel}&7.)"
 
     legacy:
       toc:
@@ -1116,6 +1168,12 @@ ui:
     text_ff9b9417: または
     gamestart_easy_normal_hard_b818a2da: /gamestart <easy|normal|hard>
     text_9822f9ec: を実行してね。
+
+  error:
+    noData: 'Sin datos'
+  favorites:
+    title: '★ Favoritos'
+    headerLatest: 'Más recientes 20  |  idioma: {lang}'
 
 quotes:
   outcome:

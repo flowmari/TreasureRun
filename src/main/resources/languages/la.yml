@@ -315,6 +315,58 @@ items:
   text_e42912c7: '&7特製鉄ブロック'
   text_c89dea57: 特製鉄ブロックのレシピを登録しました。
 ui:
+  labels:
+    tabs: '&6Tabellae:&r'
+    page: '&8Pagina {page}/{total}&r'
+    tab:
+      all: '▶ [OMNIA]'
+      success: '▶ [VICTORIA]'
+      timeUp: '▶ [TEMPUS]'
+      favorites: '▶ [DILECTA]'
+    latest: '★ Recentissimum'
+    page:
+      contents:
+        title: '📌 Index'
+        rulesItem: '1) Regulae'
+        howToPlay: '  · Quomodo ludatur'
+        scoreRoute: '  · Puncta & via'
+        savedOn: '  · Servatum in SUCCESS / TIME_UP'
+        language: '  · Lingua: {lang}'
+        yourQuotes: '  · Citationes tuae ★ servatae'
+        difficulty: 'Difficultas: {difficulty}'
+        tipsItem: '2) Consilia'
+      note:
+        bookFormat: "Nota: In libris Minecraft tabellas stilo commutare non potes, ideo res in sectiones dispositae sunt."
+      hint:
+        reopenMenu: "Monitum: /gameMenu scribe ut hoc iterum aperias."
+
+  quote:
+    title: 'Collectio Citationum'
+    intro:
+      tabsTitle: 'Tabellae:'
+      legendTitle: 'Notae:'
+      storedInDb: 'In MySQL DB servatum:'
+      db:
+        logs: 'proverb_logs (memoria)'
+        favorites: 'proverb_favorites (★ Dilecta)'
+      langLine: 'lingua: {lang}'
+    headerRecent: 'Recentia 20  |  lingua: {lang}'
+    legend:
+      success: "= Perfectum / Victoria"
+      timeUp: "= Tempus exhaustum"
+      favorites: "= ★ Citationes servatae"
+    noLogs: "Nulla adnotationes citationum adhuc.
+Automatice servantur in SUCCESS / TIME_UP."
+    noQuotesInTab: "Nullae citationes in hac tabella.
+(Fortasse nondum servatae sunt.)
+
+Aliam tabellam tempta."
+    noFavorites: "Nulla dilecta adhuc.
+
+Librum dextra preme ut {latestLabel} serves."
+    tip:
+      rightClickSave: "Monitum: Librum dextra preme ut {latestLabel} serves."
+
   auto:
     playerscore_b91d4cd3: 'PlayerScoreの挿入に失敗しました:'
     messages_yml_not_loaded_d56b1cd3: (messages.yml not loaded)
@@ -1093,7 +1145,7 @@ ui:
       openFailed: "&cLibrum regularum aperire non potui."
       hotbarGiven: "&6📖 Liber regularum in hotbar positus est."
       hotbarHint: "&eTene in manu et dextra preme ut quandōlibet relegas."
-      latestHint: "&7(Dextra preme hunc librum ut &e★Latest&7 serves.)"
+      latestHint: "&7(Dextra preme hunc librum ut &e{latestLabel}&7 serves.)"
 
     legacy:
       toc:
@@ -1115,6 +1167,12 @@ ui:
     text_ff9b9417: または
     gamestart_easy_normal_hard_b818a2da: /gamestart <easy|normal|hard>
     text_9822f9ec: を実行してね。
+
+  error:
+    noData: 'Nulla data'
+  favorites:
+    title: '★ Dilecta'
+    headerLatest: 'Recentissima 20  |  lingua: {lang}'
 
 quotes:
   outcome:

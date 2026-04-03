@@ -315,6 +315,58 @@ items:
   text_e42912c7: '&7特製鉄ブロック'
   text_c89dea57: 特製鉄ブロックのレシピを登録しました。
 ui:
+  labels:
+    tabs: '&6Tabbladen:&r'
+    page: '&8Pagina {page}/{total}&r'
+    tab:
+      all: '▶ [ALLES]'
+      success: '▶ [GELUKT]'
+      timeUp: '▶ [TIJD]'
+      favorites: '▶ [FAVORIETEN]'
+    latest: '★ Nieuwste'
+    page:
+      contents:
+        title: '📌 Inhoudsopgave'
+        rulesItem: '1) Regels'
+        howToPlay: '  · Hoe te spelen'
+        scoreRoute: '  · Score & route'
+        savedOn: '  · Opgeslagen bij SUCCESS / TIME_UP'
+        language: '  · Taal: {lang}'
+        yourQuotes: '  · Jouw ★ opgeslagen citaten'
+        difficulty: 'Moeilijkheid: {difficulty}'
+        tipsItem: '2) Tips'
+      note:
+        bookFormat: "Opmerking: In Minecraft-boeken kun je niet van tabblad wisselen door te klikken, dus de inhoud is ingedeeld in secties."
+      hint:
+        reopenMenu: "Tip: Voer /gameMenu uit om dit opnieuw te openen."
+
+  quote:
+    title: 'Citatenverzameling'
+    intro:
+      tabsTitle: 'Tabbladen:'
+      legendTitle: 'Legenda:'
+      storedInDb: 'Opgeslagen in MySQL DB:'
+      db:
+        logs: 'proverb_logs (geschiedenis)'
+        favorites: 'proverb_favorites (★ Favorieten)'
+      langLine: 'taal: {lang}'
+    headerRecent: 'Recente 20  |  taal: {lang}'
+    legend:
+      success: "= Voltooid / Geslaagd"
+      timeUp: "= Tijd verstreken"
+      favorites: "= ★ Opgeslagen citaten"
+    noLogs: "Nog geen citatenlogs.
+Ze worden automatisch opgeslagen bij SUCCESS / TIME_UP."
+    noQuotesInTab: "Geen citaten om te tonen in dit tabblad.
+(Misschien nog niet opgeslagen.)
+
+Probeer een ander tabblad."
+    noFavorites: "Nog geen favorieten.
+
+Klik met de rechtermuisknop op dit boek om {latestLabel} op te slaan."
+    tip:
+      rightClickSave: "Tip: Klik met de rechtermuisknop op dit boek om {latestLabel} op te slaan."
+
   auto:
     playerscore_b91d4cd3: 'PlayerScoreの挿入に失敗しました:'
     messages_yml_not_loaded_d56b1cd3: (messages.yml not loaded)
@@ -1093,7 +1145,7 @@ ui:
       openFailed: "&cKan het regelboek niet openen."
       hotbarGiven: "&6📖 Het regelboek is toegevoegd aan je hotbar."
       hotbarHint: "&eHoud het in je hand en klik met rechts om het altijd opnieuw te lezen."
-      latestHint: "&7(Klik met rechts op dit boek om &e★Latest&7 op te slaan.)"
+      latestHint: "&7(Klik met rechts op dit boek om &e{latestLabel}&7 op te slaan.)"
 
     legacy:
       toc:
@@ -1116,6 +1168,12 @@ ui:
     text_ff9b9417: または
     gamestart_easy_normal_hard_b818a2da: /gamestart <easy|normal|hard>
     text_9822f9ec: を実行してね。
+
+  error:
+    noData: 'Geen gegevens'
+  favorites:
+    title: '★ Favorieten'
+    headerLatest: 'Nieuwste 20  |  taal: {lang}'
 
 quotes:
   outcome:
