@@ -315,6 +315,16 @@ items:
   text_e42912c7: '&7特製鉄ブロック'
   text_c89dea57: 特製鉄ブロックのレシピを登録しました。
 ui:
+  labels:
+    tabs: '&6Schede:&r'
+    page: '&8Pagina {page}/{total}&r'
+    tab:
+      all: '▶ [TUTTO]'
+      success: '▶ [SUCCESSO]'
+      timeUp: '▶ [TEMPO]'
+      favorites: '▶ [PREFERITI]'
+    latest: '★ Ultimo'
+
   auto:
     playerscore_b91d4cd3: 'PlayerScoreの挿入に失敗しました:'
     messages_yml_not_loaded_d56b1cd3: (messages.yml not loaded)
@@ -1093,7 +1103,44 @@ ui:
       openFailed: "&cImpossibile aprire il libro delle regole."
       hotbarGiven: "&6📖 Il libro delle regole è stato messo nella tua hotbar."
       hotbarHint: "&eTienilo in mano e fai clic destro per rileggerlo quando vuoi."
-      latestHint: "&7(Fai clic destro su questo libro per salvare &e★Latest&7.)"
+      latestHint: "&7(Fai clic destro su questo libro per salvare &e{latestLabel}&7.)"
+    page:
+      contents:
+        title: '📌 Indice'
+        rulesItem: '1) Regole'
+        howToPlay: '  · Come si gioca'
+        scoreRoute: '  · Punteggio & percorso'
+        savedOn: '  · Salvato su SUCCESS / TIME_UP'
+        language: '  · Lingua: {lang}'
+        yourQuotes: '  · Le tue ★ citazioni salvate'
+        difficulty: 'Difficoltà: {difficulty}'
+        tipsItem: '2) Consigli'
+      note:
+        bookFormat: "Nota: nei libri di Minecraft non si possono cambiare scheda con un clic, quindi i contenuti sono organizzati in sezioni."
+      hint:
+        reopenMenu: "Suggerimento: esegui /gameMenu per riaprire questo menu."
+  quote:
+    title: 'Raccolta di citazioni'
+    intro:
+      tabsTitle: 'Schede:'
+      legendTitle: 'Legenda:'
+      storedInDb: 'Salvato nel database MySQL:'
+      db:
+        logs: 'proverb_logs (cronologia)'
+        favorites: 'proverb_favorites (★ Preferiti)'
+      langLine: 'lingua: {lang}'
+    headerRecent: 'Ultime 20  |  lingua: {lang}'
+    legend:
+      success: "= Completato / Successo"
+      timeUp: "= Tempo scaduto"
+      favorites: "= ★ Citazioni salvate"
+    noLogs: "Nessun log di citazioni per ora.\nVengono salvati automaticamente su SUCCESS / TIME_UP."
+    noQuotesInTab: "Nessuna citazione da mostrare in questa scheda.\n(Forse non è stata ancora salvata.)\n\nProva un'altra scheda."
+    noFavorites: "Nessun preferito per ora.
+
+Fai clic destro su questo libro per salvare {latestLabel}."
+    tip:
+      rightClickSave: "Suggerimento: fai clic destro su questo libro per salvare {latestLabel}."
     legacy:
       toc:
         message: |-
@@ -1226,6 +1273,12 @@ ui:
     text_ff9b9417: または
     gamestart_easy_normal_hard_b818a2da: /gamestart <easy|normal|hard>
     text_9822f9ec: を実行してね。
+
+  error:
+    noData: 'Nessun dato'
+  favorites:
+    title: '★ Preferiti'
+    headerLatest: 'Più recenti 20  |  lingua: {lang}'
 
 quotes:
   outcome:

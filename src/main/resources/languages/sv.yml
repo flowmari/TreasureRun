@@ -315,6 +315,16 @@ items:
   text_e42912c7: '&7特製鉄ブロック'
   text_c89dea57: 特製鉄ブロックのレシピを登録しました。
 ui:
+  labels:
+    tabs: '&6Flikar:&r'
+    page: '&8Sida {page}/{total}&r'
+    tab:
+      all: '▶ [ALLA]'
+      success: '▶ [KLAR]'
+      timeUp: '▶ [TIDEN]'
+      favorites: '▶ [FAVORITER]'
+    latest: '★ Senaste'
+
   auto:
     playerscore_b91d4cd3: 'PlayerScoreの挿入に失敗しました:'
     messages_yml_not_loaded_d56b1cd3: (messages.yml not loaded)
@@ -1093,7 +1103,44 @@ ui:
       openFailed: "&cKunde inte öppna regelboken."
       hotbarGiven: "&6📖 Regelboken lades till i din hotbar."
       hotbarHint: "&eHåll den i handen och högerklicka för att läsa om den när som helst."
-      latestHint: "&7(Högerklicka på den här boken för att spara &e★Latest&7.)"
+      latestHint: "&7(Högerklicka på den här boken för att spara &e{latestLabel}&7.)"
+    page:
+      contents:
+        title: '📌 Innehåll'
+        rulesItem: '1) Regler'
+        howToPlay: '  · Hur man spelar'
+        scoreRoute: '  · Poäng & rutt'
+        savedOn: '  · Sparas vid SUCCESS / TIME_UP'
+        language: '  · Språk: {lang}'
+        yourQuotes: '  · Dina ★ sparade citat'
+        difficulty: 'Svårighetsgrad: {difficulty}'
+        tipsItem: '2) Tips'
+      note:
+        bookFormat: "Obs: I Minecraft-böcker går det inte att byta flikar med ett klick, så innehållet är uppdelat i sektioner."
+      hint:
+        reopenMenu: "Tips: Kör /gameMenu för att öppna den här menyn igen."
+  quote:
+    title: 'Citatsamling'
+    intro:
+      tabsTitle: 'Flikar:'
+      legendTitle: 'Förklaring:'
+      storedInDb: 'Sparat i MySQL DB:'
+      db:
+        logs: 'proverb_logs (historik)'
+        favorites: 'proverb_favorites (★ Favoriter)'
+      langLine: 'språk: {lang}'
+    headerRecent: 'Senaste 20  |  språk: {lang}'
+    legend:
+      success: "= Klarat / Lyckades"
+      timeUp: "= Tiden är slut"
+      favorites: "= ★ Sparade citat"
+    noLogs: "Inga citatloggar ännu.\nDe sparas automatiskt vid SUCCESS / TIME_UP."
+    noQuotesInTab: "Inga citat att visa i den här fliken.\n(Det kanske inte har sparats än.)\n\nProva en annan flik."
+    noFavorites: "Inga favoriter ännu.
+
+Högerklicka på den här boken för att spara {latestLabel}."
+    tip:
+      rightClickSave: "Tips: Högerklicka på den här boken för att spara {latestLabel}."
 
     legacy:
       toc:
@@ -1116,6 +1163,12 @@ ui:
     text_ff9b9417: または
     gamestart_easy_normal_hard_b818a2da: /gamestart <easy|normal|hard>
     text_9822f9ec: を実行してね。
+
+  error:
+    noData: 'Inga uppgifter'
+  favorites:
+    title: '★ Favoriter'
+    headerLatest: 'Nyaste 20  |  språk: {lang}'
 
 quotes:
   outcome:

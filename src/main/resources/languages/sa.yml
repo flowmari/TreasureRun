@@ -315,6 +315,58 @@ items:
   text_e42912c7: '&7特製鉄ブロック'
   text_c89dea57: 特製鉄ブロックのレシピを登録しました。
 ui:
+  labels:
+    tabs: '&6पटलानि:&r'
+    page: '&8पृष्ठम् {page}/{total}&r'
+    tab:
+      all: '▶ [सर्वम्]'
+      success: '▶ [सिद्धिः]'
+      timeUp: '▶ [कालः]'
+      favorites: '▶ [प्रियाणि]'
+    latest: '★ नवीनतमम्'
+    page:
+      contents:
+        title: '📌 विषयसूची'
+        rulesItem: '१) नियमाः'
+        howToPlay: '  · क्रीडाविधिः'
+        scoreRoute: '  · अङ्काः च मार्गः'
+        savedOn: '  · SUCCESS / TIME_UP समये रक्ष्यते'
+        language: '  · भाषा: {lang}'
+        yourQuotes: '  · भवतः ★ रक्षितानि उद्धरणानि'
+        difficulty: 'कठिनता: {difficulty}'
+        tipsItem: '२) उपायाः'
+      note:
+        bookFormat: "सूचना: Minecraft-पुस्तकेषु क्लिकेन पटलपरिवर्तनं न शक्यम्, अतः विषयाः खण्डेषु विन्यस्ताः।"
+      hint:
+        reopenMenu: "संकेतः: पुनः उद्घाटनाय /gameMenu चालयतु।"
+
+  quote:
+    title: 'उद्धरणसंग्रहः'
+    intro:
+      tabsTitle: 'पटलानि:'
+      legendTitle: 'व्याख्या:'
+      storedInDb: 'MySQL DB मध्ये रक्षितम्:'
+      db:
+        logs: 'proverb_logs (इतिहासः)'
+        favorites: 'proverb_favorites (★ प्रियाणि)'
+      langLine: 'भाषा: {lang}'
+    headerRecent: 'अर्वाचीनानि 20  |  भाषा: {lang}'
+    legend:
+      success: "= पूर्णम् / सिद्धिः"
+      timeUp: "= कालः समाप्तः"
+      favorites: "= ★ रक्षितानि उद्धरणानि"
+    noLogs: "अद्यापि कोऽपि उद्धरणलेखः नास्ति।
+SUCCESS / TIME_UP समये स्वयमेव रक्ष्यते।"
+    noQuotesInTab: "अस्मिन् पटले प्रदर्शनाय कोऽपि उद्धरणः नास्ति।
+（सम्भवतः अद्यापि न रक्षितम्।）
+
+अन्यत् पटलं पश्यतु।"
+    noFavorites: "अद्यापि कोऽपि प्रियः नास्ति।
+
+{latestLabel} रक्षितुं एतत् पुस्तकं दक्षिणक्लिक् करोतु।"
+    tip:
+      rightClickSave: "संकेतः: {latestLabel} रक्षितुं एतत् पुस्तकं दक्षिणक्लिक् करोतु।"
+
   auto:
     playerscore_b91d4cd3: 'PlayerScoreの挿入に失敗しました:'
     messages_yml_not_loaded_d56b1cd3: (messages.yml not loaded)
@@ -1093,7 +1145,7 @@ ui:
       openFailed: "&cनियम-पुस्तकम् उद्घाटयितुं न शक्यते।"
       hotbarGiven: "&6📖 नियम-पुस्तकं तव hotbar मध्ये स्थापितम्।"
       hotbarHint: "&eहस्ते धृत्वा दक्षिण-क्लिक् कृत्वा यदा-कदा पठितुं शक्यते।"
-      latestHint: "&7(अस्य पुस्तकस्य दक्षिण-क्लिक् कृत्वा &e★Latest&7 रक्ष्यते।)"
+      latestHint: "&7(अस्य पुस्तकस्य दक्षिण-क्लिक् कृत्वा &e{latestLabel}&7 रक्ष्यते।)"
 
     legacy:
       toc:
@@ -1115,6 +1167,12 @@ ui:
     text_ff9b9417: または
     gamestart_easy_normal_hard_b818a2da: /gamestart <easy|normal|hard>
     text_9822f9ec: を実行してね。
+
+  error:
+    noData: 'न किञ्चिद् अस्ति'
+  favorites:
+    title: '★ प्रियाणि'
+    headerLatest: 'नवीनतमानि 20  |  भाषा: {lang}'
 
 quotes:
   outcome:

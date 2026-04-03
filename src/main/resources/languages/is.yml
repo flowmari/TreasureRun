@@ -315,6 +315,58 @@ items:
   text_e42912c7: '&7特製鉄ブロック'
   text_c89dea57: 特製鉄ブロックのレシピを登録しました。
 ui:
+  labels:
+    tabs: '&6Flipar:&r'
+    page: '&8Síða {page}/{total}&r'
+    tab:
+      all: '▶ [ALLT]'
+      success: '▶ [TÓKST]'
+      timeUp: '▶ [TÍMI]'
+      favorites: '▶ [UPPÁHALD]'
+    latest: '★ Nýjast'
+    page:
+      contents:
+        title: '📌 Efnisyfirlit'
+        rulesItem: '1) Reglur'
+        howToPlay: '  · Hvernig á að spila'
+        scoreRoute: '  · Stig & leið'
+        savedOn: '  · Vistað við SUCCESS / TIME_UP'
+        language: '  · Tungumál: {lang}'
+        yourQuotes: '  · Þínar ★ vistaðar tilvitnanir'
+        difficulty: 'Erfiðleikastig: {difficulty}'
+        tipsItem: '2) Ráð'
+      note:
+        bookFormat: "Athugið: Í Minecraft-bókum er ekki hægt að skipta um flipa með smelli, þess vegna er efnið skipulagt í kafla."
+      hint:
+        reopenMenu: "Ábending: Keyrðu /gameMenu til að opna þetta aftur."
+
+  quote:
+    title: 'Tilvitnasafn'
+    intro:
+      tabsTitle: 'Flipar:'
+      legendTitle: 'Skýring:'
+      storedInDb: 'Vistað í MySQL gagnagrunni:'
+      db:
+        logs: 'proverb_logs (saga)'
+        favorites: 'proverb_favorites (★ Uppáhald)'
+      langLine: 'tungumál: {lang}'
+    headerRecent: 'Nýlegar 20  |  tungumál: {lang}'
+    legend:
+      success: "= Lokið / Tókst"
+      timeUp: "= Tími útrunninn"
+      favorites: "= ★ Vistaðar tilvitnanir"
+    noLogs: "Engar tilvitnanaskráningar enn.
+Þær eru vistaðar sjálfkrafa við SUCCESS / TIME_UP."
+    noQuotesInTab: "Engar tilvitnanir til að sýna í þessum flipa.
+(Hugsanlega hefur ekkert verið vistað enn.)
+
+Reyndu annan flipa."
+    noFavorites: "Engin uppáhald enn.
+
+Hægrismelltu á þessa bók til að vista {latestLabel}."
+    tip:
+      rightClickSave: "Ábending: Hægrismelltu á þessa bók til að vista {latestLabel}."
+
   auto:
     playerscore_b91d4cd3: 'PlayerScoreの挿入に失敗しました:'
     messages_yml_not_loaded_d56b1cd3: (messages.yml not loaded)
@@ -1093,7 +1145,7 @@ ui:
       openFailed: "&cTókst ekki að opna reglubókina."
       hotbarGiven: "&6📖 Reglubókin var sett á verkfærastikuna þína."
       hotbarHint: "&eHaltu henni á hendi og hægrismelltu til að lesa hana aftur hvenær sem er."
-      latestHint: "&7(Hægrismelltu á þessa bók til að vista &e★Latest&7.)"
+      latestHint: "&7(Hægrismelltu á þessa bók til að vista &e{latestLabel}&7.)"
 
     legacy:
       toc:
@@ -1116,6 +1168,12 @@ ui:
     text_ff9b9417: または
     gamestart_easy_normal_hard_b818a2da: /gamestart <easy|normal|hard>
     text_9822f9ec: を実行してね。
+
+  error:
+    noData: 'Engar upplýsingar'
+  favorites:
+    title: '★ Uppáhald'
+    headerLatest: 'Nýjustu 20  |  tungumál: {lang}'
 
 quotes:
   outcome:

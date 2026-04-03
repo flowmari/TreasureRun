@@ -315,6 +315,58 @@ items:
   text_e42912c7: '&7特製鉄ブロック'
   text_c89dea57: 特製鉄ブロックのレシピを登録しました。
 ui:
+  labels:
+    tabs: '&6Вкладки:&r'
+    page: '&8Страница {page}/{total}&r'
+    tab:
+      all: '▶ [ВСЕ]'
+      success: '▶ [УСПЕХ]'
+      timeUp: '▶ [ВРЕМЯ]'
+      favorites: '▶ [ИЗБРАННОЕ]'
+    latest: '★ Последнее'
+    page:
+      contents:
+        title: '📌 Содержание'
+        rulesItem: '1) Правила'
+        howToPlay: '  · Как играть'
+        scoreRoute: '  · Очки и маршрут'
+        savedOn: '  · Сохраняется при SUCCESS / TIME_UP'
+        language: '  · Язык: {lang}'
+        yourQuotes: '  · Ваши ★ сохранённые цитаты'
+        difficulty: 'Сложность: {difficulty}'
+        tipsItem: '2) Советы'
+      note:
+        bookFormat: "Примечание: В книгах Minecraft нельзя переключать вкладки кликом, поэтому содержимое разделено на секции."
+      hint:
+        reopenMenu: "Совет: введите /gameMenu, чтобы открыть это снова."
+
+  quote:
+    title: 'Сборник цитат'
+    intro:
+      tabsTitle: 'Вкладки:'
+      legendTitle: 'Легенда:'
+      storedInDb: 'Сохранено в MySQL DB:'
+      db:
+        logs: 'proverb_logs (история)'
+        favorites: 'proverb_favorites (★ Избранное)'
+      langLine: 'язык: {lang}'
+    headerRecent: 'Последние 20  |  язык: {lang}'
+    legend:
+      success: "= Пройдено / Успех"
+      timeUp: "= Время вышло"
+      favorites: "= ★ Сохранённые цитаты"
+    noLogs: "Пока нет записей цитат.
+Они сохраняются автоматически при SUCCESS / TIME_UP."
+    noQuotesInTab: "В этой вкладке нет цитат для отображения.
+(Возможно, ещё ничего не сохранено.)
+
+Попробуйте другую вкладку."
+    noFavorites: "Пока нет избранного.
+
+Щёлкните правой кнопкой по этой книге, чтобы сохранить {latestLabel}."
+    tip:
+      rightClickSave: "Совет: щёлкните правой кнопкой по этой книге, чтобы сохранить {latestLabel}."
+
   auto:
     playerscore_b91d4cd3: 'PlayerScoreの挿入に失敗しました:'
     messages_yml_not_loaded_d56b1cd3: (messages.yml not loaded)
@@ -1093,7 +1145,7 @@ ui:
       openFailed: "&cНе удалось открыть книгу правил."
       hotbarGiven: "&6📖 Книга правил добавлена на вашу панель быстрого доступа."
       hotbarHint: "&eВозьмите её в руку и нажмите правой кнопкой мыши, чтобы перечитать в любое время."
-      latestHint: "&7(Нажмите правой кнопкой по этой книге, чтобы сохранить &e★Latest&7.)"
+      latestHint: "&7(Нажмите правой кнопкой по этой книге, чтобы сохранить &e{latestLabel}&7.)"
 
     legacy:
       toc:
@@ -1116,6 +1168,12 @@ ui:
     text_ff9b9417: または
     gamestart_easy_normal_hard_b818a2da: /gamestart <easy|normal|hard>
     text_9822f9ec: を実行してね。
+
+  error:
+    noData: 'Нет данных'
+  favorites:
+    title: '★ Избранное'
+    headerLatest: 'Новейшие 20  |  язык: {lang}'
 
 quotes:
   outcome:

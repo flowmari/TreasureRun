@@ -2,6 +2,12 @@ meta:
   lang: zh_tw
   note: Put translation keys under e.g. command.xxx / gui.xxx / messages.xxx etc.
 
+  error:
+    noData: '無資料'
+  favorites:
+    title: '★ 我的最愛'
+    headerLatest: '最新 20 筆  |  語言：{lang}'
+
 quotes:
   outcome:
     success:
@@ -179,6 +185,58 @@ quotes:
     - 'Victory and defeat \nare nothing more than grains of sand.\n（勝利も敗北も、同じ砂の一粒に過ぎない。）'
     - 'The road goes on—or it ends.\nEither way, it lies on the same earth.\n（道は続き、あるいは途切れ、どちらも同じ大地の上にある。）'
 ui:
+  labels:
+    tabs: '&6分頁:&r'
+    page: '&8頁面 {page}/{total}&r'
+    tab:
+      all: '▶ [全部]'
+      success: '▶ [成功]'
+      timeUp: '▶ [時間到]'
+      favorites: '▶ [我的最愛]'
+    latest: '★ 最新'
+    page:
+      contents:
+        title: '📌 目錄'
+        rulesItem: '1) 規則'
+        howToPlay: '  · 遊玩方式'
+        scoreRoute: '  · 分數與路線'
+        savedOn: '  · 於 SUCCESS / TIME_UP 時自動儲存'
+        language: '  · 語言：{lang}'
+        yourQuotes: '  · 你的 ★ 已儲存引言'
+        difficulty: '難度：{difficulty}'
+        tipsItem: '2) 提示'
+      note:
+        bookFormat: "注意：Minecraft 的書無法透過點擊切換分頁，因此內容以章節方式呈現。"
+      hint:
+        reopenMenu: "提示：執行 /gameMenu 可再次開啟此選單。"
+
+  quote:
+    title: '引言集'
+    intro:
+      tabsTitle: '分頁：'
+      legendTitle: '圖例：'
+      storedInDb: '儲存於 MySQL DB：'
+      db:
+        logs: 'proverb_logs（歷史紀錄）'
+        favorites: 'proverb_favorites（★ 我的最愛）'
+      langLine: '語言：{lang}'
+    headerRecent: '最近 20 筆  |  語言：{lang}'
+    legend:
+      success: "= 完成 / 成功"
+      timeUp: "= 時間到"
+      favorites: "= ★ 已儲存的引言"
+    noLogs: "目前尚無引言記錄。
+成功或時間到時會自動儲存。"
+    noQuotesInTab: "此分頁沒有可顯示的引言。
+（可能尚未儲存。）
+
+請試試其他分頁。"
+    noFavorites: "目前尚無我的最愛。
+
+右鍵點擊此書以儲存 {latestLabel}。"
+    tip:
+      rightClickSave: "提示：右鍵點擊此書以儲存 {latestLabel}。"
+
   auto:
     playerscore_b91d4cd3: 'PlayerScore 插入失敗:'
     messages_yml_not_loaded_d56b1cd3: (messages.yml not loaded)
@@ -288,7 +346,7 @@ ui:
       openFailed: "&c無法開啟規則書。"
       hotbarGiven: "&6📖 規則書已加入您的快捷欄。"
       hotbarHint: "&e拿著它隨時右鍵點擊即可再次閱讀。"
-      latestHint: "&7(右鍵點擊此書可儲存 &e★Latest&7。)"
+      latestHint: "&7(右鍵點擊此書可儲存 &e{latestLabel}&7。)"
 
     legacy:
       toc:

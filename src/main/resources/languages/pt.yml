@@ -2,6 +2,12 @@ meta:
   lang: pt
   note: Put translation keys under e.g. command.xxx / gui.xxx / messages.xxx etc.
 
+  error:
+    noData: 'Sem dados'
+  favorites:
+    title: '★ Favoritos'
+    headerLatest: 'Mais recentes 20  |  idioma: {lang}'
+
 quotes:
   outcome:
     success:
@@ -179,6 +185,58 @@ quotes:
     - 'Victory and defeat \nare nothing more than grains of sand.\n（勝利も敗北も、同じ砂の一粒に過ぎない。）'
     - 'The road goes on—or it ends.\nEither way, it lies on the same earth.\n（道は続き、あるいは途切れ、どちらも同じ大地の上にある。）'
 ui:
+  labels:
+    tabs: '&6Abas:&r'
+    page: '&8Página {page}/{total}&r'
+    tab:
+      all: '▶ [TUDO]'
+      success: '▶ [SUCESSO]'
+      timeUp: '▶ [TEMPO]'
+      favorites: '▶ [FAVORITOS]'
+    latest: '★ Recente'
+    page:
+      contents:
+        title: '📌 Sumário'
+        rulesItem: '1) Regras'
+        howToPlay: '  · Como jogar'
+        scoreRoute: '  · Pontuação & rota'
+        savedOn: '  · Salvo em SUCCESS / TIME_UP'
+        language: '  · Idioma: {lang}'
+        yourQuotes: '  · Suas ★ citações salvas'
+        difficulty: 'Dificuldade: {difficulty}'
+        tipsItem: '2) Dicas'
+      note:
+        bookFormat: "Nota: Os livros do Minecraft não permitem trocar de aba clicando, por isso o conteúdo está organizado em seções."
+      hint:
+        reopenMenu: "Dica: Execute /gameMenu para abrir isto novamente."
+
+  quote:
+    title: 'Coleção de citações'
+    intro:
+      tabsTitle: 'Abas:'
+      legendTitle: 'Legenda:'
+      storedInDb: 'Armazenado no MySQL DB:'
+      db:
+        logs: 'proverb_logs (histórico)'
+        favorites: 'proverb_favorites (★ Favoritos)'
+      langLine: 'idioma: {lang}'
+    headerRecent: 'Recentes 20  |  idioma: {lang}'
+    legend:
+      success: "= Concluído / Sucesso"
+      timeUp: "= Tempo esgotado"
+      favorites: "= ★ Citações salvas"
+    noLogs: "Ainda não há registros de citações.
+São salvos automaticamente em SUCCESS / TIME_UP."
+    noQuotesInTab: "Não há citações para mostrar nesta aba.
+(Talvez ainda não tenha sido salvo.)
+
+Tente outra aba."
+    noFavorites: "Ainda não há favoritos.
+
+Clique com o botão direito neste livro para salvar {latestLabel}."
+    tip:
+      rightClickSave: "Dica: Clique com o botão direito neste livro para salvar {latestLabel}."
+
   auto:
     playerscore_b91d4cd3: 'Falha ao inserir PlayerScore:'
     messages_yml_not_loaded_d56b1cd3: (messages.yml not loaded)
@@ -288,7 +346,7 @@ ui:
       openFailed: "&cFalha ao abrir o livro de regras."
       hotbarGiven: "&6📖 O livro de regras foi adicionado à sua barra de ação."
       hotbarHint: "&eSegure-o e clique com o botão direito a qualquer momento para reler."
-      latestHint: "&7(Clique com o botão direito neste livro para salvar &e★Latest&7.)"
+      latestHint: "&7(Clique com o botão direito neste livro para salvar &e{latestLabel}&7.)"
 
     legacy:
       toc:

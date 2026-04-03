@@ -2,6 +2,12 @@ meta:
   lang: hi
   note: Put translation keys under e.g. command.xxx / gui.xxx / messages.xxx etc.
 
+  error:
+    noData: 'कोई डेटा नहीं'
+  favorites:
+    title: '★ पसंदीदा'
+    headerLatest: 'नवीनतम 20  |  भाषा: {lang}'
+
 quotes:
   outcome:
     success:
@@ -179,6 +185,58 @@ quotes:
     - 'Victory and defeat \nare nothing more than grains of sand.\n（勝利も敗北も、同じ砂の一粒に過ぎない。）'
     - 'The road goes on—or it ends.\nEither way, it lies on the same earth.\n（道は続き、あるいは途切れ、どちらも同じ大地の上にある。）'
 ui:
+  labels:
+    tabs: '&6टैब:&r'
+    page: '&8पृष्ठ {page}/{total}&r'
+    tab:
+      all: '▶ [सभी]'
+      success: '▶ [सफल]'
+      timeUp: '▶ [समय समाप्त]'
+      favorites: '▶ [पसंदीदा]'
+    latest: '★ नवीनतम'
+    page:
+      contents:
+        title: '📌 विषय-सूची'
+        rulesItem: '1) नियम'
+        howToPlay: '  · कैसे खेलें'
+        scoreRoute: '  · स्कोर और मार्ग'
+        savedOn: '  · SUCCESS / TIME_UP पर सहेजा गया'
+        language: '  · भाषा: {lang}'
+        yourQuotes: '  · आपके ★ सहेजे गए उद्धरण'
+        difficulty: 'कठिनाई: {difficulty}'
+        tipsItem: '2) सुझाव'
+      note:
+        bookFormat: "नोट: Minecraft की पुस्तकों में क्लिक करके टैब नहीं बदले जा सकते, इसलिए सामग्री अनुभागों में व्यवस्थित है।"
+      hint:
+        reopenMenu: "संकेत: इसे फिर से खोलने के लिए /gameMenu चलाएं।"
+
+  quote:
+    title: 'उद्धरण संग्रह'
+    intro:
+      tabsTitle: 'टैब:'
+      legendTitle: 'संकेत चिह्न:'
+      storedInDb: 'MySQL DB में संग्रहीत:'
+      db:
+        logs: 'proverb_logs (इतिहास)'
+        favorites: 'proverb_favorites (★ पसंदीदा)'
+      langLine: 'भाषा: {lang}'
+    headerRecent: 'हाल के 20  |  भाषा: {lang}'
+    legend:
+      success: "= पूर्ण / सफल"
+      timeUp: "= समय समाप्त"
+      favorites: "= ★ सहेजे गए उद्धरण"
+    noLogs: "अभी तक कोई उद्धरण लॉग नहीं है।
+SUCCESS / TIME_UP पर स्वचालित रूप से सहेजे जाते हैं।"
+    noQuotesInTab: "इस टैब में दिखाने के लिए कोई उद्धरण नहीं है।
+(शायद अभी तक सहेजा नहीं गया।)
+
+कोई दूसरा टैब आज़माएं।"
+    noFavorites: "अभी तक कोई पसंदीदा नहीं है।
+
+{latestLabel} सहेजने के लिए इस पुस्तक पर राइट-क्लिक करें।"
+    tip:
+      rightClickSave: "सुझाव: {latestLabel} सहेजने के लिए इस पुस्तक पर राइट-क्लिक करें।"
+
   auto:
     playerscore_b91d4cd3: 'PlayerScore सम्मिलन विफल:'
     messages_yml_not_loaded_d56b1cd3: (messages.yml not loaded)
@@ -288,7 +346,7 @@ ui:
       openFailed: "&cनियम पुस्तिका खोलने में विफल।"
       hotbarGiven: "&6📖 नियम पुस्तिका आपके हॉटबार में जोड़ दी गई है।"
       hotbarHint: "&eइसे हाथ में लेकर राइट-क्लिक करें — कभी भी पुनः पढ़ें।"
-      latestHint: "&7(इस पुस्तक को राइट-क्लिक करने पर &e★Latest&7 सहेजा जाएगा।)"
+      latestHint: "&7(इस पुस्तक को राइट-क्लिक करने पर &e{latestLabel}&7 सहेजा जाएगा।)"
 
     legacy:
       toc:

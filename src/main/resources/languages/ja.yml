@@ -315,6 +315,16 @@ items:
   text_e42912c7: '&7特製鉄ブロック'
   text_c89dea57: 特製鉄ブロックのレシピを登録しました。
 ui:
+  labels:
+    tabs: '&6タブ:&r'
+    page: '&8ページ {page}/{total}&r'
+    tab:
+      all: '▶ [すべて]'
+      success: '▶ [クリア]'
+      timeUp: '▶ [タイムアップ]'
+      favorites: '▶ [お気に入り]'
+    latest: '★ 最新'
+
   auto:
     playerscore_b91d4cd3: 'PlayerScoreの挿入に失敗しました:'
     messages_yml_not_loaded_d56b1cd3: (messages.yml not loaded)
@@ -1093,7 +1103,44 @@ ui:
       openFailed: "&cルールブックを開けませんでした。"
       hotbarGiven: "&6📖 ルールブックをホットバーに配布しました。"
       hotbarHint: "&e手に持って右クリックすると、いつでも読み直せます。"
-      latestHint: "&7（この本を右クリックすると &e★Latest&7 を保存できます）"
+      latestHint: "&7（この本を右クリックすると &e{latestLabel}&7 を保存できます）"
+    page:
+      contents:
+        title: '📌 目次'
+        rulesItem: '1) ルール'
+        howToPlay: '  · 遊び方'
+        scoreRoute: '  · スコア＆ルート'
+        savedOn: '  · SUCCESS / TIME_UP で自動保存'
+        language: '  · 言語: {lang}'
+        yourQuotes: '  · あなたの★保存した格言'
+        difficulty: '難易度: {difficulty}'
+        tipsItem: '2) ヒント'
+      note:
+        bookFormat: "※ Minecraftの本はクリックで切替できないので、「セクション」形式で収録します。"
+      hint:
+        reopenMenu: "ヒント: /gameMenu で再度開けます"
+  quote:
+    title: '格言集'
+    intro:
+      tabsTitle: 'タブ:'
+      legendTitle: '凡例:'
+      storedInDb: 'MySQL DBに保存済み:'
+      db:
+        logs: 'proverb_logs (履歴)'
+        favorites: 'proverb_favorites (★ お気に入り)'
+      langLine: '言語: {lang}'
+    headerRecent: '直近 20件  |  言語: {lang}'
+    legend:
+      success: "= 完走 / 成功"
+      timeUp: "= 時間切れ"
+      favorites: "= ★保存した格言"
+    noLogs: "まだ格言ログがありません。\nSUCCESS / TIME_UP で自動で保存されます。"
+    noQuotesInTab: "このタブには表示できる格言がありません。\n（まだ保存されていない可能性があります）\n\n別タブも見てみてください。"
+    noFavorites: "まだ★お気に入りがありません。
+
+この本を右クリックで {latestLabel} を保存できます。"
+    tip:
+      rightClickSave: "ヒント: この本を右クリックで {latestLabel} を保存できます。"
 
     legacy:
       toc:
@@ -1115,6 +1162,12 @@ ui:
     text_ff9b9417: または
     gamestart_easy_normal_hard_b818a2da: /gamestart <easy|normal|hard>
     text_9822f9ec: を実行してね。
+
+  error:
+    noData: 'データなし'
+  favorites:
+    title: '★ お気に入り'
+    headerLatest: '最新 20件  |  言語: {lang}'
 
 quotes:
   outcome:

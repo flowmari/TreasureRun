@@ -314,6 +314,58 @@ items:
   text_e42912c7: '&7特製鉄ブロック'
   text_c89dea57: 特製鉄ブロックのレシピを登録しました。
 ui:
+  labels:
+    tabs: '&6Onglets:&r'
+    page: '&8Page {page}/{total}&r'
+    tab:
+      all: '▶ [TOUT]'
+      success: '▶ [SUCCÈS]'
+      timeUp: '▶ [TEMPS]'
+      favorites: '▶ [FAVORIS]'
+    latest: '★ Dernier'
+    page:
+      contents:
+        title: '📌 Sommaire'
+        rulesItem: '1) Règles'
+        howToPlay: '  · Comment jouer'
+        scoreRoute: '  · Score & itinéraire'
+        savedOn: '  · Enregistré lors de SUCCESS / TIME_UP'
+        language: '  · Langue : {lang}'
+        yourQuotes: '  · Vos ★ citations sauvegardées'
+        difficulty: 'Difficulté : {difficulty}'
+        tipsItem: '2) Conseils'
+      note:
+        bookFormat: "Remarque : Les livres Minecraft ne permettent pas de changer d'onglet en cliquant, le contenu est donc organisé en sections."
+      hint:
+        reopenMenu: "Astuce : Lancez /gameMenu pour rouvrir ceci."
+
+  quote:
+    title: 'Collection de citations'
+    intro:
+      tabsTitle: 'Onglets :'
+      legendTitle: 'Légende :'
+      storedInDb: 'Enregistré dans MySQL DB :'
+      db:
+        logs: 'proverb_logs (historique)'
+        favorites: 'proverb_favorites (★ Favoris)'
+      langLine: 'langue : {lang}'
+    headerRecent: '20 derniers  |  langue : {lang}'
+    legend:
+      success: "= Réussi / Succès"
+      timeUp: "= Temps écoulé"
+      favorites: "= ★ Citations sauvegardées"
+    noLogs: "Aucun journal de citations pour l'instant.
+Ils sont sauvegardés automatiquement lors d'un SUCCESS / TIME_UP."
+    noQuotesInTab: "Aucune citation à afficher dans cet onglet.
+(Elle n'a peut-être pas encore été sauvegardée.)
+
+Essayez un autre onglet."
+    noFavorites: "Aucun favori pour l'instant.
+
+Faites un clic droit sur ce livre pour sauvegarder {latestLabel}."
+    tip:
+      rightClickSave: "Astuce : Faites un clic droit sur ce livre pour sauvegarder {latestLabel}."
+
   auto:
     playerscore_b91d4cd3: 'PlayerScoreの挿入に失敗しました:'
     messages_yml_not_loaded_d56b1cd3: (messages.yml not loaded)
@@ -1092,7 +1144,7 @@ ui:
       openFailed: "&cImpossible d’ouvrir le livre des règles."
       hotbarGiven: "&6📖 Le livre des règles a été ajouté à ta barre rapide."
       hotbarHint: "&eTiens-le en main et fais un clic droit pour le relire à tout moment."
-      latestHint: "&7(Clic droit sur ce livre pour enregistrer &e★Latest&7.)"
+      latestHint: "&7(Clic droit sur ce livre pour enregistrer &e{latestLabel}&7.)"
 
     legacy:
       toc:
@@ -1115,6 +1167,12 @@ ui:
     text_ff9b9417: または
     gamestart_easy_normal_hard_b818a2da: /gamestart <easy|normal|hard>
     text_9822f9ec: を実行してね。
+
+  error:
+    noData: 'Aucune donnée'
+  favorites:
+    title: '★ Favoris'
+    headerLatest: '20 plus récents  |  langue : {lang}'
 
 quotes:
   outcome:

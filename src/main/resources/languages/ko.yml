@@ -315,6 +315,58 @@ items:
   text_e42912c7: '&7特製鉄ブロック'
   text_c89dea57: 特製鉄ブロックのレシピを登録しました。
 ui:
+  labels:
+    tabs: '&6탭:&r'
+    page: '&8페이지 {page}/{total}&r'
+    tab:
+      all: '▶ [전체]'
+      success: '▶ [성공]'
+      timeUp: '▶ [시간초과]'
+      favorites: '▶ [즐겨찾기]'
+    latest: '★ 최신'
+    page:
+      contents:
+        title: '📌 목차'
+        rulesItem: '1) 규칙'
+        howToPlay: '  · 플레이 방법'
+        scoreRoute: '  · 점수 & 경로'
+        savedOn: '  · SUCCESS / TIME_UP 시 자동 저장'
+        language: '  · 언어: {lang}'
+        yourQuotes: '  · 나의 ★ 저장된 인용구'
+        difficulty: '난이도: {difficulty}'
+        tipsItem: '2) 팁'
+      note:
+        bookFormat: "참고: Minecraft 책은 클릭으로 탭을 전환할 수 없어 내용이 섹션으로 구성되어 있습니다."
+      hint:
+        reopenMenu: "힌트: /gameMenu 를 실행하면 다시 열 수 있습니다."
+
+  quote:
+    title: '인용구 모음'
+    intro:
+      tabsTitle: '탭:'
+      legendTitle: '범례:'
+      storedInDb: 'MySQL DB에 저장됨:'
+      db:
+        logs: 'proverb_logs (기록)'
+        favorites: 'proverb_favorites (★ 즐겨찾기)'
+      langLine: '언어: {lang}'
+    headerRecent: '최근 20개  |  언어: {lang}'
+    legend:
+      success: "= 클리어 / 성공"
+      timeUp: "= 시간 초과"
+      favorites: "= ★ 저장된 인용구"
+    noLogs: "아직 인용구 기록이 없습니다.
+SUCCESS / TIME_UP 시 자동으로 저장됩니다."
+    noQuotesInTab: "이 탭에 표시할 인용구가 없습니다.
+(아직 저장되지 않았을 수 있습니다.)
+
+다른 탭을 확인해 보세요."
+    noFavorites: "아직 즐겨찾기가 없습니다.
+
+이 책을 우클릭하면 {latestLabel} 을 저장할 수 있습니다."
+    tip:
+      rightClickSave: "팁: 이 책을 우클릭하면 {latestLabel} 을 저장할 수 있습니다."
+
   auto:
     playerscore_b91d4cd3: 'PlayerScoreの挿入に失敗しました:'
     messages_yml_not_loaded_d56b1cd3: (messages.yml not loaded)
@@ -1093,7 +1145,7 @@ ui:
       openFailed: "&c룰북을 열 수 없습니다."
       hotbarGiven: "&6📖 룰북이 핫바에 추가되었습니다."
       hotbarHint: "&e손에 들고 우클릭하면 언제든 다시 읽을 수 있습니다."
-      latestHint: "&7(이 책을 우클릭하면 &e★Latest&7가 저장됩니다.)"
+      latestHint: "&7(이 책을 우클릭하면 &e{latestLabel}&7가 저장됩니다.)"
 
     legacy:
       toc:
@@ -1115,6 +1167,12 @@ ui:
     text_ff9b9417: または
     gamestart_easy_normal_hard_b818a2da: /gamestart <easy|normal|hard>
     text_9822f9ec: を実行してね。
+
+  error:
+    noData: '데이터 없음'
+  favorites:
+    title: '★ 즐겨찾기'
+    headerLatest: '최신 20개  |  언어: {lang}'
 
 quotes:
   outcome:
