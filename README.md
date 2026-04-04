@@ -1,5 +1,7 @@
 # TreasureRun（宝探しゲーム / Spigot Plugin）
+[![CI](https://github.com/flowmari/TreasureRun/actions/workflows/ci.yml/badge.svg)](https://github.com/flowmari/TreasureRun/actions/workflows/ci.yml)
 
+> **i18n-first design**: UI strings are externalized into `languages/*.yml` (19 languages) and validated by CI (`check_keys.sh`) to guarantee **zero missing keys** on every push.
 Minecraft（Spigot）上で遊べる、宝探しミニゲームプラグインです。  
 ステージ生成・宝箱スポーン・スコア集計・ランキング・演出（カラフル狼、虹、オーロラ、等）に加え、TreasureShop (謎の取引) による交換要素を入れています。
 
