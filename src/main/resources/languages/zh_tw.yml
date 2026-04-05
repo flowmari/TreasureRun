@@ -1,255 +1,246 @@
 meta:
   lang: zh_tw
   note: Put translation keys under e.g. command.xxx / gui.xxx / messages.xxx etc.
-
   error:
-    noData: '無資料'
+    noData: 無資料
   favorites:
-    title: '★ 我的最愛'
-    headerLatest: '最新 20 筆  |  語言：{lang}'
-
+    title: ★ 我的最愛
+    headerLatest: 最新 20 筆  |  語言：{lang}
 quotes:
   outcome:
-    success:
-    timeup:
-    other:
+    success: null
+    timeup: null
+    other: null
   success:
-    - '[TreasureRun][Lang] ''language.iconMaterial:'' セクションが見つかりません（全部PAPERになります）'
-    - '⚠ /rank が plugin.yml に見つかりません（commands: rank を追加済みか確認してください）'
-    - '=== 🌟 TreasureRun ランキング TOP10（タイム優先）🌟 ==='
-    - 'ゲーム中は reload できません（安全のため）。/gameEnd してから実行してください。'
-    - '✅ TreasureRun config を再読み込みしました（language GUI含む）。'
-    - '点（累計:'
-    - '権限がありません（OP限定）'
-    - 'の演出だけ発動しました（ランキング/DBは変更なし）'
-    - 'Light fell evenly, ,\nand every shadow vanished.\n（光が等しく降り注ぎ、すべての影が消えた。）'
-    - 'The wind fell silent.\nand everything returned to where it belonged.\n（風が止み、あるべき場所に、あるべきものが戻った。）'
-    - 'A moment of silence.\nThe world steadied its breath.\n（一瞬の静寂。世界がその呼吸を整えた。）'
-    - 'The record is etched deep in the sand—\nbeyond the reach of the wind.\n（記録は砂に深く刻まれ、風もそれを動かせない。）'
-    - 'Harmony was restored.\nEverything had been for this moment.\n（調和が訪れた。すべては、この瞬間のためにあった。）'
-    - 'Time slipped by in silence,\ntucked away in the corners of memory.\n（時間は静かに流れ、記憶の隅に収まった。）'
-    - 'The sky shifted in color,\nand one story came to its end.\n（空の色が変わり、一つの物語が完結を告げた。）'
-    - 'The waves grew calm,\nand the sea hid its depths once more.\n（波は穏やかになり、海は再びその深淵を隠した。）'
-    - 'The footsteps stopped,\nand only the place remained.\n（歩みは止まり、場所だけがそこに残された。）'
-    - 'The sun sank,\nand shadow covered the world once again.\n（日は落ち、影は再び世界を覆った。）'
-    - 'The last grains of sand fell,\nand the story quietly came to a close.\n（砂はすべて落ちきり、物語は静かに幕を閉じた。）'
-    - 'The wind swept through,\nand the footprints vanished without a trace.\n（風が吹き抜け、足跡は跡形もなく消え去った。）'
-    - 'The tide came in,\nWhat once had been there returned to the sea.\n（潮が満ちた。かつてそこにあったものは、海へと還った。）'
-    - 'Silence.\nOnly time passed through.\n（沈黙。ただ、時間だけがそこを通り過ぎた。）'
-    - 'Distance became meaning.\nTime answered your steps.\n（距離が意味になった。時間があなたの歩みに答えた。）'
-    - 'The center was found.\nThe world came to rest.\n（軸(中心)は見出された。世界はその運動を止めた。）'
-    - 'The glass didn’t break.\nNeither did you.\n（ガラスは割れなかった。あなたも折れなかった。）'
-    - 'Beneath a quiet sky,\nyour will held firm.\n（静かな空の下で、意志は持ちこたえた。）'
-    - 'Very little shines forever\n—but this moment was different.\n（永遠に輝くものなんてほとんどないけれど、この瞬間は別格だった。）'
-    - 'You made it across the fragile ground,\nholding fast to the horizon the whole way.\n（脆い地面を渡り切った。地平線景色をしっかりと握りしめたまま。）'
-    - 'The moment passed.\n What remained was the record—the achievement.\n（瞬間は過ぎ去った。遺されたもの記録・功績は残る。）'
-    - 'Luck fades quickly.\nOrder endures.\n（運は速やかに消え、整い秩序は永続する。）'
-    - 'The sky knows no rest in its endless cycle.\nNeither do you.\n（空はその終わりなき循環に休止を知らぬ。汝もまた、止まらず。）'
-    - 'The center was reached.\nThe world stood still.\n（中心は到達された。世界は立ち尽くし静止した。）'
-    - 'At last,you’ve made it here.\nThe truth stands—unbowed.\n（ついに、ここへ辿り着いた。真実は屈することなく、そこに在る。）'
-    - 'Complete. This path was yours\n—and yours alone.\n（完遂。この道を選んだのは他でもないあなただ。）'
-    - 'Time drifted into silence,\nand found its place in the deepest corners of the mind.\n（時は静寂へと漂い、精神の奥底の隅に自らの居場所を見つけた。）'
-    - 'As the sky shifted,\none story found its final resolution.\n（空が姿を変えるとともに、一つの物語はその最終的な解決完結を見出した。）'
-    - 'The waves fell quiet,\nand the sky hid its depths once more.\n（波は静まり、空は再びその深淵を覆い隠した。）'
-    - 'The footsteps ceased,\nand only the place remained.\n（歩みは途絶え、ただ場所だけがそこに在り続けた。）'
-    - 'You’ve made it.\nThe truth remains.\n（たどり着いた。正さはそのままに。）'
-    - 'Even if it was only a small step,\nyou held your ground.\n（小さな一歩でも、あなたは守り抜いた。）'
-    - 'You listened.\n The path opened.\n（耳を澄ませた。道がひらいた。）'
-    - '（あなたは辿り着いた。'
-    - '（距離が意味になり、'
-    - '（すべてが永遠に輝くわけじゃない。'
-    - 'The distance has found its meaning.\nTime has rewarded your journey.\n（距離が意味になった。時間があなたの歩みに答えた。）'
-    - 'The axis is found.\nthe world has cased its motion.\n（軸(中心)は見出された。世界はその運動を止めた。）'
-    - 'The glass held its breath,\nand you held your ground.\n（ガラスは割れなかった。あなたも折れなかった。）'
-    - 'Under the stillness of the sky,\nyour spirit did not waver.\n（静かな空の下で、意志は持ちこたえた。）'
-    - 'Few things shine forever.\nbut this moment was radiant.\n（永遠に輝くものなんてほとんどないけれど、この瞬間は別格だった。）'
-    - 'You traversed the fragile earth,\nwithout losing the view.\n（脆い地面を渡り切った。地平線景色をしっかりと握りしめたまま。）'
-    - 'The moment has passed.\nThe legacy remains.\n（瞬間は過ぎ去った。遺されたもの記録・功績は残る。）'
-    - 'Luck fades fast.\norder endures.\n（運は速やかに消え、整い秩序は永続する。）'
-    - 'The sky knows no pause in endless circle,\nnor shall you find yours.\n（空はその終わりなき循環に休止を知らぬ。汝もまた、止まらず。）'
-    - 'The center has been reached.\nThe world stood still.\n（中心は到達された。世界は立ち尽くし静止した。）'
-    - 'Finally here.\nThe truth remains unyielding.\n（ついに、ここへ辿り着いた。真実は屈することなく、そこに在る。）'
-    - 'You have seen it through.\nAnd mark this: it was you, and no one else, who chose this path.\n（完遂。この道を選んだのは他でもないあなただ。）'
-    - 'Time drifted into silence,\nfinding its place in the recesses of the mind.\n（時は静寂へと漂い、精神の奥底の隅に自らの居場所を見つけた。）'
-    - 'As the sky transformed,\nthe tale found its final resolved.\n（空が姿を変えるとともに、一つの物語はその最終的な解決完結を見出した。）'
-    - 'The waters fell calm,\nand the sky once more veiled its abyss.\n（波は静まり、空は再びその深淵を覆い隠した。）'
-    - 'The footsteps ceased,\nonly the place remained.\n（歩みは途絶え、ただ場所だけがそこに在り続けた。）'
-    - 'RUN COMPLETE.\nClear. Found it.\nThat''s enough.\n（クリア。見つけた。それで十分。）'
-    - 'RUN COMPLETE.\nThe path held.\nSo did you.\n（道は持ちこたえた。あなたも同じ。）'
-    - 'The sky has kept moving.\nSo can you.\n（空はずっと歩み続けていた。あなたも進み続けられる。）'
-    - 'RUN COMPLETE.\nA quiet result.\nThe weight of real work.\n（静かな結果。本物の積み重ね。）'
-    - 'You only walked the path\nthe world had laid out for you.\n（世界が用意していた道を、あなたは歩いただけ。）'
-    - 'The ground didn’t give way.\nIt trusted your steps.\n（大地は壊れなかった。あなたの足取りを、信じていた。）'
-    - 'This moment aligned\nwith the stars’ ancient rhythm.\n（この瞬間は、星々の長いリズムと重なった。）'
-    - 'You didn’t take anything.\n You understood something.\n（何かを奪ったわけじゃない。何かを、理解した。）'
-    - 'You didn’t gain a thing.\nYou only saw the truth for what it was.\n（手に入れたのは何かではない。真実を、見抜いただけだ。）'
-    - 'You didn’t take this place.\nYou belonged here.\n（征服したのではない。ここに、属していた。）'
-    - 'You walked a road\nolder than memory itself.\n（記憶より古い道を、あなたは辿った。）'
-    - 'The earth did not resist.\nIt recognized you.\n（大地は抗わず、あなたを認識した。）'
-    - 'This moment aligned\n with the stillness of the stars.\n（この瞬間は、星々の静けさと重なった。）'
-    - 'No conquest.\nUnderstanding was enough.\n（征服はない。理解で、十分だった。）'
-    - 'You didn’t claim it.\nYou were already home.\n（ここを奪ったのではない。ここに、属していた。）'
-    - 'In the north wind,\nclarity outlasts speed.\n（北風の中で、速さより明晰さが生き残る。）'
-    - 'The center was found.\n The world came to rest.\n（軸(中心)は見出された。世界はその運動を止めた。）'
-    - 'The stars stay silent.\nYour record does the speaking.\n（星は黙っている。語るのはあなたの記録だ。）'
-    - 'The result  remained.\nThe position changed.\n（結果は残った。位置は変わった。）'
-    - 'Between ice and glass,\nyou chose control.\n（氷とガラスのあいだで、あなたは制御を選んだ。）'
-    - 'The waves fell quiet,\nand the sea reclaimed its hidden depths.\n（波は静まり、海はその隠された深淵を再び自らのものとした。）'
-    - 'Some treasures still await.\nNext time, a different path.\n（待つ宝もある。次は、別の道を。）'
-    - 'The sky didn’t change.\nYou did.\n（空は変わらなかった。変わったのはあなた。）'
-    - 'The moment passed.\nWhat remained was order.\n（瞬間は過ぎた。整いは残った。）'
-    - 'Winter is honest.\nSo was your run.\n（冬は正直だ。あなたの走りもそうだった。）'
-    - 'The stars aligned for a moment.\nYou noticed.\n（星は束の間そろった。あなたはそれに気づいた。）'
-    - 'The distance closed.\nTime did not.\n（距離は縮んでいた。時間は縮まらなかった。）'
-    - 'The world’s rules stood firm.\n And the signal of possibility was real.\n（世界のルールは、厳然としてそこにあった。可能性（信号）は本物だった。）'
-    - 'The path closed quietly.\nYou were already through.\n（道は静かに閉じた。あなたはもう抜けていた。）'
-    - 'Nothing changed.\nOnly your position did.\n（何も変わらない。ただ、あなたの位置だけが変わった。）'
-    - 'Not luck.\nAlignment.\n（運じゃない。整いだ。）'
-    - 'The moment passed.\nThe record remains.\n（瞬間は過ぎた。記録は残る。）'
-    - 'The outcome didn’t change.\nStill, you moved forward.\n（結果に違いはなかった。それでも、あなたは前に進んだ。）'
-    - 'The output didn’t change.\nBut you reached a new level.\n（出力は変わらないままだが、あなたは新しいレベルに到達した。）'
-    - 'The ending was the same.\nBut the one who reached it had changed.\n（結末は同じだが、そこに辿り着いた人間は変わった。）'
-    - 'The destination is the same\n—but you’re no longer the traveler you once were.\n（目的地は同じだが、あなたはもう以前と同じ旅人ではない。）'
-    - 'The treasure can wait.\nSo can you.\n（宝は待っている。あなたも待てる。）'
-    - 'Breathe in.\nThen again.\n（息をして。もう一度。）'
-    - 'That’s all for now.\nOn to the next step.\n（今回はここまで。次の一歩へ。）'
-    - 'You''re still here.\nThat’s what matters.\n（まだここにいる。それが大事。）'
-    - 'The run ended.\nYou didn’t.\n（走りは止まった。あなたは止まっていない。）'
-    - 'The distance closed.\nTime did not.\n（距離は縮んだ。時間は縮まらなかった。）'
-    - 'The world kept its rules.\nYou touched the edge.\n（世界はルールを守った。あなたは境界に触れた。）'
-    - 'You didn’t make it.\nBut the signal was real.\n（届かなかった。でも合図は本物だった。）'
-    - 'Some treasures still await.\nLet’s try a different path.\n（待つ宝もある。別の道を試そう。）'
-    - 'The result remained.\nThe position changed.\n（結果は残った。位置は変わった。）'
-    - 'So close.\nThe sound said so.\n（惜しかった。音がそう言っていた。）'
-    - 'The map is still open.\nCome back to it.\n（地図は開いたまま。戻っておいで。）'
-    - 'The world’s rules stood firm.\nThe signal of possibility was real.\n（世界のルールは厳然としてそこにあった。可能性（信号）は本物だった。）'
-    - 'The world kept its rules.\n（世界はルールを守った。）'
-    - '（時間は終わった。'
-    - '（結果は変わらなかった。'
-    - 'Even the aurora fades.\nCome back with a new stride.\n（オーロラでさえ消える。新しい歩みで戻れ。）'
-    - 'In a fragile world,\nhaste shatters clarity before it can be found.\n（脆い世界では、焦りが明晰さの発見を壊してしまう。）'
-    - 'Winter is patient.\nBe the same.\n（冬は忍耐強い。あなたもそうであれ。）'
-    - 'The sky kept moving.\nSo will you.\n（空は進み続けた。あなたも進む。）'
-    - 'The story moves on.\nThe end is not yet.\n（叙事は頁をめくる。これは最後じゃない。）'
-    - 'The stars were there, watching.\nAgain.\n（星は見守っていた。もう一度。）'
-    - 'Ice takes its time.\nNeither do you.\n（氷は急がない。あなたも急ぐ必要はない。）'
-    - 'The sky kept moving.\nSo can you.\n（空は動き続けた。あなたも動き続けられる。）'
-    - 'The north has learned to wait.\nSo should you.\n（北は『待つこと』を覚えている。そこから学べ。）'
-    - 'Like drifting clouds,\ndon’t lose your flow—like a river.\n（雲が動き続けるように。川のように、流れを失わないで。）'
-    - 'The sound was near.\nThe distance was real.\nBut that moment can’t be saved.\n（音は近かった。距離は本物だった。でも、その瞬間は保存できない。）'
-    - 'The world held to its rules.\nYou touched the edge of them.\n（世界はルールを守った。あなたはその縁に触れた。）'
-    - 'You didn’t reach the treasure. \nBut the signal was real.\n（宝には届かなかった。でも合図は本物だった。）'
-    - 'It wasn’t luck.\nAlignment.\n（運じゃない。整いだ。）'
-    - 'You crossed fragile ground\nand left the horizon unbroken.\n（脆い地面を渡った。視界（景色）を壊さずに。）'
-    - '（何も変わらない。ただ、あなたの位置だけが変わった。\n運じゃない。整いだ。\n瞬間は過ぎた。記録は残る。）'
-    - 'The season closed.\nThe land remained.\n（季節は閉じた。大地は、残っている。）'
-    - 'The path The path remains.\nOnly your steps stopped.\n（道は、まだそこにある。あなたが歩みを止めただけ。）'
-    - 'It wasn’t rejection.\nOnly silence.\n（拒絶ではない。ただ、沈黙だった。）'
-    - 'The world is still intact.\nYou can return—changed.\n（世界は形を保っている。変わったあなたで、戻れる。）'
-    - 'The season ended.\nThe forest remains.\n（季節は終わった。森は、残っている。）'
-    - 'The distance was closing.\nTime kept its rhythm.\n（距離は縮んでいた。時間は、リズムを保った。）'
-    - 'Your time came to a halt.\nThe sky kept moving.\n（あなたの時間は止まった。空は、止まらなかった。）'
-    - 'Not rejection\nJust silence.\n（拒絶ではない。ただの、沈黙。）'
-    - 'The path is still here.\nYou can come back—changed.\n（道は、まだここにある。違うあなたで、戻れる。）'
-    - '（'
-    - '[EnemyDown] MySQL に接続しました（JDBC + MyBatis）'
-    - '個の宝箱をスポーンしました（中身付き）'
-    - '・特別な宝物（ネザライト、ブロックなど）でさらにボーナス点！'
-    - '7. 格言集（Quote Collection）'
-    - '8. お気に入り（Favorites）'
-    - 'Easy（ゆったり）'
-    - 'Hard（高難度）'
-    - 'Normal（標準）'
-    - '（この本を右クリックすると ★Latest を保存できます）'
-    - '（DB: proverb_logs）'
-    - '（まだ保存されていない可能性があります）'
-    - '（DB: proverb_favorites）'
+  - '[TreasureRun][Lang] ''language.iconMaterial:'' セクションが見つかりません（全部PAPERになります）'
+  - '⚠ /rank が plugin.yml に見つかりません（commands: rank を追加済みか確認してください）'
+  - === 🌟 TreasureRun ランキング TOP10（タイム優先）🌟 ===
+  - ゲーム中は reload できません（安全のため）。/gameEnd してから実行してください。
+  - ✅ TreasureRun config を再読み込みしました（language GUI含む）。
+  - '点（累計:'
+  - 権限がありません（OP限定）
+  - の演出だけ発動しました（ランキング/DBは変更なし）
+  - Light fell evenly, ,\nand every shadow vanished.\n（光が等しく降り注ぎ、すべての影が消えた。）
+  - The wind fell silent.\nand everything returned to where it belonged.\n（風が止み、あるべき場所に、あるべきものが戻った。）
+  - A moment of silence.\nThe world steadied its breath.\n（一瞬の静寂。世界がその呼吸を整えた。）
+  - The record is etched deep in the sand—\nbeyond the reach of the wind.\n（記録は砂に深く刻まれ、風もそれを動かせない。）
+  - Harmony was restored.\nEverything had been for this moment.\n（調和が訪れた。すべては、この瞬間のためにあった。）
+  - Time slipped by in silence,\ntucked away in the corners of memory.\n（時間は静かに流れ、記憶の隅に収まった。）
+  - The sky shifted in color,\nand one story came to its end.\n（空の色が変わり、一つの物語が完結を告げた。）
+  - The waves grew calm,\nand the sea hid its depths once more.\n（波は穏やかになり、海は再びその深淵を隠した。）
+  - The footsteps stopped,\nand only the place remained.\n（歩みは止まり、場所だけがそこに残された。）
+  - The sun sank,\nand shadow covered the world once again.\n（日は落ち、影は再び世界を覆った。）
+  - The last grains of sand fell,\nand the story quietly came to a close.\n（砂はすべて落ちきり、物語は静かに幕を閉じた。）
+  - The wind swept through,\nand the footprints vanished without a trace.\n（風が吹き抜け、足跡は跡形もなく消え去った。）
+  - The tide came in,\nWhat once had been there returned to the sea.\n（潮が満ちた。かつてそこにあったものは、海へと還った。）
+  - Silence.\nOnly time passed through.\n（沈黙。ただ、時間だけがそこを通り過ぎた。）
+  - Distance became meaning.\nTime answered your steps.\n（距離が意味になった。時間があなたの歩みに答えた。）
+  - The center was found.\nThe world came to rest.\n（軸(中心)は見出された。世界はその運動を止めた。）
+  - The glass didn’t break.\nNeither did you.\n（ガラスは割れなかった。あなたも折れなかった。）
+  - Beneath a quiet sky,\nyour will held firm.\n（静かな空の下で、意志は持ちこたえた。）
+  - Very little shines forever\n—but this moment was different.\n（永遠に輝くものなんてほとんどないけれど、この瞬間は別格だった。）
+  - You made it across the fragile ground,\nholding fast to the horizon the whole
+    way.\n（脆い地面を渡り切った。地平線景色をしっかりと握りしめたまま。）
+  - The moment passed.\n What remained was the record—the achievement.\n（瞬間は過ぎ去った。遺されたもの記録・功績は残る。）
+  - Luck fades quickly.\nOrder endures.\n（運は速やかに消え、整い秩序は永続する。）
+  - The sky knows no rest in its endless cycle.\nNeither do you.\n（空はその終わりなき循環に休止を知らぬ。汝もまた、止まらず。）
+  - The center was reached.\nThe world stood still.\n（中心は到達された。世界は立ち尽くし静止した。）
+  - At last,you’ve made it here.\nThe truth stands—unbowed.\n（ついに、ここへ辿り着いた。真実は屈することなく、そこに在る。）
+  - Complete. This path was yours\n—and yours alone.\n（完遂。この道を選んだのは他でもないあなただ。）
+  - Time drifted into silence,\nand found its place in the deepest corners of the
+    mind.\n（時は静寂へと漂い、精神の奥底の隅に自らの居場所を見つけた。）
+  - As the sky shifted,\none story found its final resolution.\n（空が姿を変えるとともに、一つの物語はその最終的な解決完結を見出した。）
+  - The waves fell quiet,\nand the sky hid its depths once more.\n（波は静まり、空は再びその深淵を覆い隠した。）
+  - The footsteps ceased,\nand only the place remained.\n（歩みは途絶え、ただ場所だけがそこに在り続けた。）
+  - You’ve made it.\nThe truth remains.\n（たどり着いた。正さはそのままに。）
+  - Even if it was only a small step,\nyou held your ground.\n（小さな一歩でも、あなたは守り抜いた。）
+  - You listened.\n The path opened.\n（耳を澄ませた。道がひらいた。）
+  - （あなたは辿り着いた。
+  - （距離が意味になり、
+  - （すべてが永遠に輝くわけじゃない。
+  - The distance has found its meaning.\nTime has rewarded your journey.\n（距離が意味になった。時間があなたの歩みに答えた。）
+  - The axis is found.\nthe world has cased its motion.\n（軸(中心)は見出された。世界はその運動を止めた。）
+  - The glass held its breath,\nand you held your ground.\n（ガラスは割れなかった。あなたも折れなかった。）
+  - Under the stillness of the sky,\nyour spirit did not waver.\n（静かな空の下で、意志は持ちこたえた。）
+  - Few things shine forever.\nbut this moment was radiant.\n（永遠に輝くものなんてほとんどないけれど、この瞬間は別格だった。）
+  - You traversed the fragile earth,\nwithout losing the view.\n（脆い地面を渡り切った。地平線景色をしっかりと握りしめたまま。）
+  - The moment has passed.\nThe legacy remains.\n（瞬間は過ぎ去った。遺されたもの記録・功績は残る。）
+  - Luck fades fast.\norder endures.\n（運は速やかに消え、整い秩序は永続する。）
+  - The sky knows no pause in endless circle,\nnor shall you find yours.\n（空はその終わりなき循環に休止を知らぬ。汝もまた、止まらず。）
+  - The center has been reached.\nThe world stood still.\n（中心は到達された。世界は立ち尽くし静止した。）
+  - Finally here.\nThe truth remains unyielding.\n（ついに、ここへ辿り着いた。真実は屈することなく、そこに在る。）
+  - 'You have seen it through.\nAnd mark this: it was you, and no one else, who chose
+    this path.\n（完遂。この道を選んだのは他でもないあなただ。）'
+  - Time drifted into silence,\nfinding its place in the recesses of the mind.\n（時は静寂へと漂い、精神の奥底の隅に自らの居場所を見つけた。）
+  - As the sky transformed,\nthe tale found its final resolved.\n（空が姿を変えるとともに、一つの物語はその最終的な解決完結を見出した。）
+  - The waters fell calm,\nand the sky once more veiled its abyss.\n（波は静まり、空は再びその深淵を覆い隠した。）
+  - The footsteps ceased,\nonly the place remained.\n（歩みは途絶え、ただ場所だけがそこに在り続けた。）
+  - RUN COMPLETE.\nClear. Found it.\nThat's enough.\n（クリア。見つけた。それで十分。）
+  - RUN COMPLETE.\nThe path held.\nSo did you.\n（道は持ちこたえた。あなたも同じ。）
+  - The sky has kept moving.\nSo can you.\n（空はずっと歩み続けていた。あなたも進み続けられる。）
+  - RUN COMPLETE.\nA quiet result.\nThe weight of real work.\n（静かな結果。本物の積み重ね。）
+  - You only walked the path\nthe world had laid out for you.\n（世界が用意していた道を、あなたは歩いただけ。）
+  - The ground didn’t give way.\nIt trusted your steps.\n（大地は壊れなかった。あなたの足取りを、信じていた。）
+  - This moment aligned\nwith the stars’ ancient rhythm.\n（この瞬間は、星々の長いリズムと重なった。）
+  - You didn’t take anything.\n You understood something.\n（何かを奪ったわけじゃない。何かを、理解した。）
+  - You didn’t gain a thing.\nYou only saw the truth for what it was.\n（手に入れたのは何かではない。真実を、見抜いただけだ。）
+  - You didn’t take this place.\nYou belonged here.\n（征服したのではない。ここに、属していた。）
+  - You walked a road\nolder than memory itself.\n（記憶より古い道を、あなたは辿った。）
+  - The earth did not resist.\nIt recognized you.\n（大地は抗わず、あなたを認識した。）
+  - This moment aligned\n with the stillness of the stars.\n（この瞬間は、星々の静けさと重なった。）
+  - No conquest.\nUnderstanding was enough.\n（征服はない。理解で、十分だった。）
+  - You didn’t claim it.\nYou were already home.\n（ここを奪ったのではない。ここに、属していた。）
+  - In the north wind,\nclarity outlasts speed.\n（北風の中で、速さより明晰さが生き残る。）
+  - The center was found.\n The world came to rest.\n（軸(中心)は見出された。世界はその運動を止めた。）
+  - The stars stay silent.\nYour record does the speaking.\n（星は黙っている。語るのはあなたの記録だ。）
+  - The result  remained.\nThe position changed.\n（結果は残った。位置は変わった。）
+  - Between ice and glass,\nyou chose control.\n（氷とガラスのあいだで、あなたは制御を選んだ。）
+  - The waves fell quiet,\nand the sea reclaimed its hidden depths.\n（波は静まり、海はその隠された深淵を再び自らのものとした。）
+  - Some treasures still await.\nNext time, a different path.\n（待つ宝もある。次は、別の道を。）
+  - The sky didn’t change.\nYou did.\n（空は変わらなかった。変わったのはあなた。）
+  - The moment passed.\nWhat remained was order.\n（瞬間は過ぎた。整いは残った。）
+  - Winter is honest.\nSo was your run.\n（冬は正直だ。あなたの走りもそうだった。）
+  - The stars aligned for a moment.\nYou noticed.\n（星は束の間そろった。あなたはそれに気づいた。）
+  - The distance closed.\nTime did not.\n（距離は縮んでいた。時間は縮まらなかった。）
+  - The world’s rules stood firm.\n And the signal of possibility was real.\n（世界のルールは、厳然としてそこにあった。可能性（信号）は本物だった。）
+  - The path closed quietly.\nYou were already through.\n（道は静かに閉じた。あなたはもう抜けていた。）
+  - Nothing changed.\nOnly your position did.\n（何も変わらない。ただ、あなたの位置だけが変わった。）
+  - Not luck.\nAlignment.\n（運じゃない。整いだ。）
+  - The moment passed.\nThe record remains.\n（瞬間は過ぎた。記録は残る。）
+  - The outcome didn’t change.\nStill, you moved forward.\n（結果に違いはなかった。それでも、あなたは前に進んだ。）
+  - The output didn’t change.\nBut you reached a new level.\n（出力は変わらないままだが、あなたは新しいレベルに到達した。）
+  - The ending was the same.\nBut the one who reached it had changed.\n（結末は同じだが、そこに辿り着いた人間は変わった。）
+  - The destination is the same\n—but you’re no longer the traveler you once were.\n（目的地は同じだが、あなたはもう以前と同じ旅人ではない。）
+  - The treasure can wait.\nSo can you.\n（宝は待っている。あなたも待てる。）
+  - Breathe in.\nThen again.\n（息をして。もう一度。）
+  - That’s all for now.\nOn to the next step.\n（今回はここまで。次の一歩へ。）
+  - You're still here.\nThat’s what matters.\n（まだここにいる。それが大事。）
+  - The run ended.\nYou didn’t.\n（走りは止まった。あなたは止まっていない。）
+  - The distance closed.\nTime did not.\n（距離は縮んだ。時間は縮まらなかった。）
+  - The world kept its rules.\nYou touched the edge.\n（世界はルールを守った。あなたは境界に触れた。）
+  - You didn’t make it.\nBut the signal was real.\n（届かなかった。でも合図は本物だった。）
+  - Some treasures still await.\nLet’s try a different path.\n（待つ宝もある。別の道を試そう。）
+  - The result remained.\nThe position changed.\n（結果は残った。位置は変わった。）
+  - So close.\nThe sound said so.\n（惜しかった。音がそう言っていた。）
+  - The map is still open.\nCome back to it.\n（地図は開いたまま。戻っておいで。）
+  - The world’s rules stood firm.\nThe signal of possibility was real.\n（世界のルールは厳然としてそこにあった。可能性（信号）は本物だった。）
+  - The world kept its rules.\n（世界はルールを守った。）
+  - （時間は終わった。
+  - （結果は変わらなかった。
+  - Even the aurora fades.\nCome back with a new stride.\n（オーロラでさえ消える。新しい歩みで戻れ。）
+  - In a fragile world,\nhaste shatters clarity before it can be found.\n（脆い世界では、焦りが明晰さの発見を壊してしまう。）
+  - Winter is patient.\nBe the same.\n（冬は忍耐強い。あなたもそうであれ。）
+  - The sky kept moving.\nSo will you.\n（空は進み続けた。あなたも進む。）
+  - The story moves on.\nThe end is not yet.\n（叙事は頁をめくる。これは最後じゃない。）
+  - The stars were there, watching.\nAgain.\n（星は見守っていた。もう一度。）
+  - Ice takes its time.\nNeither do you.\n（氷は急がない。あなたも急ぐ必要はない。）
+  - The sky kept moving.\nSo can you.\n（空は動き続けた。あなたも動き続けられる。）
+  - The north has learned to wait.\nSo should you.\n（北は『待つこと』を覚えている。そこから学べ。）
+  - Like drifting clouds,\ndon’t lose your flow—like a river.\n（雲が動き続けるように。川のように、流れを失わないで。）
+  - The sound was near.\nThe distance was real.\nBut that moment can’t be saved.\n（音は近かった。距離は本物だった。でも、その瞬間は保存できない。）
+  - The world held to its rules.\nYou touched the edge of them.\n（世界はルールを守った。あなたはその縁に触れた。）
+  - You didn’t reach the treasure. \nBut the signal was real.\n（宝には届かなかった。でも合図は本物だった。）
+  - It wasn’t luck.\nAlignment.\n（運じゃない。整いだ。）
+  - You crossed fragile ground\nand left the horizon unbroken.\n（脆い地面を渡った。視界（景色）を壊さずに。）
+  - （何も変わらない。ただ、あなたの位置だけが変わった。\n運じゃない。整いだ。\n瞬間は過ぎた。記録は残る。）
+  - The season closed.\nThe land remained.\n（季節は閉じた。大地は、残っている。）
+  - The path The path remains.\nOnly your steps stopped.\n（道は、まだそこにある。あなたが歩みを止めただけ。）
+  - It wasn’t rejection.\nOnly silence.\n（拒絶ではない。ただ、沈黙だった。）
+  - The world is still intact.\nYou can return—changed.\n（世界は形を保っている。変わったあなたで、戻れる。）
+  - The season ended.\nThe forest remains.\n（季節は終わった。森は、残っている。）
+  - The distance was closing.\nTime kept its rhythm.\n（距離は縮んでいた。時間は、リズムを保った。）
+  - Your time came to a halt.\nThe sky kept moving.\n（あなたの時間は止まった。空は、止まらなかった。）
+  - Not rejection\nJust silence.\n（拒絶ではない。ただの、沈黙。）
+  - The path is still here.\nYou can come back—changed.\n（道は、まだここにある。違うあなたで、戻れる。）
+  - （
+  - '[EnemyDown] MySQL に接続しました（JDBC + MyBatis）'
+  - 個の宝箱をスポーンしました（中身付き）
+  - ・特別な宝物（ネザライト、ブロックなど）でさらにボーナス点！
+  - 7. 語錄集
+  - 8. 我的最愛
+  - 簡單
+  - 困難
+  - 中等
+  - （この本を右クリックすると ★最新 を保存できます）
+  - '（DB: proverb_logs）'
+  - （まだ保存されていない可能性があります）
+  - '（DB: proverb_favorites）'
   timeup:
-    - 'Time ran out.\nNothing else did.\n（時間は終わった。ほかは終わっていない。）'
-    - 'The time is up.\nbut the rest is far from over.\n（時間は終わった。ほかは終わっていない。）'
-    - 'TIME''S UP.\nThe run ended.\nYou didn''t.\n（時間は止まった。でも、あなたは止まっていない。）'
-    - 'TIME''S UP.\nThe rules don’t change.\nAgain.\n（ルールは変わらない。もう一度。）'
-    - 'TIME''S UP.\n“So close” is real.\n（惜しい、は本物だ。）'
-    - 'Time ran out.\nMeaning didn''t.\n（時間は終わった。意味は終わっていない。）'
-    - 'The moment slipped away.\nThe meaning did not.\n（逃したのは瞬間。意味ではない。）'
-    - 'This is an interlude\n—It’s not over.\n（これは休止だ。終わりじゃない。）'
-    - 'You were closing in.\nOnly time wasn’t.\n（近づいていた。時間だけが近づかなかった。）'
-    - 'The moment slipped away,\nbut the record stayed.\n（瞬間は過ぎた。記録は残る。）'
-    - 'Your time ran out.\nThe sky didn’t.\n（あなたの時間は終わった。空は、終わっていない。）'
+  - Time ran out.\nNothing else did.\n（時間は終わった。ほかは終わっていない。）
+  - The time is up.\nbut the rest is far from over.\n（時間は終わった。ほかは終わっていない。）
+  - TIME'S UP.\nThe run ended.\nYou didn't.\n（時間は止まった。でも、あなたは止まっていない。）
+  - TIME'S UP.\nThe rules don’t change.\nAgain.\n（ルールは変わらない。もう一度。）
+  - TIME'S UP.\n“So close” is real.\n（惜しい、は本物だ。）
+  - Time ran out.\nMeaning didn't.\n（時間は終わった。意味は終わっていない。）
+  - The moment slipped away.\nThe meaning did not.\n（逃したのは瞬間。意味ではない。）
+  - This is an interlude\n—It’s not over.\n（これは休止だ。終わりじゃない。）
+  - You were closing in.\nOnly time wasn’t.\n（近づいていた。時間だけが近づかなかった。）
+  - The moment slipped away,\nbut the record stayed.\n（瞬間は過ぎた。記録は残る。）
+  - Your time ran out.\nThe sky didn’t.\n（あなたの時間は終わった。空は、終わっていない。）
   trader:
-    - 'Perfect balance.\nThe scales held level.\n（等価の均衡。天秤は水平を保った。）'
-    - 'There was no dialogue\n—only an exchange of facts.\n（対話はなく、ただ事実としての交換が行われた。）'
-    - 'Perfect equilibrium.\nThe scales held level.\n（等価の均衡。天秤は水平を保った。）'
-    - 'Things changed,\ntaking on new forms as they carried on.\n（物事は移ろい、形を変えて引き継がれた。）'
+  - Perfect balance.\nThe scales held level.\n（等価の均衡。天秤は水平を保った。）
+  - There was no dialogue\n—only an exchange of facts.\n（対話はなく、ただ事実としての交換が行われた。）
+  - Perfect equilibrium.\nThe scales held level.\n（等価の均衡。天秤は水平を保った。）
+  - Things changed,\ntaking on new forms as they carried on.\n（物事は移ろい、形を変えて引き継がれた。）
   philosophy:
-    - 'Victory and defeat \nare nothing more than grains of sand.\n（勝利も敗北も、同じ砂の一粒に過ぎない。）'
-    - 'The road goes on—or it ends.\nEither way, it lies on the same earth.\n（道は続き、あるいは途切れ、どちらも同じ大地の上にある。）'
+  - Victory and defeat \nare nothing more than grains of sand.\n（勝利も敗北も、同じ砂の一粒に過ぎない。）
+  - The road goes on—or it ends.\nEither way, it lies on the same earth.\n（道は続き、あるいは途切れ、どちらも同じ大地の上にある。）
 ui:
   labels:
     tabs: '&6分頁:&r'
-    page: '&8頁面 {page}/{total}&r'
+    page: '&8第 {page}/{total} 頁&r'
     tab:
-      all: '▶ [全部]'
-      success: '▶ [成功]'
-      timeUp: '▶ [時間到]'
-      favorites: '▶ [我的最愛]'
-    latest: '★ 最新'
-    page:
-      contents:
-        title: '📌 目錄'
-        rulesItem: '1) 規則'
-        howToPlay: '  · 遊玩方式'
-        scoreRoute: '  · 分數與路線'
-        savedOn: '  · 於 SUCCESS / TIME_UP 時自動儲存'
-        language: '  · 語言：{lang}'
-        yourQuotes: '  · 你的 ★ 已儲存引言'
-        difficulty: '難度：{difficulty}'
-        tipsItem: '2) 提示'
-      note:
-        bookFormat: "注意：Minecraft 的書無法透過點擊切換分頁，因此內容以章節方式呈現。"
-      hint:
-        reopenMenu: "提示：執行 /gameMenu 可再次開啟此選單。"
-
+      all: ▶ [全部]
+      success: ▶ [成功]
+      timeUp: ▶ [時間到]
+      favorites: ▶ [我的最愛]
+    latest: ★ 最新
+    outcome:
+      success: 成功
+      timeUp: 時間到
   quote:
-    title: '引言集'
+    title: 引言集
     intro:
-      tabsTitle: '分頁：'
-      legendTitle: '圖例：'
-      storedInDb: '儲存於 MySQL DB：'
+      tabsTitle: 分頁：
+      legendTitle: 圖例：
+      storedInDb: 儲存於 MySQL DB：
       db:
-        logs: 'proverb_logs（歷史紀錄）'
-        favorites: 'proverb_favorites（★ 我的最愛）'
-      langLine: '語言：{lang}'
-    headerRecent: '最近 20 筆  |  語言：{lang}'
+        logs: proverb_logs（歷史紀錄）
+        favorites: proverb_favorites（★ 我的最愛）
+      langLine: 語言：{lang}
+    headerRecent: 最近 20 筆  |  語言：{lang}
     legend:
-      success: "= 完成 / 成功"
-      timeUp: "= 時間到"
-      favorites: "= ★ 已儲存的引言"
-    noLogs: "目前尚無引言記錄。
-成功或時間到時會自動儲存。"
-    noQuotesInTab: "此分頁沒有可顯示的引言。
-（可能尚未儲存。）
+      success: = 完成 / 成功
+      timeUp: = 時間到
+      favorites: = ★ 已儲存的引言
+    noLogs: 目前尚無引言記錄。 成功或時間到時會自動儲存。
+    noQuotesInTab: '此分頁沒有可顯示的引言。 （可能尚未儲存。）
 
-請試試其他分頁。"
-    noFavorites: "目前尚無我的最愛。
+      請試試其他分頁。'
+    no我的最愛: '目前尚無我的最愛。
 
-右鍵點擊此書以儲存 {latestLabel}。"
+      右鍵點擊此書以儲存 {latestLabel}。'
     tip:
-      rightClickSave: "提示：右鍵點擊此書以儲存 {latestLabel}。"
+      rightClickSave: 提示：右鍵點擊此書以儲存 {latestLabel}。
+    noFavorites: 'No favorites yet.
 
+      Right-click this book to save {latestLabel}.'
   auto:
     playerscore_b91d4cd3: 'PlayerScore 插入失敗:'
     messages_yml_not_loaded_d56b1cd3: (messages.yml not loaded)
     translation_missing_77031543: '(找不到翻譯:'
     translation_missing_77031543_107: '(找不到翻譯:'
     click_to_select_aac1569c: 點擊選擇
-    treasurerun_lang_config_yml__2dde4625: "[TreasureRun][Lang] config.yml 中找不到 'language:' 區段。"
+    treasurerun_lang_config_yml__2dde4625: '[TreasureRun][Lang] config.yml 中找不到 ''language:''
+      區段。'
     click_to_select_aac1569c_76: 點擊選擇
     treasurerun_lang_default_60887a83: '[TreasureRun][Lang] default='
     click_to_select_aac1569c_19: 點擊選擇
-    treasurerun_lang_config_yml__2dde4625_33: "[TreasureRun][Lang] config.yml 中找不到 'language:' 區段。"
+    treasurerun_lang_config_yml__2dde4625_33: '[TreasureRun][Lang] config.yml 中找不到
+      ''language:'' 區段。'
     treasurerun_lang_material_la_bc70a401: '[TreasureRun][Lang] 無效的 Material: lang='
-    treasurerun_lang_language_ic_4bc2362d: "[TreasureRun][Lang] 找不到 'language.iconMaterial:' 區段（全部改為PAPER）"
+    treasurerun_lang_language_ic_4bc2362d: '[TreasureRun][Lang] 找不到 ''language.iconMaterial:''
+      區段（全部改為PAPER）'
     click_to_select_aac1569c_100: 點擊選擇
     treasurerun_lang_default_60887a83_111: '[TreasureRun][Lang] default='
     enemydown_mysql_jdbc_mybatis_6b5c6f68: '[EnemyDown] 已連接至MySQL（JDBC + MyBatis）'
@@ -264,18 +255,28 @@ ui:
     mysqlmanager_player_score_2b5c8721: '[MySQLManager] player_score 資料表可能不存在 ❌'
     enemydown_mysql_bc514e56: '[EnemyDown] MySQL 已連接。'
     enemydown_mysql_93b23ef9: '[EnemyDown] MySQL 未連接。'
-    light_fell_evenly_and_every__e50aee87: "Light fell evenly, ,\nand every shadow vanished.\n（光が等しく降り注ぎ、すべての影が消えた。）"
-    the_wind_fell_silent_and_eve_a96036c1: "The wind fell silent.\nand everything returned to where it belonged.\n（風が止み、あるべき場所に、あるべきものが戻った。）"
+    light_fell_evenly_and_every__e50aee87: 'Light fell evenly, ,
+
+      and every shadow vanished.
+
+      （光が等しく降り注ぎ、すべての影が消えた。）'
+    the_wind_fell_silent_and_eve_a96036c1: 'The wind fell silent.
+
+      and everything returned to where it belonged.
+
+      （風が止み、あるべき場所に、あるべきものが戻った。）'
     time_s_up_87859973: Time's up.
     run_complete_46d920e5: Run complete.
     run_complete_46d920e5_580: Run complete.
     run_complete_46d920e5_589: Run complete.
-    playerlanguagestore_failed_t_c4999402: '[PlayerLanguageStore] Failed to create/load player_languages.yml:'
+    playerlanguagestore_failed_t_c4999402: '[PlayerLanguageStore] Failed to create/load
+      player_languages.yml:'
     playerlanguagestore_failed_t_b6478ec8: '[PlayerLanguageStore] Failed to save player_languages.yml:'
     proverb_logged_to_mysql_prov_c13b5e4e: 'Proverb logged to MySQL: proverb_logs'
     failed_to_log_proverb_to_mys_2bb4c5c3: 'Failed to log proverb to MySQL: proverb_logs'
     loaded_proverb_logs_from_mys_b5b0f8e0: 'Loaded proverb logs from MySQL: proverb_logs'
-    failed_to_load_proverb_logs__6246be38: 'Failed to load proverb logs from MySQL: proverb_logs'
+    failed_to_load_proverb_logs__6246be38: 'Failed to load proverb logs from MySQL:
+      proverb_logs'
     treasurerunmultichestplugin_4499e25c: '🌈 TreasureRunMultiChestPlugin: 起動 🌈'
     treasurerun_gamestagemanager_3d9e7f5a: '[TreasureRun] GameStageManager event registered!'
     treasurerunmultichestplugin_a507471a: ✅ TreasureRunMultiChestPlugin が正常に起動しました！
@@ -311,55 +312,75 @@ ui:
     reload_gameend_c41d5c55: 遊戲中無法重新載入。請先執行 /gameEnd。
   menu:
     toc:
-      message: |-
-        &6===== 🌟 TreasureRun 目錄 🌟 =====
+      message: '&6===== 🌟 TreasureRun 目錄 🌟 =====
+
         &b1. 目標
+
         &f   ・在時間限制內開啟盡可能多的箱子。
 
+
         &b2. 目前難度
+
         &f   ・難度: &e{difficulty}
 
+
         &b3. 難度與顏色
+
         &f   ・簡單：紫色方塊
+
         &f   ・普通：綠色方塊
+
         &f   ・困難：藍色方塊
 
+
         &b4. 遊玩方式
+
         &f   ・四處奔跑，找到箱子，右鍵點擊開啟。
 
+
         &b5. 計分
+
         &f   ・普通寶藏: +100
+
         &f   ・特殊寶藏 (下界合金 / 方塊等): 獎勵！
 
+
         &b6. 結束條件
+
         &f   ・開啟所有箱子或時間結束 — 遊戲結束。
 
+
         &b7. 語錄收藏
+
         &f   ・在 SUCCESS / TIME_UP 時自動儲存。
 
+
         &b8. 我的最愛
+
         &f   ・用 ★ 儲存您喜愛的語錄。
 
-        &6==================================
 
+        &6=================================='
     book:
-      openFailed: "&c無法開啟規則書。"
-      hotbarGiven: "&6📖 規則書已加入您的快捷欄。"
-      hotbarHint: "&e拿著它隨時右鍵點擊即可再次閱讀。"
-      latestHint: "&7(右鍵點擊此書可儲存 &e{latestLabel}&7。)"
-
+      openFailed: '&c無法開啟規則書。'
+      hotbarGiven: '&6📖 規則書已加入您的快捷欄。'
+      hotbarHint: '&e拿著它隨時右鍵點擊即可再次閱讀。'
+      latestHint: '&7(右鍵點擊此書可儲存 &e{latestLabel}&7。)'
     legacy:
       toc:
-        message: |-
-          &6===== 🌟 TreasureRun 目錄 🌟 =====
+        message: '&6===== 🌟 TreasureRun 目錄 🌟 =====
+
           &b1. 目標
+
           &f   ・在時間限制內開啟盡可能多的箱子。
 
+
           &b2. 目前難度
+
           &f   ・難度: &e{difficulty}
 
-          &6==================================
 
+          &6=================================='
     gui:
       language_30e61e02: 語言 / Language
       gui_27_b3f3a31b: 語言過多，介面僅顯示前27項。
@@ -369,4 +390,47 @@ ui:
       text_ff9b9417: 或
       gamestart_easy_normal_hard_b818a2da: /gamestart <easy|normal|hard>
       text_9822f9ec: 執行。
-
+    page:
+      contents:
+        title: 📌 目錄
+        rulesItem: 1) 規則
+        howToPlay: '  · 遊玩方式'
+        scoreRoute: '  · 分數與路線'
+        savedOn: '  · 於 SUCCESS / TIME_UP 時保存'
+        language: '  · 語言：{lang}'
+        yourQuotes: '  · 你已儲存的 ★ 語錄'
+        difficulty: 難度：{difficulty}
+        tipsItem: 2) 提示
+      note:
+        bookFormat: 注意：Minecraft 的書本無法透過點擊切換分頁，因此內容已整理成分段形式。
+      hint:
+        reopenMenu: 提示：輸入 /gameMenu 可再次開啟此內容。
+  error:
+    noData: 目前沒有可用資料。
+  favorites:
+    headerLatest: 最新收藏  |  語言：{lang}
+    title: ★ 收藏
+gui:
+  language:
+    title: '&3Language'
+    subtitle: '&7Select your language'
+    selected: '&aSelected: &f{lang}'
+    saved: '&aSaved your language: &f{lang}'
+game:
+  difficulty:
+    easy: '&aEasy'
+    normal: '&eNormal'
+    hard: '&cHard'
+favorites:
+  title: favorites.title
+  cover:
+    head: favorites.cover.head
+    hint: favorites.cover.hint
+  empty:
+    noFav: favorites.empty.noFav
+    saveLatest: favorites.empty.saveLatest
+  toc:
+    head: favorites.toc.head
+    howto: favorites.toc.howto
+    manage: favorites.toc.manage
+    reread: favorites.toc.reread

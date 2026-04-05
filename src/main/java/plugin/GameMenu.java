@@ -698,10 +698,11 @@ public class GameMenu {
 
     String latestLabel = plugin.getI18n().tr(lang, GameMenuKeys.UI_LABEL_LATEST);
     String outcomeLabel = outcomeLabel(plugin, lang, outcome);
+    String diffLabel = difficultyLabel(plugin, lang, diff);
 
     return ChatColor.GOLD + "" + ChatColor.BOLD + latestLabel + "\n" +
         outcomeColor + "[" + outcomeLabel + "] " +
-        diffColor + safe(diff) + " " +
+        diffColor + diffLabel + " " +
         ChatColor.GRAY + "(" + safe(rowLang) + ")\n" +
         ChatColor.DARK_BLUE + safeQuote(quoteText) + "\n\n";
   }
@@ -716,10 +717,11 @@ public class GameMenu {
     ChatColor diffColor = colorByDifficulty(diff);
 
     String outcomeLabel = outcomeLabel(plugin, lang, outcome);
+    String diffLabel = difficultyLabel(plugin, lang, diff);
 
     return ChatColor.AQUA + "#" + idx + "\n" +
         outcomeColor + "[" + outcomeLabel + "] " +
-        diffColor + safe(diff) + " " +
+        diffColor + diffLabel + " " +
         ChatColor.GRAY + "(" + safe(rowLang) + ")\n" +
         ChatColor.DARK_BLUE + safeQuote(quoteText) + "\n\n";
   }
@@ -740,10 +742,11 @@ public class GameMenu {
         : (ChatColor.YELLOW + "★");
 
     String outcomeLabel = outcomeLabel(plugin, lang, outcome);
+    String diffLabel = difficultyLabel(plugin, lang, diff);
 
     return idLabel + ChatColor.GRAY + "  (" + idx + ")\n" +
         outcomeColor + "[" + outcomeLabel + "] " +
-        diffColor + safe(diff) + " " +
+        diffColor + diffLabel + " " +
         ChatColor.GRAY + "(" + safe(rowLang) + ")\n" +
         ChatColor.DARK_BLUE + safeQuote(quoteText) + "\n\n";
   }
@@ -905,6 +908,58 @@ public class GameMenu {
   // =========================================================
   // ✅ Phase 2 helpers: label dictionary (ui.labels.*)
   // =========================================================
+
+
+
+  private static String normalizeDifficultyKey(String diff) {
+    if (diff == null || diff.isBlank()) return "Normal";
+
+    String d = diff.trim();
+
+    // 内部値はそのまま維持
+    if (d.equalsIgnoreCase("Easy")) return "Easy";
+    if (d.equalsIgnoreCase("Normal")) return "Normal";
+    if (d.equalsIgnoreCase("Hard")) return "Hard";
+
+    // 表示ラベルや旧表現から内部キーへ寄せる
+    String u = d.toUpperCase();
+
+    if (u.contains("BEGINNER") || u.contains("EINSTEIGER") || u.contains("PRINCIPIANTE")
+        || u.contains("DÉBUTANT") || u.contains("INICIANTE")
+        || u.contains("初級") || u.contains("초급")
+        || u.contains("ALOITTELIJA") || u.contains("BYRJANDI")) {
+      return "Easy";
+    }
+
+    if (u.contains("INTERMEDIATE") || u.contains("MITTEL") || u.contains("INTERMEDIO")
+        || u.contains("INTERMÉDIAIRE") || u.contains("INTERMEDIÁRIO")
+        || u.contains("中級") || u.contains("중급")
+        || u.contains("KESKITASO") || u.contains("GEMIDDELD")
+        || u.contains("MELLAN") || u.contains("मध्यम")) {
+      return "Normal";
+    }
+
+    if (u.contains("ADVANCED") || u.contains("FORTGESCHRITTEN") || u.contains("AVANZATO")
+        || u.contains("AVANZADO") || u.contains("AVANCÉ")
+        || u.contains("上級") || u.contains("高級") || u.contains("고급")
+        || u.contains("EDISTYNYT") || u.contains("GEVORDERD")
+        || u.contains("उन्नत")) {
+      return "Hard";
+    }
+
+    return "Normal";
+  }
+
+  private static String difficultyLabel(TreasureRunMultiChestPlugin plugin, String lang, String diff) {
+    if (plugin == null) return safe(diff);
+
+    String key = normalizeDifficultyKey(diff);
+    return plugin.getConfig().getString(
+        "ruleBook.difficultyLabel." + lang + "." + key,
+        key
+    );
+  }
+
   private static String outcomeLabel(TreasureRunMultiChestPlugin plugin, String lang, String outcome) {
     if (plugin == null) return safe(outcome);
 

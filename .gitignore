@@ -54,3 +54,7 @@ src/main/resources/languages/__thin_backup__*/
 src/main/resources/languages_bak_*/
 src/main/resources/languages/*.broken_*
 _local_backup/
+
+# local backup artifacts
+backup/
+*.bak.*
