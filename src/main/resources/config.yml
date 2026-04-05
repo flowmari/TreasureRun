@@ -1,29 +1,17 @@
-# TreasureRunMultiChestPlugin 用 config.yml
-
-# 難易度ごとの宝箱数設定
 treasureChestCount:
   Easy: 3
   Normal: 2
   Hard: 1
-
-# ✅ 統一：Easy/Normal/Hard（先頭大文字）
 otherChestCount:
   Easy: 3
   Normal: 5
   Hard: 7
-
-# ✅ 統一：Easy/Normal/Hard（先頭大文字）
 totalChestCount:
   Easy: 20
   Normal: 30
   Hard: 40
-
-chestSpawnRadius: 20    # プレイヤー周囲の配置半径
-
-# ★追加：宝箱の総数（ゲーム1回で設置する数）
+chestSpawnRadius: 20
 totalChests: 10
-
-# ★追加：難易度ごとの制限時間（秒）
 difficultySettings:
   Easy:
     timeLimit: 300
@@ -37,1483 +25,1650 @@ difficultySettings:
     timeLimit: 120
     multiplier: 1.5
     penalty: 15
-
-# ✅ 統一：Easy/Normal/Hard（先頭大文字）
 allowedDifficulties:
-  - Easy
-  - Normal
-  - Hard
-
-# 宝物のバリエーション
+- Easy
+- Normal
+- Hard
 treasureItems:
-  - DIAMOND
-  - GOLD_INGOT
-  - EMERALD
-  - IRON_INGOT
-  - LAPIS_LAZULI
-  - APPLE
-  - NETHERITE_INGOT
-  - REDSTONE
-  - COAL
-  - ENCHANTED_GOLDEN_APPLE
-  - TNT
-  - DIAMOND_BLOCK
-  - GOLD_BLOCK
-  - EMERALD_BLOCK
-  - IRON_BLOCK
-
-# メッセージ設定
+- DIAMOND
+- GOLD_INGOT
+- EMERALD
+- IRON_INGOT
+- LAPIS_LAZULI
+- APPLE
+- NETHERITE_INGOT
+- REDSTONE
+- COAL
+- ENCHANTED_GOLDEN_APPLE
+- TNT
+- DIAMOND_BLOCK
+- GOLD_BLOCK
+- EMERALD_BLOCK
+- IRON_BLOCK
 messages:
   gameStart:
-    - "&aゲーム開始！難易度: %difficulty%"
-    - "&bお宝アイテム: %treasureItem%"
-    - "&e制限時間: %timeLimit% 秒"
-  timeWarning: "&c残り1分です！急いで宝を探してください！"
+  - '&aゲーム開始！難易度: %difficulty%'
+  - '&bお宝アイテム: %treasureItem%'
+  - '&e制限時間: %timeLimit% 秒'
+  timeWarning: '&c残り1分です！急いで宝を探してください！'
   gameEnd:
-    - "&aゲーム終了！"
-    - "&bあなたの得点: %score%"
+  - '&aゲーム終了！'
+  - '&bあなたの得点: %score%'
   chestOpened:
-    treasure: "&aお宝を発見しました！ゲームクリア！"
-    emptyEasy: "&eこのチェストにはお宝がありません。"
-    emptyNormal: "&eお宝なし。時間が減少しました。"
-    emptyHard: "&cお宝なし！時間減少＆モンスター出現！"
-
-  # =======================================================
-  # ✅ 追加：19言語翻訳（Favorites図鑑専用キー）
-  # - Favorites 図鑑は messages.translation.<lang>.favorites.* を参照
-  # - 翻訳が欠けても en → ja → default に落ちる前提で壊れない
-  # =======================================================
+    treasure: '&aお宝を発見しました！ゲームクリア！'
+    emptyEasy: '&eこのチェストにはお宝がありません。'
+    emptyNormal: '&eお宝なし。時間が減少しました。'
+    emptyHard: '&cお宝なし！時間減少＆モンスター出現！'
   translation:
-
     ja:
       favorites:
-        title: "TreasureRun お気に入り図鑑"
-        remove: "削除"
+        title: TreasureRun お気に入り図鑑
+        remove: 削除
         cover:
-          head: "TreasureRun Archive"
-          sub: "Favorites Catalog"
-          badge: "◆ お気に入り ◆"
-          countLabel: "お気に入り数"
-          hint: "クリックで章を開けます"
-          openToc: "目次を開く"
-          reread: "再読（ランダム）"
+          head: TreasureRun Archive
+          sub: Favorites Catalog
+          badge: ◆ お気に入り ◆
+          countLabel: お気に入り数
+          hint: クリックで章を開けます
+          openToc: 目次を開く
+          reread: 再読（ランダム）
         toc:
-          head: "TreasureRun Archive"
-          sub: "目次 / Catalog"
-          howto: "操作:"
-          howtoShift: "Shift + 右クリックで開く"
-          clickable: "目次（クリック可）"
-          rereadTitle: "再読モード"
-          reread: "再読（本）"
-          manage: "管理:"
+          head: TreasureRun Archive
+          sub: 目次 / Catalog
+          howto: '操作:'
+          howtoShift: Shift + 右クリックで開く
+          clickable: 目次（クリック可）
+          rereadTitle: 再読モード
+          reread: 再読（本）
+          manage: '管理:'
         empty:
-          head: "TreasureRun Archive"
-          sub: "Favorites Catalog"
-          noFav: "まだお気に入りがありません。"
-          noFavSub: "右クリックで最新格言を保存できます。"
-          saveHow: "保存方法:"
-          saveHow1: "ルールブックを手に持って"
-          saveHow2: "右クリック → 最新格言を保存"
-          tryNow: "すぐ試す:"
-          saveLatest: "最新を保存"
-          reread: "再読:"
-          rereadBook: "再読（本）"
+          head: TreasureRun Archive
+          sub: Favorites Catalog
+          noFav: まだお気に入りがありません。
+          noFavSub: 右クリックで最新格言を保存できます。
+          saveHow: '保存方法:'
+          saveHow1: ルールブックを手に持って
+          saveHow2: 右クリック → 最新格言を保存
+          tryNow: 'すぐ試す:'
+          saveLatest: 最新を保存
+          reread: '再読:'
+          rereadBook: 再読（本）
         chapter:
-          empty: "この章はまだ空です。"
-          back: "目次へ戻る"
-          count: "件数"
-          rereadBook: "再読（本）"
-          successTitle: "◆ SUCCESS ◆"
-          successSub: "表彰台ログ"
-          timeupTitle: "◆ TIME_UP ◆"
-          timeupSub: "詩集 / 余韻"
-          otherSub: "収録ログ"
+          empty: この章はまだ空です。
+          back: 目次へ戻る
+          count: 件数
+          rereadBook: 再読（本）
+          successTitle: ◆ SUCCESS ◆
+          successSub: 表彰台ログ
+          timeupTitle: ◆ TIME_UP ◆
+          timeupSub: 詩集 / 余韻
+          otherSub: 収録ログ
           pageTemplate:
             success:
-              - |-
-                §b§l◆ SUCCESS ◆
-                §7Podium Records
+            - '§b§l◆ SUCCESS ◆
 
-                §fお気に入りに保存された
-                §f「勝利の記録」を収録します。
+              §7Podium Records
 
-                §7・削除: 本の [削除] をクリック
-                §7・再読: ランダム再読で再訪できます
+
+              §fお気に入りに保存された
+
+              §f「勝利の記録」を収録します。
+
+
+              §7・削除: 本の [削除] をクリック
+
+              §7・再読: ランダム再読で再訪できます'
             timeup:
-              - |-
-                §b§l◆ TIME_UP ◆
-                §7Poems of the Unfinished Echo
+            - '§b§l◆ TIME_UP ◆
 
-                §f時間切れの余韻、
-                §f未完の響きを詩として残します。
+              §7Poems of the Unfinished Echo
 
-                §7・削除: 本の [削除] をクリック
-                §7・再読: ランダム再読で再訪できます
+
+              §f時間切れの余韻、
+
+              §f未完の響きを詩として残します。
+
+
+              §7・削除: 本の [削除] をクリック
+
+              §7・再読: ランダム再読で再訪できます'
             other:
-              - |-
-                §b§l◆ ARCHIVE ◆
-                §7Collected Logs
+            - '§b§l◆ ARCHIVE ◆
 
-                §fお気に入りに保存された
-                §f格言・断片・記録を収録します。
+              §7Collected Logs
 
-                §7・削除: 本の [削除] をクリック
 
+              §fお気に入りに保存された
+
+              §f格言・断片・記録を収録します。
+
+
+              §7・削除: 本の [削除] をクリック'
     en:
       favorites:
-        title: "TreasureRun Favorites Archive"
-        remove: "Remove"
+        title: TreasureRun Favorites Archive
+        remove: Remove
         cover:
-          head: "TreasureRun Archive"
-          sub: "Favorites Catalog"
-          badge: "◆ FAVORITES ◆"
-          countLabel: "Favorites"
-          hint: "Click to open chapters"
-          openToc: "Open TOC"
-          reread: "Re-read (Random)"
+          head: TreasureRun Archive
+          sub: Favorites Catalog
+          badge: ◆ FAVORITES ◆
+          countLabel: Favorites
+          hint: Click to open chapters
+          openToc: Open TOC
+          reread: Re-read (Random)
         toc:
-          head: "TreasureRun Archive"
-          sub: "Catalog / TOC"
-          howto: "How to:"
-          howtoShift: "Shift + Right Click to open"
-          clickable: "Chapters (clickable)"
-          rereadTitle: "Re-read Mode"
-          reread: "REREAD (BOOK)"
-          manage: "Manage:"
+          head: TreasureRun Archive
+          sub: Catalog / TOC
+          howto: 'How to:'
+          howtoShift: Shift + Right Click to open
+          clickable: Chapters (clickable)
+          rereadTitle: Re-read Mode
+          reread: REREAD (BOOK)
+          manage: 'Manage:'
         empty:
-          head: "TreasureRun Archive"
-          sub: "Favorites Catalog"
-          noFav: "No favorites yet."
-          noFavSub: "Right click to save your latest quote."
-          saveHow: "How to save:"
-          saveHow1: "Hold the rulebook"
-          saveHow2: "Right click → save latest quote"
-          tryNow: "Try now:"
-          saveLatest: "SAVE LATEST"
-          reread: "Re-read:"
-          rereadBook: "REREAD (BOOK)"
+          head: TreasureRun Archive
+          sub: Favorites Catalog
+          noFav: No favorites yet.
+          noFavSub: Right click to save your latest quote.
+          saveHow: 'How to save:'
+          saveHow1: Hold the rulebook
+          saveHow2: Right click → save latest quote
+          tryNow: 'Try now:'
+          saveLatest: SAVE LATEST
+          reread: 'Re-read:'
+          rereadBook: REREAD (BOOK)
         chapter:
-          empty: "This chapter is empty."
-          back: "Back to TOC"
-          count: "Count"
-          rereadBook: "REREAD (BOOK)"
-          successTitle: "◆ SUCCESS ◆"
-          successSub: "Podium Records"
-          timeupTitle: "◆ TIME_UP ◆"
-          timeupSub: "Poems of the Unfinished Echo"
-          otherSub: "Collected Logs"
+          empty: This chapter is empty.
+          back: Back to TOC
+          count: Count
+          rereadBook: REREAD (BOOK)
+          successTitle: ◆ SUCCESS ◆
+          successSub: Podium Records
+          timeupTitle: ◆ TIME_UP ◆
+          timeupSub: Poems of the Unfinished Echo
+          otherSub: Collected Logs
           pageTemplate:
             success:
-              - |-
-                §b§l◆ SUCCESS ◆
-                §7Podium Records
+            - '§b§l◆ SUCCESS ◆
 
-                §fThis chapter archives
-                §fyour victory records saved as favorites.
+              §7Podium Records
 
-                §7・Remove: click [Remove] in the book
-                §7・Re-read: revisit via random re-read
+
+              §fThis chapter archives
+
+              §fyour victory records saved as favorites.
+
+
+              §7・Remove: click [Remove] in the book
+
+              §7・Re-read: revisit via random re-read'
             timeup:
-              - |-
-                §b§l◆ TIME_UP ◆
-                §7Poems of the Unfinished Echo
+            - '§b§l◆ TIME_UP ◆
 
-                §fThis chapter preserves
-                §fthe quiet after time runs out.
+              §7Poems of the Unfinished Echo
 
-                §7・Remove: click [Remove] in the book
-                §7・Re-read: revisit via random re-read
+
+              §fThis chapter preserves
+
+              §fthe quiet after time runs out.
+
+
+              §7・Remove: click [Remove] in the book
+
+              §7・Re-read: revisit via random re-read'
             other:
-              - |-
-                §b§l◆ ARCHIVE ◆
-                §7Collected Logs
+            - '§b§l◆ ARCHIVE ◆
 
-                §fThis chapter collects
-                §fsaved quotes and fragments.
+              §7Collected Logs
 
-                §7・Remove: click [Remove] in the book
 
+              §fThis chapter collects
+
+              §fsaved quotes and fragments.
+
+
+              §7・Remove: click [Remove] in the book'
     de:
       favorites:
-        title: "TreasureRun Favoriten-Archiv"
-        remove: "Entfernen"
+        title: TreasureRun Favoriten-Archiv
+        remove: Entfernen
         cover:
-          head: "TreasureRun Archiv"
-          sub: "Favoritenkatalog"
-          badge: "◆ FAVORITEN ◆"
-          countLabel: "Favoriten"
-          hint: "Klicke, um Kapitel zu öffnen"
-          openToc: "Inhaltsverzeichnis öffnen"
-          reread: "Neu lesen (Zufall)"
+          head: TreasureRun Archiv
+          sub: Favoritenkatalog
+          badge: ◆ FAVORITEN ◆
+          countLabel: Favoriten
+          hint: Klicke, um Kapitel zu öffnen
+          openToc: Inhaltsverzeichnis öffnen
+          reread: Neu lesen (Zufall)
         toc:
-          head: "TreasureRun Archiv"
-          sub: "Katalog / Inhalt"
-          howto: "Bedienung:"
-          howtoShift: "Shift + Rechtsklick zum Öffnen"
-          clickable: "Kapitel (klickbar)"
-          rereadTitle: "Neu lesen"
-          reread: "NEU LESEN (BUCH)"
-          manage: "Verwaltung:"
+          head: TreasureRun Archiv
+          sub: Katalog / Inhalt
+          howto: 'Bedienung:'
+          howtoShift: Shift + Rechtsklick zum Öffnen
+          clickable: Kapitel (klickbar)
+          rereadTitle: Neu lesen
+          reread: NEU LESEN (BUCH)
+          manage: 'Verwaltung:'
         empty:
-          head: "TreasureRun Archiv"
-          sub: "Favoritenkatalog"
-          noFav: "Noch keine Favoriten."
-          noFavSub: "Rechtsklick speichert das neueste Zitat."
-          saveHow: "So speicherst du:"
-          saveHow1: "Regelbuch in die Hand nehmen"
-          saveHow2: "Rechtsklick → neuestes Zitat speichern"
-          tryNow: "Jetzt testen:"
-          saveLatest: "NEUESTES SPEICHERN"
-          reread: "Neu lesen:"
-          rereadBook: "NEU LESEN (BUCH)"
+          head: TreasureRun Archiv
+          sub: Favoritenkatalog
+          noFav: Noch keine Favoriten.
+          noFavSub: Rechtsklick speichert das neueste Zitat.
+          saveHow: 'So speicherst du:'
+          saveHow1: Regelbuch in die Hand nehmen
+          saveHow2: Rechtsklick → neuestes Zitat speichern
+          tryNow: 'Jetzt testen:'
+          saveLatest: NEUESTES SPEICHERN
+          reread: 'Neu lesen:'
+          rereadBook: NEU LESEN (BUCH)
         chapter:
-          empty: "Dieses Kapitel ist noch leer."
-          back: "Zurück zum Inhalt"
-          count: "Anzahl"
-          rereadBook: "NEU LESEN (BUCH)"
-          successTitle: "◆ SUCCESS ◆"
-          successSub: "Podiumsprotokolle"
-          timeupTitle: "◆ TIME_UP ◆"
-          timeupSub: "Gedichte des unvollendeten Echos"
-          otherSub: "Gesammelte Logs"
+          empty: Dieses Kapitel ist noch leer.
+          back: Zurück zum Inhalt
+          count: Anzahl
+          rereadBook: NEU LESEN (BUCH)
+          successTitle: ◆ SUCCESS ◆
+          successSub: Podiumsprotokolle
+          timeupTitle: ◆ TIME_UP ◆
+          timeupSub: Gedichte des unvollendeten Echos
+          otherSub: Gesammelte Logs
           pageTemplate:
             success:
-              - |-
-                §b§l◆ SUCCESS ◆
-                §7Podiumsprotokolle
+            - '§b§l◆ SUCCESS ◆
 
-                §fHier werden deine als Favoriten
-                §fgespeicherten Siegesaufzeichnungen archiviert.
+              §7Podiumsprotokolle
 
-                §7・Entfernen: im Buch auf [Entfernen] klicken
-                §7・Neu lesen: per Zufalls-Relektüre erneut besuchen
+
+              §fHier werden deine als Favoriten
+
+              §fgespeicherten Siegesaufzeichnungen archiviert.
+
+
+              §7・Entfernen: im Buch auf [Entfernen] klicken
+
+              §7・Neu lesen: per Zufalls-Relektüre erneut besuchen'
             timeup:
-              - |-
-                §b§l◆ TIME_UP ◆
-                §7Gedichte des unvollendeten Echos
+            - '§b§l◆ TIME_UP ◆
 
-                §fHier bleibt der Nachhall,
-                §fwenn die Zeit endet.
+              §7Gedichte des unvollendeten Echos
 
-                §7・Entfernen: im Buch auf [Entfernen] klicken
-                §7・Neu lesen: per Zufalls-Relektüre erneut besuchen
+
+              §fHier bleibt der Nachhall,
+
+              §fwenn die Zeit endet.
+
+
+              §7・Entfernen: im Buch auf [Entfernen] klicken
+
+              §7・Neu lesen: per Zufalls-Relektüre erneut besuchen'
             other:
-              - |-
-                §b§l◆ ARCHIV ◆
-                §7Gesammelte Logs
+            - '§b§l◆ ARCHIV ◆
 
-                §fGespeicherte Zitate und Fragmente
-                §fwerden hier gesammelt.
+              §7Gesammelte Logs
 
-                §7・Entfernen: im Buch auf [Entfernen] klicken
 
+              §fGespeicherte Zitate und Fragmente
+
+              §fwerden hier gesammelt.
+
+
+              §7・Entfernen: im Buch auf [Entfernen] klicken'
     it:
       favorites:
-        title: "Archivio Preferiti TreasureRun"
-        remove: "Rimuovi"
+        title: Archivio Preferiti TreasureRun
+        remove: Rimuovi
         cover:
-          head: "Archivio TreasureRun"
-          sub: "Catalogo dei Preferiti"
-          badge: "◆ PREFERITI ◆"
-          countLabel: "Preferiti"
-          hint: "Clicca per aprire i capitoli"
-          openToc: "Apri indice"
-          reread: "Rileggi (Casuale)"
+          head: Archivio TreasureRun
+          sub: Catalogo dei Preferiti
+          badge: ◆ PREFERITI ◆
+          countLabel: Preferiti
+          hint: Clicca per aprire i capitoli
+          openToc: Apri indice
+          reread: Rileggi (Casuale)
         toc:
-          head: "Archivio TreasureRun"
-          sub: "Catalogo / Indice"
-          howto: "Uso:"
-          howtoShift: "Shift + clic destro per aprire"
-          clickable: "Capitoli (cliccabili)"
-          rereadTitle: "Modalità rilettura"
-          reread: "RILEGGI (LIBRO)"
-          manage: "Gestione:"
+          head: Archivio TreasureRun
+          sub: Catalogo / Indice
+          howto: 'Uso:'
+          howtoShift: Shift + clic destro per aprire
+          clickable: Capitoli (cliccabili)
+          rereadTitle: Modalità rilettura
+          reread: RILEGGI (LIBRO)
+          manage: 'Gestione:'
         empty:
-          head: "Archivio TreasureRun"
-          sub: "Catalogo dei Preferiti"
-          noFav: "Nessun preferito per ora."
-          noFavSub: "Clic destro per salvare l’ultima citazione."
-          saveHow: "Come salvare:"
-          saveHow1: "Tieni in mano il libro delle regole"
-          saveHow2: "Clic destro → salva l’ultima citazione"
-          tryNow: "Prova ora:"
-          saveLatest: "SALVA ULTIMA"
-          reread: "Rileggi:"
-          rereadBook: "RILEGGI (LIBRO)"
+          head: Archivio TreasureRun
+          sub: Catalogo dei Preferiti
+          noFav: Nessun preferito per ora.
+          noFavSub: Clic destro per salvare l’ultima citazione.
+          saveHow: 'Come salvare:'
+          saveHow1: Tieni in mano il libro delle regole
+          saveHow2: Clic destro → salva l’ultima citazione
+          tryNow: 'Prova ora:'
+          saveLatest: SALVA ULTIMA
+          reread: 'Rileggi:'
+          rereadBook: RILEGGI (LIBRO)
         chapter:
-          empty: "Questo capitolo è vuoto."
-          back: "Torna all’indice"
-          count: "Totale"
-          rereadBook: "RILEGGI (LIBRO)"
-          successTitle: "◆ SUCCESS ◆"
-          successSub: "Registri del Podio"
-          timeupTitle: "◆ TIME_UP ◆"
-          timeupSub: "Poesie dell’eco incompiuta"
-          otherSub: "Log raccolti"
+          empty: Questo capitolo è vuoto.
+          back: Torna all’indice
+          count: Totale
+          rereadBook: RILEGGI (LIBRO)
+          successTitle: ◆ SUCCESS ◆
+          successSub: Registri del Podio
+          timeupTitle: ◆ TIME_UP ◆
+          timeupSub: Poesie dell’eco incompiuta
+          otherSub: Log raccolti
           pageTemplate:
             success:
-              - |-
-                §b§l◆ SUCCESS ◆
-                §7Registri del Podio
+            - '§b§l◆ SUCCESS ◆
 
-                §fQuesto capitolo archivia
-                §fi record di vittoria salvati nei preferiti.
+              §7Registri del Podio
 
-                §7・Rimuovi: clicca [Rimuovi] nel libro
-                §7・Rileggi: torna con la rilettura casuale
+
+              §fQuesto capitolo archivia
+
+              §fi record di vittoria salvati nei preferiti.
+
+
+              §7・Rimuovi: clicca [Rimuovi] nel libro
+
+              §7・Rileggi: torna con la rilettura casuale'
             timeup:
-              - |-
-                §b§l◆ TIME_UP ◆
-                §7Poesie dell’eco incompiuta
+            - '§b§l◆ TIME_UP ◆
 
-                §fQui resta il silenzio
-                §fquando il tempo finisce.
+              §7Poesie dell’eco incompiuta
 
-                §7・Rimuovi: clicca [Rimuovi] nel libro
-                §7・Rileggi: torna con la rilettura casuale
+
+              §fQui resta il silenzio
+
+              §fquando il tempo finisce.
+
+
+              §7・Rimuovi: clicca [Rimuovi] nel libro
+
+              §7・Rileggi: torna con la rilettura casuale'
             other:
-              - |-
-                §b§l◆ ARCHIVIO ◆
-                §7Log raccolti
+            - '§b§l◆ ARCHIVIO ◆
 
-                §fCitazioni e frammenti salvati
-                §fvengono raccolti qui.
+              §7Log raccolti
 
-                §7・Rimuovi: clicca [Rimuovi] nel libro
 
+              §fCitazioni e frammenti salvati
+
+              §fvengono raccolti qui.
+
+
+              §7・Rimuovi: clicca [Rimuovi] nel libro'
     sv:
       favorites:
-        title: "TreasureRun Favoritarkiv"
-        remove: "Ta bort"
+        title: TreasureRun Favoritarkiv
+        remove: Ta bort
         cover:
-          head: "TreasureRun Arkiv"
-          sub: "Favoritkatalog"
-          badge: "◆ FAVORITER ◆"
-          countLabel: "Favoriter"
-          hint: "Klicka för att öppna kapitel"
-          openToc: "Öppna innehåll"
-          reread: "Läs om (Slump)"
+          head: TreasureRun Arkiv
+          sub: Favoritkatalog
+          badge: ◆ FAVORITER ◆
+          countLabel: Favoriter
+          hint: Klicka för att öppna kapitel
+          openToc: Öppna innehåll
+          reread: Läs om (Slump)
         toc:
-          head: "TreasureRun Arkiv"
-          sub: "Katalog / Innehåll"
-          howto: "Så här:"
-          howtoShift: "Shift + högerklick för att öppna"
-          clickable: "Kapitel (klickbara)"
-          rereadTitle: "Omläsningsläge"
-          reread: "LÄS OM (BOK)"
-          manage: "Hantera:"
+          head: TreasureRun Arkiv
+          sub: Katalog / Innehåll
+          howto: 'Så här:'
+          howtoShift: Shift + högerklick för att öppna
+          clickable: Kapitel (klickbara)
+          rereadTitle: Omläsningsläge
+          reread: LÄS OM (BOK)
+          manage: 'Hantera:'
         empty:
-          head: "TreasureRun Arkiv"
-          sub: "Favoritkatalog"
-          noFav: "Inga favoriter ännu."
-          noFavSub: "Högerklick sparar senaste citatet."
-          saveHow: "Så sparar du:"
-          saveHow1: "Håll regelboken"
-          saveHow2: "Högerklick → spara senaste citatet"
-          tryNow: "Testa nu:"
-          saveLatest: "SPARA SENASTE"
-          reread: "Läs om:"
-          rereadBook: "LÄS OM (BOK)"
+          head: TreasureRun Arkiv
+          sub: Favoritkatalog
+          noFav: Inga favoriter ännu.
+          noFavSub: Högerklick sparar senaste citatet.
+          saveHow: 'Så sparar du:'
+          saveHow1: Håll regelboken
+          saveHow2: Högerklick → spara senaste citatet
+          tryNow: 'Testa nu:'
+          saveLatest: SPARA SENASTE
+          reread: 'Läs om:'
+          rereadBook: LÄS OM (BOK)
         chapter:
-          empty: "Det här kapitlet är tomt."
-          back: "Tillbaka till innehållet"
-          count: "Antal"
-          rereadBook: "LÄS OM (BOK)"
-          successTitle: "◆ SUCCESS ◆"
-          successSub: "Pallprotokoll"
-          timeupTitle: "◆ TIME_UP ◆"
-          timeupSub: "Dikter av det ofullbordade ekot"
-          otherSub: "Samlade loggar"
+          empty: Det här kapitlet är tomt.
+          back: Tillbaka till innehållet
+          count: Antal
+          rereadBook: LÄS OM (BOK)
+          successTitle: ◆ SUCCESS ◆
+          successSub: Pallprotokoll
+          timeupTitle: ◆ TIME_UP ◆
+          timeupSub: Dikter av det ofullbordade ekot
+          otherSub: Samlade loggar
           pageTemplate:
             success:
-              - |-
-                §b§l◆ SUCCESS ◆
-                §7Pallprotokoll
+            - '§b§l◆ SUCCESS ◆
 
-                §fHär arkiveras dina
-                §fsegerloggar som sparats som favoriter.
+              §7Pallprotokoll
 
-                §7・Ta bort: klicka [Ta bort] i boken
-                §7・Läs om: återvänd via slumpmässig omläsning
+
+              §fHär arkiveras dina
+
+              §fsegerloggar som sparats som favoriter.
+
+
+              §7・Ta bort: klicka [Ta bort] i boken
+
+              §7・Läs om: återvänd via slumpmässig omläsning'
             timeup:
-              - |-
-                §b§l◆ TIME_UP ◆
-                §7Dikter av det ofullbordade ekot
+            - '§b§l◆ TIME_UP ◆
 
-                §fHär stannar efterklangen
-                §fnär tiden tar slut.
+              §7Dikter av det ofullbordade ekot
 
-                §7・Ta bort: klicka [Ta bort] i boken
-                §7・Läs om: återvänd via slumpmässig omläsning
+
+              §fHär stannar efterklangen
+
+              §fnär tiden tar slut.
+
+
+              §7・Ta bort: klicka [Ta bort] i boken
+
+              §7・Läs om: återvänd via slumpmässig omläsning'
             other:
-              - |-
-                §b§l◆ ARKIV ◆
-                §7Samlade loggar
+            - '§b§l◆ ARKIV ◆
 
-                §fSparade citat och fragment
-                §fsamlas här.
+              §7Samlade loggar
 
-                §7・Ta bort: klicka [Ta bort] i boken
 
+              §fSparade citat och fragment
+
+              §fsamlas här.
+
+
+              §7・Ta bort: klicka [Ta bort] i boken'
     es:
       favorites:
-        title: "Archivo de Favoritos de TreasureRun"
-        remove: "Eliminar"
+        title: Archivo de Favoritos de TreasureRun
+        remove: Eliminar
         cover:
-          head: "Archivo TreasureRun"
-          sub: "Catálogo de Favoritos"
-          badge: "◆ FAVORITOS ◆"
-          countLabel: "Favoritos"
-          hint: "Haz clic para abrir capítulos"
-          openToc: "Abrir índice"
-          reread: "Releer (Aleatorio)"
+          head: Archivo TreasureRun
+          sub: Catálogo de Favoritos
+          badge: ◆ FAVORITOS ◆
+          countLabel: Favoritos
+          hint: Haz clic para abrir capítulos
+          openToc: Abrir índice
+          reread: Releer (Aleatorio)
         toc:
-          head: "Archivo TreasureRun"
-          sub: "Catálogo / Índice"
-          howto: "Cómo usar:"
-          howtoShift: "Shift + clic derecho para abrir"
-          clickable: "Capítulos (clicables)"
-          rereadTitle: "Modo relectura"
-          reread: "RELEER (LIBRO)"
-          manage: "Gestión:"
+          head: Archivo TreasureRun
+          sub: Catálogo / Índice
+          howto: 'Cómo usar:'
+          howtoShift: Shift + clic derecho para abrir
+          clickable: Capítulos (clicables)
+          rereadTitle: Modo relectura
+          reread: RELEER (LIBRO)
+          manage: 'Gestión:'
         empty:
-          head: "Archivo TreasureRun"
-          sub: "Catálogo de Favoritos"
-          noFav: "Aún no hay favoritos."
-          noFavSub: "Clic derecho para guardar la última cita."
-          saveHow: "Cómo guardar:"
-          saveHow1: "Sostén el libro de reglas"
-          saveHow2: "Clic derecho → guardar la última cita"
-          tryNow: "Probar:"
-          saveLatest: "GUARDAR ÚLTIMA"
-          reread: "Releer:"
-          rereadBook: "RELEER (LIBRO)"
+          head: Archivo TreasureRun
+          sub: Catálogo de Favoritos
+          noFav: Aún no hay favoritos.
+          noFavSub: Clic derecho para guardar la última cita.
+          saveHow: 'Cómo guardar:'
+          saveHow1: Sostén el libro de reglas
+          saveHow2: Clic derecho → guardar la última cita
+          tryNow: 'Probar:'
+          saveLatest: GUARDAR ÚLTIMA
+          reread: 'Releer:'
+          rereadBook: RELEER (LIBRO)
         chapter:
-          empty: "Este capítulo está vacío."
-          back: "Volver al índice"
-          count: "Cantidad"
-          rereadBook: "RELEER (LIBRO)"
-          successTitle: "◆ SUCCESS ◆"
-          successSub: "Registros del Podio"
-          timeupTitle: "◆ TIME_UP ◆"
-          timeupSub: "Poemas del eco inacabado"
-          otherSub: "Registros recopilados"
+          empty: Este capítulo está vacío.
+          back: Volver al índice
+          count: Cantidad
+          rereadBook: RELEER (LIBRO)
+          successTitle: ◆ SUCCESS ◆
+          successSub: Registros del Podio
+          timeupTitle: ◆ TIME_UP ◆
+          timeupSub: Poemas del eco inacabado
+          otherSub: Registros recopilados
           pageTemplate:
             success:
-              - |-
-                §b§l◆ SUCCESS ◆
-                §7Registros del Podio
+            - '§b§l◆ SUCCESS ◆
 
-                §fEste capítulo archiva
-                §ftus registros de victoria guardados en favoritos.
+              §7Registros del Podio
 
-                §7・Eliminar: haz clic en [Eliminar] en el libro
-                §7・Releer: vuelve con la relectura aleatoria
+
+              §fEste capítulo archiva
+
+              §ftus registros de victoria guardados en favoritos.
+
+
+              §7・Eliminar: haz clic en [Eliminar] en el libro
+
+              §7・Releer: vuelve con la relectura aleatoria'
             timeup:
-              - |-
-                §b§l◆ TIME_UP ◆
-                §7Poemas del eco inacabado
+            - '§b§l◆ TIME_UP ◆
 
-                §fAquí queda el eco
-                §fcuando el tiempo se termina.
+              §7Poemas del eco inacabado
 
-                §7・Eliminar: haz clic en [Eliminar] en el libro
-                §7・Releer: vuelve con la relectura aleatoria
+
+              §fAquí queda el eco
+
+              §fcuando el tiempo se termina.
+
+
+              §7・Eliminar: haz clic en [Eliminar] en el libro
+
+              §7・Releer: vuelve con la relectura aleatoria'
             other:
-              - |-
-                §b§l◆ ARCHIVO ◆
-                §7Registros recopilados
+            - '§b§l◆ ARCHIVO ◆
 
-                §fCitas y fragmentos guardados
-                §fse reúnen aquí.
+              §7Registros recopilados
 
-                §7・Eliminar: haz clic en [Eliminar] en el libro
 
+              §fCitas y fragmentos guardados
+
+              §fse reúnen aquí.
+
+
+              §7・Eliminar: haz clic en [Eliminar] en el libro'
     la:
       favorites:
-        title: "Tabularium Favoritorum TreasureRun"
-        remove: "Aufer"
+        title: Tabularium Favoritorum TreasureRun
+        remove: Aufer
         cover:
-          head: "Tabularium TreasureRun"
-          sub: "Catalogus Favoritorum"
-          badge: "◆ FAVORITA ◆"
-          countLabel: "Favorita"
-          hint: "Preme ut capitula aperias"
-          openToc: "Aperi indicem"
-          reread: "Relege (Fortuna)"
+          head: Tabularium TreasureRun
+          sub: Catalogus Favoritorum
+          badge: ◆ FAVORITA ◆
+          countLabel: Favorita
+          hint: Preme ut capitula aperias
+          openToc: Aperi indicem
+          reread: Relege (Fortuna)
         toc:
-          head: "Tabularium TreasureRun"
-          sub: "Catalogus / Index"
-          howto: "Usus:"
-          howtoShift: "Shift + dexter cliccare ut aperias"
-          clickable: "Capitula (cliccabilia)"
-          rereadTitle: "Modus Relectionis"
-          reread: "RELEGE (LIBER)"
-          manage: "Administratio:"
+          head: Tabularium TreasureRun
+          sub: Catalogus / Index
+          howto: 'Usus:'
+          howtoShift: Shift + dexter cliccare ut aperias
+          clickable: Capitula (cliccabilia)
+          rereadTitle: Modus Relectionis
+          reread: RELEGE (LIBER)
+          manage: 'Administratio:'
         empty:
-          head: "Tabularium TreasureRun"
-          sub: "Catalogus Favoritorum"
-          noFav: "Nondum sunt favorita."
-          noFavSub: "Dexter cliccare servat recentissimum dictum."
-          saveHow: "Servare:"
-          saveHow1: "Librum regularum tene"
-          saveHow2: "Dexter cliccare → serve recentissimum dictum"
-          tryNow: "Experire:"
-          saveLatest: "SERVA RECENTISSIMUM"
-          reread: "Relege:"
-          rereadBook: "RELEGE (LIBER)"
+          head: Tabularium TreasureRun
+          sub: Catalogus Favoritorum
+          noFav: Nondum sunt favorita.
+          noFavSub: Dexter cliccare servat recentissimum dictum.
+          saveHow: 'Servare:'
+          saveHow1: Librum regularum tene
+          saveHow2: Dexter cliccare → serve recentissimum dictum
+          tryNow: 'Experire:'
+          saveLatest: SERVA RECENTISSIMUM
+          reread: 'Relege:'
+          rereadBook: RELEGE (LIBER)
         chapter:
-          empty: "Hoc capitulum vacuum est."
-          back: "Redi ad indicem"
-          count: "Numerus"
-          rereadBook: "RELEGE (LIBER)"
-          successTitle: "◆ SUCCESS ◆"
-          successSub: "Acta Podii"
-          timeupTitle: "◆ TIME_UP ◆"
-          timeupSub: "Carmina Echi Inperfecti"
-          otherSub: "Acta Collecta"
+          empty: Hoc capitulum vacuum est.
+          back: Redi ad indicem
+          count: Numerus
+          rereadBook: RELEGE (LIBER)
+          successTitle: ◆ SUCCESS ◆
+          successSub: Acta Podii
+          timeupTitle: ◆ TIME_UP ◆
+          timeupSub: Carmina Echi Inperfecti
+          otherSub: Acta Collecta
           pageTemplate:
             success:
-              - |-
-                §b§l◆ SUCCESS ◆
-                §7Acta Podii
+            - '§b§l◆ SUCCESS ◆
 
-                §fHic servantur acta victoriae
-                §fquae in favoritīs condita sunt.
+              §7Acta Podii
 
-                §7・Aufer: preme [Aufer] in libro
-                §7・Relege: per relectionem fortuitam revises
+
+              §fHic servantur acta victoriae
+
+              §fquae in favoritīs condita sunt.
+
+
+              §7・Aufer: preme [Aufer] in libro
+
+              §7・Relege: per relectionem fortuitam revises'
             timeup:
-              - |-
-                §b§l◆ TIME_UP ◆
-                §7Carmina Echi Inperfecti
+            - '§b§l◆ TIME_UP ◆
 
-                §fHic manet resonantia
-                §fcum tempus deficit.
+              §7Carmina Echi Inperfecti
 
-                §7・Aufer: preme [Aufer] in libro
-                §7・Relege: per relectionem fortuitam revises
+
+              §fHic manet resonantia
+
+              §fcum tempus deficit.
+
+
+              §7・Aufer: preme [Aufer] in libro
+
+              §7・Relege: per relectionem fortuitam revises'
             other:
-              - |-
-                §b§l◆ TABULARIUM ◆
-                §7Acta Collecta
+            - '§b§l◆ TABULARIUM ◆
 
-                §fDicta et fragmenta condita
-                §fhic colliguntur.
+              §7Acta Collecta
 
-                §7・Aufer: preme [Aufer] in libro
 
+              §fDicta et fragmenta condita
+
+              §fhic colliguntur.
+
+
+              §7・Aufer: preme [Aufer] in libro'
     is:
       favorites:
-        title: "TreasureRun Uppáhalda-safn"
-        remove: "Fjarlægja"
+        title: TreasureRun Uppáhalda-safn
+        remove: Fjarlægja
         cover:
-          head: "TreasureRun Safn"
-          sub: "Uppáhalda-skrá"
-          badge: "◆ UPPÁHALD ◆"
-          countLabel: "Uppáhald"
-          hint: "Smelltu til að opna kafla"
-          openToc: "Opna efnisyfirlit"
-          reread: "Endurlesa (Handahófskennt)"
+          head: TreasureRun Safn
+          sub: Uppáhalda-skrá
+          badge: ◆ UPPÁHALD ◆
+          countLabel: Uppáhald
+          hint: Smelltu til að opna kafla
+          openToc: Opna efnisyfirlit
+          reread: Endurlesa (Handahófskennt)
         toc:
-          head: "TreasureRun Safn"
-          sub: "Skrá / Efnisyfirlit"
-          howto: "Notkun:"
-          howtoShift: "Shift + hægri smellur til að opna"
-          clickable: "Kaflar (smellanlegir)"
-          rereadTitle: "Endurlestrarhamur"
-          reread: "ENDURLESA (BÓK)"
-          manage: "Stjórnun:"
+          head: TreasureRun Safn
+          sub: Skrá / Efnisyfirlit
+          howto: 'Notkun:'
+          howtoShift: Shift + hægri smellur til að opna
+          clickable: Kaflar (smellanlegir)
+          rereadTitle: Endurlestrarhamur
+          reread: ENDURLESA (BÓK)
+          manage: 'Stjórnun:'
         empty:
-          head: "TreasureRun Safn"
-          sub: "Uppáhalda-skrá"
-          noFav: "Engin uppáhald enn."
-          noFavSub: "Hægri smellur vistar nýjustu tilvitnun."
-          saveHow: "Hvernig á að vista:"
-          saveHow1: "Haltu reglubókinni"
-          saveHow2: "Hægri smellur → vista nýjustu tilvitnun"
-          tryNow: "Prófa núna:"
-          saveLatest: "VISTA NÝJUSTU"
-          reread: "Endurlesa:"
-          rereadBook: "ENDURLESA (BÓK)"
+          head: TreasureRun Safn
+          sub: Uppáhalda-skrá
+          noFav: Engin uppáhald enn.
+          noFavSub: Hægri smellur vistar nýjustu tilvitnun.
+          saveHow: 'Hvernig á að vista:'
+          saveHow1: Haltu reglubókinni
+          saveHow2: Hægri smellur → vista nýjustu tilvitnun
+          tryNow: 'Prófa núna:'
+          saveLatest: VISTA NÝJUSTU
+          reread: 'Endurlesa:'
+          rereadBook: ENDURLESA (BÓK)
         chapter:
-          empty: "Þessi kafli er tómur."
-          back: "Aftur í efnisyfirlit"
-          count: "Fjöldi"
-          rereadBook: "ENDURLESA (BÓK)"
-          successTitle: "◆ SUCCESS ◆"
-          successSub: "Verðlaunapalls-skrár"
-          timeupTitle: "◆ TIME_UP ◆"
-          timeupSub: "Ljóð ólokinnar endurómunar"
-          otherSub: "Safnaðar skrár"
+          empty: Þessi kafli er tómur.
+          back: Aftur í efnisyfirlit
+          count: Fjöldi
+          rereadBook: ENDURLESA (BÓK)
+          successTitle: ◆ SUCCESS ◆
+          successSub: Verðlaunapalls-skrár
+          timeupTitle: ◆ TIME_UP ◆
+          timeupSub: Ljóð ólokinnar endurómunar
+          otherSub: Safnaðar skrár
           pageTemplate:
             success:
-              - |-
-                §b§l◆ SUCCESS ◆
-                §7Verðlaunapalls-skrár
+            - '§b§l◆ SUCCESS ◆
 
-                §fHér eru geymdar
-                §fuppáhalds sigurskrár þínar.
+              §7Verðlaunapalls-skrár
 
-                §7・Fjarlægja: smelltu á [Fjarlægja] í bókinni
-                §7・Endurlesa: heimsækja aftur með handahófs-endurlestri
+
+              §fHér eru geymdar
+
+              §fuppáhalds sigurskrár þínar.
+
+
+              §7・Fjarlægja: smelltu á [Fjarlægja] í bókinni
+
+              §7・Endurlesa: heimsækja aftur með handahófs-endurlestri'
             timeup:
-              - |-
-                §b§l◆ TIME_UP ◆
-                §7Ljóð ólokinnar endurómunar
+            - '§b§l◆ TIME_UP ◆
 
-                §fHér lifir endurómunin
-                §fþegar tíminn rennur út.
+              §7Ljóð ólokinnar endurómunar
 
-                §7・Fjarlægja: smelltu á [Fjarlægja] í bókinni
-                §7・Endurlesa: heimsækja aftur með handahófs-endurlestri
+
+              §fHér lifir endurómunin
+
+              §fþegar tíminn rennur út.
+
+
+              §7・Fjarlægja: smelltu á [Fjarlægja] í bókinni
+
+              §7・Endurlesa: heimsækja aftur með handahófs-endurlestri'
             other:
-              - |-
-                §b§l◆ SAFN ◆
-                §7Safnaðar skrár
+            - '§b§l◆ SAFN ◆
 
-                §fVistuð tilvitnun og brot
-                §feru safnað hér.
+              §7Safnaðar skrár
 
-                §7・Fjarlægja: smelltu á [Fjarlægja] í bókinni
 
+              §fVistuð tilvitnun og brot
+
+              §feru safnað hér.
+
+
+              §7・Fjarlægja: smelltu á [Fjarlægja] í bókinni'
     fi:
       favorites:
-        title: "TreasureRun Suosikkiarkisto"
-        remove: "Poista"
+        title: TreasureRun Suosikkiarkisto
+        remove: Poista
         cover:
-          head: "TreasureRun Arkisto"
-          sub: "Suosikkiluettelo"
-          badge: "◆ SUOSIKIT ◆"
-          countLabel: "Suosikit"
-          hint: "Avaa luvut klikkaamalla"
-          openToc: "Avaa sisällysluettelo"
-          reread: "Lue uudelleen (Satunnainen)"
+          head: TreasureRun Arkisto
+          sub: Suosikkiluettelo
+          badge: ◆ SUOSIKIT ◆
+          countLabel: Suosikit
+          hint: Avaa luvut klikkaamalla
+          openToc: Avaa sisällysluettelo
+          reread: Lue uudelleen (Satunnainen)
         toc:
-          head: "TreasureRun Arkisto"
-          sub: "Luettelo / Sisällys"
-          howto: "Ohje:"
-          howtoShift: "Shift + oikea klikkaus avaa"
-          clickable: "Luvut (klikattavat)"
-          rereadTitle: "Uudelleenluku"
-          reread: "LUE UUDELLEEN (KIRJA)"
-          manage: "Hallinta:"
+          head: TreasureRun Arkisto
+          sub: Luettelo / Sisällys
+          howto: 'Ohje:'
+          howtoShift: Shift + oikea klikkaus avaa
+          clickable: Luvut (klikattavat)
+          rereadTitle: Uudelleenluku
+          reread: LUE UUDELLEEN (KIRJA)
+          manage: 'Hallinta:'
         empty:
-          head: "TreasureRun Arkisto"
-          sub: "Suosikkiluettelo"
-          noFav: "Ei suosikkeja vielä."
-          noFavSub: "Oikea klikkaus tallentaa uusimman sitaatin."
-          saveHow: "Tallennus:"
-          saveHow1: "Pidä sääntökirjaa kädessä"
-          saveHow2: "Oikea klikkaus → tallenna uusin sitaatti"
-          tryNow: "Kokeile:"
-          saveLatest: "TALLENNA UUSIN"
-          reread: "Lue uudelleen:"
-          rereadBook: "LUE UUDELLEEN (KIRJA)"
+          head: TreasureRun Arkisto
+          sub: Suosikkiluettelo
+          noFav: Ei suosikkeja vielä.
+          noFavSub: Oikea klikkaus tallentaa uusimman sitaatin.
+          saveHow: 'Tallennus:'
+          saveHow1: Pidä sääntökirjaa kädessä
+          saveHow2: Oikea klikkaus → tallenna uusin sitaatti
+          tryNow: 'Kokeile:'
+          saveLatest: TALLENNA UUSIN
+          reread: 'Lue uudelleen:'
+          rereadBook: LUE UUDELLEEN (KIRJA)
         chapter:
-          empty: "Tämä luku on tyhjä."
-          back: "Takaisin sisällysluetteloon"
-          count: "Määrä"
-          rereadBook: "LUE UUDELLEEN (KIRJA)"
-          successTitle: "◆ SUCCESS ◆"
-          successSub: "Palkintokorokkeen lokit"
-          timeupTitle: "◆ TIME_UP ◆"
-          timeupSub: "Kesken jääneen kaiun runot"
-          otherSub: "Kerätyt lokit"
+          empty: Tämä luku on tyhjä.
+          back: Takaisin sisällysluetteloon
+          count: Määrä
+          rereadBook: LUE UUDELLEEN (KIRJA)
+          successTitle: ◆ SUCCESS ◆
+          successSub: Palkintokorokkeen lokit
+          timeupTitle: ◆ TIME_UP ◆
+          timeupSub: Kesken jääneen kaiun runot
+          otherSub: Kerätyt lokit
           pageTemplate:
             success:
-              - |-
-                §b§l◆ SUCCESS ◆
-                §7Palkintokorokkeen lokit
+            - '§b§l◆ SUCCESS ◆
 
-                §fTähän arkistoidaan
-                §fsuosikkeihin tallennetut voittomerkinnät.
+              §7Palkintokorokkeen lokit
 
-                §7・Poista: klikkaa [Poista] kirjassa
-                §7・Uudelleenluku: palaa satunnaisella uudelleenluvulla
+
+              §fTähän arkistoidaan
+
+              §fsuosikkeihin tallennetut voittomerkinnät.
+
+
+              §7・Poista: klikkaa [Poista] kirjassa
+
+              §7・Uudelleenluku: palaa satunnaisella uudelleenluvulla'
             timeup:
-              - |-
-                §b§l◆ TIME_UP ◆
-                §7Kesken jääneen kaiun runot
+            - '§b§l◆ TIME_UP ◆
 
-                §fTähän jää jälkikaiku
-                §fkun aika loppuu.
+              §7Kesken jääneen kaiun runot
 
-                §7・Poista: klikkaa [Poista] kirjassa
-                §7・Uudelleenluku: palaa satunnaisella uudelleenluvulla
+
+              §fTähän jää jälkikaiku
+
+              §fkun aika loppuu.
+
+
+              §7・Poista: klikkaa [Poista] kirjassa
+
+              §7・Uudelleenluku: palaa satunnaisella uudelleenluvulla'
             other:
-              - |-
-                §b§l◆ ARKISTO ◆
-                §7Kerätyt lokit
+            - '§b§l◆ ARKISTO ◆
 
-                §fTallennetut sitaatit ja katkelmat
-                §fkerätään tänne.
+              §7Kerätyt lokit
 
-                §7・Poista: klikkaa [Poista] kirjassa
 
+              §fTallennetut sitaatit ja katkelmat
+
+              §fkerätään tänne.
+
+
+              §7・Poista: klikkaa [Poista] kirjassa'
     nl:
       favorites:
-        title: "TreasureRun Favorietenarchief"
-        remove: "Verwijderen"
+        title: TreasureRun Favorietenarchief
+        remove: Verwijderen
         cover:
-          head: "TreasureRun Archief"
-          sub: "Favorieten Catalogus"
-          badge: "◆ FAVORIETEN ◆"
-          countLabel: "Favorieten"
-          hint: "Klik om hoofdstukken te openen"
-          openToc: "Inhoud openen"
-          reread: "Opnieuw lezen (Willekeurig)"
+          head: TreasureRun Archief
+          sub: Favorieten Catalogus
+          badge: ◆ FAVORIETEN ◆
+          countLabel: Favorieten
+          hint: Klik om hoofdstukken te openen
+          openToc: Inhoud openen
+          reread: Opnieuw lezen (Willekeurig)
         toc:
-          head: "TreasureRun Archief"
-          sub: "Catalogus / Inhoud"
-          howto: "Gebruik:"
-          howtoShift: "Shift + rechtsklik om te openen"
-          clickable: "Hoofdstukken (klikbaar)"
-          rereadTitle: "Herleesmodus"
-          reread: "HERLEES (BOEK)"
-          manage: "Beheer:"
+          head: TreasureRun Archief
+          sub: Catalogus / Inhoud
+          howto: 'Gebruik:'
+          howtoShift: Shift + rechtsklik om te openen
+          clickable: Hoofdstukken (klikbaar)
+          rereadTitle: Herleesmodus
+          reread: HERLEES (BOEK)
+          manage: 'Beheer:'
         empty:
-          head: "TreasureRun Archief"
-          sub: "Favorieten Catalogus"
-          noFav: "Nog geen favorieten."
-          noFavSub: "Rechtsklik om het laatste citaat op te slaan."
-          saveHow: "Opslaan:"
-          saveHow1: "Houd het regelboek vast"
-          saveHow2: "Rechtsklik → laatste citaat opslaan"
-          tryNow: "Probeer:"
-          saveLatest: "LAATSTE OPSLAAN"
-          reread: "Herlezen:"
-          rereadBook: "HERLEES (BOEK)"
+          head: TreasureRun Archief
+          sub: Favorieten Catalogus
+          noFav: Nog geen favorieten.
+          noFavSub: Rechtsklik om het laatste citaat op te slaan.
+          saveHow: 'Opslaan:'
+          saveHow1: Houd het regelboek vast
+          saveHow2: Rechtsklik → laatste citaat opslaan
+          tryNow: 'Probeer:'
+          saveLatest: LAATSTE OPSLAAN
+          reread: 'Herlezen:'
+          rereadBook: HERLEES (BOEK)
         chapter:
-          empty: "Dit hoofdstuk is leeg."
-          back: "Terug naar inhoud"
-          count: "Aantal"
-          rereadBook: "HERLEES (BOEK)"
-          successTitle: "◆ SUCCESS ◆"
-          successSub: "Podiumlogs"
-          timeupTitle: "◆ TIME_UP ◆"
-          timeupSub: "Gedichten van de onvoltooide echo"
-          otherSub: "Verzamelde logs"
+          empty: Dit hoofdstuk is leeg.
+          back: Terug naar inhoud
+          count: Aantal
+          rereadBook: HERLEES (BOEK)
+          successTitle: ◆ SUCCESS ◆
+          successSub: Podiumlogs
+          timeupTitle: ◆ TIME_UP ◆
+          timeupSub: Gedichten van de onvoltooide echo
+          otherSub: Verzamelde logs
           pageTemplate:
             success:
-              - |-
-                §b§l◆ SUCCESS ◆
-                §7Podiumlogs
+            - '§b§l◆ SUCCESS ◆
 
-                §fDit hoofdstuk bewaart
-                §fje overwinningslogs die als favoriet zijn opgeslagen.
+              §7Podiumlogs
 
-                §7・Verwijderen: klik [Verwijderen] in het boek
-                §7・Herlezen: keer terug via willekeurige herlezing
+
+              §fDit hoofdstuk bewaart
+
+              §fje overwinningslogs die als favoriet zijn opgeslagen.
+
+
+              §7・Verwijderen: klik [Verwijderen] in het boek
+
+              §7・Herlezen: keer terug via willekeurige herlezing'
             timeup:
-              - |-
-                §b§l◆ TIME_UP ◆
-                §7Gedichten van de onvoltooide echo
+            - '§b§l◆ TIME_UP ◆
 
-                §fHier blijft de nagalm
-                §fals de tijd op is.
+              §7Gedichten van de onvoltooide echo
 
-                §7・Verwijderen: klik [Verwijderen] in het boek
-                §7・Herlezen: keer terug via willekeurige herlezing
+
+              §fHier blijft de nagalm
+
+              §fals de tijd op is.
+
+
+              §7・Verwijderen: klik [Verwijderen] in het boek
+
+              §7・Herlezen: keer terug via willekeurige herlezing'
             other:
-              - |-
-                §b§l◆ ARCHIEF ◆
-                §7Verzamelde logs
+            - '§b§l◆ ARCHIEF ◆
 
-                §fOpgeslagen citaten en fragmenten
-                §fworden hier verzameld.
+              §7Verzamelde logs
 
-                §7・Verwijderen: klik [Verwijderen] in het boek
 
+              §fOpgeslagen citaten en fragmenten
+
+              §fworden hier verzameld.
+
+
+              §7・Verwijderen: klik [Verwijderen] in het boek'
     fr:
       favorites:
-        title: "Archives des Favoris TreasureRun"
-        remove: "Supprimer"
+        title: Archives des Favoris TreasureRun
+        remove: Supprimer
         cover:
-          head: "Archives TreasureRun"
-          sub: "Catalogue des Favoris"
-          badge: "◆ FAVORIS ◆"
-          countLabel: "Favoris"
-          hint: "Cliquez pour ouvrir les chapitres"
-          openToc: "Ouvrir la table des matières"
-          reread: "Relire (Aléatoire)"
+          head: Archives TreasureRun
+          sub: Catalogue des Favoris
+          badge: ◆ FAVORIS ◆
+          countLabel: Favoris
+          hint: Cliquez pour ouvrir les chapitres
+          openToc: Ouvrir la table des matières
+          reread: Relire (Aléatoire)
         toc:
-          head: "Archives TreasureRun"
-          sub: "Catalogue / Sommaire"
-          howto: "Utilisation :"
-          howtoShift: "Maj + clic droit pour ouvrir"
-          clickable: "Chapitres (cliquables)"
-          rereadTitle: "Mode relecture"
-          reread: "RELIRE (LIVRE)"
-          manage: "Gestion :"
+          head: Archives TreasureRun
+          sub: Catalogue / Sommaire
+          howto: 'Utilisation :'
+          howtoShift: Maj + clic droit pour ouvrir
+          clickable: Chapitres (cliquables)
+          rereadTitle: Mode relecture
+          reread: RELIRE (LIVRE)
+          manage: 'Gestion :'
         empty:
-          head: "Archives TreasureRun"
-          sub: "Catalogue des Favoris"
-          noFav: "Aucun favori pour le moment."
-          noFavSub: "Clic droit pour enregistrer la dernière citation."
-          saveHow: "Comment enregistrer :"
-          saveHow1: "Tenez le livre des règles"
-          saveHow2: "Clic droit → enregistrer la dernière citation"
-          tryNow: "Essayer :"
-          saveLatest: "ENREGISTRER LA DERNIÈRE"
-          reread: "Relire :"
-          rereadBook: "RELIRE (LIVRE)"
+          head: Archives TreasureRun
+          sub: Catalogue des Favoris
+          noFav: Aucun favori pour le moment.
+          noFavSub: Clic droit pour enregistrer la dernière citation.
+          saveHow: 'Comment enregistrer :'
+          saveHow1: Tenez le livre des règles
+          saveHow2: Clic droit → enregistrer la dernière citation
+          tryNow: 'Essayer :'
+          saveLatest: ENREGISTRER LA DERNIÈRE
+          reread: 'Relire :'
+          rereadBook: RELIRE (LIVRE)
         chapter:
-          empty: "Ce chapitre est vide."
-          back: "Retour au sommaire"
-          count: "Nombre"
-          rereadBook: "RELIRE (LIVRE)"
-          successTitle: "◆ SUCCESS ◆"
-          successSub: "Journal du Podium"
-          timeupTitle: "◆ TIME_UP ◆"
-          timeupSub: "Poèmes de l’écho inachevé"
-          otherSub: "Logs collectés"
+          empty: Ce chapitre est vide.
+          back: Retour au sommaire
+          count: Nombre
+          rereadBook: RELIRE (LIVRE)
+          successTitle: ◆ SUCCESS ◆
+          successSub: Journal du Podium
+          timeupTitle: ◆ TIME_UP ◆
+          timeupSub: Poèmes de l’écho inachevé
+          otherSub: Logs collectés
           pageTemplate:
             success:
-              - |-
-                §b§l◆ SUCCESS ◆
-                §7Journal du Podium
+            - '§b§l◆ SUCCESS ◆
 
-                §fCe chapitre archive
-                §fvos victoires enregistrées en favoris.
+              §7Journal du Podium
 
-                §7・Supprimer : cliquez [Supprimer] dans le livre
-                §7・Relire : revenir via la relecture aléatoire
+
+              §fCe chapitre archive
+
+              §fvos victoires enregistrées en favoris.
+
+
+              §7・Supprimer : cliquez [Supprimer] dans le livre
+
+              §7・Relire : revenir via la relecture aléatoire'
             timeup:
-              - |-
-                §b§l◆ TIME_UP ◆
-                §7Poèmes de l’écho inachevé
+            - '§b§l◆ TIME_UP ◆
 
-                §fIci demeure l’écho
-                §florsque le temps s’éteint.
+              §7Poèmes de l’écho inachevé
 
-                §7・Supprimer : cliquez [Supprimer] dans le livre
-                §7・Relire : revenir via la relecture aléatoire
+
+              §fIci demeure l’écho
+
+              §florsque le temps s’éteint.
+
+
+              §7・Supprimer : cliquez [Supprimer] dans le livre
+
+              §7・Relire : revenir via la relecture aléatoire'
             other:
-              - |-
-                §b§l◆ ARCHIVES ◆
-                §7Logs collectés
+            - '§b§l◆ ARCHIVES ◆
 
-                §fCitations et fragments sauvegardés
-                §fsont rassemblés ici.
+              §7Logs collectés
 
-                §7・Supprimer : cliquez [Supprimer] dans le livre
 
+              §fCitations et fragments sauvegardés
+
+              §fsont rassemblés ici.
+
+
+              §7・Supprimer : cliquez [Supprimer] dans le livre'
     ru:
       favorites:
-        title: "Архив избранного TreasureRun"
-        remove: "Удалить"
+        title: Архив избранного TreasureRun
+        remove: Удалить
         cover:
-          head: "Архив TreasureRun"
-          sub: "Каталог избранного"
-          badge: "◆ ИЗБРАННОЕ ◆"
-          countLabel: "Избранное"
-          hint: "Нажмите, чтобы открыть главы"
-          openToc: "Открыть оглавление"
-          reread: "Перечитать (Случайно)"
+          head: Архив TreasureRun
+          sub: Каталог избранного
+          badge: ◆ ИЗБРАННОЕ ◆
+          countLabel: Избранное
+          hint: Нажмите, чтобы открыть главы
+          openToc: Открыть оглавление
+          reread: Перечитать (Случайно)
         toc:
-          head: "Архив TreasureRun"
-          sub: "Каталог / Оглавление"
-          howto: "Как пользоваться:"
-          howtoShift: "Shift + ПКМ для открытия"
-          clickable: "Главы (кликабельны)"
-          rereadTitle: "Режим перечитывания"
-          reread: "ПЕРЕЧИТАТЬ (КНИГА)"
-          manage: "Управление:"
+          head: Архив TreasureRun
+          sub: Каталог / Оглавление
+          howto: 'Как пользоваться:'
+          howtoShift: Shift + ПКМ для открытия
+          clickable: Главы (кликабельны)
+          rereadTitle: Режим перечитывания
+          reread: ПЕРЕЧИТАТЬ (КНИГА)
+          manage: 'Управление:'
         empty:
-          head: "Архив TreasureRun"
-          sub: "Каталог избранного"
-          noFav: "Пока нет избранного."
-          noFavSub: "ПКМ — сохранить последнюю цитату."
-          saveHow: "Как сохранить:"
-          saveHow1: "Держите книгу правил"
-          saveHow2: "ПКМ → сохранить последнюю цитату"
-          tryNow: "Попробовать:"
-          saveLatest: "СОХРАНИТЬ ПОСЛЕДНЮЮ"
-          reread: "Перечитать:"
-          rereadBook: "ПЕРЕЧИТАТЬ (КНИГА)"
+          head: Архив TreasureRun
+          sub: Каталог избранного
+          noFav: Пока нет избранного.
+          noFavSub: ПКМ — сохранить последнюю цитату.
+          saveHow: 'Как сохранить:'
+          saveHow1: Держите книгу правил
+          saveHow2: ПКМ → сохранить последнюю цитату
+          tryNow: 'Попробовать:'
+          saveLatest: СОХРАНИТЬ ПОСЛЕДНЮЮ
+          reread: 'Перечитать:'
+          rereadBook: ПЕРЕЧИТАТЬ (КНИГА)
         chapter:
-          empty: "Эта глава пуста."
-          back: "Назад к оглавлению"
-          count: "Количество"
-          rereadBook: "ПЕРЕЧИТАТЬ (КНИГА)"
-          successTitle: "◆ SUCCESS ◆"
-          successSub: "Записи пьедестала"
-          timeupTitle: "◆ TIME_UP ◆"
-          timeupSub: "Стихи незавершённого эха"
-          otherSub: "Собранные записи"
+          empty: Эта глава пуста.
+          back: Назад к оглавлению
+          count: Количество
+          rereadBook: ПЕРЕЧИТАТЬ (КНИГА)
+          successTitle: ◆ SUCCESS ◆
+          successSub: Записи пьедестала
+          timeupTitle: ◆ TIME_UP ◆
+          timeupSub: Стихи незавершённого эха
+          otherSub: Собранные записи
           pageTemplate:
             success:
-              - |-
-                §b§l◆ SUCCESS ◆
-                §7Записи пьедестала
+            - '§b§l◆ SUCCESS ◆
 
-                §fЗдесь хранятся
-                §fизбранные записи побед.
+              §7Записи пьедестала
 
-                §7・Удалить: нажмите [Удалить] в книге
-                §7・Перечитать: вернитесь через случайное перечитывание
+
+              §fЗдесь хранятся
+
+              §fизбранные записи побед.
+
+
+              §7・Удалить: нажмите [Удалить] в книге
+
+              §7・Перечитать: вернитесь через случайное перечитывание'
             timeup:
-              - |-
-                §b§l◆ TIME_UP ◆
-                §7Стихи незавершённого эха
+            - '§b§l◆ TIME_UP ◆
 
-                §fЗдесь остаётся эхо,
-                §fкогда время истекает.
+              §7Стихи незавершённого эха
 
-                §7・Удалить: нажмите [Удалить] в книге
-                §7・Перечитать: вернитесь через случайное перечитывание
+
+              §fЗдесь остаётся эхо,
+
+              §fкогда время истекает.
+
+
+              §7・Удалить: нажмите [Удалить] в книге
+
+              §7・Перечитать: вернитесь через случайное перечитывание'
             other:
-              - |-
-                §b§l◆ АРХИВ ◆
-                §7Собранные записи
+            - '§b§l◆ АРХИВ ◆
 
-                §fСохранённые цитаты и фрагменты
-                §fсобраны здесь.
+              §7Собранные записи
 
-                §7・Удалить: нажмите [Удалить] в книге
 
+              §fСохранённые цитаты и фрагменты
+
+              §fсобраны здесь.
+
+
+              §7・Удалить: нажмите [Удалить] в книге'
     ko:
       favorites:
-        title: "TreasureRun 즐겨찾기 아카이브"
-        remove: "삭제"
+        title: TreasureRun 즐겨찾기 아카이브
+        remove: 삭제
         cover:
-          head: "TreasureRun 아카이브"
-          sub: "즐겨찾기 카탈로그"
-          badge: "◆ 즐겨찾기 ◆"
-          countLabel: "즐겨찾기 수"
-          hint: "클릭해서 챕터를 열 수 있어요"
-          openToc: "목차 열기"
-          reread: "다시 읽기(랜덤)"
+          head: TreasureRun 아카이브
+          sub: 즐겨찾기 카탈로그
+          badge: ◆ 즐겨찾기 ◆
+          countLabel: 즐겨찾기 수
+          hint: 클릭해서 챕터를 열 수 있어요
+          openToc: 목차 열기
+          reread: 다시 읽기(랜덤)
         toc:
-          head: "TreasureRun 아카이브"
-          sub: "카탈로그 / 목차"
-          howto: "사용법:"
-          howtoShift: "Shift + 우클릭으로 열기"
-          clickable: "챕터(클릭 가능)"
-          rereadTitle: "다시 읽기 모드"
-          reread: "다시 읽기(책)"
-          manage: "관리:"
+          head: TreasureRun 아카이브
+          sub: 카탈로그 / 목차
+          howto: '사용법:'
+          howtoShift: Shift + 우클릭으로 열기
+          clickable: 챕터(클릭 가능)
+          rereadTitle: 다시 읽기 모드
+          reread: 다시 읽기(책)
+          manage: '관리:'
         empty:
-          head: "TreasureRun 아카이브"
-          sub: "즐겨찾기 카탈로그"
-          noFav: "아직 즐겨찾기가 없어요."
-          noFavSub: "우클릭으로 최신 문장을 저장할 수 있어요."
-          saveHow: "저장 방법:"
-          saveHow1: "규칙 책을 손에 들고"
-          saveHow2: "우클릭 → 최신 문장 저장"
-          tryNow: "바로 해보기:"
-          saveLatest: "최신 저장"
-          reread: "다시 읽기:"
-          rereadBook: "다시 읽기(책)"
+          head: TreasureRun 아카이브
+          sub: 즐겨찾기 카탈로그
+          noFav: 아직 즐겨찾기가 없어요.
+          noFavSub: 우클릭으로 최신 문장을 저장할 수 있어요.
+          saveHow: '저장 방법:'
+          saveHow1: 규칙 책을 손에 들고
+          saveHow2: 우클릭 → 최신 문장 저장
+          tryNow: '바로 해보기:'
+          saveLatest: 최신 저장
+          reread: '다시 읽기:'
+          rereadBook: 다시 읽기(책)
         chapter:
-          empty: "이 챕터는 비어 있어요."
-          back: "목차로 돌아가기"
-          count: "개수"
-          rereadBook: "다시 읽기(책)"
-          successTitle: "◆ SUCCESS ◆"
-          successSub: "포디움 기록"
-          timeupTitle: "◆ TIME_UP ◆"
-          timeupSub: "미완의 에코 시집"
-          otherSub: "수집된 로그"
+          empty: 이 챕터는 비어 있어요.
+          back: 목차로 돌아가기
+          count: 개수
+          rereadBook: 다시 읽기(책)
+          successTitle: ◆ SUCCESS ◆
+          successSub: 포디움 기록
+          timeupTitle: ◆ TIME_UP ◆
+          timeupSub: 미완의 에코 시집
+          otherSub: 수집된 로그
           pageTemplate:
             success:
-              - |-
-                §b§l◆ SUCCESS ◆
-                §7포디움 기록
+            - '§b§l◆ SUCCESS ◆
 
-                §f즐겨찾기에 저장된
-                §f승리 기록을 보관합니다.
+              §7포디움 기록
 
-                §7・삭제: 책의 [삭제]를 클릭
-                §7・다시 읽기: 랜덤 다시 읽기로 재방문
+
+              §f즐겨찾기에 저장된
+
+              §f승리 기록을 보관합니다.
+
+
+              §7・삭제: 책의 [삭제]를 클릭
+
+              §7・다시 읽기: 랜덤 다시 읽기로 재방문'
             timeup:
-              - |-
-                §b§l◆ TIME_UP ◆
-                §7미완의 에코 시집
+            - '§b§l◆ TIME_UP ◆
 
-                §f시간이 끝난 뒤 남는
-                §f잔향을 시로 보관합니다.
+              §7미완의 에코 시집
 
-                §7・삭제: 책의 [삭제]를 클릭
-                §7・다시 읽기: 랜덤 다시 읽기로 재방문
+
+              §f시간이 끝난 뒤 남는
+
+              §f잔향을 시로 보관합니다.
+
+
+              §7・삭제: 책의 [삭제]를 클릭
+
+              §7・다시 읽기: 랜덤 다시 읽기로 재방문'
             other:
-              - |-
-                §b§l◆ 아카이브 ◆
-                §7수집된 로그
+            - '§b§l◆ 아카이브 ◆
 
-                §f저장된 문장과 조각들을
-                §f여기에 모읍니다.
+              §7수집된 로그
 
-                §7・삭제: 책의 [삭제]를 클릭
 
+              §f저장된 문장과 조각들을
+
+              §f여기에 모읍니다.
+
+
+              §7・삭제: 책의 [삭제]를 클릭'
     zh_tw:
       favorites:
-        title: "TreasureRun 收藏檔案"
-        remove: "刪除"
+        title: TreasureRun 收藏檔案
+        remove: 刪除
         cover:
-          head: "TreasureRun 檔案"
-          sub: "收藏目錄"
-          badge: "◆ 收藏 ◆"
-          countLabel: "收藏數量"
-          hint: "點擊開啟章節"
-          openToc: "開啟目錄"
-          reread: "重讀（隨機）"
+          head: TreasureRun 檔案
+          sub: 收藏目錄
+          badge: ◆ 收藏 ◆
+          countLabel: 收藏數量
+          hint: 點擊開啟章節
+          openToc: 開啟目錄
+          reread: 重讀（隨機）
         toc:
-          head: "TreasureRun 檔案"
-          sub: "目錄 / Catalog"
-          howto: "操作："
-          howtoShift: "Shift + 右鍵開啟"
-          clickable: "章節（可點擊）"
-          rereadTitle: "重讀模式"
-          reread: "重讀（書）"
-          manage: "管理："
+          head: TreasureRun 檔案
+          sub: 目錄 / Catalog
+          howto: 操作：
+          howtoShift: Shift + 右鍵開啟
+          clickable: 章節（可點擊）
+          rereadTitle: 重讀模式
+          reread: 重讀（書）
+          manage: 管理：
         empty:
-          head: "TreasureRun 檔案"
-          sub: "收藏目錄"
-          noFav: "目前尚無收藏。"
-          noFavSub: "右鍵可儲存最新格言。"
-          saveHow: "儲存方式："
-          saveHow1: "手持規則書"
-          saveHow2: "右鍵 → 儲存最新格言"
-          tryNow: "立刻試試："
-          saveLatest: "儲存最新"
-          reread: "重讀："
-          rereadBook: "重讀（書）"
+          head: TreasureRun 檔案
+          sub: 收藏目錄
+          noFav: 目前尚無收藏。
+          noFavSub: 右鍵可儲存最新格言。
+          saveHow: 儲存方式：
+          saveHow1: 手持規則書
+          saveHow2: 右鍵 → 儲存最新格言
+          tryNow: 立刻試試：
+          saveLatest: 儲存最新
+          reread: 重讀：
+          rereadBook: 重讀（書）
         chapter:
-          empty: "此章尚為空白。"
-          back: "返回目錄"
-          count: "數量"
-          rereadBook: "重讀（書）"
-          successTitle: "◆ SUCCESS ◆"
-          successSub: "頒獎台紀錄"
-          timeupTitle: "◆ TIME_UP ◆"
-          timeupSub: "未竟回聲詩集"
-          otherSub: "收錄紀錄"
+          empty: 此章尚為空白。
+          back: 返回目錄
+          count: 數量
+          rereadBook: 重讀（書）
+          successTitle: ◆ SUCCESS ◆
+          successSub: 頒獎台紀錄
+          timeupTitle: ◆ TIME_UP ◆
+          timeupSub: 未竟回聲詩集
+          otherSub: 收錄紀錄
           pageTemplate:
             success:
-              - |-
-                §b§l◆ SUCCESS ◆
-                §7頒獎台紀錄
+            - '§b§l◆ SUCCESS ◆
 
-                §f此章收錄
-                §f已加入收藏的勝利紀錄。
+              §7頒獎台紀錄
 
-                §7・刪除：點擊書中的 [刪除]
-                §7・重讀：可用隨機重讀回到此頁
+
+              §f此章收錄
+
+              §f已加入收藏的勝利紀錄。
+
+
+              §7・刪除：點擊書中的 [刪除]
+
+              §7・重讀：可用隨機重讀回到此頁'
             timeup:
-              - |-
-                §b§l◆ TIME_UP ◆
-                §7未竟回聲詩集
+            - '§b§l◆ TIME_UP ◆
 
-                §f此章保存
-                §f時間結束後的餘韻與回響。
+              §7未竟回聲詩集
 
-                §7・刪除：點擊書中的 [刪除]
-                §7・重讀：可用隨機重讀回到此頁
+
+              §f此章保存
+
+              §f時間結束後的餘韻與回響。
+
+
+              §7・刪除：點擊書中的 [刪除]
+
+              §7・重讀：可用隨機重讀回到此頁'
             other:
-              - |-
-                §b§l◆ 檔案 ◆
-                §7收錄紀錄
+            - '§b§l◆ 檔案 ◆
 
-                §f已收藏的格言與片段
-                §f在此收錄。
+              §7收錄紀錄
 
-                §7・刪除：點擊書中的 [刪除]
 
+              §f已收藏的格言與片段
+
+              §f在此收錄。
+
+
+              §7・刪除：點擊書中的 [刪除]'
     sa:
       favorites:
-        title: "TreasureRun प्रिय-वचन-संग्रहः"
-        remove: "हटाएँ"
+        title: TreasureRun प्रिय-वचन-संग्रहः
+        remove: हटाएँ
         cover:
-          head: "TreasureRun Archive"
-          sub: "Favorites Catalog"
-          badge: "◆ प्रिय ◆"
-          countLabel: "प्रिय संख्या"
-          hint: "अध्याय खोलने हेतु क्लिक करें"
-          openToc: "विषयसूची खोलें"
-          reread: "पुनःपठन (यादृच्छिक)"
+          head: TreasureRun Archive
+          sub: Favorites Catalog
+          badge: ◆ प्रिय ◆
+          countLabel: प्रिय संख्या
+          hint: अध्याय खोलने हेतु क्लिक करें
+          openToc: विषयसूची खोलें
+          reread: पुनःपठन (यादृच्छिक)
         toc:
-          head: "TreasureRun Archive"
-          sub: "Catalog / TOC"
-          howto: "प्रयोगः"
-          howtoShift: "Shift + दायाँ क्लिक खोलता है"
-          clickable: "अध्याय (क्लिक योग्य)"
-          rereadTitle: "पुनःपठन मोड"
-          reread: "पुनःपठन (पुस्तक)"
-          manage: "प्रबंधन:"
+          head: TreasureRun Archive
+          sub: Catalog / TOC
+          howto: प्रयोगः
+          howtoShift: Shift + दायाँ क्लिक खोलता है
+          clickable: अध्याय (क्लिक योग्य)
+          rereadTitle: पुनःपठन मोड
+          reread: पुनःपठन (पुस्तक)
+          manage: 'प्रबंधन:'
         empty:
-          head: "TreasureRun Archive"
-          sub: "Favorites Catalog"
-          noFav: "अभी कोई प्रिय नहीं।"
-          noFavSub: "दायाँ क्लिक नवीनतम वचन सहेजता है।"
-          saveHow: "सहेजने की विधि:"
-          saveHow1: "नियम-पुस्तक हाथ में रखें"
-          saveHow2: "दायाँ क्लिक → नवीनतम वचन सहेजें"
-          tryNow: "अभी आज़माएँ:"
-          saveLatest: "नवीनतम सहेजें"
-          reread: "पुनःपठन:"
-          rereadBook: "पुनःपठन (पुस्तक)"
+          head: TreasureRun Archive
+          sub: Favorites Catalog
+          noFav: अभी कोई प्रिय नहीं।
+          noFavSub: दायाँ क्लिक नवीनतम वचन सहेजता है।
+          saveHow: 'सहेजने की विधि:'
+          saveHow1: नियम-पुस्तक हाथ में रखें
+          saveHow2: दायाँ क्लिक → नवीनतम वचन सहेजें
+          tryNow: 'अभी आज़माएँ:'
+          saveLatest: नवीनतम सहेजें
+          reread: 'पुनःपठन:'
+          rereadBook: पुनःपठन (पुस्तक)
         chapter:
-          empty: "एषः अध्यायः रिक्तः।"
-          back: "विषयसूचीं प्रति गच्छ"
-          count: "संख्या"
-          rereadBook: "पुनःपठन (पुस्तक)"
-          successTitle: "◆ SUCCESS ◆"
-          successSub: "मञ्च-लेखाः"
-          timeupTitle: "◆ TIME_UP ◆"
-          timeupSub: "अपूर्ण प्रतिध्वनि-काव्यम्"
-          otherSub: "संगृहीत लेखाः"
+          empty: एषः अध्यायः रिक्तः।
+          back: विषयसूचीं प्रति गच्छ
+          count: संख्या
+          rereadBook: पुनःपठन (पुस्तक)
+          successTitle: ◆ SUCCESS ◆
+          successSub: मञ्च-लेखाः
+          timeupTitle: ◆ TIME_UP ◆
+          timeupSub: अपूर्ण प्रतिध्वनि-काव्यम्
+          otherSub: संगृहीत लेखाः
           pageTemplate:
             success:
-              - |-
-                §b§l◆ SUCCESS ◆
-                §7मञ्च-लेखाः
+            - '§b§l◆ SUCCESS ◆
 
-                §fअत्र प्रिय-रूपेण
-                §fरक्षिताः विजय-लेखाः संगृह्यन्ते।
+              §7मञ्च-लेखाः
 
-                §7・हटाएँ: पुस्तक में [हटाएँ] क्लिक करें
-                §7・पुनःपठन: यादृच्छिक पुनःपठन से पुनः आएँ
+
+              §fअत्र प्रिय-रूपेण
+
+              §fरक्षिताः विजय-लेखाः संगृह्यन्ते।
+
+
+              §7・हटाएँ: पुस्तक में [हटाएँ] क्लिक करें
+
+              §7・पुनःपठन: यादृच्छिक पुनःपठन से पुनः आएँ'
             timeup:
-              - |-
-                §b§l◆ TIME_UP ◆
-                §7अपूर्ण प्रतिध्वनि-काव्यम्
+            - '§b§l◆ TIME_UP ◆
 
-                §fअत्र समय-समाप्तेः परं
-                §fशेषा प्रतिध्वनिः कवितारूपेण तिष्ठति।
+              §7अपूर्ण प्रतिध्वनि-काव्यम्
 
-                §7・हटाएँ: पुस्तक में [हटाएँ] क्लिक करें
-                §7・पुनःपठन: यादृच्छिक पुनःपठन से पुनः आएँ
+
+              §fअत्र समय-समाप्तेः परं
+
+              §fशेषा प्रतिध्वनिः कवितारूपेण तिष्ठति।
+
+
+              §7・हटाएँ: पुस्तक में [हटाएँ] क्लिक करें
+
+              §7・पुनःपठन: यादृच्छिक पुनःपठन से पुनः आएँ'
             other:
-              - |-
-                §b§l◆ ARCHIVE ◆
-                §7संगृहीत लेखाः
+            - '§b§l◆ ARCHIVE ◆
 
-                §fप्रिय-रूपेण रक्षितानि
-                §fवचनानि अत्र संगृह्यन्ते।
+              §7संगृहीत लेखाः
 
-                §7・हटाएँ: पुस्तक में [हटाएँ] क्लिक करें
 
+              §fप्रिय-रूपेण रक्षितानि
+
+              §fवचनानि अत्र संगृह्यन्ते।
+
+
+              §7・हटाएँ: पुस्तक में [हटाएँ] क्लिक करें'
     pt:
       favorites:
-        title: "Arquivo de Favoritos do TreasureRun"
-        remove: "Remover"
+        title: Arquivo de Favoritos do TreasureRun
+        remove: Remover
         cover:
-          head: "Arquivo TreasureRun"
-          sub: "Catálogo de Favoritos"
-          badge: "◆ FAVORITOS ◆"
-          countLabel: "Favoritos"
-          hint: "Clique para abrir capítulos"
-          openToc: "Abrir índice"
-          reread: "Reler (Aleatório)"
+          head: Arquivo TreasureRun
+          sub: Catálogo de Favoritos
+          badge: ◆ FAVORITOS ◆
+          countLabel: Favoritos
+          hint: Clique para abrir capítulos
+          openToc: Abrir índice
+          reread: Reler (Aleatório)
         toc:
-          head: "Arquivo TreasureRun"
-          sub: "Catálogo / Índice"
-          howto: "Como usar:"
-          howtoShift: "Shift + clique direito para abrir"
-          clickable: "Capítulos (clicáveis)"
-          rereadTitle: "Modo releitura"
-          reread: "RELER (LIVRO)"
-          manage: "Gerenciar:"
+          head: Arquivo TreasureRun
+          sub: Catálogo / Índice
+          howto: 'Como usar:'
+          howtoShift: Shift + clique direito para abrir
+          clickable: Capítulos (clicáveis)
+          rereadTitle: Modo releitura
+          reread: RELER (LIVRO)
+          manage: 'Gerenciar:'
         empty:
-          head: "Arquivo TreasureRun"
-          sub: "Catálogo de Favoritos"
-          noFav: "Ainda não há favoritos."
-          noFavSub: "Clique direito para salvar a última citação."
-          saveHow: "Como salvar:"
-          saveHow1: "Segure o livro de regras"
-          saveHow2: "Clique direito → salvar última citação"
-          tryNow: "Testar:"
-          saveLatest: "SALVAR ÚLTIMA"
-          reread: "Reler:"
-          rereadBook: "RELER (LIVRO)"
+          head: Arquivo TreasureRun
+          sub: Catálogo de Favoritos
+          noFav: Ainda não há favoritos.
+          noFavSub: Clique direito para salvar a última citação.
+          saveHow: 'Como salvar:'
+          saveHow1: Segure o livro de regras
+          saveHow2: Clique direito → salvar última citação
+          tryNow: 'Testar:'
+          saveLatest: SALVAR ÚLTIMA
+          reread: 'Reler:'
+          rereadBook: RELER (LIVRO)
         chapter:
-          empty: "Este capítulo está vazio."
-          back: "Voltar ao índice"
-          count: "Quantidade"
-          rereadBook: "RELER (LIVRO)"
-          successTitle: "◆ SUCCESS ◆"
-          successSub: "Registros do Pódio"
-          timeupTitle: "◆ TIME_UP ◆"
-          timeupSub: "Poemas do eco inacabado"
-          otherSub: "Registros coletados"
+          empty: Este capítulo está vazio.
+          back: Voltar ao índice
+          count: Quantidade
+          rereadBook: RELER (LIVRO)
+          successTitle: ◆ SUCCESS ◆
+          successSub: Registros do Pódio
+          timeupTitle: ◆ TIME_UP ◆
+          timeupSub: Poemas do eco inacabado
+          otherSub: Registros coletados
           pageTemplate:
             success:
-              - |-
-                §b§l◆ SUCCESS ◆
-                §7Registros do Pódio
+            - '§b§l◆ SUCCESS ◆
 
-                §fEste capítulo arquiva
-                §fseus registros de vitória salvos como favoritos.
+              §7Registros do Pódio
 
-                §7・Remover: clique em [Remover] no livro
-                §7・Reler: voltar pela releitura aleatória
+
+              §fEste capítulo arquiva
+
+              §fseus registros de vitória salvos como favoritos.
+
+
+              §7・Remover: clique em [Remover] no livro
+
+              §7・Reler: voltar pela releitura aleatória'
             timeup:
-              - |-
-                §b§l◆ TIME_UP ◆
-                §7Poemas do eco inacabado
+            - '§b§l◆ TIME_UP ◆
 
-                §fAqui fica o eco
-                §fquando o tempo acaba.
+              §7Poemas do eco inacabado
 
-                §7・Remover: clique em [Remover] no livro
-                §7・Reler: voltar pela releitura aleatória
+
+              §fAqui fica o eco
+
+              §fquando o tempo acaba.
+
+
+              §7・Remover: clique em [Remover] no livro
+
+              §7・Reler: voltar pela releitura aleatória'
             other:
-              - |-
-                §b§l◆ ARQUIVO ◆
-                §7Registros coletados
+            - '§b§l◆ ARQUIVO ◆
 
-                §fCitações e fragmentos salvos
-                §fsão reunidos aqui.
+              §7Registros coletados
 
-                §7・Remover: clique em [Remover] no livro
 
+              §fCitações e fragmentos salvos
+
+              §fsão reunidos aqui.
+
+
+              §7・Remover: clique em [Remover] no livro'
     hi:
       favorites:
-        title: "TreasureRun पसंदीदा संग्रह"
-        remove: "हटाएँ"
+        title: TreasureRun पसंदीदा संग्रह
+        remove: हटाएँ
         cover:
-          head: "TreasureRun Archive"
-          sub: "Favorites Catalog"
-          badge: "◆ पसंदीदा ◆"
-          countLabel: "पसंदीदा संख्या"
-          hint: "अध्याय खोलने हेतु क्लिक करें"
-          openToc: "विषयसूची खोलें"
-          reread: "पुनःपाठ (रैंडम)"
+          head: TreasureRun Archive
+          sub: Favorites Catalog
+          badge: ◆ पसंदीदा ◆
+          countLabel: पसंदीदा संख्या
+          hint: अध्याय खोलने हेतु क्लिक करें
+          openToc: विषयसूची खोलें
+          reread: पुनःपाठ (रैंडम)
         toc:
-          head: "TreasureRun Archive"
-          sub: "Catalog / TOC"
-          howto: "कैसे उपयोग करें:"
-          howtoShift: "Shift + राइट क्लिक से खोलें"
-          clickable: "अध्याय (क्लिक योग्य)"
-          rereadTitle: "पुनःपाठ मोड"
-          reread: "पुनःपाठ (किताब)"
-          manage: "प्रबंधन:"
+          head: TreasureRun Archive
+          sub: Catalog / TOC
+          howto: 'कैसे उपयोग करें:'
+          howtoShift: Shift + राइट क्लिक से खोलें
+          clickable: अध्याय (क्लिक योग्य)
+          rereadTitle: पुनःपाठ मोड
+          reread: पुनःपाठ (किताब)
+          manage: 'प्रबंधन:'
         empty:
-          head: "TreasureRun Archive"
-          sub: "Favorites Catalog"
-          noFav: "अभी कोई पसंदीदा नहीं है।"
-          noFavSub: "राइट क्लिक से नवीनतम कथन सहेजें।"
-          saveHow: "सहेजने का तरीका:"
-          saveHow1: "रूलबुक हाथ में रखें"
-          saveHow2: "राइट क्लिक → नवीनतम कथन सहेजें"
-          tryNow: "अभी आज़माएँ:"
-          saveLatest: "नवीनतम सहेजें"
-          reread: "पुनःपाठ:"
-          rereadBook: "पुनःपाठ (किताब)"
+          head: TreasureRun Archive
+          sub: Favorites Catalog
+          noFav: अभी कोई पसंदीदा नहीं है।
+          noFavSub: राइट क्लिक से नवीनतम कथन सहेजें।
+          saveHow: 'सहेजने का तरीका:'
+          saveHow1: रूलबुक हाथ में रखें
+          saveHow2: राइट क्लिक → नवीनतम कथन सहेजें
+          tryNow: 'अभी आज़माएँ:'
+          saveLatest: नवीनतम सहेजें
+          reread: 'पुनःपाठ:'
+          rereadBook: पुनःपाठ (किताब)
         chapter:
-          empty: "यह अध्याय खाली है।"
-          back: "विषयसूची पर वापस"
-          count: "संख्या"
-          rereadBook: "पुनःपाठ (किताब)"
-          successTitle: "◆ SUCCESS ◆"
-          successSub: "पोडियम रिकॉर्ड"
-          timeupTitle: "◆ TIME_UP ◆"
-          timeupSub: "अपूर्ण प्रतिध्वनि की कविताएँ"
-          otherSub: "संग्रहीत लॉग"
+          empty: यह अध्याय खाली है।
+          back: विषयसूची पर वापस
+          count: संख्या
+          rereadBook: पुनःपाठ (किताब)
+          successTitle: ◆ SUCCESS ◆
+          successSub: पोडियम रिकॉर्ड
+          timeupTitle: ◆ TIME_UP ◆
+          timeupSub: अपूर्ण प्रतिध्वनि की कविताएँ
+          otherSub: संग्रहीत लॉग
           pageTemplate:
             success:
-              - |-
-                §b§l◆ SUCCESS ◆
-                §7पोडियम रिकॉर्ड
+            - '§b§l◆ SUCCESS ◆
 
-                §fयह अध्याय आपके
-                §fपसंदीदा में सहेजे गए विजय रिकॉर्ड संग्रहीत करता है।
+              §7पोडियम रिकॉर्ड
 
-                §7・हटाएँ: किताब में [हटाएँ] क्लिक करें
-                §7・पुनःपाठ: रैंडम पुनःपाठ से वापस आएँ
+
+              §fयह अध्याय आपके
+
+              §fपसंदीदा में सहेजे गए विजय रिकॉर्ड संग्रहीत करता है।
+
+
+              §7・हटाएँ: किताब में [हटाएँ] क्लिक करें
+
+              §7・पुनःपाठ: रैंडम पुनःपाठ से वापस आएँ'
             timeup:
-              - |-
-                §b§l◆ TIME_UP ◆
-                §7अपूर्ण प्रतिध्वनि की कविताएँ
+            - '§b§l◆ TIME_UP ◆
 
-                §fयहाँ समय समाप्त होने के बाद
-                §fशेष प्रतिध्वनि कविताओं में रहती है।
+              §7अपूर्ण प्रतिध्वनि की कविताएँ
 
-                §7・हटाएँ: किताब में [हटाएँ] क्लिक करें
-                §7・पुनःपाठ: रैंडम पुनःपाठ से वापस आएँ
+
+              §fयहाँ समय समाप्त होने के बाद
+
+              §fशेष प्रतिध्वनि कविताओं में रहती है।
+
+
+              §7・हटाएँ: किताब में [हटाएँ] क्लिक करें
+
+              §7・पुनःपाठ: रैंडम पुनःपाठ से वापस आएँ'
             other:
-              - |-
-                §b§l◆ ARCHIVE ◆
-                §7संग्रहीत लॉग
+            - '§b§l◆ ARCHIVE ◆
 
-                §fसहेजे गए कथन और अंश
-                §fयहाँ एकत्रित होते हैं।
+              §7संग्रहीत लॉग
 
-                §7・हटाएँ: किताब में [हटाएँ] क्लिक करें
 
+              §fसहेजे गए कथन और अंश
+
+              §fयहाँ एकत्रित होते हैं।
+
+
+              §7・हटाएँ: किताब में [हटाएँ] क्लिक करें'
     lzh:
       favorites:
-        title: "TreasureRun 愛蔵録"
-        remove: "刪除"
+        title: TreasureRun 愛蔵録
+        remove: 刪除
         cover:
-          head: "TreasureRun 典蔵"
-          sub: "愛蔵目録"
-          badge: "◆ 愛蔵 ◆"
-          countLabel: "愛蔵數"
-          hint: "點按以開卷"
-          openToc: "開目次"
-          reread: "再讀（隨機）"
+          head: TreasureRun 典蔵
+          sub: 愛蔵目録
+          badge: ◆ 愛蔵 ◆
+          countLabel: 愛蔵數
+          hint: 點按以開卷
+          openToc: 開目次
+          reread: 再讀（隨機）
         toc:
-          head: "TreasureRun 典蔵"
-          sub: "目錄 / Catalog"
-          howto: "操作："
-          howtoShift: "Shift＋右按以開"
-          clickable: "篇章（可點）"
-          rereadTitle: "再讀"
-          reread: "再讀（書）"
-          manage: "管理："
+          head: TreasureRun 典蔵
+          sub: 目錄 / Catalog
+          howto: 操作：
+          howtoShift: Shift＋右按以開
+          clickable: 篇章（可點）
+          rereadTitle: 再讀
+          reread: 再讀（書）
+          manage: 管理：
         empty:
-          head: "TreasureRun 典蔵"
-          sub: "愛蔵目錄"
-          noFav: "今無愛蔵。"
-          noFavSub: "右按可存最新格言。"
-          saveHow: "存法："
-          saveHow1: "執規則書"
-          saveHow2: "右按→存最新格言"
-          tryNow: "試："
-          saveLatest: "存最新"
-          reread: "再讀："
-          rereadBook: "再讀（書）"
+          head: TreasureRun 典蔵
+          sub: 愛蔵目錄
+          noFav: 今無愛蔵。
+          noFavSub: 右按可存最新格言。
+          saveHow: 存法：
+          saveHow1: 執規則書
+          saveHow2: 右按→存最新格言
+          tryNow: 試：
+          saveLatest: 存最新
+          reread: 再讀：
+          rereadBook: 再讀（書）
         chapter:
-          empty: "此篇未收。"
-          back: "返目次"
-          count: "件數"
-          rereadBook: "再讀（書）"
-          successTitle: "◆ SUCCESS ◆"
-          successSub: "表彰台錄"
-          timeupTitle: "◆ TIME_UP ◆"
-          timeupSub: "未竟回響詩"
-          otherSub: "收錄"
+          empty: 此篇未收。
+          back: 返目次
+          count: 件數
+          rereadBook: 再讀（書）
+          successTitle: ◆ SUCCESS ◆
+          successSub: 表彰台錄
+          timeupTitle: ◆ TIME_UP ◆
+          timeupSub: 未竟回響詩
+          otherSub: 收錄
           pageTemplate:
             success:
-              - |-
-                §b§l◆ SUCCESS ◆
-                §7表彰台錄
+            - '§b§l◆ SUCCESS ◆
 
-                §f此篇所載，
-                §f皆愛蔵之勝績記。
+              §7表彰台錄
 
-                §7・刪除：點書中 [刪除]
-                §7・再讀：隨機再讀可復至此
+
+              §f此篇所載，
+
+              §f皆愛蔵之勝績記。
+
+
+              §7・刪除：點書中 [刪除]
+
+              §7・再讀：隨機再讀可復至此'
             timeup:
-              - |-
-                §b§l◆ TIME_UP ◆
-                §7未竟回響詩
+            - '§b§l◆ TIME_UP ◆
 
-                §f時盡而後，
-                §f餘韻成詩，留其回響。
+              §7未竟回響詩
 
-                §7・刪除：點書中 [刪除]
-                §7・再讀：隨機再讀可復至此
+
+              §f時盡而後，
+
+              §f餘韻成詩，留其回響。
+
+
+              §7・刪除：點書中 [刪除]
+
+              §7・再讀：隨機再讀可復至此'
             other:
-              - |-
-                §b§l◆ 典蔵 ◆
-                §7收錄
+            - '§b§l◆ 典蔵 ◆
 
-                §f格言片段，
-                §f皆聚於此篇。
+              §7收錄
 
-                §7・刪除：點書中 [刪除]
 
+              §f格言片段，
+
+              §f皆聚於此篇。
+
+
+              §7・刪除：點書中 [刪除]'
     asl_gloss:
       favorites:
-        title: "TREASURERUN FAVORITES ARCHIVE"
-        remove: "REMOVE"
+        title: TREASURERUN FAVORITES ARCHIVE
+        remove: REMOVE
         cover:
-          head: "TREASURERUN ARCHIVE"
-          sub: "FAVORITES CATALOG"
-          badge: "FAVORITES"
-          countLabel: "FAVORITES COUNT"
-          hint: "CLICK OPEN CHAPTER"
-          openToc: "OPEN TOC"
-          reread: "REREAD RANDOM"
+          head: TREASURERUN ARCHIVE
+          sub: FAVORITES CATALOG
+          badge: FAVORITES
+          countLabel: FAVORITES COUNT
+          hint: CLICK OPEN CHAPTER
+          openToc: OPEN TOC
+          reread: REREAD RANDOM
         toc:
-          head: "TREASURERUN ARCHIVE"
-          sub: "CATALOG / TOC"
-          howto: "HOW-TO"
-          howtoShift: "SHIFT + RIGHT-CLICK OPEN"
-          clickable: "CHAPTER CLICK"
-          rereadTitle: "REREAD MODE"
-          reread: "REREAD BOOK"
-          manage: "MANAGE"
+          head: TREASURERUN ARCHIVE
+          sub: CATALOG / TOC
+          howto: HOW-TO
+          howtoShift: SHIFT + RIGHT-CLICK OPEN
+          clickable: CHAPTER CLICK
+          rereadTitle: REREAD MODE
+          reread: REREAD BOOK
+          manage: MANAGE
         empty:
-          head: "TREASURERUN ARCHIVE"
-          sub: "FAVORITES CATALOG"
-          noFav: "FAVORITES NONE YET"
-          noFavSub: "RIGHT-CLICK SAVE LATEST QUOTE"
-          saveHow: "SAVE HOW"
-          saveHow1: "HOLD RULEBOOK"
-          saveHow2: "RIGHT-CLICK SAVE LATEST"
-          tryNow: "TRY NOW"
-          saveLatest: "SAVE LATEST"
-          reread: "REREAD"
-          rereadBook: "REREAD BOOK"
+          head: TREASURERUN ARCHIVE
+          sub: FAVORITES CATALOG
+          noFav: FAVORITES NONE YET
+          noFavSub: RIGHT-CLICK SAVE LATEST QUOTE
+          saveHow: SAVE HOW
+          saveHow1: HOLD RULEBOOK
+          saveHow2: RIGHT-CLICK SAVE LATEST
+          tryNow: TRY NOW
+          saveLatest: SAVE LATEST
+          reread: REREAD
+          rereadBook: REREAD BOOK
         chapter:
-          empty: "CHAPTER EMPTY"
-          back: "BACK TO TOC"
-          count: "COUNT"
-          rereadBook: "REREAD BOOK"
-          successTitle: "SUCCESS"
-          successSub: "PODIUM RECORDS"
-          timeupTitle: "TIME_UP"
-          timeupSub: "POEMS UNFINISHED ECHO"
-          otherSub: "COLLECTED LOGS"
+          empty: CHAPTER EMPTY
+          back: BACK TO TOC
+          count: COUNT
+          rereadBook: REREAD BOOK
+          successTitle: SUCCESS
+          successSub: PODIUM RECORDS
+          timeupTitle: TIME_UP
+          timeupSub: POEMS UNFINISHED ECHO
+          otherSub: COLLECTED LOGS
           pageTemplate:
             success:
-              - |-
-                §b§lSUCCESS
-                §7PODIUM RECORDS
+            - '§b§lSUCCESS
 
-                §fFAVORITES SAVE.
-                §fVICTORY RECORD ARCHIVE.
+              §7PODIUM RECORDS
 
-                §7REMOVE: CLICK [REMOVE]
-                §7REREAD: RANDOM REREAD RETURN
+
+              §fFAVORITES SAVE.
+
+              §fVICTORY RECORD ARCHIVE.
+
+
+              §7REMOVE: CLICK [REMOVE]
+
+              §7REREAD: RANDOM REREAD RETURN'
             timeup:
-              - |-
-                §b§lTIME_UP
-                §7POEMS UNFINISHED ECHO
+            - '§b§lTIME_UP
 
-                §fTIME END -> ECHO STAY.
-                §fSAVE AS POEM.
+              §7POEMS UNFINISHED ECHO
 
-                §7REMOVE: CLICK [REMOVE]
-                §7REREAD: RANDOM REREAD RETURN
+
+              §fTIME END -> ECHO STAY.
+
+              §fSAVE AS POEM.
+
+
+              §7REMOVE: CLICK [REMOVE]
+
+              §7REREAD: RANDOM REREAD RETURN'
             other:
-              - |-
-                §b§lARCHIVE
-                §7COLLECTED LOGS
+            - '§b§lARCHIVE
 
-                §fQUOTE / FRAGMENT SAVE HERE.
+              §7COLLECTED LOGS
 
-                §7REMOVE: CLICK [REMOVE]
 
-# スコア設定
+              §fQUOTE / FRAGMENT SAVE HERE.
+
+
+              §7REMOVE: CLICK [REMOVE]'
 scoring:
   maxScore: 1000
-
-# モンスター設定
 monsters:
   enabled: true
   spawnCount: 3
   spawnRadius: 10
   monsterTypes:
-    - zombie
-    - skeleton
-    - creeper
-
-# ボスバー設定
+  - zombie
+  - skeleton
+  - creeper
 bossBar:
   enabled: true
   color: RED
   style: PROGRESS
-  title: "制限時間"
-
-# ====================================
-# データベース設定（MySQL接続用）
-# ====================================
+  title: 制限時間
 database:
   enabled: true
   host: minecraft_mysql
@@ -1521,134 +1676,109 @@ database:
   database: treasureDB
   user: root
   password: rootpassword
-
-# ゲーム終了後にプレイヤーの状態を復元するか
 restorePlayerStatus: true
-
-# デバッグ用：当たりチェスト座標
 winningChestLocation:
   x: 0
   y: 0
   z: 0
   world: world
-
-# =============================
-# カスタムクラフトレシピ設定
-# =============================
 customRecipes:
-  - name: "special_emerald"
-    type: shaped
-    result:
-      material: EMERALD
-      amount: 1
-      displayName: "&6特製エメラルド"
-    shape:
-      - "DDD"
-      - " D "
-      - "DDD"
-    ingredients:
-      D: DIAMOND
-
-  - name: "golden_apple_custom"
-    type: shapeless
-    result:
-      material: APPLE
-      amount: 1
-      displayName: "&e特製リンゴ"
-    ingredients:
-      - GOLD_INGOT
-      - GOLD_INGOT
-      - GOLD_INGOT
-
-  - name: "special_iron_block"
-    type: shaped
-    result:
-      material: IRON_BLOCK
-      amount: 1
-      displayName: "&7特製鉄ブロック"
-    shape:
-      - "III"
-      - "III"
-      - "III"
-    ingredients:
-      I: IRON_INGOT
-
-# =======================================================
-# ✅ 言語設定（GUI/Store とキー完全一致）
-# - allowedLanguages: GUIに並ぶ順（最大27推奨）
-# - displayName: GUIで表示する名前（switch不要）
-# =======================================================
+- name: special_emerald
+  type: shaped
+  result:
+    material: EMERALD
+    amount: 1
+    displayName: '&6特製エメラルド'
+  shape:
+  - DDD
+  - ' D '
+  - DDD
+  ingredients:
+    D: DIAMOND
+- name: golden_apple_custom
+  type: shapeless
+  result:
+    material: APPLE
+    amount: 1
+    displayName: '&e特製リンゴ'
+  ingredients:
+  - GOLD_INGOT
+  - GOLD_INGOT
+  - GOLD_INGOT
+- name: special_iron_block
+  type: shaped
+  result:
+    material: IRON_BLOCK
+    amount: 1
+    displayName: '&7特製鉄ブロック'
+  shape:
+  - III
+  - III
+  - III
+  ingredients:
+    I: IRON_INGOT
 language:
   default: ja
-
-  # ✅ GUIに並ぶ順（最大27推奨：Inventory 27枠）
   allowedLanguages:
-    - ja
-    - en
-    - de
-    - it
-    - sv
-    - es
-    - la
-    - is
-    - fi
-    - nl
-    - fr
-    - ru
-    - ko
-    - zh_tw
-    - sa
-    - pt
-    - hi
-    - lzh
-    - asl_gloss
-
-  # ✅ GUIの表示名（ここだけ編集すればOK）
+  - ja
+  - en
+  - de
+  - it
+  - sv
+  - es
+  - la
+  - is
+  - fi
+  - nl
+  - fr
+  - ru
+  - ko
+  - zh_tw
+  - sa
+  - pt
+  - hi
+  - lzh
+  - asl_gloss
   displayName:
-    ja: "日本語"
-    en: "English"
-    de: "Deutsch"
-    it: "Italiano"
-    sv: "Svenska"
-    es: "Español"
-    la: "Latina"
-    is: "Íslenska"
-    fi: "Suomi"
-    nl: "Nederlands"
-    fr: "Français"
-    ru: "Русский"
-    ko: "한국어"
-    zh_tw: "中文（繁體）"
-    sa: "Sanskrit"
-    pt: "Português"
-    hi: "हिंदी"
-    lzh: "漢文"
-    asl_gloss: "ASL GLOSS"
-
-  # ✅ [IT] みたいな短縮ラベル（無ければ lang を大文字表示）
+    ja: 日本語
+    en: English
+    de: Deutsch
+    it: Italiano
+    sv: Svenska
+    es: Español
+    la: Latina
+    is: Íslenska
+    fi: Suomi
+    nl: Nederlands
+    fr: Français
+    ru: Русский
+    ko: 한국어
+    zh_tw: 中文（繁體）
+    sa: Sanskrit
+    pt: Português
+    hi: हिंदी
+    lzh: 漢文
+    asl_gloss: ASL GLOSS
   shortLabel:
-    ja: "JA"
-    en: "EN"
-    de: "DE"
-    it: "IT"
-    sv: "SV"
-    es: "ES"
-    la: "LA"
-    is: "IS"
-    fi: "FI"
-    nl: "NL"
-    fr: "FR"
-    ru: "RU"
-    ko: "KO"
-    zh_tw: "ZH"
-    sa: "SA"
-    pt: "PT"
-    hi: "HI"
-    lzh: "LZH"
-    asl_gloss: "ASL"
-
-  # ✅ 1枚目みたいな「色つきアイコン」を完全config管理（switch不要）
-  # ※未指定の言語は PAPER
+    ja: JA
+    en: EN
+    de: DE
+    it: IT
+    sv: SV
+    es: ES
+    la: LA
+    is: IS
+    fi: FI
+    nl: NL
+    fr: FR
+    ru: RU
+    ko: KO
+    zh_tw: ZH
+    sa: SA
+    pt: PT
+    hi: HI
+    lzh: LZH
+    asl_gloss: ASL
   iconMaterial:
     ja: WHITE_WOOL
     en: BLUE_WOOL
@@ -1669,862 +1799,872 @@ language:
     hi: ORANGE_WOOL
     lzh: WHITE_WOOL
     asl_gloss: BLACK_WOOL
-
-  # ✅ 2枚目みたいに「その言語で説明文」を出す（無ければ loreDefault）
-  # Default lore shown in language GUI (keep this set; code fallback is empty string)
-  loreDefault: "Click to select"
+  loreDefault: Click to select
   lore:
-    ja: "クリックして選択"
-    en: "Click to select"
-    de: "Klicken zum Auswählen"
-    it: "Clicca per scegliere"
-    sv: "Klicka för att välja"
-    es: "Haz clic para elegir"
-    fr: "Cliquez pour choisir"
-    ru: "Нажмите, чтобы выбрать"
-    ko: "클릭해서 선택"
-    zh_tw: "點擊選擇"
-    pt: "Clique para escolher"
-    hi: "चुनने के लिए क्लिक करें"
-
+    ja: クリックして選択
+    en: Click to select
+    de: Klicken zum Auswählen
+    it: Clicca per scegliere
+    sv: Klicka för att välja
+    es: Haz clic para elegir
+    fr: Cliquez pour choisir
+    ru: Нажмите, чтобы выбрать
+    ko: 클릭해서 선택
+    zh_tw: 點擊選擇
+    pt: Clique para escolher
+    hi: चुनने के लिए क्लिक करें
 ruleBook:
   title:
-    ja: "TreasureRun ルール"
-    en: "TreasureRun Rules"
-    de: "TreasureRun Regeln"
-    it: "Regole di TreasureRun"
-    sv: "TreasureRun Regler"
-    es: "Reglas de TreasureRun"
-    la: "Regulae TreasureRun"
-    is: "TreasureRun Reglur"
-    fi: "TreasureRun Säännöt"
-    nl: "TreasureRun Regels"
-    fr: "Règles de TreasureRun"
-    ru: "Правила TreasureRun"
-    ko: "TreasureRun 규칙"
-    zh_tw: "TreasureRun 規則"
-    sa: "TreasureRun नियमाः"
-    pt: "Regras do TreasureRun"
-    hi: "TreasureRun नियम"
-    lzh: "TreasureRun 規則"
-    asl_gloss: "TREASURE-RUN RULES"
-
-  author: "TreasureRun"
-
-  # ホットバーに配る本の表示名
+    ja: TreasureRun ルール
+    en: TreasureRun Rules
+    de: TreasureRun Regeln
+    it: Regole di TreasureRun
+    sv: TreasureRun Regler
+    es: Reglas de TreasureRun
+    la: Regulae TreasureRun
+    is: TreasureRun Reglur
+    fi: TreasureRun Säännöt
+    nl: TreasureRun Regels
+    fr: Règles de TreasureRun
+    ru: Правила TreasureRun
+    ko: TreasureRun 규칙
+    zh_tw: TreasureRun 規則
+    sa: TreasureRun नियमाः
+    pt: Regras do TreasureRun
+    hi: TreasureRun नियम
+    lzh: TreasureRun 規則
+    asl_gloss: TREASURE-RUN RULES
+  author: TreasureRun
   displayName:
-    ja: "TreasureRun ルールブック"
-    en: "TreasureRun Rule Book"
-    de: "TreasureRun Regelbuch"
-    it: "Libro delle Regole TreasureRun"
-    sv: "TreasureRun Regelbok"
-    es: "Libro de Reglas de TreasureRun"
-    la: "Liber Regularum TreasureRun"
-    is: "TreasureRun Reglubók"
-    fi: "TreasureRun Sääntökirja"
-    nl: "TreasureRun Regelboek"
-    fr: "Livre des Règles TreasureRun"
-    ru: "Книга правил TreasureRun"
-    ko: "TreasureRun 규칙서"
-    zh_tw: "TreasureRun 規則書"
-    sa: "TreasureRun नियमपुस्तकः"
-    pt: "Livro de Regras do TreasureRun"
-    hi: "TreasureRun नियम पुस्तिका"
-    lzh: "TreasureRun 規則書"
-    asl_gloss: "TREASURE-RUN RULE BOOK"
-
-  # 難易度ラベル
+    ja: TreasureRun ルールブック
+    en: TreasureRun Rule Book
+    de: TreasureRun Regelbuch
+    it: Libro delle Regole TreasureRun
+    sv: TreasureRun Regelbok
+    es: Libro de Reglas de TreasureRun
+    la: Liber Regularum TreasureRun
+    is: TreasureRun Reglubók
+    fi: TreasureRun Sääntökirja
+    nl: TreasureRun Regelboek
+    fr: Livre des Règles TreasureRun
+    ru: Книга правил TreasureRun
+    ko: TreasureRun 규칙서
+    zh_tw: TreasureRun 規則書
+    sa: TreasureRun नियमपुस्तकः
+    pt: Livro de Regras do TreasureRun
+    hi: TreasureRun नियम पुस्तिका
+    lzh: TreasureRun 規則書
+    asl_gloss: TREASURE-RUN RULE BOOK
   difficultyLabel:
     ja:
-      Easy: "Easy（ゆったり）"
-      Normal: "Normal（標準）"
-      Hard: "Hard（高難度）"
+      Easy: やさしい
+      Normal: ふつう
+      Hard: むずかしい
     en:
-      Easy: "Easy (Relaxed)"
-      Normal: "Normal (Standard)"
-      Hard: "Hard (Challenging)"
+      Easy: Easy
+      Normal: Normal
+      Hard: Hard
     de:
-      Easy: "Easy (Entspannt)"
-      Normal: "Normal (Standard)"
-      Hard: "Hard (Schwierig)"
+      Easy: Leicht
+      Normal: Mittel
+      Hard: Schwer
     it:
-      Easy: "Easy (Rilassato)"
-      Normal: "Normal (Standard)"
-      Hard: "Hard (Difficile)"
+      Easy: Facile
+      Normal: Medio
+      Hard: Difficile
     sv:
-      Easy: "Easy (Lugnt)"
-      Normal: "Normal (Standard)"
-      Hard: "Hard (Svårt)"
+      Easy: Lätt
+      Normal: Medel
+      Hard: Svår
     es:
-      Easy: "Easy (Relajado)"
-      Normal: "Normal (Estándar)"
-      Hard: "Hard (Difícil)"
+      Easy: Fácil
+      Normal: Medio
+      Hard: Difícil
     la:
-      Easy: "Easy (Remissum)"
-      Normal: "Normal (Ordinarium)"
-      Hard: "Hard (Difficile)"
+      Easy: Facilis
+      Normal: Media
+      Hard: Difficilis
     is:
-      Easy: "Easy (Slakað)"
-      Normal: "Normal (Staðlað)"
-      Hard: "Hard (Erfitt)"
+      Easy: Auðvelt
+      Normal: Miðlungs
+      Hard: Erfitt
     fi:
-      Easy: "Easy (Rento)"
-      Normal: "Normal (Perus)"
-      Hard: "Hard (Vaikea)"
+      Easy: Helppo
+      Normal: Keskivaikea
+      Hard: Vaikea
     nl:
-      Easy: "Easy (Ontspannen)"
-      Normal: "Normal (Standaard)"
-      Hard: "Hard (Uitdagend)"
+      Easy: Makkelijk
+      Normal: Gemiddeld
+      Hard: Moeilijk
     fr:
-      Easy: "Easy (Détendu)"
-      Normal: "Normal (Standard)"
-      Hard: "Hard (Difficile)"
+      Easy: Facile
+      Normal: Moyen
+      Hard: Difficile
     ru:
-      Easy: "Easy (Спокойно)"
-      Normal: "Normal (Стандарт)"
-      Hard: "Hard (Сложно)"
+      Easy: Лёгкий
+      Normal: Средний
+      Hard: Сложный
     ko:
-      Easy: "Easy (여유)"
-      Normal: "Normal (표준)"
-      Hard: "Hard (어려움)"
+      Easy: 쉬움
+      Normal: 보통
+      Hard: 어려움
     zh_tw:
-      Easy: "Easy（輕鬆）"
-      Normal: "Normal（標準）"
-      Hard: "Hard（困難）"
+      Easy: 簡單
+      Normal: 中等
+      Hard: 困難
     sa:
-      Easy: "Easy (शिथिलम्)"
-      Normal: "Normal (मानकः)"
-      Hard: "Hard (दुष्करम्)"
+      Easy: सुलभम्
+      Normal: मध्यमम्
+      Hard: दुष्करम्
     pt:
-      Easy: "Easy (Tranquilo)"
-      Normal: "Normal (Padrão)"
-      Hard: "Hard (Difícil)"
+      Easy: Fácil
+      Normal: Médio
+      Hard: Difícil
     hi:
-      Easy: "Easy (आसान)"
-      Normal: "Normal (सामान्य)"
-      Hard: "Hard (कठिन)"
+      Easy: आसान
+      Normal: मध्यम
+      Hard: कठिन
     lzh:
-      Easy: "易（緩）"
-      Normal: "常（標準）"
-      Hard: "難（高難度）"
+      Easy: 易
+      Normal: 中
+      Hard: 難
     asl_gloss:
-      Easy: "EASY (CHILL)"
-      Normal: "NORMAL (STANDARD)"
-      Hard: "HARD (CHALLENGE)"
-
-  # 本文ページ（色コード § と改行を維持）
-  # ✅ 既存3ページは絶対維持（削除しない）
-  # ✅ 追加で「Favorites Archive の世界観」ページを4ページ目として追記
+      Easy: EASY
+      Normal: MEDIUM
+      Hard: HARD
   pages:
     ja:
-      - |-
-        §b§lTreasureRun ルール
+    - '§b§lTreasureRun ルール
 
-        §1難易度: %diffLabel%
 
-        制限時間内にできるだけ多くの
-        宝箱を開けよう！
-        レアな宝物ほど高得点です。
-      - |-
-        §b★ 基本の流れ
+      §1難易度: %diffLabel%
 
-        §11. /gameStart <難易度>
-        2. 緑のマークの宝箱を探す
-        3. 開けるとスコア + アイテム
-        4. 全て開けるとクリア！
-      - |-
-        §b★ ヒント
 
-        §1・ネザライト/ブロック系は
-          ジャックポット高得点！
+      制限時間内にできるだけ多くの
 
-        ・途中で /gameMenu を打つと
-          この本を再取得できます。
+      宝箱を開けよう！
 
-        ・タイムアップに注意！
-      - |-
-        §b★ Archive / Favorites
+      レアな宝物ほど高得点です。'
+    - '§b★ 基本の流れ
 
-        §1TreasureRun Archive は
-        SUCCESS（表彰台ログ）と
-        TIME_UP（詩集 / 余韻）を
-        「お気に入り」として収録します。
 
-        右クリックで最新格言を保存。
-        目次から章を開いて再読できます。
+      §11. /gameStart <難易度>
 
+      2. 緑のマークの宝箱を探す
+
+      3. 開けるとスコア + アイテム
+
+      4. 全て開けるとクリア！'
+    - "§b★ ヒント\n\n§1・ネザライト/ブロック系は\n  ジャックポット高得点！\n\n・途中で /gameMenu を打つと\n  この本を再取得できます。\n\n・タイムアップに注意！"
+    - '§b★ Archive / Favorites
+
+
+      §1TreasureRun Archive は
+
+      SUCCESS（表彰台ログ）と
+
+      TIME_UP（詩集 / 余韻）を
+
+      「お気に入り」として収録します。
+
+
+      右クリックで最新格言を保存。
+
+      目次から章を開いて再読できます。'
     en:
-      - |-
-        §b§lTreasureRun Rules
+    - '§b§lTreasureRun Rules
 
-        §1Difficulty: %diffLabel%
 
-        Open as many chests as you can
-        before time runs out!
-        The rarer the treasure, the higher the score.
-      - |-
-        §b★ Basic Flow
+      §1Difficulty: %diffLabel%
 
-        §11. /gameStart <difficulty>
-        2. Find chests with the green mark
-        3. Open to score points and get items
-        4. Open them all to clear!
-      - |-
-        §b★ Tips
 
-        §1・Netherite / block items are
-          high-score jackpots!
+      Open as many chests as you can
 
-        ・Type /gameMenu anytime to
-          get this book again.
+      before time runs out!
 
-        ・Be careful to not run out of time!
-      - |-
-        §b★ Archive / Favorites
+      The rarer the treasure, the higher the score.'
+    - '§b★ Basic Flow
 
-        §1TreasureRun Archive stores
-        SUCCESS (Podium Records) and
-        TIME_UP (Poems / Echo)
-        as your Favorites.
 
-        Right click to save the latest quote.
-        Open chapters from the Catalog to re-read.
+      §11. /gameStart <difficulty>
 
+      2. Find chests with the green mark
+
+      3. Open to score points and get items
+
+      4. Open them all to clear!'
+    - "§b★ Tips\n\n§1・Netherite / block items are\n  high-score jackpots!\n\n・Type /gameMenu anytime to\n  get this book again.\n\n・Be careful to not run out of time!"
+    - '§b★ Archive / Favorites
+
+
+      §1TreasureRun Archive stores
+
+      SUCCESS (Podium Records) and
+
+      TIME_UP (Poems / Echo)
+
+      as your Favorites.
+
+
+      Right click to save the latest quote.
+
+      Open chapters from the Catalog to re-read.'
     de:
-      - |-
-        §b§lTreasureRun Regeln
+    - '§b§lTreasureRun Regeln
 
-        §1Schwierigkeit: %diffLabel%
 
-        Öffne innerhalb der Zeit so viele
-        Truhen wie möglich!
-        Je seltener der Schatz, desto mehr Punkte.
-      - |-
-        §b★ Ablauf
+      §1Schwierigkeit: %diffLabel%
 
-        §11. /gameStart <Schwierigkeit>
-        2. Truhen mit dem grünen Zeichen suchen
-        3. Öffnen bringt Punkte und Items
-        4. Alle öffnen = geschafft!
-      - |-
-        §b★ Tipps
 
-        §1・Netherit / Block-Items sind
-          Jackpot mit vielen Punkten!
+      Öffne innerhalb der Zeit so viele
 
-        ・Mit /gameMenu kannst du
-          dieses Buch erneut bekommen.
+      Truhen wie möglich!
 
-        ・Achte auf die Zeit!
-      - |-
-        §b★ Archiv / Favoriten
+      Je seltener der Schatz, desto mehr Punkte.'
+    - '§b★ Ablauf
 
-        §1TreasureRun Archiv speichert
-        SUCCESS (Podiumsprotokolle) und
-        TIME_UP (Gedichte / Echo)
-        als deine Favoriten.
 
-        Rechtsklick: neuestes Zitat speichern.
-        Kapitel im Katalog öffnen und neu lesen.
+      §11. /gameStart <Schwierigkeit>
 
+      2. Truhen mit dem grünen Zeichen suchen
+
+      3. Öffnen bringt Punkte und Items
+
+      4. Alle öffnen = geschafft!'
+    - "§b★ Tipps\n\n§1・Netherit / Block-Items sind\n  Jackpot mit vielen Punkten!\n\n・Mit /gameMenu kannst du\n  dieses Buch erneut bekommen.\n\n・Achte auf die Zeit!"
+    - '§b★ Archiv / Favoriten
+
+
+      §1TreasureRun Archiv speichert
+
+      SUCCESS (Podiumsprotokolle) und
+
+      TIME_UP (Gedichte / Echo)
+
+      als deine Favoriten.
+
+
+      Rechtsklick: neuestes Zitat speichern.
+
+      Kapitel im Katalog öffnen und neu lesen.'
     it:
-      - |-
-        §b§lRegole di TreasureRun
+    - '§b§lRegole di TreasureRun
 
-        §1Difficoltà: %diffLabel%
 
-        Apri quante più casse possibile
-        prima che finisca il tempo!
-        Più raro è il tesoro, più alto sarà il punteggio.
-      - |-
-        §b★ Flusso di gioco
+      §1Difficoltà: %diffLabel%
 
-        §11. /gameStart <difficoltà>
-        2. Cerca le casse con il segno verde
-        3. Aprile per ottenere punti e raccogliere oggetti
-        4. Aprile tutte per completare!
-      - |-
-        §b★ Suggerimenti
 
-        §1・Netherite / oggetti a blocco sono
-          jackpot con punteggi altissimi!
+      Apri quante più casse possibile
 
-        ・Scrivi /gameMenu in qualsiasi momento
-          per ricevere di nuovo questo libro.
+      prima che finisca il tempo!
 
-        ・Attento al tempo!
-      - |-
-        §b★ Archivio / Preferiti
+      Più raro è il tesoro, più alto sarà il punteggio.'
+    - '§b★ Flusso di gioco
 
-        §1L'Archivio TreasureRun conserva
-        SUCCESS (Registri del Podio) e
-        TIME_UP (Poesie / Eco)
-        come Preferiti.
 
-        Clic destro: salva l'ultima citazione.
-        Apri i capitoli dal Catalogo per rileggere.
+      §11. /gameStart <difficoltà>
 
+      2. Cerca le casse con il segno verde
+
+      3. Aprile per ottenere punti e raccogliere oggetti
+
+      4. Aprile tutte per completare!'
+    - "§b★ Suggerimenti\n\n§1・Netherite / oggetti a blocco sono\n  jackpot con punteggi altissimi!\n\n・Scrivi /gameMenu in qualsiasi momento\n  per ricevere di nuovo questo libro.\n\n・Attento al tempo!"
+    - '§b★ Archivio / Preferiti
+
+
+      §1L''Archivio TreasureRun conserva
+
+      SUCCESS (Registri del Podio) e
+
+      TIME_UP (Poesie / Eco)
+
+      come Preferiti.
+
+
+      Clic destro: salva l''ultima citazione.
+
+      Apri i capitoli dal Catalogo per rileggere.'
     sv:
-      - |-
-        §b§lTreasureRun Regler
+    - '§b§lTreasureRun Regler
 
-        §1Svårighetsgrad: %diffLabel%
 
-        Öppna så många kistor du kan
-        innan tiden tar slut!
-        Ju mer sällsynt skatten är, desto högre poäng.
-      - |-
-        §b★ Grundflöde
+      §1Svårighetsgrad: %diffLabel%
 
-        §11. /gameStart <svårighetsgrad>
-        2. Leta efter kistor med den gröna markeringen
-        3. Öppna dem för att få poäng och samla föremål
-        4. Öppna alla för att klara spelet!
-      - |-
-        §b★ Tips
 
-        §1・Netherite / blockföremål är
-          jackpot med höga poäng!
+      Öppna så många kistor du kan
 
-        ・Skriv /gameMenu när som helst
-          för att få boken igen.
+      innan tiden tar slut!
 
-        ・Håll koll på tiden!
-      - |-
-        §b★ Arkiv / Favoriter
+      Ju mer sällsynt skatten är, desto högre poäng.'
+    - '§b★ Grundflöde
 
-        §1TreasureRun Arkiv sparar
-        SUCCESS (Pallprotokoll) och
-        TIME_UP (Dikter / Eko)
-        som Favoriter.
 
-        Högerklick: spara senaste citatet.
-        Öppna kapitel från Katalogen för att läsa om.
+      §11. /gameStart <svårighetsgrad>
 
+      2. Leta efter kistor med den gröna markeringen
+
+      3. Öppna dem för att få poäng och samla föremål
+
+      4. Öppna alla för att klara spelet!'
+    - "§b★ Tips\n\n§1・Netherite / blockföremål är\n  jackpot med höga poäng!\n\n・Skriv /gameMenu när som helst\n  för att få boken igen.\n\n・Håll koll på tiden!"
+    - '§b★ Arkiv / Favoriter
+
+
+      §1TreasureRun Arkiv sparar
+
+      SUCCESS (Pallprotokoll) och
+
+      TIME_UP (Dikter / Eko)
+
+      som Favoriter.
+
+
+      Högerklick: spara senaste citatet.
+
+      Öppna kapitel från Katalogen för att läsa om.'
     es:
-      - |-
-        §b§lReglas de TreasureRun
+    - '§b§lReglas de TreasureRun
 
-        §1Dificultad: %diffLabel%
 
-        ¡Abre tantos cofres como puedas
-        antes de que se acabe el tiempo!
-        Cuanto más raro el tesoro, más puntos.
-      - |-
-        §b★ Flujo básico
+      §1Dificultad: %diffLabel%
 
-        §11. /gameStart <dificultad>
-        2. Busca cofres con la marca verde
-        3. Ábrelos para ganar puntos y objetos
-        4. ¡Ábrelos todos para completar!
-      - |-
-        §b★ Consejos
 
-        §1・Netherite / bloques son
-          ¡jackpots de alta puntuación!
+      ¡Abre tantos cofres como puedas
 
-        ・Escribe /gameMenu para
-          recibir este libro otra vez.
+      antes de que se acabe el tiempo!
 
-        ・¡Cuidado con el tiempo!
-      - |-
-        §b★ Archivo / Favoritos
+      Cuanto más raro el tesoro, más puntos.'
+    - '§b★ Flujo básico
 
-        §1El Archivo TreasureRun guarda
-        SUCCESS (Registros del Podio) y
-        TIME_UP (Poemas / Eco)
-        como Favoritos.
 
-        Clic derecho: guarda la última cita.
-        Abre capítulos desde el Catálogo para releer.
+      §11. /gameStart <dificultad>
 
+      2. Busca cofres con la marca verde
+
+      3. Ábrelos para ganar puntos y objetos
+
+      4. ¡Ábrelos todos para completar!'
+    - "§b★ Consejos\n\n§1・Netherite / bloques son\n  ¡jackpots de alta puntuación!\n\n・Escribe /gameMenu para\n  recibir este libro otra vez.\n\n・¡Cuidado con el tiempo!"
+    - '§b★ Archivo / Favoritos
+
+
+      §1El Archivo TreasureRun guarda
+
+      SUCCESS (Registros del Podio) y
+
+      TIME_UP (Poemas / Eco)
+
+      como Favoritos.
+
+
+      Clic derecho: guarda la última cita.
+
+      Abre capítulos desde el Catálogo para releer.'
     la:
-      - |-
-        §b§lRegulae TreasureRun
+    - '§b§lRegulae TreasureRun
 
-        §1Difficultas: %diffLabel%
 
-        Aperī quam plurimas cistās potes
-        antequam tempus finiatur!
-        Quo rarior thesaurus, eo plura puncta.
-      - |-
-        §b★ Ordo ludendi
+      §1Difficultas: %diffLabel%
 
-        §11. /gameStart <difficultas>
-        2. Cistās cum signo viridi quaere
-        3. Aperī: puncta + res accipies
-        4. Omnēs aperī = perfectum!
-      - |-
-        §b★ Consilia
 
-        §1・Netherite / res in formā bloci
-          sunt jackpot cum multis punctis!
+      Aperī quam plurimas cistās potes
 
-        ・Scribe /gameMenu ut
-          librum iterum accipias.
+      antequam tempus finiatur!
 
-        ・Tempus observa!
-      - |-
-        §b★ Tabularium / Favorita
+      Quo rarior thesaurus, eo plura puncta.'
+    - '§b★ Ordo ludendi
 
-        §1Tabularium TreasureRun servat
-        SUCCESS (Acta Podii) et
-        TIME_UP (Carmina / Echo)
-        ut Favorita.
 
-        Dexter cliccare: serva recentissimum dictum.
-        Aperī capitula ex Catalogo ut releges.
+      §11. /gameStart <difficultas>
 
+      2. Cistās cum signo viridi quaere
+
+      3. Aperī: puncta + res accipies
+
+      4. Omnēs aperī = perfectum!'
+    - "§b★ Consilia\n\n§1・Netherite / res in formā bloci\n  sunt jackpot cum multis punctis!\n\n・Scribe /gameMenu ut\n  librum iterum accipias.\n\n・Tempus observa!"
+    - '§b★ Tabularium / Favorita
+
+
+      §1Tabularium TreasureRun servat
+
+      SUCCESS (Acta Podii) et
+
+      TIME_UP (Carmina / Echo)
+
+      ut Favorita.
+
+
+      Dexter cliccare: serva recentissimum dictum.
+
+      Aperī capitula ex Catalogo ut releges.'
     is:
-      - |-
-        §b§lTreasureRun Reglur
+    - '§b§lTreasureRun Reglur
 
-        §1Erfiðleiki: %diffLabel%
 
-        Opnaðu eins margar kistur og þú getur
-        áður en tíminn rennur út!
-        Því sjaldgæfari sem fjársjóðurinn er, því fleiri stig.
-      - |-
-        §b★ Grunnferli
+      §1Erfiðleiki: %diffLabel%
 
-        §11. /gameStart <erfiðleiki>
-        2. Finndu kistur með græna merkinu
-        3. Opnaðu til að fá stig og hluti
-        4. Opnaðu allar = klárað!
-      - |-
-        §b★ Ráð
 
-        §1・Netherite / blokk-hlutir eru
-          jackpot með háum stigum!
+      Opnaðu eins margar kistur og þú getur
 
-        ・Sláðu inn /gameMenu til að
-          fá bókina aftur.
+      áður en tíminn rennur út!
 
-        ・Passaðu tímann!
-      - |-
-        §b★ Safn / Uppáhald
+      Því sjaldgæfari sem fjársjóðurinn er, því fleiri stig.'
+    - '§b★ Grunnferli
 
-        §1TreasureRun Safn geymir
-        SUCCESS (Verðlaunapalls-skrár) og
-        TIME_UP (Ljóð / Echo)
-        sem uppáhald.
 
-        Hægri smellur: vista nýjustu tilvitnun.
-        Opna kafla úr skránni til að endurlesa.
+      §11. /gameStart <erfiðleiki>
 
+      2. Finndu kistur með græna merkinu
+
+      3. Opnaðu til að fá stig og hluti
+
+      4. Opnaðu allar = klárað!'
+    - "§b★ Ráð\n\n§1・Netherite / blokk-hlutir eru\n  jackpot með háum stigum!\n\n・Sláðu inn /gameMenu til að\n  fá bókina aftur.\n\n・Passaðu tímann!"
+    - '§b★ Safn / Uppáhald
+
+
+      §1TreasureRun Safn geymir
+
+      SUCCESS (Verðlaunapalls-skrár) og
+
+      TIME_UP (Ljóð / Echo)
+
+      sem uppáhald.
+
+
+      Hægri smellur: vista nýjustu tilvitnun.
+
+      Opna kafla úr skránni til að endurlesa.'
     fi:
-      - |-
-        §b§lTreasureRun Säännöt
+    - '§b§lTreasureRun Säännöt
 
-        §1Vaikeus: %diffLabel%
 
-        Avaa mahdollisimman monta arkkua
-        ennen kuin aika loppuu!
-        Mitä harvinaisempi aarre, sitä enemmän pisteitä.
-      - |-
-        §b★ Pelin kulku
+      §1Vaikeus: %diffLabel%
 
-        §11. /gameStart <vaikeus>
-        2. Etsi arkkuja vihreällä merkillä
-        3. Avaa: saat pisteitä ja esineitä
-        4. Avaa kaikki = läpäisty!
-      - |-
-        §b★ Vinkit
 
-        §1・Netherite / lohkoesineet ovat
-          piste-jackpot!
+      Avaa mahdollisimman monta arkkua
 
-        ・Kirjoita /gameMenu saadaksesi
-          kirjan uudelleen.
+      ennen kuin aika loppuu!
 
-        ・Pidä silmällä aikaa!
-      - |-
-        §b★ Arkisto / Suosikit
+      Mitä harvinaisempi aarre, sitä enemmän pisteitä.'
+    - '§b★ Pelin kulku
 
-        §1TreasureRun Arkisto tallentaa
-        SUCCESS (Palkintokorokkeen lokit) ja
-        TIME_UP (Runot / Echo)
-        suosikkeihin.
 
-        Oikea klikkaus: tallenna uusin sitaatti.
-        Avaa luvut luettelosta ja lue uudelleen.
+      §11. /gameStart <vaikeus>
 
+      2. Etsi arkkuja vihreällä merkillä
+
+      3. Avaa: saat pisteitä ja esineitä
+
+      4. Avaa kaikki = läpäisty!'
+    - "§b★ Vinkit\n\n§1・Netherite / lohkoesineet ovat\n  piste-jackpot!\n\n・Kirjoita /gameMenu saadaksesi\n  kirjan uudelleen.\n\n・Pidä silmällä aikaa!"
+    - '§b★ Arkisto / Suosikit
+
+
+      §1TreasureRun Arkisto tallentaa
+
+      SUCCESS (Palkintokorokkeen lokit) ja
+
+      TIME_UP (Runot / Echo)
+
+      suosikkeihin.
+
+
+      Oikea klikkaus: tallenna uusin sitaatti.
+
+      Avaa luvut luettelosta ja lue uudelleen.'
     nl:
-      - |-
-        §b§lTreasureRun Regels
+    - '§b§lTreasureRun Regels
 
-        §1Moeilijkheid: %diffLabel%
 
-        Open zoveel mogelijk kisten
-        voordat de tijd om is!
-        Hoe zeldzamer de schat, hoe hoger de score.
-      - |-
-        §b★ Basisverloop
+      §1Moeilijkheid: %diffLabel%
 
-        §11. /gameStart <moeilijkheid>
-        2. Zoek kisten met de groene markering
-        3. Open voor punten en items
-        4. Open ze allemaal = gehaald!
-      - |-
-        §b★ Tips
 
-        §1・Netherite / blok-items zijn
-          jackpots met hoge scores!
+      Open zoveel mogelijk kisten
 
-        ・Typ /gameMenu om
-          dit boek opnieuw te krijgen.
+      voordat de tijd om is!
 
-        ・Let op dat de tijd niet opraakt!
-      - |-
-        §b★ Archief / Favorieten
+      Hoe zeldzamer de schat, hoe hoger de score.'
+    - '§b★ Basisverloop
 
-        §1TreasureRun Archief bewaart
-        SUCCESS (Podiumlogs) en
-        TIME_UP (Gedichten / Echo)
-        als Favorieten.
 
-        Rechtsklik: sla de laatste quote op.
-        Open hoofdstukken via de Catalogus om te herlezen.
+      §11. /gameStart <moeilijkheid>
 
+      2. Zoek kisten met de groene markering
+
+      3. Open voor punten en items
+
+      4. Open ze allemaal = gehaald!'
+    - "§b★ Tips\n\n§1・Netherite / blok-items zijn\n  jackpots met hoge scores!\n\n・Typ /gameMenu om\n  dit boek opnieuw te krijgen.\n\n・Let op dat de tijd niet opraakt!"
+    - '§b★ Archief / Favorieten
+
+
+      §1TreasureRun Archief bewaart
+
+      SUCCESS (Podiumlogs) en
+
+      TIME_UP (Gedichten / Echo)
+
+      als Favorieten.
+
+
+      Rechtsklik: sla de laatste quote op.
+
+      Open hoofdstukken via de Catalogus om te herlezen.'
     fr:
-      - |-
-        §b§lRègles de TreasureRun
+    - '§b§lRègles de TreasureRun
 
-        §1Difficulté: %diffLabel%
 
-        Ouvre autant de coffres que possible
-        avant la fin du temps !
-        Plus le trésor est rare, plus le score est élevé.
-      - |-
-        §b★ Déroulement
+      §1Difficulté: %diffLabel%
 
-        §11. /gameStart <difficulté>
-        2. Trouve les coffres avec la marque verte
-        3. Ouvre pour gagner des points et des objets
-        4. Ouvre-les tous pour réussir !
-      - |-
-        §b★ Conseils
 
-        §1・Netherite / objets en blocs :
-          jackpot de points !
+      Ouvre autant de coffres que possible
 
-        ・Tape /gameMenu à tout moment
-          pour récupérer ce livre.
+      avant la fin du temps !
 
-        ・Attention au temps !
-      - |-
-        §b★ Archives / Favoris
+      Plus le trésor est rare, plus le score est élevé.'
+    - '§b★ Déroulement
 
-        §1Les Archives TreasureRun conservent
-        SUCCESS (Journal du Podium) et
-        TIME_UP (Poèmes / Echo)
-        comme Favoris.
 
-        Clic droit : enregistrer la dernière citation.
-        Ouvrez les chapitres via le Catalogue pour relire.
+      §11. /gameStart <difficulté>
 
+      2. Trouve les coffres avec la marque verte
+
+      3. Ouvre pour gagner des points et des objets
+
+      4. Ouvre-les tous pour réussir !'
+    - "§b★ Conseils\n\n§1・Netherite / objets en blocs :\n  jackpot de points !\n\n・Tape /gameMenu à tout moment\n  pour récupérer ce livre.\n\n・Attention au temps !"
+    - '§b★ Archives / Favoris
+
+
+      §1Les Archives TreasureRun conservent
+
+      SUCCESS (Journal du Podium) et
+
+      TIME_UP (Poèmes / Echo)
+
+      comme Favoris.
+
+
+      Clic droit : enregistrer la dernière citation.
+
+      Ouvrez les chapitres via le Catalogue pour relire.'
     ru:
-      - |-
-        §b§lПравила TreasureRun
+    - '§b§lПравила TreasureRun
 
-        §1Сложность: %diffLabel%
 
-        Открой как можно больше сундуков,
-        пока не закончилось время!
-        Чем реже сокровище, тем выше очки.
-      - |-
-        §b★ Основной ход
+      §1Сложность: %diffLabel%
 
-        §11. /gameStart <сложность>
-        2. Найди сундуки с зелёной меткой
-        3. Открой: получи очки и предметы
-        4. Открой все = пройдено!
-      - |-
-        §b★ Подсказки
 
-        §1・Незерит / предметы-блоки —
-          джекпот с большим количеством очков!
+      Открой как можно больше сундуков,
 
-        ・Введи /gameMenu в любой момент,
-          чтобы снова получить эту книгу.
+      пока не закончилось время!
 
-        ・Следи за временем!
-      - |-
-        §b★ Архив / Избранное
+      Чем реже сокровище, тем выше очки.'
+    - '§b★ Основной ход
 
-        §1Архив TreasureRun хранит
-        SUCCESS (Записи пьедестала) и
-        TIME_UP (Стихи / Echo)
-        как Избранное.
 
-        ПКМ: сохранить последнюю цитату.
-        Открой главы из каталога и перечитай.
+      §11. /gameStart <сложность>
 
+      2. Найди сундуки с зелёной меткой
+
+      3. Открой: получи очки и предметы
+
+      4. Открой все = пройдено!'
+    - "§b★ Подсказки\n\n§1・Незерит / предметы-блоки —\n  джекпот с большим количеством очков!\n\n・Введи /gameMenu в любой момент,\n  чтобы снова получить эту книгу.\n\n・Следи за временем!"
+    - '§b★ Архив / Избранное
+
+
+      §1Архив TreasureRun хранит
+
+      SUCCESS (Записи пьедестала) и
+
+      TIME_UP (Стихи / Echo)
+
+      как Избранное.
+
+
+      ПКМ: сохранить последнюю цитату.
+
+      Открой главы из каталога и перечитай.'
     ko:
-      - |-
-        §b§lTreasureRun 규칙
+    - '§b§lTreasureRun 규칙
 
-        §1난이도: %diffLabel%
 
-        시간 안에 가능한 한 많은
-        상자를 여세요!
-        보물이 희귀할수록 점수가 높아집니다.
-      - |-
-        §b★ 기본 진행
+      §1난이도: %diffLabel%
 
-        §11. /gameStart <난이도>
-        2. 초록 표시가 있는 상자를 찾기
-        3. 열면 점수 + 아이템 획득
-        4. 전부 열면 클리어!
-      - |-
-        §b★ 팁
 
-        §1・네더라이트/블록 아이템은
-          고득점 잭팟!
+      시간 안에 가능한 한 많은
 
-        ・/gameMenu 를 입력하면
-          이 책을 다시 받을 수 있어요.
+      상자를 여세요!
 
-        ・시간 초과에 주의!
-      - |-
-        §b★ 아카이브 / 즐겨찾기
+      보물이 희귀할수록 점수가 높아집니다.'
+    - '§b★ 기본 진행
 
-        §1TreasureRun 아카이브는
-        SUCCESS(포디움 기록)과
-        TIME_UP(시집 / 에코)를
-        즐겨찾기로 보관합니다.
 
-        우클릭: 최신 문장 저장
-        카탈로그에서 챕터를 열어 다시 읽을 수 있어요.
+      §11. /gameStart <난이도>
 
+      2. 초록 표시가 있는 상자를 찾기
+
+      3. 열면 점수 + 아이템 획득
+
+      4. 전부 열면 클리어!'
+    - "§b★ 팁\n\n§1・네더라이트/블록 아이템은\n  고득점 잭팟!\n\n・/gameMenu 를 입력하면\n  이 책을 다시 받을 수 있어요.\n\n・시간 초과에 주의!"
+    - '§b★ 아카이브 / 즐겨찾기
+
+
+      §1TreasureRun 아카이브는
+
+      SUCCESS(포디움 기록)과
+
+      TIME_UP(시집 / 에코)를
+
+      즐겨찾기로 보관합니다.
+
+
+      우클릭: 최신 문장 저장
+
+      카탈로그에서 챕터를 열어 다시 읽을 수 있어요.'
     zh_tw:
-      - |-
-        §b§lTreasureRun 規則
+    - '§b§lTreasureRun 規則
 
-        §1難度：%diffLabel%
 
-        請在時間內盡可能打開更多寶箱！
-        寶物越稀有，分數越高。
-      - |-
-        §b★ 基本流程
+      §1難度：%diffLabel%
 
-        §11. /gameStart <難度>
-        2. 尋找有綠色標記的寶箱
-        3. 打開可得分數與道具
-        4. 全部打開即通關！
-      - |-
-        §b★ 提示
 
-        §1・獄髓/方塊類道具是
-          高分大獎！
+      請在時間內盡可能打開更多寶箱！
 
-        ・輸入 /gameMenu 可
-          再次取得此書。
+      寶物越稀有，分數越高。'
+    - '§b★ 基本流程
 
-        ・注意時間！
-      - |-
-        §b★ 檔案 / 收藏
 
-        §1TreasureRun 檔案收錄
-        SUCCESS（頒獎台紀錄）與
-        TIME_UP（詩集 / 回聲）
-        作為收藏。
+      §11. /gameStart <難度>
 
-        右鍵：儲存最新格言
-        從目錄開啟章節即可重讀。
+      2. 尋找有綠色標記的寶箱
 
+      3. 打開可得分數與道具
+
+      4. 全部打開即通關！'
+    - "§b★ 提示\n\n§1・獄髓/方塊類道具是\n  高分大獎！\n\n・輸入 /gameMenu 可\n  再次取得此書。\n\n・注意時間！"
+    - '§b★ 檔案 / 收藏
+
+
+      §1TreasureRun 檔案收錄
+
+      SUCCESS（頒獎台紀錄）與
+
+      TIME_UP（詩集 / 回聲）
+
+      作為收藏。
+
+
+      右鍵：儲存最新格言
+
+      從目錄開啟章節即可重讀。'
     sa:
-      - |-
-        §b§lTreasureRun नियमाः
+    - '§b§lTreasureRun नियमाः
 
-        §1दुस्तरता: %diffLabel%
 
-        समयसीमायां यावत् शक्यं
-        तावत् काष्ठपेटिकाः उद्घाटय!
-        यः निधिः विरलः, तस्य अधिकाः अंकाः।
-      - |-
-        §b★ मूल-प्रवाहः
+      §1दुस्तरता: %diffLabel%
 
-        §11. /gameStart <दुस्तरता>
-        2. हरित-चिह्नयुक्ताः पेटिकाः अन्वेषय
-        3. उद्घाटने अंकाः + वस्तूनि
-        4. सर्वाः उद्घाट्य = सिद्धम्!
-      - |-
-        §b★ सूचनाः
 
-        §1・Netherite / block-वस्तूनि
-          उच्चाङ्क-जैकपॉट!
+      समयसीमायां यावत् शक्यं
 
-        ・/gameMenu लिखित्वा
-          पुस्तकं पुनः प्राप्नुहि।
+      तावत् काष्ठपेटिकाः उद्घाटय!
 
-        ・समयम् अवलोकय!
-      - |-
-        §b★ Archive / Favorites
+      यः निधिः विरलः, तस्य अधिकाः अंकाः।'
+    - '§b★ मूल-प्रवाहः
 
-        §1TreasureRun Archive मध्ये
-        SUCCESS (मञ्च-लेखाः) तथा
-        TIME_UP (अपूर्ण प्रतिध्वनि-काव्यम्)
-        प्रिय-वचनरूपेण संगृह्यते।
 
-        दायाँ क्लिक: नवीनतम वचन सहेजें।
-        Catalog से अध्याय खोलकर पुनःपठन करें।
+      §11. /gameStart <दुस्तरता>
 
+      2. हरित-चिह्नयुक्ताः पेटिकाः अन्वेषय
+
+      3. उद्घाटने अंकाः + वस्तूनि
+
+      4. सर्वाः उद्घाट्य = सिद्धम्!'
+    - "§b★ सूचनाः\n\n§1・Netherite / block-वस्तूनि\n  उच्चाङ्क-जैकपॉट!\n\n・/gameMenu लिखित्वा\n  पुस्तकं पुनः प्राप्नुहि।\n\n・समयम् अवलोकय!"
+    - '§b★ Archive / Favorites
+
+
+      §1TreasureRun Archive मध्ये
+
+      SUCCESS (मञ्च-लेखाः) तथा
+
+      TIME_UP (अपूर्ण प्रतिध्वनि-काव्यम्)
+
+      प्रिय-वचनरूपेण संगृह्यते।
+
+
+      दायाँ क्लिक: नवीनतम वचन सहेजें।
+
+      Catalog से अध्याय खोलकर पुनःपठन करें।'
     pt:
-      - |-
-        §b§lRegras do TreasureRun
+    - '§b§lRegras do TreasureRun
 
-        §1Dificuldade: %diffLabel%
 
-        Abra o máximo de baús que conseguir
-        antes que o tempo acabe!
-        Quanto mais raro o tesouro, maior a pontuação.
-      - |-
-        §b★ Fluxo básico
+      §1Dificuldade: %diffLabel%
 
-        §11. /gameStart <dificuldade>
-        2. Procure baús com a marca verde
-        3. Abra para ganhar pontos e itens
-        4. Abra todos para concluir!
-      - |-
-        §b★ Dicas
 
-        §1・Netherite / itens em bloco são
-          jackpots de alta pontuação!
+      Abra o máximo de baús que conseguir
 
-        ・Digite /gameMenu para
-          pegar este livro novamente.
+      antes que o tempo acabe!
 
-        ・Cuidado para não ficar sem tempo!
-      - |-
-        §b★ Arquivo / Favoritos
+      Quanto mais raro o tesouro, maior a pontuação.'
+    - '§b★ Fluxo básico
 
-        §1O Arquivo TreasureRun guarda
-        SUCCESS (Registros do Pódio) e
-        TIME_UP (Poemas / Eco)
-        como Favoritos.
 
-        Clique direito: salvar a última citação.
-        Abra capítulos pelo Catálogo para reler.
+      §11. /gameStart <dificuldade>
 
+      2. Procure baús com a marca verde
+
+      3. Abra para ganhar pontos e itens
+
+      4. Abra todos para concluir!'
+    - "§b★ Dicas\n\n§1・Netherite / itens em bloco são\n  jackpots de alta pontuação!\n\n・Digite /gameMenu para\n  pegar este livro novamente.\n\n・Cuidado para não ficar sem tempo!"
+    - '§b★ Arquivo / Favoritos
+
+
+      §1O Arquivo TreasureRun guarda
+
+      SUCCESS (Registros do Pódio) e
+
+      TIME_UP (Poemas / Eco)
+
+      como Favoritos.
+
+
+      Clique direito: salvar a última citação.
+
+      Abra capítulos pelo Catálogo para reler.'
     hi:
-      - |-
-        §b§lTreasureRun नियम
+    - '§b§lTreasureRun नियम
 
-        §1कठिनाई: %diffLabel%
 
-        समय समाप्त होने से पहले
-        जितने हो सकें उतने संदूक खोलें!
-        खजाना जितना दुर्लभ, अंक उतने अधिक।
-      - |-
-        §b★ मूल प्रवाह
+      §1कठिनाई: %diffLabel%
 
-        §11. /gameStart <कठिनाई>
-        2. हरे निशान वाले संदूक ढूँढें
-        3. खोलने पर अंक + आइटम मिलेंगे
-        4. सब खोलें = गेम क्लियर!
-      - |-
-        §b★ सुझाव
 
-        §1・Netherite / ब्लॉक आइटम
-          हाई-स्कोर जैकपॉट!
+      समय समाप्त होने से पहले
 
-        ・/gameMenu लिखकर
-          यह किताब फिर से लें।
+      जितने हो सकें उतने संदूक खोलें!
 
-        ・समय पर ध्यान दें!
-      - |-
-        §b★ Archive / Favorites
+      खजाना जितना दुर्लभ, अंक उतने अधिक।'
+    - '§b★ मूल प्रवाह
 
-        §1TreasureRun Archive में
-        SUCCESS (पोडियम रिकॉर्ड) और
-        TIME_UP (अपूर्ण प्रतिध्वनि की कविताएँ)
-        पसंदीदा के रूप में संग्रहीत होते हैं।
 
-        राइट क्लिक: नवीनतम कथन सहेजें।
-        कैटलॉग से अध्याय खोलकर पुनः पढ़ें।
+      §11. /gameStart <कठिनाई>
 
+      2. हरे निशान वाले संदूक ढूँढें
+
+      3. खोलने पर अंक + आइटम मिलेंगे
+
+      4. सब खोलें = गेम क्लियर!'
+    - "§b★ सुझाव\n\n§1・Netherite / ब्लॉक आइटम\n  हाई-स्कोर जैकपॉट!\n\n・/gameMenu लिखकर\n  यह किताब फिर से लें।\n\n・समय पर ध्यान दें!"
+    - '§b★ Archive / Favorites
+
+
+      §1TreasureRun Archive में
+
+      SUCCESS (पोडियम रिकॉर्ड) और
+
+      TIME_UP (अपूर्ण प्रतिध्वनि की कविताएँ)
+
+      पसंदीदा के रूप में संग्रहीत होते हैं।
+
+
+      राइट क्लिक: नवीनतम कथन सहेजें।
+
+      कैटलॉग से अध्याय खोलकर पुनः पढ़ें।'
     lzh:
-      - |-
-        §b§lTreasureRun 規則
+    - '§b§lTreasureRun 規則
 
-        §1難易：%diffLabel%
 
-        限時之內 盡開寶匣。
-        珍稀之寶 得點尤高。
-      - |-
-        §b★ 基本之次第
+      §1難易：%diffLabel%
 
-        §11. /gameStart <難易>
-        2. 尋綠標之匣
-        3. 開之 得點與物
-        4. 盡開則成！
-      - |-
-        §b★ 提示
 
-        §1・Netherite／方塊類
-          高得點之巨賞！
+      限時之內 盡開寶匣。
 
-        ・以 /gameMenu 可再得此書。
+      珍稀之寶 得點尤高。'
+    - '§b★ 基本之次第
 
-        ・慎勿失時！
-      - |-
-        §b★ 典蔵 / 愛蔵
 
-        §1TreasureRun 典蔵所収：
-        SUCCESS（表彰台錄）
-        TIME_UP（未竟回響詩）
-        皆為愛蔵之章。
+      §11. /gameStart <難易>
 
-        右按可存最新格言，
-        由目錄開篇以再讀。
+      2. 尋綠標之匣
 
+      3. 開之 得點與物
+
+      4. 盡開則成！'
+    - "§b★ 提示\n\n§1・Netherite／方塊類\n  高得點之巨賞！\n\n・以 /gameMenu 可再得此書。\n\n・慎勿失時！"
+    - '§b★ 典蔵 / 愛蔵
+
+
+      §1TreasureRun 典蔵所収：
+
+      SUCCESS（表彰台錄）
+
+      TIME_UP（未竟回響詩）
+
+      皆為愛蔵之章。
+
+
+      右按可存最新格言，
+
+      由目錄開篇以再讀。'
     asl_gloss:
-      - |-
-        §b§lTREASURE-RUN RULES
+    - '§b§lTREASURE-RUN RULES
 
-        §1[TOPIC] DIFFICULTY %diffLabel%
 
-        TIME-LIMIT. TRY OPEN MANY CHEST.
-        TREASURE RARE -> SCORE MORE.
-      - |-
-        §b★ BASIC FLOW
+      §1[TOPIC] DIFFICULTY %diffLabel%
 
-        §11) TYPE /gameStart DIFFICULTY
-        2) FIND CHEST GREEN-MARK
-        3) OPEN -> SCORE ADD, ITEM GET
-        4) OPEN ALL CHEST -> CLEAR FINISH
-      - |-
-        §b★ TIPS
 
-        §1NETHERITE, BLOCK-ITEM = JACKPOT SCORE BIG
+      TIME-LIMIT. TRY OPEN MANY CHEST.
 
-        ANYTIME TYPE /gameMenu -> GET BOOK AGAIN
+      TREASURE RARE -> SCORE MORE.'
+    - '§b★ BASIC FLOW
 
-        WATCH TIME. TIME RUN-OUT [NEG]
-      - |-
-        §b★ ARCHIVE / FAVORITES
 
-        §1ARCHIVE STORE:
-        SUCCESS = PODIUM RECORDS
-        TIME_UP = POEMS / ECHO
+      §11) TYPE /gameStart DIFFICULTY
 
-        RIGHT-CLICK SAVE LATEST QUOTE.
-        OPEN CHAPTER FROM CATALOG -> REREAD.
+      2) FIND CHEST GREEN-MARK
 
+      3) OPEN -> SCORE ADD, ITEM GET
+
+      4) OPEN ALL CHEST -> CLEAR FINISH'
+    - '§b★ TIPS
+
+
+      §1NETHERITE, BLOCK-ITEM = JACKPOT SCORE BIG
+
+
+      ANYTIME TYPE /gameMenu -> GET BOOK AGAIN
+
+
+      WATCH TIME. TIME RUN-OUT [NEG]'
+    - '§b★ ARCHIVE / FAVORITES
+
+
+      §1ARCHIVE STORE:
+
+      SUCCESS = PODIUM RECORDS
+
+      TIME_UP = POEMS / ECHO
+
+
+      RIGHT-CLICK SAVE LATEST QUOTE.
+
+      OPEN CHAPTER FROM CATALOG -> REREAD.'
 chestSound:
-  debug: true          # trueにするとデバッグ表示ON（普段はfalse推奨）
-  actionBarDebug: true # trueにするとActionBarに距離表示（普段はfalse推奨）
-
+  debug: true
+  actionBarDebug: true
 rankDebug:
   enabled: true
-
-# ✅ 開発/デバッグ用（採用向け：デフォルトOFF）
 debug:
   autoStartOnJoin: false
-  mszLogs: false               # MSZのデバッグログ（[MSZ] / [MSZ][DIST] / [MSZ][FX]）
-  mszHeartbeatEffect: true     # MSZのゲーム内ハートビート演出（音＋粒子）
-
+  mszLogs: false
+  mszHeartbeatEffect: true
 title:
-  outcomeStayTicks: 160   # TIME_UPの固定表示の長さ（160tick=8秒）
-  successStayTicks: 240   # SUCCESSの固定表示の長さ（240tick=12秒）
+  outcomeStayTicks: 160
+  successStayTicks: 240
