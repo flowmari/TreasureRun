@@ -17,6 +17,9 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: Install PyYAML
+        run: python3 -m pip install pyyaml
+
       - name: Set up Java
         uses: actions/setup-java@v4
         with:
