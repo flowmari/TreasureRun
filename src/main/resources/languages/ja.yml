@@ -1351,3 +1351,56 @@ quotes:
   philosophy:
   - Victory and defeat \nare nothing more than grains of sand.\n（勝利も敗北も、同じ砂の一粒に過ぎない。）
   - The road goes on—or it ends.\nEither way, it lies on the same earth.\n（道は続き、あるいは途切れ、どちらも同じ大地の上にある。）
+  command:
+    quoteFavorite:
+      playersOnly: "このコマンドはプレイヤーのみ実行できます。"
+      help:
+        title: "[TreasureRun] お気に入り格言コマンド:"
+        latest: "/quoteFavorite latest          - 最新の格言をお気に入り保存"
+        list: "/quoteFavorite list            - お気に入り一覧を表示"
+        remove: "/quoteFavorite remove <id>     - お気に入りを削除"
+        reread: "/quoteFavorite reread          - ランダム再読（チャット）"
+        rereadTitle: "/quoteFavorite reread title    - ランダム再読（タイトル表示）"
+        rereadBook: "/quoteFavorite reread book     - ランダム再読（本表示）"
+        book: "/quoteFavorite book            - 図鑑を開く（全体）"
+        bookToc: "/quoteFavorite book toc        - 目次のみ開く"
+        bookSuccess: "/quoteFavorite book success    - SUCCESS章を開く"
+        bookTimeup: "/quoteFavorite book timeup     - TIME_UP章を開く"
+        bookOther: "/quoteFavorite book other      - OTHER章を開く"
+      repositoryNotReady: "MySQL / Repository の準備ができていません。"
+      latestSaved: "★ お気に入りに保存しました！"
+      latestNotSaved: "お気に入り保存できませんでした。（ログ未保存、または重複の可能性があります）"
+      listHeader: "★ お気に入り一覧（最新20件）: (count={count})"
+      listSeparator: "------------------------------"
+      removeUsage: "使い方: /quoteFavorite remove <id>"
+      removeIdNumber: "ID は数字で入力してください。"
+      removeSuccess: "★ お気に入りを削除しました: #{id}"
+      removeNotFound: "お気に入りを削除できませんでした。（見つからない可能性があります）"
+      rereadNoQuotes: "★ まだ格言がありません。"
+      bookOpenFailed: "お気に入り図鑑を開けませんでした。"
+      openBookFailed: "このサーバーでは openBook() に失敗しました。"
+      unknownSubcommand: "不明なサブコマンドです。 /quoteFavorite help を使ってください"
+      shortcutSaved: "★ お気に入りに保存しました！ (Sneak+RightClick)"
+      shortcutNotSaved: "お気に入り保存できませんでした。（ログ未保存、または重複の可能性があります）"
+    quoteReread:
+      repositoryNotReady: "MySQL / Repository の準備ができていません。"
+      bookOpenFailed: "本を開けませんでした。"
+      openBookFailed: "このサーバーでは openBook() に失敗しました。"
+
+command:
+  lang:
+    playersOnly: "このコマンドはプレイヤーのみ実行できます。"
+    resetDone: "✅ 保存済み言語をリセットしました（次回はGUIが出ます）"
+    current: "現在の言語: {lang}"
+    emptyCode: "言語コードが空です。例: /lang ja"
+    notAllowed: "その言語は許可されていません: {lang}"
+    allowedList: "許可されている言語: {allowed}"
+    changed: "✅ 言語を変更しました: {displayName} ({lang})"
+    changedButNotSaved: "⚠ 言語は変更しましたが、永続保存に失敗しました: {lang}"
+    list:
+      title: "=== Languages ==="
+      default: "default: {default}"
+      allowed: "allowed: {allowed}"
+      usage: "使い方: /lang <code> 例: /lang ja"
+      gui: "GUI: /lang または /lang gui"
+    guiNotReady: "Language GUI が初期化されていません。"

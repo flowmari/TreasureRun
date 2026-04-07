@@ -2668,3 +2668,15 @@ debug:
 title:
   outcomeStayTicks: 160
   successStayTicks: 240
+
+
+command:
+  quoteReread:
+    ja:
+      repositoryNotReady: MySQL / Repository の準備ができていません。
+      bookOpenFailed: 本を開けませんでした。
+      openBookFailed: このサーバーでは openBook() に失敗しました。
+    en:
+      repositoryNotReady: MySQL / Repository not ready.
+      bookOpenFailed: Failed to open book.
+      openBookFailed: openBook() failed on this server.

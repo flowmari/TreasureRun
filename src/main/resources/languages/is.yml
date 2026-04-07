@@ -1299,3 +1299,21 @@ quotes:
   philosophy:
   - Victory and defeat \nare nothing more than grains of sand.\n（勝利も敗北も、同じ砂の一粒に過ぎない。）
   - The road goes on—or it ends.\nEither way, it lies on the same earth.\n（道は続き、あるいは途切れ、どちらも同じ大地の上にある。）
+
+command:
+  lang:
+    playersOnly: "Aðeins leikmenn geta notað þessa skipun."
+    resetDone: "✅ Vistað tungumál þitt hefur verið endurstillt. Næst opnast viðmótið sjálfkrafa."
+    current: "Núverandi tungumál: {lang}"
+    emptyCode: "Tungumálakóðinn er tómur. Dæmi: /lang ja"
+    notAllowed: "Þetta tungumál er ekki leyft: {lang}"
+    allowedList: "Leyfð tungumál: {allowed}"
+    changed: "✅ Tungumáli breytt í: {displayName} ({lang})"
+    changedButNotSaved: "⚠ Tungumálinu var breytt, en ekki tókst að vista það varanlega: {lang}"
+    list:
+      title: "=== Tungumál ==="
+      default: "sjálfgefið: {default}"
+      allowed: "leyfð: {allowed}"
+      usage: "Notkun: /lang <code> Dæmi: /lang ja"
+      gui: "GUI: /lang eða /lang gui"
+    guiNotReady: "Tungumálaviðmótið hefur ekki verið frumstillt."

@@ -11,6 +11,7 @@ import org.bukkit.event.block.Action;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.BookMeta;
+import plugin.I18n;
 
 import java.sql.Connection;
 import java.util.ArrayList;
@@ -31,7 +32,7 @@ public class QuoteFavoriteBookClickListener implements Listener {
 
   public QuoteFavoriteBookClickListener(TreasureRunMultiChestPlugin plugin) {
     this.plugin = plugin;
-    this.bookBuilder = new QuoteFavoritesBookBuilder();
+    this.bookBuilder = new QuoteFavoritesBookBuilder(plugin);
   }
 
   @EventHandler
@@ -71,7 +72,7 @@ public class QuoteFavoriteBookClickListener implements Listener {
       boolean shown = showFavoritesBookHybrid(player);
       if (!shown) {
         // ✅ ここまで来て false の場合も、最低限メッセージ
-        player.sendMessage(ChatColor.YELLOW + "★ No favorites yet (or repository not ready)");
+        player.sendMessage(ChatColor.YELLOW + tr(player, "favorites.empty.noFav", "favorites.empty.noFav"));
       }
       return;
     }
@@ -79,9 +80,9 @@ public class QuoteFavoriteBookClickListener implements Listener {
     boolean ok = favoriteLatest(player);
 
     if (ok) {
-      player.sendMessage(ChatColor.GREEN + "★ Favorite saved! (Latest quote)");
+      player.sendMessage(ChatColor.GREEN + tr(player, "command.quoteFavorite.latestSaved", "command.quoteFavorite.latestSaved"));
     } else {
-      player.sendMessage(ChatColor.YELLOW + "★ Not saved (maybe duplicate / no logs yet)");
+      player.sendMessage(ChatColor.YELLOW + tr(player, "command.quoteFavorite.latestNotSaved", "command.quoteFavorite.latestNotSaved"));
     }
   }
 
@@ -107,7 +108,7 @@ public class QuoteFavoriteBookClickListener implements Listener {
   // ✅ Favorites一覧を「本」で表示する（最強ハイブリッド）
   // - ① 反射でFavorites取得を試す（壊れない）
   // - ② 取れなければ recent へフォールバック（壊れない）
-  // - ③ 0件なら "No favorites yet" 本を表示（B路線完成）
+  // - ③ 0件なら空状態の本を表示（B路線完成）
   // - ④ Builderで図鑑生成（理想形）
   // - ⑤ Builderが失敗したら buildBookPages で最低限表示（壊れない）
   // =======================================================
@@ -140,7 +141,7 @@ public class QuoteFavoriteBookClickListener implements Listener {
       }
     }
 
-    // ✅ ③ 0件なら “No favorites yet” を本で表示（ここがB路線の完成）
+    // ✅ ③ 0件なら空状態メッセージ本を表示（ここがB路線の完成）
     if (rows.isEmpty()) {
       ItemStack empty = null;
       try {
@@ -152,7 +153,7 @@ public class QuoteFavoriteBookClickListener implements Listener {
           player.openBook(empty);
           return true;
         } catch (Throwable ignored) {
-          player.sendMessage(ChatColor.YELLOW + "★ No favorites yet.");
+          player.sendMessage(ChatColor.YELLOW + tr(player, "favorites.empty.noFav", "favorites.empty.noFav"));
           return true;
         }
       }
@@ -178,7 +179,7 @@ public class QuoteFavoriteBookClickListener implements Listener {
       return true;
     } catch (Throwable t) {
       // openBookが環境差で失敗する可能性があるので、最悪チャットに出す
-      player.sendMessage(ChatColor.YELLOW + "★ Favorites:");
+      player.sendMessage(ChatColor.YELLOW + tr(player, "favorites.title", "favorites.title") + ":");
       for (String r : rows) {
         if (r == null) continue;
         String trimmed = r.trim();
@@ -267,11 +268,11 @@ public class QuoteFavoriteBookClickListener implements Listener {
       BookMeta bm = (BookMeta) book.getItemMeta();
       if (bm == null) return null;
 
-      bm.setTitle("TreasureRun Favorites");
+      bm.setTitle(tr(player, "favorites.title", "favorites.title"));
       bm.setAuthor(player.getName());
-      bm.setDisplayName(ChatColor.AQUA + "TreasureRun Favorites");
+      bm.setDisplayName(ChatColor.AQUA + tr(player, "favorites.title", "favorites.title"));
 
-      List<String> pages = buildBookPages(rows);
+      List<String> pages = buildBookPages(player, rows);
       if (pages.isEmpty()) return null;
 
       bm.setPages(pages);
@@ -286,7 +287,7 @@ public class QuoteFavoriteBookClickListener implements Listener {
   // =======================================================
   // ✅ ページ分割（壊れない）
   // =======================================================
-  private List<String> buildBookPages(List<String> rows) {
+  private List<String> buildBookPages(Player player, List<String> rows) {
     List<String> pages = new ArrayList<>();
     if (rows == null || rows.isEmpty()) return pages;
 
@@ -294,7 +295,7 @@ public class QuoteFavoriteBookClickListener implements Listener {
 
     StringBuilder current = new StringBuilder();
     current.append(ChatColor.DARK_AQUA).append("★ Favorites").append("\n")
-        .append(ChatColor.GRAY).append("(Shift + Right Click)").append("\n\n");
+        .append(ChatColor.GRAY).append(tr(player, "favorites.toc.howtoShift", "favorites.toc.howtoShift")).append("\n\n");
 
     for (String row : rows) {
       if (row == null) continue;
@@ -363,4 +364,70 @@ public class QuoteFavoriteBookClickListener implements Listener {
 
     return false;
   }
+
+
+  private String tr(Player player, String key, String fallback) {
+    try {
+      I18n i18n = resolveI18n();
+      if (i18n == null) return fallback;
+      String lang = resolvePlayerLang(player);
+      String s = i18n.tr(lang, key);
+      if (s == null || s.isBlank() || s.equals(key)) return fallback;
+      return s;
+    } catch (Throwable ignored) {
+      return fallback;
+    }
+  }
+
+  private String resolvePlayerLang(Player player) {
+    if (player == null) return plugin.getConfig().getString("language.default", "ja");
+
+    UUID uuid = player.getUniqueId();
+
+    try {
+      java.lang.reflect.Field f = plugin.getClass().getDeclaredField("playerLanguageStore");
+      f.setAccessible(true);
+      Object store = f.get(plugin);
+
+      if (store != null) {
+        try {
+          java.lang.reflect.Method m = store.getClass().getMethod("get", UUID.class);
+          Object ret = m.invoke(store, uuid);
+          if (ret instanceof String s && !s.isBlank()) return s;
+        } catch (Throwable ignored) {}
+
+        try {
+          java.lang.reflect.Method m = store.getClass().getMethod("getPlayerLang", UUID.class);
+          Object ret = m.invoke(store, uuid);
+          if (ret instanceof String s && !s.isBlank()) return s;
+        } catch (Throwable ignored) {}
+      }
+    } catch (Throwable ignored) {}
+
+    return plugin.getConfig().getString("language.default", "ja");
+  }
+
+  private I18n resolveI18n() {
+    try {
+      java.lang.reflect.Method m = plugin.getClass().getMethod("getI18n");
+      Object v = m.invoke(plugin);
+      if (v instanceof I18n i) return i;
+    } catch (Throwable ignored) {}
+
+    try {
+      java.lang.reflect.Field f = plugin.getClass().getDeclaredField("i18n");
+      f.setAccessible(true);
+      Object v = f.get(plugin);
+      if (v instanceof I18n i) return i;
+    } catch (Throwable ignored) {}
+
+    try {
+      I18n i = new I18n(plugin);
+      i.loadOrCreate();
+      return i;
+    } catch (Throwable ignored) {}
+
+    return null;
+  }
+
 }

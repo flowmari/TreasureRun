@@ -1302,3 +1302,21 @@ quotes:
   philosophy:
   - Victory and defeat \nare nothing more than grains of sand.\n（勝利も敗北も、同じ砂の一粒に過ぎない。）
   - The road goes on—or it ends.\nEither way, it lies on the same earth.\n（道は続き、あるいは途切れ、どちらも同じ大地の上にある。）
+
+command:
+  lang:
+    playersOnly: "Эту команду могут использовать только игроки."
+    resetDone: "✅ Сохранённый язык был сброшен. В следующий раз откроется интерфейс."
+    current: "Текущий язык: {lang}"
+    emptyCode: "Код языка пуст. Пример: /lang ja"
+    notAllowed: "Этот язык не разрешён: {lang}"
+    allowedList: "Разрешённые языки: {allowed}"
+    changed: "✅ Язык изменён: {displayName} ({lang})"
+    changedButNotSaved: "⚠ Язык был изменён, но не удалось сохранить его постоянно: {lang}"
+    list:
+      title: "=== Языки ==="
+      default: "по умолчанию: {default}"
+      allowed: "разрешённые: {allowed}"
+      usage: "Использование: /lang <code> Пример: /lang ja"
+      gui: "GUI: /lang или /lang gui"
+    guiNotReady: "Интерфейс выбора языка не инициализирован."

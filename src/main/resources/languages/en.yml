@@ -1503,3 +1503,56 @@ quotes:
   philosophy:
   - Victory and defeat \nare nothing more than grains of sand.\n（勝利も敗北も、同じ砂の一粒に過ぎない。）
   - The road goes on—or it ends.\nEither way, it lies on the same earth.\n（道は続き、あるいは途切れ、どちらも同じ大地の上にある。）
+  command:
+    quoteFavorite:
+      playersOnly: "Players only."
+      help:
+        title: "[TreasureRun] Quote Favorite Commands:"
+        latest: "/quoteFavorite latest          - save latest quote as favorite"
+        list: "/quoteFavorite list            - show favorites"
+        remove: "/quoteFavorite remove <id>     - remove favorite"
+        reread: "/quoteFavorite reread          - random reread (chat)"
+        rereadTitle: "/quoteFavorite reread title    - random reread (title)"
+        rereadBook: "/quoteFavorite reread book     - random reread (book)"
+        book: "/quoteFavorite book            - open catalog (full)"
+        bookToc: "/quoteFavorite book toc        - open catalog (TOC only)"
+        bookSuccess: "/quoteFavorite book success    - open SUCCESS chapter"
+        bookTimeup: "/quoteFavorite book timeup     - open TIME_UP chapter"
+        bookOther: "/quoteFavorite book other      - open OTHER chapter"
+      repositoryNotReady: "MySQL / Repository not ready."
+      latestSaved: "★ Favorite saved!"
+      latestNotSaved: "Favorite not saved. (maybe no logs yet / or duplicate)"
+      listHeader: "★ Favorites (latest 20): (count={count})"
+      listSeparator: "------------------------------"
+      removeUsage: "Usage: /quoteFavorite remove <id>"
+      removeIdNumber: "ID must be a number."
+      removeSuccess: "★ Favorite removed: #{id}"
+      removeNotFound: "Favorite not removed. (not found?)"
+      rereadNoQuotes: "★ No quotes yet."
+      bookOpenFailed: "Failed to open favorites book."
+      openBookFailed: "openBook() failed on this server."
+      unknownSubcommand: "Unknown subcommand. Use: /quoteFavorite help"
+      shortcutSaved: "★ Favorite saved! (Sneak+RightClick)"
+      shortcutNotSaved: "Favorite not saved. (maybe no logs yet / or duplicate)"
+    quoteReread:
+      repositoryNotReady: "MySQL / Repository not ready."
+      bookOpenFailed: "Failed to open book."
+      openBookFailed: "openBook() failed on this server."
+
+command:
+  lang:
+    playersOnly: "This command can only be used by players."
+    resetDone: "✅ Your saved language has been reset. The GUI will open next time."
+    current: "Current language: {lang}"
+    emptyCode: "Language code is empty. Example: /lang ja"
+    notAllowed: "That language is not allowed: {lang}"
+    allowedList: "Allowed languages: {allowed}"
+    changed: "✅ Language changed: {displayName} ({lang})"
+    changedButNotSaved: "⚠ Language changed, but failed to persist it: {lang}"
+    list:
+      title: "=== Languages ==="
+      default: "default: {default}"
+      allowed: "allowed: {allowed}"
+      usage: "Usage: /lang <code> Example: /lang ja"
+      gui: "GUI: /lang or /lang gui"
+    guiNotReady: "Language GUI is not initialized."

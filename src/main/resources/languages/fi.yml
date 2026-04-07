@@ -1413,3 +1413,21 @@ quotes:
   philosophy:
   - Victory and defeat \nare nothing more than grains of sand.\n（勝利も敗北も、同じ砂の一粒に過ぎない。）
   - The road goes on—or it ends.\nEither way, it lies on the same earth.\n（道は続き、あるいは途切れ、どちらも同じ大地の上にある。）
+
+command:
+  lang:
+    playersOnly: "Tätä komentoa voivat käyttää vain pelaajat."
+    resetDone: "✅ Tallennettu kielesi on nollattu. Käyttöliittymä avautuu seuraavalla kerralla."
+    current: "Nykyinen kieli: {lang}"
+    emptyCode: "Kielikoodi puuttuu. Esimerkki: /lang ja"
+    notAllowed: "Tämä kieli ei ole sallittu: {lang}"
+    allowedList: "Sallitut kielet: {allowed}"
+    changed: "✅ Kieli vaihdettu: {displayName} ({lang})"
+    changedButNotSaved: "⚠ Kieli vaihdettiin, mutta pysyvä tallennus epäonnistui: {lang}"
+    list:
+      title: "=== Kielet ==="
+      default: "oletus: {default}"
+      allowed: "sallitut: {allowed}"
+      usage: "Käyttö: /lang <code> Esimerkki: /lang ja"
+      gui: "GUI: /lang tai /lang gui"
+    guiNotReady: "Kielikäyttöliittymää ei ole alustettu."

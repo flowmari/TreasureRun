@@ -70,7 +70,7 @@ public class QuoteFavoritesBookBuilder {
       if (meta != null) {
         meta.setTitle("TreasureRun");
         meta.setAuthor("TreasureRun");
-        meta.setPages(List.of("TreasureRun Favorites"));
+        meta.setPages(List.of("TreasureRun"));
         book.setItemMeta(meta);
       }
       return book;
@@ -172,12 +172,6 @@ public class QuoteFavoritesBookBuilder {
    */
   public ItemStack buildRereadOneShotBook(org.bukkit.entity.Player player, Object row) {
     String lang = "en";
-    try {
-      // PlayerLanguageStore からもらう設計なら外側で渡すのが理想だけど
-      // ここは最低限 “動く” を優先して安全に作る
-      lang = "en";
-    } catch (Exception ignored) {
-    }
 
     ItemStack book = new ItemStack(Material.WRITTEN_BOOK);
     BookMeta meta = (BookMeta) book.getItemMeta();
@@ -186,9 +180,12 @@ public class QuoteFavoritesBookBuilder {
     String quoteText = extractTextSafe(row);
     if (quoteText.isBlank()) quoteText = "(no text)";
 
-    meta.setTitle("TreasureRun");
+    String title = tr(lang, "favorites.cover.reread", "favorites.cover.reread");
+    String head = tr(lang, "favorites.reread.head", "favorites.reread.head");
+
+    meta.setTitle(title);
     meta.setAuthor("TreasureRun");
-    meta.setPages(List.of(quoteText));
+    meta.setPages(List.of(head + "\n\n" + quoteText));
 
     book.setItemMeta(meta);
     return book;
@@ -306,6 +303,19 @@ public class QuoteFavoritesBookBuilder {
 
     int count = (rows == null ? 0 : rows.size());
     return buildFavoritesBook(lang, player.getUniqueId(), count, rows);
+  }
+
+
+
+  private String tr(String lang, String key, String fallback) {
+    try {
+      if (i18n == null) return fallback;
+      String s = i18n.tr(lang, key);
+      if (s == null || s.isBlank() || s.equals(key)) return fallback;
+      return s;
+    } catch (Throwable ignored) {
+      return fallback;
+    }
   }
 
 }
