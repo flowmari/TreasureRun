@@ -1,5 +1,6 @@
-package plugin;
+package plugin.legacy_unused;
 
+import plugin.TreasureRunMultiChestPlugin;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;

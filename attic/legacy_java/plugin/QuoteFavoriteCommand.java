@@ -1,5 +1,6 @@
-package plugin;
+package plugin.legacy_unused;
 
+import plugin.TreasureRunMultiChestPlugin;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
