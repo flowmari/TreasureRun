@@ -5,6 +5,7 @@ import org.bukkit.inventory.ItemStack;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * Bridge class.
@@ -16,15 +17,13 @@ import java.util.List;
  */
 public class QuoteFavoritesBookBuilder {
 
+  private final TreasureRunMultiChestPlugin plugin;
   private final plugin.quote.QuoteFavoritesBookBuilder delegate;
 
-  public QuoteFavoritesBookBuilder() {
-    this.delegate = new plugin.quote.QuoteFavoritesBookBuilder();
+  public QuoteFavoritesBookBuilder(TreasureRunMultiChestPlugin plugin) {
+    this.plugin = plugin;
+    this.delegate = new plugin.quote.QuoteFavoritesBookBuilder(resolveI18n(plugin));
   }
-
-  // =======================================================
-  // ✅ methods expected by QuoteFavoriteBookClickListener
-  // =======================================================
 
   public ItemStack buildEmptyFavoritesBook(Player player) {
     return buildFavoritesBook(player, Collections.emptyList());
@@ -32,26 +31,79 @@ public class QuoteFavoritesBookBuilder {
 
   public ItemStack buildFavoritesBook(Player player, List<String> rows) {
     if (player == null) {
-      // safest fallback
-      return delegate.buildFavoritesBook("en", new java.util.UUID(0L, 0L), 0,
-          (rows == null ? Collections.emptyList() : rows));
+      return delegate.buildFavoritesBook(
+          "en",
+          new java.util.UUID(0L, 0L),
+          0,
+          (rows == null ? Collections.emptyList() : rows)
+      );
     }
 
-    String lang = "en";
+    String lang = resolvePlayerLang(player);
+    int count = (rows == null ? 0 : rows.size());
+
+    return delegate.buildFavoritesBook(
+        lang,
+        player.getUniqueId(),
+        count,
+        (rows == null ? Collections.emptyList() : rows)
+    );
+  }
+
+  private static I18n resolveI18n(TreasureRunMultiChestPlugin plugin) {
+    if (plugin == null) return null;
+
     try {
-      // If the real builder has playerLanguageStore, use it (optional)
-      java.lang.reflect.Field f = delegate.getClass().getDeclaredField("playerLanguageStore");
+      java.lang.reflect.Method m = plugin.getClass().getMethod("getI18n");
+      Object v = m.invoke(plugin);
+      if (v instanceof I18n i) return i;
+    } catch (Throwable ignored) {}
+
+    try {
+      java.lang.reflect.Field f = plugin.getClass().getDeclaredField("i18n");
       f.setAccessible(true);
-      Object pls = f.get(delegate);
-      if (pls != null) {
-        java.lang.reflect.Method m = pls.getClass().getMethod("getPlayerLang", java.util.UUID.class);
-        Object r = m.invoke(pls, player.getUniqueId());
-        if (r != null) lang = String.valueOf(r);
+      Object v = f.get(plugin);
+      if (v instanceof I18n i) return i;
+    } catch (Throwable ignored) {}
+
+    try {
+      I18n i = new I18n(plugin);
+      i.loadOrCreate();
+      return i;
+    } catch (Throwable ignored) {}
+
+    return null;
+  }
+
+  private String resolvePlayerLang(Player player) {
+    if (plugin == null || player == null) return "en";
+
+    UUID uuid = player.getUniqueId();
+
+    try {
+      java.lang.reflect.Field f = plugin.getClass().getDeclaredField("playerLanguageStore");
+      f.setAccessible(true);
+      Object store = f.get(plugin);
+
+      if (store != null) {
+        try {
+          java.lang.reflect.Method m = store.getClass().getMethod("get", UUID.class);
+          Object ret = m.invoke(store, uuid);
+          if (ret instanceof String s && !s.isBlank()) return s;
+        } catch (Throwable ignored) {}
+
+        try {
+          java.lang.reflect.Method m = store.getClass().getMethod("getPlayerLang", UUID.class);
+          Object ret = m.invoke(store, uuid);
+          if (ret instanceof String s && !s.isBlank()) return s;
+        } catch (Throwable ignored) {}
       }
     } catch (Throwable ignored) {}
 
-    int count = (rows == null ? 0 : rows.size());
-    return delegate.buildFavoritesBook(lang, player.getUniqueId(), count,
-        (rows == null ? Collections.emptyList() : rows));
+    try {
+      return plugin.getConfig().getString("language.default", "ja");
+    } catch (Throwable ignored) {
+      return "en";
+    }
   }
 }

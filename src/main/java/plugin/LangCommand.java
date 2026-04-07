@@ -22,7 +22,7 @@ public class LangCommand implements CommandExecutor, TabCompleter {
 
     // Player限定（コンソール対応したい場合はここを拡張）
     if (!(sender instanceof Player player)) {
-      sender.sendMessage(ChatColor.RED + "このコマンドはプレイヤーのみ実行できます。");
+      sender.sendMessage(ChatColor.RED + trDefault("command.lang.playersOnly", "This command can only be used by players."));
       return true;
     }
 
@@ -61,7 +61,7 @@ public class LangCommand implements CommandExecutor, TabCompleter {
         }
       } catch (Throwable ignored) {}
 
-      player.sendMessage(ChatColor.GREEN + "✅ 保存済み言語をリセットしました（次回はGUIが出ます）");
+      player.sendMessage(ChatColor.GREEN + tr(player, "command.lang.resetDone", "✅ Your saved language has been reset. The GUI will open next time."));
       return true;
     }
 
@@ -78,7 +78,7 @@ public class LangCommand implements CommandExecutor, TabCompleter {
     }
     if (sub.equalsIgnoreCase("current")) {
       String current = resolveCurrentLang(player.getUniqueId(), defaultLang);
-      player.sendMessage(ChatColor.AQUA + "現在の言語: " + ChatColor.YELLOW + current);
+      player.sendMessage(ChatColor.AQUA + trp(player, "command.lang.current", java.util.Map.of("lang", current), "Current language: {lang}"));
       return true;
     }
     if (sub.equalsIgnoreCase("gui")) {
@@ -89,13 +89,13 @@ public class LangCommand implements CommandExecutor, TabCompleter {
     // /lang <code> で直接切替
     String lang = normalizeLangCode(sub);
     if (lang.isBlank()) {
-      player.sendMessage(ChatColor.RED + "言語コードが空です。例: /lang ja");
+      player.sendMessage(ChatColor.RED + tr(player, "command.lang.emptyCode", "Language code is empty. Example: /lang ja"));
       return true;
     }
 
     if (!allowed.contains(lang)) {
-      player.sendMessage(ChatColor.RED + "その言語は許可されていません: " + lang);
-      player.sendMessage(ChatColor.GRAY + "許可されている言語: " + ChatColor.YELLOW + String.join(", ", allowed));
+      player.sendMessage(ChatColor.RED + trp(player, "command.lang.notAllowed", java.util.Map.of("lang", lang), "That language is not allowed: {lang}"));
+      player.sendMessage(ChatColor.GRAY + trp(player, "command.lang.allowedList", java.util.Map.of("allowed", String.join(", ", allowed)), "Allowed languages: {allowed}"));
       return true;
     }
 
@@ -109,9 +109,9 @@ public class LangCommand implements CommandExecutor, TabCompleter {
     String displayName = plugin.getConfig().getString("language.displayName." + lang, lang);
 
     if (saved) {
-      player.sendMessage(ChatColor.GREEN + "✅ 言語を変更しました: " + ChatColor.AQUA + displayName + ChatColor.GRAY + " (" + lang + ")");
+      player.sendMessage(ChatColor.GREEN + trp(player, "command.lang.changed", java.util.Map.of("displayName", displayName, "lang", lang), "✅ Language changed: {displayName} ({lang})"));
     } else {
-      player.sendMessage(ChatColor.YELLOW + "⚠ 言語は変更しましたが、永続保存に失敗しました: " + lang);
+      player.sendMessage(ChatColor.YELLOW + trp(player, "command.lang.changedButNotSaved", java.util.Map.of("lang", lang), "⚠ Language changed, but failed to persist it: {lang}"));
     }
 
     // 任意：I18nがあるなら動作確認用に一言（キーはあなたのI18n設計次第なので安全に）
@@ -171,11 +171,11 @@ public class LangCommand implements CommandExecutor, TabCompleter {
   }
 
   private void sendLanguageList(Player player, List<String> allowed, String defaultLang) {
-    player.sendMessage(ChatColor.AQUA + "=== Languages ===");
-    player.sendMessage(ChatColor.GRAY + "default: " + ChatColor.YELLOW + defaultLang);
-    player.sendMessage(ChatColor.GRAY + "allowed: " + ChatColor.YELLOW + String.join(", ", allowed));
-    player.sendMessage(ChatColor.GRAY + "使い方: " + ChatColor.YELLOW + "/lang <code>" + ChatColor.GRAY + " 例: /lang ja");
-    player.sendMessage(ChatColor.GRAY + "GUI: " + ChatColor.YELLOW + "/lang" + ChatColor.GRAY + " または /lang gui");
+    player.sendMessage(ChatColor.AQUA + tr(player, "command.lang.list.title", "command.lang.list.title"));
+    player.sendMessage(ChatColor.GRAY + trp(player, "command.lang.list.default", java.util.Map.of("default", defaultLang), "default: {default}"));
+    player.sendMessage(ChatColor.GRAY + trp(player, "command.lang.list.allowed", java.util.Map.of("allowed", String.join(", ", allowed)), "allowed: {allowed}"));
+    player.sendMessage(ChatColor.GRAY + tr(player, "command.lang.list.usage", "command.lang.list.usage"));
+    player.sendMessage(ChatColor.GRAY + tr(player, "command.lang.list.gui", "GUI: /lang or /lang gui"));
   }
 
   private void openLanguageGuiOrFallbackMessage(Player player, List<String> allowed, String defaultLang) {
@@ -190,7 +190,7 @@ public class LangCommand implements CommandExecutor, TabCompleter {
     } catch (Throwable ignored) {}
 
     // GUIが無い場合のフォールバック
-    player.sendMessage(ChatColor.RED + "Language GUI が初期化されていません。");
+    player.sendMessage(ChatColor.RED + tr(player, "command.lang.guiNotReady", "command.lang.guiNotReady"));
     sendLanguageList(player, allowed, defaultLang);
   }
 
@@ -323,6 +323,77 @@ public class LangCommand implements CommandExecutor, TabCompleter {
       }
     } catch (Throwable ignored) {}
     return null;
+  }
+
+
+  private Object resolveI18nObject() {
+    try {
+      java.lang.reflect.Field f = plugin.getClass().getDeclaredField("i18n");
+      f.setAccessible(true);
+      return f.get(plugin);
+    } catch (Throwable ignored) {}
+    return null;
+  }
+
+  private String trDefault(String key, String fallback) {
+    String lang = plugin.getConfig().getString("language.default", "ja");
+    return trByLang(lang, key, fallback, null);
+  }
+
+  private String tr(Player player, String key, String fallback) {
+    String lang = plugin.getConfig().getString("language.default", "ja");
+    try {
+      if (player != null) {
+        lang = resolveCurrentLang(player.getUniqueId(), lang);
+      }
+    } catch (Throwable ignored) {}
+    return trByLang(lang, key, fallback, null);
+  }
+
+  private String trp(Player player, String key, java.util.Map<String, String> vars, String fallback) {
+    String lang = plugin.getConfig().getString("language.default", "ja");
+    try {
+      if (player != null) {
+        lang = resolveCurrentLang(player.getUniqueId(), lang);
+      }
+    } catch (Throwable ignored) {}
+    return trByLang(lang, key, fallback, vars);
+  }
+
+  private String trByLang(String lang, String key, String fallback, java.util.Map<String, String> vars) {
+    try {
+      Object i18n = resolveI18nObject();
+      if (i18n != null) {
+        try {
+          Method m = i18n.getClass().getMethod("tr", String.class, String.class, java.util.Map.class);
+          Object ret = m.invoke(i18n, lang, key, vars == null ? java.util.Collections.emptyMap() : vars);
+          if (ret instanceof String s && !s.isBlank() && !s.equals(key)) return s;
+        } catch (NoSuchMethodException ignored) {
+        } catch (Throwable ignored) {
+        }
+
+        try {
+          Method m = i18n.getClass().getMethod("tr", String.class, String.class);
+          Object ret = m.invoke(i18n, lang, key);
+          if (ret instanceof String s && !s.isBlank() && !s.equals(key)) {
+            return applyVars(s, vars);
+          }
+        } catch (NoSuchMethodException ignored) {
+        } catch (Throwable ignored) {
+        }
+      }
+    } catch (Throwable ignored) {}
+    return applyVars(fallback, vars);
+  }
+
+  private String applyVars(String s, java.util.Map<String, String> vars) {
+    if (s == null) return "";
+    if (vars == null || vars.isEmpty()) return s;
+    String out = s;
+    for (java.util.Map.Entry<String, String> e : vars.entrySet()) {
+      out = out.replace("{" + e.getKey() + "}", String.valueOf(e.getValue()));
+    }
+    return out;
   }
 
   /**

@@ -37,18 +37,18 @@ public class QuoteRereadService {
   public boolean rereadRandom(Player player, OutputMode mode) {
     UUID uuid = player.getUniqueId();
 
+    // ✅ プレイヤー言語（PlayerLanguageStore優先 → default）
+    String lang = resolvePlayerLang(player);
+
     Connection conn = null;
     try {
       conn = plugin.getMySQLConnection();
     } catch (Throwable ignored) {}
 
     if (conn == null || plugin.getProverbLogRepository() == null) {
-      player.sendMessage(ChatColor.RED + "MySQL / Repository not ready.");
+      player.sendMessage(ChatColor.RED + trOrFallback(lang, "command.quoteReread.repositoryNotReady", "command.quoteReread.repositoryNotReady"));
       return false;
     }
-
-    // ✅ プレイヤー言語（PlayerLanguageStore優先 → default）
-    String lang = resolvePlayerLang(player);
 
     // ✅ favorites からランダム（なければ false）
     List<String> favs = plugin.getProverbLogRepository().loadFavorites(conn, uuid, 200);
@@ -62,8 +62,8 @@ public class QuoteRereadService {
     if (quoteText.isBlank()) return false;
 
     // ✅ messages.yml（I18n）で表示文を取得（無ければ英語にフォールバック）
-    String head = trOrFallback(lang, "favorites.reread.head", "◆ Re-read ◆");
-    String noQuotes = trOrFallback(lang, "favorites.reread.noQuotes", "★ No quotes yet.");
+    String head = trOrFallback(lang, "favorites.reread.head", "favorites.reread.head");
+    String noQuotes = trOrFallback(lang, "favorites.reread.noQuotes", "favorites.reread.noQuotes"); // reserved for future empty-state UI parity
 
     if (mode == OutputMode.CHAT) {
       player.sendMessage(ChatColor.AQUA + head);
@@ -89,7 +89,7 @@ public class QuoteRereadService {
 
       ItemStack book = bookBuilder.buildRereadOneShotBook(player, objRow);
       if (book == null) {
-        player.sendMessage(ChatColor.RED + "Failed to open book.");
+        player.sendMessage(ChatColor.RED + trOrFallback(lang, "command.quoteReread.bookOpenFailed", "command.quoteReread.bookOpenFailed"));
         return false;
       }
 
@@ -97,7 +97,7 @@ public class QuoteRereadService {
       return true;
 
     } catch (Throwable t) {
-      player.sendMessage(ChatColor.RED + "openBook() failed on this server.");
+      player.sendMessage(ChatColor.RED + trOrFallback(lang, "command.quoteReread.openBookFailed", "command.quoteReread.openBookFailed"));
       // 念のため CHAT で出す（完全に無言にならない）
       player.sendMessage(ChatColor.AQUA + head);
       player.sendMessage(ChatColor.WHITE + quoteText);

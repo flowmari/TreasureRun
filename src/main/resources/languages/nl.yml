@@ -1300,3 +1300,21 @@ quotes:
   philosophy:
   - Victory and defeat \nare nothing more than grains of sand.\n（勝利も敗北も、同じ砂の一粒に過ぎない。）
   - The road goes on—or it ends.\nEither way, it lies on the same earth.\n（道は続き、あるいは途切れ、どちらも同じ大地の上にある。）
+
+command:
+  lang:
+    playersOnly: "Dit commando kan alleen door spelers worden gebruikt."
+    resetDone: "✅ Je opgeslagen taal is gereset. De volgende keer wordt de GUI geopend."
+    current: "Huidige taal: {lang}"
+    emptyCode: "De taalcode is leeg. Voorbeeld: /lang ja"
+    notAllowed: "Die taal is niet toegestaan: {lang}"
+    allowedList: "Toegestane talen: {allowed}"
+    changed: "✅ Taal gewijzigd naar: {displayName} ({lang})"
+    changedButNotSaved: "⚠ De taal is gewijzigd, maar kon niet permanent worden opgeslagen: {lang}"
+    list:
+      title: "=== Talen ==="
+      default: "standaard: {default}"
+      allowed: "toegestaan: {allowed}"
+      usage: "Gebruik: /lang <code> Voorbeeld: /lang ja"
+      gui: "GUI: /lang of /lang gui"
+    guiNotReady: "De taal-GUI is niet geïnitialiseerd."

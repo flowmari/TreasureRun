@@ -1297,3 +1297,21 @@ quotes:
   philosophy:
   - Victory and defeat \nare nothing more than grains of sand.\n（勝利も敗北も、同じ砂の一粒に過ぎない。）
   - The road goes on—or it ends.\nEither way, it lies on the same earth.\n（道は続き、あるいは途切れ、どちらも同じ大地の上にある。）
+
+command:
+  lang:
+    playersOnly: "अयं आदेशः केवलं क्रीडकैः एव उपयोज्यः।"
+    resetDone: "✅ भवतः सञ्चितभाषा पुनःस्थापिता। अनन्तरं GUI स्वयमेव उद्घाटिष्यते।"
+    current: "वर्तमाना भाषा: {lang}"
+    emptyCode: "भाषासङ्केतः रिक्तः अस्ति। उदाहरणम्: /lang ja"
+    notAllowed: "एषा भाषा अनुमता नास्ति: {lang}"
+    allowedList: "अनुमताः भाषाः: {allowed}"
+    changed: "✅ भाषा परिवर्तिता: {displayName} ({lang})"
+    changedButNotSaved: "⚠ भाषा परिवर्तिता, किन्तु स्थायिरूपेण रक्षितुं न शक्यते: {lang}"
+    list:
+      title: "=== भाषाः ==="
+      default: "मूलतः: {default}"
+      allowed: "अनुमताः: {allowed}"
+      usage: "उपयोगः: /lang <code> उदाहरणम्: /lang ja"
+      gui: "GUI: /lang अथवा /lang gui"
+    guiNotReady: "भाषा-GUI अद्यापि प्रारब्धा नास्ति।"

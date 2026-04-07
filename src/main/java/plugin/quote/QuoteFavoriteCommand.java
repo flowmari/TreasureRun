@@ -40,7 +40,7 @@ public class QuoteFavoriteCommand implements CommandExecutor {
   public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
     if (!(sender instanceof Player player)) {
-      sender.sendMessage("Players only.");
+      sender.sendMessage(trRaw("command.quoteFavorite.playersOnly"));
       return true;
     }
 
@@ -71,16 +71,16 @@ public class QuoteFavoriteCommand implements CommandExecutor {
     // ---------------------------------------------------
     if (sub.equals("latest")) {
       if (conn == null || plugin.getProverbLogRepository() == null) {
-        player.sendMessage(ChatColor.RED + "MySQL / Repository not ready.");
+        player.sendMessage(ChatColor.RED + tr("command.quoteFavorite.repositoryNotReady"));
         return true;
       }
 
       boolean ok = plugin.getProverbLogRepository().favoriteLatestLog(conn, uuid);
 
       if (ok) {
-        player.sendMessage(ChatColor.GREEN + "★ Favorite saved!");
+        player.sendMessage(ChatColor.GREEN + tr("command.quoteFavorite.latestSaved"));
       } else {
-        player.sendMessage(ChatColor.RED + "Favorite not saved. (maybe no logs yet / or duplicate)");
+        player.sendMessage(ChatColor.RED + tr("command.quoteFavorite.latestNotSaved"));
       }
       return true;
     }
@@ -90,15 +90,15 @@ public class QuoteFavoriteCommand implements CommandExecutor {
     // ---------------------------------------------------
     if (sub.equals("list")) {
       if (conn == null || plugin.getProverbLogRepository() == null) {
-        player.sendMessage(ChatColor.RED + "MySQL / Repository not ready.");
+        player.sendMessage(ChatColor.RED + tr("command.quoteFavorite.repositoryNotReady"));
         return true;
       }
 
       List<String> favs = plugin.getProverbLogRepository().loadFavorites(conn, uuid, 20);
 
-      player.sendMessage(ChatColor.AQUA + "★ Favorites (latest 20): " + ChatColor.GRAY + "(count=" + favs.size() + ")");
+      player.sendMessage(ChatColor.AQUA + trp("command.quoteFavorite.listHeader", "count", String.valueOf(favs.size())));
       for (String row : favs) {
-        player.sendMessage(ChatColor.GRAY + "------------------------------");
+        player.sendMessage(ChatColor.GRAY + tr("command.quoteFavorite.listSeparator"));
         for (String line : row.split("\n")) {
           player.sendMessage(ChatColor.WHITE + line);
         }
@@ -111,12 +111,12 @@ public class QuoteFavoriteCommand implements CommandExecutor {
     // ---------------------------------------------------
     if (sub.equals("remove")) {
       if (args.length < 2) {
-        player.sendMessage(ChatColor.RED + "Usage: /quoteFavorite remove <id>");
+        player.sendMessage(ChatColor.RED + tr("command.quoteFavorite.removeUsage"));
         return true;
       }
 
       if (conn == null || plugin.getProverbLogRepository() == null) {
-        player.sendMessage(ChatColor.RED + "MySQL / Repository not ready.");
+        player.sendMessage(ChatColor.RED + tr("command.quoteFavorite.repositoryNotReady"));
         return true;
       }
 
@@ -124,16 +124,16 @@ public class QuoteFavoriteCommand implements CommandExecutor {
       try {
         id = Integer.parseInt(args[1]);
       } catch (NumberFormatException e) {
-        player.sendMessage(ChatColor.RED + "ID must be a number.");
+        player.sendMessage(ChatColor.RED + tr("command.quoteFavorite.removeIdNumber"));
         return true;
       }
 
       boolean ok = plugin.getProverbLogRepository().deleteFavoriteById(conn, uuid, id);
 
       if (ok) {
-        player.sendMessage(ChatColor.GREEN + "★ Favorite removed: #" + id);
+        player.sendMessage(ChatColor.GREEN + trp("command.quoteFavorite.removeSuccess", "id", String.valueOf(id)));
       } else {
-        player.sendMessage(ChatColor.RED + "Favorite not removed. (not found?)");
+        player.sendMessage(ChatColor.RED + tr("command.quoteFavorite.removeNotFound"));
       }
       return true;
     }
@@ -150,7 +150,7 @@ public class QuoteFavoriteCommand implements CommandExecutor {
 
       boolean ok = rereadService.rereadRandom(player, outMode);
       if (!ok) {
-        player.sendMessage(ChatColor.YELLOW + "★ No quotes yet.");
+        player.sendMessage(ChatColor.YELLOW + tr("command.quoteFavorite.rereadNoQuotes"));
       }
       return true;
     }
@@ -189,35 +189,86 @@ public class QuoteFavoriteCommand implements CommandExecutor {
 
       ItemStack book = bookBuilder.buildFavoritesBook(lang, uuid, count, rows, view);
       if (book == null) {
-        player.sendMessage(ChatColor.RED + "Failed to open favorites book.");
+        player.sendMessage(ChatColor.RED + tr("command.quoteFavorite.bookOpenFailed"));
         return true;
       }
 
       try {
         player.openBook(book);
       } catch (Throwable t) {
-        player.sendMessage(ChatColor.RED + "openBook() failed on this server.");
+        player.sendMessage(ChatColor.RED + tr("command.quoteFavorite.openBookFailed"));
       }
       return true;
     }
 
-    player.sendMessage(ChatColor.RED + "Unknown subcommand. Use: /quoteFavorite help");
+    player.sendMessage(ChatColor.RED + tr("command.quoteFavorite.unknownSubcommand"));
     return true;
   }
 
   private void showHelp(Player player) {
-    player.sendMessage(ChatColor.AQUA + "[TreasureRun] Quote Favorite Commands:");
-    player.sendMessage(ChatColor.GRAY + "/quoteFavorite latest          - save latest quote as favorite");
-    player.sendMessage(ChatColor.GRAY + "/quoteFavorite list            - show favorites");
-    player.sendMessage(ChatColor.GRAY + "/quoteFavorite remove <id>     - remove favorite");
-    player.sendMessage(ChatColor.GRAY + "/quoteFavorite reread          - random reread (chat)");
-    player.sendMessage(ChatColor.GRAY + "/quoteFavorite reread title    - random reread (title)");
-    player.sendMessage(ChatColor.GRAY + "/quoteFavorite reread book     - random reread (book)");
-    player.sendMessage(ChatColor.GRAY + "/quoteFavorite book            - open catalog (full)");
-    player.sendMessage(ChatColor.GRAY + "/quoteFavorite book toc        - open catalog (TOC only)");
-    player.sendMessage(ChatColor.GRAY + "/quoteFavorite book success    - open SUCCESS chapter");
-    player.sendMessage(ChatColor.GRAY + "/quoteFavorite book timeup     - open TIME_UP chapter");
-    player.sendMessage(ChatColor.GRAY + "/quoteFavorite book other      - open OTHER chapter");
+    player.sendMessage(ChatColor.AQUA + tr("command.quoteFavorite.help.title"));
+    player.sendMessage(ChatColor.GRAY + tr("command.quoteFavorite.help.latest"));
+    player.sendMessage(ChatColor.GRAY + tr("command.quoteFavorite.help.list"));
+    player.sendMessage(ChatColor.GRAY + tr("command.quoteFavorite.help.remove"));
+    player.sendMessage(ChatColor.GRAY + tr("command.quoteFavorite.help.reread"));
+    player.sendMessage(ChatColor.GRAY + tr("command.quoteFavorite.help.rereadTitle"));
+    player.sendMessage(ChatColor.GRAY + tr("command.quoteFavorite.help.rereadBook"));
+    player.sendMessage(ChatColor.GRAY + tr("command.quoteFavorite.help.book"));
+    player.sendMessage(ChatColor.GRAY + tr("command.quoteFavorite.help.bookToc"));
+    player.sendMessage(ChatColor.GRAY + tr("command.quoteFavorite.help.bookSuccess"));
+    player.sendMessage(ChatColor.GRAY + tr("command.quoteFavorite.help.bookTimeup"));
+    player.sendMessage(ChatColor.GRAY + tr("command.quoteFavorite.help.bookOther"));
+  }
+
+
+
+  private String currentLang() {
+    try {
+      return resolvePlayerLang(playerForLangFallback());
+    } catch (Throwable ignored) {
+      return plugin.getConfig().getString("language.default", "ja");
+    }
+  }
+
+  private Player playerForLangFallback() {
+    try {
+      return org.bukkit.Bukkit.getOnlinePlayers().stream().findFirst().orElse(null);
+    } catch (Throwable ignored) {
+      return null;
+    }
+  }
+
+  private String tr(String key) {
+    String lang = currentLang();
+    try {
+      if (i18n != null) {
+        String s = i18n.tr(lang, key);
+        if (s != null && !s.isBlank() && !s.equals(key)) return s;
+      }
+    } catch (Throwable ignored) {}
+    return key;
+  }
+
+  private String trp(String key, String name, String value) {
+    String lang = currentLang();
+    try {
+      if (i18n != null) {
+        String s = i18n.tr(lang, key, java.util.Map.of(name, value));
+        if (s != null && !s.isBlank() && !s.equals(key)) return s;
+      }
+    } catch (Throwable ignored) {}
+    return key.replace("{" + name + "}", value);
+  }
+
+  private String trRaw(String key) {
+    try {
+      String lang = plugin.getConfig().getString("language.default", "ja");
+      if (i18n != null) {
+        String s = i18n.tr(lang, key);
+        if (s != null && !s.isBlank() && !s.equals(key)) return s;
+      }
+    } catch (Throwable ignored) {}
+    return key;
   }
 
   // =======================================================

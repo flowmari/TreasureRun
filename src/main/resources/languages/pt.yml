@@ -447,3 +447,21 @@ favorites:
     howto: favorites.toc.howto
     manage: favorites.toc.manage
     reread: favorites.toc.reread
+
+command:
+  lang:
+    playersOnly: "Este comando só pode ser usado por jogadores."
+    resetDone: "✅ O seu idioma salvo foi redefinido. Na próxima vez, a interface será aberta."
+    current: "Idioma atual: {lang}"
+    emptyCode: "O código do idioma está vazio. Exemplo: /lang ja"
+    notAllowed: "Esse idioma não é permitido: {lang}"
+    allowedList: "Idiomas permitidos: {allowed}"
+    changed: "✅ Idioma alterado: {displayName} ({lang})"
+    changedButNotSaved: "⚠ O idioma foi alterado, mas não foi possível salvá-lo permanentemente: {lang}"
+    list:
+      title: "=== Idiomas ==="
+      default: "padrão: {default}"
+      allowed: "permitidos: {allowed}"
+      usage: "Uso: /lang <code> Exemplo: /lang ja"
+      gui: "GUI: /lang ou /lang gui"
+    guiNotReady: "A interface de idioma não foi inicializada."

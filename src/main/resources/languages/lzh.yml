@@ -434,3 +434,21 @@ favorites:
     howto: favorites.toc.howto
     manage: favorites.toc.manage
     reread: favorites.toc.reread
+
+command:
+  lang:
+    playersOnly: "此令惟玩家可用。"
+    resetDone: "✅ 所存語言已復初。後次將自啟介面。"
+    current: "今所用語：{lang}"
+    emptyCode: "語碼為空。例：/lang ja"
+    notAllowed: "此語不許用：{lang}"
+    allowedList: "可用之語：{allowed}"
+    changed: "✅ 語已更易：{displayName} ({lang})"
+    changedButNotSaved: "⚠ 語雖已更，然未能久存：{lang}"
+    list:
+      title: "=== 語言 ==="
+      default: "常用：{default}"
+      allowed: "可用：{allowed}"
+      usage: "用法：/lang <code> 例：/lang ja"
+      gui: "介面：/lang 或 /lang gui"
+    guiNotReady: "語言介面尚未備妥。"
