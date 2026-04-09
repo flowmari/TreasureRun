@@ -12,6 +12,9 @@ common:
   done: '&aDone!'
   error: '&cError: {reason}'
 command:
+  stageCleanup:
+    cleaned: "[TreasureRun] Cleaned up {count} difficulty blocks."
+    managerNotReady: "[TreasureRun] The stage manager is not initialized."
   noPermission: '&cYou don''t have permission.'
   onlyPlayer: '&cThis command can only be used by a player.'
   reload:

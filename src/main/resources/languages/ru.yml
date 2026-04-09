@@ -12,6 +12,9 @@ common:
   done: '&aГотово!'
   error: '&cОшибка: {reason}'
 command:
+  stageCleanup:
+    cleaned: "[TreasureRun] Убрано блоков сложности: {count}."
+    managerNotReady: "[TreasureRun] Менеджер сцены не инициализирован."
   noPermission: '&cУ вас нет прав.'
   onlyPlayer: '&cЭту команду может использовать только игрок.'
   reload:

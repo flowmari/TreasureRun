@@ -12,6 +12,9 @@ common:
   done: '&a완료!'
   error: '&c오류: {reason}'
 command:
+  stageCleanup:
+    cleaned: "[TreasureRun] 난이도 블록 {count}개를 정리했습니다."
+    managerNotReady: "[TreasureRun] 스테이지 관리자가 아직 초기화되지 않았습니다."
   noPermission: '&c권한이 없습니다.'
   onlyPlayer: '&c이 명령어는 플레이어만 사용할 수 있습니다.'
   reload:

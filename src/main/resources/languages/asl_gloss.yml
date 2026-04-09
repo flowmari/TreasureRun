@@ -12,6 +12,9 @@ common:
   done: '&aDONE!'
   error: '&cERROR: {reason}'
 command:
+  stageCleanup:
+    cleaned: "[TreasureRun] CLEANED UP {count} DIFFICULTY BLOCKS."
+    managerNotReady: "[TreasureRun] STAGE MANAGER NOT READY."
   noPermission: '&cNO PERMISSION.'
   onlyPlayer: '&cONLY PLAYER CAN USE.'
   reload:
@@ -1414,7 +1417,7 @@ command:
     guiCancelledGameStart: "LANGUAGE SELECT CANCEL. TRY AGAIN: /gameStart <easy|normal|hard>"
     guiCancelledGameMenu: "LANGUAGE SELECT CANCEL. OPEN AGAIN: /gameMenu gui"
     guiTooManyShown: "TOO-MANY ALLOW LANGUAGE SET. GUI SHOW FIRST 27 ONLY."
-    playersOnly: "THIS COMMAND PLAYER ONLY USE CAN."
+    playersOnly: "ONLY PLAYER CAN USE THIS COMMAND."
     resetDone: "✅ YOUR SAVED LANGUAGE RESET FINISH. NEXT TIME GUI OPEN."
     current: "CURRENT LANGUAGE: {lang}"
     emptyCode: "LANGUAGE CODE EMPTY. EXAMPLE: /lang ja"

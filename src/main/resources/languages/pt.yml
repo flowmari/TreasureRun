@@ -449,6 +449,9 @@ favorites:
     reread: favorites.toc.reread
 
 command:
+  stageCleanup:
+    cleaned: "[TreasureRun] {count} blocos de dificuldade foram removidos."
+    managerNotReady: "[TreasureRun] O gerenciador de fase não foi inicializado."
   lang:
     guiCancelledGameStart: "A seleção de idioma foi cancelada. Para tentar novamente, execute /gameStart <easy|normal|hard>."
     guiCancelledGameMenu: "A seleção de idioma foi cancelada. Para abri-la novamente, execute /gameMenu gui."

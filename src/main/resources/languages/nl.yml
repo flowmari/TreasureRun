@@ -12,6 +12,9 @@ common:
   done: '&aKlaar!'
   error: '&cFout: {reason}'
 command:
+  stageCleanup:
+    cleaned: "[TreasureRun] {count} moeilijkheidsblokken zijn opgeruimd."
+    managerNotReady: "[TreasureRun] De stagebeheerder is niet geïnitialiseerd."
   noPermission: '&cGeen toestemming.'
   onlyPlayer: '&cAlleen spelers kunnen dit gebruiken.'
   reload:

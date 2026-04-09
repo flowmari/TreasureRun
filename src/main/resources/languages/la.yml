@@ -12,6 +12,9 @@ common:
   done: '&aPerfectum!'
   error: '&cError: {reason}'
 command:
+  stageCleanup:
+    cleaned: "[TreasureRun] {count} blocos difficultatis removit."
+    managerNotReady: "[TreasureRun] Moderator scaenae nondum initiatus est."
   noPermission: '&cPotestas deest.'
   onlyPlayer: '&cHoc mandatum soli lusores.'
   reload:
@@ -1303,7 +1306,7 @@ command:
     guiCancelledGameStart: "Electio linguae intermissa est. Ut iterum coneris, exsequere /gameStart <easy|normal|hard>."
     guiCancelledGameMenu: "Electio linguae intermissa est. Ut iterum aperias, exsequere /gameMenu gui."
     guiTooManyShown: "Nimiae linguae permissae configuratae sunt; itaque in GUI tantum primae XXVII ostenduntur."
-    playersOnly: "Hoc mandatum solis lusoribus adhiberi potest."
+    playersOnly: "Hoc mandatum a lusoribus tantum adhiberi potest."
     resetDone: "✅ Lingua tua servata restituta est. Proxima vice GUI aperietur."
     current: "Lingua nunc adhibita: {lang}"
     emptyCode: "Codex linguae vacuus est. Exemplum: /lang ja"

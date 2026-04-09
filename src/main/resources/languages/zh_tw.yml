@@ -436,11 +436,14 @@ favorites:
     reread: favorites.toc.reread
 
 command:
+  stageCleanup:
+    cleaned: "[TreasureRun] 已清理 {count} 個難度方塊。"
+    managerNotReady: "[TreasureRun] 關卡管理器尚未初始化。"
   lang:
     guiCancelledGameStart: "語言選擇已取消。若要再試一次，請執行 /gameStart <easy|normal|hard>。"
     guiCancelledGameMenu: "語言選擇已取消。若要再次開啟，請執行 /gameMenu gui。"
     guiTooManyShown: "已設定過多允許的語言，因此 GUI 中只會顯示前 27 個。"
-    playersOnly: "此指令僅限玩家使用。"
+    playersOnly: "這個指令只能由玩家使用。"
     resetDone: "✅ 你已儲存的語言已重設。下次將會開啟 GUI。"
     current: "目前語言：{lang}"
     emptyCode: "語言代碼為空。範例：/lang ja"

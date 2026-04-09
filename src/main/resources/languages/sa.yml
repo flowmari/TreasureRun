@@ -12,6 +12,9 @@ common:
   done: '&aसमाप्तम्!'
   error: '&cदोषः: {reason}'
 command:
+  stageCleanup:
+    cleaned: "[TreasureRun] {count} कठिनताखण्डाः अपासारिताः।"
+    managerNotReady: "[TreasureRun] चरण-प्रबन्धकः अद्यापि न प्रारब्धः।"
   noPermission: '&cअनुमतिः नास्ति।'
   onlyPlayer: '&cअयं आदेशः केवलं क्रीडकेन।'
   reload:
@@ -1303,7 +1306,7 @@ command:
     guiCancelledGameStart: "भाषाचयनं निरस्तम्। पुनः प्रयासार्थं /gameStart <easy|normal|hard> इत्याज्ञां प्रयुञ्जीत।"
     guiCancelledGameMenu: "भाषाचयनं निरस्तम्। पुनरपि उद्घाटयितुं /gameMenu gui इत्याज्ञां प्रयुञ्जीत।"
     guiTooManyShown: "अतिप्रमाणेन अनुमतभाषाः विन्यस्ताः, अतः GUI मध्ये केवलं प्रथमा २७ भाषाः एव दर्श्यन्ते।"
-    playersOnly: "अयं आदेशः केवलं क्रीडकैः एव उपयोज्यः।"
+    playersOnly: "अयं आदेशः केवलं खेलकैः एव उपयोक्तुं शक्यते।"
     resetDone: "✅ भवतः सञ्चितभाषा पुनःस्थापिता। अनन्तरं GUI स्वयमेव उद्घाटिष्यते।"
     current: "वर्तमाना भाषा: {lang}"
     emptyCode: "भाषासङ्केतः रिक्तः अस्ति। उदाहरणम्: /lang ja"

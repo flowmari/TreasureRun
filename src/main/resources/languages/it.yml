@@ -12,6 +12,9 @@ common:
   done: '&aFatto!'
   error: '&cErrore: {reason}'
 command:
+  stageCleanup:
+    cleaned: "[TreasureRun] Rimossi {count} blocchi di difficoltà."
+    managerNotReady: "[TreasureRun] Il gestore dello stage non è inizializzato."
   noPermission: '&cPermesso negato.'
   onlyPlayer: '&cQuesto comando è solo per i giocatori.'
   reload:
@@ -1375,7 +1378,7 @@ command:
     guiCancelledGameStart: "La selezione della lingua è stata annullata. Per riprovare, esegui /gameStart <easy|normal|hard>."
     guiCancelledGameMenu: "La selezione della lingua è stata annullata. Per riaprirla, esegui /gameMenu gui."
     guiTooManyShown: "Sono state configurate troppe lingue consentite, quindi nella GUI vengono mostrate solo le prime 27."
-    playersOnly: "Questo comando può essere eseguito solo dai giocatori."
+    playersOnly: "Questo comando può essere utilizzato solo dai giocatori."
     resetDone: "✅ La lingua salvata è stata reimpostata. La prossima volta si aprirà la GUI."
     current: "Lingua attuale: {lang}"
     emptyCode: "Il codice lingua è vuoto. Esempio: /lang ja"

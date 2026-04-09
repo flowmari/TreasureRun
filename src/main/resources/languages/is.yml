@@ -12,6 +12,9 @@ common:
   done: '&aBúið!'
   error: '&cVilla: {reason}'
 command:
+  stageCleanup:
+    cleaned: "[TreasureRun] Fjarlægði {count} erfiðleikablokka."
+    managerNotReady: "[TreasureRun] Stigastýringin hefur ekki verið frumstillt."
   noPermission: '&cEngin heimild.'
   onlyPlayer: '&cAðeins fyrir leikmenn.'
   reload:
@@ -1305,7 +1308,7 @@ command:
     guiCancelledGameStart: "Hætt var við tungumálaval. Keyrðu /gameStart <easy|normal|hard> til að reyna aftur."
     guiCancelledGameMenu: "Hætt var við tungumálaval. Keyrðu /gameMenu gui til að opna það aftur."
     guiTooManyShown: "Of mörg leyfð tungumál voru stillt, þannig að aðeins fyrstu 27 birtast í viðmótinu."
-    playersOnly: "Aðeins leikmenn geta notað þessa skipun."
+    playersOnly: "Aðeins spilarar geta notað þessa skipun."
     resetDone: "✅ Vistað tungumál þitt hefur verið endurstillt. Næst opnast viðmótið sjálfkrafa."
     current: "Núverandi tungumál: {lang}"
     emptyCode: "Tungumálakóðinn er tómur. Dæmi: /lang ja"

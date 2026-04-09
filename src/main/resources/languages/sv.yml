@@ -12,6 +12,9 @@ common:
   done: '&aKlart!'
   error: '&cFel: {reason}'
 command:
+  stageCleanup:
+    cleaned: "[TreasureRun] Rensade bort {count} svårighetsblock."
+    managerNotReady: "[TreasureRun] Scenhanteraren är inte initialiserad."
   noPermission: '&cDu saknar behörighet.'
   onlyPlayer: '&cDetta kommando kan bara användas av en spelare.'
   reload:

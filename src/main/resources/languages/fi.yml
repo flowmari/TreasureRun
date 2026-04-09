@@ -12,6 +12,9 @@ common:
   done: '&aValmis!'
   error: '&cVirhe: {reason}'
 command:
+  stageCleanup:
+    cleaned: "[TreasureRun] {count} vaikeuspalikkaa siivottiin."
+    managerNotReady: "[TreasureRun] Kentänhallintaa ei ole alustettu."
   noPermission: '&cEi oikeuksia.'
   onlyPlayer: '&cVain pelaajille.'
   reload:

@@ -12,6 +12,9 @@ common:
   done: '&a完了！'
   error: '&cエラー: {reason}'
 command:
+  stageCleanup:
+    cleaned: "[TreasureRun] 難易度ブロックを {count} 個片付けました。"
+    managerNotReady: "[TreasureRun] ステージ管理が初期化されていません。"
   noPermission: '&c権限がありません。'
   onlyPlayer: '&cこのコマンドはプレイヤーのみ実行できます。'
   reload:
