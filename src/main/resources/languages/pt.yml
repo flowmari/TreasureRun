@@ -450,6 +450,9 @@ favorites:
 
 command:
   lang:
+    guiCancelledGameStart: "A seleção de idioma foi cancelada. Para tentar novamente, execute /gameStart <easy|normal|hard>."
+    guiCancelledGameMenu: "A seleção de idioma foi cancelada. Para abri-la novamente, execute /gameMenu gui."
+    guiTooManyShown: "Foram configurados idiomas permitidos em excesso, por isso apenas os primeiros 27 são mostrados na interface."
     playersOnly: "Este comando só pode ser usado por jogadores."
     resetDone: "✅ O seu idioma salvo foi redefinido. Na próxima vez, a interface será aberta."
     current: "Idioma atual: {lang}"

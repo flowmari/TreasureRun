@@ -1411,6 +1411,9 @@ quotes:
 
 command:
   lang:
+    guiCancelledGameStart: "LANGUAGE SELECT CANCEL. TRY AGAIN: /gameStart <easy|normal|hard>"
+    guiCancelledGameMenu: "LANGUAGE SELECT CANCEL. OPEN AGAIN: /gameMenu gui"
+    guiTooManyShown: "TOO-MANY ALLOW LANGUAGE SET. GUI SHOW FIRST 27 ONLY."
     playersOnly: "THIS COMMAND PLAYER ONLY USE CAN."
     resetDone: "✅ YOUR SAVED LANGUAGE RESET FINISH. NEXT TIME GUI OPEN."
     current: "CURRENT LANGUAGE: {lang}"

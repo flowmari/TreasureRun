@@ -1389,6 +1389,9 @@ quotes:
 
 command:
   lang:
+    guiCancelledGameStart: "言語選択をキャンセルしました。もう一度やる場合は /gameStart <easy|normal|hard> を実行してください。"
+    guiCancelledGameMenu: "言語選択をキャンセルしました。もう一度開く場合は /gameMenu gui を実行してください。"
+    guiTooManyShown: "許可言語が多いため、GUIには先頭27件のみ表示します。"
     playersOnly: "このコマンドはプレイヤーのみ実行できます。"
     resetDone: "✅ 保存済み言語をリセットしました（次回はGUIが出ます）"
     current: "現在の言語: {lang}"

@@ -24,12 +24,18 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok:1.18.32'
 
     // MySQL と MyBatis
-    implementation 'mysql:mysql-connector-java:8.0.33'  // ← これだけ残す
+    implementation 'mysql:mysql-connector-java:8.0.33'
     implementation 'org.mybatis:mybatis:3.5.14'
 
-    // JUnit テスト
+    // JUnit 5
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
+
+    // テストから Bukkit 型を参照するため
+    testImplementation 'org.spigotmc:spigot-api:1.20.1-R0.1-SNAPSHOT'
+
+    // Mockito（JavaPlugin / Bukkit のモック用）
+    testImplementation 'org.mockito:mockito-inline:5.2.0'
 }
 
 java {
@@ -60,3 +66,7 @@ shadowJar {
 
 // build タスクが実行されたときに shadowJar も実行されるように依存関係を追加
 build.dependsOn shadowJar
+
+test {
+    useJUnitPlatform()
+}

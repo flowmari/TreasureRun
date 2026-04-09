@@ -1357,6 +1357,9 @@ quotes:
 
 command:
   lang:
+    guiCancelledGameStart: "Språkvalet avbröts. Kör /gameStart <easy|normal|hard> för att försöka igen."
+    guiCancelledGameMenu: "Språkvalet avbröts. Kör /gameMenu gui för att öppna det igen."
+    guiTooManyShown: "För många tillåtna språk har konfigurerats, så endast de första 27 visas i gränssnittet."
     playersOnly: "Det här kommandot kan bara användas av spelare."
     resetDone: "✅ Ditt sparade språk har återställts. Nästa gång öppnas GUI:t."
     current: "Nuvarande språk: {lang}"

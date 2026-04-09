@@ -1303,6 +1303,9 @@ quotes:
 
 command:
   lang:
+    guiCancelledGameStart: "De taalkeuze is geannuleerd. Voer /gameStart <easy|normal|hard> uit om het opnieuw te proberen."
+    guiCancelledGameMenu: "De taalkeuze is geannuleerd. Voer /gameMenu gui uit om deze opnieuw te openen."
+    guiTooManyShown: "Er zijn te veel toegestane talen ingesteld, daarom worden in de GUI alleen de eerste 27 weergegeven."
     playersOnly: "Dit commando kan alleen door spelers worden gebruikt."
     resetDone: "✅ Je opgeslagen taal is gereset. De volgende keer wordt de GUI geopend."
     current: "Huidige taal: {lang}"

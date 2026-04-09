@@ -1306,6 +1306,9 @@ quotes:
 
 command:
   lang:
+    guiCancelledGameStart: "La sélection de la langue a été annulée. Pour réessayer, exécutez /gameStart <easy|normal|hard>."
+    guiCancelledGameMenu: "La sélection de la langue a été annulée. Pour la rouvrir, exécutez /gameMenu gui."
+    guiTooManyShown: "Trop de langues autorisées ont été configurées, donc seules les 27 premières sont affichées dans l’interface."
     playersOnly: "Cette commande ne peut être utilisée que par les joueurs."
     resetDone: "✅ Votre langue enregistrée a été réinitialisée. L’interface s’ouvrira la prochaine fois."
     current: "Langue actuelle : {lang}"

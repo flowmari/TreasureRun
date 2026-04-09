@@ -437,6 +437,9 @@ favorites:
 
 command:
   lang:
+    guiCancelledGameStart: "語言之選已取消。欲更試之，請行 /gameStart <easy|normal|hard>。"
+    guiCancelledGameMenu: "語言之選已取消。欲再啟之，請行 /gameMenu gui。"
+    guiTooManyShown: "所設可用語言過多，故介面中僅示前二十七種。"
     playersOnly: "此令惟玩家可用。"
     resetDone: "✅ 所存語言已復初。後次將自啟介面。"
     current: "今所用語：{lang}"

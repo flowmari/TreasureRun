@@ -1416,6 +1416,9 @@ quotes:
 
 command:
   lang:
+    guiCancelledGameStart: "Kielen valinta peruutettiin. Yritä uudelleen komennolla /gameStart <easy|normal|hard>."
+    guiCancelledGameMenu: "Kielen valinta peruutettiin. Avaa se uudelleen komennolla /gameMenu gui."
+    guiTooManyShown: "Sallittuja kieliä on määritetty liikaa, joten käyttöliittymässä näytetään vain ensimmäiset 27."
     playersOnly: "Tätä komentoa voivat käyttää vain pelaajat."
     resetDone: "✅ Tallennettu kielesi on nollattu. Käyttöliittymä avautuu seuraavalla kerralla."
     current: "Nykyinen kieli: {lang}"

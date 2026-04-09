@@ -446,6 +446,9 @@ favorites:
 
 command:
   lang:
+    guiCancelledGameStart: "भाषा चयन रद्द कर दिया गया। फिर से प्रयास करने के लिए /gameStart <easy|normal|hard> चलाएँ।"
+    guiCancelledGameMenu: "भाषा चयन रद्द कर दिया गया। इसे फिर से खोलने के लिए /gameMenu gui चलाएँ।"
+    guiTooManyShown: "बहुत ज़्यादा अनुमत भाषाएँ सेट की गई हैं, इसलिए GUI में केवल पहली 27 भाषाएँ ही दिखाई जाएँगी।"
     playersOnly: "यह कमांड केवल खिलाड़ी ही उपयोग कर सकते हैं।"
     resetDone: "✅ आपकी सहेजी हुई भाषा रीसेट कर दी गई है। अगली बार GUI खुलेगा।"
     current: "वर्तमान भाषा: {lang}"

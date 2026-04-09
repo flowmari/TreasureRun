@@ -1300,6 +1300,9 @@ quotes:
 
 command:
   lang:
+    guiCancelledGameStart: "Electio linguae intermissa est. Ut iterum coneris, exsequere /gameStart <easy|normal|hard>."
+    guiCancelledGameMenu: "Electio linguae intermissa est. Ut iterum aperias, exsequere /gameMenu gui."
+    guiTooManyShown: "Nimiae linguae permissae configuratae sunt; itaque in GUI tantum primae XXVII ostenduntur."
     playersOnly: "Hoc mandatum solis lusoribus adhiberi potest."
     resetDone: "✅ Lingua tua servata restituta est. Proxima vice GUI aperietur."
     current: "Lingua nunc adhibita: {lang}"
