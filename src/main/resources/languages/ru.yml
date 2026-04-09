@@ -12,6 +12,10 @@ common:
   done: '&aГотово!'
   error: '&cОшибка: {reason}'
 command:
+  gameStart:
+    playersOnly: 'Эту команду могут использовать только игроки.'
+    worldNotFound: '[TreasureRun] Стартовый мир не настроен или не найден.'
+    started: '§aПоиск сокровищ начался! Сложность: {difficulty} | Лимит времени: {timeLimit} сек.'
   stageCleanup:
     cleaned: "[TreasureRun] Убрано блоков сложности: {count}."
     managerNotReady: "[TreasureRun] Менеджер сцены не инициализирован."

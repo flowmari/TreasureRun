@@ -449,6 +449,10 @@ favorites:
     reread: favorites.toc.reread
 
 command:
+  gameStart:
+    playersOnly: 'Este comando só pode ser usado por jogadores.'
+    worldNotFound: '[TreasureRun] O mundo inicial não está configurado ou não pôde ser encontrado.'
+    started: '§aCaça ao tesouro iniciada! Dificuldade: {difficulty} | Limite de tempo: {timeLimit} segundos'
   stageCleanup:
     cleaned: "[TreasureRun] {count} blocos de dificuldade foram removidos."
     managerNotReady: "[TreasureRun] O gerenciador de fase não foi inicializado."

@@ -12,6 +12,10 @@ common:
   done: '&a完了！'
   error: '&cエラー: {reason}'
 command:
+  gameStart:
+    playersOnly: 'このコマンドはプレイヤーからのみ実行できます。'
+    worldNotFound: '[TreasureRun] 開始ワールドが設定されていないか、見つかりませんでした。'
+    started: '§a宝探しゲーム開始！ 難易度: {difficulty} | 制限時間: {timeLimit} 秒'
   stageCleanup:
     cleaned: "[TreasureRun] 難易度ブロックを {count} 個片付けました。"
     managerNotReady: "[TreasureRun] ステージ管理が初期化されていません。"
@@ -1395,7 +1399,7 @@ command:
     guiCancelledGameStart: "言語選択をキャンセルしました。もう一度やる場合は /gameStart <easy|normal|hard> を実行してください。"
     guiCancelledGameMenu: "言語選択をキャンセルしました。もう一度開く場合は /gameMenu gui を実行してください。"
     guiTooManyShown: "許可言語が多いため、GUIには先頭27件のみ表示します。"
-    playersOnly: "このコマンドはプレイヤーのみ実行できます。"
+    playersOnly: "このコマンドはプレイヤーからのみ実行できます。"
     resetDone: "✅ 保存済み言語をリセットしました（次回はGUIが出ます）"
     current: "現在の言語: {lang}"
     emptyCode: "言語コードが空です。例: /lang ja"

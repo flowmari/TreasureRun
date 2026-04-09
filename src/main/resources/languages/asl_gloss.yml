@@ -12,6 +12,10 @@ common:
   done: '&aDONE!'
   error: '&cERROR: {reason}'
 command:
+  gameStart:
+    playersOnly: 'THIS COMMAND CAN ONLY BE USED BY PLAYERS.'
+    worldNotFound: '[TreasureRun] START WORLD NOT SET OR NOT FOUND.'
+    started: '§aTREASURE HUNT STARTED! DIFFICULTY: {difficulty} | TIME LIMIT: {timeLimit} SECONDS'
   stageCleanup:
     cleaned: "[TreasureRun] CLEANED UP {count} DIFFICULTY BLOCKS."
     managerNotReady: "[TreasureRun] STAGE MANAGER NOT READY."

@@ -12,6 +12,10 @@ common:
   done: '&aValmis!'
   error: '&cVirhe: {reason}'
 command:
+  gameStart:
+    playersOnly: 'Tätä komentoa voivat käyttää vain pelaajat.'
+    worldNotFound: '[TreasureRun] Aloitusmaailmaa ei ole määritetty tai sitä ei löytynyt.'
+    started: '§aAarrejahti alkoi! Vaikeustaso: {difficulty} | Aikaraja: {timeLimit} sekuntia'
   stageCleanup:
     cleaned: "[TreasureRun] {count} vaikeuspalikkaa siivottiin."
     managerNotReady: "[TreasureRun] Kentänhallintaa ei ole alustettu."

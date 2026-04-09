@@ -15,31 +15,44 @@ import org.bukkit.inventory.ItemStack;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 public class TreasureRunStartCommand implements CommandExecutor {
 
-  // ★修正：TreasureRunPlugin -> TreasureRunMultiChestPlugin
   private final TreasureRunMultiChestPlugin plugin;
+  private final I18nHelper i18n;
   private final Random random = new Random();
 
-  // ★修正：コンストラクタ引数も TreasureRunMultiChestPlugin
   public TreasureRunStartCommand(TreasureRunMultiChestPlugin plugin) {
     this.plugin = plugin;
+    this.i18n = new I18nHelper(plugin);
   }
 
   @Override
   public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
     if (!(sender instanceof Player player)) {
-      sender.sendMessage("このコマンドはプレイヤーからのみ実行できます。");
+      sender.sendMessage(i18n.trDefault(
+          "command.gameStart.playersOnly",
+          "This command can only be used by players."
+      ));
       return true;
     }
 
-    String difficulty = "Easy"; // 仮でEasy固定、後で args[0] で切り替え可能
+    String difficulty = "Easy";
     int timeLimit = plugin.getConfig().getInt("difficultySettings." + difficulty + ".timeLimit", 300);
 
-    // チェスト生成情報
-    World world = Bukkit.getWorld(plugin.getConfig().getString("startLocation.world"));
+    String worldName = plugin.getConfig().getString("startLocation.world");
+    World world = Bukkit.getWorld(worldName);
+    if (world == null) {
+      player.sendMessage(i18n.tr(
+          player,
+          "command.gameStart.worldNotFound",
+          "[TreasureRun] The start world is not configured or could not be found."
+      ));
+      return true;
+    }
+
     double startX = plugin.getConfig().getDouble("startLocation.x");
     double startY = plugin.getConfig().getDouble("startLocation.y");
     double startZ = plugin.getConfig().getDouble("startLocation.z");
@@ -52,7 +65,6 @@ public class TreasureRunStartCommand implements CommandExecutor {
 
     List<Location> chestLocations = new ArrayList<>();
 
-    // 宝物チェストの座標をランダム生成
     for (int i = 0; i < treasureChestCount + otherChestCount; i++) {
       double offsetX = random.nextInt(chestSpawnRadius * 2 + 1) - chestSpawnRadius;
       double offsetZ = random.nextInt(chestSpawnRadius * 2 + 1) - chestSpawnRadius;
@@ -60,7 +72,6 @@ public class TreasureRunStartCommand implements CommandExecutor {
       chestLocations.add(loc);
     }
 
-    // 宝物を置くチェストをランダムで1つ選ぶ
     Collections.shuffle(chestLocations);
     Location treasureLocation = chestLocations.get(0);
 
@@ -68,19 +79,26 @@ public class TreasureRunStartCommand implements CommandExecutor {
       Block block = world.getBlockAt(loc);
       block.setType(Material.CHEST);
       if (block.getState() instanceof Chest chest) {
-        // 宝物はランダムに1つだけ
         if (loc.equals(treasureLocation)) {
           chest.getInventory().addItem(new ItemStack(treasureMaterial, 1));
         }
       }
     }
 
-    // ★追加：ゲーム開始処理内で BGM抑制 start を呼ぶ（直前/直後の位置）
     plugin.startVanillaMusicSuppress(player);
 
-    player.sendMessage("§a宝探しゲーム開始！ 難易度: " + difficulty + " 制限時間: " + timeLimit + " 秒");
+    player.sendMessage(i18n.trp(
+        player,
+        "command.gameStart.started",
+        Map.of(
+            "difficulty", difficulty,
+            "timeLimit", String.valueOf(timeLimit)
+        ),
+        "Treasure hunt started! Difficulty: {difficulty} | Time limit: {timeLimit} seconds"
+    ));
+
     plugin.getLanguageSelectGui().open(player, difficulty);
-    plugin.getLogger().info("TreasureRun: " + chestLocations.size() + " 個のチェストを生成しました。宝物は " + treasureLocation);
+    plugin.getLogger().info("TreasureRun: " + chestLocations.size() + " chests generated. Treasure is at " + treasureLocation);
 
     return true;
   }

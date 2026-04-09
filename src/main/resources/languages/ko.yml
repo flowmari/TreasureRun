@@ -12,6 +12,10 @@ common:
   done: '&a완료!'
   error: '&c오류: {reason}'
 command:
+  gameStart:
+    playersOnly: '이 명령어는 플레이어만 사용할 수 있습니다.'
+    worldNotFound: '[TreasureRun] 시작 월드가 설정되지 않았거나 찾을 수 없습니다.'
+    started: '§a보물찾기 게임이 시작되었습니다! 난이도: {difficulty} | 제한 시간: {timeLimit}초'
   stageCleanup:
     cleaned: "[TreasureRun] 난이도 블록 {count}개를 정리했습니다."
     managerNotReady: "[TreasureRun] 스테이지 관리자가 아직 초기화되지 않았습니다."

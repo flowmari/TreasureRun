@@ -12,6 +12,10 @@ common:
   done: '&aFertig!'
   error: '&cFehler: {reason}'
 command:
+  gameStart:
+    playersOnly: 'Dieser Befehl kann nur von Spielern verwendet werden.'
+    worldNotFound: '[TreasureRun] Die Startwelt ist nicht konfiguriert oder konnte nicht gefunden werden.'
+    started: '§aDie Schatzsuche hat begonnen! Schwierigkeitsgrad: {difficulty} | Zeitlimit: {timeLimit} Sekunden'
   stageCleanup:
     cleaned: "[TreasureRun] {count} Schwierigkeitsblöcke wurden entfernt."
     managerNotReady: "[TreasureRun] Der Stage-Manager ist nicht initialisiert."

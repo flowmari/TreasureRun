@@ -12,6 +12,10 @@ common:
   done: '&aBúið!'
   error: '&cVilla: {reason}'
 command:
+  gameStart:
+    playersOnly: 'Aðeins leikmenn geta notað þessa skipun.'
+    worldNotFound: '[TreasureRun] Upphafsheimurinn er ekki stilltur eða fannst ekki.'
+    started: '§aFjársjóðsleitin er hafin! Erfiðleikastig: {difficulty} | Tímamörk: {timeLimit} sekúndur'
   stageCleanup:
     cleaned: "[TreasureRun] Fjarlægði {count} erfiðleikablokka."
     managerNotReady: "[TreasureRun] Stigastýringin hefur ekki verið frumstillt."

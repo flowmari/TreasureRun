@@ -12,6 +12,10 @@ common:
   done: '&aसमाप्तम्!'
   error: '&cदोषः: {reason}'
 command:
+  gameStart:
+    playersOnly: 'अयं आदेशः केवलं खेलकैः एव प्रयोक्तुं शक्यते।'
+    worldNotFound: '[TreasureRun] प्रारम्भ-लोकः न विन्यस्तः अथवा न लब्धः।'
+    started: '§aनिधि-अन्वेषण-क्रीडा आरब्धा! कठिनता: {difficulty} | कालसीमा: {timeLimit} क्षणाः'
   stageCleanup:
     cleaned: "[TreasureRun] {count} कठिनताखण्डाः अपासारिताः।"
     managerNotReady: "[TreasureRun] चरण-प्रबन्धकः अद्यापि न प्रारब्धः।"

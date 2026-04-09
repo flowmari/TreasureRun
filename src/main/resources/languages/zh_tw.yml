@@ -436,6 +436,10 @@ favorites:
     reread: favorites.toc.reread
 
 command:
+  gameStart:
+    playersOnly: '這個指令只能由玩家執行。'
+    worldNotFound: '[TreasureRun] 起始世界尚未設定，或無法找到。'
+    started: '§a尋寶遊戲開始！難度：{difficulty}｜限時：{timeLimit} 秒'
   stageCleanup:
     cleaned: "[TreasureRun] 已清理 {count} 個難度方塊。"
     managerNotReady: "[TreasureRun] 關卡管理器尚未初始化。"

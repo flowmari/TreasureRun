@@ -12,6 +12,10 @@ common:
   done: '&aPerfectum!'
   error: '&cError: {reason}'
 command:
+  gameStart:
+    playersOnly: 'Hoc mandatum a lusoribus tantum adhiberi potest.'
+    worldNotFound: '[TreasureRun] Mundus initii aut non configuratus est aut inveniri non potuit.'
+    started: '§aVenatio thesauri incepta est! Difficultas: {difficulty} | Tempus finitum: {timeLimit} secundorum'
   stageCleanup:
     cleaned: "[TreasureRun] {count} blocos difficultatis removit."
     managerNotReady: "[TreasureRun] Moderator scaenae nondum initiatus est."

@@ -12,6 +12,10 @@ common:
   done: '&aKlaar!'
   error: '&cFout: {reason}'
 command:
+  gameStart:
+    playersOnly: 'Dit commando kan alleen door spelers worden gebruikt.'
+    worldNotFound: '[TreasureRun] De startwereld is niet geconfigureerd of kon niet worden gevonden.'
+    started: '§aDe schattenjacht is begonnen! Moeilijkheidsgraad: {difficulty} | Tijdslimiet: {timeLimit} seconden'
   stageCleanup:
     cleaned: "[TreasureRun] {count} moeilijkheidsblokken zijn opgeruimd."
     managerNotReady: "[TreasureRun] De stagebeheerder is niet geïnitialiseerd."

@@ -445,6 +445,10 @@ favorites:
     reread: favorites.toc.reread
 
 command:
+  gameStart:
+    playersOnly: 'यह कमांड केवल खिलाड़ी ही चला सकते हैं।'
+    worldNotFound: '[TreasureRun] प्रारंभिक दुनिया कॉन्फ़िगर नहीं है या मिल नहीं सकी।'
+    started: '§aखजाना खोज शुरू हो गई! कठिनाई: {difficulty} | समय सीमा: {timeLimit} सेकंड'
   stageCleanup:
     cleaned: "[TreasureRun] {count} कठिनाई ब्लॉक हटा दिए गए।"
     managerNotReady: "[TreasureRun] स्टेज प्रबंधक अभी प्रारंभ नहीं हुआ है।"

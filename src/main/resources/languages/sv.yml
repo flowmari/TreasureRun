@@ -12,6 +12,10 @@ common:
   done: '&aKlart!'
   error: '&cFel: {reason}'
 command:
+  gameStart:
+    playersOnly: 'Det här kommandot kan bara användas av spelare.'
+    worldNotFound: '[TreasureRun] Startvärlden är inte konfigurerad eller kunde inte hittas.'
+    started: '§aSkattjakten har börjat! Svårighetsgrad: {difficulty} | Tidsgräns: {timeLimit} sekunder'
   stageCleanup:
     cleaned: "[TreasureRun] Rensade bort {count} svårighetsblock."
     managerNotReady: "[TreasureRun] Scenhanteraren är inte initialiserad."

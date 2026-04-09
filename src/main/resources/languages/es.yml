@@ -12,6 +12,10 @@ common:
   done: '&a¡Hecho!'
   error: '&cError: {reason}'
 command:
+  gameStart:
+    playersOnly: 'Este comando solo puede ser utilizado por jugadores.'
+    worldNotFound: '[TreasureRun] El mundo inicial no está configurado o no se pudo encontrar.'
+    started: '§a¡La búsqueda del tesoro ha comenzado! Dificultad: {difficulty} | Tiempo límite: {timeLimit} segundos'
   stageCleanup:
     cleaned: "[TreasureRun] Se han retirado {count} bloques de dificultad."
     managerNotReady: "[TreasureRun] El administrador del escenario no está inicializado."
