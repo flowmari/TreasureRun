@@ -1,8 +1,10 @@
 version: 1
+
 default:
   prefix: '&b[&6TreasureRun&b]&r '
   unknown: '&c(Translation missing: {key})'
 prefix: '&b[&6TreasureRun&b]&r '
+
 common:
   true: '&aKyllä'
   false: '&cEi'
@@ -11,6 +13,7 @@ common:
   loading: '&7Ladataan...'
   done: '&aValmis!'
   error: '&cVirhe: {reason}'
+
 command:
   checkTreasureEmerald:
     playersOnly: 'Vain pelaajat voivat käyttää tätä komentoa.'
@@ -31,9 +34,25 @@ command:
     success: '&aUudelleenlataus valmis.'
     fail: '&cUudelleenlataus epäonnistui: {reason}'
   lang:
-    guiTooManyShown: 'Sallittuja kieliä on määritetty liikaa, joten käyttöliittymässä näytetään vain ensimmäiset 27.'
-    guiCancelledGameMenu: 'Kielen valinta peruttiin. Voit avata sen uudelleen komennolla /gameMenu gui.'
-    guiCancelledGameStart: 'Kielen valinta peruttiin. Yritä uudelleen komennolla /gameStart <easy|normal|hard>.'
+    guiCancelledGameStart: "Kielen valinta peruutettiin. Yritä uudelleen komennolla /gameStart <easy|normal|hard>."
+    guiCancelledGameMenu: "Kielen valinta peruutettiin. Avaa se uudelleen komennolla /gameMenu gui."
+    guiTooManyShown: "Sallittuja kieliä on määritetty liikaa, joten käyttöliittymässä näytetään vain ensimmäiset 27."
+    playersOnly: "Tätä komentoa voivat käyttää vain pelaajat."
+    resetDone: "✅ Tallennettu kielesi on nollattu. Käyttöliittymä avautuu seuraavalla kerralla."
+    current: "Nykyinen kieli: {lang}"
+    emptyCode: "Kielikoodi puuttuu. Esimerkki: /lang ja"
+    notAllowed: "Tämä kieli ei ole sallittu: {lang}"
+    allowedList: "Sallitut kielet: {allowed}"
+    changed: "✅ Kieli vaihdettu: {displayName} ({lang})"
+    changedButNotSaved: "⚠ Kieli vaihdettiin, mutta pysyvä tallennus epäonnistui: {lang}"
+    list:
+      title: "=== Kielet ==="
+      default: "oletus: {default}"
+      allowed: "sallitut: {allowed}"
+      usage: "Käyttö: /lang <code> Esimerkki: /lang ja"
+      gui: "GUI: /lang tai /lang gui"
+    guiNotReady: "Kielikäyttöliittymää ei ole alustettu."
+
 gui:
   language:
     title: '&3Kieli / 言語'
@@ -44,6 +63,7 @@ gui:
     selected: '&aValittu: &f{lang}'
     saved: '&aTallennettu kieli: &f{lang}'
     reopenHint: '&7Vaihda komennolla &f/lang'
+
 game:
   difficulty:
     easy: '&aHelppo'
@@ -141,13 +161,16 @@ game:
     treasures_collected_ca7eab31: '§7Treasures collected: §e'
     try_a_different_route_next_t_721a4d8b: §7Try a different route next time — or
       use §e/gamestart §7<§eeasy§7|§enormal§7|§ehard§7> §7to retry.
+
 sound:
   sparkle: '&b* säihky *'
   start: '&7(BGM alkaa...)'
   end: '&7(BGM loppuu...)'
+
 chestSound:
   actionBarDebug: chestSound.actionBarDebug
   debug: chestSound.debug
+
 favorites:
   chapter:
     back: favorites.chapter.back
@@ -225,6 +248,7 @@ favorites:
     quotefavoritestore_countfavo_69291680: '[QuoteFavoriteStore] countSuosikit failed:'
     treasurerun_favorites_0c778ce1: TreasureRun Suosikit
     no_text_b87d9ee6: (no text)
+
 commands:
   text_2bf42ec8: このコマンドはプレイヤーのみが実行できます。
   text_2bf42ec8_18: このコマンドはプレイヤーのみが実行できます。
@@ -303,6 +327,7 @@ commands:
   success_normal_en_the_obstac_b627a544: 【SUCCESS / Normal / en】\nThe obstacle is
     the way.
   time_up_bc0cd646: TIME UP
+
 debug:
   istreasureemerald_fb6fecec: isTreasureEmerald =
   chestsound_start_called_16th_e2a7414b: §b[ChestSound] start() called (16th-grid
@@ -314,12 +339,14 @@ debug:
   reward_giverankrewardwitheff_5e361189: '[Reward] giveRankRewardWithEffect called
     player='
   starttheme_startgame_called__9cf42cbe: '[StartTheme] startGame called by'
+
 items:
   text_7567bb35: 特製エメラルドのレシピを登録しました。
   text_7a04254b: '&e特製リンゴ'
   text_e8d4013d: 特製リンゴのレシピを登録しました。
   text_e42912c7: '&7特製鉄ブロック'
   text_c89dea57: 特製鉄ブロックのレシピを登録しました。
+
 ui:
   labels:
     tabs: '&6Välilehdet:&r'
@@ -1250,6 +1277,7 @@ ui:
   favorites:
     title: ★ Suosikit
     headerLatest: 'Uusimmat 20  |  kieli: {lang}'
+
 quotes:
   outcome:
     success: null
@@ -1430,23 +1458,3 @@ quotes:
   - Victory and defeat \nare nothing more than grains of sand.\n（勝利も敗北も、同じ砂の一粒に過ぎない。）
   - The road goes on—or it ends.\nEither way, it lies on the same earth.\n（道は続き、あるいは途切れ、どちらも同じ大地の上にある。）
 
-command:
-  lang:
-    guiCancelledGameStart: "Kielen valinta peruutettiin. Yritä uudelleen komennolla /gameStart <easy|normal|hard>."
-    guiCancelledGameMenu: "Kielen valinta peruutettiin. Avaa se uudelleen komennolla /gameMenu gui."
-    guiTooManyShown: "Sallittuja kieliä on määritetty liikaa, joten käyttöliittymässä näytetään vain ensimmäiset 27."
-    playersOnly: "Tätä komentoa voivat käyttää vain pelaajat."
-    resetDone: "✅ Tallennettu kielesi on nollattu. Käyttöliittymä avautuu seuraavalla kerralla."
-    current: "Nykyinen kieli: {lang}"
-    emptyCode: "Kielikoodi puuttuu. Esimerkki: /lang ja"
-    notAllowed: "Tämä kieli ei ole sallittu: {lang}"
-    allowedList: "Sallitut kielet: {allowed}"
-    changed: "✅ Kieli vaihdettu: {displayName} ({lang})"
-    changedButNotSaved: "⚠ Kieli vaihdettiin, mutta pysyvä tallennus epäonnistui: {lang}"
-    list:
-      title: "=== Kielet ==="
-      default: "oletus: {default}"
-      allowed: "sallitut: {allowed}"
-      usage: "Käyttö: /lang <code> Esimerkki: /lang ja"
-      gui: "GUI: /lang tai /lang gui"
-    guiNotReady: "Kielikäyttöliittymää ei ole alustettu."

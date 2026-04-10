@@ -1,8 +1,10 @@
 version: 1
+
 default:
   prefix: '&b[&6TreasureRun&b]&r '
   unknown: '&c(Translation missing: {key})'
 prefix: '&b[&6TreasureRun&b]&r '
+
 common:
   true: '&aIta'
   false: '&cMinime'
@@ -11,6 +13,7 @@ common:
   loading: '&7Oneratur...'
   done: '&aPerfectum!'
   error: '&cError: {reason}'
+
 command:
   checkTreasureEmerald:
     playersOnly: 'Hoc mandatum a lusoribus tantum adhiberi potest.'
@@ -31,9 +34,25 @@ command:
     success: '&aPerfecte onustum.'
     fail: '&cOnerare non potuit: {reason}'
   lang:
-    guiTooManyShown: 'Nimiae linguae permissae configuratae sunt; ideo tantum primae XXVII in GUI ostendentur.'
-    guiCancelledGameMenu: 'Electio linguae intermissa est. Ut iterum aperias, utere /gameMenu gui.'
-    guiCancelledGameStart: 'Electio linguae intermissa est. Iterum conare cum /gameStart <easy|normal|hard>.'
+    guiCancelledGameStart: "Electio linguae intermissa est. Ut iterum coneris, exsequere /gameStart <easy|normal|hard>."
+    guiCancelledGameMenu: "Electio linguae intermissa est. Ut iterum aperias, exsequere /gameMenu gui."
+    guiTooManyShown: "Nimiae linguae permissae configuratae sunt; itaque in GUI tantum primae XXVII ostenduntur."
+    playersOnly: "Hoc mandatum a lusoribus tantum adhiberi potest."
+    resetDone: "✅ Lingua tua servata restituta est. Proxima vice GUI aperietur."
+    current: "Lingua nunc adhibita: {lang}"
+    emptyCode: "Codex linguae vacuus est. Exemplum: /lang ja"
+    notAllowed: "Haec lingua non permittitur: {lang}"
+    allowedList: "Linguae permissae: {allowed}"
+    changed: "✅ Lingua mutata est: {displayName} ({lang})"
+    changedButNotSaved: "⚠ Lingua mutata est, sed servari permanente modo non potuit: {lang}"
+    list:
+      title: "=== Linguae ==="
+      default: "praedefinita: {default}"
+      allowed: "permissae: {allowed}"
+      usage: "Usus: /lang <code> Exemplum: /lang ja"
+      gui: "GUI: /lang vel /lang gui"
+    guiNotReady: "GUI linguae nondum initiata est."
+
 gui:
   language:
     title: '&3Lingua / 言語'
@@ -44,6 +63,7 @@ gui:
     selected: '&aElecta: &f{lang}'
     saved: '&aServata: &f{lang}'
     reopenHint: '&7Mutare potes per &f/lang'
+
 game:
   difficulty:
     easy: '&aFacilis'
@@ -141,13 +161,16 @@ game:
     treasures_collected_ca7eab31: '§7Treasures collected: §e'
     try_a_different_route_next_t_721a4d8b: §7Try a different route next time — or
       use §e/gamestart §7<§eeasy§7|§enormal§7|§ehard§7> §7to retry.
+
 sound:
   sparkle: '&b* fulgor *'
   start: '&7(BGM incipit...)'
   end: '&7(BGM finit...)'
+
 chestSound:
   actionBarDebug: chestSound.actionBarDebug
   debug: chestSound.debug
+
 favorites:
   chapter:
     back: favorites.chapter.back
@@ -225,6 +248,7 @@ favorites:
     quotefavoritestore_countfavo_69291680: '[QuoteFavoriteStore] countDilecta failed:'
     treasurerun_favorites_0c778ce1: TreasureRun Dilecta
     no_text_b87d9ee6: (no text)
+
 commands:
   text_2bf42ec8: このコマンドはプレイヤーのみが実行できます。
   text_2bf42ec8_18: このコマンドはプレイヤーのみが実行できます。
@@ -303,6 +327,7 @@ commands:
   success_normal_en_the_obstac_b627a544: 【SUCCESS / Normal / en】\nThe obstacle is
     the way.
   time_up_bc0cd646: TIME UP
+
 debug:
   istreasureemerald_fb6fecec: isTreasureEmerald =
   chestsound_start_called_16th_e2a7414b: §b[ChestSound] start() called (16th-grid
@@ -314,12 +339,14 @@ debug:
   reward_giverankrewardwitheff_5e361189: '[Reward] giveRankRewardWithEffect called
     player='
   starttheme_startgame_called__9cf42cbe: '[StartTheme] startGame called by'
+
 items:
   text_7567bb35: 特製エメラルドのレシピを登録しました。
   text_7a04254b: '&e特製リンゴ'
   text_e8d4013d: 特製リンゴのレシピを登録しました。
   text_e42912c7: '&7特製鉄ブロック'
   text_c89dea57: 特製鉄ブロックのレシピを登録しました。
+
 ui:
   labels:
     tabs: '&6Tabellae:&r'
@@ -1134,6 +1161,7 @@ ui:
   favorites:
     title: ★ Dilecta
     headerLatest: 'Recentissima 20  |  lingua: {lang}'
+
 quotes:
   outcome:
     success: null
@@ -1314,23 +1342,3 @@ quotes:
   - Victory and defeat \nare nothing more than grains of sand.\n（勝利も敗北も、同じ砂の一粒に過ぎない。）
   - The road goes on—or it ends.\nEither way, it lies on the same earth.\n（道は続き、あるいは途切れ、どちらも同じ大地の上にある。）
 
-command:
-  lang:
-    guiCancelledGameStart: "Electio linguae intermissa est. Ut iterum coneris, exsequere /gameStart <easy|normal|hard>."
-    guiCancelledGameMenu: "Electio linguae intermissa est. Ut iterum aperias, exsequere /gameMenu gui."
-    guiTooManyShown: "Nimiae linguae permissae configuratae sunt; itaque in GUI tantum primae XXVII ostenduntur."
-    playersOnly: "Hoc mandatum a lusoribus tantum adhiberi potest."
-    resetDone: "✅ Lingua tua servata restituta est. Proxima vice GUI aperietur."
-    current: "Lingua nunc adhibita: {lang}"
-    emptyCode: "Codex linguae vacuus est. Exemplum: /lang ja"
-    notAllowed: "Haec lingua non permittitur: {lang}"
-    allowedList: "Linguae permissae: {allowed}"
-    changed: "✅ Lingua mutata est: {displayName} ({lang})"
-    changedButNotSaved: "⚠ Lingua mutata est, sed servari permanente modo non potuit: {lang}"
-    list:
-      title: "=== Linguae ==="
-      default: "praedefinita: {default}"
-      allowed: "permissae: {allowed}"
-      usage: "Usus: /lang <code> Exemplum: /lang ja"
-      gui: "GUI: /lang vel /lang gui"
-    guiNotReady: "GUI linguae nondum initiata est."

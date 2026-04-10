@@ -1,8 +1,10 @@
 version: 1
+
 default:
   prefix: '&b[&6TreasureRun&b]&r '
   unknown: '&c(Translation missing: {key})'
 prefix: '&b[&6TreasureRun&b]&r '
+
 common:
   true: '&aYES'
   false: '&cNO'
@@ -11,6 +13,7 @@ common:
   loading: '&7LOADING...'
   done: '&aDONE!'
   error: '&cERROR: {reason}'
+
 command:
   checkTreasureEmerald:
     playersOnly: 'ONLY PLAYERS CAN USE THIS COMMAND.'
@@ -31,9 +34,25 @@ command:
     success: '&aRELOAD DONE.'
     fail: '&cRELOAD FAIL: {reason}'
   lang:
-    guiTooManyShown: 'TOO MANY ALLOWED LANGUAGES SET. GUI SHOW FIRST 27 ONLY.'
-    guiCancelledGameMenu: 'LANGUAGE SELECT CANCELLED. OPEN AGAIN WITH /gameMenu gui.'
-    guiCancelledGameStart: 'LANGUAGE SELECT CANCELLED. TRY AGAIN WITH /gameStart <easy|normal|hard>.'
+    guiCancelledGameStart: "LANGUAGE SELECT CANCEL. TRY AGAIN: /gameStart <easy|normal|hard>"
+    guiCancelledGameMenu: "LANGUAGE SELECT CANCEL. OPEN AGAIN: /gameMenu gui"
+    guiTooManyShown: "TOO-MANY ALLOW LANGUAGE SET. GUI SHOW FIRST 27 ONLY."
+    playersOnly: "ONLY PLAYER CAN USE THIS COMMAND."
+    resetDone: "✅ YOUR SAVED LANGUAGE RESET FINISH. NEXT TIME GUI OPEN."
+    current: "CURRENT LANGUAGE: {lang}"
+    emptyCode: "LANGUAGE CODE EMPTY. EXAMPLE: /lang ja"
+    notAllowed: "THAT LANGUAGE NOT-ALLOWED: {lang}"
+    allowedList: "ALLOWED LANGUAGE LIST: {allowed}"
+    changed: "✅ LANGUAGE CHANGE FINISH: {displayName} ({lang})"
+    changedButNotSaved: "⚠ LANGUAGE CHANGE FINISH, BUT SAVE FAIL: {lang}"
+    list:
+      title: "=== LANGUAGE ==="
+      default: "DEFAULT: {default}"
+      allowed: "ALLOWED: {allowed}"
+      usage: "USE: /lang <code> EXAMPLE: /lang ja"
+      gui: "GUI: /lang OR /lang gui"
+    guiNotReady: "LANGUAGE GUI NOT READY."
+
 gui:
   language:
     title: '&3LANGUAGE / 言語'
@@ -44,6 +63,7 @@ gui:
     selected: '&aSELECT: &f{lang}'
     saved: '&aSAVED: &f{lang}'
     reopenHint: '&7CHANGE ANYTIME: &f/lang'
+
 game:
   difficulty:
     easy: '&aEASY'
@@ -141,13 +161,16 @@ game:
     treasures_collected_ca7eab31: '§7Treasures collected: §e'
     try_a_different_route_next_t_721a4d8b: §7Try a different route next time — or
       use §e/gamestart §7<§eeasy§7|§enormal§7|§ehard§7> §7to retry.
+
 sound:
   sparkle: '&b* SPARKLE *'
   start: '&7(BGM START...)'
   end: '&7(BGM END...)'
+
 chestSound:
   actionBarDebug: chestSound.actionBarDebug
   debug: chestSound.debug
+
 favorites:
   chapter:
     back: favorites.chapter.back
@@ -225,6 +248,7 @@ favorites:
     quotefavoritestore_countfavo_69291680: '[QuoteFavoriteStore] countFAVORITES failed:'
     treasurerun_favorites_0c778ce1: TreasureRun FAVORITES
     no_text_b87d9ee6: (no text)
+
 commands:
   text_2bf42ec8: このコマンドはプレイヤーのみが実行できます。
   text_2bf42ec8_18: このコマンドはプレイヤーのみが実行できます。
@@ -303,6 +327,7 @@ commands:
   success_normal_en_the_obstac_b627a544: 【SUCCESS / Normal / en】\nThe obstacle is
     the way.
   time_up_bc0cd646: TIME UP
+
 debug:
   istreasureemerald_fb6fecec: isTreasureEmerald =
   chestsound_start_called_16th_e2a7414b: §b[ChestSound] start() called (16th-grid
@@ -314,12 +339,14 @@ debug:
   reward_giverankrewardwitheff_5e361189: '[Reward] giveRankRewardWithEffect called
     player='
   starttheme_startgame_called__9cf42cbe: '[StartTheme] startGame called by'
+
 items:
   text_7567bb35: 特製エメラルドのレシピを登録しました。
   text_7a04254b: '&e特製リンゴ'
   text_e8d4013d: 特製リンゴのレシピを登録しました。
   text_e42912c7: '&7特製鉄ブロック'
   text_c89dea57: 特製鉄ブロックのレシピを登録しました。
+
 ui:
   labels:
     tabs: '&6TABS:&r'
@@ -1245,6 +1272,7 @@ ui:
   favorites:
     title: ★ FAVORITES
     headerLatest: 'Latest 20  |  lang: {lang}'
+
 quotes:
   outcome:
     success: null
@@ -1425,23 +1453,3 @@ quotes:
   - Victory and defeat \nare nothing more than grains of sand.\n（勝利も敗北も、同じ砂の一粒に過ぎない。）
   - The road goes on—or it ends.\nEither way, it lies on the same earth.\n（道は続き、あるいは途切れ、どちらも同じ大地の上にある。）
 
-command:
-  lang:
-    guiCancelledGameStart: "LANGUAGE SELECT CANCEL. TRY AGAIN: /gameStart <easy|normal|hard>"
-    guiCancelledGameMenu: "LANGUAGE SELECT CANCEL. OPEN AGAIN: /gameMenu gui"
-    guiTooManyShown: "TOO-MANY ALLOW LANGUAGE SET. GUI SHOW FIRST 27 ONLY."
-    playersOnly: "ONLY PLAYER CAN USE THIS COMMAND."
-    resetDone: "✅ YOUR SAVED LANGUAGE RESET FINISH. NEXT TIME GUI OPEN."
-    current: "CURRENT LANGUAGE: {lang}"
-    emptyCode: "LANGUAGE CODE EMPTY. EXAMPLE: /lang ja"
-    notAllowed: "THAT LANGUAGE NOT-ALLOWED: {lang}"
-    allowedList: "ALLOWED LANGUAGE LIST: {allowed}"
-    changed: "✅ LANGUAGE CHANGE FINISH: {displayName} ({lang})"
-    changedButNotSaved: "⚠ LANGUAGE CHANGE FINISH, BUT SAVE FAIL: {lang}"
-    list:
-      title: "=== LANGUAGE ==="
-      default: "DEFAULT: {default}"
-      allowed: "ALLOWED: {allowed}"
-      usage: "USE: /lang <code> EXAMPLE: /lang ja"
-      gui: "GUI: /lang OR /lang gui"
-    guiNotReady: "LANGUAGE GUI NOT READY."

@@ -1,8 +1,10 @@
 version: 1
+
 default:
   prefix: '&b[&6TreasureRun&b]&r '
   unknown: '&c(Translation missing: {key})'
 prefix: '&b[&6TreasureRun&b]&r '
+
 common:
   true: '&aSí'
   false: '&cNo'
@@ -11,6 +13,7 @@ common:
   loading: '&7Cargando...'
   done: '&a¡Hecho!'
   error: '&cError: {reason}'
+
 command:
   checkTreasureEmerald:
     playersOnly: 'Solo los jugadores pueden usar este comando.'
@@ -31,9 +34,25 @@ command:
     success: '&aRecarga completa.'
     fail: '&cFallo al recargar: {reason}'
   lang:
-    guiTooManyShown: 'Se configuraron demasiados idiomas permitidos, así que en la interfaz solo se mostrarán los primeros 27.'
-    guiCancelledGameMenu: 'Se canceló la selección de idioma. Para volver a abrirla, usa /gameMenu gui.'
-    guiCancelledGameStart: 'Se canceló la selección de idioma. Inténtalo de nuevo con /gameStart <easy|normal|hard>.'
+    guiCancelledGameStart: "Se canceló la selección de idioma. Para intentarlo de nuevo, ejecuta /gameStart <easy|normal|hard>."
+    guiCancelledGameMenu: "Se canceló la selección de idioma. Para volver a abrirla, ejecuta /gameMenu gui."
+    guiTooManyShown: "Se configuraron demasiados idiomas permitidos, por lo que la interfaz solo muestra los primeros 27."
+    playersOnly: "Este comando solo puede ser utilizado por jugadores."
+    resetDone: "✅ Tu idioma guardado se ha restablecido. La próxima vez se abrirá la interfaz."
+    current: "Idioma actual: {lang}"
+    emptyCode: "El código de idioma está vacío. Ejemplo: /lang ja"
+    notAllowed: "Ese idioma no está permitido: {lang}"
+    allowedList: "Idiomas permitidos: {allowed}"
+    changed: "✅ Idioma cambiado: {displayName} ({lang})"
+    changedButNotSaved: "⚠ El idioma se cambió, pero no se pudo guardar de forma permanente: {lang}"
+    list:
+      title: "=== Idiomas ==="
+      default: "predeterminado: {default}"
+      allowed: "permitidos: {allowed}"
+      usage: "Uso: /lang <code> Ejemplo: /lang ja"
+      gui: "GUI: /lang o /lang gui"
+    guiNotReady: "La interfaz de idioma no está inicializada."
+
 gui:
   language:
     title: '&3Idioma / 言語'
@@ -44,6 +63,7 @@ gui:
     selected: '&aSeleccionado: &f{lang}'
     saved: '&aIdioma guardado: &f{lang}'
     reopenHint: '&7Cámbialo con &f/lang'
+
 game:
   difficulty:
     easy: '&aFácil'
@@ -141,13 +161,16 @@ game:
     treasures_collected_ca7eab31: '§7Treasures collected: §e'
     try_a_different_route_next_t_721a4d8b: §7Try a different route next time — or
       use §e/gamestart §7<§eeasy§7|§enormal§7|§ehard§7> §7to retry.
+
 sound:
   sparkle: '&b* brillo *'
   start: '&7(BGM inicia...)'
   end: '&7(BGM termina...)'
+
 chestSound:
   actionBarDebug: chestSound.actionBarDebug
   debug: chestSound.debug
+
 favorites:
   chapter:
     back: favorites.chapter.back
@@ -225,6 +248,7 @@ favorites:
     quotefavoritestore_countfavo_69291680: '[QuoteFavoriteStore] countFavoritos failed:'
     treasurerun_favorites_0c778ce1: TreasureRun Favoritos
     no_text_b87d9ee6: (no text)
+
 commands:
   text_2bf42ec8: このコマンドはプレイヤーのみが実行できます。
   text_2bf42ec8_18: このコマンドはプレイヤーのみが実行できます。
@@ -303,6 +327,7 @@ commands:
   success_normal_en_the_obstac_b627a544: 【SUCCESS / Normal / en】\nThe obstacle is
     the way.
   time_up_bc0cd646: TIME UP
+
 debug:
   istreasureemerald_fb6fecec: isTreasureEmerald =
   chestsound_start_called_16th_e2a7414b: §b[ChestSound] start() called (16th-grid
@@ -314,12 +339,14 @@ debug:
   reward_giverankrewardwitheff_5e361189: '[Reward] giveRankRewardWithEffect called
     player='
   starttheme_startgame_called__9cf42cbe: '[StartTheme] startGame called by'
+
 items:
   text_7567bb35: 特製エメラルドのレシピを登録しました。
   text_7a04254b: '&e特製リンゴ'
   text_e8d4013d: 特製リンゴのレシピを登録しました。
   text_e42912c7: '&7特製鉄ブロック'
   text_c89dea57: 特製鉄ブロックのレシピを登録しました。
+
 ui:
   labels:
     tabs: '&6Pestañas:&r'
@@ -1135,6 +1162,7 @@ ui:
   favorites:
     title: ★ Favoritos
     headerLatest: 'Más recientes 20  |  idioma: {lang}'
+
 quotes:
   outcome:
     success: null
@@ -1315,23 +1343,3 @@ quotes:
   - Victory and defeat \nare nothing more than grains of sand.\n（勝利も敗北も、同じ砂の一粒に過ぎない。）
   - The road goes on—or it ends.\nEither way, it lies on the same earth.\n（道は続き、あるいは途切れ、どちらも同じ大地の上にある。）
 
-command:
-  lang:
-    guiCancelledGameStart: "Se canceló la selección de idioma. Para intentarlo de nuevo, ejecuta /gameStart <easy|normal|hard>."
-    guiCancelledGameMenu: "Se canceló la selección de idioma. Para volver a abrirla, ejecuta /gameMenu gui."
-    guiTooManyShown: "Se configuraron demasiados idiomas permitidos, por lo que la interfaz solo muestra los primeros 27."
-    playersOnly: "Este comando solo puede ser utilizado por jugadores."
-    resetDone: "✅ Tu idioma guardado se ha restablecido. La próxima vez se abrirá la interfaz."
-    current: "Idioma actual: {lang}"
-    emptyCode: "El código de idioma está vacío. Ejemplo: /lang ja"
-    notAllowed: "Ese idioma no está permitido: {lang}"
-    allowedList: "Idiomas permitidos: {allowed}"
-    changed: "✅ Idioma cambiado: {displayName} ({lang})"
-    changedButNotSaved: "⚠ El idioma se cambió, pero no se pudo guardar de forma permanente: {lang}"
-    list:
-      title: "=== Idiomas ==="
-      default: "predeterminado: {default}"
-      allowed: "permitidos: {allowed}"
-      usage: "Uso: /lang <code> Ejemplo: /lang ja"
-      gui: "GUI: /lang o /lang gui"
-    guiNotReady: "La interfaz de idioma no está inicializada."

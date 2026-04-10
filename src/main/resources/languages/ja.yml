@@ -1,8 +1,10 @@
 version: 1
+
 default:
   prefix: '&b[&6TreasureRun&b]&r '
   unknown: '&c(Translation missing: {key})'
 prefix: '&b[&6TreasureRun&b]&r '
+
 common:
   true: '&aはい'
   false: '&cいいえ'
@@ -11,6 +13,7 @@ common:
   loading: '&7読み込み中...'
   done: '&a完了！'
   error: '&cエラー: {reason}'
+
 command:
   checkTreasureEmerald:
     playersOnly: 'このコマンドはプレイヤーのみ実行できます。'
@@ -29,6 +32,26 @@ command:
     start: '&7設定/メッセージを再読み込み中...'
     success: '&a再読み込みが完了しました。'
     fail: '&c再読み込みに失敗しました: {reason}'
+  lang:
+    guiCancelledGameStart: "言語選択をキャンセルしました。もう一度やる場合は /gameStart <easy|normal|hard> を実行してください。"
+    guiCancelledGameMenu: "言語選択をキャンセルしました。もう一度開く場合は /gameMenu gui を実行してください。"
+    guiTooManyShown: "許可言語が多いため、GUIには先頭27件のみ表示します。"
+    playersOnly: "このコマンドはプレイヤーからのみ実行できます。"
+    resetDone: "✅ 保存済み言語をリセットしました（次回はGUIが出ます）"
+    current: "現在の言語: {lang}"
+    emptyCode: "言語コードが空です。例: /lang ja"
+    notAllowed: "その言語は許可されていません: {lang}"
+    allowedList: "許可されている言語: {allowed}"
+    changed: "✅ 言語を変更しました: {displayName} ({lang})"
+    changedButNotSaved: "⚠ 言語は変更しましたが、永続保存に失敗しました: {lang}"
+    list:
+      title: "=== Languages ==="
+      default: "default: {default}"
+      allowed: "allowed: {allowed}"
+      usage: "使い方: /lang <code> 例: /lang ja"
+      gui: "GUI: /lang または /lang gui"
+    guiNotReady: "Language GUI が初期化されていません。"
+
 gui:
   language:
     title: '&3言語'
@@ -39,6 +62,7 @@ gui:
     selected: '&a選択中: &f{lang}'
     saved: '&a言語を保存しました: &f{lang}'
     reopenHint: '&7いつでも &f/lang &7で変更できます'
+
 game:
   difficulty:
     easy: '&aかんたん'
@@ -136,13 +160,16 @@ game:
     treasures_collected_ca7eab31: '§7Treasures collected: §e'
     try_a_different_route_next_t_721a4d8b: §7Try a different route next time — or
       use §e/gamestart §7<§eeasy§7|§enormal§7|§ehard§7> §7to retry.
+
 sound:
   sparkle: '&b* キラキラ *'
   start: '&7(BGM開始...)'
   end: '&7(BGM終了...)'
+
 chestSound:
   actionBarDebug: chestSound.actionBarDebug
   debug: chestSound.debug
+
 favorites:
   chapter:
     back: favorites.chapter.back
@@ -220,6 +247,7 @@ favorites:
     quotefavoritestore_countfavo_69291680: '[QuoteFavoriteStore] countお気に入り failed:'
     treasurerun_favorites_0c778ce1: TreasureRun お気に入り
     no_text_b87d9ee6: (no text)
+
 commands:
   text_2bf42ec8: このコマンドはプレイヤーのみが実行できます。
   text_2bf42ec8_18: このコマンドはプレイヤーのみが実行できます。
@@ -298,6 +326,7 @@ commands:
   success_normal_en_the_obstac_b627a544: 【SUCCESS / Normal / en】\nThe obstacle is
     the way.
   time_up_bc0cd646: TIME UP
+
 debug:
   istreasureemerald_fb6fecec: isTreasureEmerald =
   chestsound_start_called_16th_e2a7414b: §b[ChestSound] start() called (16th-grid
@@ -309,12 +338,14 @@ debug:
   reward_giverankrewardwitheff_5e361189: '[Reward] giveRankRewardWithEffect called
     player='
   starttheme_startgame_called__9cf42cbe: '[StartTheme] startGame called by'
+
 items:
   text_7567bb35: 特製エメラルドのレシピを登録しました。
   text_7a04254b: '&e特製リンゴ'
   text_e8d4013d: 特製リンゴのレシピを登録しました。
   text_e42912c7: '&7特製鉄ブロック'
   text_c89dea57: 特製鉄ブロックのレシピを登録しました。
+
 ui:
   labels:
     tabs: '&6タブ:&r'
@@ -1183,6 +1214,7 @@ ui:
   favorites:
     title: ★ お気に入り
     headerLatest: '最新 20件  |  言語: {lang}'
+
 quotes:
   outcome:
     success: null
@@ -1398,23 +1430,3 @@ quotes:
       bookOpenFailed: "本を開けませんでした。"
       openBookFailed: "このサーバーでは openBook() に失敗しました。"
 
-command:
-  lang:
-    guiCancelledGameStart: "言語選択をキャンセルしました。もう一度やる場合は /gameStart <easy|normal|hard> を実行してください。"
-    guiCancelledGameMenu: "言語選択をキャンセルしました。もう一度開く場合は /gameMenu gui を実行してください。"
-    guiTooManyShown: "許可言語が多いため、GUIには先頭27件のみ表示します。"
-    playersOnly: "このコマンドはプレイヤーからのみ実行できます。"
-    resetDone: "✅ 保存済み言語をリセットしました（次回はGUIが出ます）"
-    current: "現在の言語: {lang}"
-    emptyCode: "言語コードが空です。例: /lang ja"
-    notAllowed: "その言語は許可されていません: {lang}"
-    allowedList: "許可されている言語: {allowed}"
-    changed: "✅ 言語を変更しました: {displayName} ({lang})"
-    changedButNotSaved: "⚠ 言語は変更しましたが、永続保存に失敗しました: {lang}"
-    list:
-      title: "=== Languages ==="
-      default: "default: {default}"
-      allowed: "allowed: {allowed}"
-      usage: "使い方: /lang <code> 例: /lang ja"
-      gui: "GUI: /lang または /lang gui"
-    guiNotReady: "Language GUI が初期化されていません。"

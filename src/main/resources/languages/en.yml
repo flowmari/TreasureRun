@@ -1,8 +1,10 @@
 version: 1
+
 default:
   prefix: '&b[&6TreasureRun&b]&r '
   unknown: '&c(Translation missing: {key})'
 prefix: '&b[&6TreasureRun&b]&r '
+
 common:
   true: '&aYes'
   false: '&cNo'
@@ -11,6 +13,7 @@ common:
   loading: '&7Loading...'
   done: '&aDone!'
   error: '&cError: {reason}'
+
 command:
   checkTreasureEmerald:
     playersOnly: 'Only players can use this command.'
@@ -29,6 +32,26 @@ command:
     start: '&7Reloading config/messages...'
     success: '&aReload complete.'
     fail: '&cReload failed: {reason}'
+  lang:
+    guiCancelledGameStart: "Language selection was cancelled. To try again, run /gameStart <easy|normal|hard>."
+    guiCancelledGameMenu: "Language selection was cancelled. To open it again, run /gameMenu gui."
+    guiTooManyShown: "Too many allowed languages were configured, so only the first 27 are shown in the GUI."
+    playersOnly: "This command can only be used by players."
+    resetDone: "✅ Your saved language has been reset. The GUI will open next time."
+    current: "Current language: {lang}"
+    emptyCode: "Language code is empty. Example: /lang ja"
+    notAllowed: "That language is not allowed: {lang}"
+    allowedList: "Allowed languages: {allowed}"
+    changed: "✅ Language changed: {displayName} ({lang})"
+    changedButNotSaved: "⚠ Language changed, but failed to persist it: {lang}"
+    list:
+      title: "=== Languages ==="
+      default: "default: {default}"
+      allowed: "allowed: {allowed}"
+      usage: "Usage: /lang <code> Example: /lang ja"
+      gui: "GUI: /lang or /lang gui"
+    guiNotReady: "Language GUI is not initialized."
+
 gui:
   language:
     title: '&3Language'
@@ -39,6 +62,7 @@ gui:
     selected: '&aSelected: &f{lang}'
     saved: '&aSaved your language: &f{lang}'
     reopenHint: '&7You can change anytime with &f/lang'
+
 game:
   difficulty:
     easy: '&aEasy'
@@ -136,13 +160,16 @@ game:
     treasures_collected_ca7eab31: '§7Treasures collected: §e'
     try_a_different_route_next_t_721a4d8b: §7Try a different route next time — or
       use §e/gamestart §7<§eeasy§7|§enormal§7|§ehard§7> §7to retry.
+
 sound:
   sparkle: '&b* sparkle *'
   start: '&7(Starting BGM...)'
   end: '&7(Ending BGM...)'
+
 chestSound:
   actionBarDebug: chestSound.actionBarDebug
   debug: chestSound.debug
+
 favorites:
   chapter:
     back: favorites.chapter.back
@@ -220,6 +247,7 @@ favorites:
     quotefavoritestore_countfavo_69291680: '[QuoteFavoriteStore] countFavorites failed:'
     treasurerun_favorites_0c778ce1: TreasureRun Favorites
     no_text_b87d9ee6: (no text)
+
 commands:
   text_2bf42ec8: このコマンドはプレイヤーのみが実行できます。
   text_2bf42ec8_18: このコマンドはプレイヤーのみが実行できます。
@@ -298,6 +326,7 @@ commands:
   success_normal_en_the_obstac_b627a544: 【SUCCESS / Normal / en】\nThe obstacle is
     the way.
   time_up_bc0cd646: TIME UP
+
 debug:
   istreasureemerald_fb6fecec: isTreasureEmerald =
   chestsound_start_called_16th_e2a7414b: §b[ChestSound] start() called (16th-grid
@@ -309,12 +338,14 @@ debug:
   reward_giverankrewardwitheff_5e361189: '[Reward] giveRankRewardWithEffect called
     player='
   starttheme_startgame_called__9cf42cbe: '[StartTheme] startGame called by'
+
 items:
   text_7567bb35: 特製エメラルドのレシピを登録しました。
   text_7a04254b: '&e特製リンゴ'
   text_e8d4013d: 特製リンゴのレシピを登録しました。
   text_e42912c7: '&7特製鉄ブロック'
   text_c89dea57: 特製鉄ブロックのレシピを登録しました。
+
 ui:
   labels:
     tabs: '&6Tabs:&r'
@@ -1191,6 +1222,7 @@ ui:
   favorites:
     title: ★ Favorites
     headerLatest: 'Latest 20  |  lang: {lang}'
+
 quotes:
   outcome:
     success:
@@ -1550,23 +1582,3 @@ quotes:
       bookOpenFailed: "Failed to open book."
       openBookFailed: "openBook() failed on this server."
 
-command:
-  lang:
-    guiCancelledGameStart: "Language selection was cancelled. To try again, run /gameStart <easy|normal|hard>."
-    guiCancelledGameMenu: "Language selection was cancelled. To open it again, run /gameMenu gui."
-    guiTooManyShown: "Too many allowed languages were configured, so only the first 27 are shown in the GUI."
-    playersOnly: "This command can only be used by players."
-    resetDone: "✅ Your saved language has been reset. The GUI will open next time."
-    current: "Current language: {lang}"
-    emptyCode: "Language code is empty. Example: /lang ja"
-    notAllowed: "That language is not allowed: {lang}"
-    allowedList: "Allowed languages: {allowed}"
-    changed: "✅ Language changed: {displayName} ({lang})"
-    changedButNotSaved: "⚠ Language changed, but failed to persist it: {lang}"
-    list:
-      title: "=== Languages ==="
-      default: "default: {default}"
-      allowed: "allowed: {allowed}"
-      usage: "Usage: /lang <code> Example: /lang ja"
-      gui: "GUI: /lang or /lang gui"
-    guiNotReady: "Language GUI is not initialized."

@@ -20,7 +20,6 @@ jobs:
           distribution: temurin
           java-version: "17"
 
-
       - name: Install ripgrep (rg)
         run: sudo apt-get update && sudo apt-get install -y ripgrep
 
@@ -31,4 +30,4 @@ jobs:
         run: ./check_keys.sh
 
       - name: Build (shadowJar)
-        run: ./gradlew clean shadowJar
+        run: ./gradlew clean shadowJar --no-daemon --stacktrace

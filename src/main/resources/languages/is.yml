@@ -1,8 +1,10 @@
 version: 1
+
 default:
   prefix: '&b[&6TreasureRun&b]&r '
   unknown: '&c(Translation missing: {key})'
 prefix: '&b[&6TreasureRun&b]&r '
+
 common:
   true: '&aJá'
   false: '&cNei'
@@ -11,6 +13,7 @@ common:
   loading: '&7Hleður...'
   done: '&aBúið!'
   error: '&cVilla: {reason}'
+
 command:
   checkTreasureEmerald:
     playersOnly: 'Aðeins leikmenn geta notað þessa skipun.'
@@ -31,9 +34,25 @@ command:
     success: '&aEndurhleðsla lokið.'
     fail: '&cEndurhleðsla mistókst: {reason}'
   lang:
-    guiTooManyShown: 'Of mörg leyfð tungumál voru stillt, þannig að aðeins fyrstu 27 birtast í viðmótinu.'
-    guiCancelledGameMenu: 'Hætt var við tungumálaval. Til að opna það aftur skaltu keyra /gameMenu gui.'
-    guiCancelledGameStart: 'Hætt var við tungumálaval. Reyndu aftur með /gameStart <easy|normal|hard>.'
+    guiCancelledGameStart: "Hætt var við tungumálaval. Keyrðu /gameStart <easy|normal|hard> til að reyna aftur."
+    guiCancelledGameMenu: "Hætt var við tungumálaval. Keyrðu /gameMenu gui til að opna það aftur."
+    guiTooManyShown: "Of mörg leyfð tungumál voru stillt, þannig að aðeins fyrstu 27 birtast í viðmótinu."
+    playersOnly: "Aðeins spilarar geta notað þessa skipun."
+    resetDone: "✅ Vistað tungumál þitt hefur verið endurstillt. Næst opnast viðmótið sjálfkrafa."
+    current: "Núverandi tungumál: {lang}"
+    emptyCode: "Tungumálakóðinn er tómur. Dæmi: /lang ja"
+    notAllowed: "Þetta tungumál er ekki leyft: {lang}"
+    allowedList: "Leyfð tungumál: {allowed}"
+    changed: "✅ Tungumáli breytt í: {displayName} ({lang})"
+    changedButNotSaved: "⚠ Tungumálinu var breytt, en ekki tókst að vista það varanlega: {lang}"
+    list:
+      title: "=== Tungumál ==="
+      default: "sjálfgefið: {default}"
+      allowed: "leyfð: {allowed}"
+      usage: "Notkun: /lang <code> Dæmi: /lang ja"
+      gui: "GUI: /lang eða /lang gui"
+    guiNotReady: "Tungumálaviðmótið hefur ekki verið frumstillt."
+
 gui:
   language:
     title: '&3Tungumál / 言語'
@@ -44,6 +63,7 @@ gui:
     selected: '&aValið: &f{lang}'
     saved: '&aVistað: &f{lang}'
     reopenHint: '&7Breyttu með &f/lang'
+
 game:
   difficulty:
     easy: '&aAuðvelt'
@@ -141,13 +161,16 @@ game:
     treasures_collected_ca7eab31: '§7Treasures collected: §e'
     try_a_different_route_next_t_721a4d8b: §7Try a different route next time — or
       use §e/gamestart §7<§eeasy§7|§enormal§7|§ehard§7> §7to retry.
+
 sound:
   sparkle: '&b* glitra *'
   start: '&7(BGM byrjar...)'
   end: '&7(BGM endar...)'
+
 chestSound:
   actionBarDebug: chestSound.actionBarDebug
   debug: chestSound.debug
+
 favorites:
   chapter:
     back: favorites.chapter.back
@@ -225,6 +248,7 @@ favorites:
     quotefavoritestore_countfavo_69291680: '[QuoteFavoriteStore] countUppáhald failed:'
     treasurerun_favorites_0c778ce1: TreasureRun Uppáhald
     no_text_b87d9ee6: (no text)
+
 commands:
   text_2bf42ec8: このコマンドはプレイヤーのみが実行できます。
   text_2bf42ec8_18: このコマンドはプレイヤーのみが実行できます。
@@ -303,6 +327,7 @@ commands:
   success_normal_en_the_obstac_b627a544: 【SUCCESS / Normal / en】\nThe obstacle is
     the way.
   time_up_bc0cd646: TIME UP
+
 debug:
   istreasureemerald_fb6fecec: isTreasureEmerald =
   chestsound_start_called_16th_e2a7414b: §b[ChestSound] start() called (16th-grid
@@ -314,12 +339,14 @@ debug:
   reward_giverankrewardwitheff_5e361189: '[Reward] giveRankRewardWithEffect called
     player='
   starttheme_startgame_called__9cf42cbe: '[StartTheme] startGame called by'
+
 items:
   text_7567bb35: 特製エメラルドのレシピを登録しました。
   text_7a04254b: '&e特製リンゴ'
   text_e8d4013d: 特製リンゴのレシピを登録しました。
   text_e42912c7: '&7特製鉄ブロック'
   text_c89dea57: 特製鉄ブロックのレシピを登録しました。
+
 ui:
   labels:
     tabs: '&6Flipar:&r'
@@ -1136,6 +1163,7 @@ ui:
   favorites:
     title: ★ Uppáhald
     headerLatest: 'Nýjustu 20  |  tungumál: {lang}'
+
 quotes:
   outcome:
     success: null
@@ -1316,23 +1344,3 @@ quotes:
   - Victory and defeat \nare nothing more than grains of sand.\n（勝利も敗北も、同じ砂の一粒に過ぎない。）
   - The road goes on—or it ends.\nEither way, it lies on the same earth.\n（道は続き、あるいは途切れ、どちらも同じ大地の上にある。）
 
-command:
-  lang:
-    guiCancelledGameStart: "Hætt var við tungumálaval. Keyrðu /gameStart <easy|normal|hard> til að reyna aftur."
-    guiCancelledGameMenu: "Hætt var við tungumálaval. Keyrðu /gameMenu gui til að opna það aftur."
-    guiTooManyShown: "Of mörg leyfð tungumál voru stillt, þannig að aðeins fyrstu 27 birtast í viðmótinu."
-    playersOnly: "Aðeins spilarar geta notað þessa skipun."
-    resetDone: "✅ Vistað tungumál þitt hefur verið endurstillt. Næst opnast viðmótið sjálfkrafa."
-    current: "Núverandi tungumál: {lang}"
-    emptyCode: "Tungumálakóðinn er tómur. Dæmi: /lang ja"
-    notAllowed: "Þetta tungumál er ekki leyft: {lang}"
-    allowedList: "Leyfð tungumál: {allowed}"
-    changed: "✅ Tungumáli breytt í: {displayName} ({lang})"
-    changedButNotSaved: "⚠ Tungumálinu var breytt, en ekki tókst að vista það varanlega: {lang}"
-    list:
-      title: "=== Tungumál ==="
-      default: "sjálfgefið: {default}"
-      allowed: "leyfð: {allowed}"
-      usage: "Notkun: /lang <code> Dæmi: /lang ja"
-      gui: "GUI: /lang eða /lang gui"
-    guiNotReady: "Tungumálaviðmótið hefur ekki verið frumstillt."

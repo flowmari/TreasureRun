@@ -7,6 +7,8 @@ on:
 jobs:
   i18n:
     runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     steps:
       - name: Checkout
@@ -26,6 +28,9 @@ jobs:
           distribution: temurin
           java-version: '17'
 
+      - name: Run duplicate YAML key check
+        run: python3 scripts/check_yaml_duplicate_keys.py
+
       - name: Run missing key check
         run: python3 scripts/check_missing_i18n_keys.py
 
@@ -33,4 +38,4 @@ jobs:
         run: python3 scripts/check_suspicious_i18n.py
 
       - name: Build plugin
-        run: ./gradlew clean shadowJar --no-daemon
+        run: ./gradlew clean shadowJar --no-daemon --stacktrace

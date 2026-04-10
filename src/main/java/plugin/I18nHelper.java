@@ -33,8 +33,25 @@ public class I18nHelper {
     return ChatColor.translateAlternateColorCodes('&', s);
   }
 
+  public String tr(Player player, String key) {
+    String lang = resolvePlayerLang(player);
+    String s = plugin.getI18n().tr(lang, key);
+    if (s == null || s.isBlank() || s.contains("Translation missing:")) {
+      return "Translation missing: " + key;
+    }
+    return ChatColor.translateAlternateColorCodes('&', s);
+  }
+
   public String trp(Player player, String key, Map<String, String> vars, String fallback) {
     String s = tr(player, key, fallback);
+    for (Map.Entry<String, String> e : vars.entrySet()) {
+      s = s.replace("{" + e.getKey() + "}", e.getValue());
+    }
+    return s;
+  }
+
+  public String trp(Player player, String key, Map<String, String> vars) {
+    String s = tr(player, key);
     for (Map.Entry<String, String> e : vars.entrySet()) {
       s = s.replace("{" + e.getKey() + "}", e.getValue());
     }
@@ -46,6 +63,15 @@ public class I18nHelper {
     String s = plugin.getI18n().tr(lang, key);
     if (s == null || s.isBlank() || s.contains("Translation missing:")) {
       return fallback;
+    }
+    return ChatColor.translateAlternateColorCodes('&', s);
+  }
+
+  public String trDefault(String key) {
+    String lang = plugin.getConfig().getString("language.default", "ja");
+    String s = plugin.getI18n().tr(lang, key);
+    if (s == null || s.isBlank() || s.contains("Translation missing:")) {
+      return "Translation missing: " + key;
     }
     return ChatColor.translateAlternateColorCodes('&', s);
   }

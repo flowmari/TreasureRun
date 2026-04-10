@@ -1,8 +1,10 @@
 version: 1
+
 default:
   prefix: '&b[&6TreasureRun&b]&r '
   unknown: '&c(Translation missing: {key})'
 prefix: '&b[&6TreasureRun&b]&r '
+
 common:
   true: '&aJa'
   false: '&cNee'
@@ -11,6 +13,7 @@ common:
   loading: '&7Laden...'
   done: '&aKlaar!'
   error: '&cFout: {reason}'
+
 command:
   checkTreasureEmerald:
     playersOnly: 'Alleen spelers kunnen deze opdracht gebruiken.'
@@ -31,9 +34,25 @@ command:
     success: '&aHerladen voltooid.'
     fail: '&cHerladen mislukt: {reason}'
   lang:
-    guiTooManyShown: 'Er zijn te veel toegestane talen ingesteld, daarom worden in de GUI alleen de eerste 27 weergegeven.'
-    guiCancelledGameMenu: 'De taalkeuze is geannuleerd. Gebruik /gameMenu gui om deze opnieuw te openen.'
-    guiCancelledGameStart: 'De taalkeuze is geannuleerd. Probeer het opnieuw met /gameStart <easy|normal|hard>.'
+    guiCancelledGameStart: "De taalkeuze is geannuleerd. Voer /gameStart <easy|normal|hard> uit om het opnieuw te proberen."
+    guiCancelledGameMenu: "De taalkeuze is geannuleerd. Voer /gameMenu gui uit om deze opnieuw te openen."
+    guiTooManyShown: "Er zijn te veel toegestane talen ingesteld, daarom worden in de GUI alleen de eerste 27 weergegeven."
+    playersOnly: "Dit commando kan alleen door spelers worden gebruikt."
+    resetDone: "✅ Je opgeslagen taal is gereset. De volgende keer wordt de GUI geopend."
+    current: "Huidige taal: {lang}"
+    emptyCode: "De taalcode is leeg. Voorbeeld: /lang ja"
+    notAllowed: "Die taal is niet toegestaan: {lang}"
+    allowedList: "Toegestane talen: {allowed}"
+    changed: "✅ Taal gewijzigd naar: {displayName} ({lang})"
+    changedButNotSaved: "⚠ De taal is gewijzigd, maar kon niet permanent worden opgeslagen: {lang}"
+    list:
+      title: "=== Talen ==="
+      default: "standaard: {default}"
+      allowed: "toegestaan: {allowed}"
+      usage: "Gebruik: /lang <code> Voorbeeld: /lang ja"
+      gui: "GUI: /lang of /lang gui"
+    guiNotReady: "De taal-GUI is niet geïnitialiseerd."
+
 gui:
   language:
     title: '&3Taal / 言語'
@@ -44,6 +63,7 @@ gui:
     selected: '&aGekozen: &f{lang}'
     saved: '&aTaal opgeslagen: &f{lang}'
     reopenHint: '&7Wijzig met &f/lang'
+
 game:
   difficulty:
     easy: '&aMakkelijk'
@@ -141,13 +161,16 @@ game:
     treasures_collected_ca7eab31: '§7Treasures collected: §e'
     try_a_different_route_next_t_721a4d8b: §7Try a different route next time — or
       use §e/gamestart §7<§eeasy§7|§enormal§7|§ehard§7> §7to retry.
+
 sound:
   sparkle: '&b* sprankel *'
   start: '&7(BGM start...)'
   end: '&7(BGM einde...)'
+
 chestSound:
   actionBarDebug: chestSound.actionBarDebug
   debug: chestSound.debug
+
 favorites:
   chapter:
     back: favorites.chapter.back
@@ -225,6 +248,7 @@ favorites:
     quotefavoritestore_countfavo_69291680: '[QuoteFavoriteStore] countFavorieten failed:'
     treasurerun_favorites_0c778ce1: TreasureRun Favorieten
     no_text_b87d9ee6: (no text)
+
 commands:
   text_2bf42ec8: このコマンドはプレイヤーのみが実行できます。
   text_2bf42ec8_18: このコマンドはプレイヤーのみが実行できます。
@@ -303,6 +327,7 @@ commands:
   success_normal_en_the_obstac_b627a544: 【SUCCESS / Normal / en】\nThe obstacle is
     the way.
   time_up_bc0cd646: TIME UP
+
 debug:
   istreasureemerald_fb6fecec: isTreasureEmerald =
   chestsound_start_called_16th_e2a7414b: §b[ChestSound] start() called (16th-grid
@@ -314,12 +339,14 @@ debug:
   reward_giverankrewardwitheff_5e361189: '[Reward] giveRankRewardWithEffect called
     player='
   starttheme_startgame_called__9cf42cbe: '[StartTheme] startGame called by'
+
 items:
   text_7567bb35: 特製エメラルドのレシピを登録しました。
   text_7a04254b: '&e特製リンゴ'
   text_e8d4013d: 特製リンゴのレシピを登録しました。
   text_e42912c7: '&7特製鉄ブロック'
   text_c89dea57: 特製鉄ブロックのレシピを登録しました。
+
 ui:
   labels:
     tabs: '&6Tabbladen:&r'
@@ -1137,6 +1164,7 @@ ui:
   favorites:
     title: ★ Favorieten
     headerLatest: 'Nieuwste 20  |  taal: {lang}'
+
 quotes:
   outcome:
     success: null
@@ -1317,23 +1345,3 @@ quotes:
   - Victory and defeat \nare nothing more than grains of sand.\n（勝利も敗北も、同じ砂の一粒に過ぎない。）
   - The road goes on—or it ends.\nEither way, it lies on the same earth.\n（道は続き、あるいは途切れ、どちらも同じ大地の上にある。）
 
-command:
-  lang:
-    guiCancelledGameStart: "De taalkeuze is geannuleerd. Voer /gameStart <easy|normal|hard> uit om het opnieuw te proberen."
-    guiCancelledGameMenu: "De taalkeuze is geannuleerd. Voer /gameMenu gui uit om deze opnieuw te openen."
-    guiTooManyShown: "Er zijn te veel toegestane talen ingesteld, daarom worden in de GUI alleen de eerste 27 weergegeven."
-    playersOnly: "Dit commando kan alleen door spelers worden gebruikt."
-    resetDone: "✅ Je opgeslagen taal is gereset. De volgende keer wordt de GUI geopend."
-    current: "Huidige taal: {lang}"
-    emptyCode: "De taalcode is leeg. Voorbeeld: /lang ja"
-    notAllowed: "Die taal is niet toegestaan: {lang}"
-    allowedList: "Toegestane talen: {allowed}"
-    changed: "✅ Taal gewijzigd naar: {displayName} ({lang})"
-    changedButNotSaved: "⚠ De taal is gewijzigd, maar kon niet permanent worden opgeslagen: {lang}"
-    list:
-      title: "=== Talen ==="
-      default: "standaard: {default}"
-      allowed: "toegestaan: {allowed}"
-      usage: "Gebruik: /lang <code> Voorbeeld: /lang ja"
-      gui: "GUI: /lang of /lang gui"
-    guiNotReady: "De taal-GUI is niet geïnitialiseerd."

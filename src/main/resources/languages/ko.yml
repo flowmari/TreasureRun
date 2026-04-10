@@ -1,8 +1,10 @@
 version: 1
+
 default:
   prefix: '&b[&6TreasureRun&b]&r '
   unknown: '&c(Translation missing: {key})'
 prefix: '&b[&6TreasureRun&b]&r '
+
 common:
   true: '&a예'
   false: '&c아니오'
@@ -11,6 +13,7 @@ common:
   loading: '&7불러오는 중...'
   done: '&a완료!'
   error: '&c오류: {reason}'
+
 command:
   checkTreasureEmerald:
     playersOnly: '이 명령어는 플레이어만 사용할 수 있습니다.'
@@ -31,9 +34,25 @@ command:
     success: '&a리로드 완료.'
     fail: '&c리로드 실패: {reason}'
   lang:
-    guiTooManyShown: '허용된 언어가 너무 많이 설정되어 GUI에는 처음 27개만 표시됩니다.'
-    guiCancelledGameMenu: '언어 선택이 취소되었습니다. 다시 열려면 /gameMenu gui를 실행하세요.'
-    guiCancelledGameStart: '언어 선택이 취소되었습니다. 다시 시도하려면 /gameStart <easy|normal|hard>를 실행하세요.'
+    guiCancelledGameStart: "언어 선택이 취소되었습니다. 다시 시도하려면 /gameStart <easy|normal|hard>를 실행하세요."
+    guiCancelledGameMenu: "언어 선택이 취소되었습니다. 다시 열려면 /gameMenu gui를 실행하세요."
+    guiTooManyShown: "허용된 언어가 너무 많이 설정되어 있어서 GUI에는 처음 27개만 표시됩니다."
+    playersOnly: "이 명령어는 플레이어만 사용할 수 있습니다."
+    resetDone: "✅ 저장된 언어가 초기화되었습니다. 다음에는 GUI가 열립니다."
+    current: "현재 언어: {lang}"
+    emptyCode: "언어 코드가 비어 있습니다. 예: /lang ja"
+    notAllowed: "해당 언어는 허용되지 않습니다: {lang}"
+    allowedList: "허용된 언어: {allowed}"
+    changed: "✅ 언어가 변경되었습니다: {displayName} ({lang})"
+    changedButNotSaved: "⚠ 언어는 변경되었지만 영구 저장에 실패했습니다: {lang}"
+    list:
+      title: "=== 언어 ==="
+      default: "기본값: {default}"
+      allowed: "허용됨: {allowed}"
+      usage: "사용법: /lang <code> 예: /lang ja"
+      gui: "GUI: /lang 또는 /lang gui"
+    guiNotReady: "언어 GUI가 초기화되지 않았습니다."
+
 gui:
   language:
     title: '&3언어'
@@ -44,6 +63,7 @@ gui:
     selected: '&a선택됨: &f{lang}'
     saved: '&a언어를 저장했습니다: &f{lang}'
     reopenHint: '&7언제든지 &f/lang &7로 변경 가능'
+
 game:
   difficulty:
     easy: '&a쉬움'
@@ -141,13 +161,16 @@ game:
     treasures_collected_ca7eab31: '§7Treasures collected: §e'
     try_a_different_route_next_t_721a4d8b: §7Try a different route next time — or
       use §e/gamestart §7<§eeasy§7|§enormal§7|§ehard§7> §7to retry.
+
 sound:
   sparkle: '&b* 반짝 *'
   start: '&7(BGM 시작...)'
   end: '&7(BGM 종료...)'
+
 chestSound:
   actionBarDebug: chestSound.actionBarDebug
   debug: chestSound.debug
+
 favorites:
   chapter:
     back: favorites.chapter.back
@@ -225,6 +248,7 @@ favorites:
     quotefavoritestore_countfavo_69291680: '[QuoteFavoriteStore] count즐겨찾기 failed:'
     treasurerun_favorites_0c778ce1: TreasureRun 즐겨찾기
     no_text_b87d9ee6: (no text)
+
 commands:
   text_2bf42ec8: このコマンドはプレイヤーのみが実行できます。
   text_2bf42ec8_18: このコマンドはプレイヤーのみが実行できます。
@@ -303,6 +327,7 @@ commands:
   success_normal_en_the_obstac_b627a544: 【SUCCESS / Normal / en】\nThe obstacle is
     the way.
   time_up_bc0cd646: TIME UP
+
 debug:
   istreasureemerald_fb6fecec: isTreasureEmerald =
   chestsound_start_called_16th_e2a7414b: §b[ChestSound] start() called (16th-grid
@@ -314,12 +339,14 @@ debug:
   reward_giverankrewardwitheff_5e361189: '[Reward] giveRankRewardWithEffect called
     player='
   starttheme_startgame_called__9cf42cbe: '[StartTheme] startGame called by'
+
 items:
   text_7567bb35: 特製エメラルドのレシピを登録しました。
   text_7a04254b: '&e特製リンゴ'
   text_e8d4013d: 特製リンゴのレシピを登録しました。
   text_e42912c7: '&7特製鉄ブロック'
   text_c89dea57: 特製鉄ブロックのレシピを登録しました。
+
 ui:
   labels:
     tabs: '&6탭:&r'
@@ -1132,6 +1159,7 @@ ui:
   favorites:
     title: ★ 즐겨찾기
     headerLatest: '최신 20개  |  언어: {lang}'
+
 quotes:
   outcome:
     success: null
@@ -1312,23 +1340,3 @@ quotes:
   - Victory and defeat \nare nothing more than grains of sand.\n（勝利も敗北も、同じ砂の一粒に過ぎない。）
   - The road goes on—or it ends.\nEither way, it lies on the same earth.\n（道は続き、あるいは途切れ、どちらも同じ大地の上にある。）
 
-command:
-  lang:
-    guiCancelledGameStart: "언어 선택이 취소되었습니다. 다시 시도하려면 /gameStart <easy|normal|hard>를 실행하세요."
-    guiCancelledGameMenu: "언어 선택이 취소되었습니다. 다시 열려면 /gameMenu gui를 실행하세요."
-    guiTooManyShown: "허용된 언어가 너무 많이 설정되어 있어서 GUI에는 처음 27개만 표시됩니다."
-    playersOnly: "이 명령어는 플레이어만 사용할 수 있습니다."
-    resetDone: "✅ 저장된 언어가 초기화되었습니다. 다음에는 GUI가 열립니다."
-    current: "현재 언어: {lang}"
-    emptyCode: "언어 코드가 비어 있습니다. 예: /lang ja"
-    notAllowed: "해당 언어는 허용되지 않습니다: {lang}"
-    allowedList: "허용된 언어: {allowed}"
-    changed: "✅ 언어가 변경되었습니다: {displayName} ({lang})"
-    changedButNotSaved: "⚠ 언어는 변경되었지만 영구 저장에 실패했습니다: {lang}"
-    list:
-      title: "=== 언어 ==="
-      default: "기본값: {default}"
-      allowed: "허용됨: {allowed}"
-      usage: "사용법: /lang <code> 예: /lang ja"
-      gui: "GUI: /lang 또는 /lang gui"
-    guiNotReady: "언어 GUI가 초기화되지 않았습니다."
