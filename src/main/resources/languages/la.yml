@@ -14,8 +14,8 @@ common:
 command:
   checkTreasureEmerald:
     playersOnly: 'Hoc mandatum a lusoribus tantum adhiberi potest.'
-    resultTrue: 'Treasure Emerald repertus est.'
-    resultFalse: 'Treasure Emerald non repertus est.'
+    resultTrue: 'Res quam in manu tenes Treasure Emerald est.'
+    resultFalse: 'Res quam in manu tenes Treasure Emerald non est.'
   gameStart:
     playersOnly: 'Hoc mandatum a lusoribus tantum adhiberi potest.'
     worldNotFound: '[TreasureRun] Mundus initialis non configuratus est aut inveniri non potuit.'

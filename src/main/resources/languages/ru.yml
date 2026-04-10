@@ -14,8 +14,8 @@ common:
 command:
   checkTreasureEmerald:
     playersOnly: 'Эту команду могут использовать только игроки.'
-    resultTrue: 'Treasure Emerald обнаружен.'
-    resultFalse: 'Treasure Emerald не обнаружен.'
+    resultTrue: 'Предмет у вас в руке — Treasure Emerald.'
+    resultFalse: 'Предмет у вас в руке — не Treasure Emerald.'
   gameStart:
     playersOnly: 'Эту команду могут использовать только игроки.'
     worldNotFound: '[TreasureRun] Стартовый мир не настроен или не найден.'

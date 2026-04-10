@@ -450,9 +450,9 @@ favorites:
 
 command:
   checkTreasureEmerald:
-    playersOnly: 'Este comando só pode ser usado por jogadores.'
-    resultTrue: 'Treasure Emerald detectado.'
-    resultFalse: 'Treasure Emerald não detectado.'
+    playersOnly: 'Somente jogadores podem usar este comando.'
+    resultTrue: 'O item que você está segurando é um Treasure Emerald.'
+    resultFalse: 'O item que você está segurando não é um Treasure Emerald.'
   gameStart:
     playersOnly: 'Este comando só pode ser usado por jogadores.'
     worldNotFound: '[TreasureRun] O mundo inicial não está configurado ou não pôde ser encontrado.'

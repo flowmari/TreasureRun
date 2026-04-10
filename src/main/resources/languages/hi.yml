@@ -446,9 +446,9 @@ favorites:
 
 command:
   checkTreasureEmerald:
-    playersOnly: 'यह कमांड केवल खिलाड़ी ही इस्तेमाल कर सकते हैं।'
-    resultTrue: 'Treasure Emerald मिल गया।'
-    resultFalse: 'Treasure Emerald नहीं मिला।'
+    playersOnly: 'यह कमांड केवल खिलाड़ी ही चला सकते हैं।'
+    resultTrue: 'आपके हाथ में जो आइटम है, वह Treasure Emerald है।'
+    resultFalse: 'आपके हाथ में जो आइटम है, वह Treasure Emerald नहीं है।'
   gameStart:
     playersOnly: 'यह कमांड केवल खिलाड़ी ही इस्तेमाल कर सकते हैं।'
     worldNotFound: '[TreasureRun] शुरुआती दुनिया सेट नहीं है या मिल नहीं सकी।'

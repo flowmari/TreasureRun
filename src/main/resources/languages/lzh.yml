@@ -437,9 +437,9 @@ favorites:
 
 command:
   checkTreasureEmerald:
-    playersOnly: '此令惟玩家可用。'
-    resultTrue: 'Treasure Emerald 已檢得。'
-    resultFalse: 'Treasure Emerald 未檢得。'
+    playersOnly: '此令唯玩家可用。'
+    resultTrue: '手中所持之物乃 Treasure Emerald。'
+    resultFalse: '手中所持之物非 Treasure Emerald。'
   gameStart:
     playersOnly: '此令惟玩家可用。'
     worldNotFound: '[TreasureRun] 起始世界未設，或不可得。'

@@ -14,8 +14,8 @@ common:
 command:
   checkTreasureEmerald:
     playersOnly: 'このコマンドはプレイヤーのみ実行できます。'
-    resultTrue: 'TreasureEmerald 判定: true'
-    resultFalse: 'TreasureEmerald 判定: false'
+    resultTrue: '手に持っているアイテムは Treasure Emerald です。'
+    resultFalse: '手に持っているアイテムは Treasure Emerald ではありません。'
   gameStart:
     playersOnly: 'このコマンドはプレイヤーからのみ実行できます。'
     worldNotFound: '[TreasureRun] 開始ワールドが設定されていないか、見つかりませんでした。'

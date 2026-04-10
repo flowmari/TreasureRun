@@ -14,8 +14,8 @@ common:
 command:
   checkTreasureEmerald:
     playersOnly: 'Vain pelaajat voivat käyttää tätä komentoa.'
-    resultTrue: 'Treasure Emerald tunnistettiin.'
-    resultFalse: 'Treasure Emeraldia ei tunnistettu.'
+    resultTrue: 'Kädessäsi oleva esine on Treasure Emerald.'
+    resultFalse: 'Kädessäsi oleva esine ei ole Treasure Emerald.'
   gameStart:
     playersOnly: 'Vain pelaajat voivat käyttää tätä komentoa.'
     worldNotFound: '[TreasureRun] Aloitusmaailmaa ei ole määritetty tai sitä ei löytynyt.'

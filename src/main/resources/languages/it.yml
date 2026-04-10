@@ -13,9 +13,9 @@ common:
   error: '&cErrore: {reason}'
 command:
   checkTreasureEmerald:
-    playersOnly: 'Questo comando può essere usato solo dai giocatori.'
-    resultTrue: 'Treasure Emerald rilevato.'
-    resultFalse: 'Treasure Emerald non rilevato.'
+    playersOnly: 'Solo i giocatori possono usare questo comando.'
+    resultTrue: 'L''oggetto che hai in mano è un Treasure Emerald.'
+    resultFalse: 'L''oggetto che hai in mano non è un Treasure Emerald.'
   gameStart:
     playersOnly: 'Questo comando può essere usato solo dai giocatori.'
     worldNotFound: '[TreasureRun] Il mondo iniziale non è configurato oppure non è stato trovato.'

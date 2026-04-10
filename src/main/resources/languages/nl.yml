@@ -13,9 +13,9 @@ common:
   error: '&cFout: {reason}'
 command:
   checkTreasureEmerald:
-    playersOnly: 'Deze opdracht kan alleen door spelers worden gebruikt.'
-    resultTrue: 'Treasure Emerald gedetecteerd.'
-    resultFalse: 'Geen Treasure Emerald gedetecteerd.'
+    playersOnly: 'Alleen spelers kunnen deze opdracht gebruiken.'
+    resultTrue: 'Het voorwerp in je hand is een Treasure Emerald.'
+    resultFalse: 'Het voorwerp in je hand is geen Treasure Emerald.'
   gameStart:
     playersOnly: 'Deze opdracht kan alleen door spelers worden gebruikt.'
     worldNotFound: '[TreasureRun] De startwereld is niet ingesteld of kon niet worden gevonden.'

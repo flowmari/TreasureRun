@@ -14,8 +14,8 @@ common:
 command:
   checkTreasureEmerald:
     playersOnly: 'ONLY PLAYERS CAN USE THIS COMMAND.'
-    resultTrue: 'Treasure Emerald FOUND.'
-    resultFalse: 'Treasure Emerald NOT FOUND.'
+    resultTrue: 'ITEM IN YOUR HAND IS TREASURE EMERALD.'
+    resultFalse: 'ITEM IN YOUR HAND IS NOT TREASURE EMERALD.'
   gameStart:
     playersOnly: 'ONLY PLAYERS CAN USE THIS COMMAND.'
     worldNotFound: '[TreasureRun] START WORLD NOT SET OR NOT FOUND.'

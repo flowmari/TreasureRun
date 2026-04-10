@@ -14,8 +14,8 @@ common:
 command:
   checkTreasureEmerald:
     playersOnly: 'अयं आदेशः केवलं क्रीडकैः एव उपयुज्यते।'
-    resultTrue: 'Treasure Emerald लब्धः।'
-    resultFalse: 'Treasure Emerald न लब्धः।'
+    resultTrue: 'हस्ते धारितं वस्तु Treasure Emerald अस्ति।'
+    resultFalse: 'हस्ते धारितं वस्तु Treasure Emerald नास्ति।'
   gameStart:
     playersOnly: 'अयं आदेशः केवलं क्रीडकैः एव उपयुज्यते।'
     worldNotFound: '[TreasureRun] प्रारम्भलोकः न विन्यस्तः अथवा न लब्धः।'

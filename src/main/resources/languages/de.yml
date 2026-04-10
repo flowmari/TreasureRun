@@ -14,8 +14,8 @@ common:
 command:
   checkTreasureEmerald:
     playersOnly: 'Dieser Befehl kann nur von Spielern verwendet werden.'
-    resultTrue: 'Treasure Emerald erkannt.'
-    resultFalse: 'Treasure Emerald nicht erkannt.'
+    resultTrue: 'Der Gegenstand in deiner Hand ist ein Treasure Emerald.'
+    resultFalse: 'Der Gegenstand in deiner Hand ist kein Treasure Emerald.'
   gameStart:
     playersOnly: 'Dieser Befehl kann nur von Spielern verwendet werden.'
     worldNotFound: '[TreasureRun] Die Startwelt ist nicht konfiguriert oder konnte nicht gefunden werden.'

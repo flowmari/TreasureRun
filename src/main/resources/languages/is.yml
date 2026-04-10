@@ -14,8 +14,8 @@ common:
 command:
   checkTreasureEmerald:
     playersOnly: 'Aðeins leikmenn geta notað þessa skipun.'
-    resultTrue: 'Treasure Emerald fannst.'
-    resultFalse: 'Treasure Emerald fannst ekki.'
+    resultTrue: 'Hluturinn í hendi þinni er Treasure Emerald.'
+    resultFalse: 'Hluturinn í hendi þinni er ekki Treasure Emerald.'
   gameStart:
     playersOnly: 'Aðeins leikmenn geta notað þessa skipun.'
     worldNotFound: '[TreasureRun] Upphafsheimurinn er ekki stilltur eða fannst ekki.'
