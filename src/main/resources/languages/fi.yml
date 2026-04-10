@@ -12,19 +12,28 @@ common:
   done: '&aValmis!'
   error: '&cVirhe: {reason}'
 command:
+  checkTreasureEmerald:
+    playersOnly: 'Vain pelaajat voivat käyttää tätä komentoa.'
+    resultTrue: 'Treasure Emerald tunnistettiin.'
+    resultFalse: 'Treasure Emeraldia ei tunnistettu.'
   gameStart:
-    playersOnly: 'Tätä komentoa voivat käyttää vain pelaajat.'
+    playersOnly: 'Vain pelaajat voivat käyttää tätä komentoa.'
     worldNotFound: '[TreasureRun] Aloitusmaailmaa ei ole määritetty tai sitä ei löytynyt.'
-    started: '§aAarrejahti alkoi! Vaikeustaso: {difficulty} | Aikaraja: {timeLimit} sekuntia'
+    started: 'Aarteenetsintä alkaa! Vaikeustaso: {difficulty} | Aikaraja: {timeLimit} sekuntia'
   stageCleanup:
-    cleaned: "[TreasureRun] {count} vaikeuspalikkaa siivottiin."
-    managerNotReady: "[TreasureRun] Kentänhallintaa ei ole alustettu."
+    playersOnly: 'Vain pelaajat voivat käyttää tätä komentoa.'
+    managerNotReady: '[TreasureRun] Kentänhallintaa ei ole vielä alustettu.'
+    cleaned: '[TreasureRun] {count} vaikeuslohkoa siivottiin.'
   noPermission: '&cEi oikeuksia.'
   onlyPlayer: '&cVain pelaajille.'
   reload:
     start: '&7Ladataan uudelleen...'
     success: '&aUudelleenlataus valmis.'
     fail: '&cUudelleenlataus epäonnistui: {reason}'
+  lang:
+    guiTooManyShown: 'Sallittuja kieliä on määritetty liikaa, joten käyttöliittymässä näytetään vain ensimmäiset 27.'
+    guiCancelledGameMenu: 'Kielen valinta peruttiin. Voit avata sen uudelleen komennolla /gameMenu gui.'
+    guiCancelledGameStart: 'Kielen valinta peruttiin. Yritä uudelleen komennolla /gameStart <easy|normal|hard>.'
 gui:
   language:
     title: '&3Kieli / 言語'

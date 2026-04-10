@@ -445,17 +445,22 @@ favorites:
     reread: favorites.toc.reread
 
 command:
+  checkTreasureEmerald:
+    playersOnly: 'यह कमांड केवल खिलाड़ी ही इस्तेमाल कर सकते हैं।'
+    resultTrue: 'Treasure Emerald मिल गया।'
+    resultFalse: 'Treasure Emerald नहीं मिला।'
   gameStart:
-    playersOnly: 'यह कमांड केवल खिलाड़ी ही चला सकते हैं।'
-    worldNotFound: '[TreasureRun] प्रारंभिक दुनिया कॉन्फ़िगर नहीं है या मिल नहीं सकी।'
-    started: '§aखजाना खोज शुरू हो गई! कठिनाई: {difficulty} | समय सीमा: {timeLimit} सेकंड'
+    playersOnly: 'यह कमांड केवल खिलाड़ी ही इस्तेमाल कर सकते हैं।'
+    worldNotFound: '[TreasureRun] शुरुआती दुनिया सेट नहीं है या मिल नहीं सकी।'
+    started: 'खज़ाने की खोज शुरू हो रही है! कठिनाई: {difficulty} | समय सीमा: {timeLimit} सेकंड'
   stageCleanup:
-    cleaned: "[TreasureRun] {count} कठिनाई ब्लॉक हटा दिए गए।"
-    managerNotReady: "[TreasureRun] स्टेज प्रबंधक अभी प्रारंभ नहीं हुआ है।"
+    playersOnly: 'यह कमांड केवल खिलाड़ी ही इस्तेमाल कर सकते हैं।'
+    managerNotReady: '[TreasureRun] स्टेज मैनेजर अभी तक तैयार नहीं है।'
+    cleaned: '[TreasureRun] {count} कठिनाई ब्लॉक साफ कर दिए गए।'
   lang:
-    guiCancelledGameStart: "भाषा चयन रद्द कर दिया गया। फिर से प्रयास करने के लिए /gameStart <easy|normal|hard> चलाएँ।"
-    guiCancelledGameMenu: "भाषा चयन रद्द कर दिया गया। इसे फिर से खोलने के लिए /gameMenu gui चलाएँ।"
-    guiTooManyShown: "बहुत ज़्यादा अनुमत भाषाएँ सेट की गई हैं, इसलिए GUI में केवल पहली 27 भाषाएँ ही दिखाई जाएँगी।"
+    guiTooManyShown: 'अनुमत भाषाएँ बहुत ज़्यादा सेट की गई हैं, इसलिए GUI में केवल पहली 27 भाषाएँ दिखाई जाएँगी।'
+    guiCancelledGameMenu: 'भाषा चयन रद्द कर दिया गया। इसे फिर से खोलने के लिए /gameMenu gui चलाएँ।'
+    guiCancelledGameStart: 'भाषा चयन रद्द कर दिया गया। फिर से कोशिश करने के लिए /gameStart <easy|normal|hard> चलाएँ।'
     playersOnly: "यह कमांड केवल खिलाड़ी ही उपयोग कर सकते हैं।"
     resetDone: "✅ आपकी सहेजी हुई भाषा रीसेट कर दी गई है। अगली बार GUI खुलेगा।"
     current: "वर्तमान भाषा: {lang}"

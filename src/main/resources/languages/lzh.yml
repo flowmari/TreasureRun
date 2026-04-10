@@ -436,17 +436,22 @@ favorites:
     reread: favorites.toc.reread
 
 command:
+  checkTreasureEmerald:
+    playersOnly: '此令惟玩家可用。'
+    resultTrue: 'Treasure Emerald 已檢得。'
+    resultFalse: 'Treasure Emerald 未檢得。'
   gameStart:
-    playersOnly: '此令唯玩家可行。'
-    worldNotFound: '[TreasureRun] 始發之世界未設，或不可得。'
-    started: '§a尋寶之戲始矣！難度：{difficulty}｜限時：{timeLimit} 秒'
+    playersOnly: '此令惟玩家可用。'
+    worldNotFound: '[TreasureRun] 起始世界未設，或不可得。'
+    started: '尋寶將始！難度：{difficulty}｜限時：{timeLimit} 秒'
   stageCleanup:
-    cleaned: "[TreasureRun] 已清理難度方塊 {count} 個。"
-    managerNotReady: "[TreasureRun] 關卡之管理者未初始化也。"
+    playersOnly: '此令惟玩家可用。'
+    managerNotReady: '[TreasureRun] 關卡管理尚未備妥。'
+    cleaned: '[TreasureRun] 已清理難度方塊 {count} 個。'
   lang:
-    guiCancelledGameStart: "語言之選已取消。欲更試之，請行 /gameStart <easy|normal|hard>。"
-    guiCancelledGameMenu: "語言之選已取消。欲再啟之，請行 /gameMenu gui。"
-    guiTooManyShown: "所設可用語言過多，故介面中僅示前二十七種。"
+    guiTooManyShown: '所設可用語言過多，故介面僅示前二十七種。'
+    guiCancelledGameMenu: '語言選取已罷。欲再啟之，請用 /gameMenu gui。'
+    guiCancelledGameStart: '語言選取已罷。欲重試，請用 /gameStart <easy|normal|hard>。'
     playersOnly: "此令唯玩家可用。"
     resetDone: "✅ 所存語言已復初。後次將自啟介面。"
     current: "今所用語：{lang}"

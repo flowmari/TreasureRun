@@ -12,19 +12,28 @@ common:
   done: '&aBúið!'
   error: '&cVilla: {reason}'
 command:
+  checkTreasureEmerald:
+    playersOnly: 'Aðeins leikmenn geta notað þessa skipun.'
+    resultTrue: 'Treasure Emerald fannst.'
+    resultFalse: 'Treasure Emerald fannst ekki.'
   gameStart:
     playersOnly: 'Aðeins leikmenn geta notað þessa skipun.'
     worldNotFound: '[TreasureRun] Upphafsheimurinn er ekki stilltur eða fannst ekki.'
-    started: '§aFjársjóðsleitin er hafin! Erfiðleikastig: {difficulty} | Tímamörk: {timeLimit} sekúndur'
+    started: 'Fjársjóðsleit hefst! Erfiðleikastig: {difficulty} | Tímamörk: {timeLimit} sekúndur'
   stageCleanup:
-    cleaned: "[TreasureRun] Fjarlægði {count} erfiðleikablokka."
-    managerNotReady: "[TreasureRun] Stigastýringin hefur ekki verið frumstillt."
+    playersOnly: 'Aðeins leikmenn geta notað þessa skipun.'
+    managerNotReady: '[TreasureRun] Borðstýringin er ekki tilbúin enn.'
+    cleaned: '[TreasureRun] Hreinsaði {count} erfiðleikablokka.'
   noPermission: '&cEngin heimild.'
   onlyPlayer: '&cAðeins fyrir leikmenn.'
   reload:
     start: '&7Endurhleð...'
     success: '&aEndurhleðsla lokið.'
     fail: '&cEndurhleðsla mistókst: {reason}'
+  lang:
+    guiTooManyShown: 'Of mörg leyfð tungumál voru stillt, þannig að aðeins fyrstu 27 birtast í viðmótinu.'
+    guiCancelledGameMenu: 'Hætt var við tungumálaval. Til að opna það aftur skaltu keyra /gameMenu gui.'
+    guiCancelledGameStart: 'Hætt var við tungumálaval. Reyndu aftur með /gameStart <easy|normal|hard>.'
 gui:
   language:
     title: '&3Tungumál / 言語'

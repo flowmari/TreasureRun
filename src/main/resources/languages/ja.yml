@@ -12,6 +12,10 @@ common:
   done: '&a完了！'
   error: '&cエラー: {reason}'
 command:
+  checkTreasureEmerald:
+    playersOnly: 'このコマンドはプレイヤーのみ実行できます。'
+    resultTrue: 'TreasureEmerald 判定: true'
+    resultFalse: 'TreasureEmerald 判定: false'
   gameStart:
     playersOnly: 'このコマンドはプレイヤーからのみ実行できます。'
     worldNotFound: '[TreasureRun] 開始ワールドが設定されていないか、見つかりませんでした。'

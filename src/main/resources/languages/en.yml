@@ -12,6 +12,10 @@ common:
   done: '&aDone!'
   error: '&cError: {reason}'
 command:
+  checkTreasureEmerald:
+    playersOnly: 'Only players can use this command.'
+    resultTrue: 'Treasure Emerald check: true'
+    resultFalse: 'Treasure Emerald check: false'
   gameStart:
     playersOnly: 'This command can only be used by players.'
     worldNotFound: '[TreasureRun] The start world is not configured or could not be found.'

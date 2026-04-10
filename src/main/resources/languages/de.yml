@@ -12,19 +12,28 @@ common:
   done: '&aFertig!'
   error: '&cFehler: {reason}'
 command:
+  checkTreasureEmerald:
+    playersOnly: 'Dieser Befehl kann nur von Spielern verwendet werden.'
+    resultTrue: 'Treasure Emerald erkannt.'
+    resultFalse: 'Treasure Emerald nicht erkannt.'
   gameStart:
     playersOnly: 'Dieser Befehl kann nur von Spielern verwendet werden.'
     worldNotFound: '[TreasureRun] Die Startwelt ist nicht konfiguriert oder konnte nicht gefunden werden.'
-    started: '§aDie Schatzsuche hat begonnen! Schwierigkeitsgrad: {difficulty} | Zeitlimit: {timeLimit} Sekunden'
+    started: 'Die Schatzsuche beginnt! Schwierigkeitsgrad: {difficulty} | Zeitlimit: {timeLimit} Sekunden'
   stageCleanup:
-    cleaned: "[TreasureRun] {count} Schwierigkeitsblöcke wurden entfernt."
-    managerNotReady: "[TreasureRun] Der Stage-Manager ist nicht initialisiert."
+    playersOnly: 'Dieser Befehl kann nur von Spielern verwendet werden.'
+    managerNotReady: '[TreasureRun] Die Stufenverwaltung ist noch nicht initialisiert.'
+    cleaned: '[TreasureRun] {count} Schwierigkeitsblöcke wurden entfernt.'
   noPermission: '&cKeine Berechtigung.'
   onlyPlayer: '&cDieser Befehl ist nur für Spieler.'
   reload:
     start: '&7Neu laden...'
     success: '&aNeu laden abgeschlossen.'
     fail: '&cNeu laden fehlgeschlagen: {reason}'
+  lang:
+    guiTooManyShown: 'Es wurden zu viele zulässige Sprachen konfiguriert. Daher werden in der GUI nur die ersten 27 angezeigt.'
+    guiCancelledGameMenu: 'Die Sprachauswahl wurde abgebrochen. Mit /gameMenu gui kannst du sie erneut öffnen.'
+    guiCancelledGameStart: 'Die Sprachauswahl wurde abgebrochen. Versuche es erneut mit /gameStart <easy|normal|hard>.'
 gui:
   language:
     title: '&3Sprache / 言語'

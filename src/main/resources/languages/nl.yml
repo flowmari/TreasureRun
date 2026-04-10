@@ -12,19 +12,28 @@ common:
   done: '&aKlaar!'
   error: '&cFout: {reason}'
 command:
+  checkTreasureEmerald:
+    playersOnly: 'Deze opdracht kan alleen door spelers worden gebruikt.'
+    resultTrue: 'Treasure Emerald gedetecteerd.'
+    resultFalse: 'Geen Treasure Emerald gedetecteerd.'
   gameStart:
-    playersOnly: 'Dit commando kan alleen door spelers worden gebruikt.'
-    worldNotFound: '[TreasureRun] De startwereld is niet geconfigureerd of kon niet worden gevonden.'
-    started: '§aDe schattenjacht is begonnen! Moeilijkheidsgraad: {difficulty} | Tijdslimiet: {timeLimit} seconden'
+    playersOnly: 'Deze opdracht kan alleen door spelers worden gebruikt.'
+    worldNotFound: '[TreasureRun] De startwereld is niet ingesteld of kon niet worden gevonden.'
+    started: 'De schattenjacht begint! Moeilijkheidsgraad: {difficulty} | Tijdslimiet: {timeLimit} seconden'
   stageCleanup:
-    cleaned: "[TreasureRun] {count} moeilijkheidsblokken zijn opgeruimd."
-    managerNotReady: "[TreasureRun] De stagebeheerder is niet geïnitialiseerd."
+    playersOnly: 'Deze opdracht kan alleen door spelers worden gebruikt.'
+    managerNotReady: '[TreasureRun] De stagemanager is nog niet geïnitialiseerd.'
+    cleaned: '[TreasureRun] {count} moeilijkheidsblokken zijn opgeruimd.'
   noPermission: '&cGeen toestemming.'
   onlyPlayer: '&cAlleen spelers kunnen dit gebruiken.'
   reload:
     start: '&7Herladen...'
     success: '&aHerladen voltooid.'
     fail: '&cHerladen mislukt: {reason}'
+  lang:
+    guiTooManyShown: 'Er zijn te veel toegestane talen ingesteld, daarom worden in de GUI alleen de eerste 27 weergegeven.'
+    guiCancelledGameMenu: 'De taalkeuze is geannuleerd. Gebruik /gameMenu gui om deze opnieuw te openen.'
+    guiCancelledGameStart: 'De taalkeuze is geannuleerd. Probeer het opnieuw met /gameStart <easy|normal|hard>.'
 gui:
   language:
     title: '&3Taal / 言語'
