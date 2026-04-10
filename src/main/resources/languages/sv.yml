@@ -12,19 +12,28 @@ common:
   done: '&aKlart!'
   error: '&cFel: {reason}'
 command:
+  checkTreasureEmerald:
+    playersOnly: 'Det här kommandot kan bara användas av spelare.'
+    resultTrue: 'Treasure Emerald hittades.'
+    resultFalse: 'Treasure Emerald hittades inte.'
   gameStart:
     playersOnly: 'Det här kommandot kan bara användas av spelare.'
     worldNotFound: '[TreasureRun] Startvärlden är inte konfigurerad eller kunde inte hittas.'
-    started: '§aSkattjakten har börjat! Svårighetsgrad: {difficulty} | Tidsgräns: {timeLimit} sekunder'
+    started: 'Skattjakten börjar! Svårighetsgrad: {difficulty} | Tidsgräns: {timeLimit} sekunder'
   stageCleanup:
-    cleaned: "[TreasureRun] Rensade bort {count} svårighetsblock."
-    managerNotReady: "[TreasureRun] Scenhanteraren är inte initialiserad."
+    playersOnly: 'Det här kommandot kan bara användas av spelare.'
+    managerNotReady: '[TreasureRun] Scenhanteraren är ännu inte initierad.'
+    cleaned: '[TreasureRun] Tog bort {count} svårighetsblock.'
   noPermission: '&cDu saknar behörighet.'
   onlyPlayer: '&cDetta kommando kan bara användas av en spelare.'
   reload:
     start: '&7Laddar om...'
     success: '&aOmladdning klar.'
     fail: '&cOmladdning misslyckades: {reason}'
+  lang:
+    guiTooManyShown: 'För många tillåtna språk har konfigurerats, så endast de första 27 visas i gränssnittet.'
+    guiCancelledGameMenu: 'Språkvalet avbröts. Kör /gameMenu gui för att öppna det igen.'
+    guiCancelledGameStart: 'Språkvalet avbröts. Försök igen med /gameStart <easy|normal|hard>.'
 gui:
   language:
     title: '&3Språk / 言語'

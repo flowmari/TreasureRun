@@ -12,19 +12,28 @@ common:
   done: '&aसमाप्तम्!'
   error: '&cदोषः: {reason}'
 command:
+  checkTreasureEmerald:
+    playersOnly: 'अयं आदेशः केवलं क्रीडकैः एव उपयुज्यते।'
+    resultTrue: 'Treasure Emerald लब्धः।'
+    resultFalse: 'Treasure Emerald न लब्धः।'
   gameStart:
-    playersOnly: 'अयं आदेशः केवलं खेलकैः एव प्रयोक्तुं शक्यते।'
-    worldNotFound: '[TreasureRun] प्रारम्भ-लोकः न विन्यस्तः अथवा न लब्धः।'
-    started: '§aनिधि-अन्वेषण-क्रीडा आरब्धा! कठिनता: {difficulty} | कालसीमा: {timeLimit} क्षणाः'
+    playersOnly: 'अयं आदेशः केवलं क्रीडकैः एव उपयुज्यते।'
+    worldNotFound: '[TreasureRun] प्रारम्भलोकः न विन्यस्तः अथवा न लब्धः।'
+    started: 'निध्यान्वेषणं प्रारभ्यते! कठिनता: {difficulty} | समयसीमा: {timeLimit} सेकण्डाः'
   stageCleanup:
-    cleaned: "[TreasureRun] {count} कठिनताखण्डाः अपासारिताः।"
-    managerNotReady: "[TreasureRun] चरण-प्रबन्धकः अद्यापि न प्रारब्धः।"
+    playersOnly: 'अयं आदेशः केवलं क्रीडकैः एव उपयुज्यते।'
+    managerNotReady: '[TreasureRun] स्तरव्यवस्थापकः अद्यापि सज्जो नास्ति।'
+    cleaned: '[TreasureRun] {count} कठिनताखण्डाः अपसारिताः।'
   noPermission: '&cअनुमतिः नास्ति।'
   onlyPlayer: '&cअयं आदेशः केवलं क्रीडकेन।'
   reload:
     start: '&7पुनः लोड्यते...'
     success: '&aपुनर्लोडः समाप्तः।'
     fail: '&cपुनर्लोडः असफलः: {reason}'
+  lang:
+    guiTooManyShown: 'अत्यधिकाः अनुमतभाषाः विन्यस्ताः, अतः GUI मध्ये केवलं प्रथमा २७ भाषाः एव दृश्यन्ते।'
+    guiCancelledGameMenu: 'भाषाचयनं निरस्तम्। पुनः उद्घाटयितुं /gameMenu gui इति प्रयुज्यताम्।'
+    guiCancelledGameStart: 'भाषाचयनं निरस्तम्। पुनः प्रयत्नाय /gameStart <easy|normal|hard> इति प्रयुज्यताम्।'
 gui:
   language:
     title: '&3भाषा'

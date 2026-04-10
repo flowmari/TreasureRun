@@ -12,19 +12,28 @@ common:
   done: '&aFatto!'
   error: '&cErrore: {reason}'
 command:
+  checkTreasureEmerald:
+    playersOnly: 'Questo comando può essere usato solo dai giocatori.'
+    resultTrue: 'Treasure Emerald rilevato.'
+    resultFalse: 'Treasure Emerald non rilevato.'
   gameStart:
     playersOnly: 'Questo comando può essere usato solo dai giocatori.'
     worldNotFound: '[TreasureRun] Il mondo iniziale non è configurato oppure non è stato trovato.'
-    started: '§aCaccia al tesoro iniziata! Difficoltà: {difficulty} | Tempo limite: {timeLimit} secondi'
+    started: 'La caccia al tesoro comincia! Difficoltà: {difficulty} | Tempo limite: {timeLimit} secondi'
   stageCleanup:
-    cleaned: "[TreasureRun] Rimossi {count} blocchi di difficoltà."
-    managerNotReady: "[TreasureRun] Il gestore dello stage non è inizializzato."
+    playersOnly: 'Questo comando può essere usato solo dai giocatori.'
+    managerNotReady: '[TreasureRun] Il gestore dello stage non è ancora inizializzato.'
+    cleaned: '[TreasureRun] Rimossi {count} blocchi di difficoltà.'
   noPermission: '&cPermesso negato.'
   onlyPlayer: '&cQuesto comando è solo per i giocatori.'
   reload:
     start: '&7Ricaricamento...'
     success: '&aRicaricamento completato.'
     fail: '&cRicaricamento fallito: {reason}'
+  lang:
+    guiTooManyShown: 'Sono state configurate troppe lingue consentite, quindi nella GUI verranno mostrate solo le prime 27.'
+    guiCancelledGameMenu: 'La selezione della lingua è stata annullata. Per riaprirla, usa /gameMenu gui.'
+    guiCancelledGameStart: 'La selezione della lingua è stata annullata. Riprova con /gameStart <easy|normal|hard>.'
 gui:
   language:
     title: '&3Lingua / 言語'

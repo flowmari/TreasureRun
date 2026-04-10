@@ -12,19 +12,28 @@ common:
   done: '&aГотово!'
   error: '&cОшибка: {reason}'
 command:
+  checkTreasureEmerald:
+    playersOnly: 'Эту команду могут использовать только игроки.'
+    resultTrue: 'Treasure Emerald обнаружен.'
+    resultFalse: 'Treasure Emerald не обнаружен.'
   gameStart:
     playersOnly: 'Эту команду могут использовать только игроки.'
     worldNotFound: '[TreasureRun] Стартовый мир не настроен или не найден.'
-    started: '§aПоиск сокровищ начался! Сложность: {difficulty} | Лимит времени: {timeLimit} сек.'
+    started: 'Охота за сокровищами начинается! Сложность: {difficulty} | Лимит времени: {timeLimit} сек.'
   stageCleanup:
-    cleaned: "[TreasureRun] Убрано блоков сложности: {count}."
-    managerNotReady: "[TreasureRun] Менеджер сцены не инициализирован."
+    playersOnly: 'Эту команду могут использовать только игроки.'
+    managerNotReady: '[TreasureRun] Менеджер этапа ещё не инициализирован.'
+    cleaned: '[TreasureRun] Удалено блоков сложности: {count}.'
   noPermission: '&cУ вас нет прав.'
   onlyPlayer: '&cЭту команду может использовать только игрок.'
   reload:
     start: '&7Перезагрузка...'
     success: '&aПерезагрузка завершена.'
     fail: '&cОшибка перезагрузки: {reason}'
+  lang:
+    guiTooManyShown: 'Настроено слишком много разрешённых языков, поэтому в интерфейсе будут показаны только первые 27.'
+    guiCancelledGameMenu: 'Выбор языка отменён. Чтобы открыть его снова, используйте /gameMenu gui.'
+    guiCancelledGameStart: 'Выбор языка отменён. Попробуйте снова с помощью /gameStart <easy|normal|hard>.'
 gui:
   language:
     title: '&3Язык / 言語'

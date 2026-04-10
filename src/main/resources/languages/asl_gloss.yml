@@ -12,19 +12,28 @@ common:
   done: '&aDONE!'
   error: '&cERROR: {reason}'
 command:
+  checkTreasureEmerald:
+    playersOnly: 'ONLY PLAYERS CAN USE THIS COMMAND.'
+    resultTrue: 'Treasure Emerald FOUND.'
+    resultFalse: 'Treasure Emerald NOT FOUND.'
   gameStart:
-    playersOnly: 'THIS COMMAND CAN ONLY BE USED BY PLAYERS.'
+    playersOnly: 'ONLY PLAYERS CAN USE THIS COMMAND.'
     worldNotFound: '[TreasureRun] START WORLD NOT SET OR NOT FOUND.'
-    started: '§aTREASURE HUNT STARTED! DIFFICULTY: {difficulty} | TIME LIMIT: {timeLimit} SECONDS'
+    started: 'TREASURE HUNT START! DIFFICULTY: {difficulty} | TIME LIMIT: {timeLimit} SECONDS'
   stageCleanup:
-    cleaned: "[TreasureRun] CLEANED UP {count} DIFFICULTY BLOCKS."
-    managerNotReady: "[TreasureRun] STAGE MANAGER NOT READY."
+    playersOnly: 'ONLY PLAYERS CAN USE THIS COMMAND.'
+    managerNotReady: '[TreasureRun] STAGE MANAGER NOT READY YET.'
+    cleaned: '[TreasureRun] CLEANUP COMPLETE. {count} DIFFICULTY BLOCKS REMOVED.'
   noPermission: '&cNO PERMISSION.'
   onlyPlayer: '&cONLY PLAYER CAN USE.'
   reload:
     start: '&7RELOAD NOW...'
     success: '&aRELOAD DONE.'
     fail: '&cRELOAD FAIL: {reason}'
+  lang:
+    guiTooManyShown: 'TOO MANY ALLOWED LANGUAGES SET. GUI SHOW FIRST 27 ONLY.'
+    guiCancelledGameMenu: 'LANGUAGE SELECT CANCELLED. OPEN AGAIN WITH /gameMenu gui.'
+    guiCancelledGameStart: 'LANGUAGE SELECT CANCELLED. TRY AGAIN WITH /gameStart <easy|normal|hard>.'
 gui:
   language:
     title: '&3LANGUAGE / 言語'

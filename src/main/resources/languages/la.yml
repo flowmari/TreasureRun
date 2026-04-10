@@ -12,19 +12,28 @@ common:
   done: '&aPerfectum!'
   error: '&cError: {reason}'
 command:
+  checkTreasureEmerald:
+    playersOnly: 'Hoc mandatum a lusoribus tantum adhiberi potest.'
+    resultTrue: 'Treasure Emerald repertus est.'
+    resultFalse: 'Treasure Emerald non repertus est.'
   gameStart:
     playersOnly: 'Hoc mandatum a lusoribus tantum adhiberi potest.'
-    worldNotFound: '[TreasureRun] Mundus initii aut non configuratus est aut inveniri non potuit.'
-    started: '§aVenatio thesauri incepta est! Difficultas: {difficulty} | Tempus finitum: {timeLimit} secundorum'
+    worldNotFound: '[TreasureRun] Mundus initialis non configuratus est aut inveniri non potuit.'
+    started: 'Venatio thesauri incipit! Difficultas: {difficulty} | Terminus temporis: {timeLimit} secundae'
   stageCleanup:
-    cleaned: "[TreasureRun] {count} blocos difficultatis removit."
-    managerNotReady: "[TreasureRun] Moderator scaenae nondum initiatus est."
+    playersOnly: 'Hoc mandatum a lusoribus tantum adhiberi potest.'
+    managerNotReady: '[TreasureRun] Moderator scaenae nondum paratus est.'
+    cleaned: '[TreasureRun] {count} lateres difficultatis amoti sunt.'
   noPermission: '&cPotestas deest.'
   onlyPlayer: '&cHoc mandatum soli lusores.'
   reload:
     start: '&7Iterum onerans...'
     success: '&aPerfecte onustum.'
     fail: '&cOnerare non potuit: {reason}'
+  lang:
+    guiTooManyShown: 'Nimiae linguae permissae configuratae sunt; ideo tantum primae XXVII in GUI ostendentur.'
+    guiCancelledGameMenu: 'Electio linguae intermissa est. Ut iterum aperias, utere /gameMenu gui.'
+    guiCancelledGameStart: 'Electio linguae intermissa est. Iterum conare cum /gameStart <easy|normal|hard>.'
 gui:
   language:
     title: '&3Lingua / 言語'
