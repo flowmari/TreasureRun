@@ -1,0 +1,45 @@
+name: i18n-ci
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  i18n:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install PyYAML
+        run: pip install pyyaml
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: gradle
+
+      - name: YAML syntax check
+        run: python3 scripts/check_i18n_yaml_syntax.py
+
+      - name: Required key check
+        run: python3 scripts/check_i18n_required_keys.py
+
+      - name: Duplicate key check
+        run: python3 scripts/check_i18n_duplicate_keys.py
+
+      - name: Suspect key check
+        run: python3 scripts/check_i18n_suspect_keys.py
+        continue-on-error: true
+
+      - name: Build
+        run: ./gradlew clean build
