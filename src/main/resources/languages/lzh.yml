@@ -467,3 +467,10 @@ command:
       usage: "用法：/lang <code> 例：/lang ja"
       gui: "介面：/lang 或 /lang gui"
     guiNotReady: "語言介面尚未備妥。"
+  craftSpecialEmerald:
+    needDiamonds: "造特殊綠寶石，須鑽石三枚。"
+    success: "以鑽石三枚，已成特殊綠寶石。"
+
+items:
+  specialEmerald:
+    displayName: "&6特殊綠寶石"

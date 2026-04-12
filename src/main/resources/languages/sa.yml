@@ -53,6 +53,9 @@ command:
       gui: "GUI: /lang अथवा /lang gui"
     guiNotReady: "भाषा-GUI अद्यापि प्रारब्धा नास्ति।"
 
+  craftSpecialEmerald:
+    needDiamonds: "विशेषमरकतस्य निर्माणाय त्रयः वज्राः आवश्यकाः।"
+    success: "त्वया त्रिभिः वज्रैः विशेषमरकतं निर्मितम्!"
 gui:
   language:
     title: '&3भाषा'
@@ -347,6 +350,8 @@ items:
   text_e42912c7: '&7特製鉄ブロック'
   text_c89dea57: 特製鉄ブロックのレシピを登録しました。
 
+  specialEmerald:
+    displayName: "&6विशेषमरकत"
 ui:
   labels:
     tabs: '&6पटलानि:&r'

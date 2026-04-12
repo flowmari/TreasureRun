@@ -53,6 +53,9 @@ command:
       gui: "Interface : /lang ou /lang gui"
     guiNotReady: "L’interface de langue n’est pas initialisée."
 
+  craftSpecialEmerald:
+    needDiamonds: "Il vous faut 3 diamants pour fabriquer une Émeraude spéciale."
+    success: "Vous avez fabriqué une Émeraude spéciale avec 3 diamants !"
 gui:
   language:
     title: '&3Langue / 言語'
@@ -347,6 +350,8 @@ items:
   text_e42912c7: '&7特製鉄ブロック'
   text_c89dea57: 特製鉄ブロックのレシピを登録しました。
 
+  specialEmerald:
+    displayName: "&6Émeraude spéciale"
 ui:
   labels:
     tabs: '&6Onglets:&r'

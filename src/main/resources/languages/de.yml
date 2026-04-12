@@ -53,6 +53,9 @@ command:
       gui: "GUI: /lang oder /lang gui"
     guiNotReady: "Die Sprach-GUI wurde nicht initialisiert."
 
+  craftSpecialEmerald:
+    needDiamonds: "Du brauchst 3 Diamanten, um einen Spezial-Smaragd herzustellen."
+    success: "Du hast mit 3 Diamanten einen Spezial-Smaragd hergestellt!"
 gui:
   language:
     title: '&3Sprache / 言語'
@@ -347,6 +350,8 @@ items:
   text_e42912c7: '&7特製鉄ブロック'
   text_c89dea57: 特製鉄ブロックのレシピを登録しました。
 
+  specialEmerald:
+    displayName: "&6Spezial-Smaragd"
 ui:
   labels:
     tabs: '&6Reiter:&r'

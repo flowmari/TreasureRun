@@ -53,6 +53,9 @@ command:
       gui: "GUI: /lang 또는 /lang gui"
     guiNotReady: "언어 GUI가 초기화되지 않았습니다."
 
+  craftSpecialEmerald:
+    needDiamonds: "특별한 에메랄드를 제작하려면 다이아몬드 3개가 필요합니다."
+    success: "다이아몬드 3개로 특별한 에메랄드를 제작했습니다!"
 gui:
   language:
     title: '&3언어'
@@ -347,6 +350,8 @@ items:
   text_e42912c7: '&7特製鉄ブロック'
   text_c89dea57: 特製鉄ブロックのレシピを登録しました。
 
+  specialEmerald:
+    displayName: "&6특별한 에메랄드"
 ui:
   labels:
     tabs: '&6탭:&r'

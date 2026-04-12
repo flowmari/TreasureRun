@@ -1,6 +1,5 @@
 package plugin;
 
-import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -13,38 +12,49 @@ public class CraftSpecialEmeraldCommand implements CommandExecutor {
 
   @Override
   public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-    // 1. コマンドを実行したのがプレイヤーか確認
-    if (!(sender instanceof Player)) {
-      sender.sendMessage("このコマンドはプレイヤーのみが実行できます。");
+    TreasureRunMultiChestPlugin plugin =
+        TreasureRunMultiChestPlugin.getPlugin(TreasureRunMultiChestPlugin.class);
+    I18nHelper i18n = new I18nHelper(plugin);
+
+    if (!(sender instanceof Player player)) {
+      sender.sendMessage(i18n.trDefault(
+          "command.onlyPlayer",
+          "&cThis command can only be used by a player."
+      ));
       return true;
     }
 
-    Player player = (Player) sender;
-    int requiredDiamonds = 3;
+    final int requiredDiamonds = 3;
 
-    // 2. プレイヤーのインベントリにダイヤモンドが3個あるか確認
     if (!player.getInventory().contains(Material.DIAMOND, requiredDiamonds)) {
-      player.sendMessage(ChatColor.RED + "スペシャルエメラルドの作成には、ダイヤモンドが3個必要です。");
+      player.sendMessage(i18n.tr(
+          player,
+          "command.craftSpecialEmerald.needDiamonds",
+          "&cYou need 3 diamonds to craft a Special Emerald."
+      ));
       return true;
     }
 
-    // 3. インベントリからダイヤモンドを3個消費する
     player.getInventory().removeItem(new ItemStack(Material.DIAMOND, requiredDiamonds));
 
-    // 4. スペシャルエメラルドのアイテムを作成
-    ItemStack specialEmerald = TreasureRunMultiChestPlugin.getPlugin(TreasureRunMultiChestPlugin.class)
-        .getItemFactory()
-        .createTreasureEmerald(1);
+    ItemStack specialEmerald = plugin.getItemFactory().createTreasureEmerald(1);
 
     ItemMeta meta = specialEmerald.getItemMeta();
     if (meta != null) {
-      meta.setDisplayName(ChatColor.translateAlternateColorCodes('&', "&6特製エメラルド"));
+      meta.setDisplayName(i18n.tr(
+          player,
+          "items.specialEmerald.displayName",
+          "&6Special Emerald"
+      ));
       specialEmerald.setItemMeta(meta);
     }
 
-    // 5. プレイヤーにアイテムを渡す
     player.getInventory().addItem(specialEmerald);
-    player.sendMessage(ChatColor.AQUA + "ダイヤモンド3個でスペシャルエメラルドを作成しました！");
+    player.sendMessage(i18n.tr(
+        player,
+        "command.craftSpecialEmerald.success",
+        "&bYou crafted a Special Emerald using 3 diamonds!"
+    ));
 
     return true;
   }

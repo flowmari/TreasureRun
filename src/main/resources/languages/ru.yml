@@ -53,6 +53,9 @@ command:
       gui: "GUI: /lang или /lang gui"
     guiNotReady: "Интерфейс выбора языка не инициализирован."
 
+  craftSpecialEmerald:
+    needDiamonds: "Чтобы создать особый изумруд, нужно 3 алмаза."
+    success: "Вы создали особый изумруд, потратив 3 алмаза!"
 gui:
   language:
     title: '&3Язык / 言語'
@@ -347,6 +350,8 @@ items:
   text_e42912c7: '&7特製鉄ブロック'
   text_c89dea57: 特製鉄ブロックのレシピを登録しました。
 
+  specialEmerald:
+    displayName: "&6Особый изумруд"
 ui:
   labels:
     tabs: '&6Вкладки:&r'

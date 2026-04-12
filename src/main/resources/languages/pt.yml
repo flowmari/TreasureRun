@@ -480,3 +480,10 @@ command:
       usage: "Uso: /lang <code> Exemplo: /lang ja"
       gui: "GUI: /lang ou /lang gui"
     guiNotReady: "A interface de idioma não foi inicializada."
+  craftSpecialEmerald:
+    needDiamonds: "Você precisa de 3 diamantes para fabricar uma Esmeralda Especial."
+    success: "Você fabricou uma Esmeralda Especial usando 3 diamantes!"
+
+items:
+  specialEmerald:
+    displayName: "&6Esmeralda Especial"

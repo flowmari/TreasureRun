@@ -53,6 +53,9 @@ command:
       gui: "GUI: /lang of /lang gui"
     guiNotReady: "De taal-GUI is niet geïnitialiseerd."
 
+  craftSpecialEmerald:
+    needDiamonds: "Je hebt 3 diamanten nodig om een Speciale Smaragd te maken."
+    success: "Je hebt met 3 diamanten een Speciale Smaragd gemaakt!"
 gui:
   language:
     title: '&3Taal / 言語'
@@ -347,6 +350,8 @@ items:
   text_e42912c7: '&7特製鉄ブロック'
   text_c89dea57: 特製鉄ブロックのレシピを登録しました。
 
+  specialEmerald:
+    displayName: "&6Speciale Smaragd"
 ui:
   labels:
     tabs: '&6Tabbladen:&r'

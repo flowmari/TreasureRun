@@ -53,6 +53,9 @@ command:
       gui: "GUI: /lang tai /lang gui"
     guiNotReady: "Kielikäyttöliittymää ei ole alustettu."
 
+  craftSpecialEmerald:
+    needDiamonds: "Tarvitset 3 timanttia valmistaaksesi erikoissmaragdin."
+    success: "Valmistit erikoissmaragdin käyttäen 3 timanttia!"
 gui:
   language:
     title: '&3Kieli / 言語'
@@ -347,6 +350,8 @@ items:
   text_e42912c7: '&7特製鉄ブロック'
   text_c89dea57: 特製鉄ブロックのレシピを登録しました。
 
+  specialEmerald:
+    displayName: "&6Erikoissmaragdi"
 ui:
   labels:
     tabs: '&6Välilehdet:&r'

@@ -53,6 +53,9 @@ command:
       gui: "GUI: /lang eller /lang gui"
     guiNotReady: "Språk-GUI:t har inte initialiserats."
 
+  craftSpecialEmerald:
+    needDiamonds: "Du behöver 3 diamanter för att skapa en specialsmaragd."
+    success: "Du skapade en specialsmaragd med 3 diamanter!"
 gui:
   language:
     title: '&3Språk / 言語'
@@ -347,6 +350,8 @@ items:
   text_e42912c7: '&7特製鉄ブロック'
   text_c89dea57: 特製鉄ブロックのレシピを登録しました。
 
+  specialEmerald:
+    displayName: "&6Specialsmaragd"
 ui:
   labels:
     tabs: '&6Flikar:&r'

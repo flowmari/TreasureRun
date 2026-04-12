@@ -53,6 +53,9 @@ command:
       gui: "GUI: /lang OR /lang gui"
     guiNotReady: "LANGUAGE GUI NOT READY."
 
+  craftSpecialEmerald:
+    needDiamonds: "SPECIAL EMERALD CRAFT NEED DIAMOND THREE."
+    success: "DIAMOND THREE USE. SPECIAL EMERALD CRAFT SUCCESS."
 gui:
   language:
     title: '&3LANGUAGE / 言語'
@@ -347,6 +350,8 @@ items:
   text_e42912c7: '&7特製鉄ブロック'
   text_c89dea57: 特製鉄ブロックのレシピを登録しました。
 
+  specialEmerald:
+    displayName: "&6SPECIAL EMERALD"
 ui:
   labels:
     tabs: '&6TABS:&r'

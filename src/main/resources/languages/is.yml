@@ -53,6 +53,9 @@ command:
       gui: "GUI: /lang eða /lang gui"
     guiNotReady: "Tungumálaviðmótið hefur ekki verið frumstillt."
 
+  craftSpecialEmerald:
+    needDiamonds: "Þú þarft 3 demanta til að búa til sérstakan smaragð."
+    success: "Þú bjóst til sérstakan smaragð með 3 demöntum!"
 gui:
   language:
     title: '&3Tungumál / 言語'
@@ -347,6 +350,8 @@ items:
   text_e42912c7: '&7特製鉄ブロック'
   text_c89dea57: 特製鉄ブロックのレシピを登録しました。
 
+  specialEmerald:
+    displayName: "&6Sérstakur smaragður"
 ui:
   labels:
     tabs: '&6Flipar:&r'
