@@ -58,3 +58,6 @@ _local_backup/
 # local backup artifacts
 backup/
 *.bak.*
+
+# temporary files
+tmp/
