@@ -1,10 +1,8 @@
 version: 1
-
 default:
   prefix: '&b[&6TreasureRun&b]&r '
   unknown: '&c(Translation missing: {key})'
 prefix: '&b[&6TreasureRun&b]&r '
-
 common:
   true: '&aはい'
   false: '&cいいえ'
@@ -13,19 +11,18 @@ common:
   loading: '&7読み込み中...'
   done: '&a完了！'
   error: '&cエラー: {reason}'
-
 command:
   checkTreasureEmerald:
-    playersOnly: 'このコマンドはプレイヤーのみ実行できます。'
-    resultTrue: '手に持っているアイテムは Treasure Emerald です。'
-    resultFalse: '手に持っているアイテムは Treasure Emerald ではありません。'
+    playersOnly: このコマンドはプレイヤーのみ実行できます。
+    resultTrue: 手に持っているアイテムは Treasure Emerald です。
+    resultFalse: 手に持っているアイテムは Treasure Emerald ではありません。
   gameStart:
-    playersOnly: 'このコマンドはプレイヤーからのみ実行できます。'
+    playersOnly: このコマンドはプレイヤーからのみ実行できます。
     worldNotFound: '[TreasureRun] 開始ワールドが設定されていないか、見つかりませんでした。'
     started: '§a宝探しゲーム開始！ 難易度: {difficulty} | 制限時間: {timeLimit} 秒'
   stageCleanup:
-    cleaned: "[TreasureRun] 難易度ブロックを {count} 個片付けました。"
-    managerNotReady: "[TreasureRun] ステージ管理が初期化されていません。"
+    cleaned: '[TreasureRun] 難易度ブロックを {count} 個片付けました。'
+    managerNotReady: '[TreasureRun] ステージ管理が初期化されていません。'
   noPermission: '&c権限がありません。'
   onlyPlayer: '&cこのコマンドはプレイヤーのみ実行できます。'
   reload:
@@ -33,31 +30,30 @@ command:
     success: '&a再読み込みが完了しました。'
     fail: '&c再読み込みに失敗しました: {reason}'
   lang:
-    guiCancelledGameStart: "言語選択をキャンセルしました。もう一度やる場合は /gameStart <easy|normal|hard> を実行してください。"
-    guiCancelledGameMenu: "言語選択をキャンセルしました。もう一度開く場合は /gameMenu gui を実行してください。"
-    guiTooManyShown: "許可言語が多いため、GUIには先頭27件のみ表示します。"
-    playersOnly: "このコマンドはプレイヤーからのみ実行できます。"
-    resetDone: "✅ 保存済み言語をリセットしました（次回はGUIが出ます）"
-    current: "現在の言語: {lang}"
-    emptyCode: "言語コードが空です。例: /lang ja"
-    notAllowed: "その言語は許可されていません: {lang}"
-    allowedList: "許可されている言語: {allowed}"
-    changed: "✅ 言語を変更しました: {displayName} ({lang})"
-    changedButNotSaved: "⚠ 言語は変更しましたが、永続保存に失敗しました: {lang}"
+    guiCancelledGameStart: 言語選択をキャンセルしました。再度試すには /gameStart <easy|normal|hard> を実行してください。
+    guiCancelledGameMenu: 言語選択をキャンセルしました。もう一度開くには /gameMenu gui を実行してください。
+    guiTooManyShown: 許可言語が多すぎるため、GUIには先頭27件のみ表示しています。
+    playersOnly: このコマンドはプレイヤーからのみ実行できます。
+    resetDone: ✅ 保存済み言語をリセットしました（次回はGUIが出ます）
+    current: '現在の言語: {lang}'
+    emptyCode: '言語コードが空です。例: /lang ja'
+    notAllowed: 'その言語は許可されていません: {lang}'
+    allowedList: '許可されている言語: {allowed}'
+    changed: '✅ 言語を変更しました: {displayName} ({lang})'
+    changedButNotSaved: '⚠ 言語は変更しましたが、永続保存に失敗しました: {lang}'
     list:
-      title: "=== Languages ==="
-      default: "default: {default}"
-      allowed: "allowed: {allowed}"
-      usage: "使い方: /lang <code> 例: /lang ja"
-      gui: "GUI: /lang または /lang gui"
-    guiNotReady: "Language GUI が初期化されていません。"
-
+      title: === Languages ===
+      default: 'default: {default}'
+      allowed: 'allowed: {allowed}'
+      usage: '使い方: /lang <code> 例: /lang ja'
+      gui: 'GUI: /lang または /lang gui'
+    guiNotReady: Language GUI が初期化されていません。
   craftSpecialEmerald:
-    needDiamonds: "特製エメラルドをクラフトするには、ダイヤモンドが3個必要です。"
-    success: "ダイヤモンド3個で特製エメラルドをクラフトしました！"
+    needDiamonds: 特製エメラルドをクラフトするには、ダイヤモンドが3個必要です。
+    success: ダイヤモンド3個で特製エメラルドをクラフトしました！
 gui:
   language:
-    title: '&3言語'
+    title: 言語 / Language
     subtitle: '&7言語を選択してください'
     loreDefault:
     - '&7クリックで選択'
@@ -65,7 +61,6 @@ gui:
     selected: '&a選択中: &f{lang}'
     saved: '&a言語を保存しました: &f{lang}'
     reopenHint: '&7いつでも &f/lang &7で変更できます'
-
 game:
   difficulty:
     easy: '&aかんたん'
@@ -104,55 +99,44 @@ game:
     cursor_7fabae3f: / cursor=
     return_whoclicked_is_not_pla_a7675648: 'RETURN: whoClicked is not Player'
     return_topinventory_is_not_m_9936e6de: 'RETURN: topInventory is not MERCHANT'
-    return_not_result_slot_expec_9eb8c2c8: 'RETURN: not result slot. expected rawSlot=2
-      but was'
+    return_not_result_slot_expec_9eb8c2c8: 'RETURN: not result slot. expected rawSlot=2 but was'
     shift_53e51de9: ', shift='
-    return_topinventory_is_merch_fa2f5d98: 'RETURN: topInventory is MERCHANT but not
-      MerchantInventory instance'
+    return_topinventory_is_merch_fa2f5d98: 'RETURN: topInventory is MERCHANT but not MerchantInventory instance'
     merchant_view_title_daf2a73a: merchant view title=
     treasure_shop_2574a694: treasure shop
     return_not_treasure_shop_tit_8e65ad3d: 'RETURN: not Treasure Shop title. plainTitle='
     return_current_item_is_null_0f27c9fd: 'RETURN: current item is null'
     return_current_item_is_air_76b5e623: 'RETURN: current item is AIR'
-    return_current_item_is_not_g_d1d65218: 'RETURN: current item is not GOLDEN_APPLE.
-      type='
+    return_current_item_is_not_g_d1d65218: 'RETURN: current item is not GOLDEN_APPLE. type='
     return_game_is_not_running_048d7edb: 'RETURN: game is not running'
     ingredients_snapshot_98cb38c3: ingredients snapshot
-    return_ingredient_check_fail_673860d5: 'RETURN: ingredient check failed (need
-      TreasureEmerald>=5 and slot1 empty)'
-    ok_passed_all_checks_schedul_11e17905: 'OK: passed all checks -> scheduling effect
-      with runTaskLater'
+    return_ingredient_check_fail_673860d5: 'RETURN: ingredient check failed (need TreasureEmerald>=5 and slot1 empty)'
+    ok_passed_all_checks_schedul_11e17905: 'OK: passed all checks -> scheduling effect with runTaskLater'
     run_runtasklater_executed_96d7e049: 'RUN: runTaskLater executed'
     return_later_game_is_not_run_9cc569aa: 'RETURN(LATER): game is not running'
     return_later_player_is_offli_863a8cdc: 'RETURN(LATER): player is offline'
-    return_later_openinventory_t_7b809b57: 'RETURN(LATER): openInventory/topInventory
-      is null'
-    return_later_topinventory_is_f8714cf5: 'RETURN(LATER): topInventory is not MERCHANT.
-      type='
+    return_later_openinventory_t_7b809b57: 'RETURN(LATER): openInventory/topInventory is null'
+    return_later_topinventory_is_f8714cf5: 'RETURN(LATER): topInventory is not MERCHANT. type='
     treasure_shop_2574a694_822: treasure shop
-    return_later_not_treasure_sh_fcce2bb9: 'RETURN(LATER): not Treasure Shop title.
-      plainTitle='
+    return_later_not_treasure_sh_fcce2bb9: 'RETURN(LATER): not Treasure Shop title. plainTitle='
     ok_later_playing_effects_now_b80a2e0e: 'OK(LATER): playing effects now'
     k_llun_r_dj_pinu_16494877: '&6&lKöllun úr djúpinu'
     trade_complete_4a4b1d6f: Trade complete!
     a_hidden_power_awakens_7620bc4d: A hidden power awakens…
     mobcontrol_wolf_allowed_cust_a5459084: '[MobControl] WOLF allowed (CUSTOM). name='
     rainbow_wolf_b3cc6257: Rainbow Wolf
-    mobcontrol_wolf_allowed_name_9cc5a59a: '[MobControl] WOLF allowed (name match).
-      reason='
+    mobcontrol_wolf_allowed_name_9cc5a59a: '[MobControl] WOLF allowed (name match). reason='
     mobcontrol_wolf_cancelled_re_1a3b2e1a: '[MobControl] WOLF cancelled! reason='
     stagemobcontrollistener_refl_08ad690a: '⚠ StageMobControlListener: カウントダウン判定(reflection)に失敗。ゲーム中のみ制御します。原因:'
     stagemobcontrollistener_refl_d8a61972: '⚠ StageMobControlListener: reflection初期化に失敗。ゲーム中のみ制御します。原因:'
     mysql_connection_established_47452dfd: MySQL connection established successfully!
     failed_to_connect_to_mysql_95e4d50a: 'Failed to connect to MySQL:'
-    create_table_if_not_exists_p_136a7833: CREATE TABLE IF NOT EXISTS player_treasure_count
-      (
+    create_table_if_not_exists_p_136a7833: CREATE TABLE IF NOT EXISTS player_treasure_count (
     player_name_varchar_50_prima_79b8331b: player_name VARCHAR(50) PRIMARY KEY,
     count_int_not_null_660eadd8: count INT NOT NULL)
     failed_to_create_table_68199f98: 'Failed to create table:'
     reset_treasure_count_for_pla_96b152d2: 'Reset treasure count for player:'
-    dj_onalltreasurescollected_a871afdd: DJイベントはすでに実行中のため、onAllTreasuresCollected
-      をスキップしました。
+    dj_onalltreasurescollected_a871afdd: DJイベントはすでに実行中のため、onAllTreasuresCollected をスキップしました。
     on_duplicate_key_update_coun_a1543779: ON DUPLICATE KEY UPDATE count = ?
     failed_to_save_treasure_coun_9d94c0cc: 'Failed to save treasure count:'
     dj_triggerultimatedjevent_eb01ecae: DJイベントはすでに実行中のため、triggerUltimateDJEvent をスキップしました。
@@ -161,18 +145,14 @@ game:
     congratulations_38fd1594: §6Congratulations! 全ての宝物を見つけました！
     time_s_up_c5b3ef74: §c§lTIME'S UP!
     treasures_collected_ca7eab31: '§7Treasures collected: §e'
-    try_a_different_route_next_t_721a4d8b: §7Try a different route next time — or
-      use §e/gamestart §7<§eeasy§7|§enormal§7|§ehard§7> §7to retry.
-
+    try_a_different_route_next_t_721a4d8b: §7Try a different route next time — or use §e/gamestart §7<§eeasy§7|§enormal§7|§ehard§7> §7to retry.
 sound:
   sparkle: '&b* キラキラ *'
   start: '&7(BGM開始...)'
   end: '&7(BGM終了...)'
-
 chestSound:
   actionBarDebug: chestSound.actionBarDebug
   debug: chestSound.debug
-
 favorites:
   chapter:
     back: favorites.chapter.back
@@ -224,25 +204,20 @@ favorites:
     rereadTitle: favorites.toc.rereadTitle
     sub: favorites.toc.sub
   auto:
-    treasurerun_favorites_templa_a0a4bf2e: '[TreasureRun] favorites_templates.yml
-      created.'
+    treasurerun_favorites_templa_a0a4bf2e: '[TreasureRun] favorites_templates.yml created.'
     mysql_repository_not_ready_72df0af1: MySQL / Repository not ready.
     favorite_saved_sneak_rightcl_7a73eb4f: ★ Favorite saved! (Sneak+RightClick)
-    favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs yet
-      / or duplicate)
+    favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs yet / or duplicate)
     quotefavoritestore_reloaded__3ba623a3: '[QuoteFavoriteStore] Reloaded DB: host='
-    where_player_uuid_and_quote__36106f85: WHERE player_uuid=? AND quote_hash=? LIMIT
-      1
+    where_player_uuid_and_quote__36106f85: WHERE player_uuid=? AND quote_hash=? LIMIT 1
     quotefavoritestore_exists_fa_7d08adba: '[QuoteFavoriteStore] exists failed:'
-    player_uuid_quote_hash_outco_49f06b31: (player_uuid, quote_hash, outcome, difficulty,
-      lang, quote_text)
+    player_uuid_quote_hash_outco_49f06b31: (player_uuid, quote_hash, outcome, difficulty, lang, quote_text)
     values_643f4d2f: VALUES (?, ?, ?, ?, ?, ?)
     quotefavoritestore_addfavori_44fb1d75: '[QuoteFavoriteStore] addFavorite failed:'
     where_player_uuid_and_quote__81bcaee5: WHERE player_uuid=? AND quote_hash=?
     quotefavoritestore_removefav_8180a1e4: '[QuoteFavoriteStore] removeFavorite failed:'
     where_player_uuid_and_id_f4a80773: WHERE player_uuid=? AND id=?
-    quotefavoritestore_removefav_d024b1e5: '[QuoteFavoriteStore] removeFavoriteById
-      failed:'
+    quotefavoritestore_removefav_d024b1e5: '[QuoteFavoriteStore] removeFavoriteById failed:'
     where_player_uuid_53558ea9: WHERE player_uuid=?
     order_by_created_at_desc_lim_f22988c0: ORDER BY created_at DESC LIMIT ?
     quotefavoritestore_listfavor_f3e976d4: '[QuoteFavoriteStore] listお気に入り failed:'
@@ -250,7 +225,6 @@ favorites:
     quotefavoritestore_countfavo_69291680: '[QuoteFavoriteStore] countお気に入り failed:'
     treasurerun_favorites_0c778ce1: TreasureRun お気に入り
     no_text_b87d9ee6: (no text)
-
 commands:
   text_2bf42ec8: このコマンドはプレイヤーのみが実行できます。
   text_2bf42ec8_18: このコマンドはプレイヤーのみが実行できます。
@@ -259,13 +233,11 @@ commands:
   3_71b78a44: ダイヤモンド3個でスペシャルエメラルドを作成しました！
   players_only_10ed3cbc: Players only.
   treasurerun_quote_favorite_c_dbf690ae: '[TreasureRun] Quote Favorite Commands:'
-  quotefavorite_latest_save_la_8e4bdc46: /quoteFavorite latest  - save latest quote
-    as favorite
+  quotefavorite_latest_save_la_8e4bdc46: /quoteFavorite latest  - save latest quote as favorite
   quotefavorite_list_show_favo_4ebb13c4: /quoteFavorite list    - show favorites
   quotefavorite_remove_id_remo_a6fdb289: /quoteFavorite remove <id> - remove favorite
   favorite_saved_bb0cd8a8: ★ Favorite saved!
-  favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs yet /
-    or duplicate)
+  favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs yet / or duplicate)
   favorites_latest_20_e23c073b: '★ お気に入り (latest 20):'
   usage_quotefavorite_remove_i_5324156c: 'Usage: /quoteFavorite remove <id>'
   id_must_be_a_number_5661bf80: ID must be a number.
@@ -274,8 +246,7 @@ commands:
   unknown_subcommand_use_quote_f79bf3b5: 'Unknown subcommand. Use: /quoteFavorite'
   text_3030fd61: プレイヤーのみ実行できます
   op_10caf0f6: 権限がありません（OP限定）
-  debug_mode_is_off_config_yml_b3d27428: 'Debug mode is OFF. config.yml の debug: true
-    にしてください'
+  debug_mode_is_off_config_yml_b3d27428: 'Debug mode is OFF. config.yml の debug: true にしてください'
   rank_1_2_3_demo_d87f40da: '使い方: /rank <1|2|3|demo>'
   rank_1_2_3_demo_4f3e3084: '数字で入力してください: /rank <1|2|3|demo>'
   1_3_rank_1_2_3_7f459bd0: '1〜3だけ使えます: /rank <1|2|3>'
@@ -291,8 +262,7 @@ commands:
   players_only_10ed3cbc_43: Players only.
   mysql_repository_not_ready_72df0af1: MySQL / Repository not ready.
   favorite_saved_bb0cd8a8_81: ★ Favorite saved!
-  favorite_not_saved_maybe_no__8d52a118_83: Favorite not saved. (maybe no logs yet
-    / or duplicate)
+  favorite_not_saved_maybe_no__8d52a118_83: Favorite not saved. (maybe no logs yet / or duplicate)
   mysql_repository_not_ready_72df0af1_93: MySQL / Repository not ready.
   favorites_latest_20_e23c073b_99: '★ お気に入り (latest 20):'
   usage_quotefavorite_remove_i_5324156c_114: 'Usage: /quoteFavorite remove <id>'
@@ -303,54 +273,37 @@ commands:
   no_quotes_yet_42d26ed9: ★ No quotes yet.
   failed_to_open_favorites_boo_8f4ba39d: Failed to open favorites book.
   openbook_failed_on_this_serv_2fbcf165: openBook() failed on this server.
-  unknown_subcommand_use_quote_6a222621: 'Unknown subcommand. Use: /quoteFavorite
-    help'
+  unknown_subcommand_use_quote_6a222621: 'Unknown subcommand. Use: /quoteFavorite help'
   treasurerun_quote_favorite_c_dbf690ae_209: '[TreasureRun] Quote Favorite Commands:'
-  quotefavorite_latest_save_la_1fb00e45: /quoteFavorite latest          - save latest
-    quote as favorite
+  quotefavorite_latest_save_la_1fb00e45: /quoteFavorite latest          - save latest quote as favorite
   quotefavorite_list_show_favo_8a7b3640: /quoteFavorite list            - show favorites
   quotefavorite_remove_id_remo_e42dbb6a: /quoteFavorite remove <id>     - remove favorite
-  quotefavorite_reread_random__c0c56ea4: /quoteFavorite reread          - random reread
-    (chat)
-  quotefavorite_reread_title_r_9b1cf793: /quoteFavorite reread title    - random reread
-    (title)
-  quotefavorite_reread_book_ra_8c3bcedc: /quoteFavorite reread book     - random reread
-    (book)
-  quotefavorite_book_open_cata_055de855: /quoteFavorite book            - open catalog
-    (full)
-  quotefavorite_book_toc_open__c7d02ede: /quoteFavorite book toc        - open catalog
-    (TOC only)
-  quotefavorite_book_success_o_afe31501: /quoteFavorite book success    - open SUCCESS
-    chapter
-  quotefavorite_book_timeup_op_08b799b0: /quoteFavorite book timeup     - open TIME_UP
-    chapter
-  quotefavorite_book_other_ope_bdcbafba: /quoteFavorite book other      - open OTHER
-    chapter
-  success_normal_en_the_obstac_b627a544: 【SUCCESS / Normal / en】\nThe obstacle is
-    the way.
+  quotefavorite_reread_random__c0c56ea4: /quoteFavorite reread          - random reread (chat)
+  quotefavorite_reread_title_r_9b1cf793: /quoteFavorite reread title    - random reread (title)
+  quotefavorite_reread_book_ra_8c3bcedc: /quoteFavorite reread book     - random reread (book)
+  quotefavorite_book_open_cata_055de855: /quoteFavorite book            - open catalog (full)
+  quotefavorite_book_toc_open__c7d02ede: /quoteFavorite book toc        - open catalog (TOC only)
+  quotefavorite_book_success_o_afe31501: /quoteFavorite book success    - open SUCCESS chapter
+  quotefavorite_book_timeup_op_08b799b0: /quoteFavorite book timeup     - open TIME_UP chapter
+  quotefavorite_book_other_ope_bdcbafba: /quoteFavorite book other      - open OTHER chapter
+  success_normal_en_the_obstac_b627a544: 【SUCCESS / Normal / en】\nThe obstacle is the way.
   time_up_bc0cd646: TIME UP
-
 debug:
   istreasureemerald_fb6fecec: isTreasureEmerald =
-  chestsound_start_called_16th_e2a7414b: §b[ChestSound] start() called (16th-grid
-    mode)
+  chestsound_start_called_16th_e2a7414b: §b[ChestSound] start() called (16th-grid mode)
   chestsound_chests_0_82465b3c: §7[ChestSound] chests=0
-  chestsound_d_1fm_s_t_2f_step_6e3e0fdb: §b[ChestSound] §fD=§e%.1fm §7(%s§7) §ft=§a%.2f
-    §7step=%d bar=%d
+  chestsound_d_1fm_s_t_2f_step_6e3e0fdb: §b[ChestSound] §fD=§e%.1fm §7(%s§7) §ft=§a%.2f §7step=%d bar=%d
   chestsound_nearest_1fm_s_t_2_e2465135: §b[ChestSound] nearest=%.1fm %s  t=%.2f
-  reward_giverankrewardwitheff_5e361189: '[Reward] giveRankRewardWithEffect called
-    player='
+  reward_giverankrewardwitheff_5e361189: '[Reward] giveRankRewardWithEffect called player='
   starttheme_startgame_called__9cf42cbe: '[StartTheme] startGame called by'
-
 items:
   text_7567bb35: 特製エメラルドのレシピを登録しました。
   text_7a04254b: '&e特製リンゴ'
   text_e8d4013d: 特製リンゴのレシピを登録しました。
   text_e42912c7: '&7特製鉄ブロック'
   text_c89dea57: 特製鉄ブロックのレシピを登録しました。
-
   specialEmerald:
-    displayName: "&6特製エメラルド"
+    displayName: '&6特製エメラルド'
 ui:
   labels:
     tabs: '&6タブ:&r'
@@ -370,102 +323,65 @@ ui:
     translation_missing_77031543: '(Translation missing:'
     translation_missing_77031543_107: '(Translation missing:'
     click_to_select_aac1569c: Click to select
-    treasurerun_lang_config_yml__2dde4625: '[TreasureRun][Lang] config.yml に ''language:''
-      セクションが見つかりません。'
+    treasurerun_lang_config_yml__2dde4625: '[TreasureRun][Lang] config.yml に ''language:'' セクションが見つかりません。'
     click_to_select_aac1569c_76: Click to select
     treasurerun_lang_default_60887a83: '[TreasureRun][Lang] default='
     click_to_select_aac1569c_19: Click to select
-    treasurerun_lang_config_yml__2dde4625_33: '[TreasureRun][Lang] config.yml に ''language:''
-      セクションが見つかりません。'
+    treasurerun_lang_config_yml__2dde4625_33: '[TreasureRun][Lang] config.yml に ''language:'' セクションが見つかりません。'
     treasurerun_lang_material_la_bc70a401: '[TreasureRun][Lang] 無効なMaterial: lang='
-    treasurerun_lang_language_ic_4bc2362d: '[TreasureRun][Lang] ''language.iconMaterial:''
-      セクションが見つかりません（全部PAPERになります）'
+    treasurerun_lang_language_ic_4bc2362d: '[TreasureRun][Lang] ''language.iconMaterial:'' セクションが見つかりません（全部PAPERになります）'
     click_to_select_aac1569c_100: Click to select
     treasurerun_lang_default_60887a83_111: '[TreasureRun][Lang] default='
     enemydown_mysql_jdbc_mybatis_6b5c6f68: '[EnemyDown] MySQL に接続しました（JDBC + MyBatis）'
     enemydown_mysql_6cf3e29b: '[EnemyDown] MySQL接続に失敗しました:'
     enemydown_mysql_a18990c3: '[EnemyDown] MySQL接続を切断しました。'
     enemydown_mysql_e097a73e: '[EnemyDown] MySQL切断に失敗しました:'
-    mysqlmanager_player_score_d92afff4: '[MySQLManager] player_score テーブルを確認・作成しました
-      ✅'
-    mysqlmanager_player_score_21665c62: '[MySQLManager] player_score テーブル作成に失敗しました
-      ❌:'
+    mysqlmanager_player_score_d92afff4: '[MySQLManager] player_score テーブルを確認・作成しました ✅'
+    mysqlmanager_player_score_21665c62: '[MySQLManager] player_score テーブル作成に失敗しました ❌:'
     mysqlmanager_mysql_951100b9: '[MySQLManager] MySQL 接続テスト成功 ✅'
     mysqlmanager_player_score_a4968d00: '[MySQLManager] player_score テーブルの行数:'
     mysqlmanager_mysql_1763d390: '[MySQLManager] MySQL 接続できていません ❌'
-    mysqlmanager_player_score_2b5c8721: '[MySQLManager] player_score テーブルが存在しない可能性があります
-      ❌'
+    mysqlmanager_player_score_2b5c8721: '[MySQLManager] player_score テーブルが存在しない可能性があります ❌'
     enemydown_mysql_bc514e56: '[EnemyDown] MySQL は接続されています。'
     enemydown_mysql_93b23ef9: '[EnemyDown] MySQL は接続されていません。'
-    light_fell_evenly_and_every__e50aee87: Light fell evenly, ,\nand every shadow
-      vanished.\n（光が等しく降り注ぎ、すべての影が消えた。）
-    the_wind_fell_silent_and_eve_a96036c1: The wind fell silent.\nand everything returned
-      to where it belonged.\n（風が止み、あるべき場所に、あるべきものが戻った。）
-    a_moment_of_silence_the_worl_1eea4abb: A moment of silence.\nThe world steadied
-      its breath.\n（一瞬の静寂。世界がその呼吸を整えた。）
-    the_record_is_etched_deep_in_e9350623: The record is etched deep in the sand—\nbeyond
-      the reach of the wind.\n（記録は砂に深く刻まれ、風もそれを動かせない。）
-    harmony_was_restored_everyth_6a4e0a0c: Harmony was restored.\nEverything had been
-      for this moment.\n（調和が訪れた。すべては、この瞬間のためにあった。）
-    time_slipped_by_in_silence_t_14c78205: Time slipped by in silence,\ntucked away
-      in the corners of memory.\n（時間は静かに流れ、記憶の隅に収まった。）
-    the_sky_shifted_in_color_and_317d3e14: The sky shifted in color,\nand one story
-      came to its end.\n（空の色が変わり、一つの物語が完結を告げた。）
-    the_waves_grew_calm_and_the__1beb5585: The waves grew calm,\nand the sea hid its
-      depths once more.\n（波は穏やかになり、海は再びその深淵を隠した。）
-    the_footsteps_stopped_and_on_32af88ac: The footsteps stopped,\nand only the place
-      remained.\n（歩みは止まり、場所だけがそこに残された。）
-    the_sun_sank_and_shadow_cove_04703922: The sun sank,\nand shadow covered the world
-      once again.\n（日は落ち、影は再び世界を覆った。）
-    the_last_grains_of_sand_fell_aacb5bca: The last grains of sand fell,\nand the
-      story quietly came to a close.\n（砂はすべて落ちきり、物語は静かに幕を閉じた。）
-    the_wind_swept_through_and_t_c887bbb6: The wind swept through,\nand the footprints
-      vanished without a trace.\n（風が吹き抜け、足跡は跡形もなく消え去った。）
-    the_tide_came_in_what_once_h_95e5c491: The tide came in,\nWhat once had been there
-      returned to the sea.\n（潮が満ちた。かつてそこにあったものは、海へと還った。）
+    light_fell_evenly_and_every__e50aee87: Light fell evenly, ,\nand every shadow vanished.\n（光が等しく降り注ぎ、すべての影が消えた。）
+    the_wind_fell_silent_and_eve_a96036c1: The wind fell silent.\nand everything returned to where it belonged.\n（風が止み、あるべき場所に、あるべきものが戻った。）
+    a_moment_of_silence_the_worl_1eea4abb: A moment of silence.\nThe world steadied its breath.\n（一瞬の静寂。世界がその呼吸を整えた。）
+    the_record_is_etched_deep_in_e9350623: The record is etched deep in the sand—\nbeyond the reach of the wind.\n（記録は砂に深く刻まれ、風もそれを動かせない。）
+    harmony_was_restored_everyth_6a4e0a0c: Harmony was restored.\nEverything had been for this moment.\n（調和が訪れた。すべては、この瞬間のためにあった。）
+    time_slipped_by_in_silence_t_14c78205: Time slipped by in silence,\ntucked away in the corners of memory.\n（時間は静かに流れ、記憶の隅に収まった。）
+    the_sky_shifted_in_color_and_317d3e14: The sky shifted in color,\nand one story came to its end.\n（空の色が変わり、一つの物語が完結を告げた。）
+    the_waves_grew_calm_and_the__1beb5585: The waves grew calm,\nand the sea hid its depths once more.\n（波は穏やかになり、海は再びその深淵を隠した。）
+    the_footsteps_stopped_and_on_32af88ac: The footsteps stopped,\nand only the place remained.\n（歩みは止まり、場所だけがそこに残された。）
+    the_sun_sank_and_shadow_cove_04703922: The sun sank,\nand shadow covered the world once again.\n（日は落ち、影は再び世界を覆った。）
+    the_last_grains_of_sand_fell_aacb5bca: The last grains of sand fell,\nand the story quietly came to a close.\n（砂はすべて落ちきり、物語は静かに幕を閉じた。）
+    the_wind_swept_through_and_t_c887bbb6: The wind swept through,\nand the footprints vanished without a trace.\n（風が吹き抜け、足跡は跡形もなく消え去った。）
+    the_tide_came_in_what_once_h_95e5c491: The tide came in,\nWhat once had been there returned to the sea.\n（潮が満ちた。かつてそこにあったものは、海へと還った。）
     silence_only_time_passed_thr_60f5dc93: Silence.\nOnly time passed through.\n（沈黙。ただ、時間だけがそこを通り過ぎた。）
     perfect_balance_the_scales_h_1ea1f1a6: Perfect balance.\nThe scales held level.\n（等価の均衡。天秤は水平を保った。）
-    things_changed_taking_on_new_591958be: Things changed,\ntaking on new forms as
-      they carried on.\n（物事は移ろい、形を変えて引き継がれた。）
-    there_was_no_dialogue_only_a_6d1402e0: There was no dialogue\n—only an exchange
-      of facts.\n（対話はなく、ただ事実としての交換が行われた。）
-    victory_and_defeat_are_nothi_bdf3704e: Victory and defeat \nare nothing more than
-      grains of sand.\n（勝利も敗北も、同じ砂の一粒に過ぎない。）
-    the_road_goes_on_or_it_ends__92cbbf5c: The road goes on—or it ends.\nEither way,
-      it lies on the same earth.\n（道は続き、あるいは途切れ、どちらも同じ大地の上にある。）
-    distance_became_meaning_time_5a12895a: Distance became meaning.\nTime answered
-      your steps.\n（距離が意味になった。時間があなたの歩みに答えた。）
+    things_changed_taking_on_new_591958be: Things changed,\ntaking on new forms as they carried on.\n（物事は移ろい、形を変えて引き継がれた。）
+    there_was_no_dialogue_only_a_6d1402e0: There was no dialogue\n—only an exchange of facts.\n（対話はなく、ただ事実としての交換が行われた。）
+    victory_and_defeat_are_nothi_bdf3704e: Victory and defeat \nare nothing more than grains of sand.\n（勝利も敗北も、同じ砂の一粒に過ぎない。）
+    the_road_goes_on_or_it_ends__92cbbf5c: The road goes on—or it ends.\nEither way, it lies on the same earth.\n（道は続き、あるいは途切れ、どちらも同じ大地の上にある。）
+    distance_became_meaning_time_5a12895a: Distance became meaning.\nTime answered your steps.\n（距離が意味になった。時間があなたの歩みに答えた。）
     time_ran_out_nothing_else_di_44acc357: Time ran out.\nNothing else did.\n（時間は終わった。ほかは終わっていない。）
-    the_center_was_found_the_wor_034f5b8e: The center was found.\nThe world came to
-      rest.\n（軸(中心)は見出された。世界はその運動を止めた。）
+    the_center_was_found_the_wor_034f5b8e: The center was found.\nThe world came to rest.\n（軸(中心)は見出された。世界はその運動を止めた。）
     the_glass_didn_t_break_neith_7ae94ded: The glass didn’t break.\nNeither did you.\n（ガラスは割れなかった。あなたも折れなかった。）
     beneath_a_quiet_sky_your_wil_51818826: Beneath a quiet sky,\nyour will held firm.\n（静かな空の下で、意志は持ちこたえた。）
-    very_little_shines_forever_b_d0b5cee5: Very little shines forever\n—but this moment
-      was different.\n（永遠に輝くものなんてほとんどないけれど、この瞬間は別格だった。）
-    you_made_it_across_the_fragi_f1296f34: You made it across the fragile ground,\nholding
-      fast to the horizon the whole way.\n（脆い地面を渡り切った。地平線景色をしっかりと握りしめたまま。）
-    the_moment_passed_what_remai_0959b996: The moment passed.\n What remained was
-      the record—the achievement.\n（瞬間は過ぎ去った。遺されたもの記録・功績は残る。）
+    very_little_shines_forever_b_d0b5cee5: Very little shines forever\n—but this moment was different.\n（永遠に輝くものなんてほとんどないけれど、この瞬間は別格だった。）
+    you_made_it_across_the_fragi_f1296f34: You made it across the fragile ground,\nholding fast to the horizon the whole way.\n（脆い地面を渡り切った。地平線景色をしっかりと握りしめたまま。）
+    the_moment_passed_what_remai_0959b996: The moment passed.\n What remained was the record—the achievement.\n（瞬間は過ぎ去った。遺されたもの記録・功績は残る。）
     luck_fades_quickly_order_end_04e748db: Luck fades quickly.\nOrder endures.\n（運は速やかに消え、整い秩序は永続する。）
-    the_sky_knows_no_rest_in_its_49661783: The sky knows no rest in its endless cycle.\nNeither
-      do you.\n（空はその終わりなき循環に休止を知らぬ。汝もまた、止まらず。）
-    the_center_was_reached_the_w_da5a6a87: The center was reached.\nThe world stood
-      still.\n（中心は到達された。世界は立ち尽くし静止した。）
-    at_last_you_ve_made_it_here__b45089f2: At last,you’ve made it here.\nThe truth
-      stands—unbowed.\n（ついに、ここへ辿り着いた。真実は屈することなく、そこに在る。）
-    complete_this_path_was_yours_0d56d4fe: Complete. This path was yours\n—and yours
-      alone.\n（完遂。この道を選んだのは他でもないあなただ。）
-    time_drifted_into_silence_an_ed490109: Time drifted into silence,\nand found its
-      place in the deepest corners of the mind.\n（時は静寂へと漂い、精神の奥底の隅に自らの居場所を見つけた。）
-    as_the_sky_shifted_one_story_a677baab: As the sky shifted,\none story found its
-      final resolution.\n（空が姿を変えるとともに、一つの物語はその最終的な解決完結を見出した。）
-    the_waves_fell_quiet_and_the_0902301e: The waves fell quiet,\nand the sky hid
-      its depths once more.\n（波は静まり、空は再びその深淵を覆い隠した。）
-    the_footsteps_ceased_and_onl_b719ed44: The footsteps ceased,\nand only the place
-      remained.\n（歩みは途絶え、ただ場所だけがそこに在り続けた。）
+    the_sky_knows_no_rest_in_its_49661783: The sky knows no rest in its endless cycle.\nNeither do you.\n（空はその終わりなき循環に休止を知らぬ。汝もまた、止まらず。）
+    the_center_was_reached_the_w_da5a6a87: The center was reached.\nThe world stood still.\n（中心は到達された。世界は立ち尽くし静止した。）
+    at_last_you_ve_made_it_here__b45089f2: At last,you’ve made it here.\nThe truth stands—unbowed.\n（ついに、ここへ辿り着いた。真実は屈することなく、そこに在る。）
+    complete_this_path_was_yours_0d56d4fe: Complete. This path was yours\n—and yours alone.\n（完遂。この道を選んだのは他でもないあなただ。）
+    time_drifted_into_silence_an_ed490109: Time drifted into silence,\nand found its place in the deepest corners of the mind.\n（時は静寂へと漂い、精神の奥底の隅に自らの居場所を見つけた。）
+    as_the_sky_shifted_one_story_a677baab: As the sky shifted,\none story found its final resolution.\n（空が姿を変えるとともに、一つの物語はその最終的な解決完結を見出した。）
+    the_waves_fell_quiet_and_the_0902301e: The waves fell quiet,\nand the sky hid its depths once more.\n（波は静まり、空は再びその深淵を覆い隠した。）
+    the_footsteps_ceased_and_onl_b719ed44: The footsteps ceased,\nand only the place remained.\n（歩みは途絶え、ただ場所だけがそこに在り続けた。）
     you_ve_made_it_the_truth_rem_e5a08272: You’ve made it.\nThe truth remains.\n（たどり着いた。正さはそのままに。）
-    even_if_it_was_only_a_small__a2d93eca: Even if it was only a small step,\nyou
-      held your ground.\n（小さな一歩でも、あなたは守り抜いた。）
+    even_if_it_was_only_a_small__a2d93eca: Even if it was only a small step,\nyou held your ground.\n（小さな一歩でも、あなたは守り抜いた。）
     you_listened_the_path_opened_eab96830: You listened.\n The path opened.\n（耳を澄ませた。道がひらいた。）
     you_made_it_here_e75ebfb3: '> You made it here\n'
     the_rules_were_simple_5b50ded6: '> The rules were simple —\n'
@@ -481,93 +397,59 @@ ui:
     but_this_moment_did_4af877ff: '> But this moment did.\n'
     text_7b7a639d: （すべてが永遠に輝くわけじゃない。\n
     text_6dd1fc65: でも、この瞬間はそうだった。）
-    the_distance_has_found_its_m_b590114e: The distance has found its meaning.\nTime
-      has rewarded your journey.\n（距離が意味になった。時間があなたの歩みに答えた。）
-    the_time_is_up_but_the_rest__8d5868ec: The time is up.\nbut the rest is far from
-      over.\n（時間は終わった。ほかは終わっていない。）
-    the_axis_is_found_the_world__e3e8acb0: The axis is found.\nthe world has cased
-      its motion.\n（軸(中心)は見出された。世界はその運動を止めた。）
-    the_glass_held_its_breath_an_d1bab65c: The glass held its breath,\nand you held
-      your ground.\n（ガラスは割れなかった。あなたも折れなかった。）
-    under_the_stillness_of_the_s_962b46c5: Under the stillness of the sky,\nyour spirit
-      did not waver.\n（静かな空の下で、意志は持ちこたえた。）
-    few_things_shine_forever_but_30489af2: Few things shine forever.\nbut this moment
-      was radiant.\n（永遠に輝くものなんてほとんどないけれど、この瞬間は別格だった。）
-    you_traversed_the_fragile_ea_2fd64c84: You traversed the fragile earth,\nwithout
-      losing the view.\n（脆い地面を渡り切った。地平線景色をしっかりと握りしめたまま。）
+    the_distance_has_found_its_m_b590114e: The distance has found its meaning.\nTime has rewarded your journey.\n（距離が意味になった。時間があなたの歩みに答えた。）
+    the_time_is_up_but_the_rest__8d5868ec: The time is up.\nbut the rest is far from over.\n（時間は終わった。ほかは終わっていない。）
+    the_axis_is_found_the_world__e3e8acb0: The axis is found.\nthe world has cased its motion.\n（軸(中心)は見出された。世界はその運動を止めた。）
+    the_glass_held_its_breath_an_d1bab65c: The glass held its breath,\nand you held your ground.\n（ガラスは割れなかった。あなたも折れなかった。）
+    under_the_stillness_of_the_s_962b46c5: Under the stillness of the sky,\nyour spirit did not waver.\n（静かな空の下で、意志は持ちこたえた。）
+    few_things_shine_forever_but_30489af2: Few things shine forever.\nbut this moment was radiant.\n（永遠に輝くものなんてほとんどないけれど、この瞬間は別格だった。）
+    you_traversed_the_fragile_ea_2fd64c84: You traversed the fragile earth,\nwithout losing the view.\n（脆い地面を渡り切った。地平線景色をしっかりと握りしめたまま。）
     the_moment_has_passed_the_le_207a8d8d: The moment has passed.\nThe legacy remains.\n（瞬間は過ぎ去った。遺されたもの記録・功績は残る。）
     luck_fades_fast_order_endure_ebba56a3: Luck fades fast.\norder endures.\n（運は速やかに消え、整い秩序は永続する。）
-    the_sky_knows_no_pause_in_en_cc9765c3: The sky knows no pause in endless circle,\nnor
-      shall you find yours.\n（空はその終わりなき循環に休止を知らぬ。汝もまた、止まらず。）
-    the_center_has_been_reached__6d9a1f8b: The center has been reached.\nThe world
-      stood still.\n（中心は到達された。世界は立ち尽くし静止した。）
+    the_sky_knows_no_pause_in_en_cc9765c3: The sky knows no pause in endless circle,\nnor shall you find yours.\n（空はその終わりなき循環に休止を知らぬ。汝もまた、止まらず。）
+    the_center_has_been_reached__6d9a1f8b: The center has been reached.\nThe world stood still.\n（中心は到達された。世界は立ち尽くし静止した。）
     finally_here_the_truth_remai_473b308d: Finally here.\nThe truth remains unyielding.\n（ついに、ここへ辿り着いた。真実は屈することなく、そこに在る。）
-    you_have_seen_it_through_and_1f3219d4: 'You have seen it through.\nAnd mark this:
-      it was you, and no one else, who chose this path.\n（完遂。この道を選んだのは他でもないあなただ。）'
-    time_drifted_into_silence_fi_cce20443: Time drifted into silence,\nfinding its
-      place in the recesses of the mind.\n（時は静寂へと漂い、精神の奥底の隅に自らの居場所を見つけた。）
-    as_the_sky_transformed_the_t_1e9875ae: As the sky transformed,\nthe tale found
-      its final resolved.\n（空が姿を変えるとともに、一つの物語はその最終的な解決完結を見出した。）
-    the_waters_fell_calm_and_the_265c237f: The waters fell calm,\nand the sky once
-      more veiled its abyss.\n（波は静まり、空は再びその深淵を覆い隠した。）
+    you_have_seen_it_through_and_1f3219d4: 'You have seen it through.\nAnd mark this: it was you, and no one else, who chose this path.\n（完遂。この道を選んだのは他でもないあなただ。）'
+    time_drifted_into_silence_fi_cce20443: Time drifted into silence,\nfinding its place in the recesses of the mind.\n（時は静寂へと漂い、精神の奥底の隅に自らの居場所を見つけた。）
+    as_the_sky_transformed_the_t_1e9875ae: As the sky transformed,\nthe tale found its final resolved.\n（空が姿を変えるとともに、一つの物語はその最終的な解決完結を見出した。）
+    the_waters_fell_calm_and_the_265c237f: The waters fell calm,\nand the sky once more veiled its abyss.\n（波は静まり、空は再びその深淵を覆い隠した。）
     the_footsteps_ceased_only_th_001baff6: The footsteps ceased,\nonly the place remained.\n（歩みは途絶え、ただ場所だけがそこに在り続けた。）
-    run_complete_clear_found_it__2e6c1d46: RUN COMPLETE.\nClear. Found it.\nThat's
-      enough.\n（クリア。見つけた。それで十分。）
+    run_complete_clear_found_it__2e6c1d46: RUN COMPLETE.\nClear. Found it.\nThat's enough.\n（クリア。見つけた。それで十分。）
     run_complete_the_path_held_s_acf5d608: RUN COMPLETE.\nThe path held.\nSo did you.\n（道は持ちこたえた。あなたも同じ。）
     the_sky_has_kept_moving_so_c_0be8c877: The sky has kept moving.\nSo can you.\n（空はずっと歩み続けていた。あなたも進み続けられる。）
-    run_complete_a_quiet_result__8db3c94e: RUN COMPLETE.\nA quiet result.\nThe weight
-      of real work.\n（静かな結果。本物の積み重ね。）
-    you_only_walked_the_path_the_bd9f993a: You only walked the path\nthe world had
-      laid out for you.\n（世界が用意していた道を、あなたは歩いただけ。）
-    the_ground_didn_t_give_way_i_0278077c: The ground didn’t give way.\nIt trusted
-      your steps.\n（大地は壊れなかった。あなたの足取りを、信じていた。）
-    this_moment_aligned_with_the_eca8fb6d: This moment aligned\nwith the stars’ ancient
-      rhythm.\n（この瞬間は、星々の長いリズムと重なった。）
-    you_didn_t_take_anything_you_6528b571: You didn’t take anything.\n You understood
-      something.\n（何かを奪ったわけじゃない。何かを、理解した。）
-    you_didn_t_gain_a_thing_you__a02a2ac7: You didn’t gain a thing.\nYou only saw
-      the truth for what it was.\n（手に入れたのは何かではない。真実を、見抜いただけだ。）
-    you_didn_t_take_this_place_y_55fd462f: You didn’t take this place.\nYou belonged
-      here.\n（征服したのではない。ここに、属していた。）
+    run_complete_a_quiet_result__8db3c94e: RUN COMPLETE.\nA quiet result.\nThe weight of real work.\n（静かな結果。本物の積み重ね。）
+    you_only_walked_the_path_the_bd9f993a: You only walked the path\nthe world had laid out for you.\n（世界が用意していた道を、あなたは歩いただけ。）
+    the_ground_didn_t_give_way_i_0278077c: The ground didn’t give way.\nIt trusted your steps.\n（大地は壊れなかった。あなたの足取りを、信じていた。）
+    this_moment_aligned_with_the_eca8fb6d: This moment aligned\nwith the stars’ ancient rhythm.\n（この瞬間は、星々の長いリズムと重なった。）
+    you_didn_t_take_anything_you_6528b571: You didn’t take anything.\n You understood something.\n（何かを奪ったわけじゃない。何かを、理解した。）
+    you_didn_t_gain_a_thing_you__a02a2ac7: You didn’t gain a thing.\nYou only saw the truth for what it was.\n（手に入れたのは何かではない。真実を、見抜いただけだ。）
+    you_didn_t_take_this_place_y_55fd462f: You didn’t take this place.\nYou belonged here.\n（征服したのではない。ここに、属していた。）
     you_walked_a_road_older_than_ad212564: You walked a road\nolder than memory itself.\n（記憶より古い道を、あなたは辿った。）
-    the_earth_did_not_resist_it__08842ba8: The earth did not resist.\nIt recognized
-      you.\n（大地は抗わず、あなたを認識した。）
-    this_moment_aligned_with_the_f3dd2b74: This moment aligned\n with the stillness
-      of the stars.\n（この瞬間は、星々の静けさと重なった。）
+    the_earth_did_not_resist_it__08842ba8: The earth did not resist.\nIt recognized you.\n（大地は抗わず、あなたを認識した。）
+    this_moment_aligned_with_the_f3dd2b74: This moment aligned\n with the stillness of the stars.\n（この瞬間は、星々の静けさと重なった。）
     no_conquest_understanding_wa_d33a2f09: No conquest.\nUnderstanding was enough.\n（征服はない。理解で、十分だった。）
-    you_didn_t_claim_it_you_were_8b650427: You didn’t claim it.\nYou were already
-      home.\n（ここを奪ったのではない。ここに、属していた。）
+    you_didn_t_claim_it_you_were_8b650427: You didn’t claim it.\nYou were already home.\n（ここを奪ったのではない。ここに、属していた。）
     in_the_north_wind_clarity_ou_64c6b996: In the north wind,\nclarity outlasts speed.\n（北風の中で、速さより明晰さが生き残る。）
-    the_center_was_found_the_wor_cd5b1642: The center was found.\n The world came
-      to rest.\n（軸(中心)は見出された。世界はその運動を止めた。）
-    the_stars_stay_silent_your_r_35421861: The stars stay silent.\nYour record does
-      the speaking.\n（星は黙っている。語るのはあなたの記録だ。）
+    the_center_was_found_the_wor_cd5b1642: The center was found.\n The world came to rest.\n（軸(中心)は見出された。世界はその運動を止めた。）
+    the_stars_stay_silent_your_r_35421861: The stars stay silent.\nYour record does the speaking.\n（星は黙っている。語るのはあなたの記録だ。）
     the_result_remained_the_posi_153a12ee: The result  remained.\nThe position changed.\n（結果は残った。位置は変わった。）
     between_ice_and_glass_you_ch_3b749e42: Between ice and glass,\nyou chose control.\n（氷とガラスのあいだで、あなたは制御を選んだ。）
-    the_waves_fell_quiet_and_the_6f4d9f82: The waves fell quiet,\nand the sea reclaimed
-      its hidden depths.\n（波は静まり、海はその隠された深淵を再び自らのものとした。）
-    some_treasures_still_await_n_7a4a58a5: Some treasures still await.\nNext time,
-      a different path.\n（待つ宝もある。次は、別の道を。）
+    the_waves_fell_quiet_and_the_6f4d9f82: The waves fell quiet,\nand the sea reclaimed its hidden depths.\n（波は静まり、海はその隠された深淵を再び自らのものとした。）
+    some_treasures_still_await_n_7a4a58a5: Some treasures still await.\nNext time, a different path.\n（待つ宝もある。次は、別の道を。）
     the_sky_didn_t_change_you_di_d15d136c: The sky didn’t change.\nYou did.\n（空は変わらなかった。変わったのはあなた。）
     the_moment_passed_what_remai_89df4d34: The moment passed.\nWhat remained was order.\n（瞬間は過ぎた。整いは残った。）
     winter_is_honest_so_was_your_a996fe3e: Winter is honest.\nSo was your run.\n（冬は正直だ。あなたの走りもそうだった。）
     the_stars_aligned_for_a_mome_6428a19c: The stars aligned for a moment.\nYou noticed.\n（星は束の間そろった。あなたはそれに気づいた。）
     the_distance_closed_time_did_41c5d0bb: The distance closed.\nTime did not.\n（距離は縮んでいた。時間は縮まらなかった。）
-    the_world_s_rules_stood_firm_a6e92708: The world’s rules stood firm.\n And the
-      signal of possibility was real.\n（世界のルールは、厳然としてそこにあった。可能性（信号）は本物だった。）
-    the_path_closed_quietly_you__94844d33: The path closed quietly.\nYou were already
-      through.\n（道は静かに閉じた。あなたはもう抜けていた。）
+    the_world_s_rules_stood_firm_a6e92708: The world’s rules stood firm.\n And the signal of possibility was real.\n（世界のルールは、厳然としてそこにあった。可能性（信号）は本物だった。）
+    the_path_closed_quietly_you__94844d33: The path closed quietly.\nYou were already through.\n（道は静かに閉じた。あなたはもう抜けていた。）
     nothing_changed_only_your_po_9e81bf75: Nothing changed.\nOnly your position did.\n（何も変わらない。ただ、あなたの位置だけが変わった。）
     not_luck_alignment_ee7feb0a: Not luck.\nAlignment.\n（運じゃない。整いだ。）
     the_moment_passed_the_record_2de52e15: The moment passed.\nThe record remains.\n（瞬間は過ぎた。記録は残る。）
-    the_outcome_didn_t_change_st_9ede5637: The outcome didn’t change.\nStill, you
-      moved forward.\n（結果に違いはなかった。それでも、あなたは前に進んだ。）
-    the_output_didn_t_change_but_50c677f8: The output didn’t change.\nBut you reached
-      a new level.\n（出力は変わらないままだが、あなたは新しいレベルに到達した。）
-    the_ending_was_the_same_but__cf1c14ec: The ending was the same.\nBut the one who
-      reached it had changed.\n（結末は同じだが、そこに辿り着いた人間は変わった。）
-    the_destination_is_the_same__b300a709: The destination is the same\n—but you’re
-      no longer the traveler you once were.\n（目的地は同じだが、あなたはもう以前と同じ旅人ではない。）
+    the_outcome_didn_t_change_st_9ede5637: The outcome didn’t change.\nStill, you moved forward.\n（結果に違いはなかった。それでも、あなたは前に進んだ。）
+    the_output_didn_t_change_but_50c677f8: The output didn’t change.\nBut you reached a new level.\n（出力は変わらないままだが、あなたは新しいレベルに到達した。）
+    the_ending_was_the_same_but__cf1c14ec: The ending was the same.\nBut the one who reached it had changed.\n（結末は同じだが、そこに辿り着いた人間は変わった。）
+    the_destination_is_the_same__b300a709: The destination is the same\n—but you’re no longer the traveler you once were.\n（目的地は同じだが、あなたはもう以前と同じ旅人ではない。）
     distance_became_meaning_566ddeb3: '> Distance became meaning,\n'
     and_time_answered_your_foots_912e07cc_338: '> and time answered your footsteps.\n'
     text_e9de370f_340: （距離が意味になり、\n
@@ -587,18 +469,14 @@ ui:
     time_s_up_the_rules_don_t_ch_c74cb845: TIME'S UP.\nThe rules don’t change.\nAgain.\n（ルールは変わらない。もう一度。）
     time_s_up_so_close_is_real_e07736e1: TIME'S UP.\n“So close” is real.\n（惜しい、は本物だ。）
     the_distance_closed_time_did_70b525c5: The distance closed.\nTime did not.\n（距離は縮んだ。時間は縮まらなかった。）
-    the_world_kept_its_rules_you_5fee2cf8: The world kept its rules.\nYou touched
-      the edge.\n（世界はルールを守った。あなたは境界に触れた。）
-    you_didn_t_make_it_but_the_s_fa8b5d04: You didn’t make it.\nBut the signal was
-      real.\n（届かなかった。でも合図は本物だった。）
-    some_treasures_still_await_l_43ce0770: Some treasures still await.\nLet’s try
-      a different path.\n（待つ宝もある。別の道を試そう。）
+    the_world_kept_its_rules_you_5fee2cf8: The world kept its rules.\nYou touched the edge.\n（世界はルールを守った。あなたは境界に触れた。）
+    you_didn_t_make_it_but_the_s_fa8b5d04: You didn’t make it.\nBut the signal was real.\n（届かなかった。でも合図は本物だった。）
+    some_treasures_still_await_l_43ce0770: Some treasures still await.\nLet’s try a different path.\n（待つ宝もある。別の道を試そう。）
     the_result_remained_the_posi_1845fe86: The result remained.\nThe position changed.\n（結果は残った。位置は変わった。）
     time_ran_out_meaning_didn_t_38f78022: Time ran out.\nMeaning didn't.\n（時間は終わった。意味は終わっていない。）
     so_close_the_sound_said_so_9261da01: So close.\nThe sound said so.\n（惜しかった。音がそう言っていた。）
     the_map_is_still_open_come_b_82f2c960: The map is still open.\nCome back to it.\n（地図は開いたまま。戻っておいで。）
-    the_world_s_rules_stood_firm_e291cf02: The world’s rules stood firm.\nThe signal
-      of possibility was real.\n（世界のルールは厳然としてそこにあった。可能性（信号）は本物だった。）
+    the_world_s_rules_stood_firm_e291cf02: The world’s rules stood firm.\nThe signal of possibility was real.\n（世界のルールは厳然としてそこにあった。可能性（信号）は本物だった。）
     the_world_kept_its_rules_bf1490a0: The world kept its rules.\n（世界はルールを守った。）
     the_moment_passed_the_record_2de52e15_423: The moment passed.\nThe record remains.\n（瞬間は過ぎた。記録は残る。）
     time_ran_out_bc876eff: '> Time ran out.\n'
@@ -609,69 +487,50 @@ ui:
     but_your_position_did_becf0b69: '> But your position did.\n'
     text_4c560290: （結果は変わらなかった。\n
     text_1fe9c4fc: でも、あなたの位置は変わった。）
-    even_the_aurora_fades_come_b_b4e31401: Even the aurora fades.\nCome back with
-      a new stride.\n（オーロラでさえ消える。新しい歩みで戻れ。）
-    in_a_fragile_world_haste_sha_60dc7c09: In a fragile world,\nhaste shatters clarity
-      before it can be found.\n（脆い世界では、焦りが明晰さの発見を壊してしまう。）
-    the_moment_slipped_away_the__63f8b565: The moment slipped away.\nThe meaning did
-      not.\n（逃したのは瞬間。意味ではない。）
+    even_the_aurora_fades_come_b_b4e31401: Even the aurora fades.\nCome back with a new stride.\n（オーロラでさえ消える。新しい歩みで戻れ。）
+    in_a_fragile_world_haste_sha_60dc7c09: In a fragile world,\nhaste shatters clarity before it can be found.\n（脆い世界では、焦りが明晰さの発見を壊してしまう。）
+    the_moment_slipped_away_the__63f8b565: The moment slipped away.\nThe meaning did not.\n（逃したのは瞬間。意味ではない。）
     winter_is_patient_be_the_sam_22d05eb3: Winter is patient.\nBe the same.\n（冬は忍耐強い。あなたもそうであれ。）
     the_sky_kept_moving_so_will__e506573c: The sky kept moving.\nSo will you.\n（空は進み続けた。あなたも進む。）
     the_story_moves_on_the_end_i_d0fb4b6b: The story moves on.\nThe end is not yet.\n（叙事は頁をめくる。これは最後じゃない。）
     the_stars_were_there_watchin_27c1d5f8: The stars were there, watching.\nAgain.\n（星は見守っていた。もう一度。）
     ice_takes_its_time_neither_d_2406aa40: Ice takes its time.\nNeither do you.\n（氷は急がない。あなたも急ぐ必要はない。）
     the_sky_kept_moving_so_can_y_54a4ccde: The sky kept moving.\nSo can you.\n（空は動き続けた。あなたも動き続けられる。）
-    the_north_has_learned_to_wai_39ba43d1: The north has learned to wait.\nSo should
-      you.\n（北は『待つこと』を覚えている。そこから学べ。）
+    the_north_has_learned_to_wai_39ba43d1: The north has learned to wait.\nSo should you.\n（北は『待つこと』を覚えている。そこから学べ。）
     this_is_an_interlude_it_s_no_9b49db21: This is an interlude\n—It’s not over.\n（これは休止だ。終わりじゃない。）
-    like_drifting_clouds_don_t_l_c3c258f1: Like drifting clouds,\ndon’t lose your
-      flow—like a river.\n（雲が動き続けるように。川のように、流れを失わないで。）
-    the_sound_was_near_the_dista_cb0928e2: The sound was near.\nThe distance was real.\nBut
-      that moment can’t be saved.\n（音は近かった。距離は本物だった。でも、その瞬間は保存できない。）
+    like_drifting_clouds_don_t_l_c3c258f1: Like drifting clouds,\ndon’t lose your flow—like a river.\n（雲が動き続けるように。川のように、流れを失わないで。）
+    the_sound_was_near_the_dista_cb0928e2: The sound was near.\nThe distance was real.\nBut that moment can’t be saved.\n（音は近かった。距離は本物だった。でも、その瞬間は保存できない。）
     you_were_closing_in_only_tim_039e3c2b: You were closing in.\nOnly time wasn’t.\n（近づいていた。時間だけが近づかなかった。）
-    the_world_held_to_its_rules__12a22071: The world held to its rules.\nYou touched
-      the edge of them.\n（世界はルールを守った。あなたはその縁に触れた。）
-    you_didn_t_reach_the_treasur_1d8abec0: You didn’t reach the treasure. \nBut the
-      signal was real.\n（宝には届かなかった。でも合図は本物だった。）
-    nothing_changed_only_your_po_9e81bf75_485: Nothing changed.\nOnly your position
-      did.\n（何も変わらない。ただ、あなたの位置だけが変わった。）
+    the_world_held_to_its_rules__12a22071: The world held to its rules.\nYou touched the edge of them.\n（世界はルールを守った。あなたはその縁に触れた。）
+    you_didn_t_reach_the_treasur_1d8abec0: You didn’t reach the treasure. \nBut the signal was real.\n（宝には届かなかった。でも合図は本物だった。）
+    nothing_changed_only_your_po_9e81bf75_485: Nothing changed.\nOnly your position did.\n（何も変わらない。ただ、あなたの位置だけが変わった。）
     it_wasn_t_luck_alignment_281cfe32: It wasn’t luck.\nAlignment.\n（運じゃない。整いだ。）
-    the_moment_slipped_away_but__6e819b84: The moment slipped away,\nbut the record
-      stayed.\n（瞬間は過ぎた。記録は残る。）
-    you_crossed_fragile_ground_a_2ee4dbcd: You crossed fragile ground\nand left the
-      horizon unbroken.\n（脆い地面を渡った。視界（景色）を壊さずに。）
-    nothing_changed_only_your_po_67b63cc8: Nothing changed.\n Only your position did.\nNot
-      luck.\nAlignment.\nThe moment passed.\nThe record remains.\n
+    the_moment_slipped_away_but__6e819b84: The moment slipped away,\nbut the record stayed.\n（瞬間は過ぎた。記録は残る。）
+    you_crossed_fragile_ground_a_2ee4dbcd: You crossed fragile ground\nand left the horizon unbroken.\n（脆い地面を渡った。視界（景色）を壊さずに。）
+    nothing_changed_only_your_po_67b63cc8: Nothing changed.\n Only your position did.\nNot luck.\nAlignment.\nThe moment passed.\nThe record remains.\n
     text_6b182851: （何も変わらない。ただ、あなたの位置だけが変わった。\n運じゃない。整いだ。\n瞬間は過ぎた。記録は残る。）
     the_season_closed_the_land_r_7bdbd9a6: The season closed.\nThe land remained.\n（季節は閉じた。大地は、残っている。）
-    the_path_the_path_remains_on_c1d493d2: The path The path remains.\nOnly your steps
-      stopped.\n（道は、まだそこにある。あなたが歩みを止めただけ。）
+    the_path_the_path_remains_on_c1d493d2: The path The path remains.\nOnly your steps stopped.\n（道は、まだそこにある。あなたが歩みを止めただけ。）
     your_time_ran_out_the_sky_di_3dfe6218: Your time ran out.\nThe sky didn’t.\n（あなたの時間は終わった。空は、終わっていない。）
     it_wasn_t_rejection_only_sil_35834dbb: It wasn’t rejection.\nOnly silence.\n（拒絶ではない。ただ、沈黙だった。）
     the_world_is_still_intact_yo_13ea2af5: The world is still intact.\nYou can return—changed.\n（世界は形を保っている。変わったあなたで、戻れる。）
     the_season_ended_the_forest__8102303b: The season ended.\nThe forest remains.\n（季節は終わった。森は、残っている。）
-    the_distance_was_closing_tim_e96a008a: The distance was closing.\nTime kept its
-      rhythm.\n（距離は縮んでいた。時間は、リズムを保った。）
-    your_time_came_to_a_halt_the_2f4d397d: Your time came to a halt.\nThe sky kept
-      moving.\n（あなたの時間は止まった。空は、止まらなかった。）
+    the_distance_was_closing_tim_e96a008a: The distance was closing.\nTime kept its rhythm.\n（距離は縮んでいた。時間は、リズムを保った。）
+    your_time_came_to_a_halt_the_2f4d397d: Your time came to a halt.\nThe sky kept moving.\n（あなたの時間は止まった。空は、止まらなかった。）
     not_rejection_just_silence_e7386d1c: Not rejection\nJust silence.\n（拒絶ではない。ただの、沈黙。）
     the_path_is_still_here_you_c_7eb57bee: The path is still here.\nYou can come back—changed.\n（道は、まだここにある。違うあなたで、戻れる。）
     time_s_up_87859973: Time's up.
     perfect_equilibrium_the_scal_94a70e0d: Perfect equilibrium.\nThe scales held level.\n（等価の均衡。天秤は水平を保った。）
     run_complete_46d920e5_580: Run complete.
     run_complete_46d920e5_589: Run complete.
-    playerlanguagestore_failed_t_c4999402: '[PlayerLanguageStore] Failed to create/load
-      player_languages.yml:'
+    playerlanguagestore_failed_t_c4999402: '[PlayerLanguageStore] Failed to create/load player_languages.yml:'
     playerlanguagestore_failed_t_b6478ec8: '[PlayerLanguageStore] Failed to save player_languages.yml:'
     proverb_logged_to_mysql_prov_c13b5e4e: 'Proverb logged to MySQL: proverb_logs'
     failed_to_log_proverb_to_mys_2bb4c5c3: 'Failed to log proverb to MySQL: proverb_logs'
     loaded_proverb_logs_from_mys_b5b0f8e0: 'Loaded proverb logs from MySQL: proverb_logs'
-    failed_to_load_proverb_logs__6246be38: 'Failed to load proverb logs from MySQL:
-      proverb_logs'
-    proverblog_table_not_created_b80253f5: '[ProverbLog] Table not created: MySQL
-      connection is null.'
-    create_table_if_not_exists_p_8ef1e733: CREATE TABLE IF NOT EXISTS proverb_logs
-      (
+    failed_to_load_proverb_logs__6246be38: 'Failed to load proverb logs from MySQL: proverb_logs'
+    proverblog_table_not_created_b80253f5: '[ProverbLog] Table not created: MySQL connection is null.'
+    create_table_if_not_exists_p_8ef1e733: CREATE TABLE IF NOT EXISTS proverb_logs (
     id_int_not_null_auto_increme_829ce06d: id INT NOT NULL AUTO_INCREMENT,
     player_uuid_varchar_36_not_n_15f728d1: player_uuid VARCHAR(36) NOT NULL,
     player_name_varchar_64_not_n_aa5df445: player_name VARCHAR(64) NOT NULL,
@@ -681,33 +540,25 @@ ui:
     quote_text_text_not_null_48b0de47: quote_text TEXT NOT NULL,
     created_at_timestamp_not_nul_673192cb: created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     primary_key_id_b55d1c02: PRIMARY KEY (id),
-    index_idx_player_uuid_create_35b9309d: INDEX idx_player_uuid_created_at (player_uuid,
-      created_at)
+    index_idx_player_uuid_create_35b9309d: INDEX idx_player_uuid_created_at (player_uuid, created_at)
     engine_innodb_default_charse_8fe22c2b: ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
-    proverblog_create_table_if_n_6bb675c6: '[ProverbLog] CREATE TABLE IF NOT EXISTS
-      success: proverb_logs'
-    proverblog_create_table_if_n_23292bc9: '[ProverbLog] CREATE TABLE IF NOT EXISTS
-      failed: proverb_logs\n'
-    proverblog_proverb_not_logge_1ed045d7: '[ProverbLog] Proverb not logged: MySQL
-      connection is null.'
-    proverblog_proverb_not_logge_cdbe9b09: '[ProverbLog] Proverb not logged: UUID
-      is null.'
-    proverblog_proverb_not_logge_803d4efa: '[ProverbLog] Proverb not logged: quoteText
-      is empty.'
+    proverblog_create_table_if_n_6bb675c6: '[ProverbLog] CREATE TABLE IF NOT EXISTS success: proverb_logs'
+    proverblog_create_table_if_n_23292bc9: '[ProverbLog] CREATE TABLE IF NOT EXISTS failed: proverb_logs\n'
+    proverblog_proverb_not_logge_1ed045d7: '[ProverbLog] Proverb not logged: MySQL connection is null.'
+    proverblog_proverb_not_logge_cdbe9b09: '[ProverbLog] Proverb not logged: UUID is null.'
+    proverblog_proverb_not_logge_803d4efa: '[ProverbLog] Proverb not logged: quoteText is empty.'
     values_643f4d2f: VALUES (?, ?, ?, ?, ?, ?)
     proverb_logged_to_mysql_prov_c13b5e4e_128: 'Proverb logged to MySQL: proverb_logs'
     player_f33ae050: ', player='
     outcome_11f97672: ', outcome='
     difficulty_35c32979: ', difficulty='
     lang_35162f28: ', lang='
-    proverblog_failed_to_log_pro_a6e63ae1: '[ProverbLog] Failed to log proverb to
-      MySQL: proverb_logs'
+    proverblog_failed_to_log_pro_a6e63ae1: '[ProverbLog] Failed to log proverb to MySQL: proverb_logs'
     player_f33ae050_141: ', player='
     outcome_11f97672_142: ', outcome='
     difficulty_35c32979_143: ', difficulty='
     lang_35162f28_144: ', lang='
-    proverblog_failed_to_load_my_e0f26105: '[ProverbLog] Failed to load: MySQL connection
-      is null.'
+    proverblog_failed_to_load_my_e0f26105: '[ProverbLog] Failed to load: MySQL connection is null.'
     proverblog_failed_to_load_uu_ce8e5cbb: '[ProverbLog] Failed to load: UUID is null.'
     from_proverb_logs_753739b4: FROM proverb_logs
     where_player_uuid_43c672f9: WHERE player_uuid = ?
@@ -715,10 +566,8 @@ ui:
     limit_d52bb29c: LIMIT ?
     loaded_proverb_logs_from_mys_b5b0f8e0_202: 'Loaded proverb logs from MySQL: proverb_logs'
     count_d32f9f66: ', count='
-    proverblog_failed_to_load_pr_fdf0c136: '[ProverbLog] Failed to load proverb logs
-      from MySQL: proverb_logs'
-    proverbfav_table_not_created_3de17530: '[ProverbFav] Table not created: MySQL
-      connection is null.'
+    proverblog_failed_to_load_pr_fdf0c136: '[ProverbLog] Failed to load proverb logs from MySQL: proverb_logs'
+    proverbfav_table_not_created_3de17530: '[ProverbFav] Table not created: MySQL connection is null.'
     create_table_if_not_exists_a4abeaaa: CREATE TABLE IF NOT EXISTS
     id_int_not_null_auto_increme_829ce06d_230: id INT NOT NULL AUTO_INCREMENT,
     player_uuid_varchar_36_not_n_15f728d1_231: player_uuid VARCHAR(36) NOT NULL,
@@ -727,18 +576,13 @@ ui:
     difficulty_varchar_16_not_nu_477d1ae0_234: difficulty VARCHAR(16) NOT NULL,
     lang_varchar_16_not_null_b93fcb03_235: lang VARCHAR(16) NOT NULL,
     quote_text_text_not_null_48b0de47_236: quote_text TEXT NOT NULL,
-    created_at_timestamp_not_nul_673192cb_237: created_at TIMESTAMP NOT NULL DEFAULT
-      CURRENT_TIMESTAMP,
+    created_at_timestamp_not_nul_673192cb_237: created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     primary_key_id_b55d1c02_238: PRIMARY KEY (id),
-    unique_key_uk_player_quote_p_1a44def2: UNIQUE KEY uk_player_quote (player_uuid,
-      quote_hash),
-    index_idx_player_uuid_create_35b9309d_240: INDEX idx_player_uuid_created_at (player_uuid,
-      created_at)
+    unique_key_uk_player_quote_p_1a44def2: UNIQUE KEY uk_player_quote (player_uuid, quote_hash),
+    index_idx_player_uuid_create_35b9309d_240: INDEX idx_player_uuid_created_at (player_uuid, created_at)
     engine_innodb_default_charse_8fe22c2b_241: ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
-    proverbfav_create_table_if_n_f1ec27bc: '[ProverbFav] CREATE TABLE IF NOT EXISTS
-      success:'
-    proverbfav_create_table_if_n_c6ee2789: '[ProverbFav] CREATE TABLE IF NOT EXISTS
-      failed:'
+    proverbfav_create_table_if_n_f1ec27bc: '[ProverbFav] CREATE TABLE IF NOT EXISTS success:'
+    proverbfav_create_table_if_n_c6ee2789: '[ProverbFav] CREATE TABLE IF NOT EXISTS failed:'
     create_table_if_not_exists_a4abeaaa_267: CREATE TABLE IF NOT EXISTS
     id_int_not_null_auto_increme_829ce06d_268: id INT NOT NULL AUTO_INCREMENT,
     player_uuid_varchar_36_not_n_15f728d1_269: player_uuid VARCHAR(36) NOT NULL,
@@ -747,46 +591,33 @@ ui:
     difficulty_varchar_16_not_nu_477d1ae0_272: difficulty VARCHAR(16) NOT NULL,
     lang_varchar_16_not_null_b93fcb03_273: lang VARCHAR(16) NOT NULL,
     quote_text_text_not_null_48b0de47_274: quote_text TEXT NOT NULL,
-    created_at_timestamp_not_nul_673192cb_275: created_at TIMESTAMP NOT NULL DEFAULT
-      CURRENT_TIMESTAMP,
+    created_at_timestamp_not_nul_673192cb_275: created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     primary_key_id_b55d1c02_276: PRIMARY KEY (id),
-    unique_key_uk_player_quote_p_1a44def2_277: UNIQUE KEY uk_player_quote (player_uuid,
-      quote_hash),
-    index_idx_player_uuid_create_35b9309d_278: INDEX idx_player_uuid_created_at (player_uuid,
-      created_at)
+    unique_key_uk_player_quote_p_1a44def2_277: UNIQUE KEY uk_player_quote (player_uuid, quote_hash),
+    index_idx_player_uuid_create_35b9309d_278: INDEX idx_player_uuid_created_at (player_uuid, created_at)
     engine_innodb_default_charse_8fe22c2b_279: ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
     proverbfav_legacy_table_read_27603404: '[ProverbFav] (legacy) Table ready:'
-    proverbfav_favorite_not_save_9813114b: '[ProverbFav] Favorite not saved: MySQL
-      connection is null.'
-    proverbfav_favorite_not_save_590a769f: '[ProverbFav] Favorite not saved: UUID
-      is null.'
-    proverbfav_favorite_not_save_34c0e365: '[ProverbFav] Favorite not saved: quoteText
-      is empty.'
-    proverbfav_favorite_not_save_0f52e5ee: '[ProverbFav] Favorite not saved: quote_hash
-      is empty.'
-    player_uuid_quote_hash_outco_49f06b31: (player_uuid, quote_hash, outcome, difficulty,
-      lang, quote_text)
+    proverbfav_favorite_not_save_9813114b: '[ProverbFav] Favorite not saved: MySQL connection is null.'
+    proverbfav_favorite_not_save_590a769f: '[ProverbFav] Favorite not saved: UUID is null.'
+    proverbfav_favorite_not_save_34c0e365: '[ProverbFav] Favorite not saved: quoteText is empty.'
+    proverbfav_favorite_not_save_0f52e5ee: '[ProverbFav] Favorite not saved: quote_hash is empty.'
+    player_uuid_quote_hash_outco_49f06b31: (player_uuid, quote_hash, outcome, difficulty, lang, quote_text)
     values_643f4d2f_325: VALUES (?, ?, ?, ?, ?, ?)
     favorite_saved_to_mysql_9405b67d: 'Favorite saved to MySQL:'
     outcome_11f97672_340: ', outcome='
     difficulty_35c32979_341: ', difficulty='
     lang_35162f28_342: ', lang='
-    proverbfav_favorite_not_save_f1fbf133: '[ProverbFav] Favorite not saved (maybe
-      duplicate):'
-    proverbfav_favorite_not_remo_07ee7dcd: '[ProverbFav] Favorite not removed: MySQL
-      connection is null.'
-    proverbfav_favorite_not_remo_e2051117: '[ProverbFav] Favorite not removed: UUID
-      is null.'
-    proverbfav_favorite_not_remo_4570fbf1: '[ProverbFav] Favorite not removed: favoriteId
-      is invalid.'
+    proverbfav_favorite_not_save_f1fbf133: '[ProverbFav] Favorite not saved (maybe duplicate):'
+    proverbfav_favorite_not_remo_07ee7dcd: '[ProverbFav] Favorite not removed: MySQL connection is null.'
+    proverbfav_favorite_not_remo_e2051117: '[ProverbFav] Favorite not removed: UUID is null.'
+    proverbfav_favorite_not_remo_4570fbf1: '[ProverbFav] Favorite not removed: favoriteId is invalid.'
     where_player_uuid_and_id_aceb93bf: WHERE player_uuid = ? AND id = ?
     favorite_removed_from_mysql_b131308c: 'Favorite removed from MySQL:'
     id_c4e82714: ', id='
     rows_08076a57: ', rows='
     proverbfav_failed_to_remove__8f39087a: '[ProverbFav] Failed to remove favorite:'
     id_c4e82714_397: ', id='
-    proverbfav_failed_to_load_my_02efe0de: '[ProverbFav] Failed to load: MySQL connection
-      is null.'
+    proverbfav_failed_to_load_my_02efe0de: '[ProverbFav] Failed to load: MySQL connection is null.'
     proverbfav_failed_to_load_uu_23158d85: '[ProverbFav] Failed to load: UUID is null.'
     where_player_uuid_43c672f9_425: WHERE player_uuid = ?
     order_by_created_at_desc_fdb1452b_426: ORDER BY created_at DESC
@@ -799,21 +630,17 @@ ui:
     limit_d52bb29c_484: LIMIT ?
     loaded_favorites_from_mysql__f74875af: 'Loaded favorites from MySQL (legacy):'
     count_d32f9f66_508: ', count='
-    proverbfav_favorite_latest_f_733826ca: '[ProverbFav] Favorite latest failed: MySQL
-      connection is null.'
-    proverbfav_favorite_latest_f_0c4c2bb7: '[ProverbFav] Favorite latest failed: UUID
-      is null.'
+    proverbfav_favorite_latest_f_733826ca: '[ProverbFav] Favorite latest failed: MySQL connection is null.'
+    proverbfav_favorite_latest_f_0c4c2bb7: '[ProverbFav] Favorite latest failed: UUID is null.'
     from_proverb_logs_753739b4_544: FROM proverb_logs
     where_player_uuid_43c672f9_545: WHERE player_uuid = ?
     order_by_created_at_desc_fdb1452b_546: ORDER BY created_at DESC
     limit_1_ffee6e39: LIMIT 1
-    proverbfav_favorite_latest_f_6d3372ee: '[ProverbFav] Favorite latest failed: no
-      logs found.'
+    proverbfav_favorite_latest_f_6d3372ee: '[ProverbFav] Favorite latest failed: no logs found.'
     proverbfav_favorite_latest_f_c3cc5053: '[ProverbFav] Favorite latest failed\n'
     no_favorites_yet_or_reposito_77c37f4c: ★ No favorites yet (or repository not ready)
     favorite_saved_latest_quote_11aaaab8: ★ Favorite saved! (Latest quote)
-    not_saved_maybe_duplicate_no_19dc21fb: ★ Not saved (maybe duplicate / no logs
-      yet)
+    not_saved_maybe_duplicate_no_19dc21fb: ★ Not saved (maybe duplicate / no logs yet)
     quotefavoritebook_favorite_f_2d988ed4: '[QuoteFavoriteBook] Favorite failed:'
     no_favorites_yet_95bc6801: No favorites yet
     no_favorites_yet_c78bb556: ★ No favorites yet.
@@ -835,24 +662,18 @@ ui:
     text_1a6173d3: ダイヤ獲得！
     text_b6568a8d: 金リンゴ獲得！
     no_9c0fdee6: 🏆 No.
-    reward_rank_1_aurora_rainbow_1f54a035: '[Reward] rank==1 -> aurora/rainbow/wolf
-      유지 keepTicks='
-    reward_spawnrainbowwolfparad_b8f4d9ab: '[Reward] spawnRainbowWolfParadeGuaranteed:
-      start='
+    reward_rank_1_aurora_rainbow_1f54a035: '[Reward] rank==1 -> aurora/rainbow/wolf 유지 keepTicks='
+    reward_spawnrainbowwolfparad_b8f4d9ab: '[Reward] spawnRainbowWolfParadeGuaranteed: start='
     reward_chunk_load_warning_e6b6d0be: '[Reward] chunk load warning:'
     reward_attemptspawnwolf_atte_4673f057: '[Reward] attemptSpawnWolf attempt='
-    reward_attemptspawnwolf_spaw_72782002: '[Reward] attemptSpawnWolf: spawnEntity
-      threw:'
-    reward_attemptspawnwolf_wolf_ba598d5d: '[Reward] attemptSpawnWolf: wolf is null/invalid
-      (maybe cancelled).'
-    reward_attemptspawnwolf_spaw_5c14bc2c: '[Reward] attemptSpawnWolf: spawned OK
-      uuid='
+    reward_attemptspawnwolf_spaw_72782002: '[Reward] attemptSpawnWolf: spawnEntity threw:'
+    reward_attemptspawnwolf_wolf_ba598d5d: '[Reward] attemptSpawnWolf: wolf is null/invalid (maybe cancelled).'
+    reward_attemptspawnwolf_spaw_5c14bc2c: '[Reward] attemptSpawnWolf: spawned OK uuid='
     rainbow_wolf_b3cc6257: Rainbow Wolf
     reward_setuprainbowwolf_warn_e929e6ad: '[Reward] setupRainbowWolf warning:'
     sound_play_failed_b2df7ac2: 'Sound play failed:'
     from_scores_group_by_player__7fc800a7: FROM scores GROUP BY player_name
-    order_by_best_desc_best_time_3b8d7542: ORDER BY best DESC, best_time ASC LIMIT
-      ?
+    order_by_best_desc_best_time_3b8d7542: ORDER BY best DESC, best_time ASC LIMIT ?
     treasurerun_fetchtop_failed_370728e7: '[TreasureRun] fetchTop failed:'
     treasurerun_top_c2ff6f33: TreasureRun TOP
     r_522a9ca7: '[§\\n\r\'
@@ -891,8 +712,7 @@ ui:
     time_bigint_206903c6: time BIGINT,
     difficulty_varchar_10_8f086c99: difficulty VARCHAR(10)
     scores_8a8bd4db: ✅ scores テーブル準備完了
-    create_table_if_not_exists_p_8ef1e733_527: CREATE TABLE IF NOT EXISTS proverb_logs
-      (
+    create_table_if_not_exists_p_8ef1e733_527: CREATE TABLE IF NOT EXISTS proverb_logs (
     id_int_auto_increment_primar_6732ae69_528: id INT AUTO_INCREMENT PRIMARY KEY,
     player_uuid_varchar_36_not_n_a2b43df0: player_uuid VARCHAR(36) NOT NULL,
     player_name_varchar_50_not_n_214df4eb: player_name VARCHAR(50) NOT NULL,
@@ -901,8 +721,7 @@ ui:
     lang_varchar_10_not_null_aa855b0f: lang VARCHAR(10) NOT NULL,
     quote_text_text_not_null_bbd50dcb: quote_text TEXT NOT NULL,
     created_at_timestamp_default_5aa652aa: created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    index_idx_player_uuid_create_35b9309d_536: INDEX idx_player_uuid_created_at (player_uuid,
-      created_at)
+    index_idx_player_uuid_create_35b9309d_536: INDEX idx_player_uuid_created_at (player_uuid, created_at)
     proverb_logs_3a0fa5a6: ✅ proverb_logs テーブル準備完了
     db_73abd818: ❌ DB 初期化失敗
     getrunrank_db_null_9893a32d: '❌ getRunRank: DB接続が null です'
@@ -926,8 +745,7 @@ ui:
     text_3030fd61: プレイヤーのみ実行できます
     reload_gameend_c41d5c55: ゲーム中は reload できません（安全のため）。/gameEnd してから実行してください。
     gui_gamestart_5870f221: GUIを更新しました。もう一度 /gameStart で開いてください。
-    treasurerun_config_language__763cf02c: ✅ TreasureRun config を再読み込みしました（language
-      GUI含む）。
+    treasurerun_config_language__763cf02c: ✅ TreasureRun config を再読み込みしました（language GUI含む）。
     text_9310a1a7: ゲームは既に実行中です。
     easy_normal_hard_ef1ba55c: 難易度は やさしい / ふつう / むずかしい です。
     language_gui_aed4f8fc: Language GUI が初期化されていません。
@@ -952,8 +770,7 @@ ui:
     text_d6e25e00: '残り時間:'
     time_s_up_7441e686_1313: TIME'S UP!
     text_ec7bb539: 時間切れ！ゲーム終了！
-    gamestart_easy_normal_hard_230bd0bd: 次は別のルート・攻略手順でやってみてね！やり直すなら /gamestart <easy|normal|hard>
-      を使ってみてね！
+    gamestart_easy_normal_hard_230bd0bd: 次は別のルート・攻略手順でやってみてね！やり直すなら /gamestart <easy|normal|hard> を使ってみてね！
     overcoming_adversity_207c1a6c: OVERCOMING ADVERSITY
     try_a_different_route_next_t_ad958430: Try a different route next time - or use
     to_retry_6bbabcd7: '> to retry.'
@@ -1002,14 +819,10 @@ ui:
     text_030b276a: 'スコア:'
     text_86b353e6: に生成しました。
     treasurerun_35fbad6f: 'TreasureRun: 宝箱を'
-    player_name_score_difficulty_9a6cf62e: player_name, score, difficulty, registered_dt,
-      registered_at, game_time, uuid, kill_count
+    player_name_score_difficulty_9a6cf62e: player_name, score, difficulty, registered_dt, registered_at, game_time, uuid, kill_count
     values_fc739c89: ) VALUES (
-    playername_score_difficulty__7bdc062a: '#{playerName}, #{score}, #{difficulty},
-      #{registered_dt}, #{registeredAt}, #{gameTime}, #{uuid, jdbcType=VARCHAR}, #{killCount}'
-    insert_into_player_score_pla_d17f95dc: 'insert into player_score(player_name,
-      score, difficulty, registered_dt) values (#{playerName}, #{score}, #{difficulty},
-      now())'
+    playername_score_difficulty__7bdc062a: '#{playerName}, #{score}, #{difficulty}, #{registered_dt}, #{registeredAt}, #{gameTime}, #{uuid, jdbcType=VARCHAR}, #{killCount}'
+    insert_into_player_score_pla_d17f95dc: 'insert into player_score(player_name, score, difficulty, registered_dt) values (#{playerName}, #{score}, #{difficulty}, now())'
     player_name_playername_1d9b3d19: 'player_name = #{playerName},'
     score_score_251855b5: 'score = #{score},'
     difficulty_difficulty_a49be749: 'difficulty = #{difficulty},'
@@ -1028,8 +841,7 @@ ui:
     gametime_3d643689: ', gameTime='
     uuid_61c3caec: ', uuid='
     killcount_4221ccb8: ', killCount='
-    id_12_outcome_success_quote__53d7164c: 'id: 12\noutcome: SUCCESS\nquote: ...\ntime:
-      2026-01-23 12:34'
+    id_12_outcome_success_quote__53d7164c: 'id: 12\noutcome: SUCCESS\nquote: ...\ntime: 2026-01-23 12:34'
     mysql_repository_not_ready_72df0af1: MySQL / Repository not ready.
     re_read_64505ff5: ◆ Re-read ◆
     no_quotes_yet_42d26ed9: ★ No quotes yet.
@@ -1219,7 +1031,6 @@ ui:
   favorites:
     title: ★ お気に入り
     headerLatest: '最新 20件  |  言語: {lang}'
-
 quotes:
   outcome:
     success: null
@@ -1253,16 +1064,14 @@ quotes:
   - The glass didn’t break.\nNeither did you.\n（ガラスは割れなかった。あなたも折れなかった。）
   - Beneath a quiet sky,\nyour will held firm.\n（静かな空の下で、意志は持ちこたえた。）
   - Very little shines forever\n—but this moment was different.\n（永遠に輝くものなんてほとんどないけれど、この瞬間は別格だった。）
-  - You made it across the fragile ground,\nholding fast to the horizon the whole
-    way.\n（脆い地面を渡り切った。地平線景色をしっかりと握りしめたまま。）
+  - You made it across the fragile ground,\nholding fast to the horizon the whole way.\n（脆い地面を渡り切った。地平線景色をしっかりと握りしめたまま。）
   - The moment passed.\n What remained was the record—the achievement.\n（瞬間は過ぎ去った。遺されたもの記録・功績は残る。）
   - Luck fades quickly.\nOrder endures.\n（運は速やかに消え、整い秩序は永続する。）
   - The sky knows no rest in its endless cycle.\nNeither do you.\n（空はその終わりなき循環に休止を知らぬ。汝もまた、止まらず。）
   - The center was reached.\nThe world stood still.\n（中心は到達された。世界は立ち尽くし静止した。）
   - At last,you’ve made it here.\nThe truth stands—unbowed.\n（ついに、ここへ辿り着いた。真実は屈することなく、そこに在る。）
   - Complete. This path was yours\n—and yours alone.\n（完遂。この道を選んだのは他でもないあなただ。）
-  - Time drifted into silence,\nand found its place in the deepest corners of the
-    mind.\n（時は静寂へと漂い、精神の奥底の隅に自らの居場所を見つけた。）
+  - Time drifted into silence,\nand found its place in the deepest corners of the mind.\n（時は静寂へと漂い、精神の奥底の隅に自らの居場所を見つけた。）
   - As the sky shifted,\none story found its final resolution.\n（空が姿を変えるとともに、一つの物語はその最終的な解決完結を見出した。）
   - The waves fell quiet,\nand the sky hid its depths once more.\n（波は静まり、空は再びその深淵を覆い隠した。）
   - The footsteps ceased,\nand only the place remained.\n（歩みは途絶え、ただ場所だけがそこに在り続けた。）
@@ -1283,8 +1092,7 @@ quotes:
   - The sky knows no pause in endless circle,\nnor shall you find yours.\n（空はその終わりなき循環に休止を知らぬ。汝もまた、止まらず。）
   - The center has been reached.\nThe world stood still.\n（中心は到達された。世界は立ち尽くし静止した。）
   - Finally here.\nThe truth remains unyielding.\n（ついに、ここへ辿り着いた。真実は屈することなく、そこに在る。）
-  - 'You have seen it through.\nAnd mark this: it was you, and no one else, who chose
-    this path.\n（完遂。この道を選んだのは他でもないあなただ。）'
+  - 'You have seen it through.\nAnd mark this: it was you, and no one else, who chose this path.\n（完遂。この道を選んだのは他でもないあなただ。）'
   - Time drifted into silence,\nfinding its place in the recesses of the mind.\n（時は静寂へと漂い、精神の奥底の隅に自らの居場所を見つけた。）
   - As the sky transformed,\nthe tale found its final resolved.\n（空が姿を変えるとともに、一つの物語はその最終的な解決完結を見出した。）
   - The waters fell calm,\nand the sky once more veiled its abyss.\n（波は静まり、空は再びその深淵を覆い隠した。）
@@ -1401,37 +1209,36 @@ quotes:
   - The road goes on—or it ends.\nEither way, it lies on the same earth.\n（道は続き、あるいは途切れ、どちらも同じ大地の上にある。）
   command:
     quoteFavorite:
-      playersOnly: "このコマンドはプレイヤーのみ実行できます。"
+      playersOnly: このコマンドはプレイヤーのみ実行できます。
       help:
-        title: "[TreasureRun] お気に入り格言コマンド:"
-        latest: "/quoteFavorite latest          - 最新の格言をお気に入り保存"
-        list: "/quoteFavorite list            - お気に入り一覧を表示"
-        remove: "/quoteFavorite remove <id>     - お気に入りを削除"
-        reread: "/quoteFavorite reread          - ランダム再読（チャット）"
-        rereadTitle: "/quoteFavorite reread title    - ランダム再読（タイトル表示）"
-        rereadBook: "/quoteFavorite reread book     - ランダム再読（本表示）"
-        book: "/quoteFavorite book            - 図鑑を開く（全体）"
-        bookToc: "/quoteFavorite book toc        - 目次のみ開く"
-        bookSuccess: "/quoteFavorite book success    - SUCCESS章を開く"
-        bookTimeup: "/quoteFavorite book timeup     - TIME_UP章を開く"
-        bookOther: "/quoteFavorite book other      - OTHER章を開く"
-      repositoryNotReady: "MySQL / Repository の準備ができていません。"
-      latestSaved: "★ お気に入りに保存しました！"
-      latestNotSaved: "お気に入り保存できませんでした。（ログ未保存、または重複の可能性があります）"
-      listHeader: "★ お気に入り一覧（最新20件）: (count={count})"
-      listSeparator: "------------------------------"
-      removeUsage: "使い方: /quoteFavorite remove <id>"
-      removeIdNumber: "ID は数字で入力してください。"
-      removeSuccess: "★ お気に入りを削除しました: #{id}"
-      removeNotFound: "お気に入りを削除できませんでした。（見つからない可能性があります）"
-      rereadNoQuotes: "★ まだ格言がありません。"
-      bookOpenFailed: "お気に入り図鑑を開けませんでした。"
-      openBookFailed: "このサーバーでは openBook() に失敗しました。"
-      unknownSubcommand: "不明なサブコマンドです。 /quoteFavorite help を使ってください"
-      shortcutSaved: "★ お気に入りに保存しました！ (Sneak+RightClick)"
-      shortcutNotSaved: "お気に入り保存できませんでした。（ログ未保存、または重複の可能性があります）"
+        title: '[TreasureRun] お気に入り格言コマンド:'
+        latest: /quoteFavorite latest          - 最新の格言をお気に入り保存
+        list: /quoteFavorite list            - お気に入り一覧を表示
+        remove: /quoteFavorite remove <id>     - お気に入りを削除
+        reread: /quoteFavorite reread          - ランダム再読（チャット）
+        rereadTitle: /quoteFavorite reread title    - ランダム再読（タイトル表示）
+        rereadBook: /quoteFavorite reread book     - ランダム再読（本表示）
+        book: /quoteFavorite book            - 図鑑を開く（全体）
+        bookToc: /quoteFavorite book toc        - 目次のみ開く
+        bookSuccess: /quoteFavorite book success    - SUCCESS章を開く
+        bookTimeup: /quoteFavorite book timeup     - TIME_UP章を開く
+        bookOther: /quoteFavorite book other      - OTHER章を開く
+      repositoryNotReady: MySQL / Repository の準備ができていません。
+      latestSaved: ★ お気に入りに保存しました！
+      latestNotSaved: お気に入り保存できませんでした。（ログ未保存、または重複の可能性があります）
+      listHeader: '★ お気に入り一覧（最新20件）: (count={count})'
+      listSeparator: '------------------------------'
+      removeUsage: '使い方: /quoteFavorite remove <id>'
+      removeIdNumber: ID は数字で入力してください。
+      removeSuccess: '★ お気に入りを削除しました: #{id}'
+      removeNotFound: お気に入りを削除できませんでした。（見つからない可能性があります）
+      rereadNoQuotes: ★ まだ格言がありません。
+      bookOpenFailed: お気に入り図鑑を開けませんでした。
+      openBookFailed: このサーバーでは openBook() に失敗しました。
+      unknownSubcommand: 不明なサブコマンドです。 /quoteFavorite help を使ってください
+      shortcutSaved: ★ お気に入りに保存しました！ (Sneak+RightClick)
+      shortcutNotSaved: お気に入り保存できませんでした。（ログ未保存、または重複の可能性があります）
     quoteReread:
-      repositoryNotReady: "MySQL / Repository の準備ができていません。"
-      bookOpenFailed: "本を開けませんでした。"
-      openBookFailed: "このサーバーでは openBook() に失敗しました。"
-
+      repositoryNotReady: MySQL / Repository の準備ができていません。
+      bookOpenFailed: 本を開けませんでした。
+      openBookFailed: このサーバーでは openBook() に失敗しました。

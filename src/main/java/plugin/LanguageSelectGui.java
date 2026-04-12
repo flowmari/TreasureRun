@@ -49,10 +49,7 @@ public class LanguageSelectGui implements Listener {
     pendingAction.put(uuid, action);
 
     String lang = resolvePlayerLang(player);
-    String title = colorize(plugin.getI18n().tr(lang, "gui.language.title"));
-    if (title == null || title.isBlank()) {
-      title = ChatColor.DARK_AQUA + "Language / 言語";
-    }
+    String title = colorize(trByLang(lang, "gui.language.title"));
     openTitleByPlayer.put(uuid, title);
 
     Inventory inv = Bukkit.createInventory(null, 27, title);
@@ -66,27 +63,17 @@ public class LanguageSelectGui implements Listener {
     int count = Math.min(langs.size(), 27);
     for (int i = 0; i < count; i++) {
       String selectableLang = langs.get(i);
-      int slot = i;
-      slotToLang.put(slot, selectableLang);
-      inv.setItem(slot, createLanguageItem(selectableLang));
+      slotToLang.put(i, selectableLang);
+      inv.setItem(i, createLanguageItem(selectableLang));
     }
 
     if (langs.size() > 27) {
-      player.sendMessage(ChatColor.YELLOW + tr(player,
-          "command.lang.guiTooManyShown",
-          "Too many allowed languages were configured, so only the first 27 are shown in the GUI."));
+      player.sendMessage(ChatColor.YELLOW + tr(player, "command.lang.guiTooManyShown"));
     }
 
     player.openInventory(inv);
   }
 
-  /**
-   * store（config）完全依存のアイコン生成
-   * - displayName: language.displayName.<lang>
-   * - shortLabel : language.shortLabel.<lang>
-   * - iconMaterial: language.iconMaterial.<lang>
-   * - lore: language.lore.<lang>
-   */
   private ItemStack createLanguageItem(String langRaw) {
     String lang = (langRaw == null) ? "" : langRaw.trim().toLowerCase(Locale.ROOT);
 
@@ -105,7 +92,6 @@ public class LanguageSelectGui implements Listener {
     if (meta != null) {
       meta.setDisplayName(ChatColor.AQUA + "[" + label + "] " + langName
           + ChatColor.DARK_GRAY + " (" + lang + ")");
-
       meta.setLore(Collections.singletonList(ChatColor.GRAY + loreLine));
 
       if (lang.equalsIgnoreCase(store.getDefaultLang())) {
@@ -171,13 +157,9 @@ public class LanguageSelectGui implements Listener {
     PendingAction action = pendingAction.getOrDefault(uuid, PendingAction.START_GAME);
 
     if (action == PendingAction.GAME_MENU) {
-      player.sendMessage(ChatColor.YELLOW + tr(player,
-          "command.lang.guiCancelledGameMenu",
-          "Language selection was cancelled. To open it again, run /gameMenu gui."));
+      player.sendMessage(ChatColor.YELLOW + tr(player, "command.lang.guiCancelledGameMenu"));
     } else {
-      player.sendMessage(ChatColor.YELLOW + tr(player,
-          "command.lang.guiCancelledGameStart",
-          "Language selection was cancelled. To try again, run /gameStart <easy|normal|hard>."));
+      player.sendMessage(ChatColor.YELLOW + tr(player, "command.lang.guiCancelledGameStart"));
     }
 
     pendingDifficulty.remove(uuid);
@@ -199,13 +181,26 @@ public class LanguageSelectGui implements Listener {
     return defaultLang;
   }
 
-  private String tr(Player player, String key, String fallback) {
-    String lang = resolvePlayerLang(player);
+  private String tr(Player player, String key) {
+    return trByLang(resolvePlayerLang(player), key);
+  }
+
+  private String trByLang(String lang, String key) {
     String s = plugin.getI18n().tr(lang, key);
-    if (s == null || s.isBlank() || s.contains("Translation missing:")) {
-      return fallback;
-    }
-    return s;
+    if (isUsable(s)) return s;
+
+    String defaultLang = plugin.getConfig().getString("language.default", "ja");
+    s = plugin.getI18n().tr(defaultLang, key);
+    if (isUsable(s)) return s;
+
+    s = plugin.getI18n().tr("en", key);
+    if (isUsable(s)) return s;
+
+    return key;
+  }
+
+  private boolean isUsable(String s) {
+    return s != null && !s.isBlank() && !s.contains("Translation missing:");
   }
 
   private String colorize(String s) {

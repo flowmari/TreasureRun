@@ -39,16 +39,14 @@ quotes:
   - The glass didn’t break.\nNeither did you.\n（ガラスは割れなかった。あなたも折れなかった。）
   - Beneath a quiet sky,\nyour will held firm.\n（静かな空の下で、意志は持ちこたえた。）
   - Very little shines forever\n—but this moment was different.\n（永遠に輝くものなんてほとんどないけれど、この瞬間は別格だった。）
-  - You made it across the fragile ground,\nholding fast to the horizon the whole
-    way.\n（脆い地面を渡り切った。地平線景色をしっかりと握りしめたまま。）
+  - You made it across the fragile ground,\nholding fast to the horizon the whole way.\n（脆い地面を渡り切った。地平線景色をしっかりと握りしめたまま。）
   - The moment passed.\n What remained was the record—the achievement.\n（瞬間は過ぎ去った。遺されたもの記録・功績は残る。）
   - Luck fades quickly.\nOrder endures.\n（運は速やかに消え、整い秩序は永続する。）
   - The sky knows no rest in its endless cycle.\nNeither do you.\n（空はその終わりなき循環に休止を知らぬ。汝もまた、止まらず。）
   - The center was reached.\nThe world stood still.\n（中心は到達された。世界は立ち尽くし静止した。）
   - At last,you’ve made it here.\nThe truth stands—unbowed.\n（ついに、ここへ辿り着いた。真実は屈することなく、そこに在る。）
   - Complete. This path was yours\n—and yours alone.\n（完遂。この道を選んだのは他でもないあなただ。）
-  - Time drifted into silence,\nand found its place in the deepest corners of the
-    mind.\n（時は静寂へと漂い、精神の奥底の隅に自らの居場所を見つけた。）
+  - Time drifted into silence,\nand found its place in the deepest corners of the mind.\n（時は静寂へと漂い、精神の奥底の隅に自らの居場所を見つけた。）
   - As the sky shifted,\none story found its final resolution.\n（空が姿を変えるとともに、一つの物語はその最終的な解決完結を見出した。）
   - The waves fell quiet,\nand the sky hid its depths once more.\n（波は静まり、空は再びその深淵を覆い隠した。）
   - The footsteps ceased,\nand only the place remained.\n（歩みは途絶え、ただ場所だけがそこに在り続けた。）
@@ -69,8 +67,7 @@ quotes:
   - The sky knows no pause in endless circle,\nnor shall you find yours.\n（空はその終わりなき循環に休止を知らぬ。汝もまた、止まらず。）
   - The center has been reached.\nThe world stood still.\n（中心は到達された。世界は立ち尽くし静止した。）
   - Finally here.\nThe truth remains unyielding.\n（ついに、ここへ辿り着いた。真実は屈することなく、そこに在る。）
-  - 'You have seen it through.\nAnd mark this: it was you, and no one else, who chose
-    this path.\n（完遂。この道を選んだのは他でもないあなただ。）'
+  - 'You have seen it through.\nAnd mark this: it was you, and no one else, who chose this path.\n（完遂。この道を選んだのは他でもないあなただ。）'
   - Time drifted into silence,\nfinding its place in the recesses of the mind.\n（時は静寂へと漂い、精神の奥底の隅に自らの居場所を見つけた。）
   - As the sky transformed,\nthe tale found its final resolved.\n（空が姿を変えるとともに、一つの物語はその最終的な解決完結を見出した。）
   - The waters fell calm,\nand the sky once more veiled its abyss.\n（波は静まり、空は再びその深淵を覆い隠した。）
@@ -231,16 +228,13 @@ ui:
     translation_missing_77031543: '(譯文缺失:'
     translation_missing_77031543_107: '(譯文缺失:'
     click_to_select_aac1569c: 點擊以選
-    treasurerun_lang_config_yml__2dde4625: '[TreasureRun][Lang] config.yml 無 ''language:''
-      節。'
+    treasurerun_lang_config_yml__2dde4625: '[TreasureRun][Lang] config.yml 無 ''language:'' 節。'
     click_to_select_aac1569c_76: 點擊以選
     treasurerun_lang_default_60887a83: '[TreasureRun][Lang] default='
     click_to_select_aac1569c_19: 點擊以選
-    treasurerun_lang_config_yml__2dde4625_33: '[TreasureRun][Lang] config.yml 無 ''language:''
-      節。'
+    treasurerun_lang_config_yml__2dde4625_33: '[TreasureRun][Lang] config.yml 無 ''language:'' 節。'
     treasurerun_lang_material_la_bc70a401: '[TreasureRun][Lang] 無效 Material: lang='
-    treasurerun_lang_language_ic_4bc2362d: '[TreasureRun][Lang] 無 ''language.iconMaterial:''
-      節（皆為PAPER）'
+    treasurerun_lang_language_ic_4bc2362d: '[TreasureRun][Lang] 無 ''language.iconMaterial:'' 節（皆為PAPER）'
     click_to_select_aac1569c_100: 點擊以選
     treasurerun_lang_default_60887a83_111: '[TreasureRun][Lang] default='
     enemydown_mysql_jdbc_mybatis_6b5c6f68: '[EnemyDown] 已連MySQL（JDBC + MyBatis）'
@@ -269,14 +263,12 @@ ui:
     run_complete_46d920e5: Run complete.
     run_complete_46d920e5_580: Run complete.
     run_complete_46d920e5_589: Run complete.
-    playerlanguagestore_failed_t_c4999402: '[PlayerLanguageStore] Failed to create/load
-      player_languages.yml:'
+    playerlanguagestore_failed_t_c4999402: '[PlayerLanguageStore] Failed to create/load player_languages.yml:'
     playerlanguagestore_failed_t_b6478ec8: '[PlayerLanguageStore] Failed to save player_languages.yml:'
     proverb_logged_to_mysql_prov_c13b5e4e: 'Proverb logged to MySQL: proverb_logs'
     failed_to_log_proverb_to_mys_2bb4c5c3: 'Failed to log proverb to MySQL: proverb_logs'
     loaded_proverb_logs_from_mys_b5b0f8e0: 'Loaded proverb logs from MySQL: proverb_logs'
-    failed_to_load_proverb_logs__6246be38: 'Failed to load proverb logs from MySQL:
-      proverb_logs'
+    failed_to_load_proverb_logs__6246be38: 'Failed to load proverb logs from MySQL: proverb_logs'
     treasurerunmultichestplugin_4499e25c: '🌈 TreasureRunMultiChestPlugin: 起動 🌈'
     treasurerun_gamestagemanager_3d9e7f5a: '[TreasureRun] GameStageManager event registered!'
     treasurerunmultichestplugin_a507471a: ✅ TreasureRunMultiChestPlugin が正常に起動しました！
@@ -412,7 +404,7 @@ ui:
     title: ★ 珍藏
 gui:
   language:
-    title: '&3Language'
+    title: 語言 / Language
     subtitle: '&7Select your language'
     selected: '&aSelected: &f{lang}'
     saved: '&aSaved your language: &f{lang}'
@@ -434,43 +426,41 @@ favorites:
     howto: favorites.toc.howto
     manage: favorites.toc.manage
     reread: favorites.toc.reread
-
 command:
   checkTreasureEmerald:
-    playersOnly: '此令唯玩家可用。'
-    resultTrue: '手中所持之物乃 Treasure Emerald。'
-    resultFalse: '手中所持之物非 Treasure Emerald。'
+    playersOnly: 此令唯玩家可用。
+    resultTrue: 手中所持之物乃 Treasure Emerald。
+    resultFalse: 手中所持之物非 Treasure Emerald。
   gameStart:
-    playersOnly: '此令惟玩家可用。'
+    playersOnly: 此令惟玩家可用。
     worldNotFound: '[TreasureRun] 起始世界未設，或不可得。'
-    started: '尋寶將始！難度：{difficulty}｜限時：{timeLimit} 秒'
+    started: 尋寶將始！難度：{difficulty}｜限時：{timeLimit} 秒
   stageCleanup:
-    playersOnly: '此令惟玩家可用。'
+    playersOnly: 此令惟玩家可用。
     managerNotReady: '[TreasureRun] 關卡管理尚未備妥。'
     cleaned: '[TreasureRun] 已清理難度方塊 {count} 個。'
   lang:
-    guiTooManyShown: '所設可用語言過多，故介面僅示前二十七種。'
-    guiCancelledGameMenu: '語言選取已罷。欲再啟之，請用 /gameMenu gui。'
-    guiCancelledGameStart: '語言選取已罷。欲重試，請用 /gameStart <easy|normal|hard>。'
-    playersOnly: "此令唯玩家可用。"
-    resetDone: "✅ 所存語言已復初。後次將自啟介面。"
-    current: "今所用語：{lang}"
-    emptyCode: "語碼為空。例：/lang ja"
-    notAllowed: "此語不許用：{lang}"
-    allowedList: "可用之語：{allowed}"
-    changed: "✅ 語已更易：{displayName} ({lang})"
-    changedButNotSaved: "⚠ 語雖已更，然未能久存：{lang}"
+    guiTooManyShown: 所許語言過多，介面僅示前二十七項。
+    guiCancelledGameMenu: 語言之選已止。欲復開之，請行 /gameMenu gui。
+    guiCancelledGameStart: 語言之選已止。欲再試之，請行 /gameStart <easy|normal|hard>。
+    playersOnly: 此令唯玩家可用。
+    resetDone: ✅ 所存語言已復初。後次將自啟介面。
+    current: 今所用語：{lang}
+    emptyCode: 語碼為空。例：/lang ja
+    notAllowed: 此語不許用：{lang}
+    allowedList: 可用之語：{allowed}
+    changed: ✅ 語已更易：{displayName} ({lang})
+    changedButNotSaved: ⚠ 語雖已更，然未能久存：{lang}
     list:
-      title: "=== 語言 ==="
-      default: "常用：{default}"
-      allowed: "可用：{allowed}"
-      usage: "用法：/lang <code> 例：/lang ja"
-      gui: "介面：/lang 或 /lang gui"
-    guiNotReady: "語言介面尚未備妥。"
+      title: === 語言 ===
+      default: 常用：{default}
+      allowed: 可用：{allowed}
+      usage: 用法：/lang <code> 例：/lang ja
+      gui: 介面：/lang 或 /lang gui
+    guiNotReady: 語言介面尚未備妥。
   craftSpecialEmerald:
-    needDiamonds: "造特殊綠寶石，須鑽石三枚。"
-    success: "以鑽石三枚，已成特殊綠寶石。"
-
+    needDiamonds: 造特殊綠寶石，須鑽石三枚。
+    success: 以鑽石三枚，已成特殊綠寶石。
 items:
   specialEmerald:
-    displayName: "&6特殊綠寶石"
+    displayName: '&6特殊綠寶石'

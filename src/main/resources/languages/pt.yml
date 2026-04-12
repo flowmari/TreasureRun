@@ -39,16 +39,14 @@ quotes:
   - The glass didn’t break.\nNeither did you.\n（ガラスは割れなかった。あなたも折れなかった。）
   - Beneath a quiet sky,\nyour will held firm.\n（静かな空の下で、意志は持ちこたえた。）
   - Very little shines forever\n—but this moment was different.\n（永遠に輝くものなんてほとんどないけれど、この瞬間は別格だった。）
-  - You made it across the fragile ground,\nholding fast to the horizon the whole
-    way.\n（脆い地面を渡り切った。地平線景色をしっかりと握りしめたまま。）
+  - You made it across the fragile ground,\nholding fast to the horizon the whole way.\n（脆い地面を渡り切った。地平線景色をしっかりと握りしめたまま。）
   - The moment passed.\n What remained was the record—the achievement.\n（瞬間は過ぎ去った。遺されたもの記録・功績は残る。）
   - Luck fades quickly.\nOrder endures.\n（運は速やかに消え、整い秩序は永続する。）
   - The sky knows no rest in its endless cycle.\nNeither do you.\n（空はその終わりなき循環に休止を知らぬ。汝もまた、止まらず。）
   - The center was reached.\nThe world stood still.\n（中心は到達された。世界は立ち尽くし静止した。）
   - At last,you’ve made it here.\nThe truth stands—unbowed.\n（ついに、ここへ辿り着いた。真実は屈することなく、そこに在る。）
   - Complete. This path was yours\n—and yours alone.\n（完遂。この道を選んだのは他でもないあなただ。）
-  - Time drifted into silence,\nand found its place in the deepest corners of the
-    mind.\n（時は静寂へと漂い、精神の奥底の隅に自らの居場所を見つけた。）
+  - Time drifted into silence,\nand found its place in the deepest corners of the mind.\n（時は静寂へと漂い、精神の奥底の隅に自らの居場所を見つけた。）
   - As the sky shifted,\none story found its final resolution.\n（空が姿を変えるとともに、一つの物語はその最終的な解決完結を見出した。）
   - The waves fell quiet,\nand the sky hid its depths once more.\n（波は静まり、空は再びその深淵を覆い隠した。）
   - The footsteps ceased,\nand only the place remained.\n（歩みは途絶え、ただ場所だけがそこに在り続けた。）
@@ -69,8 +67,7 @@ quotes:
   - The sky knows no pause in endless circle,\nnor shall you find yours.\n（空はその終わりなき循環に休止を知らぬ。汝もまた、止まらず。）
   - The center has been reached.\nThe world stood still.\n（中心は到達された。世界は立ち尽くし静止した。）
   - Finally here.\nThe truth remains unyielding.\n（ついに、ここへ辿り着いた。真実は屈することなく、そこに在る。）
-  - 'You have seen it through.\nAnd mark this: it was you, and no one else, who chose
-    this path.\n（完遂。この道を選んだのは他でもないあなただ。）'
+  - 'You have seen it through.\nAnd mark this: it was you, and no one else, who chose this path.\n（完遂。この道を選んだのは他でもないあなただ。）'
   - Time drifted into silence,\nfinding its place in the recesses of the mind.\n（時は静寂へと漂い、精神の奥底の隅に自らの居場所を見つけた。）
   - As the sky transformed,\nthe tale found its final resolved.\n（空が姿を変えるとともに、一つの物語はその最終的な解決完結を見出した。）
   - The waters fell calm,\nand the sky once more veiled its abyss.\n（波は静まり、空は再びその深淵を覆い隠した。）
@@ -213,10 +210,8 @@ ui:
       success: = Concluído / Sucesso
       timeUp: = Tempo esgotado
       favorites: = ★ Citações salvas
-    noLogs: Ainda não há registros de citações. São salvos automaticamente em SUCCESS
-      / TIME_UP.
-    noQuotesInTab: 'Não há citações para mostrar nesta aba. (Talvez ainda não tenha
-      sido salvo.)
+    noLogs: Ainda não há registros de citações. São salvos automaticamente em SUCCESS / TIME_UP.
+    noQuotesInTab: 'Não há citações para mostrar nesta aba. (Talvez ainda não tenha sido salvo.)
 
       Tente outra aba.'
     noFavoritos: 'Ainda não há favoritos.
@@ -233,34 +228,25 @@ ui:
     translation_missing_77031543: '(Tradução ausente:'
     translation_missing_77031543_107: '(Tradução ausente:'
     click_to_select_aac1569c: Clique para selecionar
-    treasurerun_lang_config_yml__2dde4625: '[TreasureRun][Lang] Seção ''language:''
-      não encontrada no config.yml.'
+    treasurerun_lang_config_yml__2dde4625: '[TreasureRun][Lang] Seção ''language:'' não encontrada no config.yml.'
     click_to_select_aac1569c_76: Clique para selecionar
     treasurerun_lang_default_60887a83: '[TreasureRun][Lang] default='
     click_to_select_aac1569c_19: Clique para selecionar
-    treasurerun_lang_config_yml__2dde4625_33: '[TreasureRun][Lang] Seção ''language:''
-      não encontrada no config.yml.'
-    treasurerun_lang_material_la_bc70a401: '[TreasureRun][Lang] Material inválido:
-      lang='
-    treasurerun_lang_language_ic_4bc2362d: '[TreasureRun][Lang] Seção ''language.iconMaterial:''
-      não encontrada（tudo será PAPER）'
+    treasurerun_lang_config_yml__2dde4625_33: '[TreasureRun][Lang] Seção ''language:'' não encontrada no config.yml.'
+    treasurerun_lang_material_la_bc70a401: '[TreasureRun][Lang] Material inválido: lang='
+    treasurerun_lang_language_ic_4bc2362d: '[TreasureRun][Lang] Seção ''language.iconMaterial:'' não encontrada（tudo será PAPER）'
     click_to_select_aac1569c_100: Clique para selecionar
     treasurerun_lang_default_60887a83_111: '[TreasureRun][Lang] default='
-    enemydown_mysql_jdbc_mybatis_6b5c6f68: '[EnemyDown] Conectado ao MySQL（JDBC +
-      MyBatis）'
+    enemydown_mysql_jdbc_mybatis_6b5c6f68: '[EnemyDown] Conectado ao MySQL（JDBC + MyBatis）'
     enemydown_mysql_6cf3e29b: '[EnemyDown] Falha na conexão MySQL:'
     enemydown_mysql_a18990c3: '[EnemyDown] Conexão MySQL encerrada.'
     enemydown_mysql_e097a73e: '[EnemyDown] Falha ao desconectar MySQL:'
-    mysqlmanager_player_score_d92afff4: '[MySQLManager] Tabela player_score verificada/criada
-      ✅'
-    mysqlmanager_player_score_21665c62: '[MySQLManager] Falha ao criar tabela player_score
-      ❌:'
-    mysqlmanager_mysql_951100b9: '[MySQLManager] Teste de conexão MySQL bem-sucedido
-      ✅'
+    mysqlmanager_player_score_d92afff4: '[MySQLManager] Tabela player_score verificada/criada ✅'
+    mysqlmanager_player_score_21665c62: '[MySQLManager] Falha ao criar tabela player_score ❌:'
+    mysqlmanager_mysql_951100b9: '[MySQLManager] Teste de conexão MySQL bem-sucedido ✅'
     mysqlmanager_player_score_a4968d00: '[MySQLManager] Linhas na tabela player_score:'
     mysqlmanager_mysql_1763d390: '[MySQLManager] MySQL não conectado ❌'
-    mysqlmanager_player_score_2b5c8721: '[MySQLManager] Tabela player_score pode não
-      existir ❌'
+    mysqlmanager_player_score_2b5c8721: '[MySQLManager] Tabela player_score pode não existir ❌'
     enemydown_mysql_bc514e56: '[EnemyDown] MySQL está conectado.'
     enemydown_mysql_93b23ef9: '[EnemyDown] MySQL não está conectado.'
     light_fell_evenly_and_every__e50aee87: 'Light fell evenly, ,
@@ -277,14 +263,12 @@ ui:
     run_complete_46d920e5: Run complete.
     run_complete_46d920e5_580: Run complete.
     run_complete_46d920e5_589: Run complete.
-    playerlanguagestore_failed_t_c4999402: '[PlayerLanguageStore] Failed to create/load
-      player_languages.yml:'
+    playerlanguagestore_failed_t_c4999402: '[PlayerLanguageStore] Failed to create/load player_languages.yml:'
     playerlanguagestore_failed_t_b6478ec8: '[PlayerLanguageStore] Failed to save player_languages.yml:'
     proverb_logged_to_mysql_prov_c13b5e4e: 'Proverb logged to MySQL: proverb_logs'
     failed_to_log_proverb_to_mys_2bb4c5c3: 'Failed to log proverb to MySQL: proverb_logs'
     loaded_proverb_logs_from_mys_b5b0f8e0: 'Loaded proverb logs from MySQL: proverb_logs'
-    failed_to_load_proverb_logs__6246be38: 'Failed to load proverb logs from MySQL:
-      proverb_logs'
+    failed_to_load_proverb_logs__6246be38: 'Failed to load proverb logs from MySQL: proverb_logs'
     treasurerunmultichestplugin_4499e25c: '🌈 TreasureRunMultiChestPlugin: 起動 🌈'
     treasurerun_gamestagemanager_3d9e7f5a: '[TreasureRun] GameStageManager event registered!'
     treasurerunmultichestplugin_a507471a: ✅ TreasureRunMultiChestPlugin が正常に起動しました！
@@ -294,8 +278,7 @@ ui:
     text_1a6173d3: Diamante obtido!
     text_b6568a8d: Maçã Dourada obtida!
     no_9c0fdee6: 🏆 No.
-    gamestart_easy_normal_hard_230bd0bd: Tente uma rota diferente da próxima vez!
-      Para tentar novamente use /gamestart <easy|normal|hard>!
+    gamestart_easy_normal_hard_230bd0bd: Tente uma rota diferente da próxima vez! Para tentar novamente use /gamestart <easy|normal|hard>!
     text_9310a1a7: O jogo já está em andamento.
     text_9310a1a7_908: O jogo já está em andamento.
     text_9310a1a7_1601: O jogo já está em andamento.
@@ -314,13 +297,11 @@ ui:
     language_gui_aed4f8fc: GUI de idioma não inicializada.
     language_gui_aed4f8fc_931: GUI de idioma não inicializada.
     config_yml_3c6e9d15: ✅ config.yml carregado
-    treasurerun_config_language__763cf02c: ✅ Config do TreasureRun recarregado（incluindo
-      GUI de idioma）.
+    treasurerun_config_language__763cf02c: ✅ Config do TreasureRun recarregado（incluindo GUI de idioma）.
     gui_gamestart_5870f221: GUI atualizada. Abra novamente com /gameStart.
     text_3ecbc53d: Execute como jogador
     text_3030fd61: Somente jogadores podem executar
-    reload_gameend_c41d5c55: Não é possível recarregar durante o jogo. Execute /gameEnd
-      primeiro.
+    reload_gameend_c41d5c55: Não é possível recarregar durante o jogo. Execute /gameEnd primeiro.
   menu:
     toc:
       message: '&6===== 🌟 TreasureRun Conteúdo 🌟 =====
@@ -375,8 +356,7 @@ ui:
     book:
       openFailed: '&cFalha ao abrir o livro de regras.'
       hotbarGiven: '&6📖 O livro de regras foi adicionado à sua barra de ação.'
-      hotbarHint: '&eSegure-o e clique com o botão direito a qualquer momento para
-        reler.'
+      hotbarHint: '&eSegure-o e clique com o botão direito a qualquer momento para reler.'
       latestHint: '&7(Clique com o botão direito neste livro para salvar &e{latestLabel}&7.)'
     legacy:
       toc:
@@ -414,8 +394,7 @@ ui:
         difficulty: 'Dificuldade: {difficulty}'
         tipsItem: 2) Dicas
       note:
-        bookFormat: 'Observação: nos livros do Minecraft não dá para trocar de aba
-          clicando, então o conteúdo foi organizado em seções.'
+        bookFormat: 'Observação: nos livros do Minecraft não dá para trocar de aba clicando, então o conteúdo foi organizado em seções.'
       hint:
         reopenMenu: 'Dica: execute /gameMenu para abrir isto novamente.'
   error:
@@ -425,7 +404,7 @@ ui:
     title: ★ Favoritos
 gui:
   language:
-    title: '&3Language'
+    title: Idioma / Language
     subtitle: '&7Select your language'
     selected: '&aSelected: &f{lang}'
     saved: '&aSaved your language: &f{lang}'
@@ -447,43 +426,41 @@ favorites:
     howto: favorites.toc.howto
     manage: favorites.toc.manage
     reread: favorites.toc.reread
-
 command:
   checkTreasureEmerald:
-    playersOnly: 'Somente jogadores podem usar este comando.'
-    resultTrue: 'O item que você está segurando é um Treasure Emerald.'
-    resultFalse: 'O item que você está segurando não é um Treasure Emerald.'
+    playersOnly: Somente jogadores podem usar este comando.
+    resultTrue: O item que você está segurando é um Treasure Emerald.
+    resultFalse: O item que você está segurando não é um Treasure Emerald.
   gameStart:
-    playersOnly: 'Este comando só pode ser usado por jogadores.'
+    playersOnly: Este comando só pode ser usado por jogadores.
     worldNotFound: '[TreasureRun] O mundo inicial não está configurado ou não pôde ser encontrado.'
     started: 'A caça ao tesouro vai começar! Dificuldade: {difficulty} | Limite de tempo: {timeLimit} segundos'
   stageCleanup:
-    playersOnly: 'Este comando só pode ser usado por jogadores.'
+    playersOnly: Este comando só pode ser usado por jogadores.
     managerNotReady: '[TreasureRun] O gerenciador de fase ainda não foi inicializado.'
     cleaned: '[TreasureRun] {count} blocos de dificuldade foram removidos.'
   lang:
-    guiTooManyShown: 'Foram configurados idiomas permitidos demais, então a interface exibirá apenas os 27 primeiros.'
-    guiCancelledGameMenu: 'A seleção de idioma foi cancelada. Para abrir novamente, use /gameMenu gui.'
-    guiCancelledGameStart: 'A seleção de idioma foi cancelada. Tente novamente com /gameStart <easy|normal|hard>.'
-    playersOnly: "Este comando só pode ser usado por jogadores."
-    resetDone: "✅ O seu idioma salvo foi redefinido. Na próxima vez, a interface será aberta."
-    current: "Idioma atual: {lang}"
-    emptyCode: "O código do idioma está vazio. Exemplo: /lang ja"
-    notAllowed: "Esse idioma não é permitido: {lang}"
-    allowedList: "Idiomas permitidos: {allowed}"
-    changed: "✅ Idioma alterado: {displayName} ({lang})"
-    changedButNotSaved: "⚠ O idioma foi alterado, mas não foi possível salvá-lo permanentemente: {lang}"
+    guiTooManyShown: Foram configurados idiomas permitidos demais, então a GUI mostra apenas os primeiros 27.
+    guiCancelledGameMenu: A seleção de idioma foi cancelada. Para abrir novamente, execute /gameMenu gui.
+    guiCancelledGameStart: A seleção de idioma foi cancelada. Para tentar de novo, execute /gameStart <easy|normal|hard>.
+    playersOnly: Este comando só pode ser usado por jogadores.
+    resetDone: ✅ O seu idioma salvo foi redefinido. Na próxima vez, a interface será aberta.
+    current: 'Idioma atual: {lang}'
+    emptyCode: 'O código do idioma está vazio. Exemplo: /lang ja'
+    notAllowed: 'Esse idioma não é permitido: {lang}'
+    allowedList: 'Idiomas permitidos: {allowed}'
+    changed: '✅ Idioma alterado: {displayName} ({lang})'
+    changedButNotSaved: '⚠ O idioma foi alterado, mas não foi possível salvá-lo permanentemente: {lang}'
     list:
-      title: "=== Idiomas ==="
-      default: "padrão: {default}"
-      allowed: "permitidos: {allowed}"
-      usage: "Uso: /lang <code> Exemplo: /lang ja"
-      gui: "GUI: /lang ou /lang gui"
-    guiNotReady: "A interface de idioma não foi inicializada."
+      title: === Idiomas ===
+      default: 'padrão: {default}'
+      allowed: 'permitidos: {allowed}'
+      usage: 'Uso: /lang <code> Exemplo: /lang ja'
+      gui: 'GUI: /lang ou /lang gui'
+    guiNotReady: A interface de idioma não foi inicializada.
   craftSpecialEmerald:
-    needDiamonds: "Você precisa de 3 diamantes para fabricar uma Esmeralda Especial."
-    success: "Você fabricou uma Esmeralda Especial usando 3 diamantes!"
-
+    needDiamonds: Você precisa de 3 diamantes para fabricar uma Esmeralda Especial.
+    success: Você fabricou uma Esmeralda Especial usando 3 diamantes!
 items:
   specialEmerald:
-    displayName: "&6Esmeralda Especial"
+    displayName: '&6Esmeralda Especial'
