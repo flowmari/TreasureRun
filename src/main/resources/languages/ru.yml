@@ -25,7 +25,7 @@ command:
     managerNotReady: '[TreasureRun] Менеджер этапа ещё не инициализирован.'
     cleaned: '[TreasureRun] Удалено блоков сложности: {count}.'
   noPermission: '&cУ вас нет прав.'
-  onlyPlayer: '&cThis command can only be used by a player.'
+  onlyPlayer: '&cЭту команду может использовать только игрок.'
   reload:
     start: '&7Перезагрузка...'
     success: '&aПерезагрузка завершена.'
@@ -50,8 +50,8 @@ command:
       gui: 'GUI: /lang или /lang gui'
     guiNotReady: Интерфейс выбора языка не инициализирован.
   craftSpecialEmerald:
-    needDiamonds: '&cYou need 3 diamonds to craft a Special Emerald.'
-    success: '&bYou crafted a Special Emerald using 3 diamonds!'
+    needDiamonds: '&cЧтобы создать Особый изумруд, нужны 3 алмаза.'
+    success: '&bВы создали Особый изумруд, используя 3 алмаза!'
 gui:
   language:
     title: Язык / Language
@@ -304,7 +304,7 @@ items:
   text_e42912c7: '&7特製鉄ブロック'
   text_c89dea57: 特製鉄ブロックのレシピを登録しました。
   specialEmerald:
-    displayName: '&6Special Emerald'
+    displayName: '&6Особый изумруд'
 ui:
   labels:
     tabs: '&6Вкладки:&r'

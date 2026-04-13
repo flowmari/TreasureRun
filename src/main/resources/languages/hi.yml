@@ -459,9 +459,9 @@ command:
       gui: 'GUI: /lang या /lang gui'
     guiNotReady: भाषा GUI प्रारंभ नहीं हुई है।
   craftSpecialEmerald:
-    needDiamonds: '&cYou need 3 diamonds to craft a Special Emerald.'
-    success: '&bYou crafted a Special Emerald using 3 diamonds!'
-  onlyPlayer: '&cThis command can only be used by a player.'
+    needDiamonds: '&cस्पेशल एमराल्ड बनाने के लिए 3 हीरे चाहिए।'
+    success: '&bआपने 3 हीरों से एक स्पेशल एमराल्ड बना लिया!'
+  onlyPlayer: '&cयह कमांड केवल खिलाड़ी ही चला सकता है।'
 items:
   specialEmerald:
-    displayName: '&6Special Emerald'
+    displayName: '&6स्पेशल एमराल्ड'

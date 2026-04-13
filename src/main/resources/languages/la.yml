@@ -25,7 +25,7 @@ command:
     managerNotReady: '[TreasureRun] Moderator scaenae nondum paratus est.'
     cleaned: '[TreasureRun] {count} lateres difficultatis amoti sunt.'
   noPermission: '&cPotestas deest.'
-  onlyPlayer: '&cThis command can only be used by a player.'
+  onlyPlayer: '&cHoc mandatum a solo lusore adhiberi potest.'
   reload:
     start: '&7Iterum onerans...'
     success: '&aPerfecte onustum.'
@@ -50,8 +50,8 @@ command:
       gui: 'GUI: /lang vel /lang gui'
     guiNotReady: GUI linguae nondum initiata est.
   craftSpecialEmerald:
-    needDiamonds: '&cYou need 3 diamonds to craft a Special Emerald.'
-    success: '&bYou crafted a Special Emerald using 3 diamonds!'
+    needDiamonds: '&cTres adamantes tibi necessarii sunt ut Smaragdum Specialem conficias.'
+    success: '&bSmaragdum Specialem tribus adamantibus confecisti!'
 gui:
   language:
     title: Lingua / Language
@@ -304,7 +304,7 @@ items:
   text_e42912c7: '&7特製鉄ブロック'
   text_c89dea57: 特製鉄ブロックのレシピを登録しました。
   specialEmerald:
-    displayName: '&6Special Emerald'
+    displayName: '&6Smaragdus Specialis'
 ui:
   labels:
     tabs: '&6Tabellae:&r'
