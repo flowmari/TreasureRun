@@ -465,3 +465,5 @@ command:
 items:
   specialEmerald:
     displayName: '&6特製綠寶石'
+    loreCrafted: '&7於 TreasureRun 所製'
+    loreSpecial: '&7異常之綠寶石'

@@ -305,6 +305,8 @@ items:
   text_c89dea57: 特製鉄ブロックのレシピを登録しました。
   specialEmerald:
     displayName: '&6Esmeralda Especial'
+    loreCrafted: '&7Fabricada en TreasureRun'
+    loreSpecial: '&7Una esmeralda especial'
 ui:
   labels:
     tabs: '&6Pestañas:&r'

@@ -305,6 +305,8 @@ items:
   text_c89dea57: 特製鉄ブロックのレシピを登録しました。
   specialEmerald:
     displayName: '&6Erikoissmaragdi'
+    loreCrafted: '&7Valmistettu TreasureRunissa'
+    loreSpecial: '&7Erityinen smaragdi'
 ui:
   labels:
     tabs: '&6Välilehdet:&r'

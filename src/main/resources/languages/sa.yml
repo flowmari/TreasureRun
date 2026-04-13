@@ -305,6 +305,8 @@ items:
   text_c89dea57: 特製鉄ブロックのレシピを登録しました。
   specialEmerald:
     displayName: '&6विशेषमरकतम्'
+    loreCrafted: '&7TreasureRun मध्ये निर्मितम्'
+    loreSpecial: '&7विशेषं मरकतम्'
 ui:
   labels:
     tabs: '&6पटलानि:&r'

@@ -8,37 +8,45 @@ import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataType;
-import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class TreasureItemFactory {
 
-  private final JavaPlugin plugin;
+  private final TreasureRunMultiChestPlugin plugin;
   private final NamespacedKey treasureEmeraldKey;
+  private final I18nHelper i18n;
 
-  public TreasureItemFactory(JavaPlugin plugin) {
+  public TreasureItemFactory(TreasureRunMultiChestPlugin plugin) {
     this.plugin = plugin;
     this.treasureEmeraldKey = new NamespacedKey(plugin, "treasure_emerald");
+    this.i18n = new I18nHelper(plugin);
   }
 
   public ItemStack createTreasureEmerald(int amount) {
     ItemStack item = new ItemStack(Material.EMERALD, amount);
     ItemMeta meta = item.getItemMeta();
     if (meta != null) {
-      meta.setDisplayName(ChatColor.GOLD + "特製エメラルド");
+      meta.setDisplayName(ChatColor.translateAlternateColorCodes('&', i18n.trDefault(
+          "items.specialEmerald.displayName",
+          "&6Special Emerald"
+      )));
 
       List<String> lore = new ArrayList<>();
-      lore.add(ChatColor.GRAY + "TreasureRunでクラフトした");
-      lore.add(ChatColor.GRAY + "特別なエメラルド");
+      lore.add(ChatColor.translateAlternateColorCodes('&', i18n.trDefault(
+          "items.specialEmerald.loreCrafted",
+          "&7Crafted in TreasureRun"
+      )));
+      lore.add(ChatColor.translateAlternateColorCodes('&', i18n.trDefault(
+          "items.specialEmerald.loreSpecial",
+          "&7A special emerald"
+      )));
       meta.setLore(lore);
 
-      // 見た目演出（任意）
       meta.addEnchant(Enchantment.LUCK, 1, true);
       meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
 
-      // ★確実判別タグ（PDC）
       meta.getPersistentDataContainer().set(treasureEmeraldKey, PersistentDataType.BYTE, (byte) 1);
 
       item.setItemMeta(meta);
@@ -47,11 +55,12 @@ public class TreasureItemFactory {
   }
 
   public boolean isTreasureEmerald(ItemStack item) {
-    if (item == null || item.getType() != Material.EMERALD) return false;
+    if (item == null || item.getType() != Material.EMERALD || !item.hasItemMeta()) return false;
+
     ItemMeta meta = item.getItemMeta();
     if (meta == null) return false;
 
-    Byte flag = meta.getPersistentDataContainer().get(treasureEmeraldKey, PersistentDataType.BYTE);
-    return flag != null && flag.byteValue() == 1;
+    Byte value = meta.getPersistentDataContainer().get(treasureEmeraldKey, PersistentDataType.BYTE);
+    return value != null && value == (byte) 1;
   }
 }

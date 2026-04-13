@@ -305,6 +305,8 @@ items:
   text_c89dea57: 特製鉄ブロックのレシピを登録しました。
   specialEmerald:
     displayName: '&6Smaragdus Specialis'
+    loreCrafted: '&7In TreasureRun confectus'
+    loreSpecial: '&7Smaragdus singularis'
 ui:
   labels:
     tabs: '&6Tabellae:&r'

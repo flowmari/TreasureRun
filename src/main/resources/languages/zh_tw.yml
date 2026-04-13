@@ -465,3 +465,5 @@ command:
 items:
   specialEmerald:
     displayName: '&6特製綠寶石'
+    loreCrafted: '&7在 TreasureRun 中製作'
+    loreSpecial: '&7一顆特別的綠寶石'

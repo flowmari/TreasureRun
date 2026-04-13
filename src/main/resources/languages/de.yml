@@ -305,6 +305,8 @@ items:
   text_c89dea57: 特製鉄ブロックのレシピを登録しました。
   specialEmerald:
     displayName: '&6Spezial-Smaragd'
+    loreCrafted: '&7In TreasureRun hergestellt'
+    loreSpecial: '&7Ein besonderer Smaragd'
 ui:
   labels:
     tabs: '&6Reiter:&r'

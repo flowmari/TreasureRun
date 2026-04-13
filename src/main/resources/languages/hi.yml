@@ -465,3 +465,5 @@ command:
 items:
   specialEmerald:
     displayName: '&6स्पेशल एमराल्ड'
+    loreCrafted: '&7TreasureRun में बनाई गई'
+    loreSpecial: '&7एक विशेष एमराल्ड'

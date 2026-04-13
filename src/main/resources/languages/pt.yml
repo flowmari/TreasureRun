@@ -465,3 +465,5 @@ command:
 items:
   specialEmerald:
     displayName: '&6Esmeralda Especial'
+    loreCrafted: '&7Fabricada no TreasureRun'
+    loreSpecial: '&7Uma esmeralda especial'
