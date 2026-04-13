@@ -25,7 +25,7 @@ command:
     managerNotReady: '[TreasureRun] De stagemanager is nog niet geïnitialiseerd.'
     cleaned: '[TreasureRun] {count} moeilijkheidsblokken zijn opgeruimd.'
   noPermission: '&cGeen toestemming.'
-  onlyPlayer: '&cAlleen spelers kunnen dit gebruiken.'
+  onlyPlayer: '&cThis command can only be used by a player.'
   reload:
     start: '&7Herladen...'
     success: '&aHerladen voltooid.'
@@ -50,8 +50,8 @@ command:
       gui: 'GUI: /lang of /lang gui'
     guiNotReady: De taal-GUI is niet geïnitialiseerd.
   craftSpecialEmerald:
-    needDiamonds: Je hebt 3 diamanten nodig om een Speciale Smaragd te maken.
-    success: Je hebt met 3 diamanten een Speciale Smaragd gemaakt!
+    needDiamonds: '&cYou need 3 diamonds to craft a Special Emerald.'
+    success: '&bYou crafted a Special Emerald using 3 diamonds!'
 gui:
   language:
     title: Taal / Language
@@ -304,7 +304,7 @@ items:
   text_e42912c7: '&7特製鉄ブロック'
   text_c89dea57: 特製鉄ブロックのレシピを登録しました。
   specialEmerald:
-    displayName: '&6Speciale Smaragd'
+    displayName: '&6Special Emerald'
 ui:
   labels:
     tabs: '&6Tabbladen:&r'

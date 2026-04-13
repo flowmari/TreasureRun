@@ -459,8 +459,9 @@ command:
       gui: 'GUI: /lang ou /lang gui'
     guiNotReady: A interface de idioma não foi inicializada.
   craftSpecialEmerald:
-    needDiamonds: Você precisa de 3 diamantes para fabricar uma Esmeralda Especial.
-    success: Você fabricou uma Esmeralda Especial usando 3 diamantes!
+    needDiamonds: '&cYou need 3 diamonds to craft a Special Emerald.'
+    success: '&bYou crafted a Special Emerald using 3 diamonds!'
+  onlyPlayer: '&cThis command can only be used by a player.'
 items:
   specialEmerald:
-    displayName: '&6Esmeralda Especial'
+    displayName: '&6Special Emerald'

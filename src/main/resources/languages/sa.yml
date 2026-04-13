@@ -25,7 +25,7 @@ command:
     managerNotReady: '[TreasureRun] स्तरव्यवस्थापकः अद्यापि सज्जो नास्ति।'
     cleaned: '[TreasureRun] {count} कठिनताखण्डाः अपसारिताः।'
   noPermission: '&cअनुमतिः नास्ति।'
-  onlyPlayer: '&cअयं आदेशः केवलं क्रीडकेन।'
+  onlyPlayer: '&cThis command can only be used by a player.'
   reload:
     start: '&7पुनः लोड्यते...'
     success: '&aपुनर्लोडः समाप्तः।'
@@ -50,8 +50,8 @@ command:
       gui: 'GUI: /lang अथवा /lang gui'
     guiNotReady: भाषा-GUI अद्यापि प्रारब्धा नास्ति।
   craftSpecialEmerald:
-    needDiamonds: विशेषमरकतस्य निर्माणाय त्रयः वज्राः आवश्यकाः।
-    success: त्वया त्रिभिः वज्रैः विशेषमरकतं निर्मितम्!
+    needDiamonds: '&cYou need 3 diamonds to craft a Special Emerald.'
+    success: '&bYou crafted a Special Emerald using 3 diamonds!'
 gui:
   language:
     title: भाषा / Language
@@ -304,7 +304,7 @@ items:
   text_e42912c7: '&7特製鉄ブロック'
   text_c89dea57: 特製鉄ブロックのレシピを登録しました。
   specialEmerald:
-    displayName: '&6विशेषमरकत'
+    displayName: '&6Special Emerald'
 ui:
   labels:
     tabs: '&6पटलानि:&r'

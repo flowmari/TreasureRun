@@ -49,8 +49,8 @@ command:
       gui: 'GUI: /lang or /lang gui'
     guiNotReady: Language GUI is not initialized.
   craftSpecialEmerald:
-    needDiamonds: You need 3 diamonds to craft a Special Emerald.
-    success: You crafted a Special Emerald using 3 diamonds!
+    needDiamonds: '&cYou need 3 diamonds to craft a Special Emerald.'
+    success: '&bYou crafted a Special Emerald using 3 diamonds!'
 gui:
   language:
     title: Language / 言語

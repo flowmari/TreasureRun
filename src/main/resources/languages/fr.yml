@@ -25,7 +25,7 @@ command:
     managerNotReady: '[TreasureRun] Le gestionnaire de niveau n’est pas encore initialisé.'
     cleaned: '[TreasureRun] {count} blocs de difficulté ont été retirés.'
   noPermission: '&cPermission refusée.'
-  onlyPlayer: '&cCommande réservée aux joueurs.'
+  onlyPlayer: '&cThis command can only be used by a player.'
   reload:
     start: '&7Rechargement...'
     success: '&aRechargement terminé.'
@@ -50,8 +50,8 @@ command:
       gui: 'Interface : /lang ou /lang gui'
     guiNotReady: L’interface de langue n’est pas initialisée.
   craftSpecialEmerald:
-    needDiamonds: Il vous faut 3 diamants pour fabriquer une Émeraude spéciale.
-    success: Vous avez fabriqué une Émeraude spéciale avec 3 diamants !
+    needDiamonds: '&cYou need 3 diamonds to craft a Special Emerald.'
+    success: '&bYou crafted a Special Emerald using 3 diamonds!'
 gui:
   language:
     title: Langue / Language
@@ -304,7 +304,7 @@ items:
   text_e42912c7: '&7特製鉄ブロック'
   text_c89dea57: 特製鉄ブロックのレシピを登録しました。
   specialEmerald:
-    displayName: '&6Émeraude spéciale'
+    displayName: '&6Special Emerald'
 ui:
   labels:
     tabs: '&6Onglets:&r'

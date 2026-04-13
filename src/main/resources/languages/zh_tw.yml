@@ -459,8 +459,9 @@ command:
       gui: GUI：/lang 或 /lang gui
     guiNotReady: 語言 GUI 尚未初始化。
   craftSpecialEmerald:
-    needDiamonds: 製作特殊綠寶石需要 3 顆鑽石。
-    success: 你已使用 3 顆鑽石製作出特殊綠寶石！
+    needDiamonds: '&cYou need 3 diamonds to craft a Special Emerald.'
+    success: '&bYou crafted a Special Emerald using 3 diamonds!'
+  onlyPlayer: '&cThis command can only be used by a player.'
 items:
   specialEmerald:
-    displayName: '&6特殊綠寶石'
+    displayName: '&6Special Emerald'

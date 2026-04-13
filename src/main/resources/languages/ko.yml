@@ -25,7 +25,7 @@ command:
     managerNotReady: '[TreasureRun] 스테이지 관리자가 아직 초기화되지 않았습니다.'
     cleaned: '[TreasureRun] 난이도 블록 {count}개를 정리했습니다.'
   noPermission: '&c권한이 없습니다.'
-  onlyPlayer: '&c이 명령어는 플레이어만 사용할 수 있습니다.'
+  onlyPlayer: '&cThis command can only be used by a player.'
   reload:
     start: '&7설정/메시지 다시 불러오는 중...'
     success: '&a리로드 완료.'
@@ -50,8 +50,8 @@ command:
       gui: 'GUI: /lang 또는 /lang gui'
     guiNotReady: 언어 GUI가 초기화되지 않았습니다.
   craftSpecialEmerald:
-    needDiamonds: 특별한 에메랄드를 제작하려면 다이아몬드 3개가 필요합니다.
-    success: 다이아몬드 3개로 특별한 에메랄드를 제작했습니다!
+    needDiamonds: '&cYou need 3 diamonds to craft a Special Emerald.'
+    success: '&bYou crafted a Special Emerald using 3 diamonds!'
 gui:
   language:
     title: 언어 / Language
@@ -304,7 +304,7 @@ items:
   text_e42912c7: '&7特製鉄ブロック'
   text_c89dea57: 特製鉄ブロックのレシピを登録しました。
   specialEmerald:
-    displayName: '&6특별한 에메랄드'
+    displayName: '&6Special Emerald'
 ui:
   labels:
     tabs: '&6탭:&r'

@@ -25,7 +25,7 @@ command:
     managerNotReady: '[TreasureRun] Scenhanteraren är ännu inte initierad.'
     cleaned: '[TreasureRun] Tog bort {count} svårighetsblock.'
   noPermission: '&cDu saknar behörighet.'
-  onlyPlayer: '&cDetta kommando kan bara användas av en spelare.'
+  onlyPlayer: '&cThis command can only be used by a player.'
   reload:
     start: '&7Laddar om...'
     success: '&aOmladdning klar.'
@@ -50,8 +50,8 @@ command:
       gui: 'GUI: /lang eller /lang gui'
     guiNotReady: Språk-GUI:t har inte initialiserats.
   craftSpecialEmerald:
-    needDiamonds: Du behöver 3 diamanter för att skapa en specialsmaragd.
-    success: Du skapade en specialsmaragd med 3 diamanter!
+    needDiamonds: '&cYou need 3 diamonds to craft a Special Emerald.'
+    success: '&bYou crafted a Special Emerald using 3 diamonds!'
 gui:
   language:
     title: Språk / Language
@@ -304,7 +304,7 @@ items:
   text_e42912c7: '&7特製鉄ブロック'
   text_c89dea57: 特製鉄ブロックのレシピを登録しました。
   specialEmerald:
-    displayName: '&6Specialsmaragd'
+    displayName: '&6Special Emerald'
 ui:
   labels:
     tabs: '&6Flikar:&r'

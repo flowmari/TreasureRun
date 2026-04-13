@@ -25,7 +25,7 @@ command:
     managerNotReady: '[TreasureRun] Il gestore dello stage non è ancora inizializzato.'
     cleaned: '[TreasureRun] Rimossi {count} blocchi di difficoltà.'
   noPermission: '&cPermesso negato.'
-  onlyPlayer: '&cQuesto comando è solo per i giocatori.'
+  onlyPlayer: '&cThis command can only be used by a player.'
   reload:
     start: '&7Ricaricamento...'
     success: '&aRicaricamento completato.'
@@ -50,8 +50,8 @@ command:
       gui: 'GUI: /lang oppure /lang gui'
     guiNotReady: La GUI della lingua non è stata inizializzata.
   craftSpecialEmerald:
-    needDiamonds: Ti servono 3 diamanti per creare uno Smeraldo Speciale.
-    success: Hai creato uno Smeraldo Speciale usando 3 diamanti!
+    needDiamonds: '&cYou need 3 diamonds to craft a Special Emerald.'
+    success: '&bYou crafted a Special Emerald using 3 diamonds!'
 gui:
   language:
     title: Lingua / Language
@@ -304,7 +304,7 @@ items:
   text_e42912c7: '&7特製鉄ブロック'
   text_c89dea57: 特製鉄ブロックのレシピを登録しました。
   specialEmerald:
-    displayName: '&6Smeraldo Speciale'
+    displayName: '&6Special Emerald'
 ui:
   labels:
     tabs: '&6Schede:&r'

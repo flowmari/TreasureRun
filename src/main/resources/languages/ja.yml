@@ -49,8 +49,8 @@ command:
       gui: 'GUI: /lang または /lang gui'
     guiNotReady: Language GUI が初期化されていません。
   craftSpecialEmerald:
-    needDiamonds: 特製エメラルドをクラフトするには、ダイヤモンドが3個必要です。
-    success: ダイヤモンド3個で特製エメラルドをクラフトしました！
+    needDiamonds: '&cスペシャルエメラルドの作成にはダイヤモンドが3個必要です。'
+    success: '&bダイヤモンド3個でスペシャルエメラルドを作成しました！'
 gui:
   language:
     title: 言語 / Language

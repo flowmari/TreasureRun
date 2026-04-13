@@ -25,7 +25,7 @@ command:
     managerNotReady: '[TreasureRun] Die Stufenverwaltung ist noch nicht initialisiert.'
     cleaned: '[TreasureRun] {count} Schwierigkeitsblöcke wurden entfernt.'
   noPermission: '&cKeine Berechtigung.'
-  onlyPlayer: '&cDieser Befehl ist nur für Spieler.'
+  onlyPlayer: '&cThis command can only be used by a player.'
   reload:
     start: '&7Neu laden...'
     success: '&aNeu laden abgeschlossen.'
@@ -50,8 +50,8 @@ command:
       gui: 'GUI: /lang oder /lang gui'
     guiNotReady: Die Sprach-GUI wurde nicht initialisiert.
   craftSpecialEmerald:
-    needDiamonds: Du brauchst 3 Diamanten, um einen Spezial-Smaragd herzustellen.
-    success: Du hast mit 3 Diamanten einen Spezial-Smaragd hergestellt!
+    needDiamonds: '&cYou need 3 diamonds to craft a Special Emerald.'
+    success: '&bYou crafted a Special Emerald using 3 diamonds!'
 gui:
   language:
     title: Sprache / Language
@@ -304,7 +304,7 @@ items:
   text_e42912c7: '&7特製鉄ブロック'
   text_c89dea57: 特製鉄ブロックのレシピを登録しました。
   specialEmerald:
-    displayName: '&6Spezial-Smaragd'
+    displayName: '&6Special Emerald'
 ui:
   labels:
     tabs: '&6Reiter:&r'
