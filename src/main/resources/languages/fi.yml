@@ -25,7 +25,7 @@ command:
     managerNotReady: '[TreasureRun] Kentänhallintaa ei ole vielä alustettu.'
     cleaned: '[TreasureRun] {count} vaikeuslohkoa siivottiin.'
   noPermission: '&cEi oikeuksia.'
-  onlyPlayer: '&cThis command can only be used by a player.'
+  onlyPlayer: '&cVain pelaaja voi käyttää tätä komentoa.'
   reload:
     start: '&7Ladataan uudelleen...'
     success: '&aUudelleenlataus valmis.'
@@ -50,8 +50,8 @@ command:
       gui: 'GUI: /lang tai /lang gui'
     guiNotReady: Kielikäyttöliittymää ei ole alustettu.
   craftSpecialEmerald:
-    needDiamonds: '&cYou need 3 diamonds to craft a Special Emerald.'
-    success: '&bYou crafted a Special Emerald using 3 diamonds!'
+    needDiamonds: '&cTarvitset 3 timanttia valmistaaksesi erikoissmaragdin.'
+    success: '&bValmistit erikoissmaragdin käyttämällä 3 timanttia!'
 gui:
   language:
     title: Kieli / Language
@@ -304,7 +304,7 @@ items:
   text_e42912c7: '&7特製鉄ブロック'
   text_c89dea57: 特製鉄ブロックのレシピを登録しました。
   specialEmerald:
-    displayName: '&6Special Emerald'
+    displayName: '&6Erikoissmaragdi'
 ui:
   labels:
     tabs: '&6Välilehdet:&r'
