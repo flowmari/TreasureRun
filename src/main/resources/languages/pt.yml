@@ -464,6 +464,6 @@ command:
   onlyPlayer: '&cEste comando só pode ser usado por um jogador.'
 items:
   specialEmerald:
-    displayName: '&6Esmeralda Especial'
-    loreCrafted: '&7Fabricada no TreasureRun'
-    loreSpecial: '&7Uma esmeralda especial'
+    displayName: "&6Esmeralda especial"
+    loreCrafted: "&7Criada no TreasureRun"
+    loreSpecial: "&7Uma esmeralda especial"

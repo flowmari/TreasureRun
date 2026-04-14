@@ -464,6 +464,6 @@ command:
   onlyPlayer: '&c這個指令只能由玩家使用。'
 items:
   specialEmerald:
-    displayName: '&6特製綠寶石'
-    loreCrafted: '&7在 TreasureRun 中製作'
-    loreSpecial: '&7一顆特別的綠寶石'
+    displayName: "&6特殊綠寶石"
+    loreCrafted: "&7在 TreasureRun 中製作"
+    loreSpecial: "&7特殊的綠寶石"

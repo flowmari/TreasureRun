@@ -1029,13 +1029,7 @@ public class GameStageManager implements Listener {
     java.util.List<MerchantRecipe> recipes = new java.util.ArrayList<>();
 
     // 取引①：特製エメラルド 5 → 金リンゴ 1
-    // CraftSpecialEmeraldCommand と完全一致させるため、表示名も「§6特製エメラルド」に揃える
     ItemStack specialEmerald5 = plugin.getItemFactory().createTreasureEmerald(5);
-    org.bukkit.inventory.meta.ItemMeta m = specialEmerald5.getItemMeta();
-    if (m != null) {
-      m.setDisplayName(ChatColor.translateAlternateColorCodes('&', "&6特製エメラルド"));
-      specialEmerald5.setItemMeta(m);
-    }
 
     ItemStack result1 = new ItemStack(Material.GOLDEN_APPLE, 1);
     MerchantRecipe r1 = new MerchantRecipe(result1, 64);
@@ -1159,6 +1153,7 @@ public class GameStageManager implements Listener {
 
     if (!(isSpecial && amount >= 5 && slot1Empty)) {
       shopDebug("RETURN: ingredient check failed (need TreasureEmerald>=5 and slot1 empty)");
+      event.setCancelled(true);
       return;
     }
 

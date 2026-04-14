@@ -464,6 +464,6 @@ command:
   onlyPlayer: '&c此令唯玩家可用。'
 items:
   specialEmerald:
-    displayName: '&6特製綠寶石'
-    loreCrafted: '&7於 TreasureRun 所製'
-    loreSpecial: '&7異常之綠寶石'
+    displayName: "&6特殊綠寶石"
+    loreCrafted: "&7製於 TreasureRun"
+    loreSpecial: "&7特殊之綠寶石"

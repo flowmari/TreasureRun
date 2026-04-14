@@ -1296,11 +1296,6 @@ public class UfoCaravanController {
 
     // 取引①：特製エメラルド 5 → 金リンゴ 1
     ItemStack specialEmerald5 = treasurePluginOrNull.getItemFactory().createTreasureEmerald(5);
-    ItemMeta m = specialEmerald5.getItemMeta();
-    if (m != null) {
-      m.setDisplayName(ChatColor.translateAlternateColorCodes('&', "&6特製エメラルド"));
-      specialEmerald5.setItemMeta(m);
-    }
 
     ItemStack result1 = new ItemStack(Material.GOLDEN_APPLE, 1);
     MerchantRecipe r1 = new MerchantRecipe(result1, 64);

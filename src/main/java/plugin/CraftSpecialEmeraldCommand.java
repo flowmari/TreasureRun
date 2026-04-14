@@ -39,16 +39,6 @@ public class CraftSpecialEmeraldCommand implements CommandExecutor {
 
     ItemStack specialEmerald = plugin.getItemFactory().createTreasureEmerald(1);
 
-    ItemMeta meta = specialEmerald.getItemMeta();
-    if (meta != null) {
-      meta.setDisplayName(i18n.tr(
-          player,
-          "items.specialEmerald.displayName",
-          "&6Special Emerald"
-      ));
-      specialEmerald.setItemMeta(meta);
-    }
-
     player.getInventory().addItem(specialEmerald);
     player.sendMessage(i18n.tr(
         player,
