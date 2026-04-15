@@ -426,6 +426,7 @@ favorites:
     howto: favorites.toc.howto
     manage: favorites.toc.manage
     reread: favorites.toc.reread
+    howtoShift: '&7Sneak + right-click to open the Favorites archive'
 command:
   checkTreasureEmerald:
     playersOnly: 此令唯玩家可用。
@@ -463,10 +464,37 @@ command:
     success: '&b已用鑽石三枚製成特製綠寶石！'
   onlyPlayer: '&c此令唯玩家可用。'
   quoteFavorite:
-    latestSaved: "★ 已藏最新語錄。"
-    latestNotSaved: "最新語錄未得藏之。（或未有記錄，或已在收藏中。）"
+    latestSaved: ★ Saved the latest quote to Favorites.
+    latestNotSaved: The latest quote was not saved. It may not exist yet, or it may already be in Favorites.
+    playersOnly: '&cThis command can only be used by players.'
+    repositoryNotReady: '&cFavorites are not available yet.'
+    listHeader: '&bFavorites ({count})'
+    listSeparator: '&7------------------------------'
+    removeUsage: '&cUsage: /quoteFavorite remove <id>'
+    removeIdNumber: '&cThe ID must be a number.'
+    removeSuccess: '&aRemoved favorite ID {id}.'
+    removeNotFound: '&cThat favorite could not be found.'
+    rereadNoQuotes: '&eThere are no quotes to reread yet.'
+    bookOpenFailed: '&cFailed to build the Favorites book.'
+    openBookFailed: '&cFailed to open the book.'
+    unknownSubcommand: '&cUnknown subcommand. See /quoteFavorite help.'
+    shortcutSaved: '&a★ Saved the latest quote to Favorites.'
+    shortcutNotSaved: '&cFailed to save the latest quote.'
+    help:
+      title: '&bQuote Favorite commands'
+      latest: '&7/quoteFavorite latest : save the latest quote to Favorites'
+      list: '&7/quoteFavorite list : show Favorites'
+      remove: '&7/quoteFavorite remove <id> : remove a favorite'
+      reread: '&7/quoteFavorite reread [chat|title|book] : reread a quote'
+      rereadTitle: '&7title rereads using the title display'
+      rereadBook: '&7book rereads using a written book'
+      book: '&7/quoteFavorite book [toc|success|timeup|other|full] : open the archive book'
+      bookToc: '&7toc opens only the table of contents'
+      bookSuccess: '&7success shows only successful quotes'
+      bookTimeup: '&7timeup shows only time-up quotes'
+      bookOther: '&7other shows only other quotes'
 items:
   specialEmerald:
-    displayName: "&6特殊綠寶石"
-    loreCrafted: "&7製於 TreasureRun"
-    loreSpecial: "&7特殊之綠寶石"
+    displayName: '&6特殊綠寶石'
+    loreCrafted: '&7製於 TreasureRun'
+    loreSpecial: '&7特殊之綠寶石'
