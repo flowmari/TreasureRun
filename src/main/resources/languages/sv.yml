@@ -52,6 +52,9 @@ command:
   craftSpecialEmerald:
     needDiamonds: '&cDu behöver 3 diamanter för att skapa en specialsmaragd.'
     success: '&bDu skapade en specialsmaragd med 3 diamanter!'
+  quoteFavorite:
+    latestSaved: "★ Det senaste citatet har sparats i Favoriter."
+    latestNotSaved: "Det senaste citatet sparades inte. (Det kanske ännu inte finns någon logg, eller så finns det redan i Favoriter.)"
 gui:
   language:
     title: Språk / Language

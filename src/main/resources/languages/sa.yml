@@ -52,6 +52,9 @@ command:
   craftSpecialEmerald:
     needDiamonds: '&cविशेषमरकत-निर्माणाय त्रयः हीरकाः आवश्यकाः।'
     success: '&bत्रिभिः हीरकैः विशेषमरकतम् निर्मितम्!'
+  quoteFavorite:
+    latestSaved: "★ नवीनतम-सुभाषितं प्रियेषु सुरक्षितम्।"
+    latestNotSaved: "नवीनतम-सुभाषितं सुरक्षितं न जातम्। (अद्यापि लेखः न स्यात्, अथवा तत् पूर्वमेव प्रियेषु भवेत्।)"
 gui:
   language:
     title: भाषा / Language

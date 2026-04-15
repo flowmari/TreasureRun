@@ -52,6 +52,9 @@ command:
   craftSpecialEmerald:
     needDiamonds: '&cJe hebt 3 diamanten nodig om een Speciale Smaragd te maken.'
     success: '&bJe hebt met 3 diamanten een Speciale Smaragd gemaakt!'
+  quoteFavorite:
+    latestSaved: "★ Het nieuwste citaat is opgeslagen in Favorieten."
+    latestNotSaved: "Het nieuwste citaat is niet opgeslagen. (Misschien is er nog geen log, of staat het al in Favorieten.)"
 gui:
   language:
     title: Taal / Language

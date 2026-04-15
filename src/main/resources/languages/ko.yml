@@ -52,6 +52,9 @@ command:
   craftSpecialEmerald:
     needDiamonds: '&c특제 에메랄드를 제작하려면 다이아몬드 3개가 필요합니다.'
     success: '&b다이아몬드 3개로 특제 에메랄드를 제작했습니다!'
+  quoteFavorite:
+    latestSaved: "★ 가장 최근 문장을 즐겨찾기에 저장했습니다."
+    latestNotSaved: "가장 최근 문장은 저장되지 않았습니다. (아직 기록이 없거나 이미 즐겨찾기에 있을 수 있습니다.)"
 gui:
   language:
     title: 언어 / Language

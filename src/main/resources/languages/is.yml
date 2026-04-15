@@ -52,6 +52,9 @@ command:
   craftSpecialEmerald:
     needDiamonds: '&cÞú þarft 3 demanta til að búa til sérstakan smaragð.'
     success: '&bÞú bjóst til sérstakan smaragð með 3 demöntum!'
+  quoteFavorite:
+    latestSaved: "★ Nýjasta tilvitnunin var vistuð í uppáhaldið."
+    latestNotSaved: "Nýjasta tilvitnunin var ekki vistuð. (Kannski er engin skráning enn til staðar, eða hún er þegar í uppáhaldi.)"
 gui:
   language:
     title: Tungumál / Language

@@ -462,6 +462,9 @@ command:
     needDiamonds: '&cVocê precisa de 3 diamantes para criar uma Esmeralda Especial.'
     success: '&bVocê criou uma Esmeralda Especial usando 3 diamantes!'
   onlyPlayer: '&cEste comando só pode ser usado por um jogador.'
+  quoteFavorite:
+    latestSaved: "★ A citação mais recente foi salva nos Favoritos."
+    latestNotSaved: "A citação mais recente não foi salva. (Talvez ainda não haja registro, ou ela já esteja nos Favoritos.)"
 items:
   specialEmerald:
     displayName: "&6Esmeralda especial"

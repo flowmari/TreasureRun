@@ -52,6 +52,9 @@ command:
   craftSpecialEmerald:
     needDiamonds: '&cTres adamantes tibi necessarii sunt ut Smaragdum Specialem conficias.'
     success: '&bSmaragdum Specialem tribus adamantibus confecisti!'
+  quoteFavorite:
+    latestSaved: "★ Nova sententia in gratissimis servata est."
+    latestNotSaved: "Nova sententia servata non est. (Fortasse nullum testimonium adhuc est, aut iam in gratissimis est.)"
 gui:
   language:
     title: Lingua / Language

@@ -51,6 +51,9 @@ command:
   craftSpecialEmerald:
     needDiamonds: '&cYou need 3 diamonds to craft a Special Emerald.'
     success: '&bYou crafted a Special Emerald using 3 diamonds!'
+  quoteFavorite:
+    latestSaved: "★ Saved the latest quote to Favorites."
+    latestNotSaved: "The latest quote was not saved. (There may be no log yet, or it may already be in Favorites.)"
 gui:
   language:
     title: Language / 言語

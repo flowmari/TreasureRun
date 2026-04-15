@@ -52,6 +52,9 @@ command:
   craftSpecialEmerald:
     needDiamonds: '&cЧтобы создать Особый изумруд, нужны 3 алмаза.'
     success: '&bВы создали Особый изумруд, используя 3 алмаза!'
+  quoteFavorite:
+    latestSaved: "★ Последняя цитата сохранена в избранное."
+    latestNotSaved: "Последняя цитата не была сохранена. (Возможно, записи ещё нет, или она уже находится в избранном.)"
 gui:
   language:
     title: Язык / Language

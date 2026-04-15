@@ -52,6 +52,9 @@ command:
   craftSpecialEmerald:
     needDiamonds: '&cTarvitset 3 timanttia valmistaaksesi erikoissmaragdin.'
     success: '&bValmistit erikoissmaragdin käyttämällä 3 timanttia!'
+  quoteFavorite:
+    latestSaved: "★ Uusin sitaatti tallennettiin suosikkeihin."
+    latestNotSaved: "Uusinta sitaattia ei tallennettu. (Lokitietoa ei ehkä vielä ole, tai se on jo suosikeissa.)"
 gui:
   language:
     title: Kieli / Language

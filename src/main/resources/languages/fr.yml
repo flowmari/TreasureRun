@@ -52,6 +52,9 @@ command:
   craftSpecialEmerald:
     needDiamonds: '&cIl vous faut 3 diamants pour fabriquer une Émeraude spéciale.'
     success: '&bVous avez fabriqué une Émeraude spéciale avec 3 diamants !'
+  quoteFavorite:
+    latestSaved: "★ La citation la plus récente a été ajoutée aux favoris."
+    latestNotSaved: "La citation la plus récente n’a pas été enregistrée. (Il n’y a peut-être pas encore d’historique, ou elle figure déjà dans les favoris.)"
 gui:
   language:
     title: Langue / Language

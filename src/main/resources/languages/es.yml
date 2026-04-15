@@ -52,6 +52,9 @@ command:
   craftSpecialEmerald:
     needDiamonds: '&cNecesitas 3 diamantes para fabricar una Esmeralda Especial.'
     success: '&b¡Has fabricado una Esmeralda Especial con 3 diamantes!'
+  quoteFavorite:
+    latestSaved: "★ La cita más reciente se ha guardado en Favoritos."
+    latestNotSaved: "La cita más reciente no se guardó. (Puede que aún no haya registro, o que ya esté en Favoritos.)"
 gui:
   language:
     title: Idioma / Language

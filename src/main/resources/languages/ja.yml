@@ -51,6 +51,9 @@ command:
   craftSpecialEmerald:
     needDiamonds: '&cスペシャルエメラルドの作成にはダイヤモンドが3個必要です。'
     success: '&bダイヤモンド3個でスペシャルエメラルドを作成しました！'
+  quoteFavorite:
+    latestSaved: "★ 最新の名言をお気に入りに保存しました。"
+    latestNotSaved: "最新の名言は保存されませんでした。（まだ記録がないか、すでにお気に入り登録済みの可能性があります）"
 gui:
   language:
     title: 言語 / Language

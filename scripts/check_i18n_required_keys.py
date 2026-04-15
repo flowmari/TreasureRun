@@ -10,6 +10,8 @@ REQUIRED_KEYS = [
     ("items", "specialEmerald", "displayName"),
     ("items", "specialEmerald", "loreCrafted"),
     ("items", "specialEmerald", "loreSpecial"),
+    ("command", "quoteFavorite", "latestSaved"),
+    ("command", "quoteFavorite", "latestNotSaved"),
 ]
 
 def has_nested_key(lines, path):

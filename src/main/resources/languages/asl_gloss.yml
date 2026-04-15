@@ -52,6 +52,9 @@ command:
   craftSpecialEmerald:
     needDiamonds: '&cNEED 3 DIAMOND TO CRAFT SPECIAL EMERALD.'
     success: '&bSPECIAL EMERALD CRAFT FINISH USE 3 DIAMOND!'
+  quoteFavorite:
+    latestSaved: "★ LATEST QUOTE SAVE FAVORITES."
+    latestNotSaved: "LATEST QUOTE NOT-SAVE. MAYBE NO LOG YET, OR ALREADY FAVORITES."
 gui:
   language:
     title: LANGUAGE / SIGN

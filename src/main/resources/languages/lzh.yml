@@ -462,6 +462,9 @@ command:
     needDiamonds: '&c欲製特製綠寶石，須鑽石三枚。'
     success: '&b已用鑽石三枚製成特製綠寶石！'
   onlyPlayer: '&c此令唯玩家可用。'
+  quoteFavorite:
+    latestSaved: "★ 已藏最新語錄。"
+    latestNotSaved: "最新語錄未得藏之。（或未有記錄，或已在收藏中。）"
 items:
   specialEmerald:
     displayName: "&6特殊綠寶石"

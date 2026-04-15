@@ -52,6 +52,9 @@ command:
   craftSpecialEmerald:
     needDiamonds: '&cTi servono 3 diamanti per creare uno Smeraldo Speciale.'
     success: '&bHai creato uno Smeraldo Speciale usando 3 diamanti!'
+  quoteFavorite:
+    latestSaved: "★ L’ultima citazione è stata salvata nei Preferiti."
+    latestNotSaved: "L’ultima citazione non è stata salvata. (Potrebbe non esserci ancora alcun registro, oppure essere già nei Preferiti.)"
 gui:
   language:
     title: Lingua / Language
