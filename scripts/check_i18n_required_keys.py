@@ -8,8 +8,8 @@ REQUIRED_KEYS = [
     ("command", "craftSpecialEmerald", "needDiamonds"),
     ("command", "craftSpecialEmerald", "success"),
     ("items", "specialEmerald", "displayName"),
-("items", "specialEmerald", "loreCrafted"),
-("items", "specialEmerald", "loreSpecial"),
+    ("items", "specialEmerald", "loreCrafted"),
+    ("items", "specialEmerald", "loreSpecial"),
 ]
 
 def has_nested_key(lines, path):

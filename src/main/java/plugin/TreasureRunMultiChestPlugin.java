@@ -285,7 +285,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
       getCommand("gameRank").setExecutor(this);
     }
     if (getCommand("craftspecialemerald") != null) {
-      getCommand("craftspecialemerald").setExecutor(new CraftSpecialEmeraldCommand());
+      getCommand("craftspecialemerald").setExecutor(new CraftSpecialEmeraldCommand(this));
     }
     if (getCommand("checktreasureemerald") != null) {
       getCommand("checktreasureemerald").setExecutor(new CheckTreasureEmeraldCommand(this));
