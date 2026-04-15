@@ -2,40 +2,43 @@ name: i18n-check
 
 on:
   push:
+    branches: [ main ]
   pull_request:
+    branches: [ main ]
 
 jobs:
-  i18n:
+  validate-i18n:
     runs-on: ubuntu-latest
-    env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-
-      - name: Install PyYAML
-        run: python3 -m pip install pyyaml
-
-      - name: Set up Java
+      - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: '17'
 
-      - name: Run duplicate YAML key check
-        run: python3 scripts/check_yaml_duplicate_keys.py
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
 
-      - name: Run missing key check
-        run: python3 scripts/check_missing_i18n_keys.py
+      - name: Make gradlew executable
+        run: chmod +x gradlew
 
-      - name: Run suspicious display text check
-        run: python3 scripts/check_suspicious_i18n.py
+      - name: Compile Java
+        run: ./gradlew compileJava
 
-      - name: Build plugin
-        run: ./gradlew clean shadowJar --no-daemon --stacktrace
+      - name: Check YAML syntax
+        run: python3 scripts/check_i18n_yaml_syntax.py
+
+      - name: Check required keys
+        run: python3 scripts/check_i18n_required_keys.py
+
+      - name: Check referenced keys
+        run: python3 scripts/check_i18n_referenced_keys.py
+
+      - name: Check duplicate keys
+        run: python3 scripts/check_i18n_duplicate_keys.py
