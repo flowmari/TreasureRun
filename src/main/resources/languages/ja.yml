@@ -52,8 +52,35 @@ command:
     needDiamonds: '&cスペシャルエメラルドの作成にはダイヤモンドが3個必要です。'
     success: '&bダイヤモンド3個でスペシャルエメラルドを作成しました！'
   quoteFavorite:
-    latestSaved: "★ 最新の名言をお気に入りに保存しました。"
-    latestNotSaved: "最新の名言は保存されませんでした。（まだ記録がないか、すでにお気に入り登録済みの可能性があります）"
+    latestSaved: ★ 最新の名言をお気に入りに保存しました。
+    latestNotSaved: 最新の名言は保存されませんでした。まだ記録がないか、すでにお気に入り登録済みの可能性があります。
+    playersOnly: '&cこのコマンドはプレイヤーのみ使用できます。'
+    repositoryNotReady: '&cお気に入り機能はまだ利用できません。'
+    listHeader: '&bお気に入り一覧（{count}件）'
+    listSeparator: '&7------------------------------'
+    removeUsage: '&c使い方: /quoteFavorite remove <id>'
+    removeIdNumber: '&cIDは数字で入力してください。'
+    removeSuccess: '&aお気に入り ID {id} を削除しました。'
+    removeNotFound: '&c指定したお気に入りが見つかりませんでした。'
+    rereadNoQuotes: '&e再読できる名言がまだありません。'
+    bookOpenFailed: '&cお気に入り図鑑の生成に失敗しました。'
+    openBookFailed: '&c本を開けませんでした。'
+    unknownSubcommand: '&c不明なサブコマンドです。/quoteFavorite help を確認してください。'
+    shortcutSaved: '&a★ 最新の名言をお気に入りに保存しました。'
+    shortcutNotSaved: '&cお気に入り保存に失敗しました。'
+    help:
+      title: '&bQuoteFavorite コマンド一覧'
+      latest: '&7/quoteFavorite latest : 最新の名言をお気に入り保存'
+      list: '&7/quoteFavorite list : お気に入り一覧を表示'
+      remove: '&7/quoteFavorite remove <id> : お気に入りを削除'
+      reread: '&7/quoteFavorite reread [chat|title|book] : 名言を再読'
+      rereadTitle: '&7title はタイトル表示で再読します'
+      rereadBook: '&7book は本形式で再読します'
+      book: '&7/quoteFavorite book [toc|success|timeup|other|full] : 図鑑を開く'
+      bookToc: '&7toc は目次だけを開きます'
+      bookSuccess: '&7success は成功名言だけを表示します'
+      bookTimeup: '&7timeup は時間切れ名言だけを表示します'
+      bookOther: '&7other はその他の名言だけを表示します'
 gui:
   language:
     title: 言語 / Language
@@ -201,7 +228,7 @@ favorites:
     clickable: favorites.toc.clickable
     head: favorites.toc.head
     howto: favorites.toc.howto
-    howtoShift: favorites.toc.howtoShift
+    howtoShift: '&7Sneak+右クリックでお気に入り図鑑を開く'
     manage: favorites.toc.manage
     reread: favorites.toc.reread
     rereadTitle: favorites.toc.rereadTitle
@@ -306,6 +333,6 @@ items:
   text_e42912c7: '&7特製鉄ブロック'
   text_c89dea57: 特製鉄ブロックのレシピを登録しました。
   specialEmerald:
-    displayName: "&6特製エメラルド"
-    loreCrafted: "&7TreasureRunでクラフトした"
-    loreSpecial: "&7特別なエメラルド"
+    displayName: '&6特製エメラルド'
+    loreCrafted: '&7TreasureRunでクラフトした'
+    loreSpecial: '&7特別なエメラルド'

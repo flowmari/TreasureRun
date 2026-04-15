@@ -6,14 +6,24 @@ import sys
 JAVA_DIR = Path("src/main/java")
 LANG_DIR = Path("src/main/resources/languages")
 
-# Java 側で拾いたいパターン
 PATTERNS = [
     re.compile(r'i18n\.tr\s*\(\s*player\s*,\s*"([^"]+)"'),
-    re.compile(r'i18n\.tr\s*\(\s*"([^"]+)"'),
     re.compile(r'i18n\.trDefault\s*\(\s*"([^"]+)"'),
     re.compile(r'\btr\s*\(\s*player\s*,\s*"([^"]+)"'),
     re.compile(r'\btr\s*\(\s*"([^"]+)"'),
+    re.compile(r'\btrp\s*\(\s*"([^"]+)"'),
+    re.compile(r'\btrRaw\s*\(\s*"([^"]+)"'),
 ]
+
+LANG_CODE_RE = re.compile(r'^[a-z]{2}(?:_[a-z]{2})?$')
+
+def is_probably_i18n_key(s: str) -> bool:
+    if not s:
+        return False
+    s = s.strip()
+    if LANG_CODE_RE.fullmatch(s):
+        return False
+    return "." in s
 
 def has_nested_key(lines, path_parts):
     indent = 0
@@ -38,8 +48,9 @@ def collect_java_keys():
         found = []
         for pat in PATTERNS:
             found.extend(pat.findall(text))
+        found = sorted({k for k in found if is_probably_i18n_key(k)})
         if found:
-            keys[f] = sorted(set(found))
+            keys[f] = found
     return keys
 
 def main():
@@ -53,19 +64,12 @@ def main():
     java_keys = collect_java_keys()
     all_keys = sorted({k for ks in java_keys.values() for k in ks})
 
-    if not all_keys:
-        print("INFO: no i18n keys referenced in Java.")
-        return
-
     failed = False
-
     for lang_file in sorted(LANG_DIR.glob("*.yml")):
         lines = lang_file.read_text(encoding="utf-8").splitlines()
         missing = []
-
         for key in all_keys:
-            parts = tuple(key.split("."))
-            if not has_nested_key(lines, parts):
+            if not has_nested_key(lines, tuple(key.split("."))):
                 missing.append(key)
 
         if missing:
