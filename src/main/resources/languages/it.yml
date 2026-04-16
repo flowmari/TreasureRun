@@ -352,43 +352,36 @@ outcome:
   success:
     common:
       pool:
-      - Light fell evenly, and every shadow vanished.
-      - Harmony returned. Everything had been leading to this moment.
-      - Silence settled in. Only time kept moving.
+      - La luce cadeva uniforme e ogni ombra svaniva.
+      - L'armonia è tornata. Tutto conduceva a questo momento.
     easy:
       pool:
-      - You made it. The truth remains.
-      - You listened, and the path opened.
-      - Distance found its meaning, and time answered your steps.
+      - Ce l'hai fatta. La verità resta.
+      - Hai ascoltato, e il sentiero si è aperto.
     normal:
       pool:
-      - Distance found its meaning. Time answered your journey.
-      - Run complete. A quiet result, backed by real work.
-      - The moment passed. The record remained.
+      - La distanza ha trovato il suo senso. Il tempo ha risposto al tuo viaggio.
+      - Partita conclusa. Un risultato silenzioso, sostenuto da lavoro vero.
     hard:
       pool:
-      - In the north wind, clarity outlasts speed.
-      - Not luck. Alignment.
-      - The world did not change. Your place in it did.
+      - Nel vento del nord, la lucidità resiste più della velocità.
+      - Non fortuna. Allineamento.
   timeup:
     easy:
       pool:
-      - Time ran out. Nothing else did.
-      - The run ended. You didn’t.
-      - Take a breath. Then another.
+      - Il tempo è scaduto. Nient'altro.
+      - La corsa è finita. Tu no.
     normal:
       pool:
-      - The distance closed. Time did not.
-      - The map is still open. Come back to it.
-      - The treasure remained out of reach, but the signal was real.
+      - La distanza si è chiusa. Il tempo no.
+      - La mappa è ancora aperta. Torna.
     hard:
       pool:
-      - Even the aurora fades. Come back with a new stride.
-      - The moment slipped away. The meaning did not.
-      - The sky kept moving. So can you.
+      - Anche l'aurora svanisce. Torna con un passo nuovo.
+      - È sfuggito l'istante, non il senso.
   random:
     common:
       pool: []
   fallback:
-    runComplete: Run complete.
-    timeUp: Time's up.
+    runComplete: Partita conclusa.
+    timeUp: Tempo scaduto.
