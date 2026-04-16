@@ -507,20 +507,41 @@ items:
 outcome:
   success:
     common:
-      pool: []
+      pool:
+      - Light fell evenly, and every shadow vanished.
+      - Harmony returned. Everything had been leading to this moment.
+      - Silence settled in. Only time kept moving.
     easy:
-      pool: []
+      pool:
+      - You made it. The truth remains.
+      - You listened, and the path opened.
+      - Distance found its meaning, and time answered your steps.
     normal:
-      pool: []
+      pool:
+      - Distance found its meaning. Time answered your journey.
+      - Run complete. A quiet result, backed by real work.
+      - The moment passed. The record remained.
     hard:
-      pool: []
+      pool:
+      - In the north wind, clarity outlasts speed.
+      - Not luck. Alignment.
+      - The world did not change. Your place in it did.
   timeup:
     easy:
-      pool: []
+      pool:
+      - Time ran out. Nothing else did.
+      - The run ended. You didn’t.
+      - Take a breath. Then another.
     normal:
-      pool: []
+      pool:
+      - The distance closed. Time did not.
+      - The map is still open. Come back to it.
+      - The treasure remained out of reach, but the signal was real.
     hard:
-      pool: []
+      pool:
+      - Even the aurora fades. Come back with a new stride.
+      - The moment slipped away. The meaning did not.
+      - The sky kept moving. So can you.
   random:
     common:
       pool: []
