@@ -337,3 +337,14 @@ items:
     displayName: '&6Smaragdus specialis'
     loreCrafted: '&7In TreasureRun fabricatus'
     loreSpecial: '&7Smaragdus specialis'
+ui:
+  menu:
+    book:
+      fallbackTitle: Regulae TreasureRun
+      fallbackDisplayName: Liber Regularum TreasureRun
+  quote:
+    footer:
+      dbLogs: '(DB: proverb_logs)'
+  favorites:
+    footer:
+      dbFavorites: '(DB: proverb_favorites)'

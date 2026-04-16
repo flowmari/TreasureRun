@@ -222,6 +222,8 @@ ui:
     noFavorites: 'No favorites yet.
 
       Right-click this book to save {latestLabel}.'
+    footer:
+      dbLogs: '(BD: proverb_logs)'
   auto:
     playerscore_b91d4cd3: 'Falha ao inserir PlayerScore:'
     messages_yml_not_loaded_d56b1cd3: (messages.yml not loaded)
@@ -358,6 +360,8 @@ ui:
       hotbarGiven: '&6📖 O livro de regras foi adicionado à sua barra de ação.'
       hotbarHint: '&eSegure-o e clique com o botão direito a qualquer momento para reler.'
       latestHint: '&7(Clique com o botão direito neste livro para salvar &e{latestLabel}&7.)'
+      fallbackTitle: Regras do TreasureRun
+      fallbackDisplayName: Livro de regras do TreasureRun
     legacy:
       toc:
         message: '&6===== 🌟 TreasureRun Conteúdo 🌟 =====
@@ -402,6 +406,8 @@ ui:
   favorites:
     headerLatest: 'Favoritos mais recentes  |  idioma: {lang}'
     title: ★ Favoritos
+    footer:
+      dbFavorites: '(BD: proverb_favorites)'
 gui:
   language:
     title: Idioma / Language

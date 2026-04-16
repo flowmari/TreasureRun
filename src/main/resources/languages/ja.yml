@@ -336,3 +336,14 @@ items:
     displayName: '&6特製エメラルド'
     loreCrafted: '&7TreasureRunでクラフトした'
     loreSpecial: '&7特別なエメラルド'
+ui:
+  menu:
+    book:
+      fallbackTitle: TreasureRun ルール
+      fallbackDisplayName: TreasureRun ルールブック
+  quote:
+    footer:
+      dbLogs: '（DB: proverb_logs）'
+  favorites:
+    footer:
+      dbFavorites: '（DB: proverb_favorites）'

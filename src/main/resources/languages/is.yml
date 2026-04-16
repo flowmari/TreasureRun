@@ -337,3 +337,14 @@ items:
     displayName: '&6Sérstakur smaragður'
     loreCrafted: '&7Smíðað í TreasureRun'
     loreSpecial: '&7Sérstakur smaragður'
+ui:
+  menu:
+    book:
+      fallbackTitle: Reglur TreasureRun
+      fallbackDisplayName: Reglubók TreasureRun
+  quote:
+    footer:
+      dbLogs: '(GAGNAGRUNNUR: proverb_logs)'
+  favorites:
+    footer:
+      dbFavorites: '(GAGNAGRUNNUR: proverb_favorites)'

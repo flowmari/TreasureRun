@@ -337,3 +337,14 @@ items:
     displayName: '&6Specialsmaragd'
     loreCrafted: '&7Tillverkad i TreasureRun'
     loreSpecial: '&7En speciell smaragd'
+ui:
+  menu:
+    book:
+      fallbackTitle: TreasureRun-regler
+      fallbackDisplayName: TreasureRun-regelbok
+  quote:
+    footer:
+      dbLogs: '(DB: proverb_logs)'
+  favorites:
+    footer:
+      dbFavorites: '(DB: proverb_favorites)'

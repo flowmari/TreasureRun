@@ -337,3 +337,14 @@ items:
     displayName: '&6SPECIAL EMERALD'
     loreCrafted: '&7CRAFT IN TREASURERUN'
     loreSpecial: '&7SPECIAL EMERALD'
+ui:
+  menu:
+    book:
+      fallbackTitle: TREASURE-RUN RULES
+      fallbackDisplayName: TREASURE-RUN RULE-BOOK
+  quote:
+    footer:
+      dbLogs: '(DB: PROVERB_LOGS)'
+  favorites:
+    footer:
+      dbFavorites: '(DB: PROVERB_FAVORITES)'

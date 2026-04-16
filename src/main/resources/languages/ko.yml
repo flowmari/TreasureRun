@@ -337,3 +337,14 @@ items:
     displayName: '&6특별한 에메랄드'
     loreCrafted: '&7TreasureRun에서 제작한'
     loreSpecial: '&7특별한 에메랄드'
+ui:
+  menu:
+    book:
+      fallbackTitle: TreasureRun 규칙
+      fallbackDisplayName: TreasureRun 규칙서
+  quote:
+    footer:
+      dbLogs: '(DB: proverb_logs)'
+  favorites:
+    footer:
+      dbFavorites: '(DB: proverb_favorites)'

@@ -337,3 +337,14 @@ items:
     displayName: '&6Особый изумруд'
     loreCrafted: '&7Создан в TreasureRun'
     loreSpecial: '&7Особый изумруд'
+ui:
+  menu:
+    book:
+      fallbackTitle: Правила TreasureRun
+      fallbackDisplayName: Книга правил TreasureRun
+  quote:
+    footer:
+      dbLogs: '(БД: proverb_logs)'
+  favorites:
+    footer:
+      dbFavorites: '(БД: proverb_favorites)'

@@ -222,6 +222,8 @@ ui:
     noFavorites: 'No favorites yet.
 
       Right-click this book to save {latestLabel}.'
+    footer:
+      dbLogs: '(DB: proverb_logs)'
   auto:
     playerscore_b91d4cd3: 'PlayerScore सम्मिलन विफल:'
     messages_yml_not_loaded_d56b1cd3: (messages.yml not loaded)
@@ -358,6 +360,8 @@ ui:
       hotbarGiven: '&6📖 नियम पुस्तिका आपके हॉटबार में जोड़ दी गई है।'
       hotbarHint: '&eइसे हाथ में लेकर राइट-क्लिक करें — कभी भी पुनः पढ़ें।'
       latestHint: '&7(इस पुस्तक को राइट-क्लिक करने पर &e{latestLabel}&7 सहेजा जाएगा।)'
+      fallbackTitle: TreasureRun के नियम
+      fallbackDisplayName: TreasureRun नियम-पुस्तिका
     legacy:
       toc:
         message: '&6===== 🌟 TreasureRun सामग्री 🌟 =====
@@ -402,6 +406,8 @@ ui:
   favorites:
     headerLatest: 'नवीनतम पसंदीदा  |  भाषा: {lang}'
     title: ★ पसंदीदा
+    footer:
+      dbFavorites: '(DB: proverb_favorites)'
 gui:
   language:
     title: भाषा / Language

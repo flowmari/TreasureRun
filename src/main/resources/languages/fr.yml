@@ -337,3 +337,14 @@ items:
     displayName: '&6Émeraude spéciale'
     loreCrafted: '&7Fabriquée dans TreasureRun'
     loreSpecial: '&7Une émeraude spéciale'
+ui:
+  menu:
+    book:
+      fallbackTitle: Règles de TreasureRun
+      fallbackDisplayName: Livre des règles de TreasureRun
+  quote:
+    footer:
+      dbLogs: '(BD : proverb_logs)'
+  favorites:
+    footer:
+      dbFavorites: '(BD : proverb_favorites)'
