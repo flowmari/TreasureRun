@@ -337,3 +337,14 @@ items:
     displayName: '&6Erikoissmaragdi'
     loreCrafted: '&7Valmistettu TreasureRunissa'
     loreSpecial: '&7Erityinen smaragdi'
+ui:
+  menu:
+    book:
+      fallbackTitle: TreasureRunin säännöt
+      fallbackDisplayName: TreasureRunin sääntökirja
+  quote:
+    footer:
+      dbLogs: '(TIETOKANTA: proverb_logs)'
+  favorites:
+    footer:
+      dbFavorites: '(TIETOKANTA: proverb_favorites)'

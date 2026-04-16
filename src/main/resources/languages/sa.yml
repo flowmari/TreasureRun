@@ -337,3 +337,14 @@ items:
     displayName: '&6विशेषमरकत'
     loreCrafted: '&7TreasureRun-अन्तः निर्मितम्'
     loreSpecial: '&7विशेषं मरकतम्'
+ui:
+  menu:
+    book:
+      fallbackTitle: TreasureRun-नियमाः
+      fallbackDisplayName: TreasureRun-नियमपुस्तकम्
+  quote:
+    footer:
+      dbLogs: '(DB: proverb_logs)'
+  favorites:
+    footer:
+      dbFavorites: '(DB: proverb_favorites)'

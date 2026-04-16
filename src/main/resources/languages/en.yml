@@ -336,3 +336,14 @@ items:
     displayName: '&6Special Emerald'
     loreCrafted: '&7Crafted in TreasureRun'
     loreSpecial: '&7A special emerald'
+ui:
+  menu:
+    book:
+      fallbackTitle: TreasureRun Rules
+      fallbackDisplayName: TreasureRun Rule Book
+  quote:
+    footer:
+      dbLogs: '(DB: proverb_logs)'
+  favorites:
+    footer:
+      dbFavorites: '(DB: proverb_favorites)'

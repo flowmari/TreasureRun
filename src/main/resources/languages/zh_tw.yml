@@ -222,6 +222,8 @@ ui:
     noFavorites: 'No favorites yet.
 
       Right-click this book to save {latestLabel}.'
+    footer:
+      dbLogs: （資料庫：proverb_logs）
   auto:
     playerscore_b91d4cd3: 'PlayerScore 插入失敗:'
     messages_yml_not_loaded_d56b1cd3: (messages.yml not loaded)
@@ -358,6 +360,8 @@ ui:
       hotbarGiven: '&6📖 規則書已加入您的快捷欄。'
       hotbarHint: '&e拿著它隨時右鍵點擊即可再次閱讀。'
       latestHint: '&7(右鍵點擊此書可儲存 &e{latestLabel}&7。)'
+      fallbackTitle: TreasureRun 規則
+      fallbackDisplayName: TreasureRun 規則書
     legacy:
       toc:
         message: '&6===== 🌟 TreasureRun 目錄 🌟 =====
@@ -402,6 +406,8 @@ ui:
   favorites:
     headerLatest: 最新收藏  |  語言：{lang}
     title: ★ 收藏
+    footer:
+      dbFavorites: （資料庫：proverb_favorites）
 gui:
   language:
     title: 語言 / Language

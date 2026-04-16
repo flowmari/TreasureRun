@@ -337,3 +337,14 @@ items:
     displayName: '&6Smeraldo speciale'
     loreCrafted: '&7Creato in TreasureRun'
     loreSpecial: '&7Uno smeraldo speciale'
+ui:
+  menu:
+    book:
+      fallbackTitle: Regole di TreasureRun
+      fallbackDisplayName: Libro delle regole di TreasureRun
+  quote:
+    footer:
+      dbLogs: '(DB: proverb_logs)'
+  favorites:
+    footer:
+      dbFavorites: '(DB: proverb_favorites)'

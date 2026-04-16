@@ -76,6 +76,12 @@ public final class GameMenuKeys {
   // ✅ Error / Fallback messages
   public static final String UI_ERROR_NO_DATA = "ui.error.noData";
 
+  // ✅ GameMenu first-wave fallback / footer keys
+  public static final String UI_MENU_BOOK_FALLBACK_TITLE = "ui.menu.book.fallbackTitle";
+  public static final String UI_MENU_BOOK_FALLBACK_DISPLAY_NAME = "ui.menu.book.fallbackDisplayName";
+  public static final String UI_QUOTE_FOOTER_DB_LOGS = "ui.quote.footer.dbLogs";
+  public static final String UI_FAVORITES_FOOTER_DB_FAVORITES = "ui.favorites.footer.dbFavorites";
+
 
   // Optional
   public static final String UI_MENU_BOOK_LATEST_HINT = "ui.menu.book.latestHint";

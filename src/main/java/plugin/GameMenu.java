@@ -193,10 +193,10 @@ public class GameMenu {
 
     // フォールバック（その言語が無いときはja）
     String title = cfg.getString("ruleBook.title." + actualLang,
-        cfg.getString("ruleBook.title.ja", "TreasureRun ルール"));
+        plugin.getI18n().tr(actualLang, GameMenuKeys.UI_MENU_BOOK_FALLBACK_TITLE));
     String author = cfg.getString("ruleBook.author", "TreasureRun");
     String displayNameRaw = cfg.getString("ruleBook.displayName." + actualLang,
-        cfg.getString("ruleBook.displayName.ja", "TreasureRun ルールブック"));
+        plugin.getI18n().tr(actualLang, GameMenuKeys.UI_MENU_BOOK_FALLBACK_DISPLAY_NAME));
 
     String displayName = colorize(displayNameRaw);
 
@@ -268,8 +268,8 @@ public class GameMenu {
     }
 
     if (allNames.isEmpty()) {
-      allNames.add("TreasureRun ルールブック");
-      allNames.add("TreasureRun Rule Book");
+      allNames.add(plugin.getI18n().tr("ja", GameMenuKeys.UI_MENU_BOOK_FALLBACK_DISPLAY_NAME));
+      allNames.add(plugin.getI18n().tr("en", GameMenuKeys.UI_MENU_BOOK_FALLBACK_DISPLAY_NAME));
     }
 
     for (int i = 0; i < inv.getSize(); i++) {
@@ -488,7 +488,7 @@ public class GameMenu {
           actualLang,
           header +
               tint(ChatColor.DARK_BLUE, msg) + "\n\n" +
-              ChatColor.GRAY + "（DB: proverb_logs）",
+              ChatColor.GRAY + plugin.getI18n().tr(actualLang, GameMenuKeys.UI_QUOTE_FOOTER_DB_LOGS),
           1,
           1,
           showPageNumber
@@ -636,7 +636,7 @@ public class GameMenu {
           header +
               tint(ChatColor.DARK_BLUE, noFav) + "\n\n" +
               tint(ChatColor.DARK_BLUE, tip) + "\n\n" +
-              ChatColor.GRAY + "（DB: proverb_favorites）",
+              ChatColor.GRAY + plugin.getI18n().tr(actualLang, GameMenuKeys.UI_FAVORITES_FOOTER_DB_FAVORITES),
           1,
           1,
           showPageNumber
