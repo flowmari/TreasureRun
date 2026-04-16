@@ -1,5 +1,6 @@
 package plugin;
 
+import plugin.i18n.OutcomeMessageKeys;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
@@ -8,7 +9,12 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class OutcomeMessageService {
 
+  private final TreasureRunMultiChestPlugin plugin;
   private final Random random = new Random();
+
+  public OutcomeMessageService(TreasureRunMultiChestPlugin plugin) {
+    this.plugin = plugin;
+  }
 
   /**
    * 結果(outcome) と 難易度(difficulty) から、SUBTITLE用の短文をランダムで1つ返す。
@@ -18,12 +24,12 @@ public class OutcomeMessageService {
    *  - ここは「最大2行」前提でしたが、ユーザー指定により 3行以上の詩ブロックも含めています。
    *  - Minecraft側の表示制限（字幕の幅/行数）により見切れる可能性があります。
    */
-  public String pickSubtitle(GameOutcome outcome, String difficulty) {
+  public String pickSubtitle(GameOutcome outcome, String difficulty, String lang) {
     String d = normalizeDifficulty(difficulty);
 
     List<String> pool = switch (outcome) {
-      case SUCCESS -> successPool(d);
-      case TIME_UP -> timeUpPool(d);
+      case SUCCESS -> localizedSuccessPool(d, lang);
+      case TIME_UP -> localizedTimeUpPool(d, lang);
     };
 
     if (pool == null || pool.isEmpty()) return "";
@@ -47,6 +53,53 @@ public class OutcomeMessageService {
     if (s.contains("EASY")) return "EASY";
     if (s.contains("HARD")) return "HARD";
     return "NORMAL";
+  }
+
+  private List<String> configuredPool(String lang, String key) {
+    List<String> list = plugin.getI18n().trList(lang, key);
+    if (list == null || list.isEmpty()) return List.of();
+
+    List<String> out = new ArrayList<>();
+    for (String s : list) {
+      if (s == null) continue;
+      String t = s.trim();
+      if (!t.isEmpty() && !t.equals(key) && !t.startsWith("Translation missing:")) {
+        out.add(s);
+      }
+    }
+    return out;
+  }
+
+  private List<String> localizedSuccessPool(String d, String lang) {
+    List<String> common = configuredPool(lang, OutcomeMessageKeys.OUTCOME_SUCCESS_COMMON_POOL);
+    List<String> specific = switch (d) {
+      case "EASY" -> configuredPool(lang, OutcomeMessageKeys.OUTCOME_SUCCESS_EASY_POOL);
+      case "NORMAL" -> configuredPool(lang, OutcomeMessageKeys.OUTCOME_SUCCESS_NORMAL_POOL);
+      case "HARD" -> configuredPool(lang, OutcomeMessageKeys.OUTCOME_SUCCESS_HARD_POOL);
+      default -> List.of();
+    };
+
+    if (!common.isEmpty() || !specific.isEmpty()) {
+      List<String> out = new ArrayList<>(common.size() + specific.size());
+      out.addAll(common);
+      out.addAll(specific);
+      return out;
+    }
+
+    return successPool(d); // legacy fallback
+  }
+
+  private List<String> localizedTimeUpPool(String d, String lang) {
+    List<String> specific = switch (d) {
+      case "EASY" -> configuredPool(lang, OutcomeMessageKeys.OUTCOME_TIMEUP_EASY_POOL);
+      case "NORMAL" -> configuredPool(lang, OutcomeMessageKeys.OUTCOME_TIMEUP_NORMAL_POOL);
+      case "HARD" -> configuredPool(lang, OutcomeMessageKeys.OUTCOME_TIMEUP_HARD_POOL);
+      default -> List.of();
+    };
+
+    if (!specific.isEmpty()) return specific;
+
+    return timeUpPool(d); // legacy fallback
   }
 
   // =========================================================

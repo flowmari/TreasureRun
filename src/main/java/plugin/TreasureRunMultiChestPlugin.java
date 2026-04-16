@@ -199,7 +199,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
   private HeartbeatSoundService heartbeatSoundService;
 
   // ✅ Outcome（成功/時間切れ）ランダムSUBTITLE
-  private final OutcomeMessageService outcomeMessageService = new OutcomeMessageService();
+  private final OutcomeMessageService outcomeMessageService = new OutcomeMessageService(this);
 
   // =======================================================
   // ✅ ✅ ✅ 追加：プレイヤーが選んだ言語を保持（proverb_logs保存に使う）
@@ -1532,14 +1532,14 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     final String rankLabel = (rank > 0) ? ("#" + rank) : "-";
 
     // ✅ SUCCESS用：このRunで表示する哲学SUBTITLEを1回だけ決めて保持する（チカチカ防止）
-    final String successPhiloSub = outcomeMessageService.pickSubtitle(GameOutcome.SUCCESS, difficulty);
+    final String successLang = getPlayerLangOrDefault(player.getUniqueId());
+    final String successPhiloSub = outcomeMessageService.pickSubtitle(GameOutcome.SUCCESS, difficulty, successLang);
 
     // =======================================================
     // ✅ ✅ ✅ 追加：SUCCESS の格言ログを MySQL に保存（proverb_logs）
     // =======================================================
     if (successPhiloSub != null && !successPhiloSub.isBlank()) {
-      String lang = getPlayerLangOrDefault(player.getUniqueId());
-      saveProverbLog(player.getUniqueId(), player.getName(), "SUCCESS", difficulty, lang, successPhiloSub);
+      saveProverbLog(player.getUniqueId(), player.getName(), "SUCCESS", difficulty, successLang, successPhiloSub);
     }
 
     long djTotalTicksWork = (treasureRunGameEffectsPlugin != null)
@@ -1678,7 +1678,8 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
   //    SUCCESSは finishTitleTaskId 側で “ずっと” 見せるため、ここは主にTIME_UP用として残す
   // =======================================================
   private void showOutcomeSubtitle(Player player, GameOutcome outcome) {
-    String sub = outcomeMessageService.pickSubtitle(outcome, difficulty);
+    String lang = getPlayerLangOrDefault(player.getUniqueId());
+    String sub = outcomeMessageService.pickSubtitle(outcome, difficulty, lang);
     if (sub == null || sub.isBlank()) return;
 
     String title = (outcome == GameOutcome.SUCCESS) ? "Run Complete!" : "TIME'S UP!";
@@ -1768,7 +1769,8 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
         }
 
         // ✅ TIME_UP：哲学文（固定位置で最後に出すため、ここでは「保持」だけ）
-        final String timeUpPhiloSub = outcomeMessageService.pickSubtitle(GameOutcome.TIME_UP, difficulty);
+        final String timeUpLang = getPlayerLangOrDefault(player.getUniqueId());
+        final String timeUpPhiloSub = outcomeMessageService.pickSubtitle(GameOutcome.TIME_UP, difficulty, timeUpLang);
 
         // ✅ TIME_UP：連続回数カウント（ここで +1）
         final UUID puid = player.getUniqueId();
@@ -1835,8 +1837,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
         // ✅ ✅ ✅ 追加：TIME_UP の格言ログを MySQL に保存（proverb_logs）
         // =======================================================
         if (timeUpPhiloSub != null && !timeUpPhiloSub.isBlank()) {
-          String lang = getPlayerLangOrDefault(player.getUniqueId());
-          saveProverbLog(player.getUniqueId(), player.getName(), "TIME_UP", difficulty, lang, timeUpPhiloSub);
+          saveProverbLog(player.getUniqueId(), player.getName(), "TIME_UP", difficulty, timeUpLang, timeUpPhiloSub);
         }
 
         // ✅ ✅ ✅ ここだけ変更：
