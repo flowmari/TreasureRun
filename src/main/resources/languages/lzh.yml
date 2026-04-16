@@ -504,3 +504,26 @@ items:
     displayName: '&6特殊綠寶石'
     loreCrafted: '&7製於 TreasureRun'
     loreSpecial: '&7特殊之綠寶石'
+outcome:
+  success:
+    common:
+      pool: []
+    easy:
+      pool: []
+    normal:
+      pool: []
+    hard:
+      pool: []
+  timeup:
+    easy:
+      pool: []
+    normal:
+      pool: []
+    hard:
+      pool: []
+  random:
+    common:
+      pool: []
+  fallback:
+    runComplete: Run complete.
+    timeUp: Time's up.

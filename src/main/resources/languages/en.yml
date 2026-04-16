@@ -347,3 +347,40 @@ ui:
   favorites:
     footer:
       dbFavorites: '(DB: proverb_favorites)'
+outcome:
+  success:
+    common:
+      pool:
+      - Light fell evenly, and every shadow fell away.
+      - Harmony returned. Everything had been leading to this moment.
+    easy:
+      pool:
+      - You made it. The truth remains.
+      - Distance found its meaning, and time answered your steps.
+    normal:
+      pool:
+      - Distance found its meaning. Time answered your journey.
+      - Run complete. A quiet result, and the weight of real work.
+    hard:
+      pool:
+      - In the north wind, clarity outlasts speed.
+      - Not luck. Alignment.
+  timeup:
+    easy:
+      pool:
+      - Time ran out. Nothing else did.
+      - The run ended. You didn’t.
+    normal:
+      pool:
+      - The distance closed. Time did not.
+      - The map is still open. Come back to it.
+    hard:
+      pool:
+      - Even the aurora fades. Come back with a new stride.
+      - What slipped away was the moment, not the meaning.
+  random:
+    common:
+      pool: []
+  fallback:
+    runComplete: Run complete.
+    timeUp: Time's up.

@@ -504,3 +504,26 @@ items:
     displayName: '&6Esmeralda especial'
     loreCrafted: '&7Criada no TreasureRun'
     loreSpecial: '&7Uma esmeralda especial'
+outcome:
+  success:
+    common:
+      pool: []
+    easy:
+      pool: []
+    normal:
+      pool: []
+    hard:
+      pool: []
+  timeup:
+    easy:
+      pool: []
+    normal:
+      pool: []
+    hard:
+      pool: []
+  random:
+    common:
+      pool: []
+  fallback:
+    runComplete: Run complete.
+    timeUp: Time's up.
