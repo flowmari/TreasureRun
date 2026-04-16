@@ -352,43 +352,36 @@ outcome:
   success:
     common:
       pool:
-      - Light fell evenly, and every shadow vanished.
-      - Harmony returned. Everything had been leading to this moment.
-      - Silence settled in. Only time kept moving.
+      - La lumière tombait uniformément, et chaque ombre s'effaçait.
+      - L'harmonie est revenue. Tout menait à cet instant.
     easy:
       pool:
-      - You made it. The truth remains.
-      - You listened, and the path opened.
-      - Distance found its meaning, and time answered your steps.
+      - Tu y es arrivé. La vérité demeure.
+      - Tu as écouté, et le chemin s'est ouvert.
     normal:
       pool:
-      - Distance found its meaning. Time answered your journey.
-      - Run complete. A quiet result, backed by real work.
-      - The moment passed. The record remained.
+      - La distance a trouvé son sens. Le temps a répondu à ton voyage.
+      - Partie terminée. Un résultat discret, soutenu par un vrai travail.
     hard:
       pool:
-      - In the north wind, clarity outlasts speed.
-      - Not luck. Alignment.
-      - The world did not change. Your place in it did.
+      - Dans le vent du nord, la clarté survit à la vitesse.
+      - Ce n'était pas la chance. C'était l'alignement.
   timeup:
     easy:
       pool:
-      - Time ran out. Nothing else did.
-      - The run ended. You didn’t.
-      - Take a breath. Then another.
+      - Le temps est écoulé. Rien d'autre.
+      - La course s'est arrêtée. Pas toi.
     normal:
       pool:
-      - The distance closed. Time did not.
-      - The map is still open. Come back to it.
-      - The treasure remained out of reach, but the signal was real.
+      - La distance s'est refermée. Pas le temps.
+      - La carte est encore ouverte. Reviens-y.
     hard:
       pool:
-      - Even the aurora fades. Come back with a new stride.
-      - The moment slipped away. The meaning did not.
-      - The sky kept moving. So can you.
+      - Même l'aurore boréale s'efface. Reviens d'un pas nouveau.
+      - L'instant s'est échappé. Pas son sens.
   random:
     common:
       pool: []
   fallback:
-    runComplete: Run complete.
-    timeUp: Time's up.
+    runComplete: Partie terminée.
+    timeUp: Temps écoulé.
