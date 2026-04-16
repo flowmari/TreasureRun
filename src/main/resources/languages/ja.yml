@@ -347,3 +347,40 @@ ui:
   favorites:
     footer:
       dbFavorites: '（DB: proverb_favorites）'
+outcome:
+  success:
+    common:
+      pool:
+      - 光が等しく降り注ぎ、すべての影が消えていった。
+      - 調和が戻った。すべては、この瞬間へ向かっていた。
+    easy:
+      pool:
+      - たどり着いた。真実はそのままそこにある。
+      - 距離が意味となり、時間があなたの歩みに応えた。
+    normal:
+      pool:
+      - 距離は意味を帯び、時間はあなたの旅路に応えた。
+      - 静かな結果。そこに本物の積み重ねがあった。
+    hard:
+      pool:
+      - 北風の中で、速さよりも明晰さが生き残る。
+      - 運ではない。整いだ。
+  timeup:
+    easy:
+      pool:
+      - 時間は尽きた。だが、それだけだ。
+      - 走りは終わった。あなたは終わっていない。
+    normal:
+      pool:
+      - 距離は縮んだ。時間は縮まらなかった。
+      - 地図はまだ開いている。戻っておいで。
+    hard:
+      pool:
+      - オーロラでさえ消える。新しい歩みで戻れ。
+      - 逃したのは瞬間であって、意味ではない。
+  random:
+    common:
+      pool: []
+  fallback:
+    runComplete: クリア。
+    timeUp: 時間切れ。
