@@ -84,13 +84,13 @@ command:
       bookOther: '&7other shows only other quotes'
 gui:
   language:
-    title: भाषा / Language
-    subtitle: '&7भाषां चयनय'
+    title: भाषा
+    subtitle: '&7स्वभाषां वृणु'
     loreDefault:
     - '&7क्लिक् कृत्वा चयनय'
     - '&8चयनम् रक्ष्यते'
-    selected: '&aचयनितम्: &f{lang}'
-    saved: '&aभाषा रक्षिता: &f{lang}'
+    selected: '&aचयनिता: &f{lang}'
+    saved: '&aभाषा संगृहीता: &f{lang}'
     reopenHint: '&7&f/lang &7इत्यनेन परिवर्त्यते'
 game:
   difficulty:
@@ -390,5 +390,5 @@ outcome:
     common:
       pool: []
   fallback:
-    runComplete: Run complete.
-    timeUp: Time's up.
+    runComplete: क्रमः समाप्तः।
+    timeUp: कालः समाप्तः।

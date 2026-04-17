@@ -84,13 +84,13 @@ command:
       bookOther: '&7other shows only other quotes'
 gui:
   language:
-    title: 언어 / Language
+    title: 언어
     subtitle: '&7언어를 선택하세요'
     loreDefault:
     - '&7클릭하여 선택'
     - '&8선택은 저장됩니다'
     selected: '&a선택됨: &f{lang}'
-    saved: '&a언어를 저장했습니다: &f{lang}'
+    saved: '&a언어가 저장되었습니다: &f{lang}'
     reopenHint: '&7언제든지 &f/lang &7로 변경 가능'
 game:
   difficulty:
@@ -390,5 +390,5 @@ outcome:
     common:
       pool: []
   fallback:
-    runComplete: Run complete.
-    timeUp: Time's up.
+    runComplete: 런 완료.
+    timeUp: 시간 종료.

@@ -84,13 +84,13 @@ command:
       bookOther: '&7other shows only other quotes'
 gui:
   language:
-    title: Språk / Language
+    title: Språk
     subtitle: '&7Välj språk'
     loreDefault:
     - '&7Klicka för att välja'
     - '&8Sparas automatiskt'
-    selected: '&aVald: &f{lang}'
-    saved: '&aSparade språk: &f{lang}'
+    selected: '&aValt: &f{lang}'
+    saved: '&aSpråk sparat: &f{lang}'
     reopenHint: '&7Ändra när som helst med &f/lang'
 game:
   difficulty:
@@ -390,5 +390,5 @@ outcome:
     common:
       pool: []
   fallback:
-    runComplete: Run complete.
-    timeUp: Time's up.
+    runComplete: Rundan är klar.
+    timeUp: Tiden är ute.

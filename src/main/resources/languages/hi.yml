@@ -410,10 +410,10 @@ ui:
       dbFavorites: '(DB: proverb_favorites)'
 gui:
   language:
-    title: भाषा / Language
-    subtitle: '&7Select your language'
-    selected: '&aSelected: &f{lang}'
-    saved: '&aSaved your language: &f{lang}'
+    title: भाषा
+    subtitle: '&7अपनी भाषा चुनें'
+    selected: '&aचयनित: &f{lang}'
+    saved: '&aभाषा सहेजी गई: &f{lang}'
 game:
   difficulty:
     easy: '&aEasy'
@@ -546,5 +546,5 @@ outcome:
     common:
       pool: []
   fallback:
-    runComplete: Run complete.
-    timeUp: Time's up.
+    runComplete: रन पूरा हुआ।
+    timeUp: समय समाप्त।
