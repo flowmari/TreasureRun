@@ -21,7 +21,7 @@ command:
     worldNotFound: '[TreasureRun] El mundo inicial no está configurado o no se pudo encontrar.'
     started: '¡Comienza la búsqueda del tesoro! Dificultad: {difficulty} | Límite de tiempo: {timeLimit} segundos'
   stageCleanup:
-    playersOnly: Este comando solo puede ser usado por jugadores.
+    playersOnly: '&cSolo los jugadores pueden usar este comando.'
     managerNotReady: '[TreasureRun] El administrador del escenario todavía no se ha inicializado.'
     cleaned: '[TreasureRun] Se han limpiado {count} bloques de dificultad.'
   noPermission: '&cNo tienes permiso.'
@@ -50,6 +50,7 @@ command:
       gui: 'GUI: /lang o /lang gui'
     guiNotReady: La interfaz de idioma no está inicializada.
   craftSpecialEmerald:
+    playersOnly: '&cSolo los jugadores pueden usar este comando.'
     needDiamonds: '&cNecesitas 3 diamantes para fabricar una Esmeralda Especial.'
     success: '&b¡Has fabricado una Esmeralda Especial con 3 diamantes!'
   quoteFavorite:

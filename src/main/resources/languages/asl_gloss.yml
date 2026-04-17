@@ -21,7 +21,7 @@ command:
     worldNotFound: '[TreasureRun] START WORLD NOT SET OR NOT FOUND.'
     started: 'TREASURE HUNT START! DIFFICULTY: {difficulty} | TIME LIMIT: {timeLimit} SECONDS'
   stageCleanup:
-    playersOnly: ONLY PLAYERS CAN USE THIS COMMAND.
+    playersOnly: '&cONLY PLAYER CAN USE THIS COMMAND.'
     managerNotReady: '[TreasureRun] STAGE MANAGER NOT READY YET.'
     cleaned: '[TreasureRun] CLEANUP COMPLETE. {count} DIFFICULTY BLOCKS REMOVED.'
   noPermission: '&cNO PERMISSION.'
@@ -50,6 +50,7 @@ command:
       gui: 'GUI: /lang OR /lang gui'
     guiNotReady: LANGUAGE GUI NOT READY.
   craftSpecialEmerald:
+    playersOnly: '&cONLY PLAYER CAN USE THIS COMMAND.'
     needDiamonds: '&cNEED 3 DIAMOND TO CRAFT SPECIAL EMERALD.'
     success: '&bSPECIAL EMERALD CRAFT FINISH USE 3 DIAMOND!'
   quoteFavorite:

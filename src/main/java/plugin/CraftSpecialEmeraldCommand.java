@@ -1,5 +1,6 @@
 package plugin;
 
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -20,7 +21,10 @@ public class CraftSpecialEmeraldCommand implements CommandExecutor {
   @Override
   public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
     if (!(sender instanceof Player player)) {
-      sender.sendMessage("Players only.");
+      sender.sendMessage(ChatColor.RED + i18n.trDefault(
+          "command.craftSpecialEmerald.playersOnly",
+          "Only players can use this command."
+      ));
       return true;
     }
 

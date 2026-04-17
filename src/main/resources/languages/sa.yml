@@ -21,7 +21,7 @@ command:
     worldNotFound: '[TreasureRun] प्रारम्भलोकः न विन्यस्तः अथवा न लब्धः।'
     started: 'निध्यान्वेषणं प्रारभ्यते! कठिनता: {difficulty} | समयसीमा: {timeLimit} सेकण्डाः'
   stageCleanup:
-    playersOnly: अयं आदेशः केवलं क्रीडकैः एव उपयुज्यते।
+    playersOnly: '&cएतत् आदेशं केवलं क्रीडकाः एव उपयोक्तुं शक्नुवन्ति।'
     managerNotReady: '[TreasureRun] स्तरव्यवस्थापकः अद्यापि सज्जो नास्ति।'
     cleaned: '[TreasureRun] {count} कठिनताखण्डाः अपसारिताः।'
   noPermission: '&cअनुमतिः नास्ति।'
@@ -50,6 +50,7 @@ command:
       gui: 'GUI: /lang अथवा /lang gui'
     guiNotReady: भाषा-GUI अद्यापि प्रारब्धा नास्ति।
   craftSpecialEmerald:
+    playersOnly: '&cएतत् आदेशं केवलं क्रीडकाः एव उपयोक्तुं शक्नुवन्ति।'
     needDiamonds: '&cविशेषमरकत-निर्माणाय त्रयः हीरकाः आवश्यकाः।'
     success: '&bत्रिभिः हीरकैः विशेषमरकतम् निर्मितम्!'
   quoteFavorite:
