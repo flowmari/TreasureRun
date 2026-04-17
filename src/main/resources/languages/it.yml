@@ -21,7 +21,7 @@ command:
     worldNotFound: '[TreasureRun] Il mondo iniziale non è configurato oppure non è stato trovato.'
     started: 'La caccia al tesoro comincia! Difficoltà: {difficulty} | Tempo limite: {timeLimit} secondi'
   stageCleanup:
-    playersOnly: Questo comando può essere usato solo dai giocatori.
+    playersOnly: '&cSolo i giocatori possono usare questo comando.'
     managerNotReady: '[TreasureRun] Il gestore dello stage non è ancora inizializzato.'
     cleaned: '[TreasureRun] Rimossi {count} blocchi di difficoltà.'
   noPermission: '&cPermesso negato.'
@@ -50,6 +50,7 @@ command:
       gui: 'GUI: /lang oppure /lang gui'
     guiNotReady: La GUI della lingua non è stata inizializzata.
   craftSpecialEmerald:
+    playersOnly: '&cSolo i giocatori possono usare questo comando.'
     needDiamonds: '&cTi servono 3 diamanti per creare uno Smeraldo Speciale.'
     success: '&bHai creato uno Smeraldo Speciale usando 3 diamanti!'
   quoteFavorite:

@@ -21,7 +21,7 @@ command:
     worldNotFound: '[TreasureRun] 시작 월드가 설정되지 않았거나 찾을 수 없습니다.'
     started: '보물찾기가 시작됩니다! 난이도: {difficulty} | 제한 시간: {timeLimit}초'
   stageCleanup:
-    playersOnly: 이 명령어는 플레이어만 사용할 수 있습니다.
+    playersOnly: '&c이 명령어는 플레이어만 사용할 수 있습니다.'
     managerNotReady: '[TreasureRun] 스테이지 관리자가 아직 초기화되지 않았습니다.'
     cleaned: '[TreasureRun] 난이도 블록 {count}개를 정리했습니다.'
   noPermission: '&c권한이 없습니다.'
@@ -50,6 +50,7 @@ command:
       gui: 'GUI: /lang 또는 /lang gui'
     guiNotReady: 언어 GUI가 초기화되지 않았습니다.
   craftSpecialEmerald:
+    playersOnly: '&c이 명령어는 플레이어만 사용할 수 있습니다.'
     needDiamonds: '&c특제 에메랄드를 제작하려면 다이아몬드 3개가 필요합니다.'
     success: '&b다이아몬드 3개로 특제 에메랄드를 제작했습니다!'
   quoteFavorite:

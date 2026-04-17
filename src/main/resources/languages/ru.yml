@@ -21,7 +21,7 @@ command:
     worldNotFound: '[TreasureRun] Стартовый мир не настроен или не найден.'
     started: 'Охота за сокровищами начинается! Сложность: {difficulty} | Лимит времени: {timeLimit} сек.'
   stageCleanup:
-    playersOnly: Эту команду могут использовать только игроки.
+    playersOnly: '&cТолько игроки могут использовать эту команду.'
     managerNotReady: '[TreasureRun] Менеджер этапа ещё не инициализирован.'
     cleaned: '[TreasureRun] Удалено блоков сложности: {count}.'
   noPermission: '&cУ вас нет прав.'
@@ -50,6 +50,7 @@ command:
       gui: 'GUI: /lang или /lang gui'
     guiNotReady: Интерфейс выбора языка не инициализирован.
   craftSpecialEmerald:
+    playersOnly: '&cТолько игроки могут использовать эту команду.'
     needDiamonds: '&cЧтобы создать Особый изумруд, нужны 3 алмаза.'
     success: '&bВы создали Особый изумруд, используя 3 алмаза!'
   quoteFavorite:

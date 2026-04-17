@@ -21,7 +21,7 @@ command:
     worldNotFound: '[TreasureRun] Startvärlden är inte konfigurerad eller kunde inte hittas.'
     started: 'Skattjakten börjar! Svårighetsgrad: {difficulty} | Tidsgräns: {timeLimit} sekunder'
   stageCleanup:
-    playersOnly: Det här kommandot kan bara användas av spelare.
+    playersOnly: '&cDet här kommandot kan bara användas av spelare.'
     managerNotReady: '[TreasureRun] Scenhanteraren är ännu inte initierad.'
     cleaned: '[TreasureRun] Tog bort {count} svårighetsblock.'
   noPermission: '&cDu saknar behörighet.'
@@ -50,6 +50,7 @@ command:
       gui: 'GUI: /lang eller /lang gui'
     guiNotReady: Språk-GUI:t har inte initialiserats.
   craftSpecialEmerald:
+    playersOnly: '&cDet här kommandot kan bara användas av spelare.'
     needDiamonds: '&cDu behöver 3 diamanter för att skapa en specialsmaragd.'
     success: '&bDu skapade en specialsmaragd med 3 diamanter!'
   quoteFavorite:

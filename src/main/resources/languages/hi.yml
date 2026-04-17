@@ -443,7 +443,7 @@ command:
     worldNotFound: '[TreasureRun] शुरुआती दुनिया सेट नहीं है या मिल नहीं सकी।'
     started: 'खज़ाने की खोज शुरू हो रही है! कठिनाई: {difficulty} | समय सीमा: {timeLimit} सेकंड'
   stageCleanup:
-    playersOnly: यह कमांड केवल खिलाड़ी ही इस्तेमाल कर सकते हैं।
+    playersOnly: '&cइस कमांड का उपयोग केवल खिलाड़ी कर सकते हैं।'
     managerNotReady: '[TreasureRun] स्टेज मैनेजर अभी तक तैयार नहीं है।'
     cleaned: '[TreasureRun] {count} कठिनाई ब्लॉक साफ कर दिए गए।'
   lang:
@@ -466,6 +466,7 @@ command:
       gui: 'GUI: /lang या /lang gui'
     guiNotReady: भाषा GUI प्रारंभ नहीं हुई है।
   craftSpecialEmerald:
+    playersOnly: '&cइस कमांड का उपयोग केवल खिलाड़ी कर सकते हैं।'
     needDiamonds: '&cस्पेशल एमराल्ड बनाने के लिए 3 हीरे चाहिए।'
     success: '&bआपने 3 हीरों से एक स्पेशल एमराल्ड बना लिया!'
   onlyPlayer: '&cयह कमांड केवल खिलाड़ी ही चला सकता है।'

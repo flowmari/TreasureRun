@@ -21,7 +21,7 @@ command:
     worldNotFound: '[TreasureRun] Aloitusmaailmaa ei ole määritetty tai sitä ei löytynyt.'
     started: 'Aarteenetsintä alkaa! Vaikeustaso: {difficulty} | Aikaraja: {timeLimit} sekuntia'
   stageCleanup:
-    playersOnly: Vain pelaajat voivat käyttää tätä komentoa.
+    playersOnly: '&cVain pelaajat voivat käyttää tätä komentoa.'
     managerNotReady: '[TreasureRun] Kentänhallintaa ei ole vielä alustettu.'
     cleaned: '[TreasureRun] {count} vaikeuslohkoa siivottiin.'
   noPermission: '&cEi oikeuksia.'
@@ -50,6 +50,7 @@ command:
       gui: 'GUI: /lang tai /lang gui'
     guiNotReady: Kielikäyttöliittymää ei ole alustettu.
   craftSpecialEmerald:
+    playersOnly: '&cVain pelaajat voivat käyttää tätä komentoa.'
     needDiamonds: '&cTarvitset 3 timanttia valmistaaksesi erikoissmaragdin.'
     success: '&bValmistit erikoissmaragdin käyttämällä 3 timanttia!'
   quoteFavorite:

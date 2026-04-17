@@ -443,7 +443,7 @@ command:
     worldNotFound: '[TreasureRun] 起始世界未設定，或找不到該世界。'
     started: 尋寶遊戲開始！難度：{difficulty} | 時間限制：{timeLimit} 秒
   stageCleanup:
-    playersOnly: 此指令只能由玩家執行。
+    playersOnly: '&c只有玩家可以使用這個指令。'
     managerNotReady: '[TreasureRun] 關卡管理器尚未準備完成。'
     cleaned: '[TreasureRun] 已清理 {count} 個難度方塊。'
   lang:
@@ -466,6 +466,7 @@ command:
       gui: GUI：/lang 或 /lang gui
     guiNotReady: 語言 GUI 尚未初始化。
   craftSpecialEmerald:
+    playersOnly: '&c只有玩家可以使用這個指令。'
     needDiamonds: '&c製作特製綠寶石需要 3 顆鑽石。'
     success: '&b你已使用 3 顆鑽石製作出特製綠寶石！'
   onlyPlayer: '&c這個指令只能由玩家使用。'

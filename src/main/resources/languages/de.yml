@@ -21,7 +21,7 @@ command:
     worldNotFound: '[TreasureRun] Die Startwelt ist nicht konfiguriert oder konnte nicht gefunden werden.'
     started: 'Die Schatzsuche beginnt! Schwierigkeitsgrad: {difficulty} | Zeitlimit: {timeLimit} Sekunden'
   stageCleanup:
-    playersOnly: Dieser Befehl kann nur von Spielern verwendet werden.
+    playersOnly: '&cDiesen Befehl können nur Spieler verwenden.'
     managerNotReady: '[TreasureRun] Die Stufenverwaltung ist noch nicht initialisiert.'
     cleaned: '[TreasureRun] {count} Schwierigkeitsblöcke wurden entfernt.'
   noPermission: '&cKeine Berechtigung.'
@@ -50,6 +50,7 @@ command:
       gui: 'GUI: /lang oder /lang gui'
     guiNotReady: Die Sprach-GUI wurde nicht initialisiert.
   craftSpecialEmerald:
+    playersOnly: '&cDiesen Befehl können nur Spieler verwenden.'
     needDiamonds: '&cDu brauchst 3 Diamanten, um einen Spezial-Smaragd herzustellen.'
     success: '&bDu hast mit 3 Diamanten einen Spezial-Smaragd hergestellt!'
   quoteFavorite:

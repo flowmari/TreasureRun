@@ -21,6 +21,7 @@ command:
     worldNotFound: '[TreasureRun] 開始ワールドが設定されていないか、見つかりませんでした。'
     started: '§a宝探しゲーム開始！ 難易度: {difficulty} | 制限時間: {timeLimit} 秒'
   stageCleanup:
+    playersOnly: '&cこのコマンドはプレイヤーのみ使用できます。'
     cleaned: '[TreasureRun] 難易度ブロックを {count} 個片付けました。'
     managerNotReady: '[TreasureRun] ステージ管理が初期化されていません。'
   noPermission: '&c権限がありません。'
@@ -49,6 +50,7 @@ command:
       gui: 'GUI: /lang または /lang gui'
     guiNotReady: Language GUI が初期化されていません。
   craftSpecialEmerald:
+    playersOnly: '&cこのコマンドはプレイヤーのみ使用できます。'
     needDiamonds: '&cスペシャルエメラルドの作成にはダイヤモンドが3個必要です。'
     success: '&bダイヤモンド3個でスペシャルエメラルドを作成しました！'
   quoteFavorite:

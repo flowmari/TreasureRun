@@ -21,6 +21,7 @@ command:
     worldNotFound: '[TreasureRun] The start world is not configured or could not be found.'
     started: '§aTreasure hunt started! Difficulty: {difficulty} | Time limit: {timeLimit} seconds'
   stageCleanup:
+    playersOnly: '&cOnly players can use this command.'
     cleaned: '[TreasureRun] Cleaned up {count} difficulty blocks.'
     managerNotReady: '[TreasureRun] The stage manager is not initialized.'
   noPermission: '&cYou don''t have permission.'
@@ -49,6 +50,7 @@ command:
       gui: 'GUI: /lang or /lang gui'
     guiNotReady: Language GUI is not initialized.
   craftSpecialEmerald:
+    playersOnly: '&cOnly players can use this command.'
     needDiamonds: '&cYou need 3 diamonds to craft a Special Emerald.'
     success: '&bYou crafted a Special Emerald using 3 diamonds!'
   quoteFavorite:
