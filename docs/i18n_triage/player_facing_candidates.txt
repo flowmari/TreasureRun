@@ -1,0 +1,63 @@
+[src/main/java/plugin/CheckTreasureEmeraldCommand.java]
+  command.checkTreasureEmerald.playersOnly
+[src/main/java/plugin/CraftSpecialEmeraldCommand.java]
+  command.craftSpecialEmerald.needDiamonds
+  command.craftSpecialEmerald.success
+[src/main/java/plugin/LangCommand.java]
+  command.lang.emptyCode
+  command.lang.guiNotReady
+  command.lang.list.gui
+  command.lang.list.title
+  command.lang.list.usage
+  command.lang.resetDone
+[src/main/java/plugin/LanguageSelectGui.java]
+  command.lang.guiCancelledGameMenu
+  command.lang.guiCancelledGameStart
+  command.lang.guiTooManyShown
+[src/main/java/plugin/QuoteFavoriteBookClickListener.java]
+  command.quoteFavorite.latestNotSaved
+  command.quoteFavorite.latestSaved
+  favorites.empty.noFav
+  favorites.title
+  favorites.toc.howtoShift
+[src/main/java/plugin/StageCleanupCommand.java]
+  command.stageCleanup.managerNotReady
+  command.stageCleanup.playersOnly
+[src/main/java/plugin/TreasureItemFactory.java]
+  items.specialEmerald.displayName
+  items.specialEmerald.loreCrafted
+  items.specialEmerald.loreSpecial
+[src/main/java/plugin/TreasureRunStartCommand.java]
+  command.gameStart.playersOnly
+  command.gameStart.worldNotFound
+[src/main/java/plugin/quote/QuoteFavoriteCommand.java]
+  command.quoteFavorite.bookOpenFailed
+  command.quoteFavorite.help.book
+  command.quoteFavorite.help.bookOther
+  command.quoteFavorite.help.bookSuccess
+  command.quoteFavorite.help.bookTimeup
+  command.quoteFavorite.help.bookToc
+  command.quoteFavorite.help.latest
+  command.quoteFavorite.help.list
+  command.quoteFavorite.help.remove
+  command.quoteFavorite.help.reread
+  command.quoteFavorite.help.rereadBook
+  command.quoteFavorite.help.rereadTitle
+  command.quoteFavorite.help.title
+  command.quoteFavorite.latestNotSaved
+  command.quoteFavorite.latestSaved
+  command.quoteFavorite.listHeader
+  command.quoteFavorite.listSeparator
+  command.quoteFavorite.openBookFailed
+  command.quoteFavorite.playersOnly
+  command.quoteFavorite.removeIdNumber
+  command.quoteFavorite.removeNotFound
+  command.quoteFavorite.removeSuccess
+  command.quoteFavorite.removeUsage
+  command.quoteFavorite.repositoryNotReady
+  command.quoteFavorite.rereadNoQuotes
+  command.quoteFavorite.unknownSubcommand
+[src/main/java/plugin/quote/QuoteFavoriteShortcutListener.java]
+  command.quoteFavorite.repositoryNotReady
+  command.quoteFavorite.shortcutNotSaved
+  command.quoteFavorite.shortcutSaved

@@ -1,0 +1,200 @@
+  L174:     treasure_complete_8360fbe9: 🎵 Treasure Complete! 🎵
+  L177:     time_s_up_c5b3ef74: §c§lTIME'S UP!
+  L178:     treasures_collected_ca7eab31: '§7Treasures collected: §e'
+  L179:     try_a_different_route_next_t_721a4d8b: §7Try a different route next time — or use §e/gamestart §7<§eeasy§7|§enormal§7|§ehard§7> §7to retry.
+  L240:     favorite_saved_sneak_rightcl_7a73eb4f: ★ Favorite saved! (Sneak+RightClick)
+  L241:     favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs yet / or duplicate)
+  L265:   players_only_10ed3cbc: Players only.
+  L266:   treasurerun_quote_favorite_c_dbf690ae: '[TreasureRun] Quote Favorite Commands:'
+  L270:   favorite_saved_bb0cd8a8: ★ Favorite saved!
+  L271:   favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs yet / or duplicate)
+  L273:   usage_quotefavorite_remove_i_5324156c: 'Usage: /quoteFavorite remove <id>'
+  L275:   favorite_removed_247f2df9: '★ Favorite removed: #'
+  L277:   unknown_subcommand_use_quote_f79bf3b5: 'Unknown subcommand. Use: /quoteFavorite'
+  L174:     treasure_complete_8360fbe9: 🎵 Treasure Complete! 🎵
+  L177:     time_s_up_c5b3ef74: §c§lTIME'S UP!
+  L178:     treasures_collected_ca7eab31: '§7Treasures collected: §e'
+  L179:     try_a_different_route_next_t_721a4d8b: §7Try a different route next time — or use §e/gamestart §7<§eeasy§7|§enormal§7|§ehard§7> §7to retry.
+  L240:     favorite_saved_sneak_rightcl_7a73eb4f: ★ Favorite saved! (Sneak+RightClick)
+  L241:     favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs yet / or duplicate)
+  L265:   players_only_10ed3cbc: Players only.
+  L266:   treasurerun_quote_favorite_c_dbf690ae: '[TreasureRun] Quote Favorite Commands:'
+  L270:   favorite_saved_bb0cd8a8: ★ Favorite saved!
+  L271:   favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs yet / or duplicate)
+  L272:   favorites_latest_20_e23c073b: '★ Favoriten (latest 20):'
+  L273:   usage_quotefavorite_remove_i_5324156c: 'Usage: /quoteFavorite remove <id>'
+  L275:   favorite_removed_247f2df9: '★ Favorite removed: #'
+  L277:   unknown_subcommand_use_quote_f79bf3b5: 'Unknown subcommand. Use: /quoteFavorite'
+  L173:     treasure_complete_8360fbe9: 🎵 Treasure Complete! 🎵
+  L176:     time_s_up_c5b3ef74: §c§lTIME'S UP!
+  L177:     treasures_collected_ca7eab31: '§7Treasures collected: §e'
+  L178:     try_a_different_route_next_t_721a4d8b: §7Try a different route next time — or use §e/gamestart §7<§eeasy§7|§enormal§7|§ehard§7> §7to retry.
+  L239:     favorite_saved_sneak_rightcl_7a73eb4f: ★ Favorite saved! (Sneak+RightClick)
+  L240:     favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs yet / or duplicate)
+  L264:   players_only_10ed3cbc: Players only.
+  L265:   treasurerun_quote_favorite_c_dbf690ae: '[TreasureRun] Quote Favorite Commands:'
+  L269:   favorite_saved_bb0cd8a8: ★ Favorite saved!
+  L270:   favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs yet / or duplicate)
+  L271:   favorites_latest_20_e23c073b: '★ Favorites (latest 20):'
+  L272:   usage_quotefavorite_remove_i_5324156c: 'Usage: /quoteFavorite remove <id>'
+  L274:   favorite_removed_247f2df9: '★ Favorite removed: #'
+  L276:   unknown_subcommand_use_quote_f79bf3b5: 'Unknown subcommand. Use: /quoteFavorite'
+  L174:     treasure_complete_8360fbe9: 🎵 Treasure Complete! 🎵
+  L177:     time_s_up_c5b3ef74: §c§lTIME'S UP!
+  L178:     treasures_collected_ca7eab31: '§7Treasures collected: §e'
+  L179:     try_a_different_route_next_t_721a4d8b: §7Try a different route next time — or use §e/gamestart §7<§eeasy§7|§enormal§7|§ehard§7> §7to retry.
+  L240:     favorite_saved_sneak_rightcl_7a73eb4f: ★ Favorite saved! (Sneak+RightClick)
+  L241:     favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs yet / or duplicate)
+  L265:   players_only_10ed3cbc: Players only.
+  L266:   treasurerun_quote_favorite_c_dbf690ae: '[TreasureRun] Quote Favorite Commands:'
+  L270:   favorite_saved_bb0cd8a8: ★ Favorite saved!
+  L271:   favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs yet / or duplicate)
+  L272:   favorites_latest_20_e23c073b: '★ Favoritos (latest 20):'
+  L273:   usage_quotefavorite_remove_i_5324156c: 'Usage: /quoteFavorite remove <id>'
+  L275:   favorite_removed_247f2df9: '★ Favorite removed: #'
+  L277:   unknown_subcommand_use_quote_f79bf3b5: 'Unknown subcommand. Use: /quoteFavorite'
+  L174:     treasure_complete_8360fbe9: 🎵 Treasure Complete! 🎵
+  L177:     time_s_up_c5b3ef74: §c§lTIME'S UP!
+  L178:     treasures_collected_ca7eab31: '§7Treasures collected: §e'
+  L179:     try_a_different_route_next_t_721a4d8b: §7Try a different route next time — or use §e/gamestart §7<§eeasy§7|§enormal§7|§ehard§7> §7to retry.
+  L240:     favorite_saved_sneak_rightcl_7a73eb4f: ★ Favorite saved! (Sneak+RightClick)
+  L241:     favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs yet / or duplicate)
+  L265:   players_only_10ed3cbc: Players only.
+  L266:   treasurerun_quote_favorite_c_dbf690ae: '[TreasureRun] Quote Favorite Commands:'
+  L270:   favorite_saved_bb0cd8a8: ★ Favorite saved!
+  L271:   favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs yet / or duplicate)
+  L272:   favorites_latest_20_e23c073b: '★ Suosikit (latest 20):'
+  L273:   usage_quotefavorite_remove_i_5324156c: 'Usage: /quoteFavorite remove <id>'
+  L275:   favorite_removed_247f2df9: '★ Favorite removed: #'
+  L277:   unknown_subcommand_use_quote_f79bf3b5: 'Unknown subcommand. Use: /quoteFavorite'
+  L174:     treasure_complete_8360fbe9: 🎵 Treasure Complete! 🎵
+  L177:     time_s_up_c5b3ef74: §c§lTIME'S UP!
+  L178:     treasures_collected_ca7eab31: '§7Treasures collected: §e'
+  L179:     try_a_different_route_next_t_721a4d8b: §7Try a different route next time — or use §e/gamestart §7<§eeasy§7|§enormal§7|§ehard§7> §7to retry.
+  L240:     favorite_saved_sneak_rightcl_7a73eb4f: ★ Favorite saved! (Sneak+RightClick)
+  L241:     favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs yet / or duplicate)
+  L265:   players_only_10ed3cbc: Players only.
+  L266:   treasurerun_quote_favorite_c_dbf690ae: '[TreasureRun] Quote Favorite Commands:'
+  L270:   favorite_saved_bb0cd8a8: ★ Favorite saved!
+  L271:   favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs yet / or duplicate)
+  L272:   favorites_latest_20_e23c073b: '★ Favoris (latest 20):'
+  L273:   usage_quotefavorite_remove_i_5324156c: 'Usage: /quoteFavorite remove <id>'
+  L275:   favorite_removed_247f2df9: '★ Favorite removed: #'
+  L277:   unknown_subcommand_use_quote_f79bf3b5: 'Unknown subcommand. Use: /quoteFavorite'
+  L290:     time_s_up_7441e686: TIME'S UP!
+  L174:     treasure_complete_8360fbe9: 🎵 Treasure Complete! 🎵
+  L177:     time_s_up_c5b3ef74: §c§lTIME'S UP!
+  L178:     treasures_collected_ca7eab31: '§7Treasures collected: §e'
+  L179:     try_a_different_route_next_t_721a4d8b: §7Try a different route next time — or use §e/gamestart §7<§eeasy§7|§enormal§7|§ehard§7> §7to retry.
+  L240:     favorite_saved_sneak_rightcl_7a73eb4f: ★ Favorite saved! (Sneak+RightClick)
+  L241:     favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs yet / or duplicate)
+  L265:   players_only_10ed3cbc: Players only.
+  L266:   treasurerun_quote_favorite_c_dbf690ae: '[TreasureRun] Quote Favorite Commands:'
+  L270:   favorite_saved_bb0cd8a8: ★ Favorite saved!
+  L271:   favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs yet / or duplicate)
+  L272:   favorites_latest_20_e23c073b: '★ Uppáhald (latest 20):'
+  L273:   usage_quotefavorite_remove_i_5324156c: 'Usage: /quoteFavorite remove <id>'
+  L275:   favorite_removed_247f2df9: '★ Favorite removed: #'
+  L277:   unknown_subcommand_use_quote_f79bf3b5: 'Unknown subcommand. Use: /quoteFavorite'
+  L174:     treasure_complete_8360fbe9: 🎵 Treasure Complete! 🎵
+  L177:     time_s_up_c5b3ef74: §c§lTIME'S UP!
+  L178:     treasures_collected_ca7eab31: '§7Treasures collected: §e'
+  L179:     try_a_different_route_next_t_721a4d8b: §7Try a different route next time — or use §e/gamestart §7<§eeasy§7|§enormal§7|§ehard§7> §7to retry.
+  L240:     favorite_saved_sneak_rightcl_7a73eb4f: ★ Favorite saved! (Sneak+RightClick)
+  L241:     favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs yet / or duplicate)
+  L265:   players_only_10ed3cbc: Players only.
+  L266:   treasurerun_quote_favorite_c_dbf690ae: '[TreasureRun] Quote Favorite Commands:'
+  L270:   favorite_saved_bb0cd8a8: ★ Favorite saved!
+  L271:   favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs yet / or duplicate)
+  L272:   favorites_latest_20_e23c073b: '★ Preferiti (latest 20):'
+  L273:   usage_quotefavorite_remove_i_5324156c: 'Usage: /quoteFavorite remove <id>'
+  L275:   favorite_removed_247f2df9: '★ Favorite removed: #'
+  L277:   unknown_subcommand_use_quote_f79bf3b5: 'Unknown subcommand. Use: /quoteFavorite'
+  L173:     treasure_complete_8360fbe9: 🎵 Treasure Complete! 🎵
+  L176:     time_s_up_c5b3ef74: §c§lTIME'S UP!
+  L177:     treasures_collected_ca7eab31: '§7Treasures collected: §e'
+  L178:     try_a_different_route_next_t_721a4d8b: §7Try a different route next time — or use §e/gamestart §7<§eeasy§7|§enormal§7|§ehard§7> §7to retry.
+  L239:     favorite_saved_sneak_rightcl_7a73eb4f: ★ Favorite saved! (Sneak+RightClick)
+  L240:     favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs yet / or duplicate)
+  L264:   players_only_10ed3cbc: Players only.
+  L265:   treasurerun_quote_favorite_c_dbf690ae: '[TreasureRun] Quote Favorite Commands:'
+  L269:   favorite_saved_bb0cd8a8: ★ Favorite saved!
+  L270:   favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs yet / or duplicate)
+  L271:   favorites_latest_20_e23c073b: '★ お気に入り (latest 20):'
+  L272:   usage_quotefavorite_remove_i_5324156c: 'Usage: /quoteFavorite remove <id>'
+  L274:   favorite_removed_247f2df9: '★ Favorite removed: #'
+  L276:   unknown_subcommand_use_quote_f79bf3b5: 'Unknown subcommand. Use: /quoteFavorite'
+  L174:     treasure_complete_8360fbe9: 🎵 Treasure Complete! 🎵
+  L177:     time_s_up_c5b3ef74: §c§lTIME'S UP!
+  L178:     treasures_collected_ca7eab31: '§7Treasures collected: §e'
+  L179:     try_a_different_route_next_t_721a4d8b: §7Try a different route next time — or use §e/gamestart §7<§eeasy§7|§enormal§7|§ehard§7> §7to retry.
+  L240:     favorite_saved_sneak_rightcl_7a73eb4f: ★ Favorite saved! (Sneak+RightClick)
+  L241:     favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs yet / or duplicate)
+  L265:   players_only_10ed3cbc: Players only.
+  L266:   treasurerun_quote_favorite_c_dbf690ae: '[TreasureRun] Quote Favorite Commands:'
+  L270:   favorite_saved_bb0cd8a8: ★ Favorite saved!
+  L271:   favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs yet / or duplicate)
+  L272:   favorites_latest_20_e23c073b: '★ 즐겨찾기 (latest 20):'
+  L273:   usage_quotefavorite_remove_i_5324156c: 'Usage: /quoteFavorite remove <id>'
+  L275:   favorite_removed_247f2df9: '★ Favorite removed: #'
+  L277:   unknown_subcommand_use_quote_f79bf3b5: 'Unknown subcommand. Use: /quoteFavorite'
+  L174:     treasure_complete_8360fbe9: 🎵 Treasure Complete! 🎵
+  L177:     time_s_up_c5b3ef74: §c§lTIME'S UP!
+  L178:     treasures_collected_ca7eab31: '§7Treasures collected: §e'
+  L179:     try_a_different_route_next_t_721a4d8b: §7Try a different route next time — or use §e/gamestart §7<§eeasy§7|§enormal§7|§ehard§7> §7to retry.
+  L240:     favorite_saved_sneak_rightcl_7a73eb4f: ★ Favorite saved! (Sneak+RightClick)
+  L241:     favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs yet / or duplicate)
+  L265:   players_only_10ed3cbc: Players only.
+  L266:   treasurerun_quote_favorite_c_dbf690ae: '[TreasureRun] Quote Favorite Commands:'
+  L270:   favorite_saved_bb0cd8a8: ★ Favorite saved!
+  L271:   favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs yet / or duplicate)
+  L272:   favorites_latest_20_e23c073b: '★ Dilecta (latest 20):'
+  L273:   usage_quotefavorite_remove_i_5324156c: 'Usage: /quoteFavorite remove <id>'
+  L275:   favorite_removed_247f2df9: '★ Favorite removed: #'
+  L277:   unknown_subcommand_use_quote_f79bf3b5: 'Unknown subcommand. Use: /quoteFavorite'
+  L290:     time_s_up_7441e686: TIME'S UP!
+  L174:     treasure_complete_8360fbe9: 🎵 Treasure Complete! 🎵
+  L177:     time_s_up_c5b3ef74: §c§lTIME'S UP!
+  L178:     treasures_collected_ca7eab31: '§7Treasures collected: §e'
+  L179:     try_a_different_route_next_t_721a4d8b: §7Try a different route next time — or use §e/gamestart §7<§eeasy§7|§enormal§7|§ehard§7> §7to retry.
+  L240:     favorite_saved_sneak_rightcl_7a73eb4f: ★ Favorite saved! (Sneak+RightClick)
+  L241:     favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs yet / or duplicate)
+  L265:   players_only_10ed3cbc: Players only.
+  L266:   treasurerun_quote_favorite_c_dbf690ae: '[TreasureRun] Quote Favorite Commands:'
+  L270:   favorite_saved_bb0cd8a8: ★ Favorite saved!
+  L271:   favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs yet / or duplicate)
+  L272:   favorites_latest_20_e23c073b: '★ Favorieten (latest 20):'
+  L273:   usage_quotefavorite_remove_i_5324156c: 'Usage: /quoteFavorite remove <id>'
+  L275:   favorite_removed_247f2df9: '★ Favorite removed: #'
+  L277:   unknown_subcommand_use_quote_f79bf3b5: 'Unknown subcommand. Use: /quoteFavorite'
+  L290:     time_s_up_7441e686: TIME'S UP!
+  L174:     treasure_complete_8360fbe9: 🎵 Treasure Complete! 🎵
+  L177:     time_s_up_c5b3ef74: §c§lTIME'S UP!
+  L178:     treasures_collected_ca7eab31: '§7Treasures collected: §e'
+  L179:     try_a_different_route_next_t_721a4d8b: §7Try a different route next time — or use §e/gamestart §7<§eeasy§7|§enormal§7|§ehard§7> §7to retry.
+  L240:     favorite_saved_sneak_rightcl_7a73eb4f: ★ Favorite saved! (Sneak+RightClick)
+  L241:     favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs yet / or duplicate)
+  L265:   players_only_10ed3cbc: Players only.
+  L266:   treasurerun_quote_favorite_c_dbf690ae: '[TreasureRun] Quote Favorite Commands:'
+  L270:   favorite_saved_bb0cd8a8: ★ Favorite saved!
+  L271:   favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs yet / or duplicate)
+  L272:   favorites_latest_20_e23c073b: '★ Избранное (latest 20):'
+  L273:   usage_quotefavorite_remove_i_5324156c: 'Usage: /quoteFavorite remove <id>'
+  L275:   favorite_removed_247f2df9: '★ Favorite removed: #'
+  L277:   unknown_subcommand_use_quote_f79bf3b5: 'Unknown subcommand. Use: /quoteFavorite'
+  L174:     treasure_complete_8360fbe9: 🎵 Treasure Complete! 🎵
+  L177:     time_s_up_c5b3ef74: §c§lTIME'S UP!
+  L178:     treasures_collected_ca7eab31: '§7Treasures collected: §e'
+  L179:     try_a_different_route_next_t_721a4d8b: §7Try a different route next time — or use §e/gamestart §7<§eeasy§7|§enormal§7|§ehard§7> §7to retry.
+  L240:     favorite_saved_sneak_rightcl_7a73eb4f: ★ Favorite saved! (Sneak+RightClick)
+  L241:     favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs yet / or duplicate)
+  L265:   players_only_10ed3cbc: Players only.
+  L266:   treasurerun_quote_favorite_c_dbf690ae: '[TreasureRun] Quote Favorite Commands:'
+  L270:   favorite_saved_bb0cd8a8: ★ Favorite saved!
+  L271:   favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs yet / or duplicate)
+  L272:   favorites_latest_20_e23c073b: '★ प्रियाणि (latest 20):'
+  L273:   usage_quotefavorite_remove_i_5324156c: 'Usage: /quoteFavorite remove <id>'
+  L275:   favorite_removed_247f2df9: '★ Favorite removed: #'
+  L277:   unknown_subcommand_use_quote_f79bf3b5: 'Unknown subcommand. Use: /quoteFavorite'
+  L174:     treasure_complete_8360fbe9: 🎵 Treasure Complete! 🎵
+  L177:     time_s_up_c5b3ef74: §c§lTIME'S UP!
