@@ -84,13 +84,13 @@ command:
       bookOther: '&7other shows only other quotes'
 gui:
   language:
-    title: LANGUAGE / SIGN
-    subtitle: '&7CHOOSE LANGUAGE'
+    title: LANGUAGE
+    subtitle: '&7CHOOSE YOUR LANGUAGE'
     loreDefault:
     - '&7CLICK CHOOSE'
     - '&8SAVE AUTOMATIC'
-    selected: '&aSELECT: &f{lang}'
-    saved: '&aSAVED: &f{lang}'
+    selected: '&aSELECTED: &f{lang}'
+    saved: '&aLANGUAGE SAVED: &f{lang}'
     reopenHint: '&7CHANGE ANYTIME: &f/lang'
 game:
   difficulty:

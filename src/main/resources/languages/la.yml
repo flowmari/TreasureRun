@@ -84,13 +84,13 @@ command:
       bookOther: '&7other shows only other quotes'
 gui:
   language:
-    title: Lingua / Language
+    title: Lingua
     subtitle: '&7Linguam elige'
     loreDefault:
     - '&7Preme ut eligas'
     - '&8Servatur'
     selected: '&aElecta: &f{lang}'
-    saved: '&aServata: &f{lang}'
+    saved: '&aLingua servata: &f{lang}'
     reopenHint: '&7Mutare potes per &f/lang'
 game:
   difficulty:
@@ -390,5 +390,5 @@ outcome:
     common:
       pool: []
   fallback:
-    runComplete: Run complete.
-    timeUp: Time's up.
+    runComplete: Cursus perfectus.
+    timeUp: Tempus exiit.
