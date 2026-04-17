@@ -410,10 +410,10 @@ ui:
       dbFavorites: （資料庫：proverb_favorites）
 gui:
   language:
-    title: 語言 / Language
-    subtitle: '&7Select your language'
-    selected: '&aSelected: &f{lang}'
-    saved: '&aSaved your language: &f{lang}'
+    title: 語言
+    subtitle: '&7請擇語言'
+    selected: '&a已擇：&f{lang}'
+    saved: '&a語言已存：&f{lang}'
 game:
   difficulty:
     easy: '&aEasy'
@@ -546,5 +546,5 @@ outcome:
     common:
       pool: []
   fallback:
-    runComplete: Run complete.
-    timeUp: Time's up.
+    runComplete: 行已竟。
+    timeUp: 時已盡。

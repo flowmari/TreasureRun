@@ -84,12 +84,12 @@ command:
       bookOther: '&7other shows only other quotes'
 gui:
   language:
-    title: Taal / Language
+    title: Taal
     subtitle: '&7Kies je taal'
     loreDefault:
     - '&7Klik om te kiezen'
     - '&8Wordt opgeslagen'
-    selected: '&aGekozen: &f{lang}'
+    selected: '&aGeselecteerd: &f{lang}'
     saved: '&aTaal opgeslagen: &f{lang}'
     reopenHint: '&7Wijzig met &f/lang'
 game:
@@ -390,5 +390,5 @@ outcome:
     common:
       pool: []
   fallback:
-    runComplete: Run complete.
-    timeUp: Time's up.
+    runComplete: Run voltooid.
+    timeUp: Tijd om.
