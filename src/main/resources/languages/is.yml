@@ -84,13 +84,13 @@ command:
       bookOther: '&7other shows only other quotes'
 gui:
   language:
-    title: Tungumál / Language
+    title: Tungumál
     subtitle: '&7Veldu tungumál'
     loreDefault:
     - '&7Smelltu til að velja'
     - '&8Vistað sjálfkrafa'
     selected: '&aValið: &f{lang}'
-    saved: '&aVistað: &f{lang}'
+    saved: '&aTungumál vistað: &f{lang}'
     reopenHint: '&7Breyttu með &f/lang'
 game:
   difficulty:
@@ -390,5 +390,5 @@ outcome:
     common:
       pool: []
   fallback:
-    runComplete: Run complete.
-    timeUp: Time's up.
+    runComplete: Keyrslu lokið.
+    timeUp: Tíminn rann út.

@@ -84,7 +84,7 @@ command:
       bookOther: '&7other shows only other quotes'
 gui:
   language:
-    title: Язык / Language
+    title: Язык
     subtitle: '&7Выберите язык'
     loreDefault:
     - '&7Нажмите, чтобы выбрать'
@@ -390,5 +390,5 @@ outcome:
     common:
       pool: []
   fallback:
-    runComplete: Run complete.
-    timeUp: Time's up.
+    runComplete: Забег завершён.
+    timeUp: Время вышло.

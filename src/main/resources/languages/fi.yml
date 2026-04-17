@@ -84,13 +84,13 @@ command:
       bookOther: '&7other shows only other quotes'
 gui:
   language:
-    title: Kieli / Language
+    title: Kieli
     subtitle: '&7Valitse kieli'
     loreDefault:
     - '&7Klikkaa valitaksesi'
     - '&8Tallennetaan'
     selected: '&aValittu: &f{lang}'
-    saved: '&aTallennettu kieli: &f{lang}'
+    saved: '&aKieli tallennettu: &f{lang}'
     reopenHint: '&7Vaihda komennolla &f/lang'
 game:
   difficulty:
@@ -390,5 +390,5 @@ outcome:
     common:
       pool: []
   fallback:
-    runComplete: Run complete.
-    timeUp: Time's up.
+    runComplete: Suoritus valmis.
+    timeUp: Aika loppui.
