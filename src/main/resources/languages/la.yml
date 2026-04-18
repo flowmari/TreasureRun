@@ -210,7 +210,7 @@ favorites:
     count: favorites.chapter.count
     empty: favorites.chapter.empty
     otherSub: favorites.chapter.otherSub
-    rereadBook: favorites.chapter.rereadBook
+    rereadBook: Liber relegendi
     successSub: favorites.chapter.successSub
     successTitle: favorites.chapter.successTitle
     successTpl1: favorites.chapter.successTpl1
@@ -225,34 +225,34 @@ favorites:
     head: favorites.cover.head
     hint: favorites.cover.hint
     openToc: favorites.cover.openToc
-    reread: favorites.cover.reread
+    reread: Relectio
     sub: favorites.cover.sub
   empty:
     head: favorites.empty.head
-    noFav: 'Nulla Dilecta adhuc.'
+    noFav: Nulla Dilecta adhuc.
     noFavSub: favorites.empty.noFavSub
-    reread: favorites.empty.reread
-    rereadBook: favorites.empty.rereadBook
+    reread: Nondum est sententia relegenda.
+    rereadBook: Liber relegendi nondum praesto est.
     saveHow: favorites.empty.saveHow
     saveHow1: favorites.empty.saveHow1
     saveHow2: favorites.empty.saveHow2
     saveLatest: favorites.empty.saveLatest
     sub: favorites.empty.sub
     tryNow: favorites.empty.tryNow
-  remove: favorites.remove
+  remove: Aufer
   reread:
     head: favorites.reread.head
     noQuotes: favorites.reread.noQuotes
   table: favorites.table
-  title: 'Dilecta'
+  title: Dilecta
   toc:
     clickable: favorites.toc.clickable
     head: favorites.toc.head
     howto: favorites.toc.howto
     howtoShift: '&7Incurvare + dextrum cliccum ad archivum Dilectorum aperiendum'
     manage: favorites.toc.manage
-    reread: favorites.toc.reread
-    rereadTitle: favorites.toc.rereadTitle
+    reread: Relectio
+    rereadTitle: Relectio
     sub: favorites.toc.sub
   auto:
     treasurerun_favorites_templa_a0a4bf2e: '[TreasureRun] favorites_templates.yml

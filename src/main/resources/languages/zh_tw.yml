@@ -428,19 +428,26 @@ game:
     normal: '&eNormal'
     hard: '&cHard'
 favorites:
-  title: '收藏'
+  title: 收藏
   cover:
     head: favorites.cover.head
     hint: favorites.cover.hint
+    reread: 重讀
   empty:
-    noFav: '目前還沒有收藏。'
+    noFav: 目前還沒有收藏。
     saveLatest: favorites.empty.saveLatest
+    reread: 目前還沒有可重讀的名言。
+    rereadBook: 目前還沒有可用的重讀書本。
   toc:
     head: favorites.toc.head
     howto: favorites.toc.howto
     manage: favorites.toc.manage
-    reread: favorites.toc.reread
+    reread: 重讀
     howtoShift: '&7蹲下 + 右鍵即可開啟收藏檔案'
+    rereadTitle: 重讀
+  chapter:
+    rereadBook: 重讀書本
+  remove: 刪除
 command:
   checkTreasureEmerald:
     playersOnly: 只有玩家可以使用這個指令。
