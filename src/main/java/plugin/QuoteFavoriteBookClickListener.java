@@ -153,7 +153,7 @@ public class QuoteFavoriteBookClickListener implements Listener {
           player.openBook(empty);
           return true;
         } catch (Throwable ignored) {
-          player.sendMessage(ChatColor.YELLOW + tr(player, "favorites.empty.noFav", "favorites.empty.noFav"));
+          player.sendMessage(ChatColor.YELLOW + tr(player, "favorites.empty.noFav"));
           return true;
         }
       }
@@ -268,9 +268,9 @@ public class QuoteFavoriteBookClickListener implements Listener {
       BookMeta bm = (BookMeta) book.getItemMeta();
       if (bm == null) return null;
 
-      bm.setTitle(tr(player, "favorites.title", "favorites.title"));
+      bm.setTitle(tr(player, "favorites.title"));
       bm.setAuthor(player.getName());
-      bm.setDisplayName(ChatColor.AQUA + tr(player, "favorites.title", "favorites.title"));
+      bm.setDisplayName(ChatColor.AQUA + tr(player, "favorites.title"));
 
       List<String> pages = buildBookPages(player, rows);
       if (pages.isEmpty()) return null;
