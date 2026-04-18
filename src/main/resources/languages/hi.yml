@@ -437,19 +437,26 @@ game:
     normal: '&eNormal'
     hard: '&cHard'
 favorites:
-  title: 'पसंदीदा'
+  title: पसंदीदा
   cover:
     head: favorites.cover.head
     hint: favorites.cover.hint
+    reread: पुनर्पाठ
   empty:
-    noFav: 'अभी तक कोई पसंदीदा नहीं है।'
+    noFav: अभी तक कोई पसंदीदा नहीं है।
     saveLatest: favorites.empty.saveLatest
+    reread: अभी पुनर्पाठ के लिए कोई उद्धरण नहीं है।
+    rereadBook: अभी कोई पुनर्पाठ पुस्तक उपलब्ध नहीं है।
   toc:
     head: favorites.toc.head
     howto: favorites.toc.howto
     manage: favorites.toc.manage
-    reread: favorites.toc.reread
+    reread: पुनर्पाठ
     howtoShift: '&7झुककर + राइट-क्लिक करके पसंदीदा संग्रह खोलें'
+    rereadTitle: पुनर्पाठ
+  chapter:
+    rereadBook: पुनर्पाठ पुस्तक
+  remove: हटाएँ
 command:
   checkTreasureEmerald:
     playersOnly: यह कमांड केवल खिलाड़ी ही चला सकते हैं।

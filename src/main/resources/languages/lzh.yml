@@ -428,19 +428,26 @@ game:
     normal: '&eNormal'
     hard: '&cHard'
 favorites:
-  title: '珍藏'
+  title: 珍藏
   cover:
     head: favorites.cover.head
     hint: favorites.cover.hint
+    reread: 重讀
   empty:
-    noFav: '今尚無珍藏。'
+    noFav: 今尚無珍藏。
     saveLatest: favorites.empty.saveLatest
+    reread: 今尚無可重讀之格言。
+    rereadBook: 今尚無可用之重讀書。
   toc:
     head: favorites.toc.head
     howto: favorites.toc.howto
     manage: favorites.toc.manage
-    reread: favorites.toc.reread
+    reread: 重讀
     howtoShift: '&7潛行 + 右擊，以啟珍藏之藏冊'
+    rereadTitle: 重讀
+  chapter:
+    rereadBook: 重讀之書
+  remove: 刪去
 command:
   checkTreasureEmerald:
     playersOnly: 此令唯玩家可用。

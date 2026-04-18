@@ -212,7 +212,7 @@ favorites:
     count: favorites.chapter.count
     empty: favorites.chapter.empty
     otherSub: favorites.chapter.otherSub
-    rereadBook: favorites.chapter.rereadBook
+    rereadBook: Libro de relectura
     successSub: favorites.chapter.successSub
     successTitle: favorites.chapter.successTitle
     successTpl1: favorites.chapter.successTpl1
@@ -227,34 +227,34 @@ favorites:
     head: favorites.cover.head
     hint: favorites.cover.hint
     openToc: favorites.cover.openToc
-    reread: favorites.cover.reread
+    reread: Releer
     sub: favorites.cover.sub
   empty:
     head: favorites.empty.head
-    noFav: 'Aún no hay favoritos.'
+    noFav: Aún no hay favoritos.
     noFavSub: favorites.empty.noFavSub
-    reread: favorites.empty.reread
-    rereadBook: favorites.empty.rereadBook
+    reread: Todavía no hay citas para releer.
+    rereadBook: Todavía no hay un libro de relectura disponible.
     saveHow: favorites.empty.saveHow
     saveHow1: favorites.empty.saveHow1
     saveHow2: favorites.empty.saveHow2
     saveLatest: favorites.empty.saveLatest
     sub: favorites.empty.sub
     tryNow: favorites.empty.tryNow
-  remove: favorites.remove
+  remove: Eliminar
   reread:
     head: favorites.reread.head
     noQuotes: favorites.reread.noQuotes
   table: favorites.table
-  title: 'Favoritos'
+  title: Favoritos
   toc:
     clickable: favorites.toc.clickable
     head: favorites.toc.head
     howto: favorites.toc.howto
     howtoShift: '&7Agáchate + clic derecho para abrir el archivo de Favoritos'
     manage: favorites.toc.manage
-    reread: favorites.toc.reread
-    rereadTitle: favorites.toc.rereadTitle
+    reread: Releer
+    rereadTitle: Releer
     sub: favorites.toc.sub
   auto:
     treasurerun_favorites_templa_a0a4bf2e: '[TreasureRun] favorites_templates.yml

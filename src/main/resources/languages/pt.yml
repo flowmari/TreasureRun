@@ -441,20 +441,27 @@ game:
     normal: '&eNormal'
     hard: '&cHard'
 favorites:
-  title: 'Favoritos'
+  title: Favoritos
   cover:
     head: favorites.cover.head
     hint: favorites.cover.hint
+    reread: Releitura
   empty:
-    noFav: 'Ainda não há favoritos.'
+    noFav: Ainda não há favoritos.
     saveLatest: favorites.empty.saveLatest
+    reread: Ainda não há citações para reler.
+    rereadBook: Ainda não há livro de releitura disponível.
   toc:
     head: favorites.toc.head
     howto: favorites.toc.howto
     manage: favorites.toc.manage
-    reread: favorites.toc.reread
+    reread: Releitura
     howtoShift: '&7Agache-se + clique com o botão direito para abrir o arquivo de
       Favoritos'
+    rereadTitle: Releitura
+  chapter:
+    rereadBook: Livro de releitura
+  remove: Remover
 command:
   checkTreasureEmerald:
     playersOnly: Somente jogadores podem usar este comando.
