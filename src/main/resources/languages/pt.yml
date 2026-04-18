@@ -431,10 +431,10 @@ ui:
       dbFavorites: '(BD: proverb_favorites)'
 gui:
   language:
-    title: Idioma / Language
-    subtitle: '&7Select your language'
-    selected: '&aSelected: &f{lang}'
-    saved: '&aSaved your language: &f{lang}'
+    title: Idioma
+    subtitle: '&7Selecione seu idioma'
+    selected: '&aSelecionado: &f{lang}'
+    saved: '&aIdioma salvo: &f{lang}'
 game:
   difficulty:
     easy: '&aEasy'
