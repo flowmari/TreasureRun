@@ -1,490 +1,527 @@
 # OutcomeMessageService player-facing candidates
 
-- Easy
-- Normal
-- Hard
-- NORMAL
-- EASY
-- HARD
-- Translation missing:
-- Light fell evenly, ,
-and every shadow vanished.
-ï¼åãç­ããéãæ³¨ãããã¹ã¦ã®å½±ãæ¶ãããï¼
-- A moment of silence.
-The world steadied its breath.
-ï¼ä¸ç¬ã®éå¯ãä¸çããã®å¼å¸ãæ´ãããï¼
-- The record is etched deep in the sandâ
-beyond the reach of the wind.
-ï¼è¨é²ã¯ç ã«æ·±ãå»ã¾ããé¢¨ããããåãããªããï¼
-- Harmony was restored.
-Everything had been for this moment.
-ï¼èª¿åãè¨ªããããã¹ã¦ã¯ããã®ç¬éã®ããã«ãã£ããï¼
-- Time slipped by in silence,
-tucked away in the corners of memory.
-ï¼æéã¯éãã«æµããè¨æ¶ã®éã«åã¾ã£ããï¼
-- The sky shifted in color,
-and one story came to its end.
-ï¼ç©ºã®è²ãå¤ãããä¸ã¤ã®ç©èªãå®çµãåãããï¼
-- The waves grew calm,
-and the sea hid its depths once more.
-ï¼æ³¢ã¯ç©ããã«ãªããæµ·ã¯åã³ãã®æ·±æ·µãé ãããï¼
-- The footsteps stopped,
-and only the place remained.
-ï¼æ­©ã¿ã¯æ­¢ã¾ããå ´æã ããããã«æ®ããããï¼
-- The sun sank,
-and shadow covered the world once again.
-ï¼æ¥ã¯è½ã¡ãå½±ã¯åã³ä¸çãè¦ã£ããï¼
-- The last grains of sand fell,
-and the story quietly came to a close.
-ï¼ç ã¯ãã¹ã¦è½ã¡ãããç©èªã¯éãã«å¹ãéãããï¼
-- The wind swept through,
-and the footprints vanished without a trace.
-ï¼é¢¨ãå¹ãæããè¶³è·¡ã¯è·¡å½¢ããªãæ¶ãå»ã£ããï¼
-- The tide came in,
-What once had been there returned to the sea.
-ï¼æ½®ãæºã¡ãããã¤ã¦ããã«ãã£ããã®ã¯ãæµ·ã¸ã¨éã£ããï¼
-- Silence.
-Only time passed through.
-ï¼æ²é»ããã ãæéã ãããããéãéãããï¼
-- Perfect balance.
-The scales held level.
-ï¼ç­ä¾¡ã®åè¡¡ãå¤©ç§¤ã¯æ°´å¹³ãä¿ã£ããï¼
-- Things changed,
-taking on new forms as they carried on.
-ï¼ç©äºã¯ç§»ãããå½¢ãå¤ãã¦å¼ãç¶ããããï¼
-- There was no dialogue
-âonly an exchange of facts.
-ï¼å¯¾è©±ã¯ãªãããã äºå®ã¨ãã¦ã®äº¤æãè¡ããããï¼
-- Victory and defeat 
-are nothing more than grains of sand.
-ï¼åå©ãæåããåãç ã®ä¸ç²ã«éããªããï¼
-- The road goes onâor it ends.
-Either way, it lies on the same earth.
-ï¼éã¯ç¶ãããããã¯éåããã©ã¡ããåãå¤§å°ã®ä¸ã«ãããï¼
-- Distance became meaning.
-Time answered your steps.
-ï¼è·é¢ãæå³ã«ãªã£ããæéãããªãã®æ­©ã¿ã«ç­ãããï¼
-- Time ran out.
-Nothing else did.
-ï¼æéã¯çµãã£ããã»ãã¯çµãã£ã¦ããªããï¼
-- The center was found.
-The world came to rest.
-ï¼è»¸(ä¸­å¿)ã¯è¦åºããããä¸çã¯ãã®éåãæ­¢ãããï¼
-- The glass didnât break.
-Neither did you.
-ï¼ã¬ã©ã¹ã¯å²ããªãã£ããããªããæããªãã£ããï¼
-- Beneath a quiet sky,
-your will held firm.
-ï¼éããªç©ºã®ä¸ã§ãæå¿ã¯æã¡ãããããï¼
-- Very little shines forever
-âbut this moment was different.
-ï¼æ°¸é ã«è¼ããã®ãªãã¦ã»ã¨ãã©ãªãããã©ããã®ç¬éã¯å¥æ ¼ã ã£ããï¼
-- You made it across the fragile ground,
-holding fast to the horizon the whole way.
-ï¼èãå°é¢ãæ¸¡ãåã£ããå°å¹³ç·æ¯è²ããã£ããã¨æ¡ããããã¾ã¾ãï¼
-- The moment passed.
- What remained was the recordâthe achievement.
-ï¼ç¬éã¯éãå»ã£ããéºããããã®è¨é²ã»åç¸¾ã¯æ®ããï¼
-- Luck fades quickly.
-Order endures.
-ï¼éã¯éããã«æ¶ããæ´ãç§©åºã¯æ°¸ç¶ãããï¼
-- The sky knows no rest in its endless cycle.
-Neither do you.
-ï¼ç©ºã¯ãã®çµãããªãå¾ªç°ã«ä¼æ­¢ãç¥ãã¬ãæ±ãã¾ããæ­¢ã¾ãããï¼
-- The center was reached.
-The world stood still.
-ï¼ä¸­å¿ã¯å°éããããä¸çã¯ç«ã¡å°½ããéæ­¢ãããï¼
-- At last,youâve made it here.
-The truth standsâunbowed.
-ï¼ã¤ãã«ãããã¸è¾¿ãçãããçå®ã¯å±ãããã¨ãªããããã«å¨ããï¼
-- Complete. This path was yours
-âand yours alone.
-ï¼å®éããã®éãé¸ãã ã®ã¯ä»ã§ããªãããªãã ãï¼
-- Time drifted into silence,
-and found its place in the deepest corners of the mind.
-ï¼æã¯éå¯ã¸ã¨æ¼ããç²¾ç¥ã®å¥¥åºã®éã«èªãã®å±å ´æãè¦ã¤ãããï¼
-- As the sky shifted,
-one story found its final resolution.
-ï¼ç©ºãå§¿ãå¤ããã¨ã¨ãã«ãä¸ã¤ã®ç©èªã¯ãã®æçµçãªè§£æ±ºå®çµãè¦åºãããï¼
-- The waves fell quiet,
-and the sky hid its depths once more.
-ï¼æ³¢ã¯éã¾ããç©ºã¯åã³ãã®æ·±æ·µãè¦ãé ãããï¼
-- The footsteps ceased,
-and only the place remained.
-ï¼æ­©ã¿ã¯éçµ¶ãããã å ´æã ããããã«å¨ãç¶ãããï¼
-- Youâve made it.
-The truth remains.
-ï¼ãã©ãçãããæ­£ãã¯ãã®ã¾ã¾ã«ãï¼
-- Even if it was only a small step,
-you held your ground.
-ï¼å°ããªä¸æ­©ã§ããããªãã¯å®ãæãããï¼
-- You listened.
- The path opened.
-ï¼è³ãæ¾ã¾ãããéãã²ããããï¼
-- > You made it here
+## L21
 
-- > 
+Easy
 
-- > The rules were simple â
+## L21
 
-- > the choice was yours.
+Normal
 
-- ï¼ããªãã¯è¾¿ãçããã
+## L21
 
-- ã«ã¼ã«ã¯åç´ã ã£ãã
+Hard
 
-- é¸ãã ã®ã¯ãããªãèªèº«ãï¼
-- > Distance became meaning.
+## L51
 
-- > and time answered your footsteps.
+NORMAL
 
-- ï¼è·é¢ãæå³ã«ãªãã
+## L53
 
-- æéãããªãã®è¶³åãã«å¿ãããï¼
-- > Not everything shines forever.
+EASY
 
-- > But this moment did.
+## L53
 
-- ï¼ãã¹ã¦ãæ°¸é ã«è¼ããããããªãã
+EASY
 
-- ã§ãããã®ç¬éã¯ããã ã£ããï¼
-- The distance has found its meaning.
-Time has rewarded your journey.
-ï¼è·é¢ãæå³ã«ãªã£ããæéãããªãã®æ­©ã¿ã«ç­ãããï¼
-- The time is up.
-but the rest is far from over.
-ï¼æéã¯çµãã£ããã»ãã¯çµãã£ã¦ããªããï¼
-- The axis is found.
-the world has cased its motion.
-ï¼è»¸(ä¸­å¿)ã¯è¦åºããããä¸çã¯ãã®éåãæ­¢ãããï¼
-- The glass held its breath,
-and you held your ground.
-ï¼ã¬ã©ã¹ã¯å²ããªãã£ããããªããæããªãã£ããï¼
-- Under the stillness of the sky,
-your spirit did not waver.
-ï¼éããªç©ºã®ä¸ã§ãæå¿ã¯æã¡ãããããï¼
-- Few things shine forever.
-but this moment was radiant.
-ï¼æ°¸é ã«è¼ããã®ãªãã¦ã»ã¨ãã©ãªãããã©ããã®ç¬éã¯å¥æ ¼ã ã£ããï¼
-- You traversed the fragile earth,
-without losing the view.
-ï¼èãå°é¢ãæ¸¡ãåã£ããå°å¹³ç·æ¯è²ããã£ããã¨æ¡ããããã¾ã¾ãï¼
-- The moment has passed.
-The legacy remains.
-ï¼ç¬éã¯éãå»ã£ããéºããããã®è¨é²ã»åç¸¾ã¯æ®ããï¼
-- Luck fades fast.
-order endures.
-ï¼éã¯éããã«æ¶ããæ´ãç§©åºã¯æ°¸ç¶ãããï¼
-- The sky knows no pause in endless circle,
-nor shall you find yours.
-ï¼ç©ºã¯ãã®çµãããªãå¾ªç°ã«ä¼æ­¢ãç¥ãã¬ãæ±ãã¾ããæ­¢ã¾ãããï¼
-- The center has been reached.
-The world stood still.
-ï¼ä¸­å¿ã¯å°éããããä¸çã¯ç«ã¡å°½ããéæ­¢ãããï¼
-- Finally here.
-The truth remains unyielding.
-ï¼ã¤ãã«ãããã¸è¾¿ãçãããçå®ã¯å±ãããã¨ãªããããã«å¨ããï¼
-- You have seen it through.
-And mark this: it was you, and no one else, who chose this path.
-ï¼å®éããã®éãé¸ãã ã®ã¯ä»ã§ããªãããªãã ãï¼
-- Time drifted into silence,
-finding its place in the recesses of the mind.
-ï¼æã¯éå¯ã¸ã¨æ¼ããç²¾ç¥ã®å¥¥åºã®éã«èªãã®å±å ´æãè¦ã¤ãããï¼
-- As the sky transformed,
-the tale found its final resolved.
-ï¼ç©ºãå§¿ãå¤ããã¨ã¨ãã«ãä¸ã¤ã®ç©èªã¯ãã®æçµçãªè§£æ±ºå®çµãè¦åºãããï¼
-- The waters fell calm,
-and the sky once more veiled its abyss.
-ï¼æ³¢ã¯éã¾ããç©ºã¯åã³ãã®æ·±æ·µãè¦ãé ãããï¼
-- The footsteps ceased,
-only the place remained.
-ï¼æ­©ã¿ã¯éçµ¶ãããã å ´æã ããããã«å¨ãç¶ãããï¼
-- RUN COMPLETE.
-Clear. Found it.
-That's enough.
-ï¼ã¯ãªã¢ãè¦ã¤ãããããã§ååãï¼
-- RUN COMPLETE.
-The path held.
-So did you.
-ï¼éã¯æã¡ãããããããªããåããï¼
-- The sky has kept moving.
-So can you.
-ï¼ç©ºã¯ãã£ã¨æ­©ã¿ç¶ãã¦ãããããªããé²ã¿ç¶ãããããï¼
-- RUN COMPLETE.
-A quiet result.
-The weight of real work.
-ï¼éããªçµæãæ¬ç©ã®ç©ã¿éã­ãï¼
-- You only walked the path
-the world had laid out for you.
-ï¼ä¸çãç¨æãã¦ããéããããªãã¯æ­©ããã ããï¼
-- The ground didnât give way.
-It trusted your steps.
-ï¼å¤§å°ã¯å£ããªãã£ããããªãã®è¶³åãããä¿¡ãã¦ãããï¼
-- This moment aligned
-with the starsâ ancient rhythm.
-ï¼ãã®ç¬éã¯ãæãã®é·ããªãºã ã¨éãªã£ããï¼
-- You didnât take anything.
- You understood something.
-ï¼ä½ããå¥ªã£ããããããªããä½ãããçè§£ãããï¼
-- You didnât gain a thing.
-You only saw the truth for what it was.
-ï¼æã«å¥ããã®ã¯ä½ãã§ã¯ãªããçå®ããè¦æããã ãã ãï¼
-- You didnât take this place.
-You belonged here.
-ï¼å¾æããã®ã§ã¯ãªããããã«ãå±ãã¦ãããï¼
-- You walked a road
-older than memory itself.
-ï¼è¨æ¶ããå¤ãéããããªãã¯è¾¿ã£ããï¼
-- The earth did not resist.
-It recognized you.
-ï¼å¤§å°ã¯æãããããªããèªè­ãããï¼
-- This moment aligned
- with the stillness of the stars.
-ï¼ãã®ç¬éã¯ãæãã®éããã¨éãªã£ããï¼
-- No conquest.
-Understanding was enough.
-ï¼å¾æã¯ãªããçè§£ã§ãååã ã£ããï¼
-- You didnât claim it.
-You were already home.
-ï¼ãããå¥ªã£ãã®ã§ã¯ãªããããã«ãå±ãã¦ãããï¼
-- In the north wind,
-clarity outlasts speed.
-ï¼åé¢¨ã®ä¸­ã§ãéãããææ°ããçãæ®ããï¼
-- The center was found.
- The world came to rest.
-ï¼è»¸(ä¸­å¿)ã¯è¦åºããããä¸çã¯ãã®éåãæ­¢ãããï¼
-- The stars stay silent.
-Your record does the speaking.
-ï¼æã¯é»ã£ã¦ãããèªãã®ã¯ããªãã®è¨é²ã ãï¼
-- The result  remained.
-The position changed.
-ï¼çµæã¯æ®ã£ããä½ç½®ã¯å¤ãã£ããï¼
-- Between ice and glass,
-you chose control.
-ï¼æ°·ã¨ã¬ã©ã¹ã®ããã ã§ãããªãã¯å¶å¾¡ãé¸ãã ãï¼
-- The waves fell quiet,
-and the sea reclaimed its hidden depths.
-ï¼æ³¢ã¯éã¾ããæµ·ã¯ãã®é ãããæ·±æ·µãåã³èªãã®ãã®ã¨ãããï¼
-- Some treasures still await.
-Next time, a different path.
-ï¼å¾ã¤å®ããããæ¬¡ã¯ãå¥ã®éããï¼
-- The sky didnât change.
-You did.
-ï¼ç©ºã¯å¤ãããªãã£ããå¤ãã£ãã®ã¯ããªããï¼
-- The moment passed.
-What remained was order.
-ï¼ç¬éã¯éãããæ´ãã¯æ®ã£ããï¼
-- Winter is honest.
-So was your run.
-ï¼å¬ã¯æ­£ç´ã ãããªãã®èµ°ããããã ã£ããï¼
-- The stars aligned for a moment.
-You noticed.
-ï¼æã¯æã®éããã£ããããªãã¯ããã«æ°ã¥ãããï¼
-- The distance closed.
-Time did not.
-ï¼è·é¢ã¯ç¸®ãã§ãããæéã¯ç¸®ã¾ããªãã£ããï¼
-- The worldâs rules stood firm.
- And the signal of possibility was real.
-ï¼ä¸çã®ã«ã¼ã«ã¯ãå³ç¶ã¨ãã¦ããã«ãã£ããå¯è½æ§ï¼ä¿¡å·ï¼ã¯æ¬ç©ã ã£ããï¼
-- The path closed quietly.
-You were already through.
-ï¼éã¯éãã«éãããããªãã¯ããæãã¦ãããï¼
-- Nothing changed.
-Only your position did.
-ï¼ä½ãå¤ãããªãããã ãããªãã®ä½ç½®ã ããå¤ãã£ããï¼
-- Not luck.
-Alignment.
-ï¼éãããªããæ´ãã ãï¼
-- The moment passed.
-The record remains.
-ï¼ç¬éã¯éãããè¨é²ã¯æ®ããï¼
-- The outcome didnât change.
-Still, you moved forward.
-ï¼çµæã«éãã¯ãªãã£ããããã§ããããªãã¯åã«é²ãã ãï¼
-- The output didnât change.
-But you reached a new level.
-ï¼åºåã¯å¤ãããªãã¾ã¾ã ããããªãã¯æ°ããã¬ãã«ã«å°éãããï¼
-- The ending was the same.
-But the one who reached it had changed.
-ï¼çµæ«ã¯åãã ããããã«è¾¿ãçããäººéã¯å¤ãã£ããï¼
-- The destination is the same
-âbut youâre no longer the traveler you once were.
-ï¼ç®çå°ã¯åãã ããããªãã¯ããä»¥åã¨åãæäººã§ã¯ãªããï¼
-- > Distance became meaning,
+## L54
 
-- Run complete.
-- The treasure can wait.
-So can you.
-ï¼å®ã¯å¾ã£ã¦ãããããªããå¾ã¦ããï¼
-- Breathe in.
-Then again.
-ï¼æ¯ããã¦ãããä¸åº¦ãï¼
-- Thatâs all for now.
-On to the next step.
-ï¼ä»åã¯ããã¾ã§ãæ¬¡ã®ä¸æ­©ã¸ãï¼
-- You're still here.
-Thatâs what matters.
-ï¼ã¾ã ããã«ããããããå¤§äºãï¼
-- The run ended.
-You didnât.
-ï¼èµ°ãã¯æ­¢ã¾ã£ããããªãã¯æ­¢ã¾ã£ã¦ããªããï¼
-- TIME'S UP.
-The run ended.
-You didn't.
-ï¼æéã¯æ­¢ã¾ã£ããã§ããããªãã¯æ­¢ã¾ã£ã¦ããªããï¼
-- TIME'S UP.
-The rules donât change.
-Again.
-ï¼ã«ã¼ã«ã¯å¤ãããªããããä¸åº¦ãï¼
-- TIME'S UP.
-âSo closeâ is real.
-ï¼æãããã¯æ¬ç©ã ãï¼
-- The distance closed.
-Time did not.
-ï¼è·é¢ã¯ç¸®ãã ãæéã¯ç¸®ã¾ããªãã£ããï¼
-- The world kept its rules.
-You touched the edge.
-ï¼ä¸çã¯ã«ã¼ã«ãå®ã£ããããªãã¯å¢çã«è§¦ãããï¼
-- You didnât make it.
-But the signal was real.
-ï¼å±ããªãã£ããã§ãåå³ã¯æ¬ç©ã ã£ããï¼
-- Some treasures still await.
-Letâs try a different path.
-ï¼å¾ã¤å®ããããå¥ã®éãè©¦ãããï¼
-- The result remained.
-The position changed.
-ï¼çµæã¯æ®ã£ããä½ç½®ã¯å¤ãã£ããï¼
-- Time ran out.
-Meaning didn't.
-ï¼æéã¯çµãã£ããæå³ã¯çµãã£ã¦ããªããï¼
--  So close.
-The sound said so.
-ï¼æããã£ããé³ãããè¨ã£ã¦ãããï¼
-- The map is still open.
-Come back to it.
-ï¼å°å³ã¯éããã¾ã¾ãæ»ã£ã¦ããã§ãï¼
-- The worldâs rules stood firm.
-The signal of possibility was real.
-ï¼ä¸çã®ã«ã¼ã«ã¯å³ç¶ã¨ãã¦ããã«ãã£ããå¯è½æ§ï¼ä¿¡å·ï¼ã¯æ¬ç©ã ã£ããï¼
-- The world kept its rules.
-ï¼ä¸çã¯ã«ã¼ã«ãå®ã£ããï¼
-- > Time ran out.
+HARD
 
-- > Nothing else did.
+## L54
 
-- ï¼æéã¯çµãã£ãã
+HARD
 
-- ããä»¥å¤ã¯ãçµãã£ã¦ããªããï¼
-- > The outcome didnât change.
+## L55
 
-- > But your position did.
+NORMAL
 
-- ï¼çµæã¯å¤ãããªãã£ãã
+## L76
 
-- ã§ããããªãã®ä½ç½®ã¯å¤ãã£ããï¼
-- Even the aurora fades.
-Come back with a new stride.
-ï¼ãªã¼ã­ã©ã§ããæ¶ãããæ°ããæ­©ã¿ã§æ»ããï¼
-- In a fragile world,
-haste shatters clarity before it can be found.
-ï¼èãä¸çã§ã¯ãç¦ããææ°ãã®çºè¦ãå£ãã¦ãã¾ããï¼
-- The moment slipped away.
-The meaning did not.
-ï¼éããã®ã¯ç¬éãæå³ã§ã¯ãªããï¼
-- Winter is patient.
-Be the same.
-ï¼å¬ã¯å¿èå¼·ããããªããããã§ãããï¼
-- The sky kept moving.
-So will you.
-ï¼ç©ºã¯é²ã¿ç¶ãããããªããé²ããï¼
-- The story moves on.
-The end is not yet.
-ï¼åäºã¯é ãããããããã¯æå¾ãããªããï¼
-- The stars were there, watching.
-Again.
-ï¼æã¯è¦å®ã£ã¦ãããããä¸åº¦ãï¼
-- Ice takes its time.
-Neither do you.
-ï¼æ°·ã¯æ¥ããªããããªããæ¥ãå¿è¦ã¯ãªããï¼
-- The sky kept moving.
-So can you.
-ï¼ç©ºã¯åãç¶ãããããªããåãç¶ãããããï¼
-- The north has learned to wait.
-So should you.
-ï¼åã¯ãå¾ã¤ãã¨ããè¦ãã¦ãããããããå­¦ã¹ãï¼
-- This is an interlude
-âItâs not over.
-ï¼ããã¯ä¼æ­¢ã ãçµãããããªããï¼
-- Like drifting clouds,
-donât lose your flowâlike a river.
-ï¼é²ãåãç¶ããããã«ãå·ã®ããã«ãæµããå¤±ããªãã§ãï¼
-- The sound was near.
-The distance was real.
-But that moment canât be saved.
-ï¼é³ã¯è¿ãã£ããè·é¢ã¯æ¬ç©ã ã£ããã§ãããã®ç¬éã¯ä¿å­ã§ããªããï¼
-- You were closing in.
-Only time wasnât.
-ï¼è¿ã¥ãã¦ãããæéã ããè¿ã¥ããªãã£ããï¼
-- The world held to its rules.
-You touched the edge of them.
-ï¼ä¸çã¯ã«ã¼ã«ãå®ã£ããããªãã¯ãã®ç¸ã«è§¦ãããï¼
-- You didnât reach the treasure. 
-But the signal was real.
-ï¼å®ã«ã¯å±ããªãã£ããã§ãåå³ã¯æ¬ç©ã ã£ããï¼
-- It wasnât luck.
-Alignment.
-ï¼éãããªããæ´ãã ãï¼
-- The moment slipped away,
-but the record stayed.
-ï¼ç¬éã¯éãããè¨é²ã¯æ®ããï¼
-- You crossed fragile ground
-and left the horizon unbroken.
-ï¼èãå°é¢ãæ¸¡ã£ããè¦çï¼æ¯è²ï¼ãå£ããã«ãï¼
-- Nothing changed.
- Only your position did.
-Not luck.
-Alignment.
-The moment passed.
-The record remains.
+EASY
 
-- ï¼ä½ãå¤ãããªãããã ãããªãã®ä½ç½®ã ããå¤ãã£ãã
-éãããªããæ´ãã ã
-ç¬éã¯éãããè¨é²ã¯æ®ããï¼
-- The season closed.
-The land remained.
-ï¼å­£ç¯ã¯éãããå¤§å°ã¯ãæ®ã£ã¦ãããï¼
-- The path The path remains.
-Only your steps stopped.
-ï¼éã¯ãã¾ã ããã«ãããããªããæ­©ã¿ãæ­¢ããã ããï¼
-- Your time ran out.
-The sky didnât.
-ï¼ããªãã®æéã¯çµãã£ããç©ºã¯ãçµãã£ã¦ããªããï¼
-- It wasnât rejection.
-Only silence.
-ï¼æçµ¶ã§ã¯ãªãããã ãæ²é»ã ã£ããï¼
-- The world is still intact.
-You can returnâchanged.
-ï¼ä¸çã¯å½¢ãä¿ã£ã¦ãããå¤ãã£ãããªãã§ãæ»ãããï¼
-- The season ended.
-The forest remains.
-ï¼å­£ç¯ã¯çµãã£ããæ£®ã¯ãæ®ã£ã¦ãããï¼
-- The distance was closing.
-Time kept its rhythm.
-ï¼è·é¢ã¯ç¸®ãã§ãããæéã¯ããªãºã ãä¿ã£ããï¼
-- Your time came to a halt.
-The sky kept moving.
-ï¼ããªãã®æéã¯æ­¢ã¾ã£ããç©ºã¯ãæ­¢ã¾ããªãã£ããï¼
-- Not rejection
-Just silence.
-ï¼æçµ¶ã§ã¯ãªãããã ã®ãæ²é»ãï¼
-- The path is still here.
-You can come backâchanged.
-ï¼éã¯ãã¾ã ããã«ãããéãããªãã§ãæ»ãããï¼
-- Time's up.
-- Perfect equilibrium.
-The scales held level.
-ï¼ç­ä¾¡ã®åè¡¡ãå¤©ç§¤ã¯æ°´å¹³ãä¿ã£ããï¼
-- ï¼
-- ï¼
-- \R
-- >
+## L77
+
+NORMAL
+
+## L78
+
+HARD
+
+## L94
+
+EASY
+
+## L95
+
+NORMAL
+
+## L96
+
+HARD
+
+## L151
+
+
+  );
+
+  private static final List<String> BOOST_SUCCESS_MID = List.of(
+      
+
+## L158
+
+
+  );
+
+  private static final List<String> BOOST_TIMEUP_FAIL = List.of(
+      
+
+## L166
+
+
+  );
+
+  private static final List<String> BOOST_TRADER = List.of(
+      
+
+## L172
+
+
+  );
+
+  private static final List<String> BOOST_PHILOSOPHY = List.of(
+      
+
+## L177
+
+
+  );
+
+  private static final List<String> BOOST_SUCCESS_NORMAL_BASE17 = List.of(
+      
+
+## L199
+
+
+  );
+
+  // =========================================================
+  // SUCCESS（RUN COMPLETE）
+  // =========================================================
+  private List<String> successPool(String d) {
+    return switch (d) {
+
+      // -------------------------
+      // EASY（✅ SUCCESS 高ランク/中ランク/哲学 を “他より3倍”）
+      // -------------------------
+      case 
+
+## L211
+
+ -> {
+        List<String> base = List.of(
+            
+
+## L243
+
+,
+
+            // ✅ SUCCESS “高ランク” 5文（指定）
+            BOOST_SUCCESS_HIGH.get(0),
+            BOOST_SUCCESS_HIGH.get(1),
+            BOOST_SUCCESS_HIGH.get(2),
+            BOOST_SUCCESS_HIGH.get(3),
+            BOOST_SUCCESS_HIGH.get(4),
+
+            // ✅ SUCCESS “中ランク” 4文（指定）
+            BOOST_SUCCESS_MID.get(0),
+            BOOST_SUCCESS_MID.get(1),
+            BOOST_SUCCESS_MID.get(2),
+            BOOST_SUCCESS_MID.get(3),
+
+            // ✅ 汎用的な哲学（指定）
+            BOOST_PHILOSOPHY.get(0),
+            BOOST_PHILOSOPHY.get(1)
+        );
+
+        List<String> boosted = new ArrayList<>();
+        boosted.addAll(BOOST_SUCCESS_HIGH);
+        boosted.addAll(BOOST_SUCCESS_MID);
+        boosted.addAll(BOOST_PHILOSOPHY);
+
+        yield boost(base, boosted, 3);
+      }
+
+      // -------------------------
+      // NORMAL（✅ SUCCESS 高ランク/中ランク/哲学 を “他より3倍”）
+      // -------------------------
+      case 
+
+## L274
+
+ -> {
+        List<String> base = List.of(
+            
+
+## L289
+
+,
+
+            // ✅ 成功・中ランク（指定）
+            
+
+## L295
+
+,
+
+            // ✅ 成功・高ランク（指定）— NORMALにも1回入れる（= 3倍対象にするため）
+            BOOST_SUCCESS_HIGH.get(0),
+            BOOST_SUCCESS_HIGH.get(1),
+            BOOST_SUCCESS_HIGH.get(2),
+            BOOST_SUCCESS_HIGH.get(3),
+            BOOST_SUCCESS_HIGH.get(4),
+
+            // RUN COMPLETE 短文セット
+            
+
+## L308
+
+,
+
+            // 哲学パック（S1–S5）
+            
+
+## L316
+
+,
+
+            // 成功時（ゲームに勝ったとき）【5】
+            
+
+## L323
+
+,
+
+            // ✅ 汎用的な哲学（指定）
+            BOOST_PHILOSOPHY.get(0),
+            BOOST_PHILOSOPHY.get(1)
+        );
+
+        List<String> boosted = new ArrayList<>();
+        boosted.addAll(BOOST_SUCCESS_HIGH);
+        boosted.addAll(BOOST_SUCCESS_MID);
+        boosted.addAll(BOOST_PHILOSOPHY);
+
+        // ★追加：この17文も「最終的に必ず3回」にする
+        boosted.addAll(BOOST_SUCCESS_NORMAL_BASE17);
+
+        yield boostToExactFactor(base, boosted, 3);
+      }
+
+      // -------------------------
+      // HARD（✅ SUCCESS 高ランク/中ランク/哲学 を “他より3倍”）
+      // -------------------------
+      case 
+
+## L344
+
+ -> {
+        List<String> base = List.of(
+            
+
+## L369
+
+,
+
+            // ✅ 成功・高ランク（指定）
+            BOOST_SUCCESS_HIGH.get(0),
+            BOOST_SUCCESS_HIGH.get(1),
+            BOOST_SUCCESS_HIGH.get(2),
+            BOOST_SUCCESS_HIGH.get(3),
+            BOOST_SUCCESS_HIGH.get(4),
+
+            // ✅ 成功・中ランク（指定）— HARDにも1回入れる（= 3倍対象にするため）
+            BOOST_SUCCESS_MID.get(0),
+            BOOST_SUCCESS_MID.get(1),
+            BOOST_SUCCESS_MID.get(2),
+            BOOST_SUCCESS_MID.get(3),
+
+            // ✅ 汎用的な哲学（指定）
+            BOOST_PHILOSOPHY.get(0),
+            BOOST_PHILOSOPHY.get(1),
+
+            // ブロック引用（あなた指定）
+            
+
+## L403
+
+
+        );
+
+        List<String> boosted = new ArrayList<>();
+        boosted.addAll(BOOST_SUCCESS_HIGH);
+        boosted.addAll(BOOST_SUCCESS_MID);
+        boosted.addAll(BOOST_PHILOSOPHY);
+
+        yield boost(base, boosted, 3);
+      }
+
+      default -> List.of(
+
+## L414
+
+);
+    };
+  }
+
+  // =========================================================
+  // TIME_UP（TIME’S UP）
+  // =========================================================
+  private List<String> timeUpPool(String d) {
+    return switch (d) {
+
+      // -------------------------
+      // EASY（✅ TIME_UP 失敗5文＋哲学2文 を “他より3倍”）
+      // -------------------------
+      case 
+
+## L427
+
+ -> {
+        List<String> base = List.of(
+            
+
+## L438
+
+,
+
+            // ✅ 失敗・時間切れ（指定）— EASYにも1回入れる（= 3倍対象にするため）
+            BOOST_TIMEUP_FAIL.get(0),
+            BOOST_TIMEUP_FAIL.get(1),
+            BOOST_TIMEUP_FAIL.get(2),
+            BOOST_TIMEUP_FAIL.get(3),
+            BOOST_TIMEUP_FAIL.get(4),
+
+            // ✅ 汎用的な哲学（指定）
+            BOOST_PHILOSOPHY.get(0),
+            BOOST_PHILOSOPHY.get(1)
+        );
+
+        List<String> boosted = new ArrayList<>();
+        boosted.addAll(BOOST_TIMEUP_FAIL);
+        boosted.addAll(BOOST_PHILOSOPHY);
+
+        yield boost(base, boosted, 3);
+      }
+
+      // -------------------------
+      // NORMAL（失敗・時間切れ5文＋哲学2文を“他の全てより3倍”）
+      // -------------------------
+      case 
+
+## L462
+
+ -> {
+        List<String> base = List.of(
+            
+
+## L476
+
+,
+
+            // ✅ 失敗・時間切れ（指定）
+            BOOST_TIMEUP_FAIL.get(0),
+            BOOST_TIMEUP_FAIL.get(1),
+            BOOST_TIMEUP_FAIL.get(2),
+            BOOST_TIMEUP_FAIL.get(3),
+            BOOST_TIMEUP_FAIL.get(4),
+
+            // ✅ 汎用的な哲学（指定）
+            BOOST_PHILOSOPHY.get(0),
+            BOOST_PHILOSOPHY.get(1),
+
+            // ブロック引用（あなた指定）
+            
+
+## L504
+
+
+        );
+
+        List<String> boosted = new ArrayList<>();
+        boosted.addAll(BOOST_TIMEUP_FAIL);
+        boosted.addAll(BOOST_PHILOSOPHY);
+
+        yield boost(base, boosted, 3);
+      }
+
+      // -------------------------
+      // HARD（失敗・時間切れ5文＋哲学2文を“他の全てより3倍”）
+      // -------------------------
+      case 
+
+## L517
+
+ -> {
+        List<String> base = List.of(
+            
+
+## L545
+
+,
+
+            // ✅ 失敗・時間切れ（指定）
+            BOOST_TIMEUP_FAIL.get(0),
+            BOOST_TIMEUP_FAIL.get(1),
+            BOOST_TIMEUP_FAIL.get(2),
+            BOOST_TIMEUP_FAIL.get(3),
+            BOOST_TIMEUP_FAIL.get(4),
+
+            // ✅ 汎用的な哲学（指定）
+            BOOST_PHILOSOPHY.get(0),
+            BOOST_PHILOSOPHY.get(1),
+
+            // 北欧哲学パック（F1–F5）
+            
+
+## L563
+
+,
+
+            // TIME’S UP（時間切れ）【5】
+            
+
+## L570
+
+
+        );
+
+        List<String> boosted = new ArrayList<>();
+        boosted.addAll(BOOST_TIMEUP_FAIL);
+        boosted.addAll(BOOST_PHILOSOPHY);
+
+        yield boost(base, boosted, 3);
+      }
+
+      default -> List.of(
+
+## L580
+
+);
+    };
+  }
+
+  // =========================================================
+  // TRADER（行商人との交換）
+  // =========================================================
+  private List<String> traderPool(String d) {
+    return switch (d) {
+      case 
+
+## L589
+
+ -> {
+        List<String> base = List.of(
+            // ✅ 行商人との交換時（指定）
+            BOOST_TRADER.get(0),
+            BOOST_TRADER.get(1),
+            BOOST_TRADER.get(2),
+
+            // ✅ 汎用的な哲学（指定）
+            BOOST_PHILOSOPHY.get(0),
+            BOOST_PHILOSOPHY.get(1)
+        );
+
+        List<String> boosted = new ArrayList<>();
+        boosted.addAll(BOOST_TRADER);
+        boosted.addAll(BOOST_PHILOSOPHY);
+
+        // 指定：これら“全て”を他より3倍
+        yield boost(base, boosted, 3);
+      }
+
+      default -> List.of(
+          
+
+## L610
+
+
+      );
+    };
+  }
+
+  // =========================================================
+  // ✅ 追加：英語+日本語（（…））入り名言を優先して選ぶ + 白文字で全部チャット出力
+  // =========================================================
+
+  public String pickSuccessQuoteBilingual(String difficulty) {
+    String d = normalizeDifficulty(difficulty);
+    List<String> pool = successPool(d);
+    return pickBilingualOrFallback(pool);
+  }
+
+  public String pickTimeUpQuoteBilingual(String difficulty) {
+    String d = normalizeDifficulty(difficulty);
+    List<String> pool = timeUpPool(d);
+    return pickBilingualOrFallback(pool);
+  }
+
+  // ✅ （日本語括弧）を含むものを優先して選ぶ。無ければ通常プールから選ぶ
+  private String pickBilingualOrFallback(List<String> pool) {
+    if (pool == null || pool.isEmpty()) return 
+
+## L633
+
+;
+
+    List<String> bilingual = new ArrayList<>();
+    for (String s : pool) {
+      if (s == null) continue;
+      if (s.contains(
+
+## L638
+
+) && s.contains(
+
+## L638
+
+)) bilingual.add(s);
+    }
+
+    List<String> src = bilingual.isEmpty() ? pool : bilingual;
+    if (src.isEmpty()) return 
+
+## L642
+
+;
+
+    return src.get(ThreadLocalRandom.current().nextInt(src.size()));
+  }
+
+  // ✅ 名言テキストを「チャット欄で切れずに全部」白で出す（>引用記号も除去）
+  public void sendFinalChatQuoteWhite(Player player, String quote) {
+    if (player == null || quote == null) return;
+
+    for (String line : toChatLines(quote)) {
+      if (!line.isBlank()) {
+        player.sendMessage(ChatColor.WHITE + line);
+      }
+    }
+  }
+
+  private List<String> toChatLines(String text) {
+    List<String> out = new ArrayList<>();
+    for (String raw : text.split(
+
+## L660
+
+)) {
+      String s = raw.trim();
+
+      // 先頭の 
+
+## L663
+
+ を全部削る（blockquote対策）
+      while (s.startsWith(
+

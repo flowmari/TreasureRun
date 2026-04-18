@@ -4,21 +4,19 @@
 
 - One class only: `src/main/java/plugin/OutcomeMessageService.java`
 
-- Phase A only in this step:
+- Extract player-facing literals safely in UTF-8
 
-  - extract Java string literals
+- Separate player-facing vs internal/technical
 
-  - classify player-facing vs internal/technical
+- Do **not** start locale translation yet
 
-  - prepare source-of-truth migration inventory
+## Done when
 
-## Why this batch is strong
+- UTF-8-safe inventory is regenerated
 
-- one-class rollout
+- player-facing candidates are readable
 
-- player-facing / internal separation first
+- internal/technical lines are separated
 
-- safer than translating blindly
-
-- recruiter-friendly evidence of design discipline
+- docs are committed and pushed
 
