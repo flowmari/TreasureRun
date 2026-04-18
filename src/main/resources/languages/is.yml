@@ -21,7 +21,7 @@ command:
     worldNotFound: '[TreasureRun] Upphafsheimurinn er ekki stilltur eða fannst ekki.'
     started: 'Fjársjóðsleit hefst! Erfiðleikastig: {difficulty} | Tímamörk: {timeLimit} sekúndur'
   stageCleanup:
-    playersOnly: Aðeins leikmenn geta notað þessa skipun.
+    playersOnly: '&cAðeins leikmenn geta notað þessa skipun.'
     managerNotReady: '[TreasureRun] Borðstýringin er ekki tilbúin enn.'
     cleaned: '[TreasureRun] Hreinsaði {count} erfiðleikablokka.'
   noPermission: '&cEngin heimild.'
@@ -50,6 +50,7 @@ command:
       gui: 'GUI: /lang eða /lang gui'
     guiNotReady: Tungumálaviðmótið hefur ekki verið frumstillt.
   craftSpecialEmerald:
+    playersOnly: '&cAðeins leikmenn geta notað þessa skipun.'
     needDiamonds: '&cÞú þarft 3 demanta til að búa til sérstakan smaragð.'
     success: '&bÞú bjóst til sérstakan smaragð með 3 demöntum!'
   quoteFavorite:

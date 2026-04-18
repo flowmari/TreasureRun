@@ -21,7 +21,7 @@ command:
     worldNotFound: '[TreasureRun] Mundus initialis non configuratus est aut inveniri non potuit.'
     started: 'Venatio thesauri incipit! Difficultas: {difficulty} | Terminus temporis: {timeLimit} secundae'
   stageCleanup:
-    playersOnly: Hoc mandatum a lusoribus tantum adhiberi potest.
+    playersOnly: '&cHoc mandato soli lusores uti possunt.'
     managerNotReady: '[TreasureRun] Moderator scaenae nondum paratus est.'
     cleaned: '[TreasureRun] {count} lateres difficultatis amoti sunt.'
   noPermission: '&cPotestas deest.'
@@ -50,6 +50,7 @@ command:
       gui: 'GUI: /lang vel /lang gui'
     guiNotReady: GUI linguae nondum initiata est.
   craftSpecialEmerald:
+    playersOnly: '&cHoc mandato soli lusores uti possunt.'
     needDiamonds: '&cTres adamantes tibi necessarii sunt ut Smaragdum Specialem conficias.'
     success: '&bSmaragdum Specialem tribus adamantibus confecisti!'
   quoteFavorite:

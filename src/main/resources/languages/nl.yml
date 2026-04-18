@@ -21,7 +21,7 @@ command:
     worldNotFound: '[TreasureRun] De startwereld is niet ingesteld of kon niet worden gevonden.'
     started: 'De schattenjacht begint! Moeilijkheidsgraad: {difficulty} | Tijdslimiet: {timeLimit} seconden'
   stageCleanup:
-    playersOnly: Deze opdracht kan alleen door spelers worden gebruikt.
+    playersOnly: '&cAlleen spelers kunnen dit commando gebruiken.'
     managerNotReady: '[TreasureRun] De stagemanager is nog niet geïnitialiseerd.'
     cleaned: '[TreasureRun] {count} moeilijkheidsblokken zijn opgeruimd.'
   noPermission: '&cGeen toestemming.'
@@ -50,6 +50,7 @@ command:
       gui: 'GUI: /lang of /lang gui'
     guiNotReady: De taal-GUI is niet geïnitialiseerd.
   craftSpecialEmerald:
+    playersOnly: '&cAlleen spelers kunnen dit commando gebruiken.'
     needDiamonds: '&cJe hebt 3 diamanten nodig om een Speciale Smaragd te maken.'
     success: '&bJe hebt met 3 diamanten een Speciale Smaragd gemaakt!'
   quoteFavorite:
