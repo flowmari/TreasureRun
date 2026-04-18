@@ -422,6 +422,10 @@ gui:
     subtitle: '&7請選擇語言'
     selected: '&a已選擇：&f{lang}'
     saved: '&a語言已儲存：&f{lang}'
+    loreDefault:
+    - '&7點擊以選擇'
+    - '&8你的選擇會被儲存'
+    reopenHint: '&7可隨時用 &f/lang &7更改'
 game:
   difficulty:
     easy: '&aEasy'

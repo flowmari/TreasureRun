@@ -431,6 +431,10 @@ gui:
     subtitle: '&7अपनी भाषा चुनें'
     selected: '&aचयनित: &f{lang}'
     saved: '&aभाषा सहेजी गई: &f{lang}'
+    loreDefault:
+    - '&7चयन के लिए क्लिक करें'
+    - '&8यह चयन सहेजा जाएगा'
+    reopenHint: '&7कभी भी &f/lang &7से बदलें'
 game:
   difficulty:
     easy: '&aEasy'

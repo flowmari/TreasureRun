@@ -435,6 +435,10 @@ gui:
     subtitle: '&7Selecione seu idioma'
     selected: '&aSelecionado: &f{lang}'
     saved: '&aIdioma salvo: &f{lang}'
+    loreDefault:
+    - '&7Clique para selecionar'
+    - '&8Sua escolha será salva'
+    reopenHint: '&7Mude quando quiser com &f/lang'
 game:
   difficulty:
     easy: '&aEasy'
