@@ -432,5 +432,5 @@ outcome:
     common:
       pool: []
   fallback:
-    runComplete: Rundan är klar.
-    timeUp: Tiden är ute.
+    runComplete: Loppet klart.
+    timeUp: Tiden är slut.

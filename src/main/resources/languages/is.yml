@@ -433,5 +433,5 @@ outcome:
     common:
       pool: []
   fallback:
-    runComplete: Keyrslu lokið.
-    timeUp: Tíminn rann út.
+    runComplete: Hlaupi lokið.
+    timeUp: Tíminn er liðinn.

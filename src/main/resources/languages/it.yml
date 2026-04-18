@@ -428,5 +428,5 @@ outcome:
     common:
       pool: []
   fallback:
-    runComplete: Partita conclusa.
+    runComplete: Percorso completato.
     timeUp: Tempo scaduto.
