@@ -431,5 +431,5 @@ outcome:
     common:
       pool: []
   fallback:
-    runComplete: क्रमः समाप्तः।
+    runComplete: धावनं समाप्तम्।
     timeUp: कालः समाप्तः।

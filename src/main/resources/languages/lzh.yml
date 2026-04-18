@@ -562,5 +562,5 @@ outcome:
     common:
       pool: []
   fallback:
-    runComplete: 行已竟。
+    runComplete: 行已畢。
     timeUp: 時已盡。
