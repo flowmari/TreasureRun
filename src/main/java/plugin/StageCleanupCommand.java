@@ -24,7 +24,7 @@ public class StageCleanupCommand implements CommandExecutor {
     if (!(sender instanceof Player player)) {
       sender.sendMessage(ChatColor.RED + i18n.trDefault(
           "command.stageCleanup.playersOnly",
-          "This command can only be used by players."
+          "command.stageCleanup.playersOnly"
       ));
       return true;
     }
@@ -34,7 +34,7 @@ public class StageCleanupCommand implements CommandExecutor {
       player.sendMessage(ChatColor.RED + i18n.tr(
           player,
           "command.stageCleanup.managerNotReady",
-          "[TreasureRun] The stage manager is not initialized."
+          "command.stageCleanup.managerNotReady"
       ));
       return true;
     }
@@ -45,7 +45,7 @@ public class StageCleanupCommand implements CommandExecutor {
         player,
         "command.stageCleanup.cleaned",
         Map.of("count", String.valueOf(cleaned)),
-        "[TreasureRun] Cleaned up {count} difficulty blocks."
+        "command.stageCleanup.cleaned"
     ));
 
     return true;
