@@ -427,5 +427,5 @@ outcome:
     common:
       pool: []
   fallback:
-    runComplete: Run complete.
-    timeUp: Time's up.
+    runComplete: RUN FINISH.
+    timeUp: TIME UP.

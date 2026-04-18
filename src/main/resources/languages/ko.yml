@@ -427,5 +427,5 @@ outcome:
     common:
       pool: []
   fallback:
-    runComplete: 런 완료.
-    timeUp: 시간 종료.
+    runComplete: 라운드 완료.
+    timeUp: 시간 초과.

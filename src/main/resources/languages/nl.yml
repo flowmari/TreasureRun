@@ -434,4 +434,4 @@ outcome:
       pool: []
   fallback:
     runComplete: Run voltooid.
-    timeUp: Tijd om.
+    timeUp: Tijd is om.
