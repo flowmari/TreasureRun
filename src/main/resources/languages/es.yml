@@ -94,7 +94,7 @@ command:
       bookOther: '&7/quoteFavorite book other - abrir el otro diseño del libro'
 gui:
   language:
-    title: Idioma / Language
+    title: Idioma
     subtitle: '&7Elige tu idioma'
     loreDefault:
     - '&7Clic para seleccionar'
