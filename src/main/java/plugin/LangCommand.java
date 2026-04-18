@@ -22,7 +22,7 @@ public class LangCommand implements CommandExecutor, TabCompleter {
 
     // Player限定（コンソール対応したい場合はここを拡張）
     if (!(sender instanceof Player player)) {
-      sender.sendMessage(ChatColor.RED + trDefault("command.lang.playersOnly", "This command can only be used by players."));
+      sender.sendMessage(ChatColor.RED + trDefault("command.lang.playersOnly", "command.lang.playersOnly"));
       return true;
     }
 
@@ -61,7 +61,7 @@ public class LangCommand implements CommandExecutor, TabCompleter {
         }
       } catch (Throwable ignored) {}
 
-      player.sendMessage(ChatColor.GREEN + tr(player, "command.lang.resetDone", "✅ Your saved language has been reset. The GUI will open next time."));
+      player.sendMessage(ChatColor.GREEN + tr(player, "command.lang.resetDone", "command.lang.resetDone"));
       return true;
     }
 
@@ -78,7 +78,7 @@ public class LangCommand implements CommandExecutor, TabCompleter {
     }
     if (sub.equalsIgnoreCase("current")) {
       String current = resolveCurrentLang(player.getUniqueId(), defaultLang);
-      player.sendMessage(ChatColor.AQUA + trp(player, "command.lang.current", java.util.Map.of("lang", current), "Current language: {lang}"));
+      player.sendMessage(ChatColor.AQUA + trp(player, "command.lang.current", java.util.Map.of("lang", current), "command.lang.current"));
       return true;
     }
     if (sub.equalsIgnoreCase("gui")) {
@@ -89,13 +89,13 @@ public class LangCommand implements CommandExecutor, TabCompleter {
     // /lang <code> で直接切替
     String lang = normalizeLangCode(sub);
     if (lang.isBlank()) {
-      player.sendMessage(ChatColor.RED + tr(player, "command.lang.emptyCode", "Language code is empty. Example: /lang ja"));
+      player.sendMessage(ChatColor.RED + tr(player, "command.lang.emptyCode", "command.lang.emptyCode"));
       return true;
     }
 
     if (!allowed.contains(lang)) {
-      player.sendMessage(ChatColor.RED + trp(player, "command.lang.notAllowed", java.util.Map.of("lang", lang), "That language is not allowed: {lang}"));
-      player.sendMessage(ChatColor.GRAY + trp(player, "command.lang.allowedList", java.util.Map.of("allowed", String.join(", ", allowed)), "Allowed languages: {allowed}"));
+      player.sendMessage(ChatColor.RED + trp(player, "command.lang.notAllowed", java.util.Map.of("lang", lang), "command.lang.notAllowed"));
+      player.sendMessage(ChatColor.GRAY + trp(player, "command.lang.allowedList", java.util.Map.of("allowed", String.join(", ", allowed)), "command.lang.allowedList"));
       return true;
     }
 
@@ -109,9 +109,9 @@ public class LangCommand implements CommandExecutor, TabCompleter {
     String displayName = plugin.getConfig().getString("language.displayName." + lang, lang);
 
     if (saved) {
-      player.sendMessage(ChatColor.GREEN + trp(player, "command.lang.changed", java.util.Map.of("displayName", displayName, "lang", lang), "✅ Language changed: {displayName} ({lang})"));
+      player.sendMessage(ChatColor.GREEN + trp(player, "command.lang.changed", java.util.Map.of("displayName", displayName, "lang", lang), "command.lang.changed"));
     } else {
-      player.sendMessage(ChatColor.YELLOW + trp(player, "command.lang.changedButNotSaved", java.util.Map.of("lang", lang), "⚠ Language changed, but failed to persist it: {lang}"));
+      player.sendMessage(ChatColor.YELLOW + trp(player, "command.lang.changedButNotSaved", java.util.Map.of("lang", lang), "command.lang.changedButNotSaved"));
     }
 
     // 任意：I18nがあるなら動作確認用に一言（キーはあなたのI18n設計次第なので安全に）
@@ -172,10 +172,10 @@ public class LangCommand implements CommandExecutor, TabCompleter {
 
   private void sendLanguageList(Player player, List<String> allowed, String defaultLang) {
     player.sendMessage(ChatColor.AQUA + tr(player, "command.lang.list.title", "command.lang.list.title"));
-    player.sendMessage(ChatColor.GRAY + trp(player, "command.lang.list.default", java.util.Map.of("default", defaultLang), "default: {default}"));
-    player.sendMessage(ChatColor.GRAY + trp(player, "command.lang.list.allowed", java.util.Map.of("allowed", String.join(", ", allowed)), "allowed: {allowed}"));
+    player.sendMessage(ChatColor.GRAY + trp(player, "command.lang.list.default", java.util.Map.of("default", defaultLang), "command.lang.list.default"));
+    player.sendMessage(ChatColor.GRAY + trp(player, "command.lang.list.allowed", java.util.Map.of("allowed", String.join(", ", allowed)), "command.lang.list.allowed"));
     player.sendMessage(ChatColor.GRAY + tr(player, "command.lang.list.usage", "command.lang.list.usage"));
-    player.sendMessage(ChatColor.GRAY + tr(player, "command.lang.list.gui", "GUI: /lang or /lang gui"));
+    player.sendMessage(ChatColor.GRAY + tr(player, "command.lang.list.gui", "command.lang.list.gui"));
   }
 
   private void openLanguageGuiOrFallbackMessage(Player player, List<String> allowed, String defaultLang) {
