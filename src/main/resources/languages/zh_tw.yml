@@ -425,7 +425,7 @@ gui:
     loreDefault:
     - '&7點擊以選擇'
     - '&8你的選擇會被儲存'
-    reopenHint: '&7你可以隨時用 &f/lang &7變更'
+    reopenHint: '&7可隨時用 &f/lang &7更改'
 game:
   difficulty:
     easy: '&aEasy'

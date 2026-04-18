@@ -433,8 +433,8 @@ gui:
     saved: '&aभाषा सहेजी गई: &f{lang}'
     loreDefault:
     - '&7चयन के लिए क्लिक करें'
-    - '&8आपका चयन सहेजा जाएगा'
-    reopenHint: '&7इसे कभी भी &f/lang &7से बदल सकते हैं'
+    - '&8यह चयन सहेजा जाएगा'
+    reopenHint: '&7कभी भी &f/lang &7से बदलें'
 game:
   difficulty:
     easy: '&aEasy'

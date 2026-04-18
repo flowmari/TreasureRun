@@ -438,7 +438,7 @@ gui:
     loreDefault:
     - '&7Clique para selecionar'
     - '&8Sua escolha será salva'
-    reopenHint: '&7Você pode mudar a qualquer momento com &f/lang'
+    reopenHint: '&7Mude quando quiser com &f/lang'
 game:
   difficulty:
     easy: '&aEasy'

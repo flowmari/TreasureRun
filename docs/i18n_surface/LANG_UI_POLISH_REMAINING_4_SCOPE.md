@@ -1,13 +1,12 @@
 # Lang UI polish remaining 4
 
 ## Scope
+- hi / lzh / pt / zh_tw
 - gui.language.loreDefault
 - gui.language.reopenHint
-- locales: hi / lzh / pt / zh_tw
-- live path only
 
 ## Why this batch is strong
-- very small blast radius
-- visible surface only
-- easy to verify with gates / build / runtime
-- strong technical-review diff
+- 1 visible surface only
+- 4 locales only
+- low blast radius
+- easy to gate / build / runtime verify

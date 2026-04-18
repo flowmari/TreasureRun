@@ -423,9 +423,9 @@ gui:
     selected: '&a已擇：&f{lang}'
     saved: '&a語言已存：&f{lang}'
     loreDefault:
-    - '&7點擊以選'
-    - '&8所選將存'
-    reopenHint: '&7可隨時以 &f/lang &7更易之'
+    - '&7點擊以擇'
+    - '&8所擇將被保存'
+    reopenHint: '&7可隨時以 &f/lang &7更改'
 game:
   difficulty:
     easy: '&aEasy'
