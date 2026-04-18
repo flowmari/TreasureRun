@@ -72,7 +72,7 @@ public class QuoteFavoriteBookClickListener implements Listener {
       boolean shown = showFavoritesBookHybrid(player);
       if (!shown) {
         // ✅ ここまで来て false の場合も、最低限メッセージ
-        player.sendMessage(ChatColor.YELLOW + tr(player, "favorites.empty.noFav", "favorites.empty.noFav"));
+        player.sendMessage(ChatColor.YELLOW + tr(player, "favorites.empty.noFav"));
       }
       return;
     }
@@ -80,9 +80,9 @@ public class QuoteFavoriteBookClickListener implements Listener {
     boolean ok = favoriteLatest(player);
 
     if (ok) {
-      player.sendMessage(ChatColor.GREEN + tr(player, "command.quoteFavorite.latestSaved", "command.quoteFavorite.latestSaved"));
+      player.sendMessage(ChatColor.GREEN + tr(player, "command.quoteFavorite.latestSaved"));
     } else {
-      player.sendMessage(ChatColor.YELLOW + tr(player, "command.quoteFavorite.latestNotSaved", "command.quoteFavorite.latestNotSaved"));
+      player.sendMessage(ChatColor.YELLOW + tr(player, "command.quoteFavorite.latestNotSaved"));
     }
   }
 
@@ -179,7 +179,7 @@ public class QuoteFavoriteBookClickListener implements Listener {
       return true;
     } catch (Throwable t) {
       // openBookが環境差で失敗する可能性があるので、最悪チャットに出す
-      player.sendMessage(ChatColor.YELLOW + tr(player, "favorites.title", "favorites.title") + ":");
+      player.sendMessage(ChatColor.YELLOW + tr(player, "favorites.title") + ":");
       for (String r : rows) {
         if (r == null) continue;
         String trimmed = r.trim();
@@ -295,7 +295,7 @@ public class QuoteFavoriteBookClickListener implements Listener {
 
     StringBuilder current = new StringBuilder();
     current.append(ChatColor.DARK_AQUA).append("★ Favorites").append("\n")
-        .append(ChatColor.GRAY).append(tr(player, "favorites.toc.howtoShift", "favorites.toc.howtoShift")).append("\n\n");
+        .append(ChatColor.GRAY).append(tr(player, "favorites.toc.howtoShift")).append("\n\n");
 
     for (String row : rows) {
       if (row == null) continue;
@@ -365,6 +365,10 @@ public class QuoteFavoriteBookClickListener implements Listener {
     return false;
   }
 
+
+  private String tr(Player player, String key) {
+    return tr(player, key, key);
+  }
 
   private String tr(Player player, String key, String fallback) {
     try {
