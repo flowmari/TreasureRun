@@ -34,15 +34,15 @@ public class TreasureItemFactory {
     ItemMeta meta = item.getItemMeta();
     if (meta != null) {
       meta.setDisplayName(ChatColor.translateAlternateColorCodes('&',
-          i18n.trDefault("items.specialEmerald.displayName", "&6Special Emerald")
+          i18n.trDefault("items.specialEmerald.displayName", "items.specialEmerald.displayName")
       ));
 
       List<String> lore = new ArrayList<>();
       lore.add(ChatColor.translateAlternateColorCodes('&',
-          i18n.trDefault("items.specialEmerald.loreCrafted", "&7Crafted in TreasureRun")
+          i18n.trDefault("items.specialEmerald.loreCrafted", "items.specialEmerald.loreCrafted")
       ));
       lore.add(ChatColor.translateAlternateColorCodes('&',
-          i18n.trDefault("items.specialEmerald.loreSpecial", "&7A special emerald")
+          i18n.trDefault("items.specialEmerald.loreSpecial", "items.specialEmerald.loreSpecial")
       ));
       meta.setLore(lore);
 
@@ -63,15 +63,15 @@ public class TreasureItemFactory {
     ItemMeta meta = item.getItemMeta();
     if (meta != null) {
       meta.setDisplayName(ChatColor.translateAlternateColorCodes('&',
-          i18n.tr(player, "items.specialEmerald.displayName", "&6Special Emerald")
+          i18n.tr(player, "items.specialEmerald.displayName", "items.specialEmerald.displayName")
       ));
 
       List<String> lore = new ArrayList<>();
       lore.add(ChatColor.translateAlternateColorCodes('&',
-          i18n.tr(player, "items.specialEmerald.loreCrafted", "&7Crafted in TreasureRun")
+          i18n.tr(player, "items.specialEmerald.loreCrafted", "items.specialEmerald.loreCrafted")
       ));
       lore.add(ChatColor.translateAlternateColorCodes('&',
-          i18n.tr(player, "items.specialEmerald.loreSpecial", "&7A special emerald")
+          i18n.tr(player, "items.specialEmerald.loreSpecial", "items.specialEmerald.loreSpecial")
       ));
       meta.setLore(lore);
 
