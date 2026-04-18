@@ -85,7 +85,7 @@ command:
       bookOther: '&7other shows only other quotes'
 gui:
   language:
-    title: Language / 言語
+    title: Language
     subtitle: '&7Select your language'
     loreDefault:
     - '&7Click to select'

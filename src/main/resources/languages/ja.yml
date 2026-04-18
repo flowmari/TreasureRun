@@ -43,12 +43,12 @@ command:
     changed: '✅ 言語を変更しました: {displayName} ({lang})'
     changedButNotSaved: '⚠ 言語は変更しましたが、永続保存に失敗しました: {lang}'
     list:
-      title: === Languages ===
+      title: === 言語 ===
       default: 'default: {default}'
       allowed: 'allowed: {allowed}'
       usage: '使い方: /lang <code> 例: /lang ja'
       gui: 'GUI: /lang または /lang gui'
-    guiNotReady: Language GUI が初期化されていません。
+    guiNotReady: 言語GUIが初期化されていません。
   craftSpecialEmerald:
     playersOnly: '&cこのコマンドはプレイヤーのみ使用できます。'
     needDiamonds: '&cスペシャルエメラルドの作成にはダイヤモンドが3個必要です。'
@@ -85,7 +85,7 @@ command:
       bookOther: '&7other はその他の名言だけを表示します'
 gui:
   language:
-    title: 言語 / Language
+    title: 言語
     subtitle: '&7言語を選択してください'
     loreDefault:
     - '&7クリックで選択'

@@ -93,7 +93,7 @@ command:
       bookOther: '&7/quoteFavorite book other - ouvrir l''autre mise en page du livre'
 gui:
   language:
-    title: Langue / Language
+    title: Langue
     subtitle: '&7Choisissez votre langue'
     loreDefault:
     - '&7Cliquez pour sélectionner'
