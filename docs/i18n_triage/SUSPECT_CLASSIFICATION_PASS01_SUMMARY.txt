@@ -1,0 +1,5 @@
+player_facing_candidate: 259
+legacy_or_review: 796
+debug_internal: 375
+sql_technical: 259
+intentionally_non_localized: 75
