@@ -428,12 +428,12 @@ game:
     normal: '&eNormal'
     hard: '&cHard'
 favorites:
-  title: favorites.title
+  title: '收藏'
   cover:
     head: favorites.cover.head
     hint: favorites.cover.hint
   empty:
-    noFav: favorites.empty.noFav
+    noFav: '目前還沒有收藏。'
     saveLatest: favorites.empty.saveLatest
   toc:
     head: favorites.toc.head

@@ -227,7 +227,7 @@ favorites:
     sub: favorites.cover.sub
   empty:
     head: favorites.empty.head
-    noFav: favorites.empty.noFav
+    noFav: 'अद्यापि प्रियाणि न सन्ति।'
     noFavSub: favorites.empty.noFavSub
     reread: favorites.empty.reread
     rereadBook: favorites.empty.rereadBook
@@ -242,7 +242,7 @@ favorites:
     head: favorites.reread.head
     noQuotes: favorites.reread.noQuotes
   table: favorites.table
-  title: favorites.title
+  title: 'प्रियाणि'
   toc:
     clickable: favorites.toc.clickable
     head: favorites.toc.head
