@@ -34,7 +34,7 @@ public class TreasureRunStartCommand implements CommandExecutor {
     if (!(sender instanceof Player player)) {
       sender.sendMessage(i18n.trDefault(
           "command.gameStart.playersOnly",
-          "This command can only be used by players."
+          "command.gameStart.playersOnly"
       ));
       return true;
     }
@@ -48,7 +48,7 @@ public class TreasureRunStartCommand implements CommandExecutor {
       player.sendMessage(i18n.tr(
           player,
           "command.gameStart.worldNotFound",
-          "[TreasureRun] The start world is not configured or could not be found."
+          "command.gameStart.worldNotFound"
       ));
       return true;
     }
@@ -94,7 +94,7 @@ public class TreasureRunStartCommand implements CommandExecutor {
             "difficulty", difficulty,
             "timeLimit", String.valueOf(timeLimit)
         ),
-        "Treasure hunt started! Difficulty: {difficulty} | Time limit: {timeLimit} seconds"
+        "command.gameStart.started"
     ));
 
     plugin.getLanguageSelectGui().open(player, difficulty);
