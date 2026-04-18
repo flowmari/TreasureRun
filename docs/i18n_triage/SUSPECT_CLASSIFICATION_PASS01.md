@@ -1,0 +1,456 @@
+# SUSPECT CLASSIFICATION PASS 01
+
+## Purpose
+- Separate player-facing candidates from debug/internal/SQL/dead-legacy strings.
+- Keep `suspect_keys` as report-only, not blocker.
+- Decide the next safe class/unit after classification.
+
+## player_facing_candidate
+
+- **asl_gloss.yml**: `time_s_up_c5b3ef74: §c§lTIME'S UP!`
+- **asl_gloss.yml**: `treasures_collected_ca7eab31: '§7Treasures collected: §e'`
+- **asl_gloss.yml**: `try_a_different_route_next_t_721a4d8b: §7Try a different route next time — or`
+- **asl_gloss.yml**: `favorite_saved_sneak_rightcl_7a73eb4f: ★ Favorite saved! (Sneak+RightClick)`
+- **asl_gloss.yml**: `favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs yet`
+- **asl_gloss.yml**: `players_only_10ed3cbc: Players only.`
+- **asl_gloss.yml**: `favorite_saved_bb0cd8a8: ★ Favorite saved!`
+- **asl_gloss.yml**: `favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs yet /`
+- **asl_gloss.yml**: `favorites_latest_20_e23c073b: '★ FAVORITES (latest 20):'`
+- **asl_gloss.yml**: `usage_quotefavorite_remove_i_5324156c: 'Usage: /quoteFavorite remove <id>'`
+- **asl_gloss.yml**: `id_must_be_a_number_5661bf80: ID must be a number.`
+- **asl_gloss.yml**: `favorite_removed_247f2df9: '★ Favorite removed: #'`
+- **asl_gloss.yml**: `unknown_subcommand_use_quote_f79bf3b5: 'Unknown subcommand. Use: /quoteFavorite'`
+- **de.yml**: `time_s_up_c5b3ef74: §c§lTIME'S UP!`
+- **de.yml**: `treasures_collected_ca7eab31: '§7Treasures collected: §e'`
+- **de.yml**: `try_a_different_route_next_t_721a4d8b: §7Try a different route next time — or`
+- **de.yml**: `favorite_saved_sneak_rightcl_7a73eb4f: ★ Favorite saved! (Sneak+RightClick)`
+- **de.yml**: `favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs yet`
+- **de.yml**: `players_only_10ed3cbc: Players only.`
+- **de.yml**: `favorite_saved_bb0cd8a8: ★ Favorite saved!`
+- **de.yml**: `favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs yet /`
+- **de.yml**: `usage_quotefavorite_remove_i_5324156c: 'Usage: /quoteFavorite remove <id>'`
+- **de.yml**: `id_must_be_a_number_5661bf80: ID must be a number.`
+- **de.yml**: `favorite_removed_247f2df9: '★ Favorite removed: #'`
+- **de.yml**: `unknown_subcommand_use_quote_f79bf3b5: 'Unknown subcommand. Use: /quoteFavorite'`
+- **en.yml**: `time_s_up_c5b3ef74: §c§lTIME'S UP!`
+- **en.yml**: `treasures_collected_ca7eab31: '§7Treasures collected: §e'`
+- **en.yml**: `try_a_different_route_next_t_721a4d8b: §7Try a different route next time — or`
+- **en.yml**: `favorite_saved_sneak_rightcl_7a73eb4f: ★ Favorite saved! (Sneak+RightClick)`
+- **en.yml**: `favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs yet`
+- **en.yml**: `players_only_10ed3cbc: Players only.`
+- **en.yml**: `favorite_saved_bb0cd8a8: ★ Favorite saved!`
+- **en.yml**: `favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs yet /`
+- **en.yml**: `favorites_latest_20_e23c073b: '★ Favorites (latest 20):'`
+- **en.yml**: `usage_quotefavorite_remove_i_5324156c: 'Usage: /quoteFavorite remove <id>'`
+- **en.yml**: `id_must_be_a_number_5661bf80: ID must be a number.`
+- **en.yml**: `favorite_removed_247f2df9: '★ Favorite removed: #'`
+- **en.yml**: `unknown_subcommand_use_quote_f79bf3b5: 'Unknown subcommand. Use: /quoteFavorite'`
+- **es.yml**: `time_s_up_c5b3ef74: §c§lTIME'S UP!`
+- **es.yml**: `treasures_collected_ca7eab31: '§7Treasures collected: §e'`
+- **es.yml**: `try_a_different_route_next_t_721a4d8b: §7Try a different route next time — or`
+- **es.yml**: `favorite_saved_sneak_rightcl_7a73eb4f: ★ Favorite saved! (Sneak+RightClick)`
+- **es.yml**: `favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs yet`
+- **es.yml**: `players_only_10ed3cbc: Players only.`
+- **es.yml**: `favorite_saved_bb0cd8a8: ★ Favorite saved!`
+- **es.yml**: `favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs yet /`
+- **es.yml**: `usage_quotefavorite_remove_i_5324156c: 'Usage: /quoteFavorite remove <id>'`
+- **es.yml**: `id_must_be_a_number_5661bf80: ID must be a number.`
+- **es.yml**: `favorite_removed_247f2df9: '★ Favorite removed: #'`
+- **es.yml**: `unknown_subcommand_use_quote_f79bf3b5: 'Unknown subcommand. Use: /quoteFavorite'`
+- **fi.yml**: `time_s_up_c5b3ef74: §c§lTIME'S UP!`
+- **fi.yml**: `treasures_collected_ca7eab31: '§7Treasures collected: §e'`
+- **fi.yml**: `try_a_different_route_next_t_721a4d8b: §7Try a different route next time — or`
+- **fi.yml**: `favorite_saved_sneak_rightcl_7a73eb4f: ★ Favorite saved! (Sneak+RightClick)`
+- **fi.yml**: `favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs yet`
+- **fi.yml**: `players_only_10ed3cbc: Players only.`
+- **fi.yml**: `favorite_saved_bb0cd8a8: ★ Favorite saved!`
+- **fi.yml**: `favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs yet /`
+- **fi.yml**: `usage_quotefavorite_remove_i_5324156c: 'Usage: /quoteFavorite remove <id>'`
+- **fi.yml**: `id_must_be_a_number_5661bf80: ID must be a number.`
+- **fi.yml**: `favorite_removed_247f2df9: '★ Favorite removed: #'`
+- **fi.yml**: `unknown_subcommand_use_quote_f79bf3b5: 'Unknown subcommand. Use: /quoteFavorite'`
+- **fr.yml**: `time_s_up_c5b3ef74: §c§lTIME'S UP!`
+- **fr.yml**: `treasures_collected_ca7eab31: '§7Treasures collected: §e'`
+- **fr.yml**: `try_a_different_route_next_t_721a4d8b: §7Try a different route next time — or`
+- **fr.yml**: `favorite_saved_sneak_rightcl_7a73eb4f: ★ Favorite saved! (Sneak+RightClick)`
+- **fr.yml**: `favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs yet`
+- **fr.yml**: `players_only_10ed3cbc: Players only.`
+- **fr.yml**: `favorite_saved_bb0cd8a8: ★ Favorite saved!`
+- **fr.yml**: `favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs yet /`
+- **fr.yml**: `usage_quotefavorite_remove_i_5324156c: 'Usage: /quoteFavorite remove <id>'`
+- **fr.yml**: `id_must_be_a_number_5661bf80: ID must be a number.`
+- **fr.yml**: `favorite_removed_247f2df9: '★ Favorite removed: #'`
+- **fr.yml**: `unknown_subcommand_use_quote_f79bf3b5: 'Unknown subcommand. Use: /quoteFavorite'`
+- **hi.yml**: `time_s_up_87859973: Time's up.`
+- **hi.yml**: `run_complete_46d920e5: Run complete.`
+- **hi.yml**: `run_complete_d258363d: Run Complete!`
+- **hi.yml**: `time_s_up_7441e686: TIME'S UP!`
+- **is.yml**: `time_s_up_c5b3ef74: §c§lTIME'S UP!`
+- **is.yml**: `treasures_collected_ca7eab31: '§7Treasures collected: §e'`
+- **is.yml**: `try_a_different_route_next_t_721a4d8b: §7Try a different route next time — or`
+- **is.yml**: `favorite_saved_sneak_rightcl_7a73eb4f: ★ Favorite saved! (Sneak+RightClick)`
+- **is.yml**: `favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs yet`
+- **is.yml**: `players_only_10ed3cbc: Players only.`
+- **is.yml**: `favorite_saved_bb0cd8a8: ★ Favorite saved!`
+- **is.yml**: `favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs yet /`
+- **is.yml**: `usage_quotefavorite_remove_i_5324156c: 'Usage: /quoteFavorite remove <id>'`
+- **is.yml**: `id_must_be_a_number_5661bf80: ID must be a number.`
+- **is.yml**: `favorite_removed_247f2df9: '★ Favorite removed: #'`
+- **is.yml**: `unknown_subcommand_use_quote_f79bf3b5: 'Unknown subcommand. Use: /quoteFavorite'`
+- **it.yml**: `time_s_up_c5b3ef74: §c§lTIME'S UP!`
+- **it.yml**: `treasures_collected_ca7eab31: '§7Treasures collected: §e'`
+- **it.yml**: `try_a_different_route_next_t_721a4d8b: §7Try a different route next time — or`
+- **it.yml**: `favorite_saved_sneak_rightcl_7a73eb4f: ★ Favorite saved! (Sneak+RightClick)`
+- **it.yml**: `favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs yet`
+- **it.yml**: `players_only_10ed3cbc: Players only.`
+- **it.yml**: `favorite_saved_bb0cd8a8: ★ Favorite saved!`
+- **it.yml**: `favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs yet /`
+- **it.yml**: `usage_quotefavorite_remove_i_5324156c: 'Usage: /quoteFavorite remove <id>'`
+- **it.yml**: `id_must_be_a_number_5661bf80: ID must be a number.`
+- **it.yml**: `favorite_removed_247f2df9: '★ Favorite removed: #'`
+- **it.yml**: `unknown_subcommand_use_quote_f79bf3b5: 'Unknown subcommand. Use: /quoteFavorite'`
+- **ja.yml**: `time_s_up_c5b3ef74: §c§lTIME'S UP!`
+- **ja.yml**: `treasures_collected_ca7eab31: '§7Treasures collected: §e'`
+- **ja.yml**: `try_a_different_route_next_t_721a4d8b: §7Try a different route next time — or`
+- **ja.yml**: `favorite_saved_sneak_rightcl_7a73eb4f: ★ Favorite saved! (Sneak+RightClick)`
+- **ja.yml**: `favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs yet`
+- **ja.yml**: `players_only_10ed3cbc: Players only.`
+- **ja.yml**: `favorite_saved_bb0cd8a8: ★ Favorite saved!`
+- **ja.yml**: `favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs yet /`
+- **ja.yml**: `usage_quotefavorite_remove_i_5324156c: 'Usage: /quoteFavorite remove <id>'`
+- **ja.yml**: `id_must_be_a_number_5661bf80: ID must be a number.`
+- **ja.yml**: `favorite_removed_247f2df9: '★ Favorite removed: #'`
+- **ja.yml**: `unknown_subcommand_use_quote_f79bf3b5: 'Unknown subcommand. Use: /quoteFavorite'`
+- **ko.yml**: `time_s_up_c5b3ef74: §c§lTIME'S UP!`
+- **ko.yml**: `treasures_collected_ca7eab31: '§7Treasures collected: §e'`
+- **ko.yml**: `try_a_different_route_next_t_721a4d8b: §7Try a different route next time — or`
+- **ko.yml**: `favorite_saved_sneak_rightcl_7a73eb4f: ★ Favorite saved! (Sneak+RightClick)`
+- **ko.yml**: `favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs yet`
+- **ko.yml**: `players_only_10ed3cbc: Players only.`
+- ... and 78 more
+
+## gameplay_or_display_review
+
+- **asl_gloss.yml**: `treasure_shop_4b968fbd: Treasure Shop`
+- **asl_gloss.yml**: `treasure_shop_2574a694: treasure shop`
+- **asl_gloss.yml**: `trade_complete_4a4b1d6f: Trade complete!`
+- **asl_gloss.yml**: `a_hidden_power_awakens_7620bc4d: A hidden power awakens…`
+- **asl_gloss.yml**: `rainbow_wolf_b3cc6257: Rainbow Wolf`
+- **de.yml**: `treasure_shop_4b968fbd: Treasure Shop`
+- **de.yml**: `treasure_shop_2574a694: treasure shop`
+- **de.yml**: `trade_complete_4a4b1d6f: Trade complete!`
+- **de.yml**: `a_hidden_power_awakens_7620bc4d: A hidden power awakens…`
+- **de.yml**: `rainbow_wolf_b3cc6257: Rainbow Wolf`
+- **en.yml**: `treasure_shop_4b968fbd: Treasure Shop`
+- **en.yml**: `treasure_shop_2574a694: treasure shop`
+- **en.yml**: `trade_complete_4a4b1d6f: Trade complete!`
+- **en.yml**: `a_hidden_power_awakens_7620bc4d: A hidden power awakens…`
+- **en.yml**: `rainbow_wolf_b3cc6257: Rainbow Wolf`
+- **es.yml**: `treasure_shop_4b968fbd: Treasure Shop`
+- **es.yml**: `treasure_shop_2574a694: treasure shop`
+- **es.yml**: `trade_complete_4a4b1d6f: Trade complete!`
+- **es.yml**: `a_hidden_power_awakens_7620bc4d: A hidden power awakens…`
+- **es.yml**: `rainbow_wolf_b3cc6257: Rainbow Wolf`
+- **fi.yml**: `treasure_shop_4b968fbd: Treasure Shop`
+- **fi.yml**: `treasure_shop_2574a694: treasure shop`
+- **fi.yml**: `trade_complete_4a4b1d6f: Trade complete!`
+- **fi.yml**: `a_hidden_power_awakens_7620bc4d: A hidden power awakens…`
+- **fi.yml**: `rainbow_wolf_b3cc6257: Rainbow Wolf`
+- **fr.yml**: `treasure_shop_4b968fbd: Treasure Shop`
+- **fr.yml**: `treasure_shop_2574a694: treasure shop`
+- **fr.yml**: `trade_complete_4a4b1d6f: Trade complete!`
+- **fr.yml**: `a_hidden_power_awakens_7620bc4d: A hidden power awakens…`
+- **fr.yml**: `rainbow_wolf_b3cc6257: Rainbow Wolf`
+- **is.yml**: `treasure_shop_4b968fbd: Treasure Shop`
+- **is.yml**: `treasure_shop_2574a694: treasure shop`
+- **is.yml**: `trade_complete_4a4b1d6f: Trade complete!`
+- **is.yml**: `a_hidden_power_awakens_7620bc4d: A hidden power awakens…`
+- **is.yml**: `rainbow_wolf_b3cc6257: Rainbow Wolf`
+- **it.yml**: `treasure_shop_4b968fbd: Treasure Shop`
+- **it.yml**: `treasure_shop_2574a694: treasure shop`
+- **it.yml**: `trade_complete_4a4b1d6f: Trade complete!`
+- **it.yml**: `a_hidden_power_awakens_7620bc4d: A hidden power awakens…`
+- **it.yml**: `rainbow_wolf_b3cc6257: Rainbow Wolf`
+- **ja.yml**: `treasure_shop_4b968fbd: Treasure Shop`
+- **ja.yml**: `treasure_shop_2574a694: treasure shop`
+- **ja.yml**: `trade_complete_4a4b1d6f: Trade complete!`
+- **ja.yml**: `a_hidden_power_awakens_7620bc4d: A hidden power awakens…`
+- **ja.yml**: `rainbow_wolf_b3cc6257: Rainbow Wolf`
+- **ko.yml**: `treasure_shop_4b968fbd: Treasure Shop`
+- **ko.yml**: `treasure_shop_2574a694: treasure shop`
+- **ko.yml**: `trade_complete_4a4b1d6f: Trade complete!`
+- **ko.yml**: `a_hidden_power_awakens_7620bc4d: A hidden power awakens…`
+- **ko.yml**: `rainbow_wolf_b3cc6257: Rainbow Wolf`
+- **la.yml**: `treasure_shop_4b968fbd: Treasure Shop`
+- **la.yml**: `treasure_shop_2574a694: treasure shop`
+- **la.yml**: `trade_complete_4a4b1d6f: Trade complete!`
+- **la.yml**: `a_hidden_power_awakens_7620bc4d: A hidden power awakens…`
+- **la.yml**: `rainbow_wolf_b3cc6257: Rainbow Wolf`
+- **nl.yml**: `treasure_shop_4b968fbd: Treasure Shop`
+- **nl.yml**: `treasure_shop_2574a694: treasure shop`
+- **nl.yml**: `trade_complete_4a4b1d6f: Trade complete!`
+- **nl.yml**: `a_hidden_power_awakens_7620bc4d: A hidden power awakens…`
+- **nl.yml**: `rainbow_wolf_b3cc6257: Rainbow Wolf`
+- **ru.yml**: `treasure_shop_4b968fbd: Treasure Shop`
+- **ru.yml**: `treasure_shop_2574a694: treasure shop`
+- **ru.yml**: `trade_complete_4a4b1d6f: Trade complete!`
+- **ru.yml**: `a_hidden_power_awakens_7620bc4d: A hidden power awakens…`
+- **ru.yml**: `rainbow_wolf_b3cc6257: Rainbow Wolf`
+- **sa.yml**: `treasure_shop_4b968fbd: Treasure Shop`
+- **sa.yml**: `treasure_shop_2574a694: treasure shop`
+- **sa.yml**: `trade_complete_4a4b1d6f: Trade complete!`
+- **sa.yml**: `a_hidden_power_awakens_7620bc4d: A hidden power awakens…`
+- **sa.yml**: `rainbow_wolf_b3cc6257: Rainbow Wolf`
+- **sv.yml**: `treasure_shop_4b968fbd: Treasure Shop`
+- **sv.yml**: `treasure_shop_2574a694: treasure shop`
+- **sv.yml**: `trade_complete_4a4b1d6f: Trade complete!`
+- **sv.yml**: `a_hidden_power_awakens_7620bc4d: A hidden power awakens…`
+- **sv.yml**: `rainbow_wolf_b3cc6257: Rainbow Wolf`
+
+## sql_debug_internal
+
+- **asl_gloss.yml**: `inventoryclickevent_fired_8520aa1c: InventoryClickEvent fired`
+- **asl_gloss.yml**: `return_whoclicked_is_not_pla_a7675648: 'RETURN: whoClicked is not Player'`
+- **asl_gloss.yml**: `return_topinventory_is_not_m_9936e6de: 'RETURN: topInventory is not MERCHANT'`
+- **asl_gloss.yml**: `return_not_result_slot_expec_9eb8c2c8: 'RETURN: not result slot. expected rawSlot=2`
+- **asl_gloss.yml**: `return_topinventory_is_merch_fa2f5d98: 'RETURN: topInventory is MERCHANT but not`
+- **asl_gloss.yml**: `merchant_view_title_daf2a73a: merchant view title=`
+- **asl_gloss.yml**: `return_not_treasure_shop_tit_8e65ad3d: 'RETURN: not Treasure Shop title. plainTitle='`
+- **asl_gloss.yml**: `return_current_item_is_null_0f27c9fd: 'RETURN: current item is null'`
+- **asl_gloss.yml**: `return_current_item_is_air_76b5e623: 'RETURN: current item is AIR'`
+- **asl_gloss.yml**: `return_current_item_is_not_g_d1d65218: 'RETURN: current item is not GOLDEN_APPLE.`
+- **asl_gloss.yml**: `return_game_is_not_running_048d7edb: 'RETURN: game is not running'`
+- **asl_gloss.yml**: `return_ingredient_check_fail_673860d5: 'RETURN: ingredient check failed (need`
+- **asl_gloss.yml**: `ok_passed_all_checks_schedul_11e17905: 'OK: passed all checks -> scheduling effect`
+- **asl_gloss.yml**: `run_runtasklater_executed_96d7e049: 'RUN: runTaskLater executed'`
+- **asl_gloss.yml**: `return_later_game_is_not_run_9cc569aa: 'RETURN(LATER): game is not running'`
+- **asl_gloss.yml**: `return_later_player_is_offli_863a8cdc: 'RETURN(LATER): player is offline'`
+- **asl_gloss.yml**: `return_later_openinventory_t_7b809b57: 'RETURN(LATER): openInventory/topInventory`
+- **asl_gloss.yml**: `return_later_topinventory_is_f8714cf5: 'RETURN(LATER): topInventory is not MERCHANT.`
+- **asl_gloss.yml**: `return_later_not_treasure_sh_fcce2bb9: 'RETURN(LATER): not Treasure Shop title.`
+- **asl_gloss.yml**: `ok_later_playing_effects_now_b80a2e0e: 'OK(LATER): playing effects now'`
+- **asl_gloss.yml**: `mobcontrol_wolf_allowed_cust_a5459084: '[MobControl] WOLF allowed (CUSTOM). name='`
+- **asl_gloss.yml**: `mobcontrol_wolf_allowed_name_9cc5a59a: '[MobControl] WOLF allowed (name match).`
+- **asl_gloss.yml**: `mobcontrol_wolf_cancelled_re_1a3b2e1a: '[MobControl] WOLF cancelled! reason='`
+- **asl_gloss.yml**: `stagemobcontrollistener_refl_08ad690a: '⚠ StageMobControlListener: カウントダウン判定(reflection)に失敗。ゲーム中のみ制御します。原因:'`
+- **asl_gloss.yml**: `stagemobcontrollistener_refl_d8a61972: '⚠ StageMobControlListener: reflection初期化に失敗。ゲーム中のみ制御します。原因:'`
+- **asl_gloss.yml**: `mysql_connection_established_47452dfd: MySQL connection established successfully!`
+- **asl_gloss.yml**: `failed_to_connect_to_mysql_95e4d50a: 'Failed to connect to MySQL:'`
+- **asl_gloss.yml**: `create_table_if_not_exists_p_136a7833: CREATE TABLE IF NOT EXISTS player_treasure_count`
+- **asl_gloss.yml**: `failed_to_create_table_68199f98: 'Failed to create table:'`
+- **asl_gloss.yml**: `mysql_repository_not_ready_72df0af1: MySQL / Repository not ready.`
+- **asl_gloss.yml**: `quotefavoritestore_reloaded__3ba623a3: '[QuoteFavoriteStore] Reloaded DB: host='`
+- **asl_gloss.yml**: `where_player_uuid_and_quote__36106f85: WHERE player_uuid=? AND quote_hash=? LIMIT`
+- **asl_gloss.yml**: `values_643f4d2f: VALUES (?, ?, ?, ?, ?, ?)`
+- **asl_gloss.yml**: `where_player_uuid_and_quote__81bcaee5: WHERE player_uuid=? AND quote_hash=?`
+- **asl_gloss.yml**: `where_player_uuid_and_id_f4a80773: WHERE player_uuid=? AND id=?`
+- **asl_gloss.yml**: `where_player_uuid_53558ea9: WHERE player_uuid=?`
+- **asl_gloss.yml**: `order_by_created_at_desc_lim_f22988c0: ORDER BY created_at DESC LIMIT ?`
+- **asl_gloss.yml**: `where_player_uuid_ef617232: WHERE player_uuid=?`
+- **asl_gloss.yml**: `debug_mode_is_off_config_yml_b3d27428: 'Debug mode is OFF. config.yml の debug: true`
+- **asl_gloss.yml**: `debug_rank_3f69f429: 'DEBUG: rank'`
+- **de.yml**: `inventoryclickevent_fired_8520aa1c: InventoryClickEvent fired`
+- **de.yml**: `return_whoclicked_is_not_pla_a7675648: 'RETURN: whoClicked is not Player'`
+- **de.yml**: `return_topinventory_is_not_m_9936e6de: 'RETURN: topInventory is not MERCHANT'`
+- **de.yml**: `return_not_result_slot_expec_9eb8c2c8: 'RETURN: not result slot. expected rawSlot=2`
+- **de.yml**: `return_topinventory_is_merch_fa2f5d98: 'RETURN: topInventory is MERCHANT but not`
+- **de.yml**: `merchant_view_title_daf2a73a: merchant view title=`
+- **de.yml**: `return_not_treasure_shop_tit_8e65ad3d: 'RETURN: not Treasure Shop title. plainTitle='`
+- **de.yml**: `return_current_item_is_null_0f27c9fd: 'RETURN: current item is null'`
+- **de.yml**: `return_current_item_is_air_76b5e623: 'RETURN: current item is AIR'`
+- **de.yml**: `return_current_item_is_not_g_d1d65218: 'RETURN: current item is not GOLDEN_APPLE.`
+- **de.yml**: `return_game_is_not_running_048d7edb: 'RETURN: game is not running'`
+- **de.yml**: `return_ingredient_check_fail_673860d5: 'RETURN: ingredient check failed (need`
+- **de.yml**: `ok_passed_all_checks_schedul_11e17905: 'OK: passed all checks -> scheduling effect`
+- **de.yml**: `run_runtasklater_executed_96d7e049: 'RUN: runTaskLater executed'`
+- **de.yml**: `return_later_game_is_not_run_9cc569aa: 'RETURN(LATER): game is not running'`
+- **de.yml**: `return_later_player_is_offli_863a8cdc: 'RETURN(LATER): player is offline'`
+- **de.yml**: `return_later_openinventory_t_7b809b57: 'RETURN(LATER): openInventory/topInventory`
+- **de.yml**: `return_later_topinventory_is_f8714cf5: 'RETURN(LATER): topInventory is not MERCHANT.`
+- **de.yml**: `return_later_not_treasure_sh_fcce2bb9: 'RETURN(LATER): not Treasure Shop title.`
+- **de.yml**: `ok_later_playing_effects_now_b80a2e0e: 'OK(LATER): playing effects now'`
+- **de.yml**: `mobcontrol_wolf_allowed_cust_a5459084: '[MobControl] WOLF allowed (CUSTOM). name='`
+- **de.yml**: `mobcontrol_wolf_allowed_name_9cc5a59a: '[MobControl] WOLF allowed (name match).`
+- **de.yml**: `mobcontrol_wolf_cancelled_re_1a3b2e1a: '[MobControl] WOLF cancelled! reason='`
+- **de.yml**: `stagemobcontrollistener_refl_08ad690a: '⚠ StageMobControlListener: カウントダウン判定(reflection)に失敗。ゲーム中のみ制御します。原因:'`
+- **de.yml**: `stagemobcontrollistener_refl_d8a61972: '⚠ StageMobControlListener: reflection初期化に失敗。ゲーム中のみ制御します。原因:'`
+- **de.yml**: `mysql_connection_established_47452dfd: MySQL connection established successfully!`
+- **de.yml**: `failed_to_connect_to_mysql_95e4d50a: 'Failed to connect to MySQL:'`
+- **de.yml**: `create_table_if_not_exists_p_136a7833: CREATE TABLE IF NOT EXISTS player_treasure_count`
+- **de.yml**: `failed_to_create_table_68199f98: 'Failed to create table:'`
+- **de.yml**: `mysql_repository_not_ready_72df0af1: MySQL / Repository not ready.`
+- **de.yml**: `quotefavoritestore_reloaded__3ba623a3: '[QuoteFavoriteStore] Reloaded DB: host='`
+- **de.yml**: `where_player_uuid_and_quote__36106f85: WHERE player_uuid=? AND quote_hash=? LIMIT`
+- **de.yml**: `values_643f4d2f: VALUES (?, ?, ?, ?, ?, ?)`
+- **de.yml**: `where_player_uuid_and_quote__81bcaee5: WHERE player_uuid=? AND quote_hash=?`
+- **de.yml**: `where_player_uuid_and_id_f4a80773: WHERE player_uuid=? AND id=?`
+- **de.yml**: `where_player_uuid_53558ea9: WHERE player_uuid=?`
+- **de.yml**: `order_by_created_at_desc_lim_f22988c0: ORDER BY created_at DESC LIMIT ?`
+- **de.yml**: `where_player_uuid_ef617232: WHERE player_uuid=?`
+- **de.yml**: `debug_mode_is_off_config_yml_b3d27428: 'Debug mode is OFF. config.yml の debug: true`
+- **de.yml**: `debug_rank_3f69f429: 'DEBUG: rank'`
+- **en.yml**: `inventoryclickevent_fired_8520aa1c: InventoryClickEvent fired`
+- **en.yml**: `return_whoclicked_is_not_pla_a7675648: 'RETURN: whoClicked is not Player'`
+- **en.yml**: `return_topinventory_is_not_m_9936e6de: 'RETURN: topInventory is not MERCHANT'`
+- **en.yml**: `return_not_result_slot_expec_9eb8c2c8: 'RETURN: not result slot. expected rawSlot=2`
+- **en.yml**: `return_topinventory_is_merch_fa2f5d98: 'RETURN: topInventory is MERCHANT but not`
+- **en.yml**: `merchant_view_title_daf2a73a: merchant view title=`
+- **en.yml**: `return_not_treasure_shop_tit_8e65ad3d: 'RETURN: not Treasure Shop title. plainTitle='`
+- **en.yml**: `return_current_item_is_null_0f27c9fd: 'RETURN: current item is null'`
+- **en.yml**: `return_current_item_is_air_76b5e623: 'RETURN: current item is AIR'`
+- **en.yml**: `return_current_item_is_not_g_d1d65218: 'RETURN: current item is not GOLDEN_APPLE.`
+- **en.yml**: `return_game_is_not_running_048d7edb: 'RETURN: game is not running'`
+- **en.yml**: `return_ingredient_check_fail_673860d5: 'RETURN: ingredient check failed (need`
+- **en.yml**: `ok_passed_all_checks_schedul_11e17905: 'OK: passed all checks -> scheduling effect`
+- **en.yml**: `run_runtasklater_executed_96d7e049: 'RUN: runTaskLater executed'`
+- **en.yml**: `return_later_game_is_not_run_9cc569aa: 'RETURN(LATER): game is not running'`
+- **en.yml**: `return_later_player_is_offli_863a8cdc: 'RETURN(LATER): player is offline'`
+- **en.yml**: `return_later_openinventory_t_7b809b57: 'RETURN(LATER): openInventory/topInventory`
+- **en.yml**: `return_later_topinventory_is_f8714cf5: 'RETURN(LATER): topInventory is not MERCHANT.`
+- **en.yml**: `return_later_not_treasure_sh_fcce2bb9: 'RETURN(LATER): not Treasure Shop title.`
+- **en.yml**: `ok_later_playing_effects_now_b80a2e0e: 'OK(LATER): playing effects now'`
+- **en.yml**: `mobcontrol_wolf_allowed_cust_a5459084: '[MobControl] WOLF allowed (CUSTOM). name='`
+- **en.yml**: `mobcontrol_wolf_allowed_name_9cc5a59a: '[MobControl] WOLF allowed (name match).`
+- **en.yml**: `mobcontrol_wolf_cancelled_re_1a3b2e1a: '[MobControl] WOLF cancelled! reason='`
+- **en.yml**: `stagemobcontrollistener_refl_08ad690a: '⚠ StageMobControlListener: カウントダウン判定(reflection)に失敗。ゲーム中のみ制御します。原因:'`
+- **en.yml**: `stagemobcontrollistener_refl_d8a61972: '⚠ StageMobControlListener: reflection初期化に失敗。ゲーム中のみ制御します。原因:'`
+- **en.yml**: `mysql_connection_established_47452dfd: MySQL connection established successfully!`
+- **en.yml**: `failed_to_connect_to_mysql_95e4d50a: 'Failed to connect to MySQL:'`
+- **en.yml**: `create_table_if_not_exists_p_136a7833: CREATE TABLE IF NOT EXISTS player_treasure_count`
+- **en.yml**: `failed_to_create_table_68199f98: 'Failed to create table:'`
+- **en.yml**: `mysql_repository_not_ready_72df0af1: MySQL / Repository not ready.`
+- **en.yml**: `quotefavoritestore_reloaded__3ba623a3: '[QuoteFavoriteStore] Reloaded DB: host='`
+- **en.yml**: `where_player_uuid_and_quote__36106f85: WHERE player_uuid=? AND quote_hash=? LIMIT`
+- **en.yml**: `values_643f4d2f: VALUES (?, ?, ?, ?, ?, ?)`
+- **en.yml**: `where_player_uuid_and_quote__81bcaee5: WHERE player_uuid=? AND quote_hash=?`
+- **en.yml**: `where_player_uuid_and_id_f4a80773: WHERE player_uuid=? AND id=?`
+- **en.yml**: `where_player_uuid_53558ea9: WHERE player_uuid=?`
+- **en.yml**: `order_by_created_at_desc_lim_f22988c0: ORDER BY created_at DESC LIMIT ?`
+- **en.yml**: `where_player_uuid_ef617232: WHERE player_uuid=?`
+- **en.yml**: `debug_mode_is_off_config_yml_b3d27428: 'Debug mode is OFF. config.yml の debug: true`
+- **en.yml**: `debug_rank_3f69f429: 'DEBUG: rank'`
+- ... and 544 more
+
+## legacy_or_manual_review
+
+- **asl_gloss.yml**: `backup_cfe9e6cf: 🌊 Backup 海探索で海を検出しました`
+- **asl_gloss.yml**: `text_e096c9a4: '&6特製エメラルド'`
+- **asl_gloss.yml**: `items_current_0629a198: items current=`
+- **asl_gloss.yml**: `cursor_7fabae3f: / cursor=`
+- **asl_gloss.yml**: `shift_53e51de9: ', shift='`
+- **asl_gloss.yml**: `ingredients_snapshot_98cb38c3: ingredients snapshot`
+- **asl_gloss.yml**: `k_llun_r_dj_pinu_16494877: '&6&lKöllun úr djúpinu'`
+- **asl_gloss.yml**: `player_name_varchar_50_prima_79b8331b: player_name VARCHAR(50) PRIMARY KEY,`
+- **asl_gloss.yml**: `count_int_not_null_660eadd8: count INT NOT NULL)`
+- **asl_gloss.yml**: `reset_treasure_count_for_pla_96b152d2: 'Reset treasure count for player:'`
+- **asl_gloss.yml**: `dj_onalltreasurescollected_a871afdd: DJイベントはすでに実行中のため、onAllTreasuresCollected`
+- **asl_gloss.yml**: `on_duplicate_key_update_coun_a1543779: ON DUPLICATE KEY UPDATE count = ?`
+- **asl_gloss.yml**: `failed_to_save_treasure_coun_9d94c0cc: 'Failed to save treasure count:'`
+- **asl_gloss.yml**: `dj_triggerultimatedjevent_eb01ecae: DJイベントはすでに実行中のため、triggerUltimateDJEvent をスキップしました。`
+- **asl_gloss.yml**: `treasure_complete_8360fbe9: 🎵 Treasure Complete! 🎵`
+- **asl_gloss.yml**: `text_cc353737: 全ての宝物を発見しました！`
+- **asl_gloss.yml**: `congratulations_38fd1594: §6Congratulations! 全ての宝物を見つけました！`
+- **asl_gloss.yml**: `treasurerun_favorites_templa_a0a4bf2e: '[TreasureRun] favorites_templates.yml`
+- **asl_gloss.yml**: `quotefavoritestore_exists_fa_7d08adba: '[QuoteFavoriteStore] exists failed:'`
+- **asl_gloss.yml**: `player_uuid_quote_hash_outco_49f06b31: (player_uuid, quote_hash, outcome, difficulty,`
+- **asl_gloss.yml**: `quotefavoritestore_addfavori_44fb1d75: '[QuoteFavoriteStore] addFavorite failed:'`
+- **asl_gloss.yml**: `quotefavoritestore_removefav_8180a1e4: '[QuoteFavoriteStore] removeFavorite failed:'`
+- **asl_gloss.yml**: `quotefavoritestore_removefav_d024b1e5: '[QuoteFavoriteStore] removeFavoriteById`
+- **asl_gloss.yml**: `quotefavoritestore_listfavor_f3e976d4: '[QuoteFavoriteStore] listFAVORITES failed:'`
+- **asl_gloss.yml**: `quotefavoritestore_countfavo_69291680: '[QuoteFavoriteStore] countFAVORITES failed:'`
+- **asl_gloss.yml**: `treasurerun_favorites_0c778ce1: TreasureRun FAVORITES`
+- **asl_gloss.yml**: `no_text_b87d9ee6: (no text)`
+- **asl_gloss.yml**: `text_2bf42ec8: このコマンドはプレイヤーのみが実行できます。`
+- **asl_gloss.yml**: `3_3d5021f7: スペシャルエメラルドの作成には、ダイヤモンドが3個必要です。`
+- **asl_gloss.yml**: `text_e096c9a4: '&6特製エメラルド'`
+- **asl_gloss.yml**: `3_71b78a44: ダイヤモンド3個でスペシャルエメラルドを作成しました！`
+- **asl_gloss.yml**: `treasurerun_quote_favorite_c_dbf690ae: '[TreasureRun] Quote Favorite Commands:'`
+- **asl_gloss.yml**: `quotefavorite_latest_save_la_8e4bdc46: /quoteFavorite latest  - save latest quote`
+- **asl_gloss.yml**: `quotefavorite_list_show_favo_4ebb13c4: /quoteFavorite list    - show favorites`
+- **asl_gloss.yml**: `quotefavorite_remove_id_remo_a6fdb289: /quoteFavorite remove <id> - remove favorite`
+- **asl_gloss.yml**: `favorite_not_removed_not_fou_56de7a31: Favorite not removed. (not found?)`
+- **asl_gloss.yml**: `text_3030fd61: プレイヤーのみ実行できます`
+- **asl_gloss.yml**: `op_10caf0f6: 権限がありません（OP限定）`
+- **asl_gloss.yml**: `rank_1_2_3_demo_d87f40da: '使い方: /rank <1|2|3|demo>'`
+- **asl_gloss.yml**: `rank_1_2_3_demo_4f3e3084: '数字で入力してください: /rank <1|2|3|demo>'`
+- **asl_gloss.yml**: `1_3_rank_1_2_3_7f459bd0: '1〜3だけ使えます: /rank <1|2|3>'`
+- **asl_gloss.yml**: `db_e5d54fbd: の演出だけ発動しました（ランキング/DBは変更なし）`
+- **de.yml**: `backup_cfe9e6cf: 🌊 Backup 海探索で海を検出しました`
+- **de.yml**: `text_e096c9a4: '&6特製エメラルド'`
+- **de.yml**: `items_current_0629a198: items current=`
+- **de.yml**: `cursor_7fabae3f: / cursor=`
+- **de.yml**: `shift_53e51de9: ', shift='`
+- **de.yml**: `ingredients_snapshot_98cb38c3: ingredients snapshot`
+- **de.yml**: `k_llun_r_dj_pinu_16494877: '&6&lKöllun úr djúpinu'`
+- **de.yml**: `player_name_varchar_50_prima_79b8331b: player_name VARCHAR(50) PRIMARY KEY,`
+- **de.yml**: `count_int_not_null_660eadd8: count INT NOT NULL)`
+- **de.yml**: `reset_treasure_count_for_pla_96b152d2: 'Reset treasure count for player:'`
+- **de.yml**: `dj_onalltreasurescollected_a871afdd: DJイベントはすでに実行中のため、onAllTreasuresCollected`
+- **de.yml**: `on_duplicate_key_update_coun_a1543779: ON DUPLICATE KEY UPDATE count = ?`
+- **de.yml**: `failed_to_save_treasure_coun_9d94c0cc: 'Failed to save treasure count:'`
+- **de.yml**: `dj_triggerultimatedjevent_eb01ecae: DJイベントはすでに実行中のため、triggerUltimateDJEvent をスキップしました。`
+- **de.yml**: `treasure_complete_8360fbe9: 🎵 Treasure Complete! 🎵`
+- **de.yml**: `text_cc353737: 全ての宝物を発見しました！`
+- **de.yml**: `congratulations_38fd1594: §6Congratulations! 全ての宝物を見つけました！`
+- **de.yml**: `treasurerun_favorites_templa_a0a4bf2e: '[TreasureRun] favorites_templates.yml`
+- **de.yml**: `quotefavoritestore_exists_fa_7d08adba: '[QuoteFavoriteStore] exists failed:'`
+- **de.yml**: `player_uuid_quote_hash_outco_49f06b31: (player_uuid, quote_hash, outcome, difficulty,`
+- **de.yml**: `quotefavoritestore_addfavori_44fb1d75: '[QuoteFavoriteStore] addFavorite failed:'`
+- **de.yml**: `quotefavoritestore_removefav_8180a1e4: '[QuoteFavoriteStore] removeFavorite failed:'`
+- **de.yml**: `quotefavoritestore_removefav_d024b1e5: '[QuoteFavoriteStore] removeFavoriteById`
+- **de.yml**: `quotefavoritestore_listfavor_f3e976d4: '[QuoteFavoriteStore] listFavoriten failed:'`
+- **de.yml**: `quotefavoritestore_countfavo_69291680: '[QuoteFavoriteStore] countFavoriten failed:'`
+- **de.yml**: `treasurerun_favorites_0c778ce1: TreasureRun Favoriten`
+- **de.yml**: `no_text_b87d9ee6: (no text)`
+- **de.yml**: `text_2bf42ec8: このコマンドはプレイヤーのみが実行できます。`
+- **de.yml**: `3_3d5021f7: スペシャルエメラルドの作成には、ダイヤモンドが3個必要です。`
+- **de.yml**: `text_e096c9a4: '&6特製エメラルド'`
+- **de.yml**: `3_71b78a44: ダイヤモンド3個でスペシャルエメラルドを作成しました！`
+- **de.yml**: `treasurerun_quote_favorite_c_dbf690ae: '[TreasureRun] Quote Favorite Commands:'`
+- **de.yml**: `quotefavorite_latest_save_la_8e4bdc46: /quoteFavorite latest  - save latest quote`
+- **de.yml**: `quotefavorite_list_show_favo_4ebb13c4: /quoteFavorite list    - show favorites`
+- **de.yml**: `quotefavorite_remove_id_remo_a6fdb289: /quoteFavorite remove <id> - remove favorite`
+- **de.yml**: `favorites_latest_20_e23c073b: '★ Favoriten (latest 20):'`
+- **de.yml**: `favorite_not_removed_not_fou_56de7a31: Favorite not removed. (not found?)`
+- **de.yml**: `text_3030fd61: プレイヤーのみ実行できます`
+- **de.yml**: `op_10caf0f6: 権限がありません（OP限定）`
+- **de.yml**: `rank_1_2_3_demo_d87f40da: '使い方: /rank <1|2|3|demo>'`
+- **de.yml**: `rank_1_2_3_demo_4f3e3084: '数字で入力してください: /rank <1|2|3|demo>'`
+- **de.yml**: `1_3_rank_1_2_3_7f459bd0: '1〜3だけ使えます: /rank <1|2|3>'`
+- **de.yml**: `db_e5d54fbd: の演出だけ発動しました（ランキング/DBは変更なし）`
+- **en.yml**: `backup_cfe9e6cf: 🌊 Backup 海探索で海を検出しました`
+- **en.yml**: `text_e096c9a4: '&6特製エメラルド'`
+- **en.yml**: `items_current_0629a198: items current=`
+- **en.yml**: `cursor_7fabae3f: / cursor=`
+- **en.yml**: `shift_53e51de9: ', shift='`
+- **en.yml**: `ingredients_snapshot_98cb38c3: ingredients snapshot`
+- **en.yml**: `k_llun_r_dj_pinu_16494877: '&6&lKöllun úr djúpinu'`
+- **en.yml**: `player_name_varchar_50_prima_79b8331b: player_name VARCHAR(50) PRIMARY KEY,`
+- **en.yml**: `count_int_not_null_660eadd8: count INT NOT NULL)`
+- **en.yml**: `reset_treasure_count_for_pla_96b152d2: 'Reset treasure count for player:'`
+- **en.yml**: `dj_onalltreasurescollected_a871afdd: DJイベントはすでに実行中のため、onAllTreasuresCollected`
+- **en.yml**: `on_duplicate_key_update_coun_a1543779: ON DUPLICATE KEY UPDATE count = ?`
+- **en.yml**: `failed_to_save_treasure_coun_9d94c0cc: 'Failed to save treasure count:'`
+- **en.yml**: `dj_triggerultimatedjevent_eb01ecae: DJイベントはすでに実行中のため、triggerUltimateDJEvent をスキップしました。`
+- **en.yml**: `treasure_complete_8360fbe9: 🎵 Treasure Complete! 🎵`
+- **en.yml**: `text_cc353737: 全ての宝物を発見しました！`
+- **en.yml**: `congratulations_38fd1594: §6Congratulations! 全ての宝物を見つけました！`
+- **en.yml**: `treasurerun_favorites_templa_a0a4bf2e: '[TreasureRun] favorites_templates.yml`
+- **en.yml**: `quotefavoritestore_exists_fa_7d08adba: '[QuoteFavoriteStore] exists failed:'`
+- **en.yml**: `player_uuid_quote_hash_outco_49f06b31: (player_uuid, quote_hash, outcome, difficulty,`
+- **en.yml**: `quotefavoritestore_addfavori_44fb1d75: '[QuoteFavoriteStore] addFavorite failed:'`
+- **en.yml**: `quotefavoritestore_removefav_8180a1e4: '[QuoteFavoriteStore] removeFavorite failed:'`
+- **en.yml**: `quotefavoritestore_removefav_d024b1e5: '[QuoteFavoriteStore] removeFavoriteById`
+- **en.yml**: `quotefavoritestore_listfavor_f3e976d4: '[QuoteFavoriteStore] listFavorites failed:'`
+- **en.yml**: `quotefavoritestore_countfavo_69291680: '[QuoteFavoriteStore] countFavorites failed:'`
+- **en.yml**: `treasurerun_favorites_0c778ce1: TreasureRun Favorites`
+- **en.yml**: `no_text_b87d9ee6: (no text)`
+- **en.yml**: `text_2bf42ec8: このコマンドはプレイヤーのみが実行できます。`
+- **en.yml**: `3_3d5021f7: スペシャルエメラルドの作成には、ダイヤモンドが3個必要です。`
+- **en.yml**: `text_e096c9a4: '&6特製エメラルド'`
+- **en.yml**: `3_71b78a44: ダイヤモンド3個でスペシャルエメラルドを作成しました！`
+- **en.yml**: `treasurerun_quote_favorite_c_dbf690ae: '[TreasureRun] Quote Favorite Commands:'`
+- **en.yml**: `quotefavorite_latest_save_la_8e4bdc46: /quoteFavorite latest  - save latest quote`
+- **en.yml**: `quotefavorite_list_show_favo_4ebb13c4: /quoteFavorite list    - show favorites`
+- **en.yml**: `quotefavorite_remove_id_remo_a6fdb289: /quoteFavorite remove <id> - remove favorite`
+- ... and 707 more
