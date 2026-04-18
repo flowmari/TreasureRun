@@ -433,5 +433,5 @@ outcome:
     common:
       pool: []
   fallback:
-    runComplete: Suoritus valmis.
+    runComplete: Juoksu valmis.
     timeUp: Aika loppui.
