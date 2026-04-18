@@ -230,7 +230,7 @@ favorites:
     sub: favorites.cover.sub
   empty:
     head: favorites.empty.head
-    noFav: favorites.empty.noFav
+    noFav: 'Noch keine Favoriten.'
     noFavSub: favorites.empty.noFavSub
     reread: favorites.empty.reread
     rereadBook: favorites.empty.rereadBook
@@ -245,7 +245,7 @@ favorites:
     head: favorites.reread.head
     noQuotes: favorites.reread.noQuotes
   table: favorites.table
-  title: favorites.title
+  title: 'Favoriten'
   toc:
     clickable: favorites.toc.clickable
     head: favorites.toc.head

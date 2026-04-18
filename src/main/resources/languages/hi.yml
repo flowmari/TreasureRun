@@ -437,12 +437,12 @@ game:
     normal: '&eNormal'
     hard: '&cHard'
 favorites:
-  title: favorites.title
+  title: 'पसंदीदा'
   cover:
     head: favorites.cover.head
     hint: favorites.cover.hint
   empty:
-    noFav: favorites.empty.noFav
+    noFav: 'अभी तक कोई पसंदीदा नहीं है।'
     saveLatest: favorites.empty.saveLatest
   toc:
     head: favorites.toc.head
