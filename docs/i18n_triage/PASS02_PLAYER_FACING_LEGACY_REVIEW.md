@@ -1,0 +1,161 @@
+# Pass 02 player-facing legacy review
+
+-   L190:     time_s_up_c5b3ef74: §c§lTIME'S UP!
+-   L255:     favorite_saved_sneak_rightcl_7a73eb4f: ★ Favorite saved! (Sneak+RightClick)
+-   L284:   players_only_10ed3cbc: Players only.
+-   L285:   treasurerun_quote_favorite_c_dbf690ae: '[TreasureRun] Quote Favorite Commands:'
+-   L286:   quotefavorite_latest_save_la_8e4bdc46: /quoteFavorite latest  - save latest quote
+-   L288:   quotefavorite_list_show_favo_4ebb13c4: /quoteFavorite list    - show favorites
+-   L289:   quotefavorite_remove_id_remo_a6fdb289: /quoteFavorite remove <id> - remove favorite
+-   L290:   favorite_saved_bb0cd8a8: ★ Favorite saved!
+-   L294:   usage_quotefavorite_remove_i_5324156c: 'Usage: /quoteFavorite remove <id>'
+-   L298:   unknown_subcommand_use_quote_f79bf3b5: 'Unknown subcommand. Use: /quoteFavorite'
+-   L197:     time_s_up_c5b3ef74: §c§lTIME'S UP!
+-   L262:     favorite_saved_sneak_rightcl_7a73eb4f: ★ Favorite saved! (Sneak+RightClick)
+-   L291:   players_only_10ed3cbc: Players only.
+-   L292:   treasurerun_quote_favorite_c_dbf690ae: '[TreasureRun] Quote Favorite Commands:'
+-   L293:   quotefavorite_latest_save_la_8e4bdc46: /quoteFavorite latest  - save latest quote
+-   L295:   quotefavorite_list_show_favo_4ebb13c4: /quoteFavorite list    - show favorites
+-   L296:   quotefavorite_remove_id_remo_a6fdb289: /quoteFavorite remove <id> - remove favorite
+-   L297:   favorite_saved_bb0cd8a8: ★ Favorite saved!
+-   L301:   usage_quotefavorite_remove_i_5324156c: 'Usage: /quoteFavorite remove <id>'
+-   L305:   unknown_subcommand_use_quote_f79bf3b5: 'Unknown subcommand. Use: /quoteFavorite'
+-   L196:     time_s_up_c5b3ef74: §c§lTIME'S UP!
+-   L261:     favorite_saved_sneak_rightcl_7a73eb4f: ★ Favorite saved! (Sneak+RightClick)
+-   L290:   players_only_10ed3cbc: Players only.
+-   L291:   treasurerun_quote_favorite_c_dbf690ae: '[TreasureRun] Quote Favorite Commands:'
+-   L292:   quotefavorite_latest_save_la_8e4bdc46: /quoteFavorite latest  - save latest quote
+-   L294:   quotefavorite_list_show_favo_4ebb13c4: /quoteFavorite list    - show favorites
+-   L295:   quotefavorite_remove_id_remo_a6fdb289: /quoteFavorite remove <id> - remove favorite
+-   L296:   favorite_saved_bb0cd8a8: ★ Favorite saved!
+-   L299:   favorites_latest_20_e23c073b: '★ Favorites (latest 20):'
+-   L300:   usage_quotefavorite_remove_i_5324156c: 'Usage: /quoteFavorite remove <id>'
+-   L304:   unknown_subcommand_use_quote_f79bf3b5: 'Unknown subcommand. Use: /quoteFavorite'
+-   L198:     time_s_up_c5b3ef74: §c§lTIME'S UP!
+-   L263:     favorite_saved_sneak_rightcl_7a73eb4f: ★ Favorite saved! (Sneak+RightClick)
+-   L292:   players_only_10ed3cbc: Players only.
+-   L293:   treasurerun_quote_favorite_c_dbf690ae: '[TreasureRun] Quote Favorite Commands:'
+-   L294:   quotefavorite_latest_save_la_8e4bdc46: /quoteFavorite latest  - save latest quote
+-   L296:   quotefavorite_list_show_favo_4ebb13c4: /quoteFavorite list    - show favorites
+-   L297:   quotefavorite_remove_id_remo_a6fdb289: /quoteFavorite remove <id> - remove favorite
+-   L298:   favorite_saved_bb0cd8a8: ★ Favorite saved!
+-   L302:   usage_quotefavorite_remove_i_5324156c: 'Usage: /quoteFavorite remove <id>'
+-   L306:   unknown_subcommand_use_quote_f79bf3b5: 'Unknown subcommand. Use: /quoteFavorite'
+-   L196:     time_s_up_c5b3ef74: §c§lTIME'S UP!
+-   L261:     favorite_saved_sneak_rightcl_7a73eb4f: ★ Favorite saved! (Sneak+RightClick)
+-   L290:   players_only_10ed3cbc: Players only.
+-   L291:   treasurerun_quote_favorite_c_dbf690ae: '[TreasureRun] Quote Favorite Commands:'
+-   L292:   quotefavorite_latest_save_la_8e4bdc46: /quoteFavorite latest  - save latest quote
+-   L294:   quotefavorite_list_show_favo_4ebb13c4: /quoteFavorite list    - show favorites
+-   L295:   quotefavorite_remove_id_remo_a6fdb289: /quoteFavorite remove <id> - remove favorite
+-   L296:   favorite_saved_bb0cd8a8: ★ Favorite saved!
+-   L300:   usage_quotefavorite_remove_i_5324156c: 'Usage: /quoteFavorite remove <id>'
+-   L304:   unknown_subcommand_use_quote_f79bf3b5: 'Unknown subcommand. Use: /quoteFavorite'
+-   L197:     time_s_up_c5b3ef74: §c§lTIME'S UP!
+-   L262:     favorite_saved_sneak_rightcl_7a73eb4f: ★ Favorite saved! (Sneak+RightClick)
+-   L291:   players_only_10ed3cbc: Players only.
+-   L292:   treasurerun_quote_favorite_c_dbf690ae: '[TreasureRun] Quote Favorite Commands:'
+-   L293:   quotefavorite_latest_save_la_8e4bdc46: /quoteFavorite latest  - save latest quote
+-   L295:   quotefavorite_list_show_favo_4ebb13c4: /quoteFavorite list    - show favorites
+-   L296:   quotefavorite_remove_id_remo_a6fdb289: /quoteFavorite remove <id> - remove favorite
+-   L297:   favorite_saved_bb0cd8a8: ★ Favorite saved!
+-   L301:   usage_quotefavorite_remove_i_5324156c: 'Usage: /quoteFavorite remove <id>'
+-   L305:   unknown_subcommand_use_quote_f79bf3b5: 'Unknown subcommand. Use: /quoteFavorite'
+-   L303:     run_complete_d258363d: Run Complete!
+-   L305:     time_s_up_7441e686: TIME'S UP!
+-   L196:     time_s_up_c5b3ef74: §c§lTIME'S UP!
+-   L261:     favorite_saved_sneak_rightcl_7a73eb4f: ★ Favorite saved! (Sneak+RightClick)
+-   L290:   players_only_10ed3cbc: Players only.
+-   L291:   treasurerun_quote_favorite_c_dbf690ae: '[TreasureRun] Quote Favorite Commands:'
+-   L292:   quotefavorite_latest_save_la_8e4bdc46: /quoteFavorite latest  - save latest quote
+-   L294:   quotefavorite_list_show_favo_4ebb13c4: /quoteFavorite list    - show favorites
+-   L295:   quotefavorite_remove_id_remo_a6fdb289: /quoteFavorite remove <id> - remove favorite
+-   L296:   favorite_saved_bb0cd8a8: ★ Favorite saved!
+-   L300:   usage_quotefavorite_remove_i_5324156c: 'Usage: /quoteFavorite remove <id>'
+-   L304:   unknown_subcommand_use_quote_f79bf3b5: 'Unknown subcommand. Use: /quoteFavorite'
+-   L198:     time_s_up_c5b3ef74: §c§lTIME'S UP!
+-   L263:     favorite_saved_sneak_rightcl_7a73eb4f: ★ Favorite saved! (Sneak+RightClick)
+-   L292:   players_only_10ed3cbc: Players only.
+-   L293:   treasurerun_quote_favorite_c_dbf690ae: '[TreasureRun] Quote Favorite Commands:'
+-   L294:   quotefavorite_latest_save_la_8e4bdc46: /quoteFavorite latest  - save latest quote
+-   L296:   quotefavorite_list_show_favo_4ebb13c4: /quoteFavorite list    - show favorites
+-   L297:   quotefavorite_remove_id_remo_a6fdb289: /quoteFavorite remove <id> - remove favorite
+-   L298:   favorite_saved_bb0cd8a8: ★ Favorite saved!
+-   L302:   usage_quotefavorite_remove_i_5324156c: 'Usage: /quoteFavorite remove <id>'
+-   L306:   unknown_subcommand_use_quote_f79bf3b5: 'Unknown subcommand. Use: /quoteFavorite'
+-   L189:     time_s_up_c5b3ef74: §c§lTIME'S UP!
+-   L254:     favorite_saved_sneak_rightcl_7a73eb4f: ★ Favorite saved! (Sneak+RightClick)
+-   L283:   players_only_10ed3cbc: Players only.
+-   L284:   treasurerun_quote_favorite_c_dbf690ae: '[TreasureRun] Quote Favorite Commands:'
+-   L285:   quotefavorite_latest_save_la_8e4bdc46: /quoteFavorite latest  - save latest quote
+-   L287:   quotefavorite_list_show_favo_4ebb13c4: /quoteFavorite list    - show favorites
+-   L288:   quotefavorite_remove_id_remo_a6fdb289: /quoteFavorite remove <id> - remove favorite
+-   L289:   favorite_saved_bb0cd8a8: ★ Favorite saved!
+-   L293:   usage_quotefavorite_remove_i_5324156c: 'Usage: /quoteFavorite remove <id>'
+-   L297:   unknown_subcommand_use_quote_f79bf3b5: 'Unknown subcommand. Use: /quoteFavorite'
+-   L190:     time_s_up_c5b3ef74: §c§lTIME'S UP!
+-   L255:     favorite_saved_sneak_rightcl_7a73eb4f: ★ Favorite saved! (Sneak+RightClick)
+-   L284:   players_only_10ed3cbc: Players only.
+-   L285:   treasurerun_quote_favorite_c_dbf690ae: '[TreasureRun] Quote Favorite Commands:'
+-   L286:   quotefavorite_latest_save_la_8e4bdc46: /quoteFavorite latest  - save latest quote
+-   L288:   quotefavorite_list_show_favo_4ebb13c4: /quoteFavorite list    - show favorites
+-   L289:   quotefavorite_remove_id_remo_a6fdb289: /quoteFavorite remove <id> - remove favorite
+-   L290:   favorite_saved_bb0cd8a8: ★ Favorite saved!
+-   L294:   usage_quotefavorite_remove_i_5324156c: 'Usage: /quoteFavorite remove <id>'
+-   L298:   unknown_subcommand_use_quote_f79bf3b5: 'Unknown subcommand. Use: /quoteFavorite'
+-   L196:     time_s_up_c5b3ef74: §c§lTIME'S UP!
+-   L261:     favorite_saved_sneak_rightcl_7a73eb4f: ★ Favorite saved! (Sneak+RightClick)
+-   L290:   players_only_10ed3cbc: Players only.
+-   L291:   treasurerun_quote_favorite_c_dbf690ae: '[TreasureRun] Quote Favorite Commands:'
+-   L292:   quotefavorite_latest_save_la_8e4bdc46: /quoteFavorite latest  - save latest quote
+-   L294:   quotefavorite_list_show_favo_4ebb13c4: /quoteFavorite list    - show favorites
+-   L295:   quotefavorite_remove_id_remo_a6fdb289: /quoteFavorite remove <id> - remove favorite
+-   L296:   favorite_saved_bb0cd8a8: ★ Favorite saved!
+-   L300:   usage_quotefavorite_remove_i_5324156c: 'Usage: /quoteFavorite remove <id>'
+-   L304:   unknown_subcommand_use_quote_f79bf3b5: 'Unknown subcommand. Use: /quoteFavorite'
+-   L296:     run_complete_d258363d: Run Complete!
+-   L298:     time_s_up_7441e686: TIME'S UP!
+-   L196:     time_s_up_c5b3ef74: §c§lTIME'S UP!
+-   L261:     favorite_saved_sneak_rightcl_7a73eb4f: ★ Favorite saved! (Sneak+RightClick)
+-   L290:   players_only_10ed3cbc: Players only.
+-   L291:   treasurerun_quote_favorite_c_dbf690ae: '[TreasureRun] Quote Favorite Commands:'
+-   L292:   quotefavorite_latest_save_la_8e4bdc46: /quoteFavorite latest  - save latest quote
+-   L294:   quotefavorite_list_show_favo_4ebb13c4: /quoteFavorite list    - show favorites
+-   L295:   quotefavorite_remove_id_remo_a6fdb289: /quoteFavorite remove <id> - remove favorite
+-   L296:   favorite_saved_bb0cd8a8: ★ Favorite saved!
+-   L300:   usage_quotefavorite_remove_i_5324156c: 'Usage: /quoteFavorite remove <id>'
+-   L304:   unknown_subcommand_use_quote_f79bf3b5: 'Unknown subcommand. Use: /quoteFavorite'
+-   L305:     run_complete_d258363d: Run Complete!
+-   L307:     time_s_up_7441e686: TIME'S UP!
+-   L195:     time_s_up_c5b3ef74: §c§lTIME'S UP!
+-   L260:     favorite_saved_sneak_rightcl_7a73eb4f: ★ Favorite saved! (Sneak+RightClick)
+-   L289:   players_only_10ed3cbc: Players only.
+-   L290:   treasurerun_quote_favorite_c_dbf690ae: '[TreasureRun] Quote Favorite Commands:'
+-   L291:   quotefavorite_latest_save_la_8e4bdc46: /quoteFavorite latest  - save latest quote
+-   L293:   quotefavorite_list_show_favo_4ebb13c4: /quoteFavorite list    - show favorites
+-   L294:   quotefavorite_remove_id_remo_a6fdb289: /quoteFavorite remove <id> - remove favorite
+-   L295:   favorite_saved_bb0cd8a8: ★ Favorite saved!
+-   L299:   usage_quotefavorite_remove_i_5324156c: 'Usage: /quoteFavorite remove <id>'
+-   L303:   unknown_subcommand_use_quote_f79bf3b5: 'Unknown subcommand. Use: /quoteFavorite'
+-   L194:     time_s_up_c5b3ef74: §c§lTIME'S UP!
+-   L259:     favorite_saved_sneak_rightcl_7a73eb4f: ★ Favorite saved! (Sneak+RightClick)
+-   L288:   players_only_10ed3cbc: Players only.
+-   L289:   treasurerun_quote_favorite_c_dbf690ae: '[TreasureRun] Quote Favorite Commands:'
+-   L290:   quotefavorite_latest_save_la_8e4bdc46: /quoteFavorite latest  - save latest quote
+-   L292:   quotefavorite_list_show_favo_4ebb13c4: /quoteFavorite list    - show favorites
+-   L293:   quotefavorite_remove_id_remo_a6fdb289: /quoteFavorite remove <id> - remove favorite
+-   L294:   favorite_saved_bb0cd8a8: ★ Favorite saved!
+-   L298:   usage_quotefavorite_remove_i_5324156c: 'Usage: /quoteFavorite remove <id>'
+-   L302:   unknown_subcommand_use_quote_f79bf3b5: 'Unknown subcommand. Use: /quoteFavorite'
+-   L195:     time_s_up_c5b3ef74: §c§lTIME'S UP!
+-   L260:     favorite_saved_sneak_rightcl_7a73eb4f: ★ Favorite saved! (Sneak+RightClick)
+-   L289:   players_only_10ed3cbc: Players only.
+-   L290:   treasurerun_quote_favorite_c_dbf690ae: '[TreasureRun] Quote Favorite Commands:'
+-   L291:   quotefavorite_latest_save_la_8e4bdc46: /quoteFavorite latest  - save latest quote
+-   L293:   quotefavorite_list_show_favo_4ebb13c4: /quoteFavorite list    - show favorites
+-   L294:   quotefavorite_remove_id_remo_a6fdb289: /quoteFavorite remove <id> - remove favorite
+-   L295:   favorite_saved_bb0cd8a8: ★ Favorite saved!
+-   L299:   usage_quotefavorite_remove_i_5324156c: 'Usage: /quoteFavorite remove <id>'
+-   L303:   unknown_subcommand_use_quote_f79bf3b5: 'Unknown subcommand. Use: /quoteFavorite'
+-   L296:     run_complete_d258363d: Run Complete!
+-   L298:     time_s_up_7441e686: TIME'S UP!
