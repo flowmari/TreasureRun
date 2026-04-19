@@ -1,0 +1,54 @@
+# GameMenu literal-only candidates
+
+- L27: `* - 現在言語(lang)でフィルター（無ければ全件表示）`
+- L36: `* - Favorites を DB(MySQL proverb_favorites) から読み、タブとして収録`
+- L46: `*   showGameMenu(player, difficulty, plugin, lang)`
+- L51: `* - 表示文言は languages/*.yml（19言語）へ集約する`
+- L81: `"ruleBook.difficultyLabel." + actualLang + "." + difficulty,`
+- L82: `difficulty`
+- L92: `player.sendMessage(colorize(raw));`
+- L99: `TreasureRunMultiChestPlugin plugin, String lang) {`
+- L103: `showGameMenu(player, difficulty);`
+- L122: `actualLang = lang;`
+- L129: `"ruleBook.difficultyLabel." + actualLang + "." + difficulty,`
+- L130: `difficulty`
+- L140: `player.sendMessage(colorize(raw));`
+- L163: `openRuleBookFromConfig(player, difficulty, plugin, "");`
+- L172: `TreasureRunMultiChestPlugin plugin, String lang) {`
+- L189: `actualLang = lang;`
+- L205: `"ruleBook.difficultyLabel." + actualLang + "." + difficulty,`
+- L206: `difficulty`
+- L211: `pages = cfg.getStringList("ruleBook.pages.ja");`
+- L241: `player.sendMessage(colorize(plugin.getI18n().tr(actualLang, GameMenuKeys.UI_MENU_BOOK_OPEN_FAILED)));`
+- L245: `meta.setTitle(title);`
+- L253: `displayMeta.setDisplayName(displayName);`
+- L262: `ConfigurationSection dnSec = cfg.getConfigurationSection("ruleBook.displayName");`
+- L297: `player.openBook(book);`
+- L300: `player.sendMessage(colorize(plugin.getI18n().tr(actualLang, GameMenuKeys.UI_MENU_BOOK_HOTBAR_GIVEN)));`
+- L301: `player.sendMessage(colorize(plugin.getI18n().tr(actualLang, GameMenuKeys.UI_MENU_BOOK_HOTBAR_HINT)));`
+- L305: `player.sendMessage(colorize(plugin.getI18n().tr(`
+- L374: `pages.add(buildQuoteTabsIntroPage(plugin, actualLang));`
+- L375: `pages.addAll(buildProverbCollectionPages(player, plugin, actualLang, QuoteTab.ALL, true));`
+- L376: `pages.addAll(buildProverbCollectionPages(player, plugin, actualLang, QuoteTab.SUCCESS, true));`
+- L377: `pages.addAll(buildProverbCollectionPages(player, plugin, actualLang, QuoteTab.TIME_UP, true));`
+- L378: `pages.addAll(buildFavoritesPages(player, plugin, actualLang, true));`
+- L486: `pages.add(applyPageFooter(`
+- L489: `header +`
+- L504: `langFiltered.add(row);`
+- L525: `pages.add(applyPageFooter(`
+- L540: `StringBuilder sb = new StringBuilder(header);`
+- L548: `sb = new StringBuilder(header);`
+- L564: `sb = new StringBuilder(header);`
+- L577: `pages.add(applyPageFooter(plugin, actualLang, rawPages.get(i), i + 1, total, showPageNumber));`
+- L604: `favorites = plugin.getProverbLogRepository().loadFavorites(conn, uuid, 20);`
+- L608: `favorites = new ArrayList<>();`
+- L633: `pages.add(applyPageFooter(`
+- L636: `header +`
+- L652: `langFiltered.add(row);`
+- L659: `StringBuilder sb = new StringBuilder(header);`
+- L671: `sb = new StringBuilder(header);`
+- L684: `pages.add(applyPageFooter(plugin, actualLang, rawPages.get(i), i + 1, total, showPageNumber));`
+- L787: `int pageIndex,`
+- L795: `lang,`
+- L796: `GameMenuKeys.UI_LABEL_PAGE, // ui.labels.page`
+- L958: `"ruleBook.difficultyLabel." + lang + "." + key,`
