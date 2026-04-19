@@ -401,7 +401,7 @@ outcome:
     easy:
       pool:
       - Þú tókst þetta. Sannleikurinn stendur.
-      - Þú hlustað ir og leiðin opnaðist.
+      - Þú hlustaðir og leiðin opnaðist.
       - Vegalengdin fann merkingu sína og tíminn svaraðist við skrefum þínum.
     normal:
       pool:
@@ -417,7 +417,7 @@ outcome:
     easy:
       pool:
       - Tíminn rann út. Ekki annað.
-      - Hlaupiðlauk. Þú ekki.
+      - Hlaupið lauk. Þú ekki.
       - Dragðu andann. Síðan aftur.
     normal:
       pool:
