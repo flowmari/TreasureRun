@@ -304,20 +304,8 @@ commands:
   text_f166cc04: '§a宝探しゲーム開始！ 難易度:'
   text_2281b097: 個のチェストを生成しました。宝物は
   mysql_repository_not_ready_72df0af1: MySQL / Repository not ready.
-  favorite_not_saved_maybe_no__8d52a118_83: Favorite not saved. (maybe no logs yet
-    / or duplicate)
   mysql_repository_not_ready_72df0af1_93: MySQL / Repository not ready.
   mysql_repository_not_ready_72df0af1_119: MySQL / Repository not ready.
-  quotefavorite_latest_save_la_1fb00e45: /quoteFavorite latest          - save latest
-    quote as favorite
-  quotefavorite_list_show_favo_8a7b3640: /quoteFavorite list            - show favorites
-  quotefavorite_remove_id_remo_e42dbb6a: /quoteFavorite remove <id>     - remove favorite
-  quotefavorite_reread_random__c0c56ea4: /quoteFavorite reread          - random reread
-    (chat)
-  quotefavorite_reread_title_r_9b1cf793: /quoteFavorite reread title    - random reread
-    (title)
-  quotefavorite_reread_book_ra_8c3bcedc: /quoteFavorite reread book     - random reread
-    (book)
   quotefavorite_book_open_cata_055de855: /quoteFavorite book            - open catalog
     (full)
   quotefavorite_book_toc_open__c7d02ede: /quoteFavorite book toc        - open catalog
