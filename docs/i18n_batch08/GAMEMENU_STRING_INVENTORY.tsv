@@ -1,0 +1,316 @@
+src/main/java/plugin/GameMenu.java	53	1.0
+src/main/java/plugin/GameMenu.java	58	TreasureRun
+src/main/java/plugin/GameMenu.java	62	TreasureRun
+src/main/java/plugin/GameMenu.java	63	Plugin not ready.
+src/main/java/plugin/GameMenu.java	70	language.default
+src/main/java/plugin/GameMenu.java	70	ja
+src/main/java/plugin/GameMenu.java	81	ruleBook.difficultyLabel.
+src/main/java/plugin/GameMenu.java	81	.
+src/main/java/plugin/GameMenu.java	88	{difficulty}
+src/main/java/plugin/GameMenu.java	110	language.default
+src/main/java/plugin/GameMenu.java	110	ja
+src/main/java/plugin/GameMenu.java	116	
+src/main/java/plugin/GameMenu.java	117	
+src/main/java/plugin/GameMenu.java	129	ruleBook.difficultyLabel.
+src/main/java/plugin/GameMenu.java	129	.
+src/main/java/plugin/GameMenu.java	136	{difficulty}
+src/main/java/plugin/GameMenu.java	154	1.0
+src/main/java/plugin/GameMenu.java	158	TreasureRun
+src/main/java/plugin/GameMenu.java	163	
+src/main/java/plugin/GameMenu.java	177	language.default
+src/main/java/plugin/GameMenu.java	177	ja
+src/main/java/plugin/GameMenu.java	183	
+src/main/java/plugin/GameMenu.java	184	
+src/main/java/plugin/GameMenu.java	195	ruleBook.title.
+src/main/java/plugin/GameMenu.java	197	ruleBook.author
+src/main/java/plugin/GameMenu.java	197	TreasureRun
+src/main/java/plugin/GameMenu.java	198	ruleBook.displayName.
+src/main/java/plugin/GameMenu.java	205	ruleBook.difficultyLabel.
+src/main/java/plugin/GameMenu.java	205	.
+src/main/java/plugin/GameMenu.java	209	ruleBook.pages.
+src/main/java/plugin/GameMenu.java	211	ruleBook.pages.ja
+src/main/java/plugin/GameMenu.java	218	%diffLabel%
+src/main/java/plugin/GameMenu.java	262	ruleBook.displayName
+src/main/java/plugin/GameMenu.java	271	ja
+src/main/java/plugin/GameMenu.java	272	en
+src/main/java/plugin/GameMenu.java	308	{latestLabel}
+src/main/java/plugin/GameMenu.java	336	{lang}
+src/main/java/plugin/GameMenu.java	339	{difficulty}
+src/main/java/plugin/GameMenu.java	341	
+src/main/java/plugin/GameMenu.java	341	
+
+
+src/main/java/plugin/GameMenu.java	342	
+
+
+src/main/java/plugin/GameMenu.java	344	
+
+src/main/java/plugin/GameMenu.java	345	
+
+
+src/main/java/plugin/GameMenu.java	347	
+
+src/main/java/plugin/GameMenu.java	348	
+
+
+src/main/java/plugin/GameMenu.java	350	
+
+src/main/java/plugin/GameMenu.java	351	
+
+src/main/java/plugin/GameMenu.java	352	
+
+
+src/main/java/plugin/GameMenu.java	354	
+
+src/main/java/plugin/GameMenu.java	355	
+
+
+src/main/java/plugin/GameMenu.java	412	{latestLabel}
+src/main/java/plugin/GameMenu.java	418	{lang}
+src/main/java/plugin/GameMenu.java	421	
+src/main/java/plugin/GameMenu.java	421	📖 
+src/main/java/plugin/GameMenu.java	421	
+
+
+src/main/java/plugin/GameMenu.java	423	
+
+
+src/main/java/plugin/GameMenu.java	424	
+
+src/main/java/plugin/GameMenu.java	425	
+
+src/main/java/plugin/GameMenu.java	426	
+
+src/main/java/plugin/GameMenu.java	427	
+
+
+src/main/java/plugin/GameMenu.java	429	
+
+src/main/java/plugin/GameMenu.java	430	■ 
+src/main/java/plugin/GameMenu.java	430	 
+src/main/java/plugin/GameMenu.java	430	
+
+src/main/java/plugin/GameMenu.java	431	■ 
+src/main/java/plugin/GameMenu.java	431	 
+src/main/java/plugin/GameMenu.java	431	
+
+src/main/java/plugin/GameMenu.java	432	■ 
+src/main/java/plugin/GameMenu.java	432	 
+src/main/java/plugin/GameMenu.java	432	
+
+
+src/main/java/plugin/GameMenu.java	434	
+
+src/main/java/plugin/GameMenu.java	435	- 
+src/main/java/plugin/GameMenu.java	435	
+
+src/main/java/plugin/GameMenu.java	436	- 
+src/main/java/plugin/GameMenu.java	436	
+
+
+src/main/java/plugin/GameMenu.java	438	
+
+
+src/main/java/plugin/GameMenu.java	439	
+
+
+src/main/java/plugin/GameMenu.java	455	
+src/main/java/plugin/GameMenu.java	455	📖 
+src/main/java/plugin/GameMenu.java	456	
+
+
+src/main/java/plugin/GameMenu.java	467	[GameMenu] Failed to load Quote Collection from DB: 
+src/main/java/plugin/GameMenu.java	476	{lang}
+src/main/java/plugin/GameMenu.java	479	
+src/main/java/plugin/GameMenu.java	479	📖 
+src/main/java/plugin/GameMenu.java	479	
+
+
+src/main/java/plugin/GameMenu.java	480	
+
+src/main/java/plugin/GameMenu.java	481	
+
+
+src/main/java/plugin/GameMenu.java	490	
+
+
+src/main/java/plugin/GameMenu.java	517	SUCCESS
+src/main/java/plugin/GameMenu.java	519	TIME_UP
+src/main/java/plugin/GameMenu.java	592	
+src/main/java/plugin/GameMenu.java	593	
+
+
+src/main/java/plugin/GameMenu.java	607	[GameMenu] Failed to load Favorites from DB: 
+src/main/java/plugin/GameMenu.java	616	{lang}
+src/main/java/plugin/GameMenu.java	619	
+src/main/java/plugin/GameMenu.java	619	
+
+
+src/main/java/plugin/GameMenu.java	620	
+
+src/main/java/plugin/GameMenu.java	621	
+
+
+src/main/java/plugin/GameMenu.java	630	{latestLabel}
+src/main/java/plugin/GameMenu.java	637	
+
+
+src/main/java/plugin/GameMenu.java	638	
+
+
+src/main/java/plugin/GameMenu.java	703	
+src/main/java/plugin/GameMenu.java	703	
+
+src/main/java/plugin/GameMenu.java	704	[
+src/main/java/plugin/GameMenu.java	704	] 
+src/main/java/plugin/GameMenu.java	705	 
+src/main/java/plugin/GameMenu.java	706	(
+src/main/java/plugin/GameMenu.java	706	)
+
+src/main/java/plugin/GameMenu.java	707	
+
+
+src/main/java/plugin/GameMenu.java	722	#
+src/main/java/plugin/GameMenu.java	722	
+
+src/main/java/plugin/GameMenu.java	723	[
+src/main/java/plugin/GameMenu.java	723	] 
+src/main/java/plugin/GameMenu.java	724	 
+src/main/java/plugin/GameMenu.java	725	(
+src/main/java/plugin/GameMenu.java	725	)
+
+src/main/java/plugin/GameMenu.java	726	
+
+
+src/main/java/plugin/GameMenu.java	741	★#
+src/main/java/plugin/GameMenu.java	742	★
+src/main/java/plugin/GameMenu.java	747	  (
+src/main/java/plugin/GameMenu.java	747	)
+
+src/main/java/plugin/GameMenu.java	748	[
+src/main/java/plugin/GameMenu.java	748	] 
+src/main/java/plugin/GameMenu.java	749	 
+src/main/java/plugin/GameMenu.java	750	(
+src/main/java/plugin/GameMenu.java	750	)
+
+src/main/java/plugin/GameMenu.java	751	
+
+
+src/main/java/plugin/GameMenu.java	757	▶ [
+src/main/java/plugin/GameMenu.java	757	]
+src/main/java/plugin/GameMenu.java	758	▶ [
+src/main/java/plugin/GameMenu.java	758	]
+src/main/java/plugin/GameMenu.java	759	▶ [
+src/main/java/plugin/GameMenu.java	759	]
+src/main/java/plugin/GameMenu.java	760	▶ [
+src/main/java/plugin/GameMenu.java	760	]
+src/main/java/plugin/GameMenu.java	769	Tabs:
+src/main/java/plugin/GameMenu.java	773	
+src/main/java/plugin/GameMenu.java	773	 
+src/main/java/plugin/GameMenu.java	774	【
+src/main/java/plugin/GameMenu.java	774	】
+src/main/java/plugin/GameMenu.java	774	[
+src/main/java/plugin/GameMenu.java	774	]
+src/main/java/plugin/GameMenu.java	775	 
+src/main/java/plugin/GameMenu.java	776	【
+src/main/java/plugin/GameMenu.java	776	】
+src/main/java/plugin/GameMenu.java	776	[
+src/main/java/plugin/GameMenu.java	776	]
+src/main/java/plugin/GameMenu.java	777	 
+src/main/java/plugin/GameMenu.java	778	【
+src/main/java/plugin/GameMenu.java	778	】
+src/main/java/plugin/GameMenu.java	778	[
+src/main/java/plugin/GameMenu.java	778	]
+src/main/java/plugin/GameMenu.java	779	 
+src/main/java/plugin/GameMenu.java	780	【
+src/main/java/plugin/GameMenu.java	780	】
+src/main/java/plugin/GameMenu.java	780	[
+src/main/java/plugin/GameMenu.java	780	]
+src/main/java/plugin/GameMenu.java	793	Page 1/3
+src/main/java/plugin/GameMenu.java	797	{page}
+src/main/java/plugin/GameMenu.java	798	{total}
+src/main/java/plugin/GameMenu.java	807	\R
+src/main/java/plugin/GameMenu.java	811	
+src/main/java/plugin/GameMenu.java	813	…
+src/main/java/plugin/GameMenu.java	818	-
+src/main/java/plugin/GameMenu.java	824	UNKNOWN
+src/main/java/plugin/GameMenu.java	825	/
+src/main/java/plugin/GameMenu.java	826	UNKNOWN
+src/main/java/plugin/GameMenu.java	832	Normal
+src/main/java/plugin/GameMenu.java	833	/
+src/main/java/plugin/GameMenu.java	834	Normal
+src/main/java/plugin/GameMenu.java	840	-
+src/main/java/plugin/GameMenu.java	841	/
+src/main/java/plugin/GameMenu.java	842	-
+src/main/java/plugin/GameMenu.java	847	
+src/main/java/plugin/GameMenu.java	849	】
+src/main/java/plugin/GameMenu.java	851	
+
+src/main/java/plugin/GameMenu.java	857	
+
+src/main/java/plugin/GameMenu.java	864	【
+src/main/java/plugin/GameMenu.java	865	】
+src/main/java/plugin/GameMenu.java	871	
+src/main/java/plugin/GameMenu.java	872	★#
+src/main/java/plugin/GameMenu.java	873	
+src/main/java/plugin/GameMenu.java	874	
+
+src/main/java/plugin/GameMenu.java	876	★#
+src/main/java/plugin/GameMenu.java	876	
+src/main/java/plugin/GameMenu.java	882	SUCCESS
+src/main/java/plugin/GameMenu.java	883	TIME_UP
+src/main/java/plugin/GameMenu.java	890	EASY
+src/main/java/plugin/GameMenu.java	891	NORMAL
+src/main/java/plugin/GameMenu.java	892	HARD
+src/main/java/plugin/GameMenu.java	915	Normal
+src/main/java/plugin/GameMenu.java	920	Easy
+src/main/java/plugin/GameMenu.java	920	Easy
+src/main/java/plugin/GameMenu.java	921	Normal
+src/main/java/plugin/GameMenu.java	921	Normal
+src/main/java/plugin/GameMenu.java	922	Hard
+src/main/java/plugin/GameMenu.java	922	Hard
+src/main/java/plugin/GameMenu.java	927	BEGINNER
+src/main/java/plugin/GameMenu.java	927	EINSTEIGER
+src/main/java/plugin/GameMenu.java	927	PRINCIPIANTE
+src/main/java/plugin/GameMenu.java	928	DÉBUTANT
+src/main/java/plugin/GameMenu.java	928	INICIANTE
+src/main/java/plugin/GameMenu.java	929	初級
+src/main/java/plugin/GameMenu.java	929	초급
+src/main/java/plugin/GameMenu.java	930	ALOITTELIJA
+src/main/java/plugin/GameMenu.java	930	BYRJANDI
+src/main/java/plugin/GameMenu.java	931	Easy
+src/main/java/plugin/GameMenu.java	934	INTERMEDIATE
+src/main/java/plugin/GameMenu.java	934	MITTEL
+src/main/java/plugin/GameMenu.java	934	INTERMEDIO
+src/main/java/plugin/GameMenu.java	935	INTERMÉDIAIRE
+src/main/java/plugin/GameMenu.java	935	INTERMEDIÁRIO
+src/main/java/plugin/GameMenu.java	936	中級
+src/main/java/plugin/GameMenu.java	936	중급
+src/main/java/plugin/GameMenu.java	937	KESKITASO
+src/main/java/plugin/GameMenu.java	937	GEMIDDELD
+src/main/java/plugin/GameMenu.java	938	MELLAN
+src/main/java/plugin/GameMenu.java	938	मध्यम
+src/main/java/plugin/GameMenu.java	939	Normal
+src/main/java/plugin/GameMenu.java	942	ADVANCED
+src/main/java/plugin/GameMenu.java	942	FORTGESCHRITTEN
+src/main/java/plugin/GameMenu.java	942	AVANZATO
+src/main/java/plugin/GameMenu.java	943	AVANZADO
+src/main/java/plugin/GameMenu.java	943	AVANCÉ
+src/main/java/plugin/GameMenu.java	944	上級
+src/main/java/plugin/GameMenu.java	944	高級
+src/main/java/plugin/GameMenu.java	944	고급
+src/main/java/plugin/GameMenu.java	945	EDISTYNYT
+src/main/java/plugin/GameMenu.java	945	GEVORDERD
+src/main/java/plugin/GameMenu.java	946	उन्नत
+src/main/java/plugin/GameMenu.java	947	Hard
+src/main/java/plugin/GameMenu.java	950	Normal
+src/main/java/plugin/GameMenu.java	958	ruleBook.difficultyLabel.
+src/main/java/plugin/GameMenu.java	958	.
+src/main/java/plugin/GameMenu.java	966	
+src/main/java/plugin/GameMenu.java	967	SUCCESS
+src/main/java/plugin/GameMenu.java	968	TIME_UP
+src/main/java/plugin/GameMenu.java	986	
+
+src/main/java/plugin/GameMenu.java	986	
+
+src/main/java/plugin/GameMenu.java	990	
