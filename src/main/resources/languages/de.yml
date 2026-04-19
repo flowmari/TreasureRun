@@ -397,32 +397,39 @@ outcome:
     common:
       pool:
       - Das Licht fiel gleichmäßig, und jeder Schatten verschwand.
-      - Die Harmonie kehrte zurück. Alles führte zu diesem Moment.
+      - Die Harmonie kehrte zurück. Alles hatte zu diesem Moment geführt.
+      - Stille legte sich ein. Nur die Zeit bewegte sich weiter.
     easy:
       pool:
       - Du hast es geschafft. Die Wahrheit bleibt.
-      - Du hast hingehört, und der Weg öffnete sich.
+      - Du hast zugehört, und der Weg öffnete sich.
+      - Die Strecke bekam ihren Sinn. Die Zeit antwortete deinen Schritten.
     normal:
       pool:
       - Die Strecke bekam ihren Sinn. Die Zeit antwortete deiner Reise.
       - Lauf abgeschlossen. Ein stilles Ergebnis, getragen von echter Arbeit.
+      - Der Moment verging. Die Aufzeichnung blieb.
     hard:
       pool:
       - Im Nordwind überdauert Klarheit die Geschwindigkeit.
       - Nicht Glück. Ausrichtung.
+      - Die Welt hat sich nicht verändert. Dein Platz in ihr hat es.
   timeup:
     easy:
       pool:
       - Die Zeit ist abgelaufen. Sonst nichts.
       - Der Lauf endete. Du nicht.
+      - Atme tief durch. Dann noch einmal.
     normal:
       pool:
       - Die Distanz schloss sich. Die Zeit nicht.
       - Die Karte ist noch offen. Komm zurück.
+      - Der Schatz blieb unerreichbar, aber das Signal war echt.
     hard:
       pool:
       - Selbst das Nordlicht vergeht. Komm mit einem neuen Schritt zurück.
       - Der Augenblick ist vorbei. Die Bedeutung nicht.
+      - Der Himmel blieb in Bewegung. Du auch.
   random:
     common:
       pool: []

@@ -389,40 +389,40 @@ outcome:
   success:
     common:
       pool:
-      - Light fell evenly, and every shadow vanished.
-      - Harmony returned. Everything had been leading to this moment.
-      - Silence settled in. Only time kept moving.
+      - LIGHT FALL EVEN. SHADOW ALL DISAPPEAR.
+      - HARMONY RETURN. EVERYTHING LEAD THIS MOMENT.
+      - QUIET SETTLE. TIME ONLY KEEP MOVE.
     easy:
       pool:
-      - You made it. The truth remains.
-      - You listened, and the path opened.
-      - Distance found its meaning, and time answered your steps.
+      - YOU SUCCEED. TRUTH STAY.
+      - YOU LISTEN. PATH OPEN.
+      - DISTANCE FIND MEANING. TIME ANSWER YOUR STEP.
     normal:
       pool:
-      - Distance found its meaning. Time answered your journey.
-      - Run complete. A quiet result, backed by real work.
-      - The moment passed. The record remained.
+      - DISTANCE FIND MEANING. TIME ANSWER YOUR JOURNEY.
+      - RUN FINISH. QUIET RESULT. REAL WORK BEHIND IT.
+      - MOMENT PASS. RECORD STAY.
     hard:
       pool:
-      - In the north wind, clarity outlasts speed.
-      - Not luck. Alignment.
-      - The world did not change. Your place in it did.
+      - NORTH WIND. CLEAR THINKING BEAT SPEED.
+      - NOT LUCK. ALIGNMENT.
+      - WORLD NOT CHANGE. YOUR PLACE INSIDE CHANGE.
   timeup:
     easy:
       pool:
-      - Time ran out. Nothing else did.
-      - The run ended. You didn’t.
-      - Take a breath. Then another.
+      - TIME FINISH. NOTHING ELSE.
+      - RUN END. YOU NOT END.
+      - BREATHE. THEN AGAIN.
     normal:
       pool:
-      - The distance closed. Time did not.
-      - The map is still open. Come back to it.
-      - The treasure remained out of reach, but the signal was real.
+      - DISTANCE SHRINK. TIME NOT SHRINK.
+      - MAP STILL OPEN. COME BACK.
+      - TREASURE NOT REACH. BUT SIGNAL REAL.
     hard:
       pool:
-      - Even the aurora fades. Come back with a new stride.
-      - The moment slipped away. The meaning did not.
-      - The sky kept moving. So can you.
+      - AURORA ALSO FADE. COME BACK. NEW STEP.
+      - MOMENT SLIP AWAY. MEANING NOT.
+      - SKY KEEP MOVE. YOU ALSO CAN.
   random:
     common:
       pool: []

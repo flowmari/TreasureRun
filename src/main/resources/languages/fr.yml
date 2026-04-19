@@ -396,33 +396,40 @@ outcome:
   success:
     common:
       pool:
-      - La lumière tombait uniformément, et chaque ombre s'effaçait.
-      - L'harmonie est revenue. Tout menait à cet instant.
+      - La lumière tomba uniformément, et chaque ombre disparut.
+      - L'harmonie revint. Tout avait mené à ce moment.
+      - Le silence s'installa. Seul le temps continua.
     easy:
       pool:
       - Tu y es arrivé. La vérité demeure.
       - Tu as écouté, et le chemin s'est ouvert.
+      - La distance a pris son sens, et le temps a répondu à tes pas.
     normal:
       pool:
       - La distance a trouvé son sens. Le temps a répondu à ton voyage.
-      - Partie terminée. Un résultat discret, soutenu par un vrai travail.
+      - Parcours accompli. Un résultat discret, soutenu par un vrai travail.
+      - L'instant passa. L'enregistrement resta.
     hard:
       pool:
-      - Dans le vent du nord, la clarté survit à la vitesse.
-      - Ce n'était pas la chance. C'était l'alignement.
+      - Dans le vent du nord, la clarté dure plus longtemps que la vitesse.
+      - Pas de chance. De l'alignement.
+      - Le monde n'a pas changé. Ta place en lui, oui.
   timeup:
     easy:
       pool:
-      - Le temps est écoulé. Rien d'autre.
-      - La course s'est arrêtée. Pas toi.
+      - Le temps s'est écoulé. Rien d'autre.
+      - La course s'est terminée. Pas toi.
+      - Prends une respiration. Puis une autre.
     normal:
       pool:
-      - La distance s'est refermée. Pas le temps.
+      - La distance s'est réduite. Le temps non.
       - La carte est encore ouverte. Reviens-y.
+      - Le trésor est resté hors de portée, mais le signal était réel.
     hard:
       pool:
-      - Même l'aurore boréale s'efface. Reviens d'un pas nouveau.
-      - L'instant s'est échappé. Pas son sens.
+      - Même l'aurore s'efface. Reviens avec un nouveau pas.
+      - L'instant s'est échappé. Le sens, non.
+      - Le ciel a continué de bouger. Toi aussi tu peux.
   random:
     common:
       pool: []

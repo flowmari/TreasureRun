@@ -550,36 +550,43 @@ outcome:
   success:
     common:
       pool:
-      - A luz caiu por igual, e toda sombra desapareceu.
-      - A harmonia voltou. Tudo conduzia a este momento.
+      - A luz caiu uniformemente e cada sombra desapareceu.
+      - A harmonia voltou. Tudo havia levado a este momento.
+      - O silêncio se instalou. Apenas o tempo continuou a se mover.
     easy:
       pool:
       - Você conseguiu. A verdade permanece.
-      - Você escutou, e o caminho se abriu.
+      - Você ouviu e o caminho se abriu.
+      - A distância encontrou seu significado e o tempo respondeu aos seus passos.
     normal:
       pool:
-      - A distância encontrou sentido. O tempo respondeu à sua jornada.
-      - Partida concluída. Um resultado silencioso, sustentado por trabalho real.
+      - A distância encontrou seu significado. O tempo respondeu à sua jornada.
+      - Corrida completa. Um resultado silencioso, sustentado por trabalho real.
+      - O momento passou. O registro permaneceu.
     hard:
       pool:
       - No vento do norte, a clareza dura mais que a velocidade.
-      - Não foi sorte. Foi alinhamento.
+      - Não é sorte. É alinhamento.
+      - O mundo não mudou. Seu lugar nele sim.
   timeup:
     easy:
       pool:
-      - O tempo acabou. Só isso.
+      - O tempo acabou. Mais nada.
       - A corrida terminou. Você não.
+      - Respire fundo. Depois outra vez.
     normal:
       pool:
       - A distância se fechou. O tempo não.
-      - O mapa continua aberto. Volte para ele.
+      - O mapa ainda está aberto. Volte a ele.
+      - O tesouro permaneceu fora de alcance, mas o sinal era real.
     hard:
       pool:
-      - Até a aurora se apaga. Volte com um passo novo.
-      - O que escapou foi o instante, não o sentido.
+      - Até a aurora desaparece. Volte com um novo passo.
+      - O momento se foi. O significado não.
+      - O céu continuou se movendo. Você também pode.
   random:
     common:
       pool: []
   fallback:
-    runComplete: Partida concluída.
-    timeUp: O tempo acabou.
+    runComplete: Corrida concluída.
+    timeUp: Tempo esgotado.

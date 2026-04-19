@@ -397,33 +397,40 @@ outcome:
   success:
     common:
       pool:
-      - La luce cadeva uniforme e ogni ombra svaniva.
-      - L'armonia è tornata. Tutto conduceva a questo momento.
+      - La luce cadde uniformemente e ogni ombra scomparve.
+      - L'armonia tornò. Tutto aveva portato a questo momento.
+      - Il silenzio si pose. Solo il tempo continuò a muoversi.
     easy:
       pool:
-      - Ce l'hai fatta. La verità resta.
-      - Hai ascoltato, e il sentiero si è aperto.
+      - Ce l'hai fatta. La verità rimane.
+      - Hai ascoltato e il cammino si è aperto.
+      - La distanza ha trovato il suo significato e il tempo ha risposto ai tuoi passi.
     normal:
       pool:
-      - La distanza ha trovato il suo senso. Il tempo ha risposto al tuo viaggio.
-      - Partita conclusa. Un risultato silenzioso, sostenuto da lavoro vero.
+      - La distanza ha trovato il suo significato. Il tempo ha risposto al tuo viaggio.
+      - Percorso completato. Un risultato silenzioso, sostenuto da lavoro vero.
+      - Il momento passò. Il record rimase.
     hard:
       pool:
-      - Nel vento del nord, la lucidità resiste più della velocità.
+      - Nel vento del nord, la chiarezza dura più della velocità.
       - Non fortuna. Allineamento.
+      - Il mondo non è cambiato. Il tuo posto in esso sì.
   timeup:
     easy:
       pool:
       - Il tempo è scaduto. Nient'altro.
       - La corsa è finita. Tu no.
+      - Fai un respiro. Poi un altro.
     normal:
       pool:
       - La distanza si è chiusa. Il tempo no.
-      - La mappa è ancora aperta. Torna.
+      - La mappa è ancora aperta. Torna ad essa.
+      - Il tesoro è rimasto fuori portata, ma il segnale era reale.
     hard:
       pool:
-      - Anche l'aurora svanisce. Torna con un passo nuovo.
-      - È sfuggito l'istante, non il senso.
+      - Anche l'aurora svanisce. Torna con un nuovo passo.
+      - Il momento è sfuggito. Il significato no.
+      - Il cielo ha continuato a muoversi. Anche tu puoi.
   random:
     common:
       pool: []

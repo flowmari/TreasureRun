@@ -389,40 +389,40 @@ outcome:
   success:
     common:
       pool:
-      - Light fell evenly, and every shadow vanished.
-      - Harmony returned. Everything had been leading to this moment.
-      - Silence settled in. Only time kept moving.
+      - 빛이 고르게 내려앉고, 모든 그림자가 사라졌다.
+      - 조화가 돌아왔다. 모든 것이 이 순간을 향해 흘러오고 있었다.
+      - 고요함이 자리를 잡았다. 오직 시간만이 계속 흘렀다.
     easy:
       pool:
-      - You made it. The truth remains.
-      - You listened, and the path opened.
-      - Distance found its meaning, and time answered your steps.
+      - 해냈다. 진실은 그대로 남아 있다.
+      - 귀를 기울이자, 길이 열렸다.
+      - 거리는 의미를 찾았고, 시간은 네 발걸음에 응답했다.
     normal:
       pool:
-      - Distance found its meaning. Time answered your journey.
-      - Run complete. A quiet result, backed by real work.
-      - The moment passed. The record remained.
+      - 거리는 의미를 찾았다. 시간은 너의 여정에 응답했다.
+      - 완주. 조용한 결과, 진짜 노력으로 뒷받침된.
+      - 순간은 지나가고, 기록이 남았다.
     hard:
       pool:
-      - In the north wind, clarity outlasts speed.
-      - Not luck. Alignment.
-      - The world did not change. Your place in it did.
+      - 북풍 속에서 명확함이 속도를 이긴다.
+      - 운이 아니다. 정렬이다.
+      - 세상이 변한 게 아니다. 그 안에서 네 자리가 달라진 것이다.
   timeup:
     easy:
       pool:
-      - Time ran out. Nothing else did.
-      - The run ended. You didn’t.
-      - Take a breath. Then another.
+      - 시간이 다 됐다. 그뿐이다.
+      - 달리기는 끝났다. 너는 끝나지 않았다.
+      - 숨을 고르자. 그리고 한 번 더.
     normal:
       pool:
-      - The distance closed. Time did not.
-      - The map is still open. Come back to it.
-      - The treasure remained out of reach, but the signal was real.
+      - 거리는 줄었다. 시간은 그러지 않았다.
+      - 지도는 아직 열려 있다. 돌아와라.
+      - 보물은 닿지 않았지만, 그 신호는 진짜였다.
     hard:
       pool:
-      - Even the aurora fades. Come back with a new stride.
-      - The moment slipped away. The meaning did not.
-      - The sky kept moving. So can you.
+      - 오로라도 사라진다. 새로운 발걸음으로 돌아와라.
+      - 순간이 빠져나갔다. 의미는 그러지 않았다.
+      - 하늘은 계속 움직였다. 너도 할 수 있다.
   random:
     common:
       pool: []
