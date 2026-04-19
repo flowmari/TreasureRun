@@ -289,21 +289,8 @@ commands:
   3_3d5021f7: スペシャルエメラルドの作成には、ダイヤモンドが3個必要です。
   text_e096c9a4: '&6特製エメラルド'
   3_71b78a44: ダイヤモンド3個でスペシャルエメラルドを作成しました！
-  players_only_10ed3cbc: Players only.
-  treasurerun_quote_favorite_c_dbf690ae: '[TreasureRun] Quote Favorite Commands:'
-  quotefavorite_latest_save_la_8e4bdc46: /quoteFavorite latest  - save latest quote
-    as favorite
-  quotefavorite_list_show_favo_4ebb13c4: /quoteFavorite list    - show favorites
-  quotefavorite_remove_id_remo_a6fdb289: /quoteFavorite remove <id> - remove favorite
-  favorite_saved_bb0cd8a8: ★ Favorite saved!
   favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs yet /
     or duplicate)
-  favorites_latest_20_e23c073b: '★ Favoritos (latest 20):'
-  usage_quotefavorite_remove_i_5324156c: 'Usage: /quoteFavorite remove <id>'
-  id_must_be_a_number_5661bf80: ID must be a number.
-  favorite_removed_247f2df9: '★ Favorite removed: #'
-  favorite_not_removed_not_fou_56de7a31: Favorite not removed. (not found?)
-  unknown_subcommand_use_quote_f79bf3b5: 'Unknown subcommand. Use: /quoteFavorite'
   text_3030fd61: プレイヤーのみ実行できます
   op_10caf0f6: 権限がありません（OP限定）
   debug_mode_is_off_config_yml_b3d27428: 'Debug mode is OFF. config.yml の debug: true
