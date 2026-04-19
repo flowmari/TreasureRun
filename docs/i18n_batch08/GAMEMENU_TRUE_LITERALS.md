@@ -1,0 +1,50 @@
+# GameMenu true direct literals
+
+- L27: `* - 現在言語(lang)でフィルター（無ければ全件表示）`
+- L36: `* - Favorites を DB(MySQL proverb_favorites) から読み、タブとして収録`
+- L46: `*   showGameMenu(player, difficulty, plugin, lang)`
+- L51: `* - 表示文言は languages/*.yml（19言語）へ集約する`
+- L54: `public static void showGameMenu(Player player, String difficulty) {`
+- L56: `// Legacy: plugin/lang を引数に持たないので Bukkit から取得して i18n を使う`
+- L72: `// ✅ “保存済み言語” を最優先（/lang がここに入る）`
+- L96: `// ✅ i18n版：チャット目次を languages/*.yml の ui.menu.toc.message から表示`
+- L103: `showGameMenu(player, difficulty);`
+- L112: `// ✅ “本当に保存されている言語” を最優先（/lang がここに入る）`
+- L120: `// ✅ 保存が無い場合だけ、引数 lang（GUI選択）を採用`
+- L155: `public static void openRuleBook(Player player, String difficulty) {`
+- L162: `// lang は未指定（保存済み言語 or default を openRuleBookFromConfig が解決）`
+- L163: `openRuleBookFromConfig(player, difficulty, plugin, "");`
+- L169: `// - ここは i18n（ui.menu.book.*）に寄せる`
+- L179: `// ✅ “本当に保存されている言語” を最優先（/lang がここに入る）`
+- L187: `// ✅ 保存が無い場合だけ、引数 lang（GUI選択）を採用`
+- L201: `String displayName = colorize(displayNameRaw);`
+- L245: `meta.setTitle(title);`
+- L253: `displayMeta.setDisplayName(displayName);`
+- L297: `player.openBook(book);`
+- L299: `// ✅ メッセージ i18n 化（languages/*.yml の ui.menu.book.*）`
+- L319: `String difficulty,`
+- L401: `// ✅ legend見出しの「SUCCESS/TIME_UP/Favorites」もキー化（ui.labels.tab.* を再利用）`
+- L478: `String header =`
+- L618: `String header =`
+- L690: `private static String buildLatestBlock(TreasureRunMultiChestPlugin plugin, String lang, String row) {`
+- L694: `String quoteText = extractQuoteText(row);`
+- L700: `String outcomeLabel = outcomeLabel(plugin, lang, outcome);`
+- L701: `String diffLabel = difficultyLabel(plugin, lang, diff);`
+- L710: `private static String buildNormalBlock(TreasureRunMultiChestPlugin plugin, String lang, String row, int idx) {`
+- L714: `String quoteText = extractQuoteText(row);`
+- L719: `String outcomeLabel = outcomeLabel(plugin, lang, outcome);`
+- L720: `String diffLabel = difficultyLabel(plugin, lang, diff);`
+- L729: `private static String buildFavoriteBlock(TreasureRunMultiChestPlugin plugin, String lang, String row, int idx) {`
+- L735: `String quoteText = extractQuoteText(row);`
+- L744: `String outcomeLabel = outcomeLabel(plugin, lang, outcome);`
+- L745: `String diffLabel = difficultyLabel(plugin, lang, diff);`
+- L755: `String label = tabLabel(plugin, lang, current);`
+- L785: `String lang,`
+- L786: `String page,`
+- L793: `// ✅ i18n: "Page 1/3" も言語化（{page}/{total} を埋める）`
+- L795: `lang,`
+- L810: `private static String safeQuote(String quoteText) {`
+- L812: `String t = quoteText.trim();`
+- L909: `// ✅ Phase 2 helpers: label dictionary (ui.labels.*)`
+- L953: `private static String difficultyLabel(TreasureRunMultiChestPlugin plugin, String lang, String diff) {`
+- L963: `private static String outcomeLabel(TreasureRunMultiChestPlugin plugin, String lang, String outcome) {`
