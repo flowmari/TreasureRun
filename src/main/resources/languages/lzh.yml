@@ -257,18 +257,6 @@ ui:
     mysqlmanager_player_score_2b5c8721: '[MySQLManager] player_score 表或不存 ❌'
     enemydown_mysql_bc514e56: '[EnemyDown] MySQL 已連。'
     enemydown_mysql_93b23ef9: '[EnemyDown] MySQL 未連。'
-    light_fell_evenly_and_every__e50aee87: 'Light fell evenly, ,
-
-      and every shadow vanished.
-
-      （光が等しく降り注ぎ、すべての影が消えた。）'
-    the_wind_fell_silent_and_eve_a96036c1: 'The wind fell silent.
-
-      and everything returned to where it belonged.
-
-      （風が止み、あるべき場所に、あるべきものが戻った。）'
-    time_s_up_87859973: Time's up.
-    run_complete_46d920e5: Run complete.
     run_complete_46d920e5_580: Run complete.
     run_complete_46d920e5_589: Run complete.
     playerlanguagestore_failed_t_c4999402: '[PlayerLanguageStore] Failed to create/load
@@ -293,9 +281,7 @@ ui:
     text_9310a1a7_908: 戲已進行。
     text_9310a1a7_1601: 戲已進行。
     text_f9c4c4e2: '戲終！總分:'
-    run_complete_d258363d: Run Complete!
     run_complete_d258363d_1214: Run Complete!
-    time_s_up_7441e686: TIME'S UP!
     time_s_up_7441e686_1313: TIME'S UP!
     text_ec39d8ad: 餘時
     text_d6e25e00: '餘時:'

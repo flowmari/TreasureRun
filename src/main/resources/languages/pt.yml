@@ -265,18 +265,6 @@ ui:
       existir ❌'
     enemydown_mysql_bc514e56: '[EnemyDown] MySQL está conectado.'
     enemydown_mysql_93b23ef9: '[EnemyDown] MySQL não está conectado.'
-    light_fell_evenly_and_every__e50aee87: 'Light fell evenly, ,
-
-      and every shadow vanished.
-
-      （光が等しく降り注ぎ、すべての影が消えた。）'
-    the_wind_fell_silent_and_eve_a96036c1: 'The wind fell silent.
-
-      and everything returned to where it belonged.
-
-      （風が止み、あるべき場所に、あるべきものが戻った。）'
-    time_s_up_87859973: Time's up.
-    run_complete_46d920e5: Run complete.
     run_complete_46d920e5_580: Run complete.
     run_complete_46d920e5_589: Run complete.
     playerlanguagestore_failed_t_c4999402: '[PlayerLanguageStore] Failed to create/load
@@ -302,9 +290,7 @@ ui:
     text_9310a1a7_908: O jogo já está em andamento.
     text_9310a1a7_1601: O jogo já está em andamento.
     text_f9c4c4e2: 'Jogo encerrado! Pontuação total:'
-    run_complete_d258363d: Run Complete!
     run_complete_d258363d_1214: Run Complete!
-    time_s_up_7441e686: TIME'S UP!
     time_s_up_7441e686_1313: TIME'S UP!
     text_ec39d8ad: Tempo restante
     text_d6e25e00: 'Tempo restante:'
