@@ -397,36 +397,43 @@ outcome:
   success:
     common:
       pool:
-      - La luz cayó de forma pareja y toda sombra desapareció.
-      - La armonía regresó. Todo conducía a este momento.
+      - La luz cayó de manera uniforme y cada sombra desapareció.
+      - La armonía regresó. Todo había conducido a este momento.
+      - El silencio se instaló. Solo el tiempo siguió moviéndose.
     easy:
       pool:
       - Lo lograste. La verdad permanece.
-      - Escuchaste, y el camino se abrió.
+      - Escuchaste y el camino se abrió.
+      - La distancia encontró su significado y el tiempo respondió a tus pasos.
     normal:
       pool:
-      - La distancia encontró su sentido. El tiempo respondió a tu viaje.
-      - Partida completada. Un resultado sereno, sostenido por trabajo real.
+      - La distancia encontró su significado. El tiempo respondió a tu viaje.
+      - Carrera completada. Un resultado tranquilo, respaldado por trabajo real.
+      - El momento pasó. El registro quedó.
     hard:
       pool:
       - En el viento del norte, la claridad supera a la velocidad.
-      - No fue suerte. Fue alineación.
+      - No es suerte. Es alineación.
+      - El mundo no cambió. Tu lugar en él sí.
   timeup:
     easy:
       pool:
       - Se acabó el tiempo. Nada más.
-      - La partida terminó. Tú no.
+      - La carrera terminó. Tú no.
+      - Respira hondo. Luego otra vez.
     normal:
       pool:
       - La distancia se cerró. El tiempo no.
       - El mapa sigue abierto. Vuelve a él.
+      - El tesoro quedó fuera de alcance, pero la señal era real.
     hard:
       pool:
-      - Hasta la aurora se desvanece. Regresa con un paso nuevo.
-      - Lo que se perdió fue el instante, no el sentido.
+      - Incluso la aurora se desvanece. Regresa con un nuevo paso.
+      - El momento se escapó. El significado no.
+      - El cielo siguió moviéndose. Tú también puedes.
   random:
     common:
       pool: []
   fallback:
     runComplete: Carrera completada.
-    timeUp: Se acabó el tiempo.
+    timeUp: Tiempo agotado.

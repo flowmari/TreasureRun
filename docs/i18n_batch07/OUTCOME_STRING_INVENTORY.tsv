@@ -1,0 +1,748 @@
+21	Easy
+21	Normal
+21	Hard
+51	NORMAL
+53	EASY
+53	EASY
+54	HARD
+54	HARD
+55	NORMAL
+66	Translation missing:
+76	EASY
+77	NORMAL
+78	HARD
+94	EASY
+95	NORMAL
+96	HARD
+147	,
+      
+148	,
+      
+149	,
+      
+150	,
+      
+151	
+  );
+
+  private static final List<String> BOOST_SUCCESS_MID = List.of(
+      
+155	,
+      
+156	,
+      
+157	,
+      
+158	
+  );
+
+  private static final List<String> BOOST_TIMEUP_FAIL = List.of(
+      
+162	,
+      
+163	,
+      
+164	,
+      
+165	,
+      
+166	
+  );
+
+  private static final List<String> BOOST_TRADER = List.of(
+      
+170	,
+      
+171	,
+      
+172	
+  );
+
+  private static final List<String> BOOST_PHILOSOPHY = List.of(
+      
+176	,
+      
+177	
+  );
+
+  private static final List<String> BOOST_SUCCESS_NORMAL_BASE17 = List.of(
+      
+181	,
+      
+182	,
+      
+183	,
+      
+184	,
+      
+185	,
+      
+186	,
+      
+187	,
+      
+188	,
+      
+189	,
+      
+190	,
+      
+191	,
+
+      
+193	,
+      
+194	,
+
+      
+196	,
+      
+197	,
+      
+198	,
+      
+199	
+  );
+
+  // =========================================================
+  // SUCCESS（RUN COMPLETE）
+  // =========================================================
+  private List<String> successPool(String d) {
+    return switch (d) {
+
+      // -------------------------
+      // EASY（✅ SUCCESS 高ランク/中ランク/哲学 を “他より3倍”）
+      // -------------------------
+      case 
+211	 -> {
+        List<String> base = List.of(
+            
+213	,
+            
+214	,
+            
+215	,
+
+            
+217	 +
+                
+218	 +
+                
+219	 +
+                
+220	 +
+                
+221	 +
+                
+222	 +
+                
+223	 +
+                
+224	 +
+                
+225	 +
+                
+226	 +
+                
+227	,
+
+            
+229	 +
+                
+230	 +
+                
+231	 +
+                
+232	 +
+                
+233	 +
+                
+234	 +
+                
+235	,
+
+            
+237	 +
+                
+238	 +
+                
+239	 +
+                
+240	 +
+                
+241	 +
+                
+242	 +
+                
+243	,
+
+            // ✅ SUCCESS “高ランク” 5文（指定）
+            BOOST_SUCCESS_HIGH.get(0),
+            BOOST_SUCCESS_HIGH.get(1),
+            BOOST_SUCCESS_HIGH.get(2),
+            BOOST_SUCCESS_HIGH.get(3),
+            BOOST_SUCCESS_HIGH.get(4),
+
+            // ✅ SUCCESS “中ランク” 4文（指定）
+            BOOST_SUCCESS_MID.get(0),
+            BOOST_SUCCESS_MID.get(1),
+            BOOST_SUCCESS_MID.get(2),
+            BOOST_SUCCESS_MID.get(3),
+
+            // ✅ 汎用的な哲学（指定）
+            BOOST_PHILOSOPHY.get(0),
+            BOOST_PHILOSOPHY.get(1)
+        );
+
+        List<String> boosted = new ArrayList<>();
+        boosted.addAll(BOOST_SUCCESS_HIGH);
+        boosted.addAll(BOOST_SUCCESS_MID);
+        boosted.addAll(BOOST_PHILOSOPHY);
+
+        yield boost(base, boosted, 3);
+      }
+
+      // -------------------------
+      // NORMAL（✅ SUCCESS 高ランク/中ランク/哲学 を “他より3倍”）
+      // -------------------------
+      case 
+274	 -> {
+        List<String> base = List.of(
+            
+276	,
+            
+277	,
+            
+278	,
+            
+279	,
+            
+280	,
+            
+281	,
+            
+282	,
+            
+283	,
+            
+284	,
+            
+285	,
+            
+286	,
+
+            
+288	,
+            
+289	,
+
+            // ✅ 成功・中ランク（指定）
+            
+292	,
+            
+293	,
+            
+294	,
+            
+295	,
+
+            // ✅ 成功・高ランク（指定）— NORMALにも1回入れる（= 3倍対象にするため）
+            BOOST_SUCCESS_HIGH.get(0),
+            BOOST_SUCCESS_HIGH.get(1),
+            BOOST_SUCCESS_HIGH.get(2),
+            BOOST_SUCCESS_HIGH.get(3),
+            BOOST_SUCCESS_HIGH.get(4),
+
+            // RUN COMPLETE 短文セット
+            
+305	,
+            
+306	,
+            
+307	,
+            
+308	,
+
+            // 哲学パック（S1–S5）
+            
+311	,
+            
+312	,
+            
+313	,
+            
+314	,
+            
+315	,
+            
+316	,
+
+            // 成功時（ゲームに勝ったとき）【5】
+            
+319	,
+            
+320	,
+            
+321	,
+            
+322	,
+            
+323	,
+
+            // ✅ 汎用的な哲学（指定）
+            BOOST_PHILOSOPHY.get(0),
+            BOOST_PHILOSOPHY.get(1)
+        );
+
+        List<String> boosted = new ArrayList<>();
+        boosted.addAll(BOOST_SUCCESS_HIGH);
+        boosted.addAll(BOOST_SUCCESS_MID);
+        boosted.addAll(BOOST_PHILOSOPHY);
+
+        // ★追加：この17文も「最終的に必ず3回」にする
+        boosted.addAll(BOOST_SUCCESS_NORMAL_BASE17);
+
+        yield boostToExactFactor(base, boosted, 3);
+      }
+
+      // -------------------------
+      // HARD（✅ SUCCESS 高ランク/中ランク/哲学 を “他より3倍”）
+      // -------------------------
+      case 
+344	 -> {
+        List<String> base = List.of(
+            
+346	,
+            
+347	,
+            
+348	,
+            
+349	,
+            
+350	,
+            
+351	,
+            
+352	,
+            
+353	,
+            
+354	,
+            
+355	,
+            
+356	,
+
+            
+358	,
+            
+359	,
+            
+360	,
+
+            
+362	,
+            
+363	,
+            
+364	,
+
+            
+366	,
+            
+367	,
+            
+368	,
+            
+369	,
+
+            // ✅ 成功・高ランク（指定）
+            BOOST_SUCCESS_HIGH.get(0),
+            BOOST_SUCCESS_HIGH.get(1),
+            BOOST_SUCCESS_HIGH.get(2),
+            BOOST_SUCCESS_HIGH.get(3),
+            BOOST_SUCCESS_HIGH.get(4),
+
+            // ✅ 成功・中ランク（指定）— HARDにも1回入れる（= 3倍対象にするため）
+            BOOST_SUCCESS_MID.get(0),
+            BOOST_SUCCESS_MID.get(1),
+            BOOST_SUCCESS_MID.get(2),
+            BOOST_SUCCESS_MID.get(3),
+
+            // ✅ 汎用的な哲学（指定）
+            BOOST_PHILOSOPHY.get(0),
+            BOOST_PHILOSOPHY.get(1),
+
+            // ブロック引用（あなた指定）
+            
+389	 +
+                
+390	 +
+                
+391	 +
+                
+392	 +
+                
+393	 +
+                
+394	 +
+                
+395	,
+
+            
+397	 +
+                
+398	 +
+                
+399	 +
+                
+400	 +
+                
+401	 +
+                
+402	 +
+                
+403	
+        );
+
+        List<String> boosted = new ArrayList<>();
+        boosted.addAll(BOOST_SUCCESS_HIGH);
+        boosted.addAll(BOOST_SUCCESS_MID);
+        boosted.addAll(BOOST_PHILOSOPHY);
+
+        yield boost(base, boosted, 3);
+      }
+
+      default -> List.of(
+414	);
+    };
+  }
+
+  // =========================================================
+  // TIME_UP（TIME’S UP）
+  // =========================================================
+  private List<String> timeUpPool(String d) {
+    return switch (d) {
+
+      // -------------------------
+      // EASY（✅ TIME_UP 失敗5文＋哲学2文 を “他より3倍”）
+      // -------------------------
+      case 
+427	 -> {
+        List<String> base = List.of(
+            
+429	,
+            
+430	,
+            
+431	,
+            
+432	,
+            
+433	,
+            
+434	,
+
+            
+436	,
+            
+437	,
+            
+438	,
+
+            // ✅ 失敗・時間切れ（指定）— EASYにも1回入れる（= 3倍対象にするため）
+            BOOST_TIMEUP_FAIL.get(0),
+            BOOST_TIMEUP_FAIL.get(1),
+            BOOST_TIMEUP_FAIL.get(2),
+            BOOST_TIMEUP_FAIL.get(3),
+            BOOST_TIMEUP_FAIL.get(4),
+
+            // ✅ 汎用的な哲学（指定）
+            BOOST_PHILOSOPHY.get(0),
+            BOOST_PHILOSOPHY.get(1)
+        );
+
+        List<String> boosted = new ArrayList<>();
+        boosted.addAll(BOOST_TIMEUP_FAIL);
+        boosted.addAll(BOOST_PHILOSOPHY);
+
+        yield boost(base, boosted, 3);
+      }
+
+      // -------------------------
+      // NORMAL（失敗・時間切れ5文＋哲学2文を“他の全てより3倍”）
+      // -------------------------
+      case 
+462	 -> {
+        List<String> base = List.of(
+            
+464	,
+            
+465	,
+            
+466	,
+            
+467	,
+            
+468	,
+            
+469	,
+            
+470	,
+            
+471	,
+
+            
+473	,
+
+            
+475	,
+            
+476	,
+
+            // ✅ 失敗・時間切れ（指定）
+            BOOST_TIMEUP_FAIL.get(0),
+            BOOST_TIMEUP_FAIL.get(1),
+            BOOST_TIMEUP_FAIL.get(2),
+            BOOST_TIMEUP_FAIL.get(3),
+            BOOST_TIMEUP_FAIL.get(4),
+
+            // ✅ 汎用的な哲学（指定）
+            BOOST_PHILOSOPHY.get(0),
+            BOOST_PHILOSOPHY.get(1),
+
+            // ブロック引用（あなた指定）
+            
+490	 +
+                
+491	 +
+                
+492	 +
+                
+493	 +
+                
+494	 +
+                
+495	 +
+                
+496	,
+
+            
+498	 +
+                
+499	 +
+                
+500	 +
+                
+501	 +
+                
+502	 +
+                
+503	 +
+                
+504	
+        );
+
+        List<String> boosted = new ArrayList<>();
+        boosted.addAll(BOOST_TIMEUP_FAIL);
+        boosted.addAll(BOOST_PHILOSOPHY);
+
+        yield boost(base, boosted, 3);
+      }
+
+      // -------------------------
+      // HARD（失敗・時間切れ5文＋哲学2文を“他の全てより3倍”）
+      // -------------------------
+      case 
+517	 -> {
+        List<String> base = List.of(
+            
+519	,
+            
+520	,
+            
+521	,
+            
+522	,
+            
+523	,
+            
+524	,
+            
+525	,
+            
+526	,
+            
+527	,
+            
+528	,
+            
+529	,
+
+            
+531	,
+
+            
+533	,
+            
+534	,
+            
+535	,
+            
+536	,
+
+            
+538	,
+            
+539	,
+            
+540	,
+
+            
+542	,
+
+            
+544	 +
+                
+545	,
+
+            // ✅ 失敗・時間切れ（指定）
+            BOOST_TIMEUP_FAIL.get(0),
+            BOOST_TIMEUP_FAIL.get(1),
+            BOOST_TIMEUP_FAIL.get(2),
+            BOOST_TIMEUP_FAIL.get(3),
+            BOOST_TIMEUP_FAIL.get(4),
+
+            // ✅ 汎用的な哲学（指定）
+            BOOST_PHILOSOPHY.get(0),
+            BOOST_PHILOSOPHY.get(1),
+
+            // 北欧哲学パック（F1–F5）
+            
+559	,
+            
+560	,
+            
+561	,
+            
+562	,
+            
+563	,
+
+            // TIME’S UP（時間切れ）【5】
+            
+566	,
+            
+567	,
+            
+568	,
+            
+569	,
+            
+570	
+        );
+
+        List<String> boosted = new ArrayList<>();
+        boosted.addAll(BOOST_TIMEUP_FAIL);
+        boosted.addAll(BOOST_PHILOSOPHY);
+
+        yield boost(base, boosted, 3);
+      }
+
+      default -> List.of(
+580	);
+    };
+  }
+
+  // =========================================================
+  // TRADER（行商人との交換）
+  // =========================================================
+  private List<String> traderPool(String d) {
+    return switch (d) {
+      case 
+589	, 
+589	, 
+589	 -> {
+        List<String> base = List.of(
+            // ✅ 行商人との交換時（指定）
+            BOOST_TRADER.get(0),
+            BOOST_TRADER.get(1),
+            BOOST_TRADER.get(2),
+
+            // ✅ 汎用的な哲学（指定）
+            BOOST_PHILOSOPHY.get(0),
+            BOOST_PHILOSOPHY.get(1)
+        );
+
+        List<String> boosted = new ArrayList<>();
+        boosted.addAll(BOOST_TRADER);
+        boosted.addAll(BOOST_PHILOSOPHY);
+
+        // 指定：これら“全て”を他より3倍
+        yield boost(base, boosted, 3);
+      }
+
+      default -> List.of(
+          
+610	
+      );
+    };
+  }
+
+  // =========================================================
+  // ✅ 追加：英語+日本語（（…））入り名言を優先して選ぶ + 白文字で全部チャット出力
+  // =========================================================
+
+  public String pickSuccessQuoteBilingual(String difficulty) {
+    String d = normalizeDifficulty(difficulty);
+    List<String> pool = successPool(d);
+    return pickBilingualOrFallback(pool);
+  }
+
+  public String pickTimeUpQuoteBilingual(String difficulty) {
+    String d = normalizeDifficulty(difficulty);
+    List<String> pool = timeUpPool(d);
+    return pickBilingualOrFallback(pool);
+  }
+
+  // ✅ （日本語括弧）を含むものを優先して選ぶ。無ければ通常プールから選ぶ
+  private String pickBilingualOrFallback(List<String> pool) {
+    if (pool == null || pool.isEmpty()) return 
+633	;
+
+    List<String> bilingual = new ArrayList<>();
+    for (String s : pool) {
+      if (s == null) continue;
+      if (s.contains(
+638	) && s.contains(
+638	)) bilingual.add(s);
+    }
+
+    List<String> src = bilingual.isEmpty() ? pool : bilingual;
+    if (src.isEmpty()) return 
+642	;
+
+    return src.get(ThreadLocalRandom.current().nextInt(src.size()));
+  }
+
+  // ✅ 名言テキストを「チャット欄で切れずに全部」白で出す（>引用記号も除去）
+  public void sendFinalChatQuoteWhite(Player player, String quote) {
+    if (player == null || quote == null) return;
+
+    for (String line : toChatLines(quote)) {
+      if (!line.isBlank()) {
+        player.sendMessage(ChatColor.WHITE + line);
+      }
+    }
+  }
+
+  private List<String> toChatLines(String text) {
+    List<String> out = new ArrayList<>();
+    for (String raw : text.split(
+660	)) {
+      String s = raw.trim();
+
+      // 先頭の 
+663	 を全部削る（blockquote対策）
+      while (s.startsWith(

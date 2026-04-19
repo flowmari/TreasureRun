@@ -395,43 +395,43 @@ outcome:
   success:
     common:
       pool:
-      - Light fell evenly, and every shadow vanished.
-      - Harmony returned. Everything had been leading to this moment.
-      - Silence settled in. Only time kept moving.
+      - Valo putosi tasaisesti ja jokainen varjo katosi.
+      - Harmonia palasi. Kaikki oli johtanut tähän hetkeen.
+      - Hiljaisuus laskeutui. Vain aika jatkoi kulkuaan.
     easy:
       pool:
-      - You made it. The truth remains.
-      - You listened, and the path opened.
-      - Distance found its meaning, and time answered your steps.
+      - Onnistuit. Totuus pysyy.
+      - Kuuntelit ja tie aukesi.
+      - Matka löysi merkityksensä ja aika vastasi askeleitasi.
     normal:
       pool:
-      - Distance found its meaning. Time answered your journey.
-      - Run complete. A quiet result, backed by real work.
-      - The moment passed. The record remained.
+      - Matka löysi merkityksensä. Aika vastasi matkasi.
+      - Juoksu suoritettu. Hiljainen tulos, oikean työn tukemana.
+      - Hetki kului. Ennätys jäi.
     hard:
       pool:
-      - In the north wind, clarity outlasts speed.
-      - Not luck. Alignment.
-      - The world did not change. Your place in it did.
+      - Pohjoistuulessa selkeys kestää nopeutta pidempään.
+      - Ei tuuria. Kohdistumista.
+      - Maailma ei muuttunut. Paikkasi siinä muuttui.
   timeup:
     easy:
       pool:
-      - Time ran out. Nothing else did.
-      - The run ended. You didn’t.
-      - Take a breath. Then another.
+      - Aika loppui. Ei muuta.
+      - Juoksu päättyi. Sinä et.
+      - Hengitä syvään. Sitten vielä kerran.
     normal:
       pool:
-      - The distance closed. Time did not.
-      - The map is still open. Come back to it.
-      - The treasure remained out of reach, but the signal was real.
+      - Välimatka supistui. Aika ei.
+      - Kartta on vielä auki. Palaa siihen.
+      - Aarre jäi ulottumattomiin, mutta signaali oli todellinen.
     hard:
       pool:
-      - Even the aurora fades. Come back with a new stride.
-      - The moment slipped away. The meaning did not.
-      - The sky kept moving. So can you.
+      - Edes revontulet sammuvat. Palaa uusin askelin.
+      - Hetki lipui pois. Merkitys ei.
+      - Taivas jatkoi liikettään. Sinäkin voit.
   random:
     common:
       pool: []
   fallback:
-    runComplete: Juoksu valmis.
+    runComplete: Juoksu suoritettu.
     timeUp: Aika loppui.

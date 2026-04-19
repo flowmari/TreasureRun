@@ -393,43 +393,43 @@ outcome:
   success:
     common:
       pool:
-      - Light fell evenly, and every shadow vanished.
-      - Harmony returned. Everything had been leading to this moment.
-      - Silence settled in. Only time kept moving.
+      - प्रकाशः समत्वेन पतितः, सर्वाश्च छायाः अपगताः।
+      - सामञ्जस्यम् प्रत्यागतम्। सर्वमिदम् अस्मिन् क्षणे नयति स्म।
+      - मौनं संस्थितम्। केवलं कालः गतिम् अकरोत्।
     easy:
       pool:
-      - You made it. The truth remains.
-      - You listened, and the path opened.
-      - Distance found its meaning, and time answered your steps.
+      - त्वं प्राप्तवान्। सत्यं तिष्ठति।
+      - त्वम् अशृणोः, मार्गश्च उदघाटितः।
+      - दूरत्वम् अर्थम् अलभत, कालश्च तव पदेभ्यः प्रत्युत्तरत्।
     normal:
       pool:
-      - Distance found its meaning. Time answered your journey.
-      - Run complete. A quiet result, backed by real work.
-      - The moment passed. The record remained.
+      - दूरत्वं स्वार्थम् अलभत। कालः तव यात्राम् अनुसरत्।
+      - धावनं पूर्णम्। शान्तं फलम्, वास्तविककर्मणा धृतम्।
+      - क्षणः अतीतः। अभिलेखः अवशिष्टः।
     hard:
       pool:
-      - In the north wind, clarity outlasts speed.
-      - Not luck. Alignment.
-      - The world did not change. Your place in it did.
+      - उत्तरवायौ स्पष्टता वेगम् अतिक्रामति।
+      - न भाग्यम्। संरेखणम्।
+      - जगत् न परिवर्तितम्। तस्मिन् तव स्थानं परिवर्तितम्।
   timeup:
     easy:
       pool:
-      - Time ran out. Nothing else did.
-      - The run ended. You didn’t.
-      - Take a breath. Then another.
+      - कालः समाप्तः। अन्यत् न किमपि।
+      - धावनम् अन्तम् अगात्। त्वं न।
+      - एकं श्वासं ग्रहीष्व। पुनः।
     normal:
       pool:
-      - The distance closed. Time did not.
-      - The map is still open. Come back to it.
-      - The treasure remained out of reach, but the signal was real.
+      - दूरत्वं न्यूनम् अभवत्। कालः न।
+      - मानचित्रम् अद्यापि उद्घाटितम्। प्रत्यागच्छ।
+      - निधिः अप्राप्तः, परञ्च संकेतः सत्यः आसीत्।
     hard:
       pool:
-      - Even the aurora fades. Come back with a new stride.
-      - The moment slipped away. The meaning did not.
-      - The sky kept moving. So can you.
+      - उत्तरज्योतिरपि म्लायति। नवपदेन प्रत्यागच्छ।
+      - क्षणः अतिगतः। अर्थः न।
+      - आकाशः गतिम् अकरोत्। त्वमपि शक्नोषि।
   random:
     common:
       pool: []
   fallback:
-    runComplete: धावनं समाप्तम्।
+    runComplete: धावनं पूर्णम्।
     timeUp: कालः समाप्तः।

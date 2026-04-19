@@ -528,43 +528,43 @@ outcome:
   success:
     common:
       pool:
-      - Light fell evenly, and every shadow vanished.
-      - Harmony returned. Everything had been leading to this moment.
-      - Silence settled in. Only time kept moving.
+      - 光均落，諸影消。
+      - 和諧復歸，萬象皆導此一瞬。
+      - 靜默乘臨，唯時間依舊流轉。
     easy:
       pool:
-      - You made it. The truth remains.
-      - You listened, and the path opened.
-      - Distance found its meaning, and time answered your steps.
+      - 至矣。真理長存。
+      - 傾耳而聽，道路自開。
+      - 距離得其義，時間應汝之步。
     normal:
       pool:
-      - Distance found its meaning. Time answered your journey.
-      - Run complete. A quiet result, backed by real work.
-      - The moment passed. The record remained.
+      - 距離得其義，時間應汝之旅。
+      - 奔走告竣。靜默之果，實勤之所持。
+      - 瞬間已過，記錄長存。
     hard:
       pool:
-      - In the north wind, clarity outlasts speed.
-      - Not luck. Alignment.
-      - The world did not change. Your place in it did.
+      - 北風之中，明晰勝於速度。
+      - 非運也，乃精準也。
+      - 世界未變，汝在其中之位置已異。
   timeup:
     easy:
       pool:
-      - Time ran out. Nothing else did.
-      - The run ended. You didn’t.
-      - Take a breath. Then another.
+      - 時已盡，此外無他。
+      - 奔走止，汝未止。
+      - 吸一氣，再吸一氣。
     normal:
       pool:
-      - The distance closed. Time did not.
-      - The map is still open. Come back to it.
-      - The treasure remained out of reach, but the signal was real.
+      - 距離縮，時間未縮。
+      - 圖尚開，歸來可矣。
+      - 寶未達，然信號真確。
     hard:
       pool:
-      - Even the aurora fades. Come back with a new stride.
-      - The moment slipped away. The meaning did not.
-      - The sky kept moving. So can you.
+      - 極光亦滅，以新步歸來。
+      - 瞬間逝，義未逝。
+      - 天猶動，汝亦可動。
   random:
     common:
       pool: []
   fallback:
-    runComplete: 行已畢。
+    runComplete: 奔走告竣。
     timeUp: 時已盡。
