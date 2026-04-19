@@ -1,0 +1,63 @@
+# GameMenu non-i18n tokens
+
+- L341: `\n\n`  ← symbol/newline
+- L342: `\n\n`  ← symbol/newline
+- L344: `\n`  ← symbol/newline
+- L345: `\n\n`  ← symbol/newline
+- L347: `\n`  ← symbol/newline
+- L348: `\n\n`  ← symbol/newline
+- L350: `\n`  ← symbol/newline
+- L351: `\n`  ← symbol/newline
+- L352: `\n\n`  ← symbol/newline
+- L354: `\n`  ← symbol/newline
+- L355: `\n\n`  ← symbol/newline
+- L421: `\n\n`  ← symbol/newline
+- L423: `\n\n`  ← symbol/newline
+- L424: `\n`  ← symbol/newline
+- L425: `\n`  ← symbol/newline
+- L426: `\n`  ← symbol/newline
+- L427: `\n\n`  ← symbol/newline
+- L429: `\n`  ← symbol/newline
+- L430: `\n`  ← symbol/newline
+- L431: `\n`  ← symbol/newline
+- L432: `\n\n`  ← symbol/newline
+- L434: `\n`  ← symbol/newline
+- L435: `\n`  ← symbol/newline
+- L436: `\n\n`  ← symbol/newline
+- L438: `\n\n`  ← symbol/newline
+- L439: `\n\n`  ← symbol/newline
+- L456: `\n\n`  ← symbol/newline
+- L479: `\n\n`  ← symbol/newline
+- L480: `\n`  ← symbol/newline
+- L481: `\n\n`  ← symbol/newline
+- L490: `\n\n`  ← symbol/newline
+- L593: `\n\n`  ← symbol/newline
+- L619: `\n\n`  ← symbol/newline
+- L620: `\n`  ← symbol/newline
+- L621: `\n\n`  ← symbol/newline
+- L637: `\n\n`  ← symbol/newline
+- L638: `\n\n`  ← symbol/newline
+- L703: `\n`  ← symbol/newline
+- L707: `\n\n`  ← symbol/newline
+- L722: `\n`  ← symbol/newline
+- L726: `\n\n`  ← symbol/newline
+- L741: `★#`  ← symbol/newline
+- L742: `★`  ← symbol/newline
+- L751: `\n\n`  ← symbol/newline
+- L851: `\n`  ← symbol/newline
+- L857: `\n`  ← symbol/newline
+- L872: `★#`  ← symbol/newline
+- L874: `\n`  ← symbol/newline
+- L876: `★#`  ← symbol/newline
+- L928: `DÉBUTANT`  ← mapping token
+- L929: `初級`  ← mapping token
+- L929: `초급`  ← mapping token
+- L936: `中級`  ← mapping token
+- L936: `중급`  ← mapping token
+- L938: `मध्यम`  ← mapping token
+- L944: `上級`  ← mapping token
+- L944: `高級`  ← mapping token
+- L944: `고급`  ← mapping token
+- L946: `उन्नत`  ← mapping token
+- L986: `\n`  ← symbol/newline
+- L986: `\n`  ← symbol/newline

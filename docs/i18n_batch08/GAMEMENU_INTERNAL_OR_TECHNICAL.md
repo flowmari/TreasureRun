@@ -1,0 +1,24 @@
+# GameMenu internal / technical candidates
+
+- L58: `TreasureRun`
+- L62: `TreasureRun`
+- L70: `ja`
+- L110: `ja`
+- L158: `TreasureRun`
+- L177: `ja`
+- L197: `TreasureRun`
+- L271: `ja`
+- L272: `en`
+- L832: `Normal`
+- L834: `Normal`
+- L915: `Normal`
+- L920: `Easy`
+- L920: `Easy`
+- L921: `Normal`
+- L921: `Normal`
+- L922: `Hard`
+- L922: `Hard`
+- L931: `Easy`
+- L939: `Normal`
+- L947: `Hard`
+- L950: `Normal`
