@@ -1,13 +1,12 @@
-# Batch 07 Phase B — ja/en cleanup
+# Batch 07 Phase B-1 — ja/en cleanup
 
 ## Goal
-- OutcomeMessageService の player-facing pool を ja/en の自然文として整える
-- その後 languages/ja.yml, languages/en.yml に移す
-- さらに他17言語へ seed 展開する
+- Clean the ja/en source text for OutcomeMessageService
+- Keep Java untouched in this step
+- Prepare clean source-of-truth text before moving pools into languages/*.yml
 
-## Fixed order
-1. OUTCOME_JA_EN_CLEANUP_DRAFT.md を整える
-2. ja.yml / en.yml に pool を移す
-3. 他17言語へ seed 追加
-4. Java 置換
-5. gates / build / runtime
+## Done when
+- OUTCOME_JA_EN_CLEANUP_DRAFT.md no longer contains mojibake
+- obvious punctuation / dash / apostrophe corruption is fixed
+- missing ja entries are visible as （要補完）
+- next step can move clean pools into languages/ja.yml and languages/en.yml

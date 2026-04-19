@@ -13,19 +13,17 @@
 
 **en**
 
-Light fell evenly, ,
+Light fell evenly,,
 and every shadow vanished.
-
 ### BOOST_SUCCESS_HIGH_02
 
 **ja**
 
-（未抽出）
+（要補完）
 
 **en**
 
 ---
-
 ### BOOST_SUCCESS_HIGH_03
 
 **ja**
@@ -34,19 +32,17 @@ and every shadow vanished.
 
 **en**
 
-The wind fell silent.
+The wind fell silent,
 and everything returned to where it belonged.
-
 ### BOOST_SUCCESS_HIGH_04
 
 **ja**
 
-（未抽出）
+（要補完）
 
 **en**
 
 ---
-
 ### BOOST_SUCCESS_HIGH_05
 
 **ja**
@@ -57,17 +53,15 @@ and everything returned to where it belonged.
 
 A moment of silence.
 The world steadied its breath.
-
 ### BOOST_SUCCESS_HIGH_06
 
 **ja**
 
-（未抽出）
+（要補完）
 
 **en**
 
 ---
-
 ### BOOST_SUCCESS_HIGH_07
 
 **ja**
@@ -78,17 +72,15 @@ The world steadied its breath.
 
 The record is etched deep in the sand—
 beyond the reach of the wind.
-
 ### BOOST_SUCCESS_HIGH_08
 
 **ja**
 
-（未抽出）
+（要補完）
 
 **en**
 
 ---
-
 ### BOOST_SUCCESS_HIGH_09
 
 **ja**
@@ -99,7 +91,6 @@ beyond the reach of the wind.
 
 Harmony was restored.
 Everything had been for this moment.
-
 ## BOOST_SUCCESS_MID
 
 ### BOOST_SUCCESS_MID_01
@@ -112,17 +103,15 @@ Everything had been for this moment.
 
 Time slipped by in silence,
 tucked away in the corners of memory.
-
 ### BOOST_SUCCESS_MID_02
 
 **ja**
 
-（未抽出）
+（要補完）
 
 **en**
 
 ---
-
 ### BOOST_SUCCESS_MID_03
 
 **ja**
@@ -133,17 +122,15 @@ tucked away in the corners of memory.
 
 The sky shifted in color,
 and one story came to its end.
-
 ### BOOST_SUCCESS_MID_04
 
 **ja**
 
-（未抽出）
+（要補完）
 
 **en**
 
 ---
-
 ### BOOST_SUCCESS_MID_05
 
 **ja**
@@ -154,17 +141,15 @@ and one story came to its end.
 
 The waves grew calm,
 and the sea hid its depths once more.
-
 ### BOOST_SUCCESS_MID_06
 
 **ja**
 
-（未抽出）
+（要補完）
 
 **en**
 
 ---
-
 ### BOOST_SUCCESS_MID_07
 
 **ja**
@@ -175,7 +160,6 @@ and the sea hid its depths once more.
 
 The footsteps stopped,
 and only the place remained.
-
 ## BOOST_TIMEUP_FAIL
 
 ### BOOST_TIMEUP_FAIL_01
@@ -188,17 +172,15 @@ and only the place remained.
 
 The sun sank,
 and shadow covered the world once again.
-
 ### BOOST_TIMEUP_FAIL_02
 
 **ja**
 
-（未抽出）
+（要補完）
 
 **en**
 
 ---
-
 ### BOOST_TIMEUP_FAIL_03
 
 **ja**
@@ -209,17 +191,15 @@ and shadow covered the world once again.
 
 The last grains of sand fell,
 and the story quietly came to a close.
-
 ### BOOST_TIMEUP_FAIL_04
 
 **ja**
 
-（未抽出）
+（要補完）
 
 **en**
 
 ---
-
 ### BOOST_TIMEUP_FAIL_05
 
 **ja**
@@ -230,17 +210,15 @@ and the story quietly came to a close.
 
 The wind swept through,
 and the footprints vanished without a trace.
-
 ### BOOST_TIMEUP_FAIL_06
 
 **ja**
 
-（未抽出）
+（要補完）
 
 **en**
 
 ---
-
 ### BOOST_TIMEUP_FAIL_07
 
 **ja**
@@ -251,17 +229,15 @@ and the footprints vanished without a trace.
 
 The tide came in,
 What once had been there returned to the sea.
-
 ### BOOST_TIMEUP_FAIL_08
 
 **ja**
 
-（未抽出）
+（要補完）
 
 **en**
 
 ---
-
 ### BOOST_TIMEUP_FAIL_09
 
 **ja**
@@ -272,7 +248,6 @@ What once had been there returned to the sea.
 
 Silence.
 Only time passed through.
-
 ## BOOST_TRADER
 
 ### BOOST_TRADER_01
@@ -285,17 +260,15 @@ Only time passed through.
 
 Perfect balance.
 The scales held level.
-
 ### BOOST_TRADER_02
 
 **ja**
 
-（未抽出）
+（要補完）
 
 **en**
 
 ---
-
 ### BOOST_TRADER_03
 
 **ja**
@@ -306,17 +279,15 @@ The scales held level.
 
 Things changed,
 taking on new forms as they carried on.
-
 ### BOOST_TRADER_04
 
 **ja**
 
-（未抽出）
+（要補完）
 
 **en**
 
 ---
-
 ### BOOST_TRADER_05
 
 **ja**
@@ -327,7 +298,6 @@ taking on new forms as they carried on.
 
 There was no dialogue
 —only an exchange of facts.
-
 ## BOOST_PHILOSOPHY
 
 ### BOOST_PHILOSOPHY_01
@@ -340,17 +310,15 @@ There was no dialogue
 
 Victory and defeat
 are nothing more than grains of sand.
-
 ### BOOST_PHILOSOPHY_02
 
 **ja**
 
-（未抽出）
+（要補完）
 
 **en**
 
 ---
-
 ### BOOST_PHILOSOPHY_03
 
 **ja**
@@ -361,7 +329,6 @@ are nothing more than grains of sand.
 
 The road goes on—or it ends.
 Either way, it lies on the same earth.
-
 ## BOOST_SUCCESS_NORMAL_BASE17
 
 ### BOOST_SUCCESS_NORMAL_BASE17_01
@@ -374,17 +341,15 @@ Either way, it lies on the same earth.
 
 Distance became meaning.
 Time answered your steps.
-
 ### BOOST_SUCCESS_NORMAL_BASE17_02
 
 **ja**
 
-（未抽出）
+（要補完）
 
 **en**
 
 ---
-
 ### BOOST_SUCCESS_NORMAL_BASE17_03
 
 **ja**
@@ -395,17 +360,15 @@ Time answered your steps.
 
 Time ran out.
 Nothing else did.
-
 ### BOOST_SUCCESS_NORMAL_BASE17_04
 
 **ja**
 
-（未抽出）
+（要補完）
 
 **en**
 
 ---
-
 ### BOOST_SUCCESS_NORMAL_BASE17_05
 
 **ja**
@@ -416,17 +379,15 @@ Nothing else did.
 
 The center was found.
 The world came to rest.
-
 ### BOOST_SUCCESS_NORMAL_BASE17_06
 
 **ja**
 
-（未抽出）
+（要補完）
 
 **en**
 
 ---
-
 ### BOOST_SUCCESS_NORMAL_BASE17_07
 
 **ja**
@@ -437,17 +398,15 @@ The world came to rest.
 
 The glass didn’t break.
 Neither did you.
-
 ### BOOST_SUCCESS_NORMAL_BASE17_08
 
 **ja**
 
-（未抽出）
+（要補完）
 
 **en**
 
 ---
-
 ### BOOST_SUCCESS_NORMAL_BASE17_09
 
 **ja**
@@ -458,17 +417,15 @@ Neither did you.
 
 Beneath a quiet sky,
 your will held firm.
-
 ### BOOST_SUCCESS_NORMAL_BASE17_10
 
 **ja**
 
-（未抽出）
+（要補完）
 
 **en**
 
 ---
-
 ### BOOST_SUCCESS_NORMAL_BASE17_11
 
 **ja**
@@ -479,17 +436,15 @@ your will held firm.
 
 Very little shines forever
 —but this moment was different.
-
 ### BOOST_SUCCESS_NORMAL_BASE17_12
 
 **ja**
 
-（未抽出）
+（要補完）
 
 **en**
 
 ---
-
 ### BOOST_SUCCESS_NORMAL_BASE17_13
 
 **ja**
@@ -500,17 +455,15 @@ Very little shines forever
 
 You made it across the fragile ground,
 holding fast to the horizon the whole way.
-
 ### BOOST_SUCCESS_NORMAL_BASE17_14
 
 **ja**
 
-（未抽出）
+（要補完）
 
 **en**
 
 ---
-
 ### BOOST_SUCCESS_NORMAL_BASE17_15
 
 **ja**
@@ -521,17 +474,15 @@ holding fast to the horizon the whole way.
 
 The moment passed.
  What remained was the record—the achievement.
-
 ### BOOST_SUCCESS_NORMAL_BASE17_16
 
 **ja**
 
-（未抽出）
+（要補完）
 
 **en**
 
 ---
-
 ### BOOST_SUCCESS_NORMAL_BASE17_17
 
 **ja**
@@ -542,17 +493,15 @@ The moment passed.
 
 Luck fades quickly.
 Order endures.
-
 ### BOOST_SUCCESS_NORMAL_BASE17_18
 
 **ja**
 
-（未抽出）
+（要補完）
 
 **en**
 
 ---
-
 ### BOOST_SUCCESS_NORMAL_BASE17_19
 
 **ja**
@@ -563,17 +512,15 @@ Order endures.
 
 The sky knows no rest in its endless cycle.
 Neither do you.
-
 ### BOOST_SUCCESS_NORMAL_BASE17_20
 
 **ja**
 
-（未抽出）
+（要補完）
 
 **en**
 
 ---
-
 ### BOOST_SUCCESS_NORMAL_BASE17_21
 
 **ja**
@@ -584,17 +531,15 @@ Neither do you.
 
 The center was reached.
 The world stood still.
-
 ### BOOST_SUCCESS_NORMAL_BASE17_22
 
 **ja**
 
-（未抽出）
+（要補完）
 
 **en**
 
 ---
-
 ### BOOST_SUCCESS_NORMAL_BASE17_23
 
 **ja**
@@ -605,17 +550,15 @@ The world stood still.
 
 At last,you’ve made it here.
 The truth stands—unbowed.
-
 ### BOOST_SUCCESS_NORMAL_BASE17_24
 
 **ja**
 
-（未抽出）
+（要補完）
 
 **en**
 
 ---
-
 ### BOOST_SUCCESS_NORMAL_BASE17_25
 
 **ja**
@@ -626,17 +569,15 @@ The truth stands—unbowed.
 
 Complete. This path was yours
 —and yours alone.
-
 ### BOOST_SUCCESS_NORMAL_BASE17_26
 
 **ja**
 
-（未抽出）
+（要補完）
 
 **en**
 
 ---
-
 ### BOOST_SUCCESS_NORMAL_BASE17_27
 
 **ja**
@@ -647,17 +588,15 @@ Complete. This path was yours
 
 Time drifted into silence,
 and found its place in the deepest corners of the mind.
-
 ### BOOST_SUCCESS_NORMAL_BASE17_28
 
 **ja**
 
-（未抽出）
+（要補完）
 
 **en**
 
 ---
-
 ### BOOST_SUCCESS_NORMAL_BASE17_29
 
 **ja**
@@ -668,17 +607,15 @@ and found its place in the deepest corners of the mind.
 
 As the sky shifted,
 one story found its final resolution.
-
 ### BOOST_SUCCESS_NORMAL_BASE17_30
 
 **ja**
 
-（未抽出）
+（要補完）
 
 **en**
 
 ---
-
 ### BOOST_SUCCESS_NORMAL_BASE17_31
 
 **ja**
@@ -689,17 +626,15 @@ one story found its final resolution.
 
 The waves fell quiet,
 and the sky hid its depths once more.
-
 ### BOOST_SUCCESS_NORMAL_BASE17_32
 
 **ja**
 
-（未抽出）
+（要補完）
 
 **en**
 
 ---
-
 ### BOOST_SUCCESS_NORMAL_BASE17_33
 
 **ja**
