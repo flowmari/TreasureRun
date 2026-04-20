@@ -1,0 +1,41 @@
+name: i18n-check
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  i18n:
+    runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install PyYAML
+        run: python3 -m pip install pyyaml
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Run duplicate YAML key check
+        run: python3 scripts/check_yaml_duplicate_keys.py
+
+      - name: Run missing key check
+        run: python3 scripts/check_missing_i18n_keys.py
+
+      - name: Run suspicious display text check
+        run: python3 scripts/check_suspicious_i18n.py
+
+      - name: Build plugin
+        run: ./gradlew clean shadowJar --no-daemon --stacktrace
