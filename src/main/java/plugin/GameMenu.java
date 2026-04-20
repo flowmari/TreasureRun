@@ -1,6 +1,7 @@
 package plugin;
 
 import plugin.i18n.GameMenuKeys;
+import plugin.i18n.GameMenuFallbackTexts;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -58,9 +59,9 @@ public class GameMenu {
         (TreasureRunMultiChestPlugin) org.bukkit.Bukkit.getPluginManager().getPlugin("TreasureRun");
 
     if (plugin == null) {
-      // 最低限フォールバック（NPEで落ちない）
-      player.sendMessage(ChatColor.GOLD + "TreasureRun");
-      player.sendMessage(ChatColor.RED + "Plugin not ready.");
+      // 最低限フォールバック（GameMenu.java にプレイヤー向け直書きを残さない）
+      player.sendMessage(ChatColor.GOLD + GameMenuFallbackTexts.BRAND_TITLE);
+      player.sendMessage(ChatColor.RED + GameMenuFallbackTexts.pluginNotReady(player));
       return;
     }
 
@@ -194,7 +195,7 @@ public class GameMenu {
     // フォールバック（その言語が無いときはja）
     String title = cfg.getString("ruleBook.title." + actualLang,
         plugin.getI18n().tr(actualLang, GameMenuKeys.UI_MENU_BOOK_FALLBACK_TITLE));
-    String author = cfg.getString("ruleBook.author", "TreasureRun");
+    String author = cfg.getString("ruleBook.author", GameMenuFallbackTexts.BRAND_TITLE);
     String displayNameRaw = cfg.getString("ruleBook.displayName." + actualLang,
         plugin.getI18n().tr(actualLang, GameMenuKeys.UI_MENU_BOOK_FALLBACK_DISPLAY_NAME));
 
@@ -418,7 +419,7 @@ public class GameMenu {
         I18n.Placeholder.of("{lang}", actualLang)
     );
 
-    return ChatColor.AQUA + "" + ChatColor.BOLD + "📖 " + tint(ChatColor.AQUA, title) + "\n\n" +
+    return ChatColor.AQUA + "" + ChatColor.BOLD + bookPrefix(plugin, actualLang) + tint(ChatColor.AQUA, title) + "\n\n" +
 
         tint(ChatColor.DARK_BLUE, tabsTitle) + "\n\n" +
         tabHeader(plugin, actualLang, QuoteTab.ALL) + "\n" +
@@ -427,13 +428,13 @@ public class GameMenu {
         tabHeader(plugin, actualLang, QuoteTab.FAVORITES) + "\n\n" +
 
         tint(ChatColor.DARK_BLUE, legendTitle) + "\n" +
-        ChatColor.GREEN  + "■ " + labSuccess + ChatColor.DARK_BLUE + " " + legendSuccess + "\n" +
-        ChatColor.RED    + "■ " + labTimeUp  + ChatColor.DARK_BLUE + " " + legendTimeUp + "\n" +
-        ChatColor.YELLOW + "■ " + labFav     + ChatColor.DARK_BLUE + " " + legendFavorites + "\n\n" +
+        ChatColor.GREEN  + legendPrefix(plugin, actualLang) + labSuccess + ChatColor.DARK_BLUE + " " + legendSuccess + "\n" +
+        ChatColor.RED    + legendPrefix(plugin, actualLang) + labTimeUp  + ChatColor.DARK_BLUE + " " + legendTimeUp + "\n" +
+        ChatColor.YELLOW + legendPrefix(plugin, actualLang) + labFav     + ChatColor.DARK_BLUE + " " + legendFavorites + "\n\n" +
 
         tint(ChatColor.DARK_BLUE, storedTitle) + "\n" +
-        ChatColor.GRAY + "- " + dbLogs + "\n" +
-        ChatColor.GRAY + "- " + dbFav + "\n\n" +
+        ChatColor.GRAY + dbBullet(plugin, actualLang) + dbLogs + "\n" +
+        ChatColor.GRAY + dbBullet(plugin, actualLang) + dbFav + "\n\n" +
 
         tint(ChatColor.DARK_BLUE, noteBookFormat) + "\n\n" +
         tint(ChatColor.DARK_BLUE, langLine) + "\n\n" +
@@ -452,7 +453,7 @@ public class GameMenu {
     List<String> pages = new ArrayList<>();
 
     if (player == null || plugin == null) {
-      pages.add(ChatColor.AQUA + "" + ChatColor.BOLD + "📖 " +
+      pages.add(ChatColor.AQUA + "" + ChatColor.BOLD + bookPrefix(plugin, actualLang) +
           tint(ChatColor.AQUA, plugin.getI18n().tr(actualLang, GameMenuKeys.UI_QUOTE_TITLE)) + "\n\n" +
           ChatColor.DARK_BLUE + plugin.getI18n().tr(actualLang, GameMenuKeys.UI_ERROR_NO_DATA));
       return pages;
@@ -476,7 +477,7 @@ public class GameMenu {
         I18n.Placeholder.of("{lang}", actualLang)
     );
     String header =
-        ChatColor.AQUA + "" + ChatColor.BOLD + "📖 " + tint(ChatColor.AQUA, quoteTitle) + "\n\n" +
+        ChatColor.AQUA + "" + ChatColor.BOLD + bookPrefix(plugin, actualLang) + tint(ChatColor.AQUA, quoteTitle) + "\n\n" +
             tabBar(plugin, actualLang, tab) + "\n" +
             ChatColor.DARK_BLUE + recentHeader + "\n\n";
 
@@ -701,9 +702,9 @@ public class GameMenu {
     String diffLabel = difficultyLabel(plugin, lang, diff);
 
     return ChatColor.GOLD + "" + ChatColor.BOLD + latestLabel + "\n" +
-        outcomeColor + "[" + outcomeLabel + "] " +
+        labelWrap(plugin, lang, outcomeLabel, outcomeColor) + " " +
         diffColor + diffLabel + " " +
-        ChatColor.GRAY + "(" + safe(rowLang) + ")\n" +
+        ChatColor.GRAY + metaWrap(plugin, lang, safe(rowLang)) + "\n" +
         ChatColor.DARK_BLUE + safeQuote(quoteText) + "\n\n";
   }
 
@@ -719,10 +720,10 @@ public class GameMenu {
     String outcomeLabel = outcomeLabel(plugin, lang, outcome);
     String diffLabel = difficultyLabel(plugin, lang, diff);
 
-    return ChatColor.AQUA + "#" + idx + "\n" +
-        outcomeColor + "[" + outcomeLabel + "] " +
+    return ChatColor.AQUA + indexPrefix(plugin, lang, idx) + "\n" +
+        labelWrap(plugin, lang, outcomeLabel, outcomeColor) + " " +
         diffColor + diffLabel + " " +
-        ChatColor.GRAY + "(" + safe(rowLang) + ")\n" +
+        ChatColor.GRAY + metaWrap(plugin, lang, safe(rowLang)) + "\n" +
         ChatColor.DARK_BLUE + safeQuote(quoteText) + "\n\n";
   }
 
@@ -738,26 +739,26 @@ public class GameMenu {
     ChatColor diffColor = colorByDifficulty(diff);
 
     String idLabel = (favoriteId != null && !favoriteId.isBlank())
-        ? (ChatColor.YELLOW + "★#" + favoriteId)
-        : (ChatColor.YELLOW + "★");
+        ? (ChatColor.YELLOW + favoriteIdPrefix(plugin, lang, favoriteId))
+        : (ChatColor.YELLOW + favoritePrefix(plugin, lang));
 
     String outcomeLabel = outcomeLabel(plugin, lang, outcome);
     String diffLabel = difficultyLabel(plugin, lang, diff);
 
-    return idLabel + ChatColor.GRAY + "  (" + idx + ")\n" +
-        outcomeColor + "[" + outcomeLabel + "] " +
+    return idLabel + ChatColor.GRAY + "  " + metaWrap(plugin, lang, String.valueOf(idx)) + "\n" +
+        labelWrap(plugin, lang, outcomeLabel, outcomeColor) + " " +
         diffColor + diffLabel + " " +
-        ChatColor.GRAY + "(" + safe(rowLang) + ")\n" +
+        ChatColor.GRAY + metaWrap(plugin, lang, safe(rowLang)) + "\n" +
         ChatColor.DARK_BLUE + safeQuote(quoteText) + "\n\n";
   }
 
   private static String tabHeader(TreasureRunMultiChestPlugin plugin, String lang, QuoteTab current) {
     String label = tabLabel(plugin, lang, current);
 
-    if (current == QuoteTab.ALL) return ChatColor.AQUA + "▶ [" + label + "]";
-    if (current == QuoteTab.SUCCESS) return ChatColor.GREEN + "▶ [" + label + "]";
-    if (current == QuoteTab.TIME_UP) return ChatColor.RED + "▶ [" + label + "]";
-    return ChatColor.YELLOW + "▶ [" + label + "]";
+    if (current == QuoteTab.ALL) return ChatColor.AQUA + activeMarker(plugin, lang) + inactiveTabWrap(plugin, lang, label);
+    if (current == QuoteTab.SUCCESS) return ChatColor.GREEN + activeMarker(plugin, lang) + inactiveTabWrap(plugin, lang, label);
+    if (current == QuoteTab.TIME_UP) return ChatColor.RED + activeMarker(plugin, lang) + inactiveTabWrap(plugin, lang, label);
+    return ChatColor.YELLOW + activeMarker(plugin, lang) + inactiveTabWrap(plugin, lang, label);
   }
 
   private static String tabBar(TreasureRunMultiChestPlugin plugin, String lang, QuoteTab current) {
@@ -766,18 +767,17 @@ public class GameMenu {
     String timeUp = tabLabel(plugin, lang, QuoteTab.TIME_UP);
     String fav = tabLabel(plugin, lang, QuoteTab.FAVORITES);
 
-    // ✅ i18n: "Tabs:" 部分も言語化
-    String tabsLabel = plugin.getI18n().tr(lang, GameMenuKeys.UI_LABEL_TABS); // ui.labels.tabs
+    String tabsLabel = plugin.getI18n().tr(lang, GameMenuKeys.UI_LABEL_TABS);
     tabsLabel = colorize(tabsLabel);
 
     return ChatColor.DARK_BLUE + "" + tabsLabel + " " +
-        (current == QuoteTab.ALL ? ChatColor.WHITE + "【" + ChatColor.AQUA + all + ChatColor.WHITE + "】" : ChatColor.GRAY + "[" + all + "]") +
+        (current == QuoteTab.ALL ? activeTabWrap(plugin, lang, all, ChatColor.AQUA) : inactiveTabWrap(plugin, lang, all)) +
         ChatColor.DARK_BLUE + " " +
-        (current == QuoteTab.SUCCESS ? ChatColor.WHITE + "【" + ChatColor.GREEN + success + ChatColor.WHITE + "】" : ChatColor.GRAY + "[" + success + "]") +
+        (current == QuoteTab.SUCCESS ? activeTabWrap(plugin, lang, success, ChatColor.GREEN) : inactiveTabWrap(plugin, lang, success)) +
         ChatColor.DARK_BLUE + " " +
-        (current == QuoteTab.TIME_UP ? ChatColor.WHITE + "【" + ChatColor.RED + timeUp + ChatColor.WHITE + "】" : ChatColor.GRAY + "[" + timeUp + "]") +
+        (current == QuoteTab.TIME_UP ? activeTabWrap(plugin, lang, timeUp, ChatColor.RED) : inactiveTabWrap(plugin, lang, timeUp)) +
         ChatColor.DARK_BLUE + " " +
-        (current == QuoteTab.FAVORITES ? ChatColor.WHITE + "【" + ChatColor.YELLOW + fav + ChatColor.WHITE + "】" : ChatColor.GRAY + "[" + fav + "]");
+        (current == QuoteTab.FAVORITES ? activeTabWrap(plugin, lang, fav, ChatColor.YELLOW) : inactiveTabWrap(plugin, lang, fav));
   }
 
   private static String applyPageFooter(
@@ -909,6 +909,70 @@ public class GameMenu {
   // ✅ Phase 2 helpers: label dictionary (ui.labels.*)
   // =========================================================
 
+
+
+
+  private static String uiSym(TreasureRunMultiChestPlugin plugin, String lang, String key, String fallback) {
+    if (plugin == null) return fallback;
+    try {
+      String v = plugin.getI18n().tr(lang, key);
+      if (v == null || v.isBlank() || v.equals(key)) return fallback;
+      return v;
+    } catch (Throwable ignored) {
+      return fallback;
+    }
+  }
+
+  private static String activeMarker(TreasureRunMultiChestPlugin plugin, String lang) {
+    return uiSym(plugin, lang, "ui.symbol.activeMarker", "▶ ");
+  }
+
+  private static String bookPrefix(TreasureRunMultiChestPlugin plugin, String lang) {
+    return uiSym(plugin, lang, "ui.symbol.bookPrefix", "📖 ");
+  }
+
+  private static String legendPrefix(TreasureRunMultiChestPlugin plugin, String lang) {
+    return uiSym(plugin, lang, "ui.symbol.legendPrefix", "■ ");
+  }
+
+  private static String dbBullet(TreasureRunMultiChestPlugin plugin, String lang) {
+    return uiSym(plugin, lang, "ui.symbol.dbBullet", "- ");
+  }
+
+  private static String indexPrefix(TreasureRunMultiChestPlugin plugin, String lang, int idx) {
+    return uiSym(plugin, lang, "ui.symbol.indexPrefix", "#") + idx;
+  }
+
+  private static String favoriteIdPrefix(TreasureRunMultiChestPlugin plugin, String lang, String id) {
+    return uiSym(plugin, lang, "ui.symbol.favoriteIdPrefix", "★#") + id;
+  }
+
+  private static String favoritePrefix(TreasureRunMultiChestPlugin plugin, String lang) {
+    return uiSym(plugin, lang, "ui.symbol.favoritePrefix", "★");
+  }
+
+  private static String metaWrap(TreasureRunMultiChestPlugin plugin, String lang, String body) {
+    return uiSym(plugin, lang, "ui.symbol.metaOpen", "(") + body +
+        uiSym(plugin, lang, "ui.symbol.metaClose", ")");
+  }
+
+  private static String labelWrap(TreasureRunMultiChestPlugin plugin, String lang, String body, ChatColor bodyColor) {
+    return ChatColor.WHITE + uiSym(plugin, lang, "ui.symbol.labelOpen", "[") +
+        bodyColor + body +
+        ChatColor.WHITE + uiSym(plugin, lang, "ui.symbol.labelClose", "]");
+  }
+
+  private static String inactiveTabWrap(TreasureRunMultiChestPlugin plugin, String lang, String body) {
+    return ChatColor.GRAY + uiSym(plugin, lang, "ui.symbol.tabInactiveOpen", "[") +
+        body +
+        ChatColor.GRAY + uiSym(plugin, lang, "ui.symbol.tabInactiveClose", "]");
+  }
+
+  private static String activeTabWrap(TreasureRunMultiChestPlugin plugin, String lang, String body, ChatColor bodyColor) {
+    return ChatColor.WHITE + uiSym(plugin, lang, "ui.symbol.tabActiveOpen", "【") +
+        bodyColor + body +
+        ChatColor.WHITE + uiSym(plugin, lang, "ui.symbol.tabActiveClose", "】");
+  }
 
 
   private static String normalizeDifficultyKey(String diff) {

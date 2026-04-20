@@ -39,16 +39,14 @@ quotes:
   - The glass didn’t break.\nNeither did you.\n（ガラスは割れなかった。あなたも折れなかった。）
   - Beneath a quiet sky,\nyour will held firm.\n（静かな空の下で、意志は持ちこたえた。）
   - Very little shines forever\n—but this moment was different.\n（永遠に輝くものなんてほとんどないけれど、この瞬間は別格だった。）
-  - You made it across the fragile ground,\nholding fast to the horizon the whole
-    way.\n（脆い地面を渡り切った。地平線景色をしっかりと握りしめたまま。）
+  - You made it across the fragile ground,\nholding fast to the horizon the whole way.\n（脆い地面を渡り切った。地平線景色をしっかりと握りしめたまま。）
   - The moment passed.\n What remained was the record—the achievement.\n（瞬間は過ぎ去った。遺されたもの記録・功績は残る。）
   - Luck fades quickly.\nOrder endures.\n（運は速やかに消え、整い秩序は永続する。）
   - The sky knows no rest in its endless cycle.\nNeither do you.\n（空はその終わりなき循環に休止を知らぬ。汝もまた、止まらず。）
   - The center was reached.\nThe world stood still.\n（中心は到達された。世界は立ち尽くし静止した。）
   - At last,you’ve made it here.\nThe truth stands—unbowed.\n（ついに、ここへ辿り着いた。真実は屈することなく、そこに在る。）
   - Complete. This path was yours\n—and yours alone.\n（完遂。この道を選んだのは他でもないあなただ。）
-  - Time drifted into silence,\nand found its place in the deepest corners of the
-    mind.\n（時は静寂へと漂い、精神の奥底の隅に自らの居場所を見つけた。）
+  - Time drifted into silence,\nand found its place in the deepest corners of the mind.\n（時は静寂へと漂い、精神の奥底の隅に自らの居場所を見つけた。）
   - As the sky shifted,\none story found its final resolution.\n（空が姿を変えるとともに、一つの物語はその最終的な解決完結を見出した。）
   - The waves fell quiet,\nand the sky hid its depths once more.\n（波は静まり、空は再びその深淵を覆い隠した。）
   - The footsteps ceased,\nand only the place remained.\n（歩みは途絶え、ただ場所だけがそこに在り続けた。）
@@ -69,8 +67,7 @@ quotes:
   - The sky knows no pause in endless circle,\nnor shall you find yours.\n（空はその終わりなき循環に休止を知らぬ。汝もまた、止まらず。）
   - The center has been reached.\nThe world stood still.\n（中心は到達された。世界は立ち尽くし静止した。）
   - Finally here.\nThe truth remains unyielding.\n（ついに、ここへ辿り着いた。真実は屈することなく、そこに在る。）
-  - 'You have seen it through.\nAnd mark this: it was you, and no one else, who chose
-    this path.\n（完遂。この道を選んだのは他でもないあなただ。）'
+  - 'You have seen it through.\nAnd mark this: it was you, and no one else, who chose this path.\n（完遂。この道を選んだのは他でもないあなただ。）'
   - Time drifted into silence,\nfinding its place in the recesses of the mind.\n（時は静寂へと漂い、精神の奥底の隅に自らの居場所を見つけた。）
   - As the sky transformed,\nthe tale found its final resolved.\n（空が姿を変えるとともに、一つの物語はその最終的な解決完結を見出した。）
   - The waters fell calm,\nand the sky once more veiled its abyss.\n（波は静まり、空は再びその深淵を覆い隠した。）
@@ -213,18 +210,15 @@ ui:
       success: = पूर्ण / सफल
       timeUp: = समय समाप्त
       favorites: = ★ सहेजे गए उद्धरण
-    noLogs: अभी तक कोई उद्धरण लॉग नहीं है। SUCCESS / TIME_UP पर स्वचालित रूप से सहेजे
-      जाते हैं।
-    noQuotesInTab: 'इस टैब में दिखाने के लिए कोई उद्धरण नहीं है। (शायद अभी तक सहेजा
-      नहीं गया।)
+    noLogs: अभी तक कोई उद्धरण लॉग नहीं है। SUCCESS / TIME_UP पर स्वचालित रूप से सहेजे जाते हैं।
+    noQuotesInTab: 'इस टैब में दिखाने के लिए कोई उद्धरण नहीं है। (शायद अभी तक सहेजा नहीं गया।)
 
       कोई दूसरा टैब आज़माएं।'
     noपसंदीदा: 'अभी तक कोई पसंदीदा नहीं है।
 
       {latestLabel} सहेजने के लिए इस पुस्तक पर राइट-क्लिक करें।'
     tip:
-      rightClickSave: 'सुझाव: {latestLabel} सहेजने के लिए इस पुस्तक पर राइट-क्लिक
-        करें।'
+      rightClickSave: 'सुझाव: {latestLabel} सहेजने के लिए इस पुस्तक पर राइट-क्लिक करें।'
     noFavorites: 'No favorites yet.
 
       Right-click this book to save {latestLabel}.'
@@ -235,43 +229,35 @@ ui:
     messages_yml_not_loaded_d56b1cd3: (messages.yml not loaded)
     translation_missing_77031543: '(अनुवाद नहीं मिला:'
     translation_missing_77031543_107: '(अनुवाद नहीं मिला:'
-    treasurerun_lang_config_yml__2dde4625: '[TreasureRun][Lang] config.yml में ''language:''
-      सेक्शन नहीं मिला।'
+    treasurerun_lang_config_yml__2dde4625: '[TreasureRun][Lang] config.yml में ''language:'' सेक्शन नहीं मिला।'
     click_to_select_aac1569c_76: चुनने के लिए क्लिक करें
     treasurerun_lang_default_60887a83: '[TreasureRun][Lang] default='
     click_to_select_aac1569c_19: चुनने के लिए क्लिक करें
-    treasurerun_lang_config_yml__2dde4625_33: '[TreasureRun][Lang] config.yml में
-      ''language:'' सेक्शन नहीं मिला।'
+    treasurerun_lang_config_yml__2dde4625_33: '[TreasureRun][Lang] config.yml में ''language:'' सेक्शन नहीं मिला।'
     treasurerun_lang_material_la_bc70a401: '[TreasureRun][Lang] अमान्य Material: lang='
-    treasurerun_lang_language_ic_4bc2362d: '[TreasureRun][Lang] ''language.iconMaterial:''
-      सेक्शन नहीं मिला（सभी PAPER बन जाएंगे）'
+    treasurerun_lang_language_ic_4bc2362d: '[TreasureRun][Lang] ''language.iconMaterial:'' सेक्शन नहीं मिला（सभी PAPER बन जाएंगे）'
     click_to_select_aac1569c_100: चुनने के लिए क्लिक करें
     treasurerun_lang_default_60887a83_111: '[TreasureRun][Lang] default='
     enemydown_mysql_jdbc_mybatis_6b5c6f68: '[EnemyDown] MySQL से जुड़े（JDBC + MyBatis）'
     enemydown_mysql_6cf3e29b: '[EnemyDown] MySQL कनेक्शन विफल:'
     enemydown_mysql_a18990c3: '[EnemyDown] MySQL कनेक्शन बंद।'
     enemydown_mysql_e097a73e: '[EnemyDown] MySQL डिस्कनेक्ट विफल:'
-    mysqlmanager_player_score_d92afff4: '[MySQLManager] player_score तालिका जाँची/बनाई
-      ✅'
-    mysqlmanager_player_score_21665c62: '[MySQLManager] player_score तालिका बनाने
-      में विफल ❌:'
+    mysqlmanager_player_score_d92afff4: '[MySQLManager] player_score तालिका जाँची/बनाई ✅'
+    mysqlmanager_player_score_21665c62: '[MySQLManager] player_score तालिका बनाने में विफल ❌:'
     mysqlmanager_mysql_951100b9: '[MySQLManager] MySQL कनेक्शन परीक्षण सफल ✅'
     mysqlmanager_player_score_a4968d00: '[MySQLManager] player_score तालिका की पंक्तियाँ:'
     mysqlmanager_mysql_1763d390: '[MySQLManager] MySQL कनेक्ट नहीं ❌'
-    mysqlmanager_player_score_2b5c8721: '[MySQLManager] player_score तालिका मौजूद
-      नहीं हो सकती ❌'
+    mysqlmanager_player_score_2b5c8721: '[MySQLManager] player_score तालिका मौजूद नहीं हो सकती ❌'
     enemydown_mysql_bc514e56: '[EnemyDown] MySQL जुड़ा हुआ है।'
     enemydown_mysql_93b23ef9: '[EnemyDown] MySQL जुड़ा नहीं है।'
     run_complete_46d920e5_580: Run complete.
     run_complete_46d920e5_589: Run complete.
-    playerlanguagestore_failed_t_c4999402: '[PlayerLanguageStore] Failed to create/load
-      player_languages.yml:'
+    playerlanguagestore_failed_t_c4999402: '[PlayerLanguageStore] Failed to create/load player_languages.yml:'
     playerlanguagestore_failed_t_b6478ec8: '[PlayerLanguageStore] Failed to save player_languages.yml:'
     proverb_logged_to_mysql_prov_c13b5e4e: 'Proverb logged to MySQL: proverb_logs'
     failed_to_log_proverb_to_mys_2bb4c5c3: 'Failed to log proverb to MySQL: proverb_logs'
     loaded_proverb_logs_from_mys_b5b0f8e0: 'Loaded proverb logs from MySQL: proverb_logs'
-    failed_to_load_proverb_logs__6246be38: 'Failed to load proverb logs from MySQL:
-      proverb_logs'
+    failed_to_load_proverb_logs__6246be38: 'Failed to load proverb logs from MySQL: proverb_logs'
     treasurerunmultichestplugin_4499e25c: '🌈 TreasureRunMultiChestPlugin: 起動 🌈'
     treasurerun_gamestagemanager_3d9e7f5a: '[TreasureRun] GameStageManager event registered!'
     treasurerunmultichestplugin_a507471a: ✅ TreasureRunMultiChestPlugin が正常に起動しました！
@@ -280,8 +266,7 @@ ui:
     text_1a6173d3: हीरा प्राप्त!
     text_b6568a8d: सोने का सेब प्राप्त!
     no_9c0fdee6: 🏆 No.
-    gamestart_easy_normal_hard_230bd0bd: अगली बार अलग रास्ता आज़माएं! पुनः प्रयास
-      के लिए /gamestart <easy|normal|hard> उपयोग करें!
+    gamestart_easy_normal_hard_230bd0bd: अगली बार अलग रास्ता आज़माएं! पुनः प्रयास के लिए /gamestart <easy|normal|hard> उपयोग करें!
     text_9310a1a7: खेल पहले से चल रहा है।
     text_9310a1a7_908: खेल पहले से चल रहा है।
     text_9310a1a7_1601: खेल पहले से चल रहा है।
@@ -297,8 +282,7 @@ ui:
     easy_normal_hard_ef1ba55c: कठिनाई Easy / Normal / Hard है।
     language_gui_aed4f8fc_931: Language GUI आरंभ नहीं हुई।
     config_yml_3c6e9d15: ✅ config.yml लोड हुई
-    treasurerun_config_language__763cf02c: ✅ TreasureRun config पुनः लोड हुई（language
-      GUI सहित）।
+    treasurerun_config_language__763cf02c: ✅ TreasureRun config पुनः लोड हुई（language GUI सहित）।
     gui_gamestart_5870f221: GUI अपडेट हुई। /gameStart से पुनः खोलें।
     text_3ecbc53d: कृपया खिलाड़ी के रूप में चलाएं
     text_3030fd61: केवल खिलाड़ी उपयोग कर सकते हैं
@@ -389,8 +373,7 @@ ui:
         difficulty: 'कठिनाई: {difficulty}'
         tipsItem: 2) सुझाव
       note:
-        bookFormat: 'नोट: Minecraft की किताबों में क्लिक करके टैब नहीं बदले जा सकते,
-          इसलिए सामग्री को अलग-अलग खंडों में व्यवस्थित किया गया है।'
+        bookFormat: 'नोट: Minecraft की किताबों में क्लिक करके टैब नहीं बदले जा सकते, इसलिए सामग्री को अलग-अलग खंडों में व्यवस्थित किया गया है।'
       hint:
         reopenMenu: 'सुझाव: इसे फिर से खोलने के लिए /gameMenu चलाएँ।'
   error:
@@ -400,6 +383,24 @@ ui:
     title: ★ पसंदीदा
     footer:
       dbFavorites: '(DB: proverb_favorites)'
+  gameMenu:
+    pluginNotReady: प्लगइन अभी तैयार नहीं है।
+  symbol:
+    bookPrefix: '📖 '
+    legendPrefix: '■ '
+    dbBullet: '- '
+    indexPrefix: '#'
+    favoriteIdPrefix: ★#
+    favoritePrefix: ★
+    metaOpen: (
+    metaClose: )
+    labelOpen: '['
+    labelClose: ']'
+    tabActiveOpen: 【
+    tabActiveClose: 】
+    tabInactiveOpen: '['
+    tabInactiveClose: ']'
+    activeMarker: '▶ '
 gui:
   language:
     title: भाषा
@@ -444,19 +445,15 @@ command:
   gameStart:
     playersOnly: यह कमांड केवल खिलाड़ी ही इस्तेमाल कर सकते हैं।
     worldNotFound: '[TreasureRun] शुरुआती दुनिया सेट नहीं है या मिल नहीं सकी।'
-    started: 'खज़ाने की खोज शुरू हो रही है! कठिनाई: {difficulty} | समय सीमा: {timeLimit}
-      सेकंड'
+    started: 'खज़ाने की खोज शुरू हो रही है! कठिनाई: {difficulty} | समय सीमा: {timeLimit} सेकंड'
   stageCleanup:
     playersOnly: '&cइस कमांड का उपयोग केवल खिलाड़ी कर सकते हैं।'
     managerNotReady: '[TreasureRun] स्टेज मैनेजर अभी तक तैयार नहीं है।'
     cleaned: '[TreasureRun] {count} कठिनाई ब्लॉक साफ कर दिए गए।'
   lang:
-    guiTooManyShown: अनुमत भाषाएँ बहुत अधिक हैं, इसलिए GUI में केवल पहली 27 भाषाएँ
-      ही दिखाई जा रही हैं।
-    guiCancelledGameMenu: भाषा चयन रद्द कर दिया गया। फिर से खोलने के लिए /gameMenu
-      gui चलाएँ।
-    guiCancelledGameStart: भाषा चयन रद्द कर दिया गया। फिर से प्रयास करने के लिए /gameStart
-      <easy|normal|hard> चलाएँ।
+    guiTooManyShown: अनुमत भाषाएँ बहुत अधिक हैं, इसलिए GUI में केवल पहली 27 भाषाएँ ही दिखाई जा रही हैं।
+    guiCancelledGameMenu: भाषा चयन रद्द कर दिया गया। फिर से खोलने के लिए /gameMenu gui चलाएँ।
+    guiCancelledGameStart: भाषा चयन रद्द कर दिया गया। फिर से प्रयास करने के लिए /gameStart <easy|normal|hard> चलाएँ।
     playersOnly: यह कमांड केवल खिलाड़ी ही उपयोग कर सकते हैं।
     resetDone: ✅ आपकी सहेजी हुई भाषा रीसेट कर दी गई है। अगली बार GUI खुलेगा।
     current: 'वर्तमान भाषा: {lang}'
@@ -464,8 +461,7 @@ command:
     notAllowed: 'यह भाषा अनुमत नहीं है: {lang}'
     allowedList: 'अनुमत भाषाएँ: {allowed}'
     changed: '✅ भाषा बदल दी गई है: {displayName} ({lang})'
-    changedButNotSaved: '⚠ भाषा बदल दी गई, लेकिन स्थायी रूप से सहेजी नहीं जा सकी:
-      {lang}'
+    changedButNotSaved: '⚠ भाषा बदल दी गई, लेकिन स्थायी रूप से सहेजी नहीं जा सकी: {lang}'
     list:
       title: === भाषाएँ ===
       default: 'डिफ़ॉल्ट: {default}'
@@ -480,8 +476,7 @@ command:
   onlyPlayer: '&cयह कमांड केवल खिलाड़ी ही चला सकता है।'
   quoteFavorite:
     latestSaved: '&a★ नवीनतम उद्धरण पसंदीदा में सहेज दिया गया।'
-    latestNotSaved: '&eनवीनतम उद्धरण सहेजा नहीं जा सका। शायद अभी कोई लॉग नहीं है,
-      या यह पहले से पसंदीदा में है।'
+    latestNotSaved: '&eनवीनतम उद्धरण सहेजा नहीं जा सका। शायद अभी कोई लॉग नहीं है, या यह पहले से पसंदीदा में है।'
     playersOnly: '&cइस कमांड का उपयोग केवल खिलाड़ी कर सकते हैं।'
     repositoryNotReady: '&cपसंदीदा सुविधा अभी उपलब्ध नहीं है।'
     listHeader: '&bपसंदीदा ({count})'
