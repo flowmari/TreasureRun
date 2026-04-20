@@ -338,43 +338,55 @@ outcome:
   success:
     common:
       pool:
-      - Lux aequaliter cecidit et umbrae omnes evanuerunt.
-      - Concordia rediit. Omnia ad hoc momentum ducebant.
-      - Silentium descendit. Solum tempus movebatur.
+      - 'Pervenisti.
+
+        Iter stetit.'
     easy:
       pool:
-      - Pervenisti. Veritas manet.
-      - Auscultavisti et via aperta est.
-      - Spatium sensum invenit et tempus gressibus tuis respondit.
+      - Etiam parvus passus valet.
     normal:
       pool:
-      - Spatium suum sensum invenit. Tempus itineri tuo respondit.
-      - Cursus perfectus. Tranquillum exitum, labore vero sustentatum.
-      - Momentum praeteriit. Recordum mansit.
+      - Spatium sensum accepit.
     hard:
       pool:
-      - In vento septentrionali claritas celeritatem superat.
-      - Non fortuna. Coordinatio.
-      - Mundus non mutatus est. Locus tuus in eo mutatus est.
+      - In frigore claritas perduravit.
   timeup:
     easy:
       pool:
-      - Tempus exhauriit. Nihil aliud.
-      - Cursus finitus est. Tu non.
-      - Respira. Iterum.
+      - 'Tempus finitum est.
+
+        Tu non.'
     normal:
       pool:
-      - Spatium contractum est. Tempus non.
-      - Mappa adhuc aperta est. Redi.
-      - Thesaurus inaccessibilis mansit, sed signum verum erat.
+      - 'Spatium clausum est.
+
+        Tempus non.'
     hard:
       pool:
-      - Etiam aurora borealis evanescit. Redi novo gradu.
-      - Momentum elapsum est. Sensus non.
-      - Caelum moveri perrexit. Tu quoque potes.
+      - 'Etiam aurora evanescit.
+
+        Redi iterum.'
   random:
     common:
       pool: []
   fallback:
     runComplete: Cursus perfectus.
-    timeUp: Tempus exhauriit.
+    timeUp: Tempus exactum est.
+    trader: 'Aequilibrium perfectum.
+
+      Libra aequa mansit.'
+  trader:
+    common:
+      pool:
+      - 'Aequilibrium perfectum.
+
+        Libra aequa mansit.'
+      - 'Res mutatae sunt.
+
+        Commercium perrexit.'
+    easy:
+      pool: []
+    normal:
+      pool: []
+    hard:
+      pool: []

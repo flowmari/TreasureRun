@@ -338,43 +338,55 @@ outcome:
   success:
     common:
       pool:
-      - Das Licht fiel gleichmäßig, und jeder Schatten verschwand.
-      - Die Harmonie kehrte zurück. Alles hatte zu diesem Moment geführt.
-      - Stille legte sich ein. Nur die Zeit bewegte sich weiter.
+      - 'Du hast es geschafft.
+
+        Der Weg hat gehalten.'
     easy:
       pool:
-      - Du hast es geschafft. Die Wahrheit bleibt.
-      - Du hast zugehört, und der Weg öffnete sich.
-      - Die Strecke bekam ihren Sinn. Die Zeit antwortete deinen Schritten.
+      - Auch ein kleiner Schritt zählt.
     normal:
       pool:
-      - Die Strecke bekam ihren Sinn. Die Zeit antwortete deiner Reise.
-      - Lauf abgeschlossen. Ein stilles Ergebnis, getragen von echter Arbeit.
-      - Der Moment verging. Die Aufzeichnung blieb.
+      - Die Strecke bekam Bedeutung.
     hard:
       pool:
-      - Im Nordwind überdauert Klarheit die Geschwindigkeit.
-      - Nicht Glück. Ausrichtung.
-      - Die Welt hat sich nicht verändert. Dein Platz in ihr hat es.
+      - In der Kälte blieb die Klarheit bestehen.
   timeup:
     easy:
       pool:
-      - Die Zeit ist abgelaufen. Sonst nichts.
-      - Der Lauf endete. Du nicht.
-      - Atme tief durch. Dann noch einmal.
+      - 'Die Zeit ist abgelaufen.
+
+        Du nicht.'
     normal:
       pool:
-      - Die Distanz schloss sich. Die Zeit nicht.
-      - Die Karte ist noch offen. Komm zurück.
-      - Der Schatz blieb unerreichbar, aber das Signal war echt.
+      - 'Die Distanz schloss sich.
+
+        Die Zeit nicht.'
     hard:
       pool:
-      - Selbst das Nordlicht vergeht. Komm mit einem neuen Schritt zurück.
-      - Der Augenblick ist vorbei. Die Bedeutung nicht.
-      - Der Himmel blieb in Bewegung. Du auch.
+      - 'Selbst die Aurora vergeht.
+
+        Komm wieder.'
   random:
     common:
       pool: []
   fallback:
     runComplete: Lauf abgeschlossen.
     timeUp: Zeit abgelaufen.
+    trader: 'Vollkommene Balance.
+
+      Die Waage blieb im Gleichgewicht.'
+  trader:
+    common:
+      pool:
+      - 'Vollkommene Balance.
+
+        Die Waage blieb im Gleichgewicht.'
+      - 'Die Dinge änderten sich.
+
+        Der Tausch ging weiter.'
+    easy:
+      pool: []
+    normal:
+      pool: []
+    hard:
+      pool: []

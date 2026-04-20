@@ -338,43 +338,55 @@ outcome:
   success:
     common:
       pool:
-      - La luz cayó de manera uniforme y cada sombra desapareció.
-      - La armonía regresó. Todo había conducido a este momento.
-      - El silencio se instaló. Solo el tiempo siguió moviéndose.
+      - 'Lo lograste.
+
+        El camino resistió.'
     easy:
       pool:
-      - Lo lograste. La verdad permanece.
-      - Escuchaste y el camino se abrió.
-      - La distancia encontró su significado y el tiempo respondió a tus pasos.
+      - Incluso un paso pequeño cuenta.
     normal:
       pool:
-      - La distancia encontró su significado. El tiempo respondió a tu viaje.
-      - Carrera completada. Un resultado tranquilo, respaldado por trabajo real.
-      - El momento pasó. El registro quedó.
+      - La distancia cobró sentido.
     hard:
       pool:
-      - En el viento del norte, la claridad supera a la velocidad.
-      - No es suerte. Es alineación.
-      - El mundo no cambió. Tu lugar en él sí.
+      - En el frío, la claridad perduró.
   timeup:
     easy:
       pool:
-      - Se acabó el tiempo. Nada más.
-      - La carrera terminó. Tú no.
-      - Respira hondo. Luego otra vez.
+      - 'Se acabó el tiempo.
+
+        Tú no.'
     normal:
       pool:
-      - La distancia se cerró. El tiempo no.
-      - El mapa sigue abierto. Vuelve a él.
-      - El tesoro quedó fuera de alcance, pero la señal era real.
+      - 'La distancia se cerró.
+
+        El tiempo no.'
     hard:
       pool:
-      - Incluso la aurora se desvanece. Regresa con un nuevo paso.
-      - El momento se escapó. El significado no.
-      - El cielo siguió moviéndose. Tú también puedes.
+      - 'Incluso la aurora se desvanece.
+
+        Vuelve otra vez.'
   random:
     common:
       pool: []
   fallback:
-    runComplete: Carrera completada.
-    timeUp: Tiempo agotado.
+    runComplete: Recorrido completado.
+    timeUp: Se acabó el tiempo.
+    trader: 'Equilibrio perfecto.
+
+      La balanza se mantuvo nivelada.'
+  trader:
+    common:
+      pool:
+      - 'Equilibrio perfecto.
+
+        La balanza se mantuvo nivelada.'
+      - 'Las cosas cambiaron.
+
+        El intercambio continuó.'
+    easy:
+      pool: []
+    normal:
+      pool: []
+    hard:
+      pool: []

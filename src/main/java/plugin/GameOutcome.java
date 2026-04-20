@@ -31,10 +31,22 @@ public enum GameOutcome {
   ) {
     if (plugin == null || player == null || outcomeMessageService == null) return;
 
-    // ✅ 成功/タイムアップで選ぶ名言を分岐（英語+日本語（（…））入り優先）
+    // ✅ プレイヤー保存言語を最優先で取得して Outcome 文言へ渡す
+    String lang = "en";
+    if (plugin instanceof TreasureRunMultiChestPlugin trPlugin) {
+      lang = trPlugin.getConfig().getString("language.default", "en");
+      try {
+        if (trPlugin.getPlayerLanguageStore() != null) {
+          String saved = trPlugin.getPlayerLanguageStore().getLang(player, lang);
+          if (saved != null && !saved.isBlank()) lang = saved;
+        }
+      } catch (Throwable ignored) {}
+    }
+
+    // ✅ 成功/タイムアップで選ぶ名言を分岐（プレイヤー言語優先）
     final String quote = (this == SUCCESS)
-        ? outcomeMessageService.pickSuccessQuoteBilingual(difficulty)
-        : outcomeMessageService.pickTimeUpQuoteBilingual(difficulty);
+        ? outcomeMessageService.pickSuccessQuoteBilingual(difficulty, lang)
+        : outcomeMessageService.pickTimeUpQuoteBilingual(difficulty, lang);
 
     // ✅ 2秒前に他UI停止（40tick = 2秒）
     long clearUiDelay = Math.max(0L, finishDelayTicks - 40L);
