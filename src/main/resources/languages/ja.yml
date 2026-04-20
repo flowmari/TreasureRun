@@ -252,8 +252,6 @@ favorites:
       created.'
     mysql_repository_not_ready_72df0af1: MySQL / Repository not ready.
     favorite_saved_sneak_rightcl_7a73eb4f: ★ Favorite saved! (Sneak+RightClick)
-    favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs yet
-      / or duplicate)
     quotefavoritestore_reloaded__3ba623a3: '[QuoteFavoriteStore] Reloaded DB: host='
     where_player_uuid_and_quote__36106f85: WHERE player_uuid=? AND quote_hash=? LIMIT
       1
@@ -280,21 +278,6 @@ commands:
   3_3d5021f7: スペシャルエメラルドの作成には、ダイヤモンドが3個必要です。
   text_e096c9a4: '&6特製エメラルド'
   3_71b78a44: ダイヤモンド3個でスペシャルエメラルドを作成しました！
-  players_only_10ed3cbc: Players only.
-  treasurerun_quote_favorite_c_dbf690ae: '[TreasureRun] Quote Favorite Commands:'
-  quotefavorite_latest_save_la_8e4bdc46: /quoteFavorite latest  - save latest quote
-    as favorite
-  quotefavorite_list_show_favo_4ebb13c4: /quoteFavorite list    - show favorites
-  quotefavorite_remove_id_remo_a6fdb289: /quoteFavorite remove <id> - remove favorite
-  favorite_saved_bb0cd8a8: ★ Favorite saved!
-  favorite_not_saved_maybe_no__8d52a118: Favorite not saved. (maybe no logs yet /
-    or duplicate)
-  favorites_latest_20_e23c073b: '★ お気に入り (latest 20):'
-  usage_quotefavorite_remove_i_5324156c: 'Usage: /quoteFavorite remove <id>'
-  id_must_be_a_number_5661bf80: ID must be a number.
-  favorite_removed_247f2df9: '★ Favorite removed: #'
-  favorite_not_removed_not_fou_56de7a31: Favorite not removed. (not found?)
-  unknown_subcommand_use_quote_f79bf3b5: 'Unknown subcommand. Use: /quoteFavorite'
   text_3030fd61: プレイヤーのみ実行できます
   op_10caf0f6: 権限がありません（OP限定）
   debug_mode_is_off_config_yml_b3d27428: 'Debug mode is OFF. config.yml の debug: true
@@ -311,34 +294,9 @@ commands:
   text_fd02f248: '制限時間:'
   text_f166cc04: '§a宝探しゲーム開始！ 難易度:'
   text_2281b097: 個のチェストを生成しました。宝物は
-  players_only_10ed3cbc_43: Players only.
   mysql_repository_not_ready_72df0af1: MySQL / Repository not ready.
-  favorite_saved_bb0cd8a8_81: ★ Favorite saved!
-  favorite_not_saved_maybe_no__8d52a118_83: Favorite not saved. (maybe no logs yet
-    / or duplicate)
   mysql_repository_not_ready_72df0af1_93: MySQL / Repository not ready.
-  favorites_latest_20_e23c073b_99: '★ お気に入り (latest 20):'
-  usage_quotefavorite_remove_i_5324156c_114: 'Usage: /quoteFavorite remove <id>'
   mysql_repository_not_ready_72df0af1_119: MySQL / Repository not ready.
-  id_must_be_a_number_5661bf80_127: ID must be a number.
-  favorite_removed_247f2df9_134: '★ Favorite removed: #'
-  favorite_not_removed_not_fou_56de7a31_136: Favorite not removed. (not found?)
-  no_quotes_yet_42d26ed9: ★ No quotes yet.
-  failed_to_open_favorites_boo_8f4ba39d: Failed to open favorites book.
-  openbook_failed_on_this_serv_2fbcf165: openBook() failed on this server.
-  unknown_subcommand_use_quote_6a222621: 'Unknown subcommand. Use: /quoteFavorite
-    help'
-  treasurerun_quote_favorite_c_dbf690ae_209: '[TreasureRun] Quote Favorite Commands:'
-  quotefavorite_latest_save_la_1fb00e45: /quoteFavorite latest          - save latest
-    quote as favorite
-  quotefavorite_list_show_favo_8a7b3640: /quoteFavorite list            - show favorites
-  quotefavorite_remove_id_remo_e42dbb6a: /quoteFavorite remove <id>     - remove favorite
-  quotefavorite_reread_random__c0c56ea4: /quoteFavorite reread          - random reread
-    (chat)
-  quotefavorite_reread_title_r_9b1cf793: /quoteFavorite reread title    - random reread
-    (title)
-  quotefavorite_reread_book_ra_8c3bcedc: /quoteFavorite reread book     - random reread
-    (book)
   quotefavorite_book_open_cata_055de855: /quoteFavorite book            - open catalog
     (full)
   quotefavorite_book_toc_open__c7d02ede: /quoteFavorite book toc        - open catalog
