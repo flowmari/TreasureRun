@@ -513,43 +513,55 @@ outcome:
   success:
     common:
       pool:
-      - A luz caiu uniformemente e cada sombra desapareceu.
-      - A harmonia voltou. Tudo havia levado a este momento.
-      - O silêncio se instalou. Apenas o tempo continuou a se mover.
+      - 'Você conseguiu.
+
+        O caminho aguentou.'
     easy:
       pool:
-      - Você conseguiu. A verdade permanece.
-      - Você ouviu e o caminho se abriu.
-      - A distância encontrou seu significado e o tempo respondeu aos seus passos.
+      - Mesmo um passo pequeno conta.
     normal:
       pool:
-      - A distância encontrou seu significado. O tempo respondeu à sua jornada.
-      - Corrida completa. Um resultado silencioso, sustentado por trabalho real.
-      - O momento passou. O registro permaneceu.
+      - A distância ganhou sentido.
     hard:
       pool:
-      - No vento do norte, a clareza dura mais que a velocidade.
-      - Não é sorte. É alinhamento.
-      - O mundo não mudou. Seu lugar nele sim.
+      - No frio, a clareza resistiu.
   timeup:
     easy:
       pool:
-      - O tempo acabou. Mais nada.
-      - A corrida terminou. Você não.
-      - Respire fundo. Depois outra vez.
+      - 'O tempo acabou.
+
+        Você não.'
     normal:
       pool:
-      - A distância se fechou. O tempo não.
-      - O mapa ainda está aberto. Volte a ele.
-      - O tesouro permaneceu fora de alcance, mas o sinal era real.
+      - 'A distância encurtou.
+
+        O tempo não.'
     hard:
       pool:
-      - Até a aurora desaparece. Volte com um novo passo.
-      - O momento se foi. O significado não.
-      - O céu continuou se movendo. Você também pode.
+      - 'Até a aurora se apaga.
+
+        Volte de novo.'
   random:
     common:
       pool: []
   fallback:
     runComplete: Corrida concluída.
     timeUp: Tempo esgotado.
+    trader: 'Equilíbrio perfeito.
+
+      A balança permaneceu nivelada.'
+  trader:
+    common:
+      pool:
+      - 'Equilíbrio perfeito.
+
+        A balança permaneceu nivelada.'
+      - 'As coisas mudaram.
+
+        A troca continuou.'
+    easy:
+      pool: []
+    normal:
+      pool: []
+    hard:
+      pool: []

@@ -338,43 +338,55 @@ outcome:
   success:
     common:
       pool:
-      - La lumière tomba uniformément, et chaque ombre disparut.
-      - L'harmonie revint. Tout avait mené à ce moment.
-      - Le silence s'installa. Seul le temps continua.
+      - 'Tu y es arrivé.
+
+        Le chemin a tenu.'
     easy:
       pool:
-      - Tu y es arrivé. La vérité demeure.
-      - Tu as écouté, et le chemin s'est ouvert.
-      - La distance a pris son sens, et le temps a répondu à tes pas.
+      - Même un petit pas compte.
     normal:
       pool:
-      - La distance a trouvé son sens. Le temps a répondu à ton voyage.
-      - Parcours accompli. Un résultat discret, soutenu par un vrai travail.
-      - L'instant passa. L'enregistrement resta.
+      - La distance a pris sens.
     hard:
       pool:
-      - Dans le vent du nord, la clarté dure plus longtemps que la vitesse.
-      - Pas de chance. De l'alignement.
-      - Le monde n'a pas changé. Ta place en lui, oui.
+      - Dans le froid, la clarté a tenu bon.
   timeup:
     easy:
       pool:
-      - Le temps s'est écoulé. Rien d'autre.
-      - La course s'est terminée. Pas toi.
-      - Prends une respiration. Puis une autre.
+      - 'Le temps est écoulé.
+
+        Pas toi.'
     normal:
       pool:
-      - La distance s'est réduite. Le temps non.
-      - La carte est encore ouverte. Reviens-y.
-      - Le trésor est resté hors de portée, mais le signal était réel.
+      - 'La distance s’est réduite.
+
+        Pas le temps.'
     hard:
       pool:
-      - Même l'aurore s'efface. Reviens avec un nouveau pas.
-      - L'instant s'est échappé. Le sens, non.
-      - Le ciel a continué de bouger. Toi aussi tu peux.
+      - 'Même l’aurore s’efface.
+
+        Reviens encore.'
   random:
     common:
       pool: []
   fallback:
     runComplete: Parcours terminé.
     timeUp: Temps écoulé.
+    trader: 'Équilibre parfait.
+
+      La balance est restée stable.'
+  trader:
+    common:
+      pool:
+      - 'Équilibre parfait.
+
+        La balance est restée stable.'
+      - 'Les choses ont changé.
+
+        L’échange a continué.'
+    easy:
+      pool: []
+    normal:
+      pool: []
+    hard:
+      pool: []

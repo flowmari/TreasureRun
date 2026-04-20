@@ -338,43 +338,55 @@ outcome:
   success:
     common:
       pool:
-      - Valo putosi tasaisesti ja jokainen varjo katosi.
-      - Harmonia palasi. Kaikki oli johtanut tähän hetkeen.
-      - Hiljaisuus laskeutui. Vain aika jatkoi kulkuaan.
+      - 'Selvisit perille.
+
+        Polku kesti.'
     easy:
       pool:
-      - Onnistuit. Totuus pysyy.
-      - Kuuntelit ja tie aukesi.
-      - Matka löysi merkityksensä ja aika vastasi askeleitasi.
+      - Pienikin askel merkitsee.
     normal:
       pool:
-      - Matka löysi merkityksensä. Aika vastasi matkasi.
-      - Juoksu suoritettu. Hiljainen tulos, oikean työn tukemana.
-      - Hetki kului. Ennätys jäi.
+      - Matka sai merkityksen.
     hard:
       pool:
-      - Pohjoistuulessa selkeys kestää nopeutta pidempään.
-      - Ei tuuria. Kohdistumista.
-      - Maailma ei muuttunut. Paikkasi siinä muuttui.
+      - Kylmyydessäkin selkeys säilyi.
   timeup:
     easy:
       pool:
-      - Aika loppui. Ei muuta.
-      - Juoksu päättyi. Sinä et.
-      - Hengitä syvään. Sitten vielä kerran.
+      - 'Aika loppui.
+
+        Sinä et.'
     normal:
       pool:
-      - Välimatka supistui. Aika ei.
-      - Kartta on vielä auki. Palaa siihen.
-      - Aarre jäi ulottumattomiin, mutta signaali oli todellinen.
+      - 'Välimatka lyheni.
+
+        Aika ei.'
     hard:
       pool:
-      - Edes revontulet sammuvat. Palaa uusin askelin.
-      - Hetki lipui pois. Merkitys ei.
-      - Taivas jatkoi liikettään. Sinäkin voit.
+      - 'Jopa revontulet hiipuvat.
+
+        Tule takaisin.'
   random:
     common:
       pool: []
   fallback:
     runComplete: Juoksu suoritettu.
     timeUp: Aika loppui.
+    trader: 'Täydellinen tasapaino.
+
+      Vaaka pysyi suorassa.'
+  trader:
+    common:
+      pool:
+      - 'Täydellinen tasapaino.
+
+        Vaaka pysyi suorassa.'
+      - 'Asiat muuttuivat.
+
+        Vaihto jatkui.'
+    easy:
+      pool: []
+    normal:
+      pool: []
+    hard:
+      pool: []

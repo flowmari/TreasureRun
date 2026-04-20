@@ -338,43 +338,55 @@ outcome:
   success:
     common:
       pool:
-      - Het licht viel gelijkmatig, en elke schaduw verdween.
-      - De harmonie keerde terug. Alles had naar dit moment geleid.
-      - De stilte daalde neer. Alleen de tijd bleef bewegen.
+      - 'Je hebt het gehaald.
+
+        Het pad hield stand.'
     easy:
       pool:
-      - Je hebt het gehaald. De waarheid blijft.
-      - Je luisterde, en het pad opende zich.
-      - De afstand vond haar betekenis, en de tijd beantwoordde je stappen.
+      - Ook een kleine stap telt.
     normal:
       pool:
-      - De afstand vond haar betekenis. De tijd beantwoordde je reis.
-      - Run voltooid. Een stil resultaat, gedragen door echt werk.
-      - Het moment verstreek. Het record bleef.
+      - Afstand kreeg betekenis.
     hard:
       pool:
-      - In de noordenwind overleeft helderheid de snelheid.
-      - Geen geluk. Afstemming.
-      - De wereld veranderde niet. Jouw plek erin wel.
+      - In de kou hield de helderheid stand.
   timeup:
     easy:
       pool:
-      - De tijd is op. Meer niet.
-      - De run eindigde. Jij niet.
-      - Haal adem. Dan nog een keer.
+      - 'De tijd is om.
+
+        Jij niet.'
     normal:
       pool:
-      - De afstand sloot zich. De tijd niet.
-      - De kaart staat nog open. Kom terug.
-      - De schat bleef buiten bereik, maar het signaal was echt.
+      - 'De afstand werd kleiner.
+
+        De tijd niet.'
     hard:
       pool:
-      - Zelfs het noorderlicht vervaagt. Kom terug met een nieuwe pas.
-      - Het moment gleed weg. De betekenis niet.
-      - De hemel bleef bewegen. Dat kan jij ook.
+      - 'Zelfs het noorderlicht vervaagt.
+
+        Kom terug.'
   random:
     common:
       pool: []
   fallback:
     runComplete: Run voltooid.
-    timeUp: Tijd op.
+    timeUp: Tijd is om.
+    trader: 'Perfect evenwicht.
+
+      De weegschaal bleef in balans.'
+  trader:
+    common:
+      pool:
+      - 'Perfect evenwicht.
+
+        De weegschaal bleef in balans.'
+      - 'Dingen veranderden.
+
+        De uitwisseling ging door.'
+    easy:
+      pool: []
+    normal:
+      pool: []
+    hard:
+      pool: []

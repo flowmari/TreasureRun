@@ -338,43 +338,55 @@ outcome:
   success:
     common:
       pool:
-      - Ljósið féll jafnt og hvert skuggi hvarf.
-      - Samræmið kom aftur. Allt hafði leitt að þessum augnablik.
-      - Kyrrðin lagðist yfir. Aðeins tíminn hélt áfram að hreyfast.
+      - 'Þú komst á leiðarenda.
+
+        Leiðin hélt.'
     easy:
       pool:
-      - Þú tókst þetta. Sannleikurinn stendur.
-      - Þú hlustaðir og leiðin opnaðist.
-      - Vegalengdin fann merkingu sína og tíminn svaraðist við skrefum þínum.
+      - Lítið skref skiptir líka máli.
     normal:
       pool:
-      - Vegalengdin fann merkingu sína. Tíminn svaraðist við ferðalag þitt.
-      - Hlaup lokið. Hljægt niðurstaða, studd af raunverulegum dugnað.
-      - Augnablikið leið. Metið stóð eftir.
+      - Fjarlægðin fékk merkingu.
     hard:
       pool:
-      - Í norðanvindinum þolir skýrleiki hraðann lengur.
-      - Ekki heppni. Samræming.
-      - Heimurinn breyttist ekki. Staðan þín í honum gerði það.
+      - Í kuldanum hélt skýrleikinn velli.
   timeup:
     easy:
       pool:
-      - Tíminn rann út. Ekki annað.
-      - Hlaupið lauk. Þú ekki.
-      - Dragðu andann. Síðan aftur.
+      - 'Tíminn rann út.
+
+        Ekki þú.'
     normal:
       pool:
-      - Vegalengdin minnkaði. Tíminn ekki.
-      - Kortið er enn opið. Komdu aftur.
-      - Fjársjóðurinn náðist ekki, en merkið var raunverulegt.
+      - 'Fjarlægðin styttist.
+
+        Tíminn ekki.'
     hard:
       pool:
-      - Jafnvel norðurljósin hverfur. Komdu aftur með nýtt skref.
-      - Augnablikið rann frá. Merkingin ekki.
-      - Himinninn hélt áfram að hreyfast. Þú getur líka.
+      - 'Jafnvel norðurljósin dofna.
+
+        Komdu aftur.'
   random:
     common:
       pool: []
   fallback:
-    runComplete: Hlaup lokið.
+    runComplete: Hlaupi lokið.
     timeUp: Tíminn er útrunninn.
+    trader: 'Fullkomið jafnvægi.
+
+      Vogin hélt sér í jafnvægi.'
+  trader:
+    common:
+      pool:
+      - 'Fullkomið jafnvægi.
+
+        Vogin hélt sér í jafnvægi.'
+      - 'Hlutirnir breyttust.
+
+        Skiptin héldu áfram.'
+    easy:
+      pool: []
+    normal:
+      pool: []
+    hard:
+      pool: []
