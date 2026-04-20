@@ -234,7 +234,6 @@ ui:
     messages_yml_not_loaded_d56b1cd3: (messages.yml not loaded)
     translation_missing_77031543: '(Tradução ausente:'
     translation_missing_77031543_107: '(Tradução ausente:'
-    click_to_select_aac1569c: Clique para selecionar
     treasurerun_lang_config_yml__2dde4625: '[TreasureRun][Lang] Seção ''language:''
       não encontrada no config.yml.'
     click_to_select_aac1569c_76: Clique para selecionar
@@ -279,7 +278,6 @@ ui:
     treasurerun_gamestagemanager_3d9e7f5a: '[TreasureRun] GameStageManager event registered!'
     treasurerunmultichestplugin_a507471a: ✅ TreasureRunMultiChestPlugin が正常に起動しました！
     treasurerunmultichestplugin_c2111711: '🔻 TreasureRunMultiChestPlugin: 無効化'
-    language_30e61e02: Idioma / Language
     text_4f7e7cfa: Lingote de Netherite obtido!
     text_1a6173d3: Diamante obtido!
     text_b6568a8d: Maçã Dourada obtida!
@@ -299,7 +297,6 @@ ui:
     text_307fcc19: 'Classificação:'
     starting_in_2413fc14: Iniciando em…
     easy_normal_hard_ef1ba55c: A dificuldade é Easy / Normal / Hard.
-    language_gui_aed4f8fc: GUI de idioma não inicializada.
     language_gui_aed4f8fc_931: GUI de idioma não inicializada.
     config_yml_3c6e9d15: ✅ config.yml carregado
     treasurerun_config_language__763cf02c: ✅ Config do TreasureRun recarregado（incluindo
@@ -383,15 +380,7 @@ ui:
 
 
           &6=================================='
-    gui:
-      language_30e61e02: Idioma / Language
-      gui_27_b3f3a31b: Muitos idiomas — exibindo apenas os primeiros 27 na GUI.
-      click_to_select_aac1569c: Clique para selecionar
-      text_fce806ed: Seleção de idioma cancelada. Para tentar novamente use
-      gamestart_easy_normal_hard_35bd4a97: /gameStart <easy|normal|hard>
-      text_ff9b9417: ou
-      gamestart_easy_normal_hard_b818a2da: /gamestart <easy|normal|hard>
-      text_9822f9ec: para executar.
+    gui: {}
     page:
       contents:
         title: 📌 Conteúdo

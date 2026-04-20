@@ -232,7 +232,6 @@ ui:
     messages_yml_not_loaded_d56b1cd3: (messages.yml not loaded)
     translation_missing_77031543: '(找不到翻譯:'
     translation_missing_77031543_107: '(找不到翻譯:'
-    click_to_select_aac1569c: 點擊選擇
     treasurerun_lang_config_yml__2dde4625: '[TreasureRun][Lang] config.yml 中找不到 ''language:''
       區段。'
     click_to_select_aac1569c_76: 點擊選擇
@@ -271,7 +270,6 @@ ui:
     treasurerun_gamestagemanager_3d9e7f5a: '[TreasureRun] GameStageManager event registered!'
     treasurerunmultichestplugin_a507471a: ✅ TreasureRunMultiChestPlugin が正常に起動しました！
     treasurerunmultichestplugin_c2111711: '🔻 TreasureRunMultiChestPlugin: 無効化'
-    language_30e61e02: 語言 / Language
     text_4f7e7cfa: 獲得下界合金錠！
     text_1a6173d3: 獲得鑽石！
     text_b6568a8d: 獲得金蘋果！
@@ -290,7 +288,6 @@ ui:
     text_307fcc19: '排名:'
     starting_in_2413fc14: 即將開始…
     easy_normal_hard_ef1ba55c: 難度為 Easy / Normal / Hard。
-    language_gui_aed4f8fc: 語言介面尚未初始化。
     language_gui_aed4f8fc_931: 語言介面尚未初始化。
     config_yml_3c6e9d15: ✅ config.yml 已載入
     treasurerun_config_language__763cf02c: ✅ TreasureRun 設定已重新載入（含語言介面）。
@@ -371,15 +368,7 @@ ui:
 
 
           &6=================================='
-    gui:
-      language_30e61e02: 語言 / Language
-      gui_27_b3f3a31b: 語言過多，介面僅顯示前27項。
-      click_to_select_aac1569c: 點擊選擇
-      text_fce806ed: 語言選擇已取消。如要重試請使用
-      gamestart_easy_normal_hard_35bd4a97: /gameStart <easy|normal|hard>
-      text_ff9b9417: 或
-      gamestart_easy_normal_hard_b818a2da: /gamestart <easy|normal|hard>
-      text_9822f9ec: 執行。
+    gui: {}
     page:
       contents:
         title: 📌 目錄
