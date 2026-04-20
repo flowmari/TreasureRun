@@ -318,17 +318,22 @@ ui:
       dbFavorites: '(DB: proverb_favorites)'
   gameMenu:
     pluginNotReady: 플러그인이 아직 준비되지 않았습니다.
-  book:
-    quoteCollection:
-      titleShort: 명언 모음
-    favorites:
-      shortTitle: 즐겨찾기
-  labels:
-    tabs:
-      all: 전체
-      success: 성공
-      timeUp: 시간 종료
-      favorites: 즐겨찾기
+  symbol:
+    bookPrefix: '📖 '
+    legendPrefix: '■ '
+    dbBullet: '- '
+    indexPrefix: '#'
+    favoriteIdPrefix: ★#
+    favoritePrefix: ★
+    metaOpen: (
+    metaClose: )
+    labelOpen: '['
+    labelClose: ']'
+    tabActiveOpen: 【
+    tabActiveClose: 】
+    tabInactiveOpen: '['
+    tabInactiveClose: ']'
+    activeMarker: '▶ '
 outcome:
   success:
     common:

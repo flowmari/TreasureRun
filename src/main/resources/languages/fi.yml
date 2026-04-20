@@ -318,17 +318,22 @@ ui:
       dbFavorites: '(TIETOKANTA: proverb_favorites)'
   gameMenu:
     pluginNotReady: Lisäosa ei ole vielä valmis.
-  book:
-    quoteCollection:
-      titleShort: Sitaattikokoelma
-    favorites:
-      shortTitle: Suosikit
-  labels:
-    tabs:
-      all: KAIKKI
-      success: ONNISTUI
-      timeUp: AIKA LOPPUI
-      favorites: Suosikit
+  symbol:
+    bookPrefix: '📖 '
+    legendPrefix: '■ '
+    dbBullet: '- '
+    indexPrefix: '#'
+    favoriteIdPrefix: ★#
+    favoritePrefix: ★
+    metaOpen: (
+    metaClose: )
+    labelOpen: '['
+    labelClose: ']'
+    tabActiveOpen: 【
+    tabActiveClose: 】
+    tabInactiveOpen: '['
+    tabInactiveClose: ']'
+    activeMarker: '▶ '
 outcome:
   success:
     common:

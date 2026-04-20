@@ -184,11 +184,7 @@ quotes:
   - The road goes on—or it ends.\nEither way, it lies on the same earth.\n（道は続き、あるいは途切れ、どちらも同じ大地の上にある。）
 ui:
   labels:
-    tabs:
-      all: TUDO
-      success: SUCESSO
-      timeUp: TEMPO ESGOTADO
-      favorites: Favoritos
+    tabs: '&6Abas:&r'
     page: '&8Página {page}/{total}&r'
     tab:
       all: ▶ [TUDO]
@@ -389,11 +385,22 @@ ui:
       dbFavorites: '(BD: proverb_favorites)'
   gameMenu:
     pluginNotReady: O plugin ainda não está pronto.
-  book:
-    quoteCollection:
-      titleShort: Coleção de citações
-    favorites:
-      shortTitle: Favoritos
+  symbol:
+    bookPrefix: '📖 '
+    legendPrefix: '■ '
+    dbBullet: '- '
+    indexPrefix: '#'
+    favoriteIdPrefix: ★#
+    favoritePrefix: ★
+    metaOpen: (
+    metaClose: )
+    labelOpen: '['
+    labelClose: ']'
+    tabActiveOpen: 【
+    tabActiveClose: 】
+    tabInactiveOpen: '['
+    tabInactiveClose: ']'
+    activeMarker: '▶ '
 gui:
   language:
     title: Idioma

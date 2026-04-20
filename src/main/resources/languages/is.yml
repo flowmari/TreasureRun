@@ -318,17 +318,22 @@ ui:
       dbFavorites: '(GAGNAGRUNNUR: proverb_favorites)'
   gameMenu:
     pluginNotReady: Viðbótin er ekki tilbúin enn.
-  book:
-    quoteCollection:
-      titleShort: Tilvitnanasafn
-    favorites:
-      shortTitle: Uppáhald
-  labels:
-    tabs:
-      all: ALLT
-      success: TÓKST
-      timeUp: TÍMINN ÚTRUNNINN
-      favorites: Uppáhald
+  symbol:
+    bookPrefix: '📖 '
+    legendPrefix: '■ '
+    dbBullet: '- '
+    indexPrefix: '#'
+    favoriteIdPrefix: ★#
+    favoritePrefix: ★
+    metaOpen: (
+    metaClose: )
+    labelOpen: '['
+    labelClose: ']'
+    tabActiveOpen: 【
+    tabActiveClose: 】
+    tabInactiveOpen: '['
+    tabInactiveClose: ']'
+    activeMarker: '▶ '
 outcome:
   success:
     common:

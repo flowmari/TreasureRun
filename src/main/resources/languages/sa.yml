@@ -318,17 +318,22 @@ ui:
       dbFavorites: '(DB: proverb_favorites)'
   gameMenu:
     pluginNotReady: प्लगिन् अद्यापि सिद्धं नास्ति।
-  book:
-    quoteCollection:
-      titleShort: सूक्तिसंग्रहः
-    favorites:
-      shortTitle: प्रियाणि
-  labels:
-    tabs:
-      all: सर्वम्
-      success: सफलम्
-      timeUp: कालः समाप्तः
-      favorites: प्रियाणि
+  symbol:
+    bookPrefix: '📖 '
+    legendPrefix: '■ '
+    dbBullet: '- '
+    indexPrefix: '#'
+    favoriteIdPrefix: ★#
+    favoritePrefix: ★
+    metaOpen: (
+    metaClose: )
+    labelOpen: '['
+    labelClose: ']'
+    tabActiveOpen: 【
+    tabActiveClose: 】
+    tabInactiveOpen: '['
+    tabInactiveClose: ']'
+    activeMarker: '▶ '
 outcome:
   success:
     common:

@@ -318,17 +318,22 @@ ui:
       dbFavorites: '（DB: proverb_favorites）'
   gameMenu:
     pluginNotReady: プラグインの準備がまだできていません。
-  book:
-    quoteCollection:
-      titleShort: 格言集
-    favorites:
-      shortTitle: お気に入り
-  labels:
-    tabs:
-      all: すべて
-      success: 成功
-      timeUp: 時間切れ
-      favorites: お気に入り
+  symbol:
+    bookPrefix: '📖 '
+    legendPrefix: '■ '
+    dbBullet: '- '
+    indexPrefix: '#'
+    favoriteIdPrefix: ★#
+    favoritePrefix: ★
+    metaOpen: (
+    metaClose: )
+    labelOpen: '['
+    labelClose: ']'
+    tabActiveOpen: 【
+    tabActiveClose: 】
+    tabInactiveOpen: '['
+    tabInactiveClose: ']'
+    activeMarker: '▶ '
 outcome:
   success:
     common:

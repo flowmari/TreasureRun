@@ -318,17 +318,22 @@ ui:
       dbFavorites: '(DB: proverb_favorites)'
   gameMenu:
     pluginNotReady: De plugin is nog niet klaar.
-  book:
-    quoteCollection:
-      titleShort: Citatenverzameling
-    favorites:
-      shortTitle: Favorieten
-  labels:
-    tabs:
-      all: ALLES
-      success: SUCCES
-      timeUp: TIJD OM
-      favorites: Favorieten
+  symbol:
+    bookPrefix: '📖 '
+    legendPrefix: '■ '
+    dbBullet: '- '
+    indexPrefix: '#'
+    favoriteIdPrefix: ★#
+    favoritePrefix: ★
+    metaOpen: (
+    metaClose: )
+    labelOpen: '['
+    labelClose: ']'
+    tabActiveOpen: 【
+    tabActiveClose: 】
+    tabInactiveOpen: '['
+    tabInactiveClose: ']'
+    activeMarker: '▶ '
 outcome:
   success:
     common:

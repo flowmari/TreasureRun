@@ -318,17 +318,22 @@ ui:
       dbFavorites: '(БД: proverb_favorites)'
   gameMenu:
     pluginNotReady: Плагин ещё не готов.
-  book:
-    quoteCollection:
-      titleShort: Коллекция цитат
-    favorites:
-      shortTitle: Избранное
-  labels:
-    tabs:
-      all: ВСЁ
-      success: УСПЕХ
-      timeUp: ВРЕМЯ ВЫШЛО
-      favorites: Избранное
+  symbol:
+    bookPrefix: '📖 '
+    legendPrefix: '■ '
+    dbBullet: '- '
+    indexPrefix: '#'
+    favoriteIdPrefix: ★#
+    favoritePrefix: ★
+    metaOpen: (
+    metaClose: )
+    labelOpen: '['
+    labelClose: ']'
+    tabActiveOpen: 【
+    tabActiveClose: 】
+    tabInactiveOpen: '['
+    tabInactiveClose: ']'
+    activeMarker: '▶ '
 outcome:
   success:
     common:
