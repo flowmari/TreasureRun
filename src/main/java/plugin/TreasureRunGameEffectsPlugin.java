@@ -264,68 +264,68 @@ public class TreasureRunGameEffectsPlugin implements Listener {
   public void playTimeUpFailCue(Player p, int got, int total) {
     if (p == null || !p.isOnline()) return;
 
-    // ✅ 5秒「ピッ」タスクが残っていたら止める
     stopFinalCountdownBeeps(p);
-
-    // BGM止め（あなたの仕組みに合わせて）
     p.stopSound(SoundCategory.MUSIC);
 
     int missing = Math.max(0, total - got);
 
-    TreasureRunMultiChestPlugin trPlugin = (plugin instanceof TreasureRunMultiChestPlugin)
-        ? (TreasureRunMultiChestPlugin) plugin
-        : null;
-
-    String outcomeNoticeLang = plugin.getConfig().getString("language.default", "en");
-    try {
-      if (trPlugin != null && trPlugin.getPlayerLanguageStore() != null) {
-        String saved = trPlugin.getPlayerLanguageStore().getLang(p, outcomeNoticeLang);
-        if (saved != null && !saved.isBlank()) outcomeNoticeLang = saved;
+    String outcomeLang = "en";
+    TreasureRunMultiChestPlugin trPlugin = null;
+    if (plugin instanceof TreasureRunMultiChestPlugin) {
+      trPlugin = (TreasureRunMultiChestPlugin) plugin;
+      outcomeLang = trPlugin.getConfig().getString("language.default", "en");
+      if (trPlugin.getPlayerLanguageStore() != null) {
+        String saved = trPlugin.getPlayerLanguageStore().getLang(p, outcomeLang);
+        if (saved != null && !saved.isBlank()) outcomeLang = saved;
       }
-    } catch (Throwable ignored) {}
+      if (outcomeLang == null || outcomeLang.isBlank()) outcomeLang = "en";
+    }
 
     String titleText = (trPlugin != null)
-        ? trPlugin.getI18n().tr(outcomeNoticeLang, "outcome.notice.titleTimeUp")
+        ? trPlugin.getI18n().tr(outcomeLang, "gameplay.result.timeUpTitle")
         : "TIME'S UP!";
 
-    String subText = (trPlugin != null)
+    String collectedText = (trPlugin != null)
         ? trPlugin.getI18n().tr(
-            outcomeNoticeLang,
-            "outcome.notice.treasuresCollected",
+            outcomeLang,
+            "gameplay.result.treasuresCollected",
             I18n.Placeholder.of("{got}", String.valueOf(got)),
             I18n.Placeholder.of("{total}", String.valueOf(total)),
             I18n.Placeholder.of("{missing}", String.valueOf(missing))
           )
         : ("Treasures collected: " + got + "/" + total + " (" + missing + " left)");
 
-    final String outcomeNoticeLangFinal = outcomeNoticeLang;
-
     p.sendTitle(
-        "§c§l" + titleText,
-        "§7" + subText,
+        ChatColor.RED + "" + ChatColor.BOLD + titleText,
+        ChatColor.GRAY + collectedText,
         0, 45, 10
     );
 
+    final TreasureRunMultiChestPlugin trPluginFinal = trPlugin;
+    final String outcomeLangFinal = outcomeLang;
+
     Bukkit.getScheduler().runTaskLater(plugin, () -> {
       if (!p.isOnline()) return;
-      if (trPlugin != null) {
-        p.sendMessage("§7" + trPlugin.getI18n().tr(outcomeNoticeLangFinal, "outcome.notice.retryGuide"));
+
+      if (trPluginFinal != null) {
+        p.sendMessage(ChatColor.GRAY + trPluginFinal.getI18n().tr(outcomeLangFinal, "outcome.notice.retryGuide"));
       } else {
         p.sendMessage("§7Try a different route next time. To retry, use /gamestart <easy|normal|hard>.");
       }
     }, 10L);
 
-    // 下降フレーズ（womp感）
-    float[] pitches = {1.2f, 1.0f, 0.85f, 0.7f}; // 徐々に下げる
+    float[] pitches = {1.2f, 1.0f, 0.85f, 0.7f};
     new BukkitRunnable() {
       int i = 0;
-      @Override public void run() {
+
+      @Override
+      public void run() {
         if (!p.isOnline()) {
           cancel();
           return;
         }
         if (i >= pitches.length) {
-          p.playSound(p.getLocation(), Sound.ENTITY_VILLAGER_NO, 0.9f, 0.9f); // 締め
+          p.playSound(p.getLocation(), Sound.ENTITY_VILLAGER_NO, 0.9f, 0.9f);
           cancel();
           return;
         }
@@ -333,14 +333,9 @@ public class TreasureRunGameEffectsPlugin implements Listener {
         p.playSound(p.getLocation(), Sound.BLOCK_NOTE_BLOCK_BASS, 1.0f, pitch);
         p.playSound(p.getLocation(), Sound.BLOCK_NOTE_BLOCK_DIDGERIDOO, 0.7f, pitch * 0.7f);
       }
-
-    }.runTaskTimer(plugin, 0L, 6L); // 6tick間隔=テンポゆっくりめ
+    }.runTaskTimer(plugin, 0L, 6L);
   }
 
-  /**
-   * ✅ remainingSeconds==5 の瞬間に 1回だけ呼ぶ想定
-   * - 5秒前：短い警告音（UI_BUTTON_CLICK か NOTE_BLOCK_HAT）
-   */
   public void startFinalCountdownBeeps(Player p) {
     if (p == null || !p.isOnline()) return;
 

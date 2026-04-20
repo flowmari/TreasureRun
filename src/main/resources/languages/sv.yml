@@ -400,3 +400,13 @@ gameplay:
     treasureFound: 'Skatt: {name} ×{amount}'
     scoreAdded: 'Poäng +{add} (Totalt: {total})'
     remainingChests: 'Kistor kvar: {count}'
+  result:
+    runCompleteTitle: Loppet klart!
+    timeUpTitle: TIDEN ÄR UTE!
+    treasuresCollected: 'Skatter samlade: {got}/{total} ({missing} kvar)'
+    overcomingAdversity: ÖVERVINNA MOTGÅNGAR
+    label:
+      score: Poäng
+      time: Tid
+      rank: Placering
+    allChestsOpenedBroadcast: '{player} öppnade alla kistor! Slutpoäng: {score}'

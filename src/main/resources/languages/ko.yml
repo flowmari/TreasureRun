@@ -418,3 +418,13 @@ gameplay:
     treasureFound: '보물: {name} ×{amount}'
     scoreAdded: '점수 +{add} (누적: {total})'
     remainingChests: '남은 상자: {count}'
+  result:
+    runCompleteTitle: 완주!
+    timeUpTitle: 시간 종료!
+    treasuresCollected: '획득한 보물: {got}/{total} (남은 수 {missing})'
+    overcomingAdversity: 역경을 넘어
+    label:
+      score: 점수
+      time: 시간
+      rank: 순위
+    allChestsOpenedBroadcast: '{player}님이 모든 상자를 열었습니다! 최종 점수: {score}'

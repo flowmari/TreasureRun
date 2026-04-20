@@ -593,3 +593,13 @@ gameplay:
     treasureFound: 寶物：{name} ×{amount}
     scoreAdded: 加分 {add}（累計：{total}）
     remainingChests: 餘寶箱：{count}
+  result:
+    runCompleteTitle: 既竟！
+    timeUpTitle: 時盡！
+    treasuresCollected: 所得寶箱：{got}/{total}（餘 {missing}）
+    overcomingAdversity: 越逆境
+    label:
+      score: 分數
+      time: 時間
+      rank: 名次
+    allChestsOpenedBroadcast: '{player}盡啟諸寶箱！終分：{score}'

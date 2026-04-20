@@ -418,3 +418,13 @@ gameplay:
     treasureFound: 'Fjársjóður: {name} ×{amount}'
     scoreAdded: 'Stig +{add} (Samtals: {total})'
     remainingChests: 'Kistur eftir: {count}'
+  result:
+    runCompleteTitle: Hlaupinu lokið!
+    timeUpTitle: TÍMINN ER ÚTRUNNINN!
+    treasuresCollected: 'Fjársjóðir fundnir: {got}/{total} ({missing} eftir)'
+    overcomingAdversity: YFIRVINNA MÓTLÆTI
+    label:
+      score: Stig
+      time: Tími
+      rank: Sæti
+    allChestsOpenedBroadcast: '{player} opnaði allar kistur! Lokastig: {score}'

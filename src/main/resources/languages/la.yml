@@ -418,3 +418,13 @@ gameplay:
     treasureFound: 'Thesaurus: {name} ×{amount}'
     scoreAdded: 'Puncta +{add} (Summa: {total})'
     remainingChests: 'Arcae reliquae: {count}'
+  result:
+    runCompleteTitle: Cursus perfectus!
+    timeUpTitle: TEMPUS EXHAUSTUM!
+    treasuresCollected: 'Thesauri collecti: {got}/{total} ({missing} reliqui)'
+    overcomingAdversity: ADVERSITATE SUPERATA
+    label:
+      score: Puncta
+      time: Tempus
+      rank: Ordo
+    allChestsOpenedBroadcast: '{player} omnes arcas aperuit! Summa punctorum ultima: {score}'

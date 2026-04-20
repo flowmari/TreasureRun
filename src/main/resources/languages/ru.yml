@@ -418,3 +418,13 @@ gameplay:
     treasureFound: 'Сокровище: {name} ×{amount}'
     scoreAdded: 'Очки +{add} (Всего: {total})'
     remainingChests: 'Осталось сундуков: {count}'
+  result:
+    runCompleteTitle: Забег завершён!
+    timeUpTitle: ВРЕМЯ ВЫШЛО!
+    treasuresCollected: 'Собрано сокровищ: {got}/{total} (осталось {missing})'
+    overcomingAdversity: ПРЕОДОЛЕВАЯ ТРУДНОСТИ
+    label:
+      score: Счёт
+      time: Время
+      rank: Ранг
+    allChestsOpenedBroadcast: '{player} открыл(а) все сундуки! Итоговый счёт: {score}'

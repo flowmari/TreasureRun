@@ -418,3 +418,13 @@ gameplay:
     treasureFound: 'Schat: {name} ×{amount}'
     scoreAdded: 'Score +{add} (Totaal: {total})'
     remainingChests: 'Resterende kisten: {count}'
+  result:
+    runCompleteTitle: Run voltooid!
+    timeUpTitle: TIJD OM!
+    treasuresCollected: 'Schatten verzameld: {got}/{total} ({missing} over)'
+    overcomingAdversity: TEGENSPOED OVERWONNEN
+    label:
+      score: Score
+      time: Tijd
+      rank: Rang
+    allChestsOpenedBroadcast: '{player} heeft alle kisten geopend! Eindscore: {score}'

@@ -418,3 +418,13 @@ gameplay:
     treasureFound: 'निधिः: {name} ×{amount}'
     scoreAdded: 'अङ्काः +{add} (समग्रः: {total})'
     remainingChests: 'अवशिष्टपेटिकाः: {count}'
+  result:
+    runCompleteTitle: धावनं समाप्तम्!
+    timeUpTitle: कालः समाप्तः!
+    treasuresCollected: 'संगृहीत-निधयः: {got}/{total} (अवशिष्टाः {missing})'
+    overcomingAdversity: विपत्तेः अतिक्रमः
+    label:
+      score: अङ्काः
+      time: कालः
+      rank: स्थानम्
+    allChestsOpenedBroadcast: '{player} सर्वाः पेटिकाः उद्घाटितवान्! अन्तिमाङ्काः: {score}'

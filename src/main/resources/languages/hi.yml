@@ -593,3 +593,13 @@ gameplay:
     treasureFound: 'खज़ाना: {name} ×{amount}'
     scoreAdded: 'स्कोर +{add} (कुल: {total})'
     remainingChests: 'बाकी संदूक: {count}'
+  result:
+    runCompleteTitle: दौड़ पूरी हुई!
+    timeUpTitle: समय समाप्त!
+    treasuresCollected: 'इकट्ठे किए गए खजाने: {got}/{total} (शेष {missing})'
+    overcomingAdversity: विपरीत परिस्थितियों पर विजय
+    label:
+      score: स्कोर
+      time: 時間
+      rank: रैंक
+    allChestsOpenedBroadcast: '{player} ने सभी संदूक खोल दिए! अंतिम स्कोर: {score}'

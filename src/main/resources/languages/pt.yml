@@ -593,3 +593,13 @@ gameplay:
     treasureFound: 'Tesouro: {name} ×{amount}'
     scoreAdded: 'Pontuação +{add} (Total: {total})'
     remainingChests: 'Baús restantes: {count}'
+  result:
+    runCompleteTitle: Percurso concluído!
+    timeUpTitle: TEMPO ESGOTADO!
+    treasuresCollected: 'Tesouros coletados: {got}/{total} ({missing} restantes)'
+    overcomingAdversity: SUPERANDO A ADVERSIDADE
+    label:
+      score: Pontuação
+      time: Tempo
+      rank: Posição
+    allChestsOpenedBroadcast: '{player} abriu todos os baús! Pontuação final: {score}'

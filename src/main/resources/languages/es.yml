@@ -418,3 +418,13 @@ gameplay:
     treasureFound: 'Tesoro: {name} ×{amount}'
     scoreAdded: 'Puntuación +{add} (Total: {total})'
     remainingChests: 'Cofres restantes: {count}'
+  result:
+    runCompleteTitle: ¡Recorrido completado!
+    timeUpTitle: ¡SE ACABÓ EL TIEMPO!
+    treasuresCollected: 'Tesoros recogidos: {got}/{total} ({missing} restantes)'
+    overcomingAdversity: SUPERANDO LA ADVERSIDAD
+    label:
+      score: Puntuación
+      time: Tiempo
+      rank: Rango
+    allChestsOpenedBroadcast: '¡{player} abrió todos los cofres! Puntuación final: {score}'

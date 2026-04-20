@@ -418,3 +418,13 @@ gameplay:
     treasureFound: 'Tesoro: {name} ×{amount}'
     scoreAdded: 'Punteggio +{add} (Totale: {total})'
     remainingChests: 'Forzieri rimanenti: {count}'
+  result:
+    runCompleteTitle: Percorso completato!
+    timeUpTitle: TEMPO SCADUTO!
+    treasuresCollected: 'Tesori raccolti: {got}/{total} ({missing} rimasti)'
+    overcomingAdversity: SUPERARE LE AVVERSITÀ
+    label:
+      score: Punteggio
+      time: Tempo
+      rank: Posizione
+    allChestsOpenedBroadcast: '{player} ha aperto tutti i forzieri! Punteggio finale: {score}'

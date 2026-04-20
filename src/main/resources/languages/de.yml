@@ -418,3 +418,13 @@ gameplay:
     treasureFound: 'Schatz: {name} ×{amount}'
     scoreAdded: 'Punkte +{add} (Gesamt: {total})'
     remainingChests: 'Verbleibende Truhen: {count}'
+  result:
+    runCompleteTitle: Lauf abgeschlossen!
+    timeUpTitle: ZEIT ABGELAUFEN!
+    treasuresCollected: 'Gesammelte Schatztruhen: {got}/{total} ({missing} übrig)'
+    overcomingAdversity: WIDERSTÄNDE ÜBERWUNDEN
+    label:
+      score: Punkte
+      time: Zeit
+      rank: Rang
+    allChestsOpenedBroadcast: '{player} hat alle Truhen geöffnet! Endpunktzahl: {score}'

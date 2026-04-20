@@ -1638,10 +1638,16 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
             return;
           }
 
+          String resultLang = getPlayerLangOrDefault(player.getUniqueId());
+
+          String scoreLabel = getI18n().tr(resultLang, "gameplay.result.label.score");
+          String timeLabel  = getI18n().tr(resultLang, "gameplay.result.label.time");
+          String rankText   = getI18n().tr(resultLang, "gameplay.result.label.rank");
+
           String baseSub =
-              ChatColor.GOLD + "Score: " + finalScore +
-                  ChatColor.YELLOW + "  Time: " + timeText +
-                  ChatColor.AQUA + "  Rank: " + ChatColor.LIGHT_PURPLE + rankLabel;
+              ChatColor.GOLD + scoreLabel + ": " + finalScore +
+                  ChatColor.YELLOW + "  " + timeLabel + ": " + timeText +
+                  ChatColor.AQUA + "  " + rankText + ": " + ChatColor.LIGHT_PURPLE + rankLabel;
 
           String philoPart = (successPhiloSub == null || successPhiloSub.isBlank())
               ? ""
@@ -1649,7 +1655,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
 
           // ✅ DJ演出中ずっと「スコア行」だけを同じsubtitleで出し続ける（文言は出さない）
           player.sendTitle(
-              ChatColor.AQUA + "Run Complete!",
+              ChatColor.AQUA + getI18n().tr(resultLang, "gameplay.result.runCompleteTitle"),
               baseSub,
               0, 20, 0
           );
@@ -1693,8 +1699,14 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
       if (treasureChestManager != null) treasureChestManager.removeAllChests();
       playerScores.remove(playerUuid);
 
-      Bukkit.broadcastMessage(ChatColor.AQUA + playerName +
-          " が全ての宝箱を開けました！最終スコア: " + finalScore);
+      Bukkit.broadcastMessage(
+          ChatColor.AQUA + getI18n().tr(
+              getPlayerLangOrDefault(player.getUniqueId()),
+              "gameplay.result.allChestsOpenedBroadcast",
+              I18n.Placeholder.of("{player}", playerName),
+              I18n.Placeholder.of("{score}", String.valueOf(finalScore))
+          )
+      );
 
       // ✅ ✅ ✅ 表示位置：
       // 「broadcastの後」→「1行空けた後」→「白字」で哲学文を表示
@@ -1731,7 +1743,9 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     String sub = outcomeMessageService.pickSubtitle(outcome, difficulty, lang);
     if (sub == null || sub.isBlank()) return;
 
-    String title = (outcome == GameOutcome.SUCCESS) ? "Run Complete!" : "TIME'S UP!";
+    String title = (outcome == GameOutcome.SUCCESS)
+        ? getI18n().tr(lang, "gameplay.result.runCompleteTitle")
+        : getI18n().tr(lang, "gameplay.result.timeUpTitle");
     ChatColor titleColor = (outcome == GameOutcome.SUCCESS) ? ChatColor.AQUA : ChatColor.RED;
 
     player.sendTitle(
@@ -1831,7 +1845,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
         final boolean showAdversityAfterScene = (streak == 3);
 
         // ✅ TIME_UP表示中のTitleは常に TIME'S UP!（ここは変えない）
-        final String timeUpTitleText = "TIME'S UP!";
+        final String timeUpTitleText = getI18n().tr(timeUpLang, "gameplay.result.timeUpTitle");
 
         // ✅ TIME_UP：しばらく固定でTitle表示（SUCCESSみたいに上書きされない、見逃しにくい）
         // 表示時間: 4秒（80 ticks）/ 10 ticksごと更新 → 8回
@@ -1964,7 +1978,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
             // 例：stay=170 ticks(8.5秒) + fadeOut=10 ticks(0.5秒) → 合計約9秒
             player.sendTitle(
                 " ",
-                advColor + "OVERCOMING ADVERSITY",
+                advColor + getI18n().tr(outcomeNoticeLangFinal, "gameplay.result.overcomingAdversity"),
                 0, 170, 10
             );
 

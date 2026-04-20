@@ -418,3 +418,13 @@ gameplay:
     treasureFound: 'Aarre: {name} ×{amount}'
     scoreAdded: 'Pisteet +{add} (Yhteensä: {total})'
     remainingChests: 'Jäljellä olevat arkut: {count}'
+  result:
+    runCompleteTitle: Juoksu suoritettu!
+    timeUpTitle: AIKA LOPPUI!
+    treasuresCollected: 'Aarteita kerätty: {got}/{total} ({missing} jäljellä)'
+    overcomingAdversity: VASTOINKÄYMISTEN YLI
+    label:
+      score: Pisteet
+      time: Aika
+      rank: Sija
+    allChestsOpenedBroadcast: '{player} avasi kaikki arkut! Lopputulos: {score}'
