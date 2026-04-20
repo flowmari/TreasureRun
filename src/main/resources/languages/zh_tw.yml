@@ -475,10 +475,10 @@ command:
     success: '&b你已使用 3 顆鑽石製作出特製綠寶石！'
   onlyPlayer: '&c這個指令只能由玩家使用。'
   quoteFavorite:
-    latestSaved: '&a★ 已將最新名言加入收藏。'
-    latestNotSaved: '&e無法儲存最新名言。可能尚無紀錄，或該名言已在收藏中。'
+    latestSaved: 最新的名言已加入收藏。
+    latestNotSaved: 最新的名言無法保存。可能還沒有紀錄，或已經加入收藏。
     playersOnly: '&c此指令只能由玩家使用。'
-    repositoryNotReady: '&c收藏功能目前尚未可用。'
+    repositoryNotReady: 收藏功能尚未可用。
     listHeader: '&b收藏 ({count})'
     listSeparator: '&7------------------------------'
     removeUsage: '&c用法：/quoteFavorite remove <id>'
@@ -489,8 +489,8 @@ command:
     bookOpenFailed: '&c建立收藏書時失敗。'
     openBookFailed: '&c無法開啟書本。'
     unknownSubcommand: '&c未知的子指令。請查看 /quoteFavorite help。'
-    shortcutSaved: '&a★ 已將最新名言加入收藏。'
-    shortcutNotSaved: '&c儲存最新名言失敗。'
+    shortcutSaved: 最新的名言已加入收藏。
+    shortcutNotSaved: 最新的名言無法保存。可能還沒有紀錄，或已經加入收藏。
     help:
       title: '&bQuoteFavorite 指令'
       latest: '&7/quoteFavorite latest  - 將最新名言加入收藏'
@@ -509,47 +509,87 @@ items:
     displayName: '&6特殊綠寶石'
     loreCrafted: '&7在 TreasureRun 中製作'
     loreSpecial: '&7特殊的綠寶石'
+  material:
+    diamond: 鑽石
+    gold_ingot: 金錠
+    iron_ingot: 鐵錠
+    emerald: 綠寶石
+    apple: 蘋果
+    netherite_ingot: 獄髓錠
+    lapis_lazuli: 青金石
+    redstone: 紅石
+    coal: 煤炭
+    enchanted_golden_apple: 附魔金蘋果
+    diamond_block: 鑽石方塊
+    gold_block: 金方塊
+    emerald_block: 綠寶石方塊
+    iron_block: 鐵方塊
+    tnt: TNT
 outcome:
   success:
     common:
       pool:
-      - 光線均勻灑落，每一道陰影都消失了。
-      - 和諧回歸。一切都是為了引向這一刻。
-      - 寂靜降臨。只有時間繼續流動。
+      - '你做到了。
+
+        這條路撐住了。'
     easy:
       pool:
-      - 你做到了。真相依然在此。
-      - 你傾聽了，道路隨之開展。
-      - 距離找到了意義，時間回應了你的步伐。
+      - 再小的一步，也算前進。
     normal:
       pool:
-      - 距離找到了意義。時間回應了你的旅途。
-      - 跑程完成。靜默的結果，背後是真實的付出。
-      - 瞬間過去了。記錄留了下來。
+      - 距離成了意義。
     hard:
       pool:
-      - 在北風之中，清晰勝過速度。
-      - 不是運氣，是對齊。
-      - 世界沒有改變。你在其中的位置改變了。
+      - 即使在寒意之中，清明依然不散。
   timeup:
     easy:
       pool:
-      - 時間到了。僅此而已。
-      - 跑程結束了。你沒有。
-      - 深呼吸。再一次。
+      - '時間到了。
+
+        但你還沒有結束。'
     normal:
       pool:
-      - 距離縮短了。時間沒有。
-      - 地圖仍然開著。回來吧。
-      - 寶藏仍在伸手難及之處，但那個信號是真實的。
+      - '距離縮短了。
+
+        時間沒有。'
     hard:
       pool:
-      - 即使極光也會消逝。帶著新的步伐回來吧。
-      - 瞬間悄然離去。意義沒有。
-      - 天空繼續運行。你也可以。
+      - '連極光也會消退。
+
+        再回來吧。'
   random:
     common:
       pool: []
   fallback:
-    runComplete: 跑程完成。
+    runComplete: 已完成挑戰。
     timeUp: 時間到。
+    trader: '完美的平衡。
+
+      天秤仍然維持水平。'
+  trader:
+    common:
+      pool:
+      - '完美的平衡。
+
+        天秤仍然維持水平。'
+      - '萬物改變了。
+
+        交換仍在繼續。'
+    easy:
+      pool: []
+    normal:
+      pool: []
+    hard:
+      pool: []
+  notice:
+    timeUpGameOver: 時間到！遊戲結束！
+    retryGuide: 下次試試不同路線吧。想重新挑戰的話，請使用 /gamestart <easy|normal|hard>。
+    titleTimeUp: 時間到！
+    treasuresCollected: 已收集寶箱：{got}/{total}（剩餘 {missing}）
+gameplay:
+  pickup:
+    scoreNone: 目前還沒有分數。
+    gameEndTotalScore: 遊戲結束！總分：{score}
+    treasureFound: 寶物：{name} ×{amount}
+    scoreAdded: 分數 +{add}（累計：{total}）
+    remainingChests: 剩餘寶箱：{count}

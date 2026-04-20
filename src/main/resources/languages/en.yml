@@ -54,10 +54,10 @@ command:
     needDiamonds: '&cYou need 3 diamonds to craft a Special Emerald.'
     success: '&bYou crafted a Special Emerald using 3 diamonds!'
   quoteFavorite:
-    latestSaved: ★ Saved the latest quote to Favorites.
-    latestNotSaved: The latest quote was not saved. It may not exist yet, or it may already be in Favorites.
+    latestSaved: The latest quote was saved to Favorites.
+    latestNotSaved: The latest quote could not be saved. There may be no log yet, or it may already be in Favorites.
     playersOnly: '&cThis command can only be used by players.'
-    repositoryNotReady: '&cFavorites are not available yet.'
+    repositoryNotReady: Favorites are not available yet.
     listHeader: '&bFavorites ({count})'
     listSeparator: '&7------------------------------'
     removeUsage: '&cUsage: /quoteFavorite remove <id>'
@@ -68,8 +68,8 @@ command:
     bookOpenFailed: '&cFailed to build the Favorites book.'
     openBookFailed: '&cFailed to open the book.'
     unknownSubcommand: '&cUnknown subcommand. See /quoteFavorite help.'
-    shortcutSaved: '&a★ Saved the latest quote to Favorites.'
-    shortcutNotSaved: '&cFailed to save the latest quote.'
+    shortcutSaved: The latest quote was saved to Favorites.
+    shortcutNotSaved: The latest quote could not be saved. There may be no log yet, or it may already be in Favorites.
     help:
       title: '&bQuote Favorite commands'
       latest: '&7/quoteFavorite latest : save the latest quote to Favorites'
@@ -305,6 +305,22 @@ items:
     displayName: '&6Special Emerald'
     loreCrafted: '&7Crafted in TreasureRun'
     loreSpecial: '&7A special emerald'
+  material:
+    diamond: Diamond
+    gold_ingot: Gold Ingot
+    iron_ingot: Iron Ingot
+    emerald: Emerald
+    apple: Apple
+    netherite_ingot: Netherite Ingot
+    lapis_lazuli: Lapis Lazuli
+    redstone: Redstone
+    coal: Coal
+    enchanted_golden_apple: Enchanted Golden Apple
+    diamond_block: Diamond Block
+    gold_block: Gold Block
+    emerald_block: Emerald Block
+    iron_block: Iron Block
+    tnt: TNT
 ui:
   menu:
     book:
@@ -338,43 +354,67 @@ outcome:
   success:
     common:
       pool:
-      - Light fell evenly, and every shadow vanished.
-      - Harmony returned. Everything had been leading to this moment.
-      - Silence settled in. Only time kept moving.
+      - 'You made it.
+
+        The path held.'
     easy:
       pool:
-      - You made it. The truth remains.
-      - You listened, and the path opened.
-      - Distance found its meaning, and time answered your steps.
+      - Even a small step counts.
     normal:
       pool:
-      - Distance found its meaning. Time answered your journey.
-      - Run complete. A quiet result, backed by real work.
-      - The moment passed. The record remained.
+      - Distance became meaning.
     hard:
       pool:
-      - In the north wind, clarity outlasts speed.
-      - Not luck. Alignment.
-      - The world did not change. Your place in it did.
+      - In the cold, clarity endured.
   timeup:
     easy:
       pool:
-      - Time ran out. Nothing else did.
-      - The run ended. You didn’t.
-      - Take a breath. Then another.
+      - 'Time ran out.
+
+        You did not.'
     normal:
       pool:
-      - The distance closed. Time did not.
-      - The map is still open. Come back to it.
-      - The treasure remained out of reach, but the signal was real.
+      - 'The distance closed.
+
+        Time did not.'
     hard:
       pool:
-      - Even the aurora fades. Come back with a new stride.
-      - The moment slipped away. The meaning did not.
-      - The sky kept moving. So can you.
+      - 'Even the aurora fades.
+
+        Come back again.'
   random:
     common:
       pool: []
   fallback:
     runComplete: Run complete.
     timeUp: Time's up.
+    trader: 'Perfect balance.
+
+      The scales held level.'
+  trader:
+    common:
+      pool:
+      - 'Perfect balance.
+
+        The scales held level.'
+      - 'Things changed.
+
+        The exchange continued.'
+    easy:
+      pool: []
+    normal:
+      pool: []
+    hard:
+      pool: []
+  notice:
+    timeUpGameOver: Time's up! Game over!
+    retryGuide: Try a different route next time. To retry, use /gamestart <easy|normal|hard>.
+    titleTimeUp: TIME'S UP!
+    treasuresCollected: 'Treasures collected: {got}/{total} ({missing} left)'
+gameplay:
+  pickup:
+    scoreNone: No score yet.
+    gameEndTotalScore: 'Game over! Total score: {score}'
+    treasureFound: 'Treasure: {name} ×{amount}'
+    scoreAdded: 'Score +{add} points (Total: {total})'
+    remainingChests: 'Chests remaining: {count}'

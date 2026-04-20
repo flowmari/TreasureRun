@@ -54,10 +54,10 @@ command:
     needDiamonds: '&cÞú þarft 3 demanta til að búa til sérstakan smaragð.'
     success: '&bÞú bjóst til sérstakan smaragð með 3 demöntum!'
   quoteFavorite:
-    latestSaved: '&a★ Nýjasta tilvitnunin var vistuð í Uppáhald.'
-    latestNotSaved: '&eEkki tókst að vista nýjustu tilvitnunina. Kannski er engin færsla til enn, eða hún er þegar í Uppáhaldi.'
+    latestSaved: Nýjasta tilvitnunin var vistuð í Uppáhald.
+    latestNotSaved: Ekki tókst að vista nýjustu tilvitnunina. Annaðhvort er engin skráning enn eða hún er þegar í Uppáhaldi.
     playersOnly: '&cAðeins leikmenn geta notað þessa skipun.'
-    repositoryNotReady: '&cUppáhaldsvirknin er ekki tiltæk enn.'
+    repositoryNotReady: Uppáhald er ekki tiltækt enn.
     listHeader: '&bUppáhald ({count})'
     listSeparator: '&7------------------------------'
     removeUsage: '&cNotkun: /quoteFavorite remove <id>'
@@ -68,8 +68,8 @@ command:
     bookOpenFailed: '&cEkki tókst að búa til Uppáhaldsbókina.'
     openBookFailed: '&cEkki tókst að opna bókina.'
     unknownSubcommand: '&cÓþekkt undirskipun. Sjá /quoteFavorite help.'
-    shortcutSaved: '&a★ Nýjasta tilvitnunin var vistuð í Uppáhald.'
-    shortcutNotSaved: '&cEkki tókst að vista nýjustu tilvitnunina.'
+    shortcutSaved: Nýjasta tilvitnunin var vistuð í Uppáhald.
+    shortcutNotSaved: Ekki tókst að vista nýjustu tilvitnunina. Annaðhvort er engin skráning enn eða hún er þegar í Uppáhaldi.
     help:
       title: '&bQuoteFavorite skipanir'
       latest: '&7/quoteFavorite latest  - vista nýjustu tilvitnunina í Uppáhald'
@@ -305,6 +305,22 @@ items:
     displayName: '&6Sérstakur smaragður'
     loreCrafted: '&7Smíðað í TreasureRun'
     loreSpecial: '&7Sérstakur smaragður'
+  material:
+    diamond: Demantur
+    gold_ingot: Gullstöng
+    iron_ingot: Járnstöng
+    emerald: Smaragður
+    apple: Epli
+    netherite_ingot: Netherite-stöng
+    lapis_lazuli: Lapis lazuli
+    redstone: Rauðsteinn
+    coal: Kol
+    enchanted_golden_apple: Töfrað gullepli
+    diamond_block: Demantskubbur
+    gold_block: Gullkubbur
+    emerald_block: Smaragðskubbur
+    iron_block: Járnkubbur
+    tnt: TNT
 ui:
   menu:
     book:
@@ -338,43 +354,67 @@ outcome:
   success:
     common:
       pool:
-      - Ljósið féll jafnt og hvert skuggi hvarf.
-      - Samræmið kom aftur. Allt hafði leitt að þessum augnablik.
-      - Kyrrðin lagðist yfir. Aðeins tíminn hélt áfram að hreyfast.
+      - 'Þú komst á leiðarenda.
+
+        Leiðin hélt.'
     easy:
       pool:
-      - Þú tókst þetta. Sannleikurinn stendur.
-      - Þú hlustaðir og leiðin opnaðist.
-      - Vegalengdin fann merkingu sína og tíminn svaraðist við skrefum þínum.
+      - Lítið skref skiptir líka máli.
     normal:
       pool:
-      - Vegalengdin fann merkingu sína. Tíminn svaraðist við ferðalag þitt.
-      - Hlaup lokið. Hljægt niðurstaða, studd af raunverulegum dugnað.
-      - Augnablikið leið. Metið stóð eftir.
+      - Fjarlægðin fékk merkingu.
     hard:
       pool:
-      - Í norðanvindinum þolir skýrleiki hraðann lengur.
-      - Ekki heppni. Samræming.
-      - Heimurinn breyttist ekki. Staðan þín í honum gerði það.
+      - Í kuldanum hélt skýrleikinn velli.
   timeup:
     easy:
       pool:
-      - Tíminn rann út. Ekki annað.
-      - Hlaupið lauk. Þú ekki.
-      - Dragðu andann. Síðan aftur.
+      - 'Tíminn rann út.
+
+        Ekki þú.'
     normal:
       pool:
-      - Vegalengdin minnkaði. Tíminn ekki.
-      - Kortið er enn opið. Komdu aftur.
-      - Fjársjóðurinn náðist ekki, en merkið var raunverulegt.
+      - 'Fjarlægðin styttist.
+
+        Tíminn ekki.'
     hard:
       pool:
-      - Jafnvel norðurljósin hverfur. Komdu aftur með nýtt skref.
-      - Augnablikið rann frá. Merkingin ekki.
-      - Himinninn hélt áfram að hreyfast. Þú getur líka.
+      - 'Jafnvel norðurljósin dofna.
+
+        Komdu aftur.'
   random:
     common:
       pool: []
   fallback:
-    runComplete: Hlaup lokið.
+    runComplete: Hlaupi lokið.
     timeUp: Tíminn er útrunninn.
+    trader: 'Fullkomið jafnvægi.
+
+      Vogin hélt sér í jafnvægi.'
+  trader:
+    common:
+      pool:
+      - 'Fullkomið jafnvægi.
+
+        Vogin hélt sér í jafnvægi.'
+      - 'Hlutirnir breyttust.
+
+        Skiptin héldu áfram.'
+    easy:
+      pool: []
+    normal:
+      pool: []
+    hard:
+      pool: []
+  notice:
+    timeUpGameOver: Tíminn rann út! Leik lokið!
+    retryGuide: Prófaðu aðra leið næst. Til að reyna aftur skaltu nota /gamestart <easy|normal|hard>.
+    titleTimeUp: TÍMINN RANN ÚT!
+    treasuresCollected: 'Fjársjóðir fundnir: {got}/{total} ({missing} eftir)'
+gameplay:
+  pickup:
+    scoreNone: Engin stig eru komin enn.
+    gameEndTotalScore: 'Leik lokið! Heildarskor: {score}'
+    treasureFound: 'Fjársjóður: {name} ×{amount}'
+    scoreAdded: 'Stig +{add} (Samtals: {total})'
+    remainingChests: 'Kistur eftir: {count}'

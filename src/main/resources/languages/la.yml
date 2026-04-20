@@ -54,10 +54,10 @@ command:
     needDiamonds: '&cTres adamantes tibi necessarii sunt ut Smaragdum Specialem conficias.'
     success: '&bSmaragdum Specialem tribus adamantibus confecisti!'
   quoteFavorite:
-    latestSaved: '&a★ Sententia novissima in Dilecta servata est.'
-    latestNotSaved: '&eSententia novissima servari non potuit. Fortasse adhuc nullum commentarium est, aut iam in Dilectis est.'
+    latestSaved: Sententia novissima inter dilecta servata est.
+    latestNotSaved: Sententia novissima servari non potuit. Aut nondum relatum est aut iam inter dilecta est.
     playersOnly: '&cHoc mandato soli lusores uti possunt.'
-    repositoryNotReady: '&cRatio Dilectorum nondum praesto est.'
+    repositoryNotReady: Dilecta adhuc parata non sunt.
     listHeader: '&bDilecta ({count})'
     listSeparator: '&7------------------------------'
     removeUsage: '&cUsus: /quoteFavorite remove <id>'
@@ -68,8 +68,8 @@ command:
     bookOpenFailed: '&cLiber Dilectorum confici non potuit.'
     openBookFailed: '&cLiber aperiri non potuit.'
     unknownSubcommand: '&cSubmandatum ignotum. Vide /quoteFavorite help.'
-    shortcutSaved: '&a★ Sententia novissima in Dilecta servata est.'
-    shortcutNotSaved: '&cSententia novissima servari non potuit.'
+    shortcutSaved: Sententia novissima inter dilecta servata est.
+    shortcutNotSaved: Sententia novissima servari non potuit. Aut nondum relatum est aut iam inter dilecta est.
     help:
       title: '&bMandata QuoteFavorite'
       latest: '&7/quoteFavorite latest  - sententiam novissimam in Dilecta serva'
@@ -305,6 +305,22 @@ items:
     displayName: '&6Smaragdus specialis'
     loreCrafted: '&7In TreasureRun fabricatus'
     loreSpecial: '&7Smaragdus specialis'
+  material:
+    diamond: Adamas
+    gold_ingot: Massa auri
+    iron_ingot: Massa ferri
+    emerald: Smaragdus
+    apple: Malum
+    netherite_ingot: Massa Netheritis
+    lapis_lazuli: Lapis lazuli
+    redstone: Lapis ruber
+    coal: Carbo
+    enchanted_golden_apple: Malum aureum incantatum
+    diamond_block: Caudex adamantis
+    gold_block: Caudex auri
+    emerald_block: Caudex smaragdi
+    iron_block: Caudex ferri
+    tnt: TNT
 ui:
   menu:
     book:
@@ -338,43 +354,67 @@ outcome:
   success:
     common:
       pool:
-      - Lux aequaliter cecidit et umbrae omnes evanuerunt.
-      - Concordia rediit. Omnia ad hoc momentum ducebant.
-      - Silentium descendit. Solum tempus movebatur.
+      - 'Pervenisti.
+
+        Iter stetit.'
     easy:
       pool:
-      - Pervenisti. Veritas manet.
-      - Auscultavisti et via aperta est.
-      - Spatium sensum invenit et tempus gressibus tuis respondit.
+      - Etiam parvus passus valet.
     normal:
       pool:
-      - Spatium suum sensum invenit. Tempus itineri tuo respondit.
-      - Cursus perfectus. Tranquillum exitum, labore vero sustentatum.
-      - Momentum praeteriit. Recordum mansit.
+      - Spatium sensum accepit.
     hard:
       pool:
-      - In vento septentrionali claritas celeritatem superat.
-      - Non fortuna. Coordinatio.
-      - Mundus non mutatus est. Locus tuus in eo mutatus est.
+      - In frigore claritas perduravit.
   timeup:
     easy:
       pool:
-      - Tempus exhauriit. Nihil aliud.
-      - Cursus finitus est. Tu non.
-      - Respira. Iterum.
+      - 'Tempus finitum est.
+
+        Tu non.'
     normal:
       pool:
-      - Spatium contractum est. Tempus non.
-      - Mappa adhuc aperta est. Redi.
-      - Thesaurus inaccessibilis mansit, sed signum verum erat.
+      - 'Spatium clausum est.
+
+        Tempus non.'
     hard:
       pool:
-      - Etiam aurora borealis evanescit. Redi novo gradu.
-      - Momentum elapsum est. Sensus non.
-      - Caelum moveri perrexit. Tu quoque potes.
+      - 'Etiam aurora evanescit.
+
+        Redi iterum.'
   random:
     common:
       pool: []
   fallback:
     runComplete: Cursus perfectus.
-    timeUp: Tempus exhauriit.
+    timeUp: Tempus exactum est.
+    trader: 'Aequilibrium perfectum.
+
+      Libra aequa mansit.'
+  trader:
+    common:
+      pool:
+      - 'Aequilibrium perfectum.
+
+        Libra aequa mansit.'
+      - 'Res mutatae sunt.
+
+        Commercium perrexit.'
+    easy:
+      pool: []
+    normal:
+      pool: []
+    hard:
+      pool: []
+  notice:
+    timeUpGameOver: Tempus exactum! Ludus finitus!
+    retryGuide: Iter aliud proxima vice tenta. Ad iterandum utere /gamestart <easy|normal|hard>.
+    titleTimeUp: TEMPUS EXACTUM!
+    treasuresCollected: 'Thesauri collecti: {got}/{total} ({missing} reliqui)'
+gameplay:
+  pickup:
+    scoreNone: Puncta nondum sunt.
+    gameEndTotalScore: 'Ludus finitus! Summa punctorum: {score}'
+    treasureFound: 'Thesaurus: {name} ×{amount}'
+    scoreAdded: 'Puncta +{add} (Summa: {total})'
+    remainingChests: 'Arcae reliquae: {count}'

@@ -54,10 +54,10 @@ command:
     needDiamonds: '&cTarvitset 3 timanttia valmistaaksesi erikoissmaragdin.'
     success: '&bValmistit erikoissmaragdin käyttämällä 3 timanttia!'
   quoteFavorite:
-    latestSaved: '&a★ Uusin sitaatti tallennettiin Suosikkeihin.'
-    latestNotSaved: '&eUusinta sitaattia ei voitu tallentaa. Lokia ei ehkä vielä ole, tai sitaatti on jo Suosikeissa.'
+    latestSaved: Uusin sitaatti tallennettiin Suosikkeihin.
+    latestNotSaved: Uusinta sitaattia ei voitu tallentaa. Lokia ei ehkä vielä ole tai se on jo Suosikeissa.
     playersOnly: '&cVain pelaajat voivat käyttää tätä komentoa.'
-    repositoryNotReady: '&cSuosikit-toiminto ei ole vielä käytettävissä.'
+    repositoryNotReady: Suosikit eivät ole vielä käytettävissä.
     listHeader: '&bSuosikit ({count})'
     listSeparator: '&7------------------------------'
     removeUsage: '&cKäyttö: /quoteFavorite remove <id>'
@@ -68,8 +68,8 @@ command:
     bookOpenFailed: '&cSuosikkikirjan luominen epäonnistui.'
     openBookFailed: '&cKirjaa ei voitu avata.'
     unknownSubcommand: '&cTuntematon alikomento. Katso /quoteFavorite help.'
-    shortcutSaved: '&a★ Uusin sitaatti tallennettiin Suosikkeihin.'
-    shortcutNotSaved: '&cUusimman sitaatin tallennus epäonnistui.'
+    shortcutSaved: Uusin sitaatti tallennettiin Suosikkeihin.
+    shortcutNotSaved: Uusinta sitaattia ei voitu tallentaa. Lokia ei ehkä vielä ole tai se on jo Suosikeissa.
     help:
       title: '&bQuoteFavorite-komennot'
       latest: '&7/quoteFavorite latest  - tallenna uusin sitaatti Suosikkeihin'
@@ -305,6 +305,22 @@ items:
     displayName: '&6Erikoissmaragdi'
     loreCrafted: '&7Valmistettu TreasureRunissa'
     loreSpecial: '&7Erityinen smaragdi'
+  material:
+    diamond: Timantti
+    gold_ingot: Kultaharkko
+    iron_ingot: Rautaharkko
+    emerald: Smaragdi
+    apple: Omena
+    netherite_ingot: Netheriittiharkko
+    lapis_lazuli: Lapis lazuli
+    redstone: Punapöly
+    coal: Hiili
+    enchanted_golden_apple: Lumottu kultainen omena
+    diamond_block: Timanttilohko
+    gold_block: Kultalohko
+    emerald_block: Smaragdilohko
+    iron_block: Rautalohko
+    tnt: TNT
 ui:
   menu:
     book:
@@ -338,43 +354,67 @@ outcome:
   success:
     common:
       pool:
-      - Valo putosi tasaisesti ja jokainen varjo katosi.
-      - Harmonia palasi. Kaikki oli johtanut tähän hetkeen.
-      - Hiljaisuus laskeutui. Vain aika jatkoi kulkuaan.
+      - 'Selvisit perille.
+
+        Polku kesti.'
     easy:
       pool:
-      - Onnistuit. Totuus pysyy.
-      - Kuuntelit ja tie aukesi.
-      - Matka löysi merkityksensä ja aika vastasi askeleitasi.
+      - Pienikin askel merkitsee.
     normal:
       pool:
-      - Matka löysi merkityksensä. Aika vastasi matkasi.
-      - Juoksu suoritettu. Hiljainen tulos, oikean työn tukemana.
-      - Hetki kului. Ennätys jäi.
+      - Matka sai merkityksen.
     hard:
       pool:
-      - Pohjoistuulessa selkeys kestää nopeutta pidempään.
-      - Ei tuuria. Kohdistumista.
-      - Maailma ei muuttunut. Paikkasi siinä muuttui.
+      - Kylmyydessäkin selkeys säilyi.
   timeup:
     easy:
       pool:
-      - Aika loppui. Ei muuta.
-      - Juoksu päättyi. Sinä et.
-      - Hengitä syvään. Sitten vielä kerran.
+      - 'Aika loppui.
+
+        Sinä et.'
     normal:
       pool:
-      - Välimatka supistui. Aika ei.
-      - Kartta on vielä auki. Palaa siihen.
-      - Aarre jäi ulottumattomiin, mutta signaali oli todellinen.
+      - 'Välimatka lyheni.
+
+        Aika ei.'
     hard:
       pool:
-      - Edes revontulet sammuvat. Palaa uusin askelin.
-      - Hetki lipui pois. Merkitys ei.
-      - Taivas jatkoi liikettään. Sinäkin voit.
+      - 'Jopa revontulet hiipuvat.
+
+        Tule takaisin.'
   random:
     common:
       pool: []
   fallback:
     runComplete: Juoksu suoritettu.
     timeUp: Aika loppui.
+    trader: 'Täydellinen tasapaino.
+
+      Vaaka pysyi suorassa.'
+  trader:
+    common:
+      pool:
+      - 'Täydellinen tasapaino.
+
+        Vaaka pysyi suorassa.'
+      - 'Asiat muuttuivat.
+
+        Vaihto jatkui.'
+    easy:
+      pool: []
+    normal:
+      pool: []
+    hard:
+      pool: []
+  notice:
+    timeUpGameOver: Aika loppui! Peli päättyi!
+    retryGuide: Kokeile ensi kerralla toista reittiä. Aloita uudelleen komennolla /gamestart <easy|normal|hard>.
+    titleTimeUp: AIKA LOPPUI!
+    treasuresCollected: 'Kerätyt aarteet: {got}/{total} ({missing} jäljellä)'
+gameplay:
+  pickup:
+    scoreNone: Pisteitä ei vielä ole.
+    gameEndTotalScore: 'Peli päättyi! Kokonaispisteet: {score}'
+    treasureFound: 'Aarre: {name} ×{amount}'
+    scoreAdded: 'Pisteet +{add} (Yhteensä: {total})'
+    remainingChests: 'Jäljellä olevat arkut: {count}'

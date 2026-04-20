@@ -272,17 +272,47 @@ public class TreasureRunGameEffectsPlugin implements Listener {
 
     int missing = Math.max(0, total - got);
 
-    // 表示（パッと分かる）
+    TreasureRunMultiChestPlugin trPlugin = (plugin instanceof TreasureRunMultiChestPlugin)
+        ? (TreasureRunMultiChestPlugin) plugin
+        : null;
+
+    String outcomeNoticeLang = plugin.getConfig().getString("language.default", "en");
+    try {
+      if (trPlugin != null && trPlugin.getPlayerLanguageStore() != null) {
+        String saved = trPlugin.getPlayerLanguageStore().getLang(p, outcomeNoticeLang);
+        if (saved != null && !saved.isBlank()) outcomeNoticeLang = saved;
+      }
+    } catch (Throwable ignored) {}
+
+    String titleText = (trPlugin != null)
+        ? trPlugin.getI18n().tr(outcomeNoticeLang, "outcome.notice.titleTimeUp")
+        : "TIME'S UP!";
+
+    String subText = (trPlugin != null)
+        ? trPlugin.getI18n().tr(
+            outcomeNoticeLang,
+            "outcome.notice.treasuresCollected",
+            I18n.Placeholder.of("{got}", String.valueOf(got)),
+            I18n.Placeholder.of("{total}", String.valueOf(total)),
+            I18n.Placeholder.of("{missing}", String.valueOf(missing))
+          )
+        : ("Treasures collected: " + got + "/" + total + " (" + missing + " left)");
+
+    final String outcomeNoticeLangFinal = outcomeNoticeLang;
+
     p.sendTitle(
-        "§c§lTIME'S UP!",
-        "§7Treasures collected: §e" + got + "§7/§e" + total + " §7(" + missing + " left)",
+        "§c§l" + titleText,
+        "§7" + subText,
         0, 45, 10
     );
 
-    // ✅ 0.5秒後に Tip を出す（10 tick = 0.5秒）
     Bukkit.getScheduler().runTaskLater(plugin, () -> {
       if (!p.isOnline()) return;
-      p.sendMessage("§7Try a different route next time — or use §e/gamestart §7<§eeasy§7|§enormal§7|§ehard§7> §7to retry.");
+      if (trPlugin != null) {
+        p.sendMessage("§7" + trPlugin.getI18n().tr(outcomeNoticeLangFinal, "outcome.notice.retryGuide"));
+      } else {
+        p.sendMessage("§7Try a different route next time. To retry, use /gamestart <easy|normal|hard>.");
+      }
     }, 10L);
 
     // 下降フレーズ（womp感）

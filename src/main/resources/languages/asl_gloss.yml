@@ -54,10 +54,10 @@ command:
     needDiamonds: '&cNEED 3 DIAMOND TO CRAFT SPECIAL EMERALD.'
     success: '&bSPECIAL EMERALD CRAFT FINISH USE 3 DIAMOND!'
   quoteFavorite:
-    latestSaved: '&a★ LATEST QUOTE SAVE FAVORITES.'
-    latestNotSaved: '&eLATEST QUOTE SAVE FAIL. MAYBE NO LOG YET OR ALREADY FAVORITE.'
+    latestSaved: LATEST QUOTE SAVED FAVORITES.
+    latestNotSaved: LATEST QUOTE SAVE FAIL. MAYBE NO LOG YET OR ALREADY FAVORITE.
     playersOnly: '&cONLY PLAYER CAN USE THIS COMMAND.'
-    repositoryNotReady: '&cFAVORITES FEATURE NOT READY YET.'
+    repositoryNotReady: FAVORITES NOT READY YET.
     listHeader: '&bFAVORITES ({count})'
     listSeparator: '&7------------------------------'
     removeUsage: '&cUSE: /quoteFavorite remove <id>'
@@ -68,8 +68,8 @@ command:
     bookOpenFailed: '&cFAVORITES BOOK BUILD FAIL.'
     openBookFailed: '&cBOOK OPEN FAIL.'
     unknownSubcommand: '&cUNKNOWN SUBCOMMAND. SEE /quoteFavorite help.'
-    shortcutSaved: '&a★ LATEST QUOTE SAVE FAVORITES.'
-    shortcutNotSaved: '&cLATEST QUOTE SAVE FAIL.'
+    shortcutSaved: LATEST QUOTE SAVED FAVORITES.
+    shortcutNotSaved: LATEST QUOTE SAVE FAIL. MAYBE NO LOG YET OR ALREADY FAVORITE.
     help:
       title: '&bQUOTEFAVORITE COMMANDS'
       latest: '&7/quoteFavorite latest  - SAVE LATEST QUOTE FAVORITE'
@@ -305,6 +305,22 @@ items:
     displayName: '&6SPECIAL EMERALD'
     loreCrafted: '&7CRAFT IN TREASURERUN'
     loreSpecial: '&7SPECIAL EMERALD'
+  material:
+    diamond: DIAMOND
+    gold_ingot: GOLD INGOT
+    iron_ingot: IRON INGOT
+    emerald: EMERALD
+    apple: APPLE
+    netherite_ingot: NETHERITE INGOT
+    lapis_lazuli: LAPIS LAZULI
+    redstone: REDSTONE
+    coal: COAL
+    enchanted_golden_apple: ENCHANTED GOLDEN APPLE
+    diamond_block: DIAMOND BLOCK
+    gold_block: GOLD BLOCK
+    emerald_block: EMERALD BLOCK
+    iron_block: IRON BLOCK
+    tnt: TNT
 ui:
   menu:
     book:
@@ -338,43 +354,67 @@ outcome:
   success:
     common:
       pool:
-      - LIGHT FALL EVEN. SHADOW ALL DISAPPEAR.
-      - HARMONY RETURN. EVERYTHING LEAD THIS MOMENT.
-      - QUIET SETTLE. TIME ONLY KEEP MOVE.
+      - 'YOU SUCCEED.
+
+        PATH STAY-STRONG.'
     easy:
       pool:
-      - YOU SUCCEED. TRUTH STAY.
-      - YOU LISTEN. PATH OPEN.
-      - DISTANCE FIND MEANING. TIME ANSWER YOUR STEP.
+      - SMALL STEP STILL IMPORTANT.
     normal:
       pool:
-      - DISTANCE FIND MEANING. TIME ANSWER YOUR JOURNEY.
-      - RUN FINISH. QUIET RESULT. REAL WORK BEHIND IT.
-      - MOMENT PASS. RECORD STAY.
+      - DISTANCE BECOME MEANING.
     hard:
       pool:
-      - NORTH WIND. CLEAR THINKING BEAT SPEED.
-      - NOT LUCK. ALIGNMENT.
-      - WORLD NOT CHANGE. YOUR PLACE INSIDE CHANGE.
+      - COLD, BUT CLARITY STAY.
   timeup:
     easy:
       pool:
-      - TIME FINISH. NOTHING ELSE.
-      - RUN END. YOU NOT END.
-      - BREATHE. THEN AGAIN.
+      - 'TIME FINISH.
+
+        YOU NOT FINISH.'
     normal:
       pool:
-      - DISTANCE SHRINK. TIME NOT SHRINK.
-      - MAP STILL OPEN. COME BACK.
-      - TREASURE NOT REACH. BUT SIGNAL REAL.
+      - 'DISTANCE CLOSE.
+
+        TIME NOT.'
     hard:
       pool:
-      - AURORA ALSO FADE. COME BACK. NEW STEP.
-      - MOMENT SLIP AWAY. MEANING NOT.
-      - SKY KEEP MOVE. YOU ALSO CAN.
+      - 'AURORA ALSO FADE.
+
+        COME-BACK AGAIN.'
   random:
     common:
       pool: []
   fallback:
-    runComplete: RUN FINISH.
-    timeUp: TIME UP.
+    runComplete: RUN COMPLETE.
+    timeUp: TIME-UP.
+    trader: 'BALANCE PERFECT.
+
+      SCALES STAY LEVEL.'
+  trader:
+    common:
+      pool:
+      - 'BALANCE PERFECT.
+
+        SCALES STAY LEVEL.'
+      - 'THING CHANGE.
+
+        EXCHANGE CONTINUE.'
+    easy:
+      pool: []
+    normal:
+      pool: []
+    hard:
+      pool: []
+  notice:
+    timeUpGameOver: TIME-UP! GAME FINISH!
+    retryGuide: NEXT-TIME TRY DIFFERENT ROUTE. RETRY USE /gamestart <easy|normal|hard>.
+    titleTimeUp: TIME-UP!
+    treasuresCollected: 'TREASURE COLLECTED: {got}/{total} ({missing} LEFT)'
+gameplay:
+  pickup:
+    scoreNone: SCORE NONE YET.
+    gameEndTotalScore: 'GAME FINISH! TOTAL SCORE: {score}'
+    treasureFound: 'TREASURE: {name} ×{amount}'
+    scoreAdded: 'SCORE +{add} (TOTAL: {total})'
+    remainingChests: 'CHESTS LEFT: {count}'

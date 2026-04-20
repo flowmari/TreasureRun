@@ -14,10 +14,14 @@ public final class OutcomeMessageKeys {
   public static final String OUTCOME_TIMEUP_NORMAL_POOL = "outcome.timeup.normal.pool";
   public static final String OUTCOME_TIMEUP_HARD_POOL = "outcome.timeup.hard.pool";
 
-  // optional shared pool
-  public static final String OUTCOME_RANDOM_COMMON_POOL = "outcome.random.common.pool";
+  // trader pools
+  public static final String OUTCOME_TRADER_COMMON_POOL = "outcome.trader.common.pool";
+  public static final String OUTCOME_TRADER_EASY_POOL = "outcome.trader.easy.pool";
+  public static final String OUTCOME_TRADER_NORMAL_POOL = "outcome.trader.normal.pool";
+  public static final String OUTCOME_TRADER_HARD_POOL = "outcome.trader.hard.pool";
 
   // fallbacks
   public static final String OUTCOME_FALLBACK_RUN_COMPLETE = "outcome.fallback.runComplete";
   public static final String OUTCOME_FALLBACK_TIME_UP = "outcome.fallback.timeUp";
+  public static final String OUTCOME_FALLBACK_TRADER = "outcome.fallback.trader";
 }

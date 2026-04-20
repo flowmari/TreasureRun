@@ -54,10 +54,10 @@ command:
     needDiamonds: '&cTi servono 3 diamanti per creare uno Smeraldo Speciale.'
     success: '&bHai creato uno Smeraldo Speciale usando 3 diamanti!'
   quoteFavorite:
-    latestSaved: '&a★ La citazione più recente è stata salvata nei Preferiti.'
-    latestNotSaved: '&eNon è stato possibile salvare la citazione più recente. Potrebbe non esserci ancora alcun record, oppure potrebbe essere già nei Preferiti.'
+    latestSaved: La citazione più recente è stata salvata nei Preferiti.
+    latestNotSaved: Non è stato possibile salvare la citazione più recente. Potrebbe non esserci ancora alcun log, oppure potrebbe essere già nei Preferiti.
     playersOnly: '&cQuesto comando può essere usato solo dai giocatori.'
-    repositoryNotReady: '&cLa funzione Preferiti non è ancora disponibile.'
+    repositoryNotReady: I Preferiti non sono ancora disponibili.
     listHeader: '&bPreferiti ({count})'
     listSeparator: '&7------------------------------'
     removeUsage: '&cUso: /quoteFavorite remove <id>'
@@ -68,8 +68,8 @@ command:
     bookOpenFailed: '&cImpossibile generare il libro dei Preferiti.'
     openBookFailed: '&cImpossibile aprire il libro.'
     unknownSubcommand: '&cSottocomando sconosciuto. Controlla /quoteFavorite help.'
-    shortcutSaved: '&a★ La citazione più recente è stata salvata nei Preferiti.'
-    shortcutNotSaved: '&cImpossibile salvare la citazione più recente.'
+    shortcutSaved: La citazione più recente è stata salvata nei Preferiti.
+    shortcutNotSaved: Non è stato possibile salvare la citazione più recente. Potrebbe non esserci ancora alcun log, oppure potrebbe essere già nei Preferiti.
     help:
       title: '&bComandi di QuoteFavorite'
       latest: '&7/quoteFavorite latest  - salva l''ultima citazione nei Preferiti'
@@ -305,6 +305,22 @@ items:
     displayName: '&6Smeraldo speciale'
     loreCrafted: '&7Creato in TreasureRun'
     loreSpecial: '&7Uno smeraldo speciale'
+  material:
+    diamond: Diamante
+    gold_ingot: Lingotto d'oro
+    iron_ingot: Lingotto di ferro
+    emerald: Smeraldo
+    apple: Mela
+    netherite_ingot: Lingotto di netherite
+    lapis_lazuli: Lapislazzuli
+    redstone: Pietrarossa
+    coal: Carbone
+    enchanted_golden_apple: Mela d'oro incantata
+    diamond_block: Blocco di diamante
+    gold_block: Blocco d'oro
+    emerald_block: Blocco di smeraldo
+    iron_block: Blocco di ferro
+    tnt: TNT
 ui:
   menu:
     book:
@@ -338,43 +354,67 @@ outcome:
   success:
     common:
       pool:
-      - La luce cadde uniformemente e ogni ombra scomparve.
-      - L'armonia tornò. Tutto aveva portato a questo momento.
-      - Il silenzio si pose. Solo il tempo continuò a muoversi.
+      - 'Ce l’hai fatta.
+
+        Il cammino ha retto.'
     easy:
       pool:
-      - Ce l'hai fatta. La verità rimane.
-      - Hai ascoltato e il cammino si è aperto.
-      - La distanza ha trovato il suo significato e il tempo ha risposto ai tuoi passi.
+      - Anche un piccolo passo conta.
     normal:
       pool:
-      - La distanza ha trovato il suo significato. Il tempo ha risposto al tuo viaggio.
-      - Percorso completato. Un risultato silenzioso, sostenuto da lavoro vero.
-      - Il momento passò. Il record rimase.
+      - La distanza ha preso significato.
     hard:
       pool:
-      - Nel vento del nord, la chiarezza dura più della velocità.
-      - Non fortuna. Allineamento.
-      - Il mondo non è cambiato. Il tuo posto in esso sì.
+      - Nel freddo, la lucidità ha resistito.
   timeup:
     easy:
       pool:
-      - Il tempo è scaduto. Nient'altro.
-      - La corsa è finita. Tu no.
-      - Fai un respiro. Poi un altro.
+      - 'Il tempo è finito.
+
+        Tu no.'
     normal:
       pool:
-      - La distanza si è chiusa. Il tempo no.
-      - La mappa è ancora aperta. Torna ad essa.
-      - Il tesoro è rimasto fuori portata, ma il segnale era reale.
+      - 'La distanza si è accorciata.
+
+        Il tempo no.'
     hard:
       pool:
-      - Anche l'aurora svanisce. Torna con un nuovo passo.
-      - Il momento è sfuggito. Il significato no.
-      - Il cielo ha continuato a muoversi. Anche tu puoi.
+      - 'Anche l’aurora svanisce.
+
+        Torna ancora.'
   random:
     common:
       pool: []
   fallback:
-    runComplete: Percorso completato.
+    runComplete: Corsa completata.
     timeUp: Tempo scaduto.
+    trader: 'Equilibrio perfetto.
+
+      La bilancia è rimasta in piano.'
+  trader:
+    common:
+      pool:
+      - 'Equilibrio perfetto.
+
+        La bilancia è rimasta in piano.'
+      - 'Le cose sono cambiate.
+
+        Lo scambio è continuato.'
+    easy:
+      pool: []
+    normal:
+      pool: []
+    hard:
+      pool: []
+  notice:
+    timeUpGameOver: Tempo scaduto! Partita finita!
+    retryGuide: La prossima volta prova un altro percorso. Per riprovare usa /gamestart <easy|normal|hard>.
+    titleTimeUp: TEMPO SCADUTO!
+    treasuresCollected: 'Tesori raccolti: {got}/{total} ({missing} rimanenti)'
+gameplay:
+  pickup:
+    scoreNone: Non c'è ancora alcun punteggio.
+    gameEndTotalScore: 'Partita finita! Punteggio totale: {score}'
+    treasureFound: 'Tesoro: {name} ×{amount}'
+    scoreAdded: 'Punteggio +{add} (Totale: {total})'
+    remainingChests: 'Forzieri rimanenti: {count}'

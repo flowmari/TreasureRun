@@ -475,10 +475,10 @@ command:
     success: '&b已用鑽石三枚製成特製綠寶石！'
   onlyPlayer: '&c此令唯玩家可用。'
   quoteFavorite:
-    latestSaved: '&a★ 已收最新格言於珍藏。'
-    latestNotSaved: '&e最新格言未能收入珍藏。或尚無記錄，或已在珍藏中。'
+    latestSaved: 最新格言已存入收藏。
+    latestNotSaved: 最新格言未能保存。或尚無記錄，或已在收藏中。
     playersOnly: '&c唯玩家可用此令。'
-    repositoryNotReady: '&c珍藏之用，今猶未可。'
+    repositoryNotReady: 收藏功能尚未可用。
     listHeader: '&b珍藏 ({count})'
     listSeparator: '&7------------------------------'
     removeUsage: '&c用法：/quoteFavorite remove <id>'
@@ -489,8 +489,8 @@ command:
     bookOpenFailed: '&c造珍藏之書失敗。'
     openBookFailed: '&c書不可啟。'
     unknownSubcommand: '&c子令不識。請觀 /quoteFavorite help。'
-    shortcutSaved: '&a★ 已收最新格言於珍藏。'
-    shortcutNotSaved: '&c最新格言未能收入珍藏。'
+    shortcutSaved: 最新格言已存入收藏。
+    shortcutNotSaved: 最新格言未能保存。或尚無記錄，或已在收藏中。
     help:
       title: '&bQuoteFavorite 諸令'
       latest: '&7/quoteFavorite latest  - 收最新格言於珍藏'
@@ -509,47 +509,87 @@ items:
     displayName: '&6特殊綠寶石'
     loreCrafted: '&7製於 TreasureRun'
     loreSpecial: '&7特殊之綠寶石'
+  material:
+    diamond: 金剛石
+    gold_ingot: 金錠
+    iron_ingot: 鐵錠
+    emerald: 翠玉
+    apple: 蘋果
+    netherite_ingot: 獄髓錠
+    lapis_lazuli: 青金石
+    redstone: 紅石
+    coal: 煤
+    enchanted_golden_apple: 附魔金蘋果
+    diamond_block: 金剛石方塊
+    gold_block: 金方塊
+    emerald_block: 翠玉方塊
+    iron_block: 鐵方塊
+    tnt: TNT
 outcome:
   success:
     common:
       pool:
-      - 光均落，諸影消。
-      - 和諧復歸，萬象皆導此一瞬。
-      - 靜默乘臨，唯時間依舊流轉。
+      - '既至。
+
+        其途能持。'
     easy:
       pool:
-      - 至矣。真理長存。
-      - 傾耳而聽，道路自開。
-      - 距離得其義，時間應汝之步。
+      - 雖小步，亦可貴也。
     normal:
       pool:
-      - 距離得其義，時間應汝之旅。
-      - 奔走告竣。靜默之果，實勤之所持。
-      - 瞬間已過，記錄長存。
+      - 其遠遂成其義。
     hard:
       pool:
-      - 北風之中，明晰勝於速度。
-      - 非運也，乃精準也。
-      - 世界未變，汝在其中之位置已異。
+      - 雖寒而明不失。
   timeup:
     easy:
       pool:
-      - 時已盡，此外無他。
-      - 奔走止，汝未止。
-      - 吸一氣，再吸一氣。
+      - '時盡矣。
+
+        汝未盡也。'
     normal:
       pool:
-      - 距離縮，時間未縮。
-      - 圖尚開，歸來可矣。
-      - 寶未達，然信號真確。
+      - '其距漸近。
+
+        其時未然。'
     hard:
       pool:
-      - 極光亦滅，以新步歸來。
-      - 瞬間逝，義未逝。
-      - 天猶動，汝亦可動。
+      - '雖極光亦歇。
+
+        可更來。'
   random:
     common:
       pool: []
   fallback:
-    runComplete: 奔走告竣。
-    timeUp: 時已盡。
+    runComplete: 行已畢。
+    timeUp: 時盡。
+    trader: '均衡至矣。
+
+      衡常平。'
+  trader:
+    common:
+      pool:
+      - '均衡至矣。
+
+        衡常平。'
+      - '物既變。
+
+        其易猶續。'
+    easy:
+      pool: []
+    normal:
+      pool: []
+    hard:
+      pool: []
+  notice:
+    timeUpGameOver: 時盡！戲終！
+    retryGuide: 後宜試他途。欲重試者，請用 /gamestart <easy|normal|hard>。
+    titleTimeUp: 時盡！
+    treasuresCollected: 所獲寶箱：{got}/{total}（餘 {missing}）
+gameplay:
+  pickup:
+    scoreNone: 尚無分數。
+    gameEndTotalScore: 戲終！總分：{score}
+    treasureFound: 寶物：{name} ×{amount}
+    scoreAdded: 加分 {add}（累計：{total}）
+    remainingChests: 餘寶箱：{count}

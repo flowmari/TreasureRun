@@ -54,10 +54,10 @@ command:
     needDiamonds: '&cスペシャルエメラルドの作成にはダイヤモンドが3個必要です。'
     success: '&bダイヤモンド3個でスペシャルエメラルドを作成しました！'
   quoteFavorite:
-    latestSaved: ★ 最新の名言をお気に入りに保存しました。
+    latestSaved: 最新の名言をお気に入りに保存しました。
     latestNotSaved: 最新の名言は保存されませんでした。まだ記録がないか、すでにお気に入り登録済みの可能性があります。
     playersOnly: '&cこのコマンドはプレイヤーのみ使用できます。'
-    repositoryNotReady: '&cお気に入り機能はまだ利用できません。'
+    repositoryNotReady: お気に入り機能はまだ利用できません。
     listHeader: '&bお気に入り一覧（{count}件）'
     listSeparator: '&7------------------------------'
     removeUsage: '&c使い方: /quoteFavorite remove <id>'
@@ -68,8 +68,8 @@ command:
     bookOpenFailed: '&cお気に入り図鑑の生成に失敗しました。'
     openBookFailed: '&c本を開けませんでした。'
     unknownSubcommand: '&c不明なサブコマンドです。/quoteFavorite help を確認してください。'
-    shortcutSaved: '&a★ 最新の名言をお気に入りに保存しました。'
-    shortcutNotSaved: '&cお気に入り保存に失敗しました。'
+    shortcutSaved: 最新の名言をお気に入りに保存しました。
+    shortcutNotSaved: 最新の名言は保存されませんでした。まだ記録がないか、すでにお気に入り登録済みの可能性があります。
     help:
       title: '&bQuoteFavorite コマンド一覧'
       latest: '&7/quoteFavorite latest : 最新の名言をお気に入り保存'
@@ -305,6 +305,22 @@ items:
     displayName: '&6特製エメラルド'
     loreCrafted: '&7TreasureRunでクラフトした'
     loreSpecial: '&7特別なエメラルド'
+  material:
+    diamond: ダイヤモンド
+    gold_ingot: 金インゴット
+    iron_ingot: 鉄インゴット
+    emerald: エメラルド
+    apple: リンゴ
+    netherite_ingot: ネザライトインゴット
+    lapis_lazuli: ラピスラズリ
+    redstone: レッドストーン
+    coal: 石炭
+    enchanted_golden_apple: エンチャント金リンゴ
+    diamond_block: ダイヤモンドブロック
+    gold_block: 金ブロック
+    emerald_block: エメラルドブロック
+    iron_block: 鉄ブロック
+    tnt: TNT
 ui:
   menu:
     book:
@@ -338,43 +354,67 @@ outcome:
   success:
     common:
       pool:
-      - 光が等しく降り、すべての影が消えた。
-      - 調和が戻り、すべてはこの瞬間へと収束した。
-      - 静けさが満ち、ただ時間だけがそこを通り過ぎた。
+      - '辿り着いた。
+
+        道は持ちこたえた。'
     easy:
       pool:
-      - たどり着いた。真実はそのままそこにある。
-      - 耳を澄ませたとき、道は開いた。
-      - 距離が意味を持ち、時間があなたの歩みに応えた。
+      - 小さな一歩でも、確かな一歩だ。
     normal:
       pool:
-      - 距離は意味を持ち、時間はあなたの旅路に応えた。
-      - 走破完了。静かな結果。その背後に本物の積み重ねがある。
-      - 瞬間は過ぎ、記録が残った。
+      - 距離は、意味へと変わった。
     hard:
       pool:
-      - 北風の中では、速さより明晰さが生き残る。
-      - 運ではない。整いだ。
-      - 変わったのは世界ではなく、その中でのあなたの位置だった。
+      - 冷気の中でも、明晰さは失われなかった。
   timeup:
     easy:
       pool:
-      - 時間は尽きた。だが、それだけだ。
-      - 走りは終わった。あなたは終わっていない。
-      - 息を吸って。もう一度。
+      - '時間は尽きた。
+
+        でも、あなたは終わっていない。'
     normal:
       pool:
-      - 距離は縮まった。時間は縮まらなかった。
-      - 地図はまだ開いている。戻っておいで。
-      - 宝に届かなくても、あの合図は本物だった。
+      - '距離は縮んだ。
+
+        時間は縮まらなかった。'
     hard:
       pool:
-      - オーロラでさえ消える。新しい歩みで戻れ。
-      - 逃したのは瞬間であって、意味ではない。
-      - 空は動き続けた。あなたもまた進み続けられる。
+      - 'オーロラでさえ消えていく。
+
+        また戻ってくればいい。'
   random:
     common:
       pool: []
   fallback:
-    runComplete: ラン完了。
-    timeUp: タイムアップ。
+    runComplete: 完走した。
+    timeUp: 時間切れ。
+    trader: '完璧な均衡。
+
+      天秤は水平を保った。'
+  trader:
+    common:
+      pool:
+      - '完璧な均衡。
+
+        天秤は水平を保った。'
+      - '物事は変わった。
+
+        交換は続いていった。'
+    easy:
+      pool: []
+    normal:
+      pool: []
+    hard:
+      pool: []
+  notice:
+    timeUpGameOver: 時間切れ！ゲーム終了！
+    retryGuide: 次は別のルートで試してみてね。やり直すなら /gamestart <easy|normal|hard> を使ってね。
+    titleTimeUp: 時間切れ！
+    treasuresCollected: '回収した宝箱: {got}/{total}（残り {missing}）'
+gameplay:
+  pickup:
+    scoreNone: まだスコアがありません。
+    gameEndTotalScore: 'ゲーム終了！合計スコア: {score}'
+    treasureFound: '宝物: {name} ×{amount}'
+    scoreAdded: 'スコア +{add}点（累計: {total}点）'
+    remainingChests: '残りの宝箱: {count}個'

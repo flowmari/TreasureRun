@@ -54,10 +54,10 @@ command:
     needDiamonds: '&cDu brauchst 3 Diamanten, um einen Spezial-Smaragd herzustellen.'
     success: '&bDu hast mit 3 Diamanten einen Spezial-Smaragd hergestellt!'
   quoteFavorite:
-    latestSaved: '&a★ Das neueste Zitat wurde zu den Favoriten hinzugefügt.'
-    latestNotSaved: '&eDas neueste Zitat konnte nicht gespeichert werden. Möglicherweise gibt es noch keinen Eintrag oder es ist bereits als Favorit gespeichert.'
+    latestSaved: Das neueste Zitat wurde zu den Favoriten hinzugefügt.
+    latestNotSaved: Das neueste Zitat konnte nicht gespeichert werden. Entweder gibt es noch keinen Eintrag oder es ist bereits in den Favoriten.
     playersOnly: '&cDieser Befehl kann nur von Spielern verwendet werden.'
-    repositoryNotReady: '&cDie Favoritenfunktion ist noch nicht verfügbar.'
+    repositoryNotReady: Favoriten sind noch nicht verfügbar.
     listHeader: '&bFavoriten ({count})'
     listSeparator: '&7------------------------------'
     removeUsage: '&cVerwendung: /quoteFavorite remove <id>'
@@ -68,8 +68,8 @@ command:
     bookOpenFailed: '&cDas Favoritenbuch konnte nicht erstellt werden.'
     openBookFailed: '&cDas Buch konnte nicht geöffnet werden.'
     unknownSubcommand: '&cUnbekannter Unterbefehl. Sieh dir /quoteFavorite help an.'
-    shortcutSaved: '&a★ Das neueste Zitat wurde zu den Favoriten hinzugefügt.'
-    shortcutNotSaved: '&cDas neueste Zitat konnte nicht gespeichert werden.'
+    shortcutSaved: Das neueste Zitat wurde zu den Favoriten hinzugefügt.
+    shortcutNotSaved: Das neueste Zitat konnte nicht gespeichert werden. Entweder gibt es noch keinen Eintrag oder es ist bereits in den Favoriten.
     help:
       title: '&bQuoteFavorite-Befehle'
       latest: '&7/quoteFavorite latest  - neuestes Zitat als Favorit speichern'
@@ -305,6 +305,22 @@ items:
     displayName: '&6Spezial-Smaragd'
     loreCrafted: '&7In TreasureRun hergestellt'
     loreSpecial: '&7Ein besonderer Smaragd'
+  material:
+    diamond: Diamant
+    gold_ingot: Goldbarren
+    iron_ingot: Eisenbarren
+    emerald: Smaragd
+    apple: Apfel
+    netherite_ingot: Netheritbarren
+    lapis_lazuli: Lapislazuli
+    redstone: Redstone
+    coal: Kohle
+    enchanted_golden_apple: Verzauberter Goldapfel
+    diamond_block: Diamantblock
+    gold_block: Goldblock
+    emerald_block: Smaragdblock
+    iron_block: Eisenblock
+    tnt: TNT
 ui:
   menu:
     book:
@@ -338,43 +354,67 @@ outcome:
   success:
     common:
       pool:
-      - Das Licht fiel gleichmäßig, und jeder Schatten verschwand.
-      - Die Harmonie kehrte zurück. Alles hatte zu diesem Moment geführt.
-      - Stille legte sich ein. Nur die Zeit bewegte sich weiter.
+      - 'Du hast es geschafft.
+
+        Der Weg hat gehalten.'
     easy:
       pool:
-      - Du hast es geschafft. Die Wahrheit bleibt.
-      - Du hast zugehört, und der Weg öffnete sich.
-      - Die Strecke bekam ihren Sinn. Die Zeit antwortete deinen Schritten.
+      - Auch ein kleiner Schritt zählt.
     normal:
       pool:
-      - Die Strecke bekam ihren Sinn. Die Zeit antwortete deiner Reise.
-      - Lauf abgeschlossen. Ein stilles Ergebnis, getragen von echter Arbeit.
-      - Der Moment verging. Die Aufzeichnung blieb.
+      - Die Strecke bekam Bedeutung.
     hard:
       pool:
-      - Im Nordwind überdauert Klarheit die Geschwindigkeit.
-      - Nicht Glück. Ausrichtung.
-      - Die Welt hat sich nicht verändert. Dein Platz in ihr hat es.
+      - In der Kälte blieb die Klarheit bestehen.
   timeup:
     easy:
       pool:
-      - Die Zeit ist abgelaufen. Sonst nichts.
-      - Der Lauf endete. Du nicht.
-      - Atme tief durch. Dann noch einmal.
+      - 'Die Zeit ist abgelaufen.
+
+        Du nicht.'
     normal:
       pool:
-      - Die Distanz schloss sich. Die Zeit nicht.
-      - Die Karte ist noch offen. Komm zurück.
-      - Der Schatz blieb unerreichbar, aber das Signal war echt.
+      - 'Die Distanz schloss sich.
+
+        Die Zeit nicht.'
     hard:
       pool:
-      - Selbst das Nordlicht vergeht. Komm mit einem neuen Schritt zurück.
-      - Der Augenblick ist vorbei. Die Bedeutung nicht.
-      - Der Himmel blieb in Bewegung. Du auch.
+      - 'Selbst die Aurora vergeht.
+
+        Komm wieder.'
   random:
     common:
       pool: []
   fallback:
     runComplete: Lauf abgeschlossen.
     timeUp: Zeit abgelaufen.
+    trader: 'Vollkommene Balance.
+
+      Die Waage blieb im Gleichgewicht.'
+  trader:
+    common:
+      pool:
+      - 'Vollkommene Balance.
+
+        Die Waage blieb im Gleichgewicht.'
+      - 'Die Dinge änderten sich.
+
+        Der Tausch ging weiter.'
+    easy:
+      pool: []
+    normal:
+      pool: []
+    hard:
+      pool: []
+  notice:
+    timeUpGameOver: Zeit abgelaufen! Spiel beendet!
+    retryGuide: Probiere beim nächsten Mal eine andere Route. Zum Neustart nutze /gamestart <easy|normal|hard>.
+    titleTimeUp: ZEIT ABGELAUFEN!
+    treasuresCollected: 'Gesammelte Schatztruhen: {got}/{total} (noch {missing})'
+gameplay:
+  pickup:
+    scoreNone: Es gibt noch keinen Punktestand.
+    gameEndTotalScore: 'Spiel beendet! Gesamtpunktzahl: {score}'
+    treasureFound: 'Schatz: {name} ×{amount}'
+    scoreAdded: 'Punkte +{add} (Gesamt: {total})'
+    remainingChests: 'Verbleibende Truhen: {count}'

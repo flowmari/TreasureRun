@@ -54,10 +54,10 @@ command:
     needDiamonds: '&cJe hebt 3 diamanten nodig om een Speciale Smaragd te maken.'
     success: '&bJe hebt met 3 diamanten een Speciale Smaragd gemaakt!'
   quoteFavorite:
-    latestSaved: '&a★ Het nieuwste citaat is aan Favorieten toegevoegd.'
-    latestNotSaved: '&eHet nieuwste citaat kon niet worden opgeslagen. Misschien is er nog geen log of staat het al in Favorieten.'
+    latestSaved: De nieuwste quote is opgeslagen bij Favorieten.
+    latestNotSaved: De nieuwste quote kon niet worden opgeslagen. Er is mogelijk nog geen log, of hij staat al bij Favorieten.
     playersOnly: '&cAlleen spelers kunnen dit commando gebruiken.'
-    repositoryNotReady: '&cDe functie Favorieten is nog niet beschikbaar.'
+    repositoryNotReady: Favorieten zijn nog niet beschikbaar.
     listHeader: '&bFavorieten ({count})'
     listSeparator: '&7------------------------------'
     removeUsage: '&cGebruik: /quoteFavorite remove <id>'
@@ -68,8 +68,8 @@ command:
     bookOpenFailed: '&cHet Favorietenboek kon niet worden opgebouwd.'
     openBookFailed: '&cHet boek kon niet worden geopend.'
     unknownSubcommand: '&cOnbekend subcommando. Bekijk /quoteFavorite help.'
-    shortcutSaved: '&a★ Het nieuwste citaat is aan Favorieten toegevoegd.'
-    shortcutNotSaved: '&cHet nieuwste citaat kon niet worden opgeslagen.'
+    shortcutSaved: De nieuwste quote is opgeslagen bij Favorieten.
+    shortcutNotSaved: De nieuwste quote kon niet worden opgeslagen. Er is mogelijk nog geen log, of hij staat al bij Favorieten.
     help:
       title: '&bQuoteFavorite-commando''s'
       latest: '&7/quoteFavorite latest  - nieuwste citaat aan Favorieten toevoegen'
@@ -305,6 +305,22 @@ items:
     displayName: '&6Speciale smaragd'
     loreCrafted: '&7Gemaakt in TreasureRun'
     loreSpecial: '&7Een speciale smaragd'
+  material:
+    diamond: Diamant
+    gold_ingot: Goudstaaf
+    iron_ingot: IJzerstaaf
+    emerald: Smaragd
+    apple: Appel
+    netherite_ingot: Netherietstaaf
+    lapis_lazuli: Lapis lazuli
+    redstone: Redstone
+    coal: Steenkool
+    enchanted_golden_apple: Betoverde gouden appel
+    diamond_block: Diamantblok
+    gold_block: Goudblok
+    emerald_block: Smaragdblok
+    iron_block: IJzerblok
+    tnt: TNT
 ui:
   menu:
     book:
@@ -338,43 +354,67 @@ outcome:
   success:
     common:
       pool:
-      - Het licht viel gelijkmatig, en elke schaduw verdween.
-      - De harmonie keerde terug. Alles had naar dit moment geleid.
-      - De stilte daalde neer. Alleen de tijd bleef bewegen.
+      - 'Je hebt het gehaald.
+
+        Het pad hield stand.'
     easy:
       pool:
-      - Je hebt het gehaald. De waarheid blijft.
-      - Je luisterde, en het pad opende zich.
-      - De afstand vond haar betekenis, en de tijd beantwoordde je stappen.
+      - Ook een kleine stap telt.
     normal:
       pool:
-      - De afstand vond haar betekenis. De tijd beantwoordde je reis.
-      - Run voltooid. Een stil resultaat, gedragen door echt werk.
-      - Het moment verstreek. Het record bleef.
+      - Afstand kreeg betekenis.
     hard:
       pool:
-      - In de noordenwind overleeft helderheid de snelheid.
-      - Geen geluk. Afstemming.
-      - De wereld veranderde niet. Jouw plek erin wel.
+      - In de kou hield de helderheid stand.
   timeup:
     easy:
       pool:
-      - De tijd is op. Meer niet.
-      - De run eindigde. Jij niet.
-      - Haal adem. Dan nog een keer.
+      - 'De tijd is om.
+
+        Jij niet.'
     normal:
       pool:
-      - De afstand sloot zich. De tijd niet.
-      - De kaart staat nog open. Kom terug.
-      - De schat bleef buiten bereik, maar het signaal was echt.
+      - 'De afstand werd kleiner.
+
+        De tijd niet.'
     hard:
       pool:
-      - Zelfs het noorderlicht vervaagt. Kom terug met een nieuwe pas.
-      - Het moment gleed weg. De betekenis niet.
-      - De hemel bleef bewegen. Dat kan jij ook.
+      - 'Zelfs het noorderlicht vervaagt.
+
+        Kom terug.'
   random:
     common:
       pool: []
   fallback:
     runComplete: Run voltooid.
-    timeUp: Tijd op.
+    timeUp: Tijd is om.
+    trader: 'Perfect evenwicht.
+
+      De weegschaal bleef in balans.'
+  trader:
+    common:
+      pool:
+      - 'Perfect evenwicht.
+
+        De weegschaal bleef in balans.'
+      - 'Dingen veranderden.
+
+        De uitwisseling ging door.'
+    easy:
+      pool: []
+    normal:
+      pool: []
+    hard:
+      pool: []
+  notice:
+    timeUpGameOver: Tijd is om! Spel afgelopen!
+    retryGuide: Probeer de volgende keer een andere route. Gebruik /gamestart <easy|normal|hard> om opnieuw te beginnen.
+    titleTimeUp: TIJD IS OM!
+    treasuresCollected: 'Verzamelde schatten: {got}/{total} ({missing} over)'
+gameplay:
+  pickup:
+    scoreNone: Er is nog geen score.
+    gameEndTotalScore: 'Spel afgelopen! Totale score: {score}'
+    treasureFound: 'Schat: {name} ×{amount}'
+    scoreAdded: 'Score +{add} (Totaal: {total})'
+    remainingChests: 'Resterende kisten: {count}'
