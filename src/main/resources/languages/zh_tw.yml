@@ -475,10 +475,10 @@ command:
     success: '&b你已使用 3 顆鑽石製作出特製綠寶石！'
   onlyPlayer: '&c這個指令只能由玩家使用。'
   quoteFavorite:
-    latestSaved: '&a★ 已將最新名言加入收藏。'
-    latestNotSaved: '&e無法儲存最新名言。可能尚無紀錄，或該名言已在收藏中。'
+    latestSaved: 最新的名言已加入收藏。
+    latestNotSaved: 最新的名言無法保存。可能還沒有紀錄，或已經加入收藏。
     playersOnly: '&c此指令只能由玩家使用。'
-    repositoryNotReady: '&c收藏功能目前尚未可用。'
+    repositoryNotReady: 收藏功能尚未可用。
     listHeader: '&b收藏 ({count})'
     listSeparator: '&7------------------------------'
     removeUsage: '&c用法：/quoteFavorite remove <id>'
@@ -489,8 +489,8 @@ command:
     bookOpenFailed: '&c建立收藏書時失敗。'
     openBookFailed: '&c無法開啟書本。'
     unknownSubcommand: '&c未知的子指令。請查看 /quoteFavorite help。'
-    shortcutSaved: '&a★ 已將最新名言加入收藏。'
-    shortcutNotSaved: '&c儲存最新名言失敗。'
+    shortcutSaved: 最新的名言已加入收藏。
+    shortcutNotSaved: 最新的名言無法保存。可能還沒有紀錄，或已經加入收藏。
     help:
       title: '&bQuoteFavorite 指令'
       latest: '&7/quoteFavorite latest  - 將最新名言加入收藏'
@@ -509,6 +509,22 @@ items:
     displayName: '&6特殊綠寶石'
     loreCrafted: '&7在 TreasureRun 中製作'
     loreSpecial: '&7特殊的綠寶石'
+  material:
+    diamond: 鑽石
+    gold_ingot: 金錠
+    iron_ingot: 鐵錠
+    emerald: 綠寶石
+    apple: 蘋果
+    netherite_ingot: 獄髓錠
+    lapis_lazuli: 青金石
+    redstone: 紅石
+    coal: 煤炭
+    enchanted_golden_apple: 附魔金蘋果
+    diamond_block: 鑽石方塊
+    gold_block: 金方塊
+    emerald_block: 綠寶石方塊
+    iron_block: 鐵方塊
+    tnt: TNT
 outcome:
   success:
     common:
@@ -565,3 +581,15 @@ outcome:
       pool: []
     hard:
       pool: []
+  notice:
+    timeUpGameOver: 時間到！遊戲結束！
+    retryGuide: 下次試試不同路線吧。想重新挑戰的話，請使用 /gamestart <easy|normal|hard>。
+    titleTimeUp: 時間到！
+    treasuresCollected: 已收集寶箱：{got}/{total}（剩餘 {missing}）
+gameplay:
+  pickup:
+    scoreNone: 目前還沒有分數。
+    gameEndTotalScore: 遊戲結束！總分：{score}
+    treasureFound: 寶物：{name} ×{amount}
+    scoreAdded: 分數 +{add}（累計：{total}）
+    remainingChests: 剩餘寶箱：{count}

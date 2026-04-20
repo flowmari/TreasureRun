@@ -54,10 +54,10 @@ command:
     needDiamonds: '&cDu brauchst 3 Diamanten, um einen Spezial-Smaragd herzustellen.'
     success: '&bDu hast mit 3 Diamanten einen Spezial-Smaragd hergestellt!'
   quoteFavorite:
-    latestSaved: '&a★ Das neueste Zitat wurde zu den Favoriten hinzugefügt.'
-    latestNotSaved: '&eDas neueste Zitat konnte nicht gespeichert werden. Möglicherweise gibt es noch keinen Eintrag oder es ist bereits als Favorit gespeichert.'
+    latestSaved: Das neueste Zitat wurde zu den Favoriten hinzugefügt.
+    latestNotSaved: Das neueste Zitat konnte nicht gespeichert werden. Entweder gibt es noch keinen Eintrag oder es ist bereits in den Favoriten.
     playersOnly: '&cDieser Befehl kann nur von Spielern verwendet werden.'
-    repositoryNotReady: '&cDie Favoritenfunktion ist noch nicht verfügbar.'
+    repositoryNotReady: Favoriten sind noch nicht verfügbar.
     listHeader: '&bFavoriten ({count})'
     listSeparator: '&7------------------------------'
     removeUsage: '&cVerwendung: /quoteFavorite remove <id>'
@@ -68,8 +68,8 @@ command:
     bookOpenFailed: '&cDas Favoritenbuch konnte nicht erstellt werden.'
     openBookFailed: '&cDas Buch konnte nicht geöffnet werden.'
     unknownSubcommand: '&cUnbekannter Unterbefehl. Sieh dir /quoteFavorite help an.'
-    shortcutSaved: '&a★ Das neueste Zitat wurde zu den Favoriten hinzugefügt.'
-    shortcutNotSaved: '&cDas neueste Zitat konnte nicht gespeichert werden.'
+    shortcutSaved: Das neueste Zitat wurde zu den Favoriten hinzugefügt.
+    shortcutNotSaved: Das neueste Zitat konnte nicht gespeichert werden. Entweder gibt es noch keinen Eintrag oder es ist bereits in den Favoriten.
     help:
       title: '&bQuoteFavorite-Befehle'
       latest: '&7/quoteFavorite latest  - neuestes Zitat als Favorit speichern'
@@ -305,6 +305,22 @@ items:
     displayName: '&6Spezial-Smaragd'
     loreCrafted: '&7In TreasureRun hergestellt'
     loreSpecial: '&7Ein besonderer Smaragd'
+  material:
+    diamond: Diamant
+    gold_ingot: Goldbarren
+    iron_ingot: Eisenbarren
+    emerald: Smaragd
+    apple: Apfel
+    netherite_ingot: Netheritbarren
+    lapis_lazuli: Lapislazuli
+    redstone: Redstone
+    coal: Kohle
+    enchanted_golden_apple: Verzauberter Goldapfel
+    diamond_block: Diamantblock
+    gold_block: Goldblock
+    emerald_block: Smaragdblock
+    iron_block: Eisenblock
+    tnt: TNT
 ui:
   menu:
     book:
@@ -390,3 +406,15 @@ outcome:
       pool: []
     hard:
       pool: []
+  notice:
+    timeUpGameOver: Zeit abgelaufen! Spiel beendet!
+    retryGuide: Probiere beim nächsten Mal eine andere Route. Zum Neustart nutze /gamestart <easy|normal|hard>.
+    titleTimeUp: ZEIT ABGELAUFEN!
+    treasuresCollected: 'Gesammelte Schatztruhen: {got}/{total} (noch {missing})'
+gameplay:
+  pickup:
+    scoreNone: Es gibt noch keinen Punktestand.
+    gameEndTotalScore: 'Spiel beendet! Gesamtpunktzahl: {score}'
+    treasureFound: 'Schatz: {name} ×{amount}'
+    scoreAdded: 'Punkte +{add} (Gesamt: {total})'
+    remainingChests: 'Verbleibende Truhen: {count}'

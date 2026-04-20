@@ -54,10 +54,10 @@ command:
     needDiamonds: '&cTi servono 3 diamanti per creare uno Smeraldo Speciale.'
     success: '&bHai creato uno Smeraldo Speciale usando 3 diamanti!'
   quoteFavorite:
-    latestSaved: '&a★ La citazione più recente è stata salvata nei Preferiti.'
-    latestNotSaved: '&eNon è stato possibile salvare la citazione più recente. Potrebbe non esserci ancora alcun record, oppure potrebbe essere già nei Preferiti.'
+    latestSaved: La citazione più recente è stata salvata nei Preferiti.
+    latestNotSaved: Non è stato possibile salvare la citazione più recente. Potrebbe non esserci ancora alcun log, oppure potrebbe essere già nei Preferiti.
     playersOnly: '&cQuesto comando può essere usato solo dai giocatori.'
-    repositoryNotReady: '&cLa funzione Preferiti non è ancora disponibile.'
+    repositoryNotReady: I Preferiti non sono ancora disponibili.
     listHeader: '&bPreferiti ({count})'
     listSeparator: '&7------------------------------'
     removeUsage: '&cUso: /quoteFavorite remove <id>'
@@ -68,8 +68,8 @@ command:
     bookOpenFailed: '&cImpossibile generare il libro dei Preferiti.'
     openBookFailed: '&cImpossibile aprire il libro.'
     unknownSubcommand: '&cSottocomando sconosciuto. Controlla /quoteFavorite help.'
-    shortcutSaved: '&a★ La citazione più recente è stata salvata nei Preferiti.'
-    shortcutNotSaved: '&cImpossibile salvare la citazione più recente.'
+    shortcutSaved: La citazione più recente è stata salvata nei Preferiti.
+    shortcutNotSaved: Non è stato possibile salvare la citazione più recente. Potrebbe non esserci ancora alcun log, oppure potrebbe essere già nei Preferiti.
     help:
       title: '&bComandi di QuoteFavorite'
       latest: '&7/quoteFavorite latest  - salva l''ultima citazione nei Preferiti'
@@ -305,6 +305,22 @@ items:
     displayName: '&6Smeraldo speciale'
     loreCrafted: '&7Creato in TreasureRun'
     loreSpecial: '&7Uno smeraldo speciale'
+  material:
+    diamond: Diamante
+    gold_ingot: Lingotto d'oro
+    iron_ingot: Lingotto di ferro
+    emerald: Smeraldo
+    apple: Mela
+    netherite_ingot: Lingotto di netherite
+    lapis_lazuli: Lapislazzuli
+    redstone: Pietrarossa
+    coal: Carbone
+    enchanted_golden_apple: Mela d'oro incantata
+    diamond_block: Blocco di diamante
+    gold_block: Blocco d'oro
+    emerald_block: Blocco di smeraldo
+    iron_block: Blocco di ferro
+    tnt: TNT
 ui:
   menu:
     book:
@@ -390,3 +406,15 @@ outcome:
       pool: []
     hard:
       pool: []
+  notice:
+    timeUpGameOver: Tempo scaduto! Partita finita!
+    retryGuide: La prossima volta prova un altro percorso. Per riprovare usa /gamestart <easy|normal|hard>.
+    titleTimeUp: TEMPO SCADUTO!
+    treasuresCollected: 'Tesori raccolti: {got}/{total} ({missing} rimanenti)'
+gameplay:
+  pickup:
+    scoreNone: Non c'è ancora alcun punteggio.
+    gameEndTotalScore: 'Partita finita! Punteggio totale: {score}'
+    treasureFound: 'Tesoro: {name} ×{amount}'
+    scoreAdded: 'Punteggio +{add} (Totale: {total})'
+    remainingChests: 'Forzieri rimanenti: {count}'

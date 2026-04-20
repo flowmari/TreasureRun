@@ -54,10 +54,10 @@ command:
     needDiamonds: '&cNEED 3 DIAMOND TO CRAFT SPECIAL EMERALD.'
     success: '&bSPECIAL EMERALD CRAFT FINISH USE 3 DIAMOND!'
   quoteFavorite:
-    latestSaved: '&a★ LATEST QUOTE SAVE FAVORITES.'
-    latestNotSaved: '&eLATEST QUOTE SAVE FAIL. MAYBE NO LOG YET OR ALREADY FAVORITE.'
+    latestSaved: LATEST QUOTE SAVED FAVORITES.
+    latestNotSaved: LATEST QUOTE SAVE FAIL. MAYBE NO LOG YET OR ALREADY FAVORITE.
     playersOnly: '&cONLY PLAYER CAN USE THIS COMMAND.'
-    repositoryNotReady: '&cFAVORITES FEATURE NOT READY YET.'
+    repositoryNotReady: FAVORITES NOT READY YET.
     listHeader: '&bFAVORITES ({count})'
     listSeparator: '&7------------------------------'
     removeUsage: '&cUSE: /quoteFavorite remove <id>'
@@ -68,8 +68,8 @@ command:
     bookOpenFailed: '&cFAVORITES BOOK BUILD FAIL.'
     openBookFailed: '&cBOOK OPEN FAIL.'
     unknownSubcommand: '&cUNKNOWN SUBCOMMAND. SEE /quoteFavorite help.'
-    shortcutSaved: '&a★ LATEST QUOTE SAVE FAVORITES.'
-    shortcutNotSaved: '&cLATEST QUOTE SAVE FAIL.'
+    shortcutSaved: LATEST QUOTE SAVED FAVORITES.
+    shortcutNotSaved: LATEST QUOTE SAVE FAIL. MAYBE NO LOG YET OR ALREADY FAVORITE.
     help:
       title: '&bQUOTEFAVORITE COMMANDS'
       latest: '&7/quoteFavorite latest  - SAVE LATEST QUOTE FAVORITE'
@@ -305,6 +305,22 @@ items:
     displayName: '&6SPECIAL EMERALD'
     loreCrafted: '&7CRAFT IN TREASURERUN'
     loreSpecial: '&7SPECIAL EMERALD'
+  material:
+    diamond: DIAMOND
+    gold_ingot: GOLD INGOT
+    iron_ingot: IRON INGOT
+    emerald: EMERALD
+    apple: APPLE
+    netherite_ingot: NETHERITE INGOT
+    lapis_lazuli: LAPIS LAZULI
+    redstone: REDSTONE
+    coal: COAL
+    enchanted_golden_apple: ENCHANTED GOLDEN APPLE
+    diamond_block: DIAMOND BLOCK
+    gold_block: GOLD BLOCK
+    emerald_block: EMERALD BLOCK
+    iron_block: IRON BLOCK
+    tnt: TNT
 ui:
   menu:
     book:
@@ -390,3 +406,15 @@ outcome:
       pool: []
     hard:
       pool: []
+  notice:
+    timeUpGameOver: TIME-UP! GAME FINISH!
+    retryGuide: NEXT-TIME TRY DIFFERENT ROUTE. RETRY USE /gamestart <easy|normal|hard>.
+    titleTimeUp: TIME-UP!
+    treasuresCollected: 'TREASURE COLLECTED: {got}/{total} ({missing} LEFT)'
+gameplay:
+  pickup:
+    scoreNone: SCORE NONE YET.
+    gameEndTotalScore: 'GAME FINISH! TOTAL SCORE: {score}'
+    treasureFound: 'TREASURE: {name} ×{amount}'
+    scoreAdded: 'SCORE +{add} (TOTAL: {total})'
+    remainingChests: 'CHESTS LEFT: {count}'

@@ -54,10 +54,10 @@ command:
     needDiamonds: '&cスペシャルエメラルドの作成にはダイヤモンドが3個必要です。'
     success: '&bダイヤモンド3個でスペシャルエメラルドを作成しました！'
   quoteFavorite:
-    latestSaved: ★ 最新の名言をお気に入りに保存しました。
+    latestSaved: 最新の名言をお気に入りに保存しました。
     latestNotSaved: 最新の名言は保存されませんでした。まだ記録がないか、すでにお気に入り登録済みの可能性があります。
     playersOnly: '&cこのコマンドはプレイヤーのみ使用できます。'
-    repositoryNotReady: '&cお気に入り機能はまだ利用できません。'
+    repositoryNotReady: お気に入り機能はまだ利用できません。
     listHeader: '&bお気に入り一覧（{count}件）'
     listSeparator: '&7------------------------------'
     removeUsage: '&c使い方: /quoteFavorite remove <id>'
@@ -68,8 +68,8 @@ command:
     bookOpenFailed: '&cお気に入り図鑑の生成に失敗しました。'
     openBookFailed: '&c本を開けませんでした。'
     unknownSubcommand: '&c不明なサブコマンドです。/quoteFavorite help を確認してください。'
-    shortcutSaved: '&a★ 最新の名言をお気に入りに保存しました。'
-    shortcutNotSaved: '&cお気に入り保存に失敗しました。'
+    shortcutSaved: 最新の名言をお気に入りに保存しました。
+    shortcutNotSaved: 最新の名言は保存されませんでした。まだ記録がないか、すでにお気に入り登録済みの可能性があります。
     help:
       title: '&bQuoteFavorite コマンド一覧'
       latest: '&7/quoteFavorite latest : 最新の名言をお気に入り保存'
@@ -305,6 +305,22 @@ items:
     displayName: '&6特製エメラルド'
     loreCrafted: '&7TreasureRunでクラフトした'
     loreSpecial: '&7特別なエメラルド'
+  material:
+    diamond: ダイヤモンド
+    gold_ingot: 金インゴット
+    iron_ingot: 鉄インゴット
+    emerald: エメラルド
+    apple: リンゴ
+    netherite_ingot: ネザライトインゴット
+    lapis_lazuli: ラピスラズリ
+    redstone: レッドストーン
+    coal: 石炭
+    enchanted_golden_apple: エンチャント金リンゴ
+    diamond_block: ダイヤモンドブロック
+    gold_block: 金ブロック
+    emerald_block: エメラルドブロック
+    iron_block: 鉄ブロック
+    tnt: TNT
 ui:
   menu:
     book:
@@ -390,3 +406,15 @@ outcome:
       pool: []
     hard:
       pool: []
+  notice:
+    timeUpGameOver: 時間切れ！ゲーム終了！
+    retryGuide: 次は別のルートで試してみてね。やり直すなら /gamestart <easy|normal|hard> を使ってね。
+    titleTimeUp: 時間切れ！
+    treasuresCollected: '回収した宝箱: {got}/{total}（残り {missing}）'
+gameplay:
+  pickup:
+    scoreNone: まだスコアがありません。
+    gameEndTotalScore: 'ゲーム終了！合計スコア: {score}'
+    treasureFound: '宝物: {name} ×{amount}'
+    scoreAdded: 'スコア +{add}点（累計: {total}点）'
+    remainingChests: '残りの宝箱: {count}個'

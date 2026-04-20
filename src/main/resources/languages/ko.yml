@@ -54,10 +54,10 @@ command:
     needDiamonds: '&c특제 에메랄드를 제작하려면 다이아몬드 3개가 필요합니다.'
     success: '&b다이아몬드 3개로 특제 에메랄드를 제작했습니다!'
   quoteFavorite:
-    latestSaved: '&a★ 최신 문장을 즐겨찾기에 저장했습니다.'
-    latestNotSaved: '&e최신 문장을 저장하지 못했습니다. 아직 기록이 없거나 이미 즐겨찾기에 저장되었을 수 있습니다.'
+    latestSaved: 최신 명언이 즐겨찾기에 저장되었습니다.
+    latestNotSaved: 최신 명언을 저장할 수 없습니다. 아직 기록이 없거나 이미 즐겨찾기에 등록되었을 수 있습니다.
     playersOnly: '&c이 명령어는 플레이어만 사용할 수 있습니다.'
-    repositoryNotReady: '&c즐겨찾기 기능은 아직 사용할 수 없습니다.'
+    repositoryNotReady: 즐겨찾기 기능은 아직 사용할 수 없습니다.
     listHeader: '&b즐겨찾기 ({count})'
     listSeparator: '&7------------------------------'
     removeUsage: '&c사용법: /quoteFavorite remove <id>'
@@ -68,8 +68,8 @@ command:
     bookOpenFailed: '&c즐겨찾기 책 생성에 실패했습니다.'
     openBookFailed: '&c책을 열지 못했습니다.'
     unknownSubcommand: '&c알 수 없는 하위 명령어입니다. /quoteFavorite help 를 확인하세요.'
-    shortcutSaved: '&a★ 최신 문장을 즐겨찾기에 저장했습니다.'
-    shortcutNotSaved: '&c최신 문장 저장에 실패했습니다.'
+    shortcutSaved: 최신 명언이 즐겨찾기에 저장되었습니다.
+    shortcutNotSaved: 최신 명언을 저장할 수 없습니다. 아직 기록이 없거나 이미 즐겨찾기에 등록되었을 수 있습니다.
     help:
       title: '&bQuoteFavorite 명령어'
       latest: '&7/quoteFavorite latest  - 최신 문장을 즐겨찾기에 저장'
@@ -305,6 +305,22 @@ items:
     displayName: '&6특별한 에메랄드'
     loreCrafted: '&7TreasureRun에서 제작한'
     loreSpecial: '&7특별한 에메랄드'
+  material:
+    diamond: 다이아몬드
+    gold_ingot: 금 주괴
+    iron_ingot: 철 주괴
+    emerald: 에메랄드
+    apple: 사과
+    netherite_ingot: 네더라이트 주괴
+    lapis_lazuli: 청금석
+    redstone: 레드스톤
+    coal: 석탄
+    enchanted_golden_apple: 마법이 부여된 황금 사과
+    diamond_block: 다이아몬드 블록
+    gold_block: 금 블록
+    emerald_block: 에메랄드 블록
+    iron_block: 철 블록
+    tnt: TNT
 ui:
   menu:
     book:
@@ -390,3 +406,15 @@ outcome:
       pool: []
     hard:
       pool: []
+  notice:
+    timeUpGameOver: 시간 종료! 게임 종료!
+    retryGuide: 다음에는 다른 루트로 도전해 보세요. 다시 시작하려면 /gamestart <easy|normal|hard> 를 사용하세요.
+    titleTimeUp: 시간 종료!
+    treasuresCollected: '획득한 보물: {got}/{total} (남은 수 {missing})'
+gameplay:
+  pickup:
+    scoreNone: 아직 점수가 없습니다.
+    gameEndTotalScore: '게임 종료! 총점: {score}'
+    treasureFound: '보물: {name} ×{amount}'
+    scoreAdded: '점수 +{add} (누적: {total})'
+    remainingChests: '남은 상자: {count}'

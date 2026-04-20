@@ -475,10 +475,10 @@ command:
     success: '&bआपने 3 हीरों से एक स्पेशल एमराल्ड बना लिया!'
   onlyPlayer: '&cयह कमांड केवल खिलाड़ी ही चला सकता है।'
   quoteFavorite:
-    latestSaved: '&a★ नवीनतम उद्धरण पसंदीदा में सहेज दिया गया।'
-    latestNotSaved: '&eनवीनतम उद्धरण सहेजा नहीं जा सका। शायद अभी कोई लॉग नहीं है, या यह पहले से पसंदीदा में है।'
+    latestSaved: नवीनतम उद्धरण पसंदीदा में सहेजा गया।
+    latestNotSaved: नवीनतम उद्धरण सहेजा नहीं जा सका। या तो अभी कोई लॉग नहीं है, या वह पहले से ही पसंदीदा में है।
     playersOnly: '&cइस कमांड का उपयोग केवल खिलाड़ी कर सकते हैं।'
-    repositoryNotReady: '&cपसंदीदा सुविधा अभी उपलब्ध नहीं है।'
+    repositoryNotReady: पसंदीदा अभी उपलब्ध नहीं हैं।
     listHeader: '&bपसंदीदा ({count})'
     listSeparator: '&7------------------------------'
     removeUsage: '&cउपयोग: /quoteFavorite remove <id>'
@@ -489,8 +489,8 @@ command:
     bookOpenFailed: '&cपसंदीदा पुस्तक बनाना विफल रहा।'
     openBookFailed: '&cपुस्तक खोली नहीं जा सकी।'
     unknownSubcommand: '&cअज्ञात सबकमांड। /quoteFavorite help देखें।'
-    shortcutSaved: '&a★ नवीनतम उद्धरण पसंदीदा में सहेज दिया गया।'
-    shortcutNotSaved: '&cनवीनतम उद्धरण सहेजा नहीं जा सका。'
+    shortcutSaved: नवीनतम उद्धरण पसंदीदा में सहेजा गया।
+    shortcutNotSaved: नवीनतम उद्धरण सहेजा नहीं जा सका। या तो अभी कोई लॉग नहीं है, या वह पहले से ही पसंदीदा में है।
     help:
       title: '&bQuoteFavorite कमांड'
       latest: '&7/quoteFavorite latest  - नवीनतम उद्धरण को पसंदीदा में सहेजें'
@@ -509,6 +509,22 @@ items:
     displayName: '&6विशेष एमराल्ड'
     loreCrafted: '&7TreasureRun में निर्मित'
     loreSpecial: '&7एक विशेष एमराल्ड'
+  material:
+    diamond: हीरा
+    gold_ingot: स्वर्ण सिल्ला
+    iron_ingot: लौह सिल्ला
+    emerald: पन्ना
+    apple: सेब
+    netherite_ingot: नेदराइट सिल्ला
+    lapis_lazuli: लैपिस लाजुली
+    redstone: रेडस्टोन
+    coal: कोयला
+    enchanted_golden_apple: मंत्रमुग्ध स्वर्ण सेब
+    diamond_block: हीरे का ब्लॉक
+    gold_block: सोने का ब्लॉक
+    emerald_block: पन्ने का ब्लॉक
+    iron_block: लोहे का ब्लॉक
+    tnt: TNT
 outcome:
   success:
     common:
@@ -565,3 +581,15 @@ outcome:
       pool: []
     hard:
       pool: []
+  notice:
+    timeUpGameOver: समय समाप्त! खेल समाप्त!
+    retryGuide: अगली बार कोई दूसरा रास्ता आज़माएँ। फिर से शुरू करने के लिए /gamestart <easy|normal|hard> का उपयोग करें।
+    titleTimeUp: समय समाप्त!
+    treasuresCollected: 'इकट्ठे किए गए खजाने: {got}/{total} (बाकी {missing})'
+gameplay:
+  pickup:
+    scoreNone: अभी कोई स्कोर नहीं है।
+    gameEndTotalScore: 'खेल समाप्त! कुल स्कोर: {score}'
+    treasureFound: 'खज़ाना: {name} ×{amount}'
+    scoreAdded: 'स्कोर +{add} (कुल: {total})'
+    remainingChests: 'बाकी संदूक: {count}'

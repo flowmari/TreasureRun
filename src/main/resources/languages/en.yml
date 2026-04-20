@@ -54,10 +54,10 @@ command:
     needDiamonds: '&cYou need 3 diamonds to craft a Special Emerald.'
     success: '&bYou crafted a Special Emerald using 3 diamonds!'
   quoteFavorite:
-    latestSaved: ★ Saved the latest quote to Favorites.
-    latestNotSaved: The latest quote was not saved. It may not exist yet, or it may already be in Favorites.
+    latestSaved: The latest quote was saved to Favorites.
+    latestNotSaved: The latest quote could not be saved. There may be no log yet, or it may already be in Favorites.
     playersOnly: '&cThis command can only be used by players.'
-    repositoryNotReady: '&cFavorites are not available yet.'
+    repositoryNotReady: Favorites are not available yet.
     listHeader: '&bFavorites ({count})'
     listSeparator: '&7------------------------------'
     removeUsage: '&cUsage: /quoteFavorite remove <id>'
@@ -68,8 +68,8 @@ command:
     bookOpenFailed: '&cFailed to build the Favorites book.'
     openBookFailed: '&cFailed to open the book.'
     unknownSubcommand: '&cUnknown subcommand. See /quoteFavorite help.'
-    shortcutSaved: '&a★ Saved the latest quote to Favorites.'
-    shortcutNotSaved: '&cFailed to save the latest quote.'
+    shortcutSaved: The latest quote was saved to Favorites.
+    shortcutNotSaved: The latest quote could not be saved. There may be no log yet, or it may already be in Favorites.
     help:
       title: '&bQuote Favorite commands'
       latest: '&7/quoteFavorite latest : save the latest quote to Favorites'
@@ -305,6 +305,22 @@ items:
     displayName: '&6Special Emerald'
     loreCrafted: '&7Crafted in TreasureRun'
     loreSpecial: '&7A special emerald'
+  material:
+    diamond: Diamond
+    gold_ingot: Gold Ingot
+    iron_ingot: Iron Ingot
+    emerald: Emerald
+    apple: Apple
+    netherite_ingot: Netherite Ingot
+    lapis_lazuli: Lapis Lazuli
+    redstone: Redstone
+    coal: Coal
+    enchanted_golden_apple: Enchanted Golden Apple
+    diamond_block: Diamond Block
+    gold_block: Gold Block
+    emerald_block: Emerald Block
+    iron_block: Iron Block
+    tnt: TNT
 ui:
   menu:
     book:
@@ -390,3 +406,15 @@ outcome:
       pool: []
     hard:
       pool: []
+  notice:
+    timeUpGameOver: Time's up! Game over!
+    retryGuide: Try a different route next time. To retry, use /gamestart <easy|normal|hard>.
+    titleTimeUp: TIME'S UP!
+    treasuresCollected: 'Treasures collected: {got}/{total} ({missing} left)'
+gameplay:
+  pickup:
+    scoreNone: No score yet.
+    gameEndTotalScore: 'Game over! Total score: {score}'
+    treasureFound: 'Treasure: {name} ×{amount}'
+    scoreAdded: 'Score +{add} points (Total: {total})'
+    remainingChests: 'Chests remaining: {count}'

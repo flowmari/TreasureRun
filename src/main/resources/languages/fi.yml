@@ -54,10 +54,10 @@ command:
     needDiamonds: '&cTarvitset 3 timanttia valmistaaksesi erikoissmaragdin.'
     success: '&bValmistit erikoissmaragdin käyttämällä 3 timanttia!'
   quoteFavorite:
-    latestSaved: '&a★ Uusin sitaatti tallennettiin Suosikkeihin.'
-    latestNotSaved: '&eUusinta sitaattia ei voitu tallentaa. Lokia ei ehkä vielä ole, tai sitaatti on jo Suosikeissa.'
+    latestSaved: Uusin sitaatti tallennettiin Suosikkeihin.
+    latestNotSaved: Uusinta sitaattia ei voitu tallentaa. Lokia ei ehkä vielä ole tai se on jo Suosikeissa.
     playersOnly: '&cVain pelaajat voivat käyttää tätä komentoa.'
-    repositoryNotReady: '&cSuosikit-toiminto ei ole vielä käytettävissä.'
+    repositoryNotReady: Suosikit eivät ole vielä käytettävissä.
     listHeader: '&bSuosikit ({count})'
     listSeparator: '&7------------------------------'
     removeUsage: '&cKäyttö: /quoteFavorite remove <id>'
@@ -68,8 +68,8 @@ command:
     bookOpenFailed: '&cSuosikkikirjan luominen epäonnistui.'
     openBookFailed: '&cKirjaa ei voitu avata.'
     unknownSubcommand: '&cTuntematon alikomento. Katso /quoteFavorite help.'
-    shortcutSaved: '&a★ Uusin sitaatti tallennettiin Suosikkeihin.'
-    shortcutNotSaved: '&cUusimman sitaatin tallennus epäonnistui.'
+    shortcutSaved: Uusin sitaatti tallennettiin Suosikkeihin.
+    shortcutNotSaved: Uusinta sitaattia ei voitu tallentaa. Lokia ei ehkä vielä ole tai se on jo Suosikeissa.
     help:
       title: '&bQuoteFavorite-komennot'
       latest: '&7/quoteFavorite latest  - tallenna uusin sitaatti Suosikkeihin'
@@ -305,6 +305,22 @@ items:
     displayName: '&6Erikoissmaragdi'
     loreCrafted: '&7Valmistettu TreasureRunissa'
     loreSpecial: '&7Erityinen smaragdi'
+  material:
+    diamond: Timantti
+    gold_ingot: Kultaharkko
+    iron_ingot: Rautaharkko
+    emerald: Smaragdi
+    apple: Omena
+    netherite_ingot: Netheriittiharkko
+    lapis_lazuli: Lapis lazuli
+    redstone: Punapöly
+    coal: Hiili
+    enchanted_golden_apple: Lumottu kultainen omena
+    diamond_block: Timanttilohko
+    gold_block: Kultalohko
+    emerald_block: Smaragdilohko
+    iron_block: Rautalohko
+    tnt: TNT
 ui:
   menu:
     book:
@@ -390,3 +406,15 @@ outcome:
       pool: []
     hard:
       pool: []
+  notice:
+    timeUpGameOver: Aika loppui! Peli päättyi!
+    retryGuide: Kokeile ensi kerralla toista reittiä. Aloita uudelleen komennolla /gamestart <easy|normal|hard>.
+    titleTimeUp: AIKA LOPPUI!
+    treasuresCollected: 'Kerätyt aarteet: {got}/{total} ({missing} jäljellä)'
+gameplay:
+  pickup:
+    scoreNone: Pisteitä ei vielä ole.
+    gameEndTotalScore: 'Peli päättyi! Kokonaispisteet: {score}'
+    treasureFound: 'Aarre: {name} ×{amount}'
+    scoreAdded: 'Pisteet +{add} (Yhteensä: {total})'
+    remainingChests: 'Jäljellä olevat arkut: {count}'

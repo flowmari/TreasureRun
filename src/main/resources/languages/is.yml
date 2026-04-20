@@ -54,10 +54,10 @@ command:
     needDiamonds: '&cÞú þarft 3 demanta til að búa til sérstakan smaragð.'
     success: '&bÞú bjóst til sérstakan smaragð með 3 demöntum!'
   quoteFavorite:
-    latestSaved: '&a★ Nýjasta tilvitnunin var vistuð í Uppáhald.'
-    latestNotSaved: '&eEkki tókst að vista nýjustu tilvitnunina. Kannski er engin færsla til enn, eða hún er þegar í Uppáhaldi.'
+    latestSaved: Nýjasta tilvitnunin var vistuð í Uppáhald.
+    latestNotSaved: Ekki tókst að vista nýjustu tilvitnunina. Annaðhvort er engin skráning enn eða hún er þegar í Uppáhaldi.
     playersOnly: '&cAðeins leikmenn geta notað þessa skipun.'
-    repositoryNotReady: '&cUppáhaldsvirknin er ekki tiltæk enn.'
+    repositoryNotReady: Uppáhald er ekki tiltækt enn.
     listHeader: '&bUppáhald ({count})'
     listSeparator: '&7------------------------------'
     removeUsage: '&cNotkun: /quoteFavorite remove <id>'
@@ -68,8 +68,8 @@ command:
     bookOpenFailed: '&cEkki tókst að búa til Uppáhaldsbókina.'
     openBookFailed: '&cEkki tókst að opna bókina.'
     unknownSubcommand: '&cÓþekkt undirskipun. Sjá /quoteFavorite help.'
-    shortcutSaved: '&a★ Nýjasta tilvitnunin var vistuð í Uppáhald.'
-    shortcutNotSaved: '&cEkki tókst að vista nýjustu tilvitnunina.'
+    shortcutSaved: Nýjasta tilvitnunin var vistuð í Uppáhald.
+    shortcutNotSaved: Ekki tókst að vista nýjustu tilvitnunina. Annaðhvort er engin skráning enn eða hún er þegar í Uppáhaldi.
     help:
       title: '&bQuoteFavorite skipanir'
       latest: '&7/quoteFavorite latest  - vista nýjustu tilvitnunina í Uppáhald'
@@ -305,6 +305,22 @@ items:
     displayName: '&6Sérstakur smaragður'
     loreCrafted: '&7Smíðað í TreasureRun'
     loreSpecial: '&7Sérstakur smaragður'
+  material:
+    diamond: Demantur
+    gold_ingot: Gullstöng
+    iron_ingot: Járnstöng
+    emerald: Smaragður
+    apple: Epli
+    netherite_ingot: Netherite-stöng
+    lapis_lazuli: Lapis lazuli
+    redstone: Rauðsteinn
+    coal: Kol
+    enchanted_golden_apple: Töfrað gullepli
+    diamond_block: Demantskubbur
+    gold_block: Gullkubbur
+    emerald_block: Smaragðskubbur
+    iron_block: Járnkubbur
+    tnt: TNT
 ui:
   menu:
     book:
@@ -390,3 +406,15 @@ outcome:
       pool: []
     hard:
       pool: []
+  notice:
+    timeUpGameOver: Tíminn rann út! Leik lokið!
+    retryGuide: Prófaðu aðra leið næst. Til að reyna aftur skaltu nota /gamestart <easy|normal|hard>.
+    titleTimeUp: TÍMINN RANN ÚT!
+    treasuresCollected: 'Fjársjóðir fundnir: {got}/{total} ({missing} eftir)'
+gameplay:
+  pickup:
+    scoreNone: Engin stig eru komin enn.
+    gameEndTotalScore: 'Leik lokið! Heildarskor: {score}'
+    treasureFound: 'Fjársjóður: {name} ×{amount}'
+    scoreAdded: 'Stig +{add} (Samtals: {total})'
+    remainingChests: 'Kistur eftir: {count}'

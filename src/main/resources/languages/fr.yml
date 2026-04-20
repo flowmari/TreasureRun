@@ -54,10 +54,10 @@ command:
     needDiamonds: '&cIl vous faut 3 diamants pour fabriquer une Émeraude spéciale.'
     success: '&bVous avez fabriqué une Émeraude spéciale avec 3 diamants !'
   quoteFavorite:
-    latestSaved: '&a★ La dernière citation a été ajoutée aux favoris.'
-    latestNotSaved: '&eLa dernière citation n''a pas pu être enregistrée. Il se peut qu''il n''y ait pas encore d''entrée, ou qu''elle soit déjà dans les favoris.'
+    latestSaved: La dernière citation a été enregistrée dans les Favoris.
+    latestNotSaved: La dernière citation n'a pas pu être enregistrée. Il n'y a peut-être pas encore d'historique, ou elle est déjà dans les Favoris.
     playersOnly: '&cCette commande ne peut être utilisée que par des joueurs.'
-    repositoryNotReady: '&cLa fonction Favoris n''est pas encore disponible.'
+    repositoryNotReady: Les Favoris ne sont pas encore disponibles.
     listHeader: '&bFavoris ({count})'
     listSeparator: '&7------------------------------'
     removeUsage: '&cUtilisation : /quoteFavorite remove <id>'
@@ -68,8 +68,8 @@ command:
     bookOpenFailed: '&cLa génération du livre des favoris a échoué.'
     openBookFailed: '&cImpossible d''ouvrir le livre.'
     unknownSubcommand: '&cSous-commande inconnue. Voir /quoteFavorite help.'
-    shortcutSaved: '&a★ La dernière citation a été ajoutée aux favoris.'
-    shortcutNotSaved: '&cImpossible d''enregistrer la dernière citation.'
+    shortcutSaved: La dernière citation a été enregistrée dans les Favoris.
+    shortcutNotSaved: La dernière citation n'a pas pu être enregistrée. Il n'y a peut-être pas encore d'historique, ou elle est déjà dans les Favoris.
     help:
       title: '&bCommandes QuoteFavorite'
       latest: '&7/quoteFavorite latest  - enregistrer la dernière citation en favori'
@@ -305,6 +305,22 @@ items:
     displayName: '&6Émeraude spéciale'
     loreCrafted: '&7Fabriquée dans TreasureRun'
     loreSpecial: '&7Une émeraude spéciale'
+  material:
+    diamond: Diamant
+    gold_ingot: Lingot d'or
+    iron_ingot: Lingot de fer
+    emerald: Émeraude
+    apple: Pomme
+    netherite_ingot: Lingot de netherite
+    lapis_lazuli: Lapis-lazuli
+    redstone: Redstone
+    coal: Charbon
+    enchanted_golden_apple: Pomme dorée enchantée
+    diamond_block: Bloc de diamant
+    gold_block: Bloc d'or
+    emerald_block: Bloc d'émeraude
+    iron_block: Bloc de fer
+    tnt: TNT
 ui:
   menu:
     book:
@@ -390,3 +406,15 @@ outcome:
       pool: []
     hard:
       pool: []
+  notice:
+    timeUpGameOver: Temps écoulé ! Partie terminée !
+    retryGuide: Essaie un autre itinéraire la prochaine fois. Pour recommencer, utilise /gamestart <easy|normal|hard>.
+    titleTimeUp: TEMPS ÉCOULÉ !
+    treasuresCollected: 'Trésors récupérés : {got}/{total} ({missing} restants)'
+gameplay:
+  pickup:
+    scoreNone: Il n'y a pas encore de score.
+    gameEndTotalScore: 'Partie terminée ! Score total : {score}'
+    treasureFound: 'Trésor : {name} ×{amount}'
+    scoreAdded: 'Score +{add} (Total : {total})'
+    remainingChests: 'Coffres restants : {count}'

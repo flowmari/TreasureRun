@@ -54,10 +54,10 @@ command:
     needDiamonds: '&cNecesitas 3 diamantes para fabricar una Esmeralda Especial.'
     success: '&b¡Has fabricado una Esmeralda Especial con 3 diamantes!'
   quoteFavorite:
-    latestSaved: '&a★ La cita más reciente se guardó en Favoritos.'
-    latestNotSaved: '&eNo se pudo guardar la cita más reciente. Puede que aún no exista un registro o que ya esté en Favoritos.'
+    latestSaved: La cita más reciente se guardó en Favoritos.
+    latestNotSaved: No se pudo guardar la cita más reciente. Puede que aún no haya registros o que ya esté en Favoritos.
     playersOnly: '&cEste comando solo puede ser usado por jugadores.'
-    repositoryNotReady: '&cLa función de Favoritos todavía no está disponible.'
+    repositoryNotReady: Favoritos todavía no está disponible.
     listHeader: '&bFavoritos ({count})'
     listSeparator: '&7------------------------------'
     removeUsage: '&cUso: /quoteFavorite remove <id>'
@@ -68,8 +68,8 @@ command:
     bookOpenFailed: '&cNo se pudo generar el libro de Favoritos.'
     openBookFailed: '&cNo se pudo abrir el libro.'
     unknownSubcommand: '&cSubcomando desconocido. Consulta /quoteFavorite help.'
-    shortcutSaved: '&a★ La cita más reciente se guardó en Favoritos.'
-    shortcutNotSaved: '&cNo se pudo guardar la cita más reciente.'
+    shortcutSaved: La cita más reciente se guardó en Favoritos.
+    shortcutNotSaved: No se pudo guardar la cita más reciente. Puede que aún no haya registros o que ya esté en Favoritos.
     help:
       title: '&bComandos de QuoteFavorite'
       latest: '&7/quoteFavorite latest  - guardar la cita más reciente como favorita'
@@ -305,6 +305,22 @@ items:
     displayName: '&6Esmeralda especial'
     loreCrafted: '&7Fabricada en TreasureRun'
     loreSpecial: '&7Una esmeralda especial'
+  material:
+    diamond: Diamante
+    gold_ingot: Lingote de oro
+    iron_ingot: Lingote de hierro
+    emerald: Esmeralda
+    apple: Manzana
+    netherite_ingot: Lingote de netherita
+    lapis_lazuli: Lapislázuli
+    redstone: Redstone
+    coal: Carbón
+    enchanted_golden_apple: Manzana dorada encantada
+    diamond_block: Bloque de diamante
+    gold_block: Bloque de oro
+    emerald_block: Bloque de esmeralda
+    iron_block: Bloque de hierro
+    tnt: TNT
 ui:
   menu:
     book:
@@ -390,3 +406,15 @@ outcome:
       pool: []
     hard:
       pool: []
+  notice:
+    timeUpGameOver: ¡Se acabó el tiempo! ¡Partida terminada!
+    retryGuide: La próxima vez prueba otra ruta. Para volver a intentarlo, usa /gamestart <easy|normal|hard>.
+    titleTimeUp: ¡TIEMPO AGOTADO!
+    treasuresCollected: 'Tesoros recogidos: {got}/{total} ({missing} restantes)'
+gameplay:
+  pickup:
+    scoreNone: Todavía no hay puntuación.
+    gameEndTotalScore: '¡Fin de la partida! Puntuación total: {score}'
+    treasureFound: 'Tesoro: {name} ×{amount}'
+    scoreAdded: 'Puntuación +{add} (Total: {total})'
+    remainingChests: 'Cofres restantes: {count}'

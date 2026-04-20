@@ -54,10 +54,10 @@ command:
     needDiamonds: '&cDu behöver 3 diamanter för att skapa en specialsmaragd.'
     success: '&bDu skapade en specialsmaragd med 3 diamanter!'
   quoteFavorite:
-    latestSaved: '&a★ Det senaste citatet har lagts till i Favoriter.'
-    latestNotSaved: '&eDet senaste citatet kunde inte sparas. Det kanske inte finns någon logg ännu, eller så finns det redan i Favoriter.'
+    latestSaved: Det senaste citatet sparades i Favoriter.
+    latestNotSaved: Det gick inte att spara det senaste citatet. Antingen finns det ingen logg ännu, eller så finns det redan i Favoriter.
     playersOnly: '&cDetta kommando kan bara användas av spelare.'
-    repositoryNotReady: '&cFavoritfunktionen är inte tillgänglig ännu.'
+    repositoryNotReady: Favoriter är inte tillgängliga ännu.
     listHeader: '&bFavoriter ({count})'
     listSeparator: '&7------------------------------'
     removeUsage: '&cAnvändning: /quoteFavorite remove <id>'
@@ -68,8 +68,8 @@ command:
     bookOpenFailed: '&cDet gick inte att skapa Favoritboken.'
     openBookFailed: '&cDet gick inte att öppna boken.'
     unknownSubcommand: '&cOkänt underkommando. Se /quoteFavorite help.'
-    shortcutSaved: '&a★ Det senaste citatet har lagts till i Favoriter.'
-    shortcutNotSaved: '&cDet gick inte att spara det senaste citatet.'
+    shortcutSaved: Det senaste citatet sparades i Favoriter.
+    shortcutNotSaved: Det gick inte att spara det senaste citatet. Antingen finns det ingen logg ännu, eller så finns det redan i Favoriter.
     help:
       title: '&bQuoteFavorite-kommandon'
       latest: '&7/quoteFavorite latest  - lägg till det senaste citatet i Favoriter'
@@ -305,6 +305,22 @@ items:
     displayName: '&6Specialsmaragd'
     loreCrafted: '&7Tillverkad i TreasureRun'
     loreSpecial: '&7En speciell smaragd'
+  material:
+    diamond: Diamant
+    gold_ingot: Guldtacka
+    iron_ingot: Järntacka
+    emerald: Smaragd
+    apple: Äpple
+    netherite_ingot: Netherittacka
+    lapis_lazuli: Lapis lazuli
+    redstone: Redstone
+    coal: Kol
+    enchanted_golden_apple: Förtrollat gyllene äpple
+    diamond_block: Diamantblock
+    gold_block: Guldblock
+    emerald_block: Smaragdblock
+    iron_block: Järnblock
+    tnt: TNT
 ui:
   menu:
     book:
@@ -372,3 +388,15 @@ outcome:
       pool: []
     hard:
       pool: []
+  notice:
+    timeUpGameOver: Tiden är ute! Spelet är slut!
+    retryGuide: Prova en annan väg nästa gång. För att försöka igen, använd /gamestart <easy|normal|hard>.
+    titleTimeUp: TIDEN ÄR UTE!
+    treasuresCollected: 'Insamlade skatter: {got}/{total} ({missing} kvar)'
+gameplay:
+  pickup:
+    scoreNone: Det finns ingen poäng ännu.
+    gameEndTotalScore: 'Spelet är slut! Totalpoäng: {score}'
+    treasureFound: 'Skatt: {name} ×{amount}'
+    scoreAdded: 'Poäng +{add} (Totalt: {total})'
+    remainingChests: 'Kistor kvar: {count}'
