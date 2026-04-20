@@ -60,8 +60,13 @@ public class GameMenu {
     if (plugin == null) {
       // 最低限フォールバック（NPEで落ちない）
       player.sendMessage(ChatColor.GOLD + "TreasureRun");
-      player.sendMessage(ChatColor.RED + "Plugin not ready.");
+      player.sendMessage(ChatColor.RED + colorize(plugin.getI18n().tr(bootLang, "ui.gameMenu.pluginNotReady")));
       return;
+    }
+
+    String bootLang = plugin.getConfig().getString("language.default", "ja");
+    if (plugin.getPlayerLanguageStore() != null) {
+      bootLang = plugin.getPlayerLanguageStore().getLang(player, bootLang);
     }
 
     var cfg = plugin.getConfig();

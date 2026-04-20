@@ -18,10 +18,8 @@ command:
     resultFalse: Der Gegenstand in deiner Hand ist kein Treasure Emerald.
   gameStart:
     playersOnly: Dieser Befehl kann nur von Spielern verwendet werden.
-    worldNotFound: '[TreasureRun] Die Startwelt ist nicht konfiguriert oder konnte
-      nicht gefunden werden.'
-    started: 'Die Schatzsuche beginnt! Schwierigkeitsgrad: {difficulty} | Zeitlimit:
-      {timeLimit} Sekunden'
+    worldNotFound: '[TreasureRun] Die Startwelt ist nicht konfiguriert oder konnte nicht gefunden werden.'
+    started: 'Die Schatzsuche beginnt! Schwierigkeitsgrad: {difficulty} | Zeitlimit: {timeLimit} Sekunden'
   stageCleanup:
     playersOnly: '&cDiesen Befehl können nur Spieler verwenden.'
     managerNotReady: '[TreasureRun] Die Stufenverwaltung ist noch nicht initialisiert.'
@@ -33,22 +31,17 @@ command:
     success: '&aNeu laden abgeschlossen.'
     fail: '&cNeu laden fehlgeschlagen: {reason}'
   lang:
-    guiCancelledGameStart: Die Sprachauswahl wurde abgebrochen. Zum erneuten Versuch
-      führe /gameStart <easy|normal|hard> aus.
-    guiCancelledGameMenu: Die Sprachauswahl wurde abgebrochen. Zum erneuten Öffnen
-      führe /gameMenu gui aus.
-    guiTooManyShown: Es sind zu viele erlaubte Sprachen konfiguriert, daher werden
-      im GUI nur die ersten 27 angezeigt.
+    guiCancelledGameStart: Die Sprachauswahl wurde abgebrochen. Zum erneuten Versuch führe /gameStart <easy|normal|hard> aus.
+    guiCancelledGameMenu: Die Sprachauswahl wurde abgebrochen. Zum erneuten Öffnen führe /gameMenu gui aus.
+    guiTooManyShown: Es sind zu viele erlaubte Sprachen konfiguriert, daher werden im GUI nur die ersten 27 angezeigt.
     playersOnly: Dieser Befehl kann nur von Spielern verwendet werden.
-    resetDone: ✅ Deine gespeicherte Sprache wurde zurückgesetzt. Beim nächsten Mal
-      wird die GUI geöffnet.
+    resetDone: ✅ Deine gespeicherte Sprache wurde zurückgesetzt. Beim nächsten Mal wird die GUI geöffnet.
     current: 'Aktuelle Sprache: {lang}'
     emptyCode: 'Der Sprachcode ist leer. Beispiel: /lang ja'
     notAllowed: 'Diese Sprache ist nicht erlaubt: {lang}'
     allowedList: 'Erlaubte Sprachen: {allowed}'
     changed: '✅ Sprache geändert: {displayName} ({lang})'
-    changedButNotSaved: '⚠ Die Sprache wurde geändert, konnte aber nicht dauerhaft
-      gespeichert werden: {lang}'
+    changedButNotSaved: '⚠ Die Sprache wurde geändert, konnte aber nicht dauerhaft gespeichert werden: {lang}'
     list:
       title: === Sprachen ===
       default: 'Standard: {default}'
@@ -62,8 +55,7 @@ command:
     success: '&bDu hast mit 3 Diamanten einen Spezial-Smaragd hergestellt!'
   quoteFavorite:
     latestSaved: '&a★ Das neueste Zitat wurde zu den Favoriten hinzugefügt.'
-    latestNotSaved: '&eDas neueste Zitat konnte nicht gespeichert werden. Möglicherweise
-      gibt es noch keinen Eintrag oder es ist bereits als Favorit gespeichert.'
+    latestNotSaved: '&eDas neueste Zitat konnte nicht gespeichert werden. Möglicherweise gibt es noch keinen Eintrag oder es ist bereits als Favorit gespeichert.'
     playersOnly: '&cDieser Befehl kann nur von Spielern verwendet werden.'
     repositoryNotReady: '&cDie Favoritenfunktion ist noch nicht verfügbar.'
     listHeader: '&bFavoriten ({count})'
@@ -139,55 +131,44 @@ game:
     cursor_7fabae3f: / cursor=
     return_whoclicked_is_not_pla_a7675648: 'RETURN: whoClicked is not Player'
     return_topinventory_is_not_m_9936e6de: 'RETURN: topInventory is not MERCHANT'
-    return_not_result_slot_expec_9eb8c2c8: 'RETURN: not result slot. expected rawSlot=2
-      but was'
+    return_not_result_slot_expec_9eb8c2c8: 'RETURN: not result slot. expected rawSlot=2 but was'
     shift_53e51de9: ', shift='
-    return_topinventory_is_merch_fa2f5d98: 'RETURN: topInventory is MERCHANT but not
-      MerchantInventory instance'
+    return_topinventory_is_merch_fa2f5d98: 'RETURN: topInventory is MERCHANT but not MerchantInventory instance'
     merchant_view_title_daf2a73a: merchant view title=
     treasure_shop_2574a694: treasure shop
     return_not_treasure_shop_tit_8e65ad3d: 'RETURN: not Treasure Shop title. plainTitle='
     return_current_item_is_null_0f27c9fd: 'RETURN: current item is null'
     return_current_item_is_air_76b5e623: 'RETURN: current item is AIR'
-    return_current_item_is_not_g_d1d65218: 'RETURN: current item is not GOLDEN_APPLE.
-      type='
+    return_current_item_is_not_g_d1d65218: 'RETURN: current item is not GOLDEN_APPLE. type='
     return_game_is_not_running_048d7edb: 'RETURN: game is not running'
     ingredients_snapshot_98cb38c3: ingredients snapshot
-    return_ingredient_check_fail_673860d5: 'RETURN: ingredient check failed (need
-      TreasureEmerald>=5 and slot1 empty)'
-    ok_passed_all_checks_schedul_11e17905: 'OK: passed all checks -> scheduling effect
-      with runTaskLater'
+    return_ingredient_check_fail_673860d5: 'RETURN: ingredient check failed (need TreasureEmerald>=5 and slot1 empty)'
+    ok_passed_all_checks_schedul_11e17905: 'OK: passed all checks -> scheduling effect with runTaskLater'
     run_runtasklater_executed_96d7e049: 'RUN: runTaskLater executed'
     return_later_game_is_not_run_9cc569aa: 'RETURN(LATER): game is not running'
     return_later_player_is_offli_863a8cdc: 'RETURN(LATER): player is offline'
-    return_later_openinventory_t_7b809b57: 'RETURN(LATER): openInventory/topInventory
-      is null'
-    return_later_topinventory_is_f8714cf5: 'RETURN(LATER): topInventory is not MERCHANT.
-      type='
+    return_later_openinventory_t_7b809b57: 'RETURN(LATER): openInventory/topInventory is null'
+    return_later_topinventory_is_f8714cf5: 'RETURN(LATER): topInventory is not MERCHANT. type='
     treasure_shop_2574a694_822: treasure shop
-    return_later_not_treasure_sh_fcce2bb9: 'RETURN(LATER): not Treasure Shop title.
-      plainTitle='
+    return_later_not_treasure_sh_fcce2bb9: 'RETURN(LATER): not Treasure Shop title. plainTitle='
     ok_later_playing_effects_now_b80a2e0e: 'OK(LATER): playing effects now'
     k_llun_r_dj_pinu_16494877: '&6&lKöllun úr djúpinu'
     trade_complete_4a4b1d6f: Trade complete!
     a_hidden_power_awakens_7620bc4d: A hidden power awakens…
     mobcontrol_wolf_allowed_cust_a5459084: '[MobControl] WOLF allowed (CUSTOM). name='
     rainbow_wolf_b3cc6257: Rainbow Wolf
-    mobcontrol_wolf_allowed_name_9cc5a59a: '[MobControl] WOLF allowed (name match).
-      reason='
+    mobcontrol_wolf_allowed_name_9cc5a59a: '[MobControl] WOLF allowed (name match). reason='
     mobcontrol_wolf_cancelled_re_1a3b2e1a: '[MobControl] WOLF cancelled! reason='
     stagemobcontrollistener_refl_08ad690a: '⚠ StageMobControlListener: カウントダウン判定(reflection)に失敗。ゲーム中のみ制御します。原因:'
     stagemobcontrollistener_refl_d8a61972: '⚠ StageMobControlListener: reflection初期化に失敗。ゲーム中のみ制御します。原因:'
     mysql_connection_established_47452dfd: MySQL connection established successfully!
     failed_to_connect_to_mysql_95e4d50a: 'Failed to connect to MySQL:'
-    create_table_if_not_exists_p_136a7833: CREATE TABLE IF NOT EXISTS player_treasure_count
-      (
+    create_table_if_not_exists_p_136a7833: CREATE TABLE IF NOT EXISTS player_treasure_count (
     player_name_varchar_50_prima_79b8331b: player_name VARCHAR(50) PRIMARY KEY,
     count_int_not_null_660eadd8: count INT NOT NULL)
     failed_to_create_table_68199f98: 'Failed to create table:'
     reset_treasure_count_for_pla_96b152d2: 'Reset treasure count for player:'
-    dj_onalltreasurescollected_a871afdd: DJイベントはすでに実行中のため、onAllTreasuresCollected
-      をスキップしました。
+    dj_onalltreasurescollected_a871afdd: DJイベントはすでに実行中のため、onAllTreasuresCollected をスキップしました。
     on_duplicate_key_update_coun_a1543779: ON DUPLICATE KEY UPDATE count = ?
     failed_to_save_treasure_coun_9d94c0cc: 'Failed to save treasure count:'
     dj_triggerultimatedjevent_eb01ecae: DJイベントはすでに実行中のため、triggerUltimateDJEvent をスキップしました。
@@ -196,8 +177,7 @@ game:
     congratulations_38fd1594: §6Congratulations! 全ての宝物を見つけました！
     time_s_up_c5b3ef74: §c§lTIME'S UP!
     treasures_collected_ca7eab31: '§7Treasures collected: §e'
-    try_a_different_route_next_t_721a4d8b: §7Try a different route next time — or
-      use §e/gamestart §7<§eeasy§7|§enormal§7|§ehard§7> §7to retry.
+    try_a_different_route_next_t_721a4d8b: §7Try a different route next time — or use §e/gamestart §7<§eeasy§7|§enormal§7|§ehard§7> §7to retry.
 sound:
   sparkle: '&b* Glitzer *'
   start: '&7(BGM startet...)'
@@ -256,23 +236,19 @@ favorites:
     rereadTitle: Wiederlesen
     sub: favorites.toc.sub
   auto:
-    treasurerun_favorites_templa_a0a4bf2e: '[TreasureRun] favorites_templates.yml
-      created.'
+    treasurerun_favorites_templa_a0a4bf2e: '[TreasureRun] favorites_templates.yml created.'
     mysql_repository_not_ready_72df0af1: MySQL / Repository not ready.
     favorite_saved_sneak_rightcl_7a73eb4f: ★ Favorite saved! (Sneak+RightClick)
     quotefavoritestore_reloaded__3ba623a3: '[QuoteFavoriteStore] Reloaded DB: host='
-    where_player_uuid_and_quote__36106f85: WHERE player_uuid=? AND quote_hash=? LIMIT
-      1
+    where_player_uuid_and_quote__36106f85: WHERE player_uuid=? AND quote_hash=? LIMIT 1
     quotefavoritestore_exists_fa_7d08adba: '[QuoteFavoriteStore] exists failed:'
-    player_uuid_quote_hash_outco_49f06b31: (player_uuid, quote_hash, outcome, difficulty,
-      lang, quote_text)
+    player_uuid_quote_hash_outco_49f06b31: (player_uuid, quote_hash, outcome, difficulty, lang, quote_text)
     values_643f4d2f: VALUES (?, ?, ?, ?, ?, ?)
     quotefavoritestore_addfavori_44fb1d75: '[QuoteFavoriteStore] addFavorite failed:'
     where_player_uuid_and_quote__81bcaee5: WHERE player_uuid=? AND quote_hash=?
     quotefavoritestore_removefav_8180a1e4: '[QuoteFavoriteStore] removeFavorite failed:'
     where_player_uuid_and_id_f4a80773: WHERE player_uuid=? AND id=?
-    quotefavoritestore_removefav_d024b1e5: '[QuoteFavoriteStore] removeFavoriteById
-      failed:'
+    quotefavoritestore_removefav_d024b1e5: '[QuoteFavoriteStore] removeFavoriteById failed:'
     where_player_uuid_53558ea9: WHERE player_uuid=?
     order_by_created_at_desc_lim_f22988c0: ORDER BY created_at DESC LIMIT ?
     quotefavoritestore_listfavor_f3e976d4: '[QuoteFavoriteStore] listFavoriten failed:'
@@ -288,8 +264,7 @@ commands:
   3_71b78a44: ダイヤモンド3個でスペシャルエメラルドを作成しました！
   text_3030fd61: プレイヤーのみ実行できます
   op_10caf0f6: 権限がありません（OP限定）
-  debug_mode_is_off_config_yml_b3d27428: 'Debug mode is OFF. config.yml の debug: true
-    にしてください'
+  debug_mode_is_off_config_yml_b3d27428: 'Debug mode is OFF. config.yml の debug: true にしてください'
   rank_1_2_3_demo_d87f40da: '使い方: /rank <1|2|3|demo>'
   rank_1_2_3_demo_4f3e3084: '数字で入力してください: /rank <1|2|3|demo>'
   1_3_rank_1_2_3_7f459bd0: '1〜3だけ使えます: /rank <1|2|3>'
@@ -305,29 +280,20 @@ commands:
   mysql_repository_not_ready_72df0af1: MySQL / Repository not ready.
   mysql_repository_not_ready_72df0af1_93: MySQL / Repository not ready.
   mysql_repository_not_ready_72df0af1_119: MySQL / Repository not ready.
-  quotefavorite_book_open_cata_055de855: /quoteFavorite book            - open catalog
-    (full)
-  quotefavorite_book_toc_open__c7d02ede: /quoteFavorite book toc        - open catalog
-    (TOC only)
-  quotefavorite_book_success_o_afe31501: /quoteFavorite book success    - open SUCCESS
-    chapter
-  quotefavorite_book_timeup_op_08b799b0: /quoteFavorite book timeup     - open TIME_UP
-    chapter
-  quotefavorite_book_other_ope_bdcbafba: /quoteFavorite book other      - open OTHER
-    chapter
-  success_normal_en_the_obstac_b627a544: 【SUCCESS / Normal / en】\nThe obstacle is
-    the way.
+  quotefavorite_book_open_cata_055de855: /quoteFavorite book            - open catalog (full)
+  quotefavorite_book_toc_open__c7d02ede: /quoteFavorite book toc        - open catalog (TOC only)
+  quotefavorite_book_success_o_afe31501: /quoteFavorite book success    - open SUCCESS chapter
+  quotefavorite_book_timeup_op_08b799b0: /quoteFavorite book timeup     - open TIME_UP chapter
+  quotefavorite_book_other_ope_bdcbafba: /quoteFavorite book other      - open OTHER chapter
+  success_normal_en_the_obstac_b627a544: 【SUCCESS / Normal / en】\nThe obstacle is the way.
   time_up_bc0cd646: TIME UP
 debug:
   istreasureemerald_fb6fecec: isTreasureEmerald =
-  chestsound_start_called_16th_e2a7414b: §b[ChestSound] start() called (16th-grid
-    mode)
+  chestsound_start_called_16th_e2a7414b: §b[ChestSound] start() called (16th-grid mode)
   chestsound_chests_0_82465b3c: §7[ChestSound] chests=0
-  chestsound_d_1fm_s_t_2f_step_6e3e0fdb: §b[ChestSound] §fD=§e%.1fm §7(%s§7) §ft=§a%.2f
-    §7step=%d bar=%d
+  chestsound_d_1fm_s_t_2f_step_6e3e0fdb: §b[ChestSound] §fD=§e%.1fm §7(%s§7) §ft=§a%.2f §7step=%d bar=%d
   chestsound_nearest_1fm_s_t_2_e2465135: §b[ChestSound] nearest=%.1fm %s  t=%.2f
-  reward_giverankrewardwitheff_5e361189: '[Reward] giveRankRewardWithEffect called
-    player='
+  reward_giverankrewardwitheff_5e361189: '[Reward] giveRankRewardWithEffect called player='
   starttheme_startgame_called__9cf42cbe: '[StartTheme] startGame called by'
 items:
   text_7567bb35: 特製エメラルドのレシピを登録しました。
@@ -350,6 +316,19 @@ ui:
   favorites:
     footer:
       dbFavorites: '(DB: proverb_favorites)'
+  gameMenu:
+    pluginNotReady: Das Plugin ist noch nicht bereit.
+  book:
+    quoteCollection:
+      titleShort: Zitatsammlung
+    favorites:
+      shortTitle: Favoriten
+  labels:
+    tabs:
+      all: ALLE
+      success: ERFOLG
+      timeUp: ZEIT ABGELAUFEN
+      favorites: Favoriten
 outcome:
   success:
     common:
