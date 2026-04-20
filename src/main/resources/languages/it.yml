@@ -318,17 +318,22 @@ ui:
       dbFavorites: '(DB: proverb_favorites)'
   gameMenu:
     pluginNotReady: Il plugin non è ancora pronto.
-  book:
-    quoteCollection:
-      titleShort: Raccolta di citazioni
-    favorites:
-      shortTitle: Preferiti
-  labels:
-    tabs:
-      all: TUTTO
-      success: SUCCESSO
-      timeUp: TEMPO SCADUTO
-      favorites: Preferiti
+  symbol:
+    bookPrefix: '📖 '
+    legendPrefix: '■ '
+    dbBullet: '- '
+    indexPrefix: '#'
+    favoriteIdPrefix: ★#
+    favoritePrefix: ★
+    metaOpen: (
+    metaClose: )
+    labelOpen: '['
+    labelClose: ']'
+    tabActiveOpen: 【
+    tabActiveClose: 】
+    tabInactiveOpen: '['
+    tabInactiveClose: ']'
+    activeMarker: '▶ '
 outcome:
   success:
     common:

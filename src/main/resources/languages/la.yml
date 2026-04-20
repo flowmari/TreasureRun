@@ -318,17 +318,22 @@ ui:
       dbFavorites: '(DB: proverb_favorites)'
   gameMenu:
     pluginNotReady: Additamentum nondum paratum est.
-  book:
-    quoteCollection:
-      titleShort: Collectio sententiarum
-    favorites:
-      shortTitle: Dilecta
-  labels:
-    tabs:
-      all: OMNIA
-      success: FELICITER
-      timeUp: TEMPUS EXACTUM
-      favorites: Dilecta
+  symbol:
+    bookPrefix: '📖 '
+    legendPrefix: '■ '
+    dbBullet: '- '
+    indexPrefix: '#'
+    favoriteIdPrefix: ★#
+    favoritePrefix: ★
+    metaOpen: (
+    metaClose: )
+    labelOpen: '['
+    labelClose: ']'
+    tabActiveOpen: 【
+    tabActiveClose: 】
+    tabInactiveOpen: '['
+    tabInactiveClose: ']'
+    activeMarker: '▶ '
 outcome:
   success:
     common:
