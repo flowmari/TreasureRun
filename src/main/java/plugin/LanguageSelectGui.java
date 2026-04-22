@@ -64,7 +64,7 @@ public class LanguageSelectGui implements Listener {
     for (int i = 0; i < count; i++) {
       String selectableLang = langs.get(i);
       slotToLang.put(i, selectableLang);
-      inv.setItem(i, createLanguageItem(selectableLang));
+      inv.setItem(i, createLanguageItem(player, selectableLang));
     }
 
     if (langs.size() > 27) {
@@ -72,9 +72,19 @@ public class LanguageSelectGui implements Listener {
     }
 
     player.openInventory(inv);
+
+    String currentLang = resolvePlayerLang(player);
+    String currentDisplay = store.getDisplayName(currentLang);
+    if (currentDisplay == null || currentDisplay.isBlank()) currentDisplay = currentLang;
+
+    player.sendMessage(ChatColor.GRAY + colorize(trByLang(lang, "gui.language.subtitle")));
+    player.sendMessage(ChatColor.GREEN + colorize(
+        trByLang(lang, "gui.language.selected").replace("{lang}", currentDisplay + " (" + currentLang + ")")
+    ));
+    player.sendMessage(ChatColor.GRAY + colorize(trByLang(lang, "gui.language.reopenHint")));
   }
 
-  private ItemStack createLanguageItem(String langRaw) {
+  private ItemStack createLanguageItem(Player player, String langRaw) {
     String lang = (langRaw == null) ? "" : langRaw.trim().toLowerCase(Locale.ROOT);
 
     String langName = store.getDisplayName(lang);
@@ -87,14 +97,28 @@ public class LanguageSelectGui implements Listener {
     if (label == null || label.isBlank()) label = lang.toUpperCase(Locale.ROOT);
     if (loreLine == null || loreLine.isBlank()) loreLine = store.getLoreDefault();
 
+    String viewerLang = resolvePlayerLang(player);
+    String selectedLang = resolvePlayerLang(player);
+    boolean selected = lang.equalsIgnoreCase(selectedLang);
+
     ItemStack item = new ItemStack(mat);
     ItemMeta meta = item.getItemMeta();
     if (meta != null) {
       meta.setDisplayName(ChatColor.AQUA + "[" + label + "] " + langName
           + ChatColor.DARK_GRAY + " (" + lang + ")");
-      meta.setLore(Collections.singletonList(ChatColor.GRAY + loreLine));
 
-      if (lang.equalsIgnoreCase(store.getDefaultLang())) {
+      List<String> lore = new ArrayList<>();
+      if (selected) {
+        lore.add(ChatColor.GREEN + colorize(
+            trByLang(viewerLang, "gui.language.selected").replace("{lang}", langName + " (" + lang + ")")
+        ));
+      } else {
+        lore.add(ChatColor.GRAY + loreLine);
+      }
+      lore.add(ChatColor.DARK_GRAY + colorize(trByLang(viewerLang, "gui.language.reopenHint")));
+      meta.setLore(lore);
+
+      if (selected) {
         meta.addEnchant(Enchantment.DURABILITY, 1, true);
         meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
       }
@@ -124,6 +148,11 @@ public class LanguageSelectGui implements Listener {
     String selectedLang = slotToLang.get(slot);
 
     store.set(uuid, selectedLang);
+    try {
+      if (plugin.getPlayerLanguageStore() != null) {
+        plugin.getPlayerLanguageStore().set(uuid, selectedLang);
+      }
+    } catch (Throwable ignored) {}
     String diff = pendingDifficulty.getOrDefault(uuid, "Normal");
     PendingAction action = pendingAction.getOrDefault(uuid, PendingAction.START_GAME);
 
@@ -135,6 +164,15 @@ public class LanguageSelectGui implements Listener {
     openTitleByPlayer.remove(uuid);
 
     player.closeInventory();
+
+    String viewerLang = selectedLang;
+    String displayName = store.getDisplayName(selectedLang);
+    if (displayName == null || displayName.isBlank()) displayName = selectedLang;
+
+    player.sendMessage(ChatColor.GREEN + colorize(
+        trByLang(viewerLang, "gui.language.saved").replace("{lang}", displayName + " (" + selectedLang + ")")
+    ));
+    player.sendMessage(ChatColor.GRAY + colorize(trByLang(viewerLang, "gui.language.reopenHint")));
 
     if (action == PendingAction.GAME_MENU) {
       plugin.openGameMenuOnly(player, selectedLang);
