@@ -705,7 +705,7 @@ public class GameMenu {
         labelWrap(plugin, lang, outcomeLabel, outcomeColor) + " " +
         diffColor + diffLabel + " " +
         ChatColor.GRAY + metaWrap(plugin, lang, safe(rowLang)) + "\n" +
-        ChatColor.DARK_BLUE + safeQuote(quoteText) + "\n\n";
+        ChatColor.DARK_BLUE + displayQuote(plugin, rowLang, outcome, diff, quoteText) + "\n\n";
   }
 
   private static String buildNormalBlock(TreasureRunMultiChestPlugin plugin, String lang, String row, int idx) {
@@ -724,7 +724,7 @@ public class GameMenu {
         labelWrap(plugin, lang, outcomeLabel, outcomeColor) + " " +
         diffColor + diffLabel + " " +
         ChatColor.GRAY + metaWrap(plugin, lang, safe(rowLang)) + "\n" +
-        ChatColor.DARK_BLUE + safeQuote(quoteText) + "\n\n";
+        ChatColor.DARK_BLUE + displayQuote(plugin, rowLang, outcome, diff, quoteText) + "\n\n";
   }
 
   private static String buildFavoriteBlock(TreasureRunMultiChestPlugin plugin, String lang, String row, int idx) {
@@ -749,7 +749,7 @@ public class GameMenu {
         labelWrap(plugin, lang, outcomeLabel, outcomeColor) + " " +
         diffColor + diffLabel + " " +
         ChatColor.GRAY + metaWrap(plugin, lang, safe(rowLang)) + "\n" +
-        ChatColor.DARK_BLUE + safeQuote(quoteText) + "\n\n";
+        ChatColor.DARK_BLUE + displayQuote(plugin, rowLang, outcome, diff, quoteText) + "\n\n";
   }
 
   private static String tabHeader(TreasureRunMultiChestPlugin plugin, String lang, QuoteTab current) {
@@ -810,8 +810,38 @@ public class GameMenu {
   private static String safeQuote(String quoteText) {
     if (quoteText == null) return "";
     String t = quoteText.trim();
+    if (t.contains("Translation missing:")) return "";
     if (t.length() > 320) t = t.substring(0, 320) + "…";
     return t;
+  }
+
+  private static String displayQuote(
+      TreasureRunMultiChestPlugin plugin,
+      String rowLang,
+      String outcome,
+      String diff,
+      String quoteText
+  ) {
+    String t = safeQuote(quoteText);
+    if (!t.isBlank()) return t;
+
+    String lang = (rowLang == null || rowLang.isBlank() || "-".equals(rowLang))
+        ? plugin.getConfig().getString("language.default", "ja")
+        : rowLang.trim();
+
+    try {
+      OutcomeMessageService svc = new OutcomeMessageService(plugin);
+      String o = (outcome == null) ? "" : outcome.trim().toUpperCase(java.util.Locale.ROOT);
+
+      if (o.contains("TIME_UP")) {
+        return safeQuote(svc.pickTimeUpQuoteBilingual(diff, lang));
+      }
+      if (o.contains("SUCCESS")) {
+        return safeQuote(svc.pickSuccessQuoteBilingual(diff, lang));
+      }
+    } catch (Throwable ignored) {}
+
+    return "";
   }
 
   private static String safe(String s) {
