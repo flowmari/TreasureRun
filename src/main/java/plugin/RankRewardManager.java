@@ -54,15 +54,23 @@ public class RankRewardManager {
     ItemStack reward;
     String sub;
 
+    String rewardLang = plugin.getConfig().getString("language.default", "en");
+    try {
+      if (plugin.getPlayerLanguageStore() != null) {
+        String saved = plugin.getPlayerLanguageStore().getLang(player, rewardLang);
+        if (saved != null && !saved.isBlank()) rewardLang = saved;
+      }
+    } catch (Throwable ignored) {}
+
     if (rank == 1) {
       reward = new ItemStack(Material.NETHERITE_INGOT, 1);
-      sub = ChatColor.YELLOW + "ネザライトインゴット獲得！";
+      sub = ChatColor.YELLOW + plugin.getI18n().tr(rewardLang, "rewards.rank.netheriteIngot");
     } else if (rank == 2) {
       reward = new ItemStack(Material.DIAMOND, 1);
-      sub = ChatColor.WHITE + "ダイヤ獲得！";
+      sub = ChatColor.WHITE + plugin.getI18n().tr(rewardLang, "rewards.rank.diamond");
     } else if (rank == 3) {
       reward = new ItemStack(Material.GOLDEN_APPLE, 1);
-      sub = ChatColor.YELLOW + "金リンゴ獲得！";
+      sub = ChatColor.YELLOW + plugin.getI18n().tr(rewardLang, "rewards.rank.goldenApple");
     } else {
       return;
     }

@@ -98,8 +98,11 @@ public class QuoteFavoriteCommand implements CommandExecutor {
 
       player.sendMessage(ChatColor.AQUA + trp("command.quoteFavorite.listHeader", "count", String.valueOf(favs.size())));
       for (String row : favs) {
+        String safeRow = sanitizeFavoriteRow(row);
+        if (safeRow.isBlank()) continue;
         player.sendMessage(ChatColor.GRAY + tr("command.quoteFavorite.listSeparator"));
-        for (String line : row.split("\n")) {
+        for (String line : safeRow.split("\n")) {
+          if (line == null || line.isBlank()) continue;
           player.sendMessage(ChatColor.WHITE + line);
         }
       }
@@ -238,12 +241,27 @@ public class QuoteFavoriteCommand implements CommandExecutor {
     }
   }
 
+
+  private String sanitizeFavoriteRow(String row) {
+    if (row == null || row.isBlank()) return "";
+    StringBuilder out = new StringBuilder();
+    for (String line : row.split("\\n")) {
+      if (line == null) continue;
+      String t = line.trim();
+      if (t.isEmpty()) continue;
+      if (t.contains("Translation missing:")) continue;
+      if (out.length() > 0) out.append("\n");
+      out.append(line);
+    }
+    return out.toString().trim();
+  }
+
   private String tr(String key) {
     String lang = currentLang();
     try {
       if (i18n != null) {
         String s = i18n.tr(lang, key);
-        if (s != null && !s.isBlank() && !s.equals(key)) return s;
+        if (s != null && !s.isBlank() && !s.equals(key) && !s.startsWith("Translation missing:")) return s;
       }
     } catch (Throwable ignored) {}
     return key;
@@ -254,7 +272,7 @@ public class QuoteFavoriteCommand implements CommandExecutor {
     try {
       if (i18n != null) {
         String s = i18n.tr(lang, key, java.util.Map.of(name, value));
-        if (s != null && !s.isBlank() && !s.equals(key)) return s;
+        if (s != null && !s.isBlank() && !s.equals(key) && !s.startsWith("Translation missing:")) return s;
       }
     } catch (Throwable ignored) {}
     return key.replace("{" + name + "}", value);
@@ -265,7 +283,7 @@ public class QuoteFavoriteCommand implements CommandExecutor {
       String lang = plugin.getConfig().getString("language.default", "ja");
       if (i18n != null) {
         String s = i18n.tr(lang, key);
-        if (s != null && !s.isBlank() && !s.equals(key)) return s;
+        if (s != null && !s.isBlank() && !s.equals(key) && !s.startsWith("Translation missing:")) return s;
       }
     } catch (Throwable ignored) {}
     return key;
@@ -308,26 +326,24 @@ public class QuoteFavoriteCommand implements CommandExecutor {
   // - 見つからなければ config default
   // =======================================================
   private String resolvePlayerLang(Player player) {
-    if (player == null) return plugin.getConfig().getString("language.default", "ja");
+    String def = plugin.getConfig().getString("language.default", "ja");
+    if (player == null) return def;
 
-    UUID uuid = player.getUniqueId();
-
-    // playerLanguageStore.get(uuid) を反射で拾う（クラス構造が変わっても壊れない）
     try {
-      java.lang.reflect.Field f = plugin.getClass().getDeclaredField("playerLanguageStore");
-      f.setAccessible(true);
-      Object store = f.get(plugin);
-
-      if (store != null) {
-        java.lang.reflect.Method m = store.getClass().getMethod("get", UUID.class);
-        Object ret = m.invoke(store, uuid);
-        if (ret instanceof String s && !s.isBlank()) {
-          return s;
-        }
+      if (plugin.getPlayerLanguageStore() != null) {
+        String saved = plugin.getPlayerLanguageStore().getLang(player.getUniqueId(), "");
+        if (saved != null && !saved.isBlank()) return saved;
       }
     } catch (Throwable ignored) {}
 
-    return plugin.getConfig().getString("language.default", "ja");
+    try {
+      if (plugin.getLanguageStore() != null) {
+        String mem = plugin.getLanguageStore().get(player.getUniqueId());
+        if (mem != null && !mem.isBlank()) return mem;
+      }
+    } catch (Throwable ignored) {}
+
+    return def;
   }
 
   // =======================================================

@@ -1192,14 +1192,24 @@ public class GameStageManager implements Listener {
       shopDebug("OK(LATER): playing effects now");
 
       // 演出（100%気づく版）
+      String shopLang = plugin.getConfig().getString("language.default", "ja");
+      try {
+        if (plugin.getPlayerLanguageStore() != null) {
+          String saved = plugin.getPlayerLanguageStore().getLang(player, shopLang);
+          if (saved != null && !saved.isBlank()) shopLang = saved;
+        }
+      } catch (Throwable ignored) {}
+
       player.sendTitle(
-          ChatColor.GOLD + "Trade complete!",
-          ChatColor.AQUA + "A hidden power awakens…",
+          ChatColor.GOLD + plugin.getI18n().tr(shopLang, "gameplay.shop.tradeCompleteTitle"),
+          ChatColor.AQUA + plugin.getI18n().tr(shopLang, "gameplay.shop.hiddenPowerAwakens"),
           5,   // fadeIn (ticks)
           40,  // stay   (ticks)
           10   // fadeOut(ticks)
       );
-      player.sendMessage(ChatColor.AQUA + "??? " + ChatColor.GOLD + "Treasure Shop の秘められた力を感じた…");
+      player.sendMessage(
+          ChatColor.AQUA + "??? " + ChatColor.GOLD + plugin.getI18n().tr(shopLang, "gameplay.shop.hiddenPowerChat")
+      );
 
       // 音：確実に聞こえるやつ
       player.playSound(player.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0f, 1.2f);

@@ -174,15 +174,26 @@ public class RealtimeRankTicker {
     ScoreboardManager mgr = Bukkit.getScoreboardManager();
     if (mgr == null) return;
 
-    // ✅ 2種類版の書き方（? :）を保ったまま3種類に拡張（switch不使用）
-    String title =
-        (mode == Mode.WEEKLY)
-            ? (ChatColor.GOLD + "Weekly TreasureRun")
-            : (mode == Mode.ALLTIME)
-                ? (ChatColor.GOLD + "All-time TreasureRun")
-                : (ChatColor.GOLD + "Monthly TreasureRun");
-
     for (Player p : Bukkit.getOnlinePlayers()) {
+      String lang = "ja";
+      try {
+        if (plugin.getPlayerLanguageStore() != null) {
+          lang = plugin.getPlayerLanguageStore().getLang(
+              p,
+              plugin.getConfig().getString("language.default", "ja")
+          );
+        } else {
+          lang = plugin.getConfig().getString("language.default", "ja");
+        }
+      } catch (Throwable ignored) {}
+
+      String title =
+          (mode == Mode.WEEKLY)
+              ? (ChatColor.GOLD + plugin.getI18n().tr(lang, "rankTicker.weeklyTitle"))
+              : (mode == Mode.ALLTIME)
+                  ? (ChatColor.GOLD + plugin.getI18n().tr(lang, "rankTicker.allTimeTitle"))
+                  : (ChatColor.GOLD + plugin.getI18n().tr(lang, "rankTicker.monthlyTitle"));
+
       Scoreboard sb = mgr.getNewScoreboard();
       Objective obj = sb.registerNewObjective("tr_rank", "dummy", title);
       obj.setDisplaySlot(DisplaySlot.SIDEBAR);
@@ -195,7 +206,7 @@ public class RealtimeRankTicker {
       // 1〜3位
       int rank = 1;
       for (Row r : top) {
-        String lang = (r.langCode == null || r.langCode.isBlank())
+        String rowLang = (r.langCode == null || r.langCode.isBlank())
             ? "JA"
             : r.langCode.toUpperCase(Locale.ROOT);
 
@@ -204,7 +215,7 @@ public class RealtimeRankTicker {
                 ChatColor.WHITE + trim(r.name, 12) + " " +
                 ChatColor.DARK_GRAY + "- " +
                 ChatColor.GOLD + r.score + " " +
-                ChatColor.GRAY + "(" + lang + ")";
+                ChatColor.GRAY + "(" + rowLang + ")";
 
         // 同一文字列があるとスコアボードが壊れるのでユニーク化
         line = makeUnique(line, rank);
@@ -218,8 +229,9 @@ public class RealtimeRankTicker {
       // 空行
       obj.getScore(ChatColor.DARK_GRAY + "  ").setScore(scoreLine--);
 
-// フッター（残す）
-      obj.getScore(ChatColor.GRAY + "/gameRank weekly|all|monthly").setScore(1);
+      // フッター
+      String footer = plugin.getI18n().tr(lang, "rankTicker.footerHint");
+      obj.getScore(ChatColor.GRAY + footer).setScore(1);
 
       p.setScoreboard(sb);
     }
@@ -240,15 +252,28 @@ public class RealtimeRankTicker {
   // Notify (ActionBarではなくチャット)
   // =========================================================
 
-  private void notifyLeaderboardUpdatedChat(Mode mode) {
-    // ✅ 2種類版の style を崩さず3種類化
-    String which =
-        (mode == Mode.WEEKLY) ? "Weekly"
-            : (mode == Mode.ALLTIME) ? "All-time"
-                : "Monthly";
-
+    private void notifyLeaderboardUpdatedChat(Mode mode) {
     for (Player p : Bukkit.getOnlinePlayers()) {
-      p.sendMessage(ChatColor.AQUA + "🏁 Leaderboard Updated! " + ChatColor.GRAY + "(" + which + ")");
+      plugin.getServer().getScheduler().runTask(plugin, () -> {
+        String lang = plugin.getConfig().getString("language.default", "ja");
+        try {
+          if (plugin.getPlayerLanguageStore() != null) {
+            String saved = plugin.getPlayerLanguageStore().getLang(p, lang);
+            if (saved != null && !saved.isBlank()) lang = saved;
+          }
+        } catch (Throwable ignored) {}
+
+        String which =
+            (mode == Mode.WEEKLY)
+                ? plugin.getI18n().tr(lang, "ui.rankTicker.mode.weekly")
+                : (mode == Mode.ALLTIME)
+                    ? plugin.getI18n().tr(lang, "ui.rankTicker.mode.allTime")
+                    : plugin.getI18n().tr(lang, "ui.rankTicker.mode.monthly");
+
+        p.sendMessage(
+            ChatColor.AQUA + plugin.getI18n().tr(lang, "ui.rankTicker.updated").replace("{which}", which)
+        );
+      });
       p.playSound(p.getLocation(), Sound.UI_TOAST_IN, SoundCategory.PLAYERS, 0.25f, 1.3f);
     }
   }

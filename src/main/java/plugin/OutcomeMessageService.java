@@ -102,6 +102,17 @@ public class OutcomeMessageService {
     return out;
   }
 
+
+  public String sanitizeVisibleText(GameOutcome outcome, String lang, String text) {
+    if (text == null || text.isBlank() || text.contains("Translation missing:")) {
+      return switch (outcome) {
+        case SUCCESS -> fallbackText(lang, OutcomeMessageKeys.OUTCOME_FALLBACK_RUN_COMPLETE, "Run complete.");
+        case TIME_UP -> fallbackText(lang, OutcomeMessageKeys.OUTCOME_FALLBACK_TIME_UP, "Time's up.");
+      };
+    }
+    return text;
+  }
+
   private String fallbackText(String lang, String key, String fallback) {
     String s = plugin.getI18n().tr(lang, key);
     if (s == null || s.isBlank() || s.equals(key) || s.startsWith("Translation missing:")) {

@@ -1,4 +1,9 @@
 version: 1
+quotes:
+  outcome:
+    success: null
+    timeup: null
+    other: null
 default:
   prefix: '&b[&6TreasureRun&b]&r '
   unknown: '&c(Translation missing: {key})'
@@ -366,13 +371,13 @@ ui:
     page:
       contents:
         difficulty: 'Difficulty: {difficulty}'
-        howToPlay: How to play
+        howToPlay: 遊び方
         language: 'Language: {lang}'
         rulesItem: 1) Rules
         savedOn: Saved on SUCCESS / TIME_UP
-        scoreRoute: Score & route
+        scoreRoute: スコアとルート
         tipsItem: 2) Tips
-        title: Contents
+        title: 目次
         yourQuotes: Your saved quotes
       hint:
         reopenMenu: 'Hint: use /gameMenu to open this again.'

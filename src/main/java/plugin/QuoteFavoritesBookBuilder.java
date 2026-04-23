@@ -78,25 +78,10 @@ public class QuoteFavoritesBookBuilder {
   private String resolvePlayerLang(Player player) {
     if (plugin == null || player == null) return "en";
 
-    UUID uuid = player.getUniqueId();
-
     try {
-      java.lang.reflect.Field f = plugin.getClass().getDeclaredField("playerLanguageStore");
-      f.setAccessible(true);
-      Object store = f.get(plugin);
-
-      if (store != null) {
-        try {
-          java.lang.reflect.Method m = store.getClass().getMethod("get", UUID.class);
-          Object ret = m.invoke(store, uuid);
-          if (ret instanceof String s && !s.isBlank()) return s;
-        } catch (Throwable ignored) {}
-
-        try {
-          java.lang.reflect.Method m = store.getClass().getMethod("getPlayerLang", UUID.class);
-          Object ret = m.invoke(store, uuid);
-          if (ret instanceof String s && !s.isBlank()) return s;
-        } catch (Throwable ignored) {}
+      if (plugin.getPlayerLanguageStore() != null) {
+        String saved = plugin.getPlayerLanguageStore().getLang(player.getUniqueId(), "");
+        if (saved != null && !saved.isBlank()) return saved;
       }
     } catch (Throwable ignored) {}
 

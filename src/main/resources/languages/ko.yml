@@ -1,4 +1,9 @@
 version: 1
+quotes:
+  outcome:
+    success: null
+    timeup: null
+    other: null
 default:
   prefix: '&b[&6TreasureRun&b]&r '
   unknown: '&c(Translation missing: {key})'
@@ -367,13 +372,13 @@ ui:
     page:
       contents:
         difficulty: 'Difficulty: {difficulty}'
-        howToPlay: How to play
+        howToPlay: 플레이 방법
         language: 'Language: {lang}'
         rulesItem: 1) Rules
         savedOn: Saved on SUCCESS / TIME_UP
-        scoreRoute: Score & route
+        scoreRoute: 점수와 경로
         tipsItem: 2) Tips
-        title: Contents
+        title: 목차
         yourQuotes: Your saved quotes
       hint:
         reopenMenu: 'Hint: use /gameMenu to open this again.'

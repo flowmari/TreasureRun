@@ -44,9 +44,13 @@ public enum GameOutcome {
     }
 
     // ✅ 成功/タイムアップで選ぶ名言を分岐（プレイヤー言語優先）
-    final String quote = (this == SUCCESS)
-        ? outcomeMessageService.pickSuccessQuoteBilingual(difficulty, lang)
-        : outcomeMessageService.pickTimeUpQuoteBilingual(difficulty, lang);
+    final String quote = outcomeMessageService.sanitizeVisibleText(
+        this,
+        lang,
+        (this == SUCCESS)
+            ? outcomeMessageService.pickSuccessQuoteBilingual(difficulty, lang)
+            : outcomeMessageService.pickTimeUpQuoteBilingual(difficulty, lang)
+    );
 
     // ✅ 2秒前に他UI停止（40tick = 2秒）
     long clearUiDelay = Math.max(0L, finishDelayTicks - 40L);
