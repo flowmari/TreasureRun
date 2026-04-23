@@ -39,7 +39,9 @@ public class QuoteFavoritesBookBuilder {
 
   /** ✅ 互換：既存コードが plugin を渡してくる場合でも動くようにする */
   public QuoteFavoritesBookBuilder(JavaPlugin plugin) {
-    this.i18n = new I18n(plugin);
+    I18n loaded = new I18n(plugin);
+    loaded.loadOrCreate();
+    this.i18n = loaded;
   }
 
   /** ✅ 互換：引数なしで new してる場所が残っていてもビルドを落とさない（最後の保険） */
@@ -76,29 +78,29 @@ public class QuoteFavoritesBookBuilder {
       return book;
     }
 
-    meta.setTitle(i18n.tr(lang, TITLE));
+    meta.setTitle(tr(lang, TITLE, "Favorites"));
     meta.setAuthor("TreasureRun");
 
     List<String> pages = new ArrayList<>();
 
     // --- Cover
     pages.add(
-        i18n.tr(lang, COVER_HEAD) + "\n\n"
-            + i18n.tr(lang, COVER_SUB) + "\n\n"
-            + i18n.tr(lang, COVER_BADGE) + "\n"
-            + i18n.tr(lang, COVER_COUNT_LABEL, Map.of("count", String.valueOf(count))) + "\n\n"
-            + i18n.tr(lang, COVER_HINT)
+        tr(lang, COVER_HEAD, "Favorites Archive") + "\n\n"
+            + tr(lang, COVER_SUB, "Saved lines from your runs") + "\n\n"
+            + tr(lang, COVER_BADGE, "TreasureRun Favorites") + "\n"
+            + trp(lang, COVER_COUNT_LABEL, Map.of("count", String.valueOf(count)), "Saved: {count}") + "\n\n"
+            + tr(lang, COVER_HINT, "Use /quoteFavorite latest or /quoteFavorite list")
     );
 
     // --- TOC
     pages.add(
-        i18n.tr(lang, TOC_HEAD) + "\n"
-            + i18n.tr(lang, TOC_SUB) + "\n\n"
-            + "1. " + i18n.tr(lang, CHAPTER_SUCCESS_TITLE) + "\n"
-            + "2. " + i18n.tr(lang, CHAPTER_TIMEUP_TITLE) + "\n"
-            + "3. " + i18n.tr(lang, CHAPTER_OTHER_SUB) + "\n\n"
-            + i18n.tr(lang, TOC_HOWTO) + "\n"
-            + i18n.tr(lang, TOC_HOWTO_SHIFT)
+        tr(lang, TOC_HEAD, "Contents") + "\n"
+            + tr(lang, TOC_SUB, "Browse by chapter") + "\n\n"
+            + "1. " + tr(lang, CHAPTER_SUCCESS_TITLE, "Success") + "\n"
+            + "2. " + tr(lang, CHAPTER_TIMEUP_TITLE, "Time Up") + "\n"
+            + "3. " + tr(lang, CHAPTER_OTHER_SUB, "Other") + "\n\n"
+            + tr(lang, TOC_HOWTO, "Open a chapter to reread saved lines") + "\n"
+            + tr(lang, TOC_HOWTO_SHIFT, "Shift+RightClick saves the latest line")
     );
 
     // TOC_ONLY ならここで終了
@@ -111,14 +113,14 @@ public class QuoteFavoritesBookBuilder {
     // rows が空なら “空の説明ページ”
     if (rows == null || rows.isEmpty()) {
       pages.add(
-          i18n.tr(lang, EMPTY_HEAD) + "\n\n"
-              + i18n.tr(lang, EMPTY_SUB) + "\n\n"
-              + i18n.tr(lang, EMPTY_NO_FAV) + "\n"
-              + i18n.tr(lang, EMPTY_NO_FAV_SUB) + "\n\n"
-              + i18n.tr(lang, EMPTY_SAVE_HOW) + "\n"
-              + "• " + i18n.tr(lang, EMPTY_SAVE_HOW_1) + "\n"
-              + "• " + i18n.tr(lang, EMPTY_SAVE_HOW_2) + "\n\n"
-              + i18n.tr(lang, EMPTY_TRY_NOW)
+          tr(lang, EMPTY_HEAD, "No favorites yet") + "\n\n"
+              + tr(lang, EMPTY_SUB, "Your archive is still empty") + "\n\n"
+              + tr(lang, EMPTY_NO_FAV, "No favorites saved yet") + "\n"
+              + tr(lang, EMPTY_NO_FAV_SUB, "Save a line first to begin your archive") + "\n\n"
+              + tr(lang, EMPTY_SAVE_HOW, "How to save favorites") + "\n"
+              + "• " + tr(lang, EMPTY_SAVE_HOW_1, "Use /quoteFavorite latest") + "\n"
+              + "• " + tr(lang, EMPTY_SAVE_HOW_2, "Or Shift+RightClick the rule book") + "\n\n"
+              + tr(lang, EMPTY_TRY_NOW, "Then open this book again")
       );
 
       meta.setPages(pages);
@@ -135,30 +137,30 @@ public class QuoteFavoritesBookBuilder {
     if (mode == ViewMode.FULL || mode == ViewMode.SUCCESS_ONLY) {
       pages.add(makeChapter(
           lang,
-          i18n.tr(lang, CHAPTER_SUCCESS_TITLE),
+          tr(lang, CHAPTER_SUCCESS_TITLE, "Success"),
           byKind.getOrDefault("SUCCESS", List.of()),
-          i18n.tr(lang, SUCCESS_TEMPLATE_1),
-          i18n.tr(lang, SUCCESS_TEMPLATE_2)
+          tr(lang, SUCCESS_TEMPLATE_1, "Saved success lines"),
+          tr(lang, SUCCESS_TEMPLATE_2, "Moments you cleared the run")
       ));
     }
 
     if (mode == ViewMode.FULL || mode == ViewMode.TIME_UP_ONLY) {
       pages.add(makeChapter(
           lang,
-          i18n.tr(lang, CHAPTER_TIMEUP_TITLE),
+          tr(lang, CHAPTER_TIMEUP_TITLE, "Time Up"),
           byKind.getOrDefault("TIME_UP", List.of()),
-          i18n.tr(lang, TIMEUP_TEMPLATE_1),
-          i18n.tr(lang, TIMEUP_TEMPLATE_2)
+          tr(lang, TIMEUP_TEMPLATE_1, "Saved time-up lines"),
+          tr(lang, TIMEUP_TEMPLATE_2, "Moments the timer ran out")
       ));
     }
 
     if (mode == ViewMode.FULL || mode == ViewMode.OTHER_ONLY) {
       pages.add(makeChapter(
           lang,
-          i18n.tr(lang, CHAPTER_OTHER_SUB),
+          tr(lang, CHAPTER_OTHER_SUB, "Other"),
           byKind.getOrDefault("OTHER", List.of()),
-          i18n.tr(lang, SUCCESS_TEMPLATE_1),
-          i18n.tr(lang, SUCCESS_TEMPLATE_2)
+          tr(lang, SUCCESS_TEMPLATE_1, "Saved success lines"),
+          tr(lang, SUCCESS_TEMPLATE_2, "Moments you cleared the run")
       ));
     }
 
@@ -171,17 +173,19 @@ public class QuoteFavoritesBookBuilder {
    * ✅ 1つだけ読み返す「OneShot Book」（QuoteRereadService 用）
    */
   public ItemStack buildRereadOneShotBook(org.bukkit.entity.Player player, Object row) {
-    String lang = "en";
+    String lang = inferLangFromPlayer(player);
 
     ItemStack book = new ItemStack(Material.WRITTEN_BOOK);
     BookMeta meta = (BookMeta) book.getItemMeta();
     if (meta == null) return book;
 
     String quoteText = extractTextSafe(row);
-    if (quoteText.isBlank()) quoteText = "(no text)";
+    if (quoteText == null || quoteText.isBlank()) {
+      quoteText = tr(lang, "favorites.reread.noQuotes", "No saved lines yet.");
+    }
 
-    String title = tr(lang, "favorites.cover.reread", "favorites.cover.reread");
-    String head = tr(lang, "favorites.reread.head", "favorites.reread.head");
+    String title = tr(lang, COVER_REREAD, tr(lang, TITLE, "Favorites"));
+    String head = tr(lang, "favorites.reread.head", "Saved lines reread");
 
     meta.setTitle(title);
     meta.setAuthor("TreasureRun");
@@ -190,17 +194,50 @@ public class QuoteFavoritesBookBuilder {
     book.setItemMeta(meta);
     return book;
   }
-
   // =======================================================
   // ✅ 内部：Chapter生成
   // =======================================================
+
+
+  private String inferLangFromPlayer(org.bukkit.entity.Player player) {
+    if (player == null) return "ja";
+
+    try {
+      String locale = player.getLocale();
+      if (locale == null || locale.isBlank()) return "ja";
+
+      String l = locale.toLowerCase(Locale.ROOT).replace('-', '_');
+
+      if (l.startsWith("ja")) return "ja";
+      if (l.startsWith("en")) return "en";
+      if (l.startsWith("de")) return "de";
+      if (l.startsWith("sv")) return "sv";
+      if (l.startsWith("zh_tw") || l.startsWith("zh_hant")) return "zh_tw";
+      if (l.startsWith("fr")) return "fr";
+      if (l.startsWith("es")) return "es";
+      if (l.startsWith("it")) return "it";
+      if (l.startsWith("pt")) return "pt";
+      if (l.startsWith("fi")) return "fi";
+      if (l.startsWith("hi")) return "hi";
+      if (l.startsWith("is")) return "is";
+      if (l.startsWith("ko")) return "ko";
+      if (l.startsWith("la")) return "la";
+      if (l.startsWith("lzh")) return "lzh";
+      if (l.startsWith("nl")) return "nl";
+      if (l.startsWith("ru")) return "ru";
+      if (l.startsWith("sa")) return "sa";
+      if (l.startsWith("asl")) return "asl_gloss";
+    } catch (Throwable ignored) {}
+
+    return "ja";
+  }
 
   private String makeChapter(String lang, String title, List<?> rows, String tpl1, String tpl2) {
     StringBuilder sb = new StringBuilder();
     sb.append(title).append("\n\n");
 
     if (rows == null || rows.isEmpty()) {
-      sb.append(i18n.tr(lang, CHAPTER_EMPTY)).append("\n");
+      sb.append(tr(lang, CHAPTER_EMPTY, "No saved lines yet")).append("\n");
       return sb.toString();
     }
 
@@ -218,7 +255,7 @@ public class QuoteFavoritesBookBuilder {
       if (idx > 10) break; // 1章最大10件（見やすさ優先）
     }
 
-    sb.append("\n").append(i18n.tr(lang, CHAPTER_COUNT, Map.of("count", String.valueOf(rows.size()))));
+    sb.append("\n").append(trp(lang, CHAPTER_COUNT, Map.of("count", String.valueOf(rows.size())), "{count} entries"));
     return sb.toString();
   }
 
@@ -246,7 +283,10 @@ public class QuoteFavoritesBookBuilder {
     if (text.isBlank()) text = readStringFieldOrGetter(row, "quote");
     if (text.isBlank()) text = readStringFieldOrGetter(row, "message");
     if (text.isBlank()) text = readStringFieldOrGetter(row, "value");
-    return text == null ? "" : text;
+    if (text == null) return "";
+    text = text.trim();
+    if (text.contains("Translation missing:")) return "";
+    return text;
   }
 
   private String readStringFieldOrGetter(Object obj, String name) {
@@ -288,7 +328,7 @@ public class QuoteFavoritesBookBuilder {
       return buildFavoritesBook("en", new java.util.UUID(0L, 0L), 0, rows);
     }
 
-    String lang = "en";
+    String lang = inferLangFromPlayer(player);
     // 可能なら PlayerLanguageStore から拾う（フィールドが無くても落ちない）
     try {
       java.lang.reflect.Field f = this.getClass().getDeclaredField("playerLanguageStore");
@@ -311,10 +351,32 @@ public class QuoteFavoritesBookBuilder {
     try {
       if (i18n == null) return fallback;
       String s = i18n.tr(lang, key);
-      if (s == null || s.isBlank() || s.equals(key)) return fallback;
+      if (s == null || s.isBlank() || s.equals(key) || s.startsWith("Translation missing:")) return fallback;
       return s;
     } catch (Throwable ignored) {
       return fallback;
+    }
+  }
+
+  private String trp(String lang, String key, Map<String, String> vars, String fallback) {
+    try {
+      if (i18n == null) return fallback;
+      String s = i18n.tr(lang, key, vars);
+      if (s == null || s.isBlank() || s.equals(key) || s.startsWith("Translation missing:")) s = fallback;
+      if (vars != null) {
+        for (Map.Entry<String, String> e : vars.entrySet()) {
+          s = s.replace("{" + e.getKey() + "}", String.valueOf(e.getValue()));
+        }
+      }
+      return s;
+    } catch (Throwable ignored) {
+      String s = fallback;
+      if (vars != null) {
+        for (Map.Entry<String, String> e : vars.entrySet()) {
+          s = s.replace("{" + e.getKey() + "}", String.valueOf(e.getValue()));
+        }
+      }
+      return s;
     }
   }
 

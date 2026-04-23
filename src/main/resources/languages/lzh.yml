@@ -39,14 +39,16 @@ quotes:
   - The glass didn’t break.\nNeither did you.\n（ガラスは割れなかった。あなたも折れなかった。）
   - Beneath a quiet sky,\nyour will held firm.\n（静かな空の下で、意志は持ちこたえた。）
   - Very little shines forever\n—but this moment was different.\n（永遠に輝くものなんてほとんどないけれど、この瞬間は別格だった。）
-  - You made it across the fragile ground,\nholding fast to the horizon the whole way.\n（脆い地面を渡り切った。地平線景色をしっかりと握りしめたまま。）
+  - You made it across the fragile ground,\nholding fast to the horizon the whole
+    way.\n（脆い地面を渡り切った。地平線景色をしっかりと握りしめたまま。）
   - The moment passed.\n What remained was the record—the achievement.\n（瞬間は過ぎ去った。遺されたもの記録・功績は残る。）
   - Luck fades quickly.\nOrder endures.\n（運は速やかに消え、整い秩序は永続する。）
   - The sky knows no rest in its endless cycle.\nNeither do you.\n（空はその終わりなき循環に休止を知らぬ。汝もまた、止まらず。）
   - The center was reached.\nThe world stood still.\n（中心は到達された。世界は立ち尽くし静止した。）
   - At last,you’ve made it here.\nThe truth stands—unbowed.\n（ついに、ここへ辿り着いた。真実は屈することなく、そこに在る。）
   - Complete. This path was yours\n—and yours alone.\n（完遂。この道を選んだのは他でもないあなただ。）
-  - Time drifted into silence,\nand found its place in the deepest corners of the mind.\n（時は静寂へと漂い、精神の奥底の隅に自らの居場所を見つけた。）
+  - Time drifted into silence,\nand found its place in the deepest corners of the
+    mind.\n（時は静寂へと漂い、精神の奥底の隅に自らの居場所を見つけた。）
   - As the sky shifted,\none story found its final resolution.\n（空が姿を変えるとともに、一つの物語はその最終的な解決完結を見出した。）
   - The waves fell quiet,\nand the sky hid its depths once more.\n（波は静まり、空は再びその深淵を覆い隠した。）
   - The footsteps ceased,\nand only the place remained.\n（歩みは途絶え、ただ場所だけがそこに在り続けた。）
@@ -67,7 +69,8 @@ quotes:
   - The sky knows no pause in endless circle,\nnor shall you find yours.\n（空はその終わりなき循環に休止を知らぬ。汝もまた、止まらず。）
   - The center has been reached.\nThe world stood still.\n（中心は到達された。世界は立ち尽くし静止した。）
   - Finally here.\nThe truth remains unyielding.\n（ついに、ここへ辿り着いた。真実は屈することなく、そこに在る。）
-  - 'You have seen it through.\nAnd mark this: it was you, and no one else, who chose this path.\n（完遂。この道を選んだのは他でもないあなただ。）'
+  - 'You have seen it through.\nAnd mark this: it was you, and no one else, who chose
+    this path.\n（完遂。この道を選んだのは他でもないあなただ。）'
   - Time drifted into silence,\nfinding its place in the recesses of the mind.\n（時は静寂へと漂い、精神の奥底の隅に自らの居場所を見つけた。）
   - As the sky transformed,\nthe tale found its final resolved.\n（空が姿を変えるとともに、一つの物語はその最終的な解決完結を見出した。）
   - The waters fell calm,\nand the sky once more veiled its abyss.\n（波は静まり、空は再びその深淵を覆い隠した。）
@@ -187,18 +190,18 @@ ui:
     tabs: '&6籤:&r'
     page: '&8第{page}/{total}頁&r'
     tab:
-      all: ▶ [全覧]
-      success: ▶ [成功]
-      timeUp: ▶ [時盡]
-      favorites: ▶ [珍愛]
+      all: 皆
+      success: 成
+      timeUp: 時盡
+      favorites: 所好
     latest: ★ 新近
     outcome:
       success: 成
       timeUp: 時盡
   quote:
-    title: 語錄
+    title: 格言集
     intro:
-      tabsTitle: 籤目：
+      tabsTitle: 分頁
       legendTitle: 例解：
       storedInDb: 存於MySQL資料庫：
       db:
@@ -229,13 +232,16 @@ ui:
     messages_yml_not_loaded_d56b1cd3: (messages.yml not loaded)
     translation_missing_77031543: '(譯文缺失:'
     translation_missing_77031543_107: '(譯文缺失:'
-    treasurerun_lang_config_yml__2dde4625: '[TreasureRun][Lang] config.yml 無 ''language:'' 節。'
+    treasurerun_lang_config_yml__2dde4625: '[TreasureRun][Lang] config.yml 無 ''language:''
+      節。'
     click_to_select_aac1569c_76: 點擊以選
     treasurerun_lang_default_60887a83: '[TreasureRun][Lang] default='
     click_to_select_aac1569c_19: 點擊以選
-    treasurerun_lang_config_yml__2dde4625_33: '[TreasureRun][Lang] config.yml 無 ''language:'' 節。'
+    treasurerun_lang_config_yml__2dde4625_33: '[TreasureRun][Lang] config.yml 無 ''language:''
+      節。'
     treasurerun_lang_material_la_bc70a401: '[TreasureRun][Lang] 無效 Material: lang='
-    treasurerun_lang_language_ic_4bc2362d: '[TreasureRun][Lang] 無 ''language.iconMaterial:'' 節（皆為PAPER）'
+    treasurerun_lang_language_ic_4bc2362d: '[TreasureRun][Lang] 無 ''language.iconMaterial:''
+      節（皆為PAPER）'
     click_to_select_aac1569c_100: 點擊以選
     treasurerun_lang_default_60887a83_111: '[TreasureRun][Lang] default='
     enemydown_mysql_jdbc_mybatis_6b5c6f68: '[EnemyDown] 已連MySQL（JDBC + MyBatis）'
@@ -252,12 +258,14 @@ ui:
     enemydown_mysql_93b23ef9: '[EnemyDown] MySQL 未連。'
     run_complete_46d920e5_580: Run complete.
     run_complete_46d920e5_589: Run complete.
-    playerlanguagestore_failed_t_c4999402: '[PlayerLanguageStore] Failed to create/load player_languages.yml:'
+    playerlanguagestore_failed_t_c4999402: '[PlayerLanguageStore] Failed to create/load
+      player_languages.yml:'
     playerlanguagestore_failed_t_b6478ec8: '[PlayerLanguageStore] Failed to save player_languages.yml:'
     proverb_logged_to_mysql_prov_c13b5e4e: 'Proverb logged to MySQL: proverb_logs'
     failed_to_log_proverb_to_mys_2bb4c5c3: 'Failed to log proverb to MySQL: proverb_logs'
     loaded_proverb_logs_from_mys_b5b0f8e0: 'Loaded proverb logs from MySQL: proverb_logs'
-    failed_to_load_proverb_logs__6246be38: 'Failed to load proverb logs from MySQL: proverb_logs'
+    failed_to_load_proverb_logs__6246be38: 'Failed to load proverb logs from MySQL:
+      proverb_logs'
     treasurerunmultichestplugin_4499e25c: '🌈 TreasureRunMultiChestPlugin: 起動 🌈'
     treasurerun_gamestagemanager_3d9e7f5a: '[TreasureRun] GameStageManager event registered!'
     treasurerunmultichestplugin_a507471a: ✅ TreasureRunMultiChestPlugin が正常に起動しました！
@@ -289,60 +297,12 @@ ui:
     reload_gameend_c41d5c55: 戲中不可重載。請先執 /gameEnd。
   menu:
     toc:
-      message: '&6===== 🌟 TreasureRun 目次 🌟 =====
-
-        &b一、目的
-
-        &f   ・限時之內，開箱盡多。
-
-
-        &b二、現今難度
-
-        &f   ・難度: &e{difficulty}
-
-
-        &b三、難度與色
-
-        &f   ・易  ：紫石
-
-        &f   ・常  ：綠石
-
-        &f   ・難  ：藍石
-
-
-        &b四、操法
-
-        &f   ・疾走尋箱，右擊開之。
-
-
-        &b五、積分
-
-        &f   ・常寶: +百
-
-        &f   ・稀寶（下界合金等）: 加分！
-
-
-        &b六、終局之條
-
-        &f   ・箱盡或時盡，戲終。
-
-
-        &b七、語錄集
-
-        &f   ・勝敗皆自存語錄。
-
-
-        &b八、所愛
-
-        &f   ・以★存所愛語錄。
-
-
-        &6=================================='
+      message: '&6📌 TreasureRun 菜單已開。請閱規則書。'
     book:
       openFailed: '&c規則書不可開。'
-      hotbarGiven: '&6📖 規則書已置於快捷欄。'
-      hotbarHint: '&e持之右擊，可隨時重讀。'
-      latestHint: '&7(右擊此書可存 &e{latestLabel}&7。)'
+      hotbarGiven: 📖 規則書已置於快捷欄。
+      hotbarHint: 執於手而右擊，則可隨時復讀。
+      latestHint: （右擊此書，可存最新格言。）
       fallbackTitle: TreasureRun 之規則
       fallbackDisplayName: TreasureRun 規則書
     legacy:
@@ -401,6 +361,8 @@ ui:
     tabInactiveOpen: '['
     tabInactiveClose: ']'
     activeMarker: '▶ '
+  rankTicker:
+    updated: 🏁 榜已更新！({which})
 gui:
   language:
     title: 語言
@@ -417,26 +379,54 @@ game:
     normal: '&eNormal'
     hard: '&cHard'
 favorites:
-  title: 珍藏
+  title: 所好
   cover:
-    head: favorites.cover.head
-    hint: favorites.cover.hint
-    reread: 重讀
+    head: 所好之藏
+    hint: 可用 /quoteFavorite latest 與 /quoteFavorite list
+    reread: 重覽
+    badge: TreasureRun 所好
+    countLabel: 已存：{count}
+    openToc: 啟目錄
+    sub: 爾於遊戲之中所存之句，悉聚於此
   empty:
-    noFav: 今尚無珍藏。
-    saveLatest: favorites.empty.saveLatest
-    reread: 今尚無可重讀之格言。
-    rereadBook: 今尚無可用之重讀書。
+    noFav: 尚未有已存之所好。
+    saveLatest: 存最近之一語
+    reread: 今尚無可重覽之語。
+    rereadBook: 今尚無重覽之書可用。
+    head: 尚無所好
+    noFavSub: 先存一語，乃可開爾之藏
+    saveHow: 所好之存法
+    saveHow1: 用 /quoteFavorite latest
+    saveHow2: 或潛行而右擊規則之書
+    sub: 爾之藏今猶空也
+    tryNow: 既存之後，復開此書
   toc:
-    head: favorites.toc.head
-    howto: favorites.toc.howto
-    manage: favorites.toc.manage
-    reread: 重讀
-    howtoShift: '&7潛行 + 右擊，以啟珍藏之藏冊'
-    rereadTitle: 重讀
+    head: 目錄
+    howto: 開一章，則可重覽所存之句
+    manage: 整理所存之句
+    reread: 重覽
+    howtoShift: '&7潛行加右擊，以啟所好之藏'
+    rereadTitle: 重覽
+    clickable: 諸章可點而啟之
+    sub: 可依章而覽
   chapter:
-    rereadBook: 重讀之書
-  remove: 刪去
+    rereadBook: 重覽之書
+    back: 返目錄
+    count: '{count} 條'
+    empty: 此章尚無所存之句
+    otherSub: 其餘
+    successSub: 功成之時所存之句
+    successTitle: 功成
+    successTpl1: 功成所存之句
+    successTpl2: 克成此局之時所記
+    timeupSub: 時盡之時所存之句
+    timeupTitle: 時盡
+    timeupTpl1: 時盡所存之句
+    timeupTpl2: 更漏已盡之時所記
+  remove: 去之
+  reread:
+    head: 重覽所存之句
+    noQuotes: 爾尚未存一語。
 command:
   checkTreasureEmerald:
     playersOnly: 此令唯玩家可用。
@@ -549,14 +539,14 @@ outcome:
         汝未盡也。'
     normal:
       pool:
-      - '其距漸近。
+      - '程已合。
 
-        其時未然。'
+        時未合也。'
     hard:
       pool:
-      - '雖極光亦歇。
+      - '極光亦逝。
 
-        可更來。'
+        盍復來。'
   random:
     common:
       pool: []
@@ -603,3 +593,15 @@ gameplay:
       time: 時間
       rank: 名次
     allChestsOpenedBroadcast: '{player}盡啟諸寶箱！終分：{score}'
+  setup:
+    chestsPlaced: 已置寶箱 {count} 個！
+  success:
+    allChestsOpened: 諸寶箱皆已啟！戲終！
+    treasureCompleteTitle: 🎵 尋寶既成！ 🎵
+    allTreasuresFoundTitle: 諸寶皆得！
+    allTreasuresFoundChat: 賀！汝已盡得諸寶！
+rewards:
+  rank:
+    netheriteIngot: 得獄髓錠！
+    diamond: 得鑽石！
+    goldenApple: 得金蘋果！

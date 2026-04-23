@@ -182,12 +182,29 @@ public class TreasureRunGameEffectsPlugin implements Listener {
     }
     djRunning = true;
 
-    if (showTitle) {
-      player.sendTitle("🎵 Treasure Complete! 🎵",
-          "全ての宝物を発見しました！",
-          10, 70, 20);
+    String successLang = "en";
+    TreasureRunMultiChestPlugin trp = (plugin instanceof TreasureRunMultiChestPlugin)
+        ? (TreasureRunMultiChestPlugin) plugin : null;
+    if (trp != null) {
+      successLang = trp.getConfig().getString("language.default", "en");
+      try {
+        if (trp.getPlayerLanguageStore() != null) {
+          String saved = trp.getPlayerLanguageStore().getLang(player, successLang);
+          if (saved != null && !saved.isBlank()) successLang = saved;
+        }
+      } catch (Throwable ignored) {}
     }
-    player.sendMessage("§6Congratulations! 全ての宝物を見つけました！");
+
+    if (showTitle) {
+      String t1 = (trp != null) ? trp.getI18n().tr(successLang, "gameplay.success.treasureCompleteTitle") : "🎵 Treasure Complete! 🎵";
+      String t2 = (trp != null) ? trp.getI18n().tr(successLang, "gameplay.success.allTreasuresFoundTitle") : "All treasures found!";
+      player.sendTitle(t1, t2, 10, 70, 20);
+    }
+
+    String chatMsg = (trp != null)
+        ? trp.getI18n().tr(successLang, "gameplay.success.allTreasuresFoundChat")
+        : "Congratulations! You found all the treasures!";
+    player.sendMessage(ChatColor.GOLD + chatMsg);
 
     new BukkitRunnable() {
       int tickCount = 0;
@@ -281,9 +298,8 @@ public class TreasureRunGameEffectsPlugin implements Listener {
       if (outcomeLang == null || outcomeLang.isBlank()) outcomeLang = "en";
     }
 
-    String titleText = (trPlugin != null)
-        ? trPlugin.getI18n().tr(outcomeLang, "gameplay.result.timeUpTitle")
-        : "TIME'S UP!";
+    if (trPlugin == null) return;
+    String titleText = trPlugin.getI18n().tr(outcomeLang, "gameplay.result.timeUpTitle");
 
     String collectedText = (trPlugin != null)
         ? trPlugin.getI18n().tr(
