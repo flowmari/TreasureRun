@@ -415,6 +415,10 @@ ui:
     title: Favorites
   rankTicker:
     updated: 🏁 Topplistan uppdaterades! ({which})
+    mode:
+      weekly: Veckovis
+      allTime: Totalt
+      monthly: Månadsvis
   labels:
     tab:
       all: ALLA
@@ -508,6 +512,8 @@ gameplay:
       time: Tid
       rank: Placering
     allChestsOpenedBroadcast: '{player} öppnade alla kistor! Slutpoäng: {score}'
+    summaryLine: 'Tid: {time}  Poäng: {score}  Placering: {rank}'
+    gotLine: 'Kistor: {got}/{total}'
   setup:
     chestsPlaced: '{count} kistor placerades ut!'
   success:
@@ -515,8 +521,39 @@ gameplay:
     treasureCompleteTitle: 🎵 Skatten klar! 🎵
     allTreasuresFoundTitle: Alla skatter hittades!
     allTreasuresFoundChat: Grattis! Du hittade alla skatter!
+  start:
+    startingIn: Startar om…
+    go: Kör!
+  shop:
+    tradeCompleteTitle: Handel slutfört!
+    hiddenPowerAwakens: En dold kraft vaknar…
+    hiddenPowerChat: Du känner en dold kraft i Treasure Shop…
+  timer:
+    remainingBossbar: Återstående tid
+    remainingLine: 'Återstående tid: {seconds}s'
 rewards:
   rank:
     netheriteIngot: Du fick ett netherittacka!
     diamond: Du fick en diamant!
     goldenApple: Du fick ett gyllene äpple!
+rankTicker:
+  weeklyTitle: Veckans TreasureRun
+  allTimeTitle: TreasureRun totalt
+  monthlyTitle: Månadens TreasureRun
+  footerHint: /gameRank weekly|all|monthly
+rank:
+  command:
+    timeTop10Title: === 🌟 TreasureRun Topp 10 (Bästa tider) 🌟 ===
+    timeTop10Line: '#{rank} {player}  {time}s  {score} p  Svårighetsgrad: {difficulty}'
+    dbUnavailable: Databasanslutning saknas.
+    loadError: Ett fel uppstod när topplistan skulle laddas.
+    playsTitleWeekly: === 🎖️ TreasureRun Veckans topp 10 (Rundor) ===
+    playsTitleAllTime: === 🎖️ TreasureRun Topp 10 genom tiderna (Rundor) ===
+    playsTitleMonthly: === 🎖️ TreasureRun Månadens topp 10 (Rundor) ===
+    playsLine: '#{rank} {player}  {score} p  {time}s  ({difficulty}) [{lang}]'
+    weeklyEmpty: Inga rundor registrerade de senaste 7 dagarna.
+    weeklySwitch: 'Byt vy: /gameRank all | /gameRank monthly'
+    allTimeEmpty: Inga resultat ännu.
+    allTimeSwitch: 'Byt vy: /gameRank weekly | /gameRank monthly'
+    monthlyEmpty: Inga resultat den här månaden ännu.
+    monthlySwitch: 'Byt vy: /gameRank weekly | /gameRank all'

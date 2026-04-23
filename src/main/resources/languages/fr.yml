@@ -436,6 +436,10 @@ ui:
     activeMarker: '▶ '
   rankTicker:
     updated: 🏁 Classement mis à jour ! ({which})
+    mode:
+      weekly: Hebdomadaire
+      allTime: Global
+      monthly: Mensuel
   labels:
     tab:
       all: TOUT
@@ -530,6 +534,8 @@ gameplay:
       rank: Rang
     allChestsOpenedBroadcast: '{player} a ouvert tous les coffres ! Score final :
       {score}'
+    summaryLine: 'Temps : {time}  Score : {score}  Rang : {rank}'
+    gotLine: 'Coffres : {got}/{total}'
   setup:
     chestsPlaced: '{count} coffres ont été placés !'
   success:
@@ -537,8 +543,39 @@ gameplay:
     treasureCompleteTitle: 🎵 Trésor terminé ! 🎵
     allTreasuresFoundTitle: Tous les trésors ont été trouvés !
     allTreasuresFoundChat: Félicitations ! Vous avez trouvé tous les trésors !
+  start:
+    startingIn: Début dans…
+    go: Partez !
+  shop:
+    tradeCompleteTitle: Échange terminé !
+    hiddenPowerAwakens: Un pouvoir caché s’éveille…
+    hiddenPowerChat: Vous sentez le pouvoir caché du Treasure Shop…
+  timer:
+    remainingBossbar: Temps restant
+    remainingLine: 'Temps restant : {seconds} s'
 rewards:
   rank:
     netheriteIngot: Lingot de netherite obtenu !
     diamond: Diamant obtenu !
     goldenApple: Pomme dorée obtenue !
+rankTicker:
+  weeklyTitle: TreasureRun hebdomadaire
+  allTimeTitle: TreasureRun global
+  monthlyTitle: TreasureRun mensuel
+  footerHint: /gameRank weekly|all|monthly
+rank:
+  command:
+    timeTop10Title: === 🌟 TreasureRun Top 10 (Meilleurs temps) 🌟 ===
+    timeTop10Line: '#{rank} {player}  {time}s  {score} pts  Difficulté : {difficulty}'
+    dbUnavailable: Connexion à la base de données indisponible.
+    loadError: Une erreur est survenue lors du chargement du classement.
+    playsTitleWeekly: === 🎖️ TreasureRun Top 10 hebdomadaire (Parties) ===
+    playsTitleAllTime: === 🎖️ TreasureRun Top 10 général (Parties) ===
+    playsTitleMonthly: === 🎖️ TreasureRun Top 10 mensuel (Parties) ===
+    playsLine: '#{rank} {player}  {score} pts  {time}s  ({difficulty}) [{lang}]'
+    weeklyEmpty: Aucune partie enregistrée sur les 7 derniers jours.
+    weeklySwitch: 'Changer d’affichage : /gameRank all | /gameRank monthly'
+    allTimeEmpty: Aucun record pour le moment.
+    allTimeSwitch: 'Changer d’affichage : /gameRank weekly | /gameRank monthly'
+    monthlyEmpty: Aucun record ce mois-ci pour le moment.
+    monthlySwitch: 'Changer d’affichage : /gameRank weekly | /gameRank all'

@@ -882,7 +882,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
             "LIMIT 10");
         ResultSet rs = ps.executeQuery()) {
 
-      player.sendMessage(ChatColor.GOLD + "=== 🌟 TreasureRun ランキング TOP10（タイム優先）🌟 ===");
+      player.sendMessage(ChatColor.GOLD + trPlayer(player, "rank.command.timeTop10Title"));
 
       int rank = 1;
       while (rs.next()) {
@@ -899,11 +899,15 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
         };
 
         player.sendMessage(
-            ChatColor.AQUA + "" + rank + "位 " +
-                ChatColor.WHITE + name + "  " +
-                ChatColor.YELLOW + time + "秒 " +
-                ChatColor.GOLD + "" + score + "点  " +
-                diffColor + "難易度: " + diff
+            ChatColor.AQUA + trPlayer(
+                player,
+                "rank.command.timeTop10Line",
+                I18n.Placeholder.of("{rank}", String.valueOf(rank)),
+                I18n.Placeholder.of("{player}", String.valueOf(name)),
+                I18n.Placeholder.of("{time}", String.valueOf(time)),
+                I18n.Placeholder.of("{score}", String.valueOf(score)),
+                I18n.Placeholder.of("{difficulty}", String.valueOf(diff))
+            )
         );
 
         rank++;
@@ -915,7 +919,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
 
     } catch (SQLException e) {
       e.printStackTrace();
-      player.sendMessage(ChatColor.RED + "ランキング取得中にエラーが発生しました");
+      player.sendMessage(ChatColor.RED + trPlayer(player, "rank.command.loadError"));
     }
   }
 
@@ -923,7 +927,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
   private void showWeeklyRanking(Player player) {
     Connection conn = getConnection();
     if (conn == null) {
-      player.sendMessage(ChatColor.RED + "DB接続がありません。");
+      player.sendMessage(ChatColor.RED + trPlayer(player, "rank.command.dbUnavailable"));
       return;
     }
 
@@ -934,7 +938,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
             "ORDER BY score DESC, time ASC, id DESC " +
             "LIMIT 10";
 
-    player.sendMessage(ChatColor.AQUA + "=== 🎖️Treasure Run Weekly TOP10 (Plays) ===");
+    player.sendMessage(ChatColor.AQUA + trPlayer(player, "rank.command.playsTitleWeekly"));
 
     try (PreparedStatement ps = conn.prepareStatement(sql);
         ResultSet rs = ps.executeQuery()) {
@@ -948,32 +952,36 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
         String lang = rs.getString("lang_code");
 
         player.sendMessage(
-            ChatColor.AQUA + "" + rank + "位 " +
-                ChatColor.WHITE + (name == null ? "unknown" : name) + "  " +
-                ChatColor.GOLD + score + "pt " +
-                ChatColor.YELLOW + time + "s " +
-                ChatColor.GRAY + "(" + (diff == null ? "-" : diff) + ") " +
-                ChatColor.LIGHT_PURPLE + "[" + (lang == null ? "ja" : lang) + "]"
+            ChatColor.AQUA + trPlayer(
+                player,
+                "rank.command.playsLine",
+                I18n.Placeholder.of("{rank}", String.valueOf(rank)),
+                I18n.Placeholder.of("{player}", String.valueOf(name == null ? "unknown" : name)),
+                I18n.Placeholder.of("{score}", String.valueOf(score)),
+                I18n.Placeholder.of("{time}", String.valueOf(time)),
+                I18n.Placeholder.of("{difficulty}", String.valueOf(diff == null ? "-" : diff)),
+                I18n.Placeholder.of("{lang}", String.valueOf(lang == null ? "ja" : lang))
+            )
         );
         rank++;
       }
 
       if (rank == 1) {
-        player.sendMessage(ChatColor.GRAY + "直近7日の記録がありません。");
+        player.sendMessage(ChatColor.GRAY + trPlayer(player, "rank.command.weeklyEmpty"));
       } else {
-        player.sendMessage(ChatColor.DARK_GRAY + "表示切替: /gameRank all | /gameRank monthly");
+        player.sendMessage(ChatColor.DARK_GRAY + trPlayer(player, "rank.command.weeklySwitch"));
       }
 
     } catch (SQLException e) {
       e.printStackTrace();
-      player.sendMessage(ChatColor.RED + "ランキング取得中にエラーが発生しました");
+      player.sendMessage(ChatColor.RED + trPlayer(player, "rank.command.loadError"));
     }
   }
 
   private void showAllTimeRanking(Player player) {
     Connection conn = getConnection();
     if (conn == null) {
-      player.sendMessage(ChatColor.RED + "DB接続がありません。");
+      player.sendMessage(ChatColor.RED + trPlayer(player, "rank.command.dbUnavailable"));
       return;
     }
 
@@ -983,7 +991,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
             "ORDER BY score DESC, time ASC, id DESC " +
             "LIMIT 10";
 
-    player.sendMessage(ChatColor.AQUA + "=== 🎖️Treasure Run All-time TOP10 (Plays) ===");
+    player.sendMessage(ChatColor.AQUA + trPlayer(player, "rank.command.playsTitleAllTime"));
 
     try (PreparedStatement ps = conn.prepareStatement(sql);
         ResultSet rs = ps.executeQuery()) {
@@ -997,32 +1005,36 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
         String lang = rs.getString("lang_code");
 
         player.sendMessage(
-            ChatColor.AQUA + "" + rank + "位 " +
-                ChatColor.WHITE + (name == null ? "unknown" : name) + "  " +
-                ChatColor.GOLD + score + "pt " +
-                ChatColor.YELLOW + time + "s " +
-                ChatColor.GRAY + "(" + (diff == null ? "-" : diff) + ") " +
-                ChatColor.LIGHT_PURPLE + "[" + (lang == null ? "ja" : lang) + "]"
+            ChatColor.AQUA + trPlayer(
+                player,
+                "rank.command.playsLine",
+                I18n.Placeholder.of("{rank}", String.valueOf(rank)),
+                I18n.Placeholder.of("{player}", String.valueOf(name == null ? "unknown" : name)),
+                I18n.Placeholder.of("{score}", String.valueOf(score)),
+                I18n.Placeholder.of("{time}", String.valueOf(time)),
+                I18n.Placeholder.of("{difficulty}", String.valueOf(diff == null ? "-" : diff)),
+                I18n.Placeholder.of("{lang}", String.valueOf(lang == null ? "ja" : lang))
+            )
         );
         rank++;
       }
 
       if (rank == 1) {
-        player.sendMessage(ChatColor.GRAY + "まだ記録がありません。");
+        player.sendMessage(ChatColor.GRAY + trPlayer(player, "rank.command.allTimeEmpty"));
       } else {
-        player.sendMessage(ChatColor.DARK_GRAY + "表示切替: /gameRank weekly | /gameRank monthly");
+        player.sendMessage(ChatColor.DARK_GRAY + trPlayer(player, "rank.command.allTimeSwitch"));
       }
 
     } catch (SQLException e) {
       e.printStackTrace();
-      player.sendMessage(ChatColor.RED + "ランキング取得中にエラーが発生しました");
+      player.sendMessage(ChatColor.RED + trPlayer(player, "rank.command.loadError"));
     }
   }
 
   private void showMonthlyRanking(Player player) {
     Connection conn = getConnection();
     if (conn == null) {
-      player.sendMessage(ChatColor.RED + "DB接続がありません。");
+      player.sendMessage(ChatColor.RED + trPlayer(player, "rank.command.dbUnavailable"));
       return;
     }
 
@@ -1034,7 +1046,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
             "ORDER BY score DESC, time ASC, id DESC " +
             "LIMIT 10";
 
-    player.sendMessage(ChatColor.AQUA + "=== 🎖️Treasure Run Monthly TOP10 (Plays) ===");
+    player.sendMessage(ChatColor.AQUA + trPlayer(player, "rank.command.playsTitleMonthly"));
 
     try (PreparedStatement ps = conn.prepareStatement(sql);
         ResultSet rs = ps.executeQuery()) {
@@ -1048,25 +1060,29 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
         String lang = rs.getString("lang_code");
 
         player.sendMessage(
-            ChatColor.AQUA + "" + rank + "位 " +
-                ChatColor.WHITE + (name == null ? "unknown" : name) + "  " +
-                ChatColor.GOLD + score + "pt " +
-                ChatColor.YELLOW + time + "s " +
-                ChatColor.GRAY + "(" + (diff == null ? "-" : diff) + ") " +
-                ChatColor.LIGHT_PURPLE + "[" + (lang == null ? "ja" : lang) + "]"
+            ChatColor.AQUA + trPlayer(
+                player,
+                "rank.command.playsLine",
+                I18n.Placeholder.of("{rank}", String.valueOf(rank)),
+                I18n.Placeholder.of("{player}", String.valueOf(name == null ? "unknown" : name)),
+                I18n.Placeholder.of("{score}", String.valueOf(score)),
+                I18n.Placeholder.of("{time}", String.valueOf(time)),
+                I18n.Placeholder.of("{difficulty}", String.valueOf(diff == null ? "-" : diff)),
+                I18n.Placeholder.of("{lang}", String.valueOf(lang == null ? "ja" : lang))
+            )
         );
         rank++;
       }
 
       if (rank == 1) {
-        player.sendMessage(ChatColor.GRAY + "まだ記録がありません。");
+        player.sendMessage(ChatColor.GRAY + trPlayer(player, "rank.command.monthlyEmpty"));
       } else {
-        player.sendMessage(ChatColor.DARK_GRAY + "表示切替: /gameRank weekly | /gameRank all");
+        player.sendMessage(ChatColor.DARK_GRAY + trPlayer(player, "rank.command.monthlySwitch"));
       }
 
     } catch (SQLException e) {
       e.printStackTrace();
-      player.sendMessage(ChatColor.RED + "ランキング取得中にエラーが発生しました");
+      player.sendMessage(ChatColor.RED + trPlayer(player, "rank.command.loadError"));
     }
   }
 
@@ -1582,7 +1598,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
 
     // ✅ SUCCESS用：このRunで表示する哲学SUBTITLEを1回だけ決めて保持する（チカチカ防止）
     final String successLang = getPlayerLangOrDefault(player.getUniqueId());
-    final String successPhiloSub = outcomeMessageService.pickSubtitle(GameOutcome.SUCCESS, difficulty, successLang);
+    final String successPhiloSub = outcomeMessageService.sanitizeVisibleText(GameOutcome.SUCCESS, successLang, outcomeMessageService.pickSubtitle(GameOutcome.SUCCESS, difficulty, successLang));
 
     // =======================================================
     // ✅ ✅ ✅ 追加：SUCCESS の格言ログを MySQL に保存（proverb_logs）
@@ -1683,10 +1699,16 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
       }
 
       if (player.isOnline()) {
-        player.sendMessage(ChatColor.GOLD + "すべての宝箱を開けました！ゲーム終了！");
-        player.sendMessage(ChatColor.AQUA + "タイム: " + ChatColor.YELLOW + timeText +
-            ChatColor.GOLD + "  スコア: " + finalScore +
-            ChatColor.LIGHT_PURPLE + "  ランク: " + rankLabel);
+        player.sendMessage(ChatColor.GOLD + getI18n().tr(getPlayerLangOrDefault(player.getUniqueId()), "gameplay.success.allChestsOpened"));
+        player.sendMessage(
+            ChatColor.AQUA + getI18n().tr(
+                getPlayerLangOrDefault(player.getUniqueId()),
+                "gameplay.result.summaryLine",
+                I18n.Placeholder.of("{time}", timeText),
+                I18n.Placeholder.of("{score}", String.valueOf(finalScore)),
+                I18n.Placeholder.of("{rank}", rankLabel)
+            )
+        );
         // ✅ ここでは哲学文を出さない（位置を下に移動するため）
       }
 
@@ -1740,7 +1762,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
   // =======================================================
   private void showOutcomeSubtitle(Player player, GameOutcome outcome) {
     String lang = getPlayerLangOrDefault(player.getUniqueId());
-    String sub = outcomeMessageService.pickSubtitle(outcome, difficulty, lang);
+    String sub = outcomeMessageService.sanitizeVisibleText(outcome, lang, outcomeMessageService.pickSubtitle(outcome, difficulty, lang));
     if (sub == null || sub.isBlank()) return;
 
     String title = (outcome == GameOutcome.SUCCESS)
@@ -1796,8 +1818,10 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     w.setStorm(false);
     w.setThundering(false);
 
-    bossBar = Bukkit.createBossBar(ChatColor.GREEN + "残り時間", BarColor.GREEN, BarStyle.SOLID);
+    bossBar = Bukkit.createBossBar(ChatColor.GREEN + getI18n().tr(getPlayerLangOrDefault(player.getUniqueId()), "gameplay.timer.remainingBossbar"), BarColor.GREEN, BarStyle.SOLID);
     bossBar.addPlayer(player);
+
+    bossBar.setTitle(ChatColor.GREEN + getI18n().tr(getPlayerLangOrDefault(player.getUniqueId()), "gameplay.timer.remainingBossbar"));
 
     taskId = Bukkit.getScheduler().scheduleSyncRepeatingTask(this, () -> {
       long elapsed = (System.currentTimeMillis() - startTime) / 1000;
@@ -1812,7 +1836,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
       bossBar.setProgress((double) remaining / timeLimit);
 
       player.spigot().sendMessage(ChatMessageType.ACTION_BAR,
-          new TextComponent(ChatColor.YELLOW + "残り時間: " + remaining + "秒"));
+          new TextComponent(ChatColor.YELLOW + getI18n().tr(getPlayerLangOrDefault(player.getUniqueId()), "gameplay.timer.remainingLine", I18n.Placeholder.of("{seconds}", String.valueOf(remaining)))));
 
       if (remaining == 5) {
         if (treasureRunGameEffectsPlugin != null) {
@@ -1833,7 +1857,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
 
         // ✅ TIME_UP：哲学文（固定位置で最後に出すため、ここでは「保持」だけ）
         final String timeUpLang = getPlayerLangOrDefault(player.getUniqueId());
-        final String timeUpPhiloSub = outcomeMessageService.pickSubtitle(GameOutcome.TIME_UP, difficulty, timeUpLang);
+        final String timeUpPhiloSub = outcomeMessageService.sanitizeVisibleText(GameOutcome.TIME_UP, timeUpLang, outcomeMessageService.pickSubtitle(GameOutcome.TIME_UP, difficulty, timeUpLang));
 
         // ✅ TIME_UP：連続回数カウント（ここで +1）
         final UUID puid = player.getUniqueId();
@@ -1861,7 +1885,12 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
 
         final int got = Math.max(0, totalChestsAtStart - totalChestsRemaining);
         final String baseSub =
-            ChatColor.GOLD + "Got: " + got + "/" + totalChestsAtStart;
+            ChatColor.GOLD + getI18n().tr(
+                timeUpLang,
+                "gameplay.result.gotLine",
+                I18n.Placeholder.of("{got}", String.valueOf(got)),
+                I18n.Placeholder.of("{total}", String.valueOf(totalChestsAtStart))
+            );
 
         final String philoPart = (timeUpPhiloSub == null || timeUpPhiloSub.isBlank())
             ? ""
@@ -2228,7 +2257,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
         + " instance=" + (m != null ? System.identityHashCode(m) : -1)
     );
 
-    player.sendMessage(ChatColor.GREEN + "宝箱 " + currentTotalChests + " 個を配置しました！");
+    player.sendMessage(ChatColor.GREEN + trPlayer(player, "gameplay.setup.chestsPlaced", I18n.Placeholder.of("{count}", String.valueOf(currentTotalChests))));
 
     GameMenu.showGameMenu(player, difficulty, this, lang);
     GameMenu.openRuleBookFromConfig(player, difficulty, this, lang);
@@ -2253,9 +2282,11 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
 
               // ✅ ✅ ✅ 最大サイズで見せる：Title行に数字だけ出す（これが一番デカい）
               // Subtitleは「白に一番近いグレー」
+              String startLang = getPlayerLangOrDefault(player.getUniqueId());
+
               player.sendTitle(
                   numColor + "" + ChatColor.BOLD + count,
-                  ChatColor.GRAY + "Starting in…",
+                  ChatColor.GRAY + getI18n().tr(startLang, "gameplay.start.startingIn"),
                   0, 20, 0
               );
 
@@ -2277,8 +2308,10 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
               }, 1L);
 // ✅ ✅ ✅ 最大サイズで見せる：Title行に GO! だけ（太字）
               // ✅ 色は「白に一番近いグレー」
+              String startLang = getPlayerLangOrDefault(player.getUniqueId());
+
               player.sendTitle(
-                  ChatColor.GRAY + "" + ChatColor.BOLD + "GO!",
+                  ChatColor.GRAY + "" + ChatColor.BOLD + getI18n().tr(startLang, "gameplay.start.go"),
                   "",
                   0, 20, 10
               );

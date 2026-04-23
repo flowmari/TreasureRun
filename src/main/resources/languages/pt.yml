@@ -376,6 +376,10 @@ ui:
     activeMarker: '▶ '
   rankTicker:
     updated: 🏁 Ranking atualizado! ({which})
+    mode:
+      weekly: Semanal
+      allTime: Geral
+      monthly: Mensal
 gui:
   language:
     title: Idioma
@@ -617,6 +621,8 @@ gameplay:
       time: Tempo
       rank: Posição
     allChestsOpenedBroadcast: '{player} abriu todos os baús! Pontuação final: {score}'
+    summaryLine: 'Tempo: {time}  Pontuação: {score}  Posição: {rank}'
+    gotLine: 'Baús: {got}/{total}'
   setup:
     chestsPlaced: '{count} baús foram colocados!'
   success:
@@ -624,8 +630,39 @@ gameplay:
     treasureCompleteTitle: 🎵 Tesouro concluído! 🎵
     allTreasuresFoundTitle: Todos os tesouros foram encontrados!
     allTreasuresFoundChat: Parabéns! Você encontrou todos os tesouros!
+  start:
+    startingIn: Começa em…
+    go: Vai!
+  shop:
+    tradeCompleteTitle: Troca concluída!
+    hiddenPowerAwakens: Um poder oculto desperta…
+    hiddenPowerChat: Você sente um poder oculto na Treasure Shop…
+  timer:
+    remainingBossbar: Tempo restante
+    remainingLine: 'Tempo restante: {seconds}s'
 rewards:
   rank:
     netheriteIngot: Você recebeu um lingote de netherita!
     diamond: Você recebeu um diamante!
     goldenApple: Você recebeu uma maçã dourada!
+rankTicker:
+  weeklyTitle: TreasureRun semanal
+  allTimeTitle: TreasureRun geral
+  monthlyTitle: TreasureRun mensal
+  footerHint: /gameRank weekly|all|monthly
+rank:
+  command:
+    timeTop10Title: === 🌟 TreasureRun Top 10 (Melhores tempos) 🌟 ===
+    timeTop10Line: '#{rank} {player}  {time}s  {score} pts  Dificuldade: {difficulty}'
+    dbUnavailable: A conexão com o banco de dados não está disponível.
+    loadError: Ocorreu um erro ao carregar o ranking.
+    playsTitleWeekly: === 🎖️ TreasureRun Top 10 semanal (Partidas) ===
+    playsTitleAllTime: === 🎖️ TreasureRun Top 10 geral (Partidas) ===
+    playsTitleMonthly: === 🎖️ TreasureRun Top 10 mensal (Partidas) ===
+    playsLine: '#{rank} {player}  {score} pts  {time}s  ({difficulty}) [{lang}]'
+    weeklyEmpty: Não há partidas registradas nos últimos 7 dias.
+    weeklySwitch: 'Alternar visualização: /gameRank all | /gameRank monthly'
+    allTimeEmpty: Ainda não há registros.
+    allTimeSwitch: 'Alternar visualização: /gameRank weekly | /gameRank monthly'
+    monthlyEmpty: Ainda não há registros neste mês.
+    monthlySwitch: 'Alternar visualização: /gameRank weekly | /gameRank all'

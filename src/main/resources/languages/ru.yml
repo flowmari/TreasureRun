@@ -433,6 +433,10 @@ ui:
     activeMarker: '▶ '
   rankTicker:
     updated: 🏁 Таблица лидеров обновлена! ({which})
+    mode:
+      weekly: За неделю
+      allTime: За всё время
+      monthly: За месяц
   labels:
     tab:
       all: ВСЁ
@@ -526,6 +530,8 @@ gameplay:
       time: Время
       rank: Ранг
     allChestsOpenedBroadcast: '{player} открыл(а) все сундуки! Итоговый счёт: {score}'
+    summaryLine: 'Время: {time}  Очки: {score}  Ранг: {rank}'
+    gotLine: 'Сундуки: {got}/{total}'
   setup:
     chestsPlaced: 'Размещено сундуков: {count}!'
   success:
@@ -533,8 +539,39 @@ gameplay:
     treasureCompleteTitle: 🎵 Сокровище завершено! 🎵
     allTreasuresFoundTitle: Все сокровища найдены!
     allTreasuresFoundChat: Поздравляем! Вы нашли все сокровища!
+  start:
+    startingIn: Старт через…
+    go: Вперёд!
+  shop:
+    tradeCompleteTitle: Обмен завершён!
+    hiddenPowerAwakens: Пробуждается скрытая сила…
+    hiddenPowerChat: Вы чувствуете скрытую силу Treasure Shop…
+  timer:
+    remainingBossbar: Оставшееся время
+    remainingLine: 'Осталось времени: {seconds} с'
 rewards:
   rank:
     netheriteIngot: Вы получили незеритовый слиток!
     diamond: Вы получили алмаз!
     goldenApple: Вы получили золотое яблоко!
+rankTicker:
+  weeklyTitle: Еженедельный TreasureRun
+  allTimeTitle: TreasureRun за всё время
+  monthlyTitle: Ежемесячный TreasureRun
+  footerHint: /gameRank weekly|all|monthly
+rank:
+  command:
+    timeTop10Title: === 🌟 TreasureRun Топ-10 (Лучшее время) 🌟 ===
+    timeTop10Line: '#{rank} {player}  {time}с  {score} очк.  Сложность: {difficulty}'
+    dbUnavailable: Подключение к базе данных недоступно.
+    loadError: Произошла ошибка при загрузке рейтинга.
+    playsTitleWeekly: === 🎖️ TreasureRun Топ-10 за неделю (Забеги) ===
+    playsTitleAllTime: === 🎖️ TreasureRun Топ-10 за всё время (Забеги) ===
+    playsTitleMonthly: === 🎖️ TreasureRun Топ-10 за месяц (Забеги) ===
+    playsLine: '#{rank} {player}  {score} очк.  {time}с  ({difficulty}) [{lang}]'
+    weeklyEmpty: За последние 7 дней забегов не записано.
+    weeklySwitch: 'Сменить вид: /gameRank all | /gameRank monthly'
+    allTimeEmpty: Записей пока нет.
+    allTimeSwitch: 'Сменить вид: /gameRank weekly | /gameRank monthly'
+    monthlyEmpty: В этом месяце записей пока нет.
+    monthlySwitch: 'Сменить вид: /gameRank weekly | /gameRank all'

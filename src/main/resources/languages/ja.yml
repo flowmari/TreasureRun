@@ -426,6 +426,10 @@ ui:
     activeMarker: '▶ '
   rankTicker:
     updated: 🏁 ランキングを更新しました！ ({which})
+    mode:
+      weekly: 週間
+      allTime: 総合
+      monthly: 月間
   labels:
     tab:
       all: すべて
@@ -518,6 +522,8 @@ gameplay:
       time: タイム
       rank: 順位
     allChestsOpenedBroadcast: '【{player}】が全ての宝箱を開けました！最終スコア: {score}'
+    summaryLine: 'タイム: {time}  スコア: {score}  ランク: {rank}'
+    gotLine: '回収: {got}/{total}'
   setup:
     chestsPlaced: 宝箱 {count} 個を配置しました！
   success:
@@ -525,8 +531,39 @@ gameplay:
     treasureCompleteTitle: 🎵 宝探しクリア！ 🎵
     allTreasuresFoundTitle: すべての宝物を見つけました！
     allTreasuresFoundChat: おめでとうございます！すべての宝物を見つけました！
+  start:
+    startingIn: 開始まで…
+    go: スタート！
+  shop:
+    tradeCompleteTitle: 取引完了！
+    hiddenPowerAwakens: 秘められた力が目覚める…
+    hiddenPowerChat: Treasure Shop の秘められた力を感じた…
+  timer:
+    remainingBossbar: 残り時間
+    remainingLine: '残り時間: {seconds}秒'
 rewards:
   rank:
     netheriteIngot: ネザライトインゴット獲得！
     diamond: ダイヤ獲得！
     goldenApple: 金リンゴ獲得！
+rankTicker:
+  weeklyTitle: 週間 TreasureRun
+  allTimeTitle: 総合 TreasureRun
+  monthlyTitle: 月間 TreasureRun
+  footerHint: /gameRank weekly|all|monthly
+rank:
+  command:
+    timeTop10Title: === 🌟 TreasureRun TOP10（最速タイム）🌟 ===
+    timeTop10Line: '{rank}位 {player}  {time}秒  {score}点  難易度: {difficulty}'
+    dbUnavailable: データベースに接続できません。
+    loadError: ランキングの読み込み中にエラーが発生しました。
+    playsTitleWeekly: === 🎖️ TreasureRun 週間TOP10（プレイ記録） ===
+    playsTitleAllTime: === 🎖️ TreasureRun 総合TOP10（プレイ記録） ===
+    playsTitleMonthly: === 🎖️ TreasureRun 月間TOP10（プレイ記録） ===
+    playsLine: '{rank}位 {player}  {score}pt  {time}s  ({difficulty}) [{lang}]'
+    weeklyEmpty: 直近7日間の記録はありません。
+    weeklySwitch: '表示切替: /gameRank all | /gameRank monthly'
+    allTimeEmpty: まだ記録がありません。
+    allTimeSwitch: '表示切替: /gameRank weekly | /gameRank monthly'
+    monthlyEmpty: 今月の記録はまだありません。
+    monthlySwitch: '表示切替: /gameRank weekly | /gameRank all'

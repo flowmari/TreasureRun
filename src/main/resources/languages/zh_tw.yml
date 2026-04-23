@@ -363,6 +363,10 @@ ui:
     activeMarker: '▶ '
   rankTicker:
     updated: 🏁 排行榜已更新！({which})
+    mode:
+      weekly: 每週
+      allTime: 歷代
+      monthly: 每月
 gui:
   language:
     title: 語言
@@ -593,6 +597,8 @@ gameplay:
       time: 時間
       rank: 排名
     allChestsOpenedBroadcast: '{player} 已打開所有寶箱！最終分數：{score}'
+    summaryLine: 時間：{time}  分數：{score}  排名：{rank}
+    gotLine: 已開啟：{got}/{total}
   setup:
     chestsPlaced: 已放置 {count} 個寶箱！
   success:
@@ -600,8 +606,39 @@ gameplay:
     treasureCompleteTitle: 🎵 尋寶完成！ 🎵
     allTreasuresFoundTitle: 已找到所有寶物！
     allTreasuresFoundChat: 恭喜！你已找到所有寶物！
+  start:
+    startingIn: 即將開始…
+    go: 開始！
+  shop:
+    tradeCompleteTitle: 交易完成！
+    hiddenPowerAwakens: 隱藏的力量正在甦醒……
+    hiddenPowerChat: 你感受到 Treasure Shop 中隱藏的力量……
+  timer:
+    remainingBossbar: 剩餘時間
+    remainingLine: '剩餘時間：{seconds} 秒'
 rewards:
   rank:
     netheriteIngot: 獲得獄髓錠！
     diamond: 獲得鑽石！
     goldenApple: 獲得金蘋果！
+rankTicker:
+  weeklyTitle: 每週 TreasureRun
+  allTimeTitle: 歷代 TreasureRun
+  monthlyTitle: 每月 TreasureRun
+  footerHint: /gameRank weekly|all|monthly
+rank:
+  command:
+    timeTop10Title: === 🌟 TreasureRun TOP 10（最快紀錄）🌟 ===
+    timeTop10Line: '#{rank} {player}  {time}秒  {score}分  難度：{difficulty}'
+    dbUnavailable: 無法連線到資料庫。
+    loadError: 載入排行榜時發生錯誤。
+    playsTitleWeekly: === 🎖️ TreasureRun 每週 TOP 10（遊玩紀錄） ===
+    playsTitleAllTime: === 🎖️ TreasureRun 歷代 TOP 10（遊玩紀錄） ===
+    playsTitleMonthly: === 🎖️ TreasureRun 每月 TOP 10（遊玩紀錄） ===
+    playsLine: '#{rank} {player}  {score}分  {time}秒  ({difficulty}) [{lang}]'
+    weeklyEmpty: 最近 7 天內沒有遊玩紀錄。
+    weeklySwitch: 切換顯示：/gameRank all | /gameRank monthly
+    allTimeEmpty: 目前還沒有紀錄。
+    allTimeSwitch: 切換顯示：/gameRank weekly | /gameRank monthly
+    monthlyEmpty: 本月目前還沒有紀錄。
+    monthlySwitch: 切換顯示：/gameRank weekly | /gameRank all

@@ -363,6 +363,10 @@ ui:
     activeMarker: '▶ '
   rankTicker:
     updated: 🏁 榜已更新！({which})
+    mode:
+      weekly: 每週
+      allTime: 歷代
+      monthly: 每月
 gui:
   language:
     title: 語言
@@ -593,6 +597,8 @@ gameplay:
       time: 時間
       rank: 名次
     allChestsOpenedBroadcast: '{player}盡啟諸寶箱！終分：{score}'
+    summaryLine: 時：{time}  分：{score}  位：{rank}
+    gotLine: 已得：{got}/{total}
   setup:
     chestsPlaced: 已置寶箱 {count} 個！
   success:
@@ -600,8 +606,39 @@ gameplay:
     treasureCompleteTitle: 🎵 尋寶既成！ 🎵
     allTreasuresFoundTitle: 諸寶皆得！
     allTreasuresFoundChat: 賀！汝已盡得諸寶！
+  start:
+    startingIn: 將始…
+    go: 始！
+  shop:
+    tradeCompleteTitle: 交易既成！
+    hiddenPowerAwakens: 幽力將醒……
+    hiddenPowerChat: 若覺 Treasure Shop 之幽力……
+  timer:
+    remainingBossbar: 餘時
+    remainingLine: '餘時：{seconds}秒'
 rewards:
   rank:
     netheriteIngot: 得獄髓錠！
     diamond: 得鑽石！
     goldenApple: 得金蘋果！
+rankTicker:
+  weeklyTitle: 每週 TreasureRun
+  allTimeTitle: 歷代 TreasureRun
+  monthlyTitle: 每月 TreasureRun
+  footerHint: /gameRank weekly|all|monthly
+rank:
+  command:
+    timeTop10Title: === 🌟 TreasureRun 十甲（最疾） 🌟 ===
+    timeTop10Line: '#{rank} {player}  {time}秒  {score}分  難：{difficulty}'
+    dbUnavailable: 資料庫之連線不可得。
+    loadError: 載排行時有誤。
+    playsTitleWeekly: === 🎖️ TreasureRun 每週十甲（遊紀） ===
+    playsTitleAllTime: === 🎖️ TreasureRun 歷代十甲（遊紀） ===
+    playsTitleMonthly: === 🎖️ TreasureRun 每月十甲（遊紀） ===
+    playsLine: '#{rank} {player}  {score}分  {time}秒  ({difficulty}) [{lang}]'
+    weeklyEmpty: 近七日無遊紀。
+    weeklySwitch: 轉示：/gameRank all | /gameRank monthly
+    allTimeEmpty: 尚無記錄。
+    allTimeSwitch: 轉示：/gameRank weekly | /gameRank monthly
+    monthlyEmpty: 今月尚無記錄。
+    monthlySwitch: 轉示：/gameRank weekly | /gameRank all

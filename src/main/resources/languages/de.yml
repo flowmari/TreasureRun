@@ -435,6 +435,10 @@ ui:
     activeMarker: '▶ '
   rankTicker:
     updated: 🏁 Rangliste aktualisiert! ({which})
+    mode:
+      weekly: Wöchentlich
+      allTime: Gesamt
+      monthly: Monatlich
   labels:
     tab:
       all: ALLE
@@ -528,6 +532,8 @@ gameplay:
       time: Zeit
       rank: Rang
     allChestsOpenedBroadcast: '{player} hat alle Truhen geöffnet! Endpunktzahl: {score}'
+    summaryLine: 'Zeit: {time}  Punkte: {score}  Rang: {rank}'
+    gotLine: 'Truhen: {got}/{total}'
   setup:
     chestsPlaced: '{count} Truhen wurden platziert!'
   success:
@@ -535,8 +541,39 @@ gameplay:
     treasureCompleteTitle: 🎵 Schatzsuche abgeschlossen! 🎵
     allTreasuresFoundTitle: Alle Schätze gefunden!
     allTreasuresFoundChat: Glückwunsch! Du hast alle Schätze gefunden!
+  start:
+    startingIn: Startet in …
+    go: Los!
+  shop:
+    tradeCompleteTitle: Handel abgeschlossen!
+    hiddenPowerAwakens: Eine verborgene Kraft erwacht…
+    hiddenPowerChat: Du spürst die verborgene Kraft des Treasure Shops…
+  timer:
+    remainingBossbar: Verbleibende Zeit
+    remainingLine: 'Verbleibende Zeit: {seconds}s'
 rewards:
   rank:
     netheriteIngot: Netheritbarren erhalten!
     diamond: Diamant erhalten!
     goldenApple: Goldenen Apfel erhalten!
+rankTicker:
+  weeklyTitle: Wöchentliche TreasureRun-Rangliste
+  allTimeTitle: TreasureRun-Gesamtrangliste
+  monthlyTitle: Monatliche TreasureRun-Rangliste
+  footerHint: /gameRank weekly|all|monthly
+rank:
+  command:
+    timeTop10Title: === 🌟 TreasureRun TOP 10 (Bestzeiten) 🌟 ===
+    timeTop10Line: '#{rank} {player}  {time}s  {score} Punkte  Schwierigkeit: {difficulty}'
+    dbUnavailable: Keine Datenbankverbindung verfügbar.
+    loadError: Beim Laden der Rangliste ist ein Fehler aufgetreten.
+    playsTitleWeekly: === 🎖️ TreasureRun Wochenrangliste TOP 10 (Läufe) ===
+    playsTitleAllTime: === 🎖️ TreasureRun Gesamtrangliste TOP 10 (Läufe) ===
+    playsTitleMonthly: === 🎖️ TreasureRun Monatsrangliste TOP 10 (Läufe) ===
+    playsLine: '#{rank} {player}  {score} Punkte  {time}s  ({difficulty}) [{lang}]'
+    weeklyEmpty: In den letzten 7 Tagen wurden keine Läufe aufgezeichnet.
+    weeklySwitch: 'Ansicht wechseln: /gameRank all | /gameRank monthly'
+    allTimeEmpty: Noch keine Einträge vorhanden.
+    allTimeSwitch: 'Ansicht wechseln: /gameRank weekly | /gameRank monthly'
+    monthlyEmpty: In diesem Monat sind noch keine Einträge vorhanden.
+    monthlySwitch: 'Ansicht wechseln: /gameRank weekly | /gameRank all'

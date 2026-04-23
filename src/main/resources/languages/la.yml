@@ -434,6 +434,10 @@ ui:
     activeMarker: '▶ '
   rankTicker:
     updated: 🏁 Tabula ordinum renovata est! ({which})
+    mode:
+      weekly: Hebdomadale
+      allTime: Omnium temporum
+      monthly: Menstruum
   labels:
     tab:
       all: OMNIA
@@ -527,6 +531,8 @@ gameplay:
       rank: Ordo
     allChestsOpenedBroadcast: '{player} omnes arcas aperuit! Summa punctorum ultima:
       {score}'
+    summaryLine: 'Tempus: {time}  Puncta: {score}  Ordo: {rank}'
+    gotLine: 'Arcae: {got}/{total}'
   setup:
     chestsPlaced: '{count} arcae positae sunt!'
   success:
@@ -534,8 +540,39 @@ gameplay:
     treasureCompleteTitle: 🎵 Thesaurus confectus! 🎵
     allTreasuresFoundTitle: Omnes thesauri inventi sunt!
     allTreasuresFoundChat: Gratulamur! Omnes thesauros invenisti!
+  start:
+    startingIn: Initium post…
+    go: I!
+  shop:
+    tradeCompleteTitle: Commercium perfectum!
+    hiddenPowerAwakens: Vis occulta excitatur…
+    hiddenPowerChat: Vim occultam Treasure Shop sentis…
+  timer:
+    remainingBossbar: Tempus reliquum
+    remainingLine: 'Tempus reliquum: {seconds}s'
 rewards:
   rank:
     netheriteIngot: Accepisti metallum Netherite!
     diamond: Accepisti adamantem!
     goldenApple: Accepisti malum aureum!
+rankTicker:
+  weeklyTitle: TreasureRun hebdomadale
+  allTimeTitle: TreasureRun omnium temporum
+  monthlyTitle: TreasureRun menstruum
+  footerHint: /gameRank weekly|all|monthly
+rank:
+  command:
+    timeTop10Title: === 🌟 TreasureRun Top 10 (Tempora optima) 🌟 ===
+    timeTop10Line: '#{rank} {player}  {time}s  {score} puncta  Difficultas: {difficulty}'
+    dbUnavailable: Conexio ad databasen non praesto est.
+    loadError: Error incidit dum ordo legitur.
+    playsTitleWeekly: === 🎖️ TreasureRun Top 10 hebdomadale (Ludi) ===
+    playsTitleAllTime: === 🎖️ TreasureRun Top 10 omnium temporum (Ludi) ===
+    playsTitleMonthly: === 🎖️ TreasureRun Top 10 menstruum (Ludi) ===
+    playsLine: '#{rank} {player}  {score} puncta  {time}s  ({difficulty}) [{lang}]'
+    weeklyEmpty: Nulli ludi superioribus VII diebus notati sunt.
+    weeklySwitch: 'Muta aspectum: /gameRank all | /gameRank monthly'
+    allTimeEmpty: Nondum sunt tabulae.
+    allTimeSwitch: 'Muta aspectum: /gameRank weekly | /gameRank monthly'
+    monthlyEmpty: Hoc mense nondum sunt tabulae.
+    monthlySwitch: 'Muta aspectum: /gameRank weekly | /gameRank all'

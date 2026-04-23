@@ -435,6 +435,10 @@ ui:
     activeMarker: '▶ '
   rankTicker:
     updated: 🏁 Tulostaulukko päivitetty! ({which})
+    mode:
+      weekly: Viikoittainen
+      allTime: Kaikkien aikojen
+      monthly: Kuukausittainen
   labels:
     tab:
       all: KAIKKI
@@ -528,6 +532,8 @@ gameplay:
       time: Aika
       rank: Sija
     allChestsOpenedBroadcast: '{player} avasi kaikki arkut! Lopputulos: {score}'
+    summaryLine: 'Aika: {time}  Pisteet: {score}  Sijoitus: {rank}'
+    gotLine: 'Arkkuja: {got}/{total}'
   setup:
     chestsPlaced: '{count} arkkua asetettu!'
   success:
@@ -535,8 +541,39 @@ gameplay:
     treasureCompleteTitle: 🎵 Aarrejahti suoritettu! 🎵
     allTreasuresFoundTitle: Kaikki aarteet löytyivät!
     allTreasuresFoundChat: Onnittelut! Löysit kaikki aarteet!
+  start:
+    startingIn: Alkaa…
+    go: Mennään!
+  shop:
+    tradeCompleteTitle: Kauppa tehty!
+    hiddenPowerAwakens: Piilotettu voima herää…
+    hiddenPowerChat: Tunnet Treasure Shopin piilotetun voiman…
+  timer:
+    remainingBossbar: Jäljellä oleva aika
+    remainingLine: 'Aikaa jäljellä: {seconds}s'
 rewards:
   rank:
     netheriteIngot: Sait netheriittiharkon!
     diamond: Sait timantin!
     goldenApple: Sait kultaisen omenan!
+rankTicker:
+  weeklyTitle: Viikoittainen TreasureRun
+  allTimeTitle: TreasureRun kautta aikojen
+  monthlyTitle: Kuukausittainen TreasureRun
+  footerHint: /gameRank weekly|all|monthly
+rank:
+  command:
+    timeTop10Title: === 🌟 TreasureRun Top 10 (Parhaat ajat) 🌟 ===
+    timeTop10Line: '#{rank} {player}  {time}s  {score} p  Vaikeustaso: {difficulty}'
+    dbUnavailable: Tietokantayhteyttä ei ole saatavilla.
+    loadError: Tulostaulun lataamisessa tapahtui virhe.
+    playsTitleWeekly: === 🎖️ TreasureRun Viikon top 10 (Pelit) ===
+    playsTitleAllTime: === 🎖️ TreasureRun Kaikkien aikojen top 10 (Pelit) ===
+    playsTitleMonthly: === 🎖️ TreasureRun Kuukauden top 10 (Pelit) ===
+    playsLine: '#{rank} {player}  {score} p  {time}s  ({difficulty}) [{lang}]'
+    weeklyEmpty: Viimeisten 7 päivän aikana ei ole tallennettu pelejä.
+    weeklySwitch: 'Vaihda näkymää: /gameRank all | /gameRank monthly'
+    allTimeEmpty: Tuloksia ei vielä ole.
+    allTimeSwitch: 'Vaihda näkymää: /gameRank weekly | /gameRank monthly'
+    monthlyEmpty: Tältä kuukaudelta ei vielä ole tuloksia.
+    monthlySwitch: 'Vaihda näkymää: /gameRank weekly | /gameRank all'

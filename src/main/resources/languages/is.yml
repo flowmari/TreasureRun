@@ -435,6 +435,10 @@ ui:
     activeMarker: '▶ '
   rankTicker:
     updated: 🏁 Stigatafla uppfærð! ({which})
+    mode:
+      weekly: Vikulega
+      allTime: Allra tíma
+      monthly: Mánaðarlega
   labels:
     tab:
       all: ALLT
@@ -528,6 +532,8 @@ gameplay:
       time: Tími
       rank: Sæti
     allChestsOpenedBroadcast: '{player} opnaði allar kistur! Lokastig: {score}'
+    summaryLine: 'Tími: {time}  Stig: {score}  Sæti: {rank}'
+    gotLine: 'Kistur: {got}/{total}'
   setup:
     chestsPlaced: '{count} kistur voru settar niður!'
   success:
@@ -535,8 +541,39 @@ gameplay:
     treasureCompleteTitle: 🎵 Fjársjóðsleit lokið! 🎵
     allTreasuresFoundTitle: Allir fjársjóðir fundust!
     allTreasuresFoundChat: Til hamingju! Þú fannst alla fjársjóði!
+  start:
+    startingIn: Byrjar eftir…
+    go: Áfram!
+  shop:
+    tradeCompleteTitle: Viðskiptum lokið!
+    hiddenPowerAwakens: Dulinn kraftur vaknar…
+    hiddenPowerChat: Þú finnur dulinn kraft í Treasure Shop…
+  timer:
+    remainingBossbar: Tími eftir
+    remainingLine: 'Tími eftir: {seconds}s'
 rewards:
   rank:
     netheriteIngot: Þú fékkst Netherite-hleif!
     diamond: Þú fékkst demant!
     goldenApple: Þú fékkst gullið epli!
+rankTicker:
+  weeklyTitle: Vikulegt TreasureRun
+  allTimeTitle: TreasureRun allra tíma
+  monthlyTitle: Mánaðarlegt TreasureRun
+  footerHint: /gameRank weekly|all|monthly
+rank:
+  command:
+    timeTop10Title: === 🌟 TreasureRun Topp 10 (Bestu tímar) 🌟 ===
+    timeTop10Line: '#{rank} {player}  {time}s  {score} stig  Erfiðleikastig: {difficulty}'
+    dbUnavailable: Engin tenging við gagnagrunn.
+    loadError: Villa kom upp við að hlaða stigatöfluna.
+    playsTitleWeekly: === 🎖️ TreasureRun Vikulegt topp 10 (Leikir) ===
+    playsTitleAllTime: === 🎖️ TreasureRun Topp 10 allra tíma (Leikir) ===
+    playsTitleMonthly: === 🎖️ TreasureRun Mánaðarlegt topp 10 (Leikir) ===
+    playsLine: '#{rank} {player}  {score} stig  {time}s  ({difficulty}) [{lang}]'
+    weeklyEmpty: Engir leikir skráðir síðustu 7 daga.
+    weeklySwitch: 'Skipta um sýn: /gameRank all | /gameRank monthly'
+    allTimeEmpty: Engar færslur enn.
+    allTimeSwitch: 'Skipta um sýn: /gameRank weekly | /gameRank monthly'
+    monthlyEmpty: Engar færslur í þessum mánuði enn.
+    monthlySwitch: 'Skipta um sýn: /gameRank weekly | /gameRank all'

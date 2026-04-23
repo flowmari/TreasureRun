@@ -427,6 +427,10 @@ ui:
     activeMarker: '▶ '
   rankTicker:
     updated: 🏁 리더보드가 업데이트되었습니다! ({which})
+    mode:
+      weekly: 주간
+      allTime: 종합
+      monthly: 월간
   labels:
     tab:
       all: 전체
@@ -519,6 +523,8 @@ gameplay:
       time: 시간
       rank: 순위
     allChestsOpenedBroadcast: '{player}님이 모든 상자를 열었습니다! 최종 점수: {score}'
+    summaryLine: '시간: {time}  점수: {score}  순위: {rank}'
+    gotLine: '상자: {got}/{total}'
   setup:
     chestsPlaced: 상자 {count}개를 배치했습니다!
   success:
@@ -526,8 +532,39 @@ gameplay:
     treasureCompleteTitle: 🎵 보물 찾기 완료! 🎵
     allTreasuresFoundTitle: 모든 보물을 찾았습니다!
     allTreasuresFoundChat: 축하합니다! 모든 보물을 찾았습니다!
+  start:
+    startingIn: 시작까지…
+    go: 시작!
+  shop:
+    tradeCompleteTitle: 거래 완료!
+    hiddenPowerAwakens: 숨겨진 힘이 깨어난다…
+    hiddenPowerChat: Treasure Shop의 숨겨진 힘이 느껴집니다…
+  timer:
+    remainingBossbar: 남은 시간
+    remainingLine: '남은 시간: {seconds}초'
 rewards:
   rank:
     netheriteIngot: 네더라이트 주괴를 획득했습니다!
     diamond: 다이아몬드를 획득했습니다!
     goldenApple: 황금 사과를 획득했습니다!
+rankTicker:
+  weeklyTitle: 주간 TreasureRun
+  allTimeTitle: 종합 TreasureRun
+  monthlyTitle: 월간 TreasureRun
+  footerHint: /gameRank weekly|all|monthly
+rank:
+  command:
+    timeTop10Title: === 🌟 TreasureRun TOP 10 (최고 기록) 🌟 ===
+    timeTop10Line: '#{rank} {player}  {time}초  {score}점  난이도: {difficulty}'
+    dbUnavailable: DB 연결을 사용할 수 없습니다.
+    loadError: 랭킹을 불러오는 중 오류가 발생했습니다.
+    playsTitleWeekly: === 🎖️ TreasureRun 주간 TOP 10 (플레이 기록) ===
+    playsTitleAllTime: === 🎖️ TreasureRun 종합 TOP 10 (플레이 기록) ===
+    playsTitleMonthly: === 🎖️ TreasureRun 월간 TOP 10 (플레이 기록) ===
+    playsLine: '#{rank} {player}  {score}점  {time}초  ({difficulty}) [{lang}]'
+    weeklyEmpty: 최근 7일간 기록된 플레이가 없습니다.
+    weeklySwitch: '보기 전환: /gameRank all | /gameRank monthly'
+    allTimeEmpty: 아직 기록이 없습니다.
+    allTimeSwitch: '보기 전환: /gameRank weekly | /gameRank monthly'
+    monthlyEmpty: 이번 달 기록이 아직 없습니다.
+    monthlySwitch: '보기 전환: /gameRank weekly | /gameRank all'

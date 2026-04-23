@@ -427,6 +427,10 @@ ui:
     activeMarker: '▶ '
   rankTicker:
     updated: 🏁 LEADERBOARD UPDATED! ({which})
+    mode:
+      weekly: WEEKLY
+      allTime: ALL-TIME
+      monthly: MONTHLY
   labels:
     tab:
       all: ALL
@@ -519,6 +523,8 @@ gameplay:
       time: TIME
       rank: RANK
     allChestsOpenedBroadcast: '{player} OPEN ALL CHESTS! FINAL SCORE: {score}'
+    summaryLine: 'TIME: {time}  SCORE: {score}  RANK: {rank}'
+    gotLine: 'CHESTS: {got}/{total}'
   setup:
     chestsPlaced: 'CHESTS PLACED: {count}!'
   success:
@@ -526,8 +532,39 @@ gameplay:
     treasureCompleteTitle: 🎵 TREASURE COMPLETE! 🎵
     allTreasuresFoundTitle: ALL TREASURES FOUND!
     allTreasuresFoundChat: CONGRATULATIONS! YOU FOUND ALL TREASURES!
+  start:
+    startingIn: START SOON…
+    go: GO!
+  shop:
+    tradeCompleteTitle: TRADE COMPLETE!
+    hiddenPowerAwakens: HIDDEN POWER AWAKEN…
+    hiddenPowerChat: YOU FEEL TREASURE SHOP HIDDEN POWER…
+  timer:
+    remainingBossbar: TIME LEFT
+    remainingLine: 'TIME LEFT: {seconds}S'
 rewards:
   rank:
     netheriteIngot: NETHERITE INGOT GET!
     diamond: DIAMOND GET!
     goldenApple: GOLDEN APPLE GET!
+rankTicker:
+  weeklyTitle: WEEKLY TREASURERUN
+  allTimeTitle: ALL-TIME TREASURERUN
+  monthlyTitle: MONTHLY TREASURERUN
+  footerHint: /gameRank weekly|all|monthly
+rank:
+  command:
+    timeTop10Title: === 🌟 TreasureRun TOP 10 (FASTEST TIMES) 🌟 ===
+    timeTop10Line: '#{rank} {player}  {time}S  {score} PTS  DIFFICULTY: {difficulty}'
+    dbUnavailable: DATABASE CONNECTION NOT-AVAILABLE.
+    loadError: RANKING LOAD ERROR.
+    playsTitleWeekly: === 🎖️ TreasureRun WEEKLY TOP 10 (RUNS) ===
+    playsTitleAllTime: === 🎖️ TreasureRun ALL-TIME TOP 10 (RUNS) ===
+    playsTitleMonthly: === 🎖️ TreasureRun MONTHLY TOP 10 (RUNS) ===
+    playsLine: '#{rank} {player}  {score} PTS  {time}S  ({difficulty}) [{lang}]'
+    weeklyEmpty: LAST 7 DAYS RUN RECORD NONE.
+    weeklySwitch: 'SWITCH VIEW: /gameRank all | /gameRank monthly'
+    allTimeEmpty: RECORD NONE YET.
+    allTimeSwitch: 'SWITCH VIEW: /gameRank weekly | /gameRank monthly'
+    monthlyEmpty: THIS MONTH RECORD NONE YET.
+    monthlySwitch: 'SWITCH VIEW: /gameRank weekly | /gameRank all'

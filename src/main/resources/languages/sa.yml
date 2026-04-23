@@ -432,6 +432,10 @@ ui:
     activeMarker: '▶ '
   rankTicker:
     updated: 🏁 सूची अद्यतनीकृता! ({which})
+    mode:
+      weekly: साप्ताहिक
+      allTime: सर्वकालिक
+      monthly: मासिक
   labels:
     tab:
       all: सर्वम्
@@ -526,6 +530,8 @@ gameplay:
       rank: स्थानम्
     allChestsOpenedBroadcast: '{player} सर्वाः पेटिकाः उद्घाटितवान्! अन्तिमाङ्काः:
       {score}'
+    summaryLine: समयः {time}  अङ्काः {score}  क्रमः {rank}
+    gotLine: 'पेटिकाः: {got}/{total}'
   setup:
     chestsPlaced: '{count} संदूकाः स्थापिताः!'
   success:
@@ -533,8 +539,39 @@ gameplay:
     treasureCompleteTitle: 🎵 निधिः समाप्तः! 🎵
     allTreasuresFoundTitle: सर्वे निधयः प्राप्ताः!
     allTreasuresFoundChat: अभिनन्दनम्! त्वया सर्वे निधयः प्राप्ताः!
+  start:
+    startingIn: आरम्भः शीघ्रम्…
+    go: गच्छ!
+  shop:
+    tradeCompleteTitle: वाणिज्यं सम्पन्नम्!
+    hiddenPowerAwakens: गूढशक्तिः प्रबुध्यते…
+    hiddenPowerChat: Treasure Shop इत्यस्य गूढशक्तिं त्वम् अनुभवंसि…
+  timer:
+    remainingBossbar: अवशिष्टः समयः
+    remainingLine: 'अवशिष्टः समयः: {seconds} सेकण्डाः'
 rewards:
   rank:
     netheriteIngot: नेदराइट-धातुखण्डः प्राप्तः!
     diamond: हीरकः प्राप्तः!
     goldenApple: सुवर्णसेवम् प्राप्तम्!
+rankTicker:
+  weeklyTitle: साप्ताहिक TreasureRun
+  allTimeTitle: सर्वकालिक TreasureRun
+  monthlyTitle: मासिक TreasureRun
+  footerHint: /gameRank weekly|all|monthly
+rank:
+  command:
+    timeTop10Title: === 🌟 TreasureRun शीर्ष १० (श्रेष्ठकालः) 🌟 ===
+    timeTop10Line: '#{rank} {player}  {time}से  {score} अङ्काः  कठिनता: {difficulty}'
+    dbUnavailable: दत्तसञ्चिकायाः संयोजनं नास्ति।
+    loadError: क्रमसूची-आह्वाने दोषः अभवत्।
+    playsTitleWeekly: === 🎖️ TreasureRun साप्ताहिक शीर्ष १० (क्रीडाः) ===
+    playsTitleAllTime: === 🎖️ TreasureRun सर्वकालिक शीर्ष १० (क्रीडाः) ===
+    playsTitleMonthly: === 🎖️ TreasureRun मासिक शीर्ष १० (क्रीडाः) ===
+    playsLine: '#{rank} {player}  {score} अङ्काः  {time}से  ({difficulty}) [{lang}]'
+    weeklyEmpty: अतीतेषु सप्तदिनेषु क्रीडाः न निबद्धाः।
+    weeklySwitch: 'दृश्यं परिवर्तय: /gameRank all | /gameRank monthly'
+    allTimeEmpty: अद्यापि अभिलेखाः न सन्ति।
+    allTimeSwitch: 'दृश्यं परिवर्तय: /gameRank weekly | /gameRank monthly'
+    monthlyEmpty: अस्मिन् मासि अद्यापि अभिलेखाः न सन्ति।
+    monthlySwitch: 'दृश्यं परिवर्तय: /gameRank weekly | /gameRank all'

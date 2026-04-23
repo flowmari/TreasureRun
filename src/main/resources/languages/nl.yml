@@ -435,6 +435,10 @@ ui:
     activeMarker: '▶ '
   rankTicker:
     updated: 🏁 Klassement bijgewerkt! ({which})
+    mode:
+      weekly: Wekelijks
+      allTime: Aller tijden
+      monthly: Maandelijks
   labels:
     tab:
       all: ALLES
@@ -528,6 +532,8 @@ gameplay:
       time: Tijd
       rank: Rang
     allChestsOpenedBroadcast: '{player} heeft alle kisten geopend! Eindscore: {score}'
+    summaryLine: 'Tijd: {time}  Score: {score}  Rang: {rank}'
+    gotLine: 'Kisten: {got}/{total}'
   setup:
     chestsPlaced: '{count} kisten geplaatst!'
   success:
@@ -535,8 +541,39 @@ gameplay:
     treasureCompleteTitle: 🎵 Schat voltooid! 🎵
     allTreasuresFoundTitle: Alle schatten gevonden!
     allTreasuresFoundChat: Gefeliciteerd! Je hebt alle schatten gevonden!
+  start:
+    startingIn: Start over…
+    go: Ga!
+  shop:
+    tradeCompleteTitle: Ruil voltooid!
+    hiddenPowerAwakens: Een verborgen kracht ontwaakt…
+    hiddenPowerChat: Je voelt een verborgen kracht in de Treasure Shop…
+  timer:
+    remainingBossbar: Resterende tijd
+    remainingLine: 'Resterende tijd: {seconds}s'
 rewards:
   rank:
     netheriteIngot: Je hebt een Netherite-ingot gekregen!
     diamond: Je hebt een diamant gekregen!
     goldenApple: Je hebt een gouden appel gekregen!
+rankTicker:
+  weeklyTitle: Wekelijkse TreasureRun
+  allTimeTitle: TreasureRun aller tijden
+  monthlyTitle: Maandelijkse TreasureRun
+  footerHint: /gameRank weekly|all|monthly
+rank:
+  command:
+    timeTop10Title: === 🌟 TreasureRun Top 10 (Snelste tijden) 🌟 ===
+    timeTop10Line: '#{rank} {player}  {time}s  {score} pt  Moeilijkheid: {difficulty}'
+    dbUnavailable: Databaseverbinding is niet beschikbaar.
+    loadError: Er is een fout opgetreden bij het laden van het klassement.
+    playsTitleWeekly: === 🎖️ TreasureRun Wekelijkse Top 10 (Runs) ===
+    playsTitleAllTime: === 🎖️ TreasureRun Top 10 aller tijden (Runs) ===
+    playsTitleMonthly: === 🎖️ TreasureRun Maandelijkse Top 10 (Runs) ===
+    playsLine: '#{rank} {player}  {score} pt  {time}s  ({difficulty}) [{lang}]'
+    weeklyEmpty: Er zijn geen runs geregistreerd in de afgelopen 7 dagen.
+    weeklySwitch: 'Weergave wisselen: /gameRank all | /gameRank monthly'
+    allTimeEmpty: Er zijn nog geen records.
+    allTimeSwitch: 'Weergave wisselen: /gameRank weekly | /gameRank monthly'
+    monthlyEmpty: Er zijn deze maand nog geen records.
+    monthlySwitch: 'Weergave wisselen: /gameRank weekly | /gameRank all'

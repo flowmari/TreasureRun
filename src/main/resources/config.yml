@@ -1955,7 +1955,8 @@ ruleBook:
       3. 開けるとスコア + アイテム
 
       4. 全て開けるとクリア！'
-    - "§b★ ヒント\n\n§1・ネザライト/ブロック系は\n  ジャックポット高得点！\n\n・途中で /gameMenu を打つと\n  この本を再取得できます。\n\n・タイムアップに注意！"
+    - "§b★ ヒント\n\n§1・ネザライト/ブロック系は\n  ジャックポット高得点！\n\n・途中で /gameMenu を打つと\n  この本を再取得できます。\n\
+      \n・タイムアップに注意！"
     - '§b★ Archive / Favorites
 
 
@@ -1993,7 +1994,9 @@ ruleBook:
       3. Open to score points and get items
 
       4. Open them all to clear!'
-    - "§b★ Tips\n\n§1・Netherite / block items are\n  high-score jackpots!\n\n・Type /gameMenu anytime to\n  get this book again.\n\n・Be careful to not run out of time!"
+    - "§b★ Tips\n\n§1・Netherite / block items are\n  high-score jackpots!\n\n・Type\
+      \ /gameMenu anytime to\n  get this book again.\n\n・Be careful to not run out\
+      \ of time!"
     - '§b★ Archive / Favorites
 
 
@@ -2031,7 +2034,9 @@ ruleBook:
       3. Öffnen bringt Punkte und Items
 
       4. Alle öffnen = geschafft!'
-    - "§b★ Tipps\n\n§1・Netherit / Block-Items sind\n  Jackpot mit vielen Punkten!\n\n・Mit /gameMenu kannst du\n  dieses Buch erneut bekommen.\n\n・Achte auf die Zeit!"
+    - "§b★ Tipps\n\n§1・Netherit / Block-Items sind\n  Jackpot mit vielen Punkten!\n\
+      \n・Mit /gameMenu kannst du\n  dieses Buch erneut bekommen.\n\n・Achte auf die\
+      \ Zeit!"
     - '§b★ Archiv / Favoriten
 
 
@@ -2069,7 +2074,9 @@ ruleBook:
       3. Aprile per ottenere punti e raccogliere oggetti
 
       4. Aprile tutte per completare!'
-    - "§b★ Suggerimenti\n\n§1・Netherite / oggetti a blocco sono\n  jackpot con punteggi altissimi!\n\n・Scrivi /gameMenu in qualsiasi momento\n  per ricevere di nuovo questo libro.\n\n・Attento al tempo!"
+    - "§b★ Suggerimenti\n\n§1・Netherite / oggetti a blocco sono\n  jackpot con punteggi\
+      \ altissimi!\n\n・Scrivi /gameMenu in qualsiasi momento\n  per ricevere di nuovo\
+      \ questo libro.\n\n・Attento al tempo!"
     - '§b★ Archivio / Preferiti
 
 
@@ -2107,7 +2114,8 @@ ruleBook:
       3. Öppna dem för att få poäng och samla föremål
 
       4. Öppna alla för att klara spelet!'
-    - "§b★ Tips\n\n§1・Netherite / blockföremål är\n  jackpot med höga poäng!\n\n・Skriv /gameMenu när som helst\n  för att få boken igen.\n\n・Håll koll på tiden!"
+    - "§b★ Tips\n\n§1・Netherite / blockföremål är\n  jackpot med höga poäng!\n\n・Skriv\
+      \ /gameMenu när som helst\n  för att få boken igen.\n\n・Håll koll på tiden!"
     - '§b★ Arkiv / Favoriter
 
 
@@ -2145,7 +2153,9 @@ ruleBook:
       3. Ábrelos para ganar puntos y objetos
 
       4. ¡Ábrelos todos para completar!'
-    - "§b★ Consejos\n\n§1・Netherite / bloques son\n  ¡jackpots de alta puntuación!\n\n・Escribe /gameMenu para\n  recibir este libro otra vez.\n\n・¡Cuidado con el tiempo!"
+    - "§b★ Consejos\n\n§1・Netherite / bloques son\n  ¡jackpots de alta puntuación!\n\
+      \n・Escribe /gameMenu para\n  recibir este libro otra vez.\n\n・¡Cuidado con el\
+      \ tiempo!"
     - '§b★ Archivo / Favoritos
 
 
@@ -2183,7 +2193,8 @@ ruleBook:
       3. Aperī: puncta + res accipies
 
       4. Omnēs aperī = perfectum!'
-    - "§b★ Consilia\n\n§1・Netherite / res in formā bloci\n  sunt jackpot cum multis punctis!\n\n・Scribe /gameMenu ut\n  librum iterum accipias.\n\n・Tempus observa!"
+    - "§b★ Consilia\n\n§1・Netherite / res in formā bloci\n  sunt jackpot cum multis\
+      \ punctis!\n\n・Scribe /gameMenu ut\n  librum iterum accipias.\n\n・Tempus observa!"
     - '§b★ Tabularium / Favorita
 
 
@@ -2221,7 +2232,8 @@ ruleBook:
       3. Opnaðu til að fá stig og hluti
 
       4. Opnaðu allar = klárað!'
-    - "§b★ Ráð\n\n§1・Netherite / blokk-hlutir eru\n  jackpot með háum stigum!\n\n・Sláðu inn /gameMenu til að\n  fá bókina aftur.\n\n・Passaðu tímann!"
+    - "§b★ Ráð\n\n§1・Netherite / blokk-hlutir eru\n  jackpot með háum stigum!\n\n\
+      ・Sláðu inn /gameMenu til að\n  fá bókina aftur.\n\n・Passaðu tímann!"
     - '§b★ Safn / Uppáhald
 
 
@@ -2259,7 +2271,8 @@ ruleBook:
       3. Avaa: saat pisteitä ja esineitä
 
       4. Avaa kaikki = läpäisty!'
-    - "§b★ Vinkit\n\n§1・Netherite / lohkoesineet ovat\n  piste-jackpot!\n\n・Kirjoita /gameMenu saadaksesi\n  kirjan uudelleen.\n\n・Pidä silmällä aikaa!"
+    - "§b★ Vinkit\n\n§1・Netherite / lohkoesineet ovat\n  piste-jackpot!\n\n・Kirjoita\
+      \ /gameMenu saadaksesi\n  kirjan uudelleen.\n\n・Pidä silmällä aikaa!"
     - '§b★ Arkisto / Suosikit
 
 
@@ -2297,7 +2310,9 @@ ruleBook:
       3. Open voor punten en items
 
       4. Open ze allemaal = gehaald!'
-    - "§b★ Tips\n\n§1・Netherite / blok-items zijn\n  jackpots met hoge scores!\n\n・Typ /gameMenu om\n  dit boek opnieuw te krijgen.\n\n・Let op dat de tijd niet opraakt!"
+    - "§b★ Tips\n\n§1・Netherite / blok-items zijn\n  jackpots met hoge scores!\n\n\
+      ・Typ /gameMenu om\n  dit boek opnieuw te krijgen.\n\n・Let op dat de tijd niet\
+      \ opraakt!"
     - '§b★ Archief / Favorieten
 
 
@@ -2335,7 +2350,9 @@ ruleBook:
       3. Ouvre pour gagner des points et des objets
 
       4. Ouvre-les tous pour réussir !'
-    - "§b★ Conseils\n\n§1・Netherite / objets en blocs :\n  jackpot de points !\n\n・Tape /gameMenu à tout moment\n  pour récupérer ce livre.\n\n・Attention au temps !"
+    - "§b★ Conseils\n\n§1・Netherite / objets en blocs :\n  jackpot de points !\n\n\
+      ・Tape /gameMenu à tout moment\n  pour récupérer ce livre.\n\n・Attention au temps\
+      \ !"
     - '§b★ Archives / Favoris
 
 
@@ -2373,7 +2390,9 @@ ruleBook:
       3. Открой: получи очки и предметы
 
       4. Открой все = пройдено!'
-    - "§b★ Подсказки\n\n§1・Незерит / предметы-блоки —\n  джекпот с большим количеством очков!\n\n・Введи /gameMenu в любой момент,\n  чтобы снова получить эту книгу.\n\n・Следи за временем!"
+    - "§b★ Подсказки\n\n§1・Незерит / предметы-блоки —\n  джекпот с большим количеством\
+      \ очков!\n\n・Введи /gameMenu в любой момент,\n  чтобы снова получить эту книгу.\n\
+      \n・Следи за временем!"
     - '§b★ Архив / Избранное
 
 
@@ -2411,7 +2430,8 @@ ruleBook:
       3. 열면 점수 + 아이템 획득
 
       4. 전부 열면 클리어!'
-    - "§b★ 팁\n\n§1・네더라이트/블록 아이템은\n  고득점 잭팟!\n\n・/gameMenu 를 입력하면\n  이 책을 다시 받을 수 있어요.\n\n・시간 초과에 주의!"
+    - "§b★ 팁\n\n§1・네더라이트/블록 아이템은\n  고득점 잭팟!\n\n・/gameMenu 를 입력하면\n  이 책을 다시 받을 수 있어요.\n\
+      \n・시간 초과에 주의!"
     - '§b★ 아카이브 / 즐겨찾기
 
 
@@ -2485,7 +2505,8 @@ ruleBook:
       3. उद्घाटने अंकाः + वस्तूनि
 
       4. सर्वाः उद्घाट्य = सिद्धम्!'
-    - "§b★ सूचनाः\n\n§1・Netherite / block-वस्तूनि\n  उच्चाङ्क-जैकपॉट!\n\n・/gameMenu लिखित्वा\n  पुस्तकं पुनः प्राप्नुहि।\n\n・समयम् अवलोकय!"
+    - "§b★ सूचनाः\n\n§1・Netherite / block-वस्तूनि\n  उच्चाङ्क-जैकपॉट!\n\n・/gameMenu\
+      \ लिखित्वा\n  पुस्तकं पुनः प्राप्नुहि।\n\n・समयम् अवलोकय!"
     - '§b★ Archive / Favorites
 
 
@@ -2523,7 +2544,9 @@ ruleBook:
       3. Abra para ganhar pontos e itens
 
       4. Abra todos para concluir!'
-    - "§b★ Dicas\n\n§1・Netherite / itens em bloco são\n  jackpots de alta pontuação!\n\n・Digite /gameMenu para\n  pegar este livro novamente.\n\n・Cuidado para não ficar sem tempo!"
+    - "§b★ Dicas\n\n§1・Netherite / itens em bloco são\n  jackpots de alta pontuação!\n\
+      \n・Digite /gameMenu para\n  pegar este livro novamente.\n\n・Cuidado para não\
+      \ ficar sem tempo!"
     - '§b★ Arquivo / Favoritos
 
 
@@ -2561,7 +2584,8 @@ ruleBook:
       3. खोलने पर अंक + आइटम मिलेंगे
 
       4. सब खोलें = गेम क्लियर!'
-    - "§b★ सुझाव\n\n§1・Netherite / ब्लॉक आइटम\n  हाई-स्कोर जैकपॉट!\n\n・/gameMenu लिखकर\n  यह किताब फिर से लें।\n\n・समय पर ध्यान दें!"
+    - "§b★ सुझाव\n\n§1・Netherite / ब्लॉक आइटम\n  हाई-स्कोर जैकपॉट!\n\n・/gameMenu लिखकर\n\
+      \  यह किताब फिर से लें।\n\n・समय पर ध्यान दें!"
     - '§b★ Archive / Favorites
 
 
@@ -2657,8 +2681,8 @@ ruleBook:
 
       OPEN CHAPTER FROM CATALOG -> REREAD.'
 chestSound:
-  debug: true
-  actionBarDebug: true
+  debug: false
+  actionBarDebug: false
 rankDebug:
   enabled: true
 debug:
@@ -2668,8 +2692,6 @@ debug:
 title:
   outcomeStayTicks: 160
   successStayTicks: 240
-
-
 command:
   quoteReread:
     ja:

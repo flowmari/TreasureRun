@@ -373,6 +373,10 @@ ui:
     activeMarker: '▶ '
   rankTicker:
     updated: 🏁 लीडरबोर्ड अपडेट हो गया! ({which})
+    mode:
+      weekly: साप्ताहिक
+      allTime: सर्वकालिक
+      monthly: मासिक
 gui:
   language:
     title: भाषा
@@ -611,6 +615,8 @@ gameplay:
       time: 時間
       rank: रैंक
     allChestsOpenedBroadcast: '{player} ने सभी संदूक खोल दिए! अंतिम स्कोर: {score}'
+    summaryLine: 'समय: {time}  स्कोर: {score}  रैंक: {rank}'
+    gotLine: 'संदूक: {got}/{total}'
   setup:
     chestsPlaced: '{count} संदूक रख दिए गए हैं!'
   success:
@@ -618,8 +624,39 @@ gameplay:
     treasureCompleteTitle: 🎵 खजाना पूरा! 🎵
     allTreasuresFoundTitle: सभी खजाने मिल गए!
     allTreasuresFoundChat: बधाई हो! आपने सभी खजाने ढूँढ लिए!
+  start:
+    startingIn: शुरू होने में…
+    go: शुरू!
+  shop:
+    tradeCompleteTitle: व्यापार पूरा हुआ!
+    hiddenPowerAwakens: एक छिपी हुई शक्ति जाग उठती है…
+    hiddenPowerChat: आप Treasure Shop की छिपी हुई शक्ति महसूस करते हैं…
+  timer:
+    remainingBossbar: शेष समय
+    remainingLine: 'शेष समय: {seconds} सेकंड'
 rewards:
   rank:
     netheriteIngot: आपको नेदराइट इन्गट मिला!
     diamond: आपको हीरा मिला!
     goldenApple: आपको स्वर्ण सेब मिला!
+rankTicker:
+  weeklyTitle: साप्ताहिक TreasureRun
+  allTimeTitle: सर्वकालिक TreasureRun
+  monthlyTitle: मासिक TreasureRun
+  footerHint: /gameRank weekly|all|monthly
+rank:
+  command:
+    timeTop10Title: === 🌟 TreasureRun टॉप 10 (सबसे तेज़ समय) 🌟 ===
+    timeTop10Line: '#{rank} {player}  {time}से  {score} अंक  कठिनाई: {difficulty}'
+    dbUnavailable: डेटाबेस कनेक्शन उपलब्ध नहीं है।
+    loadError: रैंकिंग लोड करते समय त्रुटि हुई।
+    playsTitleWeekly: === 🎖️ TreasureRun साप्ताहिक टॉप 10 (रन) ===
+    playsTitleAllTime: === 🎖️ TreasureRun सर्वकालिक टॉप 10 (रन) ===
+    playsTitleMonthly: === 🎖️ TreasureRun मासिक टॉप 10 (रन) ===
+    playsLine: '#{rank} {player}  {score} अंक  {time}से  ({difficulty}) [{lang}]'
+    weeklyEmpty: पिछले 7 दिनों में कोई रन दर्ज नहीं हुआ।
+    weeklySwitch: 'दृश्य बदलें: /gameRank all | /gameRank monthly'
+    allTimeEmpty: अभी तक कोई रिकॉर्ड नहीं है।
+    allTimeSwitch: 'दृश्य बदलें: /gameRank weekly | /gameRank monthly'
+    monthlyEmpty: इस महीने अभी तक कोई रिकॉर्ड नहीं है।
+    monthlySwitch: 'दृश्य बदलें: /gameRank weekly | /gameRank all'

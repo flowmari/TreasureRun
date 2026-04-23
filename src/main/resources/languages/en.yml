@@ -434,6 +434,10 @@ ui:
     activeMarker: '▶ '
   rankTicker:
     updated: 🏁 Leaderboard updated! ({which})
+    mode:
+      weekly: Weekly
+      allTime: All-time
+      monthly: Monthly
   labels:
     tab:
       all: ALL
@@ -526,6 +530,8 @@ gameplay:
       time: Time
       rank: Rank
     allChestsOpenedBroadcast: '{player} opened all chests! Final score: {score}'
+    summaryLine: 'Time: {time}  Score: {score}  Rank: {rank}'
+    gotLine: 'Collected: {got}/{total}'
   setup:
     chestsPlaced: Placed {count} chests!
   success:
@@ -533,8 +539,39 @@ gameplay:
     treasureCompleteTitle: 🎵 Treasure Complete! 🎵
     allTreasuresFoundTitle: All treasures found!
     allTreasuresFoundChat: Congratulations! You found all treasures!
+  start:
+    startingIn: Starting in…
+    go: Go!
+  shop:
+    tradeCompleteTitle: Trade complete!
+    hiddenPowerAwakens: A hidden power awakens…
+    hiddenPowerChat: You sense a hidden power within the Treasure Shop…
+  timer:
+    remainingBossbar: Remaining Time
+    remainingLine: 'Remaining time: {seconds}s'
 rewards:
   rank:
     netheriteIngot: You got a Netherite Ingot!
     diamond: You got a Diamond!
     goldenApple: You got a Golden Apple!
+rankTicker:
+  weeklyTitle: Weekly TreasureRun
+  allTimeTitle: All-time TreasureRun
+  monthlyTitle: Monthly TreasureRun
+  footerHint: /gameRank weekly|all|monthly
+rank:
+  command:
+    timeTop10Title: === 🌟 TreasureRun Top 10 (Fastest Times) 🌟 ===
+    timeTop10Line: '#{rank} {player}  {time}s  {score} pts  Difficulty: {difficulty}'
+    dbUnavailable: Database connection unavailable.
+    loadError: An error occurred while loading the rankings.
+    playsTitleWeekly: === 🎖️ TreasureRun Weekly Top 10 (Runs) ===
+    playsTitleAllTime: === 🎖️ TreasureRun All-Time Top 10 (Runs) ===
+    playsTitleMonthly: === 🎖️ TreasureRun Monthly Top 10 (Runs) ===
+    playsLine: '#{rank} {player}  {score} pts  {time}s  ({difficulty}) [{lang}]'
+    weeklyEmpty: No runs recorded in the last 7 days.
+    weeklySwitch: 'Switch view: /gameRank all | /gameRank monthly'
+    allTimeEmpty: No records yet.
+    allTimeSwitch: 'Switch view: /gameRank weekly | /gameRank monthly'
+    monthlyEmpty: No records this month yet.
+    monthlySwitch: 'Switch view: /gameRank weekly | /gameRank all'
