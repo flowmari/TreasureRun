@@ -39,14 +39,16 @@ quotes:
   - The glass didn’t break.\nNeither did you.\n（ガラスは割れなかった。あなたも折れなかった。）
   - Beneath a quiet sky,\nyour will held firm.\n（静かな空の下で、意志は持ちこたえた。）
   - Very little shines forever\n—but this moment was different.\n（永遠に輝くものなんてほとんどないけれど、この瞬間は別格だった。）
-  - You made it across the fragile ground,\nholding fast to the horizon the whole way.\n（脆い地面を渡り切った。地平線景色をしっかりと握りしめたまま。）
+  - You made it across the fragile ground,\nholding fast to the horizon the whole
+    way.\n（脆い地面を渡り切った。地平線景色をしっかりと握りしめたまま。）
   - The moment passed.\n What remained was the record—the achievement.\n（瞬間は過ぎ去った。遺されたもの記録・功績は残る。）
   - Luck fades quickly.\nOrder endures.\n（運は速やかに消え、整い秩序は永続する。）
   - The sky knows no rest in its endless cycle.\nNeither do you.\n（空はその終わりなき循環に休止を知らぬ。汝もまた、止まらず。）
   - The center was reached.\nThe world stood still.\n（中心は到達された。世界は立ち尽くし静止した。）
   - At last,you’ve made it here.\nThe truth stands—unbowed.\n（ついに、ここへ辿り着いた。真実は屈することなく、そこに在る。）
   - Complete. This path was yours\n—and yours alone.\n（完遂。この道を選んだのは他でもないあなただ。）
-  - Time drifted into silence,\nand found its place in the deepest corners of the mind.\n（時は静寂へと漂い、精神の奥底の隅に自らの居場所を見つけた。）
+  - Time drifted into silence,\nand found its place in the deepest corners of the
+    mind.\n（時は静寂へと漂い、精神の奥底の隅に自らの居場所を見つけた。）
   - As the sky shifted,\none story found its final resolution.\n（空が姿を変えるとともに、一つの物語はその最終的な解決完結を見出した。）
   - The waves fell quiet,\nand the sky hid its depths once more.\n（波は静まり、空は再びその深淵を覆い隠した。）
   - The footsteps ceased,\nand only the place remained.\n（歩みは途絶え、ただ場所だけがそこに在り続けた。）
@@ -67,7 +69,8 @@ quotes:
   - The sky knows no pause in endless circle,\nnor shall you find yours.\n（空はその終わりなき循環に休止を知らぬ。汝もまた、止まらず。）
   - The center has been reached.\nThe world stood still.\n（中心は到達された。世界は立ち尽くし静止した。）
   - Finally here.\nThe truth remains unyielding.\n（ついに、ここへ辿り着いた。真実は屈することなく、そこに在る。）
-  - 'You have seen it through.\nAnd mark this: it was you, and no one else, who chose this path.\n（完遂。この道を選んだのは他でもないあなただ。）'
+  - 'You have seen it through.\nAnd mark this: it was you, and no one else, who chose
+    this path.\n（完遂。この道を選んだのは他でもないあなただ。）'
   - Time drifted into silence,\nfinding its place in the recesses of the mind.\n（時は静寂へと漂い、精神の奥底の隅に自らの居場所を見つけた。）
   - As the sky transformed,\nthe tale found its final resolved.\n（空が姿を変えるとともに、一つの物語はその最終的な解決完結を見出した。）
   - The waters fell calm,\nand the sky once more veiled its abyss.\n（波は静まり、空は再びその深淵を覆い隠した。）
@@ -187,18 +190,18 @@ ui:
     tabs: '&6分頁:&r'
     page: '&8第 {page}/{total} 頁&r'
     tab:
-      all: ▶ [全部]
-      success: ▶ [成功]
-      timeUp: ▶ [時間到]
-      favorites: ▶ [我的最愛]
+      all: 全部
+      success: 成功
+      timeUp: 時間到
+      favorites: 收藏
     latest: ★ 最新
     outcome:
       success: 成功
       timeUp: 時間到
   quote:
-    title: 引言集
+    title: 格言集
     intro:
-      tabsTitle: 分頁：
+      tabsTitle: 分頁
       legendTitle: 圖例：
       storedInDb: 儲存於 MySQL DB：
       db:
@@ -229,13 +232,16 @@ ui:
     messages_yml_not_loaded_d56b1cd3: (messages.yml not loaded)
     translation_missing_77031543: '(找不到翻譯:'
     translation_missing_77031543_107: '(找不到翻譯:'
-    treasurerun_lang_config_yml__2dde4625: '[TreasureRun][Lang] config.yml 中找不到 ''language:'' 區段。'
+    treasurerun_lang_config_yml__2dde4625: '[TreasureRun][Lang] config.yml 中找不到 ''language:''
+      區段。'
     click_to_select_aac1569c_76: 點擊選擇
     treasurerun_lang_default_60887a83: '[TreasureRun][Lang] default='
     click_to_select_aac1569c_19: 點擊選擇
-    treasurerun_lang_config_yml__2dde4625_33: '[TreasureRun][Lang] config.yml 中找不到 ''language:'' 區段。'
+    treasurerun_lang_config_yml__2dde4625_33: '[TreasureRun][Lang] config.yml 中找不到
+      ''language:'' 區段。'
     treasurerun_lang_material_la_bc70a401: '[TreasureRun][Lang] 無效的 Material: lang='
-    treasurerun_lang_language_ic_4bc2362d: '[TreasureRun][Lang] 找不到 ''language.iconMaterial:'' 區段（全部改為PAPER）'
+    treasurerun_lang_language_ic_4bc2362d: '[TreasureRun][Lang] 找不到 ''language.iconMaterial:''
+      區段（全部改為PAPER）'
     click_to_select_aac1569c_100: 點擊選擇
     treasurerun_lang_default_60887a83_111: '[TreasureRun][Lang] default='
     enemydown_mysql_jdbc_mybatis_6b5c6f68: '[EnemyDown] 已連接至MySQL（JDBC + MyBatis）'
@@ -252,12 +258,14 @@ ui:
     enemydown_mysql_93b23ef9: '[EnemyDown] MySQL 未連接。'
     run_complete_46d920e5_580: Run complete.
     run_complete_46d920e5_589: Run complete.
-    playerlanguagestore_failed_t_c4999402: '[PlayerLanguageStore] Failed to create/load player_languages.yml:'
+    playerlanguagestore_failed_t_c4999402: '[PlayerLanguageStore] Failed to create/load
+      player_languages.yml:'
     playerlanguagestore_failed_t_b6478ec8: '[PlayerLanguageStore] Failed to save player_languages.yml:'
     proverb_logged_to_mysql_prov_c13b5e4e: 'Proverb logged to MySQL: proverb_logs'
     failed_to_log_proverb_to_mys_2bb4c5c3: 'Failed to log proverb to MySQL: proverb_logs'
     loaded_proverb_logs_from_mys_b5b0f8e0: 'Loaded proverb logs from MySQL: proverb_logs'
-    failed_to_load_proverb_logs__6246be38: 'Failed to load proverb logs from MySQL: proverb_logs'
+    failed_to_load_proverb_logs__6246be38: 'Failed to load proverb logs from MySQL:
+      proverb_logs'
     treasurerunmultichestplugin_4499e25c: '🌈 TreasureRunMultiChestPlugin: 起動 🌈'
     treasurerun_gamestagemanager_3d9e7f5a: '[TreasureRun] GameStageManager event registered!'
     treasurerunmultichestplugin_a507471a: ✅ TreasureRunMultiChestPlugin が正常に起動しました！
@@ -289,60 +297,12 @@ ui:
     reload_gameend_c41d5c55: 遊戲中無法重新載入。請先執行 /gameEnd。
   menu:
     toc:
-      message: '&6===== 🌟 TreasureRun 目錄 🌟 =====
-
-        &b1. 目標
-
-        &f   ・在時間限制內開啟盡可能多的箱子。
-
-
-        &b2. 目前難度
-
-        &f   ・難度: &e{difficulty}
-
-
-        &b3. 難度與顏色
-
-        &f   ・簡單：紫色方塊
-
-        &f   ・普通：綠色方塊
-
-        &f   ・困難：藍色方塊
-
-
-        &b4. 遊玩方式
-
-        &f   ・四處奔跑，找到箱子，右鍵點擊開啟。
-
-
-        &b5. 計分
-
-        &f   ・普通寶藏: +100
-
-        &f   ・特殊寶藏 (下界合金 / 方塊等): 獎勵！
-
-
-        &b6. 結束條件
-
-        &f   ・開啟所有箱子或時間結束 — 遊戲結束。
-
-
-        &b7. 語錄收藏
-
-        &f   ・在 SUCCESS / TIME_UP 時自動儲存。
-
-
-        &b8. 我的最愛
-
-        &f   ・用 ★ 儲存您喜愛的語錄。
-
-
-        &6=================================='
+      message: '&6📌 已開啟 TreasureRun 選單。請查看規則書。'
     book:
       openFailed: '&c無法開啟規則書。'
-      hotbarGiven: '&6📖 規則書已加入您的快捷欄。'
-      hotbarHint: '&e拿著它隨時右鍵點擊即可再次閱讀。'
-      latestHint: '&7(右鍵點擊此書可儲存 &e{latestLabel}&7。)'
+      hotbarGiven: 📖 規則書已放入你的快捷欄。
+      hotbarHint: 拿在手上後右鍵，即可隨時重新閱讀。
+      latestHint: （右鍵這本書即可保存最新的名言）
       fallbackTitle: TreasureRun 規則
       fallbackDisplayName: TreasureRun 規則書
     legacy:
@@ -401,6 +361,8 @@ ui:
     tabInactiveOpen: '['
     tabInactiveClose: ']'
     activeMarker: '▶ '
+  rankTicker:
+    updated: 🏁 排行榜已更新！({which})
 gui:
   language:
     title: 語言
@@ -419,24 +381,52 @@ game:
 favorites:
   title: 收藏
   cover:
-    head: favorites.cover.head
-    hint: favorites.cover.hint
+    head: 收藏檔案
+    hint: 可使用 /quoteFavorite latest 或 /quoteFavorite list
     reread: 重讀
+    badge: TreasureRun 收藏
+    countLabel: '已保存: {count}'
+    openToc: 開啟目錄
+    sub: 你在遊戲過程中保存過的句子都會收錄在這裡
   empty:
-    noFav: 目前還沒有收藏。
-    saveLatest: favorites.empty.saveLatest
-    reread: 目前還沒有可重讀的名言。
-    rereadBook: 目前還沒有可用的重讀書本。
+    noFav: 目前還沒有已保存的收藏。
+    saveLatest: 保存最新一句
+    reread: 目前沒有可重讀的句子。
+    rereadBook: 目前沒有可用的重讀書。
+    head: 目前還沒有收藏
+    noFavSub: 先保存一句話，開始建立你的收藏檔案吧
+    saveHow: 收藏保存方法
+    saveHow1: 使用 /quoteFavorite latest
+    saveHow2: 或潛行時對規則書按右鍵
+    sub: 你的收藏檔案目前是空的
+    tryNow: 保存後再重新打開這本書
   toc:
-    head: favorites.toc.head
-    howto: favorites.toc.howto
-    manage: favorites.toc.manage
+    head: 目錄
+    howto: 打開章節即可重讀已保存的句子
+    manage: 整理已保存的句子
     reread: 重讀
-    howtoShift: '&7蹲下 + 右鍵即可開啟收藏檔案'
+    howtoShift: '&7潛行 + 右鍵 以打開收藏檔案'
     rereadTitle: 重讀
+    clickable: 章節可點擊開啟
+    sub: 可依章節瀏覽
   chapter:
-    rereadBook: 重讀書本
-  remove: 刪除
+    rereadBook: 重讀書
+    back: 返回目錄
+    count: '{count} 筆'
+    empty: 這個章節目前還沒有已保存的句子
+    otherSub: 其他
+    successSub: 成功通關時保存的句子
+    successTitle: 成功
+    successTpl1: 成功時保存的句子
+    successTpl2: 你完成本輪時留下的記錄
+    timeupSub: 時間結束時保存的句子
+    timeupTitle: 時間到
+    timeupTpl1: 時間到時保存的句子
+    timeupTpl2: 計時器歸零時留下的記錄
+  remove: 移除
+  reread:
+    head: 重讀已保存的句子
+    noQuotes: 你目前還沒有保存任何句子。
 command:
   checkTreasureEmerald:
     playersOnly: 只有玩家可以使用這個指令。
@@ -554,7 +544,7 @@ outcome:
         時間沒有。'
     hard:
       pool:
-      - '連極光也會消退。
+      - '連極光也會褪去。
 
         再回來吧。'
   random:
@@ -603,3 +593,15 @@ gameplay:
       time: 時間
       rank: 排名
     allChestsOpenedBroadcast: '{player} 已打開所有寶箱！最終分數：{score}'
+  setup:
+    chestsPlaced: 已放置 {count} 個寶箱！
+  success:
+    allChestsOpened: 所有寶箱都已開啟！遊戲結束！
+    treasureCompleteTitle: 🎵 尋寶完成！ 🎵
+    allTreasuresFoundTitle: 已找到所有寶物！
+    allTreasuresFoundChat: 恭喜！你已找到所有寶物！
+rewards:
+  rank:
+    netheriteIngot: 獲得獄髓錠！
+    diamond: 獲得鑽石！
+    goldenApple: 獲得金蘋果！

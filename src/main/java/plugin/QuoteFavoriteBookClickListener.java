@@ -294,8 +294,12 @@ public class QuoteFavoriteBookClickListener implements Listener {
     final int PAGE_CHAR_LIMIT = 230;
 
     StringBuilder current = new StringBuilder();
-    current.append(ChatColor.DARK_AQUA).append("★ Favorites").append("\n")
-        .append(ChatColor.GRAY).append(tr(player, "favorites.toc.howtoShift")).append("\n\n");
+    current.append(ChatColor.DARK_AQUA)
+        .append(tr(player, "favorites.title", "Favorites"))
+        .append("\n")
+        .append(ChatColor.GRAY)
+        .append(tr(player, "favorites.toc.howtoShift", "Sneak + right-click to open the Favorites archive"))
+        .append("\n\n");
 
     for (String row : rows) {
       if (row == null) continue;
@@ -353,8 +357,8 @@ public class QuoteFavoriteBookClickListener implements Listener {
     } catch (Exception ignored) {}
 
     if (allNames.isEmpty()) {
-      allNames.add("TreasureRun ルールブック");
-      allNames.add("TreasureRun Rule Book");
+      allNames.add(ChatColor.stripColor(tr(null, "ruleBook.displayName.ja", "TreasureRun ルールブック")));
+      allNames.add(ChatColor.stripColor(tr(null, "ruleBook.displayName.en", "TreasureRun Rule Book")));
     }
 
     for (String candidate : allNames) {
@@ -376,7 +380,7 @@ public class QuoteFavoriteBookClickListener implements Listener {
       if (i18n == null) return fallback;
       String lang = resolvePlayerLang(player);
       String s = i18n.tr(lang, key);
-      if (s == null || s.isBlank() || s.equals(key)) return fallback;
+      if (s == null || s.isBlank() || s.equals(key) || s.startsWith("Translation missing:")) return fallback;
       return s;
     } catch (Throwable ignored) {
       return fallback;
@@ -386,25 +390,10 @@ public class QuoteFavoriteBookClickListener implements Listener {
   private String resolvePlayerLang(Player player) {
     if (player == null) return plugin.getConfig().getString("language.default", "ja");
 
-    UUID uuid = player.getUniqueId();
-
     try {
-      java.lang.reflect.Field f = plugin.getClass().getDeclaredField("playerLanguageStore");
-      f.setAccessible(true);
-      Object store = f.get(plugin);
-
-      if (store != null) {
-        try {
-          java.lang.reflect.Method m = store.getClass().getMethod("get", UUID.class);
-          Object ret = m.invoke(store, uuid);
-          if (ret instanceof String s && !s.isBlank()) return s;
-        } catch (Throwable ignored) {}
-
-        try {
-          java.lang.reflect.Method m = store.getClass().getMethod("getPlayerLang", UUID.class);
-          Object ret = m.invoke(store, uuid);
-          if (ret instanceof String s && !s.isBlank()) return s;
-        } catch (Throwable ignored) {}
+      if (plugin.getPlayerLanguageStore() != null) {
+        String saved = plugin.getPlayerLanguageStore().getLang(player.getUniqueId(), "");
+        if (saved != null && !saved.isBlank()) return saved;
       }
     } catch (Throwable ignored) {}
 
