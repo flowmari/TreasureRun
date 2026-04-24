@@ -88,6 +88,29 @@ public class OutcomeMessageService {
     };
   }
 
+  private List<String> appendMissingUpTo(List<String> base, List<String> fallback, int expected) {
+    List<String> out = new ArrayList<>();
+    if (base != null) out.addAll(base);
+
+    if (fallback != null) {
+      for (String s : fallback) {
+        if (s == null) continue;
+        String t = s.trim();
+        if (t.isEmpty()) continue;
+        if (out.size() >= expected) break;
+        if (!out.contains(s)) out.add(s);
+      }
+    }
+    return out;
+  }
+
+  private List<String> trimToExpected(List<String> in, int expected) {
+    if (in == null) return List.of();
+    if (expected <= 0) return new ArrayList<>(in);
+    if (in.size() <= expected) return new ArrayList<>(in);
+    return new ArrayList<>(in.subList(0, expected));
+  }
+
 
   private List<String> localizedSuccessPool(String d, String lang) {
     List<String> common = configuredPool(lang, OutcomeMessageKeys.OUTCOME_SUCCESS_COMMON_POOL);
@@ -104,21 +127,27 @@ public class OutcomeMessageService {
 
     int expected = expectedSuccessCount(d);
     if (out.size() < expected) {
-      List<String> legacy = successPool(d);
-      if (legacy != null && !legacy.isEmpty()) {
-        out.addAll(legacy);
-      }
+      out = appendMissingUpTo(out, successPool(d), expected);
       if (plugin != null) {
-        plugin.getLogger().warning("[Outcome] SUCCESS pool too small: lang=" + lang
+        plugin.getLogger().warning("[Outcome] SUCCESS pool supplemented from legacy: lang=" + lang
             + " difficulty=" + d
-            + " expected>=" + expected
-            + " actual=" + out.size()
-            + " (after legacy merge)");
+            + " expected=" + expected
+            + " actual=" + out.size());
       }
     }
 
-    if (!out.isEmpty()) return out;
-    return successPool(d); // legacy fallback
+    out = trimToExpected(out, expected);
+
+    if (out.isEmpty()) return successPool(d);
+
+    if (plugin != null && out.size() != expected) {
+      plugin.getLogger().warning("[Outcome] SUCCESS pool final count mismatch: lang=" + lang
+          + " difficulty=" + d
+          + " expected=" + expected
+          + " actual=" + out.size());
+    }
+
+    return out;
   }
 
   private List<String> localizedTimeUpPool(String d, String lang) {
@@ -132,21 +161,27 @@ public class OutcomeMessageService {
 
     int expected = expectedTimeUpCount(d);
     if (out.size() < expected) {
-      List<String> legacy = timeUpPool(d);
-      if (legacy != null && !legacy.isEmpty()) {
-        out.addAll(legacy);
-      }
+      out = appendMissingUpTo(out, timeUpPool(d), expected);
       if (plugin != null) {
-        plugin.getLogger().warning("[Outcome] TIMEUP pool too small: lang=" + lang
+        plugin.getLogger().warning("[Outcome] TIMEUP pool supplemented from legacy: lang=" + lang
             + " difficulty=" + d
-            + " expected>=" + expected
-            + " actual=" + out.size()
-            + " (after legacy merge)");
+            + " expected=" + expected
+            + " actual=" + out.size());
       }
     }
 
-    if (!out.isEmpty()) return out;
-    return timeUpPool(d); // legacy fallback
+    out = trimToExpected(out, expected);
+
+    if (out.isEmpty()) return timeUpPool(d);
+
+    if (plugin != null && out.size() != expected) {
+      plugin.getLogger().warning("[Outcome] TIMEUP pool final count mismatch: lang=" + lang
+          + " difficulty=" + d
+          + " expected=" + expected
+          + " actual=" + out.size());
+    }
+
+    return out;
   }
 
   // =========================================================
