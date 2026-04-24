@@ -1818,12 +1818,18 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     w.setStorm(false);
     w.setThundering(false);
 
-    bossBar = Bukkit.createBossBar(ChatColor.GREEN + getI18n().tr(getPlayerLangOrDefault(player.getUniqueId()), "gameplay.timer.remainingBossbar"), BarColor.GREEN, BarStyle.SOLID);
+    String initialLang = resolveCurrentLang(player);
+    bossBar = Bukkit.createBossBar(
+        ChatColor.GREEN + getI18n().tr(initialLang, "gameplay.timer.remainingBossbar"),
+        BarColor.GREEN,
+        BarStyle.SOLID
+    );
     bossBar.addPlayer(player);
-
-    bossBar.setTitle(ChatColor.GREEN + getI18n().tr(getPlayerLangOrDefault(player.getUniqueId()), "gameplay.timer.remainingBossbar"));
+    bossBar.setTitle(ChatColor.GREEN + getI18n().tr(initialLang, "gameplay.timer.remainingBossbar"));
 
     taskId = Bukkit.getScheduler().scheduleSyncRepeatingTask(this, () -> {
+      String langNow = resolveCurrentLang(player);
+
       long elapsed = (System.currentTimeMillis() - startTime) / 1000;
       int timeLimit = switch (difficulty) {
         case "Easy" -> easyTimeLimit;
@@ -1834,9 +1840,18 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
 
       long remaining = Math.max(0, timeLimit - elapsed);
       bossBar.setProgress((double) remaining / timeLimit);
+      bossBar.setTitle(ChatColor.GREEN + getI18n().tr(langNow, "gameplay.timer.remainingBossbar"));
 
-      player.spigot().sendMessage(ChatMessageType.ACTION_BAR,
-          new TextComponent(ChatColor.YELLOW + getI18n().tr(getPlayerLangOrDefault(player.getUniqueId()), "gameplay.timer.remainingLine", I18n.Placeholder.of("{seconds}", String.valueOf(remaining)))));
+      player.spigot().sendMessage(
+          ChatMessageType.ACTION_BAR,
+          new TextComponent(
+              ChatColor.YELLOW + getI18n().tr(
+                  langNow,
+                  "gameplay.timer.remainingLine",
+                  I18n.Placeholder.of("{seconds}", String.valueOf(remaining))
+              )
+          )
+      );
 
       if (remaining == 5) {
         if (treasureRunGameEffectsPlugin != null) {
@@ -1856,7 +1871,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
         }
 
         // ✅ TIME_UP：哲学文（固定位置で最後に出すため、ここでは「保持」だけ）
-        final String timeUpLang = getPlayerLangOrDefault(player.getUniqueId());
+        final String timeUpLang = resolveCurrentLang(player);
         final String timeUpPhiloSub = outcomeMessageService.sanitizeVisibleText(GameOutcome.TIME_UP, timeUpLang, outcomeMessageService.pickSubtitle(GameOutcome.TIME_UP, difficulty, timeUpLang));
 
         // ✅ TIME_UP：連続回数カウント（ここで +1）
@@ -2593,28 +2608,17 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
   }
 
   // =======================================================
-  // ✅ ✅ ✅ 追加：このプレイヤーの言語を取得（無ければ default）
-  // =======================================================
-  private String getPlayerLangOrDefault(UUID uuid) {
-    if (uuid == null) return getConfig().getString("language.default", "ja");
-    String v = playerLastLang.get(uuid);
-    if (v != null && !v.isBlank()) return v;
-    return getConfig().getString("language.default", "ja");
-  }
-
-  // =======================================================
-  // ✅ ✅ ✅ 追加：/gameMenu 用に「今のプレイヤー言語」を解決する
+  // ✅ 現在のプレイヤー言語を解決（ゲーム中 /lang 切替に追従）
   // 優先順位：
-  //  0) PlayerLanguageStore（/lang の保存先） ← 最優先に変更
+  //  0) PlayerLanguageStore（/lang の保存先）
   //  1) LanguageStore（GUI由来）
   //  2) playerLastLang（ゲーム開始時に保存した言語）
   //  3) config の language.default
   // =======================================================
-  private String resolvePlayerLang(Player player) {
+  private String resolveCurrentLang(Player player) {
     String defaultLang = getConfig().getString("language.default", "ja");
     if (player == null) return defaultLang;
 
-    // ✅ 0) PlayerLanguageStore（/lang の保存先）を最優先
     try {
       if (playerLanguageStore != null) {
         String saved = playerLanguageStore.getLang(player, "");
@@ -2624,20 +2628,44 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
 
     UUID uuid = player.getUniqueId();
 
-    // 1) LanguageStore（GUI系）が取れれば次点（反射で安全に取得）
     String langFromStore = tryGetLangFromLanguageStore(uuid);
     if (langFromStore != null && !langFromStore.isBlank()) {
       return langFromStore;
     }
 
-    // 2) beginGameStartAfterLanguageSelected で保存した値
     String fromLast = playerLastLang.get(uuid);
     if (fromLast != null && !fromLast.isBlank()) {
       return fromLast;
     }
 
-    // 3) config default
     return defaultLang;
+  }
+
+  // =======================================================
+  // ✅ UUID から言語取得（オンライン中は“現在言語”を優先）
+  // =======================================================
+  private String getPlayerLangOrDefault(UUID uuid) {
+    String defaultLang = getConfig().getString("language.default", "ja");
+    if (uuid == null) return defaultLang;
+
+    try {
+      Player online = Bukkit.getPlayer(uuid);
+      if (online != null) {
+        return resolveCurrentLang(online);
+      }
+    } catch (Throwable ignored) {}
+
+    String v = playerLastLang.get(uuid);
+    if (v != null && !v.isBlank()) return v;
+
+    return defaultLang;
+  }
+
+  // =======================================================
+  // ✅ /gameMenu 用に「今のプレイヤー言語」を解決する
+  // =======================================================
+  private String resolvePlayerLang(Player player) {
+    return resolveCurrentLang(player);
   }
 
   // =======================================================
