@@ -32,6 +32,12 @@ public class OutcomeMessageService {
       case TIME_UP -> localizedTimeUpPool(d, lang);
     };
 
+    if (plugin != null) {
+      plugin.getLogger().info("[OutcomeDebug] subtitle outcome=" + outcome
+          + " difficulty=" + d
+          + " lang=" + lang
+          + " poolSize=" + (pool == null ? 0 : pool.size()));
+    }
     if (pool == null || pool.isEmpty()) return "";
     return pool.get(random.nextInt(pool.size()));
   }
@@ -710,6 +716,44 @@ public class OutcomeMessageService {
     return pickBilingualOrFallback(pool);
   }
 
+
+  private boolean looksJapaneseBilingual(String s) {
+    return s != null && s.contains("（") && s.contains("）");
+  }
+
+  private String stripJapaneseParentheticalLines(String text) {
+    if (text == null || text.isBlank()) return text;
+
+    List<String> kept = new ArrayList<>();
+    for (String raw : text.split("\\R")) {
+      String t = raw.trim();
+      if (t.startsWith("（") && t.endsWith("）")) continue;
+      kept.add(raw);
+    }
+
+    String out = String.join("\n", kept).trim();
+    return out.isEmpty() ? text : out;
+  }
+
+  private String pickForLang(List<String> pool, String lang) {
+    if (pool == null || pool.isEmpty()) return "Run complete.";
+
+    boolean preferJa = lang != null && lang.toLowerCase(Locale.ROOT).startsWith("ja");
+    List<String> preferred = new ArrayList<>();
+
+    for (String s : pool) {
+      if (s == null || s.isBlank()) continue;
+      boolean jp = looksJapaneseBilingual(s);
+      if ((preferJa && jp) || (!preferJa && !jp)) {
+        preferred.add(s);
+      }
+    }
+
+    List<String> src = preferred.isEmpty() ? pool : preferred;
+    return src.get(ThreadLocalRandom.current().nextInt(src.size()));
+  }
+
+
   // ✅ （日本語括弧）を含むものを優先して選ぶ。無ければ通常プールから選ぶ
   private String pickBilingualOrFallback(List<String> pool) {
     if (pool == null || pool.isEmpty()) return "Run complete.";
@@ -761,19 +805,32 @@ public class OutcomeMessageService {
 
   public String pickSuccessQuoteBilingual(String difficulty, String lang) {
     String d = normalizeDifficulty(difficulty);
-    return pickBilingualOrFallback(localizedSuccessPool(d, lang));
+    List<String> pool = localizedSuccessPool(d, lang);
+    if (plugin != null) {
+      plugin.getLogger().info("[OutcomeDebug] finalQuote outcome=SUCCESS difficulty=" + d + " lang=" + lang + " poolSize=" + pool.size());
+    }
+    return pickBilingualOrFallback(pool);
   }
 
   public String pickTimeUpQuoteBilingual(String difficulty, String lang) {
     String d = normalizeDifficulty(difficulty);
-    return pickBilingualOrFallback(localizedTimeUpPool(d, lang));
+    List<String> pool = localizedTimeUpPool(d, lang);
+    if (plugin != null) {
+      plugin.getLogger().info("[OutcomeDebug] finalQuote outcome=TIME_UP difficulty=" + d + " lang=" + lang + " poolSize=" + pool.size());
+    }
+    return pickBilingualOrFallback(pool);
   }
 
   public String sanitizeVisibleText(GameOutcome outcome, String lang, String text) {
     if (text == null || text.isBlank()) {
       return outcome == GameOutcome.SUCCESS ? "Run complete." : "Time's up.";
     }
-    return text;
+
+    String out = text;
+    if (lang == null || !lang.toLowerCase(Locale.ROOT).startsWith("ja")) {
+      out = stripJapaneseParentheticalLines(out);
+    }
+    return out;
   }
 
 }

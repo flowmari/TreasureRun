@@ -80,23 +80,23 @@ command:
     rereadNoQuotes: '&eEs gibt noch keine Zitate zum erneuten Lesen.'
     bookOpenFailed: '&cDas Favoritenbuch konnte nicht erstellt werden.'
     openBookFailed: '&cDas Buch konnte nicht geöffnet werden.'
-    unknownSubcommand: '&cUnbekannter Unterbefehl. Sieh dir /quoteFavorite help an.'
+    unknownSubcommand: '&cUnbekannter Unterbefehl. Siehe /quoteFavorite help.'
     shortcutSaved: Das neueste Zitat wurde zu den Favoriten hinzugefügt.
     shortcutNotSaved: Das neueste Zitat konnte nicht gespeichert werden. Entweder
       gibt es noch keinen Eintrag oder es ist bereits in den Favoriten.
     help:
       title: '&bQuoteFavorite-Befehle'
-      latest: '&7/quoteFavorite latest  - neuestes Zitat als Favorit speichern'
-      list: '&7/quoteFavorite list    - Favoriten anzeigen'
+      latest: '&7/quoteFavorite latest - Letztes Zitat zu den Favoriten hinzufügen'
+      list: '&7/quoteFavorite list - Favoriten anzeigen'
       remove: '&7/quoteFavorite remove <id> - Favorit entfernen'
-      reread: '&7/quoteFavorite reread - letztes Zitat erneut anzeigen'
+      reread: '&7/quoteFavorite reread - Letztes Zitat erneut anzeigen'
       rereadTitle: '&bWiederlesen'
-      rereadBook: '&7/quoteFavorite reread book - Wiederlese-Buch erneut öffnen'
+      rereadBook: '&7/quoteFavorite reread book - Buch zum Wiederlesen öffnen'
       book: '&7/quoteFavorite book - Favoritenbuch öffnen'
-      bookToc: '&7/quoteFavorite book toc - Inhaltsverzeichnis des Buchs öffnen'
-      bookSuccess: '&7/quoteFavorite book success - SUCCESS-Zitatebuch öffnen'
-      bookTimeup: '&7/quoteFavorite book timeup - TIME_UP-Zitatebuch öffnen'
-      bookOther: '&7/quoteFavorite book other - alternatives Buchlayout öffnen'
+      bookToc: '&7/quoteFavorite book toc - Inhaltsverzeichnis öffnen'
+      bookSuccess: '&7/quoteFavorite book success - Zitatebuch für erfolgreiche Läufe öffnen'
+      bookTimeup: '&7/quoteFavorite book timeup - Zitatebuch für Zeitablauf öffnen'
+      bookOther: '&7/quoteFavorite book other - Alternatives Buchlayout öffnen'
 gui:
   language:
     title: Sprache
@@ -200,7 +200,7 @@ game:
     treasure_complete_8360fbe9: 🎵 Treasure Complete! 🎵
     text_cc353737: 全ての宝物を発見しました！
     congratulations_38fd1594: §6Congratulations! 全ての宝物を見つけました！
-    time_s_up_c5b3ef74: §c§lTIME'S UP!
+    time_s_up_c5b3ef74: §c§lZEIT ABGELAUFEN!
     treasures_collected_ca7eab31: '§7Treasures collected: §e'
     try_a_different_route_next_t_721a4d8b: §7Try a different route next time — or
       use §e/gamestart §7<§eeasy§7|§enormal§7|§ehard§7> §7to retry.
@@ -230,7 +230,7 @@ favorites:
     badge: TreasureRun-Favoriten
     countLabel: 'Gespeichert: {count}'
     head: Favoritenarchiv
-    hint: Nutze /quoteFavorite latest oder /quoteFavorite list
+    hint: 'Tipp: Nutze /quoteFavorite latest oder /quoteFavorite list.'
     openToc: Inhalt öffnen
     reread: Erneut lesen
     sub: Eine Sammlung von Zeilen, die du während deiner Läufe gespeichert hast
@@ -241,7 +241,7 @@ favorites:
     reread: Noch keine Zeile zum erneuten Lesen vorhanden.
     rereadBook: Noch kein Buch zum erneuten Lesen verfügbar.
     saveHow: So speicherst du Favoriten
-    saveHow1: Benutze /quoteFavorite latest
+    saveHow1: 'Nutze /quoteFavorite latest.'
     saveHow2: Oder schleiche und rechtsklicke auf das Regelbuch
     saveLatest: Neueste Zeile speichern
     sub: Dein Archiv ist noch leer
@@ -249,8 +249,8 @@ favorites:
   remove: Entfernen
   reread:
     head: Gespeicherte Zeilen erneut lesen
-    noQuotes: Du hast noch keine Zeilen gespeichert.
-  table: favorites.table
+    noQuotes: Du hast noch keine Zitate gespeichert.
+  table: Favoriten
   title: Favoriten
   toc:
     clickable: Kapitel lassen sich anklicken
@@ -284,7 +284,7 @@ favorites:
     quotefavoritestore_listfavor_f3e976d4: '[QuoteFavoriteStore] listFavoriten failed:'
     where_player_uuid_ef617232: WHERE player_uuid=?
     quotefavoritestore_countfavo_69291680: '[QuoteFavoriteStore] countFavoriten failed:'
-    treasurerun_favorites_0c778ce1: TreasureRun Favoriten
+    treasurerun_favorites_0c778ce1: TreasureRun-Favoriten
     no_text_b87d9ee6: (no text)
 commands:
   text_2bf42ec8: このコマンドはプレイヤーのみが実行できます。
@@ -371,10 +371,10 @@ ui:
       latestHint: (Rechtsklicke dieses Buch, um das neueste Zitat zu speichern.)
       openFailed: Could not open the rule book.
     toc:
-      message: '&6📌 TreasureRun-Menü geöffnet. Bitte sieh ins Regelbuch.'
+      message: '&6📌 TreasureRun-Menü geöffnet. Sieh bitte ins Regelbuch.'
     legacy:
       toc:
-        message: '===== TreasureRun Menu =====
+        message: '===== TreasureRun-Menü =====
 
           Open the rule book from your hotbar to read the rules.'
     page:
@@ -387,9 +387,9 @@ ui:
         scoreRoute: Punkte & Route
         tipsItem: 2) Tips
         title: Inhalt
-        yourQuotes: Your saved quotes
+        yourQuotes: Deine gespeicherten Zitate
       hint:
-        reopenMenu: 'Hint: use /gameMenu to open this again.'
+        reopenMenu: 'Tipp: Öffne dieses Menü erneut mit /gameMenu.'
       note:
         bookFormat: Minecraft books cannot switch tabs by clicking, so sections are
           shown as pages.
@@ -405,16 +405,16 @@ ui:
       langLine: 'Language: {lang}'
       legendTitle: Legend
       storedInDb: Stored in DB
-    headerRecent: 'Recent 20  |  lang: {lang}'
+    headerRecent: 'Letzte 20 | Sprache: {lang}'
     legend:
-      favorites: = Favorites
+      favorites: = Favoriten
       success: = Success / Cleared
       timeUp: = Time up
-    noFavorites: No favorites yet.
-    noLogs: No quote logs yet.
-    noQuotesInTab: No quotes are available in this tab yet.
+    noFavorites: Noch keine Favoriten vorhanden.
+    noLogs: Noch keine Zitatprotokolle vorhanden.
+    noQuotesInTab: In diesem Tab sind noch keine Zitate verfügbar.
     tip:
-      rightClickSave: 'Tip: right-click this book to save the latest quote.'
+      rightClickSave: 'Tipp: Rechtsklicke auf dieses Buch, um das letzte Zitat zu speichern.'
   favorites:
     footer:
       dbFavorites: '(DB: proverb_favorites)'
