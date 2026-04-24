@@ -38,9 +38,9 @@ command:
     success: '&aNeu laden abgeschlossen.'
     fail: '&cNeu laden fehlgeschlagen: {reason}'
   lang:
-    guiCancelledGameStart: Die Sprachauswahl wurde abgebrochen. Zum erneuten Versuch
+    guiCancelledGameStart: Die Sprachauswahl wurde abgebrochen. Versuche es erneut mit /lang.
       führe /gameStart <easy|normal|hard> aus.
-    guiCancelledGameMenu: Die Sprachauswahl wurde abgebrochen. Zum erneuten Öffnen
+    guiCancelledGameMenu: Die Sprachauswahl wurde abgebrochen. Öffne sie erneut mit /lang.
       führe /gameMenu gui aus.
     guiTooManyShown: Es sind zu viele erlaubte Sprachen konfiguriert, daher werden
       im GUI nur die ersten 27 angezeigt.
@@ -73,11 +73,11 @@ command:
     repositoryNotReady: Favoriten sind noch nicht verfügbar.
     listHeader: '&bFavoriten ({count})'
     listSeparator: '&7------------------------------'
-    removeUsage: '&cVerwendung: /quoteFavorite remove <id>'
+    removeUsage: '&cVerwendung: /quoteFavorite remove <ID>'
     removeIdNumber: '&cDie ID muss eine Zahl sein.'
     removeSuccess: '&aFavorit mit ID {id} wurde entfernt.'
     removeNotFound: '&cDer angegebene Favorit wurde nicht gefunden.'
-    rereadNoQuotes: '&eEs gibt noch keine Zitate zum erneuten Lesen.'
+    rereadNoQuotes: '&eEs gibt noch keine Zitate zum Wiederlesen.'
     bookOpenFailed: '&cDas Favoritenbuch konnte nicht erstellt werden.'
     openBookFailed: '&cDas Buch konnte nicht geöffnet werden.'
     unknownSubcommand: '&cUnbekannter Unterbefehl. Siehe /quoteFavorite help.'
@@ -241,7 +241,7 @@ favorites:
     reread: Noch keine Zeile zum erneuten Lesen vorhanden.
     rereadBook: Noch kein Buch zum erneuten Lesen verfügbar.
     saveHow: So speicherst du Favoriten
-    saveHow1: 'Nutze /quoteFavorite latest.'
+    saveHow1: 'Tipp: Nutze /quoteFavorite latest.'
     saveHow2: Oder schleiche und rechtsklicke auf das Regelbuch
     saveLatest: Neueste Zeile speichern
     sub: Dein Archiv ist noch leer
