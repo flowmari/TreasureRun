@@ -1,0 +1,498 @@
+lang	pool	index	old	new
+is	outcome.success.easy.pool	1	"You’ve made it.
+The truth remains."	"Þú náðir alla leið.
+Sannleikurinn stendur enn."
+is	outcome.success.easy.pool	2	"Even if it was only a small step,
+you held your ground."	"Þótt skrefið væri lítið,
+hélstu velli."
+is	outcome.success.easy.pool	3	"You listened.
+ The path opened."	"Þú hlustaðir.
+Þá opnaðist leiðin."
+is	outcome.success.easy.pool	4	"> You made it here
+> 
+> The rules were simple —
+> 
+> the choice was yours."	"> Þú komst hingað.
+>
+> Reglurnar voru einfaldar —
+>
+> valið var þitt."
+is	outcome.success.easy.pool	5	"> Distance became meaning.
+> 
+> and time answered your footsteps."	"> Fjarlægðin fékk merkingu.
+>
+> Og tíminn svaraði fótsporum þínum."
+is	outcome.success.easy.pool	6	"> Not everything shines forever.
+> 
+> But this moment did."	"> Ekki allt heldur áfram að skína.
+>
+> En þetta augnablik gerði það."
+is	outcome.success.easy.pool	7	"Light fell evenly, ,
+and every shadow vanished."	"Ljósið seig mjúklega niður,
+og hver skuggi vék til hliðar."
+is	outcome.success.easy.pool	8	"The wind fell silent.
+and everything returned to where it belonged."	"Þögn féll yfir vindinn.
+Allt sneri aftur á sinn stað."
+is	outcome.success.easy.pool	9	"A moment of silence.
+The world steadied its breath."	"Andartak þagnar.
+Heimurinn dró aftur andann."
+is	outcome.success.easy.pool	10	"The record is etched deep in the sand—
+beyond the reach of the wind."	"Slóðin er grafin djúpt í sandinn —
+þangað sem vindurinn nær ekki lengur."
+is	outcome.success.easy.pool	11	"Harmony was restored.
+Everything had been for this moment."	"Jafnvægið komst á ný.
+Allt hafði stefnt að þessu augnabliki."
+is	outcome.success.easy.pool	12	"Time slipped by in silence,
+tucked away in the corners of memory."	"Tíminn rann hljóðlega hjá,
+geymdur í horni minningarinnar."
+is	outcome.success.easy.pool	13	"The sky shifted in color,
+and one story came to its end."	"Himinninn skipti um lit,
+og ein saga lauk."
+is	outcome.success.easy.pool	14	"The waves grew calm,
+and the sea hid its depths once more."	"Öldurnar lægðu,
+og hafið faldi dýpi sitt á ný."
+is	outcome.success.easy.pool	15	"The footsteps stopped,
+and only the place remained."	"Fótsporin stöðvuðust,
+og aðeins staðurinn varð eftir."
+is	outcome.success.easy.pool	16	"Victory and defeat 
+are nothing more than grains of sand."	"Sigur og ósigur —
+að lokum eru þau aðeins sandkorn."
+is	outcome.success.easy.pool	17	"The road goes on—or it ends.
+Either way, it lies on the same earth."	"Leiðin heldur áfram — eða endar hér.
+Í báðum tilvikum hvílir hún á sömu jörð."
+is	outcome.success.normal.pool	1	"The distance has found its meaning.
+Time has rewarded your journey."	"Fjarlægðin hefur loks fengið merkingu.
+Tíminn svaraði ferð þinni."
+is	outcome.success.normal.pool	2	"The time is up.
+but the rest is far from over."	"Tíminn er úti.
+En ekki lýkur öllu hér."
+is	outcome.success.normal.pool	3	"The axis is found.
+the world has cased its motion."	"Öxullinn er fundinn.
+Heimurinn hélt aftur af hreyfingu sinni."
+is	outcome.success.normal.pool	4	"The glass held its breath,
+and you held your ground."	"Glerið hélt niðri í sér andanum,
+og þú stóðst kyrr."
+is	outcome.success.normal.pool	5	"Under the stillness of the sky,
+your spirit did not waver."	"Undir kyrrum himni
+riðaðist hugur þinn ekki."
+is	outcome.success.normal.pool	6	"Few things shine forever.
+but this moment was radiant."	"Fátt skín að eilífu.
+En þetta augnablik gerði það."
+is	outcome.success.normal.pool	7	"You traversed the fragile earth,
+without losing the view."	"Þú fórst yfir brothætta jörð
+án þess að missa sjónar á sjóndeildarhringnum."
+is	outcome.success.normal.pool	8	"The moment has passed.
+The legacy remains."	"Andartakið er liðið.
+Það sem eftir stendur, stendur áfram."
+is	outcome.success.normal.pool	9	"Luck fades fast.
+order endures."	"Heppnin dofnar fljótt.
+Reglan heldur velli."
+is	outcome.success.normal.pool	10	"The sky knows no pause in endless circle,
+nor shall you find yours."	"Himinninn þekkir enga pásu í endalausum hring sínum,
+og þú stöðvaðist ekki heldur."
+is	outcome.success.normal.pool	11	"The center has been reached.
+The world stood still."	"Þú náðir miðjunni.
+Heimurinn stóð kyrr."
+is	outcome.success.normal.pool	12	"Finally here.
+The truth remains unyielding."	"Loksins ertu hér.
+Sannleikurinn lætur ekki undan."
+is	outcome.success.normal.pool	13	"You have seen it through.
+And mark this: it was you, and no one else, who chose this path."	"Þú fórst þetta til enda.
+Mundu þetta: þú valdir þessa leið. Enginn annar."
+is	outcome.success.normal.pool	14	"Time drifted into silence,
+finding its place in the recesses of the mind."	"Tíminn rann inn í þögnina
+og fann sér stað djúpt í minningunni."
+is	outcome.success.normal.pool	15	"As the sky transformed,
+the tale found its final resolved."	"Þegar himinninn skipti um lit
+komst sagan að endalokum sínum."
+is	outcome.success.normal.pool	16	"The waters fell calm,
+and the sky once more veiled its abyss."	"Vötnin lægðu,
+og himinninn huldi hyldýpið á ný."
+is	outcome.success.normal.pool	17	"The footsteps ceased,
+only the place remained."	"Fótsporin þögnuðu,
+og aðeins staðurinn varð eftir."
+is	outcome.success.normal.pool	18	"Light fell evenly, ,
+and every shadow vanished."	"Ljósið seig mjúklega niður,
+og hver skuggi vék til hliðar."
+is	outcome.success.normal.pool	19	"The wind fell silent.
+and everything returned to where it belonged."	"Þögn féll yfir vindinn.
+Allt sneri aftur á sinn stað."
+is	outcome.success.normal.pool	20	"A moment of silence.
+The world steadied its breath."	"Andartak þagnar.
+Heimurinn dró aftur andann."
+is	outcome.success.normal.pool	21	"The record is etched deep in the sand—
+beyond the reach of the wind."	"Slóðin er grafin djúpt í sandinn —
+þangað sem vindurinn nær ekki lengur."
+is	outcome.success.normal.pool	22	"Harmony was restored.
+Everything had been for this moment."	"Jafnvægið komst á ný.
+Allt hafði stefnt að þessu augnabliki."
+is	outcome.success.normal.pool	23	"RUN COMPLETE.
+Clear. Found it.
+That's enough."	"Hlaupi lokið.
+Skýrt. Fundið.
+Það nægir."
+is	outcome.success.normal.pool	24	"RUN COMPLETE.
+The path held.
+So did you."	"Hlaupi lokið.
+Leiðin hélt.
+Þú líka."
+is	outcome.success.normal.pool	25	"The sky has kept moving.
+So can you."	"Himinninn hélt áfram ferð sinni.
+Það getur þú líka."
+is	outcome.success.normal.pool	26	"RUN COMPLETE.
+A quiet result.
+The weight of real work."	"Hlaupi lokið.
+Hljóðlát niðurstaða.
+Þungi raunverulegrar vinnu."
+is	outcome.success.normal.pool	27	"You only walked the path
+the world had laid out for you."	"Þú gekkst aðeins þá leið
+sem heimurinn hafði lagt fyrir þig."
+is	outcome.success.normal.pool	28	"The ground didn’t give way.
+It trusted your steps."	"Jörðin gaf sig ekki.
+Hún treysti skrefum þínum."
+is	outcome.success.normal.pool	29	"This moment aligned
+with the stars’ ancient rhythm."	"Þetta augnablik samstilltist
+fornum takti stjarnanna."
+is	outcome.success.normal.pool	30	"You didn’t take anything.
+ You understood something."	"Þú tókst ekkert með þér.
+Þú skildir eitthvað."
+is	outcome.success.normal.pool	31	"You didn’t gain a thing.
+You only saw the truth for what it was."	"Þú vannst ekkert fyrir þig einan.
+Þú sást aðeins sannleikann eins og hann var."
+is	outcome.success.normal.pool	32	"You didn’t take this place.
+You belonged here."	"Þú lagðir þennan stað ekki undir þig.
+Þú áttir heima hér."
+is	outcome.success.normal.pool	33	"You walked a road
+older than memory itself."	"Þú gekkst veg
+sem er eldri en minningin sjálf."
+is	outcome.success.normal.pool	34	"The earth did not resist.
+It recognized you."	"Jörðin veitti enga mótstöðu.
+Hún þekkti þig."
+is	outcome.success.normal.pool	35	"This moment aligned
+ with the stillness of the stars."	"Þetta augnablik samstilltist
+þögn stjarnanna."
+is	outcome.success.hard.pool	1	"In the north wind,
+clarity outlasts speed."	"Í norðanáttinni
+endist skýrleikinn lengur en hraðinn."
+is	outcome.success.hard.pool	2	"The center was found.
+ The world came to rest."	"Miðjan fannst.
+Heimurinn gat loks hvílst."
+is	outcome.success.hard.pool	3	"The stars stay silent.
+Your record does the speaking."	"Stjörnurnar þegja.
+Slóð þín talar fyrir þig."
+is	outcome.success.hard.pool	4	"The result  remained.
+The position changed."	"Niðurstaðan stóð eftir.
+Staðan breyttist."
+is	outcome.success.hard.pool	5	"Between ice and glass,
+you chose control."	"Á milli íss og glers
+valdir þú stjórn."
+is	outcome.success.hard.pool	6	"The waves fell quiet,
+and the sea reclaimed its hidden depths."	"Öldurnar þögnuðu,
+og hafið tók aftur við huldu dýpi sínu."
+is	outcome.success.hard.pool	7	"Some treasures still await.
+Next time, a different path."	"Aðrir fjársjóðir bíða enn.
+Næst: önnur leið."
+is	outcome.success.hard.pool	8	"The sky didn’t change.
+You did."	"Himinninn breyttist ekki.
+Þú gerðir það."
+is	outcome.success.hard.pool	9	"The moment passed.
+What remained was order."	"Andartakið leið hjá.
+Það sem eftir stóð var regla."
+is	outcome.success.hard.pool	10	"Winter is honest.
+So was your run."	"Veturinn er heiðarlegur.
+Hlaupið þitt var það líka."
+is	outcome.success.hard.pool	11	"The stars aligned for a moment.
+You noticed."	"Stjörnurnar röðuðust saman um stund.
+Þú tókst eftir því."
+is	outcome.success.hard.pool	12	"The distance closed.
+Time did not."	"Fjarlægðin lokaðist.
+Tíminn ekki."
+is	outcome.success.hard.pool	13	"The world’s rules stood firm.
+ And the signal of possibility was real."	"Reglur heimsins stóðu fastar.
+Og merki möguleikans var raunverulegt."
+is	outcome.success.hard.pool	14	"The path closed quietly.
+You were already through."	"Leiðin lokaðist hljóðlega.
+Þú varst þegar komin í gegn."
+is	outcome.success.hard.pool	15	"Nothing changed.
+Only your position did."	"Ekkert breyttist.
+Aðeins staða þín."
+is	outcome.success.hard.pool	16	"Not luck.
+Alignment."	"Ekki heppni.
+Samstilling."
+is	outcome.success.hard.pool	17	"The moment passed.
+The record remains."	"Andartakið leið hjá.
+Skráin stendur eftir."
+is	outcome.success.hard.pool	18	"The outcome didn’t change.
+Still, you moved forward."	"Niðurstaðan breyttist ekki.
+Samt hreyfðir þú þig áfram."
+is	outcome.success.hard.pool	19	"The output didn’t change.
+But you reached a new level."	"Útkoman breyttist ekki.
+En þú náðir nýju stigi."
+is	outcome.success.hard.pool	20	"The ending was the same.
+But the one who reached it had changed."	"Endirinn var sá sami.
+En sú sem náði honum hafði breyst."
+is	outcome.success.hard.pool	21	"The destination is the same
+—but you’re no longer the traveler you once were."	"Áfangastaðurinn er sá sami —
+en þú ert ekki lengur sama ferðalangurinn."
+is	outcome.success.hard.pool	22	"Light fell evenly, ,
+and every shadow vanished."	"Hljóðið þagnaði.
+Merkingin varð eftir."
+is	outcome.success.hard.pool	23	"The wind fell silent.
+and everything returned to where it belonged."	"Þú fórst ekki hraðast.
+Þú hélst skýrast."
+is	outcome.success.hard.pool	24	"A moment of silence.
+The world steadied its breath."	"Það sem virtist frosið
+hafði aðeins beðið."
+is	outcome.success.hard.pool	25	"The record is etched deep in the sand—
+beyond the reach of the wind."	"Norðrið gaf ekkert eftir.
+Þú heldur ekki."
+is	outcome.success.hard.pool	26	"Harmony was restored.
+Everything had been for this moment."	"Glerið brast ekki.
+Það mundi þrýstinginn."
+is	outcome.success.hard.pool	27	"Time slipped by in silence,
+tucked away in the corners of memory."	"Leiðin bað ekki um sigur.
+Hún bað um nákvæmni."
+is	outcome.success.hard.pool	28	"The sky shifted in color,
+and one story came to its end."	"Þú komst með ró,
+ekki hávaða."
+is	outcome.success.hard.pool	29	"The waves grew calm,
+and the sea hid its depths once more."	"Það sem stóð eftir
+var ekki heppni heldur bygging."
+is	outcome.success.hard.pool	30	"The footsteps stopped,
+and only the place remained."	"Ekki allt sem endist skín.
+Sumt stendur einfaldlega áfram."
+is	outcome.success.hard.pool	31	"Victory and defeat 
+are nothing more than grains of sand."	"Í kuldanum varð formið sýnilegt.
+Þú fylgdir því."
+is	outcome.success.hard.pool	32	"The road goes on—or it ends.
+Either way, it lies on the same earth."	"Þessi niðurstaða var ekki tilviljun.
+Hún var lesin úr skrefunum þínum."
+is	outcome.timeup.easy.pool	1	"Time ran out.
+Nothing else did."	"Tíminn rann út.
+En leiðin man enn skrefin þín."
+is	outcome.timeup.easy.pool	2	"The treasure can wait.
+So can you."	"Ekki náðist allt í dag.
+En eitthvað varð skýrara."
+is	outcome.timeup.easy.pool	3	"Breathe in.
+Then again."	"Vindurinn tók tímann með sér.
+En ekki allt glataðist."
+is	outcome.timeup.easy.pool	4	"That’s all for now.
+On to the next step."	"Gullið beið áfram.
+Þú komst samt nær."
+is	outcome.timeup.easy.pool	5	"You're still here.
+That’s what matters."	"Leiðin lokaðist hljóðlega.
+Hún hvarf ekki."
+is	outcome.timeup.easy.pool	6	"The run ended.
+You didn’t."	"Þú stöðvaðist ekki af vilja.
+Tíminn stöðvaði þig."
+is	outcome.timeup.easy.pool	7	"TIME'S UP.
+The run ended.
+You didn't."	"Sjóndeildarhringurinn hélst fjarlægur.
+En þú sást hann."
+is	outcome.timeup.easy.pool	8	"TIME'S UP.
+The rules don’t change.
+Again."	"Hljóðið dofnaði.
+Fótsporin urðu eftir."
+is	outcome.timeup.easy.pool	9	"TIME'S UP.
+“So close” is real."	"Ekki sigur.
+Ekki tómleiki heldur."
+is	outcome.timeup.easy.pool	10	"The sun sank,
+and shadow covered the world once again."	"Það sem ekki fannst
+bíður kannski enn."
+is	outcome.timeup.easy.pool	11	"The last grains of sand fell,
+and the story quietly came to a close."	"Sandurinn tók við endinum.
+Minningin tók við leiðinni."
+is	outcome.timeup.easy.pool	12	"The wind swept through,
+and the footprints vanished without a trace."	"Þú misstir ekki allt.
+Þú komst hingað."
+is	outcome.timeup.easy.pool	13	"The tide came in,
+What once had been there returned to the sea."	Sumar leiðir enda áður en þær opnast alveg.
+is	outcome.timeup.easy.pool	14	"Silence.
+Only time passed through."	"Þetta var ekki lokadómur.
+Aðeins lok þessa hlaups."
+is	outcome.timeup.easy.pool	15	"Victory and defeat 
+are nothing more than grains of sand."	"Tíminn lokaði dyrunum.
+Leiðin gleymdi þér ekki."
+is	outcome.timeup.easy.pool	16	"The road goes on—or it ends.
+Either way, it lies on the same earth."	"Reyndu aftur.
+Önnur leið gæti svarað."
+is	outcome.timeup.normal.pool	1	"The distance closed.
+Time did not."	"Tíminn rann út.
+En ferðin varð ekki að engu."
+is	outcome.timeup.normal.pool	2	"The world kept its rules.
+You touched the edge."	"Þú náðir ekki fjársjóðnum.
+En þú lærðir lögun leiðarinnar."
+is	outcome.timeup.normal.pool	3	"You didn’t make it.
+But the signal was real."	"Leiðin var lengri en stundin.
+Það gerist."
+is	outcome.timeup.normal.pool	4	"Some treasures still await.
+Let’s try a different path."	"Himinninn hélt áfram.
+Þú mátt gera það líka."
+is	outcome.timeup.normal.pool	5	"The result remained.
+The position changed."	"Ekki hver tilraun endar með gulli.
+Sumar enda með skilningi."
+is	outcome.timeup.normal.pool	6	"Time ran out.
+Meaning didn't."	"Glasið hélt birtunni.
+Jafnvel þegar tíminn brast."
+is	outcome.timeup.normal.pool	7	"So close.
+The sound said so."	"Fótsporin náðu ekki alla leið.
+Samt voru þau raunveruleg."
+is	outcome.timeup.normal.pool	8	"The map is still open.
+Come back to it."	"Það sem lokast í dag
+getur opnast á morgun."
+is	outcome.timeup.normal.pool	9	"The world’s rules stood firm.
+The signal of possibility was real."	"Heppnin kom ekki í tæka tíð.
+En reglan er enn læranleg."
+is	outcome.timeup.normal.pool	10	The world kept its rules.	"Þetta var ekki ósigur á sjálfum þér.
+Aðeins hlaup sem lauk."
+is	outcome.timeup.normal.pool	11	"The moment passed.
+The record remains."	"Þú stóðst inni í óvissunni
+lengur en áður."
+is	outcome.timeup.normal.pool	12	"The sun sank,
+and shadow covered the world once again."	"Það sem lokaðist í dag
+getur orðið kunnuglegt á morgun."
+is	outcome.timeup.normal.pool	13	"The last grains of sand fell,
+and the story quietly came to a close."	"Tíminn sigraði þessa umferð.
+Ekki allt verkið."
+is	outcome.timeup.normal.pool	14	"The wind swept through,
+and the footprints vanished without a trace."	"Leiðin svaraði ekki enn.
+En hún þagði ekki alveg."
+is	outcome.timeup.normal.pool	15	"The tide came in,
+What once had been there returned to the sea."	"Þú fórst ekki til einskis.
+Jörðin tók við skrefunum."
+is	outcome.timeup.normal.pool	16	"Silence.
+Only time passed through."	"Ekki lokið.
+Aðeins óklárað."
+is	outcome.timeup.normal.pool	17	"Victory and defeat 
+are nothing more than grains of sand."	"Stjörnurnar færðust ekki.
+En þú sást betur."
+is	outcome.timeup.normal.pool	18	"The road goes on—or it ends.
+Either way, it lies on the same earth."	"Það sem vantaði var tími.
+Ekki endilega geta."
+is	outcome.timeup.normal.pool	19	"> Time ran out.
+> 
+> Nothing else did."	"Fjársjóðurinn beið.
+Þú lærðir biðina."
+is	outcome.timeup.normal.pool	20	"> The outcome didn’t change.
+> 
+> But your position did."	"Þetta hlaup varð að korti.
+Næsta getur orðið leið."
+is	outcome.timeup.hard.pool	1	"Even the aurora fades.
+Come back with a new stride."	"Tíminn lokaði hringnum.
+Þú stóðst samt inni í honum."
+is	outcome.timeup.hard.pool	2	"In a fragile world,
+haste shatters clarity before it can be found."	"Norðrið var kalt.
+En þú hvarfst ekki."
+is	outcome.timeup.hard.pool	3	"The moment slipped away.
+The meaning did not."	"Fjársjóðurinn náðist ekki.
+Merkið sást samt."
+is	outcome.timeup.hard.pool	4	"Winter is patient.
+Be the same."	"Leiðin hélt aftur af sér.
+Þú hélst áfram."
+is	outcome.timeup.hard.pool	5	"The sky kept moving.
+So will you."	"Það sem ekki náðist
+var samt sýnilegt."
+is	outcome.timeup.hard.pool	6	"The story moves on.
+The end is not yet."	"Endirinn kom snemma.
+Merkingin ekki."
+is	outcome.timeup.hard.pool	7	"The stars were there, watching.
+Again."	"Veturinn gaf engan afslátt.
+Þú baðst ekki um hann."
+is	outcome.timeup.hard.pool	8	"Ice takes its time.
+Neither do you."	"Glerið mundi þrýstinginn.
+Jafnvel án sigurs."
+is	outcome.timeup.hard.pool	9	"The sky kept moving.
+So can you."	"Ekki allt sem lokast
+er tapað."
+is	outcome.timeup.hard.pool	10	"The north has learned to wait.
+So should you."	"Stjörnurnar þögðu.
+Þú hlustaðir samt."
+is	outcome.timeup.hard.pool	11	"This is an interlude
+—It’s not over."	"Fjarlægðin vann þessa stund.
+Ekki alla söguna."
+is	outcome.timeup.hard.pool	12	"Like drifting clouds,
+don’t lose your flow—like a river."	"Það sem ekki náðist
+varð samt sýnilegt."
+is	outcome.timeup.hard.pool	13	"The sound was near.
+The distance was real.
+But that moment can’t be saved."	"Útkoman var hörð.
+En ekki tóm."
+is	outcome.timeup.hard.pool	14	"You were closing in.
+Only time wasn’t."	"Tíminn var skemmri en leiðin.
+Það er ekki lygi."
+is	outcome.timeup.hard.pool	15	"The world held to its rules.
+You touched the edge of them."	"Þú komst ekki alla leið.
+En þú komst lengra inn."
+is	outcome.timeup.hard.pool	16	"You didn’t reach the treasure. 
+But the signal was real."	"Leiðin hafnaði þér ekki.
+Hún lauk bara fyrr."
+is	outcome.timeup.hard.pool	17	"Nothing changed.
+Only your position did."	"Skýrleikinn kom seint.
+En hann kom."
+is	outcome.timeup.hard.pool	18	"It wasn’t luck.
+Alignment."	"Það sem brast
+getur orðið form."
+is	outcome.timeup.hard.pool	19	"The moment slipped away,
+but the record stayed."	"Enginn fjársjóður í dag.
+En ekki engin merking."
+is	outcome.timeup.hard.pool	20	"You crossed fragile ground
+and left the horizon unbroken."	"Kuldinn vann augnablikið.
+Ekki heildina."
+is	outcome.timeup.hard.pool	21	"Nothing changed.
+ Only your position did.
+Not luck.
+Alignment.
+The moment passed.
+The record remains."	"Hlaupið endaði.
+Spurningin lifði áfram."
+is	outcome.timeup.hard.pool	22	"The sun sank,
+and shadow covered the world once again."	"Þú tapaðir ekki sjálfri þér.
+Þú tapaðir aðeins tíma."
+is	outcome.timeup.hard.pool	23	"The last grains of sand fell,
+and the story quietly came to a close."	"Norðurljósið birtist ekki.
+En myrkrið var lesanlegt."
+is	outcome.timeup.hard.pool	24	"The wind swept through,
+and the footprints vanished without a trace."	"Það sem stöðvaðist
+var ekki viljinn."
+is	outcome.timeup.hard.pool	25	"The tide came in,
+What once had been there returned to the sea."	"Þú fannst ekki miðjuna.
+En þú fannst jaðarinn."
+is	outcome.timeup.hard.pool	26	"Silence.
+Only time passed through."	"Stundum er harða leiðin
+fyrst og fremst mæling."
+is	outcome.timeup.hard.pool	27	"Victory and defeat 
+are nothing more than grains of sand."	"Ekki náð.
+Ekki gleymt."
+is	outcome.timeup.hard.pool	28	"The road goes on—or it ends.
+Either way, it lies on the same earth."	"Það sem beið
+bíður kannski enn."
+is	outcome.timeup.hard.pool	29	"The season closed.
+The land remained."	"Það sem brotnaði í dag
+getur orðið bygging á morgun."
+is	outcome.timeup.hard.pool	30	"The path The path remains.
+Only your steps stopped."	"Þú komst að mörkunum.
+Það er líka þekking."
+is	outcome.timeup.hard.pool	31	"Your time ran out.
+The sky didn’t."	"Enginn sigur í dag.
+En engin eyða heldur."
+is	outcome.timeup.hard.pool	32	"It wasn’t rejection.
+Only silence."	"Leiðin var köld.
+Skrefin voru sönn."
+is	outcome.timeup.hard.pool	33	"The world is still intact.
+You can return—changed."	"Það sem vantaði
+var ekki endilega hugrekki."
+is	outcome.timeup.hard.pool	34	"The season ended.
+The forest remains."	"Tíminn lokaði glugganum.
+Augnaráðið varð eftir."
+is	outcome.timeup.hard.pool	35	"The distance was closing.
+Time kept its rhythm."	"Þetta var ekki síðasta leiðin.
+Aðeins þessi leið."
+is	outcome.timeup.hard.pool	36	"Your time came to a halt.
+The sky kept moving."	"Í dag var ekki sigur.
+En heldur ekki tómleiki."
+is	outcome.timeup.hard.pool	37	"Not rejection
+Just silence."	"Fjársjóðurinn þagði.
+Leiðin talaði."
+is	outcome.timeup.hard.pool	38	"The path is still here.
+You can come back—changed."	"Þú komst ekki þangað.
+En þú komst nær því að skilja."
