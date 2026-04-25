@@ -1,0 +1,327 @@
+lang	pool	index	translation
+fi	outcome.success.easy.pool	1	"Pääsit perille.
+Totuus jää."
+fi	outcome.success.easy.pool	2	"Vaikka se oli vain pieni askel,
+pysyit silti paikallasi."
+fi	outcome.success.easy.pool	3	"Kuuntelit.
+Ja tie avautui."
+fi	outcome.success.easy.pool	4	"> Pääsit tänne asti.
+>
+> Säännöt olivat yksinkertaiset —
+>
+> valinta oli sinun."
+fi	outcome.success.easy.pool	5	"> Etäisyys sai merkityksen.
+>
+> Ja aika vastasi askeliisi."
+fi	outcome.success.easy.pool	6	"> Kaikki valo ei loista ikuisesti.
+>
+> Mutta tämä hetki loisti."
+fi	outcome.success.easy.pool	7	"Valo laskeutui hiljaa,
+ja kaikki varjot väistyivät."
+fi	outcome.success.easy.pool	8	"Tuuli vaikeni.
+Kaikki palasi omalle paikalleen."
+fi	outcome.success.easy.pool	9	"Hiljainen hetki.
+Maailma löysi jälleen hengityksensä."
+fi	outcome.success.easy.pool	10	"Jälki painui syvälle hiekkaan —
+sinne, minne tuuli ei enää yllä."
+fi	outcome.success.easy.pool	11	"Tasapaino palautui.
+Kaikki oli kulkenut kohti tätä hetkeä."
+fi	outcome.success.easy.pool	12	"Aika lipui ohi hiljaa,
+muiston nurkkaan talletettuna."
+fi	outcome.success.easy.pool	13	"Taivas vaihtoi väriä,
+ja yksi tarina tuli päätökseensä."
+fi	outcome.success.easy.pool	14	"Aallot tyyntyivät,
+ja meri kätki syvyytensä jälleen."
+fi	outcome.success.easy.pool	15	"Askeleet pysähtyivät,
+ja vain paikka jäi jäljelle."
+fi	outcome.success.easy.pool	16	"Voitto ja tappio —
+lopulta ne ovat vain hiekanjyviä."
+fi	outcome.success.easy.pool	17	"Tie jatkuu — tai päättyy tähän.
+Kummallakin tavalla se lepää samalla maalla."
+fi	outcome.success.normal.pool	1	"Etäisyys löysi viimein merkityksensä.
+Aika vastasi matkaasi."
+fi	outcome.success.normal.pool	2	"Aika päättyi.
+Mutta kaikki ei päättynyt."
+fi	outcome.success.normal.pool	3	"Akseli löytyi.
+Maailma pidätti liikkeensä."
+fi	outcome.success.normal.pool	4	"Lasi pidätti hengitystään,
+ja sinä pidit paikkasi."
+fi	outcome.success.normal.pool	5	"Liikkumattoman taivaan alla
+mielesi ei horjunut."
+fi	outcome.success.normal.pool	6	"Harva asia loistaa ikuisesti.
+Mutta tämä hetki oli kirkas."
+fi	outcome.success.normal.pool	7	"Kuljit hauraan maan yli
+katsettasi kadottamatta."
+fi	outcome.success.normal.pool	8	"Hetki meni ohi.
+Se mikä jäi, pysyy."
+fi	outcome.success.normal.pool	9	"Onni kuihtuu nopeasti.
+Järjestys pysyy."
+fi	outcome.success.normal.pool	10	"Taivas ei tunne taukoa loputtomassa kehässään,
+etkä sinäkään pysähtynyt."
+fi	outcome.success.normal.pool	11	"Saavutit keskuksen.
+Maailma pysähtyi."
+fi	outcome.success.normal.pool	12	"Viimein olet tässä.
+Totuus pysyy lujana."
+fi	outcome.success.normal.pool	13	"Kuljit loppuun asti.
+Muista: tämän tien valitsit sinä, ei kukaan muu."
+fi	outcome.success.normal.pool	14	"Aika valui hiljaisuuteen
+ja löysi paikkansa muistin syvyydestä."
+fi	outcome.success.normal.pool	15	"Kun taivas vaihtoi väriään,
+tarina löysi päätöksensä."
+fi	outcome.success.normal.pool	16	"Vedet tyyntyivät,
+ja taivas peitti syvyytensä jälleen."
+fi	outcome.success.normal.pool	17	"Askeleet vaikenivat,
+ja vain paikka jäi jäljelle."
+fi	outcome.success.normal.pool	18	"Valo laskeutui hiljaa,
+ja kaikki varjot väistyivät."
+fi	outcome.success.normal.pool	19	"Tuuli vaikeni.
+Kaikki palasi omalle paikalleen."
+fi	outcome.success.normal.pool	20	"Hiljainen hetki.
+Maailma löysi jälleen hengityksensä."
+fi	outcome.success.normal.pool	21	"Jälki painui syvälle hiekkaan —
+sinne, minne tuuli ei enää yllä."
+fi	outcome.success.normal.pool	22	"Tasapaino palautui.
+Kaikki oli kulkenut kohti tätä hetkeä."
+fi	outcome.success.normal.pool	23	"Juoksu on suoritettu.
+Selvä. Löydetty.
+Se riittää."
+fi	outcome.success.normal.pool	24	"Juoksu on suoritettu.
+Tie kesti.
+Niin kestit sinäkin."
+fi	outcome.success.normal.pool	25	"Taivas jatkoi liikettään.
+Niin voit sinäkin."
+fi	outcome.success.normal.pool	26	"Juoksu on suoritettu.
+Hiljainen tulos.
+Todellisen työn paino."
+fi	outcome.success.normal.pool	27	"Kuljit vain sitä polkua,
+jonka maailma oli levittänyt eteesi."
+fi	outcome.success.normal.pool	28	"Maa ei antanut periksi.
+Se luotti askeliisi."
+fi	outcome.success.normal.pool	29	"Tämä hetki asettui samaan tahtiin
+tähtien ikivanhan rytmin kanssa."
+fi	outcome.success.normal.pool	30	"Et ottanut mitään.
+Ymmärsit jotakin."
+fi	outcome.success.normal.pool	31	"Et voittanut mitään omaksesi.
+Näit vain totuuden sellaisena kuin se oli."
+fi	outcome.success.normal.pool	32	"Et vallannut tätä paikkaa.
+Kuuluit tänne."
+fi	outcome.success.normal.pool	33	"Kuljit tietä,
+joka on muistoakin vanhempi."
+fi	outcome.success.normal.pool	34	"Maa ei vastustanut.
+Se tunnisti sinut."
+fi	outcome.success.normal.pool	35	"Tämä hetki asettui samaan hiljaisuuteen
+tähtien kanssa."
+fi	outcome.success.hard.pool	1	"Pohjoistuulessa
+kirkkaus kestää nopeutta kauemmin."
+fi	outcome.success.hard.pool	2	"Keskus löytyi.
+Maailma lepäsi."
+fi	outcome.success.hard.pool	3	"Tähdet vaikenevat.
+Jälkesi puhuu puolestasi."
+fi	outcome.success.hard.pool	4	"Tulos pysyi.
+Sijainti muuttui."
+fi	outcome.success.hard.pool	5	"Jään ja lasin välissä
+valitsit hallinnan."
+fi	outcome.success.hard.pool	6	"Aallot vaikenivat,
+ja meri otti takaisin kätketyt syvyytensä."
+fi	outcome.success.hard.pool	7	"Joitakin aarteita odottaa vielä.
+Ensi kerralla toinen polku."
+fi	outcome.success.hard.pool	8	"Taivas ei muuttunut.
+Sinä muutit."
+fi	outcome.success.hard.pool	9	"Hetki meni ohi.
+Jäljelle jäi järjestys."
+fi	outcome.success.hard.pool	10	"Talvi on rehellinen.
+Niin oli juoksusikin."
+fi	outcome.success.hard.pool	11	"Tähdet asettuivat kohdalleen hetkeksi.
+Sinä huomasit sen."
+fi	outcome.success.hard.pool	12	"Etäisyys sulkeutui.
+Aika ei."
+fi	outcome.success.hard.pool	13	"Maailman säännöt pysyivät lujina.
+Ja mahdollisuuden merkki oli todellinen."
+fi	outcome.success.hard.pool	14	"Tie sulkeutui hiljaa.
+Olit jo päässyt sen läpi."
+fi	outcome.success.hard.pool	15	"Mikään ei muuttunut.
+Vain paikkasi muuttui."
+fi	outcome.success.hard.pool	16	"Et saanut kaikkea.
+Mutta mikään ei mennyt hukkaan."
+fi	outcome.success.hard.pool	17	"Hetki meni ohi.
+Jälki jää."
+fi	outcome.success.hard.pool	18	"Lopputulos ei muuttunut.
+Silti kuljit eteenpäin."
+fi	outcome.success.hard.pool	19	"Tulos ei muuttunut.
+Mutta saavutit uuden tason."
+fi	outcome.success.hard.pool	20	"Päätepiste oli sama.
+Mutta sinne päässyt kulkija oli muuttunut."
+fi	outcome.success.hard.pool	21	"Määränpää on sama —
+mutta et ole enää se sama kulkija."
+fi	outcome.success.hard.pool	22	"Valo laskeutui hiljaa,
+ja kaikki varjot väistyivät."
+fi	outcome.success.hard.pool	23	"Tuuli vaikeni.
+Kaikki palasi omalle paikalleen."
+fi	outcome.success.hard.pool	24	"Hiljainen hetki.
+Maailma löysi jälleen hengityksensä."
+fi	outcome.success.hard.pool	25	"Jälki painui syvälle hiekkaan —
+sinne, minne tuuli ei enää yllä."
+fi	outcome.success.hard.pool	26	"Tasapaino palautui.
+Kaikki oli kulkenut kohti tätä hetkeä."
+fi	outcome.success.hard.pool	27	"Aika lipui ohi hiljaa,
+muiston nurkkaan talletettuna."
+fi	outcome.success.hard.pool	28	"Taivas vaihtoi väriä,
+ja yksi tarina tuli päätökseensä."
+fi	outcome.success.hard.pool	29	"Aallot tyyntyivät,
+ja meri kätki syvyytensä jälleen."
+fi	outcome.success.hard.pool	30	"Askeleet pysähtyivät,
+ja vain paikka jäi jäljelle."
+fi	outcome.success.hard.pool	31	"Voitto ja tappio —
+lopulta ne ovat vain hiekanjyviä."
+fi	outcome.success.hard.pool	32	"Tie jatkuu — tai päättyy tähän.
+Kummallakin tavalla se lepää samalla maalla."
+fi	outcome.timeup.easy.pool	1	"Aika loppui.
+Mikään muu ei."
+fi	outcome.timeup.easy.pool	2	"Aarre voi odottaa.
+Niin voit sinäkin."
+fi	outcome.timeup.easy.pool	3	"Tämä oli alku,
+ei tuomio."
+fi	outcome.timeup.easy.pool	4	"Tässä kaikki tältä erää.
+Seuraavaan askeleeseen."
+fi	outcome.timeup.easy.pool	5	"Olet yhä tässä.
+Sillä on merkitystä."
+fi	outcome.timeup.easy.pool	6	"Juoksu päättyi.
+Sinä et."
+fi	outcome.timeup.easy.pool	7	"AIKA LOPPUI.
+Juoksu päättyi.
+Sinä et."
+fi	outcome.timeup.easy.pool	8	"AIKA LOPPUI.
+Säännöt eivät muutu.
+Uudelleen."
+fi	outcome.timeup.easy.pool	9	"AIKA LOPPUI.
+“Melkein” on sekin totta."
+fi	outcome.timeup.easy.pool	10	"Aurinko painui alas,
+ja varjo peitti maailman jälleen."
+fi	outcome.timeup.easy.pool	11	"Viimeiset hiekanjyvät putosivat,
+ja tarina sulkeutui hiljaa."
+fi	outcome.timeup.easy.pool	12	"Tuuli pyyhkäisi läpi,
+ja jalanjäljet katosivat jäljettömiin."
+fi	outcome.timeup.easy.pool	13	"Nousuvesi saapui,
+ja se mikä oli ollut siinä, palasi mereen."
+fi	outcome.timeup.easy.pool	14	"Hiljaisuus.
+Vain aika kulki läpi."
+fi	outcome.timeup.easy.pool	15	"Voitto ja tappio —
+lopulta ne ovat vain hiekanjyviä."
+fi	outcome.timeup.easy.pool	16	"Tie jatkuu — tai päättyy tähän.
+Kummallakin tavalla se lepää samalla maalla."
+fi	outcome.timeup.normal.pool	1	"Etäisyys sulkeutui.
+Aika ei."
+fi	outcome.timeup.normal.pool	2	"Maailma piti sääntönsä.
+Sinä kosketit reunaa."
+fi	outcome.timeup.normal.pool	3	"Et ehtinyt perille.
+Mutta merkki oli todellinen."
+fi	outcome.timeup.normal.pool	4	"Joitakin aarteita odottaa vielä.
+Kokeillaan seuraavaksi toista polkua."
+fi	outcome.timeup.normal.pool	5	"Tulos pysyi.
+Sijainti muuttui."
+fi	outcome.timeup.normal.pool	6	"Jään ja lasin välissä
+opit hallinnan."
+fi	outcome.timeup.normal.pool	7	"Ovi ei sulkeutunut.
+Aika vain ehti ensin."
+fi	outcome.timeup.normal.pool	8	"Pohjoistuuli ei tuomitse.
+Se vain mittaa."
+fi	outcome.timeup.normal.pool	9	"Jäljelle jäi järjestys.
+Ja mahdollisuus palata."
+fi	outcome.timeup.normal.pool	10	"Juoksu pysähtyi,
+mutta suunta jäi eloon."
+fi	outcome.timeup.normal.pool	11	"Taivas ei kiirehtinyt.
+Ei sinunkaan tarvitse kadota."
+fi	outcome.timeup.normal.pool	12	"Tämä ei ollut loppu.
+Se oli mitta."
+fi	outcome.timeup.normal.pool	13	"Aika sanoi ei.
+Matka ei."
+fi	outcome.timeup.normal.pool	14	"Et menettänyt tietä.
+Se vain odottaa hiljaa."
+fi	outcome.timeup.normal.pool	15	"Viimeinen askel jäi vielä ottamatta.
+Siksi seuraava on olemassa."
+fi	outcome.timeup.normal.pool	16	"Varjo palasi,
+mutta silmäsi olivat jo nähneet valon."
+fi	outcome.timeup.normal.pool	17	"Aarre pysyi paikallaan.
+Sinä pääsit lähemmäs."
+fi	outcome.timeup.normal.pool	18	"Säännöt olivat ankarat.
+Yritys oli todellinen."
+fi	outcome.timeup.normal.pool	19	"Et saavuttanut kaikkea.
+Mutta et tullut tyhjin käsin."
+fi	outcome.timeup.normal.pool	20	"Hiljaisuus laskeutui.
+Tie jäi näkyviin."
+fi	outcome.timeup.hard.pool	1	"Aika loppui pohjoistuulessa.
+Mutta suuntasi ei kadonnut."
+fi	outcome.timeup.hard.pool	2	"Jää ei murtunut.
+Se vain odotti seuraavaa askelta."
+fi	outcome.timeup.hard.pool	3	"Et ehtinyt perille.
+Silti mitta oli todellinen."
+fi	outcome.timeup.hard.pool	4	"Maailma pysyi kylmänä.
+Sinä pysyit liikkeessä."
+fi	outcome.timeup.hard.pool	5	"Tulosta ei annettu.
+Mutta jälki jäi."
+fi	outcome.timeup.hard.pool	6	"Tie vaati enemmän aikaa
+kuin tällä kertaa oli jäljellä."
+fi	outcome.timeup.hard.pool	7	"Tähdet eivät vastanneet.
+Ne vain katsoivat."
+fi	outcome.timeup.hard.pool	8	"Etäisyys jäi auki.
+Se tarkoittaa, että polku on yhä olemassa."
+fi	outcome.timeup.hard.pool	9	"Kylmä ei valehtele.
+Tänään se vain mittasi sinut."
+fi	outcome.timeup.hard.pool	10	"Aarre jäi odottamaan.
+Se ei kadonnut."
+fi	outcome.timeup.hard.pool	11	"Taivas ei muuttunut.
+Mutta jokin sinussa liikahti."
+fi	outcome.timeup.hard.pool	12	"Juoksu pysähtyi.
+Harjoitus jäi elämään."
+fi	outcome.timeup.hard.pool	13	"Ei voittoa.
+Mutta ei tyhjyyttäkään."
+fi	outcome.timeup.hard.pool	14	"Aika sulki portin.
+Se ei poistanut tietä."
+fi	outcome.timeup.hard.pool	15	"Pohjoinen pysyi vaiti.
+Askeleesi eivät."
+fi	outcome.timeup.hard.pool	16	"Lasi säilyi kylmänä.
+Yrityksesi säilyi todellisena."
+fi	outcome.timeup.hard.pool	17	"Tämä ei ollut epäonnistuminen.
+Se oli kartta."
+fi	outcome.timeup.hard.pool	18	"Maailman säännöt pysyivät lujina.
+Siksi seuraava yritys merkitsee jotakin."
+fi	outcome.timeup.hard.pool	19	"Aika päättyi.
+Kokemus jäi."
+fi	outcome.timeup.hard.pool	20	"Et ylittänyt rajaa.
+Mutta löysit sen."
+fi	outcome.timeup.hard.pool	21	"Jää sulki näkymän.
+Muisti ei."
+fi	outcome.timeup.hard.pool	22	"Tulos jäi saamatta.
+Suunnan taju jäi."
+fi	outcome.timeup.hard.pool	23	"Se ei ollut voitto.
+Se oli mitta."
+fi	outcome.timeup.hard.pool	24	"Tie päättyi tältä erää.
+Matka ei."
+fi	outcome.timeup.hard.pool	25	"Kylmä ilma sanoi: ei vielä.
+Ei: ei koskaan."
+fi	outcome.timeup.hard.pool	26	"Tähdet pysyivät kaukana.
+Silti kuljit niiden alla."
+fi	outcome.timeup.hard.pool	27	"Lopetus oli hiljainen.
+Merkitys ei ollut."
+fi	outcome.timeup.hard.pool	28	"Aika otti viimeisen sanan.
+Sinulle jäi seuraava askel."
+fi	outcome.timeup.hard.pool	29	"Tänään et saanut kaikkea.
+Mutta sait rajasi näkyviin."
+fi	outcome.timeup.hard.pool	30	"Tuuli pyyhki jäljet.
+Ei yritystä."
+fi	outcome.timeup.hard.pool	31	"Maailma ei taipunut.
+Sinä opit lukemaan sitä."
+fi	outcome.timeup.hard.pool	32	"Pohjoisen alla
+pienikin askel on totta."
+fi	outcome.timeup.hard.pool	33	"Lasi, jää ja hiljaisuus —
+kaikki muistavat liikkeen."
+fi	outcome.timeup.hard.pool	34	"Et löytänyt oikotietä.
+Löysit työn."
+fi	outcome.timeup.hard.pool	35	"Hetki sulkeutui.
+Mahdollisuus jäi raolleen."
+fi	outcome.timeup.hard.pool	36	"Aika ei riittänyt.
+Sinä riitit aloittamaan."
+fi	outcome.timeup.hard.pool	37	"Oikotietä ei ollut.
+Vain oppimista."
+fi	outcome.timeup.hard.pool	38	"Tie on ankara.
+Siksi paluu merkitsee jotakin."

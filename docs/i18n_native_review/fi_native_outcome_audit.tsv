@@ -1,0 +1,27 @@
+lang	pool	kind	meta	value
+fi	outcome.success.easy.pool	COUNT	17	17
+fi	outcome.success.easy.pool	FINNISH_HINT_MISSING	2	"Vaikka se oli vain pieni askel,
+pysyit silti paikallasi."
+fi	outcome.success.normal.pool	COUNT	35	35
+fi	outcome.success.normal.pool	FINNISH_HINT_MISSING	5	"Liikkumattoman taivaan alla
+mielesi ei horjunut."
+fi	outcome.success.normal.pool	FINNISH_HINT_MISSING	7	"Kuljit hauraan maan yli
+katsettasi kadottamatta."
+fi	outcome.success.hard.pool	COUNT	32	32
+fi	outcome.success.hard.pool	FINNISH_HINT_MISSING	4	"Tulos pysyi.
+Sijainti muuttui."
+fi	outcome.success.hard.pool	FINNISH_HINT_MISSING	10	"Talvi on rehellinen.
+Niin oli juoksusikin."
+fi	outcome.timeup.easy.pool	COUNT	16	16
+fi	outcome.timeup.normal.pool	COUNT	20	20
+fi	outcome.timeup.normal.pool	FINNISH_HINT_MISSING	5	"Tulos pysyi.
+Sijainti muuttui."
+fi	outcome.timeup.normal.pool	FINNISH_HINT_MISSING	8	"Pohjoistuuli ei tuomitse.
+Se vain mittaa."
+fi	outcome.timeup.hard.pool	COUNT	38	38
+fi	outcome.timeup.hard.pool	FINNISH_HINT_MISSING	3	"Et ehtinyt perille.
+Silti mitta oli todellinen."
+fi	outcome.timeup.hard.pool	FINNISH_HINT_MISSING	27	"Lopetus oli hiljainen.
+Merkitys ei ollut."
+fi	outcome.timeup.hard.pool	FINNISH_HINT_MISSING	32	"Pohjoisen alla
+pienikin askel on totta."

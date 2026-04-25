@@ -1,474 +1,517 @@
 outcome:
   notice:
-    timeUpGameOver: 'Aika loppui. Peli päättyi.'
-    retryGuide: 'Yritä uudelleen toista reittiä pitkin.'
+    timeUpGameOver: Aika loppui. Peli päättyi.
+    retryGuide: Yritä uudelleen toista reittiä pitkin.
   success:
     common:
       pool: []
     easy:
       pool:
-      - 'You’ve made it.
+      - 'Pääsit perille.
 
-        The truth remains.'
-      - 'Even if it was only a small step,
+        Totuus jää.'
+      - 'Vaikka se oli vain pieni askel,
 
-        you held your ground.'
-      - "You listened.\n The path opened."
-      - "> You made it here\n> \n> The rules were simple —\n> \n> the choice was yours."
-      - "> Distance became meaning.\n> \n> and time answered your footsteps."
-      - "> Not everything shines forever.\n> \n> But this moment did."
-      - 'Light fell evenly, ,
+        pysyit silti paikallasi.'
+      - 'Kuuntelit.
 
-        and every shadow vanished.'
-      - 'The wind fell silent.
+        Ja tie avautui.'
+      - '> Pääsit tänne asti.
 
-        and everything returned to where it belonged.'
-      - 'A moment of silence.
+        >
 
-        The world steadied its breath.'
-      - 'The record is etched deep in the sand—
+        > Säännöt olivat yksinkertaiset —
 
-        beyond the reach of the wind.'
-      - 'Harmony was restored.
+        >
 
-        Everything had been for this moment.'
-      - 'Time slipped by in silence,
+        > valinta oli sinun.'
+      - '> Etäisyys sai merkityksen.
 
-        tucked away in the corners of memory.'
-      - 'The sky shifted in color,
+        >
 
-        and one story came to its end.'
-      - 'The waves grew calm,
+        > Ja aika vastasi askeliisi.'
+      - '> Kaikki valo ei loista ikuisesti.
 
-        and the sea hid its depths once more.'
-      - 'The footsteps stopped,
+        >
 
-        and only the place remained.'
-      - "Victory and defeat \nare nothing more than grains of sand."
-      - 'The road goes on—or it ends.
+        > Mutta tämä hetki loisti.'
+      - 'Valo laskeutui hiljaa,
 
-        Either way, it lies on the same earth.'
+        ja kaikki varjot väistyivät.'
+      - 'Tuuli vaikeni.
+
+        Kaikki palasi omalle paikalleen.'
+      - 'Hiljainen hetki.
+
+        Maailma löysi jälleen hengityksensä.'
+      - 'Jälki painui syvälle hiekkaan —
+
+        sinne, minne tuuli ei enää yllä.'
+      - 'Tasapaino palautui.
+
+        Kaikki oli kulkenut kohti tätä hetkeä.'
+      - 'Aika lipui ohi hiljaa,
+
+        muiston nurkkaan talletettuna.'
+      - 'Taivas vaihtoi väriä,
+
+        ja yksi tarina tuli päätökseensä.'
+      - 'Aallot tyyntyivät,
+
+        ja meri kätki syvyytensä jälleen.'
+      - 'Askeleet pysähtyivät,
+
+        ja vain paikka jäi jäljelle.'
+      - 'Voitto ja tappio —
+
+        lopulta ne ovat vain hiekanjyviä.'
+      - 'Tie jatkuu — tai päättyy tähän.
+
+        Kummallakin tavalla se lepää samalla maalla.'
     normal:
       pool:
-      - 'The distance has found its meaning.
+      - 'Etäisyys löysi viimein merkityksensä.
 
-        Time has rewarded your journey.'
-      - 'The time is up.
+        Aika vastasi matkaasi.'
+      - 'Aika päättyi.
 
-        but the rest is far from over.'
-      - 'The axis is found.
+        Mutta kaikki ei päättynyt.'
+      - 'Akseli löytyi.
 
-        the world has cased its motion.'
-      - 'The glass held its breath,
+        Maailma pidätti liikkeensä.'
+      - 'Lasi pidätti hengitystään,
 
-        and you held your ground.'
-      - 'Under the stillness of the sky,
+        ja sinä pidit paikkasi.'
+      - 'Liikkumattoman taivaan alla
 
-        your spirit did not waver.'
-      - 'Few things shine forever.
+        mielesi ei horjunut.'
+      - 'Harva asia loistaa ikuisesti.
 
-        but this moment was radiant.'
-      - 'You traversed the fragile earth,
+        Mutta tämä hetki oli kirkas.'
+      - 'Kuljit hauraan maan yli
 
-        without losing the view.'
-      - 'The moment has passed.
+        katsettasi kadottamatta.'
+      - 'Hetki meni ohi.
 
-        The legacy remains.'
-      - 'Luck fades fast.
+        Se mikä jäi, pysyy.'
+      - 'Onni kuihtuu nopeasti.
 
-        order endures.'
-      - 'The sky knows no pause in endless circle,
+        Järjestys pysyy.'
+      - 'Taivas ei tunne taukoa loputtomassa kehässään,
 
-        nor shall you find yours.'
-      - 'The center has been reached.
+        etkä sinäkään pysähtynyt.'
+      - 'Saavutit keskuksen.
 
-        The world stood still.'
-      - 'Finally here.
+        Maailma pysähtyi.'
+      - 'Viimein olet tässä.
 
-        The truth remains unyielding.'
-      - 'You have seen it through.
+        Totuus pysyy lujana.'
+      - 'Kuljit loppuun asti.
 
-        And mark this: it was you, and no one else, who chose this path.'
-      - 'Time drifted into silence,
+        Muista: tämän tien valitsit sinä, ei kukaan muu.'
+      - 'Aika valui hiljaisuuteen
 
-        finding its place in the recesses of the mind.'
-      - 'As the sky transformed,
+        ja löysi paikkansa muistin syvyydestä.'
+      - 'Kun taivas vaihtoi väriään,
 
-        the tale found its final resolved.'
-      - 'The waters fell calm,
+        tarina löysi päätöksensä.'
+      - 'Vedet tyyntyivät,
 
-        and the sky once more veiled its abyss.'
-      - 'The footsteps ceased,
+        ja taivas peitti syvyytensä jälleen.'
+      - 'Askeleet vaikenivat,
 
-        only the place remained.'
-      - 'Light fell evenly, ,
+        ja vain paikka jäi jäljelle.'
+      - 'Valo laskeutui hiljaa,
 
-        and every shadow vanished.'
-      - 'The wind fell silent.
+        ja kaikki varjot väistyivät.'
+      - 'Tuuli vaikeni.
 
-        and everything returned to where it belonged.'
-      - 'A moment of silence.
+        Kaikki palasi omalle paikalleen.'
+      - 'Hiljainen hetki.
 
-        The world steadied its breath.'
-      - 'The record is etched deep in the sand—
+        Maailma löysi jälleen hengityksensä.'
+      - 'Jälki painui syvälle hiekkaan —
 
-        beyond the reach of the wind.'
-      - 'Harmony was restored.
+        sinne, minne tuuli ei enää yllä.'
+      - 'Tasapaino palautui.
 
-        Everything had been for this moment.'
-      - 'RUN COMPLETE.
+        Kaikki oli kulkenut kohti tätä hetkeä.'
+      - 'Juoksu on suoritettu.
 
-        Clear. Found it.
+        Selvä. Löydetty.
 
-        That''s enough.'
-      - 'RUN COMPLETE.
+        Se riittää.'
+      - 'Juoksu on suoritettu.
 
-        The path held.
+        Tie kesti.
 
-        So did you.'
-      - 'The sky has kept moving.
+        Niin kestit sinäkin.'
+      - 'Taivas jatkoi liikettään.
 
-        So can you.'
-      - 'RUN COMPLETE.
+        Niin voit sinäkin.'
+      - 'Juoksu on suoritettu.
 
-        A quiet result.
+        Hiljainen tulos.
 
-        The weight of real work.'
-      - 'You only walked the path
+        Todellisen työn paino.'
+      - 'Kuljit vain sitä polkua,
 
-        the world had laid out for you.'
-      - 'The ground didn’t give way.
+        jonka maailma oli levittänyt eteesi.'
+      - 'Maa ei antanut periksi.
 
-        It trusted your steps.'
-      - 'This moment aligned
+        Se luotti askeliisi.'
+      - 'Tämä hetki asettui samaan tahtiin
 
-        with the stars’ ancient rhythm.'
-      - "You didn’t take anything.\n You understood something."
-      - 'You didn’t gain a thing.
+        tähtien ikivanhan rytmin kanssa.'
+      - 'Et ottanut mitään.
 
-        You only saw the truth for what it was.'
-      - 'You didn’t take this place.
+        Ymmärsit jotakin.'
+      - 'Et voittanut mitään omaksesi.
 
-        You belonged here.'
-      - 'You walked a road
+        Näit vain totuuden sellaisena kuin se oli.'
+      - 'Et vallannut tätä paikkaa.
 
-        older than memory itself.'
-      - 'The earth did not resist.
+        Kuuluit tänne.'
+      - 'Kuljit tietä,
 
-        It recognized you.'
-      - "This moment aligned\n with the stillness of the stars."
+        joka on muistoakin vanhempi.'
+      - 'Maa ei vastustanut.
+
+        Se tunnisti sinut.'
+      - 'Tämä hetki asettui samaan hiljaisuuteen
+
+        tähtien kanssa.'
     hard:
       pool:
-      - 'In the north wind,
+      - 'Pohjoistuulessa
 
-        clarity outlasts speed.'
-      - "The center was found.\n The world came to rest."
-      - 'The stars stay silent.
+        kirkkaus kestää nopeutta kauemmin.'
+      - 'Keskus löytyi.
 
-        Your record does the speaking.'
-      - 'The result  remained.
+        Maailma lepäsi.'
+      - 'Tähdet vaikenevat.
 
-        The position changed.'
-      - 'Between ice and glass,
+        Jälkesi puhuu puolestasi.'
+      - 'Tulos pysyi.
 
-        you chose control.'
-      - 'The waves fell quiet,
+        Sijainti muuttui.'
+      - 'Jään ja lasin välissä
 
-        and the sea reclaimed its hidden depths.'
-      - 'Some treasures still await.
+        valitsit hallinnan.'
+      - 'Aallot vaikenivat,
 
-        Next time, a different path.'
-      - 'The sky didn’t change.
+        ja meri otti takaisin kätketyt syvyytensä.'
+      - 'Joitakin aarteita odottaa vielä.
 
-        You did.'
-      - 'The moment passed.
+        Ensi kerralla toinen polku.'
+      - 'Taivas ei muuttunut.
 
-        What remained was order.'
-      - 'Winter is honest.
+        Sinä muutit.'
+      - 'Hetki meni ohi.
 
-        So was your run.'
-      - 'The stars aligned for a moment.
+        Jäljelle jäi järjestys.'
+      - 'Talvi on rehellinen.
 
-        You noticed.'
-      - 'The distance closed.
+        Niin oli juoksusikin.'
+      - 'Tähdet asettuivat kohdalleen hetkeksi.
 
-        Time did not.'
-      - "The world’s rules stood firm.\n And the signal of possibility was real."
-      - 'The path closed quietly.
+        Sinä huomasit sen.'
+      - 'Etäisyys sulkeutui.
 
-        You were already through.'
-      - 'Nothing changed.
+        Aika ei.'
+      - 'Maailman säännöt pysyivät lujina.
 
-        Only your position did.'
-      - 'Not luck.
+        Ja mahdollisuuden merkki oli todellinen.'
+      - 'Tie sulkeutui hiljaa.
 
-        Alignment.'
-      - 'The moment passed.
+        Olit jo päässyt sen läpi.'
+      - 'Mikään ei muuttunut.
 
-        The record remains.'
-      - 'The outcome didn’t change.
+        Vain paikkasi muuttui.'
+      - 'Et saanut kaikkea.
 
-        Still, you moved forward.'
-      - 'The output didn’t change.
+        Mutta mikään ei mennyt hukkaan.'
+      - 'Hetki meni ohi.
 
-        But you reached a new level.'
-      - 'The ending was the same.
+        Jälki jää.'
+      - 'Lopputulos ei muuttunut.
 
-        But the one who reached it had changed.'
-      - 'The destination is the same
+        Silti kuljit eteenpäin.'
+      - 'Tulos ei muuttunut.
 
-        —but you’re no longer the traveler you once were.'
-      - 'Light fell evenly, ,
+        Mutta saavutit uuden tason.'
+      - 'Päätepiste oli sama.
 
-        and every shadow vanished.'
-      - 'The wind fell silent.
+        Mutta sinne päässyt kulkija oli muuttunut.'
+      - 'Määränpää on sama —
 
-        and everything returned to where it belonged.'
-      - 'A moment of silence.
+        mutta et ole enää se sama kulkija.'
+      - 'Valo laskeutui hiljaa,
 
-        The world steadied its breath.'
-      - 'The record is etched deep in the sand—
+        ja kaikki varjot väistyivät.'
+      - 'Tuuli vaikeni.
 
-        beyond the reach of the wind.'
-      - 'Harmony was restored.
+        Kaikki palasi omalle paikalleen.'
+      - 'Hiljainen hetki.
 
-        Everything had been for this moment.'
-      - 'Time slipped by in silence,
+        Maailma löysi jälleen hengityksensä.'
+      - 'Jälki painui syvälle hiekkaan —
 
-        tucked away in the corners of memory.'
-      - 'The sky shifted in color,
+        sinne, minne tuuli ei enää yllä.'
+      - 'Tasapaino palautui.
 
-        and one story came to its end.'
-      - 'The waves grew calm,
+        Kaikki oli kulkenut kohti tätä hetkeä.'
+      - 'Aika lipui ohi hiljaa,
 
-        and the sea hid its depths once more.'
-      - 'The footsteps stopped,
+        muiston nurkkaan talletettuna.'
+      - 'Taivas vaihtoi väriä,
 
-        and only the place remained.'
-      - "Victory and defeat \nare nothing more than grains of sand."
-      - 'The road goes on—or it ends.
+        ja yksi tarina tuli päätökseensä.'
+      - 'Aallot tyyntyivät,
 
-        Either way, it lies on the same earth.'
+        ja meri kätki syvyytensä jälleen.'
+      - 'Askeleet pysähtyivät,
+
+        ja vain paikka jäi jäljelle.'
+      - 'Voitto ja tappio —
+
+        lopulta ne ovat vain hiekanjyviä.'
+      - 'Tie jatkuu — tai päättyy tähän.
+
+        Kummallakin tavalla se lepää samalla maalla.'
   timeup:
     easy:
       pool:
-      - 'Time ran out.
+      - 'Aika loppui.
 
-        Nothing else did.'
-      - 'The treasure can wait.
+        Mikään muu ei.'
+      - 'Aarre voi odottaa.
 
-        So can you.'
-      - 'Breathe in.
+        Niin voit sinäkin.'
+      - 'Tämä oli alku,
 
-        Then again.'
-      - 'That’s all for now.
+        ei tuomio.'
+      - 'Tässä kaikki tältä erää.
 
-        On to the next step.'
-      - 'You''re still here.
+        Seuraavaan askeleeseen.'
+      - 'Olet yhä tässä.
 
-        That’s what matters.'
-      - 'The run ended.
+        Sillä on merkitystä.'
+      - 'Juoksu päättyi.
 
-        You didn’t.'
-      - 'TIME''S UP.
+        Sinä et.'
+      - 'AIKA LOPPUI.
 
-        The run ended.
+        Juoksu päättyi.
 
-        You didn''t.'
-      - 'TIME''S UP.
+        Sinä et.'
+      - 'AIKA LOPPUI.
 
-        The rules don’t change.
+        Säännöt eivät muutu.
 
-        Again.'
-      - 'TIME''S UP.
+        Uudelleen.'
+      - 'AIKA LOPPUI.
 
-        “So close” is real.'
-      - 'The sun sank,
+        “Melkein” on sekin totta.'
+      - 'Aurinko painui alas,
 
-        and shadow covered the world once again.'
-      - 'The last grains of sand fell,
+        ja varjo peitti maailman jälleen.'
+      - 'Viimeiset hiekanjyvät putosivat,
 
-        and the story quietly came to a close.'
-      - 'The wind swept through,
+        ja tarina sulkeutui hiljaa.'
+      - 'Tuuli pyyhkäisi läpi,
 
-        and the footprints vanished without a trace.'
-      - 'The tide came in,
+        ja jalanjäljet katosivat jäljettömiin.'
+      - 'Nousuvesi saapui,
 
-        What once had been there returned to the sea.'
-      - 'Silence.
+        ja se mikä oli ollut siinä, palasi mereen.'
+      - 'Hiljaisuus.
 
-        Only time passed through.'
-      - "Victory and defeat \nare nothing more than grains of sand."
-      - 'The road goes on—or it ends.
+        Vain aika kulki läpi.'
+      - 'Voitto ja tappio —
 
-        Either way, it lies on the same earth.'
+        lopulta ne ovat vain hiekanjyviä.'
+      - 'Tie jatkuu — tai päättyy tähän.
+
+        Kummallakin tavalla se lepää samalla maalla.'
     normal:
       pool:
-      - 'The distance closed.
+      - 'Etäisyys sulkeutui.
 
-        Time did not.'
-      - 'The world kept its rules.
+        Aika ei.'
+      - 'Maailma piti sääntönsä.
 
-        You touched the edge.'
-      - 'You didn’t make it.
+        Sinä kosketit reunaa.'
+      - 'Et ehtinyt perille.
 
-        But the signal was real.'
-      - 'Some treasures still await.
+        Mutta merkki oli todellinen.'
+      - 'Joitakin aarteita odottaa vielä.
 
-        Let’s try a different path.'
-      - 'The result remained.
+        Kokeillaan seuraavaksi toista polkua.'
+      - 'Tulos pysyi.
 
-        The position changed.'
-      - 'Time ran out.
+        Sijainti muuttui.'
+      - 'Jään ja lasin välissä
 
-        Meaning didn''t.'
-      - 'So close.
+        opit hallinnan.'
+      - 'Ovi ei sulkeutunut.
 
-        The sound said so.'
-      - 'The map is still open.
+        Aika vain ehti ensin.'
+      - 'Pohjoistuuli ei tuomitse.
 
-        Come back to it.'
-      - 'The world’s rules stood firm.
+        Se vain mittaa.'
+      - 'Jäljelle jäi järjestys.
 
-        The signal of possibility was real.'
-      - The world kept its rules.
-      - 'The moment passed.
+        Ja mahdollisuus palata.'
+      - 'Juoksu pysähtyi,
 
-        The record remains.'
-      - 'The sun sank,
+        mutta suunta jäi eloon.'
+      - 'Taivas ei kiirehtinyt.
 
-        and shadow covered the world once again.'
-      - 'The last grains of sand fell,
+        Ei sinunkaan tarvitse kadota.'
+      - 'Tämä ei ollut loppu.
 
-        and the story quietly came to a close.'
-      - 'The wind swept through,
+        Se oli mitta.'
+      - 'Aika sanoi ei.
 
-        and the footprints vanished without a trace.'
-      - 'The tide came in,
+        Matka ei.'
+      - 'Et menettänyt tietä.
 
-        What once had been there returned to the sea.'
-      - 'Silence.
+        Se vain odottaa hiljaa.'
+      - 'Viimeinen askel jäi vielä ottamatta.
 
-        Only time passed through.'
-      - "Victory and defeat \nare nothing more than grains of sand."
-      - 'The road goes on—or it ends.
+        Siksi seuraava on olemassa.'
+      - 'Varjo palasi,
 
-        Either way, it lies on the same earth.'
-      - "> Time ran out.\n> \n> Nothing else did."
-      - "> The outcome didn’t change.\n> \n> But your position did."
+        mutta silmäsi olivat jo nähneet valon.'
+      - 'Aarre pysyi paikallaan.
+
+        Sinä pääsit lähemmäs.'
+      - 'Säännöt olivat ankarat.
+
+        Yritys oli todellinen.'
+      - 'Et saavuttanut kaikkea.
+
+        Mutta et tullut tyhjin käsin.'
+      - 'Hiljaisuus laskeutui.
+
+        Tie jäi näkyviin.'
     hard:
       pool:
-      - 'Even the aurora fades.
+      - 'Aika loppui pohjoistuulessa.
 
-        Come back with a new stride.'
-      - 'In a fragile world,
+        Mutta suuntasi ei kadonnut.'
+      - 'Jää ei murtunut.
 
-        haste shatters clarity before it can be found.'
-      - 'The moment slipped away.
+        Se vain odotti seuraavaa askelta.'
+      - 'Et ehtinyt perille.
 
-        The meaning did not.'
-      - 'Winter is patient.
+        Silti mitta oli todellinen.'
+      - 'Maailma pysyi kylmänä.
 
-        Be the same.'
-      - 'The sky kept moving.
+        Sinä pysyit liikkeessä.'
+      - 'Tulosta ei annettu.
 
-        So will you.'
-      - 'The story moves on.
+        Mutta jälki jäi.'
+      - 'Tie vaati enemmän aikaa
 
-        The end is not yet.'
-      - 'The stars were there, watching.
+        kuin tällä kertaa oli jäljellä.'
+      - 'Tähdet eivät vastanneet.
 
-        Again.'
-      - 'Ice takes its time.
+        Ne vain katsoivat.'
+      - 'Etäisyys jäi auki.
 
-        Neither do you.'
-      - 'The sky kept moving.
+        Se tarkoittaa, että polku on yhä olemassa.'
+      - 'Kylmä ei valehtele.
 
-        So can you.'
-      - 'The north has learned to wait.
+        Tänään se vain mittasi sinut.'
+      - 'Aarre jäi odottamaan.
 
-        So should you.'
-      - 'This is an interlude
+        Se ei kadonnut.'
+      - 'Taivas ei muuttunut.
 
-        —It’s not over.'
-      - 'Like drifting clouds,
+        Mutta jokin sinussa liikahti.'
+      - 'Juoksu pysähtyi.
 
-        don’t lose your flow—like a river.'
-      - 'The sound was near.
+        Harjoitus jäi elämään.'
+      - 'Ei voittoa.
 
-        The distance was real.
+        Mutta ei tyhjyyttäkään.'
+      - 'Aika sulki portin.
 
-        But that moment can’t be saved.'
-      - 'You were closing in.
+        Se ei poistanut tietä.'
+      - 'Pohjoinen pysyi vaiti.
 
-        Only time wasn’t.'
-      - 'The world held to its rules.
+        Askeleesi eivät.'
+      - 'Lasi säilyi kylmänä.
 
-        You touched the edge of them.'
-      - "You didn’t reach the treasure. \nBut the signal was real."
-      - 'Nothing changed.
+        Yrityksesi säilyi todellisena.'
+      - 'Tämä ei ollut epäonnistuminen.
 
-        Only your position did.'
-      - 'It wasn’t luck.
+        Se oli kartta.'
+      - 'Maailman säännöt pysyivät lujina.
 
-        Alignment.'
-      - 'The moment slipped away,
+        Siksi seuraava yritys merkitsee jotakin.'
+      - 'Aika päättyi.
 
-        but the record stayed.'
-      - 'You crossed fragile ground
+        Kokemus jäi.'
+      - 'Et ylittänyt rajaa.
 
-        and left the horizon unbroken.'
-      - "Nothing changed.\n Only your position did.\nNot luck.\nAlignment.\nThe moment passed.\nThe record remains."
-      - 'The sun sank,
+        Mutta löysit sen.'
+      - 'Jää sulki näkymän.
 
-        and shadow covered the world once again.'
-      - 'The last grains of sand fell,
+        Muisti ei.'
+      - 'Tulos jäi saamatta.
 
-        and the story quietly came to a close.'
-      - 'The wind swept through,
+        Suunnan taju jäi.'
+      - 'Se ei ollut voitto.
 
-        and the footprints vanished without a trace.'
-      - 'The tide came in,
+        Se oli mitta.'
+      - 'Tie päättyi tältä erää.
 
-        What once had been there returned to the sea.'
-      - 'Silence.
+        Matka ei.'
+      - 'Kylmä ilma sanoi: ei vielä.
 
-        Only time passed through.'
-      - "Victory and defeat \nare nothing more than grains of sand."
-      - 'The road goes on—or it ends.
+        Ei: ei koskaan.'
+      - 'Tähdet pysyivät kaukana.
 
-        Either way, it lies on the same earth.'
-      - 'The season closed.
+        Silti kuljit niiden alla.'
+      - 'Lopetus oli hiljainen.
 
-        The land remained.'
-      - 'The path The path remains.
+        Merkitys ei ollut.'
+      - 'Aika otti viimeisen sanan.
 
-        Only your steps stopped.'
-      - 'Your time ran out.
+        Sinulle jäi seuraava askel.'
+      - 'Tänään et saanut kaikkea.
 
-        The sky didn’t.'
-      - 'It wasn’t rejection.
+        Mutta sait rajasi näkyviin.'
+      - 'Tuuli pyyhki jäljet.
 
-        Only silence.'
-      - 'The world is still intact.
+        Ei yritystä.'
+      - 'Maailma ei taipunut.
 
-        You can return—changed.'
-      - 'The season ended.
+        Sinä opit lukemaan sitä.'
+      - 'Pohjoisen alla
 
-        The forest remains.'
-      - 'The distance was closing.
+        pienikin askel on totta.'
+      - 'Lasi, jää ja hiljaisuus —
 
-        Time kept its rhythm.'
-      - 'Your time came to a halt.
+        kaikki muistavat liikkeen.'
+      - 'Et löytänyt oikotietä.
 
-        The sky kept moving.'
-      - 'Not rejection
+        Löysit työn.'
+      - 'Hetki sulkeutui.
 
-        Just silence.'
-      - 'The path is still here.
+        Mahdollisuus jäi raolleen.'
+      - 'Aika ei riittänyt.
 
-        You can come back—changed.'
+        Sinä riitit aloittamaan.'
+      - 'Oikotietä ei ollut.
 
+        Vain oppimista.'
+      - 'Tie on ankara.
+
+        Siksi paluu merkitsee jotakin.'
 version: 1
 quotes:
   outcome:
@@ -495,8 +538,7 @@ command:
   gameStart:
     playersOnly: Vain pelaajat voivat käyttää tätä komentoa.
     worldNotFound: '[TreasureRun] Aloitusmaailmaa ei ole määritetty tai sitä ei löytynyt.'
-    started: 'Aarteenetsintä alkaa! Vaikeustaso: {difficulty} | Aikaraja: {timeLimit}
-      sekuntia'
+    started: 'Aarteenetsintä alkaa! Vaikeustaso: {difficulty} | Aikaraja: {timeLimit} sekuntia'
   stageCleanup:
     playersOnly: '&cVain pelaajat voivat käyttää tätä komentoa.'
     managerNotReady: '[TreasureRun] Kentänhallintaa ei ole vielä alustettu.'
@@ -508,22 +550,17 @@ command:
     success: '&aUudelleenlataus valmis.'
     fail: '&cUudelleenlataus epäonnistui: {reason}'
   lang:
-    guiCancelledGameStart: Kielen valinta peruttiin. Yritä uudelleen komennolla /gameStart
-      <easy|normal|hard>.
-    guiCancelledGameMenu: Kielen valinta peruttiin. Avaa se uudelleen komennolla /gameMenu
-      gui.
-    guiTooManyShown: Sallittuja kieliä on määritetty liikaa, joten GUI näyttää vain
-      ensimmäiset 27.
+    guiCancelledGameStart: Kielen valinta peruttiin. Yritä uudelleen komennolla /gameStart <easy|normal|hard>.
+    guiCancelledGameMenu: Kielen valinta peruttiin. Avaa se uudelleen komennolla /gameMenu gui.
+    guiTooManyShown: Sallittuja kieliä on määritetty liikaa, joten GUI näyttää vain ensimmäiset 27.
     playersOnly: Tätä komentoa voivat käyttää vain pelaajat.
-    resetDone: ✅ Tallennettu kielesi on nollattu. Käyttöliittymä avautuu seuraavalla
-      kerralla.
+    resetDone: ✅ Tallennettu kielesi on nollattu. Käyttöliittymä avautuu seuraavalla kerralla.
     current: 'Nykyinen kieli: {lang}'
     emptyCode: 'Kielikoodi puuttuu. Esimerkki: /lang ja'
     notAllowed: 'Tämä kieli ei ole sallittu: {lang}'
     allowedList: 'Sallitut kielet: {allowed}'
     changed: '✅ Kieli vaihdettu: {displayName} ({lang})'
-    changedButNotSaved: '⚠ Kieli vaihdettiin, mutta pysyvä tallennus epäonnistui:
-      {lang}'
+    changedButNotSaved: '⚠ Kieli vaihdettiin, mutta pysyvä tallennus epäonnistui: {lang}'
     list:
       title: === Kielet ===
       default: 'oletus: {default}'
@@ -537,8 +574,7 @@ command:
     success: '&bValmistit erikoissmaragdin käyttämällä 3 timanttia!'
   quoteFavorite:
     latestSaved: Uusin sitaatti tallennettiin Suosikkeihin.
-    latestNotSaved: Uusinta sitaattia ei voitu tallentaa. Lokia ei ehkä vielä ole
-      tai se on jo Suosikeissa.
+    latestNotSaved: Uusinta sitaattia ei voitu tallentaa. Lokia ei ehkä vielä ole tai se on jo Suosikeissa.
     playersOnly: '&cVain pelaajat voivat käyttää tätä komentoa.'
     repositoryNotReady: Suosikit eivät ole vielä käytettävissä.
     listHeader: '&bSuosikit ({count})'
@@ -552,8 +588,7 @@ command:
     openBookFailed: '&cKirjaa ei voitu avata.'
     unknownSubcommand: '&cTuntematon alikomento. Katso /quoteFavorite help.'
     shortcutSaved: Uusin sitaatti tallennettiin Suosikkeihin.
-    shortcutNotSaved: Uusinta sitaattia ei voitu tallentaa. Lokia ei ehkä vielä ole
-      tai se on jo Suosikeissa.
+    shortcutNotSaved: Uusinta sitaattia ei voitu tallentaa. Lokia ei ehkä vielä ole tai se on jo Suosikeissa.
     help:
       title: '&bQuoteFavorite-komennot'
       latest: '&7/quoteFavorite latest  - tallenna uusin sitaatti Suosikkeihin'
@@ -615,55 +650,44 @@ game:
     cursor_7fabae3f: / cursor=
     return_whoclicked_is_not_pla_a7675648: 'RETURN: whoClicked is not Player'
     return_topinventory_is_not_m_9936e6de: 'RETURN: topInventory is not MERCHANT'
-    return_not_result_slot_expec_9eb8c2c8: 'RETURN: not result slot. expected rawSlot=2
-      but was'
+    return_not_result_slot_expec_9eb8c2c8: 'RETURN: not result slot. expected rawSlot=2 but was'
     shift_53e51de9: ', shift='
-    return_topinventory_is_merch_fa2f5d98: 'RETURN: topInventory is MERCHANT but not
-      MerchantInventory instance'
+    return_topinventory_is_merch_fa2f5d98: 'RETURN: topInventory is MERCHANT but not MerchantInventory instance'
     merchant_view_title_daf2a73a: merchant view title=
     treasure_shop_2574a694: treasure shop
     return_not_treasure_shop_tit_8e65ad3d: 'RETURN: not Treasure Shop title. plainTitle='
     return_current_item_is_null_0f27c9fd: 'RETURN: current item is null'
     return_current_item_is_air_76b5e623: 'RETURN: current item is AIR'
-    return_current_item_is_not_g_d1d65218: 'RETURN: current item is not GOLDEN_APPLE.
-      type='
+    return_current_item_is_not_g_d1d65218: 'RETURN: current item is not GOLDEN_APPLE. type='
     return_game_is_not_running_048d7edb: 'RETURN: game is not running'
     ingredients_snapshot_98cb38c3: ingredients snapshot
-    return_ingredient_check_fail_673860d5: 'RETURN: ingredient check failed (need
-      TreasureEmerald>=5 and slot1 empty)'
-    ok_passed_all_checks_schedul_11e17905: 'OK: passed all checks -> scheduling effect
-      with runTaskLater'
+    return_ingredient_check_fail_673860d5: 'RETURN: ingredient check failed (need TreasureEmerald>=5 and slot1 empty)'
+    ok_passed_all_checks_schedul_11e17905: 'OK: passed all checks -> scheduling effect with runTaskLater'
     run_runtasklater_executed_96d7e049: 'RUN: runTaskLater executed'
     return_later_game_is_not_run_9cc569aa: 'RETURN(LATER): game is not running'
     return_later_player_is_offli_863a8cdc: 'RETURN(LATER): player is offline'
-    return_later_openinventory_t_7b809b57: 'RETURN(LATER): openInventory/topInventory
-      is null'
-    return_later_topinventory_is_f8714cf5: 'RETURN(LATER): topInventory is not MERCHANT.
-      type='
+    return_later_openinventory_t_7b809b57: 'RETURN(LATER): openInventory/topInventory is null'
+    return_later_topinventory_is_f8714cf5: 'RETURN(LATER): topInventory is not MERCHANT. type='
     treasure_shop_2574a694_822: treasure shop
-    return_later_not_treasure_sh_fcce2bb9: 'RETURN(LATER): not Treasure Shop title.
-      plainTitle='
+    return_later_not_treasure_sh_fcce2bb9: 'RETURN(LATER): not Treasure Shop title. plainTitle='
     ok_later_playing_effects_now_b80a2e0e: 'OK(LATER): playing effects now'
     k_llun_r_dj_pinu_16494877: '&6&lKöllun úr djúpinu'
     trade_complete_4a4b1d6f: Trade complete!
     a_hidden_power_awakens_7620bc4d: A hidden power awakens…
     mobcontrol_wolf_allowed_cust_a5459084: '[MobControl] WOLF allowed (CUSTOM). name='
     rainbow_wolf_b3cc6257: Rainbow Wolf
-    mobcontrol_wolf_allowed_name_9cc5a59a: '[MobControl] WOLF allowed (name match).
-      reason='
+    mobcontrol_wolf_allowed_name_9cc5a59a: '[MobControl] WOLF allowed (name match). reason='
     mobcontrol_wolf_cancelled_re_1a3b2e1a: '[MobControl] WOLF cancelled! reason='
     stagemobcontrollistener_refl_08ad690a: '⚠ StageMobControlListener: カウントダウン判定(reflection)に失敗。ゲーム中のみ制御します。原因:'
     stagemobcontrollistener_refl_d8a61972: '⚠ StageMobControlListener: reflection初期化に失敗。ゲーム中のみ制御します。原因:'
     mysql_connection_established_47452dfd: MySQL connection established successfully!
     failed_to_connect_to_mysql_95e4d50a: 'Failed to connect to MySQL:'
-    create_table_if_not_exists_p_136a7833: CREATE TABLE IF NOT EXISTS player_treasure_count
-      (
+    create_table_if_not_exists_p_136a7833: CREATE TABLE IF NOT EXISTS player_treasure_count (
     player_name_varchar_50_prima_79b8331b: player_name VARCHAR(50) PRIMARY KEY,
     count_int_not_null_660eadd8: count INT NOT NULL)
     failed_to_create_table_68199f98: 'Failed to create table:'
     reset_treasure_count_for_pla_96b152d2: 'Reset treasure count for player:'
-    dj_onalltreasurescollected_a871afdd: DJイベントはすでに実行中のため、onAllTreasuresCollected
-      をスキップしました。
+    dj_onalltreasurescollected_a871afdd: DJイベントはすでに実行中のため、onAllTreasuresCollected をスキップしました。
     on_duplicate_key_update_coun_a1543779: ON DUPLICATE KEY UPDATE count = ?
     failed_to_save_treasure_coun_9d94c0cc: 'Failed to save treasure count:'
     dj_triggerultimatedjevent_eb01ecae: DJイベントはすでに実行中のため、triggerUltimateDJEvent をスキップしました。
@@ -672,8 +696,7 @@ game:
     congratulations_38fd1594: §6Congratulations! 全ての宝物を見つけました！
     time_s_up_c5b3ef74: §c§lTIME'S UP!
     treasures_collected_ca7eab31: '§7Treasures collected: §e'
-    try_a_different_route_next_t_721a4d8b: §7Try a different route next time — or
-      use §e/gamestart §7<§eeasy§7|§enormal§7|§ehard§7> §7to retry.
+    try_a_different_route_next_t_721a4d8b: §7Try a different route next time — or use §e/gamestart §7<§eeasy§7|§enormal§7|§ehard§7> §7to retry.
 sound:
   sparkle: '&b* säihky *'
   start: '&7(BGM alkaa...)'
@@ -732,23 +755,19 @@ favorites:
     rereadTitle: Lue uudelleen
     sub: Selaa luvuittain
   auto:
-    treasurerun_favorites_templa_a0a4bf2e: '[TreasureRun] favorites_templates.yml
-      created.'
+    treasurerun_favorites_templa_a0a4bf2e: '[TreasureRun] favorites_templates.yml created.'
     mysql_repository_not_ready_72df0af1: MySQL / Repository not ready.
     favorite_saved_sneak_rightcl_7a73eb4f: ★ Favorite saved! (Sneak+RightClick)
     quotefavoritestore_reloaded__3ba623a3: '[QuoteFavoriteStore] Reloaded DB: host='
-    where_player_uuid_and_quote__36106f85: WHERE player_uuid=? AND quote_hash=? LIMIT
-      1
+    where_player_uuid_and_quote__36106f85: WHERE player_uuid=? AND quote_hash=? LIMIT 1
     quotefavoritestore_exists_fa_7d08adba: '[QuoteFavoriteStore] exists failed:'
-    player_uuid_quote_hash_outco_49f06b31: (player_uuid, quote_hash, outcome, difficulty,
-      lang, quote_text)
+    player_uuid_quote_hash_outco_49f06b31: (player_uuid, quote_hash, outcome, difficulty, lang, quote_text)
     values_643f4d2f: VALUES (?, ?, ?, ?, ?, ?)
     quotefavoritestore_addfavori_44fb1d75: '[QuoteFavoriteStore] addFavorite failed:'
     where_player_uuid_and_quote__81bcaee5: WHERE player_uuid=? AND quote_hash=?
     quotefavoritestore_removefav_8180a1e4: '[QuoteFavoriteStore] removeFavorite failed:'
     where_player_uuid_and_id_f4a80773: WHERE player_uuid=? AND id=?
-    quotefavoritestore_removefav_d024b1e5: '[QuoteFavoriteStore] removeFavoriteById
-      failed:'
+    quotefavoritestore_removefav_d024b1e5: '[QuoteFavoriteStore] removeFavoriteById failed:'
     where_player_uuid_53558ea9: WHERE player_uuid=?
     order_by_created_at_desc_lim_f22988c0: ORDER BY created_at DESC LIMIT ?
     quotefavoritestore_listfavor_f3e976d4: '[QuoteFavoriteStore] listSuosikit failed:'
@@ -764,8 +783,7 @@ commands:
   3_71b78a44: ダイヤモンド3個でスペシャルエメラルドを作成しました！
   text_3030fd61: プレイヤーのみ実行できます
   op_10caf0f6: 権限がありません（OP限定）
-  debug_mode_is_off_config_yml_b3d27428: 'Debug mode is OFF. config.yml の debug: true
-    にしてください'
+  debug_mode_is_off_config_yml_b3d27428: 'Debug mode is OFF. config.yml の debug: true にしてください'
   rank_1_2_3_demo_d87f40da: '使い方: /rank <1|2|3|demo>'
   rank_1_2_3_demo_4f3e3084: '数字で入力してください: /rank <1|2|3|demo>'
   1_3_rank_1_2_3_7f459bd0: '1〜3だけ使えます: /rank <1|2|3>'
@@ -781,29 +799,20 @@ commands:
   mysql_repository_not_ready_72df0af1: MySQL / Repository not ready.
   mysql_repository_not_ready_72df0af1_93: MySQL / Repository not ready.
   mysql_repository_not_ready_72df0af1_119: MySQL / Repository not ready.
-  quotefavorite_book_open_cata_055de855: /quoteFavorite book            - open catalog
-    (full)
-  quotefavorite_book_toc_open__c7d02ede: /quoteFavorite book toc        - open catalog
-    (TOC only)
-  quotefavorite_book_success_o_afe31501: /quoteFavorite book success    - open SUCCESS
-    chapter
-  quotefavorite_book_timeup_op_08b799b0: /quoteFavorite book timeup     - open TIME_UP
-    chapter
-  quotefavorite_book_other_ope_bdcbafba: /quoteFavorite book other      - open OTHER
-    chapter
-  success_normal_en_the_obstac_b627a544: 【SUCCESS / Normal / en】\nThe obstacle is
-    the way.
+  quotefavorite_book_open_cata_055de855: /quoteFavorite book            - open catalog (full)
+  quotefavorite_book_toc_open__c7d02ede: /quoteFavorite book toc        - open catalog (TOC only)
+  quotefavorite_book_success_o_afe31501: /quoteFavorite book success    - open SUCCESS chapter
+  quotefavorite_book_timeup_op_08b799b0: /quoteFavorite book timeup     - open TIME_UP chapter
+  quotefavorite_book_other_ope_bdcbafba: /quoteFavorite book other      - open OTHER chapter
+  success_normal_en_the_obstac_b627a544: 【SUCCESS / Normal / en】\nThe obstacle is the way.
   time_up_bc0cd646: TIME UP
 debug:
   istreasureemerald_fb6fecec: isTreasureEmerald =
-  chestsound_start_called_16th_e2a7414b: §b[ChestSound] start() called (16th-grid
-    mode)
+  chestsound_start_called_16th_e2a7414b: §b[ChestSound] start() called (16th-grid mode)
   chestsound_chests_0_82465b3c: §7[ChestSound] chests=0
-  chestsound_d_1fm_s_t_2f_step_6e3e0fdb: §b[ChestSound] §fD=§e%.1fm §7(%s§7) §ft=§a%.2f
-    §7step=%d bar=%d
+  chestsound_d_1fm_s_t_2f_step_6e3e0fdb: §b[ChestSound] §fD=§e%.1fm §7(%s§7) §ft=§a%.2f §7step=%d bar=%d
   chestsound_nearest_1fm_s_t_2_e2465135: §b[ChestSound] nearest=%.1fm %s  t=%.2f
-  reward_giverankrewardwitheff_5e361189: '[Reward] giveRankRewardWithEffect called
-    player='
+  reward_giverankrewardwitheff_5e361189: '[Reward] giveRankRewardWithEffect called player='
   starttheme_startgame_called__9cf42cbe: '[StartTheme] startGame called by'
 items:
   text_7567bb35: 特製エメラルドのレシピを登録しました。
@@ -837,8 +846,7 @@ ui:
       fallbackTitle: TreasureRunin säännöt
       fallbackDisplayName: TreasureRunin sääntökirja
       hotbarGiven: 📖 Sääntökirja lisättiin pikapalkkiisi.
-      hotbarHint: Pidä sitä kädessäsi ja napsauta hiiren oikealla, niin voit lukea
-        sen milloin vain uudelleen.
+      hotbarHint: Pidä sitä kädessäsi ja napsauta hiiren oikealla, niin voit lukea sen milloin vain uudelleen.
       latestHint: (Tallenna uusin sitaatti napsauttamalla tätä kirjaa hiiren oikealla.)
       openFailed: Could not open the rule book.
     toc:
@@ -862,8 +870,7 @@ ui:
       hint:
         reopenMenu: 'Hint: use /gameMenu to open this again.'
       note:
-        bookFormat: Minecraft books cannot switch tabs by clicking, so sections are
-          shown as pages.
+        bookFormat: Minecraft books cannot switch tabs by clicking, so sections are shown as pages.
   quote:
     footer:
       dbLogs: '(TIETOKANTA: proverb_logs)'
