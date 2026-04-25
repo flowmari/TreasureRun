@@ -1,0 +1,323 @@
+lang	pool	index	translation
+zh_tw	outcome.success.easy.pool	1	"你做到了。
+真相依然留在原處。"
+zh_tw	outcome.success.easy.pool	2	"就算只是一小步，
+你也沒有退開。"
+zh_tw	outcome.success.easy.pool	3	"你聽見了。
+路也因此打開了。"
+zh_tw	outcome.success.easy.pool	4	"> 你走到了這裡。
+> 
+> 規則很簡單——
+> 
+> 選擇一直在你手上。"
+zh_tw	outcome.success.easy.pool	5	"> 距離有了意義。
+> 
+> 時間也回應了你的腳步。"
+zh_tw	outcome.success.easy.pool	6	"> 不是所有光都能永遠亮著。
+> 
+> 但至少這一刻，真的亮了。"
+zh_tw	outcome.success.easy.pool	7	"光安靜地落下，
+所有陰影都退去了。"
+zh_tw	outcome.success.easy.pool	8	"風停了下來。
+一切都回到該在的地方。"
+zh_tw	outcome.success.easy.pool	9	"片刻的寂靜。
+世界重新穩住了呼吸。"
+zh_tw	outcome.success.easy.pool	10	"痕跡深深刻進沙裡——
+留在風也碰不到的地方。"
+zh_tw	outcome.success.easy.pool	11	"平衡回來了。
+所有事都像是為了這一刻。"
+zh_tw	outcome.success.easy.pool	12	"時間靜靜流過，
+停放在記憶的角落。"
+zh_tw	outcome.success.easy.pool	13	"天空換了顏色，
+一段故事也走到盡頭。"
+zh_tw	outcome.success.easy.pool	14	"浪靜了下來，
+海又把自己的深度藏起來。"
+zh_tw	outcome.success.easy.pool	15	"腳步停下，
+只剩那個地方還在。"
+zh_tw	outcome.success.easy.pool	16	"勝利也好，失敗也好，
+最後都只是沙粒。"
+zh_tw	outcome.success.easy.pool	17	"路會繼續——也可能到此為止。
+無論如何，它都還在同一片土地上。"
+zh_tw	outcome.success.normal.pool	1	"距離終於有了意義。
+時間也回應了你的旅程。"
+zh_tw	outcome.success.normal.pool	2	"時間結束了。
+但事情還沒有結束。"
+zh_tw	outcome.success.normal.pool	3	"軸心被找到了。
+世界也停下了轉動。"
+zh_tw	outcome.success.normal.pool	4	"玻璃屏住呼吸，
+而你守住了自己的位置。"
+zh_tw	outcome.success.normal.pool	5	"在沉靜的天空下，
+你的心沒有動搖。"
+zh_tw	outcome.success.normal.pool	6	"能永遠發光的東西並不多。
+但這一刻，亮得很清楚。"
+zh_tw	outcome.success.normal.pool	7	"你穿過脆弱的地面，
+沒有移開目光。"
+zh_tw	outcome.success.normal.pool	8	"那一刻已經過去了。
+留下來的，依然留下。"
+zh_tw	outcome.success.normal.pool	9	"運氣很快會褪色。
+秩序會留下來。"
+zh_tw	outcome.success.normal.pool	10	"天空在無盡的圓裡不停轉動，
+你也沒有停下。"
+zh_tw	outcome.success.normal.pool	11	"你抵達了中心。
+世界安靜了下來。"
+zh_tw	outcome.success.normal.pool	12	"終於到了這裡。
+真相依然堅定。"
+zh_tw	outcome.success.normal.pool	13	"你走到了最後。
+記住：選擇這條路的是你，不是任何別人。"
+zh_tw	outcome.success.normal.pool	14	"時間滑進沉默裡，
+在心的深處找到位置。"
+zh_tw	outcome.success.normal.pool	15	"天空變化的時候，
+故事也走到了它的結尾。"
+zh_tw	outcome.success.normal.pool	16	"水面安靜下來，
+天空再次遮住自己的深處。"
+zh_tw	outcome.success.normal.pool	17	"腳步停了，
+只剩那個地方還在。"
+zh_tw	outcome.success.normal.pool	18	"光安靜地落下，
+所有陰影都退去了。"
+zh_tw	outcome.success.normal.pool	19	"風停了下來。
+一切都回到該在的地方。"
+zh_tw	outcome.success.normal.pool	20	"片刻的寂靜。
+世界重新穩住了呼吸。"
+zh_tw	outcome.success.normal.pool	21	"痕跡深深刻進沙裡——
+留在風也碰不到的地方。"
+zh_tw	outcome.success.normal.pool	22	"平衡回來了。
+所有事都像是為了這一刻。"
+zh_tw	outcome.success.normal.pool	23	"遊戲完成。
+清楚。找到了。
+這樣就夠了。"
+zh_tw	outcome.success.normal.pool	24	"遊戲完成。
+路撐住了。
+你也撐住了。"
+zh_tw	outcome.success.normal.pool	25	"天空還在移動。
+你也可以。"
+zh_tw	outcome.success.normal.pool	26	"遊戲完成。
+安靜的結果。
+那是真正努力的重量。"
+zh_tw	outcome.success.normal.pool	27	"你只是走過了
+世界擺在你眼前的那條路。"
+zh_tw	outcome.success.normal.pool	28	"地面沒有崩塌。
+因為它相信你的腳步。"
+zh_tw	outcome.success.normal.pool	29	"這一刻，對上了
+星辰古老的節奏。"
+zh_tw	outcome.success.normal.pool	30	"你沒有奪走什麼。
+你只是明白了什麼。"
+zh_tw	outcome.success.normal.pool	31	"你沒有贏得什麼。
+你只是看見真相原本的樣子。"
+zh_tw	outcome.success.normal.pool	32	"你沒有佔有這個地方。
+你本來就屬於這裡。"
+zh_tw	outcome.success.normal.pool	33	"你走過了一條
+比記憶更古老的路。"
+zh_tw	outcome.success.normal.pool	34	"土地沒有抵抗。
+它認出了你。"
+zh_tw	outcome.success.normal.pool	35	"這一刻，對上了
+星辰的寂靜。"
+zh_tw	outcome.success.hard.pool	1	"在北風裡，
+清醒比速度留得更久。"
+zh_tw	outcome.success.hard.pool	2	"不是運氣。
+是方向。"
+zh_tw	outcome.success.hard.pool	3	"世界沒有改變。
+改變的是你在其中的位置。"
+zh_tw	outcome.success.hard.pool	4	"結果留下了。
+位置改變了。"
+zh_tw	outcome.success.hard.pool	5	"在冰與玻璃之間，
+你選擇了掌控。"
+zh_tw	outcome.success.hard.pool	6	"浪安靜下來，
+海收回了自己藏起的深度。"
+zh_tw	outcome.success.hard.pool	7	"還有一些寶物在等著。
+下一次，換一條路。"
+zh_tw	outcome.success.hard.pool	8	"天空沒有變。
+變的是你。"
+zh_tw	outcome.success.hard.pool	9	"那一刻過去了。
+留下來的是秩序。"
+zh_tw	outcome.success.hard.pool	10	"冬天很誠實。
+你的這場奔跑也是。"
+zh_tw	outcome.success.hard.pool	11	"星星在某個瞬間對齊了。
+而你注意到了。"
+zh_tw	outcome.success.hard.pool	12	"距離縮短了。
+時間沒有。"
+zh_tw	outcome.success.hard.pool	13	"世界的規則仍然立著。
+你也是。"
+zh_tw	outcome.success.hard.pool	14	"玻璃差點裂開。
+但你沒有。"
+zh_tw	outcome.success.hard.pool	15	"寒冷沒有說謊。
+它只是把一切變得清楚。"
+zh_tw	outcome.success.hard.pool	16	"你走過邊界。
+而邊界記住了你。"
+zh_tw	outcome.success.hard.pool	17	"你沒有追上時間。
+但你也沒有讓自己消失。"
+zh_tw	outcome.success.hard.pool	18	"速度會退去。
+判斷會留下。"
+zh_tw	outcome.success.hard.pool	19	"腳下的地面很薄。
+你的意志沒有。"
+zh_tw	outcome.success.hard.pool	20	"終點沒有大聲宣告。
+它只是出現在那裡。"
+zh_tw	outcome.success.hard.pool	21	"你站在風裡。
+風沒有把你帶走。"
+zh_tw	outcome.success.hard.pool	22	"世界收緊了規則。
+你還是通過了。"
+zh_tw	outcome.success.hard.pool	23	"沒有多餘的光。
+只有剛剛好的清楚。"
+zh_tw	outcome.success.hard.pool	24	"你不是被帶到這裡的。
+你是自己走來的。"
+zh_tw	outcome.success.hard.pool	25	"冰面沉默著。
+你的腳步回答了它。"
+zh_tw	outcome.success.hard.pool	26	"結果不是偶然。
+它只是終於浮現。"
+zh_tw	outcome.success.hard.pool	27	"星光很遠。
+但你看見了方向。"
+zh_tw	outcome.success.hard.pool	28	"每一步都很短。
+加起來，卻抵達了這裡。"
+zh_tw	outcome.success.hard.pool	29	你沒有讓寒冷替你決定。
+zh_tw	outcome.success.hard.pool	30	"這不是輕鬆的勝利。
+所以它留下得更深。"
+zh_tw	outcome.success.hard.pool	31	"在最窄的地方，
+你沒有退開。"
+zh_tw	outcome.success.hard.pool	32	"最後，世界安靜下來。
+你仍然在。"
+zh_tw	outcome.timeup.easy.pool	1	"時間到了。
+但你還沒有結束。"
+zh_tw	outcome.timeup.easy.pool	2	"寶物可以等。
+你也可以。"
+zh_tw	outcome.timeup.easy.pool	3	"先吸一口氣。
+再吸下一口。"
+zh_tw	outcome.timeup.easy.pool	4	"今天到這裡就好。
+下一步還在前面。"
+zh_tw	outcome.timeup.easy.pool	5	"路沒有消失。
+只是暫時安靜下來。"
+zh_tw	outcome.timeup.easy.pool	6	"沒關係。
+世界還沒有把門關上。"
+zh_tw	outcome.timeup.easy.pool	7	"風把時間帶走了。
+但沒有帶走你。"
+zh_tw	outcome.timeup.easy.pool	8	"這一次，先停在這裡。
+下一次，再從這裡開始。"
+zh_tw	outcome.timeup.easy.pool	9	"沙還在。
+腳印也還在。"
+zh_tw	outcome.timeup.easy.pool	10	"你沒有失去道路。
+只是還沒走完。"
+zh_tw	outcome.timeup.easy.pool	11	"時間先走了。
+你可以晚一點跟上。"
+zh_tw	outcome.timeup.easy.pool	12	"天空暗了一些。
+但方向還看得見。"
+zh_tw	outcome.timeup.easy.pool	13	"失敗不是終點。
+只是地圖上的一個記號。"
+zh_tw	outcome.timeup.easy.pool	14	"今天的光熄了。
+明天還會再亮。"
+zh_tw	outcome.timeup.easy.pool	15	"寶箱沒有打開。
+但你曾經靠近過。"
+zh_tw	outcome.timeup.easy.pool	16	"停下來也可以是一種前進，
+只要你還會回來。"
+zh_tw	outcome.timeup.normal.pool	1	"距離縮短了。
+時間沒有。"
+zh_tw	outcome.timeup.normal.pool	2	"地圖還開著。
+回來吧。"
+zh_tw	outcome.timeup.normal.pool	3	"寶物仍在遠處。
+但訊號是真的。"
+zh_tw	outcome.timeup.normal.pool	4	"時間關上了一扇門。
+路還沒有。"
+zh_tw	outcome.timeup.normal.pool	5	"你沒有抵達。
+但你的位置已經不同了。"
+zh_tw	outcome.timeup.normal.pool	6	"今天沒有完成。
+但你留下了痕跡。"
+zh_tw	outcome.timeup.normal.pool	7	"世界沒有嘲笑你。
+它只是等你再走一次。"
+zh_tw	outcome.timeup.normal.pool	8	"錯過了這一刻。
+但意義沒有消失。"
+zh_tw	outcome.timeup.normal.pool	9	"腳步停住了。
+方向還在。"
+zh_tw	outcome.timeup.normal.pool	10	"時間不等人。
+但人可以重新出發。"
+zh_tw	outcome.timeup.normal.pool	11	"你離答案更近了，
+只是還沒有碰到它。"
+zh_tw	outcome.timeup.normal.pool	12	"沉默。
+只有時間走過。"
+zh_tw	outcome.timeup.normal.pool	13	"勝利也好，失敗也好，
+最後都只是沙粒。"
+zh_tw	outcome.timeup.normal.pool	14	"這次是未完成。
+不是沒有意義。"
+zh_tw	outcome.timeup.normal.pool	15	"寶物沒有到手。
+但你已經理解了路的一部分。"
+zh_tw	outcome.timeup.normal.pool	16	"結果暫時空白。
+地圖仍然活著。"
+zh_tw	outcome.timeup.normal.pool	17	"風帶走了倒數。
+卻沒有帶走你的選擇。"
+zh_tw	outcome.timeup.normal.pool	18	"你沒有輸給世界。
+只是還沒跟上時間。"
+zh_tw	outcome.timeup.normal.pool	19	"這裡先停下。
+下一次，讓腳步更準。"
+zh_tw	outcome.timeup.normal.pool	20	"時間結束了。
+故事還沒有。"
+zh_tw	outcome.timeup.hard.pool	1	"就算極光會褪去，
+也請帶著新的腳步回來。"
+zh_tw	outcome.timeup.hard.pool	2	"那一刻滑走了。
+意義沒有。"
+zh_tw	outcome.timeup.hard.pool	3	"天空還在移動。
+你也可以。"
+zh_tw	outcome.timeup.hard.pool	4	"寒冷很誠實。
+它只是告訴你：還差一步。"
+zh_tw	outcome.timeup.hard.pool	5	"時間沒有留下餘地。
+但路仍然在。"
+zh_tw	outcome.timeup.hard.pool	6	"你沒有抵達中心。
+但你已經看見它在哪裡。"
+zh_tw	outcome.timeup.hard.pool	7	"冰面沒有讓步。
+下一次，用更穩的腳步。"
+zh_tw	outcome.timeup.hard.pool	8	"風帶走了結果。
+留下來的是判斷。"
+zh_tw	outcome.timeup.hard.pool	9	"這一次，世界比你更快。
+下一次，不一定。"
+zh_tw	outcome.timeup.hard.pool	10	"寶物仍在黑暗裡。
+但黑暗已經變薄了。"
+zh_tw	outcome.timeup.hard.pool	11	"你沒有被打碎。
+只是暫時停下。"
+zh_tw	outcome.timeup.hard.pool	12	"時間把門關上了。
+地面還記得你。"
+zh_tw	outcome.timeup.hard.pool	13	"不要急著否定這一步。
+它也算數。"
+zh_tw	outcome.timeup.hard.pool	14	"嚴寒沒有勝利。
+它只是把答案延後。"
+zh_tw	outcome.timeup.hard.pool	15	"天空冷了下來。
+你的方向仍然在。"
+zh_tw	outcome.timeup.hard.pool	16	"失敗很安靜。
+它也可以很有用。"
+zh_tw	outcome.timeup.hard.pool	17	"你沒有拿到寶物。
+但你帶回了資訊。"
+zh_tw	outcome.timeup.hard.pool	18	"這條路很硬。
+所以重來也值得。"
+zh_tw	outcome.timeup.hard.pool	19	"沒有抵達，
+不代表沒有前進。"
+zh_tw	outcome.timeup.hard.pool	20	"星星沒有靠近。
+但你知道該往哪裡看。"
+zh_tw	outcome.timeup.hard.pool	21	"世界收緊了規則。
+你下次會讀得更清楚。"
+zh_tw	outcome.timeup.hard.pool	22	"倒數結束了。
+判斷才剛開始。"
+zh_tw	outcome.timeup.hard.pool	23	"冰與風都還在。
+你也還在。"
+zh_tw	outcome.timeup.hard.pool	24	"今天到不了。
+明天可以更準。"
+zh_tw	outcome.timeup.hard.pool	25	"不要把這一次丟掉。
+它會變成下一次的路標。"
+zh_tw	outcome.timeup.hard.pool	26	"時間奪走了結果。
+沒有奪走你的方向。"
+zh_tw	outcome.timeup.hard.pool	27	"寒冷留下了答案的一部分。
+把它帶回去。"
+zh_tw	outcome.timeup.hard.pool	28	"你沒有停在失敗裡。
+你只是停在下一次之前。"
+zh_tw	outcome.timeup.hard.pool	29	"這不是結尾。
+只是世界要求你再試一次。"
+zh_tw	outcome.timeup.hard.pool	30	"寶物仍在原處。
+而你已經比剛才更接近。"
+zh_tw	outcome.timeup.hard.pool	31	"天空無聲。
+但路還在。"
+zh_tw	outcome.timeup.hard.pool	32	下一次，讓風追不上你。
+zh_tw	outcome.timeup.hard.pool	33	"輸掉這一局，
+不等於失去這條路。"
+zh_tw	outcome.timeup.hard.pool	34	"你退回來了。
+但不是空手。"
+zh_tw	outcome.timeup.hard.pool	35	"時間說不。
+方向說還可以。"
+zh_tw	outcome.timeup.hard.pool	36	"冰面很薄。
+經驗留下得很深。"
+zh_tw	outcome.timeup.hard.pool	37	"這次沒能完成。
+但你的腳步已經記住了地形。"
+zh_tw	outcome.timeup.hard.pool	38	"請回來。
+這條路還沒把話說完。"
