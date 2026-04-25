@@ -7,467 +7,499 @@ outcome:
       pool: []
     easy:
       pool:
-      - 'You’ve made it.
+      - 'तुमने कर दिखाया।
 
-        The truth remains.'
-      - 'Even if it was only a small step,
+        सच अब भी कायम है।'
+      - 'भले ही वह बस एक छोटा कदम था,
 
-        you held your ground.'
-      - "You listened.\n The path opened."
-      - "> You made it here\n> \n> The rules were simple —\n> \n> the choice was yours."
-      - "> Distance became meaning.\n> \n> and time answered your footsteps."
-      - "> Not everything shines forever.\n> \n> But this moment did."
-      - 'Light fell evenly, ,
+        तुम डटे रहे।'
+      - 'तुमने सुना।
 
-        and every shadow vanished.'
-      - 'The wind fell silent.
+        और रास्ता खुल गया।'
+      - "> तुम यहाँ तक पहुँच गए।\n> \n> नियम सरल थे —\n> \n> चुनाव तुम्हारा था।"
+      - "> दूरी को अर्थ मिला।\n> \n> और समय ने तुम्हारे कदमों का उत्तर दिया।"
+      - "> हर चीज़ हमेशा नहीं चमकती।\n> \n> लेकिन यह क्षण चमका।"
+      - 'रोशनी बराबर फैल गई,
 
-        and everything returned to where it belonged.'
-      - 'A moment of silence.
+        और हर छाया मिट गई।'
+      - 'हवा शांत हो गई।
 
-        The world steadied its breath.'
-      - 'The record is etched deep in the sand—
+        और सब कुछ अपनी जगह लौट आया।'
+      - 'एक क्षण का मौन।
 
-        beyond the reach of the wind.'
-      - 'Harmony was restored.
+        दुनिया ने फिर साँस ली।'
+      - 'निशान रेत में गहराई तक दर्ज हो गया —
 
-        Everything had been for this moment.'
-      - 'Time slipped by in silence,
+        हवा की पहुँच से दूर।'
+      - 'संतुलन फिर लौट आया।
 
-        tucked away in the corners of memory.'
-      - 'The sky shifted in color,
+        सब कुछ इसी क्षण तक ले आया था।'
+      - 'समय चुपचाप बीत गया,
 
-        and one story came to its end.'
-      - 'The waves grew calm,
+        स्मृति के कोनों में रखा हुआ।'
+      - 'आकाश ने रंग बदला,
 
-        and the sea hid its depths once more.'
-      - 'The footsteps stopped,
+        और एक कहानी समाप्त हुई।'
+      - 'लहरें शांत हो गईं,
 
-        and only the place remained.'
-      - "Victory and defeat \nare nothing more than grains of sand."
-      - 'The road goes on—or it ends.
+        और समुद्र ने अपनी गहराई फिर छिपा ली।'
+      - 'कदम रुक गए,
 
-        Either way, it lies on the same earth.'
+        और केवल वह स्थान रह गया।'
+      - 'जीत और हार
+
+        रेत के कणों से अधिक कुछ नहीं।'
+      - 'रास्ता आगे बढ़ता है — या यहीं समाप्त होता है।
+
+        दोनों ही हाल में वह इसी धरती पर रहता है।'
     normal:
       pool:
-      - 'The distance has found its meaning.
+      - 'दूरी को अपना अर्थ मिल गया।
 
-        Time has rewarded your journey.'
-      - 'The time is up.
+        समय ने तुम्हारी यात्रा का उत्तर दिया।'
+      - 'समय समाप्त हुआ।
 
-        but the rest is far from over.'
-      - 'The axis is found.
+        लेकिन सब कुछ समाप्त नहीं हुआ।'
+      - 'धुरी मिल गई।
 
-        the world has cased its motion.'
-      - 'The glass held its breath,
+        दुनिया ने अपनी गति रोक दी।'
+      - 'काँच ने साँस थामे रखी,
 
-        and you held your ground.'
-      - 'Under the stillness of the sky,
+        और तुम अपनी जगह डटे रहे।'
+      - 'आकाश की निस्तब्धता के नीचे,
 
-        your spirit did not waver.'
-      - 'Few things shine forever.
+        तुम्हारा मन नहीं डगमगाया।'
+      - 'बहुत कम चीज़ें हमेशा चमकती हैं।
 
-        but this moment was radiant.'
-      - 'You traversed the fragile earth,
+        लेकिन यह क्षण पूरा चमका।'
+      - 'तुमने नाज़ुक धरती पार की,
 
-        without losing the view.'
-      - 'The moment has passed.
+        बिना दृष्टि खोए।'
+      - 'क्षण बीत गया।
 
-        The legacy remains.'
-      - 'Luck fades fast.
+        जो रह गया, वह कायम है।'
+      - 'किस्मत जल्दी फीकी पड़ती है।
 
-        order endures.'
-      - 'The sky knows no pause in endless circle,
+        क्रम बना रहता है।'
+      - 'आकाश अपने अंतहीन चक्र में ठहरता नहीं,
 
-        nor shall you find yours.'
-      - 'The center has been reached.
+        और तुम भी नहीं रुके।'
+      - 'केंद्र तक पहुँचा गया।
 
-        The world stood still.'
-      - 'Finally here.
+        दुनिया ठहर गई।'
+      - 'आख़िरकार यहाँ।
 
-        The truth remains unyielding.'
-      - 'You have seen it through.
+        सच अब भी अडिग है।'
+      - 'तुम अंत तक गए।
 
-        And mark this: it was you, and no one else, who chose this path.'
-      - 'Time drifted into silence,
+        और याद रखो: यह रास्ता तुमने चुना था, किसी और ने नहीं।'
+      - 'समय मौन में उतर गया,
 
-        finding its place in the recesses of the mind.'
-      - 'As the sky transformed,
+        मन की गहराइयों में अपना स्थान पाकर।'
+      - 'जब आकाश बदल रहा था,
 
-        the tale found its final resolved.'
-      - 'The waters fell calm,
+        कहानी ने अपना अंत पा लिया।'
+      - 'जल शांत हो गया,
 
-        and the sky once more veiled its abyss.'
-      - 'The footsteps ceased,
+        और आकाश ने अपना अथाहपन फिर ढक लिया।'
+      - 'कदम थम गए,
 
-        only the place remained.'
-      - 'Light fell evenly, ,
+        और केवल वह स्थान रह गया।'
+      - 'रोशनी बराबर फैल गई,
 
-        and every shadow vanished.'
-      - 'The wind fell silent.
+        और हर छाया मिट गई।'
+      - 'हवा शांत हो गई।
 
-        and everything returned to where it belonged.'
-      - 'A moment of silence.
+        और सब कुछ अपनी जगह लौट आया।'
+      - 'एक क्षण का मौन।
 
-        The world steadied its breath.'
-      - 'The record is etched deep in the sand—
+        दुनिया ने फिर साँस ली।'
+      - 'निशान रेत में गहराई तक दर्ज हो गया —
 
-        beyond the reach of the wind.'
-      - 'Harmony was restored.
+        हवा की पहुँच से दूर।'
+      - 'संतुलन फिर लौट आया।
 
-        Everything had been for this moment.'
-      - 'RUN COMPLETE.
+        सब कुछ इसी क्षण तक ले आया था।'
+      - 'दौड़ पूरी हुई।
 
-        Clear. Found it.
+        स्पष्ट। मिल गया।
 
-        That''s enough.'
-      - 'RUN COMPLETE.
+        इतना काफ़ी है।'
+      - 'दौड़ पूरी हुई।
 
-        The path held.
+        रास्ता टिका रहा।
 
-        So did you.'
-      - 'The sky has kept moving.
+        तुम भी।'
+      - 'आकाश चलता रहा।
 
-        So can you.'
-      - 'RUN COMPLETE.
+        तुम भी आगे बढ़ सकते हो।'
+      - 'दौड़ पूरी हुई।
 
-        A quiet result.
+        एक शांत परिणाम।
 
-        The weight of real work.'
-      - 'You only walked the path
+        सच्चे काम का भार।'
+      - 'तुम बस उस रास्ते पर चले
 
-        the world had laid out for you.'
-      - 'The ground didn’t give way.
+        जो दुनिया ने तुम्हारे सामने रखा था।'
+      - 'ज़मीन नहीं टूटी।
 
-        It trusted your steps.'
-      - 'This moment aligned
+        उसने तुम्हारे कदमों पर भरोसा किया।'
+      - 'यह क्षण तारों की प्राचीन लय से
 
-        with the stars’ ancient rhythm.'
-      - "You didn’t take anything.\n You understood something."
-      - 'You didn’t gain a thing.
+        मेल खा गया।'
+      - 'तुमने कुछ छीना नहीं।
 
-        You only saw the truth for what it was.'
-      - 'You didn’t take this place.
+        तुमने कुछ समझा।'
+      - 'तुमने कुछ पाया नहीं।
 
-        You belonged here.'
-      - 'You walked a road
+        तुमने बस सच को वैसा ही देखा जैसा वह था।'
+      - 'तुमने इस स्थान को लिया नहीं।
 
-        older than memory itself.'
-      - 'The earth did not resist.
+        तुम इसी के थे।'
+      - 'तुम ऐसे रास्ते पर चले
 
-        It recognized you.'
-      - "This moment aligned\n with the stillness of the stars."
+        जो स्मृति से भी पुराना था।'
+      - 'धरती ने विरोध नहीं किया।
+
+        उसने तुम्हें पहचान लिया।'
+      - 'यह क्षण तारों की निस्तब्धता से
+
+        मेल खा गया।'
     hard:
       pool:
-      - 'In the north wind,
+      - 'उत्तरी हवा में,
 
-        clarity outlasts speed.'
-      - "The center was found.\n The world came to rest."
-      - 'The stars stay silent.
+        स्पष्टता गति से अधिक टिकती है।'
+      - 'केंद्र मिल गया।
 
-        Your record does the speaking.'
-      - 'The result  remained.
+        दुनिया विश्राम में आ गई।'
+      - 'तारे मौन रहते हैं।
 
-        The position changed.'
-      - 'Between ice and glass,
+        तुम्हारा रिकॉर्ड तुम्हारी ओर से बोलता है।'
+      - 'परिणाम वही रहा।
 
-        you chose control.'
-      - 'The waves fell quiet,
+        तुम्हारी स्थिति बदल गई।'
+      - 'बर्फ़ और काँच के बीच,
 
-        and the sea reclaimed its hidden depths.'
-      - 'Some treasures still await.
+        तुमने नियंत्रण चुना।'
+      - 'लहरें शांत हो गईं,
 
-        Next time, a different path.'
-      - 'The sky didn’t change.
+        और समुद्र ने अपनी छिपी गहराइयाँ वापस ले लीं।'
+      - 'कुछ ख़ज़ाने अब भी प्रतीक्षा कर रहे हैं।
 
-        You did.'
-      - 'The moment passed.
+        अगली बार, दूसरा रास्ता।'
+      - 'आकाश नहीं बदला।
 
-        What remained was order.'
-      - 'Winter is honest.
+        तुम बदले।'
+      - 'क्षण बीत गया।
 
-        So was your run.'
-      - 'The stars aligned for a moment.
+        जो बचा, वह क्रम था।'
+      - 'सर्दी ईमानदार होती है।
 
-        You noticed.'
-      - 'The distance closed.
+        तुम्हारी दौड़ भी थी।'
+      - 'तारे एक क्षण के लिए साथ आए।
 
-        Time did not.'
-      - "The world’s rules stood firm.\n And the signal of possibility was real."
-      - 'The path closed quietly.
+        तुमने उसे देख लिया।'
+      - 'दूरी घट गई।
 
-        You were already through.'
-      - 'Nothing changed.
+        समय नहीं।'
+      - 'दुनिया के नियम अडिग रहे।
 
-        Only your position did.'
-      - 'Not luck.
+        और संभावना का संकेत सच था।'
+      - 'रास्ता चुपचाप बंद हुआ।
 
-        Alignment.'
-      - 'The moment passed.
+        तुम पहले ही पार कर चुके थे।'
+      - 'कुछ नहीं बदला।
 
-        The record remains.'
-      - 'The outcome didn’t change.
+        सिर्फ़ तुम्हारी स्थिति बदली।'
+      - 'यह किस्मत नहीं थी।
 
-        Still, you moved forward.'
-      - 'The output didn’t change.
+        यह संरेखण था।'
+      - 'क्षण बीत गया।
 
-        But you reached a new level.'
-      - 'The ending was the same.
+        रिकॉर्ड रह गया।'
+      - 'परिणाम नहीं बदला।
 
-        But the one who reached it had changed.'
-      - 'The destination is the same
+        फिर भी तुम आगे बढ़े।'
+      - 'आउटपुट नहीं बदला।
 
-        —but you’re no longer the traveler you once were.'
-      - 'Light fell evenly, ,
+        लेकिन तुम एक नए स्तर तक पहुँचे।'
+      - 'अंत वही था।
 
-        and every shadow vanished.'
-      - 'The wind fell silent.
+        लेकिन वहाँ पहुँचने वाला व्यक्ति बदल चुका था।'
+      - 'मंज़िल वही है
 
-        and everything returned to where it belonged.'
-      - 'A moment of silence.
+        — पर अब तुम वही यात्री नहीं रहे जो पहले थे।'
+      - 'रोशनी बराबर फैल गई,
 
-        The world steadied its breath.'
-      - 'The record is etched deep in the sand—
+        और हर छाया मिट गई।'
+      - 'हवा शांत हो गई।
 
-        beyond the reach of the wind.'
-      - 'Harmony was restored.
+        और सब कुछ अपनी जगह लौट आया।'
+      - 'एक क्षण का मौन।
 
-        Everything had been for this moment.'
-      - 'Time slipped by in silence,
+        दुनिया ने फिर साँस ली।'
+      - 'निशान रेत में गहराई तक दर्ज हो गया —
 
-        tucked away in the corners of memory.'
-      - 'The sky shifted in color,
+        हवा की पहुँच से दूर।'
+      - 'संतुलन फिर लौट आया।
 
-        and one story came to its end.'
-      - 'The waves grew calm,
+        सब कुछ इसी क्षण तक ले आया था।'
+      - 'समय चुपचाप बीत गया,
 
-        and the sea hid its depths once more.'
-      - 'The footsteps stopped,
+        स्मृति के कोनों में रखा हुआ।'
+      - 'आकाश ने रंग बदला,
 
-        and only the place remained.'
-      - "Victory and defeat \nare nothing more than grains of sand."
-      - 'The road goes on—or it ends.
+        और एक कहानी समाप्त हुई।'
+      - 'लहरें शांत हो गईं,
 
-        Either way, it lies on the same earth.'
+        और समुद्र ने अपनी गहराई फिर छिपा ली।'
+      - 'कदम रुक गए,
+
+        और केवल वह स्थान रह गया।'
+      - 'जीत और हार
+
+        रेत के कणों से अधिक कुछ नहीं।'
+      - 'रास्ता आगे बढ़ता है — या यहीं समाप्त होता है।
+
+        दोनों ही हाल में वह इसी धरती पर रहता है।'
   timeup:
     easy:
       pool:
-      - 'Time ran out.
+      - 'समय समाप्त हुआ।
 
-        Nothing else did.'
-      - 'The treasure can wait.
+        तुम नहीं।'
+      - 'ख़ज़ाना प्रतीक्षा कर सकता है।
 
-        So can you.'
-      - 'Breathe in.
+        तुम भी।'
+      - 'साँस लो।
 
-        Then again.'
-      - 'That’s all for now.
+        फिर एक और साँस लो।'
+      - 'अभी के लिए इतना ही।
 
-        On to the next step.'
-      - 'You''re still here.
+        अब अगला कदम।'
+      - 'तुम अब भी यहाँ हो।
 
-        That’s what matters.'
-      - 'The run ended.
+        यही मायने रखता है।'
+      - 'दौड़ समाप्त हुई।
 
-        You didn’t.'
-      - 'TIME''S UP.
+        तुम नहीं।'
+      - 'समय समाप्त।
 
-        The run ended.
+        दौड़ समाप्त हुई।
 
-        You didn''t.'
-      - 'TIME''S UP.
+        तुम नहीं।'
+      - 'समय समाप्त।
 
-        The rules don’t change.
+        नियम नहीं बदलते।
 
-        Again.'
-      - 'TIME''S UP.
+        फिर से।'
+      - 'समय समाप्त।
 
-        “So close” is real.'
-      - 'The sun sank,
+        “लगभग” भी सच होता है।'
+      - 'सूरज डूब गया,
 
-        and shadow covered the world once again.'
-      - 'The last grains of sand fell,
+        और छाया ने फिर दुनिया को ढक लिया।'
+      - 'रेत के अंतिम कण गिर गए,
 
-        and the story quietly came to a close.'
-      - 'The wind swept through,
+        और कहानी चुपचाप बंद हो गई।'
+      - 'हवा गुज़री,
 
-        and the footprints vanished without a trace.'
-      - 'The tide came in,
+        और पदचिह्न बिना निशान मिट गए।'
+      - 'ज्वार आया,
 
-        What once had been there returned to the sea.'
-      - 'Silence.
+        और जो वहाँ था वह समुद्र में लौट गया।'
+      - 'मौन।
 
-        Only time passed through.'
-      - "Victory and defeat \nare nothing more than grains of sand."
-      - 'The road goes on—or it ends.
+        केवल समय गुज़रा।'
+      - 'जीत और हार
 
-        Either way, it lies on the same earth.'
+        रेत के कणों से अधिक कुछ नहीं।'
+      - 'रास्ता आगे बढ़ता है — या यहीं समाप्त होता है।
+
+        दोनों ही हाल में वह इसी धरती पर रहता है।'
     normal:
       pool:
-      - 'The distance closed.
+      - 'दूरी घट गई।
 
-        Time did not.'
-      - 'The world kept its rules.
+        समय नहीं।'
+      - 'दुनिया ने अपने नियम बनाए रखे।
 
-        You touched the edge.'
-      - 'You didn’t make it.
+        तुमने उनकी सीमा को छुआ।'
+      - 'तुम नहीं पहुँचे।
 
-        But the signal was real.'
-      - 'Some treasures still await.
+        लेकिन संकेत सच था।'
+      - 'कुछ ख़ज़ाने अब भी प्रतीक्षा कर रहे हैं।
 
-        Let’s try a different path.'
-      - 'The result remained.
+        चलो, कोई दूसरा रास्ता आज़माते हैं।'
+      - 'परिणाम वही रहा।
 
-        The position changed.'
-      - 'Time ran out.
+        तुम्हारी स्थिति बदल गई।'
+      - 'समय समाप्त हुआ।
 
-        Meaning didn''t.'
-      - 'So close.
+        अर्थ नहीं।'
+      - 'बहुत क़रीब था।
 
-        The sound said so.'
-      - 'The map is still open.
+        आवाज़ ने यही कहा।'
+      - 'नक्शा अब भी खुला है।
 
-        Come back to it.'
-      - 'The world’s rules stood firm.
+        वापस आना।'
+      - 'दुनिया के नियम अडिग रहे।
 
-        The signal of possibility was real.'
-      - The world kept its rules.
-      - 'The moment passed.
+        संभावना का संकेत सच था।'
+      - दुनिया ने अपने नियम बनाए रखे।
+      - 'क्षण बीत गया।
 
-        The record remains.'
-      - 'The sun sank,
+        रिकॉर्ड रह गया।'
+      - 'सूरज डूब गया,
 
-        and shadow covered the world once again.'
-      - 'The last grains of sand fell,
+        और छाया ने फिर दुनिया को ढक लिया।'
+      - 'रेत के अंतिम कण गिर गए,
 
-        and the story quietly came to a close.'
-      - 'The wind swept through,
+        और कहानी चुपचाप बंद हो गई।'
+      - 'हवा गुज़री,
 
-        and the footprints vanished without a trace.'
-      - 'The tide came in,
+        और पदचिह्न बिना निशान मिट गए।'
+      - 'ज्वार आया,
 
-        What once had been there returned to the sea.'
-      - 'Silence.
+        और जो वहाँ था वह समुद्र में लौट गया।'
+      - 'मौन।
 
-        Only time passed through.'
-      - "Victory and defeat \nare nothing more than grains of sand."
-      - 'The road goes on—or it ends.
+        केवल समय गुज़रा।'
+      - 'जीत और हार
 
-        Either way, it lies on the same earth.'
-      - "> Time ran out.\n> \n> Nothing else did."
-      - "> The outcome didn’t change.\n> \n> But your position did."
+        रेत के कणों से अधिक कुछ नहीं।'
+      - 'रास्ता आगे बढ़ता है — या यहीं समाप्त होता है।
+
+        दोनों ही हाल में वह इसी धरती पर रहता है।'
+      - "> समय समाप्त हुआ।\n> \n> और कुछ समाप्त नहीं हुआ।"
+      - "> परिणाम नहीं बदला।\n> \n> लेकिन तुम्हारी स्थिति बदल गई।"
     hard:
       pool:
-      - 'Even the aurora fades.
+      - 'ध्रुवीय आभा भी फीकी पड़ती है।
 
-        Come back with a new stride.'
-      - 'In a fragile world,
+        नए कदम के साथ लौटना।'
+      - 'एक नाज़ुक दुनिया में,
 
-        haste shatters clarity before it can be found.'
-      - 'The moment slipped away.
+        जल्दबाज़ी स्पष्टता को मिलने से पहले ही तोड़ देती है।'
+      - 'क्षण हाथ से निकल गया।
 
-        The meaning did not.'
-      - 'Winter is patient.
+        अर्थ नहीं।'
+      - 'सर्दी धैर्यवान होती है।
 
-        Be the same.'
-      - 'The sky kept moving.
+        तुम भी बनो।'
+      - 'आकाश चलता रहा।
 
-        So will you.'
-      - 'The story moves on.
+        तुम भी चलोगे।'
+      - 'कहानी आगे बढ़ती है।
 
-        The end is not yet.'
-      - 'The stars were there, watching.
+        अंत अभी नहीं आया।'
+      - 'तारे वहाँ थे, देख रहे थे।
 
-        Again.'
-      - 'Ice takes its time.
+        एक बार फिर।'
+      - 'बर्फ़ अपना समय लेती है।
 
-        Neither do you.'
-      - 'The sky kept moving.
+        तुम्हें भी लेना होगा।'
+      - 'आकाश चलता रहा।
 
-        So can you.'
-      - 'The north has learned to wait.
+        तुम भी आगे बढ़ सकते हो।'
+      - 'उत्तर ने प्रतीक्षा करना सीख लिया है।
 
-        So should you.'
-      - 'This is an interlude
+        तुम्हें भी सीखना होगा।'
+      - 'यह एक विराम है
 
-        —It’s not over.'
-      - 'Like drifting clouds,
+        — अंत नहीं।'
+      - 'बहती हुई बादलों की तरह,
 
-        don’t lose your flow—like a river.'
-      - 'The sound was near.
+        अपना प्रवाह मत खोना — नदी की तरह।'
+      - 'आवाज़ पास थी।
 
-        The distance was real.
+        दूरी सच थी।
 
-        But that moment can’t be saved.'
-      - 'You were closing in.
+        लेकिन वह क्षण बचाया नहीं जा सका।'
+      - 'तुम क़रीब पहुँच रहे थे।
 
-        Only time wasn’t.'
-      - 'The world held to its rules.
+        बस समय साथ नहीं था।'
+      - 'दुनिया अपने नियमों पर अडिग रही।
 
-        You touched the edge of them.'
-      - "You didn’t reach the treasure. \nBut the signal was real."
-      - 'Nothing changed.
+        तुमने उनकी सीमा को छुआ।'
+      - 'तुम ख़ज़ाने तक नहीं पहुँचे।
 
-        Only your position did.'
-      - 'It wasn’t luck.
+        लेकिन संकेत सच था।'
+      - 'कुछ नहीं बदला।
 
-        Alignment.'
-      - 'The moment slipped away,
+        सिर्फ़ तुम्हारी स्थिति बदली।'
+      - 'यह किस्मत नहीं थी।
 
-        but the record stayed.'
-      - 'You crossed fragile ground
+        यह संरेखण था।'
+      - 'क्षण हाथ से निकल गया,
 
-        and left the horizon unbroken.'
-      - "Nothing changed.\n Only your position did.\nNot luck.\nAlignment.\nThe moment passed.\nThe record remains."
-      - 'The sun sank,
+        लेकिन रिकॉर्ड रह गया।'
+      - 'तुमने नाज़ुक ज़मीन पार की
 
-        and shadow covered the world once again.'
-      - 'The last grains of sand fell,
+        और क्षितिज को अटूट छोड़ा।'
+      - 'कुछ नहीं बदला।
 
-        and the story quietly came to a close.'
-      - 'The wind swept through,
+        सिर्फ़ तुम्हारी स्थिति बदली।
 
-        and the footprints vanished without a trace.'
-      - 'The tide came in,
+        यह किस्मत नहीं थी।
 
-        What once had been there returned to the sea.'
-      - 'Silence.
+        यह संरेखण था।
 
-        Only time passed through.'
-      - "Victory and defeat \nare nothing more than grains of sand."
-      - 'The road goes on—or it ends.
+        क्षण बीत गया।
 
-        Either way, it lies on the same earth.'
-      - 'The season closed.
+        रिकॉर्ड रह गया।'
+      - 'सूरज डूब गया,
 
-        The land remained.'
-      - 'The path The path remains.
+        और छाया ने फिर दुनिया को ढक लिया।'
+      - 'रेत के अंतिम कण गिर गए,
 
-        Only your steps stopped.'
-      - 'Your time ran out.
+        और कहानी चुपचाप बंद हो गई।'
+      - 'हवा गुज़री,
 
-        The sky didn’t.'
-      - 'It wasn’t rejection.
+        और पदचिह्न बिना निशान मिट गए।'
+      - 'ज्वार आया,
 
-        Only silence.'
-      - 'The world is still intact.
+        और जो वहाँ था वह समुद्र में लौट गया।'
+      - 'मौन।
 
-        You can return—changed.'
-      - 'The season ended.
+        केवल समय गुज़रा।'
+      - 'जीत और हार
 
-        The forest remains.'
-      - 'The distance was closing.
+        रेत के कणों से अधिक कुछ नहीं।'
+      - 'रास्ता आगे बढ़ता है — या यहीं समाप्त होता है।
 
-        Time kept its rhythm.'
-      - 'Your time came to a halt.
+        दोनों ही हाल में वह इसी धरती पर रहता है।'
+      - 'ऋतु समाप्त हुई।
 
-        The sky kept moving.'
-      - 'Not rejection
+        धरती रह गई।'
+      - 'रास्ता अब भी है।
 
-        Just silence.'
-      - 'The path is still here.
+        केवल तुम्हारे कदम रुक गए।'
+      - 'तुम्हारा समय समाप्त हुआ।
 
-        You can come back—changed.'
+        आकाश नहीं।'
+      - 'यह अस्वीकृति नहीं थी।
+
+        सिर्फ़ मौन था।'
+      - 'दुनिया अब भी सलामत है।
+
+        तुम बदलकर लौट सकते हो।'
+      - 'ऋतु समाप्त हुई।
+
+        वन रह गया।'
+      - 'दूरी घट रही थी।
+
+        समय अपनी लय में रहा।'
+      - 'तुम्हारा समय ठहर गया।
+
+        आकाश चलता रहा।'
+      - 'यह अस्वीकृति नहीं थी।
+
+        सिर्फ़ मौन।'
+      - 'रास्ता अब भी यहीं है।
+
+        तुम बदलकर लौट सकते हो।'
 meta:
   lang: hi
   note: Put translation keys under e.g. command.xxx / gui.xxx / messages.xxx etc.
@@ -736,7 +768,8 @@ ui:
     text_1a6173d3: हीरा प्राप्त!
     text_b6568a8d: सोने का सेब प्राप्त!
     no_9c0fdee6: 🏆 No.
-    gamestart_easy_normal_hard_230bd0bd: अगली बार अलग रास्ता आज़माएं! पुनः प्रयास के लिए /gamestart <easy|normal|hard> उपयोग करें!
+    gamestart_easy_normal_hard_230bd0bd: अगली बार अलग रास्ता आज़माएं! पुनः प्रयास के लिए /gamestart <easy|normal|hard> उपयोग
+      करें!
     text_9310a1a7: खेल पहले से चल रहा है।
     text_9310a1a7_908: खेल पहले से चल रहा है।
     text_9310a1a7_1601: खेल पहले से चल रहा है।
@@ -795,7 +828,8 @@ ui:
         difficulty: 'कठिनाई: {difficulty}'
         tipsItem: 2) सुझाव
       note:
-        bookFormat: 'नोट: Minecraft की किताबों में क्लिक करके टैब नहीं बदले जा सकते, इसलिए सामग्री को अलग-अलग खंडों में व्यवस्थित किया गया है।'
+        bookFormat: 'नोट: Minecraft की किताबों में क्लिक करके टैब नहीं बदले जा सकते, इसलिए सामग्री को अलग-अलग खंडों में व्यवस्थित
+          किया गया है।'
       hint:
         reopenMenu: 'सुझाव: इसे फिर से खोलने के लिए /gameMenu चलाएँ।'
   error:
