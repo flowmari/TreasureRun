@@ -820,9 +820,9 @@ ui:
         howToPlay: Så spelar du
         language: 'Language: {lang}'
         rulesItem: 1) Regler
-        savedOn: Sparad vid SUCCESS / TIME_UP
+        savedOn: Sparad vid KLARAD / TID UTE
         scoreRoute: Poäng och rutt
-        tipsItem: 2) Tips och råd
+        tipsItem: 2) Råd och tips
         title: Innehåll
         yourQuotes: Your saved quotes
       hint:
@@ -844,7 +844,7 @@ ui:
     headerRecent: 'Recent 20  |  lang: {lang}'
     legend:
       favorites: = Favorites
-      success: = Klarad / Success
+      success: = Klarad
       timeUp: = Tiden ute
     noFavorites: No favorites yet.
     noLogs: No quote logs yet.
