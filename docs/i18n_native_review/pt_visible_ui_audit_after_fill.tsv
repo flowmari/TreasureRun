@@ -1,0 +1,4 @@
+kind	key	value
+ENGLISH_LIKE	ui.menu.page.contents.savedOn	  · Salvo em SUCCESS / TIME_UP
+ENGLISH_LIKE	ui.labels.page	&8Página {page}/{total}&r
+JP_CJK_LIKE	ui.menu.legacy.toc.message	&6===== 🌟 TreasureRun Conteúdo 🌟 =====\n&b1. Objetivo\n&f   ・Abra o maior número de baús dentro do limite de tempo.\n\n&b2. Dificuldade atual\n&f   ・Dificuldade: &e{difficulty}\n\n&6==================================
