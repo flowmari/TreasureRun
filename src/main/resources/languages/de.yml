@@ -1,3 +1,496 @@
+outcome:
+  notice:
+    timeUpGameOver: 'Die Zeit ist abgelaufen. Das Spiel ist vorbei.'
+    retryGuide: 'Versuche es noch einmal über eine andere Route.'
+  success:
+    common:
+      pool:
+      - 'Du hast es geschafft.
+
+        Die Wahrheit bleibt bestehen.'
+    easy:
+      pool:
+      - 'Du hast es geschafft.
+
+        Die Wahrheit bleibt bestehen.'
+      - 'Auch ein kleiner Schritt zählt,
+
+        und du hast standgehalten.'
+      - 'Du hast hingehört.
+
+        Der Weg hat sich geöffnet.'
+      - "> Du bist hier angekommen.\n> \n> Die Regeln waren einfach —\n> \n> doch entschieden hast du selbst."
+      - "> Entfernung bekam Bedeutung.\n> \n> und die Zeit antwortete auf deine Schritte."
+      - "> Nicht alles leuchtet für immer.\n> \n> Doch dieser Moment tat es."
+      - 'Das Licht fiel gleichmäßig,
+
+        und jeder Schatten verschwand.'
+      - 'Der Wind verstummte,
+
+        und alles kehrte an seinen angestammten Platz zurück.'
+      - 'Ein Augenblick der Stille.
+
+        Die Welt fand zu ihrem Atem zurück.'
+      - 'Die Spur ist tief in den Sand gezeichnet —
+
+        außer Reichweite des Windes.'
+      - 'Die Harmonie kehrte zurück.
+
+        Alles lief auf diesen Moment hinaus.'
+      - 'Die Zeit verstrich lautlos,
+
+        verwahrt in den Winkeln der Erinnerung.'
+      - 'Der Himmel wechselte die Farbe,
+
+        und eine Geschichte fand ihr Ende.'
+      - 'Die Wellen wurden ruhig,
+
+        und das Meer verbarg wieder seine Tiefe.'
+      - 'Die Schritte verstummten,
+
+        und nur der Ort blieb zurück.'
+      - 'Sieg und Niederlage
+
+        sind kaum mehr als Körner im Sand.'
+      - 'Der Weg führt weiter — oder endet.
+
+        So oder so ruht er auf derselben Erde.'
+    normal:
+      pool:
+      - 'Die Entfernung hat ihren Sinn gefunden.
+
+        Die Zeit hat deinen Weg beantwortet.'
+      - 'Die Zeit ist abgelaufen.
+
+        Doch noch ist nicht alles vorbei.'
+      - 'Die Achse ist gefunden.
+
+        Die Welt hat ihre Bewegung eingestellt.'
+      - 'Das Glas hielt stand,
+
+        und du ebenso.'
+      - 'Unter dem stillen Himmel
+
+        blieb dein Wille unerschüttert.'
+      - 'Nur wenig leuchtet für immer.
+
+        Doch dieser Moment strahlte.'
+      - 'Du hast den zerbrechlichen Boden durchquert,
+
+        ohne den Blick zu verlieren.'
+      - 'Der Augenblick ist vergangen.
+
+        Doch was bleibt, bleibt.'
+      - 'Glück vergeht schnell.
+
+        Ordnung bleibt.'
+      - 'Der Himmel kennt keine Pause in seinem endlosen Kreis,
+
+        und auch du kanntest keine.'
+      - 'Das Zentrum ist erreicht.
+
+        Die Welt stand still.'
+      - 'Endlich hier.
+
+        Die Wahrheit bleibt unbeugsam.'
+      - 'Du hast es bis hierher geschafft.
+
+        Und vergiss nicht: Diesen Weg hast du selbst gewählt.'
+      - 'Die Zeit glitt in die Stille
+
+        und fand ihren Platz in den Tiefen des Geistes.'
+      - 'Als der Himmel sich wandelte,
+
+        fand die Geschichte zu ihrem endgültigen Abschluss.'
+      - 'Das Wasser wurde still,
+
+        und der Himmel verhüllte erneut seinen Abgrund.'
+      - 'Die Schritte endeten,
+
+        und nur der Ort blieb.'
+      - 'Das Licht fiel gleichmäßig,
+
+        und jeder Schatten verschwand.'
+      - 'Der Wind verstummte,
+
+        und alles kehrte an seinen angestammten Platz zurück.'
+      - 'Ein Augenblick der Stille.
+
+        Die Welt fand zu ihrem Atem zurück.'
+      - 'Die Spur ist tief in den Sand gezeichnet —
+
+        außer Reichweite des Windes.'
+      - 'Die Harmonie kehrte zurück.
+
+        Alles lief auf diesen Moment hinaus.'
+      - 'LAUF BEENDET.
+
+        Geschafft. Gefunden.
+
+        Das genügt.'
+      - 'Der Himmel trug dein Schweigen,
+
+        und der Weg trug dich weiter.'
+      - 'Du bist hindurchgegangen,
+
+        ohne dem Zerbrechlichen nachzugeben.'
+      - 'Was flüchtig war, wurde klar.
+
+        Was fern war, rückte nah.'
+      - 'Die Stille blieb,
+
+        und in ihr hattest du Bestand.'
+      - 'Der Blick blieb offen,
+
+        auch als der Boden nachgab.'
+      - 'Nichts war leicht.
+
+        Doch du bist geblieben.'
+      - 'Der Weg war schmal,
+
+        aber du hast ihn getragen.'
+      - 'Die Welt wurde still,
+
+        und du wurdest nicht kleiner.'
+      - 'Die Spur führte weiter,
+
+        weil du ihr gefolgt bist.'
+      - 'Du hast das Schwanken durchschritten,
+
+        ohne den Halt zu verlieren.'
+      - 'Am Ende blieb kein Lärm.
+
+        Nur Wahrheit.'
+      - 'Du hast den Rand erreicht,
+
+        ohne den Mittelpunkt zu verlieren.'
+    hard:
+      pool:
+      - In der Kälte blieb die Klarheit bestehen.
+      - 'Die Luft wurde hart,
+
+        doch dein Wille nicht.'
+      - 'Der Weg war streng,
+
+        und dennoch bist du weitergegangen.'
+      - 'Nichts trug dich außer Entschlossenheit.
+
+        Das genügte.'
+      - 'Das Schweigen war tief,
+
+        aber du warst tiefer.'
+      - 'Wo alles fror,
+
+        blieb dein Kern in Bewegung.'
+      - 'Der Blick wurde schärfer,
+
+        je kälter die Welt wurde.'
+      - 'Du hast den Frost durchschritten,
+
+        ohne innerlich zu erstarren.'
+      - 'Die Härte der Welt
+
+        nahm dir nicht die Richtung.'
+      - 'Im stillen Blau der Kälte
+
+        blieb dein Weg erkennbar.'
+      - 'Die Luft schnitt scharf,
+
+        doch du bist nicht gewichen.'
+      - 'Es war kein Trost da.
+
+        Und trotzdem warst du da.'
+      - 'Die Welt wurde fern,
+
+        doch du bliebst gegenwärtig.'
+      - 'Kein Leuchten hielt ewig.
+
+        Aber du hieltst durch.'
+      - 'Der Weg verlangte alles.
+
+        Du hast geantwortet.'
+      - 'Unter kaltem Himmel
+
+        blieb deine Entscheidung warm.'
+      - 'Der Frost legte sich über alles,
+
+        nicht aber über deinen Entschluss.'
+      - 'Du bist dort weitergegangen,
+
+        wo andere gezögert hätten.'
+      - 'Die Stille der Kälte
+
+        konnte dich nicht verschließen.'
+      - 'Du hast den bitteren Rand erreicht,
+
+        ohne daran zu zerbrechen.'
+      - 'Die Schritte waren schwer,
+
+        aber sie blieben deine.'
+      - 'Selbst im Erstarren der Welt
+
+        blieb in dir Bewegung.'
+      - 'Was hart war, blieb hart.
+
+        Doch du bliebst standhaft.'
+      - 'Die Kälte ordnete alles.
+
+        Und du hast darin bestanden.'
+      - 'Der Horizont war leer,
+
+        aber dein Weg nicht.'
+      - 'Es gab keinen Überschuss,
+
+        nur Richtung.'
+      - 'Du hast das Schwere getragen,
+
+        ohne daran stumpf zu werden.'
+      - 'In der Ferne lag nichts Sicheres.
+
+        Und doch bist du gegangen.'
+      - 'Der Himmel blieb kalt,
+
+        doch du bliebst klar.'
+      - 'Wo alles spröde wurde,
+
+        blieb dein Schritt verlässlich.'
+      - 'Der Frost nahm die Wärme,
+
+        nicht aber den Sinn.'
+      - 'Du bist hindurchgekommen.
+
+        Nicht trotz der Härte — durch sie.'
+  timeup:
+    easy:
+      pool:
+      - 'Die Zeit lief ab.
+
+        Doch der Weg ist noch nicht verschwunden.'
+      - 'Zu spät für dieses Mal.
+
+        Nicht zu spät für den nächsten Schritt.'
+      - 'Der Augenblick ist vorbei.
+
+        Die Richtung bleibt.'
+      - 'Die Uhr war schneller.
+
+        Du kannst es wieder versuchen.'
+      - 'Die Zeit hat dich eingeholt.
+
+        Der Weg wartet trotzdem.'
+      - 'Nicht diesmal.
+
+        Aber der Anfang ist noch da.'
+      - 'Der Lauf endete hier.
+
+        Nicht deine Möglichkeit.'
+      - 'Die Zeit wurde knapp,
+
+        und dann war sie fort.'
+      - 'Es hat nicht gereicht.
+
+        Doch es war nicht umsonst.'
+      - 'Die Schritte stoppten.
+
+        Die Spur bleibt sichtbar.'
+      - 'Der Weg schloss sich.
+
+        Noch nicht für immer.'
+      - 'Zu langsam für diesen Durchgang.
+
+        Nicht zu langsam, um weiterzulernen.'
+      - 'Die Zeit ist vorbei.
+
+        Der Versuch zählt trotzdem.'
+      - 'Diesmal endete es früher.
+
+        Beim nächsten Mal vielleicht nicht.'
+      - 'Nicht jeder Anlauf trägt bis ans Ziel.
+
+        Dieser hier trug dich immerhin weiter.'
+      - 'Die Zeit war unerbittlich.
+
+        Du kannst es erneut aufnehmen.'
+    normal:
+      pool:
+      - 'Die Zeit ist abgelaufen.
+
+        Doch der Weg ist noch nicht zu Ende.'
+      - 'Nicht weit genug.
+
+        Aber weiter als zuvor.'
+      - 'Der Lauf endete hier.
+
+        Die Richtung bleibt bestehen.'
+      - 'Die Zeit war schneller.
+
+        Diesmal.'
+      - 'Zu spät für den Abschluss.
+
+        Nicht zu spät für den nächsten Versuch.'
+      - 'Der Moment ist vorbei.
+
+        Die Spur bleibt.'
+      - 'Es hat nicht gereicht.
+
+        Doch es war nicht leer.'
+      - 'Die Zeit schloss sich.
+
+        Der Weg muss es nicht tun.'
+      - 'Der Lauf verstummte.
+
+        Nicht dein Wille.'
+      - 'Diesmal blieb das Ende fern.
+
+        Die Erkenntnis nicht.'
+      - 'Du bist nicht angekommen.
+
+        Aber du bist gegangen.'
+      - 'Die Uhr blieb unerbittlich.
+
+        Du kannst es erneut aufnehmen.'
+      - 'Der Schritt kam.
+
+        Nur das Ziel kam nicht mehr rechtzeitig.'
+      - 'Die Zeit war vorbei,
+
+        bevor der Weg es war.'
+      - 'Nicht jeder Lauf wird vollendet.
+
+        Dieser hat dennoch etwas getragen.'
+      - 'Es endete früher,
+
+        als du es gewollt hättest.'
+      - 'Die Strecke blieb offen.
+
+        Die Zeit tat es nicht.'
+      - 'Was fehlte, war nicht Mut.
+
+        Nur Zeit.'
+      - 'Der Versuch brach ab.
+
+        Die Möglichkeit nicht.'
+      - 'Die Zeit nahm dir das Ende.
+
+        Nicht den nächsten Anfang.'
+    hard:
+      pool:
+      - 'Sogar das Polarlicht vergeht.
+
+        Komm mit neuem Schritt zurück.'
+      - 'In einer zerbrechlichen Welt
+
+        zerschellt Eile vor der Klarheit.'
+      - 'Der Augenblick ist vergangen.
+
+        Sein Sinn nicht.'
+      - 'Der Winter kann warten.
+
+        Du kannst es auch.'
+      - 'Der Himmel zog weiter.
+
+        Du wirst es auch tun.'
+      - 'Die Geschichte geht weiter.
+
+        Zu Ende ist sie noch nicht.'
+      - 'Die Sterne waren da.
+
+        Und du kannst wiederkommen.'
+      - 'Das Eis kennt Geduld.
+
+        Du wirst sie ebenfalls brauchen.'
+      - 'Der Himmel zog weiter.
+
+        Du kannst es auch.'
+      - 'Der Norden hat warten gelernt.
+
+        Lern du es ebenfalls.'
+      - 'Dies ist nur ein Zwischenstück.
+
+        Vorbei ist es noch nicht.'
+      - 'Wie ziehende Wolken:
+
+        Verlier deinen Fluss nicht.'
+      - 'Der Klang war nah.
+
+        Die Distanz war real.
+
+        Doch dieser Augenblick ließ sich nicht halten.'
+      - 'Du warst nah dran.
+
+        Nur die Zeit war es nicht.'
+      - 'Die Welt blieb bei ihren Regeln.
+
+        Du hast ihren Rand berührt.'
+      - 'Den Schatz hast du nicht erreicht.
+
+        Doch das Signal war echt.'
+      - 'Nichts hat sich verändert.
+
+        Nur dein Standpunkt.'
+      - 'Kein Glück.
+
+        Nur Ausrichtung.'
+      - 'Der Moment ist entglitten,
+
+        aber die Spur blieb.'
+      - 'Du hast zerbrechlichen Boden überquert
+
+        und den Horizont ungebrochen gelassen.'
+      - 'Zu Ende ging nur die Zeit.
+
+        Nicht die Möglichkeit.'
+      - 'Die Sonne sank,
+
+        und Schatten legten sich erneut über die Welt.'
+      - 'Die letzten Sandkörner fielen,
+
+        und die Geschichte klang leise aus.'
+      - 'Der Wind strich hindurch,
+
+        und die Spuren vergingen spurlos.'
+      - 'Die Flut kam,
+
+        und was da war, kehrte ins Meer zurück.'
+      - 'Stille.
+
+        Nur die Zeit ging weiter.'
+      - 'Sieg und Niederlage
+
+        sind kaum mehr als Körner im Sand.'
+      - 'Der Weg geht weiter — oder endet.
+
+        So oder so ruht er auf derselben Erde.'
+      - 'Die Zeit dieser Runde ist vorbei.
+
+        Das Land bleibt.'
+      - 'Der Weg ist noch da.
+
+        Nur deine Schritte hielten an.'
+      - 'Deine Zeit lief ab.
+
+        Der Himmel nicht.'
+      - 'Es war keine Zurückweisung.
+
+        Nur Stille.'
+      - 'Die Welt ist noch unversehrt.
+
+        Du kannst verändert zurückkehren.'
+      - 'Die Zeit dieser Runde endete.
+
+        Der Wald bleibt.'
+      - 'Die Distanz schloss sich.
+
+        Die Zeit behielt ihren Takt.'
+      - 'Deine Zeit kam zum Stillstand.
+
+        Der Himmel zog weiter.'
+      - 'Keine Zurückweisung.
+
+        Nur Stille.'
+      - 'Der Weg ist noch hier.
+
+        Du kannst verändert zurückkehren.'
 version: 1
 quotes:
   outcome:
@@ -23,10 +516,8 @@ command:
     resultFalse: Der Gegenstand in deiner Hand ist kein Treasure Emerald.
   gameStart:
     playersOnly: Dieser Befehl kann nur von Spielern verwendet werden.
-    worldNotFound: '[TreasureRun] Die Startwelt ist nicht konfiguriert oder konnte
-      nicht gefunden werden.'
-    started: 'Die Schatzsuche beginnt! Schwierigkeitsgrad: {difficulty} | Zeitlimit:
-      {timeLimit} Sekunden'
+    worldNotFound: '[TreasureRun] Die Startwelt ist nicht konfiguriert oder konnte nicht gefunden werden.'
+    started: 'Die Schatzsuche beginnt! Schwierigkeitsgrad: {difficulty} | Zeitlimit: {timeLimit} Sekunden'
   stageCleanup:
     playersOnly: '&cDiesen Befehl können nur Spieler verwenden.'
     managerNotReady: '[TreasureRun] Die Stufenverwaltung ist noch nicht initialisiert.'
@@ -38,22 +529,17 @@ command:
     success: '&aNeu laden abgeschlossen.'
     fail: '&cNeu laden fehlgeschlagen: {reason}'
   lang:
-    guiCancelledGameStart: Die Sprachauswahl wurde abgebrochen. Versuche es erneut mit /lang.
-      führe /gameStart <easy|normal|hard> aus.
-    guiCancelledGameMenu: Die Sprachauswahl wurde abgebrochen. Öffne sie erneut mit /lang.
-      führe /gameMenu gui aus.
-    guiTooManyShown: Es sind zu viele erlaubte Sprachen konfiguriert, daher werden
-      im GUI nur die ersten 27 angezeigt.
+    guiCancelledGameStart: Die Sprachauswahl wurde abgebrochen. Versuche es erneut mit /lang. führe /gameStart <easy|normal|hard> aus.
+    guiCancelledGameMenu: Die Sprachauswahl wurde abgebrochen. Öffne sie erneut mit /lang. führe /gameMenu gui aus.
+    guiTooManyShown: Es sind zu viele erlaubte Sprachen konfiguriert, daher werden im GUI nur die ersten 27 angezeigt.
     playersOnly: Dieser Befehl kann nur von Spielern verwendet werden.
-    resetDone: ✅ Deine gespeicherte Sprache wurde zurückgesetzt. Beim nächsten Mal
-      wird die GUI geöffnet.
+    resetDone: ✅ Deine gespeicherte Sprache wurde zurückgesetzt. Beim nächsten Mal wird die GUI geöffnet.
     current: 'Aktuelle Sprache: {lang}'
     emptyCode: 'Der Sprachcode ist leer. Beispiel: /lang ja'
     notAllowed: 'Diese Sprache ist nicht erlaubt: {lang}'
     allowedList: 'Erlaubte Sprachen: {allowed}'
     changed: '✅ Sprache geändert: {displayName} ({lang})'
-    changedButNotSaved: '⚠ Die Sprache wurde geändert, konnte aber nicht dauerhaft
-      gespeichert werden: {lang}'
+    changedButNotSaved: '⚠ Die Sprache wurde geändert, konnte aber nicht dauerhaft gespeichert werden: {lang}'
     list:
       title: === Sprachen ===
       default: 'Standard: {default}'
@@ -67,8 +553,7 @@ command:
     success: '&bDu hast mit 3 Diamanten einen Spezial-Smaragd hergestellt!'
   quoteFavorite:
     latestSaved: Das neueste Zitat wurde zu den Favoriten hinzugefügt.
-    latestNotSaved: Das neueste Zitat konnte nicht gespeichert werden. Entweder gibt
-      es noch keinen Eintrag oder es ist bereits in den Favoriten.
+    latestNotSaved: Das neueste Zitat konnte nicht gespeichert werden. Entweder gibt es noch keinen Eintrag oder es ist bereits in den Favoriten.
     playersOnly: '&cDieser Befehl kann nur von Spielern verwendet werden.'
     repositoryNotReady: Favoriten sind noch nicht verfügbar.
     listHeader: '&bFavoriten ({count})'
@@ -82,8 +567,7 @@ command:
     openBookFailed: '&cDas Buch konnte nicht geöffnet werden.'
     unknownSubcommand: '&cUnbekannter Unterbefehl. Siehe /quoteFavorite help.'
     shortcutSaved: Das neueste Zitat wurde zu den Favoriten hinzugefügt.
-    shortcutNotSaved: Das neueste Zitat konnte nicht gespeichert werden. Entweder
-      gibt es noch keinen Eintrag oder es ist bereits in den Favoriten.
+    shortcutNotSaved: Das neueste Zitat konnte nicht gespeichert werden. Entweder gibt es noch keinen Eintrag oder es ist bereits in den Favoriten.
     help:
       title: '&bQuoteFavorite-Befehle'
       latest: '&7/quoteFavorite latest - Letztes Zitat zu den Favoriten hinzufügen'
@@ -145,55 +629,44 @@ game:
     cursor_7fabae3f: / cursor=
     return_whoclicked_is_not_pla_a7675648: 'RETURN: whoClicked is not Player'
     return_topinventory_is_not_m_9936e6de: 'RETURN: topInventory is not MERCHANT'
-    return_not_result_slot_expec_9eb8c2c8: 'RETURN: not result slot. expected rawSlot=2
-      but was'
+    return_not_result_slot_expec_9eb8c2c8: 'RETURN: not result slot. expected rawSlot=2 but was'
     shift_53e51de9: ', shift='
-    return_topinventory_is_merch_fa2f5d98: 'RETURN: topInventory is MERCHANT but not
-      MerchantInventory instance'
+    return_topinventory_is_merch_fa2f5d98: 'RETURN: topInventory is MERCHANT but not MerchantInventory instance'
     merchant_view_title_daf2a73a: merchant view title=
     treasure_shop_2574a694: treasure shop
     return_not_treasure_shop_tit_8e65ad3d: 'RETURN: not Treasure Shop title. plainTitle='
     return_current_item_is_null_0f27c9fd: 'RETURN: current item is null'
     return_current_item_is_air_76b5e623: 'RETURN: current item is AIR'
-    return_current_item_is_not_g_d1d65218: 'RETURN: current item is not GOLDEN_APPLE.
-      type='
+    return_current_item_is_not_g_d1d65218: 'RETURN: current item is not GOLDEN_APPLE. type='
     return_game_is_not_running_048d7edb: 'RETURN: game is not running'
     ingredients_snapshot_98cb38c3: ingredients snapshot
-    return_ingredient_check_fail_673860d5: 'RETURN: ingredient check failed (need
-      TreasureEmerald>=5 and slot1 empty)'
-    ok_passed_all_checks_schedul_11e17905: 'OK: passed all checks -> scheduling effect
-      with runTaskLater'
+    return_ingredient_check_fail_673860d5: 'RETURN: ingredient check failed (need TreasureEmerald>=5 and slot1 empty)'
+    ok_passed_all_checks_schedul_11e17905: 'OK: passed all checks -> scheduling effect with runTaskLater'
     run_runtasklater_executed_96d7e049: 'RUN: runTaskLater executed'
     return_later_game_is_not_run_9cc569aa: 'RETURN(LATER): game is not running'
     return_later_player_is_offli_863a8cdc: 'RETURN(LATER): player is offline'
-    return_later_openinventory_t_7b809b57: 'RETURN(LATER): openInventory/topInventory
-      is null'
-    return_later_topinventory_is_f8714cf5: 'RETURN(LATER): topInventory is not MERCHANT.
-      type='
+    return_later_openinventory_t_7b809b57: 'RETURN(LATER): openInventory/topInventory is null'
+    return_later_topinventory_is_f8714cf5: 'RETURN(LATER): topInventory is not MERCHANT. type='
     treasure_shop_2574a694_822: treasure shop
-    return_later_not_treasure_sh_fcce2bb9: 'RETURN(LATER): not Treasure Shop title.
-      plainTitle='
+    return_later_not_treasure_sh_fcce2bb9: 'RETURN(LATER): not Treasure Shop title. plainTitle='
     ok_later_playing_effects_now_b80a2e0e: 'OK(LATER): playing effects now'
     k_llun_r_dj_pinu_16494877: '&6&lKöllun úr djúpinu'
     trade_complete_4a4b1d6f: Trade complete!
     a_hidden_power_awakens_7620bc4d: A hidden power awakens…
     mobcontrol_wolf_allowed_cust_a5459084: '[MobControl] WOLF allowed (CUSTOM). name='
     rainbow_wolf_b3cc6257: Rainbow Wolf
-    mobcontrol_wolf_allowed_name_9cc5a59a: '[MobControl] WOLF allowed (name match).
-      reason='
+    mobcontrol_wolf_allowed_name_9cc5a59a: '[MobControl] WOLF allowed (name match). reason='
     mobcontrol_wolf_cancelled_re_1a3b2e1a: '[MobControl] WOLF cancelled! reason='
     stagemobcontrollistener_refl_08ad690a: '⚠ StageMobControlListener: カウントダウン判定(reflection)に失敗。ゲーム中のみ制御します。原因:'
     stagemobcontrollistener_refl_d8a61972: '⚠ StageMobControlListener: reflection初期化に失敗。ゲーム中のみ制御します。原因:'
     mysql_connection_established_47452dfd: MySQL connection established successfully!
     failed_to_connect_to_mysql_95e4d50a: 'Failed to connect to MySQL:'
-    create_table_if_not_exists_p_136a7833: CREATE TABLE IF NOT EXISTS player_treasure_count
-      (
+    create_table_if_not_exists_p_136a7833: CREATE TABLE IF NOT EXISTS player_treasure_count (
     player_name_varchar_50_prima_79b8331b: player_name VARCHAR(50) PRIMARY KEY,
     count_int_not_null_660eadd8: count INT NOT NULL)
     failed_to_create_table_68199f98: 'Failed to create table:'
     reset_treasure_count_for_pla_96b152d2: 'Reset treasure count for player:'
-    dj_onalltreasurescollected_a871afdd: DJイベントはすでに実行中のため、onAllTreasuresCollected
-      をスキップしました。
+    dj_onalltreasurescollected_a871afdd: DJイベントはすでに実行中のため、onAllTreasuresCollected をスキップしました。
     on_duplicate_key_update_coun_a1543779: ON DUPLICATE KEY UPDATE count = ?
     failed_to_save_treasure_coun_9d94c0cc: 'Failed to save treasure count:'
     dj_triggerultimatedjevent_eb01ecae: DJイベントはすでに実行中のため、triggerUltimateDJEvent をスキップしました。
@@ -202,8 +675,7 @@ game:
     congratulations_38fd1594: §6Congratulations! 全ての宝物を見つけました！
     time_s_up_c5b3ef74: §c§lZEIT ABGELAUFEN!
     treasures_collected_ca7eab31: '§7Treasures collected: §e'
-    try_a_different_route_next_t_721a4d8b: §7Try a different route next time — or
-      use §e/gamestart §7<§eeasy§7|§enormal§7|§ehard§7> §7to retry.
+    try_a_different_route_next_t_721a4d8b: §7Try a different route next time — or use §e/gamestart §7<§eeasy§7|§enormal§7|§ehard§7> §7to retry.
 sound:
   sparkle: '&b* Glitzer *'
   start: '&7(BGM startet...)'
@@ -262,23 +734,19 @@ favorites:
     rereadTitle: Erneut lesen
     sub: Nach Kapiteln durchsuchen
   auto:
-    treasurerun_favorites_templa_a0a4bf2e: '[TreasureRun] favorites_templates.yml
-      created.'
+    treasurerun_favorites_templa_a0a4bf2e: '[TreasureRun] favorites_templates.yml created.'
     mysql_repository_not_ready_72df0af1: MySQL / Repository not ready.
     favorite_saved_sneak_rightcl_7a73eb4f: ★ Favorite saved! (Sneak+RightClick)
     quotefavoritestore_reloaded__3ba623a3: '[QuoteFavoriteStore] Reloaded DB: host='
-    where_player_uuid_and_quote__36106f85: WHERE player_uuid=? AND quote_hash=? LIMIT
-      1
+    where_player_uuid_and_quote__36106f85: WHERE player_uuid=? AND quote_hash=? LIMIT 1
     quotefavoritestore_exists_fa_7d08adba: '[QuoteFavoriteStore] exists failed:'
-    player_uuid_quote_hash_outco_49f06b31: (player_uuid, quote_hash, outcome, difficulty,
-      lang, quote_text)
+    player_uuid_quote_hash_outco_49f06b31: (player_uuid, quote_hash, outcome, difficulty, lang, quote_text)
     values_643f4d2f: VALUES (?, ?, ?, ?, ?, ?)
     quotefavoritestore_addfavori_44fb1d75: '[QuoteFavoriteStore] addFavorite failed:'
     where_player_uuid_and_quote__81bcaee5: WHERE player_uuid=? AND quote_hash=?
     quotefavoritestore_removefav_8180a1e4: '[QuoteFavoriteStore] removeFavorite failed:'
     where_player_uuid_and_id_f4a80773: WHERE player_uuid=? AND id=?
-    quotefavoritestore_removefav_d024b1e5: '[QuoteFavoriteStore] removeFavoriteById
-      failed:'
+    quotefavoritestore_removefav_d024b1e5: '[QuoteFavoriteStore] removeFavoriteById failed:'
     where_player_uuid_53558ea9: WHERE player_uuid=?
     order_by_created_at_desc_lim_f22988c0: ORDER BY created_at DESC LIMIT ?
     quotefavoritestore_listfavor_f3e976d4: '[QuoteFavoriteStore] listFavoriten failed:'
@@ -294,8 +762,7 @@ commands:
   3_71b78a44: ダイヤモンド3個でスペシャルエメラルドを作成しました！
   text_3030fd61: プレイヤーのみ実行できます
   op_10caf0f6: 権限がありません（OP限定）
-  debug_mode_is_off_config_yml_b3d27428: 'Debug mode is OFF. config.yml の debug: true
-    にしてください'
+  debug_mode_is_off_config_yml_b3d27428: 'Debug mode is OFF. config.yml の debug: true にしてください'
   rank_1_2_3_demo_d87f40da: '使い方: /rank <1|2|3|demo>'
   rank_1_2_3_demo_4f3e3084: '数字で入力してください: /rank <1|2|3|demo>'
   1_3_rank_1_2_3_7f459bd0: '1〜3だけ使えます: /rank <1|2|3>'
@@ -311,29 +778,20 @@ commands:
   mysql_repository_not_ready_72df0af1: MySQL / Repository not ready.
   mysql_repository_not_ready_72df0af1_93: MySQL / Repository not ready.
   mysql_repository_not_ready_72df0af1_119: MySQL / Repository not ready.
-  quotefavorite_book_open_cata_055de855: /quoteFavorite book            - open catalog
-    (full)
-  quotefavorite_book_toc_open__c7d02ede: /quoteFavorite book toc        - open catalog
-    (TOC only)
-  quotefavorite_book_success_o_afe31501: /quoteFavorite book success    - open SUCCESS
-    chapter
-  quotefavorite_book_timeup_op_08b799b0: /quoteFavorite book timeup     - open TIME_UP
-    chapter
-  quotefavorite_book_other_ope_bdcbafba: /quoteFavorite book other      - open OTHER
-    chapter
-  success_normal_en_the_obstac_b627a544: 【SUCCESS / Normal / en】\nThe obstacle is
-    the way.
+  quotefavorite_book_open_cata_055de855: /quoteFavorite book            - open catalog (full)
+  quotefavorite_book_toc_open__c7d02ede: /quoteFavorite book toc        - open catalog (TOC only)
+  quotefavorite_book_success_o_afe31501: /quoteFavorite book success    - open SUCCESS chapter
+  quotefavorite_book_timeup_op_08b799b0: /quoteFavorite book timeup     - open TIME_UP chapter
+  quotefavorite_book_other_ope_bdcbafba: /quoteFavorite book other      - open OTHER chapter
+  success_normal_en_the_obstac_b627a544: 【SUCCESS / Normal / en】\nThe obstacle is the way.
   time_up_bc0cd646: TIME UP
 debug:
   istreasureemerald_fb6fecec: isTreasureEmerald =
-  chestsound_start_called_16th_e2a7414b: §b[ChestSound] start() called (16th-grid
-    mode)
+  chestsound_start_called_16th_e2a7414b: §b[ChestSound] start() called (16th-grid mode)
   chestsound_chests_0_82465b3c: §7[ChestSound] chests=0
-  chestsound_d_1fm_s_t_2f_step_6e3e0fdb: §b[ChestSound] §fD=§e%.1fm §7(%s§7) §ft=§a%.2f
-    §7step=%d bar=%d
+  chestsound_d_1fm_s_t_2f_step_6e3e0fdb: §b[ChestSound] §fD=§e%.1fm §7(%s§7) §ft=§a%.2f §7step=%d bar=%d
   chestsound_nearest_1fm_s_t_2_e2465135: §b[ChestSound] nearest=%.1fm %s  t=%.2f
-  reward_giverankrewardwitheff_5e361189: '[Reward] giveRankRewardWithEffect called
-    player='
+  reward_giverankrewardwitheff_5e361189: '[Reward] giveRankRewardWithEffect called player='
   starttheme_startgame_called__9cf42cbe: '[StartTheme] startGame called by'
 items:
   text_7567bb35: 特製エメラルドのレシピを登録しました。
@@ -391,8 +849,7 @@ ui:
       hint:
         reopenMenu: 'Tipp: Öffne dieses Menü erneut mit /gameMenu.'
       note:
-        bookFormat: Minecraft books cannot switch tabs by clicking, so sections are
-          shown as pages.
+        bookFormat: Minecraft books cannot switch tabs by clicking, so sections are shown as pages.
   quote:
     footer:
       dbLogs: '(DB: proverb_logs)'
@@ -458,68 +915,6 @@ ui:
     tabs: Tabs
   error:
     noData: No data.
-outcome:
-  success:
-    common:
-      pool:
-      - 'Du hast es geschafft.
-
-        Der Weg hat gehalten.'
-    easy:
-      pool:
-      - Auch ein kleiner Schritt zählt.
-    normal:
-      pool:
-      - Die Strecke bekam Bedeutung.
-    hard:
-      pool:
-      - In der Kälte blieb die Klarheit bestehen.
-  timeup:
-    easy:
-      pool:
-      - 'Die Zeit lief ab.
-
-        Du nicht.'
-    normal:
-      pool:
-      - 'Die Distanz schloss sich.
-
-        Die Zeit nicht.'
-    hard:
-      pool:
-      - 'Selbst die Aurora vergeht.
-
-        Komm wieder.'
-  random:
-    common:
-      pool: []
-  fallback:
-    runComplete: Lauf abgeschlossen.
-    timeUp: Zeit abgelaufen.
-    trader: 'Vollkommene Balance.
-
-      Die Waage blieb im Gleichgewicht.'
-  trader:
-    common:
-      pool:
-      - 'Vollkommene Balance.
-
-        Die Waage blieb im Gleichgewicht.'
-      - 'Die Dinge änderten sich.
-
-        Der Tausch ging weiter.'
-    easy:
-      pool: []
-    normal:
-      pool: []
-    hard:
-      pool: []
-  notice:
-    timeUpGameOver: Zeit abgelaufen! Spiel beendet!
-    retryGuide: Probiere beim nächsten Mal eine andere Route. Zum Neustart nutze /gamestart
-      <easy|normal|hard>.
-    titleTimeUp: ZEIT ABGELAUFEN!
-    treasuresCollected: 'Gesammelte Schatztruhen: {got}/{total} (noch {missing})'
 gameplay:
   pickup:
     scoreNone: Es gibt noch keinen Punktestand.

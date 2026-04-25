@@ -1,3 +1,474 @@
+outcome:
+  notice:
+    timeUpGameOver: 'समय समाप्त हो गया। खेल खत्म हो गया।'
+    retryGuide: 'किसी दूसरे रास्ते से फिर कोशिश करें।'
+  success:
+    common:
+      pool: []
+    easy:
+      pool:
+      - 'You’ve made it.
+
+        The truth remains.'
+      - 'Even if it was only a small step,
+
+        you held your ground.'
+      - "You listened.\n The path opened."
+      - "> You made it here\n> \n> The rules were simple —\n> \n> the choice was yours."
+      - "> Distance became meaning.\n> \n> and time answered your footsteps."
+      - "> Not everything shines forever.\n> \n> But this moment did."
+      - 'Light fell evenly, ,
+
+        and every shadow vanished.'
+      - 'The wind fell silent.
+
+        and everything returned to where it belonged.'
+      - 'A moment of silence.
+
+        The world steadied its breath.'
+      - 'The record is etched deep in the sand—
+
+        beyond the reach of the wind.'
+      - 'Harmony was restored.
+
+        Everything had been for this moment.'
+      - 'Time slipped by in silence,
+
+        tucked away in the corners of memory.'
+      - 'The sky shifted in color,
+
+        and one story came to its end.'
+      - 'The waves grew calm,
+
+        and the sea hid its depths once more.'
+      - 'The footsteps stopped,
+
+        and only the place remained.'
+      - "Victory and defeat \nare nothing more than grains of sand."
+      - 'The road goes on—or it ends.
+
+        Either way, it lies on the same earth.'
+    normal:
+      pool:
+      - 'The distance has found its meaning.
+
+        Time has rewarded your journey.'
+      - 'The time is up.
+
+        but the rest is far from over.'
+      - 'The axis is found.
+
+        the world has cased its motion.'
+      - 'The glass held its breath,
+
+        and you held your ground.'
+      - 'Under the stillness of the sky,
+
+        your spirit did not waver.'
+      - 'Few things shine forever.
+
+        but this moment was radiant.'
+      - 'You traversed the fragile earth,
+
+        without losing the view.'
+      - 'The moment has passed.
+
+        The legacy remains.'
+      - 'Luck fades fast.
+
+        order endures.'
+      - 'The sky knows no pause in endless circle,
+
+        nor shall you find yours.'
+      - 'The center has been reached.
+
+        The world stood still.'
+      - 'Finally here.
+
+        The truth remains unyielding.'
+      - 'You have seen it through.
+
+        And mark this: it was you, and no one else, who chose this path.'
+      - 'Time drifted into silence,
+
+        finding its place in the recesses of the mind.'
+      - 'As the sky transformed,
+
+        the tale found its final resolved.'
+      - 'The waters fell calm,
+
+        and the sky once more veiled its abyss.'
+      - 'The footsteps ceased,
+
+        only the place remained.'
+      - 'Light fell evenly, ,
+
+        and every shadow vanished.'
+      - 'The wind fell silent.
+
+        and everything returned to where it belonged.'
+      - 'A moment of silence.
+
+        The world steadied its breath.'
+      - 'The record is etched deep in the sand—
+
+        beyond the reach of the wind.'
+      - 'Harmony was restored.
+
+        Everything had been for this moment.'
+      - 'RUN COMPLETE.
+
+        Clear. Found it.
+
+        That''s enough.'
+      - 'RUN COMPLETE.
+
+        The path held.
+
+        So did you.'
+      - 'The sky has kept moving.
+
+        So can you.'
+      - 'RUN COMPLETE.
+
+        A quiet result.
+
+        The weight of real work.'
+      - 'You only walked the path
+
+        the world had laid out for you.'
+      - 'The ground didn’t give way.
+
+        It trusted your steps.'
+      - 'This moment aligned
+
+        with the stars’ ancient rhythm.'
+      - "You didn’t take anything.\n You understood something."
+      - 'You didn’t gain a thing.
+
+        You only saw the truth for what it was.'
+      - 'You didn’t take this place.
+
+        You belonged here.'
+      - 'You walked a road
+
+        older than memory itself.'
+      - 'The earth did not resist.
+
+        It recognized you.'
+      - "This moment aligned\n with the stillness of the stars."
+    hard:
+      pool:
+      - 'In the north wind,
+
+        clarity outlasts speed.'
+      - "The center was found.\n The world came to rest."
+      - 'The stars stay silent.
+
+        Your record does the speaking.'
+      - 'The result  remained.
+
+        The position changed.'
+      - 'Between ice and glass,
+
+        you chose control.'
+      - 'The waves fell quiet,
+
+        and the sea reclaimed its hidden depths.'
+      - 'Some treasures still await.
+
+        Next time, a different path.'
+      - 'The sky didn’t change.
+
+        You did.'
+      - 'The moment passed.
+
+        What remained was order.'
+      - 'Winter is honest.
+
+        So was your run.'
+      - 'The stars aligned for a moment.
+
+        You noticed.'
+      - 'The distance closed.
+
+        Time did not.'
+      - "The world’s rules stood firm.\n And the signal of possibility was real."
+      - 'The path closed quietly.
+
+        You were already through.'
+      - 'Nothing changed.
+
+        Only your position did.'
+      - 'Not luck.
+
+        Alignment.'
+      - 'The moment passed.
+
+        The record remains.'
+      - 'The outcome didn’t change.
+
+        Still, you moved forward.'
+      - 'The output didn’t change.
+
+        But you reached a new level.'
+      - 'The ending was the same.
+
+        But the one who reached it had changed.'
+      - 'The destination is the same
+
+        —but you’re no longer the traveler you once were.'
+      - 'Light fell evenly, ,
+
+        and every shadow vanished.'
+      - 'The wind fell silent.
+
+        and everything returned to where it belonged.'
+      - 'A moment of silence.
+
+        The world steadied its breath.'
+      - 'The record is etched deep in the sand—
+
+        beyond the reach of the wind.'
+      - 'Harmony was restored.
+
+        Everything had been for this moment.'
+      - 'Time slipped by in silence,
+
+        tucked away in the corners of memory.'
+      - 'The sky shifted in color,
+
+        and one story came to its end.'
+      - 'The waves grew calm,
+
+        and the sea hid its depths once more.'
+      - 'The footsteps stopped,
+
+        and only the place remained.'
+      - "Victory and defeat \nare nothing more than grains of sand."
+      - 'The road goes on—or it ends.
+
+        Either way, it lies on the same earth.'
+  timeup:
+    easy:
+      pool:
+      - 'Time ran out.
+
+        Nothing else did.'
+      - 'The treasure can wait.
+
+        So can you.'
+      - 'Breathe in.
+
+        Then again.'
+      - 'That’s all for now.
+
+        On to the next step.'
+      - 'You''re still here.
+
+        That’s what matters.'
+      - 'The run ended.
+
+        You didn’t.'
+      - 'TIME''S UP.
+
+        The run ended.
+
+        You didn''t.'
+      - 'TIME''S UP.
+
+        The rules don’t change.
+
+        Again.'
+      - 'TIME''S UP.
+
+        “So close” is real.'
+      - 'The sun sank,
+
+        and shadow covered the world once again.'
+      - 'The last grains of sand fell,
+
+        and the story quietly came to a close.'
+      - 'The wind swept through,
+
+        and the footprints vanished without a trace.'
+      - 'The tide came in,
+
+        What once had been there returned to the sea.'
+      - 'Silence.
+
+        Only time passed through.'
+      - "Victory and defeat \nare nothing more than grains of sand."
+      - 'The road goes on—or it ends.
+
+        Either way, it lies on the same earth.'
+    normal:
+      pool:
+      - 'The distance closed.
+
+        Time did not.'
+      - 'The world kept its rules.
+
+        You touched the edge.'
+      - 'You didn’t make it.
+
+        But the signal was real.'
+      - 'Some treasures still await.
+
+        Let’s try a different path.'
+      - 'The result remained.
+
+        The position changed.'
+      - 'Time ran out.
+
+        Meaning didn''t.'
+      - 'So close.
+
+        The sound said so.'
+      - 'The map is still open.
+
+        Come back to it.'
+      - 'The world’s rules stood firm.
+
+        The signal of possibility was real.'
+      - The world kept its rules.
+      - 'The moment passed.
+
+        The record remains.'
+      - 'The sun sank,
+
+        and shadow covered the world once again.'
+      - 'The last grains of sand fell,
+
+        and the story quietly came to a close.'
+      - 'The wind swept through,
+
+        and the footprints vanished without a trace.'
+      - 'The tide came in,
+
+        What once had been there returned to the sea.'
+      - 'Silence.
+
+        Only time passed through.'
+      - "Victory and defeat \nare nothing more than grains of sand."
+      - 'The road goes on—or it ends.
+
+        Either way, it lies on the same earth.'
+      - "> Time ran out.\n> \n> Nothing else did."
+      - "> The outcome didn’t change.\n> \n> But your position did."
+    hard:
+      pool:
+      - 'Even the aurora fades.
+
+        Come back with a new stride.'
+      - 'In a fragile world,
+
+        haste shatters clarity before it can be found.'
+      - 'The moment slipped away.
+
+        The meaning did not.'
+      - 'Winter is patient.
+
+        Be the same.'
+      - 'The sky kept moving.
+
+        So will you.'
+      - 'The story moves on.
+
+        The end is not yet.'
+      - 'The stars were there, watching.
+
+        Again.'
+      - 'Ice takes its time.
+
+        Neither do you.'
+      - 'The sky kept moving.
+
+        So can you.'
+      - 'The north has learned to wait.
+
+        So should you.'
+      - 'This is an interlude
+
+        —It’s not over.'
+      - 'Like drifting clouds,
+
+        don’t lose your flow—like a river.'
+      - 'The sound was near.
+
+        The distance was real.
+
+        But that moment can’t be saved.'
+      - 'You were closing in.
+
+        Only time wasn’t.'
+      - 'The world held to its rules.
+
+        You touched the edge of them.'
+      - "You didn’t reach the treasure. \nBut the signal was real."
+      - 'Nothing changed.
+
+        Only your position did.'
+      - 'It wasn’t luck.
+
+        Alignment.'
+      - 'The moment slipped away,
+
+        but the record stayed.'
+      - 'You crossed fragile ground
+
+        and left the horizon unbroken.'
+      - "Nothing changed.\n Only your position did.\nNot luck.\nAlignment.\nThe moment passed.\nThe record remains."
+      - 'The sun sank,
+
+        and shadow covered the world once again.'
+      - 'The last grains of sand fell,
+
+        and the story quietly came to a close.'
+      - 'The wind swept through,
+
+        and the footprints vanished without a trace.'
+      - 'The tide came in,
+
+        What once had been there returned to the sea.'
+      - 'Silence.
+
+        Only time passed through.'
+      - "Victory and defeat \nare nothing more than grains of sand."
+      - 'The road goes on—or it ends.
+
+        Either way, it lies on the same earth.'
+      - 'The season closed.
+
+        The land remained.'
+      - 'The path The path remains.
+
+        Only your steps stopped.'
+      - 'Your time ran out.
+
+        The sky didn’t.'
+      - 'It wasn’t rejection.
+
+        Only silence.'
+      - 'The world is still intact.
+
+        You can return—changed.'
+      - 'The season ended.
+
+        The forest remains.'
+      - 'The distance was closing.
+
+        Time kept its rhythm.'
+      - 'Your time came to a halt.
+
+        The sky kept moving.'
+      - 'Not rejection
+
+        Just silence.'
+      - 'The path is still here.
+
+        You can come back—changed.'
+
 meta:
   lang: hi
   note: Put translation keys under e.g. command.xxx / gui.xxx / messages.xxx etc.
@@ -536,68 +1007,6 @@ items:
     emerald_block: पन्ने का ब्लॉक
     iron_block: लोहे का ब्लॉक
     tnt: TNT
-outcome:
-  success:
-    common:
-      pool:
-      - 'तुम पहुँच गए।
-
-        रास्ता टिका रहा।'
-    easy:
-      pool:
-      - छोटा कदम भी मायने रखता है।
-    normal:
-      pool:
-      - दूरी अर्थ बन गई।
-    hard:
-      pool:
-      - ठंड में भी स्पष्टता बनी रही।
-  timeup:
-    easy:
-      pool:
-      - 'समय समाप्त हो गया।
-
-        लेकिन तुम नहीं।'
-    normal:
-      pool:
-      - 'दूरी सिमट गई।
-
-        समय नहीं।'
-    hard:
-      pool:
-      - 'ओरोरा भी फीकी पड़ती है।
-
-        फिर लौट आना।'
-  random:
-    common:
-      pool: []
-  fallback:
-    runComplete: दौड़ पूरी हुई।
-    timeUp: समय समाप्त।
-    trader: 'पूर्ण संतुलन।
-
-      तराज़ू बराबर रही।'
-  trader:
-    common:
-      pool:
-      - 'पूर्ण संतुलन।
-
-        तराज़ू बराबर रही।'
-      - 'चीज़ें बदलीं।
-
-        लेन-देन चलता रहा।'
-    easy:
-      pool: []
-    normal:
-      pool: []
-    hard:
-      pool: []
-  notice:
-    timeUpGameOver: समय समाप्त! खेल समाप्त!
-    retryGuide: अगली बार कोई दूसरा रास्ता आज़माएँ। फिर से शुरू करने के लिए /gamestart
-      <easy|normal|hard> का उपयोग करें।
-    titleTimeUp: समय समाप्त!
-    treasuresCollected: 'इकट्ठे किए गए खजाने: {got}/{total} (बाकी {missing})'
 gameplay:
   pickup:
     scoreNone: अभी कोई स्कोर नहीं है।
