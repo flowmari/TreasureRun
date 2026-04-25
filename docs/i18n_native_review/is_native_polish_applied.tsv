@@ -1,0 +1,301 @@
+lang	pool	index	old	new
+is	outcome.success.easy.pool	1	"Þú náðir alla leið.
+Sannleikurinn stendur enn."	"Þú komst alla leið.
+Sannleikurinn stendur eftir."
+is	outcome.success.easy.pool	2	"Þótt skrefið væri lítið,
+hélstu velli."	"Þótt skrefið væri lítið,
+stóðstu föst."
+is	outcome.success.easy.pool	3	"Þú hlustaðir.
+Þá opnaðist leiðin."	"Þú hlustaðir.
+Og þá opnaðist leiðin."
+is	outcome.success.easy.pool	6	"> Ekki allt heldur áfram að skína.
+>
+> En þetta augnablik gerði það."	"> Ekki allt skín að eilífu.
+>
+> En þetta augnablik gerði það."
+is	outcome.success.easy.pool	7	"Ljósið seig mjúklega niður,
+og hver skuggi vék til hliðar."	"Ljósið féll mjúklega,
+og hver skuggi vék undan."
+is	outcome.success.easy.pool	8	"Þögn féll yfir vindinn.
+Allt sneri aftur á sinn stað."	"Vindurinn þagnaði.
+Allt sneri aftur á sinn stað."
+is	outcome.success.easy.pool	9	"Andartak þagnar.
+Heimurinn dró aftur andann."	"Andartak þagnar.
+Heimurinn náði aftur andanum."
+is	outcome.success.easy.pool	11	"Jafnvægið komst á ný.
+Allt hafði stefnt að þessu augnabliki."	"Jafnvægið var endurheimt.
+Allt hafði leitt að þessu augnabliki."
+is	outcome.success.easy.pool	12	"Tíminn rann hljóðlega hjá,
+geymdur í horni minningarinnar."	"Tíminn rann hljóðlega hjá,
+geymdur í afkima minningarinnar."
+is	outcome.success.easy.pool	13	"Himinninn skipti um lit,
+og ein saga lauk."	"Himinninn tók nýjan lit,
+og ein saga rann sitt skeið."
+is	outcome.success.easy.pool	14	"Öldurnar lægðu,
+og hafið faldi dýpi sitt á ný."	"Öldurnar lægðu,
+og hafið huldi dýpi sitt á ný."
+is	outcome.success.easy.pool	15	"Fótsporin stöðvuðust,
+og aðeins staðurinn varð eftir."	"Fótsporin þögnuðu,
+og staðurinn einn stóð eftir."
+is	outcome.success.easy.pool	16	"Sigur og ósigur —
+að lokum eru þau aðeins sandkorn."	"Sigur og ósigur —
+að lokum eru þau aðeins korn í sandi."
+is	outcome.success.easy.pool	17	"Leiðin heldur áfram — eða endar hér.
+Í báðum tilvikum hvílir hún á sömu jörð."	"Leiðin heldur áfram — eða endar hér.
+Hvort sem er, hvílir hún á sömu jörð."
+is	outcome.success.normal.pool	1	"Fjarlægðin hefur loks fengið merkingu.
+Tíminn svaraði ferð þinni."	"Fjarlægðin hefur loks öðlast merkingu.
+Tíminn svaraði ferð þinni."
+is	outcome.success.normal.pool	2	"Tíminn er úti.
+En ekki lýkur öllu hér."	"Tíminn er úti.
+En ekki endar allt hér."
+is	outcome.success.normal.pool	3	"Öxullinn er fundinn.
+Heimurinn hélt aftur af hreyfingu sinni."	"Öxullinn er fundinn.
+Heimurinn hélt niðri hreyfingu sinni."
+is	outcome.success.normal.pool	4	"Glerið hélt niðri í sér andanum,
+og þú stóðst kyrr."	"Glerið hélt niðri í sér andanum,
+og þú stóðst föst."
+is	outcome.success.normal.pool	5	"Undir kyrrum himni
+riðaðist hugur þinn ekki."	"Undir kyrrum himni
+bilaði hugur þinn ekki."
+is	outcome.success.normal.pool	7	"Þú fórst yfir brothætta jörð
+án þess að missa sjónar á sjóndeildarhringnum."	"Þú fórst yfir brothætta jörð
+án þess að missa sjóndeildarhringinn úr augsýn."
+is	outcome.success.normal.pool	8	"Andartakið er liðið.
+Það sem eftir stendur, stendur áfram."	"Andartakið er liðið.
+Það sem stendur eftir, stendur áfram."
+is	outcome.success.normal.pool	9	"Heppnin dofnar fljótt.
+Reglan heldur velli."	"Heppnin dofnar fljótt.
+Reglan stendur eftir."
+is	outcome.success.normal.pool	10	"Himinninn þekkir enga pásu í endalausum hring sínum,
+og þú stöðvaðist ekki heldur."	"Himinninn þekkir enga hvíld í endalausum hring sínum,
+og þú stöðvaðist ekki heldur."
+is	outcome.success.normal.pool	11	"Þú náðir miðjunni.
+Heimurinn stóð kyrr."	"Þú komst að miðjunni.
+Heimurinn stóð kyrr."
+is	outcome.success.normal.pool	12	"Loksins ertu hér.
+Sannleikurinn lætur ekki undan."	"Loksins ertu hér.
+Sannleikurinn stendur óhagganlegur."
+is	outcome.success.normal.pool	13	"Þú fórst þetta til enda.
+Mundu þetta: þú valdir þessa leið. Enginn annar."	"Þú fylgdir þessu til enda.
+Mundu þetta: þú valdir þessa leið. Enginn annar."
+is	outcome.success.normal.pool	14	"Tíminn rann inn í þögnina
+og fann sér stað djúpt í minningunni."	"Tíminn rann inn í þögnina
+og fann sér stað djúpt í minni þínu."
+is	outcome.success.normal.pool	15	"Þegar himinninn skipti um lit
+komst sagan að endalokum sínum."	"Þegar himinninn tók nýjan lit
+rann sagan sitt skeið."
+is	outcome.success.normal.pool	18	"Ljósið seig mjúklega niður,
+og hver skuggi vék til hliðar."	"Ljósið féll mjúklega,
+og hver skuggi vék undan."
+is	outcome.success.normal.pool	19	"Þögn féll yfir vindinn.
+Allt sneri aftur á sinn stað."	"Vindurinn þagnaði.
+Allt sneri aftur á sinn stað."
+is	outcome.success.normal.pool	20	"Andartak þagnar.
+Heimurinn dró aftur andann."	"Andartak þagnar.
+Heimurinn náði aftur andanum."
+is	outcome.success.normal.pool	22	"Jafnvægið komst á ný.
+Allt hafði stefnt að þessu augnabliki."	"Jafnvægið var endurheimt.
+Allt hafði leitt að þessu augnabliki."
+is	outcome.success.normal.pool	23	"Hlaupi lokið.
+Skýrt. Fundið.
+Það nægir."	"Hlaupi lokið.
+Skýrt. Fundið.
+Það er nóg."
+is	outcome.success.normal.pool	24	"Hlaupi lokið.
+Leiðin hélt.
+Þú líka."	"Hlaupi lokið.
+Leiðin hélt.
+Og þú líka."
+is	outcome.success.normal.pool	25	"Himinninn hélt áfram ferð sinni.
+Það getur þú líka."	"Himinninn hélt áfram sinni ferð.
+Það getur þú líka."
+is	outcome.success.normal.pool	26	"Hlaupi lokið.
+Hljóðlát niðurstaða.
+Þungi raunverulegrar vinnu."	"Hlaupi lokið.
+Hljóðlát niðurstaða.
+Þungi raunverulegs verks."
+is	outcome.success.normal.pool	27	"Þú gekkst aðeins þá leið
+sem heimurinn hafði lagt fyrir þig."	"Þú gekkst aðeins þá leið
+sem heimurinn hafði lagt fram fyrir þig."
+is	outcome.success.normal.pool	28	"Jörðin gaf sig ekki.
+Hún treysti skrefum þínum."	"Jörðin lét ekki undan.
+Hún treysti skrefum þínum."
+is	outcome.success.normal.pool	29	"Þetta augnablik samstilltist
+fornum takti stjarnanna."	"Þetta augnablik féll að
+fornum takti stjarnanna."
+is	outcome.success.normal.pool	30	"Þú tókst ekkert með þér.
+Þú skildir eitthvað."	"Þú tókst ekkert.
+En þú skildir eitthvað."
+is	outcome.success.normal.pool	31	"Þú vannst ekkert fyrir þig einan.
+Þú sást aðeins sannleikann eins og hann var."	"Þú vannst ekkert handa þér einum.
+Þú sást aðeins sannleikann eins og hann var."
+is	outcome.success.normal.pool	32	"Þú lagðir þennan stað ekki undir þig.
+Þú áttir heima hér."	"Þú lagðir þennan stað ekki undir þig.
+Þú tilheyrðir honum."
+is	outcome.success.normal.pool	33	"Þú gekkst veg
+sem er eldri en minningin sjálf."	"Þú gekkst veg
+eldri en minningin sjálf."
+is	outcome.success.normal.pool	35	"Þetta augnablik samstilltist
+þögn stjarnanna."	"Þetta augnablik féll að
+þögn stjarnanna."
+is	outcome.success.hard.pool	1	"Í norðanáttinni
+endist skýrleikinn lengur en hraðinn."	"Í norðanáttinni
+varir skýrleikinn lengur en hraðinn."
+is	outcome.success.hard.pool	2	"Miðjan fannst.
+Heimurinn gat loks hvílst."	"Miðjan fannst.
+Heimurinn mátti loks hvílast."
+is	outcome.success.hard.pool	3	"Stjörnurnar þegja.
+Slóð þín talar fyrir þig."	"Stjörnurnar þegja.
+Slóðin þín talar fyrir þig."
+is	outcome.success.hard.pool	4	"Niðurstaðan stóð eftir.
+Staðan breyttist."	"Niðurstaðan stóð eftir.
+Staðan hafði breyst."
+is	outcome.success.hard.pool	5	"Á milli íss og glers
+valdir þú stjórn."	"Milli íss og glers
+valdir þú stjórn."
+is	outcome.success.hard.pool	7	"Aðrir fjársjóðir bíða enn.
+Næst: önnur leið."	"Aðrir fjársjóðir bíða enn.
+Næst bíður önnur leið."
+is	outcome.success.hard.pool	8	"Himinninn breyttist ekki.
+Þú gerðir það."	"Himinninn breyttist ekki.
+Það gerðir þú."
+is	outcome.success.hard.pool	9	"Andartakið leið hjá.
+Það sem eftir stóð var regla."	"Andartakið leið hjá.
+Eftir stóð regla."
+is	outcome.success.hard.pool	11	"Stjörnurnar röðuðust saman um stund.
+Þú tókst eftir því."	"Stjörnurnar röðuðust saman eitt andartak.
+Þú tókst eftir því."
+is	outcome.success.hard.pool	12	"Fjarlægðin lokaðist.
+Tíminn ekki."	"Fjarlægðin lokaðist.
+Tíminn gerði það ekki."
+is	outcome.success.hard.pool	15	"Ekkert breyttist.
+Aðeins staða þín."	"Ekkert breyttist.
+Nema staða þín."
+is	outcome.success.hard.pool	16	"Ekki heppni.
+Samstilling."	"Ekki heppni.
+Heldur samhljómur."
+is	outcome.success.hard.pool	18	"Niðurstaðan breyttist ekki.
+Samt hreyfðir þú þig áfram."	"Niðurstaðan breyttist ekki.
+Samt færðir þú þig áfram."
+is	outcome.success.hard.pool	19	"Útkoman breyttist ekki.
+En þú náðir nýju stigi."	"Útkoman breyttist ekki.
+En þú komst á nýtt stig."
+is	outcome.success.hard.pool	21	"Áfangastaðurinn er sá sami —
+en þú ert ekki lengur sama ferðalangurinn."	"Áfangastaðurinn er hinn sami —
+en þú ert ekki lengur sami ferðalangurinn."
+is	outcome.success.hard.pool	22	"Hljóðið þagnaði.
+Merkingin varð eftir."	"Hljóðið þagnaði.
+Merkingin stóð eftir."
+is	outcome.success.hard.pool	23	"Þú fórst ekki hraðast.
+Þú hélst skýrast."	"Þú fórst ekki hraðast.
+Þú hélst mestri skýrleika."
+is	outcome.success.hard.pool	25	"Norðrið gaf ekkert eftir.
+Þú heldur ekki."	"Norðrið gaf ekkert eftir.
+Ekki þú heldur."
+is	outcome.success.hard.pool	29	"Það sem stóð eftir
+var ekki heppni heldur bygging."	"Það sem stóð eftir
+var ekki heppni, heldur bygging."
+is	outcome.success.hard.pool	30	"Ekki allt sem endist skín.
+Sumt stendur einfaldlega áfram."	"Ekki allt sem varir skín.
+Sumt stendur einfaldlega áfram."
+is	outcome.success.hard.pool	32	"Þessi niðurstaða var ekki tilviljun.
+Hún var lesin úr skrefunum þínum."	"Þessi niðurstaða var engin tilviljun.
+Hún var lesin úr skrefunum þínum."
+is	outcome.timeup.easy.pool	4	"Gullið beið áfram.
+Þú komst samt nær."	"Gullið beið áfram.
+Samt komst þú nær."
+is	outcome.timeup.easy.pool	5	"Leiðin lokaðist hljóðlega.
+Hún hvarf ekki."	"Leiðin lokaðist hljóðlega.
+Hún hvarf þó ekki."
+is	outcome.timeup.easy.pool	6	"Þú stöðvaðist ekki af vilja.
+Tíminn stöðvaði þig."	"Þú stöðvaðist ekki af eigin vilja.
+Tíminn stöðvaði þig."
+is	outcome.timeup.easy.pool	7	"Sjóndeildarhringurinn hélst fjarlægur.
+En þú sást hann."	"Sjóndeildarhringurinn var enn fjarlægur.
+En þú sást hann."
+is	outcome.timeup.easy.pool	8	"Hljóðið dofnaði.
+Fótsporin urðu eftir."	"Hljóðið dofnaði.
+Fótsporin stóðu eftir."
+is	outcome.timeup.easy.pool	9	"Ekki sigur.
+Ekki tómleiki heldur."	"Ekki sigur.
+En ekki tómleiki heldur."
+is	outcome.timeup.easy.pool	10	"Það sem ekki fannst
+bíður kannski enn."	"Það sem fannst ekki
+bíður kannski enn."
+is	outcome.timeup.easy.pool	13	Sumar leiðir enda áður en þær opnast alveg.	Sumar leiðir enda áður en þær opnast til fulls.
+is	outcome.timeup.normal.pool	4	"Himinninn hélt áfram.
+Þú mátt gera það líka."	"Himinninn hélt áfram.
+Það mátt þú líka."
+is	outcome.timeup.normal.pool	6	"Glasið hélt birtunni.
+Jafnvel þegar tíminn brast."	"Glerið hélt birtunni.
+Jafnvel þegar tíminn brast."
+is	outcome.timeup.normal.pool	9	"Heppnin kom ekki í tæka tíð.
+En reglan er enn læranleg."	"Heppnin kom ekki í tæka tíð.
+En regluna má enn læra."
+is	outcome.timeup.normal.pool	10	"Þetta var ekki ósigur á sjálfum þér.
+Aðeins hlaup sem lauk."	"Þetta var ekki ósigur þinn.
+Aðeins hlaup sem lauk."
+is	outcome.timeup.normal.pool	13	"Tíminn sigraði þessa umferð.
+Ekki allt verkið."	"Tíminn vann þessa umferð.
+Ekki allt verkið."
+is	outcome.timeup.normal.pool	16	"Ekki lokið.
+Aðeins óklárað."	"Ekki lokið.
+Aðeins ófullgert."
+is	outcome.timeup.normal.pool	17	"Stjörnurnar færðust ekki.
+En þú sást betur."	"Stjörnurnar færðust ekki.
+En þú sást skýrar."
+is	outcome.timeup.normal.pool	19	"Fjársjóðurinn beið.
+Þú lærðir biðina."	"Fjársjóðurinn beið.
+Þú lærðir að bíða."
+is	outcome.timeup.normal.pool	20	"Þetta hlaup varð að korti.
+Næsta getur orðið leið."	"Þetta hlaup varð að korti.
+Það næsta getur orðið leið."
+is	outcome.timeup.hard.pool	1	"Tíminn lokaði hringnum.
+Þú stóðst samt inni í honum."	"Tíminn lokaði hringnum.
+Samt stóðstu inni í honum."
+is	outcome.timeup.hard.pool	5	"Það sem ekki náðist
+var samt sýnilegt."	"Það sem náðist ekki
+var samt sýnilegt."
+is	outcome.timeup.hard.pool	6	"Endirinn kom snemma.
+Merkingin ekki."	"Endirinn kom snemma.
+Merkingin gerði það ekki."
+is	outcome.timeup.hard.pool	9	"Ekki allt sem lokast
+er tapað."	"Ekki allt sem lokast
+er glatað."
+is	outcome.timeup.hard.pool	10	"Stjörnurnar þögðu.
+Þú hlustaðir samt."	"Stjörnurnar þögðu.
+Samt hlustaðir þú."
+is	outcome.timeup.hard.pool	11	"Fjarlægðin vann þessa stund.
+Ekki alla söguna."	"Fjarlægðin vann þetta augnablik.
+Ekki alla söguna."
+is	outcome.timeup.hard.pool	12	"Það sem ekki náðist
+varð samt sýnilegt."	"Það sem náðist ekki
+varð samt sýnilegt."
+is	outcome.timeup.hard.pool	14	"Tíminn var skemmri en leiðin.
+Það er ekki lygi."	"Tíminn var styttri en leiðin.
+Það er ekki lygi."
+is	outcome.timeup.hard.pool	15	"Þú komst ekki alla leið.
+En þú komst lengra inn."	"Þú komst ekki alla leið.
+En þú komst dýpra inn."
+is	outcome.timeup.hard.pool	18	"Það sem brast
+getur orðið form."	"Það sem brast
+getur tekið á sig form."
+is	outcome.timeup.hard.pool	19	"Enginn fjársjóður í dag.
+En ekki engin merking."	"Enginn fjársjóður í dag.
+En merkingin hvarf ekki."
+is	outcome.timeup.hard.pool	22	"Þú tapaðir ekki sjálfri þér.
+Þú tapaðir aðeins tíma."	"Þú glataðir ekki sjálfri þér.
+Þú glataðir aðeins tíma."
+is	outcome.timeup.hard.pool	23	"Norðurljósið birtist ekki.
+En myrkrið var lesanlegt."	"Norðurljósið birtist ekki.
+En myrkrið var læsilegt."
+is	outcome.timeup.hard.pool	26	"Stundum er harða leiðin
+fyrst og fremst mæling."	"Stundum er erfiða leiðin
+fyrst og fremst mæling."
+is	outcome.timeup.hard.pool	34	"Tíminn lokaði glugganum.
+Augnaráðið varð eftir."	"Tíminn lokaði glugganum.
+Augnaráðið stóð eftir."
+is	outcome.timeup.hard.pool	38	"Þú komst ekki þangað.
+En þú komst nær því að skilja."	"Þú komst ekki þangað.
+En þú komst nær skilningnum."

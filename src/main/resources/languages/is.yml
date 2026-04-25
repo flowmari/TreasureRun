@@ -7,15 +7,15 @@ outcome:
       pool: []
     easy:
       pool:
-      - 'Þú náðir alla leið.
+      - 'Þú komst alla leið.
 
-        Sannleikurinn stendur enn.'
+        Sannleikurinn stendur eftir.'
       - 'Þótt skrefið væri lítið,
 
-        hélstu velli.'
+        stóðstu föst.'
       - 'Þú hlustaðir.
 
-        Þá opnaðist leiðin.'
+        Og þá opnaðist leiðin.'
       - '> Þú komst hingað.
 
         >
@@ -30,172 +30,172 @@ outcome:
         >
 
         > Og tíminn svaraði fótsporum þínum.'
-      - '> Ekki allt heldur áfram að skína.
+      - '> Ekki allt skín að eilífu.
 
         >
 
         > En þetta augnablik gerði það.'
-      - 'Ljósið seig mjúklega niður,
+      - 'Ljósið féll mjúklega,
 
-        og hver skuggi vék til hliðar.'
-      - 'Þögn féll yfir vindinn.
+        og hver skuggi vék undan.'
+      - 'Vindurinn þagnaði.
 
         Allt sneri aftur á sinn stað.'
       - 'Andartak þagnar.
 
-        Heimurinn dró aftur andann.'
+        Heimurinn náði aftur andanum.'
       - 'Slóðin er grafin djúpt í sandinn —
 
         þangað sem vindurinn nær ekki lengur.'
-      - 'Jafnvægið komst á ný.
+      - 'Jafnvægið var endurheimt.
 
-        Allt hafði stefnt að þessu augnabliki.'
+        Allt hafði leitt að þessu augnabliki.'
       - 'Tíminn rann hljóðlega hjá,
 
-        geymdur í horni minningarinnar.'
-      - 'Himinninn skipti um lit,
+        geymdur í afkima minningarinnar.'
+      - 'Himinninn tók nýjan lit,
 
-        og ein saga lauk.'
+        og ein saga rann sitt skeið.'
       - 'Öldurnar lægðu,
 
-        og hafið faldi dýpi sitt á ný.'
-      - 'Fótsporin stöðvuðust,
+        og hafið huldi dýpi sitt á ný.'
+      - 'Fótsporin þögnuðu,
 
-        og aðeins staðurinn varð eftir.'
+        og staðurinn einn stóð eftir.'
       - 'Sigur og ósigur —
 
-        að lokum eru þau aðeins sandkorn.'
+        að lokum eru þau aðeins korn í sandi.'
       - 'Leiðin heldur áfram — eða endar hér.
 
-        Í báðum tilvikum hvílir hún á sömu jörð.'
+        Hvort sem er, hvílir hún á sömu jörð.'
     normal:
       pool:
-      - 'Fjarlægðin hefur loks fengið merkingu.
+      - 'Fjarlægðin hefur loks öðlast merkingu.
 
         Tíminn svaraði ferð þinni.'
       - 'Tíminn er úti.
 
-        En ekki lýkur öllu hér.'
+        En ekki endar allt hér.'
       - 'Öxullinn er fundinn.
 
-        Heimurinn hélt aftur af hreyfingu sinni.'
+        Heimurinn hélt niðri hreyfingu sinni.'
       - 'Glerið hélt niðri í sér andanum,
 
-        og þú stóðst kyrr.'
+        og þú stóðst föst.'
       - 'Undir kyrrum himni
 
-        riðaðist hugur þinn ekki.'
+        bilaði hugur þinn ekki.'
       - 'Fátt skín að eilífu.
 
         En þetta augnablik gerði það.'
       - 'Þú fórst yfir brothætta jörð
 
-        án þess að missa sjónar á sjóndeildarhringnum.'
+        án þess að missa sjóndeildarhringinn úr augsýn.'
       - 'Andartakið er liðið.
 
-        Það sem eftir stendur, stendur áfram.'
+        Það sem stendur eftir, stendur áfram.'
       - 'Heppnin dofnar fljótt.
 
-        Reglan heldur velli.'
-      - 'Himinninn þekkir enga pásu í endalausum hring sínum,
+        Reglan stendur eftir.'
+      - 'Himinninn þekkir enga hvíld í endalausum hring sínum,
 
         og þú stöðvaðist ekki heldur.'
-      - 'Þú náðir miðjunni.
+      - 'Þú komst að miðjunni.
 
         Heimurinn stóð kyrr.'
       - 'Loksins ertu hér.
 
-        Sannleikurinn lætur ekki undan.'
-      - 'Þú fórst þetta til enda.
+        Sannleikurinn stendur óhagganlegur.'
+      - 'Þú fylgdir þessu til enda.
 
         Mundu þetta: þú valdir þessa leið. Enginn annar.'
       - 'Tíminn rann inn í þögnina
 
-        og fann sér stað djúpt í minningunni.'
-      - 'Þegar himinninn skipti um lit
+        og fann sér stað djúpt í minni þínu.'
+      - 'Þegar himinninn tók nýjan lit
 
-        komst sagan að endalokum sínum.'
+        rann sagan sitt skeið.'
       - 'Vötnin lægðu,
 
         og himinninn huldi hyldýpið á ný.'
       - 'Fótsporin þögnuðu,
 
         og aðeins staðurinn varð eftir.'
-      - 'Ljósið seig mjúklega niður,
+      - 'Ljósið féll mjúklega,
 
-        og hver skuggi vék til hliðar.'
-      - 'Þögn féll yfir vindinn.
+        og hver skuggi vék undan.'
+      - 'Vindurinn þagnaði.
 
         Allt sneri aftur á sinn stað.'
       - 'Andartak þagnar.
 
-        Heimurinn dró aftur andann.'
+        Heimurinn náði aftur andanum.'
       - 'Slóðin er grafin djúpt í sandinn —
 
         þangað sem vindurinn nær ekki lengur.'
-      - 'Jafnvægið komst á ný.
+      - 'Jafnvægið var endurheimt.
 
-        Allt hafði stefnt að þessu augnabliki.'
+        Allt hafði leitt að þessu augnabliki.'
       - 'Hlaupi lokið.
 
         Skýrt. Fundið.
 
-        Það nægir.'
+        Það er nóg.'
       - 'Hlaupi lokið.
 
         Leiðin hélt.
 
-        Þú líka.'
-      - 'Himinninn hélt áfram ferð sinni.
+        Og þú líka.'
+      - 'Himinninn hélt áfram sinni ferð.
 
         Það getur þú líka.'
       - 'Hlaupi lokið.
 
         Hljóðlát niðurstaða.
 
-        Þungi raunverulegrar vinnu.'
+        Þungi raunverulegs verks.'
       - 'Þú gekkst aðeins þá leið
 
-        sem heimurinn hafði lagt fyrir þig.'
-      - 'Jörðin gaf sig ekki.
+        sem heimurinn hafði lagt fram fyrir þig.'
+      - 'Jörðin lét ekki undan.
 
         Hún treysti skrefum þínum.'
-      - 'Þetta augnablik samstilltist
+      - 'Þetta augnablik féll að
 
         fornum takti stjarnanna.'
-      - 'Þú tókst ekkert með þér.
+      - 'Þú tókst ekkert.
 
-        Þú skildir eitthvað.'
-      - 'Þú vannst ekkert fyrir þig einan.
+        En þú skildir eitthvað.'
+      - 'Þú vannst ekkert handa þér einum.
 
         Þú sást aðeins sannleikann eins og hann var.'
       - 'Þú lagðir þennan stað ekki undir þig.
 
-        Þú áttir heima hér.'
+        Þú tilheyrðir honum.'
       - 'Þú gekkst veg
 
-        sem er eldri en minningin sjálf.'
+        eldri en minningin sjálf.'
       - 'Jörðin veitti enga mótstöðu.
 
         Hún þekkti þig.'
-      - 'Þetta augnablik samstilltist
+      - 'Þetta augnablik féll að
 
         þögn stjarnanna.'
     hard:
       pool:
       - 'Í norðanáttinni
 
-        endist skýrleikinn lengur en hraðinn.'
+        varir skýrleikinn lengur en hraðinn.'
       - 'Miðjan fannst.
 
-        Heimurinn gat loks hvílst.'
+        Heimurinn mátti loks hvílast.'
       - 'Stjörnurnar þegja.
 
-        Slóð þín talar fyrir þig.'
+        Slóðin þín talar fyrir þig.'
       - 'Niðurstaðan stóð eftir.
 
-        Staðan breyttist.'
-      - 'Á milli íss og glers
+        Staðan hafði breyst.'
+      - 'Milli íss og glers
 
         valdir þú stjórn.'
       - 'Öldurnar þögnuðu,
@@ -203,22 +203,22 @@ outcome:
         og hafið tók aftur við huldu dýpi sínu.'
       - 'Aðrir fjársjóðir bíða enn.
 
-        Næst: önnur leið.'
+        Næst bíður önnur leið.'
       - 'Himinninn breyttist ekki.
 
-        Þú gerðir það.'
+        Það gerðir þú.'
       - 'Andartakið leið hjá.
 
-        Það sem eftir stóð var regla.'
+        Eftir stóð regla.'
       - 'Veturinn er heiðarlegur.
 
         Hlaupið þitt var það líka.'
-      - 'Stjörnurnar röðuðust saman um stund.
+      - 'Stjörnurnar röðuðust saman eitt andartak.
 
         Þú tókst eftir því.'
       - 'Fjarlægðin lokaðist.
 
-        Tíminn ekki.'
+        Tíminn gerði það ekki.'
       - 'Reglur heimsins stóðu fastar.
 
         Og merki möguleikans var raunverulegt.'
@@ -227,37 +227,37 @@ outcome:
         Þú varst þegar komin í gegn.'
       - 'Ekkert breyttist.
 
-        Aðeins staða þín.'
+        Nema staða þín.'
       - 'Ekki heppni.
 
-        Samstilling.'
+        Heldur samhljómur.'
       - 'Andartakið leið hjá.
 
         Skráin stendur eftir.'
       - 'Niðurstaðan breyttist ekki.
 
-        Samt hreyfðir þú þig áfram.'
+        Samt færðir þú þig áfram.'
       - 'Útkoman breyttist ekki.
 
-        En þú náðir nýju stigi.'
+        En þú komst á nýtt stig.'
       - 'Endirinn var sá sami.
 
         En sú sem náði honum hafði breyst.'
-      - 'Áfangastaðurinn er sá sami —
+      - 'Áfangastaðurinn er hinn sami —
 
-        en þú ert ekki lengur sama ferðalangurinn.'
+        en þú ert ekki lengur sami ferðalangurinn.'
       - 'Hljóðið þagnaði.
 
-        Merkingin varð eftir.'
+        Merkingin stóð eftir.'
       - 'Þú fórst ekki hraðast.
 
-        Þú hélst skýrast.'
+        Þú hélst mestri skýrleika.'
       - 'Það sem virtist frosið
 
         hafði aðeins beðið.'
       - 'Norðrið gaf ekkert eftir.
 
-        Þú heldur ekki.'
+        Ekki þú heldur.'
       - 'Glerið brast ekki.
 
         Það mundi þrýstinginn.'
@@ -269,14 +269,14 @@ outcome:
         ekki hávaða.'
       - 'Það sem stóð eftir
 
-        var ekki heppni heldur bygging.'
-      - 'Ekki allt sem endist skín.
+        var ekki heppni, heldur bygging.'
+      - 'Ekki allt sem varir skín.
 
         Sumt stendur einfaldlega áfram.'
       - 'Í kuldanum varð formið sýnilegt.
 
         Þú fylgdir því.'
-      - 'Þessi niðurstaða var ekki tilviljun.
+      - 'Þessi niðurstaða var engin tilviljun.
 
         Hún var lesin úr skrefunum þínum.'
   timeup:
@@ -293,23 +293,23 @@ outcome:
         En ekki allt glataðist.'
       - 'Gullið beið áfram.
 
-        Þú komst samt nær.'
+        Samt komst þú nær.'
       - 'Leiðin lokaðist hljóðlega.
 
-        Hún hvarf ekki.'
-      - 'Þú stöðvaðist ekki af vilja.
+        Hún hvarf þó ekki.'
+      - 'Þú stöðvaðist ekki af eigin vilja.
 
         Tíminn stöðvaði þig.'
-      - 'Sjóndeildarhringurinn hélst fjarlægur.
+      - 'Sjóndeildarhringurinn var enn fjarlægur.
 
         En þú sást hann.'
       - 'Hljóðið dofnaði.
 
-        Fótsporin urðu eftir.'
+        Fótsporin stóðu eftir.'
       - 'Ekki sigur.
 
-        Ekki tómleiki heldur.'
-      - 'Það sem ekki fannst
+        En ekki tómleiki heldur.'
+      - 'Það sem fannst ekki
 
         bíður kannski enn.'
       - 'Sandurinn tók við endinum.
@@ -318,7 +318,7 @@ outcome:
       - 'Þú misstir ekki allt.
 
         Þú komst hingað.'
-      - Sumar leiðir enda áður en þær opnast alveg.
+      - Sumar leiðir enda áður en þær opnast til fulls.
       - 'Þetta var ekki lokadómur.
 
         Aðeins lok þessa hlaups.'
@@ -341,11 +341,11 @@ outcome:
         Það gerist.'
       - 'Himinninn hélt áfram.
 
-        Þú mátt gera það líka.'
+        Það mátt þú líka.'
       - 'Ekki hver tilraun endar með gulli.
 
         Sumar enda með skilningi.'
-      - 'Glasið hélt birtunni.
+      - 'Glerið hélt birtunni.
 
         Jafnvel þegar tíminn brast.'
       - 'Fótsporin náðu ekki alla leið.
@@ -356,8 +356,8 @@ outcome:
         getur opnast á morgun.'
       - 'Heppnin kom ekki í tæka tíð.
 
-        En reglan er enn læranleg.'
-      - 'Þetta var ekki ósigur á sjálfum þér.
+        En regluna má enn læra.'
+      - 'Þetta var ekki ósigur þinn.
 
         Aðeins hlaup sem lauk.'
       - 'Þú stóðst inni í óvissunni
@@ -366,7 +366,7 @@ outcome:
       - 'Það sem lokaðist í dag
 
         getur orðið kunnuglegt á morgun.'
-      - 'Tíminn sigraði þessa umferð.
+      - 'Tíminn vann þessa umferð.
 
         Ekki allt verkið.'
       - 'Leiðin svaraði ekki enn.
@@ -377,24 +377,24 @@ outcome:
         Jörðin tók við skrefunum.'
       - 'Ekki lokið.
 
-        Aðeins óklárað.'
+        Aðeins ófullgert.'
       - 'Stjörnurnar færðust ekki.
 
-        En þú sást betur.'
+        En þú sást skýrar.'
       - 'Það sem vantaði var tími.
 
         Ekki endilega geta.'
       - 'Fjársjóðurinn beið.
 
-        Þú lærðir biðina.'
+        Þú lærðir að bíða.'
       - 'Þetta hlaup varð að korti.
 
-        Næsta getur orðið leið.'
+        Það næsta getur orðið leið.'
     hard:
       pool:
       - 'Tíminn lokaði hringnum.
 
-        Þú stóðst samt inni í honum.'
+        Samt stóðstu inni í honum.'
       - 'Norðrið var kalt.
 
         En þú hvarfst ekki.'
@@ -404,12 +404,12 @@ outcome:
       - 'Leiðin hélt aftur af sér.
 
         Þú hélst áfram.'
-      - 'Það sem ekki náðist
+      - 'Það sem náðist ekki
 
         var samt sýnilegt.'
       - 'Endirinn kom snemma.
 
-        Merkingin ekki.'
+        Merkingin gerði það ekki.'
       - 'Veturinn gaf engan afslátt.
 
         Þú baðst ekki um hann.'
@@ -418,25 +418,25 @@ outcome:
         Jafnvel án sigurs.'
       - 'Ekki allt sem lokast
 
-        er tapað.'
+        er glatað.'
       - 'Stjörnurnar þögðu.
 
-        Þú hlustaðir samt.'
-      - 'Fjarlægðin vann þessa stund.
+        Samt hlustaðir þú.'
+      - 'Fjarlægðin vann þetta augnablik.
 
         Ekki alla söguna.'
-      - 'Það sem ekki náðist
+      - 'Það sem náðist ekki
 
         varð samt sýnilegt.'
       - 'Útkoman var hörð.
 
         En ekki tóm.'
-      - 'Tíminn var skemmri en leiðin.
+      - 'Tíminn var styttri en leiðin.
 
         Það er ekki lygi.'
       - 'Þú komst ekki alla leið.
 
-        En þú komst lengra inn.'
+        En þú komst dýpra inn.'
       - 'Leiðin hafnaði þér ekki.
 
         Hún lauk bara fyrr.'
@@ -445,29 +445,29 @@ outcome:
         En hann kom.'
       - 'Það sem brast
 
-        getur orðið form.'
+        getur tekið á sig form.'
       - 'Enginn fjársjóður í dag.
 
-        En ekki engin merking.'
+        En merkingin hvarf ekki.'
       - 'Kuldinn vann augnablikið.
 
         Ekki heildina.'
       - 'Hlaupið endaði.
 
         Spurningin lifði áfram.'
-      - 'Þú tapaðir ekki sjálfri þér.
+      - 'Þú glataðir ekki sjálfri þér.
 
-        Þú tapaðir aðeins tíma.'
+        Þú glataðir aðeins tíma.'
       - 'Norðurljósið birtist ekki.
 
-        En myrkrið var lesanlegt.'
+        En myrkrið var læsilegt.'
       - 'Það sem stöðvaðist
 
         var ekki viljinn.'
       - 'Þú fannst ekki miðjuna.
 
         En þú fannst jaðarinn.'
-      - 'Stundum er harða leiðin
+      - 'Stundum er erfiða leiðin
 
         fyrst og fremst mæling.'
       - 'Ekki náð.
@@ -493,7 +493,7 @@ outcome:
         var ekki endilega hugrekki.'
       - 'Tíminn lokaði glugganum.
 
-        Augnaráðið varð eftir.'
+        Augnaráðið stóð eftir.'
       - 'Þetta var ekki síðasta leiðin.
 
         Aðeins þessi leið.'
@@ -505,7 +505,7 @@ outcome:
         Leiðin talaði.'
       - 'Þú komst ekki þangað.
 
-        En þú komst nær því að skilja.'
+        En þú komst nær skilningnum.'
 version: 1
 quotes:
   outcome:
