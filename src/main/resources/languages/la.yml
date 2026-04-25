@@ -9,13 +9,13 @@ outcome:
       pool:
       - 'Pervenisti.
 
-        Veritas manet.'
+        Veritas tamen manet.'
       - 'Etiamsi parvus tantum gradus fuit,
 
-        in loco stetisti.'
-      - 'Audisti.
+        tamen locum tenuisti.'
+      - 'Audisti —
 
-        Via aperta est.'
+        et via patefacta est.'
       - '> Huc pervenisti.
 
         >
@@ -24,48 +24,48 @@ outcome:
 
         >
 
-        > electio tua erat.'
-      - '> Distantia sensum accepit.
+        > electio penes te erat.'
+      - '> Distantia sensum invenit.
 
         >
 
         > Tempus vestigiis tuis respondit.'
-      - '> Non omne lumen in aeternum fulget.
+      - '> Non omne lumen perpetuo fulget.
 
         >
 
         > Sed hoc momentum fulsit.'
-      - 'Lux aequaliter cecidit,
+      - 'Lux placide cecidit,
 
-        et omnis umbra recessit.'
+        et umbrae omnes recesserunt.'
       - 'Ventus conticuit.
 
-        Omnia ad locum suum redierunt.'
+        Omnia in sedem suam redierunt.'
       - 'Momentum silentii.
 
-        Mundus spiritum suum composuit.'
-      - 'Vestigium alte in arena inscriptum est —
+        Mundus rursus spiritum composuit.'
+      - 'Vestigium alte in arena impressum est —
 
-        ultra venti potestatem.'
+        quo ventus iam non pervenit.'
       - 'Concordia restituta est.
 
-        Omnia ad hoc momentum duxerant.'
-      - 'Tempus tacite praeteriit,
+        Omnia ad hoc ipsum momentum duxerant.'
+      - 'Tempus tacite praeterlapsum est,
 
-        in angulis memoriae reconditum.'
-      - 'Caelum colorem mutavit,
+        in angulo memoriae reconditum.'
+      - 'Caelum colorem vertit,
 
-        et una fabula ad finem venit.'
+        et una fabula ad finem perducta est.'
       - 'Fluctus placati sunt,
 
-        et mare altitudinem suam iterum texit.'
+        et mare profundum suum iterum texit.'
       - 'Vestigia constiterunt,
 
-        et locus solus mansit.'
-      - 'Victoria et clades —
+        et solus locus mansit.'
+      - 'Victoria cladesque —
 
         ad extremum grana arenae tantum sunt.'
-      - 'Via pergitur — aut hic finitur.
+      - 'Via pergitur — aut hic desinit.
 
         Utroque modo in eadem terra iacet.'
     normal:
@@ -78,64 +78,64 @@ outcome:
         Sed non omnia finita sunt.'
       - 'Axis inventus est.
 
-        Mundus motum suum composuit.'
+        Mundus motum suum continuit.'
       - 'Vitrum spiritum continuit,
 
-        et tu locum tenuisti.'
-      - 'Sub caelo immoto,
+        tu vero locum tenuisti.'
+      - 'Sub caelo immobili,
 
         animum non dimisisti.'
       - 'Pauca diu fulgent.
 
         Sed hoc momentum clarum fuit.'
-      - 'Per terram fragilem transisti,
+      - 'Per fragilem terram transisti,
 
         nec conspectum amisisti.'
-      - 'Momentum abiit.
+      - 'Momentum praeteriit.
 
         Quod mansit, manet.'
       - 'Fortuna cito marcescit.
 
         Ordo manet.'
-      - 'Caelum in circulo infinito moram non novit,
+      - 'Caelum in circulo infinito moram nescit,
 
-        neque tu stetisti.'
+        neque tu constitisti.'
       - 'Ad centrum pervenisti.
 
-        Mundus stetit.'
+        Mundus constitit.'
       - 'Tandem hic es.
 
         Veritas firma manet.'
       - 'Usque ad finem pervenisti.
 
         Memento: hanc viam tu elegisti, non alius.'
-      - 'Tempus in silentium lapsum est,
+      - 'Tempus in silentium delapsum est,
 
         et in profundo animi locum invenit.'
-      - 'Dum caelum colorem mutabat,
+      - 'Dum caelum colorem vertebat,
 
-        fabula ad exitum suum venit.'
+        fabula ad exitum suum pervenit.'
       - 'Aquae placatae sunt,
 
         et caelum abyssum suam iterum velavit.'
       - 'Vestigia siluerunt,
 
-        et locus solus mansit.'
-      - 'Lux aequaliter cecidit,
+        et solus locus mansit.'
+      - 'Lux placide cecidit,
 
-        et omnis umbra recessit.'
+        et umbrae omnes recesserunt.'
       - 'Ventus conticuit.
 
-        Omnia ad locum suum redierunt.'
+        Omnia in sedem suam redierunt.'
       - 'Momentum silentii.
 
-        Mundus spiritum suum composuit.'
-      - 'Vestigium alte in arena inscriptum est —
+        Mundus rursus spiritum composuit.'
+      - 'Vestigium alte in arena impressum est —
 
-        ultra venti potestatem.'
+        quo ventus iam non pervenit.'
       - 'Concordia restituta est.
 
-        Omnia ad hoc momentum duxerant.'
+        Omnia ad hoc ipsum momentum duxerant.'
       - 'Cursus perfectus est.
 
         Clarum. Inventum.
@@ -145,7 +145,7 @@ outcome:
 
         Via sustinuit.
 
-        Et tu quoque.'
+        Tu quoque.'
       - 'Caelum moveri perrexit.
 
         Tu quoque potes.'
@@ -154,7 +154,7 @@ outcome:
         Quietus eventus.
 
         Pondus veri laboris.'
-      - 'Tantum ambulasti viam
+      - 'Viam tantum ambulasti
 
         quam mundus ante te straverat.'
       - 'Terra non cessit.
@@ -162,19 +162,19 @@ outcome:
         Vestigiis tuis credidit.'
       - 'Hoc momentum congruit
 
-        antiquo siderum rhythmo.'
-      - 'Nihil rapuisti.
+        antiquo siderum numero.'
+      - 'Nihil abstulisti.
 
         Aliquid intellexisti.'
       - 'Nihil lucratus es.
 
         Veritatem tantum vidisti, qualis erat.'
-      - 'Hunc locum non cepisti.
+      - 'Hunc locum non occupasti.
 
         Hic pertinere videbaris.'
       - 'Viam ambulasti
 
-        memoria ipsa antiquiorem.'
+        ipsa memoria antiquiorem.'
       - 'Terra non restitit.
 
         Te agnovit.'
@@ -198,12 +198,12 @@ outcome:
       - 'Inter glaciem et vitrum,
 
         imperium elegisti.'
-      - 'Fluctus tacuerunt,
+      - 'Fluctus conticuerunt,
 
         et mare profunda sua recepit.'
       - 'Thesauri quidam adhuc exspectant.
 
-        Alia via proxima vice.'
+        Proxima vice alia via.'
       - 'Caelum non mutatum est.
 
         Tu mutatus es.'
@@ -212,7 +212,7 @@ outcome:
         Quod mansit, ordo fuit.'
       - 'Hiems honesta est.
 
-        Sic fuit cursus tuus.'
+        Sic et cursus tuus.'
       - 'Sidera paulisper congruerunt.
 
         Tu animadvertisti.'
@@ -222,16 +222,16 @@ outcome:
       - 'Regulae mundi firmae steterunt.
 
         Et signum possibilitatis verum fuit.'
-      - 'Via quiete clausa est.
+      - 'Via tacite clausa est.
 
-        Iam transieratis.'
+        Tu iam transieratis.'
       - 'Nihil mutatum est.
 
         Locus tuus tantum mutatus est.'
-      - 'Frigus acutum erat,
+      - 'Frigus acre fuit,
 
         sed iudicium tuum non obscuratum est.'
-      - 'Momentum abiit.
+      - 'Momentum praeteriit.
 
         Tabula manet.'
       - 'Exitus non mutatus est.
@@ -242,41 +242,41 @@ outcome:
         Sed ad gradum novum pervenisti.'
       - 'Finis idem erat.
 
-        Sed is qui ad eum pervenit mutatus erat.'
+        Sed qui ad eum pervenit mutatus erat.'
       - 'Meta eadem est —
 
         sed viator idem non es.'
-      - 'Lux aequaliter cecidit,
+      - 'Lux placide cecidit,
 
-        et omnis umbra recessit.'
+        et umbrae omnes recesserunt.'
       - 'Ventus conticuit.
 
-        Omnia ad locum suum redierunt.'
+        Omnia in sedem suam redierunt.'
       - 'Momentum silentii.
 
-        Mundus spiritum suum composuit.'
-      - 'Vestigium alte in arena inscriptum est —
+        Mundus rursus spiritum composuit.'
+      - 'Vestigium alte in arena impressum est —
 
-        ultra venti potestatem.'
+        quo ventus iam non pervenit.'
       - 'Concordia restituta est.
 
-        Omnia ad hoc momentum duxerant.'
-      - 'Tempus tacite praeteriit,
+        Omnia ad hoc ipsum momentum duxerant.'
+      - 'Tempus tacite praeterlapsum est,
 
-        in angulis memoriae reconditum.'
-      - 'Caelum colorem mutavit,
+        in angulo memoriae reconditum.'
+      - 'Caelum colorem vertit,
 
-        et una fabula ad finem venit.'
+        et una fabula ad finem perducta est.'
       - 'Fluctus placati sunt,
 
-        et mare altitudinem suam iterum texit.'
+        et mare profundum suum iterum texit.'
       - 'Vestigia constiterunt,
 
-        et locus solus mansit.'
-      - 'Victoria et clades —
+        et solus locus mansit.'
+      - 'Victoria cladesque —
 
         ad extremum grana arenae tantum sunt.'
-      - 'Via pergitur — aut hic finitur.
+      - 'Via pergitur — aut hic desinit.
 
         Utroque modo in eadem terra iacet.'
   timeup:
@@ -288,9 +288,9 @@ outcome:
       - 'Thesaurus exspectare potest.
 
         Tu quoque.'
-      - 'Finis nondum est.
+      - 'Finis nondum adest.
 
-        Tantum haec vice cessasti.'
+        Hac vice tantum substitisti.'
       - 'Hoc satis est nunc.
 
         Ad proximum gradum.'
@@ -312,14 +312,14 @@ outcome:
         Iterum.'
       - 'TEMPUS EXACTUM EST.
 
-        Prope fuisse verum est.'
+        Tam prope fuisse verum est.'
       - 'Sol occidit,
 
         et umbra mundum iterum texit.'
       - 'Ultima grana arenae ceciderunt,
 
         et fabula tacite clausa est.'
-      - 'Ventus transiit,
+      - 'Ventus pertransiit,
 
         et vestigia sine signo delevit.'
       - 'Aestus rediit,
@@ -328,10 +328,10 @@ outcome:
       - 'Silentium.
 
         Tempus solum transiit.'
-      - 'Victoria et clades —
+      - 'Victoria cladesque —
 
         ad extremum grana arenae tantum sunt.'
-      - 'Via pergitur — aut hic finitur.
+      - 'Via pergitur — aut hic desinit.
 
         Utroque modo in eadem terra iacet.'
     normal:
@@ -365,7 +365,7 @@ outcome:
         Sed via iam nota est.'
       - 'Ultimus gradus nondum venit.
 
-        Proximus tamen poterit.'
+        Proximus tamen venire potest.'
       - 'Ventus vestigia abstulit,
 
         sed non conatum.'
@@ -386,14 +386,14 @@ outcome:
         In memoria apertum manet.'
       - 'Silentium cecidit.
 
-        Lux tamen aliquantum mansit.'
+        Lux tamen paulum mansit.'
       - 'Cursus interruptus est.
 
         Voluntas non.'
       - 'Porta clausa est.
 
         Sed clavis nondum perdita est.'
-      - 'Tempus vicit hanc vicem.
+      - 'Tempus hac vice vicit.
 
         Tu tamen redire potes.'
     hard:
@@ -403,11 +403,11 @@ outcome:
         Sed tu retro non cecidisti.'
       - 'Glacies mansit.
 
-        Tuum vestigium quoque.'
-      - 'Distantia victa paene erat.
+        Tuum quoque vestigium.'
+      - 'Distantia paene victa erat.
 
         Tempus durius fuit.'
-      - 'In extremo limite stetisti.
+      - 'In ipso limite stetisti.
 
         Non satis fuit — sed verum fuit.'
       - 'Sidera nihil promiserunt.
@@ -434,22 +434,22 @@ outcome:
       - 'Finis acer fuit.
 
         Sed oculi tui aperti manserunt.'
-      - 'Frigus respondit silentio.
+      - 'Frigus silentio respondit.
 
-        Tu respondiste gradu.'
+        Tu gradu respondisti.'
       - 'Celeritas non suffecit.
 
         Claritas tamen crevit.'
       - 'Haec clades parva est.
 
         Disciplina maior.'
-      - 'Tempus clausit ianuam.
+      - 'Tempus ianuam clausit.
 
         Memoria fenestram reliquit.'
       - 'Distantia mansit.
 
         Sed minor quam antea.'
-      - 'Sic finitur haec vice.
+      - 'Sic hac vice finitur.
 
         Non sic finitur via.'
       - 'Arena cecidit.
@@ -473,7 +473,7 @@ outcome:
       - 'Hora exacta est.
 
         Vestigium manet.'
-      - 'Non pervenisti ad centrum.
+      - 'Ad centrum non pervenisti.
 
         Sed centrum te vocavit.'
       - 'Regulae firmae steterunt.
@@ -485,22 +485,22 @@ outcome:
       - 'Tenebrae redierunt.
 
         Oculi tamen assuefacti sunt.'
-      - 'Hoc non fuit vacuum.
+      - 'Hoc vacuum non fuit.
 
-        Hoc fuit praeparatio.'
-      - 'Tempus abstulit finem.
+        Praeparatio fuit.'
+      - 'Tempus finem abstulit.
 
-        Non abstulit viam.'
+        Viam non abstulit.'
       - 'Iter hic cecidit.
 
         Tu nondum.'
       - 'Nondum inventum est.
 
         Sed propius factum est.'
-      - 'Silentium clausit diem.
+      - 'Silentium diem clausit.
 
-        Crastinum apertum manet.'
-      - 'Non omnia vincuntur statim.
+        Cras apertum manet.'
+      - 'Non omnia statim vincuntur.
 
         Quaedam discuntur.'
       - 'Finis temporis.

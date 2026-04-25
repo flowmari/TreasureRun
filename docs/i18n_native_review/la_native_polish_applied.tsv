@@ -1,0 +1,495 @@
+lang	pool	index	old	new	status
+la	outcome.success.easy.pool	1	"Pervenisti.
+Veritas manet."	"Pervenisti.
+Veritas tamen manet."	CHANGED
+la	outcome.success.easy.pool	2	"Etiamsi parvus tantum gradus fuit,
+in loco stetisti."	"Etiamsi parvus tantum gradus fuit,
+tamen locum tenuisti."	CHANGED
+la	outcome.success.easy.pool	3	"Audisti.
+Via aperta est."	"Audisti —
+et via patefacta est."	CHANGED
+la	outcome.success.easy.pool	4	"> Huc pervenisti.
+>
+> Regulae simplices erant —
+>
+> electio tua erat."	"> Huc pervenisti.
+>
+> Regulae simplices erant —
+>
+> electio penes te erat."	CHANGED
+la	outcome.success.easy.pool	5	"> Distantia sensum accepit.
+>
+> Tempus vestigiis tuis respondit."	"> Distantia sensum invenit.
+>
+> Tempus vestigiis tuis respondit."	CHANGED
+la	outcome.success.easy.pool	6	"> Non omne lumen in aeternum fulget.
+>
+> Sed hoc momentum fulsit."	"> Non omne lumen perpetuo fulget.
+>
+> Sed hoc momentum fulsit."	CHANGED
+la	outcome.success.easy.pool	7	"Lux aequaliter cecidit,
+et omnis umbra recessit."	"Lux placide cecidit,
+et umbrae omnes recesserunt."	CHANGED
+la	outcome.success.easy.pool	8	"Ventus conticuit.
+Omnia ad locum suum redierunt."	"Ventus conticuit.
+Omnia in sedem suam redierunt."	CHANGED
+la	outcome.success.easy.pool	9	"Momentum silentii.
+Mundus spiritum suum composuit."	"Momentum silentii.
+Mundus rursus spiritum composuit."	CHANGED
+la	outcome.success.easy.pool	10	"Vestigium alte in arena inscriptum est —
+ultra venti potestatem."	"Vestigium alte in arena impressum est —
+quo ventus iam non pervenit."	CHANGED
+la	outcome.success.easy.pool	11	"Concordia restituta est.
+Omnia ad hoc momentum duxerant."	"Concordia restituta est.
+Omnia ad hoc ipsum momentum duxerant."	CHANGED
+la	outcome.success.easy.pool	12	"Tempus tacite praeteriit,
+in angulis memoriae reconditum."	"Tempus tacite praeterlapsum est,
+in angulo memoriae reconditum."	CHANGED
+la	outcome.success.easy.pool	13	"Caelum colorem mutavit,
+et una fabula ad finem venit."	"Caelum colorem vertit,
+et una fabula ad finem perducta est."	CHANGED
+la	outcome.success.easy.pool	14	"Fluctus placati sunt,
+et mare altitudinem suam iterum texit."	"Fluctus placati sunt,
+et mare profundum suum iterum texit."	CHANGED
+la	outcome.success.easy.pool	15	"Vestigia constiterunt,
+et locus solus mansit."	"Vestigia constiterunt,
+et solus locus mansit."	CHANGED
+la	outcome.success.easy.pool	16	"Victoria et clades —
+ad extremum grana arenae tantum sunt."	"Victoria cladesque —
+ad extremum grana arenae tantum sunt."	CHANGED
+la	outcome.success.easy.pool	17	"Via pergitur — aut hic finitur.
+Utroque modo in eadem terra iacet."	"Via pergitur — aut hic desinit.
+Utroque modo in eadem terra iacet."	CHANGED
+la	outcome.success.normal.pool	1	"Distantia tandem sensum invenit.
+Tempus itineri tuo respondit."	"Distantia tandem sensum invenit.
+Tempus itineri tuo respondit."	UNCHANGED
+la	outcome.success.normal.pool	2	"Tempus exactum est.
+Sed non omnia finita sunt."	"Tempus exactum est.
+Sed non omnia finita sunt."	UNCHANGED
+la	outcome.success.normal.pool	3	"Axis inventus est.
+Mundus motum suum composuit."	"Axis inventus est.
+Mundus motum suum continuit."	CHANGED
+la	outcome.success.normal.pool	4	"Vitrum spiritum continuit,
+et tu locum tenuisti."	"Vitrum spiritum continuit,
+tu vero locum tenuisti."	CHANGED
+la	outcome.success.normal.pool	5	"Sub caelo immoto,
+animum non dimisisti."	"Sub caelo immobili,
+animum non dimisisti."	CHANGED
+la	outcome.success.normal.pool	6	"Pauca diu fulgent.
+Sed hoc momentum clarum fuit."	"Pauca diu fulgent.
+Sed hoc momentum clarum fuit."	UNCHANGED
+la	outcome.success.normal.pool	7	"Per terram fragilem transisti,
+nec conspectum amisisti."	"Per fragilem terram transisti,
+nec conspectum amisisti."	CHANGED
+la	outcome.success.normal.pool	8	"Momentum abiit.
+Quod mansit, manet."	"Momentum praeteriit.
+Quod mansit, manet."	CHANGED
+la	outcome.success.normal.pool	9	"Fortuna cito marcescit.
+Ordo manet."	"Fortuna cito marcescit.
+Ordo manet."	UNCHANGED
+la	outcome.success.normal.pool	10	"Caelum in circulo infinito moram non novit,
+neque tu stetisti."	"Caelum in circulo infinito moram nescit,
+neque tu constitisti."	CHANGED
+la	outcome.success.normal.pool	11	"Ad centrum pervenisti.
+Mundus stetit."	"Ad centrum pervenisti.
+Mundus constitit."	CHANGED
+la	outcome.success.normal.pool	12	"Tandem hic es.
+Veritas firma manet."	"Tandem hic es.
+Veritas firma manet."	UNCHANGED
+la	outcome.success.normal.pool	13	"Usque ad finem pervenisti.
+Memento: hanc viam tu elegisti, non alius."	"Usque ad finem pervenisti.
+Memento: hanc viam tu elegisti, non alius."	UNCHANGED
+la	outcome.success.normal.pool	14	"Tempus in silentium lapsum est,
+et in profundo animi locum invenit."	"Tempus in silentium delapsum est,
+et in profundo animi locum invenit."	CHANGED
+la	outcome.success.normal.pool	15	"Dum caelum colorem mutabat,
+fabula ad exitum suum venit."	"Dum caelum colorem vertebat,
+fabula ad exitum suum pervenit."	CHANGED
+la	outcome.success.normal.pool	16	"Aquae placatae sunt,
+et caelum abyssum suam iterum velavit."	"Aquae placatae sunt,
+et caelum abyssum suam iterum velavit."	UNCHANGED
+la	outcome.success.normal.pool	17	"Vestigia siluerunt,
+et locus solus mansit."	"Vestigia siluerunt,
+et solus locus mansit."	CHANGED
+la	outcome.success.normal.pool	18	"Lux aequaliter cecidit,
+et omnis umbra recessit."	"Lux placide cecidit,
+et umbrae omnes recesserunt."	CHANGED
+la	outcome.success.normal.pool	19	"Ventus conticuit.
+Omnia ad locum suum redierunt."	"Ventus conticuit.
+Omnia in sedem suam redierunt."	CHANGED
+la	outcome.success.normal.pool	20	"Momentum silentii.
+Mundus spiritum suum composuit."	"Momentum silentii.
+Mundus rursus spiritum composuit."	CHANGED
+la	outcome.success.normal.pool	21	"Vestigium alte in arena inscriptum est —
+ultra venti potestatem."	"Vestigium alte in arena impressum est —
+quo ventus iam non pervenit."	CHANGED
+la	outcome.success.normal.pool	22	"Concordia restituta est.
+Omnia ad hoc momentum duxerant."	"Concordia restituta est.
+Omnia ad hoc ipsum momentum duxerant."	CHANGED
+la	outcome.success.normal.pool	23	"Cursus perfectus est.
+Clarum. Inventum.
+Satis est."	"Cursus perfectus est.
+Clarum. Inventum.
+Satis est."	UNCHANGED
+la	outcome.success.normal.pool	24	"Cursus perfectus est.
+Via sustinuit.
+Et tu quoque."	"Cursus perfectus est.
+Via sustinuit.
+Tu quoque."	CHANGED
+la	outcome.success.normal.pool	25	"Caelum moveri perrexit.
+Tu quoque potes."	"Caelum moveri perrexit.
+Tu quoque potes."	UNCHANGED
+la	outcome.success.normal.pool	26	"Cursus perfectus est.
+Quietus eventus.
+Pondus veri laboris."	"Cursus perfectus est.
+Quietus eventus.
+Pondus veri laboris."	UNCHANGED
+la	outcome.success.normal.pool	27	"Tantum ambulasti viam
+quam mundus ante te straverat."	"Viam tantum ambulasti
+quam mundus ante te straverat."	CHANGED
+la	outcome.success.normal.pool	28	"Terra non cessit.
+Vestigiis tuis credidit."	"Terra non cessit.
+Vestigiis tuis credidit."	UNCHANGED
+la	outcome.success.normal.pool	29	"Hoc momentum congruit
+antiquo siderum rhythmo."	"Hoc momentum congruit
+antiquo siderum numero."	CHANGED
+la	outcome.success.normal.pool	30	"Nihil rapuisti.
+Aliquid intellexisti."	"Nihil abstulisti.
+Aliquid intellexisti."	CHANGED
+la	outcome.success.normal.pool	31	"Nihil lucratus es.
+Veritatem tantum vidisti, qualis erat."	"Nihil lucratus es.
+Veritatem tantum vidisti, qualis erat."	UNCHANGED
+la	outcome.success.normal.pool	32	"Hunc locum non cepisti.
+Hic pertinere videbaris."	"Hunc locum non occupasti.
+Hic pertinere videbaris."	CHANGED
+la	outcome.success.normal.pool	33	"Viam ambulasti
+memoria ipsa antiquiorem."	"Viam ambulasti
+ipsa memoria antiquiorem."	CHANGED
+la	outcome.success.normal.pool	34	"Terra non restitit.
+Te agnovit."	"Terra non restitit.
+Te agnovit."	UNCHANGED
+la	outcome.success.normal.pool	35	"Hoc momentum congruit
+silentio siderum."	"Hoc momentum congruit
+silentio siderum."	UNCHANGED
+la	outcome.success.hard.pool	1	"In vento septentrionali,
+claritas velocitatem superat."	"In vento septentrionali,
+claritas velocitatem superat."	UNCHANGED
+la	outcome.success.hard.pool	2	"Centrum inventum est.
+Mundus quievit."	"Centrum inventum est.
+Mundus quievit."	UNCHANGED
+la	outcome.success.hard.pool	3	"Sidera silent.
+Tabula tua loquitur."	"Sidera silent.
+Tabula tua loquitur."	UNCHANGED
+la	outcome.success.hard.pool	4	"Eventus mansit.
+Locus mutatus est."	"Eventus mansit.
+Locus mutatus est."	UNCHANGED
+la	outcome.success.hard.pool	5	"Inter glaciem et vitrum,
+imperium elegisti."	"Inter glaciem et vitrum,
+imperium elegisti."	UNCHANGED
+la	outcome.success.hard.pool	6	"Fluctus tacuerunt,
+et mare profunda sua recepit."	"Fluctus conticuerunt,
+et mare profunda sua recepit."	CHANGED
+la	outcome.success.hard.pool	7	"Thesauri quidam adhuc exspectant.
+Alia via proxima vice."	"Thesauri quidam adhuc exspectant.
+Proxima vice alia via."	CHANGED
+la	outcome.success.hard.pool	8	"Caelum non mutatum est.
+Tu mutatus es."	"Caelum non mutatum est.
+Tu mutatus es."	UNCHANGED
+la	outcome.success.hard.pool	9	"Momentum praeteriit.
+Quod mansit, ordo fuit."	"Momentum praeteriit.
+Quod mansit, ordo fuit."	UNCHANGED
+la	outcome.success.hard.pool	10	"Hiems honesta est.
+Sic fuit cursus tuus."	"Hiems honesta est.
+Sic et cursus tuus."	CHANGED
+la	outcome.success.hard.pool	11	"Sidera paulisper congruerunt.
+Tu animadvertisti."	"Sidera paulisper congruerunt.
+Tu animadvertisti."	UNCHANGED
+la	outcome.success.hard.pool	12	"Distantia clausa est.
+Tempus non."	"Distantia clausa est.
+Tempus non."	UNCHANGED
+la	outcome.success.hard.pool	13	"Regulae mundi firmae steterunt.
+Et signum possibilitatis verum fuit."	"Regulae mundi firmae steterunt.
+Et signum possibilitatis verum fuit."	UNCHANGED
+la	outcome.success.hard.pool	14	"Via quiete clausa est.
+Iam transieratis."	"Via tacite clausa est.
+Tu iam transieratis."	CHANGED
+la	outcome.success.hard.pool	15	"Nihil mutatum est.
+Locus tuus tantum mutatus est."	"Nihil mutatum est.
+Locus tuus tantum mutatus est."	UNCHANGED
+la	outcome.success.hard.pool	16	"Frigus acutum erat,
+sed iudicium tuum non obscuratum est."	"Frigus acre fuit,
+sed iudicium tuum non obscuratum est."	CHANGED
+la	outcome.success.hard.pool	17	"Momentum abiit.
+Tabula manet."	"Momentum praeteriit.
+Tabula manet."	CHANGED
+la	outcome.success.hard.pool	18	"Exitus non mutatus est.
+Tamen processisti."	"Exitus non mutatus est.
+Tamen processisti."	UNCHANGED
+la	outcome.success.hard.pool	19	"Effectus non mutatus est.
+Sed ad gradum novum pervenisti."	"Effectus non mutatus est.
+Sed ad gradum novum pervenisti."	UNCHANGED
+la	outcome.success.hard.pool	20	"Finis idem erat.
+Sed is qui ad eum pervenit mutatus erat."	"Finis idem erat.
+Sed qui ad eum pervenit mutatus erat."	CHANGED
+la	outcome.success.hard.pool	21	"Meta eadem est —
+sed viator idem non es."	"Meta eadem est —
+sed viator idem non es."	UNCHANGED
+la	outcome.success.hard.pool	22	"Lux aequaliter cecidit,
+et omnis umbra recessit."	"Lux placide cecidit,
+et umbrae omnes recesserunt."	CHANGED
+la	outcome.success.hard.pool	23	"Ventus conticuit.
+Omnia ad locum suum redierunt."	"Ventus conticuit.
+Omnia in sedem suam redierunt."	CHANGED
+la	outcome.success.hard.pool	24	"Momentum silentii.
+Mundus spiritum suum composuit."	"Momentum silentii.
+Mundus rursus spiritum composuit."	CHANGED
+la	outcome.success.hard.pool	25	"Vestigium alte in arena inscriptum est —
+ultra venti potestatem."	"Vestigium alte in arena impressum est —
+quo ventus iam non pervenit."	CHANGED
+la	outcome.success.hard.pool	26	"Concordia restituta est.
+Omnia ad hoc momentum duxerant."	"Concordia restituta est.
+Omnia ad hoc ipsum momentum duxerant."	CHANGED
+la	outcome.success.hard.pool	27	"Tempus tacite praeteriit,
+in angulis memoriae reconditum."	"Tempus tacite praeterlapsum est,
+in angulo memoriae reconditum."	CHANGED
+la	outcome.success.hard.pool	28	"Caelum colorem mutavit,
+et una fabula ad finem venit."	"Caelum colorem vertit,
+et una fabula ad finem perducta est."	CHANGED
+la	outcome.success.hard.pool	29	"Fluctus placati sunt,
+et mare altitudinem suam iterum texit."	"Fluctus placati sunt,
+et mare profundum suum iterum texit."	CHANGED
+la	outcome.success.hard.pool	30	"Vestigia constiterunt,
+et locus solus mansit."	"Vestigia constiterunt,
+et solus locus mansit."	CHANGED
+la	outcome.success.hard.pool	31	"Victoria et clades —
+ad extremum grana arenae tantum sunt."	"Victoria cladesque —
+ad extremum grana arenae tantum sunt."	CHANGED
+la	outcome.success.hard.pool	32	"Via pergitur — aut hic finitur.
+Utroque modo in eadem terra iacet."	"Via pergitur — aut hic desinit.
+Utroque modo in eadem terra iacet."	CHANGED
+la	outcome.timeup.easy.pool	1	"Tempus effluxit.
+Nihil aliud."	"Tempus effluxit.
+Nihil aliud."	UNCHANGED
+la	outcome.timeup.easy.pool	2	"Thesaurus exspectare potest.
+Tu quoque."	"Thesaurus exspectare potest.
+Tu quoque."	UNCHANGED
+la	outcome.timeup.easy.pool	3	"Finis nondum est.
+Tantum haec vice cessasti."	"Finis nondum adest.
+Hac vice tantum substitisti."	CHANGED
+la	outcome.timeup.easy.pool	4	"Hoc satis est nunc.
+Ad proximum gradum."	"Hoc satis est nunc.
+Ad proximum gradum."	UNCHANGED
+la	outcome.timeup.easy.pool	5	"Adhuc hic es.
+Id ipsum valet."	"Adhuc hic es.
+Id ipsum valet."	UNCHANGED
+la	outcome.timeup.easy.pool	6	"Cursus finitus est.
+Tu non."	"Cursus finitus est.
+Tu non."	UNCHANGED
+la	outcome.timeup.easy.pool	7	"TEMPUS EXACTUM EST.
+Cursus finitus est.
+Tu non."	"TEMPUS EXACTUM EST.
+Cursus finitus est.
+Tu non."	UNCHANGED
+la	outcome.timeup.easy.pool	8	"TEMPUS EXACTUM EST.
+Regulae non mutantur.
+Iterum."	"TEMPUS EXACTUM EST.
+Regulae non mutantur.
+Iterum."	UNCHANGED
+la	outcome.timeup.easy.pool	9	"TEMPUS EXACTUM EST.
+Prope fuisse verum est."	"TEMPUS EXACTUM EST.
+Tam prope fuisse verum est."	CHANGED
+la	outcome.timeup.easy.pool	10	"Sol occidit,
+et umbra mundum iterum texit."	"Sol occidit,
+et umbra mundum iterum texit."	UNCHANGED
+la	outcome.timeup.easy.pool	11	"Ultima grana arenae ceciderunt,
+et fabula tacite clausa est."	"Ultima grana arenae ceciderunt,
+et fabula tacite clausa est."	UNCHANGED
+la	outcome.timeup.easy.pool	12	"Ventus transiit,
+et vestigia sine signo delevit."	"Ventus pertransiit,
+et vestigia sine signo delevit."	CHANGED
+la	outcome.timeup.easy.pool	13	"Aestus rediit,
+et quod ibi fuerat mari redditum est."	"Aestus rediit,
+et quod ibi fuerat mari redditum est."	UNCHANGED
+la	outcome.timeup.easy.pool	14	"Silentium.
+Tempus solum transiit."	"Silentium.
+Tempus solum transiit."	UNCHANGED
+la	outcome.timeup.easy.pool	15	"Victoria et clades —
+ad extremum grana arenae tantum sunt."	"Victoria cladesque —
+ad extremum grana arenae tantum sunt."	CHANGED
+la	outcome.timeup.easy.pool	16	"Via pergitur — aut hic finitur.
+Utroque modo in eadem terra iacet."	"Via pergitur — aut hic desinit.
+Utroque modo in eadem terra iacet."	CHANGED
+la	outcome.timeup.normal.pool	1	"Distantia clausa est.
+Tempus non."	"Distantia clausa est.
+Tempus non."	UNCHANGED
+la	outcome.timeup.normal.pool	2	"Mundus regulas suas servavit.
+Tu limen tetigisti."	"Mundus regulas suas servavit.
+Tu limen tetigisti."	UNCHANGED
+la	outcome.timeup.normal.pool	3	"Non pervenisti.
+Sed signum verum fuit."	"Non pervenisti.
+Sed signum verum fuit."	UNCHANGED
+la	outcome.timeup.normal.pool	4	"Thesauri quidam adhuc exspectant.
+Aliam viam temptemus."	"Thesauri quidam adhuc exspectant.
+Aliam viam temptemus."	UNCHANGED
+la	outcome.timeup.normal.pool	5	"Eventus mansit.
+Locus mutatus est."	"Eventus mansit.
+Locus mutatus est."	UNCHANGED
+la	outcome.timeup.normal.pool	6	"Tempus defecit.
+Via tamen mansit."	"Tempus defecit.
+Via tamen mansit."	UNCHANGED
+la	outcome.timeup.normal.pool	7	"Sub caelo frigido,
+spes adhuc tenuis fulsit."	"Sub caelo frigido,
+spes adhuc tenuis fulsit."	UNCHANGED
+la	outcome.timeup.normal.pool	8	"Cursus cessavit,
+sed memoria non cessavit."	"Cursus cessavit,
+sed memoria non cessavit."	UNCHANGED
+la	outcome.timeup.normal.pool	9	"Quod petebas, remotum mansit.
+Sed via iam nota est."	"Quod petebas, remotum mansit.
+Sed via iam nota est."	UNCHANGED
+la	outcome.timeup.normal.pool	10	"Ultimus gradus nondum venit.
+Proximus tamen poterit."	"Ultimus gradus nondum venit.
+Proximus tamen venire potest."	CHANGED
+la	outcome.timeup.normal.pool	11	"Ventus vestigia abstulit,
+sed non conatum."	"Ventus vestigia abstulit,
+sed non conatum."	UNCHANGED
+la	outcome.timeup.normal.pool	12	"Mundus tacuit.
+Responsum adhuc exspectat."	"Mundus tacuit.
+Responsum adhuc exspectat."	UNCHANGED
+la	outcome.timeup.normal.pool	13	"Nondum.
+Sed nondum non est numquam."	"Nondum.
+Sed nondum non est numquam."	UNCHANGED
+la	outcome.timeup.normal.pool	14	"Signum paene attigisti.
+Tempus prius cecidit."	"Signum paene attigisti.
+Tempus prius cecidit."	UNCHANGED
+la	outcome.timeup.normal.pool	15	"Finis venit,
+sed sensus mansit."	"Finis venit,
+sed sensus mansit."	UNCHANGED
+la	outcome.timeup.normal.pool	16	"In arena clausum est hoc iter.
+In memoria apertum manet."	"In arena clausum est hoc iter.
+In memoria apertum manet."	UNCHANGED
+la	outcome.timeup.normal.pool	17	"Silentium cecidit.
+Lux tamen aliquantum mansit."	"Silentium cecidit.
+Lux tamen paulum mansit."	CHANGED
+la	outcome.timeup.normal.pool	18	"Cursus interruptus est.
+Voluntas non."	"Cursus interruptus est.
+Voluntas non."	UNCHANGED
+la	outcome.timeup.normal.pool	19	"Porta clausa est.
+Sed clavis nondum perdita est."	"Porta clausa est.
+Sed clavis nondum perdita est."	UNCHANGED
+la	outcome.timeup.normal.pool	20	"Tempus vicit hanc vicem.
+Tu tamen redire potes."	"Tempus hac vice vicit.
+Tu tamen redire potes."	CHANGED
+la	outcome.timeup.hard.pool	1	"Tempus te praevenit.
+Sed tu retro non cecidisti."	"Tempus te praevenit.
+Sed tu retro non cecidisti."	UNCHANGED
+la	outcome.timeup.hard.pool	2	"Glacies mansit.
+Tuum vestigium quoque."	"Glacies mansit.
+Tuum quoque vestigium."	CHANGED
+la	outcome.timeup.hard.pool	3	"Distantia victa paene erat.
+Tempus durius fuit."	"Distantia paene victa erat.
+Tempus durius fuit."	CHANGED
+la	outcome.timeup.hard.pool	4	"In extremo limite stetisti.
+Non satis fuit — sed verum fuit."	"In ipso limite stetisti.
+Non satis fuit — sed verum fuit."	CHANGED
+la	outcome.timeup.hard.pool	5	"Sidera nihil promiserunt.
+Tamen ambulasti."	"Sidera nihil promiserunt.
+Tamen ambulasti."	UNCHANGED
+la	outcome.timeup.hard.pool	6	"Ventus durus fuit.
+Animus tuus durior."	"Ventus durus fuit.
+Animus tuus durior."	UNCHANGED
+la	outcome.timeup.hard.pool	7	"Cursus fractus est,
+sed via intellecta est."	"Cursus fractus est,
+sed via intellecta est."	UNCHANGED
+la	outcome.timeup.hard.pool	8	"Non omnia clausa sunt.
+Hoc iter tantum."	"Non omnia clausa sunt.
+Hoc iter tantum."	UNCHANGED
+la	outcome.timeup.hard.pool	9	"Mundus nihil remisit.
+Tu tamen accessisti."	"Mundus nihil remisit.
+Tu tamen accessisti."	UNCHANGED
+la	outcome.timeup.hard.pool	10	"Ultimum momentum elapsum est.
+Sed labor manet."	"Ultimum momentum elapsum est.
+Sed labor manet."	UNCHANGED
+la	outcome.timeup.hard.pool	11	"Nihil facile datum est.
+Nihil frustra factum est."	"Nihil facile datum est.
+Nihil frustra factum est."	UNCHANGED
+la	outcome.timeup.hard.pool	12	"Finis acer fuit.
+Sed oculi tui aperti manserunt."	"Finis acer fuit.
+Sed oculi tui aperti manserunt."	UNCHANGED
+la	outcome.timeup.hard.pool	13	"Frigus respondit silentio.
+Tu respondiste gradu."	"Frigus silentio respondit.
+Tu gradu respondisti."	CHANGED
+la	outcome.timeup.hard.pool	14	"Celeritas non suffecit.
+Claritas tamen crevit."	"Celeritas non suffecit.
+Claritas tamen crevit."	UNCHANGED
+la	outcome.timeup.hard.pool	15	"Haec clades parva est.
+Disciplina maior."	"Haec clades parva est.
+Disciplina maior."	UNCHANGED
+la	outcome.timeup.hard.pool	16	"Tempus clausit ianuam.
+Memoria fenestram reliquit."	"Tempus ianuam clausit.
+Memoria fenestram reliquit."	CHANGED
+la	outcome.timeup.hard.pool	17	"Distantia mansit.
+Sed minor quam antea."	"Distantia mansit.
+Sed minor quam antea."	UNCHANGED
+la	outcome.timeup.hard.pool	18	"Sic finitur haec vice.
+Non sic finitur via."	"Sic hac vice finitur.
+Non sic finitur via."	CHANGED
+la	outcome.timeup.hard.pool	19	"Arena cecidit.
+Voluntas stetit."	"Arena cecidit.
+Voluntas stetit."	UNCHANGED
+la	outcome.timeup.hard.pool	20	"Mare recepit quod celaverat.
+Tu tamen signum vidisti."	"Mare recepit quod celaverat.
+Tu tamen signum vidisti."	UNCHANGED
+la	outcome.timeup.hard.pool	21	"Caelum obscuratum est.
+Sed via iam delineata est."	"Caelum obscuratum est.
+Sed via iam delineata est."	UNCHANGED
+la	outcome.timeup.hard.pool	22	"Nihil captum est.
+Sed aliquid cognitum est."	"Nihil captum est.
+Sed aliquid cognitum est."	UNCHANGED
+la	outcome.timeup.hard.pool	23	"Finis durus est.
+Durior tamen fit manus tua."	"Finis durus est.
+Durior tamen fit manus tua."	UNCHANGED
+la	outcome.timeup.hard.pool	24	"Cursus tacuit.
+Cor non tacuit."	"Cursus tacuit.
+Cor non tacuit."	UNCHANGED
+la	outcome.timeup.hard.pool	25	"Hora exacta est.
+Vestigium manet."	"Hora exacta est.
+Vestigium manet."	UNCHANGED
+la	outcome.timeup.hard.pool	26	"Non pervenisti ad centrum.
+Sed centrum te vocavit."	"Ad centrum non pervenisti.
+Sed centrum te vocavit."	CHANGED
+la	outcome.timeup.hard.pool	27	"Regulae firmae steterunt.
+Tu paene intrasti."	"Regulae firmae steterunt.
+Tu paene intrasti."	UNCHANGED
+la	outcome.timeup.hard.pool	28	"Ultimus sonus evanuit.
+Sed resonantia mansit."	"Ultimus sonus evanuit.
+Sed resonantia mansit."	UNCHANGED
+la	outcome.timeup.hard.pool	29	"Tenebrae redierunt.
+Oculi tamen assuefacti sunt."	"Tenebrae redierunt.
+Oculi tamen assuefacti sunt."	UNCHANGED
+la	outcome.timeup.hard.pool	30	"Hoc non fuit vacuum.
+Hoc fuit praeparatio."	"Hoc vacuum non fuit.
+Praeparatio fuit."	CHANGED
+la	outcome.timeup.hard.pool	31	"Tempus abstulit finem.
+Non abstulit viam."	"Tempus finem abstulit.
+Viam non abstulit."	CHANGED
+la	outcome.timeup.hard.pool	32	"Iter hic cecidit.
+Tu nondum."	"Iter hic cecidit.
+Tu nondum."	UNCHANGED
+la	outcome.timeup.hard.pool	33	"Nondum inventum est.
+Sed propius factum est."	"Nondum inventum est.
+Sed propius factum est."	UNCHANGED
+la	outcome.timeup.hard.pool	34	"Silentium clausit diem.
+Crastinum apertum manet."	"Silentium diem clausit.
+Cras apertum manet."	CHANGED
+la	outcome.timeup.hard.pool	35	"Non omnia vincuntur statim.
+Quaedam discuntur."	"Non omnia statim vincuntur.
+Quaedam discuntur."	CHANGED
+la	outcome.timeup.hard.pool	36	"Finis temporis.
+Non finis tui."	"Finis temporis.
+Non finis tui."	UNCHANGED
+la	outcome.timeup.hard.pool	37	"In frigore et vitro,
+conatus tuus mansit."	"In frigore et vitro,
+conatus tuus mansit."	UNCHANGED
+la	outcome.timeup.hard.pool	38	"Iter interruptum est.
+Sed animus integer mansit."	"Iter interruptum est.
+Sed animus integer mansit."	UNCHANGED
