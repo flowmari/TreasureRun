@@ -7,467 +7,481 @@ outcome:
       pool: []
     easy:
       pool:
-      - 'You’ve made it.
+      - '汝至矣。
 
-        The truth remains.'
-      - 'Even if it was only a small step,
+        真猶在其所。'
+      - '雖一小步，
 
-        you held your ground.'
-      - "You listened.\n The path opened."
-      - "> You made it here\n> \n> The rules were simple —\n> \n> the choice was yours."
-      - "> Distance became meaning.\n> \n> and time answered your footsteps."
-      - "> Not everything shines forever.\n> \n> But this moment did."
-      - 'Light fell evenly, ,
+        汝亦不退。'
+      - '汝既聞之，
 
-        and every shadow vanished.'
-      - 'The wind fell silent.
+        道乃自開。'
+      - "> 汝至此矣。\n> \n> 法甚簡——\n> \n> 擇在汝手。"
+      - "> 遠近乃得其義。\n> \n> 時亦應汝足音。"
+      - "> 非凡光皆可久明。\n> \n> 然此一刻，誠明矣。"
+      - '光靜而下，
 
-        and everything returned to where it belonged.'
-      - 'A moment of silence.
+        群影皆退。'
+      - '風止。
 
-        The world steadied its breath.'
-      - 'The record is etched deep in the sand—
+        萬物各歸其所。'
+      - '片刻寂然。
 
-        beyond the reach of the wind.'
-      - 'Harmony was restored.
+        天地復定其息。'
+      - '跡深刻於沙——
 
-        Everything had been for this moment.'
-      - 'Time slipped by in silence,
+        在風所不能及之處。'
+      - '衡復矣。
 
-        tucked away in the corners of memory.'
-      - 'The sky shifted in color,
+        萬事若為此刻而來。'
+      - '時靜流過，
 
-        and one story came to its end.'
-      - 'The waves grew calm,
+        藏於憶之隅。'
+      - '天改其色，
 
-        and the sea hid its depths once more.'
-      - 'The footsteps stopped,
+        一事亦至其終。'
+      - '浪息，
 
-        and only the place remained.'
-      - "Victory and defeat \nare nothing more than grains of sand."
-      - 'The road goes on—or it ends.
+        海復藏其深。'
+      - '足音止，
 
-        Either way, it lies on the same earth.'
+        唯其地猶存。'
+      - '勝負者，
+
+        終亦沙粒耳。'
+      - '道或續，或止於此。
+
+        然皆在同一土上。'
     normal:
       pool:
-      - 'The distance has found its meaning.
+      - '遠近終得其義。
 
-        Time has rewarded your journey.'
-      - 'The time is up.
+        時亦應汝之行。'
+      - '時盡矣。
 
-        but the rest is far from over.'
-      - 'The axis is found.
+        然事未盡。'
+      - '軸已得。
 
-        the world has cased its motion.'
-      - 'The glass held its breath,
+        天地亦止其運。'
+      - '琉璃屏息，
 
-        and you held your ground.'
-      - 'Under the stillness of the sky,
+        汝守其位。'
+      - '靜天之下，
 
-        your spirit did not waver.'
-      - 'Few things shine forever.
+        汝心不搖。'
+      - '能久明者寡。
 
-        but this moment was radiant.'
-      - 'You traversed the fragile earth,
+        然此刻明甚。'
+      - '汝過脆地，
 
-        without losing the view.'
-      - 'The moment has passed.
+        目不移。'
+      - '此刻已過。
 
-        The legacy remains.'
-      - 'Luck fades fast.
+        所存者猶存。'
+      - '幸易褪。
 
-        order endures.'
-      - 'The sky knows no pause in endless circle,
+        序常留。'
+      - '天循無窮之圓而不息，
 
-        nor shall you find yours.'
-      - 'The center has been reached.
+        汝亦未止。'
+      - '汝至其中。
 
-        The world stood still.'
-      - 'Finally here.
+        天地靜矣。'
+      - '終至此。
 
-        The truth remains unyielding.'
-      - 'You have seen it through.
+        真猶堅然。'
+      - '汝行至終。
 
-        And mark this: it was you, and no one else, who chose this path.'
-      - 'Time drifted into silence,
+        記之：擇此道者，汝也，非他人也。'
+      - '時入沉默，
 
-        finding its place in the recesses of the mind.'
-      - 'As the sky transformed,
+        於心深處得其所。'
+      - '天變之時，
 
-        the tale found its final resolved.'
-      - 'The waters fell calm,
+        事亦至其終。'
+      - '水面既靜，
 
-        and the sky once more veiled its abyss.'
-      - 'The footsteps ceased,
+        天復掩其深。'
+      - '足音已止，
 
-        only the place remained.'
-      - 'Light fell evenly, ,
+        唯其地猶存。'
+      - '光靜而下，
 
-        and every shadow vanished.'
-      - 'The wind fell silent.
+        群影皆退。'
+      - '風止。
 
-        and everything returned to where it belonged.'
-      - 'A moment of silence.
+        萬物各歸其所。'
+      - '片刻寂然。
 
-        The world steadied its breath.'
-      - 'The record is etched deep in the sand—
+        天地復定其息。'
+      - '跡深刻於沙——
 
-        beyond the reach of the wind.'
-      - 'Harmony was restored.
+        在風所不能及之處。'
+      - '衡復矣。
 
-        Everything had been for this moment.'
-      - 'RUN COMPLETE.
+        萬事若為此刻而來。'
+      - '賽畢。
 
-        Clear. Found it.
+        明矣。得矣。
 
-        That''s enough.'
-      - 'RUN COMPLETE.
+        足矣。'
+      - '賽畢。
 
-        The path held.
+        道能承之，
 
-        So did you.'
-      - 'The sky has kept moving.
+        汝亦能承之。'
+      - '天猶運行。
 
-        So can you.'
-      - 'RUN COMPLETE.
+        汝亦可然。'
+      - '賽畢。
 
-        A quiet result.
+        靜然之果。
 
-        The weight of real work.'
-      - 'You only walked the path
+        實功之重。'
+      - 汝但行天地置於目前之道。
+      - '地不崩。
 
-        the world had laid out for you.'
-      - 'The ground didn’t give way.
+        以其信汝足也。'
+      - 此刻合於星辰古律。
+      - '汝非取物。
 
-        It trusted your steps.'
-      - 'This moment aligned
+        乃有所悟。'
+      - '汝非勝物。
 
-        with the stars’ ancient rhythm.'
-      - "You didn’t take anything.\n You understood something."
-      - 'You didn’t gain a thing.
+        但見真如其真。'
+      - '汝非奪此地。
 
-        You only saw the truth for what it was.'
-      - 'You didn’t take this place.
+        汝本屬於此。'
+      - '汝行一徑，
 
-        You belonged here.'
-      - 'You walked a road
+        其古過於記憶。'
+      - '地無所拒。
 
-        older than memory itself.'
-      - 'The earth did not resist.
-
-        It recognized you.'
-      - "This moment aligned\n with the stillness of the stars."
+        以其識汝也。'
+      - 此刻合於星辰之靜。
     hard:
       pool:
-      - 'In the north wind,
+      - '北風之中，
 
-        clarity outlasts speed.'
-      - "The center was found.\n The world came to rest."
-      - 'The stars stay silent.
+        明辨久於速。'
+      - '非幸也。
 
-        Your record does the speaking.'
-      - 'The result  remained.
+        乃向也。'
+      - '世未改。
 
-        The position changed.'
-      - 'Between ice and glass,
+        汝之位已改。'
+      - '其果猶存。
 
-        you chose control.'
-      - 'The waves fell quiet,
+        其位已易。'
+      - '冰與琉璃之間，
 
-        and the sea reclaimed its hidden depths.'
-      - 'Some treasures still await.
+        汝擇其制。'
+      - '浪既默，
 
-        Next time, a different path.'
-      - 'The sky didn’t change.
+        海復取其幽深。'
+      - '寶猶有待。
 
-        You did.'
-      - 'The moment passed.
+        來日更行他徑。'
+      - '天未變。
 
-        What remained was order.'
-      - 'Winter is honest.
+        變者汝也。'
+      - '一刻已過。
 
-        So was your run.'
-      - 'The stars aligned for a moment.
+        所餘者，序也。'
+      - '冬誠也。
 
-        You noticed.'
-      - 'The distance closed.
+        汝之行亦然。'
+      - '星辰一瞬得其位。
 
-        Time did not.'
-      - "The world’s rules stood firm.\n And the signal of possibility was real."
-      - 'The path closed quietly.
+        汝見之矣。'
+      - '遠近既合。
 
-        You were already through.'
-      - 'Nothing changed.
+        時未然。'
+      - '世之法不移。
 
-        Only your position did.'
-      - 'Not luck.
+        汝亦立焉。'
+      - '汝過寒光，
 
-        Alignment.'
-      - 'The moment passed.
+        而不失其準。'
+      - '玻璃將裂而未裂。
 
-        The record remains.'
-      - 'The outcome didn’t change.
+        汝亦未折。'
+      - '風雪無辭。
 
-        Still, you moved forward.'
-      - 'The output didn’t change.
+        故足跡誠。'
+      - '高處無聲。
 
-        But you reached a new level.'
-      - 'The ending was the same.
+        汝猶至之。'
+      - '非疾者勝。
 
-        But the one who reached it had changed.'
-      - 'The destination is the same
+        不亂者至。'
+      - '冰下有光。
 
-        —but you’re no longer the traveler you once were.'
-      - 'Light fell evenly, ,
+        汝識其處。'
+      - '時如刃。
 
-        and every shadow vanished.'
-      - 'The wind fell silent.
+        汝不避其鋒。'
+      - '遠處閉合，
 
-        and everything returned to where it belonged.'
-      - 'A moment of silence.
+        近處開焉。'
+      - '汝立於界上，
 
-        The world steadied its breath.'
-      - 'The record is etched deep in the sand—
+        而界不奪汝。'
+      - '天色冷然。
 
-        beyond the reach of the wind.'
-      - 'Harmony was restored.
+        心火未滅。'
+      - '一切皆輕，
 
-        Everything had been for this moment.'
-      - 'Time slipped by in silence,
+        唯選擇有重。'
+      - '步少而準。
 
-        tucked away in the corners of memory.'
-      - 'The sky shifted in color,
+        故道開。'
+      - '終局無言。
 
-        and one story came to its end.'
-      - 'The waves grew calm,
+        惟位可證。'
+      - '群影退後，
 
-        and the sea hid its depths once more.'
-      - 'The footsteps stopped,
+        汝仍在前。'
+      - '寒意逼近，
 
-        and only the place remained.'
-      - "Victory and defeat \nare nothing more than grains of sand."
-      - 'The road goes on—or it ends.
+        汝不改向。'
+      - '地記汝步，
 
-        Either way, it lies on the same earth.'
+        雖風不能除。'
+      - '此非偶然。
+
+        乃積行之果。'
+      - '汝至難處，
+
+        難處亦讓路。'
+      - '沉默之中，
+
+        勝負已定。'
   timeup:
     easy:
       pool:
-      - 'Time ran out.
+      - '時盡矣。
 
-        Nothing else did.'
-      - 'The treasure can wait.
+        汝未盡也。'
+      - '寶可待。
 
-        So can you.'
-      - 'Breathe in.
+        汝亦可再來。'
+      - '且一息。
 
-        Then again.'
-      - 'That’s all for now.
+        復一息。'
+      - '今暫足矣。
 
-        On to the next step.'
-      - 'You''re still here.
+        更進一步。'
+      - '路未閉。
 
-        That’s what matters.'
-      - 'The run ended.
+        但今日止於此。'
+      - '火未滅。
 
-        You didn’t.'
-      - 'TIME''S UP.
+        但風已至。'
+      - '足跡尚淺。
 
-        The run ended.
+        然已在地上。'
+      - '未得寶，
 
-        You didn''t.'
-      - 'TIME''S UP.
+        亦非空行。'
+      - 時過而道存。
+      - '汝未至終，
 
-        The rules don’t change.
+        但已離始。'
+      - 沙仍記其步。
+      - '光退，
 
-        Again.'
-      - 'TIME''S UP.
+        然眼已見之。'
+      - '此刻止，
 
-        “So close” is real.'
-      - 'The sun sank,
+        來刻可續。'
+      - '不必急。
 
-        and shadow covered the world once again.'
-      - 'The last grains of sand fell,
+        道不以急者開。'
+      - '今日之未竟，
 
-        and the story quietly came to a close.'
-      - 'The wind swept through,
+        可為明日之始。'
+      - '鐘止。
 
-        and the footprints vanished without a trace.'
-      - 'The tide came in,
-
-        What once had been there returned to the sea.'
-      - 'Silence.
-
-        Only time passed through.'
-      - "Victory and defeat \nare nothing more than grains of sand."
-      - 'The road goes on—or it ends.
-
-        Either way, it lies on the same earth.'
+        心未止。'
     normal:
       pool:
-      - 'The distance closed.
+      - '距離減矣。
 
-        Time did not.'
-      - 'The world kept its rules.
+        時未從之。'
+      - '圖猶開。
 
-        You touched the edge.'
-      - 'You didn’t make it.
+        復來。'
+      - '寶尚在遠處，
 
-        But the signal was real.'
-      - 'Some treasures still await.
+        然信號為真。'
+      - '時已落下，
 
-        Let’s try a different path.'
-      - 'The result remained.
+        道猶未合。'
+      - '汝幾近矣。
 
-        The position changed.'
-      - 'Time ran out.
+        近亦是一證。'
+      - '風先至，
 
-        Meaning didn''t.'
-      - 'So close.
+        人未及。'
+      - '此敗非盡。
 
-        The sound said so.'
-      - 'The map is still open.
+        乃路之一節。'
+      - '眼已知其方。
 
-        Come back to it.'
-      - 'The world’s rules stood firm.
+        足尚須再行。'
+      - '靜默。
 
-        The signal of possibility was real.'
-      - The world kept its rules.
-      - 'The moment passed.
+        唯時過耳。'
+      - '勝負者，
 
-        The record remains.'
-      - 'The sun sank,
+        終亦沙粒。'
+      - '今日不得，
 
-        and shadow covered the world once again.'
-      - 'The last grains of sand fell,
+        未必明日不得。'
+      - '天不為一刻止，
 
-        and the story quietly came to a close.'
-      - 'The wind swept through,
+        汝亦毋止。'
+      - '未取其寶，
 
-        and the footprints vanished without a trace.'
-      - 'The tide came in,
+        然已識其重。'
+      - '地仍在。
 
-        What once had been there returned to the sea.'
-      - 'Silence.
+        路仍在。'
+      - '時奪其果，
 
-        Only time passed through.'
-      - "Victory and defeat \nare nothing more than grains of sand."
-      - 'The road goes on—or it ends.
+        不奪其義。'
+      - '汝所失者一局，
 
-        Either way, it lies on the same earth.'
-      - "> Time ran out.\n> \n> Nothing else did."
-      - "> The outcome didn’t change.\n> \n> But your position did."
+        非其道也。'
+      - '鐘聲已盡，
+
+        餘音猶在。'
+      - '風掩足跡，
+
+        不掩方向。'
+      - '再來之時，
+
+        此地將識汝。'
+      - '止於此，
+
+        非終於此。'
     hard:
       pool:
-      - 'Even the aurora fades.
+      - '極光亦會淡。
 
-        Come back with a new stride.'
-      - 'In a fragile world,
+        更持一步而來。'
+      - '一刻滑去。
 
-        haste shatters clarity before it can be found.'
-      - 'The moment slipped away.
+        其義未去。'
+      - '天猶運行。
 
-        The meaning did not.'
-      - 'Winter is patient.
+        汝亦可然。'
+      - '寒風不問願。
 
-        Be the same.'
-      - 'The sky kept moving.
+        但問足是否仍行。'
+      - '時如冰裂。
 
-        So will you.'
-      - 'The story moves on.
+        聲已至耳。'
+      - '未至中心，
 
-        The end is not yet.'
-      - 'The stars were there, watching.
+        然中心已知汝來。'
+      - '難處不赦人。
 
-        Again.'
-      - 'Ice takes its time.
+        然亦不欺人。'
+      - '今失其寶，
 
-        Neither do you.'
-      - 'The sky kept moving.
+        猶得其向。'
+      - '雪覆其路，
 
-        So can you.'
-      - 'The north has learned to wait.
+        非滅其路。'
+      - '未竟之局，
 
-        So should you.'
-      - 'This is an interlude
+        可成明日之證。'
+      - '天色冷矣。
 
-        —It’s not over.'
-      - 'Like drifting clouds,
+        心勿冷。'
+      - '風奪其聲，
 
-        don’t lose your flow—like a river.'
-      - 'The sound was near.
+        不奪其志。'
+      - '汝未入門，
 
-        The distance was real.
+        然已至門前。'
+      - '冰仍在。
 
-        But that moment can’t be saved.'
-      - 'You were closing in.
+        足亦可再至。'
+      - '黑暗合攏，
 
-        Only time wasn’t.'
-      - 'The world held to its rules.
+        然光曾在其中。'
+      - '時不待人。
 
-        You touched the edge of them.'
-      - "You didn’t reach the treasure. \nBut the signal was real."
-      - 'Nothing changed.
+        然人可復行。'
+      - '未得者，
 
-        Only your position did.'
-      - 'It wasn’t luck.
+        未必永不得。'
+      - '敗非辱。
 
-        Alignment.'
-      - 'The moment slipped away,
+        亂乃辱。'
+      - '汝今日止步，
 
-        but the record stayed.'
-      - 'You crossed fragile ground
+        非永遠止步。'
+      - '星位已過，
 
-        and left the horizon unbroken.'
-      - "Nothing changed.\n Only your position did.\nNot luck.\nAlignment.\nThe moment passed.\nThe record remains."
-      - 'The sun sank,
+        然天圖仍在。'
+      - '路狹而寒，
 
-        and shadow covered the world once again.'
-      - 'The last grains of sand fell,
+        故一足已重。'
+      - '風雪甚急，
 
-        and the story quietly came to a close.'
-      - 'The wind swept through,
+        汝猶曾前進。'
+      - '此局不仁，
 
-        and the footprints vanished without a trace.'
-      - 'The tide came in,
+        亦不虛。'
+      - '未勝，
 
-        What once had been there returned to the sea.'
-      - 'Silence.
+        然未空。'
+      - '終聲已鳴。
 
-        Only time passed through.'
-      - "Victory and defeat \nare nothing more than grains of sand."
-      - 'The road goes on—or it ends.
+        其意猶留。'
+      - '寶在遠處。
 
-        Either way, it lies on the same earth.'
-      - 'The season closed.
+        汝亦仍在。'
+      - '若再來，
 
-        The land remained.'
-      - 'The path The path remains.
+        此寒將非初見。'
+      - '失其時，
 
-        Only your steps stopped.'
-      - 'Your time ran out.
+        未失其道。'
+      - '沉默落下。
 
-        The sky didn’t.'
-      - 'It wasn’t rejection.
+        汝仍可起。'
+      - '冰光既遠，
 
-        Only silence.'
-      - 'The world is still intact.
+        記憶猶近。'
+      - '此敗有形，
 
-        You can return—changed.'
-      - 'The season ended.
+        其學無形。'
+      - '汝與終點相望，
 
-        The forest remains.'
-      - 'The distance was closing.
+        尚未相逢。'
+      - '風合其門，
 
-        Time kept its rhythm.'
-      - 'Your time came to a halt.
+        明日可再叩。'
+      - '星辰不語，
 
-        The sky kept moving.'
-      - 'Not rejection
+        但曾照汝。'
+      - '道難，
 
-        Just silence.'
-      - 'The path is still here.
+        故足跡有價。'
+      - '時盡於此，
 
-        You can come back—changed.'
+        志可不盡。'
+      - '今日寒勝。
+
+        來日未必。'
+      - '局止，
+
+        人未止。'
 meta:
   lang: lzh
   note: Put translation keys under e.g. command.xxx / gui.xxx / messages.xxx etc.
