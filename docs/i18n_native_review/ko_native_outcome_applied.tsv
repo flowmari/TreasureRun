@@ -1,0 +1,333 @@
+lang	pool	index	translation
+ko	outcome.success.easy.pool	1	"해냈어.
+진실은 그대로 남아 있어."
+ko	outcome.success.easy.pool	2	"작은 한 걸음이었을 뿐이어도,
+넌 끝까지 버텼어."
+ko	outcome.success.easy.pool	3	"넌 들었고,
+길은 열렸어."
+ko	outcome.success.easy.pool	4	"> 여기까지 왔어.
+> 
+> 규칙은 단순했어 —
+> 
+> 선택은 너의 몫이었지."
+ko	outcome.success.easy.pool	5	"> 거리는 의미가 되었고,
+> 
+> 시간은 네 발걸음에 답했어."
+ko	outcome.success.easy.pool	6	"> 모든 빛이 영원히 빛나지는 않아.
+> 
+> 하지만 이 순간은 빛났어."
+ko	outcome.success.easy.pool	7	"빛이 고르게 내려앉고,
+모든 그림자가 사라졌어."
+ko	outcome.success.easy.pool	8	"바람이 잠잠해졌고,
+모든 것이 제자리로 돌아갔어."
+ko	outcome.success.easy.pool	9	"짧은 침묵.
+세상은 다시 숨을 골랐어."
+ko	outcome.success.easy.pool	10	"기록은 모래 깊숙이 새겨졌어 —
+바람이 닿지 못하는 곳에."
+ko	outcome.success.easy.pool	11	"균형이 되돌아왔어.
+모든 것은 이 순간을 향해 있었어."
+ko	outcome.success.easy.pool	12	"시간은 조용히 흘러가,
+기억의 구석에 머물렀어."
+ko	outcome.success.easy.pool	13	"하늘은 색을 바꾸었고,
+하나의 이야기는 끝에 닿았어."
+ko	outcome.success.easy.pool	14	"파도는 잔잔해졌고,
+바다는 다시 깊이를 숨겼어."
+ko	outcome.success.easy.pool	15	"발걸음은 멈추고,
+그 자리만 남았어."
+ko	outcome.success.easy.pool	16	"승리와 패배는
+모래알에 지나지 않아."
+ko	outcome.success.easy.pool	17	"길은 이어지거나 — 끝나거나.
+어느 쪽이든 같은 땅 위에 놓여 있어."
+ko	outcome.success.normal.pool	1	"거리는 의미를 찾았고,
+시간은 네 여정에 답했어."
+ko	outcome.success.normal.pool	2	"시간은 끝났어.
+하지만 모든 것이 끝난 건 아니야."
+ko	outcome.success.normal.pool	3	"축은 발견되었고,
+세상은 움직임을 멈췄어."
+ko	outcome.success.normal.pool	4	"유리는 숨을 참고,
+넌 그 자리에 버텼어."
+ko	outcome.success.normal.pool	5	"고요한 하늘 아래,
+네 마음은 흔들리지 않았어."
+ko	outcome.success.normal.pool	6	"영원히 빛나는 것은 많지 않아.
+하지만 이 순간은 선명히 빛났어."
+ko	outcome.success.normal.pool	7	"넌 깨지기 쉬운 땅을 건넜고,
+시야를 잃지 않았어."
+ko	outcome.success.normal.pool	8	"순간은 지나갔어.
+남은 것은 계속 남아 있어."
+ko	outcome.success.normal.pool	9	"운은 금세 희미해져.
+질서는 남아."
+ko	outcome.success.normal.pool	10	"하늘은 끝없는 원 안에서 멈추지 않고,
+너 역시 멈추지 않았어."
+ko	outcome.success.normal.pool	11	"중심에 닿았어.
+세상은 가만히 멈췄어."
+ko	outcome.success.normal.pool	12	"마침내 여기.
+진실은 여전히 단단해."
+ko	outcome.success.normal.pool	13	"넌 끝까지 갔어.
+기억해. 이 길을 선택한 건 너였고, 다른 누구도 아니었어."
+ko	outcome.success.normal.pool	14	"시간은 침묵 속으로 스며들어,
+마음 깊은 곳에 자리를 잡았어."
+ko	outcome.success.normal.pool	15	"하늘이 변하는 동안,
+이야기는 자신의 끝에 도달했어."
+ko	outcome.success.normal.pool	16	"물결은 잔잔해졌고,
+하늘은 다시 그 깊이를 감췄어."
+ko	outcome.success.normal.pool	17	"발걸음은 멎었고,
+그 자리만 남았어."
+ko	outcome.success.normal.pool	18	"빛이 고르게 내려앉고,
+모든 그림자가 사라졌어."
+ko	outcome.success.normal.pool	19	"바람이 잠잠해졌고,
+모든 것이 제자리로 돌아갔어."
+ko	outcome.success.normal.pool	20	"짧은 침묵.
+세상은 다시 숨을 골랐어."
+ko	outcome.success.normal.pool	21	"기록은 모래 깊숙이 새겨졌어 —
+바람이 닿지 못하는 곳에."
+ko	outcome.success.normal.pool	22	"균형이 되돌아왔어.
+모든 것은 이 순간을 향해 있었어."
+ko	outcome.success.normal.pool	23	"주행 완료.
+분명해. 찾았어.
+그걸로 충분해."
+ko	outcome.success.normal.pool	24	"주행 완료.
+길은 버텼고,
+너도 버텼어."
+ko	outcome.success.normal.pool	25	"하늘은 계속 움직였어.
+너도 그럴 수 있어."
+ko	outcome.success.normal.pool	26	"주행 완료.
+조용한 결과.
+진짜 노력의 무게."
+ko	outcome.success.normal.pool	27	"넌 그저 세상이 네 앞에 놓아 둔
+길을 걸었을 뿐이야."
+ko	outcome.success.normal.pool	28	"땅은 무너지지 않았어.
+네 발걸음을 믿었으니까."
+ko	outcome.success.normal.pool	29	"이 순간은
+별들의 오래된 리듬과 맞아떨어졌어."
+ko	outcome.success.normal.pool	30	"넌 아무것도 빼앗지 않았어.
+무언가를 이해했을 뿐이야."
+ko	outcome.success.normal.pool	31	"넌 아무것도 얻지 않았어.
+진실을 있는 그대로 보았을 뿐이야."
+ko	outcome.success.normal.pool	32	"넌 이곳을 차지한 게 아니야.
+이곳에 속해 있었어."
+ko	outcome.success.normal.pool	33	"넌 기억보다 오래된
+길을 걸었어."
+ko	outcome.success.normal.pool	34	"땅은 저항하지 않았어.
+너를 알아보았으니까."
+ko	outcome.success.normal.pool	35	"이 순간은
+별들의 고요와 맞아떨어졌어."
+ko	outcome.success.hard.pool	1	"북쪽 바람 속에서도,
+선명함은 속도보다 오래 남아."
+ko	outcome.success.hard.pool	2	"중심을 찾았고,
+세상은 쉬어 갔어."
+ko	outcome.success.hard.pool	3	"별들은 말이 없어.
+네 기록이 대신 말해 줘."
+ko	outcome.success.hard.pool	4	"결과는 남았고,
+위치는 달라졌어."
+ko	outcome.success.hard.pool	5	"얼음과 유리 사이에서,
+넌 통제를 선택했어."
+ko	outcome.success.hard.pool	6	"파도는 조용해졌고,
+바다는 숨겨 둔 깊이를 되찾았어."
+ko	outcome.success.hard.pool	7	"아직 기다리는 보물이 있어.
+다음엔 다른 길이야."
+ko	outcome.success.hard.pool	8	"하늘은 변하지 않았어.
+변한 건 너야."
+ko	outcome.success.hard.pool	9	"순간은 지나갔어.
+남은 것은 질서였어."
+ko	outcome.success.hard.pool	10	"겨울은 정직해.
+네 주행도 그랬어."
+ko	outcome.success.hard.pool	11	"별들이 잠시 제자리를 찾았고,
+넌 그걸 알아챘어."
+ko	outcome.success.hard.pool	12	"거리는 좁혀졌어.
+시간은 그렇지 않았어."
+ko	outcome.success.hard.pool	13	"세상의 규칙은 굳건했고,
+가능성의 신호는 분명했어."
+ko	outcome.success.hard.pool	14	"길은 조용히 닫혔어.
+넌 이미 건너온 뒤였어."
+ko	outcome.success.hard.pool	15	"아무것도 변하지 않았어.
+네 위치만 달라졌어."
+ko	outcome.success.hard.pool	16	"운이 아니었어.
+맞아떨어진 거야."
+ko	outcome.success.hard.pool	17	"순간은 지나갔고,
+기록은 남았어."
+ko	outcome.success.hard.pool	18	"결과는 바뀌지 않았어.
+그래도 넌 앞으로 나아갔어."
+ko	outcome.success.hard.pool	19	"출구는 바뀌지 않았어.
+하지만 넌 다른 높이에 닿았어."
+ko	outcome.success.hard.pool	20	"끝은 같았어.
+하지만 그 끝에 도착한 너는 이미 달라져 있었어."
+ko	outcome.success.hard.pool	21	"목적지는 같아.
+하지만 넌 더 이상 예전의 여행자가 아니야."
+ko	outcome.success.hard.pool	22	"빛이 고르게 내려앉고,
+모든 그림자가 사라졌어."
+ko	outcome.success.hard.pool	23	"바람이 잠잠해졌고,
+모든 것이 제자리로 돌아갔어."
+ko	outcome.success.hard.pool	24	"짧은 침묵.
+세상은 다시 숨을 골랐어."
+ko	outcome.success.hard.pool	25	"기록은 모래 깊숙이 새겨졌어 —
+바람이 닿지 못하는 곳에."
+ko	outcome.success.hard.pool	26	"균형이 되돌아왔어.
+모든 것은 이 순간을 향해 있었어."
+ko	outcome.success.hard.pool	27	"시간은 조용히 흘러가,
+기억의 구석에 머물렀어."
+ko	outcome.success.hard.pool	28	"하늘은 색을 바꾸었고,
+하나의 이야기는 끝에 닿았어."
+ko	outcome.success.hard.pool	29	"파도는 잔잔해졌고,
+바다는 다시 깊이를 숨겼어."
+ko	outcome.success.hard.pool	30	"발걸음은 멈추고,
+그 자리만 남았어."
+ko	outcome.success.hard.pool	31	"승리와 패배는
+모래알에 지나지 않아."
+ko	outcome.success.hard.pool	32	"길은 이어지거나 — 끝나거나.
+어느 쪽이든 같은 땅 위에 놓여 있어."
+ko	outcome.timeup.easy.pool	1	"시간은 끝났어.
+하지만 넌 끝나지 않았어."
+ko	outcome.timeup.easy.pool	2	"보물은 기다릴 수 있어.
+너도 그래."
+ko	outcome.timeup.easy.pool	3	"숨을 쉬어.
+그리고 한 번 더."
+ko	outcome.timeup.easy.pool	4	"지금은 여기까지.
+다음 걸음으로 가자."
+ko	outcome.timeup.easy.pool	5	"넌 아직 여기 있어.
+그게 중요해."
+ko	outcome.timeup.easy.pool	6	"주행은 끝났어.
+넌 아니야."
+ko	outcome.timeup.easy.pool	7	"시간 종료.
+주행은 끝났어.
+넌 아니야."
+ko	outcome.timeup.easy.pool	8	"시간 종료.
+규칙은 바뀌지 않아.
+다시 해 보자."
+ko	outcome.timeup.easy.pool	9	"시간 종료.
+‘거의’도 진짜야."
+ko	outcome.timeup.easy.pool	10	"해가 지고,
+그림자가 다시 세상을 덮었어."
+ko	outcome.timeup.easy.pool	11	"마지막 모래알이 떨어졌고,
+이야기는 조용히 닫혔어."
+ko	outcome.timeup.easy.pool	12	"바람이 지나가고,
+발자국은 흔적 없이 사라졌어."
+ko	outcome.timeup.easy.pool	13	"밀물이 차올라,
+그곳에 있던 것은 다시 바다로 돌아갔어."
+ko	outcome.timeup.easy.pool	14	"침묵.
+시간만 지나갔어."
+ko	outcome.timeup.easy.pool	15	"승리와 패배는
+모래알에 지나지 않아."
+ko	outcome.timeup.easy.pool	16	"길은 이어지거나 — 끝나거나.
+어느 쪽이든 같은 땅 위에 놓여 있어."
+ko	outcome.timeup.normal.pool	1	"거리는 좁혀졌어.
+시간은 그렇지 않았어."
+ko	outcome.timeup.normal.pool	2	"세상은 규칙을 지켰고,
+넌 그 가장자리에 닿았어."
+ko	outcome.timeup.normal.pool	3	"도착하지는 못했어.
+하지만 신호는 분명했어."
+ko	outcome.timeup.normal.pool	4	"아직 기다리는 보물이 있어.
+다른 길로 다시 가 보자."
+ko	outcome.timeup.normal.pool	5	"결과는 남았고,
+위치는 달라졌어."
+ko	outcome.timeup.normal.pool	6	"시간은 끝났어.
+의미는 끝나지 않았어."
+ko	outcome.timeup.normal.pool	7	"아슬아슬했어.
+소리가 그렇게 말해 줬어."
+ko	outcome.timeup.normal.pool	8	"지도는 아직 열려 있어.
+다시 돌아와."
+ko	outcome.timeup.normal.pool	9	"세상의 규칙은 굳건했고,
+가능성의 신호는 분명했어."
+ko	outcome.timeup.normal.pool	10	세상은 자신의 규칙을 지켰어.
+ko	outcome.timeup.normal.pool	11	"순간은 지나갔고,
+기록은 남았어."
+ko	outcome.timeup.normal.pool	12	"해가 지고,
+그림자가 다시 세상을 덮었어."
+ko	outcome.timeup.normal.pool	13	"마지막 모래알이 떨어졌고,
+이야기는 조용히 닫혔어."
+ko	outcome.timeup.normal.pool	14	"바람이 지나가고,
+발자국은 흔적 없이 사라졌어."
+ko	outcome.timeup.normal.pool	15	"밀물이 차올라,
+그곳에 있던 것은 다시 바다로 돌아갔어."
+ko	outcome.timeup.normal.pool	16	"침묵.
+시간만 지나갔어."
+ko	outcome.timeup.normal.pool	17	"승리와 패배는
+모래알에 지나지 않아."
+ko	outcome.timeup.normal.pool	18	"길은 이어지거나 — 끝나거나.
+어느 쪽이든 같은 땅 위에 놓여 있어."
+ko	outcome.timeup.normal.pool	19	"> 시간은 끝났어.
+> 
+> 그 밖의 것은 아직 끝나지 않았어."
+ko	outcome.timeup.normal.pool	20	"> 결과는 바뀌지 않았어.
+> 
+> 하지만 네 위치는 달라졌어."
+ko	outcome.timeup.hard.pool	1	"오로라조차 희미해져.
+새로운 걸음으로 돌아와."
+ko	outcome.timeup.hard.pool	2	"깨지기 쉬운 세상에서는,
+서두름이 선명함을 찾기 전에 먼저 깨뜨려."
+ko	outcome.timeup.hard.pool	3	"순간은 빠져나갔어.
+의미는 남았어."
+ko	outcome.timeup.hard.pool	4	"겨울은 기다릴 줄 알아.
+너도 그래야 해."
+ko	outcome.timeup.hard.pool	5	"하늘은 계속 움직였어.
+너도 계속 움직일 거야."
+ko	outcome.timeup.hard.pool	6	"이야기는 이어져.
+끝은 아직 오지 않았어."
+ko	outcome.timeup.hard.pool	7	"별들은 그곳에 있었고, 지켜보고 있었어.
+다시 한 번."
+ko	outcome.timeup.hard.pool	8	"얼음은 시간을 들여.
+너도 시간을 들여야 해."
+ko	outcome.timeup.hard.pool	9	"하늘은 계속 움직였어.
+너도 그럴 수 있어."
+ko	outcome.timeup.hard.pool	10	"북쪽은 기다리는 법을 배웠어.
+너도 배워야 해."
+ko	outcome.timeup.hard.pool	11	"이건 멈춤일 뿐이야.
+아직 끝이 아니야."
+ko	outcome.timeup.hard.pool	12	"떠도는 구름처럼,
+흐름을 잃지 마 — 강물처럼."
+ko	outcome.timeup.hard.pool	13	"소리는 가까웠어.
+거리는 실제였어.
+하지만 그 순간은 붙잡을 수 없었어."
+ko	outcome.timeup.hard.pool	14	"넌 가까워지고 있었어.
+다만 시간은 그렇지 않았어."
+ko	outcome.timeup.hard.pool	15	"세상은 자신의 규칙에 충실했고,
+넌 그 가장자리에 닿았어."
+ko	outcome.timeup.hard.pool	16	"보물에 닿지는 못했어.
+하지만 신호는 분명했어."
+ko	outcome.timeup.hard.pool	17	"아무것도 변하지 않았어.
+네 위치만 달라졌어."
+ko	outcome.timeup.hard.pool	18	"운이 아니었어.
+맞아떨어진 거야."
+ko	outcome.timeup.hard.pool	19	"순간은 빠져나갔지만,
+기록은 남았어."
+ko	outcome.timeup.hard.pool	20	"넌 깨지기 쉬운 땅을 건넜고,
+지평선은 그대로 남겨 두었어."
+ko	outcome.timeup.hard.pool	21	"아무것도 변하지 않았어.
+네 위치만 달라졌어.
+운이 아니었어.
+맞아떨어진 거야.
+순간은 지나갔고,
+기록은 남았어."
+ko	outcome.timeup.hard.pool	22	"해가 지고,
+그림자가 다시 세상을 덮었어."
+ko	outcome.timeup.hard.pool	23	"마지막 모래알이 떨어졌고,
+이야기는 조용히 닫혔어."
+ko	outcome.timeup.hard.pool	24	"바람이 지나가고,
+발자국은 흔적 없이 사라졌어."
+ko	outcome.timeup.hard.pool	25	"밀물이 차올라,
+그곳에 있던 것은 다시 바다로 돌아갔어."
+ko	outcome.timeup.hard.pool	26	"침묵.
+시간만 지나갔어."
+ko	outcome.timeup.hard.pool	27	"승리와 패배는
+모래알에 지나지 않아."
+ko	outcome.timeup.hard.pool	28	"길은 이어지거나 — 끝나거나.
+어느 쪽이든 같은 땅 위에 놓여 있어."
+ko	outcome.timeup.hard.pool	29	"계절은 닫혔고,
+땅은 남았어."
+ko	outcome.timeup.hard.pool	30	"길은 그대로 있어.
+멈춘 건 네 발걸음뿐이야."
+ko	outcome.timeup.hard.pool	31	"네 시간은 끝났어.
+하늘은 아니야."
+ko	outcome.timeup.hard.pool	32	"거절이 아니야.
+그저 침묵일 뿐."
+ko	outcome.timeup.hard.pool	33	"세상은 아직 온전해.
+넌 달라진 채로 돌아올 수 있어."
+ko	outcome.timeup.hard.pool	34	"계절은 끝났어.
+숲은 남아 있어."
+ko	outcome.timeup.hard.pool	35	"거리는 좁혀지고 있었어.
+시간은 자신의 리듬을 지켰어."
+ko	outcome.timeup.hard.pool	36	"네 시간은 멈췄어.
+하늘은 계속 움직였어."
+ko	outcome.timeup.hard.pool	37	"거절이 아니야.
+그저 침묵일 뿐."
+ko	outcome.timeup.hard.pool	38	"길은 아직 여기 있어.
+넌 달라진 채로 돌아올 수 있어."

@@ -1,474 +1,505 @@
 outcome:
   notice:
-    timeUpGameOver: '시간이 다 되었습니다. 게임 오버입니다.'
-    retryGuide: '다른 경로로 다시 도전해 보세요.'
+    timeUpGameOver: 시간이 다 되었습니다. 게임 오버입니다.
+    retryGuide: 다른 경로로 다시 도전해 보세요.
   success:
     common:
       pool: []
     easy:
       pool:
-      - 'You’ve made it.
+      - '해냈어.
 
-        The truth remains.'
-      - 'Even if it was only a small step,
+        진실은 그대로 남아 있어.'
+      - '작은 한 걸음이었을 뿐이어도,
 
-        you held your ground.'
-      - "You listened.\n The path opened."
-      - "> You made it here\n> \n> The rules were simple —\n> \n> the choice was yours."
-      - "> Distance became meaning.\n> \n> and time answered your footsteps."
-      - "> Not everything shines forever.\n> \n> But this moment did."
-      - 'Light fell evenly, ,
+        넌 끝까지 버텼어.'
+      - '넌 들었고,
 
-        and every shadow vanished.'
-      - 'The wind fell silent.
+        길은 열렸어.'
+      - "> 여기까지 왔어.\n> \n> 규칙은 단순했어 —\n> \n> 선택은 너의 몫이었지."
+      - "> 거리는 의미가 되었고,\n> \n> 시간은 네 발걸음에 답했어."
+      - "> 모든 빛이 영원히 빛나지는 않아.\n> \n> 하지만 이 순간은 빛났어."
+      - '빛이 고르게 내려앉고,
 
-        and everything returned to where it belonged.'
-      - 'A moment of silence.
+        모든 그림자가 사라졌어.'
+      - '바람이 잠잠해졌고,
 
-        The world steadied its breath.'
-      - 'The record is etched deep in the sand—
+        모든 것이 제자리로 돌아갔어.'
+      - '짧은 침묵.
 
-        beyond the reach of the wind.'
-      - 'Harmony was restored.
+        세상은 다시 숨을 골랐어.'
+      - '기록은 모래 깊숙이 새겨졌어 —
 
-        Everything had been for this moment.'
-      - 'Time slipped by in silence,
+        바람이 닿지 못하는 곳에.'
+      - '균형이 되돌아왔어.
 
-        tucked away in the corners of memory.'
-      - 'The sky shifted in color,
+        모든 것은 이 순간을 향해 있었어.'
+      - '시간은 조용히 흘러가,
 
-        and one story came to its end.'
-      - 'The waves grew calm,
+        기억의 구석에 머물렀어.'
+      - '하늘은 색을 바꾸었고,
 
-        and the sea hid its depths once more.'
-      - 'The footsteps stopped,
+        하나의 이야기는 끝에 닿았어.'
+      - '파도는 잔잔해졌고,
 
-        and only the place remained.'
-      - "Victory and defeat \nare nothing more than grains of sand."
-      - 'The road goes on—or it ends.
+        바다는 다시 깊이를 숨겼어.'
+      - '발걸음은 멈추고,
 
-        Either way, it lies on the same earth.'
+        그 자리만 남았어.'
+      - '승리와 패배는
+
+        모래알에 지나지 않아.'
+      - '길은 이어지거나 — 끝나거나.
+
+        어느 쪽이든 같은 땅 위에 놓여 있어.'
     normal:
       pool:
-      - 'The distance has found its meaning.
+      - '거리는 의미를 찾았고,
 
-        Time has rewarded your journey.'
-      - 'The time is up.
+        시간은 네 여정에 답했어.'
+      - '시간은 끝났어.
 
-        but the rest is far from over.'
-      - 'The axis is found.
+        하지만 모든 것이 끝난 건 아니야.'
+      - '축은 발견되었고,
 
-        the world has cased its motion.'
-      - 'The glass held its breath,
+        세상은 움직임을 멈췄어.'
+      - '유리는 숨을 참고,
 
-        and you held your ground.'
-      - 'Under the stillness of the sky,
+        넌 그 자리에 버텼어.'
+      - '고요한 하늘 아래,
 
-        your spirit did not waver.'
-      - 'Few things shine forever.
+        네 마음은 흔들리지 않았어.'
+      - '영원히 빛나는 것은 많지 않아.
 
-        but this moment was radiant.'
-      - 'You traversed the fragile earth,
+        하지만 이 순간은 선명히 빛났어.'
+      - '넌 깨지기 쉬운 땅을 건넜고,
 
-        without losing the view.'
-      - 'The moment has passed.
+        시야를 잃지 않았어.'
+      - '순간은 지나갔어.
 
-        The legacy remains.'
-      - 'Luck fades fast.
+        남은 것은 계속 남아 있어.'
+      - '운은 금세 희미해져.
 
-        order endures.'
-      - 'The sky knows no pause in endless circle,
+        질서는 남아.'
+      - '하늘은 끝없는 원 안에서 멈추지 않고,
 
-        nor shall you find yours.'
-      - 'The center has been reached.
+        너 역시 멈추지 않았어.'
+      - '중심에 닿았어.
 
-        The world stood still.'
-      - 'Finally here.
+        세상은 가만히 멈췄어.'
+      - '마침내 여기.
 
-        The truth remains unyielding.'
-      - 'You have seen it through.
+        진실은 여전히 단단해.'
+      - '넌 끝까지 갔어.
 
-        And mark this: it was you, and no one else, who chose this path.'
-      - 'Time drifted into silence,
+        기억해. 이 길을 선택한 건 너였고, 다른 누구도 아니었어.'
+      - '시간은 침묵 속으로 스며들어,
 
-        finding its place in the recesses of the mind.'
-      - 'As the sky transformed,
+        마음 깊은 곳에 자리를 잡았어.'
+      - '하늘이 변하는 동안,
 
-        the tale found its final resolved.'
-      - 'The waters fell calm,
+        이야기는 자신의 끝에 도달했어.'
+      - '물결은 잔잔해졌고,
 
-        and the sky once more veiled its abyss.'
-      - 'The footsteps ceased,
+        하늘은 다시 그 깊이를 감췄어.'
+      - '발걸음은 멎었고,
 
-        only the place remained.'
-      - 'Light fell evenly, ,
+        그 자리만 남았어.'
+      - '빛이 고르게 내려앉고,
 
-        and every shadow vanished.'
-      - 'The wind fell silent.
+        모든 그림자가 사라졌어.'
+      - '바람이 잠잠해졌고,
 
-        and everything returned to where it belonged.'
-      - 'A moment of silence.
+        모든 것이 제자리로 돌아갔어.'
+      - '짧은 침묵.
 
-        The world steadied its breath.'
-      - 'The record is etched deep in the sand—
+        세상은 다시 숨을 골랐어.'
+      - '기록은 모래 깊숙이 새겨졌어 —
 
-        beyond the reach of the wind.'
-      - 'Harmony was restored.
+        바람이 닿지 못하는 곳에.'
+      - '균형이 되돌아왔어.
 
-        Everything had been for this moment.'
-      - 'RUN COMPLETE.
+        모든 것은 이 순간을 향해 있었어.'
+      - '주행 완료.
 
-        Clear. Found it.
+        분명해. 찾았어.
 
-        That''s enough.'
-      - 'RUN COMPLETE.
+        그걸로 충분해.'
+      - '주행 완료.
 
-        The path held.
+        길은 버텼고,
 
-        So did you.'
-      - 'The sky has kept moving.
+        너도 버텼어.'
+      - '하늘은 계속 움직였어.
 
-        So can you.'
-      - 'RUN COMPLETE.
+        너도 그럴 수 있어.'
+      - '주행 완료.
 
-        A quiet result.
+        조용한 결과.
 
-        The weight of real work.'
-      - 'You only walked the path
+        진짜 노력의 무게.'
+      - '넌 그저 세상이 네 앞에 놓아 둔
 
-        the world had laid out for you.'
-      - 'The ground didn’t give way.
+        길을 걸었을 뿐이야.'
+      - '땅은 무너지지 않았어.
 
-        It trusted your steps.'
-      - 'This moment aligned
+        네 발걸음을 믿었으니까.'
+      - '이 순간은
 
-        with the stars’ ancient rhythm.'
-      - "You didn’t take anything.\n You understood something."
-      - 'You didn’t gain a thing.
+        별들의 오래된 리듬과 맞아떨어졌어.'
+      - '넌 아무것도 빼앗지 않았어.
 
-        You only saw the truth for what it was.'
-      - 'You didn’t take this place.
+        무언가를 이해했을 뿐이야.'
+      - '넌 아무것도 얻지 않았어.
 
-        You belonged here.'
-      - 'You walked a road
+        진실을 있는 그대로 보았을 뿐이야.'
+      - '넌 이곳을 차지한 게 아니야.
 
-        older than memory itself.'
-      - 'The earth did not resist.
+        이곳에 속해 있었어.'
+      - '넌 기억보다 오래된
 
-        It recognized you.'
-      - "This moment aligned\n with the stillness of the stars."
+        길을 걸었어.'
+      - '땅은 저항하지 않았어.
+
+        너를 알아보았으니까.'
+      - '이 순간은
+
+        별들의 고요와 맞아떨어졌어.'
     hard:
       pool:
-      - 'In the north wind,
+      - '북쪽 바람 속에서도,
 
-        clarity outlasts speed.'
-      - "The center was found.\n The world came to rest."
-      - 'The stars stay silent.
+        선명함은 속도보다 오래 남아.'
+      - '중심을 찾았고,
 
-        Your record does the speaking.'
-      - 'The result  remained.
+        세상은 쉬어 갔어.'
+      - '별들은 말이 없어.
 
-        The position changed.'
-      - 'Between ice and glass,
+        네 기록이 대신 말해 줘.'
+      - '결과는 남았고,
 
-        you chose control.'
-      - 'The waves fell quiet,
+        위치는 달라졌어.'
+      - '얼음과 유리 사이에서,
 
-        and the sea reclaimed its hidden depths.'
-      - 'Some treasures still await.
+        넌 통제를 선택했어.'
+      - '파도는 조용해졌고,
 
-        Next time, a different path.'
-      - 'The sky didn’t change.
+        바다는 숨겨 둔 깊이를 되찾았어.'
+      - '아직 기다리는 보물이 있어.
 
-        You did.'
-      - 'The moment passed.
+        다음엔 다른 길이야.'
+      - '하늘은 변하지 않았어.
 
-        What remained was order.'
-      - 'Winter is honest.
+        변한 건 너야.'
+      - '순간은 지나갔어.
 
-        So was your run.'
-      - 'The stars aligned for a moment.
+        남은 것은 질서였어.'
+      - '겨울은 정직해.
 
-        You noticed.'
-      - 'The distance closed.
+        네 주행도 그랬어.'
+      - '별들이 잠시 제자리를 찾았고,
 
-        Time did not.'
-      - "The world’s rules stood firm.\n And the signal of possibility was real."
-      - 'The path closed quietly.
+        넌 그걸 알아챘어.'
+      - '거리는 좁혀졌어.
 
-        You were already through.'
-      - 'Nothing changed.
+        시간은 그렇지 않았어.'
+      - '세상의 규칙은 굳건했고,
 
-        Only your position did.'
-      - 'Not luck.
+        가능성의 신호는 분명했어.'
+      - '길은 조용히 닫혔어.
 
-        Alignment.'
-      - 'The moment passed.
+        넌 이미 건너온 뒤였어.'
+      - '아무것도 변하지 않았어.
 
-        The record remains.'
-      - 'The outcome didn’t change.
+        네 위치만 달라졌어.'
+      - '운이 아니었어.
 
-        Still, you moved forward.'
-      - 'The output didn’t change.
+        맞아떨어진 거야.'
+      - '순간은 지나갔고,
 
-        But you reached a new level.'
-      - 'The ending was the same.
+        기록은 남았어.'
+      - '결과는 바뀌지 않았어.
 
-        But the one who reached it had changed.'
-      - 'The destination is the same
+        그래도 넌 앞으로 나아갔어.'
+      - '출구는 바뀌지 않았어.
 
-        —but you’re no longer the traveler you once were.'
-      - 'Light fell evenly, ,
+        하지만 넌 다른 높이에 닿았어.'
+      - '끝은 같았어.
 
-        and every shadow vanished.'
-      - 'The wind fell silent.
+        하지만 그 끝에 도착한 너는 이미 달라져 있었어.'
+      - '목적지는 같아.
 
-        and everything returned to where it belonged.'
-      - 'A moment of silence.
+        하지만 넌 더 이상 예전의 여행자가 아니야.'
+      - '빛이 고르게 내려앉고,
 
-        The world steadied its breath.'
-      - 'The record is etched deep in the sand—
+        모든 그림자가 사라졌어.'
+      - '바람이 잠잠해졌고,
 
-        beyond the reach of the wind.'
-      - 'Harmony was restored.
+        모든 것이 제자리로 돌아갔어.'
+      - '짧은 침묵.
 
-        Everything had been for this moment.'
-      - 'Time slipped by in silence,
+        세상은 다시 숨을 골랐어.'
+      - '기록은 모래 깊숙이 새겨졌어 —
 
-        tucked away in the corners of memory.'
-      - 'The sky shifted in color,
+        바람이 닿지 못하는 곳에.'
+      - '균형이 되돌아왔어.
 
-        and one story came to its end.'
-      - 'The waves grew calm,
+        모든 것은 이 순간을 향해 있었어.'
+      - '시간은 조용히 흘러가,
 
-        and the sea hid its depths once more.'
-      - 'The footsteps stopped,
+        기억의 구석에 머물렀어.'
+      - '하늘은 색을 바꾸었고,
 
-        and only the place remained.'
-      - "Victory and defeat \nare nothing more than grains of sand."
-      - 'The road goes on—or it ends.
+        하나의 이야기는 끝에 닿았어.'
+      - '파도는 잔잔해졌고,
 
-        Either way, it lies on the same earth.'
+        바다는 다시 깊이를 숨겼어.'
+      - '발걸음은 멈추고,
+
+        그 자리만 남았어.'
+      - '승리와 패배는
+
+        모래알에 지나지 않아.'
+      - '길은 이어지거나 — 끝나거나.
+
+        어느 쪽이든 같은 땅 위에 놓여 있어.'
   timeup:
     easy:
       pool:
-      - 'Time ran out.
+      - '시간은 끝났어.
 
-        Nothing else did.'
-      - 'The treasure can wait.
+        하지만 넌 끝나지 않았어.'
+      - '보물은 기다릴 수 있어.
 
-        So can you.'
-      - 'Breathe in.
+        너도 그래.'
+      - '숨을 쉬어.
 
-        Then again.'
-      - 'That’s all for now.
+        그리고 한 번 더.'
+      - '지금은 여기까지.
 
-        On to the next step.'
-      - 'You''re still here.
+        다음 걸음으로 가자.'
+      - '넌 아직 여기 있어.
 
-        That’s what matters.'
-      - 'The run ended.
+        그게 중요해.'
+      - '주행은 끝났어.
 
-        You didn’t.'
-      - 'TIME''S UP.
+        넌 아니야.'
+      - '시간 종료.
 
-        The run ended.
+        주행은 끝났어.
 
-        You didn''t.'
-      - 'TIME''S UP.
+        넌 아니야.'
+      - '시간 종료.
 
-        The rules don’t change.
+        규칙은 바뀌지 않아.
 
-        Again.'
-      - 'TIME''S UP.
+        다시 해 보자.'
+      - '시간 종료.
 
-        “So close” is real.'
-      - 'The sun sank,
+        ‘거의’도 진짜야.'
+      - '해가 지고,
 
-        and shadow covered the world once again.'
-      - 'The last grains of sand fell,
+        그림자가 다시 세상을 덮었어.'
+      - '마지막 모래알이 떨어졌고,
 
-        and the story quietly came to a close.'
-      - 'The wind swept through,
+        이야기는 조용히 닫혔어.'
+      - '바람이 지나가고,
 
-        and the footprints vanished without a trace.'
-      - 'The tide came in,
+        발자국은 흔적 없이 사라졌어.'
+      - '밀물이 차올라,
 
-        What once had been there returned to the sea.'
-      - 'Silence.
+        그곳에 있던 것은 다시 바다로 돌아갔어.'
+      - '침묵.
 
-        Only time passed through.'
-      - "Victory and defeat \nare nothing more than grains of sand."
-      - 'The road goes on—or it ends.
+        시간만 지나갔어.'
+      - '승리와 패배는
 
-        Either way, it lies on the same earth.'
+        모래알에 지나지 않아.'
+      - '길은 이어지거나 — 끝나거나.
+
+        어느 쪽이든 같은 땅 위에 놓여 있어.'
     normal:
       pool:
-      - 'The distance closed.
+      - '거리는 좁혀졌어.
 
-        Time did not.'
-      - 'The world kept its rules.
+        시간은 그렇지 않았어.'
+      - '세상은 규칙을 지켰고,
 
-        You touched the edge.'
-      - 'You didn’t make it.
+        넌 그 가장자리에 닿았어.'
+      - '도착하지는 못했어.
 
-        But the signal was real.'
-      - 'Some treasures still await.
+        하지만 신호는 분명했어.'
+      - '아직 기다리는 보물이 있어.
 
-        Let’s try a different path.'
-      - 'The result remained.
+        다른 길로 다시 가 보자.'
+      - '결과는 남았고,
 
-        The position changed.'
-      - 'Time ran out.
+        위치는 달라졌어.'
+      - '시간은 끝났어.
 
-        Meaning didn''t.'
-      - 'So close.
+        의미는 끝나지 않았어.'
+      - '아슬아슬했어.
 
-        The sound said so.'
-      - 'The map is still open.
+        소리가 그렇게 말해 줬어.'
+      - '지도는 아직 열려 있어.
 
-        Come back to it.'
-      - 'The world’s rules stood firm.
+        다시 돌아와.'
+      - '세상의 규칙은 굳건했고,
 
-        The signal of possibility was real.'
-      - The world kept its rules.
-      - 'The moment passed.
+        가능성의 신호는 분명했어.'
+      - 세상은 자신의 규칙을 지켰어.
+      - '순간은 지나갔고,
 
-        The record remains.'
-      - 'The sun sank,
+        기록은 남았어.'
+      - '해가 지고,
 
-        and shadow covered the world once again.'
-      - 'The last grains of sand fell,
+        그림자가 다시 세상을 덮었어.'
+      - '마지막 모래알이 떨어졌고,
 
-        and the story quietly came to a close.'
-      - 'The wind swept through,
+        이야기는 조용히 닫혔어.'
+      - '바람이 지나가고,
 
-        and the footprints vanished without a trace.'
-      - 'The tide came in,
+        발자국은 흔적 없이 사라졌어.'
+      - '밀물이 차올라,
 
-        What once had been there returned to the sea.'
-      - 'Silence.
+        그곳에 있던 것은 다시 바다로 돌아갔어.'
+      - '침묵.
 
-        Only time passed through.'
-      - "Victory and defeat \nare nothing more than grains of sand."
-      - 'The road goes on—or it ends.
+        시간만 지나갔어.'
+      - '승리와 패배는
 
-        Either way, it lies on the same earth.'
-      - "> Time ran out.\n> \n> Nothing else did."
-      - "> The outcome didn’t change.\n> \n> But your position did."
+        모래알에 지나지 않아.'
+      - '길은 이어지거나 — 끝나거나.
+
+        어느 쪽이든 같은 땅 위에 놓여 있어.'
+      - "> 시간은 끝났어.\n> \n> 그 밖의 것은 아직 끝나지 않았어."
+      - "> 결과는 바뀌지 않았어.\n> \n> 하지만 네 위치는 달라졌어."
     hard:
       pool:
-      - 'Even the aurora fades.
+      - '오로라조차 희미해져.
 
-        Come back with a new stride.'
-      - 'In a fragile world,
+        새로운 걸음으로 돌아와.'
+      - '깨지기 쉬운 세상에서는,
 
-        haste shatters clarity before it can be found.'
-      - 'The moment slipped away.
+        서두름이 선명함을 찾기 전에 먼저 깨뜨려.'
+      - '순간은 빠져나갔어.
 
-        The meaning did not.'
-      - 'Winter is patient.
+        의미는 남았어.'
+      - '겨울은 기다릴 줄 알아.
 
-        Be the same.'
-      - 'The sky kept moving.
+        너도 그래야 해.'
+      - '하늘은 계속 움직였어.
 
-        So will you.'
-      - 'The story moves on.
+        너도 계속 움직일 거야.'
+      - '이야기는 이어져.
 
-        The end is not yet.'
-      - 'The stars were there, watching.
+        끝은 아직 오지 않았어.'
+      - '별들은 그곳에 있었고, 지켜보고 있었어.
 
-        Again.'
-      - 'Ice takes its time.
+        다시 한 번.'
+      - '얼음은 시간을 들여.
 
-        Neither do you.'
-      - 'The sky kept moving.
+        너도 시간을 들여야 해.'
+      - '하늘은 계속 움직였어.
 
-        So can you.'
-      - 'The north has learned to wait.
+        너도 그럴 수 있어.'
+      - '북쪽은 기다리는 법을 배웠어.
 
-        So should you.'
-      - 'This is an interlude
+        너도 배워야 해.'
+      - '이건 멈춤일 뿐이야.
 
-        —It’s not over.'
-      - 'Like drifting clouds,
+        아직 끝이 아니야.'
+      - '떠도는 구름처럼,
 
-        don’t lose your flow—like a river.'
-      - 'The sound was near.
+        흐름을 잃지 마 — 강물처럼.'
+      - '소리는 가까웠어.
 
-        The distance was real.
+        거리는 실제였어.
 
-        But that moment can’t be saved.'
-      - 'You were closing in.
+        하지만 그 순간은 붙잡을 수 없었어.'
+      - '넌 가까워지고 있었어.
 
-        Only time wasn’t.'
-      - 'The world held to its rules.
+        다만 시간은 그렇지 않았어.'
+      - '세상은 자신의 규칙에 충실했고,
 
-        You touched the edge of them.'
-      - "You didn’t reach the treasure. \nBut the signal was real."
-      - 'Nothing changed.
+        넌 그 가장자리에 닿았어.'
+      - '보물에 닿지는 못했어.
 
-        Only your position did.'
-      - 'It wasn’t luck.
+        하지만 신호는 분명했어.'
+      - '아무것도 변하지 않았어.
 
-        Alignment.'
-      - 'The moment slipped away,
+        네 위치만 달라졌어.'
+      - '운이 아니었어.
 
-        but the record stayed.'
-      - 'You crossed fragile ground
+        맞아떨어진 거야.'
+      - '순간은 빠져나갔지만,
 
-        and left the horizon unbroken.'
-      - "Nothing changed.\n Only your position did.\nNot luck.\nAlignment.\nThe moment passed.\nThe record remains."
-      - 'The sun sank,
+        기록은 남았어.'
+      - '넌 깨지기 쉬운 땅을 건넜고,
 
-        and shadow covered the world once again.'
-      - 'The last grains of sand fell,
+        지평선은 그대로 남겨 두었어.'
+      - '아무것도 변하지 않았어.
 
-        and the story quietly came to a close.'
-      - 'The wind swept through,
+        네 위치만 달라졌어.
 
-        and the footprints vanished without a trace.'
-      - 'The tide came in,
+        운이 아니었어.
 
-        What once had been there returned to the sea.'
-      - 'Silence.
+        맞아떨어진 거야.
 
-        Only time passed through.'
-      - "Victory and defeat \nare nothing more than grains of sand."
-      - 'The road goes on—or it ends.
+        순간은 지나갔고,
 
-        Either way, it lies on the same earth.'
-      - 'The season closed.
+        기록은 남았어.'
+      - '해가 지고,
 
-        The land remained.'
-      - 'The path The path remains.
+        그림자가 다시 세상을 덮었어.'
+      - '마지막 모래알이 떨어졌고,
 
-        Only your steps stopped.'
-      - 'Your time ran out.
+        이야기는 조용히 닫혔어.'
+      - '바람이 지나가고,
 
-        The sky didn’t.'
-      - 'It wasn’t rejection.
+        발자국은 흔적 없이 사라졌어.'
+      - '밀물이 차올라,
 
-        Only silence.'
-      - 'The world is still intact.
+        그곳에 있던 것은 다시 바다로 돌아갔어.'
+      - '침묵.
 
-        You can return—changed.'
-      - 'The season ended.
+        시간만 지나갔어.'
+      - '승리와 패배는
 
-        The forest remains.'
-      - 'The distance was closing.
+        모래알에 지나지 않아.'
+      - '길은 이어지거나 — 끝나거나.
 
-        Time kept its rhythm.'
-      - 'Your time came to a halt.
+        어느 쪽이든 같은 땅 위에 놓여 있어.'
+      - '계절은 닫혔고,
 
-        The sky kept moving.'
-      - 'Not rejection
+        땅은 남았어.'
+      - '길은 그대로 있어.
 
-        Just silence.'
-      - 'The path is still here.
+        멈춘 건 네 발걸음뿐이야.'
+      - '네 시간은 끝났어.
 
-        You can come back—changed.'
+        하늘은 아니야.'
+      - '거절이 아니야.
 
+        그저 침묵일 뿐.'
+      - '세상은 아직 온전해.
+
+        넌 달라진 채로 돌아올 수 있어.'
+      - '계절은 끝났어.
+
+        숲은 남아 있어.'
+      - '거리는 좁혀지고 있었어.
+
+        시간은 자신의 리듬을 지켰어.'
+      - '네 시간은 멈췄어.
+
+        하늘은 계속 움직였어.'
+      - '거절이 아니야.
+
+        그저 침묵일 뿐.'
+      - '길은 아직 여기 있어.
+
+        넌 달라진 채로 돌아올 수 있어.'
 version: 1
 quotes:
   outcome:
@@ -507,8 +538,7 @@ command:
     success: '&a리로드 완료.'
     fail: '&c리로드 실패: {reason}'
   lang:
-    guiCancelledGameStart: 언어 선택이 취소되었습니다. 다시 시도하려면 /gameStart <easy|normal|hard>
-      를 실행하세요.
+    guiCancelledGameStart: 언어 선택이 취소되었습니다. 다시 시도하려면 /gameStart <easy|normal|hard> 를 실행하세요.
     guiCancelledGameMenu: 언어 선택이 취소되었습니다. 다시 열려면 /gameMenu gui 를 실행하세요.
     guiTooManyShown: 허용된 언어가 너무 많이 설정되어 있어 GUI에는 처음 27개만 표시됩니다.
     playersOnly: 이 명령어는 플레이어만 사용할 수 있습니다.
@@ -608,55 +638,44 @@ game:
     cursor_7fabae3f: / cursor=
     return_whoclicked_is_not_pla_a7675648: 'RETURN: whoClicked is not Player'
     return_topinventory_is_not_m_9936e6de: 'RETURN: topInventory is not MERCHANT'
-    return_not_result_slot_expec_9eb8c2c8: 'RETURN: not result slot. expected rawSlot=2
-      but was'
+    return_not_result_slot_expec_9eb8c2c8: 'RETURN: not result slot. expected rawSlot=2 but was'
     shift_53e51de9: ', shift='
-    return_topinventory_is_merch_fa2f5d98: 'RETURN: topInventory is MERCHANT but not
-      MerchantInventory instance'
+    return_topinventory_is_merch_fa2f5d98: 'RETURN: topInventory is MERCHANT but not MerchantInventory instance'
     merchant_view_title_daf2a73a: merchant view title=
     treasure_shop_2574a694: treasure shop
     return_not_treasure_shop_tit_8e65ad3d: 'RETURN: not Treasure Shop title. plainTitle='
     return_current_item_is_null_0f27c9fd: 'RETURN: current item is null'
     return_current_item_is_air_76b5e623: 'RETURN: current item is AIR'
-    return_current_item_is_not_g_d1d65218: 'RETURN: current item is not GOLDEN_APPLE.
-      type='
+    return_current_item_is_not_g_d1d65218: 'RETURN: current item is not GOLDEN_APPLE. type='
     return_game_is_not_running_048d7edb: 'RETURN: game is not running'
     ingredients_snapshot_98cb38c3: ingredients snapshot
-    return_ingredient_check_fail_673860d5: 'RETURN: ingredient check failed (need
-      TreasureEmerald>=5 and slot1 empty)'
-    ok_passed_all_checks_schedul_11e17905: 'OK: passed all checks -> scheduling effect
-      with runTaskLater'
+    return_ingredient_check_fail_673860d5: 'RETURN: ingredient check failed (need TreasureEmerald>=5 and slot1 empty)'
+    ok_passed_all_checks_schedul_11e17905: 'OK: passed all checks -> scheduling effect with runTaskLater'
     run_runtasklater_executed_96d7e049: 'RUN: runTaskLater executed'
     return_later_game_is_not_run_9cc569aa: 'RETURN(LATER): game is not running'
     return_later_player_is_offli_863a8cdc: 'RETURN(LATER): player is offline'
-    return_later_openinventory_t_7b809b57: 'RETURN(LATER): openInventory/topInventory
-      is null'
-    return_later_topinventory_is_f8714cf5: 'RETURN(LATER): topInventory is not MERCHANT.
-      type='
+    return_later_openinventory_t_7b809b57: 'RETURN(LATER): openInventory/topInventory is null'
+    return_later_topinventory_is_f8714cf5: 'RETURN(LATER): topInventory is not MERCHANT. type='
     treasure_shop_2574a694_822: treasure shop
-    return_later_not_treasure_sh_fcce2bb9: 'RETURN(LATER): not Treasure Shop title.
-      plainTitle='
+    return_later_not_treasure_sh_fcce2bb9: 'RETURN(LATER): not Treasure Shop title. plainTitle='
     ok_later_playing_effects_now_b80a2e0e: 'OK(LATER): playing effects now'
     k_llun_r_dj_pinu_16494877: '&6&lKöllun úr djúpinu'
     trade_complete_4a4b1d6f: Trade complete!
     a_hidden_power_awakens_7620bc4d: A hidden power awakens…
     mobcontrol_wolf_allowed_cust_a5459084: '[MobControl] WOLF allowed (CUSTOM). name='
     rainbow_wolf_b3cc6257: Rainbow Wolf
-    mobcontrol_wolf_allowed_name_9cc5a59a: '[MobControl] WOLF allowed (name match).
-      reason='
+    mobcontrol_wolf_allowed_name_9cc5a59a: '[MobControl] WOLF allowed (name match). reason='
     mobcontrol_wolf_cancelled_re_1a3b2e1a: '[MobControl] WOLF cancelled! reason='
     stagemobcontrollistener_refl_08ad690a: '⚠ StageMobControlListener: カウントダウン判定(reflection)に失敗。ゲーム中のみ制御します。原因:'
     stagemobcontrollistener_refl_d8a61972: '⚠ StageMobControlListener: reflection初期化に失敗。ゲーム中のみ制御します。原因:'
     mysql_connection_established_47452dfd: MySQL connection established successfully!
     failed_to_connect_to_mysql_95e4d50a: 'Failed to connect to MySQL:'
-    create_table_if_not_exists_p_136a7833: CREATE TABLE IF NOT EXISTS player_treasure_count
-      (
+    create_table_if_not_exists_p_136a7833: CREATE TABLE IF NOT EXISTS player_treasure_count (
     player_name_varchar_50_prima_79b8331b: player_name VARCHAR(50) PRIMARY KEY,
     count_int_not_null_660eadd8: count INT NOT NULL)
     failed_to_create_table_68199f98: 'Failed to create table:'
     reset_treasure_count_for_pla_96b152d2: 'Reset treasure count for player:'
-    dj_onalltreasurescollected_a871afdd: DJイベントはすでに実行中のため、onAllTreasuresCollected
-      をスキップしました。
+    dj_onalltreasurescollected_a871afdd: DJイベントはすでに実行中のため、onAllTreasuresCollected をスキップしました。
     on_duplicate_key_update_coun_a1543779: ON DUPLICATE KEY UPDATE count = ?
     failed_to_save_treasure_coun_9d94c0cc: 'Failed to save treasure count:'
     dj_triggerultimatedjevent_eb01ecae: DJイベントはすでに実行中のため、triggerUltimateDJEvent をスキップしました。
@@ -665,8 +684,8 @@ game:
     congratulations_38fd1594: §6Congratulations! 全ての宝物を見つけました！
     time_s_up_c5b3ef74: §c§lTIME'S UP!
     treasures_collected_ca7eab31: '§7Treasures collected: §e'
-    try_a_different_route_next_t_721a4d8b: §7Try a different route next time — or
-      use §e/gamestart §7<§eeasy§7|§enormal§7|§ehard§7> §7to retry.
+    try_a_different_route_next_t_721a4d8b: §7Try a different route next time — or use §e/gamestart §7<§eeasy§7|§enormal§7|§ehard§7>
+      §7to retry.
 sound:
   sparkle: '&b* 반짝 *'
   start: '&7(BGM 시작...)'
@@ -725,23 +744,19 @@ favorites:
     rereadTitle: 다시 읽기
     sub: 장별로 둘러보기
   auto:
-    treasurerun_favorites_templa_a0a4bf2e: '[TreasureRun] favorites_templates.yml
-      created.'
+    treasurerun_favorites_templa_a0a4bf2e: '[TreasureRun] favorites_templates.yml created.'
     mysql_repository_not_ready_72df0af1: MySQL / Repository not ready.
     favorite_saved_sneak_rightcl_7a73eb4f: ★ Favorite saved! (Sneak+RightClick)
     quotefavoritestore_reloaded__3ba623a3: '[QuoteFavoriteStore] Reloaded DB: host='
-    where_player_uuid_and_quote__36106f85: WHERE player_uuid=? AND quote_hash=? LIMIT
-      1
+    where_player_uuid_and_quote__36106f85: WHERE player_uuid=? AND quote_hash=? LIMIT 1
     quotefavoritestore_exists_fa_7d08adba: '[QuoteFavoriteStore] exists failed:'
-    player_uuid_quote_hash_outco_49f06b31: (player_uuid, quote_hash, outcome, difficulty,
-      lang, quote_text)
+    player_uuid_quote_hash_outco_49f06b31: (player_uuid, quote_hash, outcome, difficulty, lang, quote_text)
     values_643f4d2f: VALUES (?, ?, ?, ?, ?, ?)
     quotefavoritestore_addfavori_44fb1d75: '[QuoteFavoriteStore] addFavorite failed:'
     where_player_uuid_and_quote__81bcaee5: WHERE player_uuid=? AND quote_hash=?
     quotefavoritestore_removefav_8180a1e4: '[QuoteFavoriteStore] removeFavorite failed:'
     where_player_uuid_and_id_f4a80773: WHERE player_uuid=? AND id=?
-    quotefavoritestore_removefav_d024b1e5: '[QuoteFavoriteStore] removeFavoriteById
-      failed:'
+    quotefavoritestore_removefav_d024b1e5: '[QuoteFavoriteStore] removeFavoriteById failed:'
     where_player_uuid_53558ea9: WHERE player_uuid=?
     order_by_created_at_desc_lim_f22988c0: ORDER BY created_at DESC LIMIT ?
     quotefavoritestore_listfavor_f3e976d4: '[QuoteFavoriteStore] list즐겨찾기 failed:'
@@ -757,8 +772,7 @@ commands:
   3_71b78a44: ダイヤモンド3個でスペシャルエメラルドを作成しました！
   text_3030fd61: プレイヤーのみ実行できます
   op_10caf0f6: 権限がありません（OP限定）
-  debug_mode_is_off_config_yml_b3d27428: 'Debug mode is OFF. config.yml の debug: true
-    にしてください'
+  debug_mode_is_off_config_yml_b3d27428: 'Debug mode is OFF. config.yml の debug: true にしてください'
   rank_1_2_3_demo_d87f40da: '使い方: /rank <1|2|3|demo>'
   rank_1_2_3_demo_4f3e3084: '数字で入力してください: /rank <1|2|3|demo>'
   1_3_rank_1_2_3_7f459bd0: '1〜3だけ使えます: /rank <1|2|3>'
@@ -774,29 +788,20 @@ commands:
   mysql_repository_not_ready_72df0af1: MySQL / Repository not ready.
   mysql_repository_not_ready_72df0af1_93: MySQL / Repository not ready.
   mysql_repository_not_ready_72df0af1_119: MySQL / Repository not ready.
-  quotefavorite_book_open_cata_055de855: /quoteFavorite book            - open catalog
-    (full)
-  quotefavorite_book_toc_open__c7d02ede: /quoteFavorite book toc        - open catalog
-    (TOC only)
-  quotefavorite_book_success_o_afe31501: /quoteFavorite book success    - open SUCCESS
-    chapter
-  quotefavorite_book_timeup_op_08b799b0: /quoteFavorite book timeup     - open TIME_UP
-    chapter
-  quotefavorite_book_other_ope_bdcbafba: /quoteFavorite book other      - open OTHER
-    chapter
-  success_normal_en_the_obstac_b627a544: 【SUCCESS / Normal / en】\nThe obstacle is
-    the way.
+  quotefavorite_book_open_cata_055de855: /quoteFavorite book            - open catalog (full)
+  quotefavorite_book_toc_open__c7d02ede: /quoteFavorite book toc        - open catalog (TOC only)
+  quotefavorite_book_success_o_afe31501: /quoteFavorite book success    - open SUCCESS chapter
+  quotefavorite_book_timeup_op_08b799b0: /quoteFavorite book timeup     - open TIME_UP chapter
+  quotefavorite_book_other_ope_bdcbafba: /quoteFavorite book other      - open OTHER chapter
+  success_normal_en_the_obstac_b627a544: 【SUCCESS / Normal / en】\nThe obstacle is the way.
   time_up_bc0cd646: TIME UP
 debug:
   istreasureemerald_fb6fecec: isTreasureEmerald =
-  chestsound_start_called_16th_e2a7414b: §b[ChestSound] start() called (16th-grid
-    mode)
+  chestsound_start_called_16th_e2a7414b: §b[ChestSound] start() called (16th-grid mode)
   chestsound_chests_0_82465b3c: §7[ChestSound] chests=0
-  chestsound_d_1fm_s_t_2f_step_6e3e0fdb: §b[ChestSound] §fD=§e%.1fm §7(%s§7) §ft=§a%.2f
-    §7step=%d bar=%d
+  chestsound_d_1fm_s_t_2f_step_6e3e0fdb: §b[ChestSound] §fD=§e%.1fm §7(%s§7) §ft=§a%.2f §7step=%d bar=%d
   chestsound_nearest_1fm_s_t_2_e2465135: §b[ChestSound] nearest=%.1fm %s  t=%.2f
-  reward_giverankrewardwitheff_5e361189: '[Reward] giveRankRewardWithEffect called
-    player='
+  reward_giverankrewardwitheff_5e361189: '[Reward] giveRankRewardWithEffect called player='
   starttheme_startgame_called__9cf42cbe: '[StartTheme] startGame called by'
 items:
   text_7567bb35: 特製エメラルドのレシピを登録しました。
@@ -854,8 +859,7 @@ ui:
       hint:
         reopenMenu: 'Hint: use /gameMenu to open this again.'
       note:
-        bookFormat: Minecraft books cannot switch tabs by clicking, so sections are
-          shown as pages.
+        bookFormat: Minecraft books cannot switch tabs by clicking, so sections are shown as pages.
   quote:
     footer:
       dbLogs: '(DB: proverb_logs)'
