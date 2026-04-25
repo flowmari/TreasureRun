@@ -1,474 +1,493 @@
 outcome:
   notice:
-    timeUpGameOver: '時間到了，遊戲結束。'
-    retryGuide: '請換一條路線再試一次。'
+    timeUpGameOver: 時間到了，遊戲結束。
+    retryGuide: 請換一條路線再試一次。
   success:
     common:
       pool: []
     easy:
       pool:
-      - 'You’ve made it.
+      - '你做到了。
 
-        The truth remains.'
-      - 'Even if it was only a small step,
+        真相仍然立在原處。'
+      - '即使只是小小一步，
 
-        you held your ground.'
-      - "You listened.\n The path opened."
-      - "> You made it here\n> \n> The rules were simple —\n> \n> the choice was yours."
-      - "> Distance became meaning.\n> \n> and time answered your footsteps."
-      - "> Not everything shines forever.\n> \n> But this moment did."
-      - 'Light fell evenly, ,
+        你也站穩了。'
+      - '你聽見了。
 
-        and every shadow vanished.'
-      - 'The wind fell silent.
+        於是道路自己打開。'
+      - "> 你走到了這裡。\n> \n> 規則很簡單——\n> \n> 選擇是你的。"
+      - "> 距離有了意義。\n> \n> 時間也回應了你的腳步。"
+      - "> 不是所有光都會永遠閃耀。\n> \n> 但這一刻，確實亮了。"
+      - '光均勻地落下，
 
-        and everything returned to where it belonged.'
-      - 'A moment of silence.
+        所有陰影都消失了。'
+      - '風安靜下來。
 
-        The world steadied its breath.'
-      - 'The record is etched deep in the sand—
+        一切都回到了該在的位置。'
+      - '短暫的寂靜。
 
-        beyond the reach of the wind.'
-      - 'Harmony was restored.
+        世界重新調整了呼吸。'
+      - '痕跡深深刻進沙裡——
 
-        Everything had been for this moment.'
-      - 'Time slipped by in silence,
+        在風也碰不到的地方。'
+      - '平衡回來了。
 
-        tucked away in the corners of memory.'
-      - 'The sky shifted in color,
+        一切都通往這一刻。'
+      - '時間靜靜流過，
 
-        and one story came to its end.'
-      - 'The waves grew calm,
+        停在記憶的角落。'
+      - '天空換了顏色，
 
-        and the sea hid its depths once more.'
-      - 'The footsteps stopped,
+        一段故事抵達終點。'
+      - '浪平息了，
 
-        and only the place remained.'
-      - "Victory and defeat \nare nothing more than grains of sand."
-      - 'The road goes on—or it ends.
+        海再次藏起自己的深度。'
+      - '腳步停下，
 
-        Either way, it lies on the same earth.'
+        只剩那個地方留下來。'
+      - '勝利與失敗，
+
+        終究只是沙粒。'
+      - '路會繼續——或在此結束。
+
+        無論如何，它都躺在同一片土地上。'
     normal:
       pool:
-      - 'The distance has found its meaning.
+      - '距離找到了意義。
 
-        Time has rewarded your journey.'
-      - 'The time is up.
+        時間回應了你的旅程。'
+      - '時間結束了。
 
-        but the rest is far from over.'
-      - 'The axis is found.
+        但一切還沒有結束。'
+      - '軸心被找到了。
 
-        the world has cased its motion.'
-      - 'The glass held its breath,
+        世界停下了轉動。'
+      - '玻璃屏住呼吸，
 
-        and you held your ground.'
-      - 'Under the stillness of the sky,
+        而你守住了位置。'
+      - '在安靜的天空下，
 
-        your spirit did not waver.'
-      - 'Few things shine forever.
+        你的心沒有動搖。'
+      - '很少有東西能永遠發光。
 
-        but this moment was radiant.'
-      - 'You traversed the fragile earth,
+        但這一刻，亮得很清楚。'
+      - '你穿過脆弱的土地，
 
-        without losing the view.'
-      - 'The moment has passed.
+        沒有移開視線。'
+      - '那一刻已經過去。
 
-        The legacy remains.'
-      - 'Luck fades fast.
+        留下的，仍然留下。'
+      - '運氣很快會褪色。
 
-        order endures.'
-      - 'The sky knows no pause in endless circle,
+        秩序會留下。'
+      - '天空在無盡的圓裡從不停頓，
 
-        nor shall you find yours.'
-      - 'The center has been reached.
+        你也是。'
+      - '你抵達了中心。
 
-        The world stood still.'
-      - 'Finally here.
+        世界靜止了。'
+      - '終於到了這裡。
 
-        The truth remains unyielding.'
-      - 'You have seen it through.
+        真相依然堅定。'
+      - '你走到了最後。
 
-        And mark this: it was you, and no one else, who chose this path.'
-      - 'Time drifted into silence,
+        記住：選擇這條路的是你，不是任何別人。'
+      - '時間滑入沉默，
 
-        finding its place in the recesses of the mind.'
-      - 'As the sky transformed,
+        在心的深處找到位置。'
+      - '天空變化之時，
 
-        the tale found its final resolved.'
-      - 'The waters fell calm,
+        故事也抵達了它的結尾。'
+      - '水面平靜下來，
 
-        and the sky once more veiled its abyss.'
-      - 'The footsteps ceased,
+        天空再次遮住自己的深處。'
+      - '腳步停止了，
 
-        only the place remained.'
-      - 'Light fell evenly, ,
+        只剩那個地方留下來。'
+      - '光均勻地落下，
 
-        and every shadow vanished.'
-      - 'The wind fell silent.
+        所有陰影都消失了。'
+      - '風安靜下來。
 
-        and everything returned to where it belonged.'
-      - 'A moment of silence.
+        一切都回到了該在的位置。'
+      - '短暫的寂靜。
 
-        The world steadied its breath.'
-      - 'The record is etched deep in the sand—
+        世界重新調整了呼吸。'
+      - '痕跡深深刻進沙裡——
 
-        beyond the reach of the wind.'
-      - 'Harmony was restored.
+        在風也碰不到的地方。'
+      - '平衡回來了。
 
-        Everything had been for this moment.'
-      - 'RUN COMPLETE.
+        一切都通往這一刻。'
+      - '遊戲完成。
 
-        Clear. Found it.
+        清楚。找到了。
 
-        That''s enough.'
-      - 'RUN COMPLETE.
+        這樣就夠了。'
+      - '遊戲完成。
 
-        The path held.
+        路撐住了。
 
-        So did you.'
-      - 'The sky has kept moving.
+        你也是。'
+      - '天空還在移動。
 
-        So can you.'
-      - 'RUN COMPLETE.
+        你也可以。'
+      - '遊戲完成。
 
-        A quiet result.
+        安靜的結果。
 
-        The weight of real work.'
-      - 'You only walked the path
+        真正努力的重量。'
+      - '你只是走過了
 
-        the world had laid out for you.'
-      - 'The ground didn’t give way.
+        世界擺在你面前的那條路。'
+      - '地面沒有崩塌。
 
-        It trusted your steps.'
-      - 'This moment aligned
+        它相信了你的腳步。'
+      - '這一刻對上了
 
-        with the stars’ ancient rhythm.'
-      - "You didn’t take anything.\n You understood something."
-      - 'You didn’t gain a thing.
+        星辰古老的節奏。'
+      - '你沒有奪走什麼。
 
-        You only saw the truth for what it was.'
-      - 'You didn’t take this place.
+        你只是明白了什麼。'
+      - '你沒有贏得什麼。
 
-        You belonged here.'
-      - 'You walked a road
+        你只是看見真相原本的樣子。'
+      - '你沒有佔有這個地方。
 
-        older than memory itself.'
-      - 'The earth did not resist.
+        你本來就屬於這裡。'
+      - '你走過一條
 
-        It recognized you.'
-      - "This moment aligned\n with the stillness of the stars."
+        比記憶更古老的路。'
+      - '土地沒有抵抗。
+
+        它認出了你。'
+      - '這一刻對上了
+
+        星辰的寂靜。'
     hard:
       pool:
-      - 'In the north wind,
+      - '在北風之中，
 
-        clarity outlasts speed.'
-      - "The center was found.\n The world came to rest."
-      - 'The stars stay silent.
+        清醒比速度更能留下。'
+      - '不是運氣。
 
-        Your record does the speaking.'
-      - 'The result  remained.
+        是方向。'
+      - '世界沒有改變。
 
-        The position changed.'
-      - 'Between ice and glass,
+        改變的是你在其中的位置。'
+      - '結果留下了。
 
-        you chose control.'
-      - 'The waves fell quiet,
+        位置改變了。'
+      - '在冰與玻璃之間，
 
-        and the sea reclaimed its hidden depths.'
-      - 'Some treasures still await.
+        你選擇了掌控。'
+      - '浪安靜下來，
 
-        Next time, a different path.'
-      - 'The sky didn’t change.
+        海收回了它藏起的深度。'
+      - '還有一些寶物在等。
 
-        You did.'
-      - 'The moment passed.
+        下一次，換一條路。'
+      - '天空沒有改變。
 
-        What remained was order.'
-      - 'Winter is honest.
+        你改變了。'
+      - '那一刻過去了。
 
-        So was your run.'
-      - 'The stars aligned for a moment.
+        留下的是秩序。'
+      - '冬天很誠實。
 
-        You noticed.'
-      - 'The distance closed.
+        你的這場奔跑也是。'
+      - '星星在某一瞬間對齊。
 
-        Time did not.'
-      - "The world’s rules stood firm.\n And the signal of possibility was real."
-      - 'The path closed quietly.
+        你注意到了。'
+      - '距離被縮短了。
 
-        You were already through.'
-      - 'Nothing changed.
+        時間沒有。'
+      - '世界的規則仍然站著。
 
-        Only your position did.'
-      - 'Not luck.
+        你也是。'
+      - '玻璃快要裂開。
 
-        Alignment.'
-      - 'The moment passed.
+        你沒有。'
+      - '寒冷沒有說謊。
 
-        The record remains.'
-      - 'The outcome didn’t change.
+        它只是把一切變得清楚。'
+      - '你走過邊界。
 
-        Still, you moved forward.'
-      - 'The output didn’t change.
+        而邊界記住了你。'
+      - '你沒有追上時間。
 
-        But you reached a new level.'
-      - 'The ending was the same.
+        但你沒有讓自己消失。'
+      - '速度會消退。
 
-        But the one who reached it had changed.'
-      - 'The destination is the same
+        判斷會留下。'
+      - '腳下的地面很薄。
 
-        —but you’re no longer the traveler you once were.'
-      - 'Light fell evenly, ,
+        你的意志沒有。'
+      - '終點沒有大聲宣告。
 
-        and every shadow vanished.'
-      - 'The wind fell silent.
+        它只是出現在那裡。'
+      - '你站在風裡。
 
-        and everything returned to where it belonged.'
-      - 'A moment of silence.
+        風沒有帶走你。'
+      - '世界收緊了規則。
 
-        The world steadied its breath.'
-      - 'The record is etched deep in the sand—
+        你仍然通過了。'
+      - '沒有多餘的光。
 
-        beyond the reach of the wind.'
-      - 'Harmony was restored.
+        只有剛好足夠的清楚。'
+      - '你不是被帶到這裡。
 
-        Everything had been for this moment.'
-      - 'Time slipped by in silence,
+        你是自己走來的。'
+      - '冰面沉默。
 
-        tucked away in the corners of memory.'
-      - 'The sky shifted in color,
+        你的腳步回答了它。'
+      - '結果不是偶然。
 
-        and one story came to its end.'
-      - 'The waves grew calm,
+        它只是終於顯現。'
+      - '星光很遠。
 
-        and the sea hid its depths once more.'
-      - 'The footsteps stopped,
+        但你看見了方向。'
+      - '每一步都很短。
 
-        and only the place remained.'
-      - "Victory and defeat \nare nothing more than grains of sand."
-      - 'The road goes on—or it ends.
+        合起來卻抵達了這裡。'
+      - 你沒有讓寒冷替你決定。
+      - '這不是輕鬆的勝利。
 
-        Either way, it lies on the same earth.'
+        所以它留下得更深。'
+      - '在最窄的地方，
+
+        你沒有退開。'
+      - '最後，世界安靜下來。
+
+        你仍然在。'
   timeup:
     easy:
       pool:
-      - 'Time ran out.
+      - '時間到了。
 
-        Nothing else did.'
-      - 'The treasure can wait.
+        但你沒有結束。'
+      - '寶物可以等。
 
-        So can you.'
-      - 'Breathe in.
+        你也可以。'
+      - '先吸一口氣。
 
-        Then again.'
-      - 'That’s all for now.
+        再吸下一口。'
+      - '今天到這裡就好。
 
-        On to the next step.'
-      - 'You''re still here.
+        下一步還在前面。'
+      - '路沒有消失。
 
-        That’s what matters.'
-      - 'The run ended.
+        只是暫時安靜下來。'
+      - '沒關係。
 
-        You didn’t.'
-      - 'TIME''S UP.
+        世界還沒有關上門。'
+      - '風把時間帶走了。
 
-        The run ended.
+        但沒有帶走你。'
+      - '這一次，停在這裡。
 
-        You didn''t.'
-      - 'TIME''S UP.
+        下一次，從這裡再開始。'
+      - '沙還在。
 
-        The rules don’t change.
+        腳印也還在。'
+      - '你沒有失去道路。
 
-        Again.'
-      - 'TIME''S UP.
+        只是還沒走完。'
+      - '時間先走了。
 
-        “So close” is real.'
-      - 'The sun sank,
+        你可以晚一點跟上。'
+      - '天空暗了一點。
 
-        and shadow covered the world once again.'
-      - 'The last grains of sand fell,
+        但方向仍然看得見。'
+      - '失敗不是終點。
 
-        and the story quietly came to a close.'
-      - 'The wind swept through,
+        只是地圖上的一個記號。'
+      - '今天的光熄了。
 
-        and the footprints vanished without a trace.'
-      - 'The tide came in,
+        明天還會再亮。'
+      - '寶箱沒有開。
 
-        What once had been there returned to the sea.'
-      - 'Silence.
+        但你已經靠近過。'
+      - '停下來也算一種前進，
 
-        Only time passed through.'
-      - "Victory and defeat \nare nothing more than grains of sand."
-      - 'The road goes on—or it ends.
-
-        Either way, it lies on the same earth.'
+        只要你還會回來。'
     normal:
       pool:
-      - 'The distance closed.
+      - '距離縮短了。
 
-        Time did not.'
-      - 'The world kept its rules.
+        時間沒有。'
+      - '地圖還是開著的。
 
-        You touched the edge.'
-      - 'You didn’t make it.
+        回來吧。'
+      - '寶物仍在遠處。
 
-        But the signal was real.'
-      - 'Some treasures still await.
+        但訊號是真的。'
+      - '時間關上了一扇門。
 
-        Let’s try a different path.'
-      - 'The result remained.
+        路還沒有。'
+      - '你沒有抵達。
 
-        The position changed.'
-      - 'Time ran out.
+        但你已經改變了位置。'
+      - '今天沒有完成。
 
-        Meaning didn''t.'
-      - 'So close.
+        可你留下了痕跡。'
+      - '世界沒有嘲笑你。
 
-        The sound said so.'
-      - 'The map is still open.
+        它只是等你再走一次。'
+      - '錯過了這一刻。
 
-        Come back to it.'
-      - 'The world’s rules stood firm.
+        但意義沒有消失。'
+      - '腳步停住了。
 
-        The signal of possibility was real.'
-      - The world kept its rules.
-      - 'The moment passed.
+        方向還在。'
+      - '時間不等人。
 
-        The record remains.'
-      - 'The sun sank,
+        但人可以再出發。'
+      - '你離答案更近了，
 
-        and shadow covered the world once again.'
-      - 'The last grains of sand fell,
+        只是還沒有碰到它。'
+      - '沉默。
 
-        and the story quietly came to a close.'
-      - 'The wind swept through,
+        只有時間走過。'
+      - '勝利與失敗，
 
-        and the footprints vanished without a trace.'
-      - 'The tide came in,
+        終究只是沙粒。'
+      - '這次是未完成。
 
-        What once had been there returned to the sea.'
-      - 'Silence.
+        不是無意義。'
+      - '寶物沒有到手。
 
-        Only time passed through.'
-      - "Victory and defeat \nare nothing more than grains of sand."
-      - 'The road goes on—or it ends.
+        但你已經理解了路的一部分。'
+      - '結果暫時空白。
 
-        Either way, it lies on the same earth.'
-      - "> Time ran out.\n> \n> Nothing else did."
-      - "> The outcome didn’t change.\n> \n> But your position did."
+        地圖仍然活著。'
+      - '風把倒數帶走。
+
+        卻沒有帶走你的選擇。'
+      - '你沒有輸給世界。
+
+        只是還沒跟上時間。'
+      - '這裡先停下。
+
+        下一次，讓腳步更準。'
+      - '時間結束。
+
+        故事還沒有。'
     hard:
       pool:
-      - 'Even the aurora fades.
+      - '即使極光會褪去，
 
-        Come back with a new stride.'
-      - 'In a fragile world,
+        也請帶著新的腳步回來。'
+      - '那一刻滑走了。
 
-        haste shatters clarity before it can be found.'
-      - 'The moment slipped away.
+        意義沒有。'
+      - '天空還在移動。
 
-        The meaning did not.'
-      - 'Winter is patient.
+        你也可以。'
+      - '寒冷很誠實。
 
-        Be the same.'
-      - 'The sky kept moving.
+        它只是告訴你：還差一步。'
+      - '時間沒有留下餘地。
 
-        So will you.'
-      - 'The story moves on.
+        但路仍然存在。'
+      - '你沒有抵達中心。
 
-        The end is not yet.'
-      - 'The stars were there, watching.
+        可你已經看見它在哪裡。'
+      - '冰面沒有讓步。
 
-        Again.'
-      - 'Ice takes its time.
+        下一次，用更穩的腳步。'
+      - '風把結果帶走。
 
-        Neither do you.'
-      - 'The sky kept moving.
+        留下的是判斷。'
+      - '這一次，世界比你更快。
 
-        So can you.'
-      - 'The north has learned to wait.
+        下一次，不一定。'
+      - '寶物仍在黑暗裡。
 
-        So should you.'
-      - 'This is an interlude
+        但黑暗已經變薄。'
+      - '你沒有被打碎。
 
-        —It’s not over.'
-      - 'Like drifting clouds,
+        只是暫時停下。'
+      - '時間關門了。
 
-        don’t lose your flow—like a river.'
-      - 'The sound was near.
+        地面還記得你。'
+      - '不要急著否定這一步。
 
-        The distance was real.
+        它也算數。'
+      - '嚴寒沒有勝利。
 
-        But that moment can’t be saved.'
-      - 'You were closing in.
+        它只是延後了答案。'
+      - '天空冷下來。
 
-        Only time wasn’t.'
-      - 'The world held to its rules.
+        你的方向仍然存在。'
+      - '失敗很安靜。
 
-        You touched the edge of them.'
-      - "You didn’t reach the treasure. \nBut the signal was real."
-      - 'Nothing changed.
+        它也可以很有用。'
+      - '你沒有拿到寶物。
 
-        Only your position did.'
-      - 'It wasn’t luck.
+        但你帶回了資訊。'
+      - '這條路很硬。
 
-        Alignment.'
-      - 'The moment slipped away,
+        所以重來也值得。'
+      - '沒有抵達，
 
-        but the record stayed.'
-      - 'You crossed fragile ground
+        不代表沒有前進。'
+      - '星星沒有靠近。
 
-        and left the horizon unbroken.'
-      - "Nothing changed.\n Only your position did.\nNot luck.\nAlignment.\nThe moment passed.\nThe record remains."
-      - 'The sun sank,
+        但你知道該往哪裡看。'
+      - '世界收緊了規則。
 
-        and shadow covered the world once again.'
-      - 'The last grains of sand fell,
+        你下次會讀得更清楚。'
+      - '倒數結束。
 
-        and the story quietly came to a close.'
-      - 'The wind swept through,
+        判斷才剛開始。'
+      - '冰與風都還在。
 
-        and the footprints vanished without a trace.'
-      - 'The tide came in,
+        你也還在。'
+      - '今天到不了。
 
-        What once had been there returned to the sea.'
-      - 'Silence.
+        明天可以更準。'
+      - '不要把這一次丟掉。
 
-        Only time passed through.'
-      - "Victory and defeat \nare nothing more than grains of sand."
-      - 'The road goes on—or it ends.
+        它會成為下一次的路標。'
+      - '時間奪走了結果。
 
-        Either way, it lies on the same earth.'
-      - 'The season closed.
+        沒有奪走你的方向。'
+      - '寒冷留下答案的一部分。
 
-        The land remained.'
-      - 'The path The path remains.
+        把它帶回去。'
+      - '你沒有停在失敗裡。
 
-        Only your steps stopped.'
-      - 'Your time ran out.
+        你只是停在下一次之前。'
+      - '這不是結尾。
 
-        The sky didn’t.'
-      - 'It wasn’t rejection.
+        只是世界要求你再試一次。'
+      - '寶物仍在原處。
 
-        Only silence.'
-      - 'The world is still intact.
+        而你已經比剛才更接近。'
+      - '天空無聲。
 
-        You can return—changed.'
-      - 'The season ended.
+        但路還在。'
+      - 下一次，讓風追不上你。
+      - '失去這一局，
 
-        The forest remains.'
-      - 'The distance was closing.
+        不等於失去這條路。'
+      - '你退回來了。
 
-        Time kept its rhythm.'
-      - 'Your time came to a halt.
+        但不是空手。'
+      - '時間說不。
 
-        The sky kept moving.'
-      - 'Not rejection
+        方向說還可以。'
+      - '冰面很薄。
 
-        Just silence.'
-      - 'The path is still here.
+        經驗留下得很深。'
+      - '這次沒能完成。
 
-        You can come back—changed.'
+        但你的腳步已經記住了地形。'
+      - '請回來。
 
+        這條路還沒把話說完。'
 meta:
   lang: zh_tw
   note: Put translation keys under e.g. command.xxx / gui.xxx / messages.xxx etc.
@@ -510,16 +529,14 @@ quotes:
   - The glass didn’t break.\nNeither did you.\n（ガラスは割れなかった。あなたも折れなかった。）
   - Beneath a quiet sky,\nyour will held firm.\n（静かな空の下で、意志は持ちこたえた。）
   - Very little shines forever\n—but this moment was different.\n（永遠に輝くものなんてほとんどないけれど、この瞬間は別格だった。）
-  - You made it across the fragile ground,\nholding fast to the horizon the whole
-    way.\n（脆い地面を渡り切った。地平線景色をしっかりと握りしめたまま。）
+  - You made it across the fragile ground,\nholding fast to the horizon the whole way.\n（脆い地面を渡り切った。地平線景色をしっかりと握りしめたまま。）
   - The moment passed.\n What remained was the record—the achievement.\n（瞬間は過ぎ去った。遺されたもの記録・功績は残る。）
   - Luck fades quickly.\nOrder endures.\n（運は速やかに消え、整い秩序は永続する。）
   - The sky knows no rest in its endless cycle.\nNeither do you.\n（空はその終わりなき循環に休止を知らぬ。汝もまた、止まらず。）
   - The center was reached.\nThe world stood still.\n（中心は到達された。世界は立ち尽くし静止した。）
   - At last,you’ve made it here.\nThe truth stands—unbowed.\n（ついに、ここへ辿り着いた。真実は屈することなく、そこに在る。）
   - Complete. This path was yours\n—and yours alone.\n（完遂。この道を選んだのは他でもないあなただ。）
-  - Time drifted into silence,\nand found its place in the deepest corners of the
-    mind.\n（時は静寂へと漂い、精神の奥底の隅に自らの居場所を見つけた。）
+  - Time drifted into silence,\nand found its place in the deepest corners of the mind.\n（時は静寂へと漂い、精神の奥底の隅に自らの居場所を見つけた。）
   - As the sky shifted,\none story found its final resolution.\n（空が姿を変えるとともに、一つの物語はその最終的な解決完結を見出した。）
   - The waves fell quiet,\nand the sky hid its depths once more.\n（波は静まり、空は再びその深淵を覆い隠した。）
   - The footsteps ceased,\nand only the place remained.\n（歩みは途絶え、ただ場所だけがそこに在り続けた。）
@@ -540,8 +557,7 @@ quotes:
   - The sky knows no pause in endless circle,\nnor shall you find yours.\n（空はその終わりなき循環に休止を知らぬ。汝もまた、止まらず。）
   - The center has been reached.\nThe world stood still.\n（中心は到達された。世界は立ち尽くし静止した。）
   - Finally here.\nThe truth remains unyielding.\n（ついに、ここへ辿り着いた。真実は屈することなく、そこに在る。）
-  - 'You have seen it through.\nAnd mark this: it was you, and no one else, who chose
-    this path.\n（完遂。この道を選んだのは他でもないあなただ。）'
+  - 'You have seen it through.\nAnd mark this: it was you, and no one else, who chose this path.\n（完遂。この道を選んだのは他でもないあなただ。）'
   - Time drifted into silence,\nfinding its place in the recesses of the mind.\n（時は静寂へと漂い、精神の奥底の隅に自らの居場所を見つけた。）
   - As the sky transformed,\nthe tale found its final resolved.\n（空が姿を変えるとともに、一つの物語はその最終的な解決完結を見出した。）
   - The waters fell calm,\nand the sky once more veiled its abyss.\n（波は静まり、空は再びその深淵を覆い隠した。）
@@ -703,16 +719,13 @@ ui:
     messages_yml_not_loaded_d56b1cd3: (messages.yml not loaded)
     translation_missing_77031543: '(找不到翻譯:'
     translation_missing_77031543_107: '(找不到翻譯:'
-    treasurerun_lang_config_yml__2dde4625: '[TreasureRun][Lang] config.yml 中找不到 ''language:''
-      區段。'
+    treasurerun_lang_config_yml__2dde4625: '[TreasureRun][Lang] config.yml 中找不到 ''language:'' 區段。'
     click_to_select_aac1569c_76: 點擊選擇
     treasurerun_lang_default_60887a83: '[TreasureRun][Lang] default='
     click_to_select_aac1569c_19: 點擊選擇
-    treasurerun_lang_config_yml__2dde4625_33: '[TreasureRun][Lang] config.yml 中找不到
-      ''language:'' 區段。'
+    treasurerun_lang_config_yml__2dde4625_33: '[TreasureRun][Lang] config.yml 中找不到 ''language:'' 區段。'
     treasurerun_lang_material_la_bc70a401: '[TreasureRun][Lang] 無效的 Material: lang='
-    treasurerun_lang_language_ic_4bc2362d: '[TreasureRun][Lang] 找不到 ''language.iconMaterial:''
-      區段（全部改為PAPER）'
+    treasurerun_lang_language_ic_4bc2362d: '[TreasureRun][Lang] 找不到 ''language.iconMaterial:'' 區段（全部改為PAPER）'
     click_to_select_aac1569c_100: 點擊選擇
     treasurerun_lang_default_60887a83_111: '[TreasureRun][Lang] default='
     enemydown_mysql_jdbc_mybatis_6b5c6f68: '[EnemyDown] 已連接至MySQL（JDBC + MyBatis）'
@@ -729,14 +742,12 @@ ui:
     enemydown_mysql_93b23ef9: '[EnemyDown] MySQL 未連接。'
     run_complete_46d920e5_580: Run complete.
     run_complete_46d920e5_589: Run complete.
-    playerlanguagestore_failed_t_c4999402: '[PlayerLanguageStore] Failed to create/load
-      player_languages.yml:'
+    playerlanguagestore_failed_t_c4999402: '[PlayerLanguageStore] Failed to create/load player_languages.yml:'
     playerlanguagestore_failed_t_b6478ec8: '[PlayerLanguageStore] Failed to save player_languages.yml:'
     proverb_logged_to_mysql_prov_c13b5e4e: 'Proverb logged to MySQL: proverb_logs'
     failed_to_log_proverb_to_mys_2bb4c5c3: 'Failed to log proverb to MySQL: proverb_logs'
     loaded_proverb_logs_from_mys_b5b0f8e0: 'Loaded proverb logs from MySQL: proverb_logs'
-    failed_to_load_proverb_logs__6246be38: 'Failed to load proverb logs from MySQL:
-      proverb_logs'
+    failed_to_load_proverb_logs__6246be38: 'Failed to load proverb logs from MySQL: proverb_logs'
     treasurerunmultichestplugin_4499e25c: '🌈 TreasureRunMultiChestPlugin: 起動 🌈'
     treasurerun_gamestagemanager_3d9e7f5a: '[TreasureRun] GameStageManager event registered!'
     treasurerunmultichestplugin_a507471a: ✅ TreasureRunMultiChestPlugin が正常に起動しました！
@@ -1025,7 +1036,7 @@ gameplay:
     hiddenPowerChat: 你感受到 Treasure Shop 中隱藏的力量……
   timer:
     remainingBossbar: 剩餘時間
-    remainingLine: '剩餘時間：{seconds} 秒'
+    remainingLine: 剩餘時間：{seconds} 秒
 rewards:
   rank:
     netheriteIngot: 獲得獄髓錠！
