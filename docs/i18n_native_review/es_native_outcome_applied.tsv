@@ -1,0 +1,327 @@
+lang	pool	index	translation
+es	outcome.success.easy.pool	1	"Llegaste.
+La verdad permanece."
+es	outcome.success.easy.pool	2	"Aunque solo fuera un pequeño paso,
+mantuviste tu lugar."
+es	outcome.success.easy.pool	3	"Escuchaste.
+Y el camino se abrió."
+es	outcome.success.easy.pool	4	"> Has llegado hasta aquí.
+>
+> Las reglas eran sencillas —
+>
+> la elección era tuya."
+es	outcome.success.easy.pool	5	"> La distancia cobró sentido.
+>
+> Y el tiempo respondió a tus pasos."
+es	outcome.success.easy.pool	6	"> No toda luz brilla para siempre.
+>
+> Pero este instante sí brilló."
+es	outcome.success.easy.pool	7	"La luz cayó con calma,
+y todas las sombras se retiraron."
+es	outcome.success.easy.pool	8	"El viento guardó silencio.
+Todo volvió a su lugar."
+es	outcome.success.easy.pool	9	"Un instante de silencio.
+El mundo volvió a respirar con calma."
+es	outcome.success.easy.pool	10	"La huella quedó grabada en la arena —
+allí donde el viento ya no alcanza."
+es	outcome.success.easy.pool	11	"La armonía fue restaurada.
+Todo había conducido a este momento."
+es	outcome.success.easy.pool	12	"El tiempo pasó en silencio,
+guardado en un rincón de la memoria."
+es	outcome.success.easy.pool	13	"El cielo cambió de color,
+y una historia llegó a su fin."
+es	outcome.success.easy.pool	14	"Las olas se aquietaron,
+y el mar volvió a ocultar su profundidad."
+es	outcome.success.easy.pool	15	"Los pasos se detuvieron,
+y solo quedó el lugar."
+es	outcome.success.easy.pool	16	"Victoria y derrota —
+al final, no son más que granos de arena."
+es	outcome.success.easy.pool	17	"El camino continúa — o termina aquí.
+De cualquier modo, descansa sobre la misma tierra."
+es	outcome.success.normal.pool	1	"La distancia encontró por fin su sentido.
+El tiempo respondió a tu viaje."
+es	outcome.success.normal.pool	2	"El tiempo se agotó.
+Pero no todo ha terminado."
+es	outcome.success.normal.pool	3	"El eje fue encontrado.
+El mundo contuvo su movimiento."
+es	outcome.success.normal.pool	4	"El cristal contuvo la respiración,
+y tú mantuviste tu lugar."
+es	outcome.success.normal.pool	5	"Bajo la quietud del cielo,
+tu ánimo no vaciló."
+es	outcome.success.normal.pool	6	"Pocas cosas brillan para siempre.
+Pero este instante fue luminoso."
+es	outcome.success.normal.pool	7	"Cruzaste una tierra frágil,
+sin perder de vista el horizonte."
+es	outcome.success.normal.pool	8	"El instante pasó.
+Lo que permanece, permanece."
+es	outcome.success.normal.pool	9	"La suerte se marchita pronto.
+El orden permanece."
+es	outcome.success.normal.pool	10	"El cielo no conoce pausa en su círculo infinito,
+y tú tampoco te detuviste."
+es	outcome.success.normal.pool	11	"Alcanzaste el centro.
+El mundo quedó inmóvil."
+es	outcome.success.normal.pool	12	"Al fin estás aquí.
+La verdad sigue firme."
+es	outcome.success.normal.pool	13	"Llegaste hasta el final.
+Recuerda: este camino lo elegiste tú, y nadie más."
+es	outcome.success.normal.pool	14	"El tiempo se deslizó hacia el silencio,
+y halló su lugar en lo profundo de la memoria."
+es	outcome.success.normal.pool	15	"Mientras el cielo cambiaba de color,
+la historia encontró su desenlace."
+es	outcome.success.normal.pool	16	"Las aguas se calmaron,
+y el cielo volvió a cubrir su abismo."
+es	outcome.success.normal.pool	17	"Los pasos callaron,
+y solo quedó el lugar."
+es	outcome.success.normal.pool	18	"La luz cayó con calma,
+y todas las sombras se retiraron."
+es	outcome.success.normal.pool	19	"El viento guardó silencio.
+Todo volvió a su lugar."
+es	outcome.success.normal.pool	20	"Un instante de silencio.
+El mundo volvió a respirar con calma."
+es	outcome.success.normal.pool	21	"La huella quedó grabada en la arena —
+allí donde el viento ya no alcanza."
+es	outcome.success.normal.pool	22	"La armonía fue restaurada.
+Todo había conducido a este momento."
+es	outcome.success.normal.pool	23	"Carrera completada.
+Claro. Encontrado.
+Eso basta."
+es	outcome.success.normal.pool	24	"Carrera completada.
+El camino resistió.
+Tú también."
+es	outcome.success.normal.pool	25	"El cielo siguió moviéndose.
+Tú también puedes."
+es	outcome.success.normal.pool	26	"Carrera completada.
+Un resultado silencioso.
+El peso del trabajo real."
+es	outcome.success.normal.pool	27	"Solo caminaste el sendero
+que el mundo había tendido ante ti."
+es	outcome.success.normal.pool	28	"La tierra no cedió.
+Confió en tus pasos."
+es	outcome.success.normal.pool	29	"Este instante se alineó
+con el antiguo ritmo de las estrellas."
+es	outcome.success.normal.pool	30	"No tomaste nada.
+Comprendiste algo."
+es	outcome.success.normal.pool	31	"No ganaste nada.
+Solo viste la verdad tal como era."
+es	outcome.success.normal.pool	32	"No tomaste este lugar.
+Pertenecías aquí."
+es	outcome.success.normal.pool	33	"Caminaste por una senda
+más antigua que la memoria misma."
+es	outcome.success.normal.pool	34	"La tierra no se resistió.
+Te reconoció."
+es	outcome.success.normal.pool	35	"Este instante se alineó
+con la quietud de las estrellas."
+es	outcome.success.hard.pool	1	"En el viento del norte,
+la claridad dura más que la velocidad."
+es	outcome.success.hard.pool	2	"El centro fue encontrado.
+El mundo descansó."
+es	outcome.success.hard.pool	3	"Las estrellas guardan silencio.
+Tu registro habla por ti."
+es	outcome.success.hard.pool	4	"El resultado permaneció.
+La posición cambió."
+es	outcome.success.hard.pool	5	"Entre el hielo y el cristal,
+elegiste el control."
+es	outcome.success.hard.pool	6	"Las olas callaron,
+y el mar recuperó sus profundidades ocultas."
+es	outcome.success.hard.pool	7	"Aún quedan tesoros esperando.
+La próxima vez, otro camino."
+es	outcome.success.hard.pool	8	"El cielo no cambió.
+Tú sí."
+es	outcome.success.hard.pool	9	"El instante pasó.
+Lo que quedó fue orden."
+es	outcome.success.hard.pool	10	"El invierno es honesto.
+Tu carrera también lo fue."
+es	outcome.success.hard.pool	11	"Las estrellas se alinearon por un instante.
+Tú lo notaste."
+es	outcome.success.hard.pool	12	"La distancia se cerró.
+El tiempo no."
+es	outcome.success.hard.pool	13	"Las reglas del mundo se mantuvieron firmes.
+Y la señal de posibilidad fue real."
+es	outcome.success.hard.pool	14	"El camino se cerró en silencio.
+Tú ya habías cruzado."
+es	outcome.success.hard.pool	15	"Nada cambió.
+Solo cambió tu posición."
+es	outcome.success.hard.pool	16	"El mundo no se volvió más amable.
+Tú te volviste más preciso."
+es	outcome.success.hard.pool	17	"El instante pasó.
+El registro permanece."
+es	outcome.success.hard.pool	18	"El resultado no cambió.
+Aun así, avanzaste."
+es	outcome.success.hard.pool	19	"La salida no cambió.
+Pero alcanzaste otro nivel."
+es	outcome.success.hard.pool	20	"El final fue el mismo.
+Pero quien llegó a él había cambiado."
+es	outcome.success.hard.pool	21	"El destino es el mismo —
+pero ya no eres el viajero que eras."
+es	outcome.success.hard.pool	22	"La luz cayó con calma,
+y todas las sombras se retiraron."
+es	outcome.success.hard.pool	23	"El viento guardó silencio.
+Todo volvió a su lugar."
+es	outcome.success.hard.pool	24	"Un instante de silencio.
+El mundo volvió a respirar con calma."
+es	outcome.success.hard.pool	25	"La huella quedó grabada en la arena —
+allí donde el viento ya no alcanza."
+es	outcome.success.hard.pool	26	"La armonía fue restaurada.
+Todo había conducido a este momento."
+es	outcome.success.hard.pool	27	"El tiempo pasó en silencio,
+guardado en un rincón de la memoria."
+es	outcome.success.hard.pool	28	"El cielo cambió de color,
+y una historia llegó a su fin."
+es	outcome.success.hard.pool	29	"Las olas se aquietaron,
+y el mar volvió a ocultar su profundidad."
+es	outcome.success.hard.pool	30	"Los pasos se detuvieron,
+y solo quedó el lugar."
+es	outcome.success.hard.pool	31	"Victoria y derrota —
+al final, no son más que granos de arena."
+es	outcome.success.hard.pool	32	"El camino continúa — o termina aquí.
+De cualquier modo, descansa sobre la misma tierra."
+es	outcome.timeup.easy.pool	1	"El tiempo se agotó.
+Nada más lo hizo."
+es	outcome.timeup.easy.pool	2	"El tesoro puede esperar.
+Tú también."
+es	outcome.timeup.easy.pool	3	"Una pausa no es el final.
+Solo es una pausa."
+es	outcome.timeup.easy.pool	4	"Por ahora, eso es todo.
+Al siguiente paso."
+es	outcome.timeup.easy.pool	5	"Sigues aquí.
+Eso es lo que importa."
+es	outcome.timeup.easy.pool	6	"La carrera terminó.
+Tú no."
+es	outcome.timeup.easy.pool	7	"SE ACABÓ EL TIEMPO.
+La carrera terminó.
+Tú no."
+es	outcome.timeup.easy.pool	8	"SE ACABÓ EL TIEMPO.
+Las reglas no cambian.
+Otra vez."
+es	outcome.timeup.easy.pool	9	"SE ACABÓ EL TIEMPO.
+“Casi” también cuenta."
+es	outcome.timeup.easy.pool	10	"El sol se hundió,
+y la sombra volvió a cubrir el mundo."
+es	outcome.timeup.easy.pool	11	"Cayeron los últimos granos de arena,
+y la historia se cerró en silencio."
+es	outcome.timeup.easy.pool	12	"El viento pasó de largo,
+y las huellas desaparecieron sin dejar rastro."
+es	outcome.timeup.easy.pool	13	"Subió la marea,
+y lo que una vez estuvo allí volvió al mar."
+es	outcome.timeup.easy.pool	14	"Silencio.
+Solo el tiempo atravesó el lugar."
+es	outcome.timeup.easy.pool	15	"Victoria y derrota —
+al final, no son más que granos de arena."
+es	outcome.timeup.easy.pool	16	"El camino continúa — o termina aquí.
+De cualquier modo, descansa sobre la misma tierra."
+es	outcome.timeup.normal.pool	1	"La distancia se cerró.
+El tiempo no."
+es	outcome.timeup.normal.pool	2	"El mundo conservó sus reglas.
+Tú tocaste el borde."
+es	outcome.timeup.normal.pool	3	"No llegaste.
+Pero la señal fue real."
+es	outcome.timeup.normal.pool	4	"Aún quedan tesoros esperando.
+Probemos otro camino."
+es	outcome.timeup.normal.pool	5	"El resultado permaneció.
+La posición cambió."
+es	outcome.timeup.normal.pool	6	"Nada cambió.
+Solo cambió tu posición."
+es	outcome.timeup.normal.pool	7	"El mundo no se volvió más amable.
+Tú te volviste más preciso."
+es	outcome.timeup.normal.pool	8	"El instante pasó.
+El registro permanece."
+es	outcome.timeup.normal.pool	9	"El resultado no cambió.
+Aun así, avanzaste."
+es	outcome.timeup.normal.pool	10	"La salida no cambió.
+Pero alcanzaste otro nivel."
+es	outcome.timeup.normal.pool	11	"El final fue el mismo.
+Pero quien llegó a él había cambiado."
+es	outcome.timeup.normal.pool	12	"El destino es el mismo —
+pero ya no eres el viajero que eras."
+es	outcome.timeup.normal.pool	13	"El tiempo se cerró como una puerta.
+Tu mano seguía sobre el picaporte."
+es	outcome.timeup.normal.pool	14	"El tesoro permaneció oculto.
+El camino no fue en vano."
+es	outcome.timeup.normal.pool	15	"La arena cayó.
+La forma quedó."
+es	outcome.timeup.normal.pool	16	"Perdiste el instante,
+pero no el pulso."
+es	outcome.timeup.normal.pool	17	"El mundo siguió frío.
+Tú seguiste de pie."
+es	outcome.timeup.normal.pool	18	"El mapa no cambió.
+Tu lectura sí."
+es	outcome.timeup.normal.pool	19	"No era el final correcto.
+Era la próxima señal."
+es	outcome.timeup.normal.pool	20	"El tiempo terminó.
+La búsqueda no."
+es	outcome.timeup.hard.pool	1	"El norte no perdona.
+Tampoco miente."
+es	outcome.timeup.hard.pool	2	"El hielo conservó su forma.
+Tú conservaste la tuya."
+es	outcome.timeup.hard.pool	3	"La distancia se cerró.
+El tiempo no."
+es	outcome.timeup.hard.pool	4	"El mundo conservó sus reglas.
+Tú tocaste el borde."
+es	outcome.timeup.hard.pool	5	"No llegaste.
+Pero la señal fue real."
+es	outcome.timeup.hard.pool	6	"Aún quedan tesoros esperando.
+La próxima vez, otro camino."
+es	outcome.timeup.hard.pool	7	"El resultado permaneció.
+La posición cambió."
+es	outcome.timeup.hard.pool	8	"Nada cambió.
+Solo cambió tu posición."
+es	outcome.timeup.hard.pool	9	"El mundo no se volvió más amable.
+Tú te volviste más preciso."
+es	outcome.timeup.hard.pool	10	"El instante pasó.
+El registro permanece."
+es	outcome.timeup.hard.pool	11	"El resultado no cambió.
+Aun así, avanzaste."
+es	outcome.timeup.hard.pool	12	"La salida no cambió.
+Pero alcanzaste otro nivel."
+es	outcome.timeup.hard.pool	13	"El final fue el mismo.
+Pero quien llegó a él había cambiado."
+es	outcome.timeup.hard.pool	14	"El destino es el mismo —
+pero ya no eres el viajero que eras."
+es	outcome.timeup.hard.pool	15	"El viento del norte siguió soplando.
+Tú aprendiste a leerlo."
+es	outcome.timeup.hard.pool	16	"La claridad llegó tarde,
+pero llegó."
+es	outcome.timeup.hard.pool	17	"La puerta se cerró.
+La forma del camino quedó."
+es	outcome.timeup.hard.pool	18	"La nieve no respondió.
+Tus pasos sí."
+es	outcome.timeup.hard.pool	19	"El cristal no se quebró.
+Tu duda sí."
+es	outcome.timeup.hard.pool	20	"El tiempo no concedió nada.
+La ruta enseñó algo."
+es	outcome.timeup.hard.pool	21	"El centro quedó lejos.
+La dirección quedó clara."
+es	outcome.timeup.hard.pool	22	"El frío lo redujo todo
+a lo verdadero."
+es	outcome.timeup.hard.pool	23	"No fue victoria.
+Fue medida."
+es	outcome.timeup.hard.pool	24	"El mundo no cambió de juicio.
+Tú cambiaste de postura."
+es	outcome.timeup.hard.pool	25	"La señal fue breve.
+La viste."
+es	outcome.timeup.hard.pool	26	"El camino no cedió.
+Tú tampoco del todo."
+es	outcome.timeup.hard.pool	27	"El tesoro esperó.
+La experiencia no."
+es	outcome.timeup.hard.pool	28	"El silencio cayó primero.
+Después, el tiempo."
+es	outcome.timeup.hard.pool	29	"Quedó una línea sin cruzar.
+También quedó una razón para volver."
+es	outcome.timeup.hard.pool	30	"La noche cubrió el campo.
+La memoria guardó el trayecto."
+es	outcome.timeup.hard.pool	31	"No alcanzaste el final.
+Pero el final ya te vio venir."
+es	outcome.timeup.hard.pool	32	"El camino continúa — o termina aquí.
+De cualquier modo, descansa sobre la misma tierra."
+es	outcome.timeup.hard.pool	33	"Las estrellas no dieron respuesta.
+Pero dejaron una señal."
+es	outcome.timeup.hard.pool	34	"La escarcha cubrió la ruta.
+No borró tus pasos."
+es	outcome.timeup.hard.pool	35	"El intento terminó.
+La precisión quedó."
+es	outcome.timeup.hard.pool	36	"El tiempo fue más duro que el frío.
+Aun así, llegaste más lejos."
+es	outcome.timeup.hard.pool	37	"No hubo atajo.
+Solo aprendizaje."
+es	outcome.timeup.hard.pool	38	"La próxima vez, el mismo norte
+no parecerá tan lejano."

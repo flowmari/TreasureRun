@@ -1,474 +1,517 @@
 outcome:
   notice:
-    timeUpGameOver: 'Se acabó el tiempo. Fin de la partida.'
-    retryGuide: 'Inténtalo de nuevo por una ruta diferente.'
+    timeUpGameOver: Se acabó el tiempo. Fin de la partida.
+    retryGuide: Inténtalo de nuevo por una ruta diferente.
   success:
     common:
       pool: []
     easy:
       pool:
-      - 'You’ve made it.
+      - 'Llegaste.
 
-        The truth remains.'
-      - 'Even if it was only a small step,
+        La verdad permanece.'
+      - 'Aunque solo fuera un pequeño paso,
 
-        you held your ground.'
-      - "You listened.\n The path opened."
-      - "> You made it here\n> \n> The rules were simple —\n> \n> the choice was yours."
-      - "> Distance became meaning.\n> \n> and time answered your footsteps."
-      - "> Not everything shines forever.\n> \n> But this moment did."
-      - 'Light fell evenly, ,
+        mantuviste tu lugar.'
+      - 'Escuchaste.
 
-        and every shadow vanished.'
-      - 'The wind fell silent.
+        Y el camino se abrió.'
+      - '> Has llegado hasta aquí.
 
-        and everything returned to where it belonged.'
-      - 'A moment of silence.
+        >
 
-        The world steadied its breath.'
-      - 'The record is etched deep in the sand—
+        > Las reglas eran sencillas —
 
-        beyond the reach of the wind.'
-      - 'Harmony was restored.
+        >
 
-        Everything had been for this moment.'
-      - 'Time slipped by in silence,
+        > la elección era tuya.'
+      - '> La distancia cobró sentido.
 
-        tucked away in the corners of memory.'
-      - 'The sky shifted in color,
+        >
 
-        and one story came to its end.'
-      - 'The waves grew calm,
+        > Y el tiempo respondió a tus pasos.'
+      - '> No toda luz brilla para siempre.
 
-        and the sea hid its depths once more.'
-      - 'The footsteps stopped,
+        >
 
-        and only the place remained.'
-      - "Victory and defeat \nare nothing more than grains of sand."
-      - 'The road goes on—or it ends.
+        > Pero este instante sí brilló.'
+      - 'La luz cayó con calma,
 
-        Either way, it lies on the same earth.'
+        y todas las sombras se retiraron.'
+      - 'El viento guardó silencio.
+
+        Todo volvió a su lugar.'
+      - 'Un instante de silencio.
+
+        El mundo volvió a respirar con calma.'
+      - 'La huella quedó grabada en la arena —
+
+        allí donde el viento ya no alcanza.'
+      - 'La armonía fue restaurada.
+
+        Todo había conducido a este momento.'
+      - 'El tiempo pasó en silencio,
+
+        guardado en un rincón de la memoria.'
+      - 'El cielo cambió de color,
+
+        y una historia llegó a su fin.'
+      - 'Las olas se aquietaron,
+
+        y el mar volvió a ocultar su profundidad.'
+      - 'Los pasos se detuvieron,
+
+        y solo quedó el lugar.'
+      - 'Victoria y derrota —
+
+        al final, no son más que granos de arena.'
+      - 'El camino continúa — o termina aquí.
+
+        De cualquier modo, descansa sobre la misma tierra.'
     normal:
       pool:
-      - 'The distance has found its meaning.
+      - 'La distancia encontró por fin su sentido.
 
-        Time has rewarded your journey.'
-      - 'The time is up.
+        El tiempo respondió a tu viaje.'
+      - 'El tiempo se agotó.
 
-        but the rest is far from over.'
-      - 'The axis is found.
+        Pero no todo ha terminado.'
+      - 'El eje fue encontrado.
 
-        the world has cased its motion.'
-      - 'The glass held its breath,
+        El mundo contuvo su movimiento.'
+      - 'El cristal contuvo la respiración,
 
-        and you held your ground.'
-      - 'Under the stillness of the sky,
+        y tú mantuviste tu lugar.'
+      - 'Bajo la quietud del cielo,
 
-        your spirit did not waver.'
-      - 'Few things shine forever.
+        tu ánimo no vaciló.'
+      - 'Pocas cosas brillan para siempre.
 
-        but this moment was radiant.'
-      - 'You traversed the fragile earth,
+        Pero este instante fue luminoso.'
+      - 'Cruzaste una tierra frágil,
 
-        without losing the view.'
-      - 'The moment has passed.
+        sin perder de vista el horizonte.'
+      - 'El instante pasó.
 
-        The legacy remains.'
-      - 'Luck fades fast.
+        Lo que permanece, permanece.'
+      - 'La suerte se marchita pronto.
 
-        order endures.'
-      - 'The sky knows no pause in endless circle,
+        El orden permanece.'
+      - 'El cielo no conoce pausa en su círculo infinito,
 
-        nor shall you find yours.'
-      - 'The center has been reached.
+        y tú tampoco te detuviste.'
+      - 'Alcanzaste el centro.
 
-        The world stood still.'
-      - 'Finally here.
+        El mundo quedó inmóvil.'
+      - 'Al fin estás aquí.
 
-        The truth remains unyielding.'
-      - 'You have seen it through.
+        La verdad sigue firme.'
+      - 'Llegaste hasta el final.
 
-        And mark this: it was you, and no one else, who chose this path.'
-      - 'Time drifted into silence,
+        Recuerda: este camino lo elegiste tú, y nadie más.'
+      - 'El tiempo se deslizó hacia el silencio,
 
-        finding its place in the recesses of the mind.'
-      - 'As the sky transformed,
+        y halló su lugar en lo profundo de la memoria.'
+      - 'Mientras el cielo cambiaba de color,
 
-        the tale found its final resolved.'
-      - 'The waters fell calm,
+        la historia encontró su desenlace.'
+      - 'Las aguas se calmaron,
 
-        and the sky once more veiled its abyss.'
-      - 'The footsteps ceased,
+        y el cielo volvió a cubrir su abismo.'
+      - 'Los pasos callaron,
 
-        only the place remained.'
-      - 'Light fell evenly, ,
+        y solo quedó el lugar.'
+      - 'La luz cayó con calma,
 
-        and every shadow vanished.'
-      - 'The wind fell silent.
+        y todas las sombras se retiraron.'
+      - 'El viento guardó silencio.
 
-        and everything returned to where it belonged.'
-      - 'A moment of silence.
+        Todo volvió a su lugar.'
+      - 'Un instante de silencio.
 
-        The world steadied its breath.'
-      - 'The record is etched deep in the sand—
+        El mundo volvió a respirar con calma.'
+      - 'La huella quedó grabada en la arena —
 
-        beyond the reach of the wind.'
-      - 'Harmony was restored.
+        allí donde el viento ya no alcanza.'
+      - 'La armonía fue restaurada.
 
-        Everything had been for this moment.'
-      - 'RUN COMPLETE.
+        Todo había conducido a este momento.'
+      - 'Carrera completada.
 
-        Clear. Found it.
+        Claro. Encontrado.
 
-        That''s enough.'
-      - 'RUN COMPLETE.
+        Eso basta.'
+      - 'Carrera completada.
 
-        The path held.
+        El camino resistió.
 
-        So did you.'
-      - 'The sky has kept moving.
+        Tú también.'
+      - 'El cielo siguió moviéndose.
 
-        So can you.'
-      - 'RUN COMPLETE.
+        Tú también puedes.'
+      - 'Carrera completada.
 
-        A quiet result.
+        Un resultado silencioso.
 
-        The weight of real work.'
-      - 'You only walked the path
+        El peso del trabajo real.'
+      - 'Solo caminaste el sendero
 
-        the world had laid out for you.'
-      - 'The ground didn’t give way.
+        que el mundo había tendido ante ti.'
+      - 'La tierra no cedió.
 
-        It trusted your steps.'
-      - 'This moment aligned
+        Confió en tus pasos.'
+      - 'Este instante se alineó
 
-        with the stars’ ancient rhythm.'
-      - "You didn’t take anything.\n You understood something."
-      - 'You didn’t gain a thing.
+        con el antiguo ritmo de las estrellas.'
+      - 'No tomaste nada.
 
-        You only saw the truth for what it was.'
-      - 'You didn’t take this place.
+        Comprendiste algo.'
+      - 'No ganaste nada.
 
-        You belonged here.'
-      - 'You walked a road
+        Solo viste la verdad tal como era.'
+      - 'No tomaste este lugar.
 
-        older than memory itself.'
-      - 'The earth did not resist.
+        Pertenecías aquí.'
+      - 'Caminaste por una senda
 
-        It recognized you.'
-      - "This moment aligned\n with the stillness of the stars."
+        más antigua que la memoria misma.'
+      - 'La tierra no se resistió.
+
+        Te reconoció.'
+      - 'Este instante se alineó
+
+        con la quietud de las estrellas.'
     hard:
       pool:
-      - 'In the north wind,
+      - 'En el viento del norte,
 
-        clarity outlasts speed.'
-      - "The center was found.\n The world came to rest."
-      - 'The stars stay silent.
+        la claridad dura más que la velocidad.'
+      - 'El centro fue encontrado.
 
-        Your record does the speaking.'
-      - 'The result  remained.
+        El mundo descansó.'
+      - 'Las estrellas guardan silencio.
 
-        The position changed.'
-      - 'Between ice and glass,
+        Tu registro habla por ti.'
+      - 'El resultado permaneció.
 
-        you chose control.'
-      - 'The waves fell quiet,
+        La posición cambió.'
+      - 'Entre el hielo y el cristal,
 
-        and the sea reclaimed its hidden depths.'
-      - 'Some treasures still await.
+        elegiste el control.'
+      - 'Las olas callaron,
 
-        Next time, a different path.'
-      - 'The sky didn’t change.
+        y el mar recuperó sus profundidades ocultas.'
+      - 'Aún quedan tesoros esperando.
 
-        You did.'
-      - 'The moment passed.
+        La próxima vez, otro camino.'
+      - 'El cielo no cambió.
 
-        What remained was order.'
-      - 'Winter is honest.
+        Tú sí.'
+      - 'El instante pasó.
 
-        So was your run.'
-      - 'The stars aligned for a moment.
+        Lo que quedó fue orden.'
+      - 'El invierno es honesto.
 
-        You noticed.'
-      - 'The distance closed.
+        Tu carrera también lo fue.'
+      - 'Las estrellas se alinearon por un instante.
 
-        Time did not.'
-      - "The world’s rules stood firm.\n And the signal of possibility was real."
-      - 'The path closed quietly.
+        Tú lo notaste.'
+      - 'La distancia se cerró.
 
-        You were already through.'
-      - 'Nothing changed.
+        El tiempo no.'
+      - 'Las reglas del mundo se mantuvieron firmes.
 
-        Only your position did.'
-      - 'Not luck.
+        Y la señal de posibilidad fue real.'
+      - 'El camino se cerró en silencio.
 
-        Alignment.'
-      - 'The moment passed.
+        Tú ya habías cruzado.'
+      - 'Nada cambió.
 
-        The record remains.'
-      - 'The outcome didn’t change.
+        Solo cambió tu posición.'
+      - 'El mundo no se volvió más amable.
 
-        Still, you moved forward.'
-      - 'The output didn’t change.
+        Tú te volviste más preciso.'
+      - 'El instante pasó.
 
-        But you reached a new level.'
-      - 'The ending was the same.
+        El registro permanece.'
+      - 'El resultado no cambió.
 
-        But the one who reached it had changed.'
-      - 'The destination is the same
+        Aun así, avanzaste.'
+      - 'La salida no cambió.
 
-        —but you’re no longer the traveler you once were.'
-      - 'Light fell evenly, ,
+        Pero alcanzaste otro nivel.'
+      - 'El final fue el mismo.
 
-        and every shadow vanished.'
-      - 'The wind fell silent.
+        Pero quien llegó a él había cambiado.'
+      - 'El destino es el mismo —
 
-        and everything returned to where it belonged.'
-      - 'A moment of silence.
+        pero ya no eres el viajero que eras.'
+      - 'La luz cayó con calma,
 
-        The world steadied its breath.'
-      - 'The record is etched deep in the sand—
+        y todas las sombras se retiraron.'
+      - 'El viento guardó silencio.
 
-        beyond the reach of the wind.'
-      - 'Harmony was restored.
+        Todo volvió a su lugar.'
+      - 'Un instante de silencio.
 
-        Everything had been for this moment.'
-      - 'Time slipped by in silence,
+        El mundo volvió a respirar con calma.'
+      - 'La huella quedó grabada en la arena —
 
-        tucked away in the corners of memory.'
-      - 'The sky shifted in color,
+        allí donde el viento ya no alcanza.'
+      - 'La armonía fue restaurada.
 
-        and one story came to its end.'
-      - 'The waves grew calm,
+        Todo había conducido a este momento.'
+      - 'El tiempo pasó en silencio,
 
-        and the sea hid its depths once more.'
-      - 'The footsteps stopped,
+        guardado en un rincón de la memoria.'
+      - 'El cielo cambió de color,
 
-        and only the place remained.'
-      - "Victory and defeat \nare nothing more than grains of sand."
-      - 'The road goes on—or it ends.
+        y una historia llegó a su fin.'
+      - 'Las olas se aquietaron,
 
-        Either way, it lies on the same earth.'
+        y el mar volvió a ocultar su profundidad.'
+      - 'Los pasos se detuvieron,
+
+        y solo quedó el lugar.'
+      - 'Victoria y derrota —
+
+        al final, no son más que granos de arena.'
+      - 'El camino continúa — o termina aquí.
+
+        De cualquier modo, descansa sobre la misma tierra.'
   timeup:
     easy:
       pool:
-      - 'Time ran out.
+      - 'El tiempo se agotó.
 
-        Nothing else did.'
-      - 'The treasure can wait.
+        Nada más lo hizo.'
+      - 'El tesoro puede esperar.
 
-        So can you.'
-      - 'Breathe in.
+        Tú también.'
+      - 'Una pausa no es el final.
 
-        Then again.'
-      - 'That’s all for now.
+        Solo es una pausa.'
+      - 'Por ahora, eso es todo.
 
-        On to the next step.'
-      - 'You''re still here.
+        Al siguiente paso.'
+      - 'Sigues aquí.
 
-        That’s what matters.'
-      - 'The run ended.
+        Eso es lo que importa.'
+      - 'La carrera terminó.
 
-        You didn’t.'
-      - 'TIME''S UP.
+        Tú no.'
+      - 'SE ACABÓ EL TIEMPO.
 
-        The run ended.
+        La carrera terminó.
 
-        You didn''t.'
-      - 'TIME''S UP.
+        Tú no.'
+      - 'SE ACABÓ EL TIEMPO.
 
-        The rules don’t change.
+        Las reglas no cambian.
 
-        Again.'
-      - 'TIME''S UP.
+        Otra vez.'
+      - 'SE ACABÓ EL TIEMPO.
 
-        “So close” is real.'
-      - 'The sun sank,
+        “Casi” también cuenta.'
+      - 'El sol se hundió,
 
-        and shadow covered the world once again.'
-      - 'The last grains of sand fell,
+        y la sombra volvió a cubrir el mundo.'
+      - 'Cayeron los últimos granos de arena,
 
-        and the story quietly came to a close.'
-      - 'The wind swept through,
+        y la historia se cerró en silencio.'
+      - 'El viento pasó de largo,
 
-        and the footprints vanished without a trace.'
-      - 'The tide came in,
+        y las huellas desaparecieron sin dejar rastro.'
+      - 'Subió la marea,
 
-        What once had been there returned to the sea.'
-      - 'Silence.
+        y lo que una vez estuvo allí volvió al mar.'
+      - 'Silencio.
 
-        Only time passed through.'
-      - "Victory and defeat \nare nothing more than grains of sand."
-      - 'The road goes on—or it ends.
+        Solo el tiempo atravesó el lugar.'
+      - 'Victoria y derrota —
 
-        Either way, it lies on the same earth.'
+        al final, no son más que granos de arena.'
+      - 'El camino continúa — o termina aquí.
+
+        De cualquier modo, descansa sobre la misma tierra.'
     normal:
       pool:
-      - 'The distance closed.
+      - 'La distancia se cerró.
 
-        Time did not.'
-      - 'The world kept its rules.
+        El tiempo no.'
+      - 'El mundo conservó sus reglas.
 
-        You touched the edge.'
-      - 'You didn’t make it.
+        Tú tocaste el borde.'
+      - 'No llegaste.
 
-        But the signal was real.'
-      - 'Some treasures still await.
+        Pero la señal fue real.'
+      - 'Aún quedan tesoros esperando.
 
-        Let’s try a different path.'
-      - 'The result remained.
+        Probemos otro camino.'
+      - 'El resultado permaneció.
 
-        The position changed.'
-      - 'Time ran out.
+        La posición cambió.'
+      - 'Nada cambió.
 
-        Meaning didn''t.'
-      - 'So close.
+        Solo cambió tu posición.'
+      - 'El mundo no se volvió más amable.
 
-        The sound said so.'
-      - 'The map is still open.
+        Tú te volviste más preciso.'
+      - 'El instante pasó.
 
-        Come back to it.'
-      - 'The world’s rules stood firm.
+        El registro permanece.'
+      - 'El resultado no cambió.
 
-        The signal of possibility was real.'
-      - The world kept its rules.
-      - 'The moment passed.
+        Aun así, avanzaste.'
+      - 'La salida no cambió.
 
-        The record remains.'
-      - 'The sun sank,
+        Pero alcanzaste otro nivel.'
+      - 'El final fue el mismo.
 
-        and shadow covered the world once again.'
-      - 'The last grains of sand fell,
+        Pero quien llegó a él había cambiado.'
+      - 'El destino es el mismo —
 
-        and the story quietly came to a close.'
-      - 'The wind swept through,
+        pero ya no eres el viajero que eras.'
+      - 'El tiempo se cerró como una puerta.
 
-        and the footprints vanished without a trace.'
-      - 'The tide came in,
+        Tu mano seguía sobre el picaporte.'
+      - 'El tesoro permaneció oculto.
 
-        What once had been there returned to the sea.'
-      - 'Silence.
+        El camino no fue en vano.'
+      - 'La arena cayó.
 
-        Only time passed through.'
-      - "Victory and defeat \nare nothing more than grains of sand."
-      - 'The road goes on—or it ends.
+        La forma quedó.'
+      - 'Perdiste el instante,
 
-        Either way, it lies on the same earth.'
-      - "> Time ran out.\n> \n> Nothing else did."
-      - "> The outcome didn’t change.\n> \n> But your position did."
+        pero no el pulso.'
+      - 'El mundo siguió frío.
+
+        Tú seguiste de pie.'
+      - 'El mapa no cambió.
+
+        Tu lectura sí.'
+      - 'No era el final correcto.
+
+        Era la próxima señal.'
+      - 'El tiempo terminó.
+
+        La búsqueda no.'
     hard:
       pool:
-      - 'Even the aurora fades.
+      - 'El norte no perdona.
 
-        Come back with a new stride.'
-      - 'In a fragile world,
+        Tampoco miente.'
+      - 'El hielo conservó su forma.
 
-        haste shatters clarity before it can be found.'
-      - 'The moment slipped away.
+        Tú conservaste la tuya.'
+      - 'La distancia se cerró.
 
-        The meaning did not.'
-      - 'Winter is patient.
+        El tiempo no.'
+      - 'El mundo conservó sus reglas.
 
-        Be the same.'
-      - 'The sky kept moving.
+        Tú tocaste el borde.'
+      - 'No llegaste.
 
-        So will you.'
-      - 'The story moves on.
+        Pero la señal fue real.'
+      - 'Aún quedan tesoros esperando.
 
-        The end is not yet.'
-      - 'The stars were there, watching.
+        La próxima vez, otro camino.'
+      - 'El resultado permaneció.
 
-        Again.'
-      - 'Ice takes its time.
+        La posición cambió.'
+      - 'Nada cambió.
 
-        Neither do you.'
-      - 'The sky kept moving.
+        Solo cambió tu posición.'
+      - 'El mundo no se volvió más amable.
 
-        So can you.'
-      - 'The north has learned to wait.
+        Tú te volviste más preciso.'
+      - 'El instante pasó.
 
-        So should you.'
-      - 'This is an interlude
+        El registro permanece.'
+      - 'El resultado no cambió.
 
-        —It’s not over.'
-      - 'Like drifting clouds,
+        Aun así, avanzaste.'
+      - 'La salida no cambió.
 
-        don’t lose your flow—like a river.'
-      - 'The sound was near.
+        Pero alcanzaste otro nivel.'
+      - 'El final fue el mismo.
 
-        The distance was real.
+        Pero quien llegó a él había cambiado.'
+      - 'El destino es el mismo —
 
-        But that moment can’t be saved.'
-      - 'You were closing in.
+        pero ya no eres el viajero que eras.'
+      - 'El viento del norte siguió soplando.
 
-        Only time wasn’t.'
-      - 'The world held to its rules.
+        Tú aprendiste a leerlo.'
+      - 'La claridad llegó tarde,
 
-        You touched the edge of them.'
-      - "You didn’t reach the treasure. \nBut the signal was real."
-      - 'Nothing changed.
+        pero llegó.'
+      - 'La puerta se cerró.
 
-        Only your position did.'
-      - 'It wasn’t luck.
+        La forma del camino quedó.'
+      - 'La nieve no respondió.
 
-        Alignment.'
-      - 'The moment slipped away,
+        Tus pasos sí.'
+      - 'El cristal no se quebró.
 
-        but the record stayed.'
-      - 'You crossed fragile ground
+        Tu duda sí.'
+      - 'El tiempo no concedió nada.
 
-        and left the horizon unbroken.'
-      - "Nothing changed.\n Only your position did.\nNot luck.\nAlignment.\nThe moment passed.\nThe record remains."
-      - 'The sun sank,
+        La ruta enseñó algo.'
+      - 'El centro quedó lejos.
 
-        and shadow covered the world once again.'
-      - 'The last grains of sand fell,
+        La dirección quedó clara.'
+      - 'El frío lo redujo todo
 
-        and the story quietly came to a close.'
-      - 'The wind swept through,
+        a lo verdadero.'
+      - 'No fue victoria.
 
-        and the footprints vanished without a trace.'
-      - 'The tide came in,
+        Fue medida.'
+      - 'El mundo no cambió de juicio.
 
-        What once had been there returned to the sea.'
-      - 'Silence.
+        Tú cambiaste de postura.'
+      - 'La señal fue breve.
 
-        Only time passed through.'
-      - "Victory and defeat \nare nothing more than grains of sand."
-      - 'The road goes on—or it ends.
+        La viste.'
+      - 'El camino no cedió.
 
-        Either way, it lies on the same earth.'
-      - 'The season closed.
+        Tú tampoco del todo.'
+      - 'El tesoro esperó.
 
-        The land remained.'
-      - 'The path The path remains.
+        La experiencia no.'
+      - 'El silencio cayó primero.
 
-        Only your steps stopped.'
-      - 'Your time ran out.
+        Después, el tiempo.'
+      - 'Quedó una línea sin cruzar.
 
-        The sky didn’t.'
-      - 'It wasn’t rejection.
+        También quedó una razón para volver.'
+      - 'La noche cubrió el campo.
 
-        Only silence.'
-      - 'The world is still intact.
+        La memoria guardó el trayecto.'
+      - 'No alcanzaste el final.
 
-        You can return—changed.'
-      - 'The season ended.
+        Pero el final ya te vio venir.'
+      - 'El camino continúa — o termina aquí.
 
-        The forest remains.'
-      - 'The distance was closing.
+        De cualquier modo, descansa sobre la misma tierra.'
+      - 'Las estrellas no dieron respuesta.
 
-        Time kept its rhythm.'
-      - 'Your time came to a halt.
+        Pero dejaron una señal.'
+      - 'La escarcha cubrió la ruta.
 
-        The sky kept moving.'
-      - 'Not rejection
+        No borró tus pasos.'
+      - 'El intento terminó.
 
-        Just silence.'
-      - 'The path is still here.
+        La precisión quedó.'
+      - 'El tiempo fue más duro que el frío.
 
-        You can come back—changed.'
+        Aun así, llegaste más lejos.'
+      - 'No hubo atajo.
 
+        Solo aprendizaje.'
+      - 'La próxima vez, el mismo norte
+
+        no parecerá tan lejano.'
 version: 1
 quotes:
   outcome:
@@ -494,14 +537,11 @@ command:
     resultFalse: El objeto que tienes en la mano no es un Treasure Emerald.
   gameStart:
     playersOnly: Este comando solo puede ser usado por jugadores.
-    worldNotFound: '[TreasureRun] El mundo inicial no está configurado o no se pudo
-      encontrar.'
-    started: '¡Comienza la búsqueda del tesoro! Dificultad: {difficulty} | Límite
-      de tiempo: {timeLimit} segundos'
+    worldNotFound: '[TreasureRun] El mundo inicial no está configurado o no se pudo encontrar.'
+    started: '¡Comienza la búsqueda del tesoro! Dificultad: {difficulty} | Límite de tiempo: {timeLimit} segundos'
   stageCleanup:
     playersOnly: '&cSolo los jugadores pueden usar este comando.'
-    managerNotReady: '[TreasureRun] El administrador del escenario todavía no se ha
-      inicializado.'
+    managerNotReady: '[TreasureRun] El administrador del escenario todavía no se ha inicializado.'
     cleaned: '[TreasureRun] Se han limpiado {count} bloques de dificultad.'
   noPermission: '&cNo tienes permiso.'
   onlyPlayer: '&cEste comando solo puede ser usado por un jugador.'
@@ -510,22 +550,17 @@ command:
     success: '&aRecarga completa.'
     fail: '&cFallo al recargar: {reason}'
   lang:
-    guiCancelledGameStart: Se canceló la selección de idioma. Para volver a intentarlo,
-      ejecuta /gameStart <easy|normal|hard>.
-    guiCancelledGameMenu: Se canceló la selección de idioma. Para abrirla de nuevo,
-      ejecuta /gameMenu gui.
-    guiTooManyShown: Se configuraron demasiados idiomas permitidos, por lo que la
-      GUI solo muestra los primeros 27.
+    guiCancelledGameStart: Se canceló la selección de idioma. Para volver a intentarlo, ejecuta /gameStart <easy|normal|hard>.
+    guiCancelledGameMenu: Se canceló la selección de idioma. Para abrirla de nuevo, ejecuta /gameMenu gui.
+    guiTooManyShown: Se configuraron demasiados idiomas permitidos, por lo que la GUI solo muestra los primeros 27.
     playersOnly: Este comando solo puede ser utilizado por jugadores.
-    resetDone: ✅ Tu idioma guardado se ha restablecido. La próxima vez se abrirá la
-      interfaz.
+    resetDone: ✅ Tu idioma guardado se ha restablecido. La próxima vez se abrirá la interfaz.
     current: 'Idioma actual: {lang}'
     emptyCode: 'El código de idioma está vacío. Ejemplo: /lang ja'
     notAllowed: 'Ese idioma no está permitido: {lang}'
     allowedList: 'Idiomas permitidos: {allowed}'
     changed: '✅ Idioma cambiado: {displayName} ({lang})'
-    changedButNotSaved: '⚠ El idioma se cambió, pero no se pudo guardar de forma permanente:
-      {lang}'
+    changedButNotSaved: '⚠ El idioma se cambió, pero no se pudo guardar de forma permanente: {lang}'
     list:
       title: === Idiomas ===
       default: 'predeterminado: {default}'
@@ -539,8 +574,7 @@ command:
     success: '&b¡Has fabricado una Esmeralda Especial con 3 diamantes!'
   quoteFavorite:
     latestSaved: La cita más reciente se guardó en Favoritos.
-    latestNotSaved: No se pudo guardar la cita más reciente. Puede que aún no haya
-      registros o que ya esté en Favoritos.
+    latestNotSaved: No se pudo guardar la cita más reciente. Puede que aún no haya registros o que ya esté en Favoritos.
     playersOnly: '&cEste comando solo puede ser usado por jugadores.'
     repositoryNotReady: Favoritos todavía no está disponible.
     listHeader: '&bFavoritos ({count})'
@@ -554,8 +588,7 @@ command:
     openBookFailed: '&cNo se pudo abrir el libro.'
     unknownSubcommand: '&cSubcomando desconocido. Consulta /quoteFavorite help.'
     shortcutSaved: La cita más reciente se guardó en Favoritos.
-    shortcutNotSaved: No se pudo guardar la cita más reciente. Puede que aún no haya
-      registros o que ya esté en Favoritos.
+    shortcutNotSaved: No se pudo guardar la cita más reciente. Puede que aún no haya registros o que ya esté en Favoritos.
     help:
       title: '&bComandos de QuoteFavorite'
       latest: '&7/quoteFavorite latest  - guardar la cita más reciente como favorita'
@@ -617,55 +650,44 @@ game:
     cursor_7fabae3f: / cursor=
     return_whoclicked_is_not_pla_a7675648: 'RETURN: whoClicked is not Player'
     return_topinventory_is_not_m_9936e6de: 'RETURN: topInventory is not MERCHANT'
-    return_not_result_slot_expec_9eb8c2c8: 'RETURN: not result slot. expected rawSlot=2
-      but was'
+    return_not_result_slot_expec_9eb8c2c8: 'RETURN: not result slot. expected rawSlot=2 but was'
     shift_53e51de9: ', shift='
-    return_topinventory_is_merch_fa2f5d98: 'RETURN: topInventory is MERCHANT but not
-      MerchantInventory instance'
+    return_topinventory_is_merch_fa2f5d98: 'RETURN: topInventory is MERCHANT but not MerchantInventory instance'
     merchant_view_title_daf2a73a: merchant view title=
     treasure_shop_2574a694: treasure shop
     return_not_treasure_shop_tit_8e65ad3d: 'RETURN: not Treasure Shop title. plainTitle='
     return_current_item_is_null_0f27c9fd: 'RETURN: current item is null'
     return_current_item_is_air_76b5e623: 'RETURN: current item is AIR'
-    return_current_item_is_not_g_d1d65218: 'RETURN: current item is not GOLDEN_APPLE.
-      type='
+    return_current_item_is_not_g_d1d65218: 'RETURN: current item is not GOLDEN_APPLE. type='
     return_game_is_not_running_048d7edb: 'RETURN: game is not running'
     ingredients_snapshot_98cb38c3: ingredients snapshot
-    return_ingredient_check_fail_673860d5: 'RETURN: ingredient check failed (need
-      TreasureEmerald>=5 and slot1 empty)'
-    ok_passed_all_checks_schedul_11e17905: 'OK: passed all checks -> scheduling effect
-      with runTaskLater'
+    return_ingredient_check_fail_673860d5: 'RETURN: ingredient check failed (need TreasureEmerald>=5 and slot1 empty)'
+    ok_passed_all_checks_schedul_11e17905: 'OK: passed all checks -> scheduling effect with runTaskLater'
     run_runtasklater_executed_96d7e049: 'RUN: runTaskLater executed'
     return_later_game_is_not_run_9cc569aa: 'RETURN(LATER): game is not running'
     return_later_player_is_offli_863a8cdc: 'RETURN(LATER): player is offline'
-    return_later_openinventory_t_7b809b57: 'RETURN(LATER): openInventory/topInventory
-      is null'
-    return_later_topinventory_is_f8714cf5: 'RETURN(LATER): topInventory is not MERCHANT.
-      type='
+    return_later_openinventory_t_7b809b57: 'RETURN(LATER): openInventory/topInventory is null'
+    return_later_topinventory_is_f8714cf5: 'RETURN(LATER): topInventory is not MERCHANT. type='
     treasure_shop_2574a694_822: treasure shop
-    return_later_not_treasure_sh_fcce2bb9: 'RETURN(LATER): not Treasure Shop title.
-      plainTitle='
+    return_later_not_treasure_sh_fcce2bb9: 'RETURN(LATER): not Treasure Shop title. plainTitle='
     ok_later_playing_effects_now_b80a2e0e: 'OK(LATER): playing effects now'
     k_llun_r_dj_pinu_16494877: '&6&lKöllun úr djúpinu'
     trade_complete_4a4b1d6f: Trade complete!
     a_hidden_power_awakens_7620bc4d: A hidden power awakens…
     mobcontrol_wolf_allowed_cust_a5459084: '[MobControl] WOLF allowed (CUSTOM). name='
     rainbow_wolf_b3cc6257: Rainbow Wolf
-    mobcontrol_wolf_allowed_name_9cc5a59a: '[MobControl] WOLF allowed (name match).
-      reason='
+    mobcontrol_wolf_allowed_name_9cc5a59a: '[MobControl] WOLF allowed (name match). reason='
     mobcontrol_wolf_cancelled_re_1a3b2e1a: '[MobControl] WOLF cancelled! reason='
     stagemobcontrollistener_refl_08ad690a: '⚠ StageMobControlListener: カウントダウン判定(reflection)に失敗。ゲーム中のみ制御します。原因:'
     stagemobcontrollistener_refl_d8a61972: '⚠ StageMobControlListener: reflection初期化に失敗。ゲーム中のみ制御します。原因:'
     mysql_connection_established_47452dfd: MySQL connection established successfully!
     failed_to_connect_to_mysql_95e4d50a: 'Failed to connect to MySQL:'
-    create_table_if_not_exists_p_136a7833: CREATE TABLE IF NOT EXISTS player_treasure_count
-      (
+    create_table_if_not_exists_p_136a7833: CREATE TABLE IF NOT EXISTS player_treasure_count (
     player_name_varchar_50_prima_79b8331b: player_name VARCHAR(50) PRIMARY KEY,
     count_int_not_null_660eadd8: count INT NOT NULL)
     failed_to_create_table_68199f98: 'Failed to create table:'
     reset_treasure_count_for_pla_96b152d2: 'Reset treasure count for player:'
-    dj_onalltreasurescollected_a871afdd: DJイベントはすでに実行中のため、onAllTreasuresCollected
-      をスキップしました。
+    dj_onalltreasurescollected_a871afdd: DJイベントはすでに実行中のため、onAllTreasuresCollected をスキップしました。
     on_duplicate_key_update_coun_a1543779: ON DUPLICATE KEY UPDATE count = ?
     failed_to_save_treasure_coun_9d94c0cc: 'Failed to save treasure count:'
     dj_triggerultimatedjevent_eb01ecae: DJイベントはすでに実行中のため、triggerUltimateDJEvent をスキップしました。
@@ -674,8 +696,7 @@ game:
     congratulations_38fd1594: §6Congratulations! 全ての宝物を見つけました！
     time_s_up_c5b3ef74: §c§lTIME'S UP!
     treasures_collected_ca7eab31: '§7Treasures collected: §e'
-    try_a_different_route_next_t_721a4d8b: §7Try a different route next time — or
-      use §e/gamestart §7<§eeasy§7|§enormal§7|§ehard§7> §7to retry.
+    try_a_different_route_next_t_721a4d8b: §7Try a different route next time — or use §e/gamestart §7<§eeasy§7|§enormal§7|§ehard§7> §7to retry.
 sound:
   sparkle: '&b* brillo *'
   start: '&7(BGM inicia...)'
@@ -734,23 +755,19 @@ favorites:
     rereadTitle: Releer
     sub: Explorar por capítulo
   auto:
-    treasurerun_favorites_templa_a0a4bf2e: '[TreasureRun] favorites_templates.yml
-      created.'
+    treasurerun_favorites_templa_a0a4bf2e: '[TreasureRun] favorites_templates.yml created.'
     mysql_repository_not_ready_72df0af1: MySQL / Repository not ready.
     favorite_saved_sneak_rightcl_7a73eb4f: ★ Favorite saved! (Sneak+RightClick)
     quotefavoritestore_reloaded__3ba623a3: '[QuoteFavoriteStore] Reloaded DB: host='
-    where_player_uuid_and_quote__36106f85: WHERE player_uuid=? AND quote_hash=? LIMIT
-      1
+    where_player_uuid_and_quote__36106f85: WHERE player_uuid=? AND quote_hash=? LIMIT 1
     quotefavoritestore_exists_fa_7d08adba: '[QuoteFavoriteStore] exists failed:'
-    player_uuid_quote_hash_outco_49f06b31: (player_uuid, quote_hash, outcome, difficulty,
-      lang, quote_text)
+    player_uuid_quote_hash_outco_49f06b31: (player_uuid, quote_hash, outcome, difficulty, lang, quote_text)
     values_643f4d2f: VALUES (?, ?, ?, ?, ?, ?)
     quotefavoritestore_addfavori_44fb1d75: '[QuoteFavoriteStore] addFavorite failed:'
     where_player_uuid_and_quote__81bcaee5: WHERE player_uuid=? AND quote_hash=?
     quotefavoritestore_removefav_8180a1e4: '[QuoteFavoriteStore] removeFavorite failed:'
     where_player_uuid_and_id_f4a80773: WHERE player_uuid=? AND id=?
-    quotefavoritestore_removefav_d024b1e5: '[QuoteFavoriteStore] removeFavoriteById
-      failed:'
+    quotefavoritestore_removefav_d024b1e5: '[QuoteFavoriteStore] removeFavoriteById failed:'
     where_player_uuid_53558ea9: WHERE player_uuid=?
     order_by_created_at_desc_lim_f22988c0: ORDER BY created_at DESC LIMIT ?
     quotefavoritestore_listfavor_f3e976d4: '[QuoteFavoriteStore] listFavoritos failed:'
@@ -766,8 +783,7 @@ commands:
   3_71b78a44: ダイヤモンド3個でスペシャルエメラルドを作成しました！
   text_3030fd61: プレイヤーのみ実行できます
   op_10caf0f6: 権限がありません（OP限定）
-  debug_mode_is_off_config_yml_b3d27428: 'Debug mode is OFF. config.yml の debug: true
-    にしてください'
+  debug_mode_is_off_config_yml_b3d27428: 'Debug mode is OFF. config.yml の debug: true にしてください'
   rank_1_2_3_demo_d87f40da: '使い方: /rank <1|2|3|demo>'
   rank_1_2_3_demo_4f3e3084: '数字で入力してください: /rank <1|2|3|demo>'
   1_3_rank_1_2_3_7f459bd0: '1〜3だけ使えます: /rank <1|2|3>'
@@ -783,29 +799,20 @@ commands:
   mysql_repository_not_ready_72df0af1: MySQL / Repository not ready.
   mysql_repository_not_ready_72df0af1_93: MySQL / Repository not ready.
   mysql_repository_not_ready_72df0af1_119: MySQL / Repository not ready.
-  quotefavorite_book_open_cata_055de855: /quoteFavorite book            - open catalog
-    (full)
-  quotefavorite_book_toc_open__c7d02ede: /quoteFavorite book toc        - open catalog
-    (TOC only)
-  quotefavorite_book_success_o_afe31501: /quoteFavorite book success    - open SUCCESS
-    chapter
-  quotefavorite_book_timeup_op_08b799b0: /quoteFavorite book timeup     - open TIME_UP
-    chapter
-  quotefavorite_book_other_ope_bdcbafba: /quoteFavorite book other      - open OTHER
-    chapter
-  success_normal_en_the_obstac_b627a544: 【SUCCESS / Normal / en】\nThe obstacle is
-    the way.
+  quotefavorite_book_open_cata_055de855: /quoteFavorite book            - open catalog (full)
+  quotefavorite_book_toc_open__c7d02ede: /quoteFavorite book toc        - open catalog (TOC only)
+  quotefavorite_book_success_o_afe31501: /quoteFavorite book success    - open SUCCESS chapter
+  quotefavorite_book_timeup_op_08b799b0: /quoteFavorite book timeup     - open TIME_UP chapter
+  quotefavorite_book_other_ope_bdcbafba: /quoteFavorite book other      - open OTHER chapter
+  success_normal_en_the_obstac_b627a544: 【SUCCESS / Normal / en】\nThe obstacle is the way.
   time_up_bc0cd646: TIME UP
 debug:
   istreasureemerald_fb6fecec: isTreasureEmerald =
-  chestsound_start_called_16th_e2a7414b: §b[ChestSound] start() called (16th-grid
-    mode)
+  chestsound_start_called_16th_e2a7414b: §b[ChestSound] start() called (16th-grid mode)
   chestsound_chests_0_82465b3c: §7[ChestSound] chests=0
-  chestsound_d_1fm_s_t_2f_step_6e3e0fdb: §b[ChestSound] §fD=§e%.1fm §7(%s§7) §ft=§a%.2f
-    §7step=%d bar=%d
+  chestsound_d_1fm_s_t_2f_step_6e3e0fdb: §b[ChestSound] §fD=§e%.1fm §7(%s§7) §ft=§a%.2f §7step=%d bar=%d
   chestsound_nearest_1fm_s_t_2_e2465135: §b[ChestSound] nearest=%.1fm %s  t=%.2f
-  reward_giverankrewardwitheff_5e361189: '[Reward] giveRankRewardWithEffect called
-    player='
+  reward_giverankrewardwitheff_5e361189: '[Reward] giveRankRewardWithEffect called player='
   starttheme_startgame_called__9cf42cbe: '[StartTheme] startGame called by'
 items:
   text_7567bb35: 特製エメラルドのレシピを登録しました。
@@ -863,8 +870,7 @@ ui:
       hint:
         reopenMenu: 'Hint: use /gameMenu to open this again.'
       note:
-        bookFormat: Minecraft books cannot switch tabs by clicking, so sections are
-          shown as pages.
+        bookFormat: Minecraft books cannot switch tabs by clicking, so sections are shown as pages.
   quote:
     footer:
       dbLogs: '(BD: proverb_logs)'
@@ -946,8 +952,7 @@ gameplay:
       score: Puntuación
       time: Tiempo
       rank: Rango
-    allChestsOpenedBroadcast: '¡{player} abrió todos los cofres! Puntuación final:
-      {score}'
+    allChestsOpenedBroadcast: '¡{player} abrió todos los cofres! Puntuación final: {score}'
     summaryLine: 'Tiempo: {time}  Puntuación: {score}  Rango: {rank}'
     gotLine: 'Cofres: {got}/{total}'
   setup:
