@@ -9,13 +9,13 @@ outcome:
       pool:
       - 'Tu es arrivé.
 
-        La vérité demeure.'
-      - 'Même si ce n’était qu’un petit pas,
+        La vérité reste.'
+      - 'Même si ce n’était qu’un pas modeste,
 
         tu as tenu bon.'
       - 'Tu as écouté.
 
-        Et le chemin s’est ouvert.'
+        Alors le chemin s’est ouvert.'
       - '> Tu es arrivé jusqu’ici.
 
         >
@@ -24,44 +24,44 @@ outcome:
 
         >
 
-        > le choix t’appartenait.'
+        > le choix était le tien.'
       - '> La distance a pris sens.
 
         >
 
-        > Et le temps a répondu à tes pas.'
+        > Et le temps a répondu à chacun de tes pas.'
       - '> Toute lumière ne brille pas éternellement.
 
         >
 
         > Mais cet instant, lui, a brillé.'
-      - 'La lumière est descendue doucement,
+      - 'La lumière est tombée doucement,
 
         et toutes les ombres se sont retirées.'
       - 'Le vent s’est tu.
 
-        Tout est revenu à sa place.'
-      - 'Un instant de silence.
+        Tout a repris sa place.'
+      - 'Un silence, un instant.
 
         Le monde a repris son souffle.'
-      - 'La trace s’est gravée dans le sable —
+      - 'La trace s’est inscrite dans le sable —
 
-        là où le vent ne l’atteint plus.'
-      - 'L’équilibre a été rétabli.
+        là où le vent ne l’efface plus.'
+      - 'L’équilibre est revenu.
 
         Tout menait à cet instant.'
       - 'Le temps a glissé en silence,
 
-        préservé dans un recoin de la mémoire.'
+        à l’abri dans un recoin de la mémoire.'
       - 'Le ciel a changé de couleur,
 
-        et une histoire a trouvé sa fin.'
+        et une histoire s’est achevée.'
       - 'Les vagues se sont apaisées,
 
-        et la mer a de nouveau caché ses profondeurs.'
+        et la mer a de nouveau gardé ses profondeurs.'
       - 'Les pas se sont arrêtés,
 
-        et seul le lieu est resté.'
+        et le lieu seul est resté.'
       - 'Victoire et défaite —
 
         au fond, ce ne sont que des grains de sable.'
@@ -70,159 +70,159 @@ outcome:
         Dans les deux cas, elle repose sur la même terre.'
     normal:
       pool:
-      - 'La distance a enfin trouvé son sens.
+      - 'La distance a enfin pris sens.
 
         Le temps a répondu à ton voyage.'
       - 'Le temps est écoulé.
 
-        Mais tout n’est pas terminé.'
+        Mais rien n’est vraiment terminé.'
       - 'L’axe a été trouvé.
 
-        Le monde a retenu son mouvement.'
+        Le monde a suspendu son mouvement.'
       - 'Le verre a retenu son souffle,
 
-        et tu as tenu bon.'
+        et toi, tu as tenu bon.'
       - 'Sous le ciel immobile,
 
-        ton esprit n’a pas vacillé.'
-      - 'Peu de choses brillent pour toujours.
+        ton esprit n’a pas tremblé.'
+      - 'Peu de choses brillent à jamais.
 
-        Mais cet instant était lumineux.'
+        Mais cet instant a brillé.'
       - 'Tu as traversé une terre fragile
 
-        sans perdre ton horizon.'
+        sans perdre de vue l’horizon.'
       - 'L’instant est passé.
 
-        Ce qui demeure demeure.'
-      - 'La chance se fane vite.
+        Ce qui reste demeure.'
+      - 'La chance s’efface vite.
 
         L’ordre demeure.'
-      - 'Le ciel ne connaît aucune pause dans son cercle infini,
+      - 'Le ciel ne marque aucune pause dans son cercle infini,
 
         et toi non plus, tu ne t’es pas arrêté.'
       - 'Tu as atteint le centre.
 
-        Le monde est resté immobile.'
+        Le monde s’est immobilisé.'
       - 'Te voilà enfin ici.
 
-        La vérité tient bon.'
+        La vérité demeure.'
       - 'Tu es allé jusqu’au bout.
 
-        Souviens-toi : ce chemin, c’est toi qui l’as choisi, et personne d’autre.'
+        Souviens-toi : ce chemin, c’est toi qui l’as choisi. Personne d’autre.'
       - 'Le temps a glissé vers le silence
 
-        et trouvé sa place dans les profondeurs de la mémoire.'
+        et trouvé sa place au fond de la mémoire.'
       - 'Tandis que le ciel changeait de couleur,
 
-        l’histoire a trouvé son dénouement.'
+        l’histoire a trouvé sa fin.'
       - 'Les eaux se sont calmées,
 
-        et le ciel a de nouveau voilé son abîme.'
+        et le ciel a de nouveau voilé l’abîme.'
       - 'Les pas se sont tus,
 
-        et seul le lieu est resté.'
-      - 'La lumière est descendue doucement,
+        et le lieu seul est resté.'
+      - 'La lumière est tombée doucement,
 
         et toutes les ombres se sont retirées.'
       - 'Le vent s’est tu.
 
-        Tout est revenu à sa place.'
-      - 'Un instant de silence.
+        Tout a repris sa place.'
+      - 'Un silence, un instant.
 
         Le monde a repris son souffle.'
-      - 'La trace s’est gravée dans le sable —
+      - 'La trace s’est inscrite dans le sable —
 
-        là où le vent ne l’atteint plus.'
-      - 'L’équilibre a été rétabli.
+        là où le vent ne l’efface plus.'
+      - 'L’équilibre est revenu.
 
         Tout menait à cet instant.'
       - 'Course terminée.
 
         Clair. Trouvé.
 
-        Cela suffit.'
+        Ça suffit.'
       - 'Course terminée.
 
         Le chemin a tenu.
 
         Toi aussi.'
-      - 'Le ciel a continué son mouvement.
+      - 'Le ciel a poursuivi sa course.
 
-        Toi aussi, tu le peux.'
+        Toi aussi, tu peux continuer.'
       - 'Course terminée.
 
-        Un résultat silencieux.
+        Un résultat discret.
 
         Le poids du vrai travail.'
       - 'Tu n’as fait que suivre le sentier
 
-        que le monde avait placé devant toi.'
+        que le monde avait tracé devant toi.'
       - 'La terre n’a pas cédé.
 
-        Elle a fait confiance à tes pas.'
+        Elle s’est fiée à tes pas.'
       - 'Cet instant s’est accordé
 
-        au rythme ancien des étoiles.'
+        au vieux rythme des étoiles.'
       - 'Tu n’as rien pris.
 
         Tu as compris quelque chose.'
-      - 'Tu n’as rien gagné pour toi.
+      - 'Tu n’as rien gagné pour toi seul.
 
         Tu as seulement vu la vérité telle qu’elle était.'
       - 'Tu n’as pas conquis ce lieu.
 
-        Tu y appartenais.'
-      - 'Tu as marché sur une voie
+        Tu en faisais partie.'
+      - 'Tu as emprunté une voie
 
         plus ancienne que la mémoire elle-même.'
       - 'La terre n’a pas résisté.
 
         Elle t’a reconnu.'
-      - 'Cet instant s’est aligné
+      - 'Cet instant s’est accordé
 
-        sur le silence des étoiles.'
+        au silence des étoiles.'
     hard:
       pool:
       - 'Dans le vent du nord,
 
-        la clarté dure plus longtemps que la vitesse.'
+        la clarté dure plus que la vitesse.'
       - 'Le centre a été trouvé.
 
-        Le monde a pu se reposer.'
-      - 'Les étoiles gardent le silence.
+        Le monde a pu s’apaiser.'
+      - 'Les étoiles se taisent.
 
         Ta trace parle pour toi.'
-      - 'Le résultat est resté.
+      - 'Le résultat tient.
 
         La position a changé.'
-      - 'Entre la glace et le verre,
+      - 'Entre glace et verre,
 
         tu as choisi la maîtrise.'
       - 'Les vagues se sont tues,
 
-        et la mer a repris ses profondeurs cachées.'
+        et la mer a repris ses profondeurs secrètes.'
       - 'D’autres trésors attendent encore.
 
-        La prochaine fois, un autre chemin.'
+        La prochaine fois, prends un autre chemin.'
       - 'Le ciel n’a pas changé.
 
-        Toi, si.'
+        Toi, oui.'
       - 'L’instant est passé.
 
-        Ce qui est resté, c’est l’ordre.'
+        Il n’est resté que l’ordre.'
       - 'L’hiver est honnête.
 
-        Ta course l’a été aussi.'
-      - 'Les étoiles se sont alignées un instant.
+        Ta course l’était aussi.'
+      - 'Les étoiles se sont alignées, un instant.
 
-        Tu l’as remarqué.'
+        Tu l’as vu.'
       - 'La distance s’est refermée.
 
-        Le temps, non.'
+        Le temps, lui, non.'
       - 'Les règles du monde sont restées fermes.
 
-        Et le signe du possible était réel.'
-      - 'Le chemin s’est refermé en silence.
+        Et le signe du possible était bien réel.'
+      - 'Le chemin s’est refermé sans bruit.
 
         Tu l’avais déjà traversé.'
       - 'Sous le ciel froid,
@@ -233,37 +233,37 @@ outcome:
         Mais rien n’a été perdu.'
       - 'Dans un monde fragile,
 
-        tu as appris à avancer sans le briser.'
-      - 'Le silence qui a suivi
+        tu as appris à avancer sans le rompre.'
+      - 'Le silence d’après
 
         a pesé plus lourd que le bruit.'
       - 'Le résultat n’a pas changé.
 
-        Mais tu as atteint un autre niveau.'
+        Mais tu as franchi un palier.'
       - 'Le point d’arrivée était le même.
 
-        Mais celui qui y est arrivé avait changé.'
-      - 'La destination est la même —
+        Mais celui qui l’a atteint avait changé.'
+      - 'La destination reste la même —
 
-        mais le voyageur n’est plus le même.'
+        mais le voyageur, lui, a changé.'
       - 'Le ciel est resté lointain.
 
         Ton pas, lui, était réel.'
       - 'Tu as traversé le froid
 
-        sans lui donner ton cœur.'
+        sans lui céder ton cœur.'
       - 'La lumière n’a pas promis de rester.
 
-        Tu as avancé malgré tout.'
+        Tu as avancé quand même.'
       - 'Le monde n’a pas applaudi.
 
-        Il a simplement laissé une trace.'
+        Il a simplement gardé la trace.'
       - 'La voie était étroite.
 
-        Ton jugement l’a été davantage.'
-      - 'Ce n’était pas de la vitesse.
+        Ton jugement l’était plus encore.'
+      - 'Ce n’était pas une question de vitesse.
 
-        C’était de la précision.'
+        C’était une question de précision.'
       - 'Chaque pas a compté.
 
         Même ceux que personne n’a vus.'
@@ -278,17 +278,17 @@ outcome:
         Il a seulement révélé ta forme.'
       - 'Ce qui semblait lointain
 
-        est devenu un lieu réel.'
+        est devenu un lieu véritable.'
   timeup:
     easy:
       pool:
       - 'Le temps est écoulé.
 
-        Rien d’autre ne l’est.'
+        Rien d’autre ne l’est vraiment.'
       - 'Le trésor peut attendre.
 
         Toi aussi.'
-      - 'Ce n’était qu’un commencement,
+      - 'Ce n’était qu’un début,
 
         pas un jugement.'
       - 'La route n’a pas disparu.
@@ -296,15 +296,15 @@ outcome:
         Elle s’est seulement tue pour aujourd’hui.'
       - 'Tu n’as pas échoué.
 
-        Tu as appris la distance.'
+        Tu as appris ce que vaut la distance.'
       - 'La course s’est arrêtée.
 
-        Toi, non.'
+        Pas toi.'
       - 'TEMPS ÉCOULÉ.
 
         La course s’est arrêtée.
 
-        Toi, non.'
+        Pas toi.'
       - 'TEMPS ÉCOULÉ.
 
         Le chemin reste là.
@@ -314,22 +314,22 @@ outcome:
 
         Le monde n’a pas fermé sa porte.
 
-        Il t’a seulement demandé de recommencer.'
+        Il t’a seulement demandé de revenir.'
       - 'Le ciel s’est assombri,
 
         mais la route n’a pas disparu.'
       - 'Les pas se sont arrêtés,
 
-        mais le lieu se souvient.'
+        mais le lieu s’en souvient.'
       - 'Même sans arrivée,
 
-        il y eut un chemin.'
+        il y a eu un chemin.'
       - 'Ce que tu n’as pas trouvé
 
         peut encore t’attendre.'
       - 'Le silence n’était pas une fin.
 
-        C’était une pause.'
+        Seulement une pause.'
       - 'Aujourd’hui, le temps a gagné.
 
         Demain, le chemin peut changer.'
@@ -338,18 +338,18 @@ outcome:
         si elle apprend au pied où revenir.'
     normal:
       pool:
-      - 'Le temps a choisi sa limite.
+      - 'Le temps a posé sa limite.
 
         Toi, tu peux encore choisir le chemin.'
       - 'La lumière s’est éloignée.
 
         Mais elle n’a pas disparu.'
-      - 'Le résultat est resté.
+      - 'Le résultat tient.
 
         La position a changé.'
       - 'La route s’est refermée.
 
-        Mais pas définitivement.'
+        Pas pour toujours.'
       - 'Ce n’était pas une victoire.
 
         C’était une mesure.'
@@ -358,13 +358,13 @@ outcome:
         Il a seulement demandé davantage.'
       - 'Tu n’as pas atteint le centre.
 
-        Mais tu en as appris le poids.'
+        Mais tu en as senti le poids.'
       - 'Le vent du nord ne juge pas.
 
-        Il mesure seulement.'
+        Il mesure, simplement.'
       - 'La distance est restée.
 
-        Mais elle a maintenant un nom.'
+        Mais désormais, elle a un nom.'
       - 'La fin est venue sans colère.
 
         Elle a seulement coupé le son.'
@@ -376,19 +376,19 @@ outcome:
         te montrera le prochain pas.'
       - 'La course s’est tue.
 
-        La leçon, non.'
-      - 'Le ciel a fermé son cercle.
+        Pas la leçon.'
+      - 'Le ciel a refermé son cercle.
 
-        Le chemin, lui, peut rouvrir.'
+        Le chemin, lui, peut se rouvrir.'
       - 'Tu n’es pas arrivé.
 
-        Mais tu as avancé pour de vrai.'
-      - 'Le lieu n’a pas été pris.
+        Mais tu as vraiment avancé.'
+      - 'Le lieu n’a pas été atteint.
 
-        Il a été aperçu.'
+        Il a été entrevu.'
       - 'Le trésor est resté loin.
 
-        Mais pas inconnu.'
+        Mais il n’est plus inconnu.'
       - 'Rien ne s’est effondré.
 
         Tout a simplement attendu.'
@@ -405,14 +405,14 @@ outcome:
         La trace demeure.'
       - 'Tu n’es pas arrivé.
 
-        Mais la mesure était réelle.'
+        Mais la mesure était juste.'
       - 'La vitesse n’a pas suffi.
 
         La clarté reviendra.'
-      - 'Le froid n’a pas parlé.
+      - 'Le froid n’a rien dit.
 
         Il t’a seulement observé.'
-      - 'La route était stricte.
+      - 'La route était sévère.
 
         Elle n’était pas injuste.'
       - 'Le ciel est resté haut.
@@ -429,7 +429,7 @@ outcome:
         Pas l’effort.'
       - 'L’épreuve n’a pas cédé.
 
-        Toi non plus complètement.'
+        Toi non plus, pas vraiment.'
       - 'Le temps a gagné cette manche.
 
         Pas toute l’histoire.'
@@ -442,7 +442,7 @@ outcome:
       - 'Le silence a compté chaque pas.
 
         Même les derniers.'
-      - 'Le verre n’a pas cassé.
+      - 'Le verre ne s’est pas brisé.
 
         Il a seulement refusé l’erreur.'
       - 'La distance est restée dure.
@@ -456,13 +456,13 @@ outcome:
         Mais tu as touché la limite.'
       - 'Le froid a gardé son secret.
 
-        Tu en as appris le contour.'
+        Tu en as deviné le contour.'
       - 'Ce n’était pas assez.
 
         Mais ce n’était pas rien.'
-      - 'Le nord n’accorde pas de détour.
+      - 'Le nord n’offre aucun détour.
 
-        Il laisse seulement des preuves.'
+        Il ne laisse que des preuves.'
       - 'La route n’a pas menti.
 
         Elle a demandé davantage.'
@@ -477,10 +477,10 @@ outcome:
         La carte, elle, s’est précisée.'
       - 'La fin fut silencieuse.
 
-        Le sens, non.'
+        Pas le sens.'
       - 'Le trésor n’a pas bougé.
 
-        Toi, si.'
+        Toi, oui.'
       - 'La perte n’a pas effacé l’effort.
 
         Elle l’a rendu visible.'
@@ -490,10 +490,10 @@ outcome:
       - 'Le froid a gardé la porte.
 
         Tu as trouvé la serrure.'
-      - 'Sous le nord,
+      - 'Sous le ciel du nord,
 
         même un petit pas est vrai.'
-      - 'Aucun raccourci.
+      - 'Pas de raccourci.
 
         Seulement l’apprentissage.'
       - 'Le monde n’a pas cédé.
@@ -501,16 +501,16 @@ outcome:
         Mais il t’a vu revenir.'
       - 'La mesure fut sévère.
 
-        Elle n’était pas vide.'
+        Elle n’était pas vaine.'
       - 'Le silence a fermé la scène.
 
-        Mais pas le chemin.'
+        Pas le chemin.'
       - 'Tu n’as pas gagné aujourd’hui.
 
         Mais tu as laissé une trace juste.'
       - 'La route n’a pas disparu.
 
-        Elle attend une meilleure lecture.'
+        Elle attend d’être mieux lue.'
       - 'Le dernier pas n’a pas suffi.
 
         Mais il comptait quand même.'

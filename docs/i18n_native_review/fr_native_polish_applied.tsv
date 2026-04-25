@@ -1,0 +1,332 @@
+lang	pool	index	old	new
+fr	outcome.success.easy.pool	1	"Tu es arrivé.
+La vérité demeure."	"Tu es arrivé.
+La vérité reste."
+fr	outcome.success.easy.pool	2	"Même si ce n’était qu’un petit pas,
+tu as tenu bon."	"Même si ce n’était qu’un pas modeste,
+tu as tenu bon."
+fr	outcome.success.easy.pool	3	"Tu as écouté.
+Et le chemin s’est ouvert."	"Tu as écouté.
+Alors le chemin s’est ouvert."
+fr	outcome.success.easy.pool	4	"> Tu es arrivé jusqu’ici.
+>
+> Les règles étaient simples —
+>
+> le choix t’appartenait."	"> Tu es arrivé jusqu’ici.
+>
+> Les règles étaient simples —
+>
+> le choix était le tien."
+fr	outcome.success.easy.pool	5	"> La distance a pris sens.
+>
+> Et le temps a répondu à tes pas."	"> La distance a pris sens.
+>
+> Et le temps a répondu à chacun de tes pas."
+fr	outcome.success.easy.pool	7	"La lumière est descendue doucement,
+et toutes les ombres se sont retirées."	"La lumière est tombée doucement,
+et toutes les ombres se sont retirées."
+fr	outcome.success.easy.pool	8	"Le vent s’est tu.
+Tout est revenu à sa place."	"Le vent s’est tu.
+Tout a repris sa place."
+fr	outcome.success.easy.pool	9	"Un instant de silence.
+Le monde a repris son souffle."	"Un silence, un instant.
+Le monde a repris son souffle."
+fr	outcome.success.easy.pool	10	"La trace s’est gravée dans le sable —
+là où le vent ne l’atteint plus."	"La trace s’est inscrite dans le sable —
+là où le vent ne l’efface plus."
+fr	outcome.success.easy.pool	11	"L’équilibre a été rétabli.
+Tout menait à cet instant."	"L’équilibre est revenu.
+Tout menait à cet instant."
+fr	outcome.success.easy.pool	12	"Le temps a glissé en silence,
+préservé dans un recoin de la mémoire."	"Le temps a glissé en silence,
+à l’abri dans un recoin de la mémoire."
+fr	outcome.success.easy.pool	13	"Le ciel a changé de couleur,
+et une histoire a trouvé sa fin."	"Le ciel a changé de couleur,
+et une histoire s’est achevée."
+fr	outcome.success.easy.pool	14	"Les vagues se sont apaisées,
+et la mer a de nouveau caché ses profondeurs."	"Les vagues se sont apaisées,
+et la mer a de nouveau gardé ses profondeurs."
+fr	outcome.success.easy.pool	15	"Les pas se sont arrêtés,
+et seul le lieu est resté."	"Les pas se sont arrêtés,
+et le lieu seul est resté."
+fr	outcome.success.normal.pool	1	"La distance a enfin trouvé son sens.
+Le temps a répondu à ton voyage."	"La distance a enfin pris sens.
+Le temps a répondu à ton voyage."
+fr	outcome.success.normal.pool	2	"Le temps est écoulé.
+Mais tout n’est pas terminé."	"Le temps est écoulé.
+Mais rien n’est vraiment terminé."
+fr	outcome.success.normal.pool	3	"L’axe a été trouvé.
+Le monde a retenu son mouvement."	"L’axe a été trouvé.
+Le monde a suspendu son mouvement."
+fr	outcome.success.normal.pool	4	"Le verre a retenu son souffle,
+et tu as tenu bon."	"Le verre a retenu son souffle,
+et toi, tu as tenu bon."
+fr	outcome.success.normal.pool	5	"Sous le ciel immobile,
+ton esprit n’a pas vacillé."	"Sous le ciel immobile,
+ton esprit n’a pas tremblé."
+fr	outcome.success.normal.pool	6	"Peu de choses brillent pour toujours.
+Mais cet instant était lumineux."	"Peu de choses brillent à jamais.
+Mais cet instant a brillé."
+fr	outcome.success.normal.pool	7	"Tu as traversé une terre fragile
+sans perdre ton horizon."	"Tu as traversé une terre fragile
+sans perdre de vue l’horizon."
+fr	outcome.success.normal.pool	8	"L’instant est passé.
+Ce qui demeure demeure."	"L’instant est passé.
+Ce qui reste demeure."
+fr	outcome.success.normal.pool	9	"La chance se fane vite.
+L’ordre demeure."	"La chance s’efface vite.
+L’ordre demeure."
+fr	outcome.success.normal.pool	10	"Le ciel ne connaît aucune pause dans son cercle infini,
+et toi non plus, tu ne t’es pas arrêté."	"Le ciel ne marque aucune pause dans son cercle infini,
+et toi non plus, tu ne t’es pas arrêté."
+fr	outcome.success.normal.pool	11	"Tu as atteint le centre.
+Le monde est resté immobile."	"Tu as atteint le centre.
+Le monde s’est immobilisé."
+fr	outcome.success.normal.pool	12	"Te voilà enfin ici.
+La vérité tient bon."	"Te voilà enfin ici.
+La vérité demeure."
+fr	outcome.success.normal.pool	13	"Tu es allé jusqu’au bout.
+Souviens-toi : ce chemin, c’est toi qui l’as choisi, et personne d’autre."	"Tu es allé jusqu’au bout.
+Souviens-toi : ce chemin, c’est toi qui l’as choisi. Personne d’autre."
+fr	outcome.success.normal.pool	14	"Le temps a glissé vers le silence
+et trouvé sa place dans les profondeurs de la mémoire."	"Le temps a glissé vers le silence
+et trouvé sa place au fond de la mémoire."
+fr	outcome.success.normal.pool	15	"Tandis que le ciel changeait de couleur,
+l’histoire a trouvé son dénouement."	"Tandis que le ciel changeait de couleur,
+l’histoire a trouvé sa fin."
+fr	outcome.success.normal.pool	16	"Les eaux se sont calmées,
+et le ciel a de nouveau voilé son abîme."	"Les eaux se sont calmées,
+et le ciel a de nouveau voilé l’abîme."
+fr	outcome.success.normal.pool	17	"Les pas se sont tus,
+et seul le lieu est resté."	"Les pas se sont tus,
+et le lieu seul est resté."
+fr	outcome.success.normal.pool	18	"La lumière est descendue doucement,
+et toutes les ombres se sont retirées."	"La lumière est tombée doucement,
+et toutes les ombres se sont retirées."
+fr	outcome.success.normal.pool	19	"Le vent s’est tu.
+Tout est revenu à sa place."	"Le vent s’est tu.
+Tout a repris sa place."
+fr	outcome.success.normal.pool	20	"Un instant de silence.
+Le monde a repris son souffle."	"Un silence, un instant.
+Le monde a repris son souffle."
+fr	outcome.success.normal.pool	21	"La trace s’est gravée dans le sable —
+là où le vent ne l’atteint plus."	"La trace s’est inscrite dans le sable —
+là où le vent ne l’efface plus."
+fr	outcome.success.normal.pool	22	"L’équilibre a été rétabli.
+Tout menait à cet instant."	"L’équilibre est revenu.
+Tout menait à cet instant."
+fr	outcome.success.normal.pool	23	"Course terminée.
+Clair. Trouvé.
+Cela suffit."	"Course terminée.
+Clair. Trouvé.
+Ça suffit."
+fr	outcome.success.normal.pool	25	"Le ciel a continué son mouvement.
+Toi aussi, tu le peux."	"Le ciel a poursuivi sa course.
+Toi aussi, tu peux continuer."
+fr	outcome.success.normal.pool	26	"Course terminée.
+Un résultat silencieux.
+Le poids du vrai travail."	"Course terminée.
+Un résultat discret.
+Le poids du vrai travail."
+fr	outcome.success.normal.pool	27	"Tu n’as fait que suivre le sentier
+que le monde avait placé devant toi."	"Tu n’as fait que suivre le sentier
+que le monde avait tracé devant toi."
+fr	outcome.success.normal.pool	28	"La terre n’a pas cédé.
+Elle a fait confiance à tes pas."	"La terre n’a pas cédé.
+Elle s’est fiée à tes pas."
+fr	outcome.success.normal.pool	29	"Cet instant s’est accordé
+au rythme ancien des étoiles."	"Cet instant s’est accordé
+au vieux rythme des étoiles."
+fr	outcome.success.normal.pool	31	"Tu n’as rien gagné pour toi.
+Tu as seulement vu la vérité telle qu’elle était."	"Tu n’as rien gagné pour toi seul.
+Tu as seulement vu la vérité telle qu’elle était."
+fr	outcome.success.normal.pool	32	"Tu n’as pas conquis ce lieu.
+Tu y appartenais."	"Tu n’as pas conquis ce lieu.
+Tu en faisais partie."
+fr	outcome.success.normal.pool	33	"Tu as marché sur une voie
+plus ancienne que la mémoire elle-même."	"Tu as emprunté une voie
+plus ancienne que la mémoire elle-même."
+fr	outcome.success.normal.pool	35	"Cet instant s’est aligné
+sur le silence des étoiles."	"Cet instant s’est accordé
+au silence des étoiles."
+fr	outcome.success.hard.pool	1	"Dans le vent du nord,
+la clarté dure plus longtemps que la vitesse."	"Dans le vent du nord,
+la clarté dure plus que la vitesse."
+fr	outcome.success.hard.pool	2	"Le centre a été trouvé.
+Le monde a pu se reposer."	"Le centre a été trouvé.
+Le monde a pu s’apaiser."
+fr	outcome.success.hard.pool	3	"Les étoiles gardent le silence.
+Ta trace parle pour toi."	"Les étoiles se taisent.
+Ta trace parle pour toi."
+fr	outcome.success.hard.pool	4	"Le résultat est resté.
+La position a changé."	"Le résultat tient.
+La position a changé."
+fr	outcome.success.hard.pool	5	"Entre la glace et le verre,
+tu as choisi la maîtrise."	"Entre glace et verre,
+tu as choisi la maîtrise."
+fr	outcome.success.hard.pool	6	"Les vagues se sont tues,
+et la mer a repris ses profondeurs cachées."	"Les vagues se sont tues,
+et la mer a repris ses profondeurs secrètes."
+fr	outcome.success.hard.pool	7	"D’autres trésors attendent encore.
+La prochaine fois, un autre chemin."	"D’autres trésors attendent encore.
+La prochaine fois, prends un autre chemin."
+fr	outcome.success.hard.pool	8	"Le ciel n’a pas changé.
+Toi, si."	"Le ciel n’a pas changé.
+Toi, oui."
+fr	outcome.success.hard.pool	9	"L’instant est passé.
+Ce qui est resté, c’est l’ordre."	"L’instant est passé.
+Il n’est resté que l’ordre."
+fr	outcome.success.hard.pool	10	"L’hiver est honnête.
+Ta course l’a été aussi."	"L’hiver est honnête.
+Ta course l’était aussi."
+fr	outcome.success.hard.pool	11	"Les étoiles se sont alignées un instant.
+Tu l’as remarqué."	"Les étoiles se sont alignées, un instant.
+Tu l’as vu."
+fr	outcome.success.hard.pool	12	"La distance s’est refermée.
+Le temps, non."	"La distance s’est refermée.
+Le temps, lui, non."
+fr	outcome.success.hard.pool	13	"Les règles du monde sont restées fermes.
+Et le signe du possible était réel."	"Les règles du monde sont restées fermes.
+Et le signe du possible était bien réel."
+fr	outcome.success.hard.pool	14	"Le chemin s’est refermé en silence.
+Tu l’avais déjà traversé."	"Le chemin s’est refermé sans bruit.
+Tu l’avais déjà traversé."
+fr	outcome.success.hard.pool	17	"Dans un monde fragile,
+tu as appris à avancer sans le briser."	"Dans un monde fragile,
+tu as appris à avancer sans le rompre."
+fr	outcome.success.hard.pool	18	"Le silence qui a suivi
+a pesé plus lourd que le bruit."	"Le silence d’après
+a pesé plus lourd que le bruit."
+fr	outcome.success.hard.pool	19	"Le résultat n’a pas changé.
+Mais tu as atteint un autre niveau."	"Le résultat n’a pas changé.
+Mais tu as franchi un palier."
+fr	outcome.success.hard.pool	20	"Le point d’arrivée était le même.
+Mais celui qui y est arrivé avait changé."	"Le point d’arrivée était le même.
+Mais celui qui l’a atteint avait changé."
+fr	outcome.success.hard.pool	21	"La destination est la même —
+mais le voyageur n’est plus le même."	"La destination reste la même —
+mais le voyageur, lui, a changé."
+fr	outcome.success.hard.pool	23	"Tu as traversé le froid
+sans lui donner ton cœur."	"Tu as traversé le froid
+sans lui céder ton cœur."
+fr	outcome.success.hard.pool	24	"La lumière n’a pas promis de rester.
+Tu as avancé malgré tout."	"La lumière n’a pas promis de rester.
+Tu as avancé quand même."
+fr	outcome.success.hard.pool	25	"Le monde n’a pas applaudi.
+Il a simplement laissé une trace."	"Le monde n’a pas applaudi.
+Il a simplement gardé la trace."
+fr	outcome.success.hard.pool	26	"La voie était étroite.
+Ton jugement l’a été davantage."	"La voie était étroite.
+Ton jugement l’était plus encore."
+fr	outcome.success.hard.pool	27	"Ce n’était pas de la vitesse.
+C’était de la précision."	"Ce n’était pas une question de vitesse.
+C’était une question de précision."
+fr	outcome.success.hard.pool	32	"Ce qui semblait lointain
+est devenu un lieu réel."	"Ce qui semblait lointain
+est devenu un lieu véritable."
+fr	outcome.timeup.easy.pool	1	"Le temps est écoulé.
+Rien d’autre ne l’est."	"Le temps est écoulé.
+Rien d’autre ne l’est vraiment."
+fr	outcome.timeup.easy.pool	3	"Ce n’était qu’un commencement,
+pas un jugement."	"Ce n’était qu’un début,
+pas un jugement."
+fr	outcome.timeup.easy.pool	5	"Tu n’as pas échoué.
+Tu as appris la distance."	"Tu n’as pas échoué.
+Tu as appris ce que vaut la distance."
+fr	outcome.timeup.easy.pool	6	"La course s’est arrêtée.
+Toi, non."	"La course s’est arrêtée.
+Pas toi."
+fr	outcome.timeup.easy.pool	7	"TEMPS ÉCOULÉ.
+La course s’est arrêtée.
+Toi, non."	"TEMPS ÉCOULÉ.
+La course s’est arrêtée.
+Pas toi."
+fr	outcome.timeup.easy.pool	9	"TEMPS ÉCOULÉ.
+Le monde n’a pas fermé sa porte.
+Il t’a seulement demandé de recommencer."	"TEMPS ÉCOULÉ.
+Le monde n’a pas fermé sa porte.
+Il t’a seulement demandé de revenir."
+fr	outcome.timeup.easy.pool	11	"Les pas se sont arrêtés,
+mais le lieu se souvient."	"Les pas se sont arrêtés,
+mais le lieu s’en souvient."
+fr	outcome.timeup.easy.pool	12	"Même sans arrivée,
+il y eut un chemin."	"Même sans arrivée,
+il y a eu un chemin."
+fr	outcome.timeup.easy.pool	14	"Le silence n’était pas une fin.
+C’était une pause."	"Le silence n’était pas une fin.
+Seulement une pause."
+fr	outcome.timeup.normal.pool	1	"Le temps a choisi sa limite.
+Toi, tu peux encore choisir le chemin."	"Le temps a posé sa limite.
+Toi, tu peux encore choisir le chemin."
+fr	outcome.timeup.normal.pool	3	"Le résultat est resté.
+La position a changé."	"Le résultat tient.
+La position a changé."
+fr	outcome.timeup.normal.pool	4	"La route s’est refermée.
+Mais pas définitivement."	"La route s’est refermée.
+Pas pour toujours."
+fr	outcome.timeup.normal.pool	7	"Tu n’as pas atteint le centre.
+Mais tu en as appris le poids."	"Tu n’as pas atteint le centre.
+Mais tu en as senti le poids."
+fr	outcome.timeup.normal.pool	8	"Le vent du nord ne juge pas.
+Il mesure seulement."	"Le vent du nord ne juge pas.
+Il mesure, simplement."
+fr	outcome.timeup.normal.pool	9	"La distance est restée.
+Mais elle a maintenant un nom."	"La distance est restée.
+Mais désormais, elle a un nom."
+fr	outcome.timeup.normal.pool	13	"La course s’est tue.
+La leçon, non."	"La course s’est tue.
+Pas la leçon."
+fr	outcome.timeup.normal.pool	14	"Le ciel a fermé son cercle.
+Le chemin, lui, peut rouvrir."	"Le ciel a refermé son cercle.
+Le chemin, lui, peut se rouvrir."
+fr	outcome.timeup.normal.pool	15	"Tu n’es pas arrivé.
+Mais tu as avancé pour de vrai."	"Tu n’es pas arrivé.
+Mais tu as vraiment avancé."
+fr	outcome.timeup.normal.pool	16	"Le lieu n’a pas été pris.
+Il a été aperçu."	"Le lieu n’a pas été atteint.
+Il a été entrevu."
+fr	outcome.timeup.normal.pool	17	"Le trésor est resté loin.
+Mais pas inconnu."	"Le trésor est resté loin.
+Mais il n’est plus inconnu."
+fr	outcome.timeup.hard.pool	2	"Tu n’es pas arrivé.
+Mais la mesure était réelle."	"Tu n’es pas arrivé.
+Mais la mesure était juste."
+fr	outcome.timeup.hard.pool	4	"Le froid n’a pas parlé.
+Il t’a seulement observé."	"Le froid n’a rien dit.
+Il t’a seulement observé."
+fr	outcome.timeup.hard.pool	5	"La route était stricte.
+Elle n’était pas injuste."	"La route était sévère.
+Elle n’était pas injuste."
+fr	outcome.timeup.hard.pool	10	"L’épreuve n’a pas cédé.
+Toi non plus complètement."	"L’épreuve n’a pas cédé.
+Toi non plus, pas vraiment."
+fr	outcome.timeup.hard.pool	15	"Le verre n’a pas cassé.
+Il a seulement refusé l’erreur."	"Le verre ne s’est pas brisé.
+Il a seulement refusé l’erreur."
+fr	outcome.timeup.hard.pool	19	"Le froid a gardé son secret.
+Tu en as appris le contour."	"Le froid a gardé son secret.
+Tu en as deviné le contour."
+fr	outcome.timeup.hard.pool	21	"Le nord n’accorde pas de détour.
+Il laisse seulement des preuves."	"Le nord n’offre aucun détour.
+Il ne laisse que des preuves."
+fr	outcome.timeup.hard.pool	26	"La fin fut silencieuse.
+Le sens, non."	"La fin fut silencieuse.
+Pas le sens."
+fr	outcome.timeup.hard.pool	27	"Le trésor n’a pas bougé.
+Toi, si."	"Le trésor n’a pas bougé.
+Toi, oui."
+fr	outcome.timeup.hard.pool	31	"Sous le nord,
+même un petit pas est vrai."	"Sous le ciel du nord,
+même un petit pas est vrai."
+fr	outcome.timeup.hard.pool	32	"Aucun raccourci.
+Seulement l’apprentissage."	"Pas de raccourci.
+Seulement l’apprentissage."
+fr	outcome.timeup.hard.pool	34	"La mesure fut sévère.
+Elle n’était pas vide."	"La mesure fut sévère.
+Elle n’était pas vaine."
+fr	outcome.timeup.hard.pool	35	"Le silence a fermé la scène.
+Mais pas le chemin."	"Le silence a fermé la scène.
+Pas le chemin."
+fr	outcome.timeup.hard.pool	37	"La route n’a pas disparu.
+Elle attend une meilleure lecture."	"La route n’a pas disparu.
+Elle attend d’être mieux lue."
