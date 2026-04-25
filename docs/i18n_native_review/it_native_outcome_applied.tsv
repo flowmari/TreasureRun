@@ -1,0 +1,497 @@
+lang	pool	index	old	new
+it	outcome.success.easy.pool	1	"You’ve made it.
+The truth remains."	"Ce l’hai fatta.
+La verità resta."
+it	outcome.success.easy.pool	2	"Even if it was only a small step,
+you held your ground."	"Anche se era solo un piccolo passo,
+hai tenuto saldo il terreno sotto di te."
+it	outcome.success.easy.pool	3	"You listened.
+ The path opened."	"Hai ascoltato.
+E il sentiero si è aperto."
+it	outcome.success.easy.pool	4	"> You made it here
+> 
+> The rules were simple —
+> 
+> the choice was yours."	"> Sei arrivato fin qui.
+>
+> Le regole erano semplici —
+>
+> la scelta era tua."
+it	outcome.success.easy.pool	5	"> Distance became meaning.
+> 
+> and time answered your footsteps."	"> La distanza ha preso significato.
+>
+> E il tempo ha risposto ai tuoi passi."
+it	outcome.success.easy.pool	6	"> Not everything shines forever.
+> 
+> But this moment did."	"> Non tutto ciò che brilla dura per sempre.
+>
+> Ma questo istante ha brillato."
+it	outcome.success.easy.pool	7	"Light fell evenly, ,
+and every shadow vanished."	"La luce è scesa piano,
+e ogni ombra si è ritirata."
+it	outcome.success.easy.pool	8	"The wind fell silent.
+and everything returned to where it belonged."	"Il vento si è placato.
+Ogni cosa è tornata al suo posto."
+it	outcome.success.easy.pool	9	"A moment of silence.
+The world steadied its breath."	"Un istante di silenzio.
+Il mondo ha ripreso fiato."
+it	outcome.success.easy.pool	10	"The record is etched deep in the sand—
+beyond the reach of the wind."	"La traccia si è incisa nella sabbia —
+là dove il vento non arriva più."
+it	outcome.success.easy.pool	11	"Harmony was restored.
+Everything had been for this moment."	"L’equilibrio è tornato.
+Tutto portava a questo istante."
+it	outcome.success.easy.pool	12	"Time slipped by in silence,
+tucked away in the corners of memory."	"Il tempo è scivolato via in silenzio,
+al riparo in un angolo della memoria."
+it	outcome.success.easy.pool	13	"The sky shifted in color,
+and one story came to its end."	"Il cielo ha cambiato colore,
+e una storia si è chiusa."
+it	outcome.success.easy.pool	14	"The waves grew calm,
+and the sea hid its depths once more."	"Le onde si sono calmate,
+e il mare ha custodito di nuovo le sue profondità."
+it	outcome.success.easy.pool	15	"The footsteps stopped,
+and only the place remained."	"I passi si sono fermati,
+e solo il luogo è rimasto."
+it	outcome.success.easy.pool	16	"Victory and defeat 
+are nothing more than grains of sand."	"Vittoria e sconfitta —
+in fondo, non sono che granelli di sabbia."
+it	outcome.success.easy.pool	17	"The road goes on—or it ends.
+Either way, it lies on the same earth."	"La strada continua — oppure finisce qui.
+In entrambi i casi, poggia sulla stessa terra."
+it	outcome.success.normal.pool	1	"The distance has found its meaning.
+Time has rewarded your journey."	"La distanza ha finalmente trovato il suo senso.
+Il tempo ha risposto al tuo viaggio."
+it	outcome.success.normal.pool	2	"The time is up.
+but the rest is far from over."	"Il tempo è scaduto.
+Ma non tutto è finito."
+it	outcome.success.normal.pool	3	"The axis is found.
+the world has cased its motion."	"L’asse è stato trovato.
+Il mondo ha sospeso il suo moto."
+it	outcome.success.normal.pool	4	"The glass held its breath,
+and you held your ground."	"Il vetro ha trattenuto il respiro,
+e tu hai tenuto duro."
+it	outcome.success.normal.pool	5	"Under the stillness of the sky,
+your spirit did not waver."	"Sotto il cielo immobile,
+il tuo spirito non ha vacillato."
+it	outcome.success.normal.pool	6	"Few things shine forever.
+but this moment was radiant."	"Poche cose brillano per sempre.
+Ma questo istante ha brillato."
+it	outcome.success.normal.pool	7	"You traversed the fragile earth,
+without losing the view."	"Hai attraversato una terra fragile
+senza perdere di vista l’orizzonte."
+it	outcome.success.normal.pool	8	"The moment has passed.
+The legacy remains."	"L’istante è passato.
+Ciò che resta, resta."
+it	outcome.success.normal.pool	9	"Luck fades fast.
+order endures."	"La fortuna svanisce in fretta.
+L’ordine rimane."
+it	outcome.success.normal.pool	10	"The sky knows no pause in endless circle,
+nor shall you find yours."	"Il cielo non conosce pause nel suo cerchio infinito,
+e nemmeno tu ti sei fermato."
+it	outcome.success.normal.pool	11	"The center has been reached.
+The world stood still."	"Hai raggiunto il centro.
+Il mondo si è fermato."
+it	outcome.success.normal.pool	12	"Finally here.
+The truth remains unyielding."	"Finalmente sei qui.
+La verità resta salda."
+it	outcome.success.normal.pool	13	"You have seen it through.
+And mark this: it was you, and no one else, who chose this path."	"Sei arrivato fino in fondo.
+Ricordalo: questa strada l’hai scelta tu, nessun altro."
+it	outcome.success.normal.pool	14	"Time drifted into silence,
+finding its place in the recesses of the mind."	"Il tempo è scivolato nel silenzio
+e ha trovato posto nel fondo della memoria."
+it	outcome.success.normal.pool	15	"As the sky transformed,
+the tale found its final resolved."	"Mentre il cielo cambiava colore,
+la storia ha trovato la sua fine."
+it	outcome.success.normal.pool	16	"The waters fell calm,
+and the sky once more veiled its abyss."	"Le acque si sono calmate,
+e il cielo ha velato di nuovo l’abisso."
+it	outcome.success.normal.pool	17	"The footsteps ceased,
+only the place remained."	"I passi si sono spenti,
+e solo il luogo è rimasto."
+it	outcome.success.normal.pool	18	"Light fell evenly, ,
+and every shadow vanished."	"La luce è scesa piano,
+e ogni ombra si è ritirata."
+it	outcome.success.normal.pool	19	"The wind fell silent.
+and everything returned to where it belonged."	"Il vento si è placato.
+Ogni cosa è tornata al suo posto."
+it	outcome.success.normal.pool	20	"A moment of silence.
+The world steadied its breath."	"Un istante di silenzio.
+Il mondo ha ripreso fiato."
+it	outcome.success.normal.pool	21	"The record is etched deep in the sand—
+beyond the reach of the wind."	"La traccia si è incisa nella sabbia —
+là dove il vento non arriva più."
+it	outcome.success.normal.pool	22	"Harmony was restored.
+Everything had been for this moment."	"L’equilibrio è tornato.
+Tutto portava a questo istante."
+it	outcome.success.normal.pool	23	"RUN COMPLETE.
+Clear. Found it.
+That's enough."	"Corsa completata.
+Chiaro. Trovato.
+Basta così."
+it	outcome.success.normal.pool	24	"RUN COMPLETE.
+The path held.
+So did you."	"Corsa completata.
+Il sentiero ha retto.
+Anche tu."
+it	outcome.success.normal.pool	25	"The sky has kept moving.
+So can you."	"Il cielo ha continuato il suo corso.
+Puoi farlo anche tu."
+it	outcome.success.normal.pool	26	"RUN COMPLETE.
+A quiet result.
+The weight of real work."	"Corsa completata.
+Un risultato quieto.
+Il peso del lavoro vero."
+it	outcome.success.normal.pool	27	"You only walked the path
+the world had laid out for you."	"Hai solo seguito il sentiero
+che il mondo aveva tracciato davanti a te."
+it	outcome.success.normal.pool	28	"The ground didn’t give way.
+It trusted your steps."	"La terra non ha ceduto.
+Si è fidata dei tuoi passi."
+it	outcome.success.normal.pool	29	"This moment aligned
+with the stars’ ancient rhythm."	"Questo istante si è accordato
+al ritmo antico delle stelle."
+it	outcome.success.normal.pool	30	"You didn’t take anything.
+ You understood something."	"Non hai preso nulla.
+Hai capito qualcosa."
+it	outcome.success.normal.pool	31	"You didn’t gain a thing.
+You only saw the truth for what it was."	"Non hai guadagnato nulla per te.
+Hai solo visto la verità per ciò che era."
+it	outcome.success.normal.pool	32	"You didn’t take this place.
+You belonged here."	"Non hai conquistato questo luogo.
+Ne facevi parte."
+it	outcome.success.normal.pool	33	"You walked a road
+older than memory itself."	"Hai percorso una via
+più antica della memoria stessa."
+it	outcome.success.normal.pool	34	"The earth did not resist.
+It recognized you."	"La terra non ha opposto resistenza.
+Ti ha riconosciuto."
+it	outcome.success.normal.pool	35	"This moment aligned
+ with the stillness of the stars."	"Questo istante si è accordato
+al silenzio delle stelle."
+it	outcome.success.hard.pool	1	"In the north wind,
+clarity outlasts speed."	"Nel vento del nord,
+la chiarezza dura più della velocità."
+it	outcome.success.hard.pool	2	"The center was found.
+ The world came to rest."	"Il centro è stato trovato.
+Il mondo ha potuto quietarsi."
+it	outcome.success.hard.pool	3	"The stars stay silent.
+Your record does the speaking."	"Le stelle tacciono.
+La tua traccia parla per te."
+it	outcome.success.hard.pool	4	"The result  remained.
+The position changed."	"Il risultato ha retto.
+La posizione è cambiata."
+it	outcome.success.hard.pool	5	"Between ice and glass,
+you chose control."	"Tra ghiaccio e vetro,
+hai scelto il controllo."
+it	outcome.success.hard.pool	6	"The waves fell quiet,
+and the sea reclaimed its hidden depths."	"Le onde si sono spente,
+e il mare ha ripreso le sue profondità segrete."
+it	outcome.success.hard.pool	7	"Some treasures still await.
+Next time, a different path."	"Altri tesori aspettano ancora.
+La prossima volta, un altro sentiero."
+it	outcome.success.hard.pool	8	"The sky didn’t change.
+You did."	"Il cielo non è cambiato.
+Tu sì."
+it	outcome.success.hard.pool	9	"The moment passed.
+What remained was order."	"L’istante è passato.
+È rimasto solo l’ordine."
+it	outcome.success.hard.pool	10	"Winter is honest.
+So was your run."	"L’inverno è onesto.
+Lo è stata anche la tua corsa."
+it	outcome.success.hard.pool	11	"The stars aligned for a moment.
+You noticed."	"Le stelle si sono allineate per un istante.
+Tu te ne sei accorto."
+it	outcome.success.hard.pool	12	"The distance closed.
+Time did not."	"La distanza si è chiusa.
+Il tempo no."
+it	outcome.success.hard.pool	13	"The world’s rules stood firm.
+ And the signal of possibility was real."	"Le regole del mondo sono rimaste salde.
+E il segno del possibile era reale."
+it	outcome.success.hard.pool	14	"The path closed quietly.
+You were already through."	"Il sentiero si è richiuso in silenzio.
+Tu lo avevi già attraversato."
+it	outcome.success.hard.pool	15	"Nothing changed.
+Only your position did."	"Hai trovato abbastanza.
+Il resto può aspettare."
+it	outcome.success.hard.pool	16	"Not luck.
+Alignment."	"Non hai ottenuto tutto.
+Ma nulla è andato perduto."
+it	outcome.success.hard.pool	17	"The moment passed.
+The record remains."	"La sabbia ha dimenticato i tuoi passi.
+Il risultato no."
+it	outcome.success.hard.pool	18	"The outcome didn’t change.
+Still, you moved forward."	"Il silenzio che è seguito
+pesava più del rumore."
+it	outcome.success.hard.pool	19	"The output didn’t change.
+But you reached a new level."	"Il risultato non è cambiato.
+Ma tu hai raggiunto un nuovo livello."
+it	outcome.success.hard.pool	20	"The ending was the same.
+But the one who reached it had changed."	"La meta era la stessa.
+Chi l’ha raggiunta, però, era cambiato."
+it	outcome.success.hard.pool	21	"The destination is the same
+—but you’re no longer the traveler you once were."	"La destinazione è la stessa —
+ma il viandante non è più lo stesso."
+it	outcome.success.hard.pool	22	"Light fell evenly, ,
+and every shadow vanished."	"Il mondo non ti ha aperto una scorciatoia.
+Ti ha lasciato passare."
+it	outcome.success.hard.pool	23	"The wind fell silent.
+and everything returned to where it belonged."	"Hai attraversato il margine
+senza spezzarlo."
+it	outcome.success.hard.pool	24	"A moment of silence.
+The world steadied its breath."	"Il vetro non si è infranto.
+Ha ricordato il tuo peso."
+it	outcome.success.hard.pool	25	"The record is etched deep in the sand—
+beyond the reach of the wind."	"La luce ha resistito
+finché non hai trovato il centro."
+it	outcome.success.hard.pool	26	"Harmony was restored.
+Everything had been for this moment."	"Non era fortuna.
+Era presenza."
+it	outcome.success.hard.pool	27	"Time slipped by in silence,
+tucked away in the corners of memory."	"Il tempo non ti ha concesso nulla.
+Tu hai preso il ritmo."
+it	outcome.success.hard.pool	28	"The sky shifted in color,
+and one story came to its end."	"Il mare ha tenuto il segreto.
+Tu hai trovato la via."
+it	outcome.success.hard.pool	29	"The waves grew calm,
+and the sea hid its depths once more."	"Hai raggiunto il bordo del silenzio
+senza perdere il tuo nome."
+it	outcome.success.hard.pool	30	"The footsteps stopped,
+and only the place remained."	"La corsa è finita.
+La misura resta."
+it	outcome.success.hard.pool	31	"Victory and defeat 
+are nothing more than grains of sand."	Sei arrivato dove il rumore non serve più.
+it	outcome.success.hard.pool	32	"The road goes on—or it ends.
+Either way, it lies on the same earth."	"Anche il freddo ha riconosciuto
+la forma dei tuoi passi."
+it	outcome.timeup.easy.pool	1	"Time ran out.
+Nothing else did."	"Il tempo è finito.
+Nient’altro."
+it	outcome.timeup.easy.pool	2	"The treasure can wait.
+So can you."	"Il tesoro può aspettare.
+Anche tu puoi."
+it	outcome.timeup.easy.pool	3	"Breathe in.
+Then again."	"Questo era un inizio,
+non una condanna."
+it	outcome.timeup.easy.pool	4	"That’s all for now.
+On to the next step."	"Non sei arrivato.
+Ma hai visto la strada."
+it	outcome.timeup.easy.pool	5	"You're still here.
+That’s what matters."	"Non hai fallito.
+Hai imparato la distanza."
+it	outcome.timeup.easy.pool	6	"The run ended.
+You didn’t."	"La corsa si è fermata.
+Tu no."
+it	outcome.timeup.easy.pool	7	"TIME'S UP.
+The run ended.
+You didn't."	"TEMPO SCADUTO.
+La corsa è finita.
+Tu no."
+it	outcome.timeup.easy.pool	8	"TIME'S UP.
+The rules don’t change.
+Again."	"TEMPO SCADUTO.
+Il sentiero resta.
+Anche tu."
+it	outcome.timeup.easy.pool	9	"TIME'S UP.
+“So close” is real."	"Il mondo non ti ha chiuso fuori.
+Ti ha solo chiesto un altro tentativo."
+it	outcome.timeup.easy.pool	10	"The sun sank,
+and shadow covered the world once again."	"Il silenzio non era una fine.
+Era una pausa."
+it	outcome.timeup.easy.pool	11	"The last grains of sand fell,
+and the story quietly came to a close."	"Il vento ha coperto la traccia.
+Non il cammino."
+it	outcome.timeup.easy.pool	12	"The wind swept through,
+and the footprints vanished without a trace."	"Un passo mancava.
+Il resto rimane."
+it	outcome.timeup.easy.pool	13	"The tide came in,
+What once had been there returned to the sea."	"La sabbia ha preso il tempo.
+Non il senso."
+it	outcome.timeup.easy.pool	14	"Silence.
+Only time passed through."	"La porta si è chiusa piano.
+La strada no."
+it	outcome.timeup.easy.pool	15	"Victory and defeat 
+are nothing more than grains of sand."	Non tutto si trova al primo passaggio.
+it	outcome.timeup.easy.pool	16	"The road goes on—or it ends.
+Either way, it lies on the same earth."	La prossima corsa saprà già il tuo nome.
+it	outcome.timeup.normal.pool	1	"The distance closed.
+Time did not."	"Il tempo è scaduto.
+Ma la strada non è scomparsa."
+it	outcome.timeup.normal.pool	2	"The world kept its rules.
+You touched the edge."	"Non sei arrivato in tempo.
+Eppure qualcosa si è mosso."
+it	outcome.timeup.normal.pool	3	"You didn’t make it.
+But the signal was real."	"Il risultato ha retto.
+La posizione è cambiata."
+it	outcome.timeup.normal.pool	4	"Some treasures still await.
+Let’s try a different path."	"La luce si è ritirata.
+La direzione resta."
+it	outcome.timeup.normal.pool	5	"The result remained.
+The position changed."	"Il silenzio ha segnato il punto.
+Riparti da lì."
+it	outcome.timeup.normal.pool	6	"Time ran out.
+Meaning didn't."	"La distanza è rimasta.
+Ora però ha un nome."
+it	outcome.timeup.normal.pool	7	"So close.
+The sound said so."	"Il vento del nord non giudica.
+Misura soltanto."
+it	outcome.timeup.normal.pool	8	"The map is still open.
+Come back to it."	"Non hai perso la via.
+Hai incontrato il suo limite."
+it	outcome.timeup.normal.pool	9	"The world’s rules stood firm.
+The signal of possibility was real."	"La corsa si è chiusa.
+Il cammino no."
+it	outcome.timeup.normal.pool	10	The world kept its rules.	"Ciò che non hai raggiunto
+può ancora chiamarti."
+it	outcome.timeup.normal.pool	11	"The moment passed.
+The record remains."	"Il tempo ha vinto questa volta.
+Non per sempre."
+it	outcome.timeup.normal.pool	12	"The sun sank,
+and shadow covered the world once again."	"Il vetro ha tremato.
+Tu sei rimasto."
+it	outcome.timeup.normal.pool	13	"The last grains of sand fell,
+and the story quietly came to a close."	"La mappa non è finita.
+Si è solo piegata."
+it	outcome.timeup.normal.pool	14	"The wind swept through,
+and the footprints vanished without a trace."	"Il mondo non ha cancellato i tuoi passi.
+Li ha messi da parte."
+it	outcome.timeup.normal.pool	15	"The tide came in,
+What once had been there returned to the sea."	"La sconfitta è stata quieta.
+Anche questo è un segno."
+it	outcome.timeup.normal.pool	16	"Silence.
+Only time passed through."	"Il centro non si è mosso.
+Aspetta ancora."
+it	outcome.timeup.normal.pool	17	"Victory and defeat 
+are nothing more than grains of sand."	Hai imparato il peso del margine.
+it	outcome.timeup.normal.pool	18	"The road goes on—or it ends.
+Either way, it lies on the same earth."	"Il silenzio dopo l’errore
+può diventare una mappa."
+it	outcome.timeup.normal.pool	19	"> Time ran out.
+> 
+> Nothing else did."	"Il cielo ha chiuso la scena.
+Non il cammino."
+it	outcome.timeup.normal.pool	20	"> The outcome didn’t change.
+> 
+> But your position did."	"La prossima volta,
+il tempo ti riconoscerà prima."
+it	outcome.timeup.hard.pool	1	"Even the aurora fades.
+Come back with a new stride."	"Non sei arrivato in tempo.
+Ma la misura era reale."
+it	outcome.timeup.hard.pool	2	"In a fragile world,
+haste shatters clarity before it can be found."	"Il freddo non perdona.
+Però insegna."
+it	outcome.timeup.hard.pool	3	"The moment slipped away.
+The meaning did not."	"Il tempo si è chiuso.
+La tua traccia è rimasta."
+it	outcome.timeup.hard.pool	4	"Winter is patient.
+Be the same."	"Hai mancato il centro.
+Non hai mancato il significato."
+it	outcome.timeup.hard.pool	5	"The sky kept moving.
+So will you."	"Il vetro ha tenuto.
+Il tempo no."
+it	outcome.timeup.hard.pool	6	"The story moves on.
+The end is not yet."	"La corsa è finita ai margini.
+E i margini parlano."
+it	outcome.timeup.hard.pool	7	"The stars were there, watching.
+Again."	"Non c’erano scorciatoie.
+Solo apprendimento."
+it	outcome.timeup.hard.pool	8	"Ice takes its time.
+Neither do you."	"L’ombra è arrivata prima.
+Tu sei arrivato comunque."
+it	outcome.timeup.hard.pool	9	"The sky kept moving.
+So can you."	"Il mare ha ripreso il segreto.
+Ma non la tua memoria."
+it	outcome.timeup.hard.pool	10	"The north has learned to wait.
+So should you."	"Le stelle non hanno applaudito.
+Hanno contato."
+it	outcome.timeup.hard.pool	11	"This is an interlude
+—It’s not over."	"Il risultato è stato duro.
+Per questo è vero."
+it	outcome.timeup.hard.pool	12	"Like drifting clouds,
+don’t lose your flow—like a river."	"La distanza è rimasta severa.
+Ma ha rivelato la sua verità."
+it	outcome.timeup.hard.pool	13	"The sound was near.
+The distance was real.
+But that moment can’t be saved."	"Il silenzio ha contato ogni passo.
+Anche gli ultimi."
+it	outcome.timeup.hard.pool	14	"You were closing in.
+Only time wasn’t."	"Non hai spezzato il limite.
+Lo hai visto da vicino."
+it	outcome.timeup.hard.pool	15	"The world held to its rules.
+You touched the edge of them."	"Il nord non consola.
+Rende chiaro."
+it	outcome.timeup.hard.pool	16	"You didn’t reach the treasure. 
+But the signal was real."	"La strada si è chiusa.
+La forma dei tuoi passi è rimasta."
+it	outcome.timeup.hard.pool	17	"Nothing changed.
+Only your position did."	"Il tempo ha preso la vittoria.
+Tu hai preso la lezione."
+it	outcome.timeup.hard.pool	18	"It wasn’t luck.
+Alignment."	"Il centro era vicino.
+Non abbastanza."
+it	outcome.timeup.hard.pool	19	"The moment slipped away,
+but the record stayed."	"Il mondo è rimasto fermo.
+Tu hai imparato a muoverti meglio."
+it	outcome.timeup.hard.pool	20	"You crossed fragile ground
+and left the horizon unbroken."	"La corsa non ti ha premiato.
+Ti ha affinato."
+it	outcome.timeup.hard.pool	21	"Nothing changed.
+ Only your position did.
+Not luck.
+Alignment.
+The moment passed.
+The record remains."	"Il vento ha spento la luce.
+Non la direzione."
+it	outcome.timeup.hard.pool	22	"The sun sank,
+and shadow covered the world once again."	"La sconfitta non ha gridato.
+Ha inciso."
+it	outcome.timeup.hard.pool	23	"The last grains of sand fell,
+and the story quietly came to a close."	"Il luogo non ti ha respinto.
+Ti ha chiesto precisione."
+it	outcome.timeup.hard.pool	24	"The wind swept through,
+and the footprints vanished without a trace."	"Il tempo non era crudele.
+Era esatto."
+it	outcome.timeup.hard.pool	25	"The tide came in,
+What once had been there returned to the sea."	"Hai perso l’istante.
+Non il cammino."
+it	outcome.timeup.hard.pool	26	"Silence.
+Only time passed through."	"La fine è stata quieta.
+Il significato no."
+it	outcome.timeup.hard.pool	27	"Victory and defeat 
+are nothing more than grains of sand."	"Ogni passo mancato
+è una misura per il prossimo."
+it	outcome.timeup.hard.pool	28	"The road goes on—or it ends.
+Either way, it lies on the same earth."	"Il cielo si è chiuso.
+La strada resta sotto i piedi."
+it	outcome.timeup.hard.pool	29	"The season closed.
+The land remained."	"La distanza non ti ha ceduto.
+Ti ha mostrato il suo peso."
+it	outcome.timeup.hard.pool	30	"The path The path remains.
+Only your steps stopped."	"Sotto il nord,
+anche un piccolo passo è vero."
+it	outcome.timeup.hard.pool	31	"Your time ran out.
+The sky didn’t."	"Il margine ha vinto.
+Ma tu lo hai visto."
+it	outcome.timeup.hard.pool	32	"It wasn’t rejection.
+Only silence."	"Nessuna scorciatoia.
+Solo apprendimento."
+it	outcome.timeup.hard.pool	33	"The world is still intact.
+You can return—changed."	"La sabbia ha coperto il risultato.
+Non il tentativo."
+it	outcome.timeup.hard.pool	34	"The season ended.
+The forest remains."	"Il silenzio ha chiuso la scena.
+Ma non la via."
+it	outcome.timeup.hard.pool	35	"The distance was closing.
+Time kept its rhythm."	"Il tempo ha detto no.
+La strada non ancora."
+it	outcome.timeup.hard.pool	36	"Your time came to a halt.
+The sky kept moving."	"Non era il finale.
+Era una soglia."
+it	outcome.timeup.hard.pool	37	"Not rejection
+Just silence."	"La prossima corsa partirà
+da ciò che hai capito."
+it	outcome.timeup.hard.pool	38	"The path is still here.
+You can come back—changed."	"Il mondo non ha ceduto.
+Tu sei diventato più preciso."
