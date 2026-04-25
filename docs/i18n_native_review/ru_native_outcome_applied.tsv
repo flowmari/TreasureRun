@@ -1,0 +1,330 @@
+lang	pool	index	translation
+ru	outcome.success.easy.pool	1	"Ты дошёл.
+Истина всё ещё на месте."
+ru	outcome.success.easy.pool	2	"Пусть это был лишь маленький шаг,
+но ты не отступил."
+ru	outcome.success.easy.pool	3	"Ты прислушался —
+и путь открылся."
+ru	outcome.success.easy.pool	4	"> Ты добрался сюда.
+> 
+> Правила были просты —
+> 
+> выбор оставался за тобой."
+ru	outcome.success.easy.pool	5	"> Расстояние обрело смысл.
+> 
+> И время ответило на твои шаги."
+ru	outcome.success.easy.pool	6	"> Не всякий свет горит вечно.
+> 
+> Но этот миг — сиял."
+ru	outcome.success.easy.pool	7	"Свет лёг ровно,
+и все тени отступили."
+ru	outcome.success.easy.pool	8	"Ветер стих.
+Всё вернулось на своё место."
+ru	outcome.success.easy.pool	9	"Мгновение тишины.
+Мир снова выровнял дыхание."
+ru	outcome.success.easy.pool	10	"След глубоко врезался в песок —
+там, куда не достанет ветер."
+ru	outcome.success.easy.pool	11	"Равновесие вернулось.
+Всё вело именно к этому мигу."
+ru	outcome.success.easy.pool	12	"Время тихо прошло мимо
+и осталось в уголке памяти."
+ru	outcome.success.easy.pool	13	"Небо сменило цвет,
+и одна история подошла к концу."
+ru	outcome.success.easy.pool	14	"Волны улеглись,
+и море снова спрятало свою глубину."
+ru	outcome.success.easy.pool	15	"Шаги остановились,
+и осталось только это место."
+ru	outcome.success.easy.pool	16	"Победа и поражение —
+в конце концов лишь песчинки."
+ru	outcome.success.easy.pool	17	"Дорога продолжается — или обрывается здесь.
+Так или иначе, она лежит на той же земле."
+ru	outcome.success.normal.pool	1	"Расстояние наконец обрело смысл.
+Время ответило на твой путь."
+ru	outcome.success.normal.pool	2	"Время вышло.
+Но не всё ещё окончено."
+ru	outcome.success.normal.pool	3	"Ось найдена.
+Мир остановил своё движение."
+ru	outcome.success.normal.pool	4	"Стекло затаило дыхание,
+а ты удержал своё место."
+ru	outcome.success.normal.pool	5	"Под неподвижным небом
+твой дух не дрогнул."
+ru	outcome.success.normal.pool	6	"Немногие вещи сияют вечно.
+Но этот миг был ясен и светел."
+ru	outcome.success.normal.pool	7	"Ты прошёл по хрупкой земле
+и не потерял взгляда."
+ru	outcome.success.normal.pool	8	"Мгновение прошло.
+То, что осталось, всё ещё остаётся."
+ru	outcome.success.normal.pool	9	"Удача быстро тускнеет.
+Порядок остаётся."
+ru	outcome.success.normal.pool	10	"Небо не знает паузы в бесконечном круге,
+и ты тоже не остановился."
+ru	outcome.success.normal.pool	11	"Ты достиг центра.
+Мир замер."
+ru	outcome.success.normal.pool	12	"Наконец — здесь.
+Истина всё ещё тверда."
+ru	outcome.success.normal.pool	13	"Ты дошёл до конца.
+Запомни: этот путь выбрал ты, и никто другой."
+ru	outcome.success.normal.pool	14	"Время скользнуло в тишину
+и нашло место в глубине сердца."
+ru	outcome.success.normal.pool	15	"Пока небо меняло цвет,
+история дошла до своего финала."
+ru	outcome.success.normal.pool	16	"Вода успокоилась,
+и небо снова прикрыло свою бездну."
+ru	outcome.success.normal.pool	17	"Шаги стихли,
+и осталось только это место."
+ru	outcome.success.normal.pool	18	"Свет лёг ровно,
+и все тени отступили."
+ru	outcome.success.normal.pool	19	"Ветер стих.
+Всё вернулось на своё место."
+ru	outcome.success.normal.pool	20	"Мгновение тишины.
+Мир снова выровнял дыхание."
+ru	outcome.success.normal.pool	21	"След глубоко врезался в песок —
+там, куда не достанет ветер."
+ru	outcome.success.normal.pool	22	"Равновесие вернулось.
+Всё вело именно к этому мигу."
+ru	outcome.success.normal.pool	23	"Забег завершён.
+Ясно. Найдено.
+Этого достаточно."
+ru	outcome.success.normal.pool	24	"Забег завершён.
+Путь выдержал.
+И ты тоже."
+ru	outcome.success.normal.pool	25	"Небо продолжало двигаться.
+Ты тоже можешь."
+ru	outcome.success.normal.pool	26	"Забег завершён.
+Тихий результат.
+Вес настоящего труда."
+ru	outcome.success.normal.pool	27	"Ты просто прошёл дорогой,
+которую мир положил перед тобой."
+ru	outcome.success.normal.pool	28	"Земля не провалилась.
+Она поверила твоим шагам."
+ru	outcome.success.normal.pool	29	"Этот миг совпал
+с древним ритмом звёзд."
+ru	outcome.success.normal.pool	30	"Ты ничего не забрал.
+Ты что-то понял."
+ru	outcome.success.normal.pool	31	"Ты ничего не приобрёл.
+Ты лишь увидел истину такой, какая она есть."
+ru	outcome.success.normal.pool	32	"Ты не завоевал это место.
+Ты всегда ему принадлежал."
+ru	outcome.success.normal.pool	33	"Ты прошёл дорогой,
+что старше самой памяти."
+ru	outcome.success.normal.pool	34	"Земля не сопротивлялась.
+Она узнала тебя."
+ru	outcome.success.normal.pool	35	"Этот миг совпал
+с тишиной звёзд."
+ru	outcome.success.hard.pool	1	"В северном ветре
+ясность переживает скорость."
+ru	outcome.success.hard.pool	2	"Центр был найден.
+Мир пришёл к покою."
+ru	outcome.success.hard.pool	3	"Даже там, где стекло готово треснуть,
+ты не потерял направление."
+ru	outcome.success.hard.pool	4	"Холод поднимался от земли,
+но твои шаги не рассыпались."
+ru	outcome.success.hard.pool	5	"Ветер пытался стереть следы.
+Но путь уже запомнил тебя."
+ru	outcome.success.hard.pool	6	"Ты дошёл туда,
+где шум уже не имеет власти."
+ru	outcome.success.hard.pool	7	"Не сила привела тебя сюда,
+а выдержка."
+ru	outcome.success.hard.pool	8	"Хрупкий мир не простил бы спешки.
+Ты это понял."
+ru	outcome.success.hard.pool	9	"Свет дрожал,
+но не погас."
+ru	outcome.success.hard.pool	10	"Там, где всё могло исчезнуть,
+ты остался."
+ru	outcome.success.hard.pool	11	"Небо было далеко.
+Земля была тонка.
+И всё же ты прошёл."
+ru	outcome.success.hard.pool	12	"Ты не победил холод.
+Ты научился идти сквозь него."
+ru	outcome.success.hard.pool	13	"Забег завершён.
+Трудный путь.
+Настоящее доказательство."
+ru	outcome.success.hard.pool	14	"Центр не звал громко.
+Он ждал тихо."
+ru	outcome.success.hard.pool	15	"Твои шаги стали ответом
+на вопрос, которого никто не произнёс."
+ru	outcome.success.hard.pool	16	"Путь был узким.
+Решение — твоим."
+ru	outcome.success.hard.pool	17	"Стекло помнило каждый шаг.
+И не разбилось."
+ru	outcome.success.hard.pool	18	"Ты прошёл не быстрее всех.
+Ты прошёл точнее."
+ru	outcome.success.hard.pool	19	"Даже тишина
+признала твой приход."
+ru	outcome.success.hard.pool	20	"Мир остановился не сразу.
+Но он остановился."
+ru	outcome.success.hard.pool	21	"Всё лишнее отпало.
+Остался только путь."
+ru	outcome.success.hard.pool	22	"Ты дошёл до места,
+где победа уже не шумит."
+ru	outcome.success.hard.pool	23	"Ни ветер, ни время
+не смогли забрать этот след."
+ru	outcome.success.hard.pool	24	"Ты не требовал ответа.
+Но он пришёл."
+ru	outcome.success.hard.pool	25	"То, что было хрупким,
+выдержало вместе с тобой."
+ru	outcome.success.hard.pool	26	"Забег завершён.
+Свет остался.
+След остался.
+Ты остался."
+ru	outcome.success.hard.pool	27	"Северный ветер стих не потому, что проиграл.
+Он просто увидел достаточно."
+ru	outcome.success.hard.pool	28	"Ты прошёл через край карты
+и всё же остался в мире."
+ru	outcome.success.hard.pool	29	"В этом месте
+даже молчание стало ясным."
+ru	outcome.success.hard.pool	30	"Дорога не стала легче.
+Ты стал спокойнее."
+ru	outcome.success.hard.pool	31	"Последний шаг был тихим.
+Но именно он всё решил."
+ru	outcome.success.hard.pool	32	"Там, где всё должно было рассыпаться,
+появился порядок."
+ru	outcome.timeup.easy.pool	1	"Время вышло.
+Но путь ещё помнит твои шаги."
+ru	outcome.timeup.easy.pool	2	"Ты не дошёл.
+Но ты начал — и это уже след."
+ru	outcome.timeup.easy.pool	3	"Песок принял результат
+без упрёка."
+ru	outcome.timeup.easy.pool	4	"Свет погас не сразу.
+Он просто стал тише."
+ru	outcome.timeup.easy.pool	5	"Ветер прошёл по следам,
+но не всё смог стереть."
+ru	outcome.timeup.easy.pool	6	"Не каждый путь заканчивается находкой.
+Некоторые учат слушать."
+ru	outcome.timeup.easy.pool	7	"Мир не закрылся.
+Он просто ждёт другой попытки."
+ru	outcome.timeup.easy.pool	8	"Часы остановились.
+Но движение внутри осталось."
+ru	outcome.timeup.easy.pool	9	"Сегодня дорога оборвалась.
+Завтра она может открыться иначе."
+ru	outcome.timeup.easy.pool	10	"Ты потерял время,
+но не смысл."
+ru	outcome.timeup.easy.pool	11	"Поражение не громкое.
+Оно просто просит вернуться внимательнее."
+ru	outcome.timeup.easy.pool	12	"Небо не отвернулось.
+Оно только сменило цвет."
+ru	outcome.timeup.easy.pool	13	"След короток,
+но он настоящий."
+ru	outcome.timeup.easy.pool	14	"Путь не исчез.
+Он стал вопросом."
+ru	outcome.timeup.easy.pool	15	"Время забрало попытку.
+Опыт осталось."
+ru	outcome.timeup.easy.pool	16	"Конец забега —
+не конец дороги."
+ru	outcome.timeup.normal.pool	1	"Время вышло.
+Мир не сказал «нет» —
+он сказал «ещё не сейчас»."
+ru	outcome.timeup.normal.pool	2	"Ты был близко.
+Иногда близость тоже оставляет след."
+ru	outcome.timeup.normal.pool	3	"Путь не раскрылся полностью,
+но направление стало яснее."
+ru	outcome.timeup.normal.pool	4	"Стекло дрогнуло,
+и ты увидел, где оно тоньше."
+ru	outcome.timeup.normal.pool	5	"Неудача прошла тихо.
+Но урок остался."
+ru	outcome.timeup.normal.pool	6	"Ветер унёс часть следов.
+Остальные остались в тебе."
+ru	outcome.timeup.normal.pool	7	"Этот забег не стал победой.
+Он стал картой."
+ru	outcome.timeup.normal.pool	8	"Там, где ты остановился,
+путь всё ещё дышит."
+ru	outcome.timeup.normal.pool	9	"Время не простило задержки,
+но запомнило попытку."
+ru	outcome.timeup.normal.pool	10	"Ты не дошёл до центра.
+Но стал ближе к нему."
+ru	outcome.timeup.normal.pool	11	"Забег окончен.
+Ответ ещё впереди."
+ru	outcome.timeup.normal.pool	12	"Мир не рухнул.
+Он просто не открылся до конца."
+ru	outcome.timeup.normal.pool	13	"В этой тишине
+есть место для следующего шага."
+ru	outcome.timeup.normal.pool	14	"Ты увидел предел.
+Теперь знаешь, где его искать."
+ru	outcome.timeup.normal.pool	15	"Не всё потеряно.
+Некоторые вещи созревают после поражения."
+ru	outcome.timeup.normal.pool	16	"Песок закрыл следы,
+но не стер смысл."
+ru	outcome.timeup.normal.pool	17	"Небо осталось в движении.
+И тебе ещё можно двигаться."
+ru	outcome.timeup.normal.pool	18	Сегодня путь оказался длиннее времени.
+ru	outcome.timeup.normal.pool	19	"Неудача — это не пустота.
+Это форма памяти."
+ru	outcome.timeup.normal.pool	20	"Время вышло.
+Но дорога ещё не отказалась от тебя."
+ru	outcome.timeup.hard.pool	1	"Время вышло.
+Северный ветер оказался быстрее."
+ru	outcome.timeup.hard.pool	2	"Холод сомкнулся раньше,
+чем путь открылся."
+ru	outcome.timeup.hard.pool	3	"Ты не дошёл.
+Но выдержал больше, чем казалось возможным."
+ru	outcome.timeup.hard.pool	4	"Стекло треснуло вдалеке.
+Мир напомнил о своей хрупкости."
+ru	outcome.timeup.hard.pool	5	"Трудный путь не дал ответа.
+Зато показал цену вопроса."
+ru	outcome.timeup.hard.pool	6	"Ветер забрал следы,
+но не забрал попытку."
+ru	outcome.timeup.hard.pool	7	"Здесь поражение не кричит.
+Оно стоит молча рядом."
+ru	outcome.timeup.hard.pool	8	"Ты встретил край.
+Теперь знаешь, где он начинается."
+ru	outcome.timeup.hard.pool	9	"Время закончилось.
+Но ясность не исчезла."
+ru	outcome.timeup.hard.pool	10	"Холод победил этот забег,
+но не твою способность вернуться."
+ru	outcome.timeup.hard.pool	11	"Мир остался закрытым.
+Пока."
+ru	outcome.timeup.hard.pool	12	"Каждый неверный шаг
+стал частью будущей точности."
+ru	outcome.timeup.hard.pool	13	"Ты дошёл не до конца,
+а до границы."
+ru	outcome.timeup.hard.pool	14	"В этой неудаче
+есть форма силы."
+ru	outcome.timeup.hard.pool	15	"Свет погас.
+Но направление осталось."
+ru	outcome.timeup.hard.pool	16	Стеклянная земля не простила промедления.
+ru	outcome.timeup.hard.pool	17	"Небо двигалось без остановки.
+Ты остановился — чтобы понять."
+ru	outcome.timeup.hard.pool	18	"Не всякая попытка должна сиять.
+Некоторые должны закалять."
+ru	outcome.timeup.hard.pool	19	"Путь не был милосерден.
+Но он был честен."
+ru	outcome.timeup.hard.pool	20	"Сегодня центр остался недостижим.
+Значит, он всё ещё ждёт."
+ru	outcome.timeup.hard.pool	21	"Северный ветер стёр карту.
+Но не память."
+ru	outcome.timeup.hard.pool	22	"Забег окончен.
+Тишина тяжёлая,
+но не пустая."
+ru	outcome.timeup.hard.pool	23	"Время ушло.
+След остался под песком."
+ru	outcome.timeup.hard.pool	24	"Ты проиграл не миру,
+а минутам."
+ru	outcome.timeup.hard.pool	25	"Хрупкая земля потребовала большего.
+Теперь ты знаешь."
+ru	outcome.timeup.hard.pool	26	"Поражение легло рядом,
+как холодная тень."
+ru	outcome.timeup.hard.pool	27	"Этот конец не красив.
+Но он настоящий."
+ru	outcome.timeup.hard.pool	28	"Мир не раскрылся.
+Зато показал, где сопротивляется."
+ru	outcome.timeup.hard.pool	29	"Твои шаги оборвались.
+Но путь не исчез."
+ru	outcome.timeup.hard.pool	30	"Ветер был суров.
+И всё же ты шёл."
+ru	outcome.timeup.hard.pool	31	"Неудача здесь —
+не стыд, а отметка глубины."
+ru	outcome.timeup.hard.pool	32	"Попытка завершена.
+След спрятан.
+Возвращение возможно."
+ru	outcome.timeup.hard.pool	33	"Сегодня порядок не сложился.
+Но его контур уже виден."
+ru	outcome.timeup.hard.pool	34	"Там, где всё остановилось,
+начинается следующая точность."
+ru	outcome.timeup.hard.pool	35	"Время вышло.
+Но это ещё не последнее слово."
+ru	outcome.timeup.hard.pool	36	"Путь оказался жёстче надежды.
+И всё же надежда осталась."
+ru	outcome.timeup.hard.pool	37	"Тьма стала ближе.
+Но свет не забыт."
+ru	outcome.timeup.hard.pool	38	"Этот забег ушёл в тишину.
+Следующий начнётся с неё."
