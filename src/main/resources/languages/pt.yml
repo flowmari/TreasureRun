@@ -1,7 +1,7 @@
 outcome:
   notice:
-    timeUpGameOver: 'O tempo acabou. Fim de jogo.'
-    retryGuide: 'Tente novamente por uma rota diferente.'
+    timeUpGameOver: O tempo acabou. Fim de jogo.
+    retryGuide: Tente novamente por uma rota diferente.
   success:
     common:
       pool: []
@@ -468,7 +468,6 @@ outcome:
       - 'The path is still here.
 
         You can come back—changed.'
-
 meta:
   lang: pt
   note: Put translation keys under e.g. command.xxx / gui.xxx / messages.xxx etc.
@@ -510,16 +509,14 @@ quotes:
   - The glass didn’t break.\nNeither did you.\n（ガラスは割れなかった。あなたも折れなかった。）
   - Beneath a quiet sky,\nyour will held firm.\n（静かな空の下で、意志は持ちこたえた。）
   - Very little shines forever\n—but this moment was different.\n（永遠に輝くものなんてほとんどないけれど、この瞬間は別格だった。）
-  - You made it across the fragile ground,\nholding fast to the horizon the whole
-    way.\n（脆い地面を渡り切った。地平線景色をしっかりと握りしめたまま。）
+  - You made it across the fragile ground,\nholding fast to the horizon the whole way.\n（脆い地面を渡り切った。地平線景色をしっかりと握りしめたまま。）
   - The moment passed.\n What remained was the record—the achievement.\n（瞬間は過ぎ去った。遺されたもの記録・功績は残る。）
   - Luck fades quickly.\nOrder endures.\n（運は速やかに消え、整い秩序は永続する。）
   - The sky knows no rest in its endless cycle.\nNeither do you.\n（空はその終わりなき循環に休止を知らぬ。汝もまた、止まらず。）
   - The center was reached.\nThe world stood still.\n（中心は到達された。世界は立ち尽くし静止した。）
   - At last,you’ve made it here.\nThe truth stands—unbowed.\n（ついに、ここへ辿り着いた。真実は屈することなく、そこに在る。）
   - Complete. This path was yours\n—and yours alone.\n（完遂。この道を選んだのは他でもないあなただ。）
-  - Time drifted into silence,\nand found its place in the deepest corners of the
-    mind.\n（時は静寂へと漂い、精神の奥底の隅に自らの居場所を見つけた。）
+  - Time drifted into silence,\nand found its place in the deepest corners of the mind.\n（時は静寂へと漂い、精神の奥底の隅に自らの居場所を見つけた。）
   - As the sky shifted,\none story found its final resolution.\n（空が姿を変えるとともに、一つの物語はその最終的な解決完結を見出した。）
   - The waves fell quiet,\nand the sky hid its depths once more.\n（波は静まり、空は再びその深淵を覆い隠した。）
   - The footsteps ceased,\nand only the place remained.\n（歩みは途絶え、ただ場所だけがそこに在り続けた。）
@@ -540,8 +537,7 @@ quotes:
   - The sky knows no pause in endless circle,\nnor shall you find yours.\n（空はその終わりなき循環に休止を知らぬ。汝もまた、止まらず。）
   - The center has been reached.\nThe world stood still.\n（中心は到達された。世界は立ち尽くし静止した。）
   - Finally here.\nThe truth remains unyielding.\n（ついに、ここへ辿り着いた。真実は屈することなく、そこに在る。）
-  - 'You have seen it through.\nAnd mark this: it was you, and no one else, who chose
-    this path.\n（完遂。この道を選んだのは他でもないあなただ。）'
+  - 'You have seen it through.\nAnd mark this: it was you, and no one else, who chose this path.\n（完遂。この道を選んだのは他でもないあなただ。）'
   - Time drifted into silence,\nfinding its place in the recesses of the mind.\n（時は静寂へと漂い、精神の奥底の隅に自らの居場所を見つけた。）
   - As the sky transformed,\nthe tale found its final resolved.\n（空が姿を変えるとともに、一つの物語はその最終的な解決完結を見出した。）
   - The waters fell calm,\nand the sky once more veiled its abyss.\n（波は静まり、空は再びその深淵を覆い隠した。）
@@ -659,7 +655,7 @@ quotes:
 ui:
   labels:
     tabs: '&6Abas:&r'
-    page: '&8Página {page}/{total}&r'
+    page: '&8Página {current}/{total}&r'
     tab:
       all: TUDO
       success: SUCESSO
@@ -684,10 +680,8 @@ ui:
       success: = Concluído / Sucesso
       timeUp: = Tempo esgotado
       favorites: = ★ Citações salvas
-    noLogs: Ainda não há registros de citações. São salvos automaticamente em SUCCESS
-      / TIME_UP.
-    noQuotesInTab: 'Não há citações para mostrar nesta aba. (Talvez ainda não tenha
-      sido salvo.)
+    noLogs: Ainda não há registros de citações. São salvos automaticamente em SUCCESS / TIME_UP.
+    noQuotesInTab: 'Não há citações para mostrar nesta aba. (Talvez ainda não tenha sido salvo.)
 
       Tente outra aba.'
     noFavoritos: 'Ainda não há favoritos.
@@ -705,46 +699,35 @@ ui:
     messages_yml_not_loaded_d56b1cd3: (messages.yml not loaded)
     translation_missing_77031543: '(Tradução ausente:'
     translation_missing_77031543_107: '(Tradução ausente:'
-    treasurerun_lang_config_yml__2dde4625: '[TreasureRun][Lang] Seção ''language:''
-      não encontrada no config.yml.'
+    treasurerun_lang_config_yml__2dde4625: '[TreasureRun][Lang] Seção ''language:'' não encontrada no config.yml.'
     click_to_select_aac1569c_76: Clique para selecionar
     treasurerun_lang_default_60887a83: '[TreasureRun][Lang] default='
     click_to_select_aac1569c_19: Clique para selecionar
-    treasurerun_lang_config_yml__2dde4625_33: '[TreasureRun][Lang] Seção ''language:''
-      não encontrada no config.yml.'
-    treasurerun_lang_material_la_bc70a401: '[TreasureRun][Lang] Material inválido:
-      lang='
-    treasurerun_lang_language_ic_4bc2362d: '[TreasureRun][Lang] Seção ''language.iconMaterial:''
-      não encontrada（tudo será PAPER）'
+    treasurerun_lang_config_yml__2dde4625_33: '[TreasureRun][Lang] Seção ''language:'' não encontrada no config.yml.'
+    treasurerun_lang_material_la_bc70a401: '[TreasureRun][Lang] Material inválido: lang='
+    treasurerun_lang_language_ic_4bc2362d: '[TreasureRun][Lang] Seção ''language.iconMaterial:'' não encontrada（tudo será PAPER）'
     click_to_select_aac1569c_100: Clique para selecionar
     treasurerun_lang_default_60887a83_111: '[TreasureRun][Lang] default='
-    enemydown_mysql_jdbc_mybatis_6b5c6f68: '[EnemyDown] Conectado ao MySQL（JDBC +
-      MyBatis）'
+    enemydown_mysql_jdbc_mybatis_6b5c6f68: '[EnemyDown] Conectado ao MySQL（JDBC + MyBatis）'
     enemydown_mysql_6cf3e29b: '[EnemyDown] Falha na conexão MySQL:'
     enemydown_mysql_a18990c3: '[EnemyDown] Conexão MySQL encerrada.'
     enemydown_mysql_e097a73e: '[EnemyDown] Falha ao desconectar MySQL:'
-    mysqlmanager_player_score_d92afff4: '[MySQLManager] Tabela player_score verificada/criada
-      ✅'
-    mysqlmanager_player_score_21665c62: '[MySQLManager] Falha ao criar tabela player_score
-      ❌:'
-    mysqlmanager_mysql_951100b9: '[MySQLManager] Teste de conexão MySQL bem-sucedido
-      ✅'
+    mysqlmanager_player_score_d92afff4: '[MySQLManager] Tabela player_score verificada/criada ✅'
+    mysqlmanager_player_score_21665c62: '[MySQLManager] Falha ao criar tabela player_score ❌:'
+    mysqlmanager_mysql_951100b9: '[MySQLManager] Teste de conexão MySQL bem-sucedido ✅'
     mysqlmanager_player_score_a4968d00: '[MySQLManager] Linhas na tabela player_score:'
     mysqlmanager_mysql_1763d390: '[MySQLManager] MySQL não conectado ❌'
-    mysqlmanager_player_score_2b5c8721: '[MySQLManager] Tabela player_score pode não
-      existir ❌'
+    mysqlmanager_player_score_2b5c8721: '[MySQLManager] Tabela player_score pode não existir ❌'
     enemydown_mysql_bc514e56: '[EnemyDown] MySQL está conectado.'
     enemydown_mysql_93b23ef9: '[EnemyDown] MySQL não está conectado.'
     run_complete_46d920e5_580: Run complete.
     run_complete_46d920e5_589: Run complete.
-    playerlanguagestore_failed_t_c4999402: '[PlayerLanguageStore] Failed to create/load
-      player_languages.yml:'
+    playerlanguagestore_failed_t_c4999402: '[PlayerLanguageStore] Failed to create/load player_languages.yml:'
     playerlanguagestore_failed_t_b6478ec8: '[PlayerLanguageStore] Failed to save player_languages.yml:'
     proverb_logged_to_mysql_prov_c13b5e4e: 'Proverb logged to MySQL: proverb_logs'
     failed_to_log_proverb_to_mys_2bb4c5c3: 'Failed to log proverb to MySQL: proverb_logs'
     loaded_proverb_logs_from_mys_b5b0f8e0: 'Loaded proverb logs from MySQL: proverb_logs'
-    failed_to_load_proverb_logs__6246be38: 'Failed to load proverb logs from MySQL:
-      proverb_logs'
+    failed_to_load_proverb_logs__6246be38: 'Failed to load proverb logs from MySQL: proverb_logs'
     treasurerunmultichestplugin_4499e25c: '🌈 TreasureRunMultiChestPlugin: 起動 🌈'
     treasurerun_gamestagemanager_3d9e7f5a: '[TreasureRun] GameStageManager event registered!'
     treasurerunmultichestplugin_a507471a: ✅ TreasureRunMultiChestPlugin が正常に起動しました！
@@ -753,8 +736,7 @@ ui:
     text_1a6173d3: Diamante obtido!
     text_b6568a8d: Maçã Dourada obtida!
     no_9c0fdee6: 🏆 No.
-    gamestart_easy_normal_hard_230bd0bd: Tente uma rota diferente da próxima vez!
-      Para tentar novamente use /gamestart <easy|normal|hard>!
+    gamestart_easy_normal_hard_230bd0bd: Tente uma rota diferente da próxima vez! Para tentar novamente use /gamestart <easy|normal|hard>!
     text_9310a1a7: O jogo já está em andamento.
     text_9310a1a7_908: O jogo já está em andamento.
     text_9310a1a7_1601: O jogo já está em andamento.
@@ -770,13 +752,11 @@ ui:
     easy_normal_hard_ef1ba55c: A dificuldade é Easy / Normal / Hard.
     language_gui_aed4f8fc_931: GUI de idioma não inicializada.
     config_yml_3c6e9d15: ✅ config.yml carregado
-    treasurerun_config_language__763cf02c: ✅ Config do TreasureRun recarregado（incluindo
-      GUI de idioma）.
+    treasurerun_config_language__763cf02c: ✅ Config do TreasureRun recarregado（incluindo GUI de idioma）.
     gui_gamestart_5870f221: GUI atualizada. Abra novamente com /gameStart.
     text_3ecbc53d: Execute como jogador
     text_3030fd61: Somente jogadores podem executar
-    reload_gameend_c41d5c55: Não é possível recarregar durante o jogo. Execute /gameEnd
-      primeiro.
+    reload_gameend_c41d5c55: Não é possível recarregar durante o jogo. Execute /gameEnd primeiro.
   menu:
     toc:
       message: '&6📌 Menu do TreasureRun aberto. Confira o livro de regras.'
@@ -784,22 +764,21 @@ ui:
       openFailed: '&cFalha ao abrir o livro de regras.'
       hotbarGiven: 📖 O livro de regras foi adicionado à sua barra rápida.
       hotbarHint: Segure-o e clique com o botão direito para relê-lo quando quiser.
-      latestHint: (Clique com o botão direito neste livro para salvar a citação mais
-        recente.)
+      latestHint: (Clique com o botão direito neste livro para salvar a citação mais recente.)
       fallbackTitle: Regras do TreasureRun
       fallbackDisplayName: Livro de regras do TreasureRun
     legacy:
       toc:
-        message: '&6===== 🌟 TreasureRun Conteúdo 🌟 =====
+        message: '&6===== 🌟 Menu do TreasureRun 🌟 =====
 
           &b1. Objetivo
 
-          &f   ・Abra o maior número de baús dentro do limite de tempo.
+          &f   - Abra o maior número possível de baús dentro do limite de tempo.
 
 
           &b2. Dificuldade atual
 
-          &f   ・Dificuldade: &e{difficulty}
+          &f   - Dificuldade: &e{difficulty}
 
 
           &6=================================='
@@ -810,14 +789,13 @@ ui:
         rulesItem: 1) Regras
         howToPlay: '  · Como jogar'
         scoreRoute: '  · Pontuação e rota'
-        savedOn: '  · Salvo em SUCCESS / TIME_UP'
+        savedOn: · Salvo em Sucesso / Tempo esgotado
         language: '  · Idioma: {lang}'
         yourQuotes: '  · Suas citações salvas com ★'
         difficulty: 'Dificuldade: {difficulty}'
         tipsItem: 2) Dicas
       note:
-        bookFormat: 'Observação: nos livros do Minecraft não dá para trocar de aba
-          clicando, então o conteúdo foi organizado em seções.'
+        bookFormat: 'Observação: nos livros do Minecraft não dá para trocar de aba clicando, então o conteúdo foi organizado em seções.'
       hint:
         reopenMenu: 'Dica: execute /gameMenu para abrir isto novamente.'
   error:
@@ -866,6 +844,12 @@ game:
     easy: '&aEasy'
     normal: '&eNormal'
     hard: '&cHard'
+  auto:
+    backup_cfe9e6cf: 🌊 Busca de oceano de backup concluída com sucesso.
+    text_e096c9a4: '&6Esmeralda Especial'
+    dj_onalltreasurescollected_a871afdd: O evento DJ já está em execução, então onAllTreasuresCollected foi ignorado.
+    text_cc353737: Todos os tesouros foram encontrados!
+    congratulations_38fd1594: §6Parabéns! Você encontrou todos os tesouros!
 favorites:
   title: Favoritos
   cover:
@@ -893,8 +877,7 @@ favorites:
     howto: Abra um capítulo para reler as linhas salvas
     manage: Gerenciar linhas salvas
     reread: Reler
-    howtoShift: '&7Agache-se + clique com o botão direito para abrir o arquivo de
-      favoritos'
+    howtoShift: '&7Agache-se + clique com o botão direito para abrir o arquivo de favoritos'
     rereadTitle: Reler
     clickable: Os capítulos podem ser abertos com um clique
     sub: Navegar por capítulo
@@ -916,6 +899,8 @@ favorites:
   reread:
     head: Reler linhas salvas
     noQuotes: Você ainda não salvou nenhuma linha.
+  auto:
+    favorite_saved_sneak_rightcl_7a73eb4f: ★ Favorito salvo! (Agachar + clique direito)
 command:
   checkTreasureEmerald:
     playersOnly: Somente jogadores podem usar este comando.
@@ -923,31 +908,24 @@ command:
     resultFalse: O item que você está segurando não é um Treasure Emerald.
   gameStart:
     playersOnly: Este comando só pode ser usado por jogadores.
-    worldNotFound: '[TreasureRun] O mundo inicial não está configurado ou não pôde
-      ser encontrado.'
-    started: 'A caça ao tesouro vai começar! Dificuldade: {difficulty} | Limite de
-      tempo: {timeLimit} segundos'
+    worldNotFound: '[TreasureRun] O mundo inicial não está configurado ou não pôde ser encontrado.'
+    started: 'A caça ao tesouro vai começar! Dificuldade: {difficulty} | Limite de tempo: {timeLimit} segundos'
   stageCleanup:
     playersOnly: '&cSomente jogadores podem usar este comando.'
     managerNotReady: '[TreasureRun] O gerenciador de fase ainda não foi inicializado.'
     cleaned: '[TreasureRun] {count} blocos de dificuldade foram removidos.'
   lang:
-    guiTooManyShown: Foram configurados idiomas permitidos demais, então a GUI mostra
-      apenas os primeiros 27.
-    guiCancelledGameMenu: A seleção de idioma foi cancelada. Para abrir novamente,
-      execute /gameMenu gui.
-    guiCancelledGameStart: A seleção de idioma foi cancelada. Para tentar de novo,
-      execute /gameStart <easy|normal|hard>.
+    guiTooManyShown: Foram configurados idiomas permitidos demais, então a GUI mostra apenas os primeiros 27.
+    guiCancelledGameMenu: A seleção de idioma foi cancelada. Para abrir novamente, execute /gameMenu gui.
+    guiCancelledGameStart: A seleção de idioma foi cancelada. Para tentar de novo, execute /gameStart <easy|normal|hard>.
     playersOnly: Este comando só pode ser usado por jogadores.
-    resetDone: ✅ O seu idioma salvo foi redefinido. Na próxima vez, a interface será
-      aberta.
+    resetDone: ✅ O seu idioma salvo foi redefinido. Na próxima vez, a interface será aberta.
     current: 'Idioma atual: {lang}'
     emptyCode: 'O código do idioma está vazio. Exemplo: /lang ja'
     notAllowed: 'Esse idioma não é permitido: {lang}'
     allowedList: 'Idiomas permitidos: {allowed}'
     changed: '✅ Idioma alterado: {displayName} ({lang})'
-    changedButNotSaved: '⚠ O idioma foi alterado, mas não foi possível salvá-lo permanentemente:
-      {lang}'
+    changedButNotSaved: '⚠ O idioma foi alterado, mas não foi possível salvá-lo permanentemente: {lang}'
     list:
       title: === Idiomas ===
       default: 'padrão: {default}'
@@ -962,8 +940,7 @@ command:
   onlyPlayer: '&cEste comando só pode ser usado por um jogador.'
   quoteFavorite:
     latestSaved: A citação mais recente foi salva nos Favoritos.
-    latestNotSaved: Não foi possível salvar a citação mais recente. Talvez ainda não
-      exista registro, ou ela já esteja nos Favoritos.
+    latestNotSaved: Não foi possível salvar a citação mais recente. Talvez ainda não exista registro, ou ela já esteja nos Favoritos.
     playersOnly: '&cEste comando só pode ser usado por jogadores.'
     repositoryNotReady: Favoritos ainda não estão disponíveis.
     listHeader: '&bFavoritos ({count})'
@@ -977,8 +954,7 @@ command:
     openBookFailed: '&cNão foi possível abrir o livro.'
     unknownSubcommand: '&cSubcomando desconhecido. Veja /quoteFavorite help.'
     shortcutSaved: A citação mais recente foi salva nos Favoritos.
-    shortcutNotSaved: Não foi possível salvar a citação mais recente. Talvez ainda
-      não exista registro, ou ela já esteja nos Favoritos.
+    shortcutNotSaved: Não foi possível salvar a citação mais recente. Talvez ainda não exista registro, ou ela já esteja nos Favoritos.
     help:
       title: '&bComandos do QuoteFavorite'
       latest: '&7/quoteFavorite latest  - salvar a citação mais recente nos Favoritos'
@@ -1013,6 +989,11 @@ items:
     emerald_block: Bloco de esmeralda
     iron_block: Bloco de ferro
     tnt: TNT
+  text_7567bb35: A receita da Esmeralda Especial foi registrada.
+  text_7a04254b: '&eMaçã Especial'
+  text_e8d4013d: A receita da Maçã Especial foi registrada.
+  text_e42912c7: '&7Bloco de Ferro Especial'
+  text_c89dea57: A receita do Bloco de Ferro Especial foi registrada.
 gameplay:
   pickup:
     scoreNone: Ainda não há pontuação.
@@ -1075,3 +1056,21 @@ rank:
     allTimeSwitch: 'Alternar visualização: /gameRank weekly | /gameRank monthly'
     monthlyEmpty: Ainda não há registros neste mês.
     monthlySwitch: 'Alternar visualização: /gameRank weekly | /gameRank all'
+commands:
+  text_2bf42ec8: Este comando só pode ser executado por jogadores.
+  text_2bf42ec8_18: Este comando só pode ser executado por jogadores.
+  3_3d5021f7: São necessários 3 diamantes para criar a Esmeralda Especial.
+  text_e096c9a4: '&6Esmeralda Especial'
+  3_71b78a44: A Esmeralda Especial foi criada com 3 diamantes!
+  text_3030fd61: Apenas jogadores podem executar este comando.
+  op_10caf0f6: Você não tem permissão (somente OP).
+  rank_1_2_3_demo_d87f40da: 'Uso: /rank <1|2|3|demo>'
+  rank_1_2_3_demo_4f3e3084: 'Digite um número: /rank <1|2|3|demo>'
+  1_3_rank_1_2_3_7f459bd0: 'Apenas valores de 1 a 3 são permitidos: /rank <1|2|3>'
+  text_bed3daf7: Este comando só pode ser executado por jogadores.
+  treasurerun_bcef4fe9: '[TreasureRun] O gerenciamento do estágio não foi inicializado.'
+  text_287fa0f1: '{count} blocos de dificuldade foram removidos.'
+  text_44a99db9: Este comando só pode ser executado por um jogador.
+  text_fd02f248: 'Limite de tempo:'
+  text_f166cc04: '§aA caça ao tesouro começou! Dificuldade:'
+  text_2281b097: '{count} baús foram gerados. Número de tesouros:'
