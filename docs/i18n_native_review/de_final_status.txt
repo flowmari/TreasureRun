@@ -1,0 +1,13 @@
+de final status
+================
+Result:
+- JP/CJK total = 2
+- EN total = 25
+- VISIBLE = 0
+- INTERNAL = 20
+- REVIEW = 7
+
+Decision:
+- de is complete for player-visible UI.
+- Remaining mixed-language items are internal/debug/log oriented or acceptable structured UI lines.
+- Next step: audit other languages for outcome 158 coverage and visible fallback risk.
