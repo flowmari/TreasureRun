@@ -1,0 +1,7 @@
+lang	pool	kind	meta	value
+sa	outcome.success.easy.pool	COUNT	17	17
+sa	outcome.success.normal.pool	COUNT	35	35
+sa	outcome.success.hard.pool	COUNT	32	32
+sa	outcome.timeup.easy.pool	COUNT	16	16
+sa	outcome.timeup.normal.pool	COUNT	20	20
+sa	outcome.timeup.hard.pool	COUNT	38	38
