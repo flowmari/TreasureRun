@@ -1,0 +1,52 @@
+lang	pool	kind	meta	value
+nl	outcome.success.easy.pool	COUNT	17	17
+nl	outcome.success.easy.pool	ENGLISH_LIKE	6	"> Niet alles blijft voor altijd schitteren.
+>
+> Maar dit moment deed dat wel."
+nl	outcome.success.easy.pool	ENGLISH_LIKE	8	"De wind werd stil.
+Alles keerde terug naar zijn plaats."
+nl	outcome.success.easy.pool	ENGLISH_LIKE	10	"Het spoor staat diep in het zand gegrift —
+waar de wind er niet meer bij kan."
+nl	outcome.success.easy.pool	ENGLISH_LIKE	11	"Het evenwicht keerde terug.
+Alles leidde naar dit moment."
+nl	outcome.success.normal.pool	COUNT	35	35
+nl	outcome.success.normal.pool	ENGLISH_LIKE	6	"Weinig dingen blijven voor altijd schitteren.
+Maar dit moment schitterde."
+nl	outcome.success.normal.pool	ENGLISH_LIKE	8	"Het moment is voorbij.
+Wat blijft, blijft."
+nl	outcome.success.normal.pool	DUTCH_HINT_MISSING	9	"Geluk vervaagt snel.
+Orde blijft bestaan."
+nl	outcome.success.normal.pool	ENGLISH_LIKE	19	"De wind werd stil.
+Alles keerde terug naar zijn plaats."
+nl	outcome.success.normal.pool	ENGLISH_LIKE	21	"Het spoor staat diep in het zand gegrift —
+waar de wind er niet meer bij kan."
+nl	outcome.success.normal.pool	ENGLISH_LIKE	22	"Het evenwicht keerde terug.
+Alles leidde naar dit moment."
+nl	outcome.success.normal.pool	ENGLISH_LIKE	29	"Dit moment stemde zich af
+op het oude ritme van de sterren."
+nl	outcome.success.normal.pool	ENGLISH_LIKE	35	"Dit moment stemde zich af
+op de stilte van de sterren."
+nl	outcome.success.hard.pool	COUNT	32	32
+nl	outcome.success.hard.pool	ENGLISH_LIKE	9	"Het moment ging voorbij.
+Wat bleef, was orde."
+nl	outcome.success.hard.pool	DUTCH_HINT_MISSING	15	"Wat bevroren leek,
+bleek alleen maar te wachten."
+nl	outcome.success.hard.pool	DUTCH_HINT_MISSING	30	"Niet alles wat standhoudt, schittert.
+Sommige dingen blijven gewoon."
+nl	outcome.timeup.easy.pool	COUNT	16	16
+nl	outcome.timeup.easy.pool	ENGLISH_LIKE	7	"De wind nam de tijd mee.
+Maar niet alles ging verloren."
+nl	outcome.timeup.normal.pool	COUNT	20	20
+nl	outcome.timeup.normal.pool	DUTCH_HINT_MISSING	5	"Niet elke poging eindigt met goud.
+Sommige eindigen met inzicht."
+nl	outcome.timeup.normal.pool	DUTCH_HINT_MISSING	12	"Wat vandaag gesloten werd,
+kan morgen herkenbaar zijn."
+nl	outcome.timeup.hard.pool	COUNT	38	38
+nl	outcome.timeup.hard.pool	DUTCH_HINT_MISSING	12	"Wat niet bereikt werd,
+bleef zichtbaar."
+nl	outcome.timeup.hard.pool	ENGLISH_LIKE	21	"De kou won het moment.
+Niet het geheel."
+nl	outcome.timeup.hard.pool	DUTCH_HINT_MISSING	29	"Niet gehaald.
+Niet vergeten."
+nl	outcome.timeup.hard.pool	DUTCH_HINT_MISSING	31	"Wat vandaag brak,
+kan morgen structuur worden."
