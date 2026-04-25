@@ -621,9 +621,9 @@ game:
     header: '&6=== Rangliste ==='
     line: '&e#{rank} &f{player} &7- &b{score}'
   auto:
-    backup_cfe9e6cf: 🌊 Backup 海探索で海を検出しました
+    backup_cfe9e6cf: 🌊 Backup-Meererkennung erfolgreich.
     treasure_shop_4b968fbd: Treasure Shop
-    text_e096c9a4: '&6特製エメラルド'
+    text_e096c9a4: '&6Spezial-Smaragd'
     inventoryclickevent_fired_8520aa1c: InventoryClickEvent fired
     items_current_0629a198: items current=
     cursor_7fabae3f: / cursor=
@@ -666,16 +666,16 @@ game:
     count_int_not_null_660eadd8: count INT NOT NULL)
     failed_to_create_table_68199f98: 'Failed to create table:'
     reset_treasure_count_for_pla_96b152d2: 'Reset treasure count for player:'
-    dj_onalltreasurescollected_a871afdd: DJイベントはすでに実行中のため、onAllTreasuresCollected をスキップしました。
+    dj_onalltreasurescollected_a871afdd: DJ-Event läuft bereits; onAllTreasuresCollected wurde übersprungen.
     on_duplicate_key_update_coun_a1543779: ON DUPLICATE KEY UPDATE count = ?
     failed_to_save_treasure_coun_9d94c0cc: 'Failed to save treasure count:'
-    dj_triggerultimatedjevent_eb01ecae: DJイベントはすでに実行中のため、triggerUltimateDJEvent をスキップしました。
-    treasure_complete_8360fbe9: 🎵 Treasure Complete! 🎵
-    text_cc353737: 全ての宝物を発見しました！
-    congratulations_38fd1594: §6Congratulations! 全ての宝物を見つけました！
+    dj_triggerultimatedjevent_eb01ecae: DJ-Event läuft bereits; triggerUltimateDJEvent wurde übersprungen.
+    treasure_complete_8360fbe9: 🎵 Schatzsuche abgeschlossen! 🎵
+    text_cc353737: Alle Schätze wurden gefunden!
+    congratulations_38fd1594: '§6Glückwunsch! Du hast alle Schätze gefunden!'
     time_s_up_c5b3ef74: §c§lZEIT ABGELAUFEN!
-    treasures_collected_ca7eab31: '§7Treasures collected: §e'
-    try_a_different_route_next_t_721a4d8b: §7Try a different route next time — or use §e/gamestart §7<§eeasy§7|§enormal§7|§ehard§7> §7to retry.
+    treasures_collected_ca7eab31: '§7Gesammelte Schätze: §e'
+    try_a_different_route_next_t_721a4d8b: '§7Versuche es beim nächsten Mal über eine andere Route — oder starte mit §e/gamestart §7<§eeasy§7|§enormal§7|§ehard§7> §7einen neuen Versuch.'
 sound:
   sparkle: '&b* Glitzer *'
   start: '&7(BGM startet...)'
@@ -736,7 +736,7 @@ favorites:
   auto:
     treasurerun_favorites_templa_a0a4bf2e: '[TreasureRun] favorites_templates.yml created.'
     mysql_repository_not_ready_72df0af1: MySQL / Repository not ready.
-    favorite_saved_sneak_rightcl_7a73eb4f: ★ Favorite saved! (Sneak+RightClick)
+    favorite_saved_sneak_rightcl_7a73eb4f: ★ Favorit gespeichert! (Schleichen + Rechtsklick)
     quotefavoritestore_reloaded__3ba623a3: '[QuoteFavoriteStore] Reloaded DB: host='
     where_player_uuid_and_quote__36106f85: WHERE player_uuid=? AND quote_hash=? LIMIT 1
     quotefavoritestore_exists_fa_7d08adba: '[QuoteFavoriteStore] exists failed:'
@@ -755,26 +755,26 @@ favorites:
     treasurerun_favorites_0c778ce1: TreasureRun-Favoriten
     no_text_b87d9ee6: (no text)
 commands:
-  text_2bf42ec8: このコマンドはプレイヤーのみが実行できます。
-  text_2bf42ec8_18: このコマンドはプレイヤーのみが実行できます。
-  3_3d5021f7: スペシャルエメラルドの作成には、ダイヤモンドが3個必要です。
-  text_e096c9a4: '&6特製エメラルド'
-  3_71b78a44: ダイヤモンド3個でスペシャルエメラルドを作成しました！
-  text_3030fd61: プレイヤーのみ実行できます
-  op_10caf0f6: 権限がありません（OP限定）
-  debug_mode_is_off_config_yml_b3d27428: 'Debug mode is OFF. config.yml の debug: true にしてください'
-  rank_1_2_3_demo_d87f40da: '使い方: /rank <1|2|3|demo>'
-  rank_1_2_3_demo_4f3e3084: '数字で入力してください: /rank <1|2|3|demo>'
-  1_3_rank_1_2_3_7f459bd0: '1〜3だけ使えます: /rank <1|2|3>'
-  db_e5d54fbd: の演出だけ発動しました（ランキング/DBは変更なし）
+  text_2bf42ec8: Dieser Befehl kann nur von Spielern ausgeführt werden.
+  text_2bf42ec8_18: Dieser Befehl kann nur von Spielern ausgeführt werden.
+  3_3d5021f7: Für die Herstellung eines Spezial-Smaragds werden 3 Diamanten benötigt.
+  text_e096c9a4: '&6Spezial-Smaragd'
+  3_71b78a44: Spezial-Smaragd aus 3 Diamanten hergestellt!
+  text_3030fd61: Nur Spieler können diesen Befehl ausführen.
+  op_10caf0f6: Keine Berechtigung (nur OP).
+  debug_mode_is_off_config_yml_b3d27428: 'Der Debug-Modus ist AUS. Setze in der config.yml debug: true.'
+  rank_1_2_3_demo_d87f40da: 'Verwendung: /rank <1|2|3|demo>'
+  rank_1_2_3_demo_4f3e3084: 'Bitte gib eine Zahl ein: /rank <1|2|3|demo>'
+  1_3_rank_1_2_3_7f459bd0: 'Es sind nur 1 bis 3 erlaubt: /rank <1|2|3>'
+  db_e5d54fbd: Es wurde nur der Effekt ausgelöst (Rangliste/DB unverändert).
   debug_rank_3f69f429: 'DEBUG: rank'
-  text_bed3daf7: このコマンドはプレイヤーのみ実行できます。
-  treasurerun_bcef4fe9: '[TreasureRun] ステージ管理が初期化されていません。'
-  text_287fa0f1: 個の難易度ブロックを片付けました。
-  text_44a99db9: このコマンドはプレイヤーからのみ実行できます。
-  text_fd02f248: '制限時間:'
-  text_f166cc04: '§a宝探しゲーム開始！ 難易度:'
-  text_2281b097: 個のチェストを生成しました。宝物は
+  text_bed3daf7: Dieser Befehl kann nur von Spielern ausgeführt werden.
+  treasurerun_bcef4fe9: '[TreasureRun] Die Bühnenverwaltung wurde nicht initialisiert.'
+  text_287fa0f1: Schwierigkeitsblöcke wurden entfernt.
+  text_44a99db9: Dieser Befehl kann nur von einem Spieler ausgeführt werden.
+  text_fd02f248: 'Zeitlimit:'
+  text_f166cc04: '§aDie Schatzsuche beginnt! Schwierigkeit:'
+  text_2281b097: Truhen wurden erzeugt. Die Schätze sind
   mysql_repository_not_ready_72df0af1: MySQL / Repository not ready.
   mysql_repository_not_ready_72df0af1_93: MySQL / Repository not ready.
   mysql_repository_not_ready_72df0af1_119: MySQL / Repository not ready.
@@ -794,11 +794,11 @@ debug:
   reward_giverankrewardwitheff_5e361189: '[Reward] giveRankRewardWithEffect called player='
   starttheme_startgame_called__9cf42cbe: '[StartTheme] startGame called by'
 items:
-  text_7567bb35: 特製エメラルドのレシピを登録しました。
-  text_7a04254b: '&e特製リンゴ'
-  text_e8d4013d: 特製リンゴのレシピを登録しました。
-  text_e42912c7: '&7特製鉄ブロック'
-  text_c89dea57: 特製鉄ブロックのレシピを登録しました。
+  text_7567bb35: Das Rezept für den Spezial-Smaragd wurde registriert.
+  text_7a04254b: '&eSpezial-Apfel'
+  text_e8d4013d: Das Rezept für den Spezial-Apfel wurde registriert.
+  text_e42912c7: '&7Spezial-Eisenblock'
+  text_c89dea57: Das Rezept für den Spezial-Eisenblock wurde registriert.
   specialEmerald:
     displayName: '&6Spezial-Smaragd'
     loreCrafted: '&7In TreasureRun hergestellt'
@@ -840,10 +840,10 @@ ui:
         difficulty: 'Difficulty: {difficulty}'
         howToPlay: Spielanleitung
         language: 'Language: {lang}'
-        rulesItem: 1) Rules
-        savedOn: Saved on SUCCESS / TIME_UP
+        rulesItem: 1) Regeln
+        savedOn: Gespeichert bei SUCCESS / TIME_UP
         scoreRoute: Punkte & Route
-        tipsItem: 2) Tips
+        tipsItem: 2) Tipps
         title: Inhalt
         yourQuotes: Deine gespeicherten Zitate
       hint:
@@ -911,8 +911,8 @@ ui:
     outcome:
       success: SUCCESS
       timeUp: TIME UP
-    page: Page {current}/{total}
-    tabs: Tabs
+    page: Seite {current}/{total}
+    tabs: Reiter
   error:
     noData: No data.
 gameplay:
