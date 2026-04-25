@@ -1,474 +1,519 @@
 outcome:
   notice:
-    timeUpGameOver: 'Le temps est écoulé. Partie terminée.'
-    retryGuide: 'Réessaie en passant par un autre chemin.'
+    timeUpGameOver: Le temps est écoulé. Partie terminée.
+    retryGuide: Réessaie en passant par un autre chemin.
   success:
     common:
       pool: []
     easy:
       pool:
-      - 'You’ve made it.
+      - 'Tu es arrivé.
 
-        The truth remains.'
-      - 'Even if it was only a small step,
+        La vérité demeure.'
+      - 'Même si ce n’était qu’un petit pas,
 
-        you held your ground.'
-      - "You listened.\n The path opened."
-      - "> You made it here\n> \n> The rules were simple —\n> \n> the choice was yours."
-      - "> Distance became meaning.\n> \n> and time answered your footsteps."
-      - "> Not everything shines forever.\n> \n> But this moment did."
-      - 'Light fell evenly, ,
+        tu as tenu bon.'
+      - 'Tu as écouté.
 
-        and every shadow vanished.'
-      - 'The wind fell silent.
+        Et le chemin s’est ouvert.'
+      - '> Tu es arrivé jusqu’ici.
 
-        and everything returned to where it belonged.'
-      - 'A moment of silence.
+        >
 
-        The world steadied its breath.'
-      - 'The record is etched deep in the sand—
+        > Les règles étaient simples —
 
-        beyond the reach of the wind.'
-      - 'Harmony was restored.
+        >
 
-        Everything had been for this moment.'
-      - 'Time slipped by in silence,
+        > le choix t’appartenait.'
+      - '> La distance a pris sens.
 
-        tucked away in the corners of memory.'
-      - 'The sky shifted in color,
+        >
 
-        and one story came to its end.'
-      - 'The waves grew calm,
+        > Et le temps a répondu à tes pas.'
+      - '> Toute lumière ne brille pas éternellement.
 
-        and the sea hid its depths once more.'
-      - 'The footsteps stopped,
+        >
 
-        and only the place remained.'
-      - "Victory and defeat \nare nothing more than grains of sand."
-      - 'The road goes on—or it ends.
+        > Mais cet instant, lui, a brillé.'
+      - 'La lumière est descendue doucement,
 
-        Either way, it lies on the same earth.'
+        et toutes les ombres se sont retirées.'
+      - 'Le vent s’est tu.
+
+        Tout est revenu à sa place.'
+      - 'Un instant de silence.
+
+        Le monde a repris son souffle.'
+      - 'La trace s’est gravée dans le sable —
+
+        là où le vent ne l’atteint plus.'
+      - 'L’équilibre a été rétabli.
+
+        Tout menait à cet instant.'
+      - 'Le temps a glissé en silence,
+
+        préservé dans un recoin de la mémoire.'
+      - 'Le ciel a changé de couleur,
+
+        et une histoire a trouvé sa fin.'
+      - 'Les vagues se sont apaisées,
+
+        et la mer a de nouveau caché ses profondeurs.'
+      - 'Les pas se sont arrêtés,
+
+        et seul le lieu est resté.'
+      - 'Victoire et défaite —
+
+        au fond, ce ne sont que des grains de sable.'
+      - 'La route continue — ou s’arrête ici.
+
+        Dans les deux cas, elle repose sur la même terre.'
     normal:
       pool:
-      - 'The distance has found its meaning.
+      - 'La distance a enfin trouvé son sens.
 
-        Time has rewarded your journey.'
-      - 'The time is up.
+        Le temps a répondu à ton voyage.'
+      - 'Le temps est écoulé.
 
-        but the rest is far from over.'
-      - 'The axis is found.
+        Mais tout n’est pas terminé.'
+      - 'L’axe a été trouvé.
 
-        the world has cased its motion.'
-      - 'The glass held its breath,
+        Le monde a retenu son mouvement.'
+      - 'Le verre a retenu son souffle,
 
-        and you held your ground.'
-      - 'Under the stillness of the sky,
+        et tu as tenu bon.'
+      - 'Sous le ciel immobile,
 
-        your spirit did not waver.'
-      - 'Few things shine forever.
+        ton esprit n’a pas vacillé.'
+      - 'Peu de choses brillent pour toujours.
 
-        but this moment was radiant.'
-      - 'You traversed the fragile earth,
+        Mais cet instant était lumineux.'
+      - 'Tu as traversé une terre fragile
 
-        without losing the view.'
-      - 'The moment has passed.
+        sans perdre ton horizon.'
+      - 'L’instant est passé.
 
-        The legacy remains.'
-      - 'Luck fades fast.
+        Ce qui demeure demeure.'
+      - 'La chance se fane vite.
 
-        order endures.'
-      - 'The sky knows no pause in endless circle,
+        L’ordre demeure.'
+      - 'Le ciel ne connaît aucune pause dans son cercle infini,
 
-        nor shall you find yours.'
-      - 'The center has been reached.
+        et toi non plus, tu ne t’es pas arrêté.'
+      - 'Tu as atteint le centre.
 
-        The world stood still.'
-      - 'Finally here.
+        Le monde est resté immobile.'
+      - 'Te voilà enfin ici.
 
-        The truth remains unyielding.'
-      - 'You have seen it through.
+        La vérité tient bon.'
+      - 'Tu es allé jusqu’au bout.
 
-        And mark this: it was you, and no one else, who chose this path.'
-      - 'Time drifted into silence,
+        Souviens-toi : ce chemin, c’est toi qui l’as choisi, et personne d’autre.'
+      - 'Le temps a glissé vers le silence
 
-        finding its place in the recesses of the mind.'
-      - 'As the sky transformed,
+        et trouvé sa place dans les profondeurs de la mémoire.'
+      - 'Tandis que le ciel changeait de couleur,
 
-        the tale found its final resolved.'
-      - 'The waters fell calm,
+        l’histoire a trouvé son dénouement.'
+      - 'Les eaux se sont calmées,
 
-        and the sky once more veiled its abyss.'
-      - 'The footsteps ceased,
+        et le ciel a de nouveau voilé son abîme.'
+      - 'Les pas se sont tus,
 
-        only the place remained.'
-      - 'Light fell evenly, ,
+        et seul le lieu est resté.'
+      - 'La lumière est descendue doucement,
 
-        and every shadow vanished.'
-      - 'The wind fell silent.
+        et toutes les ombres se sont retirées.'
+      - 'Le vent s’est tu.
 
-        and everything returned to where it belonged.'
-      - 'A moment of silence.
+        Tout est revenu à sa place.'
+      - 'Un instant de silence.
 
-        The world steadied its breath.'
-      - 'The record is etched deep in the sand—
+        Le monde a repris son souffle.'
+      - 'La trace s’est gravée dans le sable —
 
-        beyond the reach of the wind.'
-      - 'Harmony was restored.
+        là où le vent ne l’atteint plus.'
+      - 'L’équilibre a été rétabli.
 
-        Everything had been for this moment.'
-      - 'RUN COMPLETE.
+        Tout menait à cet instant.'
+      - 'Course terminée.
 
-        Clear. Found it.
+        Clair. Trouvé.
 
-        That''s enough.'
-      - 'RUN COMPLETE.
+        Cela suffit.'
+      - 'Course terminée.
 
-        The path held.
+        Le chemin a tenu.
 
-        So did you.'
-      - 'The sky has kept moving.
+        Toi aussi.'
+      - 'Le ciel a continué son mouvement.
 
-        So can you.'
-      - 'RUN COMPLETE.
+        Toi aussi, tu le peux.'
+      - 'Course terminée.
 
-        A quiet result.
+        Un résultat silencieux.
 
-        The weight of real work.'
-      - 'You only walked the path
+        Le poids du vrai travail.'
+      - 'Tu n’as fait que suivre le sentier
 
-        the world had laid out for you.'
-      - 'The ground didn’t give way.
+        que le monde avait placé devant toi.'
+      - 'La terre n’a pas cédé.
 
-        It trusted your steps.'
-      - 'This moment aligned
+        Elle a fait confiance à tes pas.'
+      - 'Cet instant s’est accordé
 
-        with the stars’ ancient rhythm.'
-      - "You didn’t take anything.\n You understood something."
-      - 'You didn’t gain a thing.
+        au rythme ancien des étoiles.'
+      - 'Tu n’as rien pris.
 
-        You only saw the truth for what it was.'
-      - 'You didn’t take this place.
+        Tu as compris quelque chose.'
+      - 'Tu n’as rien gagné pour toi.
 
-        You belonged here.'
-      - 'You walked a road
+        Tu as seulement vu la vérité telle qu’elle était.'
+      - 'Tu n’as pas conquis ce lieu.
 
-        older than memory itself.'
-      - 'The earth did not resist.
+        Tu y appartenais.'
+      - 'Tu as marché sur une voie
 
-        It recognized you.'
-      - "This moment aligned\n with the stillness of the stars."
+        plus ancienne que la mémoire elle-même.'
+      - 'La terre n’a pas résisté.
+
+        Elle t’a reconnu.'
+      - 'Cet instant s’est aligné
+
+        sur le silence des étoiles.'
     hard:
       pool:
-      - 'In the north wind,
+      - 'Dans le vent du nord,
 
-        clarity outlasts speed.'
-      - "The center was found.\n The world came to rest."
-      - 'The stars stay silent.
+        la clarté dure plus longtemps que la vitesse.'
+      - 'Le centre a été trouvé.
 
-        Your record does the speaking.'
-      - 'The result  remained.
+        Le monde a pu se reposer.'
+      - 'Les étoiles gardent le silence.
 
-        The position changed.'
-      - 'Between ice and glass,
+        Ta trace parle pour toi.'
+      - 'Le résultat est resté.
 
-        you chose control.'
-      - 'The waves fell quiet,
+        La position a changé.'
+      - 'Entre la glace et le verre,
 
-        and the sea reclaimed its hidden depths.'
-      - 'Some treasures still await.
+        tu as choisi la maîtrise.'
+      - 'Les vagues se sont tues,
 
-        Next time, a different path.'
-      - 'The sky didn’t change.
+        et la mer a repris ses profondeurs cachées.'
+      - 'D’autres trésors attendent encore.
 
-        You did.'
-      - 'The moment passed.
+        La prochaine fois, un autre chemin.'
+      - 'Le ciel n’a pas changé.
 
-        What remained was order.'
-      - 'Winter is honest.
+        Toi, si.'
+      - 'L’instant est passé.
 
-        So was your run.'
-      - 'The stars aligned for a moment.
+        Ce qui est resté, c’est l’ordre.'
+      - 'L’hiver est honnête.
 
-        You noticed.'
-      - 'The distance closed.
+        Ta course l’a été aussi.'
+      - 'Les étoiles se sont alignées un instant.
 
-        Time did not.'
-      - "The world’s rules stood firm.\n And the signal of possibility was real."
-      - 'The path closed quietly.
+        Tu l’as remarqué.'
+      - 'La distance s’est refermée.
 
-        You were already through.'
-      - 'Nothing changed.
+        Le temps, non.'
+      - 'Les règles du monde sont restées fermes.
 
-        Only your position did.'
-      - 'Not luck.
+        Et le signe du possible était réel.'
+      - 'Le chemin s’est refermé en silence.
 
-        Alignment.'
-      - 'The moment passed.
+        Tu l’avais déjà traversé.'
+      - 'Sous le ciel froid,
 
-        The record remains.'
-      - 'The outcome didn’t change.
+        la main qui n’a pas tremblé a trouvé la réponse.'
+      - 'Tu n’as pas tout obtenu.
 
-        Still, you moved forward.'
-      - 'The output didn’t change.
+        Mais rien n’a été perdu.'
+      - 'Dans un monde fragile,
 
-        But you reached a new level.'
-      - 'The ending was the same.
+        tu as appris à avancer sans le briser.'
+      - 'Le silence qui a suivi
 
-        But the one who reached it had changed.'
-      - 'The destination is the same
+        a pesé plus lourd que le bruit.'
+      - 'Le résultat n’a pas changé.
 
-        —but you’re no longer the traveler you once were.'
-      - 'Light fell evenly, ,
+        Mais tu as atteint un autre niveau.'
+      - 'Le point d’arrivée était le même.
 
-        and every shadow vanished.'
-      - 'The wind fell silent.
+        Mais celui qui y est arrivé avait changé.'
+      - 'La destination est la même —
 
-        and everything returned to where it belonged.'
-      - 'A moment of silence.
+        mais le voyageur n’est plus le même.'
+      - 'Le ciel est resté lointain.
 
-        The world steadied its breath.'
-      - 'The record is etched deep in the sand—
+        Ton pas, lui, était réel.'
+      - 'Tu as traversé le froid
 
-        beyond the reach of the wind.'
-      - 'Harmony was restored.
+        sans lui donner ton cœur.'
+      - 'La lumière n’a pas promis de rester.
 
-        Everything had been for this moment.'
-      - 'Time slipped by in silence,
+        Tu as avancé malgré tout.'
+      - 'Le monde n’a pas applaudi.
 
-        tucked away in the corners of memory.'
-      - 'The sky shifted in color,
+        Il a simplement laissé une trace.'
+      - 'La voie était étroite.
 
-        and one story came to its end.'
-      - 'The waves grew calm,
+        Ton jugement l’a été davantage.'
+      - 'Ce n’était pas de la vitesse.
 
-        and the sea hid its depths once more.'
-      - 'The footsteps stopped,
+        C’était de la précision.'
+      - 'Chaque pas a compté.
 
-        and only the place remained.'
-      - "Victory and defeat \nare nothing more than grains of sand."
-      - 'The road goes on—or it ends.
+        Même ceux que personne n’a vus.'
+      - 'Tu as atteint le bord du silence
 
-        Either way, it lies on the same earth.'
+        sans perdre ton nom.'
+      - 'L’épreuve s’est achevée.
+
+        La mesure, elle, demeure.'
+      - 'Le froid n’a pas gagné.
+
+        Il a seulement révélé ta forme.'
+      - 'Ce qui semblait lointain
+
+        est devenu un lieu réel.'
   timeup:
     easy:
       pool:
-      - 'Time ran out.
+      - 'Le temps est écoulé.
 
-        Nothing else did.'
-      - 'The treasure can wait.
+        Rien d’autre ne l’est.'
+      - 'Le trésor peut attendre.
 
-        So can you.'
-      - 'Breathe in.
+        Toi aussi.'
+      - 'Ce n’était qu’un commencement,
 
-        Then again.'
-      - 'That’s all for now.
+        pas un jugement.'
+      - 'La route n’a pas disparu.
 
-        On to the next step.'
-      - 'You''re still here.
+        Elle s’est seulement tue pour aujourd’hui.'
+      - 'Tu n’as pas échoué.
 
-        That’s what matters.'
-      - 'The run ended.
+        Tu as appris la distance.'
+      - 'La course s’est arrêtée.
 
-        You didn’t.'
-      - 'TIME''S UP.
+        Toi, non.'
+      - 'TEMPS ÉCOULÉ.
 
-        The run ended.
+        La course s’est arrêtée.
 
-        You didn''t.'
-      - 'TIME''S UP.
+        Toi, non.'
+      - 'TEMPS ÉCOULÉ.
 
-        The rules don’t change.
+        Le chemin reste là.
 
-        Again.'
-      - 'TIME''S UP.
+        Respire, puis reviens.'
+      - 'TEMPS ÉCOULÉ.
 
-        “So close” is real.'
-      - 'The sun sank,
+        Le monde n’a pas fermé sa porte.
 
-        and shadow covered the world once again.'
-      - 'The last grains of sand fell,
+        Il t’a seulement demandé de recommencer.'
+      - 'Le ciel s’est assombri,
 
-        and the story quietly came to a close.'
-      - 'The wind swept through,
+        mais la route n’a pas disparu.'
+      - 'Les pas se sont arrêtés,
 
-        and the footprints vanished without a trace.'
-      - 'The tide came in,
+        mais le lieu se souvient.'
+      - 'Même sans arrivée,
 
-        What once had been there returned to the sea.'
-      - 'Silence.
+        il y eut un chemin.'
+      - 'Ce que tu n’as pas trouvé
 
-        Only time passed through.'
-      - "Victory and defeat \nare nothing more than grains of sand."
-      - 'The road goes on—or it ends.
+        peut encore t’attendre.'
+      - 'Le silence n’était pas une fin.
 
-        Either way, it lies on the same earth.'
+        C’était une pause.'
+      - 'Aujourd’hui, le temps a gagné.
+
+        Demain, le chemin peut changer.'
+      - 'Aucune trace n’est inutile
+
+        si elle apprend au pied où revenir.'
     normal:
       pool:
-      - 'The distance closed.
+      - 'Le temps a choisi sa limite.
 
-        Time did not.'
-      - 'The world kept its rules.
+        Toi, tu peux encore choisir le chemin.'
+      - 'La lumière s’est éloignée.
 
-        You touched the edge.'
-      - 'You didn’t make it.
+        Mais elle n’a pas disparu.'
+      - 'Le résultat est resté.
 
-        But the signal was real.'
-      - 'Some treasures still await.
+        La position a changé.'
+      - 'La route s’est refermée.
 
-        Let’s try a different path.'
-      - 'The result remained.
+        Mais pas définitivement.'
+      - 'Ce n’était pas une victoire.
 
-        The position changed.'
-      - 'Time ran out.
+        C’était une mesure.'
+      - 'Le monde n’a pas refusé.
 
-        Meaning didn''t.'
-      - 'So close.
+        Il a seulement demandé davantage.'
+      - 'Tu n’as pas atteint le centre.
 
-        The sound said so.'
-      - 'The map is still open.
+        Mais tu en as appris le poids.'
+      - 'Le vent du nord ne juge pas.
 
-        Come back to it.'
-      - 'The world’s rules stood firm.
+        Il mesure seulement.'
+      - 'La distance est restée.
 
-        The signal of possibility was real.'
-      - The world kept its rules.
-      - 'The moment passed.
+        Mais elle a maintenant un nom.'
+      - 'La fin est venue sans colère.
 
-        The record remains.'
-      - 'The sun sank,
+        Elle a seulement coupé le son.'
+      - 'Le temps n’a pas été cruel.
 
-        and shadow covered the world once again.'
-      - 'The last grains of sand fell,
+        Il a été exact.'
+      - 'Ce qui manque encore
 
-        and the story quietly came to a close.'
-      - 'The wind swept through,
+        te montrera le prochain pas.'
+      - 'La course s’est tue.
 
-        and the footprints vanished without a trace.'
-      - 'The tide came in,
+        La leçon, non.'
+      - 'Le ciel a fermé son cercle.
 
-        What once had been there returned to the sea.'
-      - 'Silence.
+        Le chemin, lui, peut rouvrir.'
+      - 'Tu n’es pas arrivé.
 
-        Only time passed through.'
-      - "Victory and defeat \nare nothing more than grains of sand."
-      - 'The road goes on—or it ends.
+        Mais tu as avancé pour de vrai.'
+      - 'Le lieu n’a pas été pris.
 
-        Either way, it lies on the same earth.'
-      - "> Time ran out.\n> \n> Nothing else did."
-      - "> The outcome didn’t change.\n> \n> But your position did."
+        Il a été aperçu.'
+      - 'Le trésor est resté loin.
+
+        Mais pas inconnu.'
+      - 'Rien ne s’est effondré.
+
+        Tout a simplement attendu.'
+      - 'Le silence après l’échec
+
+        peut devenir une carte.'
+      - 'Reviens autrement.
+
+        Le monde s’en souviendra.'
     hard:
       pool:
-      - 'Even the aurora fades.
+      - 'Le temps s’est refermé.
 
-        Come back with a new stride.'
-      - 'In a fragile world,
+        La trace demeure.'
+      - 'Tu n’es pas arrivé.
 
-        haste shatters clarity before it can be found.'
-      - 'The moment slipped away.
+        Mais la mesure était réelle.'
+      - 'La vitesse n’a pas suffi.
 
-        The meaning did not.'
-      - 'Winter is patient.
+        La clarté reviendra.'
+      - 'Le froid n’a pas parlé.
 
-        Be the same.'
-      - 'The sky kept moving.
+        Il t’a seulement observé.'
+      - 'La route était stricte.
 
-        So will you.'
-      - 'The story moves on.
+        Elle n’était pas injuste.'
+      - 'Le ciel est resté haut.
 
-        The end is not yet.'
-      - 'The stars were there, watching.
+        Tes pas sont restés vrais.'
+      - 'Rien n’a été donné.
 
-        Again.'
-      - 'Ice takes its time.
+        Tout a été pesé.'
+      - 'Le centre est resté hors d’atteinte.
 
-        Neither do you.'
-      - 'The sky kept moving.
+        Mais il n’est plus inconnu.'
+      - 'Le vent a effacé le bruit.
 
-        So can you.'
-      - 'The north has learned to wait.
+        Pas l’effort.'
+      - 'L’épreuve n’a pas cédé.
 
-        So should you.'
-      - 'This is an interlude
+        Toi non plus complètement.'
+      - 'Le temps a gagné cette manche.
 
-        —It’s not over.'
-      - 'Like drifting clouds,
+        Pas toute l’histoire.'
+      - 'Le chemin s’est fermé.
 
-        don’t lose your flow—like a river.'
-      - 'The sound was near.
+        Mais ton regard l’a retenu.'
+      - 'Tu as perdu l’instant.
 
-        The distance was real.
+        Pas la forme de la route.'
+      - 'Le silence a compté chaque pas.
 
-        But that moment can’t be saved.'
-      - 'You were closing in.
+        Même les derniers.'
+      - 'Le verre n’a pas cassé.
 
-        Only time wasn’t.'
-      - 'The world held to its rules.
+        Il a seulement refusé l’erreur.'
+      - 'La distance est restée dure.
 
-        You touched the edge of them.'
-      - "You didn’t reach the treasure. \nBut the signal was real."
-      - 'Nothing changed.
+        Mais elle a révélé sa vérité.'
+      - 'Aucune lumière facile.
 
-        Only your position did.'
-      - 'It wasn’t luck.
+        Seulement une direction.'
+      - 'Tu n’as pas atteint la fin.
 
-        Alignment.'
-      - 'The moment slipped away,
+        Mais tu as touché la limite.'
+      - 'Le froid a gardé son secret.
 
-        but the record stayed.'
-      - 'You crossed fragile ground
+        Tu en as appris le contour.'
+      - 'Ce n’était pas assez.
 
-        and left the horizon unbroken.'
-      - "Nothing changed.\n Only your position did.\nNot luck.\nAlignment.\nThe moment passed.\nThe record remains."
-      - 'The sun sank,
+        Mais ce n’était pas rien.'
+      - 'Le nord n’accorde pas de détour.
 
-        and shadow covered the world once again.'
-      - 'The last grains of sand fell,
+        Il laisse seulement des preuves.'
+      - 'La route n’a pas menti.
 
-        and the story quietly came to a close.'
-      - 'The wind swept through,
+        Elle a demandé davantage.'
+      - 'Ce ne fut pas une victoire.
 
-        and the footprints vanished without a trace.'
-      - 'The tide came in,
+        Ce fut une mesure.'
+      - 'Le ciel n’a pas répondu.
 
-        What once had been there returned to the sea.'
-      - 'Silence.
+        Mais tes pas ont posé la question.'
+      - 'Le monde est resté fermé.
 
-        Only time passed through.'
-      - "Victory and defeat \nare nothing more than grains of sand."
-      - 'The road goes on—or it ends.
+        La carte, elle, s’est précisée.'
+      - 'La fin fut silencieuse.
 
-        Either way, it lies on the same earth.'
-      - 'The season closed.
+        Le sens, non.'
+      - 'Le trésor n’a pas bougé.
 
-        The land remained.'
-      - 'The path The path remains.
+        Toi, si.'
+      - 'La perte n’a pas effacé l’effort.
 
-        Only your steps stopped.'
-      - 'Your time ran out.
+        Elle l’a rendu visible.'
+      - 'Le temps a coupé la route.
 
-        The sky didn’t.'
-      - 'It wasn’t rejection.
+        Pas l’élan.'
+      - 'Le froid a gardé la porte.
 
-        Only silence.'
-      - 'The world is still intact.
+        Tu as trouvé la serrure.'
+      - 'Sous le nord,
 
-        You can return—changed.'
-      - 'The season ended.
+        même un petit pas est vrai.'
+      - 'Aucun raccourci.
 
-        The forest remains.'
-      - 'The distance was closing.
+        Seulement l’apprentissage.'
+      - 'Le monde n’a pas cédé.
 
-        Time kept its rhythm.'
-      - 'Your time came to a halt.
+        Mais il t’a vu revenir.'
+      - 'La mesure fut sévère.
 
-        The sky kept moving.'
-      - 'Not rejection
+        Elle n’était pas vide.'
+      - 'Le silence a fermé la scène.
 
-        Just silence.'
-      - 'The path is still here.
+        Mais pas le chemin.'
+      - 'Tu n’as pas gagné aujourd’hui.
 
-        You can come back—changed.'
+        Mais tu as laissé une trace juste.'
+      - 'La route n’a pas disparu.
 
+        Elle attend une meilleure lecture.'
+      - 'Le dernier pas n’a pas suffi.
+
+        Mais il comptait quand même.'
 version: 1
 quotes:
   outcome:
@@ -495,8 +540,7 @@ command:
   gameStart:
     playersOnly: Cette commande ne peut être utilisée que par des joueurs.
     worldNotFound: '[TreasureRun] Le monde de départ n’est pas configuré ou est introuvable.'
-    started: 'La chasse au trésor commence ! Difficulté : {difficulty} | Temps limite
-      : {timeLimit} secondes'
+    started: 'La chasse au trésor commence ! Difficulté : {difficulty} | Temps limite : {timeLimit} secondes'
   stageCleanup:
     playersOnly: '&cSeuls les joueurs peuvent utiliser cette commande.'
     managerNotReady: '[TreasureRun] Le gestionnaire de niveau n’est pas encore initialisé.'
@@ -508,22 +552,17 @@ command:
     success: '&aRechargement terminé.'
     fail: '&cÉchec du rechargement : {reason}'
   lang:
-    guiCancelledGameStart: La sélection de la langue a été annulée. Pour réessayer,
-      exécutez /gameStart <easy|normal|hard>.
-    guiCancelledGameMenu: La sélection de la langue a été annulée. Pour la rouvrir,
-      exécutez /gameMenu gui.
-    guiTooManyShown: Trop de langues autorisées ont été configurées, donc l’interface
-      n’affiche que les 27 premières.
+    guiCancelledGameStart: La sélection de la langue a été annulée. Pour réessayer, exécutez /gameStart <easy|normal|hard>.
+    guiCancelledGameMenu: La sélection de la langue a été annulée. Pour la rouvrir, exécutez /gameMenu gui.
+    guiTooManyShown: Trop de langues autorisées ont été configurées, donc l’interface n’affiche que les 27 premières.
     playersOnly: Cette commande ne peut être utilisée que par les joueurs.
-    resetDone: ✅ Votre langue enregistrée a été réinitialisée. L’interface s’ouvrira
-      la prochaine fois.
+    resetDone: ✅ Votre langue enregistrée a été réinitialisée. L’interface s’ouvrira la prochaine fois.
     current: 'Langue actuelle : {lang}'
     emptyCode: 'Le code de langue est vide. Exemple : /lang ja'
     notAllowed: 'Cette langue n’est pas autorisée : {lang}'
     allowedList: 'Langues autorisées : {allowed}'
     changed: '✅ Langue modifiée : {displayName} ({lang})'
-    changedButNotSaved: '⚠ La langue a été modifiée, mais l’enregistrement permanent
-      a échoué : {lang}'
+    changedButNotSaved: '⚠ La langue a été modifiée, mais l’enregistrement permanent a échoué : {lang}'
     list:
       title: === Langues ===
       default: 'par défaut : {default}'
@@ -537,8 +576,7 @@ command:
     success: '&bVous avez fabriqué une Émeraude spéciale avec 3 diamants !'
   quoteFavorite:
     latestSaved: La dernière citation a été enregistrée dans les Favoris.
-    latestNotSaved: La dernière citation n'a pas pu être enregistrée. Il n'y a peut-être
-      pas encore d'historique, ou elle est déjà dans les Favoris.
+    latestNotSaved: La dernière citation n'a pas pu être enregistrée. Il n'y a peut-être pas encore d'historique, ou elle est déjà dans les Favoris.
     playersOnly: '&cCette commande ne peut être utilisée que par des joueurs.'
     repositoryNotReady: Les Favoris ne sont pas encore disponibles.
     listHeader: '&bFavoris ({count})'
@@ -552,8 +590,7 @@ command:
     openBookFailed: '&cImpossible d''ouvrir le livre.'
     unknownSubcommand: '&cSous-commande inconnue. Voir /quoteFavorite help.'
     shortcutSaved: La dernière citation a été enregistrée dans les Favoris.
-    shortcutNotSaved: La dernière citation n'a pas pu être enregistrée. Il n'y a peut-être
-      pas encore d'historique, ou elle est déjà dans les Favoris.
+    shortcutNotSaved: La dernière citation n'a pas pu être enregistrée. Il n'y a peut-être pas encore d'historique, ou elle est déjà dans les Favoris.
     help:
       title: '&bCommandes QuoteFavorite'
       latest: '&7/quoteFavorite latest  - enregistrer la dernière citation en favori'
@@ -564,8 +601,7 @@ command:
       rereadBook: '&7/quoteFavorite reread book - rouvrir le livre de relecture'
       book: '&7/quoteFavorite book - ouvrir le livre des favoris'
       bookToc: '&7/quoteFavorite book toc - ouvrir la table des matières du livre'
-      bookSuccess: '&7/quoteFavorite book success - ouvrir le livre des citations
-        SUCCESS'
+      bookSuccess: '&7/quoteFavorite book success - ouvrir le livre des citations SUCCESS'
       bookTimeup: '&7/quoteFavorite book timeup - ouvrir le livre des citations TIME_UP'
       bookOther: '&7/quoteFavorite book other - ouvrir l''autre mise en page du livre'
 gui:
@@ -616,55 +652,44 @@ game:
     cursor_7fabae3f: / cursor=
     return_whoclicked_is_not_pla_a7675648: 'RETURN: whoClicked is not Player'
     return_topinventory_is_not_m_9936e6de: 'RETURN: topInventory is not MERCHANT'
-    return_not_result_slot_expec_9eb8c2c8: 'RETURN: not result slot. expected rawSlot=2
-      but was'
+    return_not_result_slot_expec_9eb8c2c8: 'RETURN: not result slot. expected rawSlot=2 but was'
     shift_53e51de9: ', shift='
-    return_topinventory_is_merch_fa2f5d98: 'RETURN: topInventory is MERCHANT but not
-      MerchantInventory instance'
+    return_topinventory_is_merch_fa2f5d98: 'RETURN: topInventory is MERCHANT but not MerchantInventory instance'
     merchant_view_title_daf2a73a: merchant view title=
     treasure_shop_2574a694: treasure shop
     return_not_treasure_shop_tit_8e65ad3d: 'RETURN: not Treasure Shop title. plainTitle='
     return_current_item_is_null_0f27c9fd: 'RETURN: current item is null'
     return_current_item_is_air_76b5e623: 'RETURN: current item is AIR'
-    return_current_item_is_not_g_d1d65218: 'RETURN: current item is not GOLDEN_APPLE.
-      type='
+    return_current_item_is_not_g_d1d65218: 'RETURN: current item is not GOLDEN_APPLE. type='
     return_game_is_not_running_048d7edb: 'RETURN: game is not running'
     ingredients_snapshot_98cb38c3: ingredients snapshot
-    return_ingredient_check_fail_673860d5: 'RETURN: ingredient check failed (need
-      TreasureEmerald>=5 and slot1 empty)'
-    ok_passed_all_checks_schedul_11e17905: 'OK: passed all checks -> scheduling effect
-      with runTaskLater'
+    return_ingredient_check_fail_673860d5: 'RETURN: ingredient check failed (need TreasureEmerald>=5 and slot1 empty)'
+    ok_passed_all_checks_schedul_11e17905: 'OK: passed all checks -> scheduling effect with runTaskLater'
     run_runtasklater_executed_96d7e049: 'RUN: runTaskLater executed'
     return_later_game_is_not_run_9cc569aa: 'RETURN(LATER): game is not running'
     return_later_player_is_offli_863a8cdc: 'RETURN(LATER): player is offline'
-    return_later_openinventory_t_7b809b57: 'RETURN(LATER): openInventory/topInventory
-      is null'
-    return_later_topinventory_is_f8714cf5: 'RETURN(LATER): topInventory is not MERCHANT.
-      type='
+    return_later_openinventory_t_7b809b57: 'RETURN(LATER): openInventory/topInventory is null'
+    return_later_topinventory_is_f8714cf5: 'RETURN(LATER): topInventory is not MERCHANT. type='
     treasure_shop_2574a694_822: treasure shop
-    return_later_not_treasure_sh_fcce2bb9: 'RETURN(LATER): not Treasure Shop title.
-      plainTitle='
+    return_later_not_treasure_sh_fcce2bb9: 'RETURN(LATER): not Treasure Shop title. plainTitle='
     ok_later_playing_effects_now_b80a2e0e: 'OK(LATER): playing effects now'
     k_llun_r_dj_pinu_16494877: '&6&lKöllun úr djúpinu'
     trade_complete_4a4b1d6f: Trade complete!
     a_hidden_power_awakens_7620bc4d: A hidden power awakens…
     mobcontrol_wolf_allowed_cust_a5459084: '[MobControl] WOLF allowed (CUSTOM). name='
     rainbow_wolf_b3cc6257: Rainbow Wolf
-    mobcontrol_wolf_allowed_name_9cc5a59a: '[MobControl] WOLF allowed (name match).
-      reason='
+    mobcontrol_wolf_allowed_name_9cc5a59a: '[MobControl] WOLF allowed (name match). reason='
     mobcontrol_wolf_cancelled_re_1a3b2e1a: '[MobControl] WOLF cancelled! reason='
     stagemobcontrollistener_refl_08ad690a: '⚠ StageMobControlListener: カウントダウン判定(reflection)に失敗。ゲーム中のみ制御します。原因:'
     stagemobcontrollistener_refl_d8a61972: '⚠ StageMobControlListener: reflection初期化に失敗。ゲーム中のみ制御します。原因:'
     mysql_connection_established_47452dfd: MySQL connection established successfully!
     failed_to_connect_to_mysql_95e4d50a: 'Failed to connect to MySQL:'
-    create_table_if_not_exists_p_136a7833: CREATE TABLE IF NOT EXISTS player_treasure_count
-      (
+    create_table_if_not_exists_p_136a7833: CREATE TABLE IF NOT EXISTS player_treasure_count (
     player_name_varchar_50_prima_79b8331b: player_name VARCHAR(50) PRIMARY KEY,
     count_int_not_null_660eadd8: count INT NOT NULL)
     failed_to_create_table_68199f98: 'Failed to create table:'
     reset_treasure_count_for_pla_96b152d2: 'Reset treasure count for player:'
-    dj_onalltreasurescollected_a871afdd: DJイベントはすでに実行中のため、onAllTreasuresCollected
-      をスキップしました。
+    dj_onalltreasurescollected_a871afdd: DJイベントはすでに実行中のため、onAllTreasuresCollected をスキップしました。
     on_duplicate_key_update_coun_a1543779: ON DUPLICATE KEY UPDATE count = ?
     failed_to_save_treasure_coun_9d94c0cc: 'Failed to save treasure count:'
     dj_triggerultimatedjevent_eb01ecae: DJイベントはすでに実行中のため、triggerUltimateDJEvent をスキップしました。
@@ -673,8 +698,7 @@ game:
     congratulations_38fd1594: §6Congratulations! 全ての宝物を見つけました！
     time_s_up_c5b3ef74: §c§lTIME'S UP!
     treasures_collected_ca7eab31: '§7Treasures collected: §e'
-    try_a_different_route_next_t_721a4d8b: §7Try a different route next time — or
-      use §e/gamestart §7<§eeasy§7|§enormal§7|§ehard§7> §7to retry.
+    try_a_different_route_next_t_721a4d8b: §7Try a different route next time — or use §e/gamestart §7<§eeasy§7|§enormal§7|§ehard§7> §7to retry.
 sound:
   sparkle: '&b* scintille *'
   start: '&7(BGM démarre...)'
@@ -733,23 +757,19 @@ favorites:
     rereadTitle: Relire
     sub: Parcourir par chapitre
   auto:
-    treasurerun_favorites_templa_a0a4bf2e: '[TreasureRun] favorites_templates.yml
-      created.'
+    treasurerun_favorites_templa_a0a4bf2e: '[TreasureRun] favorites_templates.yml created.'
     mysql_repository_not_ready_72df0af1: MySQL / Repository not ready.
     favorite_saved_sneak_rightcl_7a73eb4f: ★ Favorite saved! (Sneak+RightClick)
     quotefavoritestore_reloaded__3ba623a3: '[QuoteFavoriteStore] Reloaded DB: host='
-    where_player_uuid_and_quote__36106f85: WHERE player_uuid=? AND quote_hash=? LIMIT
-      1
+    where_player_uuid_and_quote__36106f85: WHERE player_uuid=? AND quote_hash=? LIMIT 1
     quotefavoritestore_exists_fa_7d08adba: '[QuoteFavoriteStore] exists failed:'
-    player_uuid_quote_hash_outco_49f06b31: (player_uuid, quote_hash, outcome, difficulty,
-      lang, quote_text)
+    player_uuid_quote_hash_outco_49f06b31: (player_uuid, quote_hash, outcome, difficulty, lang, quote_text)
     values_643f4d2f: VALUES (?, ?, ?, ?, ?, ?)
     quotefavoritestore_addfavori_44fb1d75: '[QuoteFavoriteStore] addFavorite failed:'
     where_player_uuid_and_quote__81bcaee5: WHERE player_uuid=? AND quote_hash=?
     quotefavoritestore_removefav_8180a1e4: '[QuoteFavoriteStore] removeFavorite failed:'
     where_player_uuid_and_id_f4a80773: WHERE player_uuid=? AND id=?
-    quotefavoritestore_removefav_d024b1e5: '[QuoteFavoriteStore] removeFavoriteById
-      failed:'
+    quotefavoritestore_removefav_d024b1e5: '[QuoteFavoriteStore] removeFavoriteById failed:'
     where_player_uuid_53558ea9: WHERE player_uuid=?
     order_by_created_at_desc_lim_f22988c0: ORDER BY created_at DESC LIMIT ?
     quotefavoritestore_listfavor_f3e976d4: '[QuoteFavoriteStore] listFavoris failed:'
@@ -765,8 +785,7 @@ commands:
   3_71b78a44: ダイヤモンド3個でスペシャルエメラルドを作成しました！
   text_3030fd61: プレイヤーのみ実行できます
   op_10caf0f6: 権限がありません（OP限定）
-  debug_mode_is_off_config_yml_b3d27428: 'Debug mode is OFF. config.yml の debug: true
-    にしてください'
+  debug_mode_is_off_config_yml_b3d27428: 'Debug mode is OFF. config.yml の debug: true にしてください'
   rank_1_2_3_demo_d87f40da: '使い方: /rank <1|2|3|demo>'
   rank_1_2_3_demo_4f3e3084: '数字で入力してください: /rank <1|2|3|demo>'
   1_3_rank_1_2_3_7f459bd0: '1〜3だけ使えます: /rank <1|2|3>'
@@ -782,29 +801,20 @@ commands:
   mysql_repository_not_ready_72df0af1: MySQL / Repository not ready.
   mysql_repository_not_ready_72df0af1_93: MySQL / Repository not ready.
   mysql_repository_not_ready_72df0af1_119: MySQL / Repository not ready.
-  quotefavorite_book_open_cata_055de855: /quoteFavorite book            - open catalog
-    (full)
-  quotefavorite_book_toc_open__c7d02ede: /quoteFavorite book toc        - open catalog
-    (TOC only)
-  quotefavorite_book_success_o_afe31501: /quoteFavorite book success    - open SUCCESS
-    chapter
-  quotefavorite_book_timeup_op_08b799b0: /quoteFavorite book timeup     - open TIME_UP
-    chapter
-  quotefavorite_book_other_ope_bdcbafba: /quoteFavorite book other      - open OTHER
-    chapter
-  success_normal_en_the_obstac_b627a544: 【SUCCESS / Normal / en】\nThe obstacle is
-    the way.
+  quotefavorite_book_open_cata_055de855: /quoteFavorite book            - open catalog (full)
+  quotefavorite_book_toc_open__c7d02ede: /quoteFavorite book toc        - open catalog (TOC only)
+  quotefavorite_book_success_o_afe31501: /quoteFavorite book success    - open SUCCESS chapter
+  quotefavorite_book_timeup_op_08b799b0: /quoteFavorite book timeup     - open TIME_UP chapter
+  quotefavorite_book_other_ope_bdcbafba: /quoteFavorite book other      - open OTHER chapter
+  success_normal_en_the_obstac_b627a544: 【SUCCESS / Normal / en】\nThe obstacle is the way.
   time_up_bc0cd646: TIME UP
 debug:
   istreasureemerald_fb6fecec: isTreasureEmerald =
-  chestsound_start_called_16th_e2a7414b: §b[ChestSound] start() called (16th-grid
-    mode)
+  chestsound_start_called_16th_e2a7414b: §b[ChestSound] start() called (16th-grid mode)
   chestsound_chests_0_82465b3c: §7[ChestSound] chests=0
-  chestsound_d_1fm_s_t_2f_step_6e3e0fdb: §b[ChestSound] §fD=§e%.1fm §7(%s§7) §ft=§a%.2f
-    §7step=%d bar=%d
+  chestsound_d_1fm_s_t_2f_step_6e3e0fdb: §b[ChestSound] §fD=§e%.1fm §7(%s§7) §ft=§a%.2f §7step=%d bar=%d
   chestsound_nearest_1fm_s_t_2_e2465135: §b[ChestSound] nearest=%.1fm %s  t=%.2f
-  reward_giverankrewardwitheff_5e361189: '[Reward] giveRankRewardWithEffect called
-    player='
+  reward_giverankrewardwitheff_5e361189: '[Reward] giveRankRewardWithEffect called player='
   starttheme_startgame_called__9cf42cbe: '[StartTheme] startGame called by'
 items:
   text_7567bb35: 特製エメラルドのレシピを登録しました。
@@ -839,8 +849,7 @@ ui:
       fallbackDisplayName: Livre des règles de TreasureRun
       hotbarGiven: 📖 Le livre des règles a été ajouté à votre barre rapide.
       hotbarHint: Tenez-le en main et faites un clic droit pour le relire à tout moment.
-      latestHint: (Faites un clic droit sur ce livre pour enregistrer la dernière
-        citation.)
+      latestHint: (Faites un clic droit sur ce livre pour enregistrer la dernière citation.)
       openFailed: Could not open the rule book.
     toc:
       message: '&6📌 Menu TreasureRun ouvert. Consulte le livre des règles.'
@@ -863,8 +872,7 @@ ui:
       hint:
         reopenMenu: 'Hint: use /gameMenu to open this again.'
       note:
-        bookFormat: Minecraft books cannot switch tabs by clicking, so sections are
-          shown as pages.
+        bookFormat: Minecraft books cannot switch tabs by clicking, so sections are shown as pages.
   quote:
     footer:
       dbLogs: '(BD : proverb_logs)'
@@ -946,8 +954,7 @@ gameplay:
       score: Score
       time: Temps
       rank: Rang
-    allChestsOpenedBroadcast: '{player} a ouvert tous les coffres ! Score final :
-      {score}'
+    allChestsOpenedBroadcast: '{player} a ouvert tous les coffres ! Score final : {score}'
     summaryLine: 'Temps : {time}  Score : {score}  Rang : {rank}'
     gotLine: 'Coffres : {got}/{total}'
   setup:

@@ -1,0 +1,328 @@
+lang	pool	index	translation
+fr	outcome.success.easy.pool	1	"Tu es arrivé.
+La vérité demeure."
+fr	outcome.success.easy.pool	2	"Même si ce n’était qu’un petit pas,
+tu as tenu bon."
+fr	outcome.success.easy.pool	3	"Tu as écouté.
+Et le chemin s’est ouvert."
+fr	outcome.success.easy.pool	4	"> Tu es arrivé jusqu’ici.
+>
+> Les règles étaient simples —
+>
+> le choix t’appartenait."
+fr	outcome.success.easy.pool	5	"> La distance a pris sens.
+>
+> Et le temps a répondu à tes pas."
+fr	outcome.success.easy.pool	6	"> Toute lumière ne brille pas éternellement.
+>
+> Mais cet instant, lui, a brillé."
+fr	outcome.success.easy.pool	7	"La lumière est descendue doucement,
+et toutes les ombres se sont retirées."
+fr	outcome.success.easy.pool	8	"Le vent s’est tu.
+Tout est revenu à sa place."
+fr	outcome.success.easy.pool	9	"Un instant de silence.
+Le monde a repris son souffle."
+fr	outcome.success.easy.pool	10	"La trace s’est gravée dans le sable —
+là où le vent ne l’atteint plus."
+fr	outcome.success.easy.pool	11	"L’équilibre a été rétabli.
+Tout menait à cet instant."
+fr	outcome.success.easy.pool	12	"Le temps a glissé en silence,
+préservé dans un recoin de la mémoire."
+fr	outcome.success.easy.pool	13	"Le ciel a changé de couleur,
+et une histoire a trouvé sa fin."
+fr	outcome.success.easy.pool	14	"Les vagues se sont apaisées,
+et la mer a de nouveau caché ses profondeurs."
+fr	outcome.success.easy.pool	15	"Les pas se sont arrêtés,
+et seul le lieu est resté."
+fr	outcome.success.easy.pool	16	"Victoire et défaite —
+au fond, ce ne sont que des grains de sable."
+fr	outcome.success.easy.pool	17	"La route continue — ou s’arrête ici.
+Dans les deux cas, elle repose sur la même terre."
+fr	outcome.success.normal.pool	1	"La distance a enfin trouvé son sens.
+Le temps a répondu à ton voyage."
+fr	outcome.success.normal.pool	2	"Le temps est écoulé.
+Mais tout n’est pas terminé."
+fr	outcome.success.normal.pool	3	"L’axe a été trouvé.
+Le monde a retenu son mouvement."
+fr	outcome.success.normal.pool	4	"Le verre a retenu son souffle,
+et tu as tenu bon."
+fr	outcome.success.normal.pool	5	"Sous le ciel immobile,
+ton esprit n’a pas vacillé."
+fr	outcome.success.normal.pool	6	"Peu de choses brillent pour toujours.
+Mais cet instant était lumineux."
+fr	outcome.success.normal.pool	7	"Tu as traversé une terre fragile
+sans perdre ton horizon."
+fr	outcome.success.normal.pool	8	"L’instant est passé.
+Ce qui demeure demeure."
+fr	outcome.success.normal.pool	9	"La chance se fane vite.
+L’ordre demeure."
+fr	outcome.success.normal.pool	10	"Le ciel ne connaît aucune pause dans son cercle infini,
+et toi non plus, tu ne t’es pas arrêté."
+fr	outcome.success.normal.pool	11	"Tu as atteint le centre.
+Le monde est resté immobile."
+fr	outcome.success.normal.pool	12	"Te voilà enfin ici.
+La vérité tient bon."
+fr	outcome.success.normal.pool	13	"Tu es allé jusqu’au bout.
+Souviens-toi : ce chemin, c’est toi qui l’as choisi, et personne d’autre."
+fr	outcome.success.normal.pool	14	"Le temps a glissé vers le silence
+et trouvé sa place dans les profondeurs de la mémoire."
+fr	outcome.success.normal.pool	15	"Tandis que le ciel changeait de couleur,
+l’histoire a trouvé son dénouement."
+fr	outcome.success.normal.pool	16	"Les eaux se sont calmées,
+et le ciel a de nouveau voilé son abîme."
+fr	outcome.success.normal.pool	17	"Les pas se sont tus,
+et seul le lieu est resté."
+fr	outcome.success.normal.pool	18	"La lumière est descendue doucement,
+et toutes les ombres se sont retirées."
+fr	outcome.success.normal.pool	19	"Le vent s’est tu.
+Tout est revenu à sa place."
+fr	outcome.success.normal.pool	20	"Un instant de silence.
+Le monde a repris son souffle."
+fr	outcome.success.normal.pool	21	"La trace s’est gravée dans le sable —
+là où le vent ne l’atteint plus."
+fr	outcome.success.normal.pool	22	"L’équilibre a été rétabli.
+Tout menait à cet instant."
+fr	outcome.success.normal.pool	23	"Course terminée.
+Clair. Trouvé.
+Cela suffit."
+fr	outcome.success.normal.pool	24	"Course terminée.
+Le chemin a tenu.
+Toi aussi."
+fr	outcome.success.normal.pool	25	"Le ciel a continué son mouvement.
+Toi aussi, tu le peux."
+fr	outcome.success.normal.pool	26	"Course terminée.
+Un résultat silencieux.
+Le poids du vrai travail."
+fr	outcome.success.normal.pool	27	"Tu n’as fait que suivre le sentier
+que le monde avait placé devant toi."
+fr	outcome.success.normal.pool	28	"La terre n’a pas cédé.
+Elle a fait confiance à tes pas."
+fr	outcome.success.normal.pool	29	"Cet instant s’est accordé
+au rythme ancien des étoiles."
+fr	outcome.success.normal.pool	30	"Tu n’as rien pris.
+Tu as compris quelque chose."
+fr	outcome.success.normal.pool	31	"Tu n’as rien gagné pour toi.
+Tu as seulement vu la vérité telle qu’elle était."
+fr	outcome.success.normal.pool	32	"Tu n’as pas conquis ce lieu.
+Tu y appartenais."
+fr	outcome.success.normal.pool	33	"Tu as marché sur une voie
+plus ancienne que la mémoire elle-même."
+fr	outcome.success.normal.pool	34	"La terre n’a pas résisté.
+Elle t’a reconnu."
+fr	outcome.success.normal.pool	35	"Cet instant s’est aligné
+sur le silence des étoiles."
+fr	outcome.success.hard.pool	1	"Dans le vent du nord,
+la clarté dure plus longtemps que la vitesse."
+fr	outcome.success.hard.pool	2	"Le centre a été trouvé.
+Le monde a pu se reposer."
+fr	outcome.success.hard.pool	3	"Les étoiles gardent le silence.
+Ta trace parle pour toi."
+fr	outcome.success.hard.pool	4	"Le résultat est resté.
+La position a changé."
+fr	outcome.success.hard.pool	5	"Entre la glace et le verre,
+tu as choisi la maîtrise."
+fr	outcome.success.hard.pool	6	"Les vagues se sont tues,
+et la mer a repris ses profondeurs cachées."
+fr	outcome.success.hard.pool	7	"D’autres trésors attendent encore.
+La prochaine fois, un autre chemin."
+fr	outcome.success.hard.pool	8	"Le ciel n’a pas changé.
+Toi, si."
+fr	outcome.success.hard.pool	9	"L’instant est passé.
+Ce qui est resté, c’est l’ordre."
+fr	outcome.success.hard.pool	10	"L’hiver est honnête.
+Ta course l’a été aussi."
+fr	outcome.success.hard.pool	11	"Les étoiles se sont alignées un instant.
+Tu l’as remarqué."
+fr	outcome.success.hard.pool	12	"La distance s’est refermée.
+Le temps, non."
+fr	outcome.success.hard.pool	13	"Les règles du monde sont restées fermes.
+Et le signe du possible était réel."
+fr	outcome.success.hard.pool	14	"Le chemin s’est refermé en silence.
+Tu l’avais déjà traversé."
+fr	outcome.success.hard.pool	15	"Sous le ciel froid,
+la main qui n’a pas tremblé a trouvé la réponse."
+fr	outcome.success.hard.pool	16	"Tu n’as pas tout obtenu.
+Mais rien n’a été perdu."
+fr	outcome.success.hard.pool	17	"Dans un monde fragile,
+tu as appris à avancer sans le briser."
+fr	outcome.success.hard.pool	18	"Le silence qui a suivi
+a pesé plus lourd que le bruit."
+fr	outcome.success.hard.pool	19	"Le résultat n’a pas changé.
+Mais tu as atteint un autre niveau."
+fr	outcome.success.hard.pool	20	"Le point d’arrivée était le même.
+Mais celui qui y est arrivé avait changé."
+fr	outcome.success.hard.pool	21	"La destination est la même —
+mais le voyageur n’est plus le même."
+fr	outcome.success.hard.pool	22	"Le ciel est resté lointain.
+Ton pas, lui, était réel."
+fr	outcome.success.hard.pool	23	"Tu as traversé le froid
+sans lui donner ton cœur."
+fr	outcome.success.hard.pool	24	"La lumière n’a pas promis de rester.
+Tu as avancé malgré tout."
+fr	outcome.success.hard.pool	25	"Le monde n’a pas applaudi.
+Il a simplement laissé une trace."
+fr	outcome.success.hard.pool	26	"La voie était étroite.
+Ton jugement l’a été davantage."
+fr	outcome.success.hard.pool	27	"Ce n’était pas de la vitesse.
+C’était de la précision."
+fr	outcome.success.hard.pool	28	"Chaque pas a compté.
+Même ceux que personne n’a vus."
+fr	outcome.success.hard.pool	29	"Tu as atteint le bord du silence
+sans perdre ton nom."
+fr	outcome.success.hard.pool	30	"L’épreuve s’est achevée.
+La mesure, elle, demeure."
+fr	outcome.success.hard.pool	31	"Le froid n’a pas gagné.
+Il a seulement révélé ta forme."
+fr	outcome.success.hard.pool	32	"Ce qui semblait lointain
+est devenu un lieu réel."
+fr	outcome.timeup.easy.pool	1	"Le temps est écoulé.
+Rien d’autre ne l’est."
+fr	outcome.timeup.easy.pool	2	"Le trésor peut attendre.
+Toi aussi."
+fr	outcome.timeup.easy.pool	3	"Ce n’était qu’un commencement,
+pas un jugement."
+fr	outcome.timeup.easy.pool	4	"La route n’a pas disparu.
+Elle s’est seulement tue pour aujourd’hui."
+fr	outcome.timeup.easy.pool	5	"Tu n’as pas échoué.
+Tu as appris la distance."
+fr	outcome.timeup.easy.pool	6	"La course s’est arrêtée.
+Toi, non."
+fr	outcome.timeup.easy.pool	7	"TEMPS ÉCOULÉ.
+La course s’est arrêtée.
+Toi, non."
+fr	outcome.timeup.easy.pool	8	"TEMPS ÉCOULÉ.
+Le chemin reste là.
+Respire, puis reviens."
+fr	outcome.timeup.easy.pool	9	"TEMPS ÉCOULÉ.
+Le monde n’a pas fermé sa porte.
+Il t’a seulement demandé de recommencer."
+fr	outcome.timeup.easy.pool	10	"Le ciel s’est assombri,
+mais la route n’a pas disparu."
+fr	outcome.timeup.easy.pool	11	"Les pas se sont arrêtés,
+mais le lieu se souvient."
+fr	outcome.timeup.easy.pool	12	"Même sans arrivée,
+il y eut un chemin."
+fr	outcome.timeup.easy.pool	13	"Ce que tu n’as pas trouvé
+peut encore t’attendre."
+fr	outcome.timeup.easy.pool	14	"Le silence n’était pas une fin.
+C’était une pause."
+fr	outcome.timeup.easy.pool	15	"Aujourd’hui, le temps a gagné.
+Demain, le chemin peut changer."
+fr	outcome.timeup.easy.pool	16	"Aucune trace n’est inutile
+si elle apprend au pied où revenir."
+fr	outcome.timeup.normal.pool	1	"Le temps a choisi sa limite.
+Toi, tu peux encore choisir le chemin."
+fr	outcome.timeup.normal.pool	2	"La lumière s’est éloignée.
+Mais elle n’a pas disparu."
+fr	outcome.timeup.normal.pool	3	"Le résultat est resté.
+La position a changé."
+fr	outcome.timeup.normal.pool	4	"La route s’est refermée.
+Mais pas définitivement."
+fr	outcome.timeup.normal.pool	5	"Ce n’était pas une victoire.
+C’était une mesure."
+fr	outcome.timeup.normal.pool	6	"Le monde n’a pas refusé.
+Il a seulement demandé davantage."
+fr	outcome.timeup.normal.pool	7	"Tu n’as pas atteint le centre.
+Mais tu en as appris le poids."
+fr	outcome.timeup.normal.pool	8	"Le vent du nord ne juge pas.
+Il mesure seulement."
+fr	outcome.timeup.normal.pool	9	"La distance est restée.
+Mais elle a maintenant un nom."
+fr	outcome.timeup.normal.pool	10	"La fin est venue sans colère.
+Elle a seulement coupé le son."
+fr	outcome.timeup.normal.pool	11	"Le temps n’a pas été cruel.
+Il a été exact."
+fr	outcome.timeup.normal.pool	12	"Ce qui manque encore
+te montrera le prochain pas."
+fr	outcome.timeup.normal.pool	13	"La course s’est tue.
+La leçon, non."
+fr	outcome.timeup.normal.pool	14	"Le ciel a fermé son cercle.
+Le chemin, lui, peut rouvrir."
+fr	outcome.timeup.normal.pool	15	"Tu n’es pas arrivé.
+Mais tu as avancé pour de vrai."
+fr	outcome.timeup.normal.pool	16	"Le lieu n’a pas été pris.
+Il a été aperçu."
+fr	outcome.timeup.normal.pool	17	"Le trésor est resté loin.
+Mais pas inconnu."
+fr	outcome.timeup.normal.pool	18	"Rien ne s’est effondré.
+Tout a simplement attendu."
+fr	outcome.timeup.normal.pool	19	"Le silence après l’échec
+peut devenir une carte."
+fr	outcome.timeup.normal.pool	20	"Reviens autrement.
+Le monde s’en souviendra."
+fr	outcome.timeup.hard.pool	1	"Le temps s’est refermé.
+La trace demeure."
+fr	outcome.timeup.hard.pool	2	"Tu n’es pas arrivé.
+Mais la mesure était réelle."
+fr	outcome.timeup.hard.pool	3	"La vitesse n’a pas suffi.
+La clarté reviendra."
+fr	outcome.timeup.hard.pool	4	"Le froid n’a pas parlé.
+Il t’a seulement observé."
+fr	outcome.timeup.hard.pool	5	"La route était stricte.
+Elle n’était pas injuste."
+fr	outcome.timeup.hard.pool	6	"Le ciel est resté haut.
+Tes pas sont restés vrais."
+fr	outcome.timeup.hard.pool	7	"Rien n’a été donné.
+Tout a été pesé."
+fr	outcome.timeup.hard.pool	8	"Le centre est resté hors d’atteinte.
+Mais il n’est plus inconnu."
+fr	outcome.timeup.hard.pool	9	"Le vent a effacé le bruit.
+Pas l’effort."
+fr	outcome.timeup.hard.pool	10	"L’épreuve n’a pas cédé.
+Toi non plus complètement."
+fr	outcome.timeup.hard.pool	11	"Le temps a gagné cette manche.
+Pas toute l’histoire."
+fr	outcome.timeup.hard.pool	12	"Le chemin s’est fermé.
+Mais ton regard l’a retenu."
+fr	outcome.timeup.hard.pool	13	"Tu as perdu l’instant.
+Pas la forme de la route."
+fr	outcome.timeup.hard.pool	14	"Le silence a compté chaque pas.
+Même les derniers."
+fr	outcome.timeup.hard.pool	15	"Le verre n’a pas cassé.
+Il a seulement refusé l’erreur."
+fr	outcome.timeup.hard.pool	16	"La distance est restée dure.
+Mais elle a révélé sa vérité."
+fr	outcome.timeup.hard.pool	17	"Aucune lumière facile.
+Seulement une direction."
+fr	outcome.timeup.hard.pool	18	"Tu n’as pas atteint la fin.
+Mais tu as touché la limite."
+fr	outcome.timeup.hard.pool	19	"Le froid a gardé son secret.
+Tu en as appris le contour."
+fr	outcome.timeup.hard.pool	20	"Ce n’était pas assez.
+Mais ce n’était pas rien."
+fr	outcome.timeup.hard.pool	21	"Le nord n’accorde pas de détour.
+Il laisse seulement des preuves."
+fr	outcome.timeup.hard.pool	22	"La route n’a pas menti.
+Elle a demandé davantage."
+fr	outcome.timeup.hard.pool	23	"Ce ne fut pas une victoire.
+Ce fut une mesure."
+fr	outcome.timeup.hard.pool	24	"Le ciel n’a pas répondu.
+Mais tes pas ont posé la question."
+fr	outcome.timeup.hard.pool	25	"Le monde est resté fermé.
+La carte, elle, s’est précisée."
+fr	outcome.timeup.hard.pool	26	"La fin fut silencieuse.
+Le sens, non."
+fr	outcome.timeup.hard.pool	27	"Le trésor n’a pas bougé.
+Toi, si."
+fr	outcome.timeup.hard.pool	28	"La perte n’a pas effacé l’effort.
+Elle l’a rendu visible."
+fr	outcome.timeup.hard.pool	29	"Le temps a coupé la route.
+Pas l’élan."
+fr	outcome.timeup.hard.pool	30	"Le froid a gardé la porte.
+Tu as trouvé la serrure."
+fr	outcome.timeup.hard.pool	31	"Sous le nord,
+même un petit pas est vrai."
+fr	outcome.timeup.hard.pool	32	"Aucun raccourci.
+Seulement l’apprentissage."
+fr	outcome.timeup.hard.pool	33	"Le monde n’a pas cédé.
+Mais il t’a vu revenir."
+fr	outcome.timeup.hard.pool	34	"La mesure fut sévère.
+Elle n’était pas vide."
+fr	outcome.timeup.hard.pool	35	"Le silence a fermé la scène.
+Mais pas le chemin."
+fr	outcome.timeup.hard.pool	36	"Tu n’as pas gagné aujourd’hui.
+Mais tu as laissé une trace juste."
+fr	outcome.timeup.hard.pool	37	"La route n’a pas disparu.
+Elle attend une meilleure lecture."
+fr	outcome.timeup.hard.pool	38	"Le dernier pas n’a pas suffi.
+Mais il comptait quand même."

@@ -1,0 +1,48 @@
+lang	pool	kind	meta	value
+fr	outcome.success.easy.pool	COUNT	17	17
+fr	outcome.success.easy.pool	ENGLISH_LIKE	5	"> La distance a pris sens.
+>
+> Et le temps a répondu à tes pas."
+fr	outcome.success.easy.pool	ENGLISH_LIKE	9	"Un instant de silence.
+Le monde a repris son souffle."
+fr	outcome.success.easy.pool	ENGLISH_LIKE	12	"Le temps a glissé en silence,
+préservé dans un recoin de la mémoire."
+fr	outcome.success.normal.pool	COUNT	35	35
+fr	outcome.success.normal.pool	ENGLISH_LIKE	1	"La distance a enfin trouvé son sens.
+Le temps a répondu à ton voyage."
+fr	outcome.success.normal.pool	ENGLISH_LIKE	14	"Le temps a glissé vers le silence
+et trouvé sa place dans les profondeurs de la mémoire."
+fr	outcome.success.normal.pool	ENGLISH_LIKE	20	"Un instant de silence.
+Le monde a repris son souffle."
+fr	outcome.success.normal.pool	ENGLISH_LIKE	35	"Cet instant s’est aligné
+sur le silence des étoiles."
+fr	outcome.success.hard.pool	COUNT	32	32
+fr	outcome.success.hard.pool	ENGLISH_LIKE	3	"Les étoiles gardent le silence.
+Ta trace parle pour toi."
+fr	outcome.success.hard.pool	ENGLISH_LIKE	12	"La distance s’est refermée.
+Le temps, non."
+fr	outcome.success.hard.pool	ENGLISH_LIKE	14	"Le chemin s’est refermé en silence.
+Tu l’avais déjà traversé."
+fr	outcome.success.hard.pool	ENGLISH_LIKE	18	"Le silence qui a suivi
+a pesé plus lourd que le bruit."
+fr	outcome.success.hard.pool	ENGLISH_LIKE	29	"Tu as atteint le bord du silence
+sans perdre ton nom."
+fr	outcome.timeup.easy.pool	COUNT	16	16
+fr	outcome.timeup.easy.pool	ENGLISH_LIKE	5	"Tu n’as pas échoué.
+Tu as appris la distance."
+fr	outcome.timeup.easy.pool	ENGLISH_LIKE	14	"Le silence n’était pas une fin.
+C’était une pause."
+fr	outcome.timeup.normal.pool	COUNT	20	20
+fr	outcome.timeup.normal.pool	ENGLISH_LIKE	9	"La distance est restée.
+Mais elle a maintenant un nom."
+fr	outcome.timeup.normal.pool	ENGLISH_LIKE	19	"Le silence après l’échec
+peut devenir une carte."
+fr	outcome.timeup.hard.pool	COUNT	38	38
+fr	outcome.timeup.hard.pool	ENGLISH_LIKE	14	"Le silence a compté chaque pas.
+Même les derniers."
+fr	outcome.timeup.hard.pool	ENGLISH_LIKE	16	"La distance est restée dure.
+Mais elle a révélé sa vérité."
+fr	outcome.timeup.hard.pool	FRENCH_HINT_MISSING	32	"Aucun raccourci.
+Seulement l’apprentissage."
+fr	outcome.timeup.hard.pool	ENGLISH_LIKE	35	"Le silence a fermé la scène.
+Mais pas le chemin."
