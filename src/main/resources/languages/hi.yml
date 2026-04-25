@@ -1,7 +1,7 @@
 outcome:
   notice:
-    timeUpGameOver: 'समय समाप्त हो गया। खेल खत्म हो गया।'
-    retryGuide: 'किसी दूसरे रास्ते से फिर कोशिश करें।'
+    timeUpGameOver: समय समाप्त हो गया। खेल खत्म हो गया।
+    retryGuide: किसी दूसरे रास्ते से फिर कोशिश करें।
   success:
     common:
       pool: []
@@ -468,7 +468,6 @@ outcome:
       - 'The path is still here.
 
         You can come back—changed.'
-
 meta:
   lang: hi
   note: Put translation keys under e.g. command.xxx / gui.xxx / messages.xxx etc.
@@ -510,16 +509,14 @@ quotes:
   - The glass didn’t break.\nNeither did you.\n（ガラスは割れなかった。あなたも折れなかった。）
   - Beneath a quiet sky,\nyour will held firm.\n（静かな空の下で、意志は持ちこたえた。）
   - Very little shines forever\n—but this moment was different.\n（永遠に輝くものなんてほとんどないけれど、この瞬間は別格だった。）
-  - You made it across the fragile ground,\nholding fast to the horizon the whole
-    way.\n（脆い地面を渡り切った。地平線景色をしっかりと握りしめたまま。）
+  - You made it across the fragile ground,\nholding fast to the horizon the whole way.\n（脆い地面を渡り切った。地平線景色をしっかりと握りしめたまま。）
   - The moment passed.\n What remained was the record—the achievement.\n（瞬間は過ぎ去った。遺されたもの記録・功績は残る。）
   - Luck fades quickly.\nOrder endures.\n（運は速やかに消え、整い秩序は永続する。）
   - The sky knows no rest in its endless cycle.\nNeither do you.\n（空はその終わりなき循環に休止を知らぬ。汝もまた、止まらず。）
   - The center was reached.\nThe world stood still.\n（中心は到達された。世界は立ち尽くし静止した。）
   - At last,you’ve made it here.\nThe truth stands—unbowed.\n（ついに、ここへ辿り着いた。真実は屈することなく、そこに在る。）
   - Complete. This path was yours\n—and yours alone.\n（完遂。この道を選んだのは他でもないあなただ。）
-  - Time drifted into silence,\nand found its place in the deepest corners of the
-    mind.\n（時は静寂へと漂い、精神の奥底の隅に自らの居場所を見つけた。）
+  - Time drifted into silence,\nand found its place in the deepest corners of the mind.\n（時は静寂へと漂い、精神の奥底の隅に自らの居場所を見つけた。）
   - As the sky shifted,\none story found its final resolution.\n（空が姿を変えるとともに、一つの物語はその最終的な解決完結を見出した。）
   - The waves fell quiet,\nand the sky hid its depths once more.\n（波は静まり、空は再びその深淵を覆い隠した。）
   - The footsteps ceased,\nand only the place remained.\n（歩みは途絶え、ただ場所だけがそこに在り続けた。）
@@ -540,8 +537,7 @@ quotes:
   - The sky knows no pause in endless circle,\nnor shall you find yours.\n（空はその終わりなき循環に休止を知らぬ。汝もまた、止まらず。）
   - The center has been reached.\nThe world stood still.\n（中心は到達された。世界は立ち尽くし静止した。）
   - Finally here.\nThe truth remains unyielding.\n（ついに、ここへ辿り着いた。真実は屈することなく、そこに在る。）
-  - 'You have seen it through.\nAnd mark this: it was you, and no one else, who chose
-    this path.\n（完遂。この道を選んだのは他でもないあなただ。）'
+  - 'You have seen it through.\nAnd mark this: it was you, and no one else, who chose this path.\n（完遂。この道を選んだのは他でもないあなただ。）'
   - Time drifted into silence,\nfinding its place in the recesses of the mind.\n（時は静寂へと漂い、精神の奥底の隅に自らの居場所を見つけた。）
   - As the sky transformed,\nthe tale found its final resolved.\n（空が姿を変えるとともに、一つの物語はその最終的な解決完結を見出した。）
   - The waters fell calm,\nand the sky once more veiled its abyss.\n（波は静まり、空は再びその深淵を覆い隠した。）
@@ -659,7 +655,7 @@ quotes:
 ui:
   labels:
     tabs: '&6टैब:&r'
-    page: '&8पृष्ठ {page}/{total}&r'
+    page: '&8पृष्ठ {current}/{total}&r'
     tab:
       all: सभी
       success: सफल
@@ -684,18 +680,15 @@ ui:
       success: = पूर्ण / सफल
       timeUp: = समय समाप्त
       favorites: = ★ सहेजे गए उद्धरण
-    noLogs: अभी तक कोई उद्धरण लॉग नहीं है। SUCCESS / TIME_UP पर स्वचालित रूप से सहेजे
-      जाते हैं।
-    noQuotesInTab: 'इस टैब में दिखाने के लिए कोई उद्धरण नहीं है। (शायद अभी तक सहेजा
-      नहीं गया।)
+    noLogs: अभी तक कोई उद्धरण लॉग नहीं है। SUCCESS / TIME_UP पर स्वचालित रूप से सहेजे जाते हैं।
+    noQuotesInTab: 'इस टैब में दिखाने के लिए कोई उद्धरण नहीं है। (शायद अभी तक सहेजा नहीं गया।)
 
       कोई दूसरा टैब आज़माएं।'
     noपसंदीदा: 'अभी तक कोई पसंदीदा नहीं है।
 
       {latestLabel} सहेजने के लिए इस पुस्तक पर राइट-क्लिक करें।'
     tip:
-      rightClickSave: 'सुझाव: {latestLabel} सहेजने के लिए इस पुस्तक पर राइट-क्लिक
-        करें।'
+      rightClickSave: 'सुझाव: {latestLabel} सहेजने के लिए इस पुस्तक पर राइट-क्लिक करें।'
     noFavorites: 'No favorites yet.
 
       Right-click this book to save {latestLabel}.'
@@ -706,43 +699,35 @@ ui:
     messages_yml_not_loaded_d56b1cd3: (messages.yml not loaded)
     translation_missing_77031543: '(अनुवाद नहीं मिला:'
     translation_missing_77031543_107: '(अनुवाद नहीं मिला:'
-    treasurerun_lang_config_yml__2dde4625: '[TreasureRun][Lang] config.yml में ''language:''
-      सेक्शन नहीं मिला।'
+    treasurerun_lang_config_yml__2dde4625: '[TreasureRun][Lang] config.yml में ''language:'' सेक्शन नहीं मिला।'
     click_to_select_aac1569c_76: चुनने के लिए क्लिक करें
     treasurerun_lang_default_60887a83: '[TreasureRun][Lang] default='
     click_to_select_aac1569c_19: चुनने के लिए क्लिक करें
-    treasurerun_lang_config_yml__2dde4625_33: '[TreasureRun][Lang] config.yml में
-      ''language:'' सेक्शन नहीं मिला।'
+    treasurerun_lang_config_yml__2dde4625_33: '[TreasureRun][Lang] config.yml में ''language:'' सेक्शन नहीं मिला।'
     treasurerun_lang_material_la_bc70a401: '[TreasureRun][Lang] अमान्य Material: lang='
-    treasurerun_lang_language_ic_4bc2362d: '[TreasureRun][Lang] ''language.iconMaterial:''
-      सेक्शन नहीं मिला（सभी PAPER बन जाएंगे）'
+    treasurerun_lang_language_ic_4bc2362d: '[TreasureRun][Lang] ''language.iconMaterial:'' सेक्शन नहीं मिला（सभी PAPER बन जाएंगे）'
     click_to_select_aac1569c_100: चुनने के लिए क्लिक करें
     treasurerun_lang_default_60887a83_111: '[TreasureRun][Lang] default='
     enemydown_mysql_jdbc_mybatis_6b5c6f68: '[EnemyDown] MySQL से जुड़े（JDBC + MyBatis）'
     enemydown_mysql_6cf3e29b: '[EnemyDown] MySQL कनेक्शन विफल:'
     enemydown_mysql_a18990c3: '[EnemyDown] MySQL कनेक्शन बंद।'
     enemydown_mysql_e097a73e: '[EnemyDown] MySQL डिस्कनेक्ट विफल:'
-    mysqlmanager_player_score_d92afff4: '[MySQLManager] player_score तालिका जाँची/बनाई
-      ✅'
-    mysqlmanager_player_score_21665c62: '[MySQLManager] player_score तालिका बनाने
-      में विफल ❌:'
+    mysqlmanager_player_score_d92afff4: '[MySQLManager] player_score तालिका जाँची/बनाई ✅'
+    mysqlmanager_player_score_21665c62: '[MySQLManager] player_score तालिका बनाने में विफल ❌:'
     mysqlmanager_mysql_951100b9: '[MySQLManager] MySQL कनेक्शन परीक्षण सफल ✅'
     mysqlmanager_player_score_a4968d00: '[MySQLManager] player_score तालिका की पंक्तियाँ:'
     mysqlmanager_mysql_1763d390: '[MySQLManager] MySQL कनेक्ट नहीं ❌'
-    mysqlmanager_player_score_2b5c8721: '[MySQLManager] player_score तालिका मौजूद
-      नहीं हो सकती ❌'
+    mysqlmanager_player_score_2b5c8721: '[MySQLManager] player_score तालिका मौजूद नहीं हो सकती ❌'
     enemydown_mysql_bc514e56: '[EnemyDown] MySQL जुड़ा हुआ है।'
     enemydown_mysql_93b23ef9: '[EnemyDown] MySQL जुड़ा नहीं है।'
     run_complete_46d920e5_580: Run complete.
     run_complete_46d920e5_589: Run complete.
-    playerlanguagestore_failed_t_c4999402: '[PlayerLanguageStore] Failed to create/load
-      player_languages.yml:'
+    playerlanguagestore_failed_t_c4999402: '[PlayerLanguageStore] Failed to create/load player_languages.yml:'
     playerlanguagestore_failed_t_b6478ec8: '[PlayerLanguageStore] Failed to save player_languages.yml:'
     proverb_logged_to_mysql_prov_c13b5e4e: 'Proverb logged to MySQL: proverb_logs'
     failed_to_log_proverb_to_mys_2bb4c5c3: 'Failed to log proverb to MySQL: proverb_logs'
     loaded_proverb_logs_from_mys_b5b0f8e0: 'Loaded proverb logs from MySQL: proverb_logs'
-    failed_to_load_proverb_logs__6246be38: 'Failed to load proverb logs from MySQL:
-      proverb_logs'
+    failed_to_load_proverb_logs__6246be38: 'Failed to load proverb logs from MySQL: proverb_logs'
     treasurerunmultichestplugin_4499e25c: '🌈 TreasureRunMultiChestPlugin: 起動 🌈'
     treasurerun_gamestagemanager_3d9e7f5a: '[TreasureRun] GameStageManager event registered!'
     treasurerunmultichestplugin_a507471a: ✅ TreasureRunMultiChestPlugin が正常に起動しました！
@@ -751,8 +736,7 @@ ui:
     text_1a6173d3: हीरा प्राप्त!
     text_b6568a8d: सोने का सेब प्राप्त!
     no_9c0fdee6: 🏆 No.
-    gamestart_easy_normal_hard_230bd0bd: अगली बार अलग रास्ता आज़माएं! पुनः प्रयास
-      के लिए /gamestart <easy|normal|hard> उपयोग करें!
+    gamestart_easy_normal_hard_230bd0bd: अगली बार अलग रास्ता आज़माएं! पुनः प्रयास के लिए /gamestart <easy|normal|hard> उपयोग करें!
     text_9310a1a7: खेल पहले से चल रहा है।
     text_9310a1a7_908: खेल पहले से चल रहा है।
     text_9310a1a7_1601: खेल पहले से चल रहा है।
@@ -768,8 +752,7 @@ ui:
     easy_normal_hard_ef1ba55c: कठिनाई Easy / Normal / Hard है।
     language_gui_aed4f8fc_931: Language GUI आरंभ नहीं हुई।
     config_yml_3c6e9d15: ✅ config.yml लोड हुई
-    treasurerun_config_language__763cf02c: ✅ TreasureRun config पुनः लोड हुई（language
-      GUI सहित）।
+    treasurerun_config_language__763cf02c: ✅ TreasureRun config पुनः लोड हुई（language GUI सहित）।
     gui_gamestart_5870f221: GUI अपडेट हुई। /gameStart से पुनः खोलें।
     text_3ecbc53d: कृपया खिलाड़ी के रूप में चलाएं
     text_3030fd61: केवल खिलाड़ी उपयोग कर सकते हैं
@@ -780,23 +763,22 @@ ui:
     book:
       openFailed: '&cनियम पुस्तिका खोलने में विफल।'
       hotbarGiven: 📖 नियम-पुस्तिका आपके हॉटबार में रख दी गई है।
-      hotbarHint: इसे हाथ में लेकर राइट-क्लिक करें, फिर आप इसे कभी भी फिर से पढ़ सकते
-        हैं।
+      hotbarHint: इसे हाथ में लेकर राइट-क्लिक करें, फिर आप इसे कभी भी फिर से पढ़ सकते हैं।
       latestHint: (इस पुस्तक पर राइट-क्लिक करके नवीनतम उद्धरण सहेजें।)
       fallbackTitle: TreasureRun के नियम
       fallbackDisplayName: TreasureRun नियम-पुस्तिका
     legacy:
       toc:
-        message: '&6===== 🌟 TreasureRun सामग्री 🌟 =====
+        message: '&6===== 🌟 TreasureRun मेनू 🌟 =====
 
           &b1. लक्ष्य
 
-          &f   ・समय सीमा में अधिक से अधिक संदूक खोलें।
+          &f   - समय सीमा के भीतर जितने संभव हों उतने संदूक खोलें।
 
 
           &b2. वर्तमान कठिनाई
 
-          &f   ・कठिनाई: &e{difficulty}
+          &f   - कठिनाई: &e{difficulty}
 
 
           &6=================================='
@@ -807,14 +789,13 @@ ui:
         rulesItem: 1) नियम
         howToPlay: '  · कैसे खेलें'
         scoreRoute: '  · स्कोर और मार्ग'
-        savedOn: '  · SUCCESS / TIME_UP पर सहेजा जाता है'
+        savedOn: · सफलता / समय-समाप्ति पर सहेजा गया
         language: '  · भाषा: {lang}'
         yourQuotes: '  · आपकी ★ सहेजी गई उक्तियाँ'
         difficulty: 'कठिनाई: {difficulty}'
         tipsItem: 2) सुझाव
       note:
-        bookFormat: 'नोट: Minecraft की किताबों में क्लिक करके टैब नहीं बदले जा सकते,
-          इसलिए सामग्री को अलग-अलग खंडों में व्यवस्थित किया गया है।'
+        bookFormat: 'नोट: Minecraft की किताबों में क्लिक करके टैब नहीं बदले जा सकते, इसलिए सामग्री को अलग-अलग खंडों में व्यवस्थित किया गया है।'
       hint:
         reopenMenu: 'सुझाव: इसे फिर से खोलने के लिए /gameMenu चलाएँ।'
   error:
@@ -863,6 +844,12 @@ game:
     easy: '&aEasy'
     normal: '&eNormal'
     hard: '&cHard'
+  auto:
+    backup_cfe9e6cf: 🌊 बैकअप समुद्र खोज सफल रही।
+    text_e096c9a4: '&6स्पेशल एमराल्ड'
+    dj_onalltreasurescollected_a871afdd: DJ इवेंट पहले से चल रहा है, इसलिए onAllTreasuresCollected छोड़ दिया गया।
+    text_cc353737: सभी खजाने मिल गए!
+    congratulations_38fd1594: §6बधाई हो! आपने सभी खजाने ढूंढ लिए!
 favorites:
   title: पसंदीदा
   cover:
@@ -912,6 +899,8 @@ favorites:
   reread:
     head: सहेजी गई पंक्तियाँ फिर से पढ़ें
     noQuotes: आपने अभी तक कोई पंक्ति सहेजी नहीं है।
+  auto:
+    favorite_saved_sneak_rightcl_7a73eb4f: ★ पसंदीदा सहेजा गया! (झुककर + राइट-क्लिक)
 command:
   checkTreasureEmerald:
     playersOnly: यह कमांड केवल खिलाड़ी ही चला सकते हैं।
@@ -920,19 +909,15 @@ command:
   gameStart:
     playersOnly: यह कमांड केवल खिलाड़ी ही इस्तेमाल कर सकते हैं।
     worldNotFound: '[TreasureRun] शुरुआती दुनिया सेट नहीं है या मिल नहीं सकी।'
-    started: 'खज़ाने की खोज शुरू हो रही है! कठिनाई: {difficulty} | समय सीमा: {timeLimit}
-      सेकंड'
+    started: 'खज़ाने की खोज शुरू हो रही है! कठिनाई: {difficulty} | समय सीमा: {timeLimit} सेकंड'
   stageCleanup:
     playersOnly: '&cइस कमांड का उपयोग केवल खिलाड़ी कर सकते हैं।'
     managerNotReady: '[TreasureRun] स्टेज मैनेजर अभी तक तैयार नहीं है।'
     cleaned: '[TreasureRun] {count} कठिनाई ब्लॉक साफ कर दिए गए।'
   lang:
-    guiTooManyShown: अनुमत भाषाएँ बहुत अधिक हैं, इसलिए GUI में केवल पहली 27 भाषाएँ
-      ही दिखाई जा रही हैं।
-    guiCancelledGameMenu: भाषा चयन रद्द कर दिया गया। फिर से खोलने के लिए /gameMenu
-      gui चलाएँ।
-    guiCancelledGameStart: भाषा चयन रद्द कर दिया गया। फिर से प्रयास करने के लिए /gameStart
-      <easy|normal|hard> चलाएँ।
+    guiTooManyShown: अनुमत भाषाएँ बहुत अधिक हैं, इसलिए GUI में केवल पहली 27 भाषाएँ ही दिखाई जा रही हैं।
+    guiCancelledGameMenu: भाषा चयन रद्द कर दिया गया। फिर से खोलने के लिए /gameMenu gui चलाएँ।
+    guiCancelledGameStart: भाषा चयन रद्द कर दिया गया। फिर से प्रयास करने के लिए /gameStart <easy|normal|hard> चलाएँ।
     playersOnly: यह कमांड केवल खिलाड़ी ही उपयोग कर सकते हैं।
     resetDone: ✅ आपकी सहेजी हुई भाषा रीसेट कर दी गई है। अगली बार GUI खुलेगा।
     current: 'वर्तमान भाषा: {lang}'
@@ -940,8 +925,7 @@ command:
     notAllowed: 'यह भाषा अनुमत नहीं है: {lang}'
     allowedList: 'अनुमत भाषाएँ: {allowed}'
     changed: '✅ भाषा बदल दी गई है: {displayName} ({lang})'
-    changedButNotSaved: '⚠ भाषा बदल दी गई, लेकिन स्थायी रूप से सहेजी नहीं जा सकी:
-      {lang}'
+    changedButNotSaved: '⚠ भाषा बदल दी गई, लेकिन स्थायी रूप से सहेजी नहीं जा सकी: {lang}'
     list:
       title: === भाषाएँ ===
       default: 'डिफ़ॉल्ट: {default}'
@@ -956,8 +940,7 @@ command:
   onlyPlayer: '&cयह कमांड केवल खिलाड़ी ही चला सकता है।'
   quoteFavorite:
     latestSaved: नवीनतम उद्धरण पसंदीदा में सहेजा गया।
-    latestNotSaved: नवीनतम उद्धरण सहेजा नहीं जा सका। या तो अभी कोई लॉग नहीं है, या
-      वह पहले से ही पसंदीदा में है।
+    latestNotSaved: नवीनतम उद्धरण सहेजा नहीं जा सका। या तो अभी कोई लॉग नहीं है, या वह पहले से ही पसंदीदा में है।
     playersOnly: '&cइस कमांड का उपयोग केवल खिलाड़ी कर सकते हैं।'
     repositoryNotReady: पसंदीदा अभी उपलब्ध नहीं हैं।
     listHeader: '&bपसंदीदा ({count})'
@@ -971,8 +954,7 @@ command:
     openBookFailed: '&cपुस्तक खोली नहीं जा सकी।'
     unknownSubcommand: '&cअज्ञात सबकमांड। /quoteFavorite help देखें।'
     shortcutSaved: नवीनतम उद्धरण पसंदीदा में सहेजा गया।
-    shortcutNotSaved: नवीनतम उद्धरण सहेजा नहीं जा सका। या तो अभी कोई लॉग नहीं है,
-      या वह पहले से ही पसंदीदा में है।
+    shortcutNotSaved: नवीनतम उद्धरण सहेजा नहीं जा सका। या तो अभी कोई लॉग नहीं है, या वह पहले से ही पसंदीदा में है।
     help:
       title: '&bQuoteFavorite कमांड'
       latest: '&7/quoteFavorite latest  - नवीनतम उद्धरण को पसंदीदा में सहेजें'
@@ -1007,6 +989,11 @@ items:
     emerald_block: पन्ने का ब्लॉक
     iron_block: लोहे का ब्लॉक
     tnt: TNT
+  text_7567bb35: स्पेशल एमराल्ड की रेसिपी दर्ज की गई।
+  text_7a04254b: '&eस्पेशल सेब'
+  text_e8d4013d: स्पेशल सेब की रेसिपी दर्ज की गई।
+  text_e42912c7: '&7स्पेशल आयरन ब्लॉक'
+  text_c89dea57: स्पेशल आयरन ब्लॉक की रेसिपी दर्ज की गई।
 gameplay:
   pickup:
     scoreNone: अभी कोई स्कोर नहीं है।
@@ -1069,3 +1056,21 @@ rank:
     allTimeSwitch: 'दृश्य बदलें: /gameRank weekly | /gameRank monthly'
     monthlyEmpty: इस महीने अभी तक कोई रिकॉर्ड नहीं है।
     monthlySwitch: 'दृश्य बदलें: /gameRank weekly | /gameRank all'
+commands:
+  text_2bf42ec8: यह कमांड केवल खिलाड़ी चला सकते हैं।
+  text_2bf42ec8_18: यह कमांड केवल खिलाड़ी चला सकते हैं।
+  3_3d5021f7: स्पेशल एमराल्ड बनाने के लिए 3 हीरे चाहिए।
+  text_e096c9a4: '&6स्पेशल एमराल्ड'
+  3_71b78a44: 3 हीरों से स्पेशल एमराल्ड बना लिया गया!
+  text_3030fd61: केवल खिलाड़ी ही इसे चला सकते हैं।
+  op_10caf0f6: आपके पास अनुमति नहीं है (केवल OP)।
+  rank_1_2_3_demo_d87f40da: 'उपयोग: /rank <1|2|3|demo>'
+  rank_1_2_3_demo_4f3e3084: 'कृपया एक संख्या दर्ज करें: /rank <1|2|3|demo>'
+  1_3_rank_1_2_3_7f459bd0: 'केवल 1 से 3 तक मान्य हैं: /rank <1|2|3>'
+  text_bed3daf7: यह कमांड केवल खिलाड़ी चला सकते हैं।
+  treasurerun_bcef4fe9: '[TreasureRun] स्टेज प्रबंधन प्रारंभ नहीं हुआ है।'
+  text_287fa0f1: '{count} कठिनाई ब्लॉक साफ़ किए गए।'
+  text_44a99db9: यह कमांड केवल खिलाड़ी की ओर से चलाया जा सकता है।
+  text_fd02f248: 'समय सीमा:'
+  text_f166cc04: '§aट्रेज़र हंट शुरू! कठिनाई:'
+  text_2281b097: '{count} संदूक बनाए गए। खजाने की संख्या:'

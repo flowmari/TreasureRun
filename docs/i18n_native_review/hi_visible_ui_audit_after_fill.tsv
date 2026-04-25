@@ -1,0 +1,4 @@
+kind	key	value
+ENGLISH_LIKE	ui.menu.page.contents.savedOn	  · SUCCESS / TIME_UP पर सहेजा जाता है
+ENGLISH_LIKE	ui.labels.page	&8पृष्ठ {page}/{total}&r
+JP_CJK_LIKE	ui.menu.legacy.toc.message	&6===== 🌟 TreasureRun सामग्री 🌟 =====\n&b1. लक्ष्य\n&f   ・समय सीमा में अधिक से अधिक संदूक खोलें।\n\n&b2. वर्तमान कठिनाई\n&f   ・कठिनाई: &e{difficulty}\n\n&6==================================

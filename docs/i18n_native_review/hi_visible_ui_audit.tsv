@@ -1,0 +1,32 @@
+kind	key	value
+MISSING_VISIBLE	favorites.auto.favorite_saved_sneak_rightcl_7a73eb4f	
+MISSING_VISIBLE	commands.text_2bf42ec8	
+MISSING_VISIBLE	commands.text_2bf42ec8_18	
+MISSING_VISIBLE	commands.3_3d5021f7	
+MISSING_VISIBLE	commands.text_e096c9a4	
+MISSING_VISIBLE	commands.3_71b78a44	
+MISSING_VISIBLE	commands.text_3030fd61	
+MISSING_VISIBLE	commands.op_10caf0f6	
+MISSING_VISIBLE	commands.rank_1_2_3_demo_d87f40da	
+MISSING_VISIBLE	commands.rank_1_2_3_demo_4f3e3084	
+MISSING_VISIBLE	commands.1_3_rank_1_2_3_7f459bd0	
+MISSING_VISIBLE	commands.text_bed3daf7	
+MISSING_VISIBLE	commands.treasurerun_bcef4fe9	
+MISSING_VISIBLE	commands.text_287fa0f1	
+MISSING_VISIBLE	commands.text_44a99db9	
+MISSING_VISIBLE	commands.text_fd02f248	
+MISSING_VISIBLE	commands.text_f166cc04	
+MISSING_VISIBLE	commands.text_2281b097	
+MISSING_VISIBLE	items.text_7567bb35	
+MISSING_VISIBLE	items.text_7a04254b	
+MISSING_VISIBLE	items.text_e8d4013d	
+MISSING_VISIBLE	items.text_e42912c7	
+MISSING_VISIBLE	items.text_c89dea57	
+MISSING_VISIBLE	game.auto.backup_cfe9e6cf	
+MISSING_VISIBLE	game.auto.text_e096c9a4	
+MISSING_VISIBLE	game.auto.dj_onalltreasurescollected_a871afdd	
+MISSING_VISIBLE	game.auto.text_cc353737	
+MISSING_VISIBLE	game.auto.congratulations_38fd1594	
+ENGLISH_LIKE	ui.menu.page.contents.savedOn	  · SUCCESS / TIME_UP पर सहेजा जाता है
+ENGLISH_LIKE	ui.labels.page	&8पृष्ठ {page}/{total}&r
+JP_CJK_LIKE	ui.menu.legacy.toc.message	&6===== 🌟 TreasureRun सामग्री 🌟 =====\n&b1. लक्ष्य\n&f   ・समय सीमा में अधिक से अधिक संदूक खोलें।\n\n&b2. वर्तमान कठिनाई\n&f   ・कठिनाई: &e{difficulty}\n\n&6==================================
