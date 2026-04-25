@@ -1,0 +1,355 @@
+lang	pool	index	old	new
+it	outcome.success.easy.pool	1	"Ce l’hai fatta.
+La verità resta."	"Ce l’hai fatta.
+La verità rimane."
+it	outcome.success.easy.pool	2	"Anche se era solo un piccolo passo,
+hai tenuto saldo il terreno sotto di te."	"Anche se era solo un piccolo passo,
+sei rimasto saldo."
+it	outcome.success.easy.pool	3	"Hai ascoltato.
+E il sentiero si è aperto."	"Hai ascoltato.
+E il sentiero si è aperto davanti a te."
+it	outcome.success.easy.pool	5	"> La distanza ha preso significato.
+>
+> E il tempo ha risposto ai tuoi passi."	"> La distanza ha acquistato senso.
+>
+> E il tempo ha risposto a ogni tuo passo."
+it	outcome.success.easy.pool	6	"> Non tutto ciò che brilla dura per sempre.
+>
+> Ma questo istante ha brillato."	"> Non tutto ciò che brilla dura per sempre.
+>
+> Ma questo istante sì."
+it	outcome.success.easy.pool	7	"La luce è scesa piano,
+e ogni ombra si è ritirata."	"La luce è calata piano,
+e ogni ombra si è dissolta."
+it	outcome.success.easy.pool	8	"Il vento si è placato.
+Ogni cosa è tornata al suo posto."	"Il vento si è zittito.
+Ogni cosa è tornata al suo posto."
+it	outcome.success.easy.pool	9	"Un istante di silenzio.
+Il mondo ha ripreso fiato."	"Un istante di silenzio.
+Il mondo ha ripreso il suo respiro."
+it	outcome.success.easy.pool	10	"La traccia si è incisa nella sabbia —
+là dove il vento non arriva più."	"La traccia si è impressa nella sabbia —
+là dove il vento non arriva più."
+it	outcome.success.easy.pool	11	"L’equilibrio è tornato.
+Tutto portava a questo istante."	"L’equilibrio è stato ristabilito.
+Tutto conduceva a questo istante."
+it	outcome.success.easy.pool	12	"Il tempo è scivolato via in silenzio,
+al riparo in un angolo della memoria."	"Il tempo è scivolato via in silenzio,
+custodito in un angolo della memoria."
+it	outcome.success.easy.pool	13	"Il cielo ha cambiato colore,
+e una storia si è chiusa."	"Il cielo ha cambiato colore,
+e una storia ha trovato la sua fine."
+it	outcome.success.easy.pool	14	"Le onde si sono calmate,
+e il mare ha custodito di nuovo le sue profondità."	"Le onde si sono calmate,
+e il mare ha nascosto di nuovo le sue profondità."
+it	outcome.success.easy.pool	15	"I passi si sono fermati,
+e solo il luogo è rimasto."	"I passi si sono fermati,
+e il luogo solo è rimasto."
+it	outcome.success.easy.pool	16	"Vittoria e sconfitta —
+in fondo, non sono che granelli di sabbia."	"Vittoria e sconfitta —
+in fondo, sono solo granelli di sabbia."
+it	outcome.success.easy.pool	17	"La strada continua — oppure finisce qui.
+In entrambi i casi, poggia sulla stessa terra."	"La strada continua — oppure finisce qui.
+In ogni caso, riposa sulla stessa terra."
+it	outcome.success.normal.pool	1	"La distanza ha finalmente trovato il suo senso.
+Il tempo ha risposto al tuo viaggio."	"La distanza ha finalmente preso senso.
+Il tempo ha risposto al tuo cammino."
+it	outcome.success.normal.pool	2	"Il tempo è scaduto.
+Ma non tutto è finito."	"Il tempo è scaduto.
+Ma non tutto finisce qui."
+it	outcome.success.normal.pool	3	"L’asse è stato trovato.
+Il mondo ha sospeso il suo moto."	"L’asse è stato trovato.
+Il mondo ha trattenuto il suo movimento."
+it	outcome.success.normal.pool	4	"Il vetro ha trattenuto il respiro,
+e tu hai tenuto duro."	"Il vetro ha trattenuto il respiro,
+e tu sei rimasto saldo."
+it	outcome.success.normal.pool	5	"Sotto il cielo immobile,
+il tuo spirito non ha vacillato."	"Sotto il cielo immobile,
+il tuo spirito non ha tremato."
+it	outcome.success.normal.pool	6	"Poche cose brillano per sempre.
+Ma questo istante ha brillato."	"Poche cose brillano per sempre.
+Ma questo istante sì."
+it	outcome.success.normal.pool	7	"Hai attraversato una terra fragile
+senza perdere di vista l’orizzonte."	"Hai attraversato una terra fragile
+senza perdere l’orizzonte."
+it	outcome.success.normal.pool	8	"L’istante è passato.
+Ciò che resta, resta."	"L’istante è passato.
+Ciò che rimane, rimane."
+it	outcome.success.normal.pool	9	"La fortuna svanisce in fretta.
+L’ordine rimane."	"La fortuna svanisce in fretta.
+L’ordine resiste."
+it	outcome.success.normal.pool	11	"Hai raggiunto il centro.
+Il mondo si è fermato."	"Hai raggiunto il centro.
+Il mondo si è immobilizzato."
+it	outcome.success.normal.pool	12	"Finalmente sei qui.
+La verità resta salda."	"Finalmente sei qui.
+La verità rimane salda."
+it	outcome.success.normal.pool	13	"Sei arrivato fino in fondo.
+Ricordalo: questa strada l’hai scelta tu, nessun altro."	"Sei arrivato fino in fondo.
+Ricordalo: questa strada l’hai scelta tu. Nessun altro."
+it	outcome.success.normal.pool	14	"Il tempo è scivolato nel silenzio
+e ha trovato posto nel fondo della memoria."	"Il tempo è scivolato nel silenzio
+e ha trovato posto nel profondo della memoria."
+it	outcome.success.normal.pool	15	"Mentre il cielo cambiava colore,
+la storia ha trovato la sua fine."	"Mentre il cielo cambiava colore,
+la storia ha trovato il suo compimento."
+it	outcome.success.normal.pool	16	"Le acque si sono calmate,
+e il cielo ha velato di nuovo l’abisso."	"Le acque si sono calmate,
+e il cielo ha di nuovo velato l’abisso."
+it	outcome.success.normal.pool	17	"I passi si sono spenti,
+e solo il luogo è rimasto."	"I passi si sono taciuti,
+e il luogo solo è rimasto."
+it	outcome.success.normal.pool	18	"La luce è scesa piano,
+e ogni ombra si è ritirata."	"La luce è calata piano,
+e ogni ombra si è dissolta."
+it	outcome.success.normal.pool	19	"Il vento si è placato.
+Ogni cosa è tornata al suo posto."	"Il vento si è zittito.
+Ogni cosa è tornata al suo posto."
+it	outcome.success.normal.pool	20	"Un istante di silenzio.
+Il mondo ha ripreso fiato."	"Un istante di silenzio.
+Il mondo ha ripreso il suo respiro."
+it	outcome.success.normal.pool	21	"La traccia si è incisa nella sabbia —
+là dove il vento non arriva più."	"La traccia si è impressa nella sabbia —
+là dove il vento non arriva più."
+it	outcome.success.normal.pool	22	"L’equilibrio è tornato.
+Tutto portava a questo istante."	"L’equilibrio è stato ristabilito.
+Tutto conduceva a questo istante."
+it	outcome.success.normal.pool	23	"Corsa completata.
+Chiaro. Trovato.
+Basta così."	"Corsa completata.
+Chiaro. Ritrovato.
+Questo basta."
+it	outcome.success.normal.pool	24	"Corsa completata.
+Il sentiero ha retto.
+Anche tu."	"Corsa completata.
+Il cammino ha retto.
+Anche tu."
+it	outcome.success.normal.pool	25	"Il cielo ha continuato il suo corso.
+Puoi farlo anche tu."	"Il cielo ha continuato il suo corso.
+Anche tu puoi continuare."
+it	outcome.success.normal.pool	26	"Corsa completata.
+Un risultato quieto.
+Il peso del lavoro vero."	"Corsa completata.
+Un risultato silenzioso.
+Il peso del lavoro vero."
+it	outcome.success.normal.pool	27	"Hai solo seguito il sentiero
+che il mondo aveva tracciato davanti a te."	"Hai solo seguito il sentiero
+che il mondo aveva steso davanti a te."
+it	outcome.success.normal.pool	28	"La terra non ha ceduto.
+Si è fidata dei tuoi passi."	"Il terreno non ha ceduto.
+Ha avuto fiducia nei tuoi passi."
+it	outcome.success.normal.pool	29	"Questo istante si è accordato
+al ritmo antico delle stelle."	"Questo istante si è accordato
+all’antico ritmo delle stelle."
+it	outcome.success.normal.pool	31	"Non hai guadagnato nulla per te.
+Hai solo visto la verità per ciò che era."	"Non hai ottenuto nulla per te solo.
+Hai solo visto la verità per ciò che era."
+it	outcome.success.normal.pool	32	"Non hai conquistato questo luogo.
+Ne facevi parte."	"Non hai conquistato questo luogo.
+Vi appartenevi."
+it	outcome.success.normal.pool	33	"Hai percorso una via
+più antica della memoria stessa."	"Hai imboccato una via
+più antica della memoria stessa."
+it	outcome.success.normal.pool	35	"Questo istante si è accordato
+al silenzio delle stelle."	"Questo istante si è accordato
+con il silenzio delle stelle."
+it	outcome.success.hard.pool	1	"Nel vento del nord,
+la chiarezza dura più della velocità."	"Nel vento del nord,
+la lucidità dura più della velocità."
+it	outcome.success.hard.pool	2	"Il centro è stato trovato.
+Il mondo ha potuto quietarsi."	"Il centro è stato trovato.
+Il mondo ha potuto acquietarsi."
+it	outcome.success.hard.pool	3	"Le stelle tacciono.
+La tua traccia parla per te."	"Le stelle restano in silenzio.
+La tua traccia parla per te."
+it	outcome.success.hard.pool	4	"Il risultato ha retto.
+La posizione è cambiata."	"Il risultato è rimasto.
+La posizione è cambiata."
+it	outcome.success.hard.pool	5	"Tra ghiaccio e vetro,
+hai scelto il controllo."	"Fra ghiaccio e vetro,
+hai scelto il controllo."
+it	outcome.success.hard.pool	6	"Le onde si sono spente,
+e il mare ha ripreso le sue profondità segrete."	"Le onde si sono spente,
+e il mare ha ripreso le sue profondità nascoste."
+it	outcome.success.hard.pool	7	"Altri tesori aspettano ancora.
+La prossima volta, un altro sentiero."	"Altri tesori aspettano ancora.
+La prossima volta, un altro cammino."
+it	outcome.success.hard.pool	9	"L’istante è passato.
+È rimasto solo l’ordine."	"L’istante è passato.
+È rimasto l’ordine."
+it	outcome.success.hard.pool	11	"Le stelle si sono allineate per un istante.
+Tu te ne sei accorto."	"Le stelle si sono allineate per un istante.
+Tu l’hai visto."
+it	outcome.success.hard.pool	12	"La distanza si è chiusa.
+Il tempo no."	"La distanza si è colmata.
+Il tempo no."
+it	outcome.success.hard.pool	14	"Il sentiero si è richiuso in silenzio.
+Tu lo avevi già attraversato."	"Il cammino si è richiuso in silenzio.
+Tu lo avevi già oltrepassato."
+it	outcome.success.hard.pool	15	"Hai trovato abbastanza.
+Il resto può aspettare."	"Hai trovato quanto bastava.
+Il resto può aspettare."
+it	outcome.success.hard.pool	17	"La sabbia ha dimenticato i tuoi passi.
+Il risultato no."	"La sabbia ha cancellato i tuoi passi.
+Il risultato no."
+it	outcome.success.hard.pool	18	"Il silenzio che è seguito
+pesava più del rumore."	"Il silenzio venuto dopo
+pesava più del rumore."
+it	outcome.success.hard.pool	19	"Il risultato non è cambiato.
+Ma tu hai raggiunto un nuovo livello."	"Il risultato non è cambiato.
+Ma tu hai raggiunto un’altra soglia."
+it	outcome.success.hard.pool	20	"La meta era la stessa.
+Chi l’ha raggiunta, però, era cambiato."	"La meta era la stessa.
+Ma chi l’ha raggiunta era cambiato."
+it	outcome.success.hard.pool	22	"Il mondo non ti ha aperto una scorciatoia.
+Ti ha lasciato passare."	"Il mondo non ti ha aperto una scorciatoia.
+Ti ha permesso di passare."
+it	outcome.success.hard.pool	23	"Hai attraversato il margine
+senza spezzarlo."	"Hai varcato il margine
+senza spezzarlo."
+it	outcome.success.hard.pool	24	"Il vetro non si è infranto.
+Ha ricordato il tuo peso."	"Il vetro non si è infranto.
+Ha conservato il ricordo del tuo peso."
+it	outcome.success.hard.pool	25	"La luce ha resistito
+finché non hai trovato il centro."	"La luce ha resistito
+finché non hai raggiunto il centro."
+it	outcome.success.hard.pool	26	"Non era fortuna.
+Era presenza."	"Non è stata fortuna.
+Era presenza."
+it	outcome.success.hard.pool	27	"Il tempo non ti ha concesso nulla.
+Tu hai preso il ritmo."	"Il tempo non ti ha concesso nulla.
+Tu ne hai preso il ritmo."
+it	outcome.success.hard.pool	30	"La corsa è finita.
+La misura resta."	"La corsa si è conclusa.
+La misura resta."
+it	outcome.timeup.easy.pool	1	"Il tempo è finito.
+Nient’altro."	"Il tempo è finito.
+Null’altro."
+it	outcome.timeup.easy.pool	2	"Il tesoro può aspettare.
+Anche tu puoi."	"Il tesoro può aspettare.
+Anche tu."
+it	outcome.timeup.easy.pool	3	"Questo era un inizio,
+non una condanna."	"Era un inizio,
+non una condanna."
+it	outcome.timeup.easy.pool	4	"Non sei arrivato.
+Ma hai visto la strada."	"Non sei arrivato.
+Ma hai visto il cammino."
+it	outcome.timeup.easy.pool	5	"Non hai fallito.
+Hai imparato la distanza."	"Non hai fallito.
+Hai imparato la misura della distanza."
+it	outcome.timeup.easy.pool	6	"La corsa si è fermata.
+Tu no."	"La corsa si è arrestata.
+Tu no."
+it	outcome.timeup.easy.pool	7	"TEMPO SCADUTO.
+La corsa è finita.
+Tu no."	"TEMPO SCADUTO.
+La corsa si è conclusa.
+Tu no."
+it	outcome.timeup.easy.pool	8	"TEMPO SCADUTO.
+Il sentiero resta.
+Anche tu."	"TEMPO SCADUTO.
+Il cammino resta.
+Anche tu."
+it	outcome.timeup.easy.pool	9	"Il mondo non ti ha chiuso fuori.
+Ti ha solo chiesto un altro tentativo."	"Il mondo non ti ha chiuso fuori.
+Ti ha chiesto soltanto un altro tentativo."
+it	outcome.timeup.easy.pool	11	"Il vento ha coperto la traccia.
+Non il cammino."	"Il vento ha coperto le tracce.
+Non il cammino."
+it	outcome.timeup.easy.pool	12	"Un passo mancava.
+Il resto rimane."	"Mancava un passo.
+Il resto rimane."
+it	outcome.timeup.easy.pool	13	"La sabbia ha preso il tempo.
+Non il senso."	"La sabbia si è presa il tempo.
+Non il senso."
+it	outcome.timeup.easy.pool	14	"La porta si è chiusa piano.
+La strada no."	"La porta si è chiusa in silenzio.
+La strada no."
+it	outcome.timeup.normal.pool	1	"Il tempo è scaduto.
+Ma la strada non è scomparsa."	"Il tempo è scaduto.
+Ma il cammino non è scomparso."
+it	outcome.timeup.normal.pool	3	"Il risultato ha retto.
+La posizione è cambiata."	"Il risultato è rimasto.
+La posizione è cambiata."
+it	outcome.timeup.normal.pool	4	"La luce si è ritirata.
+La direzione resta."	"La luce si è ritratta.
+La direzione resta."
+it	outcome.timeup.normal.pool	5	"Il silenzio ha segnato il punto.
+Riparti da lì."	"Il silenzio ha segnato il punto.
+Riparti da quel punto."
+it	outcome.timeup.normal.pool	6	"La distanza è rimasta.
+Ora però ha un nome."	"La distanza è rimasta.
+Ma ora ha un nome."
+it	outcome.timeup.normal.pool	7	"Il vento del nord non giudica.
+Misura soltanto."	"Il vento del nord non giudica.
+Misura e basta."
+it	outcome.timeup.normal.pool	8	"Non hai perso la via.
+Hai incontrato il suo limite."	"Non hai perso la via.
+Ne hai incontrato il limite."
+it	outcome.timeup.normal.pool	10	"Ciò che non hai raggiunto
+può ancora chiamarti."	"Ciò che non hai raggiunto
+può ancora richiamarti."
+it	outcome.timeup.normal.pool	11	"Il tempo ha vinto questa volta.
+Non per sempre."	"Il tempo ha vinto questa volta.
+Ma non per sempre."
+it	outcome.timeup.normal.pool	12	"Il vetro ha tremato.
+Tu sei rimasto."	"Il vetro ha tremato.
+Tu sei rimasto lì."
+it	outcome.timeup.normal.pool	13	"La mappa non è finita.
+Si è solo piegata."	"La mappa non è finita.
+Si è soltanto piegata."
+it	outcome.timeup.normal.pool	14	"Il mondo non ha cancellato i tuoi passi.
+Li ha messi da parte."	"Il mondo non ha cancellato i tuoi passi.
+Li ha custoditi."
+it	outcome.timeup.normal.pool	16	"Il centro non si è mosso.
+Aspetta ancora."	"Il centro non si è spostato.
+Aspetta ancora."
+it	outcome.timeup.normal.pool	17	Hai imparato il peso del margine.	Hai imparato il peso del limite.
+it	outcome.timeup.normal.pool	18	"Il silenzio dopo l’errore
+può diventare una mappa."	"Il silenzio dopo l’errore
+può diventare mappa."
+it	outcome.timeup.hard.pool	2	"Il freddo non perdona.
+Però insegna."	"Il freddo non perdona.
+Ma insegna."
+it	outcome.timeup.hard.pool	4	"Hai mancato il centro.
+Non hai mancato il significato."	"Hai mancato il centro.
+Non hai mancato il senso."
+it	outcome.timeup.hard.pool	5	"Il vetro ha tenuto.
+Il tempo no."	"Il vetro ha retto.
+Il tempo no."
+it	outcome.timeup.hard.pool	8	"L’ombra è arrivata prima.
+Tu sei arrivato comunque."	"L’ombra è arrivata prima.
+Tu, comunque, sei arrivato."
+it	outcome.timeup.hard.pool	11	"Il risultato è stato duro.
+Per questo è vero."	"Il risultato è stato duro.
+Proprio per questo è vero."
+it	outcome.timeup.hard.pool	12	"La distanza è rimasta severa.
+Ma ha rivelato la sua verità."	"La distanza è rimasta severa.
+Ma ha rivelato la propria verità."
+it	outcome.timeup.hard.pool	15	"Il nord non consola.
+Rende chiaro."	"Il nord non consola.
+Rende tutto chiaro."
+it	outcome.timeup.hard.pool	17	"Il tempo ha preso la vittoria.
+Tu hai preso la lezione."	"Il tempo si è preso la vittoria.
+Tu hai preso la lezione."
+it	outcome.timeup.hard.pool	20	"La corsa non ti ha premiato.
+Ti ha affinato."	"La corsa non ti ha premiato.
+Ti ha reso più preciso."
+it	outcome.timeup.hard.pool	22	"La sconfitta non ha gridato.
+Ha inciso."	"La sconfitta non ha gridato.
+Ha lasciato un segno."
+it	outcome.timeup.hard.pool	27	"Ogni passo mancato
+è una misura per il prossimo."	"Ogni passo mancato
+è misura per il prossimo."
+it	outcome.timeup.hard.pool	28	"Il cielo si è chiuso.
+La strada resta sotto i piedi."	"Il cielo si è chiuso.
+La strada resta sotto i tuoi piedi."
+it	outcome.timeup.hard.pool	29	"La distanza non ti ha ceduto.
+Ti ha mostrato il suo peso."	"La distanza non ti ha ceduto.
+Ti ha mostrato il proprio peso."
+it	outcome.timeup.hard.pool	30	"Sotto il nord,
+anche un piccolo passo è vero."	"Sotto il nord,
+anche un piccolo passo è reale."
+it	outcome.timeup.hard.pool	37	"La prossima corsa partirà
+da ciò che hai capito."	"La prossima corsa partirà
+da ciò che hai compreso."
