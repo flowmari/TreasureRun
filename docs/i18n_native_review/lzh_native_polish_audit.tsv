@@ -1,0 +1,7 @@
+lang	pool	kind	meta	value
+lzh	outcome.success.easy.pool	COUNT	17	
+lzh	outcome.success.normal.pool	COUNT	35	
+lzh	outcome.success.hard.pool	COUNT	32	
+lzh	outcome.timeup.easy.pool	COUNT	16	
+lzh	outcome.timeup.normal.pool	COUNT	20	
+lzh	outcome.timeup.hard.pool	COUNT	38	
