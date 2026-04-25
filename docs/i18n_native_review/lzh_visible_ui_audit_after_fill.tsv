@@ -1,0 +1,34 @@
+kind	key	value
+ENGLISH_LIKE	ui.menu.page.contents.savedOn	  · 於 SUCCESS / TIME_UP 時存之
+ENGLISH_LIKE	ui.labels.page	&8第{page}/{total}頁&r
+JP_CJK_LIKE	favorites.auto.favorite_saved_sneak_rightcl_7a73eb4f	★ 已藏之！（潛行 + 右擊）
+JP_CJK_LIKE	commands.text_2bf42ec8	此令唯玩家可行。
+JP_CJK_LIKE	commands.text_2bf42ec8_18	此令唯玩家可行。
+JP_CJK_LIKE	commands.3_3d5021f7	造特製綠寶石，須鑽石三枚。
+JP_CJK_LIKE	commands.text_e096c9a4	&6特製綠寶石
+JP_CJK_LIKE	commands.3_71b78a44	已以鑽石三枚造特製綠寶石！
+JP_CJK_LIKE	commands.text_3030fd61	唯玩家可行此令。
+JP_CJK_LIKE	commands.op_10caf0f6	無權限（唯 OP 可用）。
+JP_CJK_LIKE	commands.rank_1_2_3_demo_d87f40da	用法：/rank <1|2|3|demo>
+JP_CJK_LIKE	commands.rank_1_2_3_demo_4f3e3084	請以數字輸入：/rank <1|2|3|demo>
+JP_CJK_LIKE	commands.1_3_rank_1_2_3_7f459bd0	唯可用 1 至 3：/rank <1|2|3>
+JP_CJK_LIKE	commands.text_bed3daf7	此令唯玩家可行。
+JP_CJK_LIKE	commands.treasurerun_bcef4fe9	[TreasureRun] 關卡管理尚未初始化。
+JP_CJK_LIKE	commands.text_287fa0f1	已清理 {count} 個難度方塊。
+JP_CJK_LIKE	commands.text_44a99db9	此令唯玩家得行。
+JP_CJK_LIKE	commands.text_fd02f248	限時：
+JP_CJK_LIKE	commands.text_f166cc04	§a尋寶始矣！難度：
+JP_CJK_LIKE	commands.text_2281b097	已生成 {count} 箱。寶物之數：
+JP_CJK_LIKE	items.text_7567bb35	特製綠寶石之配方已錄。
+JP_CJK_LIKE	items.text_7a04254b	&e特製蘋果
+JP_CJK_LIKE	items.text_e8d4013d	特製蘋果之配方已錄。
+JP_CJK_LIKE	items.text_e42912c7	&7特製鐵塊
+JP_CJK_LIKE	items.text_c89dea57	特製鐵塊之配方已錄。
+JP_CJK_LIKE	game.auto.backup_cfe9e6cf	🌊 備用海域搜尋已成。
+JP_CJK_LIKE	game.auto.text_e096c9a4	&6特製綠寶石
+JP_CJK_LIKE	game.auto.dj_onalltreasurescollected_a871afdd	DJ 之事已在行，故略過 onAllTreasuresCollected。
+JP_CJK_LIKE	game.auto.text_cc353737	諸寶皆已得！
+JP_CJK_LIKE	game.auto.congratulations_38fd1594	§6賀矣！汝已盡得諸寶！
+JP_CJK_LIKE	ui.menu.page.contents.savedOn	  · 於 SUCCESS / TIME_UP 時存之
+JP_CJK_LIKE	ui.labels.page	&8第{page}/{total}頁&r
+JP_CJK_LIKE	ui.menu.legacy.toc.message	&6===== 🌟 TreasureRun 目次 🌟 =====\n&b一、目的\n&f   ・限時之內，開箱盡多。\n\n&b二、現今難度\n&f   ・難度: &e{difficulty}\n\n&6==================================

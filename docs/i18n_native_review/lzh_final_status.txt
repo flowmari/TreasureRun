@@ -1,0 +1,9 @@
+Classical Chinese visible UI localization status
+
+- visible UI audit after fill: missing_visible=0
+- visible UI audit after patch: missing_visible=0
+- visible UI audit after patch: english_like=0
+- visible UI audit after patch: jp_cjk_like=31
+- note: jp_cjk_like is expected for lzh and is not treated as a defect signal
+- recommendation: treat Classical Chinese visible UI as complete
+- remaining non-visible or lower-priority review items can be handled later
