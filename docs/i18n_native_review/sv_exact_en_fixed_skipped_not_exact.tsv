@@ -1,0 +1,20 @@
+pool	index	current_value
+outcome.success.easy.pool	1	Även ett litet steg räknas.
+outcome.success.easy.pool	2	Du lyssnade och vägen öppnade sig.
+outcome.success.easy.pool	3	Distansen fick sin mening och tiden svarade på dina steg.
+outcome.success.normal.pool	1	Avstånd blev till mening.
+outcome.success.normal.pool	2	Löpningen klar. Ett stilla resultat, buret av verkligt arbete.
+outcome.success.normal.pool	3	Ögonblicket passerade. Rekordet stannade kvar.
+outcome.success.hard.pool	1	I nordanvinden överlever klarhet hastigheten.
+outcome.success.hard.pool	2	Inte tur. Inriktning.
+outcome.success.hard.pool	3	Världen förändrades inte. Din plats i den gjorde det.
+outcome.timeup.easy.pool	1	"Tiden tog slut.
+Inte du."
+outcome.timeup.easy.pool	2	Löpningen tog slut. Du inte.
+outcome.timeup.easy.pool	3	Ta ett andetag. Sedan ett till.
+outcome.timeup.normal.pool	1	Distansen minskade. Tiden inte.
+outcome.timeup.normal.pool	2	Kartan är fortfarande öppen. Kom tillbaka.
+outcome.timeup.normal.pool	3	Skatten förblev utom räckhåll, men signalen var verklig.
+outcome.timeup.hard.pool	1	Även norrsken bleknar. Kom tillbaka med ett nytt steg.
+outcome.timeup.hard.pool	2	Ögonblicket gled bort. Meningen inte.
+outcome.timeup.hard.pool	3	Himlen fortsatte röra sig. Det kan du också.

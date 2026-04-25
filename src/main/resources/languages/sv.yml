@@ -7,467 +7,465 @@ outcome:
       pool: []
     easy:
       pool:
-      - 'You’ve made it.
+      - Även ett litet steg räknas.
+      - Du lyssnade och vägen öppnade sig.
+      - Distansen fick sin mening och tiden svarade på dina steg.
+      - "> Du tog dig hit.\n> \n> Reglerna var enkla —\n> \n> valet var ditt."
+      - "> Avståndet fick mening.\n> \n> Och tiden svarade på dina steg."
+      - "> Allt lyser inte för alltid.\n> \n> Men det här ögonblicket gjorde det."
+      - 'Ljuset föll jämnt,
 
-        The truth remains.'
-      - 'Even if it was only a small step,
+        och varje skugga försvann.'
+      - 'Vinden tystnade.
 
-        you held your ground.'
-      - "You listened.\n The path opened."
-      - "> You made it here\n> \n> The rules were simple —\n> \n> the choice was yours."
-      - "> Distance became meaning.\n> \n> and time answered your footsteps."
-      - "> Not everything shines forever.\n> \n> But this moment did."
-      - 'Light fell evenly, ,
+        Och allt återvände dit det hörde hemma.'
+      - 'Ett ögonblick av tystnad.
 
-        and every shadow vanished.'
-      - 'The wind fell silent.
+        Världen hämtade andan.'
+      - 'Spåret ristades djupt i sanden —
 
-        and everything returned to where it belonged.'
-      - 'A moment of silence.
+        utom räckhåll för vinden.'
+      - 'Balansen återställdes.
 
-        The world steadied its breath.'
-      - 'The record is etched deep in the sand—
+        Allt hade lett fram till detta ögonblick.'
+      - 'Tiden gled förbi i tystnad,
 
-        beyond the reach of the wind.'
-      - 'Harmony was restored.
+        gömd i minnets hörn.'
+      - 'Himlen skiftade färg,
 
-        Everything had been for this moment.'
-      - 'Time slipped by in silence,
+        och en berättelse nådde sitt slut.'
+      - 'Vågorna stillnade,
 
-        tucked away in the corners of memory.'
-      - 'The sky shifted in color,
+        och havet dolde åter sitt djup.'
+      - 'Stegen stannade,
 
-        and one story came to its end.'
-      - 'The waves grew calm,
+        och bara platsen fanns kvar.'
+      - 'Seger och nederlag
 
-        and the sea hid its depths once more.'
-      - 'The footsteps stopped,
+        är inget annat än sandkorn.'
+      - 'Vägen fortsätter — eller tar slut.
 
-        and only the place remained.'
-      - "Victory and defeat \nare nothing more than grains of sand."
-      - 'The road goes on—or it ends.
-
-        Either way, it lies on the same earth.'
+        Hur som helst vilar den på samma jord.'
     normal:
       pool:
-      - 'The distance has found its meaning.
+      - Avstånd blev till mening.
+      - Löpningen klar. Ett stilla resultat, buret av verkligt arbete.
+      - Ögonblicket passerade. Rekordet stannade kvar.
+      - 'Glaset höll andan,
 
-        Time has rewarded your journey.'
-      - 'The time is up.
+        och du stod kvar.'
+      - 'Under himlens stillhet
 
-        but the rest is far from over.'
-      - 'The axis is found.
+        vek inte ditt mod.'
+      - 'Få saker lyser för alltid.
 
-        the world has cased its motion.'
-      - 'The glass held its breath,
+        Men det här ögonblicket lyste klart.'
+      - 'Du korsade den sköra jorden
 
-        and you held your ground.'
-      - 'Under the stillness of the sky,
+        utan att tappa blicken.'
+      - 'Ögonblicket passerade.
 
-        your spirit did not waver.'
-      - 'Few things shine forever.
+        Det som blev kvar består.'
+      - 'Tur bleknar snabbt.
 
-        but this moment was radiant.'
-      - 'You traversed the fragile earth,
+        Ordning består.'
+      - 'Himlen gör inga uppehåll i sin ändlösa cirkel,
 
-        without losing the view.'
-      - 'The moment has passed.
+        och inte heller gjorde du det.'
+      - 'Centrum nåddes.
 
-        The legacy remains.'
-      - 'Luck fades fast.
+        Världen stod stilla.'
+      - 'Äntligen här.
 
-        order endures.'
-      - 'The sky knows no pause in endless circle,
+        Sanningen står orubblig.'
+      - 'Du gick hela vägen.
 
-        nor shall you find yours.'
-      - 'The center has been reached.
+        Och minns detta: det var du, och ingen annan, som valde den.'
+      - 'Tiden gled in i tystnad,
 
-        The world stood still.'
-      - 'Finally here.
+        och fann sin plats i sinnets djup.'
+      - 'När himlen förändrades
 
-        The truth remains unyielding.'
-      - 'You have seen it through.
+        fick berättelsen sitt slut.'
+      - 'Vattnet stillnade,
 
-        And mark this: it was you, and no one else, who chose this path.'
-      - 'Time drifted into silence,
+        och himlen dolde åter sitt avgrundsdjup.'
+      - 'Stegen upphörde,
 
-        finding its place in the recesses of the mind.'
-      - 'As the sky transformed,
+        och bara platsen fanns kvar.'
+      - 'Ljuset föll jämnt,
 
-        the tale found its final resolved.'
-      - 'The waters fell calm,
+        och varje skugga försvann.'
+      - 'Vinden tystnade.
 
-        and the sky once more veiled its abyss.'
-      - 'The footsteps ceased,
+        Och allt återvände dit det hörde hemma.'
+      - 'Ett ögonblick av tystnad.
 
-        only the place remained.'
-      - 'Light fell evenly, ,
+        Världen hämtade andan.'
+      - 'Spåret ristades djupt i sanden —
 
-        and every shadow vanished.'
-      - 'The wind fell silent.
+        utom räckhåll för vinden.'
+      - 'Balansen återställdes.
 
-        and everything returned to where it belonged.'
-      - 'A moment of silence.
+        Allt hade lett fram till detta ögonblick.'
+      - 'LOPPET SLUTFÖRT.
 
-        The world steadied its breath.'
-      - 'The record is etched deep in the sand—
+        Klart. Funnet.
 
-        beyond the reach of the wind.'
-      - 'Harmony was restored.
+        Det räcker.'
+      - 'LOPPET SLUTFÖRT.
 
-        Everything had been for this moment.'
-      - 'RUN COMPLETE.
+        Vägen höll.
 
-        Clear. Found it.
+        Det gjorde du också.'
+      - 'Himlen fortsatte röra sig.
 
-        That''s enough.'
-      - 'RUN COMPLETE.
+        Det kan du också.'
+      - 'LOPPET SLUTFÖRT.
 
-        The path held.
+        Ett stilla resultat.
 
-        So did you.'
-      - 'The sky has kept moving.
+        Tyngden av verkligt arbete.'
+      - 'Du gick bara den väg
 
-        So can you.'
-      - 'RUN COMPLETE.
+        som världen hade lagt framför dig.'
+      - 'Marken gav inte vika.
 
-        A quiet result.
+        Den litade på dina steg.'
+      - 'Det här ögonblicket föll i takt
 
-        The weight of real work.'
-      - 'You only walked the path
+        med stjärnornas uråldriga rytm.'
+      - 'Du tog ingenting.
 
-        the world had laid out for you.'
-      - 'The ground didn’t give way.
+        Du förstod något.'
+      - 'Du vann ingenting.
 
-        It trusted your steps.'
-      - 'This moment aligned
+        Du såg bara sanningen som den var.'
+      - 'Du tog inte den här platsen.
 
-        with the stars’ ancient rhythm.'
-      - "You didn’t take anything.\n You understood something."
-      - 'You didn’t gain a thing.
+        Du hörde hemma här.'
+      - 'Du gick en väg
 
-        You only saw the truth for what it was.'
-      - 'You didn’t take this place.
+        äldre än minnet självt.'
+      - 'Jorden gjorde inget motstånd.
 
-        You belonged here.'
-      - 'You walked a road
+        Den kände igen dig.'
+      - 'Det här ögonblicket föll i takt
 
-        older than memory itself.'
-      - 'The earth did not resist.
-
-        It recognized you.'
-      - "This moment aligned\n with the stillness of the stars."
+        med stjärnornas stillhet.'
     hard:
       pool:
-      - 'In the north wind,
+      - I nordanvinden överlever klarhet hastigheten.
+      - Inte tur. Inriktning.
+      - Världen förändrades inte. Din plats i den gjorde det.
+      - 'Resultatet stod kvar.
 
-        clarity outlasts speed.'
-      - "The center was found.\n The world came to rest."
-      - 'The stars stay silent.
+        Positionen förändrades.'
+      - 'Mellan is och glas
 
-        Your record does the speaking.'
-      - 'The result  remained.
+        valde du kontroll.'
+      - 'Vågorna tystnade,
 
-        The position changed.'
-      - 'Between ice and glass,
+        och havet tog tillbaka sina dolda djup.'
+      - 'Några skatter väntar ännu.
 
-        you chose control.'
-      - 'The waves fell quiet,
+        Nästa gång, en annan väg.'
+      - 'Himlen förändrades inte.
 
-        and the sea reclaimed its hidden depths.'
-      - 'Some treasures still await.
+        Det gjorde du.'
+      - 'Ögonblicket passerade.
 
-        Next time, a different path.'
-      - 'The sky didn’t change.
+        Det som blev kvar var ordning.'
+      - 'Vintern är ärlig.
 
-        You did.'
-      - 'The moment passed.
+        Det var ditt lopp också.'
+      - 'Stjärnorna stod rätt för ett ögonblick.
 
-        What remained was order.'
-      - 'Winter is honest.
+        Du märkte det.'
+      - 'Avståndet slöts.
 
-        So was your run.'
-      - 'The stars aligned for a moment.
+        Tiden gjorde det inte.'
+      - 'Världens regler stod fasta.
 
-        You noticed.'
-      - 'The distance closed.
+        Och möjligheten var verklig.'
+      - 'Vägen slöt sig tyst.
 
-        Time did not.'
-      - "The world’s rules stood firm.\n And the signal of possibility was real."
-      - 'The path closed quietly.
+        Du var redan igenom.'
+      - 'Ingenting förändrades.
 
-        You were already through.'
-      - 'Nothing changed.
+        Bara din position gjorde det.'
+      - 'Inte tur.
 
-        Only your position did.'
-      - 'Not luck.
+        Samklang.'
+      - 'Ögonblicket passerade.
 
-        Alignment.'
-      - 'The moment passed.
+        Resultatet består.'
+      - 'Utfallet förändrades inte.
 
-        The record remains.'
-      - 'The outcome didn’t change.
+        Ändå gick du vidare.'
+      - 'Resultatet förändrades inte.
 
-        Still, you moved forward.'
-      - 'The output didn’t change.
+        Men du nådde en ny nivå.'
+      - 'Slutet var detsamma.
 
-        But you reached a new level.'
-      - 'The ending was the same.
+        Men den som nådde dit hade förändrats.'
+      - 'Målet är detsamma
 
-        But the one who reached it had changed.'
-      - 'The destination is the same
+        — men du är inte längre den resenär du var.'
+      - 'Ljuset föll jämnt,
 
-        —but you’re no longer the traveler you once were.'
-      - 'Light fell evenly, ,
+        och varje skugga försvann.'
+      - 'Vinden tystnade.
 
-        and every shadow vanished.'
-      - 'The wind fell silent.
+        Och allt återvände dit det hörde hemma.'
+      - 'Ett ögonblick av tystnad.
 
-        and everything returned to where it belonged.'
-      - 'A moment of silence.
+        Världen hämtade andan.'
+      - 'Spåret ristades djupt i sanden —
 
-        The world steadied its breath.'
-      - 'The record is etched deep in the sand—
+        utom räckhåll för vinden.'
+      - 'Balansen återställdes.
 
-        beyond the reach of the wind.'
-      - 'Harmony was restored.
+        Allt hade lett fram till detta ögonblick.'
+      - 'Tiden gled förbi i tystnad,
 
-        Everything had been for this moment.'
-      - 'Time slipped by in silence,
+        gömd i minnets hörn.'
+      - 'Himlen skiftade färg,
 
-        tucked away in the corners of memory.'
-      - 'The sky shifted in color,
+        och en berättelse nådde sitt slut.'
+      - 'Vågorna stillnade,
 
-        and one story came to its end.'
-      - 'The waves grew calm,
+        och havet dolde åter sitt djup.'
+      - 'Stegen stannade,
 
-        and the sea hid its depths once more.'
-      - 'The footsteps stopped,
+        och bara platsen fanns kvar.'
+      - 'Seger och nederlag
 
-        and only the place remained.'
-      - "Victory and defeat \nare nothing more than grains of sand."
-      - 'The road goes on—or it ends.
+        är inget annat än sandkorn.'
+      - 'Vägen fortsätter — eller tar slut.
 
-        Either way, it lies on the same earth.'
+        Hur som helst vilar den på samma jord.'
   timeup:
     easy:
       pool:
-      - 'Time ran out.
+      - 'Tiden tog slut.
 
-        Nothing else did.'
-      - 'The treasure can wait.
+        Inte du.'
+      - Löpningen tog slut. Du inte.
+      - Ta ett andetag. Sedan ett till.
+      - 'Det räcker för nu.
 
-        So can you.'
-      - 'Breathe in.
+        Vidare till nästa steg.'
+      - 'Du är fortfarande här.
 
-        Then again.'
-      - 'That’s all for now.
+        Det är det som räknas.'
+      - 'Loppet tog slut.
 
-        On to the next step.'
-      - 'You''re still here.
+        Inte du.'
+      - 'TIDEN ÄR UTE.
 
-        That’s what matters.'
-      - 'The run ended.
+        Loppet tog slut.
 
-        You didn’t.'
-      - 'TIME''S UP.
+        Inte du.'
+      - 'TIDEN ÄR UTE.
 
-        The run ended.
+        Reglerna förändras inte.
 
-        You didn''t.'
-      - 'TIME''S UP.
+        Försök igen.'
+      - 'TIDEN ÄR UTE.
 
-        The rules don’t change.
+        ”Så nära” är också verkligt.'
+      - 'Solen sjönk,
 
-        Again.'
-      - 'TIME''S UP.
+        och skuggan täckte världen igen.'
+      - 'De sista sandkornen föll,
 
-        “So close” is real.'
-      - 'The sun sank,
+        och berättelsen slöts i tystnad.'
+      - 'Vinden drog förbi,
 
-        and shadow covered the world once again.'
-      - 'The last grains of sand fell,
+        och fotspåren försvann utan spår.'
+      - 'Tidvattnet steg,
 
-        and the story quietly came to a close.'
-      - 'The wind swept through,
+        och det som funnits där återvände till havet.'
+      - 'Tystnad.
 
-        and the footprints vanished without a trace.'
-      - 'The tide came in,
+        Bara tiden passerade.'
+      - 'Seger och nederlag
 
-        What once had been there returned to the sea.'
-      - 'Silence.
+        är inget annat än sandkorn.'
+      - 'Vägen fortsätter — eller tar slut.
 
-        Only time passed through.'
-      - "Victory and defeat \nare nothing more than grains of sand."
-      - 'The road goes on—or it ends.
-
-        Either way, it lies on the same earth.'
+        Hur som helst vilar den på samma jord.'
     normal:
       pool:
-      - 'The distance closed.
+      - Distansen minskade. Tiden inte.
+      - Kartan är fortfarande öppen. Kom tillbaka.
+      - Skatten förblev utom räckhåll, men signalen var verklig.
+      - 'Några skatter väntar ännu.
 
-        Time did not.'
-      - 'The world kept its rules.
+        Låt oss pröva en annan väg.'
+      - 'Resultatet stod kvar.
 
-        You touched the edge.'
-      - 'You didn’t make it.
+        Positionen förändrades.'
+      - 'Tiden tog slut.
 
-        But the signal was real.'
-      - 'Some treasures still await.
+        Meningen gjorde det inte.'
+      - 'Så nära.
 
-        Let’s try a different path.'
-      - 'The result remained.
+        Ljudet sade det.'
+      - 'Kartan är fortfarande öppen.
 
-        The position changed.'
-      - 'Time ran out.
+        Kom tillbaka till den.'
+      - 'Världens regler stod fasta.
 
-        Meaning didn''t.'
-      - 'So close.
+        Möjlighetens signal var verklig.'
+      - Världen behöll sina regler.
+      - 'Ögonblicket passerade.
 
-        The sound said so.'
-      - 'The map is still open.
+        Resultatet består.'
+      - 'Solen sjönk,
 
-        Come back to it.'
-      - 'The world’s rules stood firm.
+        och skuggan täckte världen igen.'
+      - 'De sista sandkornen föll,
 
-        The signal of possibility was real.'
-      - The world kept its rules.
-      - 'The moment passed.
+        och berättelsen slöts i tystnad.'
+      - 'Vinden drog förbi,
 
-        The record remains.'
-      - 'The sun sank,
+        och fotspåren försvann utan spår.'
+      - 'Tidvattnet steg,
 
-        and shadow covered the world once again.'
-      - 'The last grains of sand fell,
+        och det som funnits där återvände till havet.'
+      - 'Tystnad.
 
-        and the story quietly came to a close.'
-      - 'The wind swept through,
+        Bara tiden passerade.'
+      - 'Seger och nederlag
 
-        and the footprints vanished without a trace.'
-      - 'The tide came in,
+        är inget annat än sandkorn.'
+      - 'Vägen fortsätter — eller tar slut.
 
-        What once had been there returned to the sea.'
-      - 'Silence.
-
-        Only time passed through.'
-      - "Victory and defeat \nare nothing more than grains of sand."
-      - 'The road goes on—or it ends.
-
-        Either way, it lies on the same earth.'
-      - "> Time ran out.\n> \n> Nothing else did."
-      - "> The outcome didn’t change.\n> \n> But your position did."
+        Hur som helst vilar den på samma jord.'
+      - "> Tiden tog slut.\n> \n> Inget annat gjorde det."
+      - "> Utfallet förändrades inte.\n> \n> Men din position gjorde det."
     hard:
       pool:
-      - 'Even the aurora fades.
+      - Även norrsken bleknar. Kom tillbaka med ett nytt steg.
+      - Ögonblicket gled bort. Meningen inte.
+      - Himlen fortsatte röra sig. Det kan du också.
+      - 'Vintern är tålmodig.
 
-        Come back with a new stride.'
-      - 'In a fragile world,
+        Var det också.'
+      - 'Himlen fortsatte röra sig.
 
-        haste shatters clarity before it can be found.'
-      - 'The moment slipped away.
+        Det kommer du också att göra.'
+      - 'Berättelsen går vidare.
 
-        The meaning did not.'
-      - 'Winter is patient.
+        Slutet har inte kommit än.'
+      - 'Stjärnorna fanns där och såg på.
 
-        Be the same.'
-      - 'The sky kept moving.
+        Igen.'
+      - 'Isen tar sin tid.
 
-        So will you.'
-      - 'The story moves on.
+        Det behöver du också göra.'
+      - 'Himlen fortsatte röra sig.
 
-        The end is not yet.'
-      - 'The stars were there, watching.
+        Det kan du också.'
+      - 'Norden har lärt sig att vänta.
 
-        Again.'
-      - 'Ice takes its time.
+        Det bör du också.'
+      - 'Det här är ett mellanspel
 
-        Neither do you.'
-      - 'The sky kept moving.
+        — inte slutet.'
+      - 'Som drivande moln:
 
-        So can you.'
-      - 'The north has learned to wait.
+        tappa inte ditt flöde — som en flod.'
+      - 'Ljudet var nära.
 
-        So should you.'
-      - 'This is an interlude
+        Avståndet var verkligt.
 
-        —It’s not over.'
-      - 'Like drifting clouds,
+        Men det ögonblicket gick inte att spara.'
+      - 'Du närmade dig.
 
-        don’t lose your flow—like a river.'
-      - 'The sound was near.
+        Det var bara tiden som inte gjorde det.'
+      - 'Världen höll fast vid sina regler.
 
-        The distance was real.
+        Du rörde vid deras kant.'
+      - 'Du nådde inte skatten.
 
-        But that moment can’t be saved.'
-      - 'You were closing in.
+        Men signalen var verklig.'
+      - 'Ingenting förändrades.
 
-        Only time wasn’t.'
-      - 'The world held to its rules.
+        Bara din position gjorde det.'
+      - 'Det var inte tur.
 
-        You touched the edge of them.'
-      - "You didn’t reach the treasure. \nBut the signal was real."
-      - 'Nothing changed.
+        Det var samklang.'
+      - 'Ögonblicket gled undan,
 
-        Only your position did.'
-      - 'It wasn’t luck.
+        men resultatet blev kvar.'
+      - 'Du korsade skör mark
 
-        Alignment.'
-      - 'The moment slipped away,
+        och lämnade horisonten obruten.'
+      - 'Ingenting förändrades.
 
-        but the record stayed.'
-      - 'You crossed fragile ground
+        Bara din position gjorde det.
 
-        and left the horizon unbroken.'
-      - "Nothing changed.\n Only your position did.\nNot luck.\nAlignment.\nThe moment passed.\nThe record remains."
-      - 'The sun sank,
+        Det var inte tur.
 
-        and shadow covered the world once again.'
-      - 'The last grains of sand fell,
+        Det var samklang.
 
-        and the story quietly came to a close.'
-      - 'The wind swept through,
+        Ögonblicket passerade.
 
-        and the footprints vanished without a trace.'
-      - 'The tide came in,
+        Resultatet består.'
+      - 'Solen sjönk,
 
-        What once had been there returned to the sea.'
-      - 'Silence.
+        och skuggan täckte världen igen.'
+      - 'De sista sandkornen föll,
 
-        Only time passed through.'
-      - "Victory and defeat \nare nothing more than grains of sand."
-      - 'The road goes on—or it ends.
+        och berättelsen slöts i tystnad.'
+      - 'Vinden drog förbi,
 
-        Either way, it lies on the same earth.'
-      - 'The season closed.
+        och fotspåren försvann utan spår.'
+      - 'Tidvattnet steg,
 
-        The land remained.'
-      - 'The path The path remains.
+        och det som funnits där återvände till havet.'
+      - 'Tystnad.
 
-        Only your steps stopped.'
-      - 'Your time ran out.
+        Bara tiden passerade.'
+      - 'Seger och nederlag
 
-        The sky didn’t.'
-      - 'It wasn’t rejection.
+        är inget annat än sandkorn.'
+      - 'Vägen fortsätter — eller tar slut.
 
-        Only silence.'
-      - 'The world is still intact.
+        Hur som helst vilar den på samma jord.'
+      - 'Årstiden slöts.
 
-        You can return—changed.'
-      - 'The season ended.
+        Landet blev kvar.'
+      - 'Vägen finns kvar.
 
-        The forest remains.'
-      - 'The distance was closing.
+        Bara dina steg stannade.'
+      - 'Din tid tog slut.
 
-        Time kept its rhythm.'
-      - 'Your time came to a halt.
+        Himlen gjorde det inte.'
+      - 'Det var inte ett avslag.
 
-        The sky kept moving.'
-      - 'Not rejection
+        Bara tystnad.'
+      - 'Världen är fortfarande hel.
 
-        Just silence.'
-      - 'The path is still here.
+        Du kan återvända — förändrad.'
+      - 'Årstiden tog slut.
 
-        You can come back—changed.'
+        Skogen blev kvar.'
+      - 'Avståndet höll på att slutas.
+
+        Tiden behöll sin rytm.'
+      - 'Din tid stannade.
+
+        Himlen fortsatte röra sig.'
+      - 'Det var inte ett avslag.
+
+        Bara tystnad.'
+      - 'Vägen finns fortfarande här.
+
+        Du kan komma tillbaka — förändrad.'
 version: 1
 quotes:
   outcome:
@@ -530,7 +528,8 @@ command:
     success: '&bDu skapade en specialsmaragd med 3 diamanter!'
   quoteFavorite:
     latestSaved: Det senaste citatet sparades i Favoriter.
-    latestNotSaved: Det gick inte att spara det senaste citatet. Antingen finns det ingen logg ännu, eller så finns det redan i Favoriter.
+    latestNotSaved: Det gick inte att spara det senaste citatet. Antingen finns det ingen logg ännu, eller så finns det redan
+      i Favoriter.
     playersOnly: '&cDetta kommando kan bara användas av spelare.'
     repositoryNotReady: Favoriter är inte tillgängliga ännu.
     listHeader: '&bFavoriter ({count})'
@@ -544,7 +543,8 @@ command:
     openBookFailed: '&cDet gick inte att öppna boken.'
     unknownSubcommand: '&cOkänt underkommando. Se /quoteFavorite help.'
     shortcutSaved: Det senaste citatet sparades i Favoriter.
-    shortcutNotSaved: Det gick inte att spara det senaste citatet. Antingen finns det ingen logg ännu, eller så finns det redan i Favoriter.
+    shortcutNotSaved: Det gick inte att spara det senaste citatet. Antingen finns det ingen logg ännu, eller så finns det
+      redan i Favoriter.
     help:
       title: '&bQuoteFavorite-kommandon'
       latest: '&7/quoteFavorite latest  - lägg till det senaste citatet i Favoriter'
@@ -652,7 +652,8 @@ game:
     congratulations_38fd1594: §6Grattis! Du hittade alla skatter!
     time_s_up_c5b3ef74: §c§lTIME'S UP!
     treasures_collected_ca7eab31: '§7Treasures collected: §e'
-    try_a_different_route_next_t_721a4d8b: §7Try a different route next time — or use §e/gamestart §7<§eeasy§7|§enormal§7|§ehard§7> §7to retry.
+    try_a_different_route_next_t_721a4d8b: §7Try a different route next time — or use §e/gamestart §7<§eeasy§7|§enormal§7|§ehard§7>
+      §7to retry.
 sound:
   sparkle: '&b* glittra *'
   start: '&7(BGM startar...)'
