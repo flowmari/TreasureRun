@@ -1,0 +1,333 @@
+lang	pool	index	translation
+sv	outcome.success.easy.pool	1	"Du klarade det.
+Sanningen står kvar."
+sv	outcome.success.easy.pool	2	"Även ett litet steg räknas,
+när du står kvar."
+sv	outcome.success.easy.pool	3	"Du lyssnade.
+Och vägen öppnade sig."
+sv	outcome.success.easy.pool	4	"> Du tog dig hit.
+> 
+> Reglerna var enkla —
+> 
+> valet var ditt."
+sv	outcome.success.easy.pool	5	"> Avståndet fick mening.
+> 
+> Och tiden svarade på dina steg."
+sv	outcome.success.easy.pool	6	"> Allt lyser inte för alltid.
+> 
+> Men det här ögonblicket gjorde det."
+sv	outcome.success.easy.pool	7	"Ljuset föll jämnt,
+och varje skugga försvann."
+sv	outcome.success.easy.pool	8	"Vinden tystnade.
+Och allt återvände dit det hörde hemma."
+sv	outcome.success.easy.pool	9	"Ett ögonblick av stillhet.
+Världen hämtade andan."
+sv	outcome.success.easy.pool	10	"Spåret ristades djupt i sanden —
+utom räckhåll för vinden."
+sv	outcome.success.easy.pool	11	"Balansen återställdes.
+Allt ledde fram till detta ögonblick."
+sv	outcome.success.easy.pool	12	"Tiden gled förbi i tystnad,
+gömd i minnets hörn."
+sv	outcome.success.easy.pool	13	"Himlen skiftade färg,
+och en berättelse nådde sitt slut."
+sv	outcome.success.easy.pool	14	"Vågorna stillnade,
+och havet dolde åter sitt djup."
+sv	outcome.success.easy.pool	15	"Stegen stannade,
+och bara platsen fanns kvar."
+sv	outcome.success.easy.pool	16	"Seger och förlust
+är inget annat än sandkorn."
+sv	outcome.success.easy.pool	17	"Vägen fortsätter — eller tar slut.
+Hur som helst vilar den på samma jord."
+sv	outcome.success.normal.pool	1	"Avståndet fick mening.
+Tiden svarade på din färd."
+sv	outcome.success.normal.pool	2	"Tiden tog slut.
+Men allt är inte över."
+sv	outcome.success.normal.pool	3	"Axeln hittades.
+Världen stannade upp."
+sv	outcome.success.normal.pool	4	"Glaset höll andan,
+och du stod kvar."
+sv	outcome.success.normal.pool	5	"Under himlens stillhet
+vek inte ditt mod."
+sv	outcome.success.normal.pool	6	"Få saker lyser för alltid.
+Men det här ögonblicket lyste klart."
+sv	outcome.success.normal.pool	7	"Du korsade den sköra marken
+utan att tappa blicken."
+sv	outcome.success.normal.pool	8	"Ögonblicket passerade.
+Det som blev kvar består."
+sv	outcome.success.normal.pool	9	"Tur bleknar fort.
+Ordning består."
+sv	outcome.success.normal.pool	10	"Himlen gör inga uppehåll i sin ändlösa cirkel,
+och inte heller gjorde du det."
+sv	outcome.success.normal.pool	11	"Centrum nåddes.
+Världen stod stilla."
+sv	outcome.success.normal.pool	12	"Äntligen här.
+Sanningen står orubblig."
+sv	outcome.success.normal.pool	13	"Du gick hela vägen.
+Och minns detta: det var du, och ingen annan, som valde den."
+sv	outcome.success.normal.pool	14	"Tiden gled in i tystnad,
+och fann sin plats i sinnets djup."
+sv	outcome.success.normal.pool	15	"När himlen förändrades
+fick berättelsen sitt slut."
+sv	outcome.success.normal.pool	16	"Vattnet stillnade,
+och himlen dolde åter sitt djup."
+sv	outcome.success.normal.pool	17	"Stegen upphörde,
+och bara platsen fanns kvar."
+sv	outcome.success.normal.pool	18	"Ljuset föll jämnt,
+och varje skugga försvann."
+sv	outcome.success.normal.pool	19	"Vinden tystnade.
+Och allt återvände dit det hörde hemma."
+sv	outcome.success.normal.pool	20	"Ett ögonblick av stillhet.
+Världen hämtade andan."
+sv	outcome.success.normal.pool	21	"Spåret ristades djupt i sanden —
+utom räckhåll för vinden."
+sv	outcome.success.normal.pool	22	"Balansen återställdes.
+Allt ledde fram till detta ögonblick."
+sv	outcome.success.normal.pool	23	"LOPPET SLUTFÖRT.
+Klart. Funnet.
+Det räcker."
+sv	outcome.success.normal.pool	24	"LOPPET SLUTFÖRT.
+Vägen höll.
+Det gjorde du också."
+sv	outcome.success.normal.pool	25	"Himlen fortsatte röra sig.
+Det kan du också."
+sv	outcome.success.normal.pool	26	"LOPPET SLUTFÖRT.
+Ett stilla resultat.
+Tyngden av verkligt arbete."
+sv	outcome.success.normal.pool	27	"Du gick bara den väg
+som världen hade lagt framför dig."
+sv	outcome.success.normal.pool	28	"Marken gav inte vika.
+Den litade på dina steg."
+sv	outcome.success.normal.pool	29	"Det här ögonblicket föll i takt
+med stjärnornas uråldriga rytm."
+sv	outcome.success.normal.pool	30	"Du tog ingenting.
+Du förstod något."
+sv	outcome.success.normal.pool	31	"Du vann ingenting.
+Du såg bara sanningen som den var."
+sv	outcome.success.normal.pool	32	"Du tog inte den här platsen.
+Du hörde hemma här."
+sv	outcome.success.normal.pool	33	"Du gick en väg
+äldre än minnet självt."
+sv	outcome.success.normal.pool	34	"Jorden gjorde inget motstånd.
+Den kände igen dig."
+sv	outcome.success.normal.pool	35	"Det här ögonblicket föll i takt
+med stjärnornas stillhet."
+sv	outcome.success.hard.pool	1	"I nordanvinden
+varar klarhet längre än fart."
+sv	outcome.success.hard.pool	2	"Inte tur.
+Riktning."
+sv	outcome.success.hard.pool	3	"Världen förändrades inte.
+Din plats i den gjorde det."
+sv	outcome.success.hard.pool	4	"Resultatet stod kvar.
+Positionen förändrades."
+sv	outcome.success.hard.pool	5	"Mellan is och glas
+valde du kontroll."
+sv	outcome.success.hard.pool	6	"Vågorna tystnade,
+och havet tog tillbaka sina dolda djup."
+sv	outcome.success.hard.pool	7	"Några skatter väntar ännu.
+Nästa gång, en annan väg."
+sv	outcome.success.hard.pool	8	"Himlen förändrades inte.
+Det gjorde du."
+sv	outcome.success.hard.pool	9	"Ögonblicket passerade.
+Det som blev kvar var ordning."
+sv	outcome.success.hard.pool	10	"Vintern är ärlig.
+Det var ditt lopp också."
+sv	outcome.success.hard.pool	11	"Stjärnorna stod rätt för ett ögonblick.
+Du märkte det."
+sv	outcome.success.hard.pool	12	"Avståndet slöts.
+Tiden gjorde det inte."
+sv	outcome.success.hard.pool	13	"Världens regler stod fasta.
+Och möjligheten var verklig."
+sv	outcome.success.hard.pool	14	"Vägen slöt sig tyst.
+Du var redan igenom."
+sv	outcome.success.hard.pool	15	"Ingenting förändrades.
+Bara din position gjorde det."
+sv	outcome.success.hard.pool	16	"Inte tur.
+Samklang."
+sv	outcome.success.hard.pool	17	"Ögonblicket passerade.
+Resultatet består."
+sv	outcome.success.hard.pool	18	"Utfallet förändrades inte.
+Ändå gick du vidare."
+sv	outcome.success.hard.pool	19	"Resultatet förändrades inte.
+Men du nådde en ny nivå."
+sv	outcome.success.hard.pool	20	"Slutet var detsamma.
+Men den som nådde dit hade förändrats."
+sv	outcome.success.hard.pool	21	"Målet är detsamma
+— men du är inte längre den resenär du var."
+sv	outcome.success.hard.pool	22	"Ljuset föll jämnt,
+och varje skugga försvann."
+sv	outcome.success.hard.pool	23	"Vinden tystnade.
+Och allt återvände dit det hörde hemma."
+sv	outcome.success.hard.pool	24	"Ett ögonblick av stillhet.
+Världen hämtade andan."
+sv	outcome.success.hard.pool	25	"Spåret ristades djupt i sanden —
+utom räckhåll för vinden."
+sv	outcome.success.hard.pool	26	"Balansen återställdes.
+Allt ledde fram till detta ögonblick."
+sv	outcome.success.hard.pool	27	"Tiden gled förbi i tystnad,
+gömd i minnets hörn."
+sv	outcome.success.hard.pool	28	"Himlen skiftade färg,
+och en berättelse nådde sitt slut."
+sv	outcome.success.hard.pool	29	"Vågorna stillnade,
+och havet dolde åter sitt djup."
+sv	outcome.success.hard.pool	30	"Stegen stannade,
+och bara platsen fanns kvar."
+sv	outcome.success.hard.pool	31	"Seger och förlust
+är inget annat än sandkorn."
+sv	outcome.success.hard.pool	32	"Vägen fortsätter — eller tar slut.
+Hur som helst vilar den på samma jord."
+sv	outcome.timeup.easy.pool	1	"Tiden tog slut.
+Inte du."
+sv	outcome.timeup.easy.pool	2	"Skatten kan vänta.
+Det kan du också."
+sv	outcome.timeup.easy.pool	3	"Ta ett andetag.
+Sedan ett till."
+sv	outcome.timeup.easy.pool	4	"Det räcker för nu.
+Vidare till nästa steg."
+sv	outcome.timeup.easy.pool	5	"Du är fortfarande här.
+Det är det som räknas."
+sv	outcome.timeup.easy.pool	6	"Loppet tog slut.
+Inte du."
+sv	outcome.timeup.easy.pool	7	"TIDEN ÄR UTE.
+Loppet tog slut.
+Inte du."
+sv	outcome.timeup.easy.pool	8	"TIDEN ÄR UTE.
+Reglerna förändras inte.
+Försök igen."
+sv	outcome.timeup.easy.pool	9	"TIDEN ÄR UTE.
+”Så nära” är också verkligt."
+sv	outcome.timeup.easy.pool	10	"Solen sjönk,
+och skuggan täckte världen igen."
+sv	outcome.timeup.easy.pool	11	"De sista sandkornen föll,
+och berättelsen slöts i tystnad."
+sv	outcome.timeup.easy.pool	12	"Vinden drog förbi,
+och fotspåren försvann utan spår."
+sv	outcome.timeup.easy.pool	13	"Tidvattnet steg,
+och det som funnits där återvände till havet."
+sv	outcome.timeup.easy.pool	14	"Tystnad.
+Bara tiden passerade."
+sv	outcome.timeup.easy.pool	15	"Seger och förlust
+är inget annat än sandkorn."
+sv	outcome.timeup.easy.pool	16	"Vägen fortsätter — eller tar slut.
+Hur som helst vilar den på samma jord."
+sv	outcome.timeup.normal.pool	1	"Avståndet krympte.
+Tiden gjorde det inte."
+sv	outcome.timeup.normal.pool	2	"Världen behöll sina regler.
+Du rörde vid deras gräns."
+sv	outcome.timeup.normal.pool	3	"Skatten förblev utom räckhåll.
+Men signalen var verklig."
+sv	outcome.timeup.normal.pool	4	"Några skatter väntar ännu.
+Låt oss pröva en annan väg."
+sv	outcome.timeup.normal.pool	5	"Resultatet stod kvar.
+Positionen förändrades."
+sv	outcome.timeup.normal.pool	6	"Tiden tog slut.
+Meningen gjorde det inte."
+sv	outcome.timeup.normal.pool	7	"Så nära.
+Ljudet sade det."
+sv	outcome.timeup.normal.pool	8	"Kartan är fortfarande öppen.
+Kom tillbaka till den."
+sv	outcome.timeup.normal.pool	9	"Världens regler stod fasta.
+Möjlighetens signal var verklig."
+sv	outcome.timeup.normal.pool	10	Världen behöll sina regler.
+sv	outcome.timeup.normal.pool	11	"Ögonblicket passerade.
+Resultatet består."
+sv	outcome.timeup.normal.pool	12	"Solen sjönk,
+och skuggan täckte världen igen."
+sv	outcome.timeup.normal.pool	13	"De sista sandkornen föll,
+och berättelsen slöts i tystnad."
+sv	outcome.timeup.normal.pool	14	"Vinden drog förbi,
+och fotspåren försvann utan spår."
+sv	outcome.timeup.normal.pool	15	"Tidvattnet steg,
+och det som funnits där återvände till havet."
+sv	outcome.timeup.normal.pool	16	"Tystnad.
+Bara tiden passerade."
+sv	outcome.timeup.normal.pool	17	"Seger och förlust
+är inget annat än sandkorn."
+sv	outcome.timeup.normal.pool	18	"Vägen fortsätter — eller tar slut.
+Hur som helst vilar den på samma jord."
+sv	outcome.timeup.normal.pool	19	"> Tiden tog slut.
+> 
+> Inget annat gjorde det."
+sv	outcome.timeup.normal.pool	20	"> Utfallet förändrades inte.
+> 
+> Men din position gjorde det."
+sv	outcome.timeup.hard.pool	1	"Till och med norrsken bleknar.
+Kom tillbaka med ett nytt steg."
+sv	outcome.timeup.hard.pool	2	"I en skör värld
+krossar brådska klarheten innan den hinner hittas."
+sv	outcome.timeup.hard.pool	3	"Ögonblicket gled undan.
+Meningen gjorde det inte."
+sv	outcome.timeup.hard.pool	4	"Vintern är tålmodig.
+Var det också."
+sv	outcome.timeup.hard.pool	5	"Himlen fortsatte röra sig.
+Det kommer du också att göra."
+sv	outcome.timeup.hard.pool	6	"Berättelsen går vidare.
+Slutet har inte kommit än."
+sv	outcome.timeup.hard.pool	7	"Stjärnorna fanns där och såg på.
+Igen."
+sv	outcome.timeup.hard.pool	8	"Isen tar sin tid.
+Det behöver du också göra."
+sv	outcome.timeup.hard.pool	9	"Himlen fortsatte röra sig.
+Det kan du också."
+sv	outcome.timeup.hard.pool	10	"Norden har lärt sig att vänta.
+Det bör du också."
+sv	outcome.timeup.hard.pool	11	"Det här är ett mellanspel
+— inte slutet."
+sv	outcome.timeup.hard.pool	12	"Som drivande moln:
+tappa inte ditt flöde — som en flod."
+sv	outcome.timeup.hard.pool	13	"Ljudet var nära.
+Avståndet var verkligt.
+Men det ögonblicket gick inte att spara."
+sv	outcome.timeup.hard.pool	14	"Du närmade dig.
+Det var bara tiden som inte gjorde det."
+sv	outcome.timeup.hard.pool	15	"Världen höll fast vid sina regler.
+Du rörde vid deras kant."
+sv	outcome.timeup.hard.pool	16	"Du nådde inte skatten.
+Men signalen var verklig."
+sv	outcome.timeup.hard.pool	17	"Ingenting förändrades.
+Bara din position gjorde det."
+sv	outcome.timeup.hard.pool	18	"Det var inte tur.
+Det var samklang."
+sv	outcome.timeup.hard.pool	19	"Ögonblicket gled undan,
+men resultatet blev kvar."
+sv	outcome.timeup.hard.pool	20	"Du korsade skör mark
+och lämnade horisonten obruten."
+sv	outcome.timeup.hard.pool	21	"Ingenting förändrades.
+Bara din position gjorde det.
+Det var inte tur.
+Det var samklang.
+Ögonblicket passerade.
+Resultatet består."
+sv	outcome.timeup.hard.pool	22	"Solen sjönk,
+och skuggan täckte världen igen."
+sv	outcome.timeup.hard.pool	23	"De sista sandkornen föll,
+och berättelsen slöts i tystnad."
+sv	outcome.timeup.hard.pool	24	"Vinden drog förbi,
+och fotspåren försvann utan spår."
+sv	outcome.timeup.hard.pool	25	"Tidvattnet steg,
+och det som funnits där återvände till havet."
+sv	outcome.timeup.hard.pool	26	"Tystnad.
+Bara tiden passerade."
+sv	outcome.timeup.hard.pool	27	"Seger och förlust
+är inget annat än sandkorn."
+sv	outcome.timeup.hard.pool	28	"Vägen fortsätter — eller tar slut.
+Hur som helst vilar den på samma jord."
+sv	outcome.timeup.hard.pool	29	"Årstiden slöts.
+Landet blev kvar."
+sv	outcome.timeup.hard.pool	30	"Vägen finns kvar.
+Bara dina steg stannade."
+sv	outcome.timeup.hard.pool	31	"Din tid tog slut.
+Himlen gjorde det inte."
+sv	outcome.timeup.hard.pool	32	"Det var inte ett avslag.
+Bara tystnad."
+sv	outcome.timeup.hard.pool	33	"Världen är fortfarande hel.
+Du kan återvända — förändrad."
+sv	outcome.timeup.hard.pool	34	"Årstiden tog slut.
+Skogen blev kvar."
+sv	outcome.timeup.hard.pool	35	"Avståndet höll på att slutas.
+Tiden behöll sin rytm."
+sv	outcome.timeup.hard.pool	36	"Din tid stannade.
+Himlen fortsatte röra sig."
+sv	outcome.timeup.hard.pool	37	"Det var inte ett avslag.
+Bara tystnad."
+sv	outcome.timeup.hard.pool	38	"Vägen finns fortfarande här.
+Du kan komma tillbaka — förändrad."

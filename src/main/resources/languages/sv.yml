@@ -7,9 +7,15 @@ outcome:
       pool: []
     easy:
       pool:
-      - Även ett litet steg räknas.
-      - Du lyssnade och vägen öppnade sig.
-      - Distansen fick sin mening och tiden svarade på dina steg.
+      - 'Du klarade det.
+
+        Sanningen står kvar.'
+      - 'Även ett litet steg räknas,
+
+        när du står kvar.'
+      - 'Du lyssnade.
+
+        Och vägen öppnade sig.'
       - "> Du tog dig hit.\n> \n> Reglerna var enkla —\n> \n> valet var ditt."
       - "> Avståndet fick mening.\n> \n> Och tiden svarade på dina steg."
       - "> Allt lyser inte för alltid.\n> \n> Men det här ögonblicket gjorde det."
@@ -19,7 +25,7 @@ outcome:
       - 'Vinden tystnade.
 
         Och allt återvände dit det hörde hemma.'
-      - 'Ett ögonblick av tystnad.
+      - 'Ett ögonblick av stillhet.
 
         Världen hämtade andan.'
       - 'Spåret ristades djupt i sanden —
@@ -27,7 +33,7 @@ outcome:
         utom räckhåll för vinden.'
       - 'Balansen återställdes.
 
-        Allt hade lett fram till detta ögonblick.'
+        Allt ledde fram till detta ögonblick.'
       - 'Tiden gled förbi i tystnad,
 
         gömd i minnets hörn.'
@@ -40,7 +46,7 @@ outcome:
       - 'Stegen stannade,
 
         och bara platsen fanns kvar.'
-      - 'Seger och nederlag
+      - 'Seger och förlust
 
         är inget annat än sandkorn.'
       - 'Vägen fortsätter — eller tar slut.
@@ -48,9 +54,15 @@ outcome:
         Hur som helst vilar den på samma jord.'
     normal:
       pool:
-      - Avstånd blev till mening.
-      - Löpningen klar. Ett stilla resultat, buret av verkligt arbete.
-      - Ögonblicket passerade. Rekordet stannade kvar.
+      - 'Avståndet fick mening.
+
+        Tiden svarade på din färd.'
+      - 'Tiden tog slut.
+
+        Men allt är inte över.'
+      - 'Axeln hittades.
+
+        Världen stannade upp.'
       - 'Glaset höll andan,
 
         och du stod kvar.'
@@ -60,13 +72,13 @@ outcome:
       - 'Få saker lyser för alltid.
 
         Men det här ögonblicket lyste klart.'
-      - 'Du korsade den sköra jorden
+      - 'Du korsade den sköra marken
 
         utan att tappa blicken.'
       - 'Ögonblicket passerade.
 
         Det som blev kvar består.'
-      - 'Tur bleknar snabbt.
+      - 'Tur bleknar fort.
 
         Ordning består.'
       - 'Himlen gör inga uppehåll i sin ändlösa cirkel,
@@ -89,7 +101,7 @@ outcome:
         fick berättelsen sitt slut.'
       - 'Vattnet stillnade,
 
-        och himlen dolde åter sitt avgrundsdjup.'
+        och himlen dolde åter sitt djup.'
       - 'Stegen upphörde,
 
         och bara platsen fanns kvar.'
@@ -99,7 +111,7 @@ outcome:
       - 'Vinden tystnade.
 
         Och allt återvände dit det hörde hemma.'
-      - 'Ett ögonblick av tystnad.
+      - 'Ett ögonblick av stillhet.
 
         Världen hämtade andan.'
       - 'Spåret ristades djupt i sanden —
@@ -107,7 +119,7 @@ outcome:
         utom räckhåll för vinden.'
       - 'Balansen återställdes.
 
-        Allt hade lett fram till detta ögonblick.'
+        Allt ledde fram till detta ögonblick.'
       - 'LOPPET SLUTFÖRT.
 
         Klart. Funnet.
@@ -155,9 +167,15 @@ outcome:
         med stjärnornas stillhet.'
     hard:
       pool:
-      - I nordanvinden överlever klarhet hastigheten.
-      - Inte tur. Inriktning.
-      - Världen förändrades inte. Din plats i den gjorde det.
+      - 'I nordanvinden
+
+        varar klarhet längre än fart.'
+      - 'Inte tur.
+
+        Riktning.'
+      - 'Världen förändrades inte.
+
+        Din plats i den gjorde det.'
       - 'Resultatet stod kvar.
 
         Positionen förändrades.'
@@ -218,7 +236,7 @@ outcome:
       - 'Vinden tystnade.
 
         Och allt återvände dit det hörde hemma.'
-      - 'Ett ögonblick av tystnad.
+      - 'Ett ögonblick av stillhet.
 
         Världen hämtade andan.'
       - 'Spåret ristades djupt i sanden —
@@ -226,7 +244,7 @@ outcome:
         utom räckhåll för vinden.'
       - 'Balansen återställdes.
 
-        Allt hade lett fram till detta ögonblick.'
+        Allt ledde fram till detta ögonblick.'
       - 'Tiden gled förbi i tystnad,
 
         gömd i minnets hörn.'
@@ -239,7 +257,7 @@ outcome:
       - 'Stegen stannade,
 
         och bara platsen fanns kvar.'
-      - 'Seger och nederlag
+      - 'Seger och förlust
 
         är inget annat än sandkorn.'
       - 'Vägen fortsätter — eller tar slut.
@@ -251,8 +269,12 @@ outcome:
       - 'Tiden tog slut.
 
         Inte du.'
-      - Löpningen tog slut. Du inte.
-      - Ta ett andetag. Sedan ett till.
+      - 'Skatten kan vänta.
+
+        Det kan du också.'
+      - 'Ta ett andetag.
+
+        Sedan ett till.'
       - 'Det räcker för nu.
 
         Vidare till nästa steg.'
@@ -290,7 +312,7 @@ outcome:
       - 'Tystnad.
 
         Bara tiden passerade.'
-      - 'Seger och nederlag
+      - 'Seger och förlust
 
         är inget annat än sandkorn.'
       - 'Vägen fortsätter — eller tar slut.
@@ -298,9 +320,15 @@ outcome:
         Hur som helst vilar den på samma jord.'
     normal:
       pool:
-      - Distansen minskade. Tiden inte.
-      - Kartan är fortfarande öppen. Kom tillbaka.
-      - Skatten förblev utom räckhåll, men signalen var verklig.
+      - 'Avståndet krympte.
+
+        Tiden gjorde det inte.'
+      - 'Världen behöll sina regler.
+
+        Du rörde vid deras gräns.'
+      - 'Skatten förblev utom räckhåll.
+
+        Men signalen var verklig.'
       - 'Några skatter väntar ännu.
 
         Låt oss pröva en annan väg.'
@@ -338,7 +366,7 @@ outcome:
       - 'Tystnad.
 
         Bara tiden passerade.'
-      - 'Seger och nederlag
+      - 'Seger och förlust
 
         är inget annat än sandkorn.'
       - 'Vägen fortsätter — eller tar slut.
@@ -348,9 +376,15 @@ outcome:
       - "> Utfallet förändrades inte.\n> \n> Men din position gjorde det."
     hard:
       pool:
-      - Även norrsken bleknar. Kom tillbaka med ett nytt steg.
-      - Ögonblicket gled bort. Meningen inte.
-      - Himlen fortsatte röra sig. Det kan du också.
+      - 'Till och med norrsken bleknar.
+
+        Kom tillbaka med ett nytt steg.'
+      - 'I en skör värld
+
+        krossar brådska klarheten innan den hinner hittas.'
+      - 'Ögonblicket gled undan.
+
+        Meningen gjorde det inte.'
       - 'Vintern är tålmodig.
 
         Var det också.'
@@ -430,7 +464,7 @@ outcome:
       - 'Tystnad.
 
         Bara tiden passerade.'
-      - 'Seger och nederlag
+      - 'Seger och förlust
 
         är inget annat än sandkorn.'
       - 'Vägen fortsätter — eller tar slut.
