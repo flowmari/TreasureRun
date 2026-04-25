@@ -7,467 +7,499 @@ outcome:
       pool: []
     easy:
       pool:
-      - 'You’ve made it.
+      - 'Você conseguiu.
 
-        The truth remains.'
-      - 'Even if it was only a small step,
+        A verdade continua de pé.'
+      - 'Mesmo que tenha sido só um pequeno passo,
 
-        you held your ground.'
-      - "You listened.\n The path opened."
-      - "> You made it here\n> \n> The rules were simple —\n> \n> the choice was yours."
-      - "> Distance became meaning.\n> \n> and time answered your footsteps."
-      - "> Not everything shines forever.\n> \n> But this moment did."
-      - 'Light fell evenly, ,
+        você se manteve firme.'
+      - 'Você escutou.
 
-        and every shadow vanished.'
-      - 'The wind fell silent.
+        E o caminho se abriu.'
+      - "> Você chegou até aqui.\n> \n> As regras eram simples —\n> \n> a escolha era sua."
+      - "> A distância ganhou sentido.\n> \n> E o tempo respondeu aos seus passos."
+      - "> Nem tudo brilha para sempre.\n> \n> Mas este momento brilhou."
+      - 'A luz se espalhou por igual,
 
-        and everything returned to where it belonged.'
-      - 'A moment of silence.
+        e toda sombra desapareceu.'
+      - 'O vento se calou.
 
-        The world steadied its breath.'
-      - 'The record is etched deep in the sand—
+        E tudo voltou ao seu lugar.'
+      - 'Um instante de silêncio.
 
-        beyond the reach of the wind.'
-      - 'Harmony was restored.
+        O mundo voltou a respirar.'
+      - 'A marca ficou gravada fundo na areia —
 
-        Everything had been for this moment.'
-      - 'Time slipped by in silence,
+        fora do alcance do vento.'
+      - 'A harmonia foi restaurada.
 
-        tucked away in the corners of memory.'
-      - 'The sky shifted in color,
+        Tudo levou a este momento.'
+      - 'O tempo passou em silêncio,
 
-        and one story came to its end.'
-      - 'The waves grew calm,
+        guardado nos cantos da memória.'
+      - 'O céu mudou de cor,
 
-        and the sea hid its depths once more.'
-      - 'The footsteps stopped,
+        e uma história chegou ao fim.'
+      - 'As ondas se acalmaram,
 
-        and only the place remained.'
-      - "Victory and defeat \nare nothing more than grains of sand."
-      - 'The road goes on—or it ends.
+        e o mar escondeu novamente sua profundidade.'
+      - 'Os passos pararam,
 
-        Either way, it lies on the same earth.'
+        e só o lugar permaneceu.'
+      - 'Vitória e derrota
+
+        são apenas grãos de areia.'
+      - 'A estrada continua — ou termina.
+
+        De qualquer forma, repousa sobre a mesma terra.'
     normal:
       pool:
-      - 'The distance has found its meaning.
+      - 'A distância encontrou sentido.
 
-        Time has rewarded your journey.'
-      - 'The time is up.
+        O tempo respondeu à sua jornada.'
+      - 'O tempo acabou.
 
-        but the rest is far from over.'
-      - 'The axis is found.
+        Mas nem tudo terminou.'
+      - 'O eixo foi encontrado.
 
-        the world has cased its motion.'
-      - 'The glass held its breath,
+        O mundo interrompeu seu movimento.'
+      - 'O vidro segurou o fôlego,
 
-        and you held your ground.'
-      - 'Under the stillness of the sky,
+        e você manteve sua posição.'
+      - 'Sob a quietude do céu,
 
-        your spirit did not waver.'
-      - 'Few things shine forever.
+        seu espírito não vacilou.'
+      - 'Poucas coisas brilham para sempre.
 
-        but this moment was radiant.'
-      - 'You traversed the fragile earth,
+        Mas este momento brilhou inteiro.'
+      - 'Você atravessou a terra frágil,
 
-        without losing the view.'
-      - 'The moment has passed.
+        sem perder a paisagem de vista.'
+      - 'O momento passou.
 
-        The legacy remains.'
-      - 'Luck fades fast.
+        O que ficou permanece.'
+      - 'A sorte se apaga depressa.
 
-        order endures.'
-      - 'The sky knows no pause in endless circle,
+        A ordem permanece.'
+      - 'O céu não faz pausas em seu círculo infinito,
 
-        nor shall you find yours.'
-      - 'The center has been reached.
+        e você também não parou.'
+      - 'O centro foi alcançado.
 
-        The world stood still.'
-      - 'Finally here.
+        O mundo ficou imóvel.'
+      - 'Finalmente aqui.
 
-        The truth remains unyielding.'
-      - 'You have seen it through.
+        A verdade continua firme.'
+      - 'Você foi até o fim.
 
-        And mark this: it was you, and no one else, who chose this path.'
-      - 'Time drifted into silence,
+        E lembre-se: foi você, e ninguém mais, que escolheu este caminho.'
+      - 'O tempo deslizou para o silêncio,
 
-        finding its place in the recesses of the mind.'
-      - 'As the sky transformed,
+        encontrando lugar nas profundezas da mente.'
+      - 'Enquanto o céu se transformava,
 
-        the tale found its final resolved.'
-      - 'The waters fell calm,
+        a história encontrou seu desfecho.'
+      - 'As águas se acalmaram,
 
-        and the sky once more veiled its abyss.'
-      - 'The footsteps ceased,
+        e o céu voltou a esconder seu abismo.'
+      - 'Os passos cessaram,
 
-        only the place remained.'
-      - 'Light fell evenly, ,
+        e só o lugar permaneceu.'
+      - 'A luz se espalhou por igual,
 
-        and every shadow vanished.'
-      - 'The wind fell silent.
+        e toda sombra desapareceu.'
+      - 'O vento se calou.
 
-        and everything returned to where it belonged.'
-      - 'A moment of silence.
+        E tudo voltou ao seu lugar.'
+      - 'Um instante de silêncio.
 
-        The world steadied its breath.'
-      - 'The record is etched deep in the sand—
+        O mundo voltou a respirar.'
+      - 'A marca ficou gravada fundo na areia —
 
-        beyond the reach of the wind.'
-      - 'Harmony was restored.
+        fora do alcance do vento.'
+      - 'A harmonia foi restaurada.
 
-        Everything had been for this moment.'
-      - 'RUN COMPLETE.
+        Tudo levou a este momento.'
+      - 'PARTIDA CONCLUÍDA.
 
-        Clear. Found it.
+        Claro. Encontrado.
 
-        That''s enough.'
-      - 'RUN COMPLETE.
+        Isso basta.'
+      - 'PARTIDA CONCLUÍDA.
 
-        The path held.
+        O caminho resistiu.
 
-        So did you.'
-      - 'The sky has kept moving.
+        Você também.'
+      - 'O céu continuou em movimento.
 
-        So can you.'
-      - 'RUN COMPLETE.
+        Você também pode seguir.'
+      - 'PARTIDA CONCLUÍDA.
 
-        A quiet result.
+        Um resultado silencioso.
 
-        The weight of real work.'
-      - 'You only walked the path
+        O peso do trabalho real.'
+      - 'Você apenas caminhou pela trilha
 
-        the world had laid out for you.'
-      - 'The ground didn’t give way.
+        que o mundo havia colocado diante de você.'
+      - 'O chão não cedeu.
 
-        It trusted your steps.'
-      - 'This moment aligned
+        Ele confiou nos seus passos.'
+      - 'Este momento se alinhou
 
-        with the stars’ ancient rhythm.'
-      - "You didn’t take anything.\n You understood something."
-      - 'You didn’t gain a thing.
+        ao ritmo antigo das estrelas.'
+      - 'Você não tomou nada.
 
-        You only saw the truth for what it was.'
-      - 'You didn’t take this place.
+        Você entendeu algo.'
+      - 'Você não ganhou coisa alguma.
 
-        You belonged here.'
-      - 'You walked a road
+        Apenas viu a verdade como ela era.'
+      - 'Você não tomou este lugar.
 
-        older than memory itself.'
-      - 'The earth did not resist.
+        Você pertencia a ele.'
+      - 'Você caminhou por uma estrada
 
-        It recognized you.'
-      - "This moment aligned\n with the stillness of the stars."
+        mais antiga que a própria memória.'
+      - 'A terra não resistiu.
+
+        Ela reconheceu você.'
+      - 'Este momento se alinhou
+
+        à quietude das estrelas.'
     hard:
       pool:
-      - 'In the north wind,
+      - 'No vento do norte,
 
-        clarity outlasts speed.'
-      - "The center was found.\n The world came to rest."
-      - 'The stars stay silent.
+        a clareza dura mais que a velocidade.'
+      - 'O centro foi encontrado.
 
-        Your record does the speaking.'
-      - 'The result  remained.
+        O mundo repousou.'
+      - 'As estrelas permanecem em silêncio.
 
-        The position changed.'
-      - 'Between ice and glass,
+        Seu registro fala por você.'
+      - 'O resultado permaneceu.
 
-        you chose control.'
-      - 'The waves fell quiet,
+        Sua posição mudou.'
+      - 'Entre o gelo e o vidro,
 
-        and the sea reclaimed its hidden depths.'
-      - 'Some treasures still await.
+        você escolheu o controle.'
+      - 'As ondas silenciaram,
 
-        Next time, a different path.'
-      - 'The sky didn’t change.
+        e o mar retomou suas profundezas ocultas.'
+      - 'Alguns tesouros ainda esperam.
 
-        You did.'
-      - 'The moment passed.
+        Da próxima vez, outro caminho.'
+      - 'O céu não mudou.
 
-        What remained was order.'
-      - 'Winter is honest.
+        Você mudou.'
+      - 'O momento passou.
 
-        So was your run.'
-      - 'The stars aligned for a moment.
+        O que permaneceu foi a ordem.'
+      - 'O inverno é honesto.
 
-        You noticed.'
-      - 'The distance closed.
+        Sua partida também foi.'
+      - 'As estrelas se alinharam por um instante.
 
-        Time did not.'
-      - "The world’s rules stood firm.\n And the signal of possibility was real."
-      - 'The path closed quietly.
+        Você percebeu.'
+      - 'A distância se fechou.
 
-        You were already through.'
-      - 'Nothing changed.
+        O tempo, não.'
+      - 'As regras do mundo permaneceram firmes.
 
-        Only your position did.'
-      - 'Not luck.
+        E o sinal de possibilidade era real.'
+      - 'O caminho se fechou em silêncio.
 
-        Alignment.'
-      - 'The moment passed.
+        Você já havia atravessado.'
+      - 'Nada mudou.
 
-        The record remains.'
-      - 'The outcome didn’t change.
+        Só a sua posição mudou.'
+      - 'Não foi sorte.
 
-        Still, you moved forward.'
-      - 'The output didn’t change.
+        Foi alinhamento.'
+      - 'O momento passou.
 
-        But you reached a new level.'
-      - 'The ending was the same.
+        O registro permanece.'
+      - 'O resultado não mudou.
 
-        But the one who reached it had changed.'
-      - 'The destination is the same
+        Ainda assim, você avançou.'
+      - 'A saída não mudou.
 
-        —but you’re no longer the traveler you once were.'
-      - 'Light fell evenly, ,
+        Mas você alcançou outro nível.'
+      - 'O final foi o mesmo.
 
-        and every shadow vanished.'
-      - 'The wind fell silent.
+        Mas quem chegou até ele já havia mudado.'
+      - 'O destino é o mesmo
 
-        and everything returned to where it belonged.'
-      - 'A moment of silence.
+        — mas você já não é quem era ao partir.'
+      - 'A luz se espalhou por igual,
 
-        The world steadied its breath.'
-      - 'The record is etched deep in the sand—
+        e toda sombra desapareceu.'
+      - 'O vento se calou.
 
-        beyond the reach of the wind.'
-      - 'Harmony was restored.
+        E tudo voltou ao seu lugar.'
+      - 'Um instante de silêncio.
 
-        Everything had been for this moment.'
-      - 'Time slipped by in silence,
+        O mundo voltou a respirar.'
+      - 'A marca ficou gravada fundo na areia —
 
-        tucked away in the corners of memory.'
-      - 'The sky shifted in color,
+        fora do alcance do vento.'
+      - 'A harmonia foi restaurada.
 
-        and one story came to its end.'
-      - 'The waves grew calm,
+        Tudo levou a este momento.'
+      - 'O tempo passou em silêncio,
 
-        and the sea hid its depths once more.'
-      - 'The footsteps stopped,
+        guardado nos cantos da memória.'
+      - 'O céu mudou de cor,
 
-        and only the place remained.'
-      - "Victory and defeat \nare nothing more than grains of sand."
-      - 'The road goes on—or it ends.
+        e uma história chegou ao fim.'
+      - 'As ondas se acalmaram,
 
-        Either way, it lies on the same earth.'
+        e o mar escondeu novamente sua profundidade.'
+      - 'Os passos pararam,
+
+        e só o lugar permaneceu.'
+      - 'Vitória e derrota
+
+        são apenas grãos de areia.'
+      - 'A estrada continua — ou termina.
+
+        De qualquer forma, repousa sobre a mesma terra.'
   timeup:
     easy:
       pool:
-      - 'Time ran out.
+      - 'O tempo acabou.
 
-        Nothing else did.'
-      - 'The treasure can wait.
+        Você, não.'
+      - 'O tesouro pode esperar.
 
-        So can you.'
-      - 'Breathe in.
+        Você também.'
+      - 'Respire.
 
-        Then again.'
-      - 'That’s all for now.
+        Depois, respire de novo.'
+      - 'Por enquanto, é só.
 
-        On to the next step.'
-      - 'You''re still here.
+        Siga para o próximo passo.'
+      - 'Você ainda está aqui.
 
-        That’s what matters.'
-      - 'The run ended.
+        É isso que importa.'
+      - 'A partida terminou.
 
-        You didn’t.'
-      - 'TIME''S UP.
+        Você, não.'
+      - 'O TEMPO ACABOU.
 
-        The run ended.
+        A partida terminou.
 
-        You didn''t.'
-      - 'TIME''S UP.
+        Você, não.'
+      - 'O TEMPO ACABOU.
 
-        The rules don’t change.
+        As regras não mudam.
 
-        Again.'
-      - 'TIME''S UP.
+        De novo.'
+      - 'O TEMPO ACABOU.
 
-        “So close” is real.'
-      - 'The sun sank,
+        “Quase” também é real.'
+      - 'O sol se pôs,
 
-        and shadow covered the world once again.'
-      - 'The last grains of sand fell,
+        e a sombra cobriu o mundo mais uma vez.'
+      - 'Os últimos grãos de areia caíram,
 
-        and the story quietly came to a close.'
-      - 'The wind swept through,
+        e a história se fechou em silêncio.'
+      - 'O vento passou,
 
-        and the footprints vanished without a trace.'
-      - 'The tide came in,
+        e as pegadas desapareceram sem deixar rastro.'
+      - 'A maré subiu,
 
-        What once had been there returned to the sea.'
-      - 'Silence.
+        e o que estava ali voltou ao mar.'
+      - 'Silêncio.
 
-        Only time passed through.'
-      - "Victory and defeat \nare nothing more than grains of sand."
-      - 'The road goes on—or it ends.
+        Só o tempo passou.'
+      - 'Vitória e derrota
 
-        Either way, it lies on the same earth.'
+        são apenas grãos de areia.'
+      - 'A estrada continua — ou termina.
+
+        De qualquer forma, repousa sobre a mesma terra.'
     normal:
       pool:
-      - 'The distance closed.
+      - 'A distância se fechou.
 
-        Time did not.'
-      - 'The world kept its rules.
+        O tempo, não.'
+      - 'O mundo manteve suas regras.
 
-        You touched the edge.'
-      - 'You didn’t make it.
+        Você tocou a borda delas.'
+      - 'Você não chegou.
 
-        But the signal was real.'
-      - 'Some treasures still await.
+        Mas o sinal era real.'
+      - 'Alguns tesouros ainda esperam.
 
-        Let’s try a different path.'
-      - 'The result remained.
+        Vamos tentar outro caminho.'
+      - 'O resultado permaneceu.
 
-        The position changed.'
-      - 'Time ran out.
+        Sua posição mudou.'
+      - 'O tempo acabou.
 
-        Meaning didn''t.'
-      - 'So close.
+        O sentido, não.'
+      - 'Foi por pouco.
 
-        The sound said so.'
-      - 'The map is still open.
+        O som dizia isso.'
+      - 'O mapa ainda está aberto.
 
-        Come back to it.'
-      - 'The world’s rules stood firm.
+        Volte a ele.'
+      - 'As regras do mundo permaneceram firmes.
 
-        The signal of possibility was real.'
-      - The world kept its rules.
-      - 'The moment passed.
+        O sinal de possibilidade era real.'
+      - O mundo manteve suas regras.
+      - 'O momento passou.
 
-        The record remains.'
-      - 'The sun sank,
+        O registro permanece.'
+      - 'O sol se pôs,
 
-        and shadow covered the world once again.'
-      - 'The last grains of sand fell,
+        e a sombra cobriu o mundo mais uma vez.'
+      - 'Os últimos grãos de areia caíram,
 
-        and the story quietly came to a close.'
-      - 'The wind swept through,
+        e a história se fechou em silêncio.'
+      - 'O vento passou,
 
-        and the footprints vanished without a trace.'
-      - 'The tide came in,
+        e as pegadas desapareceram sem deixar rastro.'
+      - 'A maré subiu,
 
-        What once had been there returned to the sea.'
-      - 'Silence.
+        e o que estava ali voltou ao mar.'
+      - 'Silêncio.
 
-        Only time passed through.'
-      - "Victory and defeat \nare nothing more than grains of sand."
-      - 'The road goes on—or it ends.
+        Só o tempo passou.'
+      - 'Vitória e derrota
 
-        Either way, it lies on the same earth.'
-      - "> Time ran out.\n> \n> Nothing else did."
-      - "> The outcome didn’t change.\n> \n> But your position did."
+        são apenas grãos de areia.'
+      - 'A estrada continua — ou termina.
+
+        De qualquer forma, repousa sobre a mesma terra.'
+      - "> O tempo acabou.\n> \n> Nada mais acabou."
+      - "> O resultado não mudou.\n> \n> Mas sua posição mudou."
     hard:
       pool:
-      - 'Even the aurora fades.
+      - 'Até a aurora se apaga.
 
-        Come back with a new stride.'
-      - 'In a fragile world,
+        Volte com um novo passo.'
+      - 'Em um mundo frágil,
 
-        haste shatters clarity before it can be found.'
-      - 'The moment slipped away.
+        a pressa estilhaça a clareza antes que ela seja encontrada.'
+      - 'O momento escapou.
 
-        The meaning did not.'
-      - 'Winter is patient.
+        O sentido, não.'
+      - 'O inverno é paciente.
 
-        Be the same.'
-      - 'The sky kept moving.
+        Seja também.'
+      - 'O céu continuou em movimento.
 
-        So will you.'
-      - 'The story moves on.
+        Você também continuará.'
+      - 'A história segue.
 
-        The end is not yet.'
-      - 'The stars were there, watching.
+        O fim ainda não chegou.'
+      - 'As estrelas estavam lá, observando.
 
-        Again.'
-      - 'Ice takes its time.
+        Mais uma vez.'
+      - 'O gelo leva seu tempo.
 
-        Neither do you.'
-      - 'The sky kept moving.
+        Você também precisará levar o seu.'
+      - 'O céu continuou em movimento.
 
-        So can you.'
-      - 'The north has learned to wait.
+        Você também pode seguir.'
+      - 'O norte aprendeu a esperar.
 
-        So should you.'
-      - 'This is an interlude
+        Você também deveria.'
+      - 'Isto é um intervalo
 
-        —It’s not over.'
-      - 'Like drifting clouds,
+        — ainda não acabou.'
+      - 'Como nuvens à deriva,
 
-        don’t lose your flow—like a river.'
-      - 'The sound was near.
+        não perca seu fluxo — como um rio.'
+      - 'O som estava perto.
 
-        The distance was real.
+        A distância era real.
 
-        But that moment can’t be saved.'
-      - 'You were closing in.
+        Mas aquele momento não pôde ser guardado.'
+      - 'Você estava se aproximando.
 
-        Only time wasn’t.'
-      - 'The world held to its rules.
+        Só o tempo não estava.'
+      - 'O mundo se manteve fiel às suas regras.
 
-        You touched the edge of them.'
-      - "You didn’t reach the treasure. \nBut the signal was real."
-      - 'Nothing changed.
+        Você tocou a borda delas.'
+      - 'Você não alcançou o tesouro.
 
-        Only your position did.'
-      - 'It wasn’t luck.
+        Mas o sinal era real.'
+      - 'Nada mudou.
 
-        Alignment.'
-      - 'The moment slipped away,
+        Só a sua posição mudou.'
+      - 'Não foi sorte.
 
-        but the record stayed.'
-      - 'You crossed fragile ground
+        Foi alinhamento.'
+      - 'O momento escapou,
 
-        and left the horizon unbroken.'
-      - "Nothing changed.\n Only your position did.\nNot luck.\nAlignment.\nThe moment passed.\nThe record remains."
-      - 'The sun sank,
+        mas o registro permaneceu.'
+      - 'Você atravessou um chão frágil
 
-        and shadow covered the world once again.'
-      - 'The last grains of sand fell,
+        e deixou o horizonte intacto.'
+      - 'Nada mudou.
 
-        and the story quietly came to a close.'
-      - 'The wind swept through,
+        Só a sua posição mudou.
 
-        and the footprints vanished without a trace.'
-      - 'The tide came in,
+        Não foi sorte.
 
-        What once had been there returned to the sea.'
-      - 'Silence.
+        Foi alinhamento.
 
-        Only time passed through.'
-      - "Victory and defeat \nare nothing more than grains of sand."
-      - 'The road goes on—or it ends.
+        O momento passou.
 
-        Either way, it lies on the same earth.'
-      - 'The season closed.
+        O registro permanece.'
+      - 'O sol se pôs,
 
-        The land remained.'
-      - 'The path The path remains.
+        e a sombra cobriu o mundo mais uma vez.'
+      - 'Os últimos grãos de areia caíram,
 
-        Only your steps stopped.'
-      - 'Your time ran out.
+        e a história se fechou em silêncio.'
+      - 'O vento passou,
 
-        The sky didn’t.'
-      - 'It wasn’t rejection.
+        e as pegadas desapareceram sem deixar rastro.'
+      - 'A maré subiu,
 
-        Only silence.'
-      - 'The world is still intact.
+        e o que estava ali voltou ao mar.'
+      - 'Silêncio.
 
-        You can return—changed.'
-      - 'The season ended.
+        Só o tempo passou.'
+      - 'Vitória e derrota
 
-        The forest remains.'
-      - 'The distance was closing.
+        são apenas grãos de areia.'
+      - 'A estrada continua — ou termina.
 
-        Time kept its rhythm.'
-      - 'Your time came to a halt.
+        De qualquer forma, repousa sobre a mesma terra.'
+      - 'A estação se fechou.
 
-        The sky kept moving.'
-      - 'Not rejection
+        A terra permaneceu.'
+      - 'O caminho permanece.
 
-        Just silence.'
-      - 'The path is still here.
+        Só seus passos pararam.'
+      - 'Seu tempo acabou.
 
-        You can come back—changed.'
+        O céu, não.'
+      - 'Não foi rejeição.
+
+        Foi apenas silêncio.'
+      - 'O mundo ainda está inteiro.
+
+        Você pode voltar — diferente.'
+      - 'A estação terminou.
+
+        A floresta permanece.'
+      - 'A distância estava se fechando.
+
+        O tempo manteve seu ritmo.'
+      - 'Seu tempo parou.
+
+        O céu continuou em movimento.'
+      - 'Não foi rejeição.
+
+        Só silêncio.'
+      - 'O caminho ainda está aqui.
+
+        Você pode voltar — diferente.'
 meta:
   lang: pt
   note: Put translation keys under e.g. command.xxx / gui.xxx / messages.xxx etc.
@@ -705,7 +737,8 @@ ui:
     click_to_select_aac1569c_19: Clique para selecionar
     treasurerun_lang_config_yml__2dde4625_33: '[TreasureRun][Lang] Seção ''language:'' não encontrada no config.yml.'
     treasurerun_lang_material_la_bc70a401: '[TreasureRun][Lang] Material inválido: lang='
-    treasurerun_lang_language_ic_4bc2362d: '[TreasureRun][Lang] Seção ''language.iconMaterial:'' não encontrada（tudo será PAPER）'
+    treasurerun_lang_language_ic_4bc2362d: '[TreasureRun][Lang] Seção ''language.iconMaterial:'' não encontrada（tudo será
+      PAPER）'
     click_to_select_aac1569c_100: Clique para selecionar
     treasurerun_lang_default_60887a83_111: '[TreasureRun][Lang] default='
     enemydown_mysql_jdbc_mybatis_6b5c6f68: '[EnemyDown] Conectado ao MySQL（JDBC + MyBatis）'
@@ -795,7 +828,8 @@ ui:
         difficulty: 'Dificuldade: {difficulty}'
         tipsItem: 2) Dicas
       note:
-        bookFormat: 'Observação: nos livros do Minecraft não dá para trocar de aba clicando, então o conteúdo foi organizado em seções.'
+        bookFormat: 'Observação: nos livros do Minecraft não dá para trocar de aba clicando, então o conteúdo foi organizado
+          em seções.'
       hint:
         reopenMenu: 'Dica: execute /gameMenu para abrir isto novamente.'
   error:
@@ -940,7 +974,8 @@ command:
   onlyPlayer: '&cEste comando só pode ser usado por um jogador.'
   quoteFavorite:
     latestSaved: A citação mais recente foi salva nos Favoritos.
-    latestNotSaved: Não foi possível salvar a citação mais recente. Talvez ainda não exista registro, ou ela já esteja nos Favoritos.
+    latestNotSaved: Não foi possível salvar a citação mais recente. Talvez ainda não exista registro, ou ela já esteja nos
+      Favoritos.
     playersOnly: '&cEste comando só pode ser usado por jogadores.'
     repositoryNotReady: Favoritos ainda não estão disponíveis.
     listHeader: '&bFavoritos ({count})'
@@ -954,7 +989,8 @@ command:
     openBookFailed: '&cNão foi possível abrir o livro.'
     unknownSubcommand: '&cSubcomando desconhecido. Veja /quoteFavorite help.'
     shortcutSaved: A citação mais recente foi salva nos Favoritos.
-    shortcutNotSaved: Não foi possível salvar a citação mais recente. Talvez ainda não exista registro, ou ela já esteja nos Favoritos.
+    shortcutNotSaved: Não foi possível salvar a citação mais recente. Talvez ainda não exista registro, ou ela já esteja nos
+      Favoritos.
     help:
       title: '&bComandos do QuoteFavorite'
       latest: '&7/quoteFavorite latest  - salvar a citação mais recente nos Favoritos'

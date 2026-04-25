@@ -1,0 +1,507 @@
+lang	pool	index	status	en_reference	current_pt	native_pt_translation
+pt	outcome.success.easy.pool	1	EXACT_EN	"You’ve made it.
+The truth remains."	"You’ve made it.
+The truth remains."	
+pt	outcome.success.easy.pool	2	EXACT_EN	"Even if it was only a small step,
+you held your ground."	"Even if it was only a small step,
+you held your ground."	
+pt	outcome.success.easy.pool	3	EXACT_EN	"You listened.
+ The path opened."	"You listened.
+ The path opened."	
+pt	outcome.success.easy.pool	4	EXACT_EN	"> You made it here
+> 
+> The rules were simple —
+> 
+> the choice was yours."	"> You made it here
+> 
+> The rules were simple —
+> 
+> the choice was yours."	
+pt	outcome.success.easy.pool	5	EXACT_EN	"> Distance became meaning.
+> 
+> and time answered your footsteps."	"> Distance became meaning.
+> 
+> and time answered your footsteps."	
+pt	outcome.success.easy.pool	6	EXACT_EN	"> Not everything shines forever.
+> 
+> But this moment did."	"> Not everything shines forever.
+> 
+> But this moment did."	
+pt	outcome.success.easy.pool	7	EXACT_EN	"Light fell evenly, ,
+and every shadow vanished."	"Light fell evenly, ,
+and every shadow vanished."	
+pt	outcome.success.easy.pool	8	EXACT_EN	"The wind fell silent.
+and everything returned to where it belonged."	"The wind fell silent.
+and everything returned to where it belonged."	
+pt	outcome.success.easy.pool	9	EXACT_EN	"A moment of silence.
+The world steadied its breath."	"A moment of silence.
+The world steadied its breath."	
+pt	outcome.success.easy.pool	10	EXACT_EN	"The record is etched deep in the sand—
+beyond the reach of the wind."	"The record is etched deep in the sand—
+beyond the reach of the wind."	
+pt	outcome.success.easy.pool	11	EXACT_EN	"Harmony was restored.
+Everything had been for this moment."	"Harmony was restored.
+Everything had been for this moment."	
+pt	outcome.success.easy.pool	12	EXACT_EN	"Time slipped by in silence,
+tucked away in the corners of memory."	"Time slipped by in silence,
+tucked away in the corners of memory."	
+pt	outcome.success.easy.pool	13	EXACT_EN	"The sky shifted in color,
+and one story came to its end."	"The sky shifted in color,
+and one story came to its end."	
+pt	outcome.success.easy.pool	14	EXACT_EN	"The waves grew calm,
+and the sea hid its depths once more."	"The waves grew calm,
+and the sea hid its depths once more."	
+pt	outcome.success.easy.pool	15	EXACT_EN	"The footsteps stopped,
+and only the place remained."	"The footsteps stopped,
+and only the place remained."	
+pt	outcome.success.easy.pool	16	EXACT_EN	"Victory and defeat 
+are nothing more than grains of sand."	"Victory and defeat 
+are nothing more than grains of sand."	
+pt	outcome.success.easy.pool	17	EXACT_EN	"The road goes on—or it ends.
+Either way, it lies on the same earth."	"The road goes on—or it ends.
+Either way, it lies on the same earth."	
+pt	outcome.success.normal.pool	1	EXACT_EN	"The distance has found its meaning.
+Time has rewarded your journey."	"The distance has found its meaning.
+Time has rewarded your journey."	
+pt	outcome.success.normal.pool	2	EXACT_EN	"The time is up.
+but the rest is far from over."	"The time is up.
+but the rest is far from over."	
+pt	outcome.success.normal.pool	3	EXACT_EN	"The axis is found.
+the world has cased its motion."	"The axis is found.
+the world has cased its motion."	
+pt	outcome.success.normal.pool	4	EXACT_EN	"The glass held its breath,
+and you held your ground."	"The glass held its breath,
+and you held your ground."	
+pt	outcome.success.normal.pool	5	EXACT_EN	"Under the stillness of the sky,
+your spirit did not waver."	"Under the stillness of the sky,
+your spirit did not waver."	
+pt	outcome.success.normal.pool	6	EXACT_EN	"Few things shine forever.
+but this moment was radiant."	"Few things shine forever.
+but this moment was radiant."	
+pt	outcome.success.normal.pool	7	EXACT_EN	"You traversed the fragile earth,
+without losing the view."	"You traversed the fragile earth,
+without losing the view."	
+pt	outcome.success.normal.pool	8	EXACT_EN	"The moment has passed.
+The legacy remains."	"The moment has passed.
+The legacy remains."	
+pt	outcome.success.normal.pool	9	EXACT_EN	"Luck fades fast.
+order endures."	"Luck fades fast.
+order endures."	
+pt	outcome.success.normal.pool	10	EXACT_EN	"The sky knows no pause in endless circle,
+nor shall you find yours."	"The sky knows no pause in endless circle,
+nor shall you find yours."	
+pt	outcome.success.normal.pool	11	EXACT_EN	"The center has been reached.
+The world stood still."	"The center has been reached.
+The world stood still."	
+pt	outcome.success.normal.pool	12	EXACT_EN	"Finally here.
+The truth remains unyielding."	"Finally here.
+The truth remains unyielding."	
+pt	outcome.success.normal.pool	13	EXACT_EN	"You have seen it through.
+And mark this: it was you, and no one else, who chose this path."	"You have seen it through.
+And mark this: it was you, and no one else, who chose this path."	
+pt	outcome.success.normal.pool	14	EXACT_EN	"Time drifted into silence,
+finding its place in the recesses of the mind."	"Time drifted into silence,
+finding its place in the recesses of the mind."	
+pt	outcome.success.normal.pool	15	EXACT_EN	"As the sky transformed,
+the tale found its final resolved."	"As the sky transformed,
+the tale found its final resolved."	
+pt	outcome.success.normal.pool	16	EXACT_EN	"The waters fell calm,
+and the sky once more veiled its abyss."	"The waters fell calm,
+and the sky once more veiled its abyss."	
+pt	outcome.success.normal.pool	17	EXACT_EN	"The footsteps ceased,
+only the place remained."	"The footsteps ceased,
+only the place remained."	
+pt	outcome.success.normal.pool	18	EXACT_EN	"Light fell evenly, ,
+and every shadow vanished."	"Light fell evenly, ,
+and every shadow vanished."	
+pt	outcome.success.normal.pool	19	EXACT_EN	"The wind fell silent.
+and everything returned to where it belonged."	"The wind fell silent.
+and everything returned to where it belonged."	
+pt	outcome.success.normal.pool	20	EXACT_EN	"A moment of silence.
+The world steadied its breath."	"A moment of silence.
+The world steadied its breath."	
+pt	outcome.success.normal.pool	21	EXACT_EN	"The record is etched deep in the sand—
+beyond the reach of the wind."	"The record is etched deep in the sand—
+beyond the reach of the wind."	
+pt	outcome.success.normal.pool	22	EXACT_EN	"Harmony was restored.
+Everything had been for this moment."	"Harmony was restored.
+Everything had been for this moment."	
+pt	outcome.success.normal.pool	23	EXACT_EN	"RUN COMPLETE.
+Clear. Found it.
+That's enough."	"RUN COMPLETE.
+Clear. Found it.
+That's enough."	
+pt	outcome.success.normal.pool	24	EXACT_EN	"RUN COMPLETE.
+The path held.
+So did you."	"RUN COMPLETE.
+The path held.
+So did you."	
+pt	outcome.success.normal.pool	25	EXACT_EN	"The sky has kept moving.
+So can you."	"The sky has kept moving.
+So can you."	
+pt	outcome.success.normal.pool	26	EXACT_EN	"RUN COMPLETE.
+A quiet result.
+The weight of real work."	"RUN COMPLETE.
+A quiet result.
+The weight of real work."	
+pt	outcome.success.normal.pool	27	EXACT_EN	"You only walked the path
+the world had laid out for you."	"You only walked the path
+the world had laid out for you."	
+pt	outcome.success.normal.pool	28	EXACT_EN	"The ground didn’t give way.
+It trusted your steps."	"The ground didn’t give way.
+It trusted your steps."	
+pt	outcome.success.normal.pool	29	EXACT_EN	"This moment aligned
+with the stars’ ancient rhythm."	"This moment aligned
+with the stars’ ancient rhythm."	
+pt	outcome.success.normal.pool	30	EXACT_EN	"You didn’t take anything.
+ You understood something."	"You didn’t take anything.
+ You understood something."	
+pt	outcome.success.normal.pool	31	EXACT_EN	"You didn’t gain a thing.
+You only saw the truth for what it was."	"You didn’t gain a thing.
+You only saw the truth for what it was."	
+pt	outcome.success.normal.pool	32	EXACT_EN	"You didn’t take this place.
+You belonged here."	"You didn’t take this place.
+You belonged here."	
+pt	outcome.success.normal.pool	33	EXACT_EN	"You walked a road
+older than memory itself."	"You walked a road
+older than memory itself."	
+pt	outcome.success.normal.pool	34	EXACT_EN	"The earth did not resist.
+It recognized you."	"The earth did not resist.
+It recognized you."	
+pt	outcome.success.normal.pool	35	EXACT_EN	"This moment aligned
+ with the stillness of the stars."	"This moment aligned
+ with the stillness of the stars."	
+pt	outcome.success.hard.pool	1	EXACT_EN	"In the north wind,
+clarity outlasts speed."	"In the north wind,
+clarity outlasts speed."	
+pt	outcome.success.hard.pool	2	EXACT_EN	"The center was found.
+ The world came to rest."	"The center was found.
+ The world came to rest."	
+pt	outcome.success.hard.pool	3	EXACT_EN	"The stars stay silent.
+Your record does the speaking."	"The stars stay silent.
+Your record does the speaking."	
+pt	outcome.success.hard.pool	4	EXACT_EN	"The result  remained.
+The position changed."	"The result  remained.
+The position changed."	
+pt	outcome.success.hard.pool	5	EXACT_EN	"Between ice and glass,
+you chose control."	"Between ice and glass,
+you chose control."	
+pt	outcome.success.hard.pool	6	EXACT_EN	"The waves fell quiet,
+and the sea reclaimed its hidden depths."	"The waves fell quiet,
+and the sea reclaimed its hidden depths."	
+pt	outcome.success.hard.pool	7	EXACT_EN	"Some treasures still await.
+Next time, a different path."	"Some treasures still await.
+Next time, a different path."	
+pt	outcome.success.hard.pool	8	EXACT_EN	"The sky didn’t change.
+You did."	"The sky didn’t change.
+You did."	
+pt	outcome.success.hard.pool	9	EXACT_EN	"The moment passed.
+What remained was order."	"The moment passed.
+What remained was order."	
+pt	outcome.success.hard.pool	10	EXACT_EN	"Winter is honest.
+So was your run."	"Winter is honest.
+So was your run."	
+pt	outcome.success.hard.pool	11	EXACT_EN	"The stars aligned for a moment.
+You noticed."	"The stars aligned for a moment.
+You noticed."	
+pt	outcome.success.hard.pool	12	EXACT_EN	"The distance closed.
+Time did not."	"The distance closed.
+Time did not."	
+pt	outcome.success.hard.pool	13	EXACT_EN	"The world’s rules stood firm.
+ And the signal of possibility was real."	"The world’s rules stood firm.
+ And the signal of possibility was real."	
+pt	outcome.success.hard.pool	14	EXACT_EN	"The path closed quietly.
+You were already through."	"The path closed quietly.
+You were already through."	
+pt	outcome.success.hard.pool	15	EXACT_EN	"Nothing changed.
+Only your position did."	"Nothing changed.
+Only your position did."	
+pt	outcome.success.hard.pool	16	EXACT_EN	"Not luck.
+Alignment."	"Not luck.
+Alignment."	
+pt	outcome.success.hard.pool	17	EXACT_EN	"The moment passed.
+The record remains."	"The moment passed.
+The record remains."	
+pt	outcome.success.hard.pool	18	EXACT_EN	"The outcome didn’t change.
+Still, you moved forward."	"The outcome didn’t change.
+Still, you moved forward."	
+pt	outcome.success.hard.pool	19	EXACT_EN	"The output didn’t change.
+But you reached a new level."	"The output didn’t change.
+But you reached a new level."	
+pt	outcome.success.hard.pool	20	EXACT_EN	"The ending was the same.
+But the one who reached it had changed."	"The ending was the same.
+But the one who reached it had changed."	
+pt	outcome.success.hard.pool	21	EXACT_EN	"The destination is the same
+—but you’re no longer the traveler you once were."	"The destination is the same
+—but you’re no longer the traveler you once were."	
+pt	outcome.success.hard.pool	22	EXACT_EN	"Light fell evenly, ,
+and every shadow vanished."	"Light fell evenly, ,
+and every shadow vanished."	
+pt	outcome.success.hard.pool	23	EXACT_EN	"The wind fell silent.
+and everything returned to where it belonged."	"The wind fell silent.
+and everything returned to where it belonged."	
+pt	outcome.success.hard.pool	24	EXACT_EN	"A moment of silence.
+The world steadied its breath."	"A moment of silence.
+The world steadied its breath."	
+pt	outcome.success.hard.pool	25	EXACT_EN	"The record is etched deep in the sand—
+beyond the reach of the wind."	"The record is etched deep in the sand—
+beyond the reach of the wind."	
+pt	outcome.success.hard.pool	26	EXACT_EN	"Harmony was restored.
+Everything had been for this moment."	"Harmony was restored.
+Everything had been for this moment."	
+pt	outcome.success.hard.pool	27	EXACT_EN	"Time slipped by in silence,
+tucked away in the corners of memory."	"Time slipped by in silence,
+tucked away in the corners of memory."	
+pt	outcome.success.hard.pool	28	EXACT_EN	"The sky shifted in color,
+and one story came to its end."	"The sky shifted in color,
+and one story came to its end."	
+pt	outcome.success.hard.pool	29	EXACT_EN	"The waves grew calm,
+and the sea hid its depths once more."	"The waves grew calm,
+and the sea hid its depths once more."	
+pt	outcome.success.hard.pool	30	EXACT_EN	"The footsteps stopped,
+and only the place remained."	"The footsteps stopped,
+and only the place remained."	
+pt	outcome.success.hard.pool	31	EXACT_EN	"Victory and defeat 
+are nothing more than grains of sand."	"Victory and defeat 
+are nothing more than grains of sand."	
+pt	outcome.success.hard.pool	32	EXACT_EN	"The road goes on—or it ends.
+Either way, it lies on the same earth."	"The road goes on—or it ends.
+Either way, it lies on the same earth."	
+pt	outcome.timeup.easy.pool	1	EXACT_EN	"Time ran out.
+Nothing else did."	"Time ran out.
+Nothing else did."	
+pt	outcome.timeup.easy.pool	2	EXACT_EN	"The treasure can wait.
+So can you."	"The treasure can wait.
+So can you."	
+pt	outcome.timeup.easy.pool	3	EXACT_EN	"Breathe in.
+Then again."	"Breathe in.
+Then again."	
+pt	outcome.timeup.easy.pool	4	EXACT_EN	"That’s all for now.
+On to the next step."	"That’s all for now.
+On to the next step."	
+pt	outcome.timeup.easy.pool	5	EXACT_EN	"You're still here.
+That’s what matters."	"You're still here.
+That’s what matters."	
+pt	outcome.timeup.easy.pool	6	EXACT_EN	"The run ended.
+You didn’t."	"The run ended.
+You didn’t."	
+pt	outcome.timeup.easy.pool	7	EXACT_EN	"TIME'S UP.
+The run ended.
+You didn't."	"TIME'S UP.
+The run ended.
+You didn't."	
+pt	outcome.timeup.easy.pool	8	EXACT_EN	"TIME'S UP.
+The rules don’t change.
+Again."	"TIME'S UP.
+The rules don’t change.
+Again."	
+pt	outcome.timeup.easy.pool	9	EXACT_EN	"TIME'S UP.
+“So close” is real."	"TIME'S UP.
+“So close” is real."	
+pt	outcome.timeup.easy.pool	10	EXACT_EN	"The sun sank,
+and shadow covered the world once again."	"The sun sank,
+and shadow covered the world once again."	
+pt	outcome.timeup.easy.pool	11	EXACT_EN	"The last grains of sand fell,
+and the story quietly came to a close."	"The last grains of sand fell,
+and the story quietly came to a close."	
+pt	outcome.timeup.easy.pool	12	EXACT_EN	"The wind swept through,
+and the footprints vanished without a trace."	"The wind swept through,
+and the footprints vanished without a trace."	
+pt	outcome.timeup.easy.pool	13	EXACT_EN	"The tide came in,
+What once had been there returned to the sea."	"The tide came in,
+What once had been there returned to the sea."	
+pt	outcome.timeup.easy.pool	14	EXACT_EN	"Silence.
+Only time passed through."	"Silence.
+Only time passed through."	
+pt	outcome.timeup.easy.pool	15	EXACT_EN	"Victory and defeat 
+are nothing more than grains of sand."	"Victory and defeat 
+are nothing more than grains of sand."	
+pt	outcome.timeup.easy.pool	16	EXACT_EN	"The road goes on—or it ends.
+Either way, it lies on the same earth."	"The road goes on—or it ends.
+Either way, it lies on the same earth."	
+pt	outcome.timeup.normal.pool	1	EXACT_EN	"The distance closed.
+Time did not."	"The distance closed.
+Time did not."	
+pt	outcome.timeup.normal.pool	2	EXACT_EN	"The world kept its rules.
+You touched the edge."	"The world kept its rules.
+You touched the edge."	
+pt	outcome.timeup.normal.pool	3	EXACT_EN	"You didn’t make it.
+But the signal was real."	"You didn’t make it.
+But the signal was real."	
+pt	outcome.timeup.normal.pool	4	EXACT_EN	"Some treasures still await.
+Let’s try a different path."	"Some treasures still await.
+Let’s try a different path."	
+pt	outcome.timeup.normal.pool	5	EXACT_EN	"The result remained.
+The position changed."	"The result remained.
+The position changed."	
+pt	outcome.timeup.normal.pool	6	EXACT_EN	"Time ran out.
+Meaning didn't."	"Time ran out.
+Meaning didn't."	
+pt	outcome.timeup.normal.pool	7	EXACT_EN	"So close.
+The sound said so."	"So close.
+The sound said so."	
+pt	outcome.timeup.normal.pool	8	EXACT_EN	"The map is still open.
+Come back to it."	"The map is still open.
+Come back to it."	
+pt	outcome.timeup.normal.pool	9	EXACT_EN	"The world’s rules stood firm.
+The signal of possibility was real."	"The world’s rules stood firm.
+The signal of possibility was real."	
+pt	outcome.timeup.normal.pool	10	EXACT_EN	The world kept its rules.	The world kept its rules.	
+pt	outcome.timeup.normal.pool	11	EXACT_EN	"The moment passed.
+The record remains."	"The moment passed.
+The record remains."	
+pt	outcome.timeup.normal.pool	12	EXACT_EN	"The sun sank,
+and shadow covered the world once again."	"The sun sank,
+and shadow covered the world once again."	
+pt	outcome.timeup.normal.pool	13	EXACT_EN	"The last grains of sand fell,
+and the story quietly came to a close."	"The last grains of sand fell,
+and the story quietly came to a close."	
+pt	outcome.timeup.normal.pool	14	EXACT_EN	"The wind swept through,
+and the footprints vanished without a trace."	"The wind swept through,
+and the footprints vanished without a trace."	
+pt	outcome.timeup.normal.pool	15	EXACT_EN	"The tide came in,
+What once had been there returned to the sea."	"The tide came in,
+What once had been there returned to the sea."	
+pt	outcome.timeup.normal.pool	16	EXACT_EN	"Silence.
+Only time passed through."	"Silence.
+Only time passed through."	
+pt	outcome.timeup.normal.pool	17	EXACT_EN	"Victory and defeat 
+are nothing more than grains of sand."	"Victory and defeat 
+are nothing more than grains of sand."	
+pt	outcome.timeup.normal.pool	18	EXACT_EN	"The road goes on—or it ends.
+Either way, it lies on the same earth."	"The road goes on—or it ends.
+Either way, it lies on the same earth."	
+pt	outcome.timeup.normal.pool	19	EXACT_EN	"> Time ran out.
+> 
+> Nothing else did."	"> Time ran out.
+> 
+> Nothing else did."	
+pt	outcome.timeup.normal.pool	20	EXACT_EN	"> The outcome didn’t change.
+> 
+> But your position did."	"> The outcome didn’t change.
+> 
+> But your position did."	
+pt	outcome.timeup.hard.pool	1	EXACT_EN	"Even the aurora fades.
+Come back with a new stride."	"Even the aurora fades.
+Come back with a new stride."	
+pt	outcome.timeup.hard.pool	2	EXACT_EN	"In a fragile world,
+haste shatters clarity before it can be found."	"In a fragile world,
+haste shatters clarity before it can be found."	
+pt	outcome.timeup.hard.pool	3	EXACT_EN	"The moment slipped away.
+The meaning did not."	"The moment slipped away.
+The meaning did not."	
+pt	outcome.timeup.hard.pool	4	EXACT_EN	"Winter is patient.
+Be the same."	"Winter is patient.
+Be the same."	
+pt	outcome.timeup.hard.pool	5	EXACT_EN	"The sky kept moving.
+So will you."	"The sky kept moving.
+So will you."	
+pt	outcome.timeup.hard.pool	6	EXACT_EN	"The story moves on.
+The end is not yet."	"The story moves on.
+The end is not yet."	
+pt	outcome.timeup.hard.pool	7	EXACT_EN	"The stars were there, watching.
+Again."	"The stars were there, watching.
+Again."	
+pt	outcome.timeup.hard.pool	8	EXACT_EN	"Ice takes its time.
+Neither do you."	"Ice takes its time.
+Neither do you."	
+pt	outcome.timeup.hard.pool	9	EXACT_EN	"The sky kept moving.
+So can you."	"The sky kept moving.
+So can you."	
+pt	outcome.timeup.hard.pool	10	EXACT_EN	"The north has learned to wait.
+So should you."	"The north has learned to wait.
+So should you."	
+pt	outcome.timeup.hard.pool	11	EXACT_EN	"This is an interlude
+—It’s not over."	"This is an interlude
+—It’s not over."	
+pt	outcome.timeup.hard.pool	12	EXACT_EN	"Like drifting clouds,
+don’t lose your flow—like a river."	"Like drifting clouds,
+don’t lose your flow—like a river."	
+pt	outcome.timeup.hard.pool	13	EXACT_EN	"The sound was near.
+The distance was real.
+But that moment can’t be saved."	"The sound was near.
+The distance was real.
+But that moment can’t be saved."	
+pt	outcome.timeup.hard.pool	14	EXACT_EN	"You were closing in.
+Only time wasn’t."	"You were closing in.
+Only time wasn’t."	
+pt	outcome.timeup.hard.pool	15	EXACT_EN	"The world held to its rules.
+You touched the edge of them."	"The world held to its rules.
+You touched the edge of them."	
+pt	outcome.timeup.hard.pool	16	EXACT_EN	"You didn’t reach the treasure. 
+But the signal was real."	"You didn’t reach the treasure. 
+But the signal was real."	
+pt	outcome.timeup.hard.pool	17	EXACT_EN	"Nothing changed.
+Only your position did."	"Nothing changed.
+Only your position did."	
+pt	outcome.timeup.hard.pool	18	EXACT_EN	"It wasn’t luck.
+Alignment."	"It wasn’t luck.
+Alignment."	
+pt	outcome.timeup.hard.pool	19	EXACT_EN	"The moment slipped away,
+but the record stayed."	"The moment slipped away,
+but the record stayed."	
+pt	outcome.timeup.hard.pool	20	EXACT_EN	"You crossed fragile ground
+and left the horizon unbroken."	"You crossed fragile ground
+and left the horizon unbroken."	
+pt	outcome.timeup.hard.pool	21	EXACT_EN	"Nothing changed.
+ Only your position did.
+Not luck.
+Alignment.
+The moment passed.
+The record remains."	"Nothing changed.
+ Only your position did.
+Not luck.
+Alignment.
+The moment passed.
+The record remains."	
+pt	outcome.timeup.hard.pool	22	EXACT_EN	"The sun sank,
+and shadow covered the world once again."	"The sun sank,
+and shadow covered the world once again."	
+pt	outcome.timeup.hard.pool	23	EXACT_EN	"The last grains of sand fell,
+and the story quietly came to a close."	"The last grains of sand fell,
+and the story quietly came to a close."	
+pt	outcome.timeup.hard.pool	24	EXACT_EN	"The wind swept through,
+and the footprints vanished without a trace."	"The wind swept through,
+and the footprints vanished without a trace."	
+pt	outcome.timeup.hard.pool	25	EXACT_EN	"The tide came in,
+What once had been there returned to the sea."	"The tide came in,
+What once had been there returned to the sea."	
+pt	outcome.timeup.hard.pool	26	EXACT_EN	"Silence.
+Only time passed through."	"Silence.
+Only time passed through."	
+pt	outcome.timeup.hard.pool	27	EXACT_EN	"Victory and defeat 
+are nothing more than grains of sand."	"Victory and defeat 
+are nothing more than grains of sand."	
+pt	outcome.timeup.hard.pool	28	EXACT_EN	"The road goes on—or it ends.
+Either way, it lies on the same earth."	"The road goes on—or it ends.
+Either way, it lies on the same earth."	
+pt	outcome.timeup.hard.pool	29	EXACT_EN	"The season closed.
+The land remained."	"The season closed.
+The land remained."	
+pt	outcome.timeup.hard.pool	30	EXACT_EN	"The path The path remains.
+Only your steps stopped."	"The path The path remains.
+Only your steps stopped."	
+pt	outcome.timeup.hard.pool	31	EXACT_EN	"Your time ran out.
+The sky didn’t."	"Your time ran out.
+The sky didn’t."	
+pt	outcome.timeup.hard.pool	32	EXACT_EN	"It wasn’t rejection.
+Only silence."	"It wasn’t rejection.
+Only silence."	
+pt	outcome.timeup.hard.pool	33	EXACT_EN	"The world is still intact.
+You can return—changed."	"The world is still intact.
+You can return—changed."	
+pt	outcome.timeup.hard.pool	34	EXACT_EN	"The season ended.
+The forest remains."	"The season ended.
+The forest remains."	
+pt	outcome.timeup.hard.pool	35	EXACT_EN	"The distance was closing.
+Time kept its rhythm."	"The distance was closing.
+Time kept its rhythm."	
+pt	outcome.timeup.hard.pool	36	EXACT_EN	"Your time came to a halt.
+The sky kept moving."	"Your time came to a halt.
+The sky kept moving."	
+pt	outcome.timeup.hard.pool	37	EXACT_EN	"Not rejection
+Just silence."	"Not rejection
+Just silence."	
+pt	outcome.timeup.hard.pool	38	EXACT_EN	"The path is still here.
+You can come back—changed."	"The path is still here.
+You can come back—changed."	

@@ -1,0 +1,333 @@
+lang	pool	index	translation
+pt	outcome.success.easy.pool	1	"Você conseguiu.
+A verdade permanece."
+pt	outcome.success.easy.pool	2	"Mesmo que tenha sido apenas um pequeno passo,
+você se manteve firme."
+pt	outcome.success.easy.pool	3	"Você escutou.
+O caminho se abriu."
+pt	outcome.success.easy.pool	4	"> Você chegou até aqui
+> 
+> As regras eram simples —
+> 
+> a escolha era sua."
+pt	outcome.success.easy.pool	5	"> A distância ganhou sentido.
+> 
+> e o tempo respondeu aos seus passos."
+pt	outcome.success.easy.pool	6	"> Nem tudo brilha para sempre.
+> 
+> Mas este momento brilhou."
+pt	outcome.success.easy.pool	7	"A luz caiu por igual,
+e toda sombra desapareceu."
+pt	outcome.success.easy.pool	8	"O vento silenciou.
+e tudo voltou ao seu lugar."
+pt	outcome.success.easy.pool	9	"Um momento de silêncio.
+O mundo firmou a própria respiração."
+pt	outcome.success.easy.pool	10	"O registro ficou gravado fundo na areia —
+fora do alcance do vento."
+pt	outcome.success.easy.pool	11	"A harmonia foi restaurada.
+Tudo existiu para este momento."
+pt	outcome.success.easy.pool	12	"O tempo passou em silêncio,
+guardado nos cantos da memória."
+pt	outcome.success.easy.pool	13	"O céu mudou de cor,
+e uma história chegou ao fim."
+pt	outcome.success.easy.pool	14	"As ondas se acalmaram,
+e o mar escondeu de novo sua profundidade."
+pt	outcome.success.easy.pool	15	"Os passos pararam,
+e apenas o lugar permaneceu."
+pt	outcome.success.easy.pool	16	"Vitória e derrota
+não são mais que grãos de areia."
+pt	outcome.success.easy.pool	17	"A estrada continua — ou termina.
+De qualquer forma, repousa sobre a mesma terra."
+pt	outcome.success.normal.pool	1	"A distância encontrou seu sentido.
+O tempo respondeu à sua jornada."
+pt	outcome.success.normal.pool	2	"O tempo acabou.
+Mas nem tudo terminou."
+pt	outcome.success.normal.pool	3	"O eixo foi encontrado.
+O mundo cessou seu movimento."
+pt	outcome.success.normal.pool	4	"O vidro sustentou o fôlego,
+e você sustentou sua posição."
+pt	outcome.success.normal.pool	5	"Sob a quietude do céu,
+seu espírito não vacilou."
+pt	outcome.success.normal.pool	6	"Poucas coisas brilham para sempre.
+Mas este momento foi radiante."
+pt	outcome.success.normal.pool	7	"Você atravessou a terra frágil,
+sem perder a visão."
+pt	outcome.success.normal.pool	8	"O momento passou.
+O legado permanece."
+pt	outcome.success.normal.pool	9	"A sorte se apaga rápido.
+A ordem permanece."
+pt	outcome.success.normal.pool	10	"O céu não conhece pausa em seu círculo infinito,
+e você também não buscou a sua."
+pt	outcome.success.normal.pool	11	"O centro foi alcançado.
+O mundo ficou imóvel."
+pt	outcome.success.normal.pool	12	"Finalmente aqui.
+A verdade permanece inflexível."
+pt	outcome.success.normal.pool	13	"Você foi até o fim.
+E lembre-se: foi você, e ninguém mais, que escolheu este caminho."
+pt	outcome.success.normal.pool	14	"O tempo deslizou para o silêncio,
+encontrando lugar nas profundezas da mente."
+pt	outcome.success.normal.pool	15	"Enquanto o céu se transformava,
+a história encontrou sua resolução final."
+pt	outcome.success.normal.pool	16	"As águas se acalmaram,
+e o céu voltou a velar seu abismo."
+pt	outcome.success.normal.pool	17	"Os passos cessaram,
+e apenas o lugar permaneceu."
+pt	outcome.success.normal.pool	18	"A luz caiu por igual,
+e toda sombra desapareceu."
+pt	outcome.success.normal.pool	19	"O vento silenciou.
+e tudo voltou ao seu lugar."
+pt	outcome.success.normal.pool	20	"Um momento de silêncio.
+O mundo firmou a própria respiração."
+pt	outcome.success.normal.pool	21	"O registro ficou gravado fundo na areia —
+fora do alcance do vento."
+pt	outcome.success.normal.pool	22	"A harmonia foi restaurada.
+Tudo existiu para este momento."
+pt	outcome.success.normal.pool	23	"CORRIDA CONCLUÍDA.
+Claro. Encontrado.
+Isso basta."
+pt	outcome.success.normal.pool	24	"CORRIDA CONCLUÍDA.
+O caminho resistiu.
+Você também."
+pt	outcome.success.normal.pool	25	"O céu continuou se movendo.
+Você também pode."
+pt	outcome.success.normal.pool	26	"CORRIDA CONCLUÍDA.
+Um resultado silencioso.
+O peso do trabalho real."
+pt	outcome.success.normal.pool	27	"Você apenas caminhou pela trilha
+que o mundo colocou diante de você."
+pt	outcome.success.normal.pool	28	"O chão não cedeu.
+Ele confiou nos seus passos."
+pt	outcome.success.normal.pool	29	"Este momento se alinhou
+com o ritmo antigo das estrelas."
+pt	outcome.success.normal.pool	30	"Você não tomou nada.
+Você compreendeu algo."
+pt	outcome.success.normal.pool	31	"Você não ganhou coisa alguma.
+Apenas viu a verdade como ela era."
+pt	outcome.success.normal.pool	32	"Você não tomou este lugar.
+Você pertencia a ele."
+pt	outcome.success.normal.pool	33	"Você caminhou por uma estrada
+mais antiga que a própria memória."
+pt	outcome.success.normal.pool	34	"A terra não resistiu.
+Ela reconheceu você."
+pt	outcome.success.normal.pool	35	"Este momento se alinhou
+com a quietude das estrelas."
+pt	outcome.success.hard.pool	1	"No vento do norte,
+a clareza sobrevive à velocidade."
+pt	outcome.success.hard.pool	2	"O centro foi encontrado.
+O mundo repousou."
+pt	outcome.success.hard.pool	3	"As estrelas permanecem em silêncio.
+Seu registro fala por você."
+pt	outcome.success.hard.pool	4	"O resultado permaneceu.
+A posição mudou."
+pt	outcome.success.hard.pool	5	"Entre gelo e vidro,
+você escolheu o controle."
+pt	outcome.success.hard.pool	6	"As ondas silenciaram,
+e o mar retomou suas profundezas ocultas."
+pt	outcome.success.hard.pool	7	"Alguns tesouros ainda esperam.
+Da próxima vez, outro caminho."
+pt	outcome.success.hard.pool	8	"O céu não mudou.
+Você mudou."
+pt	outcome.success.hard.pool	9	"O momento passou.
+O que permaneceu foi a ordem."
+pt	outcome.success.hard.pool	10	"O inverno é honesto.
+Sua corrida também foi."
+pt	outcome.success.hard.pool	11	"As estrelas se alinharam por um instante.
+Você percebeu."
+pt	outcome.success.hard.pool	12	"A distância se fechou.
+O tempo não."
+pt	outcome.success.hard.pool	13	"As regras do mundo permaneceram firmes.
+E o sinal de possibilidade era real."
+pt	outcome.success.hard.pool	14	"O caminho se fechou em silêncio.
+Você já havia atravessado."
+pt	outcome.success.hard.pool	15	"Nada mudou.
+Apenas sua posição mudou."
+pt	outcome.success.hard.pool	16	"Não foi sorte.
+Foi alinhamento."
+pt	outcome.success.hard.pool	17	"O momento passou.
+O registro permanece."
+pt	outcome.success.hard.pool	18	"O resultado não mudou.
+Ainda assim, você avançou."
+pt	outcome.success.hard.pool	19	"A saída não mudou.
+Mas você alcançou outro nível."
+pt	outcome.success.hard.pool	20	"O final foi o mesmo.
+Mas quem chegou até ele já havia mudado."
+pt	outcome.success.hard.pool	21	"O destino é o mesmo
+— mas você já não é o viajante de antes."
+pt	outcome.success.hard.pool	22	"A luz caiu por igual,
+e toda sombra desapareceu."
+pt	outcome.success.hard.pool	23	"O vento silenciou.
+e tudo voltou ao seu lugar."
+pt	outcome.success.hard.pool	24	"Um momento de silêncio.
+O mundo firmou a própria respiração."
+pt	outcome.success.hard.pool	25	"O registro ficou gravado fundo na areia —
+fora do alcance do vento."
+pt	outcome.success.hard.pool	26	"A harmonia foi restaurada.
+Tudo existiu para este momento."
+pt	outcome.success.hard.pool	27	"O tempo passou em silêncio,
+guardado nos cantos da memória."
+pt	outcome.success.hard.pool	28	"O céu mudou de cor,
+e uma história chegou ao fim."
+pt	outcome.success.hard.pool	29	"As ondas se acalmaram,
+e o mar escondeu de novo sua profundidade."
+pt	outcome.success.hard.pool	30	"Os passos pararam,
+e apenas o lugar permaneceu."
+pt	outcome.success.hard.pool	31	"Vitória e derrota
+não são mais que grãos de areia."
+pt	outcome.success.hard.pool	32	"A estrada continua — ou termina.
+De qualquer forma, repousa sobre a mesma terra."
+pt	outcome.timeup.easy.pool	1	"O tempo acabou.
+Mas você não."
+pt	outcome.timeup.easy.pool	2	"O tesouro pode esperar.
+Você também."
+pt	outcome.timeup.easy.pool	3	"Respire.
+Depois, respire outra vez."
+pt	outcome.timeup.easy.pool	4	"Por agora, é tudo.
+Siga para o próximo passo."
+pt	outcome.timeup.easy.pool	5	"Você ainda está aqui.
+É isso que importa."
+pt	outcome.timeup.easy.pool	6	"A corrida terminou.
+Você não."
+pt	outcome.timeup.easy.pool	7	"O TEMPO ACABOU.
+A corrida terminou.
+Você não."
+pt	outcome.timeup.easy.pool	8	"O TEMPO ACABOU.
+As regras não mudam.
+Tente outra vez."
+pt	outcome.timeup.easy.pool	9	"O TEMPO ACABOU.
+“Quase” também é real."
+pt	outcome.timeup.easy.pool	10	"O sol se pôs,
+e a sombra cobriu o mundo mais uma vez."
+pt	outcome.timeup.easy.pool	11	"Os últimos grãos de areia caíram,
+e a história se encerrou em silêncio."
+pt	outcome.timeup.easy.pool	12	"O vento passou,
+e as pegadas desapareceram sem deixar traço."
+pt	outcome.timeup.easy.pool	13	"A maré subiu,
+e o que esteve ali voltou ao mar."
+pt	outcome.timeup.easy.pool	14	"Silêncio.
+Apenas o tempo passou."
+pt	outcome.timeup.easy.pool	15	"Vitória e derrota
+não são mais que grãos de areia."
+pt	outcome.timeup.easy.pool	16	"A estrada continua — ou termina.
+De qualquer forma, repousa sobre a mesma terra."
+pt	outcome.timeup.normal.pool	1	"A distância se fechou.
+O tempo não."
+pt	outcome.timeup.normal.pool	2	"O mundo manteve suas regras.
+Você tocou sua borda."
+pt	outcome.timeup.normal.pool	3	"Você não chegou.
+Mas o sinal era real."
+pt	outcome.timeup.normal.pool	4	"Alguns tesouros ainda esperam.
+Vamos tentar outro caminho."
+pt	outcome.timeup.normal.pool	5	"O resultado permaneceu.
+A posição mudou."
+pt	outcome.timeup.normal.pool	6	"O tempo acabou.
+O sentido não."
+pt	outcome.timeup.normal.pool	7	"Foi por pouco.
+O som disse isso."
+pt	outcome.timeup.normal.pool	8	"O mapa ainda está aberto.
+Volte a ele."
+pt	outcome.timeup.normal.pool	9	"As regras do mundo permaneceram firmes.
+O sinal de possibilidade era real."
+pt	outcome.timeup.normal.pool	10	O mundo manteve suas regras.
+pt	outcome.timeup.normal.pool	11	"O momento passou.
+O registro permanece."
+pt	outcome.timeup.normal.pool	12	"O sol se pôs,
+e a sombra cobriu o mundo mais uma vez."
+pt	outcome.timeup.normal.pool	13	"Os últimos grãos de areia caíram,
+e a história se encerrou em silêncio."
+pt	outcome.timeup.normal.pool	14	"O vento passou,
+e as pegadas desapareceram sem deixar traço."
+pt	outcome.timeup.normal.pool	15	"A maré subiu,
+e o que esteve ali voltou ao mar."
+pt	outcome.timeup.normal.pool	16	"Silêncio.
+Apenas o tempo passou."
+pt	outcome.timeup.normal.pool	17	"Vitória e derrota
+não são mais que grãos de areia."
+pt	outcome.timeup.normal.pool	18	"A estrada continua — ou termina.
+De qualquer forma, repousa sobre a mesma terra."
+pt	outcome.timeup.normal.pool	19	"> O tempo acabou.
+> 
+> Nada mais acabou."
+pt	outcome.timeup.normal.pool	20	"> O resultado não mudou.
+> 
+> Mas sua posição mudou."
+pt	outcome.timeup.hard.pool	1	"Até a aurora se apaga.
+Volte com um novo passo."
+pt	outcome.timeup.hard.pool	2	"Em um mundo frágil,
+a pressa estilhaça a clareza antes que ela seja encontrada."
+pt	outcome.timeup.hard.pool	3	"O momento escapou.
+O sentido não."
+pt	outcome.timeup.hard.pool	4	"O inverno é paciente.
+Seja também."
+pt	outcome.timeup.hard.pool	5	"O céu continuou se movendo.
+Você também continuará."
+pt	outcome.timeup.hard.pool	6	"A história segue.
+O fim ainda não chegou."
+pt	outcome.timeup.hard.pool	7	"As estrelas estavam lá, observando.
+Outra vez."
+pt	outcome.timeup.hard.pool	8	"O gelo leva seu tempo.
+Você também precisará levar o seu."
+pt	outcome.timeup.hard.pool	9	"O céu continuou se movendo.
+Você também pode."
+pt	outcome.timeup.hard.pool	10	"O norte aprendeu a esperar.
+Você também deve aprender."
+pt	outcome.timeup.hard.pool	11	"Isto é um intervalo
+— ainda não acabou."
+pt	outcome.timeup.hard.pool	12	"Como nuvens à deriva,
+não perca seu fluxo — como um rio."
+pt	outcome.timeup.hard.pool	13	"O som estava perto.
+A distância era real.
+Mas aquele momento não pôde ser salvo."
+pt	outcome.timeup.hard.pool	14	"Você estava se aproximando.
+Só o tempo não estava."
+pt	outcome.timeup.hard.pool	15	"O mundo se manteve fiel às suas regras.
+Você tocou a borda delas."
+pt	outcome.timeup.hard.pool	16	"Você não alcançou o tesouro.
+Mas o sinal era real."
+pt	outcome.timeup.hard.pool	17	"Nada mudou.
+Apenas sua posição mudou."
+pt	outcome.timeup.hard.pool	18	"Não foi sorte.
+Foi alinhamento."
+pt	outcome.timeup.hard.pool	19	"O momento escapou,
+mas o registro permaneceu."
+pt	outcome.timeup.hard.pool	20	"Você atravessou chão frágil
+e deixou o horizonte intacto."
+pt	outcome.timeup.hard.pool	21	"Nada mudou.
+Apenas sua posição mudou.
+Não foi sorte.
+Foi alinhamento.
+O momento passou.
+O registro permanece."
+pt	outcome.timeup.hard.pool	22	"O sol se pôs,
+e a sombra cobriu o mundo mais uma vez."
+pt	outcome.timeup.hard.pool	23	"Os últimos grãos de areia caíram,
+e a história se encerrou em silêncio."
+pt	outcome.timeup.hard.pool	24	"O vento passou,
+e as pegadas desapareceram sem deixar traço."
+pt	outcome.timeup.hard.pool	25	"A maré subiu,
+e o que esteve ali voltou ao mar."
+pt	outcome.timeup.hard.pool	26	"Silêncio.
+Apenas o tempo passou."
+pt	outcome.timeup.hard.pool	27	"Vitória e derrota
+não são mais que grãos de areia."
+pt	outcome.timeup.hard.pool	28	"A estrada continua — ou termina.
+De qualquer forma, repousa sobre a mesma terra."
+pt	outcome.timeup.hard.pool	29	"A estação se fechou.
+A terra permaneceu."
+pt	outcome.timeup.hard.pool	30	"O caminho permanece.
+Apenas seus passos pararam."
+pt	outcome.timeup.hard.pool	31	"Seu tempo acabou.
+O céu não."
+pt	outcome.timeup.hard.pool	32	"Não foi rejeição.
+Apenas silêncio."
+pt	outcome.timeup.hard.pool	33	"O mundo ainda está inteiro.
+Você pode voltar — mudada."
+pt	outcome.timeup.hard.pool	34	"A estação terminou.
+A floresta permanece."
+pt	outcome.timeup.hard.pool	35	"A distância estava se fechando.
+O tempo manteve seu ritmo."
+pt	outcome.timeup.hard.pool	36	"Seu tempo parou.
+O céu continuou se movendo."
+pt	outcome.timeup.hard.pool	37	"Não foi rejeição.
+Apenas silêncio."
+pt	outcome.timeup.hard.pool	38	"O caminho ainda está aqui.
+Você pode voltar — mudada."
