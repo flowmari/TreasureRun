@@ -20,30 +20,51 @@ public class RankDebugCommand implements CommandExecutor {
     this.plugin = plugin;
   }
 
+
+  private String lang(Player player) {
+    try {
+      String lang = "en";
+      if (plugin.getPlayerLanguageStore() != null) {
+        lang = plugin.getPlayerLanguageStore().getLang(player, lang);
+      }
+      return lang;
+    } catch (Throwable ignored) {
+      return "en";
+    }
+  }
+
+  private String tr(Player player, String key) {
+    try {
+      return plugin.getI18n().tr(lang(player), key);
+    } catch (Throwable ignored) {
+      return key;
+    }
+  }
+
   @Override
   public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
     // プレイヤーのみ
     if (!(sender instanceof Player player)) {
-      sender.sendMessage("プレイヤーのみ実行できます");
+      sender.sendMessage("Only players can run this command.");
       return true;
     }
 
     // OP限定（安全）
     if (!player.isOp()) {
-      player.sendMessage("権限がありません（OP限定）");
+      player.sendMessage(tr(player, "finalAudit.command.opOnly"));
       return true;
     }
 
     // rankDebug.enabled=true のときだけ有効（安全）
     if (!plugin.getConfig().getBoolean("rankDebug.enabled", false)) {
-      player.sendMessage("Rank debug is OFF. config.yml の rankDebug.enabled: true にしてください");
+      player.sendMessage(tr(player, "finalAudit.command.rankDebugOff"));
       return true;
     }
 
     // /rank demo  または /rank 1|2|3
     if (args.length != 1) {
-      player.sendMessage("使い方: /rank <1|2|3|demo>");
+      player.sendMessage(tr(player, "finalAudit.command.rankUsage"));
       return true;
     }
 
@@ -125,12 +146,12 @@ public class RankDebugCommand implements CommandExecutor {
     try {
       rank = Integer.parseInt(args[0]);
     } catch (NumberFormatException e) {
-      player.sendMessage("数字で入力してください: /rank <1|2|3|demo>");
+      player.sendMessage(tr(player, "finalAudit.command.rankNumberOnly"));
       return true;
     }
 
     if (rank < 1 || rank > 3) {
-      player.sendMessage("1〜3だけ使えます: /rank <1|2|3>");
+      player.sendMessage(tr(player, "finalAudit.command.rankOnlyOneToThree"));
       return true;
     }
 

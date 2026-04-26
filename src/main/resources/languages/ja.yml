@@ -712,3 +712,28 @@ rank:
     allTimeSwitch: '表示切替: /gameRank weekly | /gameRank monthly'
     monthlyEmpty: 今月の記録はまだありません。
     monthlySwitch: '表示切替: /gameRank weekly | /gameRank all'
+
+# Final visible-surface i18n audit keys
+finalAudit:
+  shop:
+    treasureShop: "Treasure Shop"
+  item:
+    specialApple: "特製リンゴ"
+    specialIronBlock: "特製鉄ブロック"
+  command:
+    playerOnly: "プレイヤーのみ実行できます。"
+    opOnly: "権限がありません（OP限定）。"
+    rankDebugOff: "Rank debug は OFF です。config.yml の rankDebug.enabled: true にしてください。"
+    rankUsage: "使い方: /rank <1|2|3|demo>"
+    rankNumberOnly: "数字で入力してください: /rank <1|2|3|demo>"
+    rankOnlyOneToThree: "1〜3だけ使えます: /rank <1|2|3>"
+    gameAlreadyRunning: "ゲームは既に実行中です。"
+    invalidDifficulty: "難易度は Easy / Normal / Hard です。"
+    languageGuiNotReady: "Language GUI が初期化されていません。"
+    reloadBlockedRunning: "ゲーム中は reload できません（安全のため）。/gameEnd してから実行してください。"
+    noPermission: "このコマンドを使う権限がありません。"
+    noPermissionOp: "このコマンドを使う権限がありません。（OP限定）"
+  debug:
+    chestSoundStart: "[ChestSound] start() called (16th-grid mode)"
+    chestSoundNoChests: "[ChestSound] chests=0"
+    chestSoundNearest: "[ChestSound] nearest={distance}m {range} t={t}"
