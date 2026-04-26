@@ -1,0 +1,2 @@
+status	severity	file	line	text
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/RankRewardManager.java	-	Reward label uses finalAudit.reward.label through trReward(player, ...)

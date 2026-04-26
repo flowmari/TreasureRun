@@ -839,8 +839,7 @@ gameplay:
     timeUpTitle: TIDEN ÄR UTE!
     treasuresCollected: 'Skatter samlade: {got}/{total} ({missing} kvar)'
     overcomingAdversity: ÖVERVINNA MOTGÅNGAR
-    label:
-      score: Poäng
+    label: "Belöning"
       time: Tid
       rank: Placering
     allChestsOpenedBroadcast: '{player} öppnade alla kistor! Slutpoäng: {score}'

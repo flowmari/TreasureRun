@@ -853,8 +853,7 @@ gameplay:
     timeUpTitle: कालः समाप्तः!
     treasuresCollected: 'संगृहीत-निधयः: {got}/{total} (अवशिष्टाः {missing})'
     overcomingAdversity: विपत्तेः अतिक्रमः
-    label:
-      score: अङ्काः
+    label: "फलम्"
       time: कालः
       rank: स्थानम्
     allChestsOpenedBroadcast: '{player} सर्वाः पेटिकाः उद्घाटितवान्! अन्तिमाङ्काः: {score}'
@@ -944,5 +943,5 @@ finalAudit:
     chestSoundNoChests: "[ChestSound] पेटिका न प्राप्ता।"
     chestSoundNearest: "[ChestSound] nearest={distance}m inRange={range} t={t}"
   reward:
-    label: "पुरस्कारः"
+    label: "फलम्"
     rainbowWolf: "Rainbow Wolf"

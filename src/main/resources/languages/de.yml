@@ -828,8 +828,7 @@ gameplay:
     timeUpTitle: ZEIT ABGELAUFEN!
     treasuresCollected: 'Gesammelte Schatztruhen: {got}/{total} ({missing} übrig)'
     overcomingAdversity: WIDERSTÄNDE ÜBERWUNDEN
-    label:
-      score: Punkte
+    label: "Belohnung"
       time: Zeit
       rank: Rang
     allChestsOpenedBroadcast: '{player} hat alle Truhen geöffnet! Endpunktzahl: {score}'
