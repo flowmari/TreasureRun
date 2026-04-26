@@ -1147,7 +1147,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     // ✅ treasureReload
     if (cmd.getName().equalsIgnoreCase("treasureReload")) {
       if (isRunning) {
-        player.sendMessage(ChatColor.RED + "ゲーム中は reload できません（安全のため）。/gameEnd してから実行してください。");
+        player.sendMessage(ChatColor.RED + getI18n().tr(getPlayerLangOrDefault(player.getUniqueId()), "finalAudit.command.reloadBlockedRunning"));
         return true;
       }
 
@@ -1222,7 +1222,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
           String diff = (difficulty == null || difficulty.isBlank()) ? "Normal" : difficulty;
           languageSelectGui.openForGameMenu(player, diff); // ✅ ここが変更点
         } else {
-          player.sendMessage(ChatColor.RED + "Language GUI が初期化されていません。");
+          player.sendMessage(ChatColor.RED + getI18n().tr(getPlayerLangOrDefault(player.getUniqueId()), "finalAudit.command.languageGuiNotReady"));
         }
         return true;
       }
@@ -1238,7 +1238,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     if (cmd.getName().equalsIgnoreCase("gameStart") || cmd.getName().equalsIgnoreCase("gamestart")) {
 
       if (isRunning) {
-        player.sendMessage(ChatColor.RED + "ゲームは既に実行中です。");
+        player.sendMessage(ChatColor.RED + getI18n().tr(getPlayerLangOrDefault(player.getUniqueId()), "finalAudit.command.gameAlreadyRunning"));
         return true;
       }
 
@@ -1275,7 +1275,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
         if (diff.equals("easy") || diff.equals("normal") || diff.equals("hard")) {
           selectedDifficulty = diff.substring(0, 1).toUpperCase() + diff.substring(1);
         } else {
-          player.sendMessage(ChatColor.RED + "難易度は Easy / Normal / Hard です。");
+          player.sendMessage(ChatColor.RED + getI18n().tr(getPlayerLangOrDefault(player.getUniqueId()), "finalAudit.command.invalidDifficulty"));
           return true;
         }
       } else {
@@ -1302,7 +1302,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
       if (languageSelectGui != null) {
         languageSelectGui.open(player, selectedDifficulty);
       } else {
-        player.sendMessage(ChatColor.RED + "Language GUI が初期化されていません。");
+        player.sendMessage(ChatColor.RED + getI18n().tr(getPlayerLangOrDefault(player.getUniqueId()), "finalAudit.command.languageGuiNotReady"));
       }
 
       return true;
@@ -1405,7 +1405,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     Player player = event.getPlayer();
 
     if (isRunning) {
-      player.sendMessage(ChatColor.RED + "ゲームは既に実行中です。");
+      player.sendMessage(ChatColor.RED + getI18n().tr(getPlayerLangOrDefault(player.getUniqueId()), "finalAudit.command.gameAlreadyRunning"));
       return;
     }
 
@@ -1442,7 +1442,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     if (languageSelectGui != null) {
       languageSelectGui.open(player, selectedDifficulty);
     } else {
-      player.sendMessage(ChatColor.RED + "Language GUI が初期化されていません。");
+      player.sendMessage(ChatColor.RED + getI18n().tr(getPlayerLangOrDefault(player.getUniqueId()), "finalAudit.command.languageGuiNotReady"));
     }
   }
 
@@ -2205,7 +2205,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
   public void beginGameStartAfterLanguageSelected(Player player, String selectedDifficulty, String lang) {
 
     if (isRunning) {
-      player.sendMessage(ChatColor.RED + "ゲームは既に実行中です。");
+      player.sendMessage(ChatColor.RED + getI18n().tr(getPlayerLangOrDefault(player.getUniqueId()), "finalAudit.command.gameAlreadyRunning"));
       return;
     }
 

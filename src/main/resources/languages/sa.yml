@@ -1003,3 +1003,28 @@ rank:
     allTimeSwitch: 'दृश्यं परिवर्तय: /gameRank weekly | /gameRank monthly'
     monthlyEmpty: अस्मिन् मासि अद्यापि अभिलेखाः न सन्ति।
     monthlySwitch: 'दृश्यं परिवर्तय: /gameRank weekly | /gameRank all'
+
+# Final visible-surface i18n audit keys
+finalAudit:
+  shop:
+    treasureShop: "Treasure Shop"
+  item:
+    specialApple: "Special Apple"
+    specialIronBlock: "Special Iron Block"
+  command:
+    playerOnly: "Only players can run this command."
+    opOnly: "You do not have permission. OP only."
+    rankDebugOff: "Rank debug is OFF. Set rankDebug.enabled: true in config.yml."
+    rankUsage: "Usage: /rank <1|2|3|demo>"
+    rankNumberOnly: "Please enter a number: /rank <1|2|3|demo>"
+    rankOnlyOneToThree: "Only 1 to 3 can be used: /rank <1|2|3>"
+    gameAlreadyRunning: "The game is already running."
+    invalidDifficulty: "Difficulty must be Easy, Normal, or Hard."
+    languageGuiNotReady: "Language GUI is not initialized."
+    reloadBlockedRunning: "Reload is disabled while the game is running. Please run /gameEnd first."
+    noPermission: "You do not have permission to use this command."
+    noPermissionOp: "You do not have permission to use this command. OP only."
+  debug:
+    chestSoundStart: "[ChestSound] start() called (16th-grid mode)"
+    chestSoundNoChests: "[ChestSound] chests=0"
+    chestSoundNearest: "[ChestSound] nearest={distance}m {range} t={t}"

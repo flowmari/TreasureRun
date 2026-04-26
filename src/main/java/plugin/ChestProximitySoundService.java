@@ -64,6 +64,30 @@ public class ChestProximitySoundService {
     this.debugActionBar = plugin.getConfig().getBoolean("chestSound.actionBarDebug", false);
   }
 
+
+  private String chestLang(Player player) {
+    try {
+      if (plugin instanceof TreasureRunMultiChestPlugin trp) {
+        String lang = "en";
+        if (trp.getPlayerLanguageStore() != null) {
+          lang = trp.getPlayerLanguageStore().getLang(player, lang);
+        }
+        return lang;
+      }
+    } catch (Throwable ignored) {}
+    return "en";
+  }
+
+  private String trChest(Player player, String key) {
+    try {
+      if (plugin instanceof TreasureRunMultiChestPlugin trp && trp.getI18n() != null) {
+        return trp.getI18n().tr(chestLang(player), key);
+      }
+    } catch (Throwable ignored) {}
+    return key;
+  }
+
+
   // ✅ 追加：外部（結果表示側）からロック/解除できる
   public void setActionBarLocked(Player player, boolean locked) {
     if (player == null) return;
@@ -88,7 +112,7 @@ public class ChestProximitySoundService {
     stop(player);
 
     if (debugChat) {
-      player.sendMessage("§b[ChestSound] start() called (16th-grid mode)");
+      player.sendMessage("§b" + trChest(player, "finalAudit.debug.chestSoundStart"));
     }
 
     final long[] tickNow = {0L};
@@ -136,7 +160,7 @@ public class ChestProximitySoundService {
       // ✅ ActionBarは debugActionBar AND ロックされてないときだけ
       if (debugActionBar && !isActionBarLocked(player)) {
         player.spigot().sendMessage(ChatMessageType.ACTION_BAR,
-            new TextComponent("§7[ChestSound] chests=0"));
+            new TextComponent("§7" + trChest(player, "finalAudit.debug.chestSoundNoChests")));
       }
       return;
     }
@@ -181,7 +205,7 @@ public class ChestProximitySoundService {
     if (debugChat) {
       if (secondsNow != lastDebugSec[0] && (secondsNow % 2 == 0)) {
         lastDebugSec[0] = secondsNow;
-        player.sendMessage(String.format("§b[ChestSound] nearest=%.1fm %s  t=%.2f", dist, inRange, t));
+        player.sendMessage("§b" + trChest(player, "finalAudit.debug.chestSoundNearest").replace("{distance}", String.format("%.1f", dist)).replace("{range}", String.valueOf(inRange)).replace("{t}", String.format("%.2f", t)));
       }
     }
 

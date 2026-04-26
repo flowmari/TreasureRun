@@ -23,6 +23,16 @@ public class CustomRecipeLoader {
     registerSpecialIronBlockRecipe();
   }
 
+
+  private String trDefault(String key) {
+    try {
+      if (plugin.getI18n() != null) {
+        return plugin.getI18n().tr("ja", key);
+      }
+    } catch (Throwable ignored) {}
+    return key;
+  }
+
   /**
    * サンプル1: ダイヤ3個で特製エメラルド
    */
@@ -37,7 +47,7 @@ public class CustomRecipeLoader {
     recipe.setIngredient('D', Material.DIAMOND);
 
     Bukkit.addRecipe(recipe);
-    plugin.getLogger().info("特製エメラルドのレシピを登録しました。");
+    plugin.getLogger().info("[Recipe] special emerald recipe registered.");
   }
 
   /**
@@ -47,7 +57,7 @@ public class CustomRecipeLoader {
     ItemStack result = new ItemStack(Material.APPLE, 1);
     ItemMeta meta = result.getItemMeta();
     if (meta != null) {
-      meta.setDisplayName(ChatColor.translateAlternateColorCodes('&', "&e特製リンゴ"));
+      meta.setDisplayName(ChatColor.YELLOW + trDefault("finalAudit.item.specialApple"));
       result.setItemMeta(meta);
     }
 
@@ -57,7 +67,7 @@ public class CustomRecipeLoader {
     recipe.addIngredient(3, Material.GOLD_INGOT);
 
     Bukkit.addRecipe(recipe);
-    plugin.getLogger().info("特製リンゴのレシピを登録しました。");
+    plugin.getLogger().info("[Recipe] special apple recipe registered.");
   }
 
   /**
@@ -67,7 +77,7 @@ public class CustomRecipeLoader {
     ItemStack result = new ItemStack(Material.IRON_BLOCK, 1);
     ItemMeta meta = result.getItemMeta();
     if (meta != null) {
-      meta.setDisplayName(ChatColor.translateAlternateColorCodes('&', "&7特製鉄ブロック"));
+      meta.setDisplayName(ChatColor.GRAY + trDefault("finalAudit.item.specialIronBlock"));
       result.setItemMeta(meta);
     }
 
@@ -78,6 +88,6 @@ public class CustomRecipeLoader {
     recipe.setIngredient('I', Material.IRON_INGOT);
 
     Bukkit.addRecipe(recipe);
-    plugin.getLogger().info("特製鉄ブロックのレシピを登録しました。");
+    plugin.getLogger().info("[Recipe] special iron block recipe registered.");
   }
 }

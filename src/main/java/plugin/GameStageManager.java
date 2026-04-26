@@ -923,6 +923,31 @@ public class GameStageManager implements Listener {
 
   // =======================================================
   // ★ 行商人＋ラマ2匹をネオン床ステージの上にスポーンさせる
+
+  private String stageLang() {
+    try {
+      for (Player p : Bukkit.getOnlinePlayers()) {
+        if (p != null && p.isOnline()) {
+          String lang = "en";
+          if (plugin.getPlayerLanguageStore() != null) {
+            lang = plugin.getPlayerLanguageStore().getLang(p, lang);
+          }
+          return lang;
+        }
+      }
+    } catch (Throwable ignored) {}
+    return "en";
+  }
+
+  private String trStage(String key) {
+    try {
+      if (plugin != null && plugin.getI18n() != null) {
+        return plugin.getI18n().tr(stageLang(), key);
+      }
+    } catch (Throwable ignored) {}
+    return key;
+  }
+
   // =======================================================
   public void spawnTraderAndLlamas(Location center) {
     if (center == null) return;
@@ -953,7 +978,7 @@ public class GameStageManager implements Listener {
 
           String n = e.getCustomName();
 
-          if (n != null && n.contains("Treasure Shop")) { try { e.remove(); } catch (Exception ignored) {} }
+          if (n != null && (n.contains("Treasure Shop") || ChatColor.stripColor(n).contains(trStage("finalAudit.shop.treasureShop")))) { try { e.remove(); } catch (Exception ignored) {} }
 
         }
 
@@ -967,7 +992,7 @@ public class GameStageManager implements Listener {
       t.setAI(true);
       t.setPersistent(true);
       t.setGlowing(true);
-      t.setCustomName(ChatColor.GOLD + "" + ChatColor.BOLD + "Treasure Shop");
+      t.setCustomName(ChatColor.GOLD + "" + ChatColor.BOLD + trStage("finalAudit.shop.treasureShop"));
       t.setCustomNameVisible(true);
     });
 
