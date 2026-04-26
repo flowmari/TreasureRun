@@ -843,8 +843,7 @@ gameplay:
     timeUpTitle: TÍMINN ER ÚTRUNNINN!
     treasuresCollected: 'Fjársjóðir fundnir: {got}/{total} ({missing} eftir)'
     overcomingAdversity: YFIRVINNA MÓTLÆTI
-    label:
-      score: Stig
+    label: "Verðlaun"
       time: Tími
       rank: Sæti
     allChestsOpenedBroadcast: '{player} opnaði allar kistur! Lokastig: {score}'

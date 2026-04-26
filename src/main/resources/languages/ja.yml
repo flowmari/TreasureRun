@@ -542,8 +542,7 @@ gameplay:
     timeUpTitle: 時間切れ！
     treasuresCollected: '回収した宝箱: {got}/{total}（残り {missing}）'
     overcomingAdversity: 逆境を越えて
-    label:
-      score: スコア
+    label: "報酬"
       time: タイム
       rank: 順位
     allChestsOpenedBroadcast: '【{player}】が全ての宝箱を開けました！最終スコア: {score}'

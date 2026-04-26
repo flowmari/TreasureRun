@@ -85,8 +85,7 @@ public class RankRewardManager {
 
     // ② チャット表示（Titleは MultiChestPlugin 側で維持するのでここでは送らない）
     String chatRank = ChatColor.GOLD + "🏆 No." + rank + " !!";
-    player.sendMessage(chatRank + ChatColor.RESET + " " +
-        ChatColor.GREEN + "[Reward] " + ChatColor.RESET + sub);
+    player.sendMessage(chatRank + ChatColor.RESET + " " + ChatColor.GREEN + trReward(player, "finalAudit.reward.label") + " " + ChatColor.RESET + sub);
 
     // ③ 音（気づく用：2つ重ねる）
     playSafe(player, Sound.ENTITY_PLAYER_LEVELUP, 1.0f, 1.2f);

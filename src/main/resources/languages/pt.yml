@@ -975,8 +975,7 @@ gameplay:
     timeUpTitle: TEMPO ESGOTADO!
     treasuresCollected: 'Tesouros coletados: {got}/{total} ({missing} restantes)'
     overcomingAdversity: SUPERANDO A ADVERSIDADE
-    label:
-      score: Pontuação
+    label: "Recompensa"
       time: Tempo
       rank: Posição
     allChestsOpenedBroadcast: '{player} abriu todos os baús! Pontuação final: {score}'

@@ -851,8 +851,7 @@ gameplay:
     timeUpTitle: TEMPS ÉCOULÉ !
     treasuresCollected: 'Trésors récupérés : {got}/{total} ({missing} restants)'
     overcomingAdversity: SURMONTER L'ADVERSITÉ
-    label:
-      score: Score
+    label: "Récompense"
       time: Temps
       rank: Rang
     allChestsOpenedBroadcast: '{player} a ouvert tous les coffres ! Score final : {score}'
