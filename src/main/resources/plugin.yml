@@ -8,20 +8,18 @@ commands:
     description: Reload TreasureRun config.yml (including language settings)
     usage: /<command>
     permission: treasure.reload
-    permission-message: "§cYou do not have permission to use this command. OP only."
+
     aliases: [treasureReload]   # ✅ 追加：/treasureReload を /gameReload の別名として有効化
 
   treasureReload:               # ✅ 追加：別名ではなく「独立コマンド」としても定義（どちらでも動く）
     description: Reload TreasureRun config.yml (including language settings)
     usage: /<command>
     permission: treasure.reload
-    permission-message: "§cYou do not have permission to use this command. OP only."
 
   game:
     description: TreasureRun game control
     usage: /game start | /game end
     permission: treasure.game
-    permission-message: "§cYou do not have permission to use this command."
 
   gameRank:
     description: Show the top 10 players.
@@ -37,13 +35,11 @@ commands:
     description: Craft a special emerald using 3 diamonds.
     usage: /<command>
     permission: treasure.craftspecialemerald
-    permission-message: "§cYou do not have permission to use this command."
 
   checktreasureemerald:
     description: Check if the item in main hand is Treasure Emerald (PDC).
     usage: /checktreasureemerald
     permission: treasure.checktreasureemerald
-    permission-message: "§cYou do not have permission to use this command."
 
   gameMenu:
     description: Show the TreasureRun rule menu.
@@ -54,7 +50,6 @@ commands:
     description: End TreasureRun game
     usage: /gameEnd
     permission: treasure.game
-    permission-message: "§cYou do not have permission to use this command."
 
   gamestart:
     description: Start TreasureRun game (official)
@@ -71,7 +66,7 @@ commands:
     description: Save/List/Remove your favorite quotes
     usage: /quoteFavorite <latest|list|remove|reread|book>
     permission: treasure.quoteFavorite
-    permission-message: "§cYou do not have permission to use this command."
+
     aliases: [qfav, quotefav, favquote]
 
   # ✅ 追加：言語切替コマンド
@@ -79,13 +74,11 @@ commands:
     description: Set your language
     usage: /lang <code>
     permission: treasure.lang
-    permission-message: "§cYou do not have permission to use this command."
 
   treasureExportLang:
     description: Export config.yml messages.translation.* to languages/*.yml
     usage: /treasureexportLang [overwrite]
     permission: treasure.reload
-    permission-message: "§cYou do not have permission to use this command. OP only."
 
   # =============================
   # ★追加：撮影・動作確認用（デバッグ）コマンド
@@ -94,7 +87,6 @@ commands:
     description: Debug - force rank effect (1/2/3)
     usage: /rank <1|2|3>
     permission: treasure.debug.rank
-    permission-message: "§cYou do not have permission to use this command. OP only."
 
 permissions:
   treasure.start:
