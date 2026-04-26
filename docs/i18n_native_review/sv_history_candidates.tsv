@@ -1,0 +1,185 @@
+pool	index	kind	freq	value	note
+outcome.success.easy.pool	1	CANDIDATE_1	7	You made it. The truth remains.	
+outcome.success.easy.pool	1	CANDIDATE_2	6	Även ett litet steg räknas.	
+outcome.success.easy.pool	1	CANDIDATE_3	6	Du klarade det. Sanningen kvarstår.	
+outcome.success.easy.pool	2	CANDIDATE_1	7	You listened, and the path opened.	
+outcome.success.easy.pool	2	CANDIDATE_2	6	Du lyssnade och vägen öppnade sig.	
+outcome.success.easy.pool	3	CANDIDATE_1	7	Distance found its meaning, and time answered your steps.	
+outcome.success.easy.pool	3	CANDIDATE_2	6	Distansen fick sin mening och tiden svarade på dina steg.	
+outcome.success.easy.pool	4	NO_CANDIDATE	0		
+outcome.success.easy.pool	5	NO_CANDIDATE	0		
+outcome.success.easy.pool	6	NO_CANDIDATE	0		
+outcome.success.easy.pool	7	NO_CANDIDATE	0		
+outcome.success.easy.pool	8	NO_CANDIDATE	0		
+outcome.success.easy.pool	9	NO_CANDIDATE	0		
+outcome.success.easy.pool	10	NO_CANDIDATE	0		
+outcome.success.easy.pool	11	NO_CANDIDATE	0		
+outcome.success.easy.pool	12	NO_CANDIDATE	0		
+outcome.success.easy.pool	13	NO_CANDIDATE	0		
+outcome.success.easy.pool	14	NO_CANDIDATE	0		
+outcome.success.easy.pool	15	NO_CANDIDATE	0		
+outcome.success.easy.pool	16	NO_CANDIDATE	0		
+outcome.success.easy.pool	17	NO_CANDIDATE	0		
+outcome.success.normal.pool	1	CANDIDATE_1	7	Distance found its meaning. Time answered your journey.	
+outcome.success.normal.pool	1	CANDIDATE_2	6	Avstånd blev till mening.	
+outcome.success.normal.pool	1	CANDIDATE_3	6	Distansen fick sin mening. Tiden svarade på din resa.	
+outcome.success.normal.pool	2	CANDIDATE_1	7	Run complete. A quiet result, backed by real work.	
+outcome.success.normal.pool	2	CANDIDATE_2	6	Löpningen klar. Ett stilla resultat, buret av verkligt arbete.	
+outcome.success.normal.pool	3	CANDIDATE_1	7	The moment passed. The record remained.	
+outcome.success.normal.pool	3	CANDIDATE_2	6	Ögonblicket passerade. Rekordet stannade kvar.	
+outcome.success.normal.pool	4	NO_CANDIDATE	0		
+outcome.success.normal.pool	5	NO_CANDIDATE	0		
+outcome.success.normal.pool	6	NO_CANDIDATE	0		
+outcome.success.normal.pool	7	NO_CANDIDATE	0		
+outcome.success.normal.pool	8	NO_CANDIDATE	0		
+outcome.success.normal.pool	9	NO_CANDIDATE	0		
+outcome.success.normal.pool	10	NO_CANDIDATE	0		
+outcome.success.normal.pool	11	NO_CANDIDATE	0		
+outcome.success.normal.pool	12	NO_CANDIDATE	0		
+outcome.success.normal.pool	13	NO_CANDIDATE	0		
+outcome.success.normal.pool	14	NO_CANDIDATE	0		
+outcome.success.normal.pool	15	NO_CANDIDATE	0		
+outcome.success.normal.pool	16	NO_CANDIDATE	0		
+outcome.success.normal.pool	17	NO_CANDIDATE	0		
+outcome.success.normal.pool	18	NO_CANDIDATE	0		
+outcome.success.normal.pool	19	NO_CANDIDATE	0		
+outcome.success.normal.pool	20	NO_CANDIDATE	0		
+outcome.success.normal.pool	21	NO_CANDIDATE	0		
+outcome.success.normal.pool	22	NO_CANDIDATE	0		
+outcome.success.normal.pool	23	NO_CANDIDATE	0		
+outcome.success.normal.pool	24	NO_CANDIDATE	0		
+outcome.success.normal.pool	25	NO_CANDIDATE	0		
+outcome.success.normal.pool	26	NO_CANDIDATE	0		
+outcome.success.normal.pool	27	NO_CANDIDATE	0		
+outcome.success.normal.pool	28	NO_CANDIDATE	0		
+outcome.success.normal.pool	29	NO_CANDIDATE	0		
+outcome.success.normal.pool	30	NO_CANDIDATE	0		
+outcome.success.normal.pool	31	NO_CANDIDATE	0		
+outcome.success.normal.pool	32	NO_CANDIDATE	0		
+outcome.success.normal.pool	33	NO_CANDIDATE	0		
+outcome.success.normal.pool	34	NO_CANDIDATE	0		
+outcome.success.normal.pool	35	NO_CANDIDATE	0		
+outcome.success.hard.pool	1	CANDIDATE_1	7	In the north wind, clarity outlasts speed.	
+outcome.success.hard.pool	1	CANDIDATE_2	6	I kylan bestod klarheten.	
+outcome.success.hard.pool	1	CANDIDATE_3	6	I nordanvinden överlever klarhet hastigheten.	
+outcome.success.hard.pool	2	CANDIDATE_1	7	Not luck. Alignment.	
+outcome.success.hard.pool	2	CANDIDATE_2	6	Inte tur. Inriktning.	
+outcome.success.hard.pool	3	CANDIDATE_1	7	The world did not change. Your place in it did.	
+outcome.success.hard.pool	3	CANDIDATE_2	6	Världen förändrades inte. Din plats i den gjorde det.	
+outcome.success.hard.pool	4	NO_CANDIDATE	0		
+outcome.success.hard.pool	5	NO_CANDIDATE	0		
+outcome.success.hard.pool	6	NO_CANDIDATE	0		
+outcome.success.hard.pool	7	NO_CANDIDATE	0		
+outcome.success.hard.pool	8	NO_CANDIDATE	0		
+outcome.success.hard.pool	9	NO_CANDIDATE	0		
+outcome.success.hard.pool	10	NO_CANDIDATE	0		
+outcome.success.hard.pool	11	NO_CANDIDATE	0		
+outcome.success.hard.pool	12	NO_CANDIDATE	0		
+outcome.success.hard.pool	13	NO_CANDIDATE	0		
+outcome.success.hard.pool	14	NO_CANDIDATE	0		
+outcome.success.hard.pool	15	NO_CANDIDATE	0		
+outcome.success.hard.pool	16	NO_CANDIDATE	0		
+outcome.success.hard.pool	17	NO_CANDIDATE	0		
+outcome.success.hard.pool	18	NO_CANDIDATE	0		
+outcome.success.hard.pool	19	NO_CANDIDATE	0		
+outcome.success.hard.pool	20	NO_CANDIDATE	0		
+outcome.success.hard.pool	21	NO_CANDIDATE	0		
+outcome.success.hard.pool	22	NO_CANDIDATE	0		
+outcome.success.hard.pool	23	NO_CANDIDATE	0		
+outcome.success.hard.pool	24	NO_CANDIDATE	0		
+outcome.success.hard.pool	25	NO_CANDIDATE	0		
+outcome.success.hard.pool	26	NO_CANDIDATE	0		
+outcome.success.hard.pool	27	NO_CANDIDATE	0		
+outcome.success.hard.pool	28	NO_CANDIDATE	0		
+outcome.success.hard.pool	29	NO_CANDIDATE	0		
+outcome.success.hard.pool	30	NO_CANDIDATE	0		
+outcome.success.hard.pool	31	NO_CANDIDATE	0		
+outcome.success.hard.pool	32	NO_CANDIDATE	0		
+outcome.timeup.easy.pool	1	CANDIDATE_1	7	Time ran out. Nothing else did.	
+outcome.timeup.easy.pool	1	CANDIDATE_2	6	Tiden tog slut.\nInte du.	
+outcome.timeup.easy.pool	1	CANDIDATE_3	6	Tiden rann ut. Inget annat.	
+outcome.timeup.easy.pool	2	CANDIDATE_1	7	The run ended. You didn’t.	
+outcome.timeup.easy.pool	2	CANDIDATE_2	6	Löpningen tog slut. Du inte.	
+outcome.timeup.easy.pool	3	CANDIDATE_1	7	Take a breath. Then another.	
+outcome.timeup.easy.pool	3	CANDIDATE_2	6	Ta ett andetag. Sedan ett till.	
+outcome.timeup.easy.pool	4	NO_CANDIDATE	0		
+outcome.timeup.easy.pool	5	NO_CANDIDATE	0		
+outcome.timeup.easy.pool	6	NO_CANDIDATE	0		
+outcome.timeup.easy.pool	7	NO_CANDIDATE	0		
+outcome.timeup.easy.pool	8	NO_CANDIDATE	0		
+outcome.timeup.easy.pool	9	NO_CANDIDATE	0		
+outcome.timeup.easy.pool	10	NO_CANDIDATE	0		
+outcome.timeup.easy.pool	11	NO_CANDIDATE	0		
+outcome.timeup.easy.pool	12	NO_CANDIDATE	0		
+outcome.timeup.easy.pool	13	NO_CANDIDATE	0		
+outcome.timeup.easy.pool	14	NO_CANDIDATE	0		
+outcome.timeup.easy.pool	15	NO_CANDIDATE	0		
+outcome.timeup.easy.pool	16	NO_CANDIDATE	0		
+outcome.timeup.normal.pool	1	CANDIDATE_1	7	The distance closed. Time did not.	
+outcome.timeup.normal.pool	1	CANDIDATE_2	6	Distansen minskade. Tiden inte.	
+outcome.timeup.normal.pool	1	CANDIDATE_3	3	Avståndet slöts.\nTiden gjorde det inte.	
+outcome.timeup.normal.pool	1	CANDIDATE_4	3	Avståndet krympte.\nInte tiden.	
+outcome.timeup.normal.pool	2	CANDIDATE_1	7	The map is still open. Come back to it.	
+outcome.timeup.normal.pool	2	CANDIDATE_2	6	Kartan är fortfarande öppen. Kom tillbaka.	
+outcome.timeup.normal.pool	3	CANDIDATE_1	7	The treasure remained out of reach, but the signal was real.	
+outcome.timeup.normal.pool	3	CANDIDATE_2	6	Skatten förblev utom räckhåll, men signalen var verklig.	
+outcome.timeup.normal.pool	4	NO_CANDIDATE	0		
+outcome.timeup.normal.pool	5	NO_CANDIDATE	0		
+outcome.timeup.normal.pool	6	NO_CANDIDATE	0		
+outcome.timeup.normal.pool	7	NO_CANDIDATE	0		
+outcome.timeup.normal.pool	8	NO_CANDIDATE	0		
+outcome.timeup.normal.pool	9	NO_CANDIDATE	0		
+outcome.timeup.normal.pool	10	NO_CANDIDATE	0		
+outcome.timeup.normal.pool	11	NO_CANDIDATE	0		
+outcome.timeup.normal.pool	12	NO_CANDIDATE	0		
+outcome.timeup.normal.pool	13	NO_CANDIDATE	0		
+outcome.timeup.normal.pool	14	NO_CANDIDATE	0		
+outcome.timeup.normal.pool	15	NO_CANDIDATE	0		
+outcome.timeup.normal.pool	16	NO_CANDIDATE	0		
+outcome.timeup.normal.pool	17	NO_CANDIDATE	0		
+outcome.timeup.normal.pool	18	NO_CANDIDATE	0		
+outcome.timeup.normal.pool	19	NO_CANDIDATE	0		
+outcome.timeup.normal.pool	20	NO_CANDIDATE	0		
+outcome.timeup.hard.pool	1	CANDIDATE_1	7	Even the aurora fades. Come back with a new stride.	
+outcome.timeup.hard.pool	1	CANDIDATE_2	6	Även norrsken bleknar. Kom tillbaka med ett nytt steg.	
+outcome.timeup.hard.pool	1	CANDIDATE_3	3	Till och med norrskenet bleknar.\nKom tillbaka igen.	
+outcome.timeup.hard.pool	1	CANDIDATE_4	3	Till och med norrsken bleknar.\nKom tillbaka igen.	
+outcome.timeup.hard.pool	2	CANDIDATE_1	7	The moment slipped away. The meaning did not.	
+outcome.timeup.hard.pool	2	CANDIDATE_2	6	Ögonblicket gled bort. Meningen inte.	
+outcome.timeup.hard.pool	3	CANDIDATE_1	7	The sky kept moving. So can you.	
+outcome.timeup.hard.pool	3	CANDIDATE_2	6	Himlen fortsatte röra sig. Det kan du också.	
+outcome.timeup.hard.pool	4	NO_CANDIDATE	0		
+outcome.timeup.hard.pool	5	NO_CANDIDATE	0		
+outcome.timeup.hard.pool	6	NO_CANDIDATE	0		
+outcome.timeup.hard.pool	7	NO_CANDIDATE	0		
+outcome.timeup.hard.pool	8	NO_CANDIDATE	0		
+outcome.timeup.hard.pool	9	NO_CANDIDATE	0		
+outcome.timeup.hard.pool	10	NO_CANDIDATE	0		
+outcome.timeup.hard.pool	11	NO_CANDIDATE	0		
+outcome.timeup.hard.pool	12	NO_CANDIDATE	0		
+outcome.timeup.hard.pool	13	NO_CANDIDATE	0		
+outcome.timeup.hard.pool	14	NO_CANDIDATE	0		
+outcome.timeup.hard.pool	15	NO_CANDIDATE	0		
+outcome.timeup.hard.pool	16	NO_CANDIDATE	0		
+outcome.timeup.hard.pool	17	NO_CANDIDATE	0		
+outcome.timeup.hard.pool	18	NO_CANDIDATE	0		
+outcome.timeup.hard.pool	19	NO_CANDIDATE	0		
+outcome.timeup.hard.pool	20	NO_CANDIDATE	0		
+outcome.timeup.hard.pool	21	NO_CANDIDATE	0		
+outcome.timeup.hard.pool	22	NO_CANDIDATE	0		
+outcome.timeup.hard.pool	23	NO_CANDIDATE	0		
+outcome.timeup.hard.pool	24	NO_CANDIDATE	0		
+outcome.timeup.hard.pool	25	NO_CANDIDATE	0		
+outcome.timeup.hard.pool	26	NO_CANDIDATE	0		
+outcome.timeup.hard.pool	27	NO_CANDIDATE	0		
+outcome.timeup.hard.pool	28	NO_CANDIDATE	0		
+outcome.timeup.hard.pool	29	NO_CANDIDATE	0		
+outcome.timeup.hard.pool	30	NO_CANDIDATE	0		
+outcome.timeup.hard.pool	31	NO_CANDIDATE	0		
+outcome.timeup.hard.pool	32	NO_CANDIDATE	0		
+outcome.timeup.hard.pool	33	NO_CANDIDATE	0		
+outcome.timeup.hard.pool	34	NO_CANDIDATE	0		
+outcome.timeup.hard.pool	35	NO_CANDIDATE	0		
+outcome.timeup.hard.pool	36	NO_CANDIDATE	0		
+outcome.timeup.hard.pool	37	NO_CANDIDATE	0		
+outcome.timeup.hard.pool	38	NO_CANDIDATE	0		

@@ -1,0 +1,1112 @@
+outcome:
+  notice:
+    timeUpGameOver: O tempo acabou. Fim de jogo.
+    retryGuide: Tente novamente por uma rota diferente.
+  success:
+    common:
+      pool: []
+    easy:
+      pool:
+      - 'Você conseguiu.
+
+        A verdade permanece.'
+      - 'Mesmo que tenha sido apenas um pequeno passo,
+
+        você se manteve firme.'
+      - 'Você escutou.
+
+        O caminho se abriu.'
+      - "> Você chegou até aqui\n> \n> As regras eram simples —\n> \n> a escolha era sua."
+      - "> A distância ganhou sentido.\n> \n> e o tempo respondeu aos seus passos."
+      - "> Nem tudo brilha para sempre.\n> \n> Mas este momento brilhou."
+      - 'A luz caiu por igual,
+
+        e toda sombra desapareceu.'
+      - 'O vento silenciou.
+
+        e tudo voltou ao seu lugar.'
+      - 'Um momento de silêncio.
+
+        O mundo firmou a própria respiração.'
+      - 'O registro ficou gravado fundo na areia —
+
+        fora do alcance do vento.'
+      - 'A harmonia foi restaurada.
+
+        Tudo existiu para este momento.'
+      - 'O tempo passou em silêncio,
+
+        guardado nos cantos da memória.'
+      - 'O céu mudou de cor,
+
+        e uma história chegou ao fim.'
+      - 'As ondas se acalmaram,
+
+        e o mar escondeu de novo sua profundidade.'
+      - 'Os passos pararam,
+
+        e apenas o lugar permaneceu.'
+      - 'Vitória e derrota
+
+        não são mais que grãos de areia.'
+      - 'A estrada continua — ou termina.
+
+        De qualquer forma, repousa sobre a mesma terra.'
+    normal:
+      pool:
+      - 'A distância encontrou seu sentido.
+
+        O tempo respondeu à sua jornada.'
+      - 'O tempo acabou.
+
+        Mas nem tudo terminou.'
+      - 'O eixo foi encontrado.
+
+        O mundo cessou seu movimento.'
+      - 'O vidro sustentou o fôlego,
+
+        e você sustentou sua posição.'
+      - 'Sob a quietude do céu,
+
+        seu espírito não vacilou.'
+      - 'Poucas coisas brilham para sempre.
+
+        Mas este momento foi radiante.'
+      - 'Você atravessou a terra frágil,
+
+        sem perder a visão.'
+      - 'O momento passou.
+
+        O legado permanece.'
+      - 'A sorte se apaga rápido.
+
+        A ordem permanece.'
+      - 'O céu não conhece pausa em seu círculo infinito,
+
+        e você também não buscou a sua.'
+      - 'O centro foi alcançado.
+
+        O mundo ficou imóvel.'
+      - 'Finalmente aqui.
+
+        A verdade permanece inflexível.'
+      - 'Você foi até o fim.
+
+        E lembre-se: foi você, e ninguém mais, que escolheu este caminho.'
+      - 'O tempo deslizou para o silêncio,
+
+        encontrando lugar nas profundezas da mente.'
+      - 'Enquanto o céu se transformava,
+
+        a história encontrou sua resolução final.'
+      - 'As águas se acalmaram,
+
+        e o céu voltou a velar seu abismo.'
+      - 'Os passos cessaram,
+
+        e apenas o lugar permaneceu.'
+      - 'A luz caiu por igual,
+
+        e toda sombra desapareceu.'
+      - 'O vento silenciou.
+
+        e tudo voltou ao seu lugar.'
+      - 'Um momento de silêncio.
+
+        O mundo firmou a própria respiração.'
+      - 'O registro ficou gravado fundo na areia —
+
+        fora do alcance do vento.'
+      - 'A harmonia foi restaurada.
+
+        Tudo existiu para este momento.'
+      - 'CORRIDA CONCLUÍDA.
+
+        Claro. Encontrado.
+
+        Isso basta.'
+      - 'CORRIDA CONCLUÍDA.
+
+        O caminho resistiu.
+
+        Você também.'
+      - 'O céu continuou se movendo.
+
+        Você também pode.'
+      - 'CORRIDA CONCLUÍDA.
+
+        Um resultado silencioso.
+
+        O peso do trabalho real.'
+      - 'Você apenas caminhou pela trilha
+
+        que o mundo colocou diante de você.'
+      - 'O chão não cedeu.
+
+        Ele confiou nos seus passos.'
+      - 'Este momento se alinhou
+
+        com o ritmo antigo das estrelas.'
+      - 'Você não tomou nada.
+
+        Você compreendeu algo.'
+      - 'Você não ganhou coisa alguma.
+
+        Apenas viu a verdade como ela era.'
+      - 'Você não tomou este lugar.
+
+        Você pertencia a ele.'
+      - 'Você caminhou por uma estrada
+
+        mais antiga que a própria memória.'
+      - 'A terra não resistiu.
+
+        Ela reconheceu você.'
+      - 'Este momento se alinhou
+
+        com a quietude das estrelas.'
+    hard:
+      pool:
+      - 'No vento do norte,
+
+        a clareza sobrevive à velocidade.'
+      - 'O centro foi encontrado.
+
+        O mundo repousou.'
+      - 'As estrelas permanecem em silêncio.
+
+        Seu registro fala por você.'
+      - 'O resultado permaneceu.
+
+        A posição mudou.'
+      - 'Entre gelo e vidro,
+
+        você escolheu o controle.'
+      - 'As ondas silenciaram,
+
+        e o mar retomou suas profundezas ocultas.'
+      - 'Alguns tesouros ainda esperam.
+
+        Da próxima vez, outro caminho.'
+      - 'O céu não mudou.
+
+        Você mudou.'
+      - 'O momento passou.
+
+        O que permaneceu foi a ordem.'
+      - 'O inverno é honesto.
+
+        Sua corrida também foi.'
+      - 'As estrelas se alinharam por um instante.
+
+        Você percebeu.'
+      - 'A distância se fechou.
+
+        O tempo não.'
+      - 'As regras do mundo permaneceram firmes.
+
+        E o sinal de possibilidade era real.'
+      - 'O caminho se fechou em silêncio.
+
+        Você já havia atravessado.'
+      - 'Nada mudou.
+
+        Apenas sua posição mudou.'
+      - 'Não foi sorte.
+
+        Foi alinhamento.'
+      - 'O momento passou.
+
+        O registro permanece.'
+      - 'O resultado não mudou.
+
+        Ainda assim, você avançou.'
+      - 'A saída não mudou.
+
+        Mas você alcançou outro nível.'
+      - 'O final foi o mesmo.
+
+        Mas quem chegou até ele já havia mudado.'
+      - 'O destino é o mesmo
+
+        — mas você já não é o viajante de antes.'
+      - 'A luz caiu por igual,
+
+        e toda sombra desapareceu.'
+      - 'O vento silenciou.
+
+        e tudo voltou ao seu lugar.'
+      - 'Um momento de silêncio.
+
+        O mundo firmou a própria respiração.'
+      - 'O registro ficou gravado fundo na areia —
+
+        fora do alcance do vento.'
+      - 'A harmonia foi restaurada.
+
+        Tudo existiu para este momento.'
+      - 'O tempo passou em silêncio,
+
+        guardado nos cantos da memória.'
+      - 'O céu mudou de cor,
+
+        e uma história chegou ao fim.'
+      - 'As ondas se acalmaram,
+
+        e o mar escondeu de novo sua profundidade.'
+      - 'Os passos pararam,
+
+        e apenas o lugar permaneceu.'
+      - 'Vitória e derrota
+
+        não são mais que grãos de areia.'
+      - 'A estrada continua — ou termina.
+
+        De qualquer forma, repousa sobre a mesma terra.'
+  timeup:
+    easy:
+      pool:
+      - 'O tempo acabou.
+
+        Mas você não.'
+      - 'O tesouro pode esperar.
+
+        Você também.'
+      - 'Respire.
+
+        Depois, respire outra vez.'
+      - 'Por agora, é tudo.
+
+        Siga para o próximo passo.'
+      - 'Você ainda está aqui.
+
+        É isso que importa.'
+      - 'A corrida terminou.
+
+        Você não.'
+      - 'O TEMPO ACABOU.
+
+        A corrida terminou.
+
+        Você não.'
+      - 'O TEMPO ACABOU.
+
+        As regras não mudam.
+
+        Tente outra vez.'
+      - 'O TEMPO ACABOU.
+
+        “Quase” também é real.'
+      - 'O sol se pôs,
+
+        e a sombra cobriu o mundo mais uma vez.'
+      - 'Os últimos grãos de areia caíram,
+
+        e a história se encerrou em silêncio.'
+      - 'O vento passou,
+
+        e as pegadas desapareceram sem deixar traço.'
+      - 'A maré subiu,
+
+        e o que esteve ali voltou ao mar.'
+      - 'Silêncio.
+
+        Apenas o tempo passou.'
+      - 'Vitória e derrota
+
+        não são mais que grãos de areia.'
+      - 'A estrada continua — ou termina.
+
+        De qualquer forma, repousa sobre a mesma terra.'
+    normal:
+      pool:
+      - 'A distância se fechou.
+
+        O tempo não.'
+      - 'O mundo manteve suas regras.
+
+        Você tocou sua borda.'
+      - 'Você não chegou.
+
+        Mas o sinal era real.'
+      - 'Alguns tesouros ainda esperam.
+
+        Vamos tentar outro caminho.'
+      - 'O resultado permaneceu.
+
+        A posição mudou.'
+      - 'O tempo acabou.
+
+        O sentido não.'
+      - 'Foi por pouco.
+
+        O som disse isso.'
+      - 'O mapa ainda está aberto.
+
+        Volte a ele.'
+      - 'As regras do mundo permaneceram firmes.
+
+        O sinal de possibilidade era real.'
+      - O mundo manteve suas regras.
+      - 'O momento passou.
+
+        O registro permanece.'
+      - 'O sol se pôs,
+
+        e a sombra cobriu o mundo mais uma vez.'
+      - 'Os últimos grãos de areia caíram,
+
+        e a história se encerrou em silêncio.'
+      - 'O vento passou,
+
+        e as pegadas desapareceram sem deixar traço.'
+      - 'A maré subiu,
+
+        e o que esteve ali voltou ao mar.'
+      - 'Silêncio.
+
+        Apenas o tempo passou.'
+      - 'Vitória e derrota
+
+        não são mais que grãos de areia.'
+      - 'A estrada continua — ou termina.
+
+        De qualquer forma, repousa sobre a mesma terra.'
+      - "> O tempo acabou.\n> \n> Nada mais acabou."
+      - "> O resultado não mudou.\n> \n> Mas sua posição mudou."
+    hard:
+      pool:
+      - 'Até a aurora se apaga.
+
+        Volte com um novo passo.'
+      - 'Em um mundo frágil,
+
+        a pressa estilhaça a clareza antes que ela seja encontrada.'
+      - 'O momento escapou.
+
+        O sentido não.'
+      - 'O inverno é paciente.
+
+        Seja também.'
+      - 'O céu continuou se movendo.
+
+        Você também continuará.'
+      - 'A história segue.
+
+        O fim ainda não chegou.'
+      - 'As estrelas estavam lá, observando.
+
+        Outra vez.'
+      - 'O gelo leva seu tempo.
+
+        Você também precisará levar o seu.'
+      - 'O céu continuou se movendo.
+
+        Você também pode.'
+      - 'O norte aprendeu a esperar.
+
+        Você também deve aprender.'
+      - 'Isto é um intervalo
+
+        — ainda não acabou.'
+      - 'Como nuvens à deriva,
+
+        não perca seu fluxo — como um rio.'
+      - 'O som estava perto.
+
+        A distância era real.
+
+        Mas aquele momento não pôde ser salvo.'
+      - 'Você estava se aproximando.
+
+        Só o tempo não estava.'
+      - 'O mundo se manteve fiel às suas regras.
+
+        Você tocou a borda delas.'
+      - 'Você não alcançou o tesouro.
+
+        Mas o sinal era real.'
+      - 'Nada mudou.
+
+        Apenas sua posição mudou.'
+      - 'Não foi sorte.
+
+        Foi alinhamento.'
+      - 'O momento escapou,
+
+        mas o registro permaneceu.'
+      - 'Você atravessou chão frágil
+
+        e deixou o horizonte intacto.'
+      - 'Nada mudou.
+
+        Apenas sua posição mudou.
+
+        Não foi sorte.
+
+        Foi alinhamento.
+
+        O momento passou.
+
+        O registro permanece.'
+      - 'O sol se pôs,
+
+        e a sombra cobriu o mundo mais uma vez.'
+      - 'Os últimos grãos de areia caíram,
+
+        e a história se encerrou em silêncio.'
+      - 'O vento passou,
+
+        e as pegadas desapareceram sem deixar traço.'
+      - 'A maré subiu,
+
+        e o que esteve ali voltou ao mar.'
+      - 'Silêncio.
+
+        Apenas o tempo passou.'
+      - 'Vitória e derrota
+
+        não são mais que grãos de areia.'
+      - 'A estrada continua — ou termina.
+
+        De qualquer forma, repousa sobre a mesma terra.'
+      - 'A estação se fechou.
+
+        A terra permaneceu.'
+      - 'O caminho permanece.
+
+        Apenas seus passos pararam.'
+      - 'Seu tempo acabou.
+
+        O céu não.'
+      - 'Não foi rejeição.
+
+        Apenas silêncio.'
+      - 'O mundo ainda está inteiro.
+
+        Você pode voltar — mudada.'
+      - 'A estação terminou.
+
+        A floresta permanece.'
+      - 'A distância estava se fechando.
+
+        O tempo manteve seu ritmo.'
+      - 'Seu tempo parou.
+
+        O céu continuou se movendo.'
+      - 'Não foi rejeição.
+
+        Apenas silêncio.'
+      - 'O caminho ainda está aqui.
+
+        Você pode voltar — mudada.'
+meta:
+  lang: pt
+  note: Put translation keys under e.g. command.xxx / gui.xxx / messages.xxx etc.
+  error:
+    noData: Sem dados
+  favorites:
+    title: ★ Favoritos
+    headerLatest: 'Mais recentes 20  |  idioma: {lang}'
+quotes:
+  outcome:
+    success: null
+    timeup: null
+    other: null
+  success:
+  - '[TreasureRun][Lang] ''language.iconMaterial:'' セクションが見つかりません（全部PAPERになります）'
+  - '⚠ /rank が plugin.yml に見つかりません（commands: rank を追加済みか確認してください）'
+  - === 🌟 TreasureRun ランキング TOP10（タイム優先）🌟 ===
+  - ゲーム中は reload できません（安全のため）。/gameEnd してから実行してください。
+  - ✅ TreasureRun config を再読み込みしました（language GUI含む）。
+  - '点（累計:'
+  - 権限がありません（OP限定）
+  - の演出だけ発動しました（ランキング/DBは変更なし）
+  - Light fell evenly, ,\nand every shadow vanished.\n（光が等しく降り注ぎ、すべての影が消えた。）
+  - The wind fell silent.\nand everything returned to where it belonged.\n（風が止み、あるべき場所に、あるべきものが戻った。）
+  - A moment of silence.\nThe world steadied its breath.\n（一瞬の静寂。世界がその呼吸を整えた。）
+  - The record is etched deep in the sand—\nbeyond the reach of the wind.\n（記録は砂に深く刻まれ、風もそれを動かせない。）
+  - Harmony was restored.\nEverything had been for this moment.\n（調和が訪れた。すべては、この瞬間のためにあった。）
+  - Time slipped by in silence,\ntucked away in the corners of memory.\n（時間は静かに流れ、記憶の隅に収まった。）
+  - The sky shifted in color,\nand one story came to its end.\n（空の色が変わり、一つの物語が完結を告げた。）
+  - The waves grew calm,\nand the sea hid its depths once more.\n（波は穏やかになり、海は再びその深淵を隠した。）
+  - The footsteps stopped,\nand only the place remained.\n（歩みは止まり、場所だけがそこに残された。）
+  - The sun sank,\nand shadow covered the world once again.\n（日は落ち、影は再び世界を覆った。）
+  - The last grains of sand fell,\nand the story quietly came to a close.\n（砂はすべて落ちきり、物語は静かに幕を閉じた。）
+  - The wind swept through,\nand the footprints vanished without a trace.\n（風が吹き抜け、足跡は跡形もなく消え去った。）
+  - The tide came in,\nWhat once had been there returned to the sea.\n（潮が満ちた。かつてそこにあったものは、海へと還った。）
+  - Silence.\nOnly time passed through.\n（沈黙。ただ、時間だけがそこを通り過ぎた。）
+  - Distance became meaning.\nTime answered your steps.\n（距離が意味になった。時間があなたの歩みに答えた。）
+  - The center was found.\nThe world came to rest.\n（軸(中心)は見出された。世界はその運動を止めた。）
+  - The glass didn’t break.\nNeither did you.\n（ガラスは割れなかった。あなたも折れなかった。）
+  - Beneath a quiet sky,\nyour will held firm.\n（静かな空の下で、意志は持ちこたえた。）
+  - Very little shines forever\n—but this moment was different.\n（永遠に輝くものなんてほとんどないけれど、この瞬間は別格だった。）
+  - You made it across the fragile ground,\nholding fast to the horizon the whole way.\n（脆い地面を渡り切った。地平線景色をしっかりと握りしめたまま。）
+  - The moment passed.\n What remained was the record—the achievement.\n（瞬間は過ぎ去った。遺されたもの記録・功績は残る。）
+  - Luck fades quickly.\nOrder endures.\n（運は速やかに消え、整い秩序は永続する。）
+  - The sky knows no rest in its endless cycle.\nNeither do you.\n（空はその終わりなき循環に休止を知らぬ。汝もまた、止まらず。）
+  - The center was reached.\nThe world stood still.\n（中心は到達された。世界は立ち尽くし静止した。）
+  - At last,you’ve made it here.\nThe truth stands—unbowed.\n（ついに、ここへ辿り着いた。真実は屈することなく、そこに在る。）
+  - Complete. This path was yours\n—and yours alone.\n（完遂。この道を選んだのは他でもないあなただ。）
+  - Time drifted into silence,\nand found its place in the deepest corners of the mind.\n（時は静寂へと漂い、精神の奥底の隅に自らの居場所を見つけた。）
+  - As the sky shifted,\none story found its final resolution.\n（空が姿を変えるとともに、一つの物語はその最終的な解決完結を見出した。）
+  - The waves fell quiet,\nand the sky hid its depths once more.\n（波は静まり、空は再びその深淵を覆い隠した。）
+  - The footsteps ceased,\nand only the place remained.\n（歩みは途絶え、ただ場所だけがそこに在り続けた。）
+  - You’ve made it.\nThe truth remains.\n（たどり着いた。正さはそのままに。）
+  - Even if it was only a small step,\nyou held your ground.\n（小さな一歩でも、あなたは守り抜いた。）
+  - You listened.\n The path opened.\n（耳を澄ませた。道がひらいた。）
+  - （あなたは辿り着いた。
+  - （距離が意味になり、
+  - （すべてが永遠に輝くわけじゃない。
+  - The distance has found its meaning.\nTime has rewarded your journey.\n（距離が意味になった。時間があなたの歩みに答えた。）
+  - The axis is found.\nthe world has cased its motion.\n（軸(中心)は見出された。世界はその運動を止めた。）
+  - The glass held its breath,\nand you held your ground.\n（ガラスは割れなかった。あなたも折れなかった。）
+  - Under the stillness of the sky,\nyour spirit did not waver.\n（静かな空の下で、意志は持ちこたえた。）
+  - Few things shine forever.\nbut this moment was radiant.\n（永遠に輝くものなんてほとんどないけれど、この瞬間は別格だった。）
+  - You traversed the fragile earth,\nwithout losing the view.\n（脆い地面を渡り切った。地平線景色をしっかりと握りしめたまま。）
+  - The moment has passed.\nThe legacy remains.\n（瞬間は過ぎ去った。遺されたもの記録・功績は残る。）
+  - Luck fades fast.\norder endures.\n（運は速やかに消え、整い秩序は永続する。）
+  - The sky knows no pause in endless circle,\nnor shall you find yours.\n（空はその終わりなき循環に休止を知らぬ。汝もまた、止まらず。）
+  - The center has been reached.\nThe world stood still.\n（中心は到達された。世界は立ち尽くし静止した。）
+  - Finally here.\nThe truth remains unyielding.\n（ついに、ここへ辿り着いた。真実は屈することなく、そこに在る。）
+  - 'You have seen it through.\nAnd mark this: it was you, and no one else, who chose this path.\n（完遂。この道を選んだのは他でもないあなただ。）'
+  - Time drifted into silence,\nfinding its place in the recesses of the mind.\n（時は静寂へと漂い、精神の奥底の隅に自らの居場所を見つけた。）
+  - As the sky transformed,\nthe tale found its final resolved.\n（空が姿を変えるとともに、一つの物語はその最終的な解決完結を見出した。）
+  - The waters fell calm,\nand the sky once more veiled its abyss.\n（波は静まり、空は再びその深淵を覆い隠した。）
+  - The footsteps ceased,\nonly the place remained.\n（歩みは途絶え、ただ場所だけがそこに在り続けた。）
+  - RUN COMPLETE.\nClear. Found it.\nThat's enough.\n（クリア。見つけた。それで十分。）
+  - RUN COMPLETE.\nThe path held.\nSo did you.\n（道は持ちこたえた。あなたも同じ。）
+  - The sky has kept moving.\nSo can you.\n（空はずっと歩み続けていた。あなたも進み続けられる。）
+  - RUN COMPLETE.\nA quiet result.\nThe weight of real work.\n（静かな結果。本物の積み重ね。）
+  - You only walked the path\nthe world had laid out for you.\n（世界が用意していた道を、あなたは歩いただけ。）
+  - The ground didn’t give way.\nIt trusted your steps.\n（大地は壊れなかった。あなたの足取りを、信じていた。）
+  - This moment aligned\nwith the stars’ ancient rhythm.\n（この瞬間は、星々の長いリズムと重なった。）
+  - You didn’t take anything.\n You understood something.\n（何かを奪ったわけじゃない。何かを、理解した。）
+  - You didn’t gain a thing.\nYou only saw the truth for what it was.\n（手に入れたのは何かではない。真実を、見抜いただけだ。）
+  - You didn’t take this place.\nYou belonged here.\n（征服したのではない。ここに、属していた。）
+  - You walked a road\nolder than memory itself.\n（記憶より古い道を、あなたは辿った。）
+  - The earth did not resist.\nIt recognized you.\n（大地は抗わず、あなたを認識した。）
+  - This moment aligned\n with the stillness of the stars.\n（この瞬間は、星々の静けさと重なった。）
+  - No conquest.\nUnderstanding was enough.\n（征服はない。理解で、十分だった。）
+  - You didn’t claim it.\nYou were already home.\n（ここを奪ったのではない。ここに、属していた。）
+  - In the north wind,\nclarity outlasts speed.\n（北風の中で、速さより明晰さが生き残る。）
+  - The center was found.\n The world came to rest.\n（軸(中心)は見出された。世界はその運動を止めた。）
+  - The stars stay silent.\nYour record does the speaking.\n（星は黙っている。語るのはあなたの記録だ。）
+  - The result  remained.\nThe position changed.\n（結果は残った。位置は変わった。）
+  - Between ice and glass,\nyou chose control.\n（氷とガラスのあいだで、あなたは制御を選んだ。）
+  - The waves fell quiet,\nand the sea reclaimed its hidden depths.\n（波は静まり、海はその隠された深淵を再び自らのものとした。）
+  - Some treasures still await.\nNext time, a different path.\n（待つ宝もある。次は、別の道を。）
+  - The sky didn’t change.\nYou did.\n（空は変わらなかった。変わったのはあなた。）
+  - The moment passed.\nWhat remained was order.\n（瞬間は過ぎた。整いは残った。）
+  - Winter is honest.\nSo was your run.\n（冬は正直だ。あなたの走りもそうだった。）
+  - The stars aligned for a moment.\nYou noticed.\n（星は束の間そろった。あなたはそれに気づいた。）
+  - The distance closed.\nTime did not.\n（距離は縮んでいた。時間は縮まらなかった。）
+  - The world’s rules stood firm.\n And the signal of possibility was real.\n（世界のルールは、厳然としてそこにあった。可能性（信号）は本物だった。）
+  - The path closed quietly.\nYou were already through.\n（道は静かに閉じた。あなたはもう抜けていた。）
+  - Nothing changed.\nOnly your position did.\n（何も変わらない。ただ、あなたの位置だけが変わった。）
+  - Not luck.\nAlignment.\n（運じゃない。整いだ。）
+  - The moment passed.\nThe record remains.\n（瞬間は過ぎた。記録は残る。）
+  - The outcome didn’t change.\nStill, you moved forward.\n（結果に違いはなかった。それでも、あなたは前に進んだ。）
+  - The output didn’t change.\nBut you reached a new level.\n（出力は変わらないままだが、あなたは新しいレベルに到達した。）
+  - The ending was the same.\nBut the one who reached it had changed.\n（結末は同じだが、そこに辿り着いた人間は変わった。）
+  - The destination is the same\n—but you’re no longer the traveler you once were.\n（目的地は同じだが、あなたはもう以前と同じ旅人ではない。）
+  - The treasure can wait.\nSo can you.\n（宝は待っている。あなたも待てる。）
+  - Breathe in.\nThen again.\n（息をして。もう一度。）
+  - That’s all for now.\nOn to the next step.\n（今回はここまで。次の一歩へ。）
+  - You're still here.\nThat’s what matters.\n（まだここにいる。それが大事。）
+  - The run ended.\nYou didn’t.\n（走りは止まった。あなたは止まっていない。）
+  - The distance closed.\nTime did not.\n（距離は縮んだ。時間は縮まらなかった。）
+  - The world kept its rules.\nYou touched the edge.\n（世界はルールを守った。あなたは境界に触れた。）
+  - You didn’t make it.\nBut the signal was real.\n（届かなかった。でも合図は本物だった。）
+  - Some treasures still await.\nLet’s try a different path.\n（待つ宝もある。別の道を試そう。）
+  - The result remained.\nThe position changed.\n（結果は残った。位置は変わった。）
+  - So close.\nThe sound said so.\n（惜しかった。音がそう言っていた。）
+  - The map is still open.\nCome back to it.\n（地図は開いたまま。戻っておいで。）
+  - The world’s rules stood firm.\nThe signal of possibility was real.\n（世界のルールは厳然としてそこにあった。可能性（信号）は本物だった。）
+  - The world kept its rules.\n（世界はルールを守った。）
+  - （時間は終わった。
+  - （結果は変わらなかった。
+  - Even the aurora fades.\nCome back with a new stride.\n（オーロラでさえ消える。新しい歩みで戻れ。）
+  - In a fragile world,\nhaste shatters clarity before it can be found.\n（脆い世界では、焦りが明晰さの発見を壊してしまう。）
+  - Winter is patient.\nBe the same.\n（冬は忍耐強い。あなたもそうであれ。）
+  - The sky kept moving.\nSo will you.\n（空は進み続けた。あなたも進む。）
+  - The story moves on.\nThe end is not yet.\n（叙事は頁をめくる。これは最後じゃない。）
+  - The stars were there, watching.\nAgain.\n（星は見守っていた。もう一度。）
+  - Ice takes its time.\nNeither do you.\n（氷は急がない。あなたも急ぐ必要はない。）
+  - The sky kept moving.\nSo can you.\n（空は動き続けた。あなたも動き続けられる。）
+  - The north has learned to wait.\nSo should you.\n（北は『待つこと』を覚えている。そこから学べ。）
+  - Like drifting clouds,\ndon’t lose your flow—like a river.\n（雲が動き続けるように。川のように、流れを失わないで。）
+  - The sound was near.\nThe distance was real.\nBut that moment can’t be saved.\n（音は近かった。距離は本物だった。でも、その瞬間は保存できない。）
+  - The world held to its rules.\nYou touched the edge of them.\n（世界はルールを守った。あなたはその縁に触れた。）
+  - You didn’t reach the treasure. \nBut the signal was real.\n（宝には届かなかった。でも合図は本物だった。）
+  - It wasn’t luck.\nAlignment.\n（運じゃない。整いだ。）
+  - You crossed fragile ground\nand left the horizon unbroken.\n（脆い地面を渡った。視界（景色）を壊さずに。）
+  - （何も変わらない。ただ、あなたの位置だけが変わった。\n運じゃない。整いだ。\n瞬間は過ぎた。記録は残る。）
+  - The season closed.\nThe land remained.\n（季節は閉じた。大地は、残っている。）
+  - The path The path remains.\nOnly your steps stopped.\n（道は、まだそこにある。あなたが歩みを止めただけ。）
+  - It wasn’t rejection.\nOnly silence.\n（拒絶ではない。ただ、沈黙だった。）
+  - The world is still intact.\nYou can return—changed.\n（世界は形を保っている。変わったあなたで、戻れる。）
+  - The season ended.\nThe forest remains.\n（季節は終わった。森は、残っている。）
+  - The distance was closing.\nTime kept its rhythm.\n（距離は縮んでいた。時間は、リズムを保った。）
+  - Your time came to a halt.\nThe sky kept moving.\n（あなたの時間は止まった。空は、止まらなかった。）
+  - Not rejection\nJust silence.\n（拒絶ではない。ただの、沈黙。）
+  - The path is still here.\nYou can come back—changed.\n（道は、まだここにある。違うあなたで、戻れる。）
+  - （
+  - '[EnemyDown] MySQL に接続しました（JDBC + MyBatis）'
+  - 個の宝箱をスポーンしました（中身付き）
+  - ・特別な宝物（ネザライト、ブロックなど）でさらにボーナス点！
+  - 7. Coleção de citações
+  - 8. Favoritos
+  - Fácil
+  - Difícil
+  - Médio
+  - （この本を右クリックすると ★Mais recentes を保存できます）
+  - '（DB: proverb_logs）'
+  - （まだ保存されていない可能性があります）
+  - '（DB: proverb_favorites）'
+  timeup:
+  - Time ran out.\nNothing else did.\n（時間は終わった。ほかは終わっていない。）
+  - The time is up.\nbut the rest is far from over.\n（時間は終わった。ほかは終わっていない。）
+  - TIME'S UP.\nThe run ended.\nYou didn't.\n（時間は止まった。でも、あなたは止まっていない。）
+  - TIME'S UP.\nThe rules don’t change.\nAgain.\n（ルールは変わらない。もう一度。）
+  - TIME'S UP.\n“So close” is real.\n（惜しい、は本物だ。）
+  - Time ran out.\nMeaning didn't.\n（時間は終わった。意味は終わっていない。）
+  - The moment slipped away.\nThe meaning did not.\n（逃したのは瞬間。意味ではない。）
+  - This is an interlude\n—It’s not over.\n（これは休止だ。終わりじゃない。）
+  - You were closing in.\nOnly time wasn’t.\n（近づいていた。時間だけが近づかなかった。）
+  - The moment slipped away,\nbut the record stayed.\n（瞬間は過ぎた。記録は残る。）
+  - Your time ran out.\nThe sky didn’t.\n（あなたの時間は終わった。空は、終わっていない。）
+  trader:
+  - Perfect balance.\nThe scales held level.\n（等価の均衡。天秤は水平を保った。）
+  - There was no dialogue\n—only an exchange of facts.\n（対話はなく、ただ事実としての交換が行われた。）
+  - Perfect equilibrium.\nThe scales held level.\n（等価の均衡。天秤は水平を保った。）
+  - Things changed,\ntaking on new forms as they carried on.\n（物事は移ろい、形を変えて引き継がれた。）
+  philosophy:
+  - Victory and defeat \nare nothing more than grains of sand.\n（勝利も敗北も、同じ砂の一粒に過ぎない。）
+  - The road goes on—or it ends.\nEither way, it lies on the same earth.\n（道は続き、あるいは途切れ、どちらも同じ大地の上にある。）
+ui:
+  labels:
+    tabs: '&6Abas:&r'
+    page: '&8Página {current}/{total}&r'
+    tab:
+      all: TUDO
+      success: SUCESSO
+      timeUp: TEMPO ESGOTADO
+      favorites: Favoritos
+    latest: ★ Recente
+    outcome:
+      success: Sucesso
+      timeUp: Tempo esgotado
+  quote:
+    title: Coleção de citações
+    intro:
+      tabsTitle: Abas
+      legendTitle: 'Legenda:'
+      storedInDb: 'Armazenado no MySQL DB:'
+      db:
+        logs: proverb_logs (histórico)
+        favorites: proverb_favorites (★ Favoritos)
+      langLine: 'idioma: {lang}'
+    headerRecent: 'Recentes 20  |  idioma: {lang}'
+    legend:
+      success: = Concluído / Sucesso
+      timeUp: = Tempo esgotado
+      favorites: = ★ Citações salvas
+    noLogs: Ainda não há registros de citações. São salvos automaticamente em SUCCESS / TIME_UP.
+    noQuotesInTab: 'Não há citações para mostrar nesta aba. (Talvez ainda não tenha sido salvo.)
+
+      Tente outra aba.'
+    noFavoritos: 'Ainda não há favoritos.
+
+      Clique com o botão direito neste livro para salvar {latestLabel}.'
+    tip:
+      rightClickSave: 'Dica: Clique com o botão direito neste livro para salvar {latestLabel}.'
+    noFavorites: 'No favorites yet.
+
+      Right-click this book to save {latestLabel}.'
+    footer:
+      dbLogs: '(BD: proverb_logs)'
+  auto:
+    playerscore_b91d4cd3: 'Falha ao inserir PlayerScore:'
+    messages_yml_not_loaded_d56b1cd3: (messages.yml not loaded)
+    translation_missing_77031543: '(Tradução ausente:'
+    translation_missing_77031543_107: '(Tradução ausente:'
+    treasurerun_lang_config_yml__2dde4625: '[TreasureRun][Lang] Seção ''language:'' não encontrada no config.yml.'
+    click_to_select_aac1569c_76: Clique para selecionar
+    treasurerun_lang_default_60887a83: '[TreasureRun][Lang] default='
+    click_to_select_aac1569c_19: Clique para selecionar
+    treasurerun_lang_config_yml__2dde4625_33: '[TreasureRun][Lang] Seção ''language:'' não encontrada no config.yml.'
+    treasurerun_lang_material_la_bc70a401: '[TreasureRun][Lang] Material inválido: lang='
+    treasurerun_lang_language_ic_4bc2362d: '[TreasureRun][Lang] Seção ''language.iconMaterial:'' não encontrada（tudo será
+      PAPER）'
+    click_to_select_aac1569c_100: Clique para selecionar
+    treasurerun_lang_default_60887a83_111: '[TreasureRun][Lang] default='
+    enemydown_mysql_jdbc_mybatis_6b5c6f68: '[EnemyDown] Conectado ao MySQL（JDBC + MyBatis）'
+    enemydown_mysql_6cf3e29b: '[EnemyDown] Falha na conexão MySQL:'
+    enemydown_mysql_a18990c3: '[EnemyDown] Conexão MySQL encerrada.'
+    enemydown_mysql_e097a73e: '[EnemyDown] Falha ao desconectar MySQL:'
+    mysqlmanager_player_score_d92afff4: '[MySQLManager] Tabela player_score verificada/criada ✅'
+    mysqlmanager_player_score_21665c62: '[MySQLManager] Falha ao criar tabela player_score ❌:'
+    mysqlmanager_mysql_951100b9: '[MySQLManager] Teste de conexão MySQL bem-sucedido ✅'
+    mysqlmanager_player_score_a4968d00: '[MySQLManager] Linhas na tabela player_score:'
+    mysqlmanager_mysql_1763d390: '[MySQLManager] MySQL não conectado ❌'
+    mysqlmanager_player_score_2b5c8721: '[MySQLManager] Tabela player_score pode não existir ❌'
+    enemydown_mysql_bc514e56: '[EnemyDown] MySQL está conectado.'
+    enemydown_mysql_93b23ef9: '[EnemyDown] MySQL não está conectado.'
+    run_complete_46d920e5_580: Run complete.
+    run_complete_46d920e5_589: Run complete.
+    playerlanguagestore_failed_t_c4999402: '[PlayerLanguageStore] Failed to create/load player_languages.yml:'
+    playerlanguagestore_failed_t_b6478ec8: '[PlayerLanguageStore] Failed to save player_languages.yml:'
+    proverb_logged_to_mysql_prov_c13b5e4e: 'Proverb logged to MySQL: proverb_logs'
+    failed_to_log_proverb_to_mys_2bb4c5c3: 'Failed to log proverb to MySQL: proverb_logs'
+    loaded_proverb_logs_from_mys_b5b0f8e0: 'Loaded proverb logs from MySQL: proverb_logs'
+    failed_to_load_proverb_logs__6246be38: 'Failed to load proverb logs from MySQL: proverb_logs'
+    treasurerunmultichestplugin_4499e25c: '🌈 TreasureRunMultiChestPlugin: 起動 🌈'
+    treasurerun_gamestagemanager_3d9e7f5a: '[TreasureRun] GameStageManager event registered!'
+    treasurerunmultichestplugin_a507471a: ✅ TreasureRunMultiChestPlugin が正常に起動しました！
+    treasurerunmultichestplugin_c2111711: '🔻 TreasureRunMultiChestPlugin: 無効化'
+    text_4f7e7cfa: Lingote de Netherite obtido!
+    text_1a6173d3: Diamante obtido!
+    text_b6568a8d: Maçã Dourada obtida!
+    no_9c0fdee6: 🏆 No.
+    gamestart_easy_normal_hard_230bd0bd: Tente uma rota diferente da próxima vez! Para tentar novamente use /gamestart <easy|normal|hard>!
+    text_9310a1a7: O jogo já está em andamento.
+    text_9310a1a7_908: O jogo já está em andamento.
+    text_9310a1a7_1601: O jogo já está em andamento.
+    text_f9c4c4e2: 'Jogo encerrado! Pontuação total:'
+    run_complete_d258363d_1214: Run Complete!
+    time_s_up_7441e686_1313: TIME'S UP!
+    text_ec39d8ad: Tempo restante
+    text_d6e25e00: 'Tempo restante:'
+    text_b2c59e95: 'Tempo:'
+    text_c148686b: 'Pontuação:'
+    text_307fcc19: 'Classificação:'
+    starting_in_2413fc14: Iniciando em…
+    easy_normal_hard_ef1ba55c: A dificuldade é Easy / Normal / Hard.
+    language_gui_aed4f8fc_931: GUI de idioma não inicializada.
+    config_yml_3c6e9d15: ✅ config.yml carregado
+    treasurerun_config_language__763cf02c: ✅ Config do TreasureRun recarregado（incluindo GUI de idioma）.
+    gui_gamestart_5870f221: GUI atualizada. Abra novamente com /gameStart.
+    text_3ecbc53d: Execute como jogador
+    text_3030fd61: Somente jogadores podem executar
+    reload_gameend_c41d5c55: Não é possível recarregar durante o jogo. Execute /gameEnd primeiro.
+  menu:
+    toc:
+      message: '&6📌 Menu do TreasureRun aberto. Confira o livro de regras.'
+    book:
+      openFailed: '&cFalha ao abrir o livro de regras.'
+      hotbarGiven: 📖 O livro de regras foi adicionado à sua barra rápida.
+      hotbarHint: Segure-o e clique com o botão direito para relê-lo quando quiser.
+      latestHint: (Clique com o botão direito neste livro para salvar a citação mais recente.)
+      fallbackTitle: Regras do TreasureRun
+      fallbackDisplayName: Livro de regras do TreasureRun
+    legacy:
+      toc:
+        message: '&6===== 🌟 Menu do TreasureRun 🌟 =====
+
+          &b1. Objetivo
+
+          &f   - Abra o maior número possível de baús dentro do limite de tempo.
+
+
+          &b2. Dificuldade atual
+
+          &f   - Dificuldade: &e{difficulty}
+
+
+          &6=================================='
+    gui: {}
+    page:
+      contents:
+        title: 📌 Conteúdo
+        rulesItem: 1) Regras
+        howToPlay: '  · Como jogar'
+        scoreRoute: '  · Pontuação e rota'
+        savedOn: · Salvo em Sucesso / Tempo esgotado
+        language: '  · Idioma: {lang}'
+        yourQuotes: '  · Suas citações salvas com ★'
+        difficulty: 'Dificuldade: {difficulty}'
+        tipsItem: 2) Dicas
+      note:
+        bookFormat: 'Observação: nos livros do Minecraft não dá para trocar de aba clicando, então o conteúdo foi organizado
+          em seções.'
+      hint:
+        reopenMenu: 'Dica: execute /gameMenu para abrir isto novamente.'
+  error:
+    noData: Nenhum dado disponível.
+  favorites:
+    headerLatest: 'Favoritos mais recentes  |  idioma: {lang}'
+    title: ★ Favoritos
+    footer:
+      dbFavorites: '(BD: proverb_favorites)'
+  gameMenu:
+    pluginNotReady: O plugin ainda não está pronto.
+  symbol:
+    bookPrefix: '📖 '
+    legendPrefix: '■ '
+    dbBullet: '- '
+    indexPrefix: '#'
+    favoriteIdPrefix: ★#
+    favoritePrefix: ★
+    metaOpen: (
+    metaClose: )
+    labelOpen: '['
+    labelClose: ']'
+    tabActiveOpen: 【
+    tabActiveClose: 】
+    tabInactiveOpen: '['
+    tabInactiveClose: ']'
+    activeMarker: '▶ '
+  rankTicker:
+    updated: 🏁 Ranking atualizado! ({which})
+    mode:
+      weekly: Semanal
+      allTime: Geral
+      monthly: Mensal
+gui:
+  language:
+    title: Idioma
+    subtitle: '&7Selecione seu idioma'
+    selected: '&aSelecionado: &f{lang}'
+    saved: '&aIdioma salvo: &f{lang}'
+    loreDefault:
+    - '&7Clique para selecionar'
+    - '&8Sua escolha será salva'
+    reopenHint: '&7Mude quando quiser com &f/lang'
+game:
+  difficulty:
+    easy: '&aEasy'
+    normal: '&eNormal'
+    hard: '&cHard'
+  auto:
+    backup_cfe9e6cf: 🌊 Busca de oceano de backup concluída com sucesso.
+    text_e096c9a4: '&6Esmeralda Especial'
+    dj_onalltreasurescollected_a871afdd: O evento DJ já está em execução, então onAllTreasuresCollected foi ignorado.
+    text_cc353737: Todos os tesouros foram encontrados!
+    congratulations_38fd1594: §6Parabéns! Você encontrou todos os tesouros!
+favorites:
+  title: Favoritos
+  cover:
+    head: Arquivo de favoritos
+    hint: Use /quoteFavorite latest ou /quoteFavorite list
+    reread: Reler
+    badge: Favoritos do TreasureRun
+    countLabel: 'Salvos: {count}'
+    openToc: Abrir conteúdo
+    sub: Uma coleção de linhas que você salvou durante suas partidas
+  empty:
+    noFav: Ainda não há favoritos salvos.
+    saveLatest: Salvar a linha mais recente
+    reread: Ainda não há nada para reler.
+    rereadBook: Ainda não há livro de releitura disponível.
+    head: Ainda não há favoritos
+    noFavSub: Salve primeiro uma linha para começar seu arquivo
+    saveHow: Como salvar favoritos
+    saveHow1: Use /quoteFavorite latest
+    saveHow2: Ou agache-se e clique com o botão direito no livro de regras
+    sub: Seu arquivo ainda está vazio
+    tryNow: Depois abra este livro novamente
+  toc:
+    head: Conteúdo
+    howto: Abra um capítulo para reler as linhas salvas
+    manage: Gerenciar linhas salvas
+    reread: Reler
+    howtoShift: '&7Agache-se + clique com o botão direito para abrir o arquivo de favoritos'
+    rereadTitle: Reler
+    clickable: Os capítulos podem ser abertos com um clique
+    sub: Navegar por capítulo
+  chapter:
+    rereadBook: Livro de releitura
+    back: Voltar ao conteúdo
+    count: '{count} entradas'
+    empty: Ainda não há linhas salvas neste capítulo
+    otherSub: Outros
+    successSub: Linhas salvas de partidas bem-sucedidas
+    successTitle: Sucesso
+    successTpl1: Linhas de sucesso salvas
+    successTpl2: Momentos em que você concluiu a partida
+    timeupSub: Linhas salvas de momentos em que o tempo acabou
+    timeupTitle: Tempo esgotado
+    timeupTpl1: Linhas de tempo esgotado salvas
+    timeupTpl2: Momentos em que o cronômetro chegou a zero
+  remove: Remover
+  reread:
+    head: Reler linhas salvas
+    noQuotes: Você ainda não salvou nenhuma linha.
+  auto:
+    favorite_saved_sneak_rightcl_7a73eb4f: ★ Favorito salvo! (Agachar + clique direito)
+command:
+  checkTreasureEmerald:
+    playersOnly: Somente jogadores podem usar este comando.
+    resultTrue: O item que você está segurando é um Treasure Emerald.
+    resultFalse: O item que você está segurando não é um Treasure Emerald.
+  gameStart:
+    playersOnly: Este comando só pode ser usado por jogadores.
+    worldNotFound: '[TreasureRun] O mundo inicial não está configurado ou não pôde ser encontrado.'
+    started: 'A caça ao tesouro vai começar! Dificuldade: {difficulty} | Limite de tempo: {timeLimit} segundos'
+  stageCleanup:
+    playersOnly: '&cSomente jogadores podem usar este comando.'
+    managerNotReady: '[TreasureRun] O gerenciador de fase ainda não foi inicializado.'
+    cleaned: '[TreasureRun] {count} blocos de dificuldade foram removidos.'
+  lang:
+    guiTooManyShown: Foram configurados idiomas permitidos demais, então a GUI mostra apenas os primeiros 27.
+    guiCancelledGameMenu: A seleção de idioma foi cancelada. Para abrir novamente, execute /gameMenu gui.
+    guiCancelledGameStart: A seleção de idioma foi cancelada. Para tentar de novo, execute /gameStart <easy|normal|hard>.
+    playersOnly: Este comando só pode ser usado por jogadores.
+    resetDone: ✅ O seu idioma salvo foi redefinido. Na próxima vez, a interface será aberta.
+    current: 'Idioma atual: {lang}'
+    emptyCode: 'O código do idioma está vazio. Exemplo: /lang ja'
+    notAllowed: 'Esse idioma não é permitido: {lang}'
+    allowedList: 'Idiomas permitidos: {allowed}'
+    changed: '✅ Idioma alterado: {displayName} ({lang})'
+    changedButNotSaved: '⚠ O idioma foi alterado, mas não foi possível salvá-lo permanentemente: {lang}'
+    list:
+      title: === Idiomas ===
+      default: 'padrão: {default}'
+      allowed: 'permitidos: {allowed}'
+      usage: 'Uso: /lang <code> Exemplo: /lang ja'
+      gui: 'GUI: /lang ou /lang gui'
+    guiNotReady: A interface de idioma não foi inicializada.
+  craftSpecialEmerald:
+    playersOnly: '&cSomente jogadores podem usar este comando.'
+    needDiamonds: '&cVocê precisa de 3 diamantes para criar uma Esmeralda Especial.'
+    success: '&bVocê criou uma Esmeralda Especial usando 3 diamantes!'
+  onlyPlayer: '&cEste comando só pode ser usado por um jogador.'
+  quoteFavorite:
+    latestSaved: A citação mais recente foi salva nos Favoritos.
+    latestNotSaved: Não foi possível salvar a citação mais recente. Talvez ainda não exista registro, ou ela já esteja nos
+      Favoritos.
+    playersOnly: '&cEste comando só pode ser usado por jogadores.'
+    repositoryNotReady: Favoritos ainda não estão disponíveis.
+    listHeader: '&bFavoritos ({count})'
+    listSeparator: '&7------------------------------'
+    removeUsage: '&cUso: /quoteFavorite remove <id>'
+    removeIdNumber: '&cO ID deve ser um número.'
+    removeSuccess: '&aFavorito ID {id} removido.'
+    removeNotFound: '&cO favorito indicado não foi encontrado.'
+    rereadNoQuotes: '&eAinda não há citações para reler.'
+    bookOpenFailed: '&cFalha ao gerar o livro de Favoritos.'
+    openBookFailed: '&cNão foi possível abrir o livro.'
+    unknownSubcommand: '&cSubcomando desconhecido. Veja /quoteFavorite help.'
+    shortcutSaved: A citação mais recente foi salva nos Favoritos.
+    shortcutNotSaved: Não foi possível salvar a citação mais recente. Talvez ainda não exista registro, ou ela já esteja nos
+      Favoritos.
+    help:
+      title: '&bComandos do QuoteFavorite'
+      latest: '&7/quoteFavorite latest  - salvar a citação mais recente nos Favoritos'
+      list: '&7/quoteFavorite list    - mostrar Favoritos'
+      remove: '&7/quoteFavorite remove <id> - remover favorito'
+      reread: '&7/quoteFavorite reread - reler a última citação'
+      rereadTitle: '&bReleitura'
+      rereadBook: '&7/quoteFavorite reread book - reabrir o livro de releitura'
+      book: '&7/quoteFavorite book - abrir o livro de Favoritos'
+      bookToc: '&7/quoteFavorite book toc - abrir o índice do livro'
+      bookSuccess: '&7/quoteFavorite book success - abrir o livro de citações SUCCESS'
+      bookTimeup: '&7/quoteFavorite book timeup - abrir o livro de citações TIME_UP'
+      bookOther: '&7/quoteFavorite book other - abrir o outro layout do livro'
+items:
+  specialEmerald:
+    displayName: '&6Esmeralda especial'
+    loreCrafted: '&7Criada no TreasureRun'
+    loreSpecial: '&7Uma esmeralda especial'
+  material:
+    diamond: Diamante
+    gold_ingot: Barra de ouro
+    iron_ingot: Barra de ferro
+    emerald: Esmeralda
+    apple: Maçã
+    netherite_ingot: Barra de netherita
+    lapis_lazuli: Lápis-lazúli
+    redstone: Redstone
+    coal: Carvão
+    enchanted_golden_apple: Maçã dourada encantada
+    diamond_block: Bloco de diamante
+    gold_block: Bloco de ouro
+    emerald_block: Bloco de esmeralda
+    iron_block: Bloco de ferro
+    tnt: TNT
+  text_7567bb35: A receita da Esmeralda Especial foi registrada.
+  text_7a04254b: '&eMaçã Especial'
+  text_e8d4013d: A receita da Maçã Especial foi registrada.
+  text_e42912c7: '&7Bloco de Ferro Especial'
+  text_c89dea57: A receita do Bloco de Ferro Especial foi registrada.
+gameplay:
+  pickup:
+    scoreNone: Ainda não há pontuação.
+    gameEndTotalScore: 'Fim de jogo! Pontuação total: {score}'
+    treasureFound: 'Tesouro: {name} ×{amount}'
+    scoreAdded: 'Pontuação +{add} (Total: {total})'
+    remainingChests: 'Baús restantes: {count}'
+  result:
+    runCompleteTitle: Percurso concluído!
+    timeUpTitle: TEMPO ESGOTADO!
+    treasuresCollected: 'Tesouros coletados: {got}/{total} ({missing} restantes)'
+    overcomingAdversity: SUPERANDO A ADVERSIDADE
+    label:
+      score: Pontuação
+      time: Tempo
+      rank: Posição
+    allChestsOpenedBroadcast: '{player} abriu todos os baús! Pontuação final: {score}'
+    summaryLine: 'Tempo: {time}  Pontuação: {score}  Posição: {rank}'
+    gotLine: 'Baús: {got}/{total}'
+  setup:
+    chestsPlaced: '{count} baús foram colocados!'
+  success:
+    allChestsOpened: Todos os baús foram abertos! Fim de jogo!
+    treasureCompleteTitle: 🎵 Tesouro concluído! 🎵
+    allTreasuresFoundTitle: Todos os tesouros foram encontrados!
+    allTreasuresFoundChat: Parabéns! Você encontrou todos os tesouros!
+  start:
+    startingIn: Começa em…
+    go: Vai!
+  shop:
+    tradeCompleteTitle: Troca concluída!
+    hiddenPowerAwakens: Um poder oculto desperta…
+    hiddenPowerChat: Você sente um poder oculto na Treasure Shop…
+  timer:
+    remainingBossbar: Tempo restante
+    remainingLine: 'Tempo restante: {seconds}s'
+rewards:
+  rank:
+    netheriteIngot: Você recebeu um lingote de netherita!
+    diamond: Você recebeu um diamante!
+    goldenApple: Você recebeu uma maçã dourada!
+rankTicker:
+  weeklyTitle: TreasureRun semanal
+  allTimeTitle: TreasureRun geral
+  monthlyTitle: TreasureRun mensal
+  footerHint: /gameRank weekly|all|monthly
+rank:
+  command:
+    timeTop10Title: === 🌟 TreasureRun Top 10 (Melhores tempos) 🌟 ===
+    timeTop10Line: '#{rank} {player}  {time}s  {score} pts  Dificuldade: {difficulty}'
+    dbUnavailable: A conexão com o banco de dados não está disponível.
+    loadError: Ocorreu um erro ao carregar o ranking.
+    playsTitleWeekly: === 🎖️ TreasureRun Top 10 semanal (Partidas) ===
+    playsTitleAllTime: === 🎖️ TreasureRun Top 10 geral (Partidas) ===
+    playsTitleMonthly: === 🎖️ TreasureRun Top 10 mensal (Partidas) ===
+    playsLine: '#{rank} {player}  {score} pts  {time}s  ({difficulty}) [{lang}]'
+    weeklyEmpty: Não há partidas registradas nos últimos 7 dias.
+    weeklySwitch: 'Alternar visualização: /gameRank all | /gameRank monthly'
+    allTimeEmpty: Ainda não há registros.
+    allTimeSwitch: 'Alternar visualização: /gameRank weekly | /gameRank monthly'
+    monthlyEmpty: Ainda não há registros neste mês.
+    monthlySwitch: 'Alternar visualização: /gameRank weekly | /gameRank all'
+commands:
+  text_2bf42ec8: Este comando só pode ser executado por jogadores.
+  text_2bf42ec8_18: Este comando só pode ser executado por jogadores.
+  3_3d5021f7: São necessários 3 diamantes para criar a Esmeralda Especial.
+  text_e096c9a4: '&6Esmeralda Especial'
+  3_71b78a44: A Esmeralda Especial foi criada com 3 diamantes!
+  text_3030fd61: Apenas jogadores podem executar este comando.
+  op_10caf0f6: Você não tem permissão (somente OP).
+  rank_1_2_3_demo_d87f40da: 'Uso: /rank <1|2|3|demo>'
+  rank_1_2_3_demo_4f3e3084: 'Digite um número: /rank <1|2|3|demo>'
+  1_3_rank_1_2_3_7f459bd0: 'Apenas valores de 1 a 3 são permitidos: /rank <1|2|3>'
+  text_bed3daf7: Este comando só pode ser executado por jogadores.
+  treasurerun_bcef4fe9: '[TreasureRun] O gerenciamento do estágio não foi inicializado.'
+  text_287fa0f1: '{count} blocos de dificuldade foram removidos.'
+  text_44a99db9: Este comando só pode ser executado por um jogador.
+  text_fd02f248: 'Limite de tempo:'
+  text_f166cc04: '§aA caça ao tesouro começou! Dificuldade:'
+  text_2281b097: '{count} baús foram gerados. Número de tesouros:'

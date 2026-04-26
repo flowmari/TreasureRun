@@ -1,0 +1,14 @@
+lang	template_path	rows
+asl_gloss	docs/i18n_native_review/asl_gloss_outcome_native_template.tsv	158
+es	docs/i18n_native_review/es_outcome_native_template.tsv	158
+fi	docs/i18n_native_review/fi_outcome_native_template.tsv	158
+fr	docs/i18n_native_review/fr_outcome_native_template.tsv	158
+is	docs/i18n_native_review/is_outcome_native_template.tsv	158
+it	docs/i18n_native_review/it_outcome_native_template.tsv	158
+ko	docs/i18n_native_review/ko_outcome_native_template.tsv	158
+la	docs/i18n_native_review/la_outcome_native_template.tsv	158
+lzh	docs/i18n_native_review/lzh_outcome_native_template.tsv	158
+nl	docs/i18n_native_review/nl_outcome_native_template.tsv	158
+ru	docs/i18n_native_review/ru_outcome_native_template.tsv	158
+sa	docs/i18n_native_review/sa_outcome_native_template.tsv	158
+zh_tw	docs/i18n_native_review/zh_tw_outcome_native_template.tsv	158

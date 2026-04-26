@@ -1,0 +1,507 @@
+lang	pool	index	status	en_reference	current_value	native_translation	note
+is	outcome.success.easy.pool	1	EXACT_EN,ENGLISH_LIKE	"You’ve made it.
+The truth remains."	"You’ve made it.
+The truth remains."		fill_native_translation_only
+is	outcome.success.easy.pool	2	EXACT_EN,ENGLISH_LIKE	"Even if it was only a small step,
+you held your ground."	"Even if it was only a small step,
+you held your ground."		fill_native_translation_only
+is	outcome.success.easy.pool	3	EXACT_EN,ENGLISH_LIKE	"You listened.
+ The path opened."	"You listened.
+ The path opened."		fill_native_translation_only
+is	outcome.success.easy.pool	4	EXACT_EN,ENGLISH_LIKE	"> You made it here
+> 
+> The rules were simple —
+> 
+> the choice was yours."	"> You made it here
+> 
+> The rules were simple —
+> 
+> the choice was yours."		fill_native_translation_only
+is	outcome.success.easy.pool	5	EXACT_EN,ENGLISH_LIKE	"> Distance became meaning.
+> 
+> and time answered your footsteps."	"> Distance became meaning.
+> 
+> and time answered your footsteps."		fill_native_translation_only
+is	outcome.success.easy.pool	6	EXACT_EN,ENGLISH_LIKE	"> Not everything shines forever.
+> 
+> But this moment did."	"> Not everything shines forever.
+> 
+> But this moment did."		fill_native_translation_only
+is	outcome.success.easy.pool	7	EXACT_EN,ENGLISH_LIKE	"Light fell evenly, ,
+and every shadow vanished."	"Light fell evenly, ,
+and every shadow vanished."		fill_native_translation_only
+is	outcome.success.easy.pool	8	EXACT_EN,ENGLISH_LIKE	"The wind fell silent.
+and everything returned to where it belonged."	"The wind fell silent.
+and everything returned to where it belonged."		fill_native_translation_only
+is	outcome.success.easy.pool	9	EXACT_EN,ENGLISH_LIKE	"A moment of silence.
+The world steadied its breath."	"A moment of silence.
+The world steadied its breath."		fill_native_translation_only
+is	outcome.success.easy.pool	10	EXACT_EN,ENGLISH_LIKE	"The record is etched deep in the sand—
+beyond the reach of the wind."	"The record is etched deep in the sand—
+beyond the reach of the wind."		fill_native_translation_only
+is	outcome.success.easy.pool	11	EXACT_EN,ENGLISH_LIKE	"Harmony was restored.
+Everything had been for this moment."	"Harmony was restored.
+Everything had been for this moment."		fill_native_translation_only
+is	outcome.success.easy.pool	12	EXACT_EN,ENGLISH_LIKE	"Time slipped by in silence,
+tucked away in the corners of memory."	"Time slipped by in silence,
+tucked away in the corners of memory."		fill_native_translation_only
+is	outcome.success.easy.pool	13	EXACT_EN,ENGLISH_LIKE	"The sky shifted in color,
+and one story came to its end."	"The sky shifted in color,
+and one story came to its end."		fill_native_translation_only
+is	outcome.success.easy.pool	14	EXACT_EN,ENGLISH_LIKE	"The waves grew calm,
+and the sea hid its depths once more."	"The waves grew calm,
+and the sea hid its depths once more."		fill_native_translation_only
+is	outcome.success.easy.pool	15	EXACT_EN,ENGLISH_LIKE	"The footsteps stopped,
+and only the place remained."	"The footsteps stopped,
+and only the place remained."		fill_native_translation_only
+is	outcome.success.easy.pool	16	EXACT_EN,ENGLISH_LIKE	"Victory and defeat 
+are nothing more than grains of sand."	"Victory and defeat 
+are nothing more than grains of sand."		fill_native_translation_only
+is	outcome.success.easy.pool	17	EXACT_EN,ENGLISH_LIKE	"The road goes on—or it ends.
+Either way, it lies on the same earth."	"The road goes on—or it ends.
+Either way, it lies on the same earth."		fill_native_translation_only
+is	outcome.success.normal.pool	1	EXACT_EN,ENGLISH_LIKE	"The distance has found its meaning.
+Time has rewarded your journey."	"The distance has found its meaning.
+Time has rewarded your journey."		fill_native_translation_only
+is	outcome.success.normal.pool	2	EXACT_EN,ENGLISH_LIKE	"The time is up.
+but the rest is far from over."	"The time is up.
+but the rest is far from over."		fill_native_translation_only
+is	outcome.success.normal.pool	3	EXACT_EN,ENGLISH_LIKE	"The axis is found.
+the world has cased its motion."	"The axis is found.
+the world has cased its motion."		fill_native_translation_only
+is	outcome.success.normal.pool	4	EXACT_EN,ENGLISH_LIKE	"The glass held its breath,
+and you held your ground."	"The glass held its breath,
+and you held your ground."		fill_native_translation_only
+is	outcome.success.normal.pool	5	EXACT_EN,ENGLISH_LIKE	"Under the stillness of the sky,
+your spirit did not waver."	"Under the stillness of the sky,
+your spirit did not waver."		fill_native_translation_only
+is	outcome.success.normal.pool	6	EXACT_EN,ENGLISH_LIKE	"Few things shine forever.
+but this moment was radiant."	"Few things shine forever.
+but this moment was radiant."		fill_native_translation_only
+is	outcome.success.normal.pool	7	EXACT_EN,ENGLISH_LIKE	"You traversed the fragile earth,
+without losing the view."	"You traversed the fragile earth,
+without losing the view."		fill_native_translation_only
+is	outcome.success.normal.pool	8	EXACT_EN,ENGLISH_LIKE	"The moment has passed.
+The legacy remains."	"The moment has passed.
+The legacy remains."		fill_native_translation_only
+is	outcome.success.normal.pool	9	EXACT_EN	"Luck fades fast.
+order endures."	"Luck fades fast.
+order endures."		fill_native_translation_only
+is	outcome.success.normal.pool	10	EXACT_EN,ENGLISH_LIKE	"The sky knows no pause in endless circle,
+nor shall you find yours."	"The sky knows no pause in endless circle,
+nor shall you find yours."		fill_native_translation_only
+is	outcome.success.normal.pool	11	EXACT_EN,ENGLISH_LIKE	"The center has been reached.
+The world stood still."	"The center has been reached.
+The world stood still."		fill_native_translation_only
+is	outcome.success.normal.pool	12	EXACT_EN,ENGLISH_LIKE	"Finally here.
+The truth remains unyielding."	"Finally here.
+The truth remains unyielding."		fill_native_translation_only
+is	outcome.success.normal.pool	13	EXACT_EN,ENGLISH_LIKE	"You have seen it through.
+And mark this: it was you, and no one else, who chose this path."	"You have seen it through.
+And mark this: it was you, and no one else, who chose this path."		fill_native_translation_only
+is	outcome.success.normal.pool	14	EXACT_EN,ENGLISH_LIKE	"Time drifted into silence,
+finding its place in the recesses of the mind."	"Time drifted into silence,
+finding its place in the recesses of the mind."		fill_native_translation_only
+is	outcome.success.normal.pool	15	EXACT_EN,ENGLISH_LIKE	"As the sky transformed,
+the tale found its final resolved."	"As the sky transformed,
+the tale found its final resolved."		fill_native_translation_only
+is	outcome.success.normal.pool	16	EXACT_EN,ENGLISH_LIKE	"The waters fell calm,
+and the sky once more veiled its abyss."	"The waters fell calm,
+and the sky once more veiled its abyss."		fill_native_translation_only
+is	outcome.success.normal.pool	17	EXACT_EN,ENGLISH_LIKE	"The footsteps ceased,
+only the place remained."	"The footsteps ceased,
+only the place remained."		fill_native_translation_only
+is	outcome.success.normal.pool	18	EXACT_EN,ENGLISH_LIKE	"Light fell evenly, ,
+and every shadow vanished."	"Light fell evenly, ,
+and every shadow vanished."		fill_native_translation_only
+is	outcome.success.normal.pool	19	EXACT_EN,ENGLISH_LIKE	"The wind fell silent.
+and everything returned to where it belonged."	"The wind fell silent.
+and everything returned to where it belonged."		fill_native_translation_only
+is	outcome.success.normal.pool	20	EXACT_EN,ENGLISH_LIKE	"A moment of silence.
+The world steadied its breath."	"A moment of silence.
+The world steadied its breath."		fill_native_translation_only
+is	outcome.success.normal.pool	21	EXACT_EN,ENGLISH_LIKE	"The record is etched deep in the sand—
+beyond the reach of the wind."	"The record is etched deep in the sand—
+beyond the reach of the wind."		fill_native_translation_only
+is	outcome.success.normal.pool	22	EXACT_EN,ENGLISH_LIKE	"Harmony was restored.
+Everything had been for this moment."	"Harmony was restored.
+Everything had been for this moment."		fill_native_translation_only
+is	outcome.success.normal.pool	23	EXACT_EN,ENGLISH_LIKE	"RUN COMPLETE.
+Clear. Found it.
+That's enough."	"RUN COMPLETE.
+Clear. Found it.
+That's enough."		fill_native_translation_only
+is	outcome.success.normal.pool	24	EXACT_EN,ENGLISH_LIKE	"RUN COMPLETE.
+The path held.
+So did you."	"RUN COMPLETE.
+The path held.
+So did you."		fill_native_translation_only
+is	outcome.success.normal.pool	25	EXACT_EN,ENGLISH_LIKE	"The sky has kept moving.
+So can you."	"The sky has kept moving.
+So can you."		fill_native_translation_only
+is	outcome.success.normal.pool	26	EXACT_EN,ENGLISH_LIKE	"RUN COMPLETE.
+A quiet result.
+The weight of real work."	"RUN COMPLETE.
+A quiet result.
+The weight of real work."		fill_native_translation_only
+is	outcome.success.normal.pool	27	EXACT_EN,ENGLISH_LIKE	"You only walked the path
+the world had laid out for you."	"You only walked the path
+the world had laid out for you."		fill_native_translation_only
+is	outcome.success.normal.pool	28	EXACT_EN,ENGLISH_LIKE	"The ground didn’t give way.
+It trusted your steps."	"The ground didn’t give way.
+It trusted your steps."		fill_native_translation_only
+is	outcome.success.normal.pool	29	EXACT_EN,ENGLISH_LIKE	"This moment aligned
+with the stars’ ancient rhythm."	"This moment aligned
+with the stars’ ancient rhythm."		fill_native_translation_only
+is	outcome.success.normal.pool	30	EXACT_EN,ENGLISH_LIKE	"You didn’t take anything.
+ You understood something."	"You didn’t take anything.
+ You understood something."		fill_native_translation_only
+is	outcome.success.normal.pool	31	EXACT_EN,ENGLISH_LIKE	"You didn’t gain a thing.
+You only saw the truth for what it was."	"You didn’t gain a thing.
+You only saw the truth for what it was."		fill_native_translation_only
+is	outcome.success.normal.pool	32	EXACT_EN,ENGLISH_LIKE	"You didn’t take this place.
+You belonged here."	"You didn’t take this place.
+You belonged here."		fill_native_translation_only
+is	outcome.success.normal.pool	33	EXACT_EN,ENGLISH_LIKE	"You walked a road
+older than memory itself."	"You walked a road
+older than memory itself."		fill_native_translation_only
+is	outcome.success.normal.pool	34	EXACT_EN,ENGLISH_LIKE	"The earth did not resist.
+It recognized you."	"The earth did not resist.
+It recognized you."		fill_native_translation_only
+is	outcome.success.normal.pool	35	EXACT_EN,ENGLISH_LIKE	"This moment aligned
+ with the stillness of the stars."	"This moment aligned
+ with the stillness of the stars."		fill_native_translation_only
+is	outcome.success.hard.pool	1	EXACT_EN,ENGLISH_LIKE	"In the north wind,
+clarity outlasts speed."	"In the north wind,
+clarity outlasts speed."		fill_native_translation_only
+is	outcome.success.hard.pool	2	EXACT_EN,ENGLISH_LIKE	"The center was found.
+ The world came to rest."	"The center was found.
+ The world came to rest."		fill_native_translation_only
+is	outcome.success.hard.pool	3	EXACT_EN,ENGLISH_LIKE	"The stars stay silent.
+Your record does the speaking."	"The stars stay silent.
+Your record does the speaking."		fill_native_translation_only
+is	outcome.success.hard.pool	4	EXACT_EN,ENGLISH_LIKE	"The result  remained.
+The position changed."	"The result  remained.
+The position changed."		fill_native_translation_only
+is	outcome.success.hard.pool	5	EXACT_EN,ENGLISH_LIKE	"Between ice and glass,
+you chose control."	"Between ice and glass,
+you chose control."		fill_native_translation_only
+is	outcome.success.hard.pool	6	EXACT_EN,ENGLISH_LIKE	"The waves fell quiet,
+and the sea reclaimed its hidden depths."	"The waves fell quiet,
+and the sea reclaimed its hidden depths."		fill_native_translation_only
+is	outcome.success.hard.pool	7	EXACT_EN,ENGLISH_LIKE	"Some treasures still await.
+Next time, a different path."	"Some treasures still await.
+Next time, a different path."		fill_native_translation_only
+is	outcome.success.hard.pool	8	EXACT_EN,ENGLISH_LIKE	"The sky didn’t change.
+You did."	"The sky didn’t change.
+You did."		fill_native_translation_only
+is	outcome.success.hard.pool	9	EXACT_EN,ENGLISH_LIKE	"The moment passed.
+What remained was order."	"The moment passed.
+What remained was order."		fill_native_translation_only
+is	outcome.success.hard.pool	10	EXACT_EN,ENGLISH_LIKE	"Winter is honest.
+So was your run."	"Winter is honest.
+So was your run."		fill_native_translation_only
+is	outcome.success.hard.pool	11	EXACT_EN,ENGLISH_LIKE	"The stars aligned for a moment.
+You noticed."	"The stars aligned for a moment.
+You noticed."		fill_native_translation_only
+is	outcome.success.hard.pool	12	EXACT_EN,ENGLISH_LIKE	"The distance closed.
+Time did not."	"The distance closed.
+Time did not."		fill_native_translation_only
+is	outcome.success.hard.pool	13	EXACT_EN,ENGLISH_LIKE	"The world’s rules stood firm.
+ And the signal of possibility was real."	"The world’s rules stood firm.
+ And the signal of possibility was real."		fill_native_translation_only
+is	outcome.success.hard.pool	14	EXACT_EN,ENGLISH_LIKE	"The path closed quietly.
+You were already through."	"The path closed quietly.
+You were already through."		fill_native_translation_only
+is	outcome.success.hard.pool	15	EXACT_EN,ENGLISH_LIKE	"Nothing changed.
+Only your position did."	"Nothing changed.
+Only your position did."		fill_native_translation_only
+is	outcome.success.hard.pool	16	EXACT_EN	"Not luck.
+Alignment."	"Not luck.
+Alignment."		fill_native_translation_only
+is	outcome.success.hard.pool	17	EXACT_EN,ENGLISH_LIKE	"The moment passed.
+The record remains."	"The moment passed.
+The record remains."		fill_native_translation_only
+is	outcome.success.hard.pool	18	EXACT_EN,ENGLISH_LIKE	"The outcome didn’t change.
+Still, you moved forward."	"The outcome didn’t change.
+Still, you moved forward."		fill_native_translation_only
+is	outcome.success.hard.pool	19	EXACT_EN,ENGLISH_LIKE	"The output didn’t change.
+But you reached a new level."	"The output didn’t change.
+But you reached a new level."		fill_native_translation_only
+is	outcome.success.hard.pool	20	EXACT_EN,ENGLISH_LIKE	"The ending was the same.
+But the one who reached it had changed."	"The ending was the same.
+But the one who reached it had changed."		fill_native_translation_only
+is	outcome.success.hard.pool	21	EXACT_EN,ENGLISH_LIKE	"The destination is the same
+—but you’re no longer the traveler you once were."	"The destination is the same
+—but you’re no longer the traveler you once were."		fill_native_translation_only
+is	outcome.success.hard.pool	22	EXACT_EN,ENGLISH_LIKE	"Light fell evenly, ,
+and every shadow vanished."	"Light fell evenly, ,
+and every shadow vanished."		fill_native_translation_only
+is	outcome.success.hard.pool	23	EXACT_EN,ENGLISH_LIKE	"The wind fell silent.
+and everything returned to where it belonged."	"The wind fell silent.
+and everything returned to where it belonged."		fill_native_translation_only
+is	outcome.success.hard.pool	24	EXACT_EN,ENGLISH_LIKE	"A moment of silence.
+The world steadied its breath."	"A moment of silence.
+The world steadied its breath."		fill_native_translation_only
+is	outcome.success.hard.pool	25	EXACT_EN,ENGLISH_LIKE	"The record is etched deep in the sand—
+beyond the reach of the wind."	"The record is etched deep in the sand—
+beyond the reach of the wind."		fill_native_translation_only
+is	outcome.success.hard.pool	26	EXACT_EN,ENGLISH_LIKE	"Harmony was restored.
+Everything had been for this moment."	"Harmony was restored.
+Everything had been for this moment."		fill_native_translation_only
+is	outcome.success.hard.pool	27	EXACT_EN,ENGLISH_LIKE	"Time slipped by in silence,
+tucked away in the corners of memory."	"Time slipped by in silence,
+tucked away in the corners of memory."		fill_native_translation_only
+is	outcome.success.hard.pool	28	EXACT_EN,ENGLISH_LIKE	"The sky shifted in color,
+and one story came to its end."	"The sky shifted in color,
+and one story came to its end."		fill_native_translation_only
+is	outcome.success.hard.pool	29	EXACT_EN,ENGLISH_LIKE	"The waves grew calm,
+and the sea hid its depths once more."	"The waves grew calm,
+and the sea hid its depths once more."		fill_native_translation_only
+is	outcome.success.hard.pool	30	EXACT_EN,ENGLISH_LIKE	"The footsteps stopped,
+and only the place remained."	"The footsteps stopped,
+and only the place remained."		fill_native_translation_only
+is	outcome.success.hard.pool	31	EXACT_EN,ENGLISH_LIKE	"Victory and defeat 
+are nothing more than grains of sand."	"Victory and defeat 
+are nothing more than grains of sand."		fill_native_translation_only
+is	outcome.success.hard.pool	32	EXACT_EN,ENGLISH_LIKE	"The road goes on—or it ends.
+Either way, it lies on the same earth."	"The road goes on—or it ends.
+Either way, it lies on the same earth."		fill_native_translation_only
+is	outcome.timeup.easy.pool	1	EXACT_EN,ENGLISH_LIKE	"Time ran out.
+Nothing else did."	"Time ran out.
+Nothing else did."		fill_native_translation_only
+is	outcome.timeup.easy.pool	2	EXACT_EN,ENGLISH_LIKE	"The treasure can wait.
+So can you."	"The treasure can wait.
+So can you."		fill_native_translation_only
+is	outcome.timeup.easy.pool	3	EXACT_EN	"Breathe in.
+Then again."	"Breathe in.
+Then again."		fill_native_translation_only
+is	outcome.timeup.easy.pool	4	EXACT_EN,ENGLISH_LIKE	"That’s all for now.
+On to the next step."	"That’s all for now.
+On to the next step."		fill_native_translation_only
+is	outcome.timeup.easy.pool	5	EXACT_EN,ENGLISH_LIKE	"You're still here.
+That’s what matters."	"You're still here.
+That’s what matters."		fill_native_translation_only
+is	outcome.timeup.easy.pool	6	EXACT_EN,ENGLISH_LIKE	"The run ended.
+You didn’t."	"The run ended.
+You didn’t."		fill_native_translation_only
+is	outcome.timeup.easy.pool	7	EXACT_EN,ENGLISH_LIKE	"TIME'S UP.
+The run ended.
+You didn't."	"TIME'S UP.
+The run ended.
+You didn't."		fill_native_translation_only
+is	outcome.timeup.easy.pool	8	EXACT_EN,ENGLISH_LIKE	"TIME'S UP.
+The rules don’t change.
+Again."	"TIME'S UP.
+The rules don’t change.
+Again."		fill_native_translation_only
+is	outcome.timeup.easy.pool	9	EXACT_EN,ENGLISH_LIKE	"TIME'S UP.
+“So close” is real."	"TIME'S UP.
+“So close” is real."		fill_native_translation_only
+is	outcome.timeup.easy.pool	10	EXACT_EN,ENGLISH_LIKE	"The sun sank,
+and shadow covered the world once again."	"The sun sank,
+and shadow covered the world once again."		fill_native_translation_only
+is	outcome.timeup.easy.pool	11	EXACT_EN,ENGLISH_LIKE	"The last grains of sand fell,
+and the story quietly came to a close."	"The last grains of sand fell,
+and the story quietly came to a close."		fill_native_translation_only
+is	outcome.timeup.easy.pool	12	EXACT_EN,ENGLISH_LIKE	"The wind swept through,
+and the footprints vanished without a trace."	"The wind swept through,
+and the footprints vanished without a trace."		fill_native_translation_only
+is	outcome.timeup.easy.pool	13	EXACT_EN,ENGLISH_LIKE	"The tide came in,
+What once had been there returned to the sea."	"The tide came in,
+What once had been there returned to the sea."		fill_native_translation_only
+is	outcome.timeup.easy.pool	14	EXACT_EN,ENGLISH_LIKE	"Silence.
+Only time passed through."	"Silence.
+Only time passed through."		fill_native_translation_only
+is	outcome.timeup.easy.pool	15	EXACT_EN,ENGLISH_LIKE	"Victory and defeat 
+are nothing more than grains of sand."	"Victory and defeat 
+are nothing more than grains of sand."		fill_native_translation_only
+is	outcome.timeup.easy.pool	16	EXACT_EN,ENGLISH_LIKE	"The road goes on—or it ends.
+Either way, it lies on the same earth."	"The road goes on—or it ends.
+Either way, it lies on the same earth."		fill_native_translation_only
+is	outcome.timeup.normal.pool	1	EXACT_EN,ENGLISH_LIKE	"The distance closed.
+Time did not."	"The distance closed.
+Time did not."		fill_native_translation_only
+is	outcome.timeup.normal.pool	2	EXACT_EN,ENGLISH_LIKE	"The world kept its rules.
+You touched the edge."	"The world kept its rules.
+You touched the edge."		fill_native_translation_only
+is	outcome.timeup.normal.pool	3	EXACT_EN,ENGLISH_LIKE	"You didn’t make it.
+But the signal was real."	"You didn’t make it.
+But the signal was real."		fill_native_translation_only
+is	outcome.timeup.normal.pool	4	EXACT_EN,ENGLISH_LIKE	"Some treasures still await.
+Let’s try a different path."	"Some treasures still await.
+Let’s try a different path."		fill_native_translation_only
+is	outcome.timeup.normal.pool	5	EXACT_EN,ENGLISH_LIKE	"The result remained.
+The position changed."	"The result remained.
+The position changed."		fill_native_translation_only
+is	outcome.timeup.normal.pool	6	EXACT_EN,ENGLISH_LIKE	"Time ran out.
+Meaning didn't."	"Time ran out.
+Meaning didn't."		fill_native_translation_only
+is	outcome.timeup.normal.pool	7	EXACT_EN,ENGLISH_LIKE	"So close.
+The sound said so."	"So close.
+The sound said so."		fill_native_translation_only
+is	outcome.timeup.normal.pool	8	EXACT_EN,ENGLISH_LIKE	"The map is still open.
+Come back to it."	"The map is still open.
+Come back to it."		fill_native_translation_only
+is	outcome.timeup.normal.pool	9	EXACT_EN,ENGLISH_LIKE	"The world’s rules stood firm.
+The signal of possibility was real."	"The world’s rules stood firm.
+The signal of possibility was real."		fill_native_translation_only
+is	outcome.timeup.normal.pool	10	EXACT_EN,ENGLISH_LIKE	The world kept its rules.	The world kept its rules.		fill_native_translation_only
+is	outcome.timeup.normal.pool	11	EXACT_EN,ENGLISH_LIKE	"The moment passed.
+The record remains."	"The moment passed.
+The record remains."		fill_native_translation_only
+is	outcome.timeup.normal.pool	12	EXACT_EN,ENGLISH_LIKE	"The sun sank,
+and shadow covered the world once again."	"The sun sank,
+and shadow covered the world once again."		fill_native_translation_only
+is	outcome.timeup.normal.pool	13	EXACT_EN,ENGLISH_LIKE	"The last grains of sand fell,
+and the story quietly came to a close."	"The last grains of sand fell,
+and the story quietly came to a close."		fill_native_translation_only
+is	outcome.timeup.normal.pool	14	EXACT_EN,ENGLISH_LIKE	"The wind swept through,
+and the footprints vanished without a trace."	"The wind swept through,
+and the footprints vanished without a trace."		fill_native_translation_only
+is	outcome.timeup.normal.pool	15	EXACT_EN,ENGLISH_LIKE	"The tide came in,
+What once had been there returned to the sea."	"The tide came in,
+What once had been there returned to the sea."		fill_native_translation_only
+is	outcome.timeup.normal.pool	16	EXACT_EN,ENGLISH_LIKE	"Silence.
+Only time passed through."	"Silence.
+Only time passed through."		fill_native_translation_only
+is	outcome.timeup.normal.pool	17	EXACT_EN,ENGLISH_LIKE	"Victory and defeat 
+are nothing more than grains of sand."	"Victory and defeat 
+are nothing more than grains of sand."		fill_native_translation_only
+is	outcome.timeup.normal.pool	18	EXACT_EN,ENGLISH_LIKE	"The road goes on—or it ends.
+Either way, it lies on the same earth."	"The road goes on—or it ends.
+Either way, it lies on the same earth."		fill_native_translation_only
+is	outcome.timeup.normal.pool	19	EXACT_EN,ENGLISH_LIKE	"> Time ran out.
+> 
+> Nothing else did."	"> Time ran out.
+> 
+> Nothing else did."		fill_native_translation_only
+is	outcome.timeup.normal.pool	20	EXACT_EN,ENGLISH_LIKE	"> The outcome didn’t change.
+> 
+> But your position did."	"> The outcome didn’t change.
+> 
+> But your position did."		fill_native_translation_only
+is	outcome.timeup.hard.pool	1	EXACT_EN,ENGLISH_LIKE	"Even the aurora fades.
+Come back with a new stride."	"Even the aurora fades.
+Come back with a new stride."		fill_native_translation_only
+is	outcome.timeup.hard.pool	2	EXACT_EN,ENGLISH_LIKE	"In a fragile world,
+haste shatters clarity before it can be found."	"In a fragile world,
+haste shatters clarity before it can be found."		fill_native_translation_only
+is	outcome.timeup.hard.pool	3	EXACT_EN,ENGLISH_LIKE	"The moment slipped away.
+The meaning did not."	"The moment slipped away.
+The meaning did not."		fill_native_translation_only
+is	outcome.timeup.hard.pool	4	EXACT_EN,ENGLISH_LIKE	"Winter is patient.
+Be the same."	"Winter is patient.
+Be the same."		fill_native_translation_only
+is	outcome.timeup.hard.pool	5	EXACT_EN,ENGLISH_LIKE	"The sky kept moving.
+So will you."	"The sky kept moving.
+So will you."		fill_native_translation_only
+is	outcome.timeup.hard.pool	6	EXACT_EN,ENGLISH_LIKE	"The story moves on.
+The end is not yet."	"The story moves on.
+The end is not yet."		fill_native_translation_only
+is	outcome.timeup.hard.pool	7	EXACT_EN,ENGLISH_LIKE	"The stars were there, watching.
+Again."	"The stars were there, watching.
+Again."		fill_native_translation_only
+is	outcome.timeup.hard.pool	8	EXACT_EN,ENGLISH_LIKE	"Ice takes its time.
+Neither do you."	"Ice takes its time.
+Neither do you."		fill_native_translation_only
+is	outcome.timeup.hard.pool	9	EXACT_EN,ENGLISH_LIKE	"The sky kept moving.
+So can you."	"The sky kept moving.
+So can you."		fill_native_translation_only
+is	outcome.timeup.hard.pool	10	EXACT_EN,ENGLISH_LIKE	"The north has learned to wait.
+So should you."	"The north has learned to wait.
+So should you."		fill_native_translation_only
+is	outcome.timeup.hard.pool	11	EXACT_EN	"This is an interlude
+—It’s not over."	"This is an interlude
+—It’s not over."		fill_native_translation_only
+is	outcome.timeup.hard.pool	12	EXACT_EN,ENGLISH_LIKE	"Like drifting clouds,
+don’t lose your flow—like a river."	"Like drifting clouds,
+don’t lose your flow—like a river."		fill_native_translation_only
+is	outcome.timeup.hard.pool	13	EXACT_EN,ENGLISH_LIKE	"The sound was near.
+The distance was real.
+But that moment can’t be saved."	"The sound was near.
+The distance was real.
+But that moment can’t be saved."		fill_native_translation_only
+is	outcome.timeup.hard.pool	14	EXACT_EN,ENGLISH_LIKE	"You were closing in.
+Only time wasn’t."	"You were closing in.
+Only time wasn’t."		fill_native_translation_only
+is	outcome.timeup.hard.pool	15	EXACT_EN,ENGLISH_LIKE	"The world held to its rules.
+You touched the edge of them."	"The world held to its rules.
+You touched the edge of them."		fill_native_translation_only
+is	outcome.timeup.hard.pool	16	EXACT_EN,ENGLISH_LIKE	"You didn’t reach the treasure. 
+But the signal was real."	"You didn’t reach the treasure. 
+But the signal was real."		fill_native_translation_only
+is	outcome.timeup.hard.pool	17	EXACT_EN,ENGLISH_LIKE	"Nothing changed.
+Only your position did."	"Nothing changed.
+Only your position did."		fill_native_translation_only
+is	outcome.timeup.hard.pool	18	EXACT_EN	"It wasn’t luck.
+Alignment."	"It wasn’t luck.
+Alignment."		fill_native_translation_only
+is	outcome.timeup.hard.pool	19	EXACT_EN,ENGLISH_LIKE	"The moment slipped away,
+but the record stayed."	"The moment slipped away,
+but the record stayed."		fill_native_translation_only
+is	outcome.timeup.hard.pool	20	EXACT_EN,ENGLISH_LIKE	"You crossed fragile ground
+and left the horizon unbroken."	"You crossed fragile ground
+and left the horizon unbroken."		fill_native_translation_only
+is	outcome.timeup.hard.pool	21	EXACT_EN,ENGLISH_LIKE	"Nothing changed.
+ Only your position did.
+Not luck.
+Alignment.
+The moment passed.
+The record remains."	"Nothing changed.
+ Only your position did.
+Not luck.
+Alignment.
+The moment passed.
+The record remains."		fill_native_translation_only
+is	outcome.timeup.hard.pool	22	EXACT_EN,ENGLISH_LIKE	"The sun sank,
+and shadow covered the world once again."	"The sun sank,
+and shadow covered the world once again."		fill_native_translation_only
+is	outcome.timeup.hard.pool	23	EXACT_EN,ENGLISH_LIKE	"The last grains of sand fell,
+and the story quietly came to a close."	"The last grains of sand fell,
+and the story quietly came to a close."		fill_native_translation_only
+is	outcome.timeup.hard.pool	24	EXACT_EN,ENGLISH_LIKE	"The wind swept through,
+and the footprints vanished without a trace."	"The wind swept through,
+and the footprints vanished without a trace."		fill_native_translation_only
+is	outcome.timeup.hard.pool	25	EXACT_EN,ENGLISH_LIKE	"The tide came in,
+What once had been there returned to the sea."	"The tide came in,
+What once had been there returned to the sea."		fill_native_translation_only
+is	outcome.timeup.hard.pool	26	EXACT_EN,ENGLISH_LIKE	"Silence.
+Only time passed through."	"Silence.
+Only time passed through."		fill_native_translation_only
+is	outcome.timeup.hard.pool	27	EXACT_EN,ENGLISH_LIKE	"Victory and defeat 
+are nothing more than grains of sand."	"Victory and defeat 
+are nothing more than grains of sand."		fill_native_translation_only
+is	outcome.timeup.hard.pool	28	EXACT_EN,ENGLISH_LIKE	"The road goes on—or it ends.
+Either way, it lies on the same earth."	"The road goes on—or it ends.
+Either way, it lies on the same earth."		fill_native_translation_only
+is	outcome.timeup.hard.pool	29	EXACT_EN,ENGLISH_LIKE	"The season closed.
+The land remained."	"The season closed.
+The land remained."		fill_native_translation_only
+is	outcome.timeup.hard.pool	30	EXACT_EN,ENGLISH_LIKE	"The path The path remains.
+Only your steps stopped."	"The path The path remains.
+Only your steps stopped."		fill_native_translation_only
+is	outcome.timeup.hard.pool	31	EXACT_EN,ENGLISH_LIKE	"Your time ran out.
+The sky didn’t."	"Your time ran out.
+The sky didn’t."		fill_native_translation_only
+is	outcome.timeup.hard.pool	32	EXACT_EN,ENGLISH_LIKE	"It wasn’t rejection.
+Only silence."	"It wasn’t rejection.
+Only silence."		fill_native_translation_only
+is	outcome.timeup.hard.pool	33	EXACT_EN,ENGLISH_LIKE	"The world is still intact.
+You can return—changed."	"The world is still intact.
+You can return—changed."		fill_native_translation_only
+is	outcome.timeup.hard.pool	34	EXACT_EN,ENGLISH_LIKE	"The season ended.
+The forest remains."	"The season ended.
+The forest remains."		fill_native_translation_only
+is	outcome.timeup.hard.pool	35	EXACT_EN,ENGLISH_LIKE	"The distance was closing.
+Time kept its rhythm."	"The distance was closing.
+Time kept its rhythm."		fill_native_translation_only
+is	outcome.timeup.hard.pool	36	EXACT_EN,ENGLISH_LIKE	"Your time came to a halt.
+The sky kept moving."	"Your time came to a halt.
+The sky kept moving."		fill_native_translation_only
+is	outcome.timeup.hard.pool	37	EXACT_EN,ENGLISH_LIKE	"Not rejection
+Just silence."	"Not rejection
+Just silence."		fill_native_translation_only
+is	outcome.timeup.hard.pool	38	EXACT_EN,ENGLISH_LIKE	"The path is still here.
+You can come back—changed."	"The path is still here.
+You can come back—changed."		fill_native_translation_only

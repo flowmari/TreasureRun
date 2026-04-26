@@ -1,0 +1,7 @@
+lang	pool	rows
+pt	outcome.success.easy.pool	17
+pt	outcome.success.normal.pool	35
+pt	outcome.success.hard.pool	32
+pt	outcome.timeup.easy.pool	16
+pt	outcome.timeup.normal.pool	20
+pt	outcome.timeup.hard.pool	38

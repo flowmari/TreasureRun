@@ -1,0 +1,56 @@
+616	EN	  - '&7Endpunktzahl: &f{score}'
+619	EN	  - '&7Endpunktzahl: &f{score}'
+622	EN	    line: '&e#{rank} &f{player} &7- &b{score}'
+624	JP/CJK	    backup_cfe9e6cf: 🌊 Backup 海探索で海を検出しました
+626	JP/CJK	    text_e096c9a4: '&6特製エメラルド'
+643	EN	    return_ingredient_check_fail_673860d5: 'RETURN: ingredient check failed (need TreasureEmerald>=5 and slot1 empty)'
+660	JP/CJK	    stagemobcontrollistener_refl_08ad690a: '⚠ StageMobControlListener: カウントダウン判定(reflection)に失敗。ゲーム中のみ制御します。原因:'
+661	JP/CJK	    stagemobcontrollistener_refl_d8a61972: '⚠ StageMobControlListener: reflection初期化に失敗。ゲーム中のみ制御します。原因:'
+663	EN	    failed_to_connect_to_mysql_95e4d50a: 'Failed to connect to MySQL:'
+667	EN	    failed_to_create_table_68199f98: 'Failed to create table:'
+669	JP/CJK	    dj_onalltreasurescollected_a871afdd: DJイベントはすでに実行中のため、onAllTreasuresCollected をスキップしました。
+671	EN	    failed_to_save_treasure_coun_9d94c0cc: 'Failed to save treasure count:'
+672	JP/CJK	    dj_triggerultimatedjevent_eb01ecae: DJイベントはすでに実行中のため、triggerUltimateDJEvent をスキップしました。
+674	JP/CJK	    text_cc353737: 全ての宝物を発見しました！
+675	JP/CJK	    congratulations_38fd1594: §6Congratulations! 全ての宝物を見つけました！
+685	EN	  debug: chestSound.debug
+739	EN	    favorite_saved_sneak_rightcl_7a73eb4f: ★ Favorite saved! (Sneak+RightClick)
+742	EN	    quotefavoritestore_exists_fa_7d08adba: '[QuoteFavoriteStore] exists failed:'
+745	EN	    quotefavoritestore_addfavori_44fb1d75: '[QuoteFavoriteStore] addFavorite failed:'
+747	EN	    quotefavoritestore_removefav_8180a1e4: '[QuoteFavoriteStore] removeFavorite failed:'
+749	EN	    quotefavoritestore_removefav_d024b1e5: '[QuoteFavoriteStore] removeFavoriteById failed:'
+752	EN	    quotefavoritestore_listfavor_f3e976d4: '[QuoteFavoriteStore] listFavoriten failed:'
+754	EN	    quotefavoritestore_countfavo_69291680: '[QuoteFavoriteStore] countFavoriten failed:'
+758	JP/CJK	  text_2bf42ec8: このコマンドはプレイヤーのみが実行できます。
+759	JP/CJK	  text_2bf42ec8_18: このコマンドはプレイヤーのみが実行できます。
+760	JP/CJK	  3_3d5021f7: スペシャルエメラルドの作成には、ダイヤモンドが3個必要です。
+761	JP/CJK	  text_e096c9a4: '&6特製エメラルド'
+762	JP/CJK	  3_71b78a44: ダイヤモンド3個でスペシャルエメラルドを作成しました！
+763	JP/CJK	  text_3030fd61: プレイヤーのみ実行できます
+764	JP/CJK	  op_10caf0f6: 権限がありません（OP限定）
+765	JP/CJK	  debug_mode_is_off_config_yml_b3d27428: 'Debug mode is OFF. config.yml の debug: true にしてください'
+766	JP/CJK	  rank_1_2_3_demo_d87f40da: '使い方: /rank <1|2|3|demo>'
+767	JP/CJK	  rank_1_2_3_demo_4f3e3084: '数字で入力してください: /rank <1|2|3|demo>'
+768	JP/CJK	  1_3_rank_1_2_3_7f459bd0: '1〜3だけ使えます: /rank <1|2|3>'
+769	JP/CJK	  db_e5d54fbd: の演出だけ発動しました（ランキング/DBは変更なし）
+770	EN	  debug_rank_3f69f429: 'DEBUG: rank'
+771	JP/CJK	  text_bed3daf7: このコマンドはプレイヤーのみ実行できます。
+772	JP/CJK	  treasurerun_bcef4fe9: '[TreasureRun] ステージ管理が初期化されていません。'
+773	JP/CJK	  text_287fa0f1: 個の難易度ブロックを片付けました。
+774	JP/CJK	  text_44a99db9: このコマンドはプレイヤーからのみ実行できます。
+775	JP/CJK	  text_fd02f248: '制限時間:'
+776	JP/CJK	  text_f166cc04: '§a宝探しゲーム開始！ 難易度:'
+777	JP/CJK	  text_2281b097: 個のチェストを生成しました。宝物は
+790	EN	  chestsound_start_called_16th_e2a7414b: §b[ChestSound] start() called (16th-grid mode)
+797	JP/CJK	  text_7567bb35: 特製エメラルドのレシピを登録しました。
+798	JP/CJK	  text_7a04254b: '&e特製リンゴ'
+799	JP/CJK	  text_e8d4013d: 特製リンゴのレシピを登録しました。
+800	JP/CJK	  text_e42912c7: '&7特製鉄ブロック'
+801	JP/CJK	  text_c89dea57: 特製鉄ブロックのレシピを登録しました。
+844	EN	        savedOn: Saved on SUCCESS / TIME_UP
+914	EN	    page: Page {current}/{total}
+921	EN	    gameEndTotalScore: 'Spiel beendet! Gesamtpunktzahl: {score}'
+934	EN	    allChestsOpenedBroadcast: '{player} hat alle Truhen geöffnet! Endpunktzahl: {score}'
+935	EN	    summaryLine: 'Zeit: {time}  Punkte: {score}  Rang: {rank}'
+967	EN	    timeTop10Line: '#{rank} {player}  {time}s  {score} Punkte  Schwierigkeit: {difficulty}'
+973	EN	    playsLine: '#{rank} {player}  {score} Punkte  {time}s  ({difficulty}) [{lang}]'

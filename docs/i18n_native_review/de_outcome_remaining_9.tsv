@@ -1,0 +1,10 @@
+lang	pool	kind	meta	value
+de	outcome.success.easy.pool	ENGLISH_LIKE_6		> Nicht alles leuchtet für immer.\n> \n> Doch dieser Moment tat es.
+de	outcome.success.easy.pool	ENGLISH_LIKE_8		Der Wind verstummte,\nund alles kehrte an seinen angestammten Platz zurück.
+de	outcome.success.easy.pool	ENGLISH_LIKE_11		Die Harmonie kehrte zurück.\nAlles lief auf diesen Moment hinaus.
+de	outcome.success.normal.pool	ENGLISH_LIKE_6		Nur wenig leuchtet für immer.\nDoch dieser Moment strahlte.
+de	outcome.success.normal.pool	ENGLISH_LIKE_19		Der Wind verstummte,\nund alles kehrte an seinen angestammten Platz zurück.
+de	outcome.success.normal.pool	ENGLISH_LIKE_22		Die Harmonie kehrte zurück.\nAlles lief auf diesen Moment hinaus.
+de	outcome.timeup.normal.pool	ENGLISH_LIKE_6		Der Moment ist vorbei.\nDie Spur bleibt.
+de	outcome.timeup.hard.pool	ENGLISH_LIKE_19		Der Moment ist entglitten,\naber die Spur blieb.
+de	outcome.timeup.hard.pool	ENGLISH_LIKE_24		Der Wind strich hindurch,\nund die Spuren vergingen spurlos.

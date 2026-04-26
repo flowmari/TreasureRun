@@ -70,36 +70,77 @@ public class GameStageManager implements Listener {
   //   - 海が見つからない場合は足元を海に変換してfallbackする
   // =======================================================
 
-  // ✅ 追加：中心(cx,cz)に対して「水の上に5x5が乗る」か判定（y は水面のY）
-  private boolean isWaterPlatform(World w, int cx, int y, int cz) {
-    for (int dx = -2; dx <= 2; dx++) {
-      for (int dz = -2; dz <= 2; dz++) {
-        Material t = w.getBlockAt(cx + dx, y, cz + dz).getType();
-        if (t != Material.WATER) return false;
+  // ✅ 中心(cx,cz)に対して「本当に開けた外洋ステージが乗る」か判定
+  // - radius 内の水面が十分多い
+  // - 周囲に土/砂/草/葉/丸太などの陸地・森素材が少ない
+  // - これで海岸・川・ジャングル横を避ける
+  private boolean isOpenOceanPlatform(World w, int cx, int y, int cz) {
+    int radius = 48; // 見た目に森が近くならない最低ライン
+    int waterLike = 0;
+    int landLike = 0;
+    int total = 0;
+
+    for (int dx = -radius; dx <= radius; dx += 4) {
+      for (int dz = -radius; dz <= radius; dz += 4) {
+        total++;
+
+        int x = cx + dx;
+        int z = cz + dz;
+        int topY = w.getHighestBlockYAt(x, z);
+        Material top = w.getBlockAt(x, topY, z).getType();
+
+        if (top == Material.WATER || top == Material.KELP || top == Material.SEAGRASS || top == Material.TALL_SEAGRASS) {
+          waterLike++;
+          continue;
+        }
+
+        // 海岸・森・ジャングル・陸地っぽいものを強く拒否
+        String name = top.name();
+        if (top.isSolid()
+            || name.contains("LEAVES")
+            || name.contains("LOG")
+            || name.contains("WOOD")
+            || name.contains("DIRT")
+            || name.contains("GRASS")
+            || name.contains("SAND")
+            || name.contains("STONE")
+            || name.contains("CLAY")
+            || name.contains("MUD")
+            || name.contains("VINE")) {
+          landLike++;
+        }
       }
     }
-    return true;
+
+    // ほぼ水で、陸地・森が少ない場所だけ採用
+    double waterRate = total == 0 ? 0.0 : (waterLike * 1.0 / total);
+    double landRate = total == 0 ? 1.0 : (landLike * 1.0 / total);
+
+    return waterRate >= 0.72 && landRate <= 0.08;
   }
 
-  // ✅ 追加：見つけた水地点(x,z,y)から、5x5床が水上に乗る「中心」を優先して返す
+  // ✅ 見つけた水地点(x,z,y)から、開けた外洋中心だけを返す
+  // 見つからない場合は null。海岸・川・ジャングル横は採用しない。
   private Location pickBestWaterCenter(World w, int x, int y, int z) {
-    int[][] cands = {
-        {0, 0},
-        {4, 0}, {-4, 0}, {0, 4}, {0, -4},
-        {4, 4}, {4, -4}, {-4, 4}, {-4, -4}
-    };
-    for (int[] o : cands) {
-      int cx = x + o[0];
-      int cz = z + o[1];
-      if (isWaterPlatform(w, cx, y, cz)) {
-        return new Location(w, cx, y, cz);
+    int[] offsets = {0, 32, -32, 64, -64, 96, -96, 128, -128};
+
+    for (int ox : offsets) {
+      for (int oz : offsets) {
+        int cx = x + ox;
+        int cz = z + oz;
+
+        if (isOpenOceanPlatform(w, cx, y, cz)) {
+          return new Location(w, cx, y, cz);
+        }
       }
     }
-    return new Location(w, x, y, z);
+
+    return null;
   }
 
-  // ✅ 追加：海が見つからない時の“確実に海上”fallback（足元を海に変える）
-  // radius=10 なら 21x21 を海にする
+
+  // ✅ 海上ステージ用：周囲を強制的に「水面＋上空クリア」にする
+  // これで海岸・砂浜・ジャングル横に寄っても、ステージ周囲だけは必ず海になる
   private void createFallbackOceanPatch(Location origin, int radius) {
     if (origin == null || origin.getWorld() == null) return;
     World w = origin.getWorld();
@@ -107,27 +148,37 @@ public class GameStageManager implements Listener {
     int cx = origin.getBlockX();
     int cz = origin.getBlockZ();
 
-    int topY = w.getHighestBlockYAt(origin);
-    Material topType = w.getBlockAt(cx, topY, cz).getType();
-    int waterY = topType.isSolid() ? (topY + 1) : topY;
+    // origin が水ならそのYを水面にする。水でなければ現在地付近の最高地点を基準にする。
+    int waterY = origin.getBlockY();
+    if (w.getBlockAt(cx, waterY, cz).getType() != Material.WATER) {
+      int topY = w.getHighestBlockYAt(origin);
+      Material topType = w.getBlockAt(cx, topY, cz).getType();
+      waterY = topType == Material.WATER ? topY : topY + 1;
+    }
 
     for (int dx = -radius; dx <= radius; dx++) {
       for (int dz = -radius; dz <= radius; dz++) {
         int x = cx + dx;
         int z = cz + dz;
 
-        // 水面の空間を確保
-        Block surface = w.getBlockAt(x, waterY, z);
-        if (surface.getType().isSolid()) surface.setType(Material.AIR);
+        // 水面そのもの
+        w.getBlockAt(x, waterY, z).setType(Material.WATER, false);
 
-        // 1段下を水にする
-        Block water = w.getBlockAt(x, waterY - 1, z);
-        water.setType(Material.WATER);
+        // 水面より上を空気にして、砂丘・木・葉・土・草を消す
+        for (int y = waterY + 1; y <= waterY + 10; y++) {
+          Block b = w.getBlockAt(x, y, z);
+          if (!b.getType().isAir()) {
+            b.setType(Material.AIR, false);
+          }
+        }
+
+        // 水面直下が空洞だと変なので、1段下も水にする
+        w.getBlockAt(x, waterY - 1, z).setType(Material.WATER, false);
       }
     }
 
-    // base を水面位置に合わせる（この後の処理で +1 される想定）
-    origin.setY(waterY - 1);
+    // base は「水ブロックのY」を持つ
+    origin.setY(waterY);
   }
 
   // ✅ UFO を渡せる版（TreasureRunMultiChestPlugin 側で new GameStageManager(this, ufo) にできる）
@@ -207,33 +258,33 @@ public class GameStageManager implements Listener {
         + " gsm=" + System.identityHashCode(this)
     );
 
-    // まず従来の海探索
-    Location base = findNearbySeaLocation(player.getLocation(), 48);
+    // ✅ 本当の外洋ステージ固定：
+    // 近場の川・海岸・ジャングル横を拾わない。広域から「開けた海」だけを採用する。
+    Location base = forceFindOcean(player.getLocation());
 
-    // バックアップ海探索（より広く探す）
-    if (base == null) {
-      base = forceFindOcean(player.getLocation());
-      if (base != null) {
-        plugin.getLogger().info("🌊 Backup 海探索で海を検出しました");
-      }
+    if (base != null) {
+      plugin.getLogger().info("🌊 [OpenOcean] 開けた外洋を検出しました: x="
+          + base.getBlockX() + " y=" + base.getBlockY() + " z=" + base.getBlockZ());
     }
 
-    // それでも見つからない場合は元の場所
+    // それでも見つからない場合は、プレイヤーから遠く離れた場所に人工外洋を作る
     if (base == null) {
-      base = player.getLocation().clone();
-      plugin.getLogger().warning("⚠ 海が見つからなかったため、周囲を海に変換して海上ステージを生成します");
-      createFallbackOceanPatch(base, 10);
+      base = player.getLocation().clone().add(320, 0, 320);
+      plugin.getLogger().warning("⚠ [OpenOcean] 外洋が見つからなかったため、遠方に人工外洋ステージを生成します: x="
+          + base.getBlockX() + " z=" + base.getBlockZ());
+      createFallbackOceanPatch(base, 128);
     }
 
-    Location stageCenter = base.clone();
     World w = base.getWorld();
 
-    // 海なら水面+1 に調整（base 自体は海探索で見つけた地点）
-    int seaY = w.getHighestBlockYAt(base);
-    if (w.getBlockAt(base.getBlockX(), seaY, base.getBlockZ()).getType() == Material.WATER) {
-      seaY += 1;
-    }
-    stageCenter.setY(seaY);
+    // ✅ 最重要：見つけた場所が海でも、周囲を必ず海に整える
+    // これで海岸・砂浜・ジャングル横に寄っても、ステージ周辺は海上になる
+    createFallbackOceanPatch(base, 128);
+
+    Location stageCenter = base.clone();
+
+    // base は水ブロックのY。ステージ床はその1つ上。
+    stageCenter.setY(base.getBlockY() + 1);
 
     // ✅ 追加：このステージ中心を記憶（後で難易度ブロックをスイープ掃除できる）
     rememberStageCenter(stageCenter);
@@ -396,7 +447,8 @@ public class GameStageManager implements Listener {
         for (int yy = py; yy >= py - 6 && yy >= 50; yy--) {
           Material m = w.getBlockAt(p.getBlockX(), yy, p.getBlockZ()).getType();
           if (m == Material.WATER) {
-            return pickBestWaterCenter(w, p.getBlockX(), yy, p.getBlockZ());
+            Location center = pickBestWaterCenter(w, p.getBlockX(), yy, p.getBlockZ());
+            if (center != null) return center;
           }
         }
       }
@@ -409,7 +461,7 @@ public class GameStageManager implements Listener {
     World w = origin.getWorld();
 
     // 半径を徐々に拡大して海を探索（最大256）
-    for (int r = 48; r <= 256; r += 16) {
+    for (int r = 96; r <= 768; r += 32) {
       for (int dx = -r; dx <= r; dx += 8) {
         for (int dz = -r; dz <= r; dz += 8) {
 
@@ -439,13 +491,21 @@ public class GameStageManager implements Listener {
     int cz = center.getBlockZ();
     int y = center.getBlockY();
 
-    for (int dx = -2; dx <= 2; dx++) {
-      for (int dz = -2; dz <= 2; dz++) {
+    // ✅ Stage visual size:
+    // radius=4 means 9x9 blocks.
+    // This is the compact playable neon glass floor size.
+    final int floorRadius = 4;
+
+    for (int dx = -floorRadius; dx <= floorRadius; dx++) {
+      for (int dz = -floorRadius; dz <= floorRadius; dz++) {
         Block top = w.getBlockAt(cx + dx, y, cz + dz);
         Block under = w.getBlockAt(cx + dx, y - 1, cz + dz);
 
-        // ✨ 真ん中の十字だけシーランタン
-        if (dx == 0 || dz == 0) {
+        // ✨ 中央十字＋外周ラインをシーランタンにして、広い床でも輪郭が見えるようにする
+        boolean centerCross = (dx == 0 || dz == 0);
+        boolean border = (Math.abs(dx) == floorRadius || Math.abs(dz) == floorRadius);
+
+        if (centerCross || border) {
           under.setType(Material.SEA_LANTERN);
         } else {
           under.setType(Material.PRISMARINE);
@@ -468,8 +528,11 @@ public class GameStageManager implements Listener {
     int cz = center.getBlockZ();
     int y = center.getBlockY();
 
-    for (int dx = -2; dx <= 2; dx++) {
-      for (int dz = -2; dz <= 2; dz++) {
+    // ✅ ネオン床が9x9になったので、上空クリア範囲も同じ半径に合わせる
+    final int floorRadius = 4;
+
+    for (int dx = -floorRadius; dx <= floorRadius; dx++) {
+      for (int dz = -floorRadius; dz <= floorRadius; dz++) {
         for (int dy = 1; dy <= height; dy++) {
           Block b = w.getBlockAt(cx + dx, y + dy, cz + dz);
           if (!b.getType().isAir()) b.setType(Material.AIR);
@@ -486,9 +549,10 @@ public class GameStageManager implements Listener {
     int cz = center.getBlockZ();
 
     // ステージの一辺に 3 つ並べる（左＝Easy, 真ん中＝Normal, 右＝Hard）
-    Block easyBlock   = w.getBlockAt(cx - 1, y, cz + 3);
-    Block normalBlock = w.getBlockAt(cx,     y, cz + 3);
-    Block hardBlock   = w.getBlockAt(cx + 1, y, cz + 3);
+    // ✅ 床を半径4に調整したので、難易度ブロックは外周すぐ外に置く
+    Block easyBlock   = w.getBlockAt(cx - 1, y, cz + 5);
+    Block normalBlock = w.getBlockAt(cx,     y, cz + 5);
+    Block hardBlock   = w.getBlockAt(cx + 1, y, cz + 5);
 
     // ★ 難易度カラー
     // Easy  : 紫

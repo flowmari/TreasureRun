@@ -1,0 +1,141 @@
+batch_file	lang	pool	index	en_source	translation	note
+sv_batch_01.tsv	sv	outcome.success.easy.pool	4	> You made it here\n> \n> The rules were simple —\n> \n> the choice was yours.		unresolved_after_real_sv_apply
+sv_batch_01.tsv	sv	outcome.success.easy.pool	5	> Distance became meaning.\n> \n> and time answered your footsteps.		unresolved_after_real_sv_apply
+sv_batch_01.tsv	sv	outcome.success.easy.pool	6	> Not everything shines forever.\n> \n> But this moment did.		unresolved_after_real_sv_apply
+sv_batch_01.tsv	sv	outcome.success.easy.pool	7	Light fell evenly, ,\nand every shadow vanished.		unresolved_after_real_sv_apply
+sv_batch_01.tsv	sv	outcome.success.easy.pool	8	The wind fell silent.\nand everything returned to where it belonged.		unresolved_after_real_sv_apply
+sv_batch_01.tsv	sv	outcome.success.easy.pool	9	A moment of silence.\nThe world steadied its breath.		unresolved_after_real_sv_apply
+sv_batch_01.tsv	sv	outcome.success.easy.pool	10	The record is etched deep in the sand—\nbeyond the reach of the wind.		unresolved_after_real_sv_apply
+sv_batch_01.tsv	sv	outcome.success.easy.pool	11	Harmony was restored.\nEverything had been for this moment.		unresolved_after_real_sv_apply
+sv_batch_01.tsv	sv	outcome.success.easy.pool	12	Time slipped by in silence,\ntucked away in the corners of memory.		unresolved_after_real_sv_apply
+sv_batch_01.tsv	sv	outcome.success.easy.pool	13	The sky shifted in color,\nand one story came to its end.		unresolved_after_real_sv_apply
+sv_batch_01.tsv	sv	outcome.success.easy.pool	14	The waves grew calm,\nand the sea hid its depths once more.		unresolved_after_real_sv_apply
+sv_batch_01.tsv	sv	outcome.success.easy.pool	15	The footsteps stopped,\nand only the place remained.		unresolved_after_real_sv_apply
+sv_batch_01.tsv	sv	outcome.success.easy.pool	16	Victory and defeat \nare nothing more than grains of sand.		unresolved_after_real_sv_apply
+sv_batch_01.tsv	sv	outcome.success.easy.pool	17	The road goes on—or it ends.\nEither way, it lies on the same earth.		unresolved_after_real_sv_apply
+sv_batch_01.tsv	sv	outcome.success.normal.pool	4	The glass held its breath,\nand you held your ground.		unresolved_after_real_sv_apply
+sv_batch_01.tsv	sv	outcome.success.normal.pool	5	Under the stillness of the sky,\nyour spirit did not waver.		unresolved_after_real_sv_apply
+sv_batch_01.tsv	sv	outcome.success.normal.pool	6	Few things shine forever.\nbut this moment was radiant.		unresolved_after_real_sv_apply
+sv_batch_01.tsv	sv	outcome.success.normal.pool	7	You traversed the fragile earth,\nwithout losing the view.		unresolved_after_real_sv_apply
+sv_batch_01.tsv	sv	outcome.success.normal.pool	8	The moment has passed.\nThe legacy remains.		unresolved_after_real_sv_apply
+sv_batch_01.tsv	sv	outcome.success.normal.pool	9	Luck fades fast.\norder endures.		unresolved_after_real_sv_apply
+sv_batch_02.tsv	sv	outcome.success.normal.pool	10	The sky knows no pause in endless circle,\nnor shall you find yours.		unresolved_after_real_sv_apply
+sv_batch_02.tsv	sv	outcome.success.normal.pool	11	The center has been reached.\nThe world stood still.		unresolved_after_real_sv_apply
+sv_batch_02.tsv	sv	outcome.success.normal.pool	12	Finally here.\nThe truth remains unyielding.		unresolved_after_real_sv_apply
+sv_batch_02.tsv	sv	outcome.success.normal.pool	13	You have seen it through.\nAnd mark this: it was you, and no one else, who chose this path.		unresolved_after_real_sv_apply
+sv_batch_02.tsv	sv	outcome.success.normal.pool	14	Time drifted into silence,\nfinding its place in the recesses of the mind.		unresolved_after_real_sv_apply
+sv_batch_02.tsv	sv	outcome.success.normal.pool	15	As the sky transformed,\nthe tale found its final resolved.		unresolved_after_real_sv_apply
+sv_batch_02.tsv	sv	outcome.success.normal.pool	16	The waters fell calm,\nand the sky once more veiled its abyss.		unresolved_after_real_sv_apply
+sv_batch_02.tsv	sv	outcome.success.normal.pool	17	The footsteps ceased,\nonly the place remained.		unresolved_after_real_sv_apply
+sv_batch_02.tsv	sv	outcome.success.normal.pool	18	Light fell evenly, ,\nand every shadow vanished.		unresolved_after_real_sv_apply
+sv_batch_02.tsv	sv	outcome.success.normal.pool	19	The wind fell silent.\nand everything returned to where it belonged.		unresolved_after_real_sv_apply
+sv_batch_02.tsv	sv	outcome.success.normal.pool	20	A moment of silence.\nThe world steadied its breath.		unresolved_after_real_sv_apply
+sv_batch_02.tsv	sv	outcome.success.normal.pool	21	The record is etched deep in the sand—\nbeyond the reach of the wind.		unresolved_after_real_sv_apply
+sv_batch_02.tsv	sv	outcome.success.normal.pool	22	Harmony was restored.\nEverything had been for this moment.		unresolved_after_real_sv_apply
+sv_batch_02.tsv	sv	outcome.success.normal.pool	23	RUN COMPLETE.\nClear. Found it.\nThat's enough.		unresolved_after_real_sv_apply
+sv_batch_02.tsv	sv	outcome.success.normal.pool	24	RUN COMPLETE.\nThe path held.\nSo did you.		unresolved_after_real_sv_apply
+sv_batch_02.tsv	sv	outcome.success.normal.pool	25	The sky has kept moving.\nSo can you.		unresolved_after_real_sv_apply
+sv_batch_02.tsv	sv	outcome.success.normal.pool	26	RUN COMPLETE.\nA quiet result.\nThe weight of real work.		unresolved_after_real_sv_apply
+sv_batch_02.tsv	sv	outcome.success.normal.pool	27	You only walked the path\nthe world had laid out for you.		unresolved_after_real_sv_apply
+sv_batch_02.tsv	sv	outcome.success.normal.pool	28	The ground didn’t give way.\nIt trusted your steps.		unresolved_after_real_sv_apply
+sv_batch_02.tsv	sv	outcome.success.normal.pool	29	This moment aligned\nwith the stars’ ancient rhythm.		unresolved_after_real_sv_apply
+sv_batch_03.tsv	sv	outcome.success.normal.pool	30	You didn’t take anything.\n You understood something.		unresolved_after_real_sv_apply
+sv_batch_03.tsv	sv	outcome.success.normal.pool	31	You didn’t gain a thing.\nYou only saw the truth for what it was.		unresolved_after_real_sv_apply
+sv_batch_03.tsv	sv	outcome.success.normal.pool	32	You didn’t take this place.\nYou belonged here.		unresolved_after_real_sv_apply
+sv_batch_03.tsv	sv	outcome.success.normal.pool	33	You walked a road\nolder than memory itself.		unresolved_after_real_sv_apply
+sv_batch_03.tsv	sv	outcome.success.normal.pool	34	The earth did not resist.\nIt recognized you.		unresolved_after_real_sv_apply
+sv_batch_03.tsv	sv	outcome.success.normal.pool	35	This moment aligned\n with the stillness of the stars.		unresolved_after_real_sv_apply
+sv_batch_03.tsv	sv	outcome.success.hard.pool	4	The result  remained.\nThe position changed.		unresolved_after_real_sv_apply
+sv_batch_03.tsv	sv	outcome.success.hard.pool	5	Between ice and glass,\nyou chose control.		unresolved_after_real_sv_apply
+sv_batch_03.tsv	sv	outcome.success.hard.pool	6	The waves fell quiet,\nand the sea reclaimed its hidden depths.		unresolved_after_real_sv_apply
+sv_batch_03.tsv	sv	outcome.success.hard.pool	7	Some treasures still await.\nNext time, a different path.		unresolved_after_real_sv_apply
+sv_batch_03.tsv	sv	outcome.success.hard.pool	8	The sky didn’t change.\nYou did.		unresolved_after_real_sv_apply
+sv_batch_03.tsv	sv	outcome.success.hard.pool	9	The moment passed.\nWhat remained was order.		unresolved_after_real_sv_apply
+sv_batch_03.tsv	sv	outcome.success.hard.pool	10	Winter is honest.\nSo was your run.		unresolved_after_real_sv_apply
+sv_batch_03.tsv	sv	outcome.success.hard.pool	11	The stars aligned for a moment.\nYou noticed.		unresolved_after_real_sv_apply
+sv_batch_03.tsv	sv	outcome.success.hard.pool	12	The distance closed.\nTime did not.		unresolved_after_real_sv_apply
+sv_batch_03.tsv	sv	outcome.success.hard.pool	13	The world’s rules stood firm.\n And the signal of possibility was real.		unresolved_after_real_sv_apply
+sv_batch_03.tsv	sv	outcome.success.hard.pool	14	The path closed quietly.\nYou were already through.		unresolved_after_real_sv_apply
+sv_batch_03.tsv	sv	outcome.success.hard.pool	15	Nothing changed.\nOnly your position did.		unresolved_after_real_sv_apply
+sv_batch_03.tsv	sv	outcome.success.hard.pool	16	Not luck.\nAlignment.		unresolved_after_real_sv_apply
+sv_batch_03.tsv	sv	outcome.success.hard.pool	17	The moment passed.\nThe record remains.		unresolved_after_real_sv_apply
+sv_batch_04.tsv	sv	outcome.success.hard.pool	18	The outcome didn’t change.\nStill, you moved forward.		unresolved_after_real_sv_apply
+sv_batch_04.tsv	sv	outcome.success.hard.pool	19	The output didn’t change.\nBut you reached a new level.		unresolved_after_real_sv_apply
+sv_batch_04.tsv	sv	outcome.success.hard.pool	20	The ending was the same.\nBut the one who reached it had changed.		unresolved_after_real_sv_apply
+sv_batch_04.tsv	sv	outcome.success.hard.pool	21	The destination is the same\n—but you’re no longer the traveler you once were.		unresolved_after_real_sv_apply
+sv_batch_04.tsv	sv	outcome.success.hard.pool	22	Light fell evenly, ,\nand every shadow vanished.		unresolved_after_real_sv_apply
+sv_batch_04.tsv	sv	outcome.success.hard.pool	23	The wind fell silent.\nand everything returned to where it belonged.		unresolved_after_real_sv_apply
+sv_batch_04.tsv	sv	outcome.success.hard.pool	24	A moment of silence.\nThe world steadied its breath.		unresolved_after_real_sv_apply
+sv_batch_04.tsv	sv	outcome.success.hard.pool	25	The record is etched deep in the sand—\nbeyond the reach of the wind.		unresolved_after_real_sv_apply
+sv_batch_04.tsv	sv	outcome.success.hard.pool	26	Harmony was restored.\nEverything had been for this moment.		unresolved_after_real_sv_apply
+sv_batch_04.tsv	sv	outcome.success.hard.pool	27	Time slipped by in silence,\ntucked away in the corners of memory.		unresolved_after_real_sv_apply
+sv_batch_04.tsv	sv	outcome.success.hard.pool	28	The sky shifted in color,\nand one story came to its end.		unresolved_after_real_sv_apply
+sv_batch_04.tsv	sv	outcome.success.hard.pool	29	The waves grew calm,\nand the sea hid its depths once more.		unresolved_after_real_sv_apply
+sv_batch_04.tsv	sv	outcome.success.hard.pool	30	The footsteps stopped,\nand only the place remained.		unresolved_after_real_sv_apply
+sv_batch_04.tsv	sv	outcome.success.hard.pool	31	Victory and defeat \nare nothing more than grains of sand.		unresolved_after_real_sv_apply
+sv_batch_04.tsv	sv	outcome.success.hard.pool	32	The road goes on—or it ends.\nEither way, it lies on the same earth.		unresolved_after_real_sv_apply
+sv_batch_04.tsv	sv	outcome.timeup.easy.pool	4	That’s all for now.\nOn to the next step.		unresolved_after_real_sv_apply
+sv_batch_04.tsv	sv	outcome.timeup.easy.pool	5	You're still here.\nThat’s what matters.		unresolved_after_real_sv_apply
+sv_batch_04.tsv	sv	outcome.timeup.easy.pool	6	The run ended.\nYou didn’t.		unresolved_after_real_sv_apply
+sv_batch_04.tsv	sv	outcome.timeup.easy.pool	7	TIME'S UP.\nThe run ended.\nYou didn't.		unresolved_after_real_sv_apply
+sv_batch_04.tsv	sv	outcome.timeup.easy.pool	8	TIME'S UP.\nThe rules don’t change.\nAgain.		unresolved_after_real_sv_apply
+sv_batch_05.tsv	sv	outcome.timeup.easy.pool	9	TIME'S UP.\n“So close” is real.		unresolved_after_real_sv_apply
+sv_batch_05.tsv	sv	outcome.timeup.easy.pool	10	The sun sank,\nand shadow covered the world once again.		unresolved_after_real_sv_apply
+sv_batch_05.tsv	sv	outcome.timeup.easy.pool	11	The last grains of sand fell,\nand the story quietly came to a close.		unresolved_after_real_sv_apply
+sv_batch_05.tsv	sv	outcome.timeup.easy.pool	12	The wind swept through,\nand the footprints vanished without a trace.		unresolved_after_real_sv_apply
+sv_batch_05.tsv	sv	outcome.timeup.easy.pool	13	The tide came in,\nWhat once had been there returned to the sea.		unresolved_after_real_sv_apply
+sv_batch_05.tsv	sv	outcome.timeup.easy.pool	14	Silence.\nOnly time passed through.		unresolved_after_real_sv_apply
+sv_batch_05.tsv	sv	outcome.timeup.easy.pool	15	Victory and defeat \nare nothing more than grains of sand.		unresolved_after_real_sv_apply
+sv_batch_05.tsv	sv	outcome.timeup.easy.pool	16	The road goes on—or it ends.\nEither way, it lies on the same earth.		unresolved_after_real_sv_apply
+sv_batch_05.tsv	sv	outcome.timeup.normal.pool	4	Some treasures still await.\nLet’s try a different path.		unresolved_after_real_sv_apply
+sv_batch_05.tsv	sv	outcome.timeup.normal.pool	5	The result remained.\nThe position changed.		unresolved_after_real_sv_apply
+sv_batch_05.tsv	sv	outcome.timeup.normal.pool	6	Time ran out.\nMeaning didn't.		unresolved_after_real_sv_apply
+sv_batch_05.tsv	sv	outcome.timeup.normal.pool	7	So close.\nThe sound said so.		unresolved_after_real_sv_apply
+sv_batch_05.tsv	sv	outcome.timeup.normal.pool	8	The map is still open.\nCome back to it.		unresolved_after_real_sv_apply
+sv_batch_05.tsv	sv	outcome.timeup.normal.pool	9	The world’s rules stood firm.\nThe signal of possibility was real.		unresolved_after_real_sv_apply
+sv_batch_05.tsv	sv	outcome.timeup.normal.pool	10	The world kept its rules.		unresolved_after_real_sv_apply
+sv_batch_05.tsv	sv	outcome.timeup.normal.pool	11	The moment passed.\nThe record remains.		unresolved_after_real_sv_apply
+sv_batch_05.tsv	sv	outcome.timeup.normal.pool	12	The sun sank,\nand shadow covered the world once again.		unresolved_after_real_sv_apply
+sv_batch_05.tsv	sv	outcome.timeup.normal.pool	13	The last grains of sand fell,\nand the story quietly came to a close.		unresolved_after_real_sv_apply
+sv_batch_05.tsv	sv	outcome.timeup.normal.pool	14	The wind swept through,\nand the footprints vanished without a trace.		unresolved_after_real_sv_apply
+sv_batch_05.tsv	sv	outcome.timeup.normal.pool	15	The tide came in,\nWhat once had been there returned to the sea.		unresolved_after_real_sv_apply
+sv_batch_06.tsv	sv	outcome.timeup.normal.pool	16	Silence.\nOnly time passed through.		unresolved_after_real_sv_apply
+sv_batch_06.tsv	sv	outcome.timeup.normal.pool	17	Victory and defeat \nare nothing more than grains of sand.		unresolved_after_real_sv_apply
+sv_batch_06.tsv	sv	outcome.timeup.normal.pool	18	The road goes on—or it ends.\nEither way, it lies on the same earth.		unresolved_after_real_sv_apply
+sv_batch_06.tsv	sv	outcome.timeup.normal.pool	19	> Time ran out.\n> \n> Nothing else did.		unresolved_after_real_sv_apply
+sv_batch_06.tsv	sv	outcome.timeup.normal.pool	20	> The outcome didn’t change.\n> \n> But your position did.		unresolved_after_real_sv_apply
+sv_batch_06.tsv	sv	outcome.timeup.hard.pool	4	Winter is patient.\nBe the same.		unresolved_after_real_sv_apply
+sv_batch_06.tsv	sv	outcome.timeup.hard.pool	5	The sky kept moving.\nSo will you.		unresolved_after_real_sv_apply
+sv_batch_06.tsv	sv	outcome.timeup.hard.pool	6	The story moves on.\nThe end is not yet.		unresolved_after_real_sv_apply
+sv_batch_06.tsv	sv	outcome.timeup.hard.pool	7	The stars were there, watching.\nAgain.		unresolved_after_real_sv_apply
+sv_batch_06.tsv	sv	outcome.timeup.hard.pool	8	Ice takes its time.\nNeither do you.		unresolved_after_real_sv_apply
+sv_batch_06.tsv	sv	outcome.timeup.hard.pool	9	The sky kept moving.\nSo can you.		unresolved_after_real_sv_apply
+sv_batch_06.tsv	sv	outcome.timeup.hard.pool	10	The north has learned to wait.\nSo should you.		unresolved_after_real_sv_apply
+sv_batch_06.tsv	sv	outcome.timeup.hard.pool	11	This is an interlude\n—It’s not over.		unresolved_after_real_sv_apply
+sv_batch_06.tsv	sv	outcome.timeup.hard.pool	12	Like drifting clouds,\ndon’t lose your flow—like a river.		unresolved_after_real_sv_apply
+sv_batch_06.tsv	sv	outcome.timeup.hard.pool	13	The sound was near.\nThe distance was real.\nBut that moment can’t be saved.		unresolved_after_real_sv_apply
+sv_batch_06.tsv	sv	outcome.timeup.hard.pool	14	You were closing in.\nOnly time wasn’t.		unresolved_after_real_sv_apply
+sv_batch_06.tsv	sv	outcome.timeup.hard.pool	15	The world held to its rules.\nYou touched the edge of them.		unresolved_after_real_sv_apply
+sv_batch_06.tsv	sv	outcome.timeup.hard.pool	16	You didn’t reach the treasure. \nBut the signal was real.		unresolved_after_real_sv_apply
+sv_batch_06.tsv	sv	outcome.timeup.hard.pool	17	Nothing changed.\nOnly your position did.		unresolved_after_real_sv_apply
+sv_batch_06.tsv	sv	outcome.timeup.hard.pool	18	It wasn’t luck.\nAlignment.		unresolved_after_real_sv_apply
+sv_batch_07.tsv	sv	outcome.timeup.hard.pool	19	The moment slipped away,\nbut the record stayed.		unresolved_after_real_sv_apply
+sv_batch_07.tsv	sv	outcome.timeup.hard.pool	20	You crossed fragile ground\nand left the horizon unbroken.		unresolved_after_real_sv_apply
+sv_batch_07.tsv	sv	outcome.timeup.hard.pool	21	Nothing changed.\n Only your position did.\nNot luck.\nAlignment.\nThe moment passed.\nThe record remains.		unresolved_after_real_sv_apply
+sv_batch_07.tsv	sv	outcome.timeup.hard.pool	22	The sun sank,\nand shadow covered the world once again.		unresolved_after_real_sv_apply
+sv_batch_07.tsv	sv	outcome.timeup.hard.pool	23	The last grains of sand fell,\nand the story quietly came to a close.		unresolved_after_real_sv_apply
+sv_batch_07.tsv	sv	outcome.timeup.hard.pool	24	The wind swept through,\nand the footprints vanished without a trace.		unresolved_after_real_sv_apply
+sv_batch_07.tsv	sv	outcome.timeup.hard.pool	25	The tide came in,\nWhat once had been there returned to the sea.		unresolved_after_real_sv_apply
+sv_batch_07.tsv	sv	outcome.timeup.hard.pool	26	Silence.\nOnly time passed through.		unresolved_after_real_sv_apply
+sv_batch_07.tsv	sv	outcome.timeup.hard.pool	27	Victory and defeat \nare nothing more than grains of sand.		unresolved_after_real_sv_apply
+sv_batch_07.tsv	sv	outcome.timeup.hard.pool	28	The road goes on—or it ends.\nEither way, it lies on the same earth.		unresolved_after_real_sv_apply
+sv_batch_07.tsv	sv	outcome.timeup.hard.pool	29	The season closed.\nThe land remained.		unresolved_after_real_sv_apply
+sv_batch_07.tsv	sv	outcome.timeup.hard.pool	30	The path The path remains.\nOnly your steps stopped.		unresolved_after_real_sv_apply
+sv_batch_07.tsv	sv	outcome.timeup.hard.pool	31	Your time ran out.\nThe sky didn’t.		unresolved_after_real_sv_apply
+sv_batch_07.tsv	sv	outcome.timeup.hard.pool	32	It wasn’t rejection.\nOnly silence.		unresolved_after_real_sv_apply
+sv_batch_07.tsv	sv	outcome.timeup.hard.pool	33	The world is still intact.\nYou can return—changed.		unresolved_after_real_sv_apply
+sv_batch_07.tsv	sv	outcome.timeup.hard.pool	34	The season ended.\nThe forest remains.		unresolved_after_real_sv_apply
+sv_batch_07.tsv	sv	outcome.timeup.hard.pool	35	The distance was closing.\nTime kept its rhythm.		unresolved_after_real_sv_apply
+sv_batch_07.tsv	sv	outcome.timeup.hard.pool	36	Your time came to a halt.\nThe sky kept moving.		unresolved_after_real_sv_apply
+sv_batch_07.tsv	sv	outcome.timeup.hard.pool	37	Not rejection\nJust silence.		unresolved_after_real_sv_apply
+sv_batch_07.tsv	sv	outcome.timeup.hard.pool	38	The path is still here.\nYou can come back—changed.		unresolved_after_real_sv_apply

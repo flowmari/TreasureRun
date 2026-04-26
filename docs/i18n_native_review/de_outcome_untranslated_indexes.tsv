@@ -1,0 +1,159 @@
+pool	index	kind	value
+outcome.success.easy.pool	1	EXACT_MATCH_EN_1	You’ve made it.\nThe truth remains.
+outcome.success.easy.pool	2	EXACT_MATCH_EN_2	Even if it was only a small step,\nyou held your ground.
+outcome.success.easy.pool	3	EXACT_MATCH_EN_3	You listened.\n The path opened.
+outcome.success.easy.pool	4	EXACT_MATCH_EN_4	> You made it here\n> \n> The rules were simple —\n> \n> the choice was yours.
+outcome.success.easy.pool	5	EXACT_MATCH_EN_5	> Distance became meaning.\n> \n> and time answered your footsteps.
+outcome.success.easy.pool	6	ENGLISH_LIKE_6	> Nichts leuchtet ewig.\n> \n> Aber dieser Moment tat es.
+outcome.success.easy.pool	7	EXACT_MATCH_EN_7	Light fell evenly, ,\nand every shadow vanished.
+outcome.success.easy.pool	8	ENGLISH_LIKE_8	Der Wind verstummte,\nund alles kehrte an seinen Platz zurück.
+outcome.success.easy.pool	9	EXACT_MATCH_EN_9	A moment of silence.\nThe world steadied its breath.
+outcome.success.easy.pool	10	EXACT_MATCH_EN_10	The record is etched deep in the sand—\nbeyond the reach of the wind.
+outcome.success.easy.pool	11	ENGLISH_LIKE_11	Die Harmonie kehrte zurück.\nAlles führte zu diesem Moment.
+outcome.success.easy.pool	12	EXACT_MATCH_EN_12	Time slipped by in silence,\ntucked away in the corners of memory.
+outcome.success.easy.pool	13	EXACT_MATCH_EN_13	The sky shifted in color,\nand one story came to its end.
+outcome.success.easy.pool	14	EXACT_MATCH_EN_14	The waves grew calm,\nand the sea hid its depths once more.
+outcome.success.easy.pool	15	EXACT_MATCH_EN_15	The footsteps stopped,\nand only the place remained.
+outcome.success.easy.pool	16	EXACT_MATCH_EN_16	Victory and defeat \nare nothing more than grains of sand.
+outcome.success.easy.pool	17	EXACT_MATCH_EN_17	The road goes on—or it ends.\nEither way, it lies on the same earth.
+outcome.success.normal.pool	1	EXACT_MATCH_EN_1	The distance has found its meaning.\nTime has rewarded your journey.
+outcome.success.normal.pool	2	EXACT_MATCH_EN_2	The time is up.\nbut the rest is far from over.
+outcome.success.normal.pool	3	EXACT_MATCH_EN_3	The axis is found.\nthe world has cased its motion.
+outcome.success.normal.pool	4	EXACT_MATCH_EN_4	The glass held its breath,\nand you held your ground.
+outcome.success.normal.pool	5	EXACT_MATCH_EN_5	Under the stillness of the sky,\nyour spirit did not waver.
+outcome.success.normal.pool	6	ENGLISH_LIKE_6	Wenig leuchtet für immer.\nDoch dieser Moment strahlte.
+outcome.success.normal.pool	7	EXACT_MATCH_EN_7	You traversed the fragile earth,\nwithout losing the view.
+outcome.success.normal.pool	8	EXACT_MATCH_EN_8	The moment has passed.\nThe legacy remains.
+outcome.success.normal.pool	9	EXACT_MATCH_EN_9	Luck fades fast.\norder endures.
+outcome.success.normal.pool	10	EXACT_MATCH_EN_10	The sky knows no pause in endless circle,\nnor shall you find yours.
+outcome.success.normal.pool	11	EXACT_MATCH_EN_11	The center has been reached.\nThe world stood still.
+outcome.success.normal.pool	12	EXACT_MATCH_EN_12	Finally here.\nThe truth remains unyielding.
+outcome.success.normal.pool	13	EXACT_MATCH_EN_13	You have seen it through.\nAnd mark this: it was you, and no one else, who chose this path.
+outcome.success.normal.pool	14	EXACT_MATCH_EN_14	Time drifted into silence,\nfinding its place in the recesses of the mind.
+outcome.success.normal.pool	15	EXACT_MATCH_EN_15	As the sky transformed,\nthe tale found its final resolved.
+outcome.success.normal.pool	16	EXACT_MATCH_EN_16	The waters fell calm,\nand the sky once more veiled its abyss.
+outcome.success.normal.pool	17	EXACT_MATCH_EN_17	The footsteps ceased,\nonly the place remained.
+outcome.success.normal.pool	18	EXACT_MATCH_EN_18	Light fell evenly, ,\nand every shadow vanished.
+outcome.success.normal.pool	19	ENGLISH_LIKE_19	Der Wind verstummte,\nund alles kehrte an seinen Platz zurück.
+outcome.success.normal.pool	20	EXACT_MATCH_EN_20	A moment of silence.\nThe world steadied its breath.
+outcome.success.normal.pool	21	EXACT_MATCH_EN_21	The record is etched deep in the sand—\nbeyond the reach of the wind.
+outcome.success.normal.pool	22	ENGLISH_LIKE_22	Die Harmonie kehrte zurück.\nAlles führte zu diesem Moment.
+outcome.success.normal.pool	23	EXACT_MATCH_EN_23	RUN COMPLETE.\nClear. Found it.\nThat's enough.
+outcome.success.normal.pool	24	EXACT_MATCH_EN_24	RUN COMPLETE.\nThe path held.\nSo did you.
+outcome.success.normal.pool	25	EXACT_MATCH_EN_25	The sky has kept moving.\nSo can you.
+outcome.success.normal.pool	26	EXACT_MATCH_EN_26	RUN COMPLETE.\nA quiet result.\nThe weight of real work.
+outcome.success.normal.pool	27	EXACT_MATCH_EN_27	You only walked the path\nthe world had laid out for you.
+outcome.success.normal.pool	28	EXACT_MATCH_EN_28	The ground didn’t give way.\nIt trusted your steps.
+outcome.success.normal.pool	29	EXACT_MATCH_EN_29	This moment aligned\nwith the stars’ ancient rhythm.
+outcome.success.normal.pool	30	EXACT_MATCH_EN_30	You didn’t take anything.\n You understood something.
+outcome.success.normal.pool	31	EXACT_MATCH_EN_31	You didn’t gain a thing.\nYou only saw the truth for what it was.
+outcome.success.normal.pool	32	EXACT_MATCH_EN_32	You didn’t take this place.\nYou belonged here.
+outcome.success.normal.pool	33	EXACT_MATCH_EN_33	You walked a road\nolder than memory itself.
+outcome.success.normal.pool	34	EXACT_MATCH_EN_34	The earth did not resist.\nIt recognized you.
+outcome.success.normal.pool	35	EXACT_MATCH_EN_35	This moment aligned\n with the stillness of the stars.
+outcome.success.hard.pool	1	EXACT_MATCH_EN_1	In the north wind,\nclarity outlasts speed.
+outcome.success.hard.pool	2	EXACT_MATCH_EN_2	The center was found.\n The world came to rest.
+outcome.success.hard.pool	3	EXACT_MATCH_EN_3	The stars stay silent.\nYour record does the speaking.
+outcome.success.hard.pool	4	EXACT_MATCH_EN_4	The result  remained.\nThe position changed.
+outcome.success.hard.pool	5	EXACT_MATCH_EN_5	Between ice and glass,\nyou chose control.
+outcome.success.hard.pool	6	EXACT_MATCH_EN_6	The waves fell quiet,\nand the sea reclaimed its hidden depths.
+outcome.success.hard.pool	7	EXACT_MATCH_EN_7	Some treasures still await.\nNext time, a different path.
+outcome.success.hard.pool	8	EXACT_MATCH_EN_8	The sky didn’t change.\nYou did.
+outcome.success.hard.pool	9	EXACT_MATCH_EN_9	The moment passed.\nWhat remained was order.
+outcome.success.hard.pool	10	EXACT_MATCH_EN_10	Winter is honest.\nSo was your run.
+outcome.success.hard.pool	11	EXACT_MATCH_EN_11	The stars aligned for a moment.\nYou noticed.
+outcome.success.hard.pool	12	EXACT_MATCH_EN_12	The distance closed.\nTime did not.
+outcome.success.hard.pool	13	EXACT_MATCH_EN_13	The world’s rules stood firm.\n And the signal of possibility was real.
+outcome.success.hard.pool	14	EXACT_MATCH_EN_14	The path closed quietly.\nYou were already through.
+outcome.success.hard.pool	15	EXACT_MATCH_EN_15	Nothing changed.\nOnly your position did.
+outcome.success.hard.pool	16	EXACT_MATCH_EN_16	Not luck.\nAlignment.
+outcome.success.hard.pool	17	EXACT_MATCH_EN_17	The moment passed.\nThe record remains.
+outcome.success.hard.pool	18	EXACT_MATCH_EN_18	The outcome didn’t change.\nStill, you moved forward.
+outcome.success.hard.pool	19	EXACT_MATCH_EN_19	The output didn’t change.\nBut you reached a new level.
+outcome.success.hard.pool	20	EXACT_MATCH_EN_20	The ending was the same.\nBut the one who reached it had changed.
+outcome.success.hard.pool	21	EXACT_MATCH_EN_21	The destination is the same\n—but you’re no longer the traveler you once were.
+outcome.success.hard.pool	22	EXACT_MATCH_EN_22	Light fell evenly, ,\nand every shadow vanished.
+outcome.success.hard.pool	23	EXACT_MATCH_EN_23	The wind fell silent.\nand everything returned to where it belonged.
+outcome.success.hard.pool	24	EXACT_MATCH_EN_24	A moment of silence.\nThe world steadied its breath.
+outcome.success.hard.pool	25	EXACT_MATCH_EN_25	The record is etched deep in the sand—\nbeyond the reach of the wind.
+outcome.success.hard.pool	26	EXACT_MATCH_EN_26	Harmony was restored.\nEverything had been for this moment.
+outcome.success.hard.pool	27	EXACT_MATCH_EN_27	Time slipped by in silence,\ntucked away in the corners of memory.
+outcome.success.hard.pool	28	EXACT_MATCH_EN_28	The sky shifted in color,\nand one story came to its end.
+outcome.success.hard.pool	29	EXACT_MATCH_EN_29	The waves grew calm,\nand the sea hid its depths once more.
+outcome.success.hard.pool	30	EXACT_MATCH_EN_30	The footsteps stopped,\nand only the place remained.
+outcome.success.hard.pool	31	EXACT_MATCH_EN_31	Victory and defeat \nare nothing more than grains of sand.
+outcome.success.hard.pool	32	EXACT_MATCH_EN_32	The road goes on—or it ends.\nEither way, it lies on the same earth.
+outcome.timeup.easy.pool	1	EXACT_MATCH_EN_1	Time ran out.\nNothing else did.
+outcome.timeup.easy.pool	2	EXACT_MATCH_EN_2	The treasure can wait.\nSo can you.
+outcome.timeup.easy.pool	3	EXACT_MATCH_EN_3	Breathe in.\nThen again.
+outcome.timeup.easy.pool	4	EXACT_MATCH_EN_4	That’s all for now.\nOn to the next step.
+outcome.timeup.easy.pool	5	EXACT_MATCH_EN_5	You're still here.\nThat’s what matters.
+outcome.timeup.easy.pool	6	EXACT_MATCH_EN_6	The run ended.\nYou didn’t.
+outcome.timeup.easy.pool	7	EXACT_MATCH_EN_7	TIME'S UP.\nThe run ended.\nYou didn't.
+outcome.timeup.easy.pool	8	EXACT_MATCH_EN_8	TIME'S UP.\nThe rules don’t change.\nAgain.
+outcome.timeup.easy.pool	9	EXACT_MATCH_EN_9	TIME'S UP.\n“So close” is real.
+outcome.timeup.easy.pool	10	EXACT_MATCH_EN_10	The sun sank,\nand shadow covered the world once again.
+outcome.timeup.easy.pool	11	EXACT_MATCH_EN_11	The last grains of sand fell,\nand the story quietly came to a close.
+outcome.timeup.easy.pool	12	EXACT_MATCH_EN_12	The wind swept through,\nand the footprints vanished without a trace.
+outcome.timeup.easy.pool	13	EXACT_MATCH_EN_13	The tide came in,\nWhat once had been there returned to the sea.
+outcome.timeup.easy.pool	14	EXACT_MATCH_EN_14	Silence.\nOnly time passed through.
+outcome.timeup.easy.pool	15	EXACT_MATCH_EN_15	Victory and defeat \nare nothing more than grains of sand.
+outcome.timeup.easy.pool	16	EXACT_MATCH_EN_16	The road goes on—or it ends.\nEither way, it lies on the same earth.
+outcome.timeup.normal.pool	1	EXACT_MATCH_EN_1	The distance closed.\nTime did not.
+outcome.timeup.normal.pool	2	EXACT_MATCH_EN_2	The world kept its rules.\nYou touched the edge.
+outcome.timeup.normal.pool	3	EXACT_MATCH_EN_3	You didn’t make it.\nBut the signal was real.
+outcome.timeup.normal.pool	4	EXACT_MATCH_EN_4	Some treasures still await.\nLet’s try a different path.
+outcome.timeup.normal.pool	5	EXACT_MATCH_EN_5	The result remained.\nThe position changed.
+outcome.timeup.normal.pool	6	ENGLISH_LIKE_6	Der Moment ist vorbei.\nDie Spur bleibt.
+outcome.timeup.normal.pool	7	EXACT_MATCH_EN_7	So close.\nThe sound said so.
+outcome.timeup.normal.pool	8	EXACT_MATCH_EN_8	The map is still open.\nCome back to it.
+outcome.timeup.normal.pool	9	EXACT_MATCH_EN_9	The world’s rules stood firm.\nThe signal of possibility was real.
+outcome.timeup.normal.pool	10	EXACT_MATCH_EN_10	The world kept its rules.
+outcome.timeup.normal.pool	11	EXACT_MATCH_EN_11	The moment passed.\nThe record remains.
+outcome.timeup.normal.pool	12	EXACT_MATCH_EN_12	The sun sank,\nand shadow covered the world once again.
+outcome.timeup.normal.pool	13	EXACT_MATCH_EN_13	The last grains of sand fell,\nand the story quietly came to a close.
+outcome.timeup.normal.pool	14	EXACT_MATCH_EN_14	The wind swept through,\nand the footprints vanished without a trace.
+outcome.timeup.normal.pool	15	EXACT_MATCH_EN_15	The tide came in,\nWhat once had been there returned to the sea.
+outcome.timeup.normal.pool	16	EXACT_MATCH_EN_16	Silence.\nOnly time passed through.
+outcome.timeup.normal.pool	17	EXACT_MATCH_EN_17	Victory and defeat \nare nothing more than grains of sand.
+outcome.timeup.normal.pool	18	EXACT_MATCH_EN_18	The road goes on—or it ends.\nEither way, it lies on the same earth.
+outcome.timeup.normal.pool	19	EXACT_MATCH_EN_19	> Time ran out.\n> \n> Nothing else did.
+outcome.timeup.normal.pool	20	EXACT_MATCH_EN_20	> The outcome didn’t change.\n> \n> But your position did.
+outcome.timeup.hard.pool	1	EXACT_MATCH_EN_1	Even the aurora fades.\nCome back with a new stride.
+outcome.timeup.hard.pool	2	EXACT_MATCH_EN_2	In a fragile world,\nhaste shatters clarity before it can be found.
+outcome.timeup.hard.pool	3	EXACT_MATCH_EN_3	The moment slipped away.\nThe meaning did not.
+outcome.timeup.hard.pool	4	EXACT_MATCH_EN_4	Winter is patient.\nBe the same.
+outcome.timeup.hard.pool	5	EXACT_MATCH_EN_5	The sky kept moving.\nSo will you.
+outcome.timeup.hard.pool	6	EXACT_MATCH_EN_6	The story moves on.\nThe end is not yet.
+outcome.timeup.hard.pool	7	EXACT_MATCH_EN_7	The stars were there, watching.\nAgain.
+outcome.timeup.hard.pool	8	EXACT_MATCH_EN_8	Ice takes its time.\nNeither do you.
+outcome.timeup.hard.pool	9	EXACT_MATCH_EN_9	The sky kept moving.\nSo can you.
+outcome.timeup.hard.pool	10	EXACT_MATCH_EN_10	The north has learned to wait.\nSo should you.
+outcome.timeup.hard.pool	11	EXACT_MATCH_EN_11	This is an interlude\n—It’s not over.
+outcome.timeup.hard.pool	12	EXACT_MATCH_EN_12	Like drifting clouds,\ndon’t lose your flow—like a river.
+outcome.timeup.hard.pool	13	EXACT_MATCH_EN_13	The sound was near.\nThe distance was real.\nBut that moment can’t be saved.
+outcome.timeup.hard.pool	14	EXACT_MATCH_EN_14	You were closing in.\nOnly time wasn’t.
+outcome.timeup.hard.pool	15	EXACT_MATCH_EN_15	The world held to its rules.\nYou touched the edge of them.
+outcome.timeup.hard.pool	16	EXACT_MATCH_EN_16	You didn’t reach the treasure. \nBut the signal was real.
+outcome.timeup.hard.pool	17	EXACT_MATCH_EN_17	Nothing changed.\nOnly your position did.
+outcome.timeup.hard.pool	18	EXACT_MATCH_EN_18	It wasn’t luck.\nAlignment.
+outcome.timeup.hard.pool	19	ENGLISH_LIKE_19	Der Moment ist vergangen,\naber die Spur blieb.
+outcome.timeup.hard.pool	20	EXACT_MATCH_EN_20	You crossed fragile ground\nand left the horizon unbroken.
+outcome.timeup.hard.pool	21	EXACT_MATCH_EN_21	Nothing changed.\n Only your position did.\nNot luck.\nAlignment.\nThe moment passed.\nThe record remains.
+outcome.timeup.hard.pool	22	EXACT_MATCH_EN_22	The sun sank,\nand shadow covered the world once again.
+outcome.timeup.hard.pool	23	EXACT_MATCH_EN_23	The last grains of sand fell,\nand the story quietly came to a close.
+outcome.timeup.hard.pool	24	ENGLISH_LIKE_24	Der Wind zog hindurch,\nund die Spuren vergingen spurlos.
+outcome.timeup.hard.pool	25	EXACT_MATCH_EN_25	The tide came in,\nWhat once had been there returned to the sea.
+outcome.timeup.hard.pool	26	EXACT_MATCH_EN_26	Silence.\nOnly time passed through.
+outcome.timeup.hard.pool	27	EXACT_MATCH_EN_27	Victory and defeat \nare nothing more than grains of sand.
+outcome.timeup.hard.pool	28	EXACT_MATCH_EN_28	The road goes on—or it ends.\nEither way, it lies on the same earth.
+outcome.timeup.hard.pool	29	EXACT_MATCH_EN_29	The season closed.\nThe land remained.
+outcome.timeup.hard.pool	30	EXACT_MATCH_EN_30	The path The path remains.\nOnly your steps stopped.
+outcome.timeup.hard.pool	31	EXACT_MATCH_EN_31	Your time ran out.\nThe sky didn’t.
+outcome.timeup.hard.pool	32	EXACT_MATCH_EN_32	It wasn’t rejection.\nOnly silence.
+outcome.timeup.hard.pool	33	EXACT_MATCH_EN_33	The world is still intact.\nYou can return—changed.
+outcome.timeup.hard.pool	34	EXACT_MATCH_EN_34	The season ended.\nThe forest remains.
+outcome.timeup.hard.pool	35	EXACT_MATCH_EN_35	The distance was closing.\nTime kept its rhythm.
+outcome.timeup.hard.pool	36	EXACT_MATCH_EN_36	Your time came to a halt.\nThe sky kept moving.
+outcome.timeup.hard.pool	37	EXACT_MATCH_EN_37	Not rejection\nJust silence.
+outcome.timeup.hard.pool	38	EXACT_MATCH_EN_38	The path is still here.\nYou can come back—changed.

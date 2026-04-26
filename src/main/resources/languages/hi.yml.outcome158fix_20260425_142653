@@ -1,0 +1,662 @@
+meta:
+  lang: hi
+  note: Put translation keys under e.g. command.xxx / gui.xxx / messages.xxx etc.
+  error:
+    noData: कोई डेटा नहीं
+  favorites:
+    title: ★ पसंदीदा
+    headerLatest: 'नवीनतम 20  |  भाषा: {lang}'
+quotes:
+  outcome:
+    success: null
+    timeup: null
+    other: null
+  success:
+  - '[TreasureRun][Lang] ''language.iconMaterial:'' セクションが見つかりません（全部PAPERになります）'
+  - '⚠ /rank が plugin.yml に見つかりません（commands: rank を追加済みか確認してください）'
+  - === 🌟 TreasureRun ランキング TOP10（タイム優先）🌟 ===
+  - ゲーム中は reload できません（安全のため）。/gameEnd してから実行してください。
+  - ✅ TreasureRun config を再読み込みしました（language GUI含む）。
+  - '点（累計:'
+  - 権限がありません（OP限定）
+  - の演出だけ発動しました（ランキング/DBは変更なし）
+  - Light fell evenly, ,\nand every shadow vanished.\n（光が等しく降り注ぎ、すべての影が消えた。）
+  - The wind fell silent.\nand everything returned to where it belonged.\n（風が止み、あるべき場所に、あるべきものが戻った。）
+  - A moment of silence.\nThe world steadied its breath.\n（一瞬の静寂。世界がその呼吸を整えた。）
+  - The record is etched deep in the sand—\nbeyond the reach of the wind.\n（記録は砂に深く刻まれ、風もそれを動かせない。）
+  - Harmony was restored.\nEverything had been for this moment.\n（調和が訪れた。すべては、この瞬間のためにあった。）
+  - Time slipped by in silence,\ntucked away in the corners of memory.\n（時間は静かに流れ、記憶の隅に収まった。）
+  - The sky shifted in color,\nand one story came to its end.\n（空の色が変わり、一つの物語が完結を告げた。）
+  - The waves grew calm,\nand the sea hid its depths once more.\n（波は穏やかになり、海は再びその深淵を隠した。）
+  - The footsteps stopped,\nand only the place remained.\n（歩みは止まり、場所だけがそこに残された。）
+  - The sun sank,\nand shadow covered the world once again.\n（日は落ち、影は再び世界を覆った。）
+  - The last grains of sand fell,\nand the story quietly came to a close.\n（砂はすべて落ちきり、物語は静かに幕を閉じた。）
+  - The wind swept through,\nand the footprints vanished without a trace.\n（風が吹き抜け、足跡は跡形もなく消え去った。）
+  - The tide came in,\nWhat once had been there returned to the sea.\n（潮が満ちた。かつてそこにあったものは、海へと還った。）
+  - Silence.\nOnly time passed through.\n（沈黙。ただ、時間だけがそこを通り過ぎた。）
+  - Distance became meaning.\nTime answered your steps.\n（距離が意味になった。時間があなたの歩みに答えた。）
+  - The center was found.\nThe world came to rest.\n（軸(中心)は見出された。世界はその運動を止めた。）
+  - The glass didn’t break.\nNeither did you.\n（ガラスは割れなかった。あなたも折れなかった。）
+  - Beneath a quiet sky,\nyour will held firm.\n（静かな空の下で、意志は持ちこたえた。）
+  - Very little shines forever\n—but this moment was different.\n（永遠に輝くものなんてほとんどないけれど、この瞬間は別格だった。）
+  - You made it across the fragile ground,\nholding fast to the horizon the whole
+    way.\n（脆い地面を渡り切った。地平線景色をしっかりと握りしめたまま。）
+  - The moment passed.\n What remained was the record—the achievement.\n（瞬間は過ぎ去った。遺されたもの記録・功績は残る。）
+  - Luck fades quickly.\nOrder endures.\n（運は速やかに消え、整い秩序は永続する。）
+  - The sky knows no rest in its endless cycle.\nNeither do you.\n（空はその終わりなき循環に休止を知らぬ。汝もまた、止まらず。）
+  - The center was reached.\nThe world stood still.\n（中心は到達された。世界は立ち尽くし静止した。）
+  - At last,you’ve made it here.\nThe truth stands—unbowed.\n（ついに、ここへ辿り着いた。真実は屈することなく、そこに在る。）
+  - Complete. This path was yours\n—and yours alone.\n（完遂。この道を選んだのは他でもないあなただ。）
+  - Time drifted into silence,\nand found its place in the deepest corners of the
+    mind.\n（時は静寂へと漂い、精神の奥底の隅に自らの居場所を見つけた。）
+  - As the sky shifted,\none story found its final resolution.\n（空が姿を変えるとともに、一つの物語はその最終的な解決完結を見出した。）
+  - The waves fell quiet,\nand the sky hid its depths once more.\n（波は静まり、空は再びその深淵を覆い隠した。）
+  - The footsteps ceased,\nand only the place remained.\n（歩みは途絶え、ただ場所だけがそこに在り続けた。）
+  - You’ve made it.\nThe truth remains.\n（たどり着いた。正さはそのままに。）
+  - Even if it was only a small step,\nyou held your ground.\n（小さな一歩でも、あなたは守り抜いた。）
+  - You listened.\n The path opened.\n（耳を澄ませた。道がひらいた。）
+  - （あなたは辿り着いた。
+  - （距離が意味になり、
+  - （すべてが永遠に輝くわけじゃない。
+  - The distance has found its meaning.\nTime has rewarded your journey.\n（距離が意味になった。時間があなたの歩みに答えた。）
+  - The axis is found.\nthe world has cased its motion.\n（軸(中心)は見出された。世界はその運動を止めた。）
+  - The glass held its breath,\nand you held your ground.\n（ガラスは割れなかった。あなたも折れなかった。）
+  - Under the stillness of the sky,\nyour spirit did not waver.\n（静かな空の下で、意志は持ちこたえた。）
+  - Few things shine forever.\nbut this moment was radiant.\n（永遠に輝くものなんてほとんどないけれど、この瞬間は別格だった。）
+  - You traversed the fragile earth,\nwithout losing the view.\n（脆い地面を渡り切った。地平線景色をしっかりと握りしめたまま。）
+  - The moment has passed.\nThe legacy remains.\n（瞬間は過ぎ去った。遺されたもの記録・功績は残る。）
+  - Luck fades fast.\norder endures.\n（運は速やかに消え、整い秩序は永続する。）
+  - The sky knows no pause in endless circle,\nnor shall you find yours.\n（空はその終わりなき循環に休止を知らぬ。汝もまた、止まらず。）
+  - The center has been reached.\nThe world stood still.\n（中心は到達された。世界は立ち尽くし静止した。）
+  - Finally here.\nThe truth remains unyielding.\n（ついに、ここへ辿り着いた。真実は屈することなく、そこに在る。）
+  - 'You have seen it through.\nAnd mark this: it was you, and no one else, who chose
+    this path.\n（完遂。この道を選んだのは他でもないあなただ。）'
+  - Time drifted into silence,\nfinding its place in the recesses of the mind.\n（時は静寂へと漂い、精神の奥底の隅に自らの居場所を見つけた。）
+  - As the sky transformed,\nthe tale found its final resolved.\n（空が姿を変えるとともに、一つの物語はその最終的な解決完結を見出した。）
+  - The waters fell calm,\nand the sky once more veiled its abyss.\n（波は静まり、空は再びその深淵を覆い隠した。）
+  - The footsteps ceased,\nonly the place remained.\n（歩みは途絶え、ただ場所だけがそこに在り続けた。）
+  - RUN COMPLETE.\nClear. Found it.\nThat's enough.\n（クリア。見つけた。それで十分。）
+  - RUN COMPLETE.\nThe path held.\nSo did you.\n（道は持ちこたえた。あなたも同じ。）
+  - The sky has kept moving.\nSo can you.\n（空はずっと歩み続けていた。あなたも進み続けられる。）
+  - RUN COMPLETE.\nA quiet result.\nThe weight of real work.\n（静かな結果。本物の積み重ね。）
+  - You only walked the path\nthe world had laid out for you.\n（世界が用意していた道を、あなたは歩いただけ。）
+  - The ground didn’t give way.\nIt trusted your steps.\n（大地は壊れなかった。あなたの足取りを、信じていた。）
+  - This moment aligned\nwith the stars’ ancient rhythm.\n（この瞬間は、星々の長いリズムと重なった。）
+  - You didn’t take anything.\n You understood something.\n（何かを奪ったわけじゃない。何かを、理解した。）
+  - You didn’t gain a thing.\nYou only saw the truth for what it was.\n（手に入れたのは何かではない。真実を、見抜いただけだ。）
+  - You didn’t take this place.\nYou belonged here.\n（征服したのではない。ここに、属していた。）
+  - You walked a road\nolder than memory itself.\n（記憶より古い道を、あなたは辿った。）
+  - The earth did not resist.\nIt recognized you.\n（大地は抗わず、あなたを認識した。）
+  - This moment aligned\n with the stillness of the stars.\n（この瞬間は、星々の静けさと重なった。）
+  - No conquest.\nUnderstanding was enough.\n（征服はない。理解で、十分だった。）
+  - You didn’t claim it.\nYou were already home.\n（ここを奪ったのではない。ここに、属していた。）
+  - In the north wind,\nclarity outlasts speed.\n（北風の中で、速さより明晰さが生き残る。）
+  - The center was found.\n The world came to rest.\n（軸(中心)は見出された。世界はその運動を止めた。）
+  - The stars stay silent.\nYour record does the speaking.\n（星は黙っている。語るのはあなたの記録だ。）
+  - The result  remained.\nThe position changed.\n（結果は残った。位置は変わった。）
+  - Between ice and glass,\nyou chose control.\n（氷とガラスのあいだで、あなたは制御を選んだ。）
+  - The waves fell quiet,\nand the sea reclaimed its hidden depths.\n（波は静まり、海はその隠された深淵を再び自らのものとした。）
+  - Some treasures still await.\nNext time, a different path.\n（待つ宝もある。次は、別の道を。）
+  - The sky didn’t change.\nYou did.\n（空は変わらなかった。変わったのはあなた。）
+  - The moment passed.\nWhat remained was order.\n（瞬間は過ぎた。整いは残った。）
+  - Winter is honest.\nSo was your run.\n（冬は正直だ。あなたの走りもそうだった。）
+  - The stars aligned for a moment.\nYou noticed.\n（星は束の間そろった。あなたはそれに気づいた。）
+  - The distance closed.\nTime did not.\n（距離は縮んでいた。時間は縮まらなかった。）
+  - The world’s rules stood firm.\n And the signal of possibility was real.\n（世界のルールは、厳然としてそこにあった。可能性（信号）は本物だった。）
+  - The path closed quietly.\nYou were already through.\n（道は静かに閉じた。あなたはもう抜けていた。）
+  - Nothing changed.\nOnly your position did.\n（何も変わらない。ただ、あなたの位置だけが変わった。）
+  - Not luck.\nAlignment.\n（運じゃない。整いだ。）
+  - The moment passed.\nThe record remains.\n（瞬間は過ぎた。記録は残る。）
+  - The outcome didn’t change.\nStill, you moved forward.\n（結果に違いはなかった。それでも、あなたは前に進んだ。）
+  - The output didn’t change.\nBut you reached a new level.\n（出力は変わらないままだが、あなたは新しいレベルに到達した。）
+  - The ending was the same.\nBut the one who reached it had changed.\n（結末は同じだが、そこに辿り着いた人間は変わった。）
+  - The destination is the same\n—but you’re no longer the traveler you once were.\n（目的地は同じだが、あなたはもう以前と同じ旅人ではない。）
+  - The treasure can wait.\nSo can you.\n（宝は待っている。あなたも待てる。）
+  - Breathe in.\nThen again.\n（息をして。もう一度。）
+  - That’s all for now.\nOn to the next step.\n（今回はここまで。次の一歩へ。）
+  - You're still here.\nThat’s what matters.\n（まだここにいる。それが大事。）
+  - The run ended.\nYou didn’t.\n（走りは止まった。あなたは止まっていない。）
+  - The distance closed.\nTime did not.\n（距離は縮んだ。時間は縮まらなかった。）
+  - The world kept its rules.\nYou touched the edge.\n（世界はルールを守った。あなたは境界に触れた。）
+  - You didn’t make it.\nBut the signal was real.\n（届かなかった。でも合図は本物だった。）
+  - Some treasures still await.\nLet’s try a different path.\n（待つ宝もある。別の道を試そう。）
+  - The result remained.\nThe position changed.\n（結果は残った。位置は変わった。）
+  - So close.\nThe sound said so.\n（惜しかった。音がそう言っていた。）
+  - The map is still open.\nCome back to it.\n（地図は開いたまま。戻っておいで。）
+  - The world’s rules stood firm.\nThe signal of possibility was real.\n（世界のルールは厳然としてそこにあった。可能性（信号）は本物だった。）
+  - The world kept its rules.\n（世界はルールを守った。）
+  - （時間は終わった。
+  - （結果は変わらなかった。
+  - Even the aurora fades.\nCome back with a new stride.\n（オーロラでさえ消える。新しい歩みで戻れ。）
+  - In a fragile world,\nhaste shatters clarity before it can be found.\n（脆い世界では、焦りが明晰さの発見を壊してしまう。）
+  - Winter is patient.\nBe the same.\n（冬は忍耐強い。あなたもそうであれ。）
+  - The sky kept moving.\nSo will you.\n（空は進み続けた。あなたも進む。）
+  - The story moves on.\nThe end is not yet.\n（叙事は頁をめくる。これは最後じゃない。）
+  - The stars were there, watching.\nAgain.\n（星は見守っていた。もう一度。）
+  - Ice takes its time.\nNeither do you.\n（氷は急がない。あなたも急ぐ必要はない。）
+  - The sky kept moving.\nSo can you.\n（空は動き続けた。あなたも動き続けられる。）
+  - The north has learned to wait.\nSo should you.\n（北は『待つこと』を覚えている。そこから学べ。）
+  - Like drifting clouds,\ndon’t lose your flow—like a river.\n（雲が動き続けるように。川のように、流れを失わないで。）
+  - The sound was near.\nThe distance was real.\nBut that moment can’t be saved.\n（音は近かった。距離は本物だった。でも、その瞬間は保存できない。）
+  - The world held to its rules.\nYou touched the edge of them.\n（世界はルールを守った。あなたはその縁に触れた。）
+  - You didn’t reach the treasure. \nBut the signal was real.\n（宝には届かなかった。でも合図は本物だった。）
+  - It wasn’t luck.\nAlignment.\n（運じゃない。整いだ。）
+  - You crossed fragile ground\nand left the horizon unbroken.\n（脆い地面を渡った。視界（景色）を壊さずに。）
+  - （何も変わらない。ただ、あなたの位置だけが変わった。\n運じゃない。整いだ。\n瞬間は過ぎた。記録は残る。）
+  - The season closed.\nThe land remained.\n（季節は閉じた。大地は、残っている。）
+  - The path The path remains.\nOnly your steps stopped.\n（道は、まだそこにある。あなたが歩みを止めただけ。）
+  - It wasn’t rejection.\nOnly silence.\n（拒絶ではない。ただ、沈黙だった。）
+  - The world is still intact.\nYou can return—changed.\n（世界は形を保っている。変わったあなたで、戻れる。）
+  - The season ended.\nThe forest remains.\n（季節は終わった。森は、残っている。）
+  - The distance was closing.\nTime kept its rhythm.\n（距離は縮んでいた。時間は、リズムを保った。）
+  - Your time came to a halt.\nThe sky kept moving.\n（あなたの時間は止まった。空は、止まらなかった。）
+  - Not rejection\nJust silence.\n（拒絶ではない。ただの、沈黙。）
+  - The path is still here.\nYou can come back—changed.\n（道は、まだここにある。違うあなたで、戻れる。）
+  - （
+  - '[EnemyDown] MySQL に接続しました（JDBC + MyBatis）'
+  - 個の宝箱をスポーンしました（中身付き）
+  - ・特別な宝物（ネザライト、ブロックなど）でさらにボーナス点！
+  - 7. उद्धरण-संग्रह
+  - 8. पसंदीदा
+  - आसान
+  - कठिन
+  - मध्यम
+  - （この本を右クリックすると ★नवीनतम を保存できます）
+  - '（DB: proverb_logs）'
+  - （まだ保存されていない可能性があります）
+  - '（DB: proverb_favorites）'
+  timeup:
+  - Time ran out.\nNothing else did.\n（時間は終わった。ほかは終わっていない。）
+  - The time is up.\nbut the rest is far from over.\n（時間は終わった。ほかは終わっていない。）
+  - TIME'S UP.\nThe run ended.\nYou didn't.\n（時間は止まった。でも、あなたは止まっていない。）
+  - TIME'S UP.\nThe rules don’t change.\nAgain.\n（ルールは変わらない。もう一度。）
+  - TIME'S UP.\n“So close” is real.\n（惜しい、は本物だ。）
+  - Time ran out.\nMeaning didn't.\n（時間は終わった。意味は終わっていない。）
+  - The moment slipped away.\nThe meaning did not.\n（逃したのは瞬間。意味ではない。）
+  - This is an interlude\n—It’s not over.\n（これは休止だ。終わりじゃない。）
+  - You were closing in.\nOnly time wasn’t.\n（近づいていた。時間だけが近づかなかった。）
+  - The moment slipped away,\nbut the record stayed.\n（瞬間は過ぎた。記録は残る。）
+  - Your time ran out.\nThe sky didn’t.\n（あなたの時間は終わった。空は、終わっていない。）
+  trader:
+  - Perfect balance.\nThe scales held level.\n（等価の均衡。天秤は水平を保った。）
+  - There was no dialogue\n—only an exchange of facts.\n（対話はなく、ただ事実としての交換が行われた。）
+  - Perfect equilibrium.\nThe scales held level.\n（等価の均衡。天秤は水平を保った。）
+  - Things changed,\ntaking on new forms as they carried on.\n（物事は移ろい、形を変えて引き継がれた。）
+  philosophy:
+  - Victory and defeat \nare nothing more than grains of sand.\n（勝利も敗北も、同じ砂の一粒に過ぎない。）
+  - The road goes on—or it ends.\nEither way, it lies on the same earth.\n（道は続き、あるいは途切れ、どちらも同じ大地の上にある。）
+ui:
+  labels:
+    tabs: '&6टैब:&r'
+    page: '&8पृष्ठ {page}/{total}&r'
+    tab:
+      all: सभी
+      success: सफल
+      timeUp: समय समाप्त
+      favorites: पसंदीदा
+    latest: ★ नवीनतम
+    outcome:
+      success: सफल
+      timeUp: समय समाप्त
+  quote:
+    title: उद्धरण संग्रह
+    intro:
+      tabsTitle: टैब
+      legendTitle: 'संकेत चिह्न:'
+      storedInDb: 'MySQL DB में संग्रहीत:'
+      db:
+        logs: proverb_logs (इतिहास)
+        favorites: proverb_favorites (★ पसंदीदा)
+      langLine: 'भाषा: {lang}'
+    headerRecent: 'हाल के 20  |  भाषा: {lang}'
+    legend:
+      success: = पूर्ण / सफल
+      timeUp: = समय समाप्त
+      favorites: = ★ सहेजे गए उद्धरण
+    noLogs: अभी तक कोई उद्धरण लॉग नहीं है। SUCCESS / TIME_UP पर स्वचालित रूप से सहेजे
+      जाते हैं।
+    noQuotesInTab: 'इस टैब में दिखाने के लिए कोई उद्धरण नहीं है। (शायद अभी तक सहेजा
+      नहीं गया।)
+
+      कोई दूसरा टैब आज़माएं।'
+    noपसंदीदा: 'अभी तक कोई पसंदीदा नहीं है।
+
+      {latestLabel} सहेजने के लिए इस पुस्तक पर राइट-क्लिक करें।'
+    tip:
+      rightClickSave: 'सुझाव: {latestLabel} सहेजने के लिए इस पुस्तक पर राइट-क्लिक
+        करें।'
+    noFavorites: 'No favorites yet.
+
+      Right-click this book to save {latestLabel}.'
+    footer:
+      dbLogs: '(DB: proverb_logs)'
+  auto:
+    playerscore_b91d4cd3: 'PlayerScore सम्मिलन विफल:'
+    messages_yml_not_loaded_d56b1cd3: (messages.yml not loaded)
+    translation_missing_77031543: '(अनुवाद नहीं मिला:'
+    translation_missing_77031543_107: '(अनुवाद नहीं मिला:'
+    treasurerun_lang_config_yml__2dde4625: '[TreasureRun][Lang] config.yml में ''language:''
+      सेक्शन नहीं मिला।'
+    click_to_select_aac1569c_76: चुनने के लिए क्लिक करें
+    treasurerun_lang_default_60887a83: '[TreasureRun][Lang] default='
+    click_to_select_aac1569c_19: चुनने के लिए क्लिक करें
+    treasurerun_lang_config_yml__2dde4625_33: '[TreasureRun][Lang] config.yml में
+      ''language:'' सेक्शन नहीं मिला।'
+    treasurerun_lang_material_la_bc70a401: '[TreasureRun][Lang] अमान्य Material: lang='
+    treasurerun_lang_language_ic_4bc2362d: '[TreasureRun][Lang] ''language.iconMaterial:''
+      सेक्शन नहीं मिला（सभी PAPER बन जाएंगे）'
+    click_to_select_aac1569c_100: चुनने के लिए क्लिक करें
+    treasurerun_lang_default_60887a83_111: '[TreasureRun][Lang] default='
+    enemydown_mysql_jdbc_mybatis_6b5c6f68: '[EnemyDown] MySQL से जुड़े（JDBC + MyBatis）'
+    enemydown_mysql_6cf3e29b: '[EnemyDown] MySQL कनेक्शन विफल:'
+    enemydown_mysql_a18990c3: '[EnemyDown] MySQL कनेक्शन बंद।'
+    enemydown_mysql_e097a73e: '[EnemyDown] MySQL डिस्कनेक्ट विफल:'
+    mysqlmanager_player_score_d92afff4: '[MySQLManager] player_score तालिका जाँची/बनाई
+      ✅'
+    mysqlmanager_player_score_21665c62: '[MySQLManager] player_score तालिका बनाने
+      में विफल ❌:'
+    mysqlmanager_mysql_951100b9: '[MySQLManager] MySQL कनेक्शन परीक्षण सफल ✅'
+    mysqlmanager_player_score_a4968d00: '[MySQLManager] player_score तालिका की पंक्तियाँ:'
+    mysqlmanager_mysql_1763d390: '[MySQLManager] MySQL कनेक्ट नहीं ❌'
+    mysqlmanager_player_score_2b5c8721: '[MySQLManager] player_score तालिका मौजूद
+      नहीं हो सकती ❌'
+    enemydown_mysql_bc514e56: '[EnemyDown] MySQL जुड़ा हुआ है।'
+    enemydown_mysql_93b23ef9: '[EnemyDown] MySQL जुड़ा नहीं है।'
+    run_complete_46d920e5_580: Run complete.
+    run_complete_46d920e5_589: Run complete.
+    playerlanguagestore_failed_t_c4999402: '[PlayerLanguageStore] Failed to create/load
+      player_languages.yml:'
+    playerlanguagestore_failed_t_b6478ec8: '[PlayerLanguageStore] Failed to save player_languages.yml:'
+    proverb_logged_to_mysql_prov_c13b5e4e: 'Proverb logged to MySQL: proverb_logs'
+    failed_to_log_proverb_to_mys_2bb4c5c3: 'Failed to log proverb to MySQL: proverb_logs'
+    loaded_proverb_logs_from_mys_b5b0f8e0: 'Loaded proverb logs from MySQL: proverb_logs'
+    failed_to_load_proverb_logs__6246be38: 'Failed to load proverb logs from MySQL:
+      proverb_logs'
+    treasurerunmultichestplugin_4499e25c: '🌈 TreasureRunMultiChestPlugin: 起動 🌈'
+    treasurerun_gamestagemanager_3d9e7f5a: '[TreasureRun] GameStageManager event registered!'
+    treasurerunmultichestplugin_a507471a: ✅ TreasureRunMultiChestPlugin が正常に起動しました！
+    treasurerunmultichestplugin_c2111711: '🔻 TreasureRunMultiChestPlugin: 無効化'
+    text_4f7e7cfa: नेदराइट इंगॉट प्राप्त!
+    text_1a6173d3: हीरा प्राप्त!
+    text_b6568a8d: सोने का सेब प्राप्त!
+    no_9c0fdee6: 🏆 No.
+    gamestart_easy_normal_hard_230bd0bd: अगली बार अलग रास्ता आज़माएं! पुनः प्रयास
+      के लिए /gamestart <easy|normal|hard> उपयोग करें!
+    text_9310a1a7: खेल पहले से चल रहा है।
+    text_9310a1a7_908: खेल पहले से चल रहा है।
+    text_9310a1a7_1601: खेल पहले से चल रहा है।
+    text_f9c4c4e2: 'खेल समाप्त! कुल स्कोर:'
+    run_complete_d258363d_1214: Run Complete!
+    time_s_up_7441e686_1313: TIME'S UP!
+    text_ec39d8ad: बचा समय
+    text_d6e25e00: 'बचा समय:'
+    text_b2c59e95: 'समय:'
+    text_c148686b: 'स्कोर:'
+    text_307fcc19: 'रैंक:'
+    starting_in_2413fc14: शुरू होने में…
+    easy_normal_hard_ef1ba55c: कठिनाई Easy / Normal / Hard है।
+    language_gui_aed4f8fc_931: Language GUI आरंभ नहीं हुई।
+    config_yml_3c6e9d15: ✅ config.yml लोड हुई
+    treasurerun_config_language__763cf02c: ✅ TreasureRun config पुनः लोड हुई（language
+      GUI सहित）।
+    gui_gamestart_5870f221: GUI अपडेट हुई। /gameStart से पुनः खोलें।
+    text_3ecbc53d: कृपया खिलाड़ी के रूप में चलाएं
+    text_3030fd61: केवल खिलाड़ी उपयोग कर सकते हैं
+    reload_gameend_c41d5c55: खेल के दौरान reload नहीं हो सकता। /gameEnd के बाद करें।
+  menu:
+    toc:
+      message: '&6📌 TreasureRun मेन्यू खुल गया है। नियम-पुस्तिका देखें।'
+    book:
+      openFailed: '&cनियम पुस्तिका खोलने में विफल।'
+      hotbarGiven: 📖 नियम-पुस्तिका आपके हॉटबार में रख दी गई है।
+      hotbarHint: इसे हाथ में लेकर राइट-क्लिक करें, फिर आप इसे कभी भी फिर से पढ़ सकते
+        हैं।
+      latestHint: (इस पुस्तक पर राइट-क्लिक करके नवीनतम उद्धरण सहेजें।)
+      fallbackTitle: TreasureRun के नियम
+      fallbackDisplayName: TreasureRun नियम-पुस्तिका
+    legacy:
+      toc:
+        message: '&6===== 🌟 TreasureRun सामग्री 🌟 =====
+
+          &b1. लक्ष्य
+
+          &f   ・समय सीमा में अधिक से अधिक संदूक खोलें।
+
+
+          &b2. वर्तमान कठिनाई
+
+          &f   ・कठिनाई: &e{difficulty}
+
+
+          &6=================================='
+    gui: {}
+    page:
+      contents:
+        title: 📌 विषय-सूची
+        rulesItem: 1) नियम
+        howToPlay: '  · कैसे खेलें'
+        scoreRoute: '  · स्कोर और मार्ग'
+        savedOn: '  · SUCCESS / TIME_UP पर सहेजा जाता है'
+        language: '  · भाषा: {lang}'
+        yourQuotes: '  · आपकी ★ सहेजी गई उक्तियाँ'
+        difficulty: 'कठिनाई: {difficulty}'
+        tipsItem: 2) सुझाव
+      note:
+        bookFormat: 'नोट: Minecraft की किताबों में क्लिक करके टैब नहीं बदले जा सकते,
+          इसलिए सामग्री को अलग-अलग खंडों में व्यवस्थित किया गया है।'
+      hint:
+        reopenMenu: 'सुझाव: इसे फिर से खोलने के लिए /gameMenu चलाएँ।'
+  error:
+    noData: कोई डेटा उपलब्ध नहीं है।
+  favorites:
+    headerLatest: 'नवीनतम पसंदीदा  |  भाषा: {lang}'
+    title: ★ पसंदीदा
+    footer:
+      dbFavorites: '(DB: proverb_favorites)'
+  gameMenu:
+    pluginNotReady: प्लगइन अभी तैयार नहीं है।
+  symbol:
+    bookPrefix: '📖 '
+    legendPrefix: '■ '
+    dbBullet: '- '
+    indexPrefix: '#'
+    favoriteIdPrefix: ★#
+    favoritePrefix: ★
+    metaOpen: (
+    metaClose: )
+    labelOpen: '['
+    labelClose: ']'
+    tabActiveOpen: 【
+    tabActiveClose: 】
+    tabInactiveOpen: '['
+    tabInactiveClose: ']'
+    activeMarker: '▶ '
+  rankTicker:
+    updated: 🏁 लीडरबोर्ड अपडेट हो गया! ({which})
+    mode:
+      weekly: साप्ताहिक
+      allTime: सर्वकालिक
+      monthly: मासिक
+gui:
+  language:
+    title: भाषा
+    subtitle: '&7अपनी भाषा चुनें'
+    selected: '&aचयनित: &f{lang}'
+    saved: '&aभाषा सहेजी गई: &f{lang}'
+    loreDefault:
+    - '&7चयन के लिए क्लिक करें'
+    - '&8यह चयन सहेजा जाएगा'
+    reopenHint: '&7कभी भी &f/lang &7से बदलें'
+game:
+  difficulty:
+    easy: '&aEasy'
+    normal: '&eNormal'
+    hard: '&cHard'
+favorites:
+  title: पसंदीदा
+  cover:
+    head: पसंदीदा अभिलेख
+    hint: /quoteFavorite latest या /quoteFavorite list का उपयोग करें
+    reread: फिर से पढ़ें
+    badge: TreasureRun पसंदीदा
+    countLabel: 'सहेजे गए: {count}'
+    openToc: विषयसूची खोलें
+    sub: आपकी रनों के दौरान सहेजी गई पंक्तियों का संग्रह
+  empty:
+    noFav: अभी तक कोई पसंदीदा सहेजा नहीं गया है।
+    saveLatest: सबसे नई पंक्ति सहेजें
+    reread: अभी दोबारा पढ़ने के लिए कोई पंक्ति नहीं है।
+    rereadBook: अभी कोई पुनर्पाठ पुस्तक उपलब्ध नहीं है।
+    head: अभी कोई पसंदीदा नहीं है
+    noFavSub: अपना अभिलेख शुरू करने के लिए पहले एक पंक्ति सहेजें
+    saveHow: पसंदीदा कैसे सहेजें
+    saveHow1: /quoteFavorite latest का उपयोग करें
+    saveHow2: या झुककर नियम-पुस्तक पर राइट-क्लिक करें
+    sub: आपका अभिलेख अभी खाली है
+    tryNow: फिर यह पुस्तक दोबारा खोलें
+  toc:
+    head: विषयसूची
+    howto: सहेजी गई पंक्तियाँ फिर से पढ़ने के लिए कोई अध्याय खोलें
+    manage: सहेजी गई पंक्तियों का प्रबंधन करें
+    reread: फिर से पढ़ें
+    howtoShift: '&7झुककर + राइट-क्लिक करके पसंदीदा अभिलेख खोलें'
+    rereadTitle: फिर से पढ़ें
+    clickable: अध्याय क्लिक करके खोले जा सकते हैं
+    sub: अध्याय के अनुसार देखें
+  chapter:
+    rereadBook: पुनर्पाठ पुस्तक
+    back: विषयसूची पर वापस जाएँ
+    count: '{count} प्रविष्टियाँ'
+    empty: इस अध्याय में अभी कोई पंक्ति सहेजी नहीं गई है
+    otherSub: अन्य
+    successSub: सफल रनों से सहेजी गई पंक्तियाँ
+    successTitle: सफलता
+    successTpl1: सफलता की सहेजी गई पंक्तियाँ
+    successTpl2: वे क्षण जब आपने रन पूरा किया
+    timeupSub: समय समाप्ति के क्षणों से सहेजी गई पंक्तियाँ
+    timeupTitle: समय समाप्त
+    timeupTpl1: समय समाप्ति की सहेजी गई पंक्तियाँ
+    timeupTpl2: वे क्षण जब टाइमर समाप्त हुआ
+  remove: हटाएँ
+  reread:
+    head: सहेजी गई पंक्तियाँ फिर से पढ़ें
+    noQuotes: आपने अभी तक कोई पंक्ति सहेजी नहीं है।
+command:
+  checkTreasureEmerald:
+    playersOnly: यह कमांड केवल खिलाड़ी ही चला सकते हैं।
+    resultTrue: आपके हाथ में जो आइटम है, वह Treasure Emerald है।
+    resultFalse: आपके हाथ में जो आइटम है, वह Treasure Emerald नहीं है।
+  gameStart:
+    playersOnly: यह कमांड केवल खिलाड़ी ही इस्तेमाल कर सकते हैं।
+    worldNotFound: '[TreasureRun] शुरुआती दुनिया सेट नहीं है या मिल नहीं सकी।'
+    started: 'खज़ाने की खोज शुरू हो रही है! कठिनाई: {difficulty} | समय सीमा: {timeLimit}
+      सेकंड'
+  stageCleanup:
+    playersOnly: '&cइस कमांड का उपयोग केवल खिलाड़ी कर सकते हैं।'
+    managerNotReady: '[TreasureRun] स्टेज मैनेजर अभी तक तैयार नहीं है।'
+    cleaned: '[TreasureRun] {count} कठिनाई ब्लॉक साफ कर दिए गए।'
+  lang:
+    guiTooManyShown: अनुमत भाषाएँ बहुत अधिक हैं, इसलिए GUI में केवल पहली 27 भाषाएँ
+      ही दिखाई जा रही हैं।
+    guiCancelledGameMenu: भाषा चयन रद्द कर दिया गया। फिर से खोलने के लिए /gameMenu
+      gui चलाएँ।
+    guiCancelledGameStart: भाषा चयन रद्द कर दिया गया। फिर से प्रयास करने के लिए /gameStart
+      <easy|normal|hard> चलाएँ।
+    playersOnly: यह कमांड केवल खिलाड़ी ही उपयोग कर सकते हैं।
+    resetDone: ✅ आपकी सहेजी हुई भाषा रीसेट कर दी गई है। अगली बार GUI खुलेगा।
+    current: 'वर्तमान भाषा: {lang}'
+    emptyCode: 'भाषा कोड खाली है। उदाहरण: /lang ja'
+    notAllowed: 'यह भाषा अनुमत नहीं है: {lang}'
+    allowedList: 'अनुमत भाषाएँ: {allowed}'
+    changed: '✅ भाषा बदल दी गई है: {displayName} ({lang})'
+    changedButNotSaved: '⚠ भाषा बदल दी गई, लेकिन स्थायी रूप से सहेजी नहीं जा सकी:
+      {lang}'
+    list:
+      title: === भाषाएँ ===
+      default: 'डिफ़ॉल्ट: {default}'
+      allowed: 'अनुमत: {allowed}'
+      usage: 'उपयोग: /lang <code> उदाहरण: /lang ja'
+      gui: 'GUI: /lang या /lang gui'
+    guiNotReady: भाषा GUI प्रारंभ नहीं हुई है।
+  craftSpecialEmerald:
+    playersOnly: '&cइस कमांड का उपयोग केवल खिलाड़ी कर सकते हैं।'
+    needDiamonds: '&cस्पेशल एमराल्ड बनाने के लिए 3 हीरे चाहिए।'
+    success: '&bआपने 3 हीरों से एक स्पेशल एमराल्ड बना लिया!'
+  onlyPlayer: '&cयह कमांड केवल खिलाड़ी ही चला सकता है।'
+  quoteFavorite:
+    latestSaved: नवीनतम उद्धरण पसंदीदा में सहेजा गया।
+    latestNotSaved: नवीनतम उद्धरण सहेजा नहीं जा सका। या तो अभी कोई लॉग नहीं है, या
+      वह पहले से ही पसंदीदा में है।
+    playersOnly: '&cइस कमांड का उपयोग केवल खिलाड़ी कर सकते हैं।'
+    repositoryNotReady: पसंदीदा अभी उपलब्ध नहीं हैं।
+    listHeader: '&bपसंदीदा ({count})'
+    listSeparator: '&7------------------------------'
+    removeUsage: '&cउपयोग: /quoteFavorite remove <id>'
+    removeIdNumber: '&cID एक संख्या होनी चाहिए।'
+    removeSuccess: '&aपसंदीदा ID {id} हटा दी गई।'
+    removeNotFound: '&cनिर्दिष्ट पसंदीदा नहीं मिला।'
+    rereadNoQuotes: '&eदोबारा पढ़ने के लिए अभी कोई उद्धरण नहीं है।'
+    bookOpenFailed: '&cपसंदीदा पुस्तक बनाना विफल रहा।'
+    openBookFailed: '&cपुस्तक खोली नहीं जा सकी।'
+    unknownSubcommand: '&cअज्ञात सबकमांड। /quoteFavorite help देखें।'
+    shortcutSaved: नवीनतम उद्धरण पसंदीदा में सहेजा गया।
+    shortcutNotSaved: नवीनतम उद्धरण सहेजा नहीं जा सका। या तो अभी कोई लॉग नहीं है,
+      या वह पहले से ही पसंदीदा में है।
+    help:
+      title: '&bQuoteFavorite कमांड'
+      latest: '&7/quoteFavorite latest  - नवीनतम उद्धरण को पसंदीदा में सहेजें'
+      list: '&7/quoteFavorite list    - पसंदीदा सूची दिखाएँ'
+      remove: '&7/quoteFavorite remove <id> - पसंदीदा हटाएँ'
+      reread: '&7/quoteFavorite reread - नवीनतम उद्धरण फिर से पढ़ें'
+      rereadTitle: '&bपुनर्पाठ कमांड'
+      rereadBook: '&7/quoteFavorite reread book - पुनर्पाठ पुस्तक फिर खोलें'
+      book: '&7/quoteFavorite book - पसंदीदा पुस्तक खोलें'
+      bookToc: '&7/quoteFavorite book toc - पुस्तक की विषयसूची खोलें'
+      bookSuccess: '&7/quoteFavorite book success - SUCCESS उद्धरण पुस्तक खोलें'
+      bookTimeup: '&7/quoteFavorite book timeup - TIME_UP उद्धरण पुस्तक खोलें'
+      bookOther: '&7/quoteFavorite book other - दूसरे पुस्तक लेआउट को खोलें'
+items:
+  specialEmerald:
+    displayName: '&6विशेष एमराल्ड'
+    loreCrafted: '&7TreasureRun में निर्मित'
+    loreSpecial: '&7एक विशेष एमराल्ड'
+  material:
+    diamond: हीरा
+    gold_ingot: स्वर्ण सिल्ला
+    iron_ingot: लौह सिल्ला
+    emerald: पन्ना
+    apple: सेब
+    netherite_ingot: नेदराइट सिल्ला
+    lapis_lazuli: लैपिस लाजुली
+    redstone: रेडस्टोन
+    coal: कोयला
+    enchanted_golden_apple: मंत्रमुग्ध स्वर्ण सेब
+    diamond_block: हीरे का ब्लॉक
+    gold_block: सोने का ब्लॉक
+    emerald_block: पन्ने का ब्लॉक
+    iron_block: लोहे का ब्लॉक
+    tnt: TNT
+outcome:
+  success:
+    common:
+      pool:
+      - 'तुम पहुँच गए।
+
+        रास्ता टिका रहा।'
+    easy:
+      pool:
+      - छोटा कदम भी मायने रखता है।
+    normal:
+      pool:
+      - दूरी अर्थ बन गई।
+    hard:
+      pool:
+      - ठंड में भी स्पष्टता बनी रही।
+  timeup:
+    easy:
+      pool:
+      - 'समय समाप्त हो गया।
+
+        लेकिन तुम नहीं।'
+    normal:
+      pool:
+      - 'दूरी सिमट गई।
+
+        समय नहीं।'
+    hard:
+      pool:
+      - 'ओरोरा भी फीकी पड़ती है।
+
+        फिर लौट आना।'
+  random:
+    common:
+      pool: []
+  fallback:
+    runComplete: दौड़ पूरी हुई।
+    timeUp: समय समाप्त।
+    trader: 'पूर्ण संतुलन।
+
+      तराज़ू बराबर रही।'
+  trader:
+    common:
+      pool:
+      - 'पूर्ण संतुलन।
+
+        तराज़ू बराबर रही।'
+      - 'चीज़ें बदलीं।
+
+        लेन-देन चलता रहा।'
+    easy:
+      pool: []
+    normal:
+      pool: []
+    hard:
+      pool: []
+  notice:
+    timeUpGameOver: समय समाप्त! खेल समाप्त!
+    retryGuide: अगली बार कोई दूसरा रास्ता आज़माएँ। फिर से शुरू करने के लिए /gamestart
+      <easy|normal|hard> का उपयोग करें।
+    titleTimeUp: समय समाप्त!
+    treasuresCollected: 'इकट्ठे किए गए खजाने: {got}/{total} (बाकी {missing})'
+gameplay:
+  pickup:
+    scoreNone: अभी कोई स्कोर नहीं है।
+    gameEndTotalScore: 'खेल समाप्त! कुल स्कोर: {score}'
+    treasureFound: 'खज़ाना: {name} ×{amount}'
+    scoreAdded: 'स्कोर +{add} (कुल: {total})'
+    remainingChests: 'बाकी संदूक: {count}'
+  result:
+    runCompleteTitle: दौड़ पूरी हुई!
+    timeUpTitle: समय समाप्त!
+    treasuresCollected: 'इकट्ठे किए गए खजाने: {got}/{total} (शेष {missing})'
+    overcomingAdversity: विपरीत परिस्थितियों पर विजय
+    label:
+      score: स्कोर
+      time: 時間
+      rank: रैंक
+    allChestsOpenedBroadcast: '{player} ने सभी संदूक खोल दिए! अंतिम स्कोर: {score}'
+    summaryLine: 'समय: {time}  स्कोर: {score}  रैंक: {rank}'
+    gotLine: 'संदूक: {got}/{total}'
+  setup:
+    chestsPlaced: '{count} संदूक रख दिए गए हैं!'
+  success:
+    allChestsOpened: सभी संदूक खुल गए! खेल समाप्त!
+    treasureCompleteTitle: 🎵 खजाना पूरा! 🎵
+    allTreasuresFoundTitle: सभी खजाने मिल गए!
+    allTreasuresFoundChat: बधाई हो! आपने सभी खजाने ढूँढ लिए!
+  start:
+    startingIn: शुरू होने में…
+    go: शुरू!
+  shop:
+    tradeCompleteTitle: व्यापार पूरा हुआ!
+    hiddenPowerAwakens: एक छिपी हुई शक्ति जाग उठती है…
+    hiddenPowerChat: आप Treasure Shop की छिपी हुई शक्ति महसूस करते हैं…
+  timer:
+    remainingBossbar: शेष समय
+    remainingLine: 'शेष समय: {seconds} सेकंड'
+rewards:
+  rank:
+    netheriteIngot: आपको नेदराइट इन्गट मिला!
+    diamond: आपको हीरा मिला!
+    goldenApple: आपको स्वर्ण सेब मिला!
+rankTicker:
+  weeklyTitle: साप्ताहिक TreasureRun
+  allTimeTitle: सर्वकालिक TreasureRun
+  monthlyTitle: मासिक TreasureRun
+  footerHint: /gameRank weekly|all|monthly
+rank:
+  command:
+    timeTop10Title: === 🌟 TreasureRun टॉप 10 (सबसे तेज़ समय) 🌟 ===
+    timeTop10Line: '#{rank} {player}  {time}से  {score} अंक  कठिनाई: {difficulty}'
+    dbUnavailable: डेटाबेस कनेक्शन उपलब्ध नहीं है।
+    loadError: रैंकिंग लोड करते समय त्रुटि हुई।
+    playsTitleWeekly: === 🎖️ TreasureRun साप्ताहिक टॉप 10 (रन) ===
+    playsTitleAllTime: === 🎖️ TreasureRun सर्वकालिक टॉप 10 (रन) ===
+    playsTitleMonthly: === 🎖️ TreasureRun मासिक टॉप 10 (रन) ===
+    playsLine: '#{rank} {player}  {score} अंक  {time}से  ({difficulty}) [{lang}]'
+    weeklyEmpty: पिछले 7 दिनों में कोई रन दर्ज नहीं हुआ।
+    weeklySwitch: 'दृश्य बदलें: /gameRank all | /gameRank monthly'
+    allTimeEmpty: अभी तक कोई रिकॉर्ड नहीं है।
+    allTimeSwitch: 'दृश्य बदलें: /gameRank weekly | /gameRank monthly'
+    monthlyEmpty: इस महीने अभी तक कोई रिकॉर्ड नहीं है।
+    monthlySwitch: 'दृश्य बदलें: /gameRank weekly | /gameRank all'
