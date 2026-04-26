@@ -727,69 +727,22 @@ ui:
     footer:
       dbLogs: '(DB: proverb_logs)'
   auto:
-    playerscore_b91d4cd3: 'PlayerScore सम्मिलन विफल:'
     messages_yml_not_loaded_d56b1cd3: (messages.yml not loaded)
-    translation_missing_77031543: '(अनुवाद नहीं मिला:'
     translation_missing_77031543_107: '(अनुवाद नहीं मिला:'
-    treasurerun_lang_config_yml__2dde4625: '[TreasureRun][Lang] config.yml में ''language:'' सेक्शन नहीं मिला।'
     click_to_select_aac1569c_76: चुनने के लिए क्लिक करें
-    treasurerun_lang_default_60887a83: '[TreasureRun][Lang] default='
     click_to_select_aac1569c_19: चुनने के लिए क्लिक करें
     treasurerun_lang_config_yml__2dde4625_33: '[TreasureRun][Lang] config.yml में ''language:'' सेक्शन नहीं मिला।'
-    treasurerun_lang_material_la_bc70a401: '[TreasureRun][Lang] अमान्य Material: lang='
-    treasurerun_lang_language_ic_4bc2362d: '[TreasureRun][Lang] ''language.iconMaterial:'' सेक्शन नहीं मिला（सभी PAPER बन जाएंगे）'
     click_to_select_aac1569c_100: चुनने के लिए क्लिक करें
     treasurerun_lang_default_60887a83_111: '[TreasureRun][Lang] default='
-    enemydown_mysql_jdbc_mybatis_6b5c6f68: '[EnemyDown] MySQL से जुड़े（JDBC + MyBatis）'
-    enemydown_mysql_6cf3e29b: '[EnemyDown] MySQL कनेक्शन विफल:'
-    enemydown_mysql_a18990c3: '[EnemyDown] MySQL कनेक्शन बंद।'
-    enemydown_mysql_e097a73e: '[EnemyDown] MySQL डिस्कनेक्ट विफल:'
-    mysqlmanager_player_score_d92afff4: '[MySQLManager] player_score तालिका जाँची/बनाई ✅'
-    mysqlmanager_player_score_21665c62: '[MySQLManager] player_score तालिका बनाने में विफल ❌:'
-    mysqlmanager_mysql_951100b9: '[MySQLManager] MySQL कनेक्शन परीक्षण सफल ✅'
-    mysqlmanager_player_score_a4968d00: '[MySQLManager] player_score तालिका की पंक्तियाँ:'
-    mysqlmanager_mysql_1763d390: '[MySQLManager] MySQL कनेक्ट नहीं ❌'
-    mysqlmanager_player_score_2b5c8721: '[MySQLManager] player_score तालिका मौजूद नहीं हो सकती ❌'
-    enemydown_mysql_bc514e56: '[EnemyDown] MySQL जुड़ा हुआ है।'
-    enemydown_mysql_93b23ef9: '[EnemyDown] MySQL जुड़ा नहीं है।'
     run_complete_46d920e5_580: Run complete.
     run_complete_46d920e5_589: Run complete.
-    playerlanguagestore_failed_t_c4999402: '[PlayerLanguageStore] Failed to create/load player_languages.yml:'
-    playerlanguagestore_failed_t_b6478ec8: '[PlayerLanguageStore] Failed to save player_languages.yml:'
-    proverb_logged_to_mysql_prov_c13b5e4e: 'Proverb logged to MySQL: proverb_logs'
-    failed_to_log_proverb_to_mys_2bb4c5c3: 'Failed to log proverb to MySQL: proverb_logs'
-    loaded_proverb_logs_from_mys_b5b0f8e0: 'Loaded proverb logs from MySQL: proverb_logs'
-    failed_to_load_proverb_logs__6246be38: 'Failed to load proverb logs from MySQL: proverb_logs'
-    treasurerunmultichestplugin_4499e25c: '🌈 TreasureRunMultiChestPlugin: 起動 🌈'
-    treasurerun_gamestagemanager_3d9e7f5a: '[TreasureRun] GameStageManager event registered!'
-    treasurerunmultichestplugin_a507471a: ✅ TreasureRunMultiChestPlugin が正常に起動しました！
-    treasurerunmultichestplugin_c2111711: '🔻 TreasureRunMultiChestPlugin: 無効化'
-    text_4f7e7cfa: नेदराइट इंगॉट प्राप्त!
-    text_1a6173d3: हीरा प्राप्त!
-    text_b6568a8d: सोने का सेब प्राप्त!
-    no_9c0fdee6: 🏆 No.
     gamestart_easy_normal_hard_230bd0bd: अगली बार अलग रास्ता आज़माएं! पुनः प्रयास के लिए /gamestart <easy|normal|hard> उपयोग
       करें!
-    text_9310a1a7: खेल पहले से चल रहा है।
     text_9310a1a7_908: खेल पहले से चल रहा है।
     text_9310a1a7_1601: खेल पहले से चल रहा है।
-    text_f9c4c4e2: 'खेल समाप्त! कुल स्कोर:'
     run_complete_d258363d_1214: Run Complete!
     time_s_up_7441e686_1313: TIME'S UP!
-    text_ec39d8ad: बचा समय
-    text_d6e25e00: 'बचा समय:'
-    text_b2c59e95: 'समय:'
-    text_c148686b: 'स्कोर:'
-    text_307fcc19: 'रैंक:'
-    starting_in_2413fc14: शुरू होने में…
-    easy_normal_hard_ef1ba55c: कठिनाई Easy / Normal / Hard है।
     language_gui_aed4f8fc_931: Language GUI आरंभ नहीं हुई।
-    config_yml_3c6e9d15: ✅ config.yml लोड हुई
-    treasurerun_config_language__763cf02c: ✅ TreasureRun config पुनः लोड हुई（language GUI सहित）।
-    gui_gamestart_5870f221: GUI अपडेट हुई। /gameStart से पुनः खोलें।
-    text_3ecbc53d: कृपया खिलाड़ी के रूप में चलाएं
-    text_3030fd61: केवल खिलाड़ी उपयोग कर सकते हैं
-    reload_gameend_c41d5c55: खेल के दौरान reload नहीं हो सकता। /gameEnd के बाद करें।
   menu:
     toc:
       message: '&6📌 TreasureRun मेन्यू खुल गया है। नियम-पुस्तिका देखें।'
@@ -879,11 +832,6 @@ game:
     normal: '&eNormal'
     hard: '&cHard'
   auto:
-    backup_cfe9e6cf: 🌊 बैकअप समुद्र खोज सफल रही।
-    text_e096c9a4: '&6स्पेशल एमराल्ड'
-    dj_onalltreasurescollected_a871afdd: DJ इवेंट पहले से चल रहा है, इसलिए onAllTreasuresCollected छोड़ दिया गया।
-    text_cc353737: सभी खजाने मिल गए!
-    congratulations_38fd1594: §6बधाई हो! आपने सभी खजाने ढूंढ लिए!
 favorites:
   title: पसंदीदा
   cover:
@@ -934,7 +882,6 @@ favorites:
     head: सहेजी गई पंक्तियाँ फिर से पढ़ें
     noQuotes: आपने अभी तक कोई पंक्ति सहेजी नहीं है।
   auto:
-    favorite_saved_sneak_rightcl_7a73eb4f: ★ पसंदीदा सहेजा गया! (झुककर + राइट-क्लिक)
 command:
   checkTreasureEmerald:
     playersOnly: यह कमांड केवल खिलाड़ी ही चला सकते हैं।
@@ -1023,11 +970,6 @@ items:
     emerald_block: पन्ने का ब्लॉक
     iron_block: लोहे का ब्लॉक
     tnt: TNT
-  text_7567bb35: स्पेशल एमराल्ड की रेसिपी दर्ज की गई।
-  text_7a04254b: '&eस्पेशल सेब'
-  text_e8d4013d: स्पेशल सेब की रेसिपी दर्ज की गई।
-  text_e42912c7: '&7स्पेशल आयरन ब्लॉक'
-  text_c89dea57: स्पेशल आयरन ब्लॉक की रेसिपी दर्ज की गई।
 gameplay:
   pickup:
     scoreNone: अभी कोई स्कोर नहीं है।
@@ -1091,25 +1033,9 @@ rank:
     monthlyEmpty: इस महीने अभी तक कोई रिकॉर्ड नहीं है।
     monthlySwitch: 'दृश्य बदलें: /gameRank weekly | /gameRank all'
 commands:
-  text_2bf42ec8: यह कमांड केवल खिलाड़ी चला सकते हैं।
   text_2bf42ec8_18: यह कमांड केवल खिलाड़ी चला सकते हैं।
-  3_3d5021f7: स्पेशल एमराल्ड बनाने के लिए 3 हीरे चाहिए।
-  text_e096c9a4: '&6स्पेशल एमराल्ड'
-  3_71b78a44: 3 हीरों से स्पेशल एमराल्ड बना लिया गया!
-  text_3030fd61: केवल खिलाड़ी ही इसे चला सकते हैं।
-  op_10caf0f6: आपके पास अनुमति नहीं है (केवल OP)।
   rank_1_2_3_demo_d87f40da: 'उपयोग: /rank <1|2|3|demo>'
   rank_1_2_3_demo_4f3e3084: 'कृपया एक संख्या दर्ज करें: /rank <1|2|3|demo>'
-  1_3_rank_1_2_3_7f459bd0: 'केवल 1 से 3 तक मान्य हैं: /rank <1|2|3>'
-  text_bed3daf7: यह कमांड केवल खिलाड़ी चला सकते हैं।
-  treasurerun_bcef4fe9: '[TreasureRun] स्टेज प्रबंधन प्रारंभ नहीं हुआ है।'
-  text_287fa0f1: '{count} कठिनाई ब्लॉक साफ़ किए गए।'
-  text_44a99db9: यह कमांड केवल खिलाड़ी की ओर से चलाया जा सकता है।
-  text_fd02f248: 'समय सीमा:'
-  text_f166cc04: '§aट्रेज़र हंट शुरू! कठिनाई:'
-  text_2281b097: '{count} संदूक बनाए गए। खजाने की संख्या:'
-
-# Final visible-surface i18n audit keys
 finalAudit:
   shop:
     treasureShop: "खज़ाने की दुकान"

@@ -727,69 +727,21 @@ ui:
     footer:
       dbLogs: '(BD: proverb_logs)'
   auto:
-    playerscore_b91d4cd3: 'Falha ao inserir PlayerScore:'
     messages_yml_not_loaded_d56b1cd3: (messages.yml not loaded)
-    translation_missing_77031543: '(Tradução ausente:'
     translation_missing_77031543_107: '(Tradução ausente:'
-    treasurerun_lang_config_yml__2dde4625: '[TreasureRun][Lang] Seção ''language:'' não encontrada no config.yml.'
     click_to_select_aac1569c_76: Clique para selecionar
-    treasurerun_lang_default_60887a83: '[TreasureRun][Lang] default='
     click_to_select_aac1569c_19: Clique para selecionar
     treasurerun_lang_config_yml__2dde4625_33: '[TreasureRun][Lang] Seção ''language:'' não encontrada no config.yml.'
-    treasurerun_lang_material_la_bc70a401: '[TreasureRun][Lang] Material inválido: lang='
-    treasurerun_lang_language_ic_4bc2362d: '[TreasureRun][Lang] Seção ''language.iconMaterial:'' não encontrada（tudo será
-      PAPER）'
     click_to_select_aac1569c_100: Clique para selecionar
     treasurerun_lang_default_60887a83_111: '[TreasureRun][Lang] default='
-    enemydown_mysql_jdbc_mybatis_6b5c6f68: '[EnemyDown] Conectado ao MySQL（JDBC + MyBatis）'
-    enemydown_mysql_6cf3e29b: '[EnemyDown] Falha na conexão MySQL:'
-    enemydown_mysql_a18990c3: '[EnemyDown] Conexão MySQL encerrada.'
-    enemydown_mysql_e097a73e: '[EnemyDown] Falha ao desconectar MySQL:'
-    mysqlmanager_player_score_d92afff4: '[MySQLManager] Tabela player_score verificada/criada ✅'
-    mysqlmanager_player_score_21665c62: '[MySQLManager] Falha ao criar tabela player_score ❌:'
-    mysqlmanager_mysql_951100b9: '[MySQLManager] Teste de conexão MySQL bem-sucedido ✅'
-    mysqlmanager_player_score_a4968d00: '[MySQLManager] Linhas na tabela player_score:'
-    mysqlmanager_mysql_1763d390: '[MySQLManager] MySQL não conectado ❌'
-    mysqlmanager_player_score_2b5c8721: '[MySQLManager] Tabela player_score pode não existir ❌'
-    enemydown_mysql_bc514e56: '[EnemyDown] MySQL está conectado.'
-    enemydown_mysql_93b23ef9: '[EnemyDown] MySQL não está conectado.'
     run_complete_46d920e5_580: Run complete.
     run_complete_46d920e5_589: Run complete.
-    playerlanguagestore_failed_t_c4999402: '[PlayerLanguageStore] Failed to create/load player_languages.yml:'
-    playerlanguagestore_failed_t_b6478ec8: '[PlayerLanguageStore] Failed to save player_languages.yml:'
-    proverb_logged_to_mysql_prov_c13b5e4e: 'Proverb logged to MySQL: proverb_logs'
-    failed_to_log_proverb_to_mys_2bb4c5c3: 'Failed to log proverb to MySQL: proverb_logs'
-    loaded_proverb_logs_from_mys_b5b0f8e0: 'Loaded proverb logs from MySQL: proverb_logs'
-    failed_to_load_proverb_logs__6246be38: 'Failed to load proverb logs from MySQL: proverb_logs'
-    treasurerunmultichestplugin_4499e25c: '🌈 TreasureRunMultiChestPlugin: 起動 🌈'
-    treasurerun_gamestagemanager_3d9e7f5a: '[TreasureRun] GameStageManager event registered!'
-    treasurerunmultichestplugin_a507471a: ✅ TreasureRunMultiChestPlugin が正常に起動しました！
-    treasurerunmultichestplugin_c2111711: '🔻 TreasureRunMultiChestPlugin: 無効化'
-    text_4f7e7cfa: Lingote de Netherite obtido!
-    text_1a6173d3: Diamante obtido!
-    text_b6568a8d: Maçã Dourada obtida!
-    no_9c0fdee6: 🏆 No.
     gamestart_easy_normal_hard_230bd0bd: Tente uma rota diferente da próxima vez! Para tentar novamente use /gamestart <easy|normal|hard>!
-    text_9310a1a7: O jogo já está em andamento.
     text_9310a1a7_908: O jogo já está em andamento.
     text_9310a1a7_1601: O jogo já está em andamento.
-    text_f9c4c4e2: 'Jogo encerrado! Pontuação total:'
     run_complete_d258363d_1214: Run Complete!
     time_s_up_7441e686_1313: TIME'S UP!
-    text_ec39d8ad: Tempo restante
-    text_d6e25e00: 'Tempo restante:'
-    text_b2c59e95: 'Tempo:'
-    text_c148686b: 'Pontuação:'
-    text_307fcc19: 'Classificação:'
-    starting_in_2413fc14: Iniciando em…
-    easy_normal_hard_ef1ba55c: A dificuldade é Easy / Normal / Hard.
     language_gui_aed4f8fc_931: GUI de idioma não inicializada.
-    config_yml_3c6e9d15: ✅ config.yml carregado
-    treasurerun_config_language__763cf02c: ✅ Config do TreasureRun recarregado（incluindo GUI de idioma）.
-    gui_gamestart_5870f221: GUI atualizada. Abra novamente com /gameStart.
-    text_3ecbc53d: Execute como jogador
-    text_3030fd61: Somente jogadores podem executar
-    reload_gameend_c41d5c55: Não é possível recarregar durante o jogo. Execute /gameEnd primeiro.
   menu:
     toc:
       message: '&6📌 Menu do TreasureRun aberto. Confira o livro de regras.'
@@ -879,11 +831,6 @@ game:
     normal: '&eNormal'
     hard: '&cHard'
   auto:
-    backup_cfe9e6cf: 🌊 Busca de oceano de backup concluída com sucesso.
-    text_e096c9a4: '&6Esmeralda Especial'
-    dj_onalltreasurescollected_a871afdd: O evento DJ já está em execução, então onAllTreasuresCollected foi ignorado.
-    text_cc353737: Todos os tesouros foram encontrados!
-    congratulations_38fd1594: §6Parabéns! Você encontrou todos os tesouros!
 favorites:
   title: Favoritos
   cover:
@@ -934,7 +881,6 @@ favorites:
     head: Reler linhas salvas
     noQuotes: Você ainda não salvou nenhuma linha.
   auto:
-    favorite_saved_sneak_rightcl_7a73eb4f: ★ Favorito salvo! (Agachar + clique direito)
 command:
   checkTreasureEmerald:
     playersOnly: Somente jogadores podem usar este comando.
@@ -1025,11 +971,6 @@ items:
     emerald_block: Bloco de esmeralda
     iron_block: Bloco de ferro
     tnt: TNT
-  text_7567bb35: A receita da Esmeralda Especial foi registrada.
-  text_7a04254b: '&eMaçã Especial'
-  text_e8d4013d: A receita da Maçã Especial foi registrada.
-  text_e42912c7: '&7Bloco de Ferro Especial'
-  text_c89dea57: A receita do Bloco de Ferro Especial foi registrada.
 gameplay:
   pickup:
     scoreNone: Ainda não há pontuação.
@@ -1093,25 +1034,9 @@ rank:
     monthlyEmpty: Ainda não há registros neste mês.
     monthlySwitch: 'Alternar visualização: /gameRank weekly | /gameRank all'
 commands:
-  text_2bf42ec8: Este comando só pode ser executado por jogadores.
   text_2bf42ec8_18: Este comando só pode ser executado por jogadores.
-  3_3d5021f7: São necessários 3 diamantes para criar a Esmeralda Especial.
-  text_e096c9a4: '&6Esmeralda Especial'
-  3_71b78a44: A Esmeralda Especial foi criada com 3 diamantes!
-  text_3030fd61: Apenas jogadores podem executar este comando.
-  op_10caf0f6: Você não tem permissão (somente OP).
   rank_1_2_3_demo_d87f40da: 'Uso: /rank <1|2|3|demo>'
   rank_1_2_3_demo_4f3e3084: 'Digite um número: /rank <1|2|3|demo>'
-  1_3_rank_1_2_3_7f459bd0: 'Apenas valores de 1 a 3 são permitidos: /rank <1|2|3>'
-  text_bed3daf7: Este comando só pode ser executado por jogadores.
-  treasurerun_bcef4fe9: '[TreasureRun] O gerenciamento do estágio não foi inicializado.'
-  text_287fa0f1: '{count} blocos de dificuldade foram removidos.'
-  text_44a99db9: Este comando só pode ser executado por um jogador.
-  text_fd02f248: 'Limite de tempo:'
-  text_f166cc04: '§aA caça ao tesouro começou! Dificuldade:'
-  text_2281b097: '{count} baús foram gerados. Número de tesouros:'
-
-# Final visible-surface i18n audit keys
 finalAudit:
   shop:
     treasureShop: "Loja do tesouro"
