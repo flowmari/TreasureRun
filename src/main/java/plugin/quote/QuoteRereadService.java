@@ -46,7 +46,7 @@ public class QuoteRereadService {
     } catch (Throwable ignored) {}
 
     if (conn == null || plugin.getProverbLogRepository() == null) {
-      player.sendMessage(ChatColor.RED + trOrFallback(lang, "command.quoteReread.repositoryNotReady", "command.quoteReread.repositoryNotReady"));
+      player.sendMessage(ChatColor.RED + trOrFallback(lang, "command.quoteReread.repositoryNotReady", "The favorites repository is not ready yet."));
       return false;
     }
 
@@ -89,7 +89,7 @@ public class QuoteRereadService {
 
       ItemStack book = bookBuilder.buildRereadOneShotBook(player, objRow);
       if (book == null) {
-        player.sendMessage(ChatColor.RED + trOrFallback(lang, "command.quoteReread.bookOpenFailed", "command.quoteReread.bookOpenFailed"));
+        player.sendMessage(ChatColor.RED + trOrFallback(lang, "command.quoteReread.bookOpenFailed", "Could not open the favorites book."));
         return false;
       }
 
@@ -97,7 +97,7 @@ public class QuoteRereadService {
       return true;
 
     } catch (Throwable t) {
-      player.sendMessage(ChatColor.RED + trOrFallback(lang, "command.quoteReread.openBookFailed", "command.quoteReread.openBookFailed"));
+      player.sendMessage(ChatColor.RED + trOrFallback(lang, "command.quoteReread.openBookFailed", "Could not open the book."));
       // 念のため CHAT で出す（完全に無言にならない）
       player.sendMessage(ChatColor.AQUA + head);
       player.sendMessage(ChatColor.WHITE + quoteText);

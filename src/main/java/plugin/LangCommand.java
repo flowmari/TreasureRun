@@ -20,7 +20,7 @@ public class LangCommand implements CommandExecutor, TabCompleter {
   public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
     if (!(sender instanceof Player player)) {
-      sender.sendMessage(ChatColor.RED + trDefault("command.lang.playersOnly", "command.lang.playersOnly"));
+      sender.sendMessage(ChatColor.RED + trDefault("command.lang.playersOnly", "Only players can run this command."));
       return true;
     }
 

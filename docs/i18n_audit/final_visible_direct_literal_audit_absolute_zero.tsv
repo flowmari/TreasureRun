@@ -1,0 +1,203 @@
+status	severity	file	line	text
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/CheckTreasureEmeraldCommand.java	23	sender.sendMessage(ChatColor.RED + i18n.trDefault(
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/CheckTreasureEmeraldCommand.java	32	player.sendMessage(ChatColor.AQUA + i18n.tr(
+OK_ALLOWED_DYNAMIC	P0_CHAT_ACTIONBAR	src/main/java/plugin/ChestProximitySoundService.java	101	"player.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(""""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/ChestProximitySoundService.java	115	"player.sendMessage(""§b"" + trChest(player, ""finalAudit.debug.chestSoundStart""));"
+OK_ALLOWED_DYNAMIC	P0_CHAT_ACTIONBAR	src/main/java/plugin/ChestProximitySoundService.java	162	player.spigot().sendMessage(ChatMessageType.ACTION_BAR,
+OK_ALLOWED_DYNAMIC	P0_CHAT_ACTIONBAR	src/main/java/plugin/ChestProximitySoundService.java	202	player.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(msg));
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/ChestProximitySoundService.java	208	"player.sendMessage(""§b"" + trChest(player, ""finalAudit.debug.chestSoundNearest"").replace(""{distance}"", String.format(""%.1f"", dist)).replace(""{range}"", String.valueOf(inRange)).replace(""{t}"", String.format(""%.2f"", t)));"
+OK_ALLOWED_DYNAMIC	P0_CHAT_ACTIONBAR	src/main/java/plugin/ChestProximitySoundService.java	435	"player.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(""""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/CraftSpecialEmeraldCommand.java	24	sender.sendMessage(ChatColor.RED + i18n.trDefault(
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/CraftSpecialEmeraldCommand.java	35	player.sendMessage(i18n.tr(
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/CraftSpecialEmeraldCommand.java	48	player.sendMessage(i18n.tr(
+OK_I18N	P0_GUI_ITEM_BOOK	src/main/java/plugin/CustomRecipeLoader.java	60	"meta.setDisplayName(ChatColor.YELLOW + trDefault(""finalAudit.item.specialApple""));"
+OK_I18N	P0_GUI_ITEM_BOOK	src/main/java/plugin/CustomRecipeLoader.java	80	"meta.setDisplayName(ChatColor.GRAY + trDefault(""finalAudit.item.specialIronBlock""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/GameMenu.java	63	player.sendMessage(ChatColor.GOLD + GameMenuFallbackTexts.BRAND_TITLE);
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/GameMenu.java	64	player.sendMessage(ChatColor.RED + GameMenuFallbackTexts.pluginNotReady(player));
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/GameMenu.java	93	player.sendMessage(colorize(raw));
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/GameMenu.java	141	player.sendMessage(colorize(raw));
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/GameMenu.java	242	player.sendMessage(colorize(plugin.getI18n().tr(actualLang, GameMenuKeys.UI_MENU_BOOK_OPEN_FAILED)));
+OK_ALLOWED_DYNAMIC	P1_WORLD_TITLE_BOSSBAR	src/main/java/plugin/GameMenu.java	246	meta.setTitle(title);
+OK_ALLOWED_DYNAMIC	P2_BOOK_PAGE	src/main/java/plugin/GameMenu.java	248	meta.setPages(replaced);
+OK_ALLOWED_DYNAMIC	P0_GUI_ITEM_BOOK	src/main/java/plugin/GameMenu.java	254	displayMeta.setDisplayName(displayName);
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/GameMenu.java	301	player.sendMessage(colorize(plugin.getI18n().tr(actualLang, GameMenuKeys.UI_MENU_BOOK_HOTBAR_GIVEN)));
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/GameMenu.java	302	player.sendMessage(colorize(plugin.getI18n().tr(actualLang, GameMenuKeys.UI_MENU_BOOK_HOTBAR_HINT)));
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/GameMenu.java	306	player.sendMessage(colorize(plugin.getI18n().tr(
+OK_COMMENT	P1_WORLD_TITLE_BOSSBAR	src/main/java/plugin/GameOutcome.java	43	// player.resetTitle();
+OK_COMMENT	P0_CHAT_ACTIONBAR	src/main/java/plugin/GameOutcome.java	44	"// player.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(""""));"
+OK_I18N	P1_WORLD_TITLE_BOSSBAR	src/main/java/plugin/GameStageManager.java	995	"t.setCustomName(ChatColor.GOLD + """" + ChatColor.BOLD + trStage(""finalAudit.shop.treasureShop""));"
+OK_NO_STRING_LITERAL_OR_DYNAMIC	P1_WORLD_TITLE_BOSSBAR	src/main/java/plugin/GameStageManager.java	1292	player.sendTitle(
+OK_NO_STRING_LITERAL_OR_DYNAMIC	P0_CHAT_ACTIONBAR	src/main/java/plugin/GameStageManager.java	1299	player.sendMessage(
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/LangCommand.java	23	"sender.sendMessage(ChatColor.RED + trDefault(""command.lang.playersOnly"", ""Only players can run this command.""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/LangCommand.java	51	"player.sendMessage(ChatColor.GREEN + tr(player, ""command.lang.resetDone"", ""command.lang.resetDone""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/LangCommand.java	63	player.sendMessage(ChatColor.AQUA + trp(
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/LangCommand.java	79	"player.sendMessage(ChatColor.RED + tr(player, ""command.lang.emptyCode"", ""command.lang.emptyCode""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/LangCommand.java	84	"player.sendMessage(ChatColor.RED + trp(player, ""command.lang.notAllowed"", java.util.Map.of(""lang"", lang), ""command.lang.notAllowed""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/LangCommand.java	85	"player.sendMessage(ChatColor.GRAY + trp(player, ""command.lang.allowedList"", java.util.Map.of(""allowed"", String.join("", "", allowed)), ""command.lang.allowedList""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/LangCommand.java	95	player.sendMessage(ChatColor.GREEN + trByLang(
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/LangCommand.java	102	player.sendMessage(ChatColor.YELLOW + trByLang(
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/LangCommand.java	158	"player.sendMessage(ChatColor.AQUA + tr(player, ""command.lang.list.title"", ""command.lang.list.title""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/LangCommand.java	159	"player.sendMessage(ChatColor.GRAY + trp(player, ""command.lang.list.default"", java.util.Map.of(""default"", defaultLang), ""command.lang.list.default""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/LangCommand.java	160	"player.sendMessage(ChatColor.GRAY + trp(player, ""command.lang.list.allowed"", java.util.Map.of(""allowed"", String.join("", "", allowed)), ""command.lang.list.allowed""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/LangCommand.java	161	"player.sendMessage(ChatColor.GRAY + tr(player, ""command.lang.list.usage"", ""command.lang.list.usage""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/LangCommand.java	162	"player.sendMessage(ChatColor.GRAY + tr(player, ""command.lang.list.gui"", ""command.lang.list.gui""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/LangCommand.java	174	"player.sendMessage(ChatColor.RED + tr(player, ""command.lang.guiNotReady"", ""command.lang.guiNotReady""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/LanguageSelectGui.java	71	"player.sendMessage(ChatColor.YELLOW + tr(player, ""command.lang.guiTooManyShown""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/LanguageSelectGui.java	80	"player.sendMessage(ChatColor.GRAY + colorize(trByLang(lang, ""gui.language.subtitle"")));"
+OK_NO_STRING_LITERAL_OR_DYNAMIC	P0_CHAT_ACTIONBAR	src/main/java/plugin/LanguageSelectGui.java	81	player.sendMessage(ChatColor.GREEN + colorize(
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/LanguageSelectGui.java	84	"player.sendMessage(ChatColor.GRAY + colorize(trByLang(lang, ""gui.language.reopenHint"")));"
+OK_ALLOWED_FORMATTING_OR_KEY	P0_GUI_ITEM_BOOK	src/main/java/plugin/LanguageSelectGui.java	107	"meta.setDisplayName(ChatColor.AQUA + ""["" + label + ""] "" + langName"
+OK_NO_STRING_LITERAL_OR_DYNAMIC	P0_CHAT_ACTIONBAR	src/main/java/plugin/LanguageSelectGui.java	172	player.sendMessage(ChatColor.GREEN + colorize(
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/LanguageSelectGui.java	175	"player.sendMessage(ChatColor.GRAY + colorize(trByLang(viewerLang, ""gui.language.reopenHint"")));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/LanguageSelectGui.java	198	"player.sendMessage(ChatColor.YELLOW + tr(player, ""command.lang.guiCancelledGameMenu""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/LanguageSelectGui.java	200	"player.sendMessage(ChatColor.YELLOW + tr(player, ""command.lang.guiCancelledGameStart""));"
+OK_ALLOWED_FORMATTING_OR_KEY	P0_CHAT_ACTIONBAR	src/main/java/plugin/MySQLManager.java	173	"sender.sendMessage(ChatColor.GREEN + trSender(sender, ""finalAudit.command.dbConnected""));"
+OK_ALLOWED_FORMATTING_OR_KEY	P0_CHAT_ACTIONBAR	src/main/java/plugin/MySQLManager.java	175	"sender.sendMessage(ChatColor.RED + trSender(sender, ""finalAudit.command.dbNotConnected""));"
+OK_ALLOWED_DYNAMIC	P0_CHAT_ACTIONBAR	src/main/java/plugin/OutcomeMessageService.java	779	player.sendMessage(ChatColor.WHITE + line);
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/QuoteFavoriteBookClickListener.java	75	"player.sendMessage(ChatColor.YELLOW + tr(player, ""favorites.empty.noFav""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/QuoteFavoriteBookClickListener.java	83	"player.sendMessage(ChatColor.GREEN + tr(player, ""command.quoteFavorite.latestSaved""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/QuoteFavoriteBookClickListener.java	85	"player.sendMessage(ChatColor.YELLOW + tr(player, ""command.quoteFavorite.latestNotSaved""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/QuoteFavoriteBookClickListener.java	156	"player.sendMessage(ChatColor.YELLOW + tr(player, ""favorites.empty.noFav""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/QuoteFavoriteBookClickListener.java	182	"player.sendMessage(ChatColor.YELLOW + tr(player, ""favorites.title"") + "":"");"
+OK_ALLOWED_DYNAMIC	P0_CHAT_ACTIONBAR	src/main/java/plugin/QuoteFavoriteBookClickListener.java	187	player.sendMessage(ChatColor.WHITE + trimmed);
+OK_I18N	P1_WORLD_TITLE_BOSSBAR	src/main/java/plugin/QuoteFavoriteBookClickListener.java	271	"bm.setTitle(tr(player, ""favorites.title""));"
+OK_I18N	P0_GUI_ITEM_BOOK	src/main/java/plugin/QuoteFavoriteBookClickListener.java	273	"bm.setDisplayName(ChatColor.AQUA + tr(player, ""favorites.title""));"
+OK_ALLOWED_DYNAMIC	P2_BOOK_PAGE	src/main/java/plugin/QuoteFavoriteBookClickListener.java	278	bm.setPages(pages);
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/RankDebugCommand.java	49	"sender.sendMessage(plugin.getI18n().tr(""en"", ""finalAudit.command.playerOnly""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/RankDebugCommand.java	55	"player.sendMessage(tr(player, ""finalAudit.command.opOnly""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/RankDebugCommand.java	61	"player.sendMessage(tr(player, ""finalAudit.command.rankDebugOff""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/RankDebugCommand.java	67	"player.sendMessage(tr(player, ""finalAudit.command.rankUsage""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/RankDebugCommand.java	149	"player.sendMessage(tr(player, ""finalAudit.command.rankNumberOnly""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/RankDebugCommand.java	154	"player.sendMessage(tr(player, ""finalAudit.command.rankOnlyOneToThree""));"
+OK_COMMENT	P0_CHAT_ACTIONBAR	src/main/java/plugin/RankDebugCommand.java	161	"// player.sendMessage(""DEBUG: rank "" + rank + "" の演出だけ発動しました（ランキング/DBは変更なし）"");"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/RankRewardManager.java	88	"player.sendMessage(chatRank + ChatColor.RESET + "" "" + ChatColor.GREEN + trReward(player, ""finalAudit.reward.label"") + "" "" + ChatColor.RESET + sub);"
+OK_I18N	P1_WORLD_TITLE_BOSSBAR	src/main/java/plugin/RankRewardManager.java	381	"wo.setCustomName(ChatColor.LIGHT_PURPLE + """" + ChatColor.BOLD + trReward(player, ""finalAudit.reward.rainbowWolf""));"
+OK_NO_STRING_LITERAL_OR_DYNAMIC	P0_CHAT_ACTIONBAR	src/main/java/plugin/RealtimeRankTicker.java	273	p.sendMessage(
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/StageCleanupCommand.java	25	sender.sendMessage(ChatColor.RED + i18n.trDefault(
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/StageCleanupCommand.java	34	player.sendMessage(ChatColor.RED + i18n.tr(
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/StageCleanupCommand.java	44	player.sendMessage(ChatColor.AQUA + i18n.trp(
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureExportLangCommand.java	43	"sender.sendMessage(ChatColor.RED + tr(""finalAudit.command.exportMissingRoot""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureExportLangCommand.java	44	"sender.sendMessage(ChatColor.GRAY + tr(""finalAudit.command.exportExample""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureExportLangCommand.java	51	"sender.sendMessage(ChatColor.RED + tr(""finalAudit.command.exportCreateFolderFailed"").replace(""{path}"", dir.getAbsolutePath()));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureExportLangCommand.java	67	"sender.sendMessage(ChatColor.RED + tr(""finalAudit.command.exportNoLanguages""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureExportLangCommand.java	104	"sender.sendMessage(ChatColor.RED + tr(""finalAudit.command.exportFailed"").replace(""{lang}"", lang).replace(""{error}"", String.valueOf(t.getMessage())));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureExportLangCommand.java	108	"sender.sendMessage(ChatColor.GREEN + tr(""finalAudit.command.exportComplete"").replace(""{count}"", String.valueOf(written)));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureExportLangCommand.java	109	"sender.sendMessage(ChatColor.GRAY + tr(""finalAudit.command.exportOutputFolder"").replace(""{path}"", dir.getAbsolutePath()));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureExportLangCommand.java	112	"sender.sendMessage(ChatColor.YELLOW + tr(""finalAudit.command.exportSkippedExisting"").replace(""{langs}"", String.join("", "", skipped)));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureExportLangCommand.java	113	"sender.sendMessage(ChatColor.GRAY + tr(""finalAudit.command.exportOverwriteHint""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureExportLangCommand.java	116	"sender.sendMessage(ChatColor.AQUA + tr(""finalAudit.command.exportNextStep""));"
+OK_NO_STRING_LITERAL_OR_DYNAMIC	P0_GUI_ITEM_BOOK	src/main/java/plugin/TreasureItemFactory.java	36	meta.setDisplayName(ChatColor.translateAlternateColorCodes('&',
+OK_NO_STRING_LITERAL_OR_DYNAMIC	P0_GUI_ITEM_BOOK	src/main/java/plugin/TreasureItemFactory.java	65	meta.setDisplayName(ChatColor.translateAlternateColorCodes('&',
+OK_NO_STRING_LITERAL_OR_DYNAMIC	P1_WORLD_TITLE_BOSSBAR	src/main/java/plugin/TreasureRunGameEffectsPlugin.java	201	player.sendTitle(t1, t2, 10, 70, 20);
+OK_NO_STRING_LITERAL_OR_DYNAMIC	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureRunGameEffectsPlugin.java	207	player.sendMessage(ChatColor.GOLD + chatMsg);
+OK_NO_STRING_LITERAL_OR_DYNAMIC	P1_WORLD_TITLE_BOSSBAR	src/main/java/plugin/TreasureRunGameEffectsPlugin.java	314	p.sendTitle(
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	885	"player.sendMessage(ChatColor.GOLD + trPlayer(player, ""rank.command.timeTop10Title""));"
+OK_NO_STRING_LITERAL_OR_DYNAMIC	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	901	player.sendMessage(
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	917	"player.sendMessage(ChatColor.GRAY + trPlayer(player, ""gameplay.pickup.scoreNone""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	922	"player.sendMessage(ChatColor.RED + trPlayer(player, ""rank.command.loadError""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	930	"player.sendMessage(ChatColor.RED + trPlayer(player, ""rank.command.dbUnavailable""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	941	"player.sendMessage(ChatColor.AQUA + trPlayer(player, ""rank.command.playsTitleWeekly""));"
+OK_NO_STRING_LITERAL_OR_DYNAMIC	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	954	player.sendMessage(
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	970	"player.sendMessage(ChatColor.GRAY + trPlayer(player, ""rank.command.weeklyEmpty""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	972	"player.sendMessage(ChatColor.DARK_GRAY + trPlayer(player, ""rank.command.weeklySwitch""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	977	"player.sendMessage(ChatColor.RED + trPlayer(player, ""rank.command.loadError""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	984	"player.sendMessage(ChatColor.RED + trPlayer(player, ""rank.command.dbUnavailable""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	994	"player.sendMessage(ChatColor.AQUA + trPlayer(player, ""rank.command.playsTitleAllTime""));"
+OK_NO_STRING_LITERAL_OR_DYNAMIC	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	1007	player.sendMessage(
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	1023	"player.sendMessage(ChatColor.GRAY + trPlayer(player, ""rank.command.allTimeEmpty""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	1025	"player.sendMessage(ChatColor.DARK_GRAY + trPlayer(player, ""rank.command.allTimeSwitch""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	1030	"player.sendMessage(ChatColor.RED + trPlayer(player, ""rank.command.loadError""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	1037	"player.sendMessage(ChatColor.RED + trPlayer(player, ""rank.command.dbUnavailable""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	1049	"player.sendMessage(ChatColor.AQUA + trPlayer(player, ""rank.command.playsTitleMonthly""));"
+OK_NO_STRING_LITERAL_OR_DYNAMIC	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	1062	player.sendMessage(
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	1078	"player.sendMessage(ChatColor.GRAY + trPlayer(player, ""rank.command.monthlyEmpty""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	1080	"player.sendMessage(ChatColor.DARK_GRAY + trPlayer(player, ""rank.command.monthlySwitch""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	1085	"player.sendMessage(ChatColor.RED + trPlayer(player, ""rank.command.loadError""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	1143	"if (player == null) { sender.sendMessage(getI18n().tr(getConfig().getString(""language.default"", ""en""), ""finalAudit.command.playerOnlyConsoleNoOnline"")); return true; }"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	1150	"player.sendMessage(ChatColor.RED + getI18n().tr(getPlayerLangOrDefault(player.getUniqueId()), ""finalAudit.command.reloadBlockedRunning""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	1184	"p.sendMessage(ChatColor.YELLOW + getI18n().tr(getPlayerLangOrDefault(p.getUniqueId()), ""finalAudit.command.guiReloadedReopen""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	1189	"player.sendMessage(ChatColor.GREEN + getI18n().tr(getPlayerLangOrDefault(player.getUniqueId()), ""finalAudit.command.treasureReloadDone""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	1225	"player.sendMessage(ChatColor.RED + getI18n().tr(getPlayerLangOrDefault(player.getUniqueId()), ""finalAudit.command.languageGuiNotReady""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	1241	"player.sendMessage(ChatColor.RED + getI18n().tr(getPlayerLangOrDefault(player.getUniqueId()), ""finalAudit.command.gameAlreadyRunning""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	1278	"player.sendMessage(ChatColor.RED + getI18n().tr(getPlayerLangOrDefault(player.getUniqueId()), ""finalAudit.command.invalidDifficulty""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	1305	"player.sendMessage(ChatColor.RED + getI18n().tr(getPlayerLangOrDefault(player.getUniqueId()), ""finalAudit.command.languageGuiNotReady""));"
+OK_NO_STRING_LITERAL_OR_DYNAMIC	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	1316	player.sendMessage(
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	1408	"player.sendMessage(ChatColor.RED + getI18n().tr(getPlayerLangOrDefault(player.getUniqueId()), ""finalAudit.command.gameAlreadyRunning""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	1445	"player.sendMessage(ChatColor.RED + getI18n().tr(getPlayerLangOrDefault(player.getUniqueId()), ""finalAudit.command.languageGuiNotReady""));"
+OK_NO_STRING_LITERAL_OR_DYNAMIC	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	1481	player.sendMessage(
+OK_NO_STRING_LITERAL_OR_DYNAMIC	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	1517	player.sendMessage(
+OK_NO_STRING_LITERAL_OR_DYNAMIC	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	1540	player.sendMessage(
+OK_NO_STRING_LITERAL_OR_DYNAMIC	P1_WORLD_TITLE_BOSSBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	1673	player.sendTitle(
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	1702	"player.sendMessage(ChatColor.GOLD + getI18n().tr(getPlayerLangOrDefault(player.getUniqueId()), ""gameplay.success.allChestsOpened""));"
+OK_NO_STRING_LITERAL_OR_DYNAMIC	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	1703	player.sendMessage(
+OK_EMPTY_FORMATTING	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	1740	"player.sendMessage("" "");"
+OK_ALLOWED_DYNAMIC	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	1748	player.sendMessage(ChatColor.WHITE + trimmed); // ✅ ここだけ変更（WHITE → GRAY）
+OK_NO_STRING_LITERAL_OR_DYNAMIC	P1_WORLD_TITLE_BOSSBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	1773	player.sendTitle(
+OK_ALLOWED_DYNAMIC	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	1780	"player.sendMessage(ChatColor.DARK_GRAY + """" + ChatColor.ITALIC + sub);"
+OK_I18N	P1_WORLD_TITLE_BOSSBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	1828	"bossBar.setTitle(ChatColor.GREEN + getI18n().tr(initialLang, ""gameplay.timer.remainingBossbar""));"
+OK_I18N	P1_WORLD_TITLE_BOSSBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	1843	"bossBar.setTitle(ChatColor.GREEN + getI18n().tr(langNow, ""gameplay.timer.remainingBossbar""));"
+OK_ALLOWED_DYNAMIC	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	1845	player.spigot().sendMessage(
+OK_NO_STRING_LITERAL_OR_DYNAMIC	P1_WORLD_TITLE_BOSSBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	1927	player.sendTitle(
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	1958	"player.sendMessage(ChatColor.WHITE + getI18n().tr(outcomeNoticeLang, ""outcome.notice.timeUpGameOver""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	1959	"player.sendMessage(ChatColor.WHITE + getI18n().tr(outcomeNoticeLang, ""outcome.notice.retryGuide""));"
+OK_EMPTY_FORMATTING	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	2001	"player.sendMessage("" "");"
+OK_EMPTY_FORMATTING	P1_WORLD_TITLE_BOSSBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	2018	"player.sendTitle("""", """", 0, 1, 0);"
+OK_NO_STRING_LITERAL_OR_DYNAMIC	P1_WORLD_TITLE_BOSSBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	2023	player.sendTitle(
+OK_EMPTY_FORMATTING	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	2038	"player.sendMessage("" "");"
+OK_NO_STRING_LITERAL_OR_DYNAMIC	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	2047	player.sendMessage(ChatColor.GRAY + trimmed);
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	2208	"player.sendMessage(ChatColor.RED + getI18n().tr(getPlayerLangOrDefault(player.getUniqueId()), ""finalAudit.command.gameAlreadyRunning""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	2276	"player.sendMessage(ChatColor.GREEN + trPlayer(player, ""gameplay.setup.chestsPlaced"", I18n.Placeholder.of(""{count}"", String.valueOf(currentTotalChests))));"
+OK_NO_STRING_LITERAL_OR_DYNAMIC	P1_WORLD_TITLE_BOSSBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	2303	player.sendTitle(
+OK_NO_STRING_LITERAL_OR_DYNAMIC	P1_WORLD_TITLE_BOSSBAR	src/main/java/plugin/TreasureRunMultiChestPlugin.java	2329	player.sendTitle(
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureRunStartCommand.java	35	sender.sendMessage(i18n.trDefault(
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureRunStartCommand.java	48	player.sendMessage(i18n.tr(
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/TreasureRunStartCommand.java	90	player.sendMessage(i18n.trp(
+OK_I18N	P1_WORLD_TITLE_BOSSBAR	src/main/java/plugin/UfoCaravanController.java	569	"trader.setCustomName(ChatColor.GOLD + """" + ChatColor.BOLD + trUfo(""finalAudit.shop.treasureShop""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/quote/QuoteFavoriteCommand.java	43	"sender.sendMessage(trRaw(""command.quoteFavorite.playersOnly""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/quote/QuoteFavoriteCommand.java	74	"player.sendMessage(ChatColor.RED + tr(""command.quoteFavorite.repositoryNotReady""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/quote/QuoteFavoriteCommand.java	81	"player.sendMessage(ChatColor.GREEN + tr(""command.quoteFavorite.latestSaved""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/quote/QuoteFavoriteCommand.java	83	"player.sendMessage(ChatColor.RED + tr(""command.quoteFavorite.latestNotSaved""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/quote/QuoteFavoriteCommand.java	93	"player.sendMessage(ChatColor.RED + tr(""command.quoteFavorite.repositoryNotReady""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/quote/QuoteFavoriteCommand.java	99	"player.sendMessage(ChatColor.AQUA + trp(""command.quoteFavorite.listHeader"", ""count"", String.valueOf(favs.size())));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/quote/QuoteFavoriteCommand.java	103	"player.sendMessage(ChatColor.GRAY + tr(""command.quoteFavorite.listSeparator""));"
+OK_ALLOWED_DYNAMIC	P0_CHAT_ACTIONBAR	src/main/java/plugin/quote/QuoteFavoriteCommand.java	106	player.sendMessage(ChatColor.WHITE + line);
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/quote/QuoteFavoriteCommand.java	117	"player.sendMessage(ChatColor.RED + tr(""command.quoteFavorite.removeUsage""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/quote/QuoteFavoriteCommand.java	122	"player.sendMessage(ChatColor.RED + tr(""command.quoteFavorite.repositoryNotReady""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/quote/QuoteFavoriteCommand.java	130	"player.sendMessage(ChatColor.RED + tr(""command.quoteFavorite.removeIdNumber""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/quote/QuoteFavoriteCommand.java	137	"player.sendMessage(ChatColor.GREEN + trp(""command.quoteFavorite.removeSuccess"", ""id"", String.valueOf(id)));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/quote/QuoteFavoriteCommand.java	139	"player.sendMessage(ChatColor.RED + tr(""command.quoteFavorite.removeNotFound""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/quote/QuoteFavoriteCommand.java	156	"player.sendMessage(ChatColor.YELLOW + tr(""command.quoteFavorite.rereadNoQuotes""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/quote/QuoteFavoriteCommand.java	195	"player.sendMessage(ChatColor.RED + tr(""command.quoteFavorite.bookOpenFailed""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/quote/QuoteFavoriteCommand.java	202	"player.sendMessage(ChatColor.RED + tr(""command.quoteFavorite.openBookFailed""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/quote/QuoteFavoriteCommand.java	207	"player.sendMessage(ChatColor.RED + tr(""command.quoteFavorite.unknownSubcommand""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/quote/QuoteFavoriteCommand.java	212	"player.sendMessage(ChatColor.AQUA + tr(""command.quoteFavorite.help.title""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/quote/QuoteFavoriteCommand.java	213	"player.sendMessage(ChatColor.GRAY + tr(""command.quoteFavorite.help.latest""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/quote/QuoteFavoriteCommand.java	214	"player.sendMessage(ChatColor.GRAY + tr(""command.quoteFavorite.help.list""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/quote/QuoteFavoriteCommand.java	215	"player.sendMessage(ChatColor.GRAY + tr(""command.quoteFavorite.help.remove""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/quote/QuoteFavoriteCommand.java	216	"player.sendMessage(ChatColor.GRAY + tr(""command.quoteFavorite.help.reread""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/quote/QuoteFavoriteCommand.java	217	"player.sendMessage(ChatColor.GRAY + tr(""command.quoteFavorite.help.rereadTitle""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/quote/QuoteFavoriteCommand.java	218	"player.sendMessage(ChatColor.GRAY + tr(""command.quoteFavorite.help.rereadBook""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/quote/QuoteFavoriteCommand.java	219	"player.sendMessage(ChatColor.GRAY + tr(""command.quoteFavorite.help.book""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/quote/QuoteFavoriteCommand.java	220	"player.sendMessage(ChatColor.GRAY + tr(""command.quoteFavorite.help.bookToc""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/quote/QuoteFavoriteCommand.java	221	"player.sendMessage(ChatColor.GRAY + tr(""command.quoteFavorite.help.bookSuccess""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/quote/QuoteFavoriteCommand.java	222	"player.sendMessage(ChatColor.GRAY + tr(""command.quoteFavorite.help.bookTimeup""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/quote/QuoteFavoriteCommand.java	223	"player.sendMessage(ChatColor.GRAY + tr(""command.quoteFavorite.help.bookOther""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/quote/QuoteFavoriteShortcutListener.java	48	"player.sendMessage(ChatColor.RED + tr(player, ""command.quoteFavorite.repositoryNotReady""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/quote/QuoteFavoriteShortcutListener.java	56	"player.sendMessage(ChatColor.GREEN + tr(player, ""command.quoteFavorite.shortcutSaved""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/quote/QuoteFavoriteShortcutListener.java	58	"player.sendMessage(ChatColor.RED + tr(player, ""command.quoteFavorite.shortcutNotSaved""));"
+OK_ALLOWED_BRAND	P1_WORLD_TITLE_BOSSBAR	src/main/java/plugin/quote/QuoteFavoritesBookBuilder.java	73	"meta.setTitle(""TreasureRun"");"
+OK_ALLOWED_BRAND	P2_BOOK_PAGE	src/main/java/plugin/quote/QuoteFavoritesBookBuilder.java	75	"meta.setPages(List.of(""TreasureRun""));"
+OK_I18N	P1_WORLD_TITLE_BOSSBAR	src/main/java/plugin/quote/QuoteFavoritesBookBuilder.java	81	"meta.setTitle(tr(lang, TITLE, ""Favorites""));"
+OK_ALLOWED_DYNAMIC	P2_BOOK_PAGE	src/main/java/plugin/quote/QuoteFavoritesBookBuilder.java	108	meta.setPages(pages);
+OK_ALLOWED_DYNAMIC	P2_BOOK_PAGE	src/main/java/plugin/quote/QuoteFavoritesBookBuilder.java	126	meta.setPages(pages);
+OK_ALLOWED_DYNAMIC	P2_BOOK_PAGE	src/main/java/plugin/quote/QuoteFavoritesBookBuilder.java	167	meta.setPages(pages);
+OK_ALLOWED_DYNAMIC	P1_WORLD_TITLE_BOSSBAR	src/main/java/plugin/quote/QuoteFavoritesBookBuilder.java	190	meta.setTitle(title);
+OK_EMPTY_FORMATTING	P2_BOOK_PAGE	src/main/java/plugin/quote/QuoteFavoritesBookBuilder.java	192	"meta.setPages(List.of(head + ""\n\n"" + quoteText));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/quote/QuoteRereadService.java	49	"player.sendMessage(ChatColor.RED + trOrFallback(lang, ""command.quoteReread.repositoryNotReady"", ""The favorites repository is not ready yet.""));"
+OK_ALLOWED_DYNAMIC	P0_CHAT_ACTIONBAR	src/main/java/plugin/quote/QuoteRereadService.java	69	player.sendMessage(ChatColor.AQUA + head);
+OK_NO_STRING_LITERAL_OR_DYNAMIC	P0_CHAT_ACTIONBAR	src/main/java/plugin/quote/QuoteRereadService.java	70	player.sendMessage(ChatColor.WHITE + quoteText);
+OK_NO_STRING_LITERAL_OR_DYNAMIC	P1_WORLD_TITLE_BOSSBAR	src/main/java/plugin/quote/QuoteRereadService.java	76	player.sendTitle(
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/quote/QuoteRereadService.java	92	"player.sendMessage(ChatColor.RED + trOrFallback(lang, ""command.quoteReread.bookOpenFailed"", ""Could not open the favorites book.""));"
+OK_I18N	P0_CHAT_ACTIONBAR	src/main/java/plugin/quote/QuoteRereadService.java	100	"player.sendMessage(ChatColor.RED + trOrFallback(lang, ""command.quoteReread.openBookFailed"", ""Could not open the book.""));"
+OK_ALLOWED_DYNAMIC	P0_CHAT_ACTIONBAR	src/main/java/plugin/quote/QuoteRereadService.java	102	player.sendMessage(ChatColor.AQUA + head);
+OK_NO_STRING_LITERAL_OR_DYNAMIC	P0_CHAT_ACTIONBAR	src/main/java/plugin/quote/QuoteRereadService.java	103	player.sendMessage(ChatColor.WHITE + quoteText);
