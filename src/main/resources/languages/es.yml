@@ -920,8 +920,8 @@ finalAudit:
     reloadBlockedRunning: "No se puede recargar mientras la partida está en curso. Ejecuta /gameEnd primero."
     noPermission: "No tienes permiso para usar este comando."
     noPermissionOp: "No tienes permiso para usar este comando. Se requieren permisos de operador."
-    treasureReloadDone: "✅ La configuración de TreasureRun se ha recargado, incluido el menú de idioma."
-    guiReloadedReopen: "La interfaz se ha actualizado. Ejecuta /gameStart otra vez para abrirla."
+    treasureReloadDone: "✅ Se ha recargado la configuración de TreasureRun, incluido el menú de idioma."
+    guiReloadedReopen: "La interfaz se ha actualizado. Ejecuta /gameStart de nuevo para volver a abrirla."
   debug:
     chestSoundStart: "[ChestSound] Iniciado en modo de cuadrícula de 16."
     chestSoundNoChests: "[ChestSound] No se encontraron cofres."

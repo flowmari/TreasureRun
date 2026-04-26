@@ -26,7 +26,7 @@ public class TreasureExportLangCommand implements CommandExecutor {
       overwrite = args[0].equalsIgnoreCase("overwrite") || args[0].equalsIgnoreCase("--overwrite");
     }
 
-    // 1) 元データ：config.yml の messages.translation
+    // 1) Source data: messages.translation in config.yml
     ConfigurationSection root = plugin.getConfig().getConfigurationSection("messages.translation");
     if (root == null) {
       sender.sendMessage(ChatColor.RED + "❌ messages.translation was not found in config.yml.");
@@ -34,14 +34,14 @@ public class TreasureExportLangCommand implements CommandExecutor {
       return true;
     }
 
-    // 2) 出力先：plugins/TreasureRun/languages/
+    // 2) Output folder: plugins/TreasureRun/languages/
     File dir = new File(plugin.getDataFolder(), "languages");
     if (!dir.exists() && !dir.mkdirs()) {
       sender.sendMessage(ChatColor.RED + "❌ Could not create the languages/ folder: " + dir.getAbsolutePath());
       return true;
     }
 
-    // 3) 書き出し対象の言語一覧
+    // 3) Languages to export
     Set<String> langs = new LinkedHashSet<>(root.getKeys(false));
 
     // config.yml の language.allowedLanguages も一応加える（translationが無くてもファイルだけ作りたい場合）
