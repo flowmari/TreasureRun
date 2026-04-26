@@ -1,0 +1,4 @@
+priority	lang	rows	batch_count	dir
+1	sv	140	7	docs/i18n_native_review/sv_batches
+2	pt	158	8	docs/i18n_native_review/pt_batches
+3	hi	158	8	docs/i18n_native_review/hi_batches

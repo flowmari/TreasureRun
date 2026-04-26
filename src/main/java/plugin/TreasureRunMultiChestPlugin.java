@@ -2030,7 +2030,8 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
             consecutiveTimeUpCounts.put(puid, 0);
           }
 
-          player.sendMessage(ChatColor.GRAY + getI18n().tr(outcomeNoticeLangFinal, "outcome.notice.retryGuide"));
+          // retryGuide is already sent once above with timeUpGameOver.
+          // Do not send it again here, otherwise the same line appears twice in chat.
 
           // ✅ 名言：1行空けて、グレーで最下段へ（ここ以外は一切いじらない）
           if (timeUpPhiloSub != null && !timeUpPhiloSub.isBlank()) {

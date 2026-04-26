@@ -1,0 +1,608 @@
+# Player-visible literal candidates (Pass 02)
+
+## src/main/java/plugin/ChestProximitySoundService.java
+- L91: `player.sendMessage("§b[ChestSound] start() called (16th-grid mode)");`
+- L184: `player.sendMessage(String.format("§b[ChestSound] nearest=%.1fm %s  t=%.2f", dist, inRange, t));`
+
+## src/main/java/plugin/CraftSpecialEmeraldCommand.java
+- L38: `"&cYou need 3 diamonds to craft a Special Emerald."`
+- L51: `"&bYou crafted a Special Emerald using 3 diamonds!"`
+
+## src/main/java/plugin/CustomRecipeLoader.java
+- L50: `meta.setDisplayName(ChatColor.translateAlternateColorCodes('&', "&e特製リンゴ"));`
+- L70: `meta.setDisplayName(ChatColor.translateAlternateColorCodes('&', "&7特製鉄ブロック"));`
+
+## src/main/java/plugin/GameMenu.java
+- L53: `@Deprecated(since = "1.0", forRemoval = false)`
+- L58: `(TreasureRunMultiChestPlugin) org.bukkit.Bukkit.getPluginManager().getPlugin("TreasureRun");`
+- L62: `player.sendMessage(ChatColor.GOLD + "TreasureRun");`
+- L63: `player.sendMessage(ChatColor.RED + "Plugin not ready.");`
+- L70: `String defaultLang = cfg.getString("language.default", "ja");`
+- L81: `"ruleBook.difficultyLabel." + actualLang + "." + difficulty,`
+- L88: `I18n.Placeholder.of("{difficulty}", diffLabel)`
+- L110: `String defaultLang = cfg.getString("language.default", "ja");`
+- L129: `"ruleBook.difficultyLabel." + actualLang + "." + difficulty,`
+- L136: `I18n.Placeholder.of("{difficulty}", diffLabel)`
+- L154: `@Deprecated(since = "1.0", forRemoval = false)`
+- L158: `(TreasureRunMultiChestPlugin) org.bukkit.Bukkit.getPluginManager().getPlugin("TreasureRun");`
+- L177: `String defaultLang = cfg.getString("language.default", "ja");`
+- L195: `String title = cfg.getString("ruleBook.title." + actualLang,`
+- L197: `String author = cfg.getString("ruleBook.author", "TreasureRun");`
+- L198: `String displayNameRaw = cfg.getString("ruleBook.displayName." + actualLang,`
+- L205: `"ruleBook.difficultyLabel." + actualLang + "." + difficulty,`
+- L209: `List<String> pages = cfg.getStringList("ruleBook.pages." + actualLang);`
+- L211: `pages = cfg.getStringList("ruleBook.pages.ja");`
+- L218: `replaced.add(p.replace("%diffLabel%", diffLabel));`
+- L262: `ConfigurationSection dnSec = cfg.getConfigurationSection("ruleBook.displayName");`
+- L308: `I18n.Placeholder.of("{latestLabel}", latestLabel)`
+- L336: `I18n.Placeholder.of("{lang}", actualLang));`
+- L339: `I18n.Placeholder.of("{difficulty}", diffLabel));`
+- L341: `return ChatColor.AQUA + "" + ChatColor.BOLD + tint(ChatColor.AQUA, contentsTitle) + "\n\n" +`
+- L342: `ChatColor.DARK_BLUE + diffLine + "\n\n" +`
+- L345: `ChatColor.DARK_BLUE + howToPlay + "\n\n" +`
+- L348: `ChatColor.DARK_BLUE + scoreRoute + "\n\n" +`
+- L352: `ChatColor.DARK_BLUE + langLine + "\n\n" +`
+- L355: `ChatColor.DARK_BLUE + yourQuotes + "\n\n" +`
+- L412: `I18n.Placeholder.of("{latestLabel}", latestLabel)`
+- L418: `I18n.Placeholder.of("{lang}", actualLang)`
+- L421: `return ChatColor.AQUA + "" + ChatColor.BOLD + "📖 " + tint(ChatColor.AQUA, title) + "\n\n" +`
+- L423: `tint(ChatColor.DARK_BLUE, tabsTitle) + "\n\n" +`
+- L427: `tabHeader(plugin, actualLang, QuoteTab.FAVORITES) + "\n\n" +`
+- L430: `ChatColor.GREEN  + "■ " + labSuccess + ChatColor.DARK_BLUE + " " + legendSuccess + "\n" +`
+- L431: `ChatColor.RED    + "■ " + labTimeUp  + ChatColor.DARK_BLUE + " " + legendTimeUp + "\n" +`
+- L432: `ChatColor.YELLOW + "■ " + labFav     + ChatColor.DARK_BLUE + " " + legendFavorites + "\n\n" +`
+- L435: `ChatColor.GRAY + "- " + dbLogs + "\n" +`
+- L436: `ChatColor.GRAY + "- " + dbFav + "\n\n" +`
+- L438: `tint(ChatColor.DARK_BLUE, noteBookFormat) + "\n\n" +`
+- L439: `tint(ChatColor.DARK_BLUE, langLine) + "\n\n" +`
+- L455: `pages.add(ChatColor.AQUA + "" + ChatColor.BOLD + "📖 " +`
+- L476: `I18n.Placeholder.of("{lang}", actualLang)`
+- L479: `ChatColor.AQUA + "" + ChatColor.BOLD + "📖 " + tint(ChatColor.AQUA, quoteTitle) + "\n\n" +`
+- L481: `ChatColor.DARK_BLUE + recentHeader + "\n\n";`
+- L490: `tint(ChatColor.DARK_BLUE, msg) + "\n\n" +`
+- L616: `I18n.Placeholder.of("{lang}", actualLang)`
+- L619: `ChatColor.YELLOW + "" + ChatColor.BOLD + tint(ChatColor.YELLOW, favoritesTitle) + "\n\n" +`
+- L621: `ChatColor.DARK_BLUE + latestHeader + "\n\n";`
+- L630: `I18n.Placeholder.of("{latestLabel}", latestLabel)`
+- L637: `tint(ChatColor.DARK_BLUE, noFav) + "\n\n" +`
+- L638: `tint(ChatColor.DARK_BLUE, tip) + "\n\n" +`
+- L704: `outcomeColor + "[" + outcomeLabel + "] " +`
+- L706: `ChatColor.GRAY + "(" + safe(rowLang) + ")\n" +`
+- L707: `ChatColor.DARK_BLUE + safeQuote(quoteText) + "\n\n";`
+- L722: `return ChatColor.AQUA + "#" + idx + "\n" +`
+- L723: `outcomeColor + "[" + outcomeLabel + "] " +`
+- L725: `ChatColor.GRAY + "(" + safe(rowLang) + ")\n" +`
+- L726: `ChatColor.DARK_BLUE + safeQuote(quoteText) + "\n\n";`
+- L741: `? (ChatColor.YELLOW + "★#" + favoriteId)`
+- L742: `: (ChatColor.YELLOW + "★");`
+- L747: `return idLabel + ChatColor.GRAY + "  (" + idx + ")\n" +`
+- L748: `outcomeColor + "[" + outcomeLabel + "] " +`
+- L750: `ChatColor.GRAY + "(" + safe(rowLang) + ")\n" +`
+- L751: `ChatColor.DARK_BLUE + safeQuote(quoteText) + "\n\n";`
+- L757: `if (current == QuoteTab.ALL) return ChatColor.AQUA + "▶ [" + label + "]";`
+- L758: `if (current == QuoteTab.SUCCESS) return ChatColor.GREEN + "▶ [" + label + "]";`
+- L759: `if (current == QuoteTab.TIME_UP) return ChatColor.RED + "▶ [" + label + "]";`
+- L760: `return ChatColor.YELLOW + "▶ [" + label + "]";`
+- L769: `// ✅ i18n: "Tabs:" 部分も言語化`
+- L774: `(current == QuoteTab.ALL ? ChatColor.WHITE + "【" + ChatColor.AQUA + all + ChatColor.WHITE + "】" : ChatColor.GRAY + "[" + all + "]") +`
+- L776: `(current == QuoteTab.SUCCESS ? ChatColor.WHITE + "【" + ChatColor.GREEN + success + ChatColor.WHITE + "】" : ChatColor.GRAY + "[" + success + "]") +`
+- L778: `(current == QuoteTab.TIME_UP ? ChatColor.WHITE + "【" + ChatColor.RED + timeUp + ChatColor.WHITE + "】" : ChatColor.GRAY + "[" + timeUp + "]") +`
+- L780: `(current == QuoteTab.FAVORITES ? ChatColor.WHITE + "【" + ChatColor.YELLOW + fav + ChatColor.WHITE + "】" : ChatColor.GRAY + "[" + fav + "]");`
+- L793: `// ✅ i18n: "Page 1/3" も言語化（{page}/{total} を埋める）`
+- L797: `I18n.Placeholder.of("{page}", String.valueOf(pageIndex)),`
+- L798: `I18n.Placeholder.of("{total}", String.valueOf(totalPages))`
+- L807: `return s.split("\\R", -1).length;`
+- L813: `if (t.length() > 320) t = t.substring(0, 320) + "…";`
+- L818: `if (s == null || s.isBlank()) return "-";`
+- L824: `if (inside == null) return "UNKNOWN";`
+- L825: `String[] parts = inside.split("/");`
+- L826: `if (parts.length < 1) return "UNKNOWN";`
+- L832: `if (inside == null) return "Normal";`
+- L833: `String[] parts = inside.split("/");`
+- L834: `if (parts.length < 2) return "Normal";`
+- L840: `if (inside == null) return "-";`
+- L841: `String[] parts = inside.split("/");`
+- L842: `if (parts.length < 3) return "-";`
+- L849: `int b = row.indexOf("】");`
+- L864: `int a = row.indexOf("【");`
+- L865: `int b = row.indexOf("】");`
+- L872: `int star = row.indexOf("★#");`
+- L876: `return line.replace("★#", "").trim();`
+- L882: `if (o.contains("SUCCESS")) return ChatColor.GREEN;`
+- L883: `if (o.contains("TIME_UP")) return ChatColor.RED;`
+- L890: `if (d.contains("EASY")) return ChatColor.LIGHT_PURPLE;`
+- L891: `if (d.contains("NORMAL")) return ChatColor.YELLOW;`
+- L892: `if (d.contains("HARD")) return ChatColor.AQUA;`
+- L915: `if (diff == null || diff.isBlank()) return "Normal";`
+- L920: `if (d.equalsIgnoreCase("Easy")) return "Easy";`
+- L921: `if (d.equalsIgnoreCase("Normal")) return "Normal";`
+- L922: `if (d.equalsIgnoreCase("Hard")) return "Hard";`
+- L927: `if (u.contains("BEGINNER") || u.contains("EINSTEIGER") || u.contains("PRINCIPIANTE")`
+- L928: `|| u.contains("DÉBUTANT") || u.contains("INICIANTE")`
+- L929: `|| u.contains("初級") || u.contains("초급")`
+- L930: `|| u.contains("ALOITTELIJA") || u.contains("BYRJANDI")) {`
+- L931: `return "Easy";`
+- L934: `if (u.contains("INTERMEDIATE") || u.contains("MITTEL") || u.contains("INTERMEDIO")`
+- L935: `|| u.contains("INTERMÉDIAIRE") || u.contains("INTERMEDIÁRIO")`
+- L936: `|| u.contains("中級") || u.contains("중급")`
+- L937: `|| u.contains("KESKITASO") || u.contains("GEMIDDELD")`
+- L938: `|| u.contains("MELLAN") || u.contains("मध्यम")) {`
+- L939: `return "Normal";`
+- L942: `if (u.contains("ADVANCED") || u.contains("FORTGESCHRITTEN") || u.contains("AVANZATO")`
+- L943: `|| u.contains("AVANZADO") || u.contains("AVANCÉ")`
+- L944: `|| u.contains("上級") || u.contains("高級") || u.contains("고급")`
+- L945: `|| u.contains("EDISTYNYT") || u.contains("GEVORDERD")`
+- L946: `|| u.contains("उन्नत")) {`
+- L947: `return "Hard";`
+- L950: `return "Normal";`
+- L958: `"ruleBook.difficultyLabel." + lang + "." + key,`
+
+## src/main/java/plugin/GameStageManager.java
+- L906: `t.setCustomName(ChatColor.GOLD + "" + ChatColor.BOLD + "Treasure Shop");`
+- L1202: `player.sendMessage(ChatColor.AQUA + "??? " + ChatColor.GOLD + "Treasure Shop の秘められた力を感じた…");`
+
+## src/main/java/plugin/LangCommand.java
+- L31: `String defaultLang = plugin.getConfig().getString("language.default", "ja");`
+- L42: `if (sub.equalsIgnoreCase("reset")) {`
+- L53: `String[] candidates = {"clear", "remove", "unset", "delete", "clearPlayerLanguage", "removePlayerLanguage"};`
+- L69: `if (sub.equalsIgnoreCase("list")) {`
+- L75: `if (sub.equalsIgnoreCase("list")) {`
+- L79: `if (sub.equalsIgnoreCase("current")) {`
+- L84: `if (sub.equalsIgnoreCase("gui")) {`
+- L109: `String displayName = plugin.getConfig().getString("language.displayName." + lang, lang);`
+- L134: `base.add("list");`
+- L135: `base.add("current");`
+- L136: `base.add("gui");`
+- L154: `List<String> list = plugin.getConfig().getStringList("language.allowedLanguages");`
+- L157: `return new ArrayList<>(Arrays.asList("ja", "en"));`
+- L222: `java.lang.reflect.Field f = plugin.getClass().getDeclaredField("playerLanguageStore");`
+- L229: `Method m = pls.getClass().getMethod("set", UUID.class, String.class);`
+- L234: `String[] candidates = {"setLanguage", "setLang", "put", "save"};`
+- L254: `java.lang.reflect.Field f = plugin.getClass().getDeclaredField("playerLanguageStore");`
+- L260: `String[] candidates = {"get", "getLanguage", "getLang", "load"};`
+- L284: `"setPlayerLanguage",`
+- L285: `"setSelectedLanguage",`
+- L286: `"setLang",`
+- L287: `"setLanguage",`
+- L288: `"setPlayerLang"`
+- L309: `"getPlayerLanguage",`
+- L310: `"getSelectedLanguage",`
+- L311: `"getLang",`
+- L312: `"getLanguage",`
+- L313: `"getPlayerLang"`
+- L331: `java.lang.reflect.Field f = plugin.getClass().getDeclaredField("i18n");`
+- L339: `String lang = plugin.getConfig().getString("language.default", "ja");`
+- L344: `String lang = plugin.getConfig().getString("language.default", "ja");`
+- L354: `String lang = plugin.getConfig().getString("language.default", "ja");`
+- L368: `Method m = i18n.getClass().getMethod("tr", String.class, String.class, java.util.Map.class);`
+- L376: `Method m = i18n.getClass().getMethod("tr", String.class, String.class);`
+- L394: `out = out.replace("{" + e.getKey() + "}", String.valueOf(e.getValue()));`
+- L406: `java.lang.reflect.Field f = plugin.getClass().getDeclaredField("i18n");`
+- L416: `player.sendMessage(ChatColor.GRAY + msg + ChatColor.DARK_GRAY + " (" + lang + ")");`
+- L426: `Method m = i18n.getClass().getMethod("tr", Player.class, String.class);`
+- L433: `Method m = i18n.getClass().getMethod("tr", UUID.class, String.class);`
+- L440: `Method m = i18n.getClass().getMethod("tr", Object.class, String.class);`
+
+## src/main/java/plugin/LanguageSelectGui.java
+- L93: `meta.setDisplayName(ChatColor.AQUA + "[" + label + "] " + langName`
+- L94: `+ ChatColor.DARK_GRAY + " (" + lang + ")");`
+- L127: `String diff = pendingDifficulty.getOrDefault(uuid, "Normal");`
+- L172: `String defaultLang = plugin.getConfig().getString("language.default", "ja");`
+- L192: `String defaultLang = plugin.getConfig().getString("language.default", "ja");`
+- L203: `return s != null && !s.isBlank() && !s.contains("Translation missing:");`
+
+## src/main/java/plugin/MySQLManager.java
+- L155: `sender.sendMessage(ChatColor.GREEN + "[EnemyDown] MySQL は接続されています。");`
+- L157: `sender.sendMessage(ChatColor.RED + "[EnemyDown] MySQL は接続されていません。");`
+
+## src/main/java/plugin/OutcomeMessageService.java
+- L21: `* difficulty は "Easy" / "Normal" / "Hard" など、既存の文字列に合わせる（containsで判定）。`
+- L51: `if (difficulty == null) return "NORMAL";`
+- L53: `if (s.contains("EASY")) return "EASY";`
+- L54: `if (s.contains("HARD")) return "HARD";`
+- L55: `return "NORMAL";`
+- L66: `if (!t.isEmpty() && !t.equals(key) && !t.startsWith("Translation missing:")) {`
+- L147: `"Light fell evenly, ,\nand every shadow vanished.\n（光が等しく降り注ぎ、すべての影が消えた。）",`
+- L148: `"The wind fell silent.\nand everything returned to where it belonged.\n（風が止み、あるべき場所に、あるべきものが戻った。）",`
+- L149: `"A moment of silence.\nThe world steadied its breath.\n（一瞬の静寂。世界がその呼吸を整えた。）",`
+- L150: `"The record is etched deep in the sand—\nbeyond the reach of the wind.\n（記録は砂に深く刻まれ、風もそれを動かせない。）",`
+- L151: `"Harmony was restored.\nEverything had been for this moment.\n（調和が訪れた。すべては、この瞬間のためにあった。）"`
+- L155: `"Time slipped by in silence,\ntucked away in the corners of memory.\n（時間は静かに流れ、記憶の隅に収まった。）",`
+- L156: `"The sky shifted in color,\nand one story came to its end.\n（空の色が変わり、一つの物語が完結を告げた。）",`
+- L157: `"The waves grew calm,\nand the sea hid its depths once more.\n（波は穏やかになり、海は再びその深淵を隠した。）",`
+- L158: `"The footsteps stopped,\nand only the place remained.\n（歩みは止まり、場所だけがそこに残された。）"`
+- L162: `"The sun sank,\nand shadow covered the world once again.\n（日は落ち、影は再び世界を覆った。）",`
+- L163: `"The last grains of sand fell,\nand the story quietly came to a close.\n（砂はすべて落ちきり、物語は静かに幕を閉じた。）",`
+- L164: `"The wind swept through,\nand the footprints vanished without a trace.\n（風が吹き抜け、足跡は跡形もなく消え去った。）",`
+- L165: `"The tide came in,\nWhat once had been there returned to the sea.\n（潮が満ちた。かつてそこにあったものは、海へと還った。）",`
+- L166: `"Silence.\nOnly time passed through.\n（沈黙。ただ、時間だけがそこを通り過ぎた。）"`
+- L170: `"Perfect balance.\nThe scales held level.\n（等価の均衡。天秤は水平を保った。）",`
+- L171: `"Things changed,\ntaking on new forms as they carried on.\n（物事は移ろい、形を変えて引き継がれた。）",`
+- L172: `"There was no dialogue\n—only an exchange of facts.\n（対話はなく、ただ事実としての交換が行われた。）"`
+- L176: `"Victory and defeat \nare nothing more than grains of sand.\n（勝利も敗北も、同じ砂の一粒に過ぎない。）",`
+- L177: `"The road goes on—or it ends.\nEither way, it lies on the same earth.\n（道は続き、あるいは途切れ、どちらも同じ大地の上にある。）"`
+- L181: `"Distance became meaning.\nTime answered your steps.\n（距離が意味になった。時間があなたの歩みに答えた。）",`
+- L182: `"Time ran out.\nNothing else did.\n（時間は終わった。ほかは終わっていない。）",`
+- L183: `"The center was found.\nThe world came to rest.\n（軸(中心)は見出された。世界はその運動を止めた。）",`
+- L184: `"The glass didn’t break.\nNeither did you.\n（ガラスは割れなかった。あなたも折れなかった。）",`
+- L185: `"Beneath a quiet sky,\nyour will held firm.\n（静かな空の下で、意志は持ちこたえた。）",`
+- L186: `"Very little shines forever\n—but this moment was different.\n（永遠に輝くものなんてほとんどないけれど、この瞬間は別格だった。）",`
+- L187: `"You made it across the fragile ground,\nholding fast to the horizon the whole way.\n（脆い地面を渡り切った。地平線景色をしっかりと握りしめたまま。）",`
+- L188: `"The moment passed.\n What remained was the record—the achievement.\n（瞬間は過ぎ去った。遺されたもの記録・功績は残る。）",`
+- L189: `"Luck fades quickly.\nOrder endures.\n（運は速やかに消え、整い秩序は永続する。）",`
+- L190: `"The sky knows no rest in its endless cycle.\nNeither do you.\n（空はその終わりなき循環に休止を知らぬ。汝もまた、止まらず。）",`
+- L191: `"The center was reached.\nThe world stood still.\n（中心は到達された。世界は立ち尽くし静止した。）",`
+- L193: `"At last,you’ve made it here.\nThe truth stands—unbowed.\n（ついに、ここへ辿り着いた。真実は屈することなく、そこに在る。）",`
+- L194: `"Complete. This path was yours\n—and yours alone.\n（完遂。この道を選んだのは他でもないあなただ。）",`
+- L196: `"Time drifted into silence,\nand found its place in the deepest corners of the mind.\n（時は静寂へと漂い、精神の奥底の隅に自らの居場所を見つけた。）",`
+- L197: `"As the sky shifted,\none story found its final resolution.\n（空が姿を変えるとともに、一つの物語はその最終的な解決完結を見出した。）",`
+- L198: `"The waves fell quiet,\nand the sky hid its depths once more.\n（波は静まり、空は再びその深淵を覆い隠した。）",`
+- L199: `"The footsteps ceased,\nand only the place remained.\n（歩みは途絶え、ただ場所だけがそこに在り続けた。）"`
+- L211: `case "EASY" -> {`
+- L213: `"You’ve made it.\nThe truth remains.\n（たどり着いた。正さはそのままに。）",`
+- L214: `"Even if it was only a small step,\nyou held your ground.\n（小さな一歩でも、あなたは守り抜いた。）",`
+- L215: `"You listened.\n The path opened.\n（耳を澄ませた。道がひらいた。）",`
+- L217: `"> You made it here\n" +`
+- L218: `"> \n" +`
+- L219: `"> The rules were simple —\n" +`
+- L220: `"> \n" +`
+- L221: `"> the choice was yours.\n" +`
+- L223: `"（あなたは辿り着いた。\n" +`
+- L225: `"ルールは単純だった。\n" +`
+- L227: `"選んだのは、あなた自身。）",`
+- L229: `"> Distance became meaning.\n" +`
+- L230: `"> \n" +`
+- L231: `"> and time answered your footsteps.\n" +`
+- L233: `"（距離が意味になり、\n" +`
+- L235: `"時間があなたの足取りに応えた。）",`
+- L237: `"> Not everything shines forever.\n" +`
+- L238: `"> \n" +`
+- L239: `"> But this moment did.\n" +`
+- L241: `"（すべてが永遠に輝くわけじゃない。\n" +`
+- L243: `"でも、この瞬間はそうだった。）",`
+- L274: `case "NORMAL" -> {`
+- L276: `"The distance has found its meaning.\nTime has rewarded your journey.\n（距離が意味になった。時間があなたの歩みに答えた。）",`
+- L277: `"The time is up.\nbut the rest is far from over.\n（時間は終わった。ほかは終わっていない。）",`
+- L278: `"The axis is found.\nthe world has cased its motion.\n（軸(中心)は見出された。世界はその運動を止めた。）",`
+- L279: `"The glass held its breath,\nand you held your ground.\n（ガラスは割れなかった。あなたも折れなかった。）",`
+- L280: `"Under the stillness of the sky,\nyour spirit did not waver.\n（静かな空の下で、意志は持ちこたえた。）",`
+- L281: `"Few things shine forever.\nbut this moment was radiant.\n（永遠に輝くものなんてほとんどないけれど、この瞬間は別格だった。）",`
+- L282: `"You traversed the fragile earth,\nwithout losing the view.\n（脆い地面を渡り切った。地平線景色をしっかりと握りしめたまま。）",`
+- L283: `"The moment has passed.\nThe legacy remains.\n（瞬間は過ぎ去った。遺されたもの記録・功績は残る。）",`
+- L284: `"Luck fades fast.\norder endures.\n（運は速やかに消え、整い秩序は永続する。）",`
+- L285: `"The sky knows no pause in endless circle,\nnor shall you find yours.\n（空はその終わりなき循環に休止を知らぬ。汝もまた、止まらず。）",`
+- L286: `"The center has been reached.\nThe world stood still.\n（中心は到達された。世界は立ち尽くし静止した。）",`
+- L288: `"Finally here.\nThe truth remains unyielding.\n（ついに、ここへ辿り着いた。真実は屈することなく、そこに在る。）",`
+- L289: `"You have seen it through.\nAnd mark this: it was you, and no one else, who chose this path.\n（完遂。この道を選んだのは他でもないあなただ。）",`
+- L292: `"Time drifted into silence,\nfinding its place in the recesses of the mind.\n（時は静寂へと漂い、精神の奥底の隅に自らの居場所を見つけた。）",`
+- L293: `"As the sky transformed,\nthe tale found its final resolved.\n（空が姿を変えるとともに、一つの物語はその最終的な解決完結を見出した。）",`
+- L294: `"The waters fell calm,\nand the sky once more veiled its abyss.\n（波は静まり、空は再びその深淵を覆い隠した。）",`
+- L295: `"The footsteps ceased,\nonly the place remained.\n（歩みは途絶え、ただ場所だけがそこに在り続けた。）",`
+- L305: `"RUN COMPLETE.\nClear. Found it.\nThat's enough.\n（クリア。見つけた。それで十分。）",`
+- L306: `"RUN COMPLETE.\nThe path held.\nSo did you.\n（道は持ちこたえた。あなたも同じ。）",`
+- L307: `"The sky has kept moving.\nSo can you.\n（空はずっと歩み続けていた。あなたも進み続けられる。）",`
+- L308: `"RUN COMPLETE.\nA quiet result.\nThe weight of real work.\n（静かな結果。本物の積み重ね。）",`
+- L311: `"You only walked the path\nthe world had laid out for you.\n（世界が用意していた道を、あなたは歩いただけ。）",`
+- L312: `"The ground didn’t give way.\nIt trusted your steps.\n（大地は壊れなかった。あなたの足取りを、信じていた。）",`
+- L313: `"This moment aligned\nwith the stars’ ancient rhythm.\n（この瞬間は、星々の長いリズムと重なった。）",`
+- L314: `"You didn’t take anything.\n You understood something.\n（何かを奪ったわけじゃない。何かを、理解した。）",`
+- L315: `"You didn’t gain a thing.\nYou only saw the truth for what it was.\n（手に入れたのは何かではない。真実を、見抜いただけだ。）",`
+- L316: `"You didn’t take this place.\nYou belonged here.\n（征服したのではない。ここに、属していた。）",`
+- L319: `"You walked a road\nolder than memory itself.\n（記憶より古い道を、あなたは辿った。）",`
+- L320: `"The earth did not resist.\nIt recognized you.\n（大地は抗わず、あなたを認識した。）",`
+- L321: `"This moment aligned\n with the stillness of the stars.\n（この瞬間は、星々の静けさと重なった。）",`
+- L322: `"No conquest.\nUnderstanding was enough.\n（征服はない。理解で、十分だった。）",`
+- L323: `"You didn’t claim it.\nYou were already home.\n（ここを奪ったのではない。ここに、属していた。）",`
+- L344: `case "HARD" -> {`
+- L346: `"In the north wind,\nclarity outlasts speed.\n（北風の中で、速さより明晰さが生き残る。）",`
+- L347: `"The center was found.\n The world came to rest.\n（軸(中心)は見出された。世界はその運動を止めた。）",`
+- L348: `"The stars stay silent.\nYour record does the speaking.\n（星は黙っている。語るのはあなたの記録だ。）",`
+- L349: `"The result  remained.\nThe position changed.\n（結果は残った。位置は変わった。）",`
+- L350: `"Between ice and glass,\nyou chose control.\n（氷とガラスのあいだで、あなたは制御を選んだ。）",`
+- L351: `"The waves fell quiet,\nand the sea reclaimed its hidden depths.\n（波は静まり、海はその隠された深淵を再び自らのものとした。）",`
+- L352: `"Some treasures still await.\nNext time, a different path.\n（待つ宝もある。次は、別の道を。）",`
+- L353: `"The sky didn’t change.\nYou did.\n（空は変わらなかった。変わったのはあなた。）",`
+- L354: `"The moment passed.\nWhat remained was order.\n（瞬間は過ぎた。整いは残った。）",`
+- L355: `"Winter is honest.\nSo was your run.\n（冬は正直だ。あなたの走りもそうだった。）",`
+- L356: `"The stars aligned for a moment.\nYou noticed.\n（星は束の間そろった。あなたはそれに気づいた。）",`
+- L358: `"The distance closed.\nTime did not.\n（距離は縮んでいた。時間は縮まらなかった。）",`
+- L359: `"The world’s rules stood firm.\n And the signal of possibility was real.\n（世界のルールは、厳然としてそこにあった。可能性（信号）は本物だった。）",`
+- L360: `"The path closed quietly.\nYou were already through.\n（道は静かに閉じた。あなたはもう抜けていた。）",`
+- L362: `"Nothing changed.\nOnly your position did.\n（何も変わらない。ただ、あなたの位置だけが変わった。）",`
+- L363: `"Not luck.\nAlignment.\n（運じゃない。整いだ。）",`
+- L364: `"The moment passed.\nThe record remains.\n（瞬間は過ぎた。記録は残る。）",`
+- L366: `"The outcome didn’t change.\nStill, you moved forward.\n（結果に違いはなかった。それでも、あなたは前に進んだ。）",`
+- L367: `"The output didn’t change.\nBut you reached a new level.\n（出力は変わらないままだが、あなたは新しいレベルに到達した。）",`
+- L368: `"The ending was the same.\nBut the one who reached it had changed.\n（結末は同じだが、そこに辿り着いた人間は変わった。）",`
+- L369: `"The destination is the same\n—but you’re no longer the traveler you once were.\n（目的地は同じだが、あなたはもう以前と同じ旅人ではない。）",`
+- L389: `"> Distance became meaning,\n" +`
+- L390: `"> \n" +`
+- L391: `"> and time answered your footsteps.\n" +`
+- L393: `"（距離が意味になり、\n" +`
+- L395: `"時間があなたの足取りに応えた。）",`
+- L397: `"> Not everything shines forever.\n" +`
+- L398: `"> \n" +`
+- L399: `"> But this moment did.\n" +`
+- L401: `"（すべてが永遠に輝くわけじゃない。\n" +`
+- L403: `"でも、この瞬間はそうだった。）"`
+- L414: `default -> List.of("Run complete.");`
+- L427: `case "EASY" -> {`
+- L429: `"Time ran out.\nNothing else did.\n（時間は終わった。ほかは終わっていない。）",`
+- L430: `"The treasure can wait.\nSo can you.\n（宝は待っている。あなたも待てる。）",`
+- L431: `"Breathe in.\nThen again.\n（息をして。もう一度。）",`
+- L432: `"That’s all for now.\nOn to the next step.\n（今回はここまで。次の一歩へ。）",`
+- L433: `"You're still here.\nThat’s what matters.\n（まだここにいる。それが大事。）",`
+- L434: `"The run ended.\nYou didn’t.\n（走りは止まった。あなたは止まっていない。）",`
+- L436: `"TIME'S UP.\nThe run ended.\nYou didn't.\n（時間は止まった。でも、あなたは止まっていない。）",`
+- L437: `"TIME'S UP.\nThe rules don’t change.\nAgain.\n（ルールは変わらない。もう一度。）",`
+- L438: `"TIME'S UP.\n“So close” is real.\n（惜しい、は本物だ。）",`
+- L462: `case "NORMAL" -> {`
+- L464: `"The distance closed.\nTime did not.\n（距離は縮んだ。時間は縮まらなかった。）",`
+- L465: `"The world kept its rules.\nYou touched the edge.\n（世界はルールを守った。あなたは境界に触れた。）",`
+- L466: `"You didn’t make it.\nBut the signal was real.\n（届かなかった。でも合図は本物だった。）",`
+- L467: `"Some treasures still await.\nLet’s try a different path.\n（待つ宝もある。別の道を試そう。）",`
+- L468: `"The result remained.\nThe position changed.\n（結果は残った。位置は変わった。）",`
+- L469: `"Time ran out.\nMeaning didn't.\n（時間は終わった。意味は終わっていない。）",`
+- L470: `" So close.\nThe sound said so.\n（惜しかった。音がそう言っていた。）",`
+- L471: `"The map is still open.\nCome back to it.\n（地図は開いたまま。戻っておいで。）",`
+- L473: `"The world’s rules stood firm.\nThe signal of possibility was real.\n（世界のルールは厳然としてそこにあった。可能性（信号）は本物だった。）",`
+- L475: `"The world kept its rules.\n（世界はルールを守った。）",`
+- L476: `"The moment passed.\nThe record remains.\n（瞬間は過ぎた。記録は残る。）",`
+- L490: `"> Time ran out.\n" +`
+- L491: `"> \n" +`
+- L492: `"> Nothing else did.\n" +`
+- L494: `"（時間は終わった。\n" +`
+- L496: `"それ以外は、終わっていない。）",`
+- L498: `"> The outcome didn’t change.\n" +`
+- L499: `"> \n" +`
+- L500: `"> But your position did.\n" +`
+- L502: `"（結果は変わらなかった。\n" +`
+- L504: `"でも、あなたの位置は変わった。）"`
+- L517: `case "HARD" -> {`
+- L519: `"Even the aurora fades.\nCome back with a new stride.\n（オーロラでさえ消える。新しい歩みで戻れ。）",`
+- L520: `"In a fragile world,\nhaste shatters clarity before it can be found.\n（脆い世界では、焦りが明晰さの発見を壊してしまう。）",`
+- L521: `"The moment slipped away.\nThe meaning did not.\n（逃したのは瞬間。意味ではない。）",`
+- L522: `"Winter is patient.\nBe the same.\n（冬は忍耐強い。あなたもそうであれ。）",`
+- L523: `"The sky kept moving.\nSo will you.\n（空は進み続けた。あなたも進む。）",`
+- L524: `"The story moves on.\nThe end is not yet.\n（叙事は頁をめくる。これは最後じゃない。）",`
+- L525: `"The stars were there, watching.\nAgain.\n（星は見守っていた。もう一度。）",`
+- L526: `"Ice takes its time.\nNeither do you.\n（氷は急がない。あなたも急ぐ必要はない。）",`
+- L527: `"The sky kept moving.\nSo can you.\n（空は動き続けた。あなたも動き続けられる。）",`
+- L528: `"The north has learned to wait.\nSo should you.\n（北は『待つこと』を覚えている。そこから学べ。）",`
+- L529: `"This is an interlude\n—It’s not over.\n（これは休止だ。終わりじゃない。）",`
+- L531: `"Like drifting clouds,\ndon’t lose your flow—like a river.\n（雲が動き続けるように。川のように、流れを失わないで。）",`
+- L533: `"The sound was near.\nThe distance was real.\nBut that moment can’t be saved.\n（音は近かった。距離は本物だった。でも、その瞬間は保存できない。）",`
+- L534: `"You were closing in.\nOnly time wasn’t.\n（近づいていた。時間だけが近づかなかった。）",`
+- L535: `"The world held to its rules.\nYou touched the edge of them.\n（世界はルールを守った。あなたはその縁に触れた。）",`
+- L536: `"You didn’t reach the treasure. \nBut the signal was real.\n（宝には届かなかった。でも合図は本物だった。）",`
+- L538: `"Nothing changed.\nOnly your position did.\n（何も変わらない。ただ、あなたの位置だけが変わった。）",`
+- L539: `"It wasn’t luck.\nAlignment.\n（運じゃない。整いだ。）",`
+- L540: `"The moment slipped away,\nbut the record stayed.\n（瞬間は過ぎた。記録は残る。）",`
+- L542: `"You crossed fragile ground\nand left the horizon unbroken.\n（脆い地面を渡った。視界（景色）を壊さずに。）",`
+- L544: `"Nothing changed.\n Only your position did.\nNot luck.\nAlignment.\nThe moment passed.\nThe record remains.\n" +`
+- L545: `"（何も変わらない。ただ、あなたの位置だけが変わった。\n運じゃない。整いだ。\n瞬間は過ぎた。記録は残る。）",`
+- L559: `"The season closed.\nThe land remained.\n（季節は閉じた。大地は、残っている。）",`
+- L560: `"The path The path remains.\nOnly your steps stopped.\n（道は、まだそこにある。あなたが歩みを止めただけ。）",`
+- L561: `"Your time ran out.\nThe sky didn’t.\n（あなたの時間は終わった。空は、終わっていない。）",`
+- L562: `"It wasn’t rejection.\nOnly silence.\n（拒絶ではない。ただ、沈黙だった。）",`
+- L563: `"The world is still intact.\nYou can return—changed.\n（世界は形を保っている。変わったあなたで、戻れる。）",`
+- L566: `"The season ended.\nThe forest remains.\n（季節は終わった。森は、残っている。）",`
+- L567: `"The distance was closing.\nTime kept its rhythm.\n（距離は縮んでいた。時間は、リズムを保った。）",`
+- L568: `"Your time came to a halt.\nThe sky kept moving.\n（あなたの時間は止まった。空は、止まらなかった。）",`
+- L569: `"Not rejection\nJust silence.\n（拒絶ではない。ただの、沈黙。）",`
+- L570: `"The path is still here.\nYou can come back—changed.\n（道は、まだここにある。違うあなたで、戻れる。）"`
+- L580: `default -> List.of("Time's up.");`
+- L589: `case "EASY", "NORMAL", "HARD" -> {`
+- L610: `"Perfect equilibrium.\nThe scales held level.\n（等価の均衡。天秤は水平を保った。）"`
+- L633: `if (pool == null || pool.isEmpty()) return "Run complete.";`
+- L638: `if (s.contains("（") && s.contains("）")) bilingual.add(s);`
+- L642: `if (src.isEmpty()) return "Run complete.";`
+- L660: `for (String raw : text.split("\\R")) {`
+- L663: `// 先頭の ">" を全部削る（blockquote対策）`
+- L664: `while (s.startsWith(">")) s = s.substring(1).trim();`
+
+## src/main/java/plugin/QuoteFavoriteBookClickListener.java
+- L201: `@SuppressWarnings("unchecked")`
+- L210: `"getFavoriteQuotes",`
+- L211: `"getFavorites",`
+- L212: `"getFavoriteLogs",`
+- L213: `"getFavoriteProverbs",`
+- L214: `"loadFavorites"`
+- L239: `@SuppressWarnings("unchecked")`
+- L245: `plugin.getClass().getMethod("getRecentProverbs", UUID.class, int.class);`
+- L297: `current.append(ChatColor.DARK_AQUA).append("★ Favorites").append("\n")`
+- L309: `String entry = "• " + trimmed + "\n\n";`
+- L317: `String cut = entry.substring(0, Math.min(entry.length(), PAGE_CHAR_LIMIT - 5)) + "...";`
+- L318: `current.append(cut).append("\n\n");`
+- L344: `ConfigurationSection sec = cfg.getConfigurationSection("ruleBook.displayName");`
+- L356: `allNames.add("TreasureRun ルールブック");`
+- L357: `allNames.add("TreasureRun Rule Book");`
+- L387: `if (player == null) return plugin.getConfig().getString("language.default", "ja");`
+- L392: `java.lang.reflect.Field f = plugin.getClass().getDeclaredField("playerLanguageStore");`
+- L398: `java.lang.reflect.Method m = store.getClass().getMethod("get", UUID.class);`
+- L404: `java.lang.reflect.Method m = store.getClass().getMethod("getPlayerLang", UUID.class);`
+- L411: `return plugin.getConfig().getString("language.default", "ja");`
+- L416: `java.lang.reflect.Method m = plugin.getClass().getMethod("getI18n");`
+- L422: `java.lang.reflect.Field f = plugin.getClass().getDeclaredField("i18n");`
+
+## src/main/java/plugin/RankDebugCommand.java
+- L28: `sender.sendMessage("プレイヤーのみ実行できます");`
+- L34: `player.sendMessage("権限がありません（OP限定）");`
+- L46: `player.sendMessage("使い方: /rank <1|2|3|demo>");`
+- L128: `player.sendMessage("数字で入力してください: /rank <1|2|3|demo>");`
+- L133: `player.sendMessage("1〜3だけ使えます: /rank <1|2|3>");`
+
+## src/main/java/plugin/RankRewardManager.java
+- L361: `wo.setCustomName(ChatColor.LIGHT_PURPLE + "" + ChatColor.BOLD + "Rainbow Wolf");`
+
+## src/main/java/plugin/RealtimeRankTicker.java
+- L251: `p.sendMessage(ChatColor.AQUA + "🏁 Leaderboard Updated! " + ChatColor.GRAY + "(" + which + ")");`
+
+## src/main/java/plugin/StageCleanupCommand.java
+- L47: `Map.of("count", String.valueOf(cleaned)),`
+
+## src/main/java/plugin/TreasureExportLangCommand.java
+- L40: `sender.sendMessage(ChatColor.RED + "❌ languages/ フォルダを作れませんでした: " + dir.getAbsolutePath());`
+- L56: `sender.sendMessage(ChatColor.RED + "❌ 書き出し対象の言語がありません。");`
+- L93: `sender.sendMessage(ChatColor.RED + "❌ 書き出し失敗: " + lang + " (" + t.getMessage() + ")");`
+- L97: `sender.sendMessage(ChatColor.GREEN + "✅ Export 完了: " + written + " ファイルを書き出しました。");`
+- L98: `sender.sendMessage(ChatColor.GRAY + "出力先: " + dir.getAbsolutePath());`
+- L101: `sender.sendMessage(ChatColor.YELLOW + "⚠ 既存ファイルのためスキップ: " + String.join(", ", skipped));`
+- L102: `sender.sendMessage(ChatColor.GRAY + "上書きするなら: /treasureExportLang overwrite");`
+
+## src/main/java/plugin/TreasureItemFactory.java
+- L24: `this.treasureEmeraldKey = new NamespacedKey(plugin, "treasure_emerald");`
+
+## src/main/java/plugin/TreasureRunGameEffectsPlugin.java
+- L186: `player.sendTitle("🎵 Treasure Complete! 🎵",`
+- L190: `player.sendMessage("§6Congratulations! 全ての宝物を見つけました！");`
+- L285: `p.sendMessage("§7Try a different route next time — or use §e/gamestart §7<§eeasy§7|§enormal§7|§ehard§7> §7to retry.");`
+
+## src/main/java/plugin/TreasureRunMultiChestPlugin.java
+- L860: `player.sendMessage(ChatColor.GOLD + "=== 🌟 TreasureRun ランキング TOP10（タイム優先）🌟 ===");`
+- L888: `player.sendMessage(ChatColor.GRAY + "まだスコアがありません。");`
+- L893: `player.sendMessage(ChatColor.RED + "ランキング取得中にエラーが発生しました");`
+- L901: `player.sendMessage(ChatColor.RED + "DB接続がありません。");`
+- L912: `player.sendMessage(ChatColor.AQUA + "=== 🎖️Treasure Run Weekly TOP10 (Plays) ===");`
+- L937: `player.sendMessage(ChatColor.GRAY + "直近7日の記録がありません。");`
+- L939: `player.sendMessage(ChatColor.DARK_GRAY + "表示切替: /gameRank all | /gameRank monthly");`
+- L944: `player.sendMessage(ChatColor.RED + "ランキング取得中にエラーが発生しました");`
+- L951: `player.sendMessage(ChatColor.RED + "DB接続がありません。");`
+- L961: `player.sendMessage(ChatColor.AQUA + "=== 🎖️Treasure Run All-time TOP10 (Plays) ===");`
+- L986: `player.sendMessage(ChatColor.GRAY + "まだ記録がありません。");`
+- L988: `player.sendMessage(ChatColor.DARK_GRAY + "表示切替: /gameRank weekly | /gameRank monthly");`
+- L993: `player.sendMessage(ChatColor.RED + "ランキング取得中にエラーが発生しました");`
+- L1000: `player.sendMessage(ChatColor.RED + "DB接続がありません。");`
+- L1012: `player.sendMessage(ChatColor.AQUA + "=== 🎖️Treasure Run Monthly TOP10 (Plays) ===");`
+- L1037: `player.sendMessage(ChatColor.GRAY + "まだ記録がありません。");`
+- L1039: `player.sendMessage(ChatColor.DARK_GRAY + "表示切替: /gameRank weekly | /gameRank all");`
+- L1044: `player.sendMessage(ChatColor.RED + "ランキング取得中にエラーが発生しました");`
+- L1102: `if (player == null) { sender.sendMessage("プレイヤーのみ実行できます（オンラインプレイヤー無し）"); return true; }`
+- L1109: `player.sendMessage(ChatColor.RED + "ゲーム中は reload できません（安全のため）。/gameEnd してから実行してください。");`
+- L1143: `p.sendMessage(ChatColor.YELLOW + "GUIを更新しました。もう一度 /gameStart で開いてください。");`
+- L1148: `player.sendMessage(ChatColor.GREEN + "✅ TreasureRun config を再読み込みしました（language GUI含む）。");`
+- L1184: `player.sendMessage(ChatColor.RED + "Language GUI が初期化されていません。");`
+- L1200: `player.sendMessage(ChatColor.RED + "ゲームは既に実行中です。");`
+- L1237: `player.sendMessage(ChatColor.RED + "難易度は Easy / Normal / Hard です。");`
+- L1264: `player.sendMessage(ChatColor.RED + "Language GUI が初期化されていません。");`
+- L1275: `player.sendMessage(ChatColor.GOLD + "ゲーム終了！合計スコア: " + ChatColor.YELLOW + score);`
+- L1361: `player.sendMessage(ChatColor.RED + "ゲームは既に実行中です。");`
+- L1398: `player.sendMessage(ChatColor.RED + "Language GUI が初期化されていません。");`
+- L1434: `player.sendMessage(ChatColor.GOLD + " 宝物: " +`
+- L1464: `player.sendMessage(ChatColor.GREEN + "スコア +" + add + "点（累計: " + newScore + "点）");`
+- L1480: `player.sendMessage(ChatColor.AQUA + "残りの宝箱: " +`
+- L1631: `player.sendMessage(ChatColor.GOLD + "すべての宝箱を開けました！ゲーム終了！");`
+- L1632: `player.sendMessage(ChatColor.AQUA + "タイム: " + ChatColor.YELLOW + timeText +`
+- L1846: `player.sendMessage(ChatColor.WHITE + "時間切れ！ゲーム終了！");`
+- L1847: `player.sendMessage(ChatColor.WHITE + "次は別のルート・攻略手順でやってみてね！やり直すなら /gamestart <easy|normal|hard> を使ってみてね！");`
+- L2105: `player.sendMessage(ChatColor.RED + "ゲームは既に実行中です。");`
+- L2173: `player.sendMessage(ChatColor.GREEN + "宝箱 " + currentTotalChests + " 個を配置しました！");`
+
+## src/main/java/plugin/TreasureRunPlugin.java
+- L114: `player.sendMessage("=== TreasureRun ランキング TOP10 ===");`
+- L117: `player.sendMessage(rank + ". " + rs.getString("player_name") +`
+- L168: `sender.sendMessage("プレイヤーから実行してください");`
+- L180: `player.sendMessage(ChatColor.RED + "ゲームは既に実行中です。");`
+- L190: `player.sendMessage(ChatColor.RED + "難易度は Easy, Normal, Hard のいずれかを指定してください。");`
+- L217: `player.sendMessage(ChatColor.GREEN + "宝物は " + targetMaterial.name() + " です。周辺を探してください！");`
+- L263: `player.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(ChatColor.YELLOW + "残り時間: " + secondsLeft + "秒"));`
+- L265: `player.sendMessage(ChatColor.RED + "制限時間は" + gameTimeSeconds + "秒です。");`
+- L267: `player.sendMessage(ChatColor.RED + "あと10秒です！");`
+- L274: `player.sendMessage(ChatColor.RED + "時間切れ！宝物を見つけられませんでした。スコアは0点です。");`
+- L295: `player.sendMessage(ChatColor.GOLD + "おめでとう！ " + targetMaterial.name() + " を見つけました！");`
+- L296: `player.sendMessage(ChatColor.GREEN + "かかった時間: " + timeSec + "秒");`
+- L297: `player.sendMessage(ChatColor.GREEN + "スコア: " + score + "点");`
+
+## src/main/java/plugin/TreasureRunStartCommand.java
+- L42: `String difficulty = "Easy";`
+- L43: `int timeLimit = plugin.getConfig().getInt("difficultySettings." + difficulty + ".timeLimit", 300);`
+- L45: `String worldName = plugin.getConfig().getString("startLocation.world");`
+- L56: `double startX = plugin.getConfig().getDouble("startLocation.x");`
+- L57: `double startY = plugin.getConfig().getDouble("startLocation.y");`
+- L58: `double startZ = plugin.getConfig().getDouble("startLocation.z");`
+- L59: `int treasureChestCount = plugin.getConfig().getInt("chests.treasureChestCount", 1);`
+- L60: `int otherChestCount = plugin.getConfig().getInt("chests.otherChestCount." + difficulty, 3);`
+- L61: `int chestSpawnRadius = plugin.getConfig().getInt("chests.chestSpawnRadius", 20);`
+- L62: `String treasureName = plugin.getConfig().getString("treasureItem", "DIAMOND");`
+- L94: `"difficulty", difficulty,`
+- L95: `"timeLimit", String.valueOf(timeLimit)`
+
+## src/main/java/plugin/UfoCaravanController.java
+- L548: `trader.setCustomName(ChatColor.GOLD + "" + ChatColor.BOLD + "Treasure Shop");`
+
+## src/main/java/plugin/quote/QuoteFavoriteCommand.java
+- L64: `if (sub.equals("help")) {`
+- L72: `if (sub.equals("latest")) {`
+- L91: `if (sub.equals("list")) {`
+- L112: `if (sub.equals("remove")) {`
+- L144: `if (sub.equals("reread")) {`
+- L145: `String mode = (args.length >= 2) ? args[1].toLowerCase(Locale.ROOT) : "chat";`
+- L148: `if (mode.equals("title")) outMode = QuoteRereadService.OutputMode.TITLE;`
+- L149: `if (mode.equals("book")) outMode = QuoteRereadService.OutputMode.BOOK;`
+- L161: `if (sub.equals("book")) {`
+- L162: `String mode = (args.length >= 2) ? args[1].toLowerCase(Locale.ROOT) : "full";`
+- L181: `if (mode.equals("toc")) view = QuoteFavoritesBookBuilder.ViewMode.TOC_ONLY;`
+- L182: `if (mode.equals("success")) view = QuoteFavoritesBookBuilder.ViewMode.SUCCESS_ONLY;`
+- L183: `if (mode.equals("timeup")) view = QuoteFavoritesBookBuilder.ViewMode.TIME_UP_ONLY;`
+- L184: `if (mode.equals("other")) view = QuoteFavoritesBookBuilder.ViewMode.OTHER_ONLY;`
+- L185: `if (mode.equals("full")) view = QuoteFavoritesBookBuilder.ViewMode.FULL;`
+- L229: `return plugin.getConfig().getString("language.default", "ja");`
+- L260: `return key.replace("{" + name + "}", value);`
+- L265: `String lang = plugin.getConfig().getString("language.default", "ja");`
+- L283: `java.lang.reflect.Method m = plugin.getClass().getMethod("getI18n");`
+- L288: `// 2) private field "i18n" を反射で拾う`
+- L290: `java.lang.reflect.Field f = plugin.getClass().getDeclaredField("i18n");`
+- L311: `if (player == null) return plugin.getConfig().getString("language.default", "ja");`
+- L317: `java.lang.reflect.Field f = plugin.getClass().getDeclaredField("playerLanguageStore");`
+- L322: `java.lang.reflect.Method m = store.getClass().getMethod("get", UUID.class);`
+- L330: `return plugin.getConfig().getString("language.default", "ja");`
+- L335: `// - 例: "【SUCCESS / Normal / en】\nThe obstacle is the way."`
+- L340: `String kind = "OTHER";`
+- L345: `if (upper.contains("SUCCESS")) kind = "SUCCESS";`
+- L346: `if (upper.contains("TIME_UP") || upper.contains("TIME UP") || upper.contains("TIMEUP")) kind = "TIME_UP";`
+- L365: `this.kind = (kind == null) ? "OTHER" : kind;`
+
+## src/main/java/plugin/quote/QuoteFavoriteShortcutListener.java
+- L66: `java.lang.reflect.Method m = plugin.getClass().getMethod("getI18n");`
+- L72: `java.lang.reflect.Field f = plugin.getClass().getDeclaredField("i18n");`
+- L88: `if (player == null) return plugin.getConfig().getString("language.default", "ja");`
+- L93: `java.lang.reflect.Field f = plugin.getClass().getDeclaredField("playerLanguageStore");`
+- L99: `java.lang.reflect.Method m = store.getClass().getMethod("get", java.util.UUID.class);`
+- L105: `java.lang.reflect.Method m = store.getClass().getMethod("getLang", Player.class, String.class);`
+- L106: `Object ret = m.invoke(store, player, plugin.getConfig().getString("language.default", "ja"));`
+- L112: `return plugin.getConfig().getString("language.default", "ja");`
+
+## src/main/java/plugin/quote/QuoteFavoritesBookBuilder.java
+- L71: `meta.setTitle("TreasureRun");`
+- L72: `meta.setAuthor("TreasureRun");`
+- L73: `meta.setPages(List.of("TreasureRun"));`
+- L80: `meta.setAuthor("TreasureRun");`
+- L139: `byKind.getOrDefault("SUCCESS", List.of()),`
+- L149: `byKind.getOrDefault("TIME_UP", List.of()),`
+- L159: `byKind.getOrDefault("OTHER", List.of()),`
+- L174: `String lang = "en";`
+- L181: `if (quoteText.isBlank()) quoteText = "(no text)";`
+- L187: `meta.setAuthor("TreasureRun");`
+- L188: `meta.setPages(List.of(head + "\n\n" + quoteText));`
+- L200: `sb.append(title).append("\n\n");`
+- L209: `sb.append(tpl2).append("\n\n");`
+- L216: `sb.append(idx).append(". ").append(text).append("\n\n");`
+- L230: `String kind = readStringFieldOrGetter(row, "kind");`
+- L231: `if (kind.isBlank()) kind = readStringFieldOrGetter(row, "outcome");`
+- L232: `if (kind.isBlank()) kind = readStringFieldOrGetter(row, "result");`
+- L233: `if (kind.isBlank()) kind = "OTHER";`
+- L237: `if (kind.contains("TIME")) return "TIME_UP";`
+- L238: `if (kind.contains("SUCCESS")) return "SUCCESS";`
+- L239: `if (kind.contains("FAIL")) return "OTHER";`
+- L240: `if (kind.contains("OTHER")) return "OTHER";`
+- L245: `String text = readStringFieldOrGetter(row, "text");`
+- L246: `if (text.isBlank()) text = readStringFieldOrGetter(row, "quote");`
+- L247: `if (text.isBlank()) text = readStringFieldOrGetter(row, "message");`
+- L248: `if (text.isBlank()) text = readStringFieldOrGetter(row, "value");`
+- L257: `String m = "get" + name.substring(0, 1).toUpperCase(Locale.ROOT) + name.substring(1);`
+- L288: `return buildFavoritesBook("en", new java.util.UUID(0L, 0L), 0, rows);`
+- L291: `String lang = "en";`
+- L294: `java.lang.reflect.Field f = this.getClass().getDeclaredField("playerLanguageStore");`
+- L298: `java.lang.reflect.Method m = pls.getClass().getMethod("getPlayerLang", java.util.UUID.class);`
+
+TOTAL_CANDIDATES: 557

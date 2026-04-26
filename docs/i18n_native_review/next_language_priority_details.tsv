@@ -1,0 +1,995 @@
+lang	kind	key	value
+asl_gloss	ENGLISH_LIKE	outcome.notice.timeUpGameOver	TIME-UP. GAME OVER.
+asl_gloss	ENGLISH_LIKE	outcome.notice.retryGuide	TRY AGAIN DIFFERENT ROUTE.
+asl_gloss	ENGLISH_LIKE	favorites.chapter.successSub	SUCCESS RUN SAVED LINE
+asl_gloss	ENGLISH_LIKE	favorites.chapter.successTitle	SUCCESS
+asl_gloss	ENGLISH_LIKE	favorites.chapter.successTpl1	SUCCESS SAVED LINE
+asl_gloss	ENGLISH_LIKE	favorites.cover.badge	TREASURERUN FAVORITE
+asl_gloss	ENGLISH_LIKE	favorites.cover.head	FAVORITE ARCHIVE
+asl_gloss	ENGLISH_LIKE	favorites.empty.head	FAVORITE NONE-YET
+asl_gloss	ENGLISH_LIKE	favorites.empty.noFav	FAVORITE SAVE NONE-YET.
+asl_gloss	ENGLISH_LIKE	favorites.empty.saveHow	HOW SAVE FAVORITE
+asl_gloss	ENGLISH_LIKE	favorites.title	FAVORITE
+asl_gloss	ENGLISH_LIKE	favorites.toc.howtoShift	&7CROUCH + RIGHT-CLICK OPEN FAVORITE ARCHIVE
+asl_gloss	ENGLISH_LIKE	favorites.auto.favorite_saved_sneak_rightcl_7a73eb4f	★ Favorite saved! (Sneak+RightClick)
+asl_gloss	ENGLISH_LIKE	commands.quotefavorite_book_success_o_afe31501	/quoteFavorite book success    - open SUCCESS chapter
+asl_gloss	ENGLISH_LIKE	commands.success_normal_en_the_obstac_b627a544	【SUCCESS / Normal / en】\nThe obstacle is the way.
+asl_gloss	ENGLISH_LIKE	commands.time_up_bc0cd646	TIME UP
+asl_gloss	ENGLISH_LIKE	ui.menu.book.fallbackTitle	TREASURE-RUN RULES
+asl_gloss	ENGLISH_LIKE	ui.menu.legacy.toc.message	===== TreasureRun Menu =====\nOpen the rule book from your hotbar to read the rules.
+asl_gloss	ENGLISH_LIKE	ui.menu.page.contents.rulesItem	1) Rules
+asl_gloss	ENGLISH_LIKE	ui.menu.page.contents.savedOn	Saved on SUCCESS / TIME_UP
+asl_gloss	ENGLISH_LIKE	ui.menu.page.contents.tipsItem	2) Tips
+asl_gloss	ENGLISH_LIKE	ui.menu.page.note.bookFormat	Minecraft books cannot switch tabs by clicking, so sections are shown as pages.
+asl_gloss	ENGLISH_LIKE	ui.quote.intro.tabsTitle	TABS
+asl_gloss	ENGLISH_LIKE	ui.quote.legend.success	= Success / Cleared
+asl_gloss	ENGLISH_LIKE	ui.quote.legend.timeUp	= Time up
+asl_gloss	ENGLISH_LIKE	ui.labels.tab.success	SUCCESS
+asl_gloss	ENGLISH_LIKE	ui.labels.outcome.success	SUCCESS
+asl_gloss	ENGLISH_LIKE	ui.labels.outcome.timeUp	TIME UP
+asl_gloss	ENGLISH_LIKE	ui.labels.page	Page {current}/{total}
+asl_gloss	ENGLISH_LIKE	ui.labels.tabs	Tabs
+asl_gloss	JP_CJK_LIKE	game.auto.backup_cfe9e6cf	🌊 Backup 海探索で海を検出しました
+asl_gloss	JP_CJK_LIKE	game.auto.text_e096c9a4	&6特製エメラルド
+asl_gloss	JP_CJK_LIKE	game.auto.dj_onalltreasurescollected_a871afdd	DJイベントはすでに実行中のため、onAllTreasuresCollected をスキップしました。
+asl_gloss	JP_CJK_LIKE	game.auto.text_cc353737	全ての宝物を発見しました！
+asl_gloss	JP_CJK_LIKE	game.auto.congratulations_38fd1594	§6Congratulations! 全ての宝物を見つけました！
+asl_gloss	JP_CJK_LIKE	commands.text_2bf42ec8	このコマンドはプレイヤーのみが実行できます。
+asl_gloss	JP_CJK_LIKE	commands.text_2bf42ec8_18	このコマンドはプレイヤーのみが実行できます。
+asl_gloss	JP_CJK_LIKE	commands.3_3d5021f7	スペシャルエメラルドの作成には、ダイヤモンドが3個必要です。
+asl_gloss	JP_CJK_LIKE	commands.text_e096c9a4	&6特製エメラルド
+asl_gloss	JP_CJK_LIKE	commands.3_71b78a44	ダイヤモンド3個でスペシャルエメラルドを作成しました！
+asl_gloss	JP_CJK_LIKE	commands.text_3030fd61	プレイヤーのみ実行できます
+asl_gloss	JP_CJK_LIKE	commands.op_10caf0f6	権限がありません（OP限定）
+asl_gloss	JP_CJK_LIKE	commands.rank_1_2_3_demo_d87f40da	使い方: /rank <1|2|3|demo>
+asl_gloss	JP_CJK_LIKE	commands.rank_1_2_3_demo_4f3e3084	数字で入力してください: /rank <1|2|3|demo>
+asl_gloss	JP_CJK_LIKE	commands.1_3_rank_1_2_3_7f459bd0	1〜3だけ使えます: /rank <1|2|3>
+asl_gloss	JP_CJK_LIKE	commands.db_e5d54fbd	の演出だけ発動しました（ランキング/DBは変更なし）
+asl_gloss	JP_CJK_LIKE	commands.text_bed3daf7	このコマンドはプレイヤーのみ実行できます。
+asl_gloss	JP_CJK_LIKE	commands.treasurerun_bcef4fe9	[TreasureRun] ステージ管理が初期化されていません。
+asl_gloss	JP_CJK_LIKE	commands.text_287fa0f1	個の難易度ブロックを片付けました。
+asl_gloss	JP_CJK_LIKE	commands.text_44a99db9	このコマンドはプレイヤーからのみ実行できます。
+asl_gloss	JP_CJK_LIKE	commands.text_fd02f248	制限時間:
+asl_gloss	JP_CJK_LIKE	commands.text_f166cc04	§a宝探しゲーム開始！ 難易度:
+asl_gloss	JP_CJK_LIKE	commands.text_2281b097	個のチェストを生成しました。宝物は
+asl_gloss	JP_CJK_LIKE	items.text_7567bb35	特製エメラルドのレシピを登録しました。
+asl_gloss	JP_CJK_LIKE	items.text_7a04254b	&e特製リンゴ
+asl_gloss	JP_CJK_LIKE	items.text_e8d4013d	特製リンゴのレシピを登録しました。
+asl_gloss	JP_CJK_LIKE	items.text_e42912c7	&7特製鉄ブロック
+asl_gloss	JP_CJK_LIKE	items.text_c89dea57	特製鉄ブロックのレシピを登録しました。
+de	ENGLISH_LIKE	commands.quotefavorite_book_success_o_afe31501	/quoteFavorite book success    - open SUCCESS chapter
+de	ENGLISH_LIKE	commands.success_normal_en_the_obstac_b627a544	【SUCCESS / Normal / en】\nThe obstacle is the way.
+de	ENGLISH_LIKE	commands.time_up_bc0cd646	TIME UP
+de	ENGLISH_LIKE	ui.menu.legacy.toc.message	===== TreasureRun-Menü =====\nOpen the rule book from your hotbar to read the rules.
+de	ENGLISH_LIKE	ui.menu.page.contents.savedOn	Gespeichert bei SUCCESS / TIME_UP
+de	ENGLISH_LIKE	ui.menu.page.note.bookFormat	Minecraft books cannot switch tabs by clicking, so sections are shown as pages.
+de	ENGLISH_LIKE	ui.quote.intro.tabsTitle	Tabs
+de	ENGLISH_LIKE	ui.quote.legend.success	= Success / Cleared
+de	ENGLISH_LIKE	ui.quote.legend.timeUp	= Time up
+de	ENGLISH_LIKE	ui.labels.outcome.success	SUCCESS
+de	ENGLISH_LIKE	ui.labels.outcome.timeUp	TIME UP
+en	ENGLISH_LIKE	outcome.notice.timeUpGameOver	Time is up. Game over.
+en	ENGLISH_LIKE	outcome.notice.retryGuide	Try again using a different route.
+en	ENGLISH_LIKE	favorites.chapter.successTitle	Success
+en	ENGLISH_LIKE	favorites.chapter.successTpl1	Saved success lines
+en	ENGLISH_LIKE	favorites.chapter.timeupTitle	Time Up
+en	ENGLISH_LIKE	favorites.auto.favorite_saved_sneak_rightcl_7a73eb4f	★ Favorite saved! (Sneak+RightClick)
+en	ENGLISH_LIKE	commands.quotefavorite_book_success_o_afe31501	/quoteFavorite book success    - open SUCCESS chapter
+en	ENGLISH_LIKE	commands.success_normal_en_the_obstac_b627a544	【SUCCESS / Normal / en】\nThe obstacle is the way.
+en	ENGLISH_LIKE	commands.time_up_bc0cd646	TIME UP
+en	ENGLISH_LIKE	ui.menu.book.fallbackTitle	TreasureRun Rules
+en	ENGLISH_LIKE	ui.menu.legacy.toc.message	===== TreasureRun Menu =====\nOpen the rule book from your hotbar to read the rules.
+en	ENGLISH_LIKE	ui.menu.page.contents.rulesItem	1) Rules
+en	ENGLISH_LIKE	ui.menu.page.contents.savedOn	Saved on SUCCESS / TIME_UP
+en	ENGLISH_LIKE	ui.menu.page.contents.tipsItem	2) Tips
+en	ENGLISH_LIKE	ui.menu.page.note.bookFormat	Minecraft books cannot switch tabs by clicking, so sections are shown as pages.
+en	ENGLISH_LIKE	ui.quote.intro.tabsTitle	Tabs
+en	ENGLISH_LIKE	ui.quote.legend.success	= Success / Cleared
+en	ENGLISH_LIKE	ui.quote.legend.timeUp	= Time up
+en	ENGLISH_LIKE	ui.labels.tab.success	SUCCESS
+en	ENGLISH_LIKE	ui.labels.tab.timeUp	TIME UP
+en	ENGLISH_LIKE	ui.labels.outcome.success	SUCCESS
+en	ENGLISH_LIKE	ui.labels.outcome.timeUp	TIME UP
+en	ENGLISH_LIKE	ui.labels.page	Page {current}/{total}
+en	ENGLISH_LIKE	ui.labels.tabs	Tabs
+en	JP_CJK_LIKE	game.auto.backup_cfe9e6cf	🌊 Backup 海探索で海を検出しました
+en	JP_CJK_LIKE	game.auto.text_e096c9a4	&6特製エメラルド
+en	JP_CJK_LIKE	game.auto.dj_onalltreasurescollected_a871afdd	DJイベントはすでに実行中のため、onAllTreasuresCollected をスキップしました。
+en	JP_CJK_LIKE	game.auto.text_cc353737	全ての宝物を発見しました！
+en	JP_CJK_LIKE	game.auto.congratulations_38fd1594	§6Congratulations! 全ての宝物を見つけました！
+en	JP_CJK_LIKE	commands.text_2bf42ec8	このコマンドはプレイヤーのみが実行できます。
+en	JP_CJK_LIKE	commands.text_2bf42ec8_18	このコマンドはプレイヤーのみが実行できます。
+en	JP_CJK_LIKE	commands.3_3d5021f7	スペシャルエメラルドの作成には、ダイヤモンドが3個必要です。
+en	JP_CJK_LIKE	commands.text_e096c9a4	&6特製エメラルド
+en	JP_CJK_LIKE	commands.3_71b78a44	ダイヤモンド3個でスペシャルエメラルドを作成しました！
+en	JP_CJK_LIKE	commands.text_3030fd61	プレイヤーのみ実行できます
+en	JP_CJK_LIKE	commands.op_10caf0f6	権限がありません（OP限定）
+en	JP_CJK_LIKE	commands.rank_1_2_3_demo_d87f40da	使い方: /rank <1|2|3|demo>
+en	JP_CJK_LIKE	commands.rank_1_2_3_demo_4f3e3084	数字で入力してください: /rank <1|2|3|demo>
+en	JP_CJK_LIKE	commands.1_3_rank_1_2_3_7f459bd0	1〜3だけ使えます: /rank <1|2|3>
+en	JP_CJK_LIKE	commands.db_e5d54fbd	の演出だけ発動しました（ランキング/DBは変更なし）
+en	JP_CJK_LIKE	commands.text_bed3daf7	このコマンドはプレイヤーのみ実行できます。
+en	JP_CJK_LIKE	commands.treasurerun_bcef4fe9	[TreasureRun] ステージ管理が初期化されていません。
+en	JP_CJK_LIKE	commands.text_287fa0f1	個の難易度ブロックを片付けました。
+en	JP_CJK_LIKE	commands.text_44a99db9	このコマンドはプレイヤーからのみ実行できます。
+en	JP_CJK_LIKE	commands.text_fd02f248	制限時間:
+en	JP_CJK_LIKE	commands.text_f166cc04	§a宝探しゲーム開始！ 難易度:
+en	JP_CJK_LIKE	commands.text_2281b097	個のチェストを生成しました。宝物は
+en	JP_CJK_LIKE	items.text_7567bb35	特製エメラルドのレシピを登録しました。
+en	JP_CJK_LIKE	items.text_7a04254b	&e特製リンゴ
+en	JP_CJK_LIKE	items.text_e8d4013d	特製リンゴのレシピを登録しました。
+en	JP_CJK_LIKE	items.text_e42912c7	&7特製鉄ブロック
+en	JP_CJK_LIKE	items.text_c89dea57	特製鉄ブロックのレシピを登録しました。
+es	ENGLISH_LIKE	favorites.auto.favorite_saved_sneak_rightcl_7a73eb4f	★ Favorite saved! (Sneak+RightClick)
+es	ENGLISH_LIKE	commands.quotefavorite_book_success_o_afe31501	/quoteFavorite book success    - open SUCCESS chapter
+es	ENGLISH_LIKE	commands.success_normal_en_the_obstac_b627a544	【SUCCESS / Normal / en】\nThe obstacle is the way.
+es	ENGLISH_LIKE	commands.time_up_bc0cd646	TIME UP
+es	ENGLISH_LIKE	ui.menu.legacy.toc.message	===== TreasureRun Menu =====\nOpen the rule book from your hotbar to read the rules.
+es	ENGLISH_LIKE	ui.menu.page.contents.rulesItem	1) Rules
+es	ENGLISH_LIKE	ui.menu.page.contents.savedOn	Saved on SUCCESS / TIME_UP
+es	ENGLISH_LIKE	ui.menu.page.contents.tipsItem	2) Tips
+es	ENGLISH_LIKE	ui.menu.page.note.bookFormat	Minecraft books cannot switch tabs by clicking, so sections are shown as pages.
+es	ENGLISH_LIKE	ui.quote.legend.success	= Success / Cleared
+es	ENGLISH_LIKE	ui.quote.legend.timeUp	= Time up
+es	ENGLISH_LIKE	ui.labels.outcome.success	SUCCESS
+es	ENGLISH_LIKE	ui.labels.outcome.timeUp	TIME UP
+es	ENGLISH_LIKE	ui.labels.page	Page {current}/{total}
+es	ENGLISH_LIKE	ui.labels.tabs	Tabs
+es	JP_CJK_LIKE	game.auto.backup_cfe9e6cf	🌊 Backup 海探索で海を検出しました
+es	JP_CJK_LIKE	game.auto.text_e096c9a4	&6特製エメラルド
+es	JP_CJK_LIKE	game.auto.dj_onalltreasurescollected_a871afdd	DJイベントはすでに実行中のため、onAllTreasuresCollected をスキップしました。
+es	JP_CJK_LIKE	game.auto.text_cc353737	全ての宝物を発見しました！
+es	JP_CJK_LIKE	game.auto.congratulations_38fd1594	§6Congratulations! 全ての宝物を見つけました！
+es	JP_CJK_LIKE	commands.text_2bf42ec8	このコマンドはプレイヤーのみが実行できます。
+es	JP_CJK_LIKE	commands.text_2bf42ec8_18	このコマンドはプレイヤーのみが実行できます。
+es	JP_CJK_LIKE	commands.3_3d5021f7	スペシャルエメラルドの作成には、ダイヤモンドが3個必要です。
+es	JP_CJK_LIKE	commands.text_e096c9a4	&6特製エメラルド
+es	JP_CJK_LIKE	commands.3_71b78a44	ダイヤモンド3個でスペシャルエメラルドを作成しました！
+es	JP_CJK_LIKE	commands.text_3030fd61	プレイヤーのみ実行できます
+es	JP_CJK_LIKE	commands.op_10caf0f6	権限がありません（OP限定）
+es	JP_CJK_LIKE	commands.rank_1_2_3_demo_d87f40da	使い方: /rank <1|2|3|demo>
+es	JP_CJK_LIKE	commands.rank_1_2_3_demo_4f3e3084	数字で入力してください: /rank <1|2|3|demo>
+es	JP_CJK_LIKE	commands.1_3_rank_1_2_3_7f459bd0	1〜3だけ使えます: /rank <1|2|3>
+es	JP_CJK_LIKE	commands.db_e5d54fbd	の演出だけ発動しました（ランキング/DBは変更なし）
+es	JP_CJK_LIKE	commands.text_bed3daf7	このコマンドはプレイヤーのみ実行できます。
+es	JP_CJK_LIKE	commands.treasurerun_bcef4fe9	[TreasureRun] ステージ管理が初期化されていません。
+es	JP_CJK_LIKE	commands.text_287fa0f1	個の難易度ブロックを片付けました。
+es	JP_CJK_LIKE	commands.text_44a99db9	このコマンドはプレイヤーからのみ実行できます。
+es	JP_CJK_LIKE	commands.text_fd02f248	制限時間:
+es	JP_CJK_LIKE	commands.text_f166cc04	§a宝探しゲーム開始！ 難易度:
+es	JP_CJK_LIKE	commands.text_2281b097	個のチェストを生成しました。宝物は
+es	JP_CJK_LIKE	items.text_7567bb35	特製エメラルドのレシピを登録しました。
+es	JP_CJK_LIKE	items.text_7a04254b	&e特製リンゴ
+es	JP_CJK_LIKE	items.text_e8d4013d	特製リンゴのレシピを登録しました。
+es	JP_CJK_LIKE	items.text_e42912c7	&7特製鉄ブロック
+es	JP_CJK_LIKE	items.text_c89dea57	特製鉄ブロックのレシピを登録しました。
+fi	ENGLISH_LIKE	favorites.auto.favorite_saved_sneak_rightcl_7a73eb4f	★ Favorite saved! (Sneak+RightClick)
+fi	ENGLISH_LIKE	commands.quotefavorite_book_success_o_afe31501	/quoteFavorite book success    - open SUCCESS chapter
+fi	ENGLISH_LIKE	commands.success_normal_en_the_obstac_b627a544	【SUCCESS / Normal / en】\nThe obstacle is the way.
+fi	ENGLISH_LIKE	commands.time_up_bc0cd646	TIME UP
+fi	ENGLISH_LIKE	ui.menu.legacy.toc.message	===== TreasureRun Menu =====\nOpen the rule book from your hotbar to read the rules.
+fi	ENGLISH_LIKE	ui.menu.page.contents.rulesItem	1) Rules
+fi	ENGLISH_LIKE	ui.menu.page.contents.savedOn	Saved on SUCCESS / TIME_UP
+fi	ENGLISH_LIKE	ui.menu.page.contents.tipsItem	2) Tips
+fi	ENGLISH_LIKE	ui.menu.page.note.bookFormat	Minecraft books cannot switch tabs by clicking, so sections are shown as pages.
+fi	ENGLISH_LIKE	ui.quote.legend.success	= Success / Cleared
+fi	ENGLISH_LIKE	ui.quote.legend.timeUp	= Time up
+fi	ENGLISH_LIKE	ui.labels.outcome.success	SUCCESS
+fi	ENGLISH_LIKE	ui.labels.outcome.timeUp	TIME UP
+fi	ENGLISH_LIKE	ui.labels.page	Page {current}/{total}
+fi	ENGLISH_LIKE	ui.labels.tabs	Tabs
+fi	JP_CJK_LIKE	game.auto.backup_cfe9e6cf	🌊 Backup 海探索で海を検出しました
+fi	JP_CJK_LIKE	game.auto.text_e096c9a4	&6特製エメラルド
+fi	JP_CJK_LIKE	game.auto.dj_onalltreasurescollected_a871afdd	DJイベントはすでに実行中のため、onAllTreasuresCollected をスキップしました。
+fi	JP_CJK_LIKE	game.auto.text_cc353737	全ての宝物を発見しました！
+fi	JP_CJK_LIKE	game.auto.congratulations_38fd1594	§6Congratulations! 全ての宝物を見つけました！
+fi	JP_CJK_LIKE	commands.text_2bf42ec8	このコマンドはプレイヤーのみが実行できます。
+fi	JP_CJK_LIKE	commands.text_2bf42ec8_18	このコマンドはプレイヤーのみが実行できます。
+fi	JP_CJK_LIKE	commands.3_3d5021f7	スペシャルエメラルドの作成には、ダイヤモンドが3個必要です。
+fi	JP_CJK_LIKE	commands.text_e096c9a4	&6特製エメラルド
+fi	JP_CJK_LIKE	commands.3_71b78a44	ダイヤモンド3個でスペシャルエメラルドを作成しました！
+fi	JP_CJK_LIKE	commands.text_3030fd61	プレイヤーのみ実行できます
+fi	JP_CJK_LIKE	commands.op_10caf0f6	権限がありません（OP限定）
+fi	JP_CJK_LIKE	commands.rank_1_2_3_demo_d87f40da	使い方: /rank <1|2|3|demo>
+fi	JP_CJK_LIKE	commands.rank_1_2_3_demo_4f3e3084	数字で入力してください: /rank <1|2|3|demo>
+fi	JP_CJK_LIKE	commands.1_3_rank_1_2_3_7f459bd0	1〜3だけ使えます: /rank <1|2|3>
+fi	JP_CJK_LIKE	commands.db_e5d54fbd	の演出だけ発動しました（ランキング/DBは変更なし）
+fi	JP_CJK_LIKE	commands.text_bed3daf7	このコマンドはプレイヤーのみ実行できます。
+fi	JP_CJK_LIKE	commands.treasurerun_bcef4fe9	[TreasureRun] ステージ管理が初期化されていません。
+fi	JP_CJK_LIKE	commands.text_287fa0f1	個の難易度ブロックを片付けました。
+fi	JP_CJK_LIKE	commands.text_44a99db9	このコマンドはプレイヤーからのみ実行できます。
+fi	JP_CJK_LIKE	commands.text_fd02f248	制限時間:
+fi	JP_CJK_LIKE	commands.text_f166cc04	§a宝探しゲーム開始！ 難易度:
+fi	JP_CJK_LIKE	commands.text_2281b097	個のチェストを生成しました。宝物は
+fi	JP_CJK_LIKE	items.text_7567bb35	特製エメラルドのレシピを登録しました。
+fi	JP_CJK_LIKE	items.text_7a04254b	&e特製リンゴ
+fi	JP_CJK_LIKE	items.text_e8d4013d	特製リンゴのレシピを登録しました。
+fi	JP_CJK_LIKE	items.text_e42912c7	&7特製鉄ブロック
+fi	JP_CJK_LIKE	items.text_c89dea57	特製鉄ブロックのレシピを登録しました。
+fr	ENGLISH_LIKE	favorites.auto.favorite_saved_sneak_rightcl_7a73eb4f	★ Favorite saved! (Sneak+RightClick)
+fr	ENGLISH_LIKE	commands.quotefavorite_book_success_o_afe31501	/quoteFavorite book success    - open SUCCESS chapter
+fr	ENGLISH_LIKE	commands.success_normal_en_the_obstac_b627a544	【SUCCESS / Normal / en】\nThe obstacle is the way.
+fr	ENGLISH_LIKE	commands.time_up_bc0cd646	TIME UP
+fr	ENGLISH_LIKE	ui.menu.legacy.toc.message	===== TreasureRun Menu =====\nOpen the rule book from your hotbar to read the rules.
+fr	ENGLISH_LIKE	ui.menu.page.contents.rulesItem	1) Rules
+fr	ENGLISH_LIKE	ui.menu.page.contents.savedOn	Saved on SUCCESS / TIME_UP
+fr	ENGLISH_LIKE	ui.menu.page.contents.tipsItem	2) Tips
+fr	ENGLISH_LIKE	ui.menu.page.note.bookFormat	Minecraft books cannot switch tabs by clicking, so sections are shown as pages.
+fr	ENGLISH_LIKE	ui.quote.legend.success	= Success / Cleared
+fr	ENGLISH_LIKE	ui.quote.legend.timeUp	= Time up
+fr	ENGLISH_LIKE	ui.labels.outcome.success	SUCCESS
+fr	ENGLISH_LIKE	ui.labels.outcome.timeUp	TIME UP
+fr	ENGLISH_LIKE	ui.labels.page	Page {current}/{total}
+fr	ENGLISH_LIKE	ui.labels.tabs	Tabs
+fr	JP_CJK_LIKE	game.auto.backup_cfe9e6cf	🌊 Backup 海探索で海を検出しました
+fr	JP_CJK_LIKE	game.auto.text_e096c9a4	&6特製エメラルド
+fr	JP_CJK_LIKE	game.auto.dj_onalltreasurescollected_a871afdd	DJイベントはすでに実行中のため、onAllTreasuresCollected をスキップしました。
+fr	JP_CJK_LIKE	game.auto.text_cc353737	全ての宝物を発見しました！
+fr	JP_CJK_LIKE	game.auto.congratulations_38fd1594	§6Congratulations! 全ての宝物を見つけました！
+fr	JP_CJK_LIKE	commands.text_2bf42ec8	このコマンドはプレイヤーのみが実行できます。
+fr	JP_CJK_LIKE	commands.text_2bf42ec8_18	このコマンドはプレイヤーのみが実行できます。
+fr	JP_CJK_LIKE	commands.3_3d5021f7	スペシャルエメラルドの作成には、ダイヤモンドが3個必要です。
+fr	JP_CJK_LIKE	commands.text_e096c9a4	&6特製エメラルド
+fr	JP_CJK_LIKE	commands.3_71b78a44	ダイヤモンド3個でスペシャルエメラルドを作成しました！
+fr	JP_CJK_LIKE	commands.text_3030fd61	プレイヤーのみ実行できます
+fr	JP_CJK_LIKE	commands.op_10caf0f6	権限がありません（OP限定）
+fr	JP_CJK_LIKE	commands.rank_1_2_3_demo_d87f40da	使い方: /rank <1|2|3|demo>
+fr	JP_CJK_LIKE	commands.rank_1_2_3_demo_4f3e3084	数字で入力してください: /rank <1|2|3|demo>
+fr	JP_CJK_LIKE	commands.1_3_rank_1_2_3_7f459bd0	1〜3だけ使えます: /rank <1|2|3>
+fr	JP_CJK_LIKE	commands.db_e5d54fbd	の演出だけ発動しました（ランキング/DBは変更なし）
+fr	JP_CJK_LIKE	commands.text_bed3daf7	このコマンドはプレイヤーのみ実行できます。
+fr	JP_CJK_LIKE	commands.treasurerun_bcef4fe9	[TreasureRun] ステージ管理が初期化されていません。
+fr	JP_CJK_LIKE	commands.text_287fa0f1	個の難易度ブロックを片付けました。
+fr	JP_CJK_LIKE	commands.text_44a99db9	このコマンドはプレイヤーからのみ実行できます。
+fr	JP_CJK_LIKE	commands.text_fd02f248	制限時間:
+fr	JP_CJK_LIKE	commands.text_f166cc04	§a宝探しゲーム開始！ 難易度:
+fr	JP_CJK_LIKE	commands.text_2281b097	個のチェストを生成しました。宝物は
+fr	JP_CJK_LIKE	items.text_7567bb35	特製エメラルドのレシピを登録しました。
+fr	JP_CJK_LIKE	items.text_7a04254b	&e特製リンゴ
+fr	JP_CJK_LIKE	items.text_e8d4013d	特製リンゴのレシピを登録しました。
+fr	JP_CJK_LIKE	items.text_e42912c7	&7特製鉄ブロック
+fr	JP_CJK_LIKE	items.text_c89dea57	特製鉄ブロックのレシピを登録しました。
+hi	MISSING_VISIBLE	commands.1_3_rank_1_2_3_7f459bd0	
+hi	MISSING_VISIBLE	commands.3_3d5021f7	
+hi	MISSING_VISIBLE	commands.3_71b78a44	
+hi	MISSING_VISIBLE	commands.db_e5d54fbd	
+hi	MISSING_VISIBLE	commands.op_10caf0f6	
+hi	MISSING_VISIBLE	commands.quotefavorite_book_open_cata_055de855	
+hi	MISSING_VISIBLE	commands.quotefavorite_book_other_ope_bdcbafba	
+hi	MISSING_VISIBLE	commands.quotefavorite_book_success_o_afe31501	
+hi	MISSING_VISIBLE	commands.quotefavorite_book_timeup_op_08b799b0	
+hi	MISSING_VISIBLE	commands.quotefavorite_book_toc_open__c7d02ede	
+hi	MISSING_VISIBLE	commands.rank_1_2_3_demo_4f3e3084	
+hi	MISSING_VISIBLE	commands.rank_1_2_3_demo_d87f40da	
+hi	MISSING_VISIBLE	commands.success_normal_en_the_obstac_b627a544	
+hi	MISSING_VISIBLE	commands.text_2281b097	
+hi	MISSING_VISIBLE	commands.text_287fa0f1	
+hi	MISSING_VISIBLE	commands.text_2bf42ec8	
+hi	MISSING_VISIBLE	commands.text_2bf42ec8_18	
+hi	MISSING_VISIBLE	commands.text_3030fd61	
+hi	MISSING_VISIBLE	commands.text_44a99db9	
+hi	MISSING_VISIBLE	commands.text_bed3daf7	
+hi	MISSING_VISIBLE	commands.text_e096c9a4	
+hi	MISSING_VISIBLE	commands.text_f166cc04	
+hi	MISSING_VISIBLE	commands.text_fd02f248	
+hi	MISSING_VISIBLE	commands.time_up_bc0cd646	
+hi	MISSING_VISIBLE	commands.treasurerun_bcef4fe9	
+hi	MISSING_VISIBLE	favorites.auto.favorite_saved_sneak_rightcl_7a73eb4f	
+hi	MISSING_VISIBLE	favorites.auto.no_text_b87d9ee6	
+hi	MISSING_VISIBLE	favorites.auto.order_by_created_at_desc_lim_f22988c0	
+hi	MISSING_VISIBLE	favorites.auto.player_uuid_quote_hash_outco_49f06b31	
+hi	MISSING_VISIBLE	favorites.auto.treasurerun_favorites_0c778ce1	
+hi	MISSING_VISIBLE	favorites.auto.treasurerun_favorites_templa_a0a4bf2e	
+hi	MISSING_VISIBLE	favorites.auto.values_643f4d2f	
+hi	MISSING_VISIBLE	favorites.auto.where_player_uuid_53558ea9	
+hi	MISSING_VISIBLE	favorites.auto.where_player_uuid_and_id_f4a80773	
+hi	MISSING_VISIBLE	favorites.auto.where_player_uuid_and_quote__36106f85	
+hi	MISSING_VISIBLE	favorites.auto.where_player_uuid_and_quote__81bcaee5	
+hi	MISSING_VISIBLE	favorites.auto.where_player_uuid_ef617232	
+hi	MISSING_VISIBLE	favorites.table	
+hi	MISSING_VISIBLE	game.auto.a_hidden_power_awakens_7620bc4d	
+hi	MISSING_VISIBLE	game.auto.backup_cfe9e6cf	
+hi	MISSING_VISIBLE	game.auto.congratulations_38fd1594	
+hi	MISSING_VISIBLE	game.auto.count_int_not_null_660eadd8	
+hi	MISSING_VISIBLE	game.auto.cursor_7fabae3f	
+hi	MISSING_VISIBLE	game.auto.dj_onalltreasurescollected_a871afdd	
+hi	MISSING_VISIBLE	game.auto.failed_to_save_treasure_coun_9d94c0cc	
+hi	MISSING_VISIBLE	game.auto.ingredients_snapshot_98cb38c3	
+hi	MISSING_VISIBLE	game.auto.inventoryclickevent_fired_8520aa1c	
+hi	MISSING_VISIBLE	game.auto.items_current_0629a198	
+hi	MISSING_VISIBLE	game.auto.k_llun_r_dj_pinu_16494877	
+hi	MISSING_VISIBLE	game.auto.merchant_view_title_daf2a73a	
+hi	ENGLISH_LIKE	ui.labels.page	&8पृष्ठ {page}/{total}&r
+hi	ENGLISH_LIKE	ui.quote.noLogs	अभी तक कोई उद्धरण लॉग नहीं है। SUCCESS / TIME_UP पर स्वचालित रूप से सहेजे जाते हैं।
+hi	ENGLISH_LIKE	ui.menu.page.contents.savedOn	  · SUCCESS / TIME_UP पर सहेजा जाता है
+hi	JP_CJK_LIKE	ui.auto.treasurerunmultichestplugin_4499e25c	🌈 TreasureRunMultiChestPlugin: 起動 🌈
+hi	JP_CJK_LIKE	ui.auto.treasurerunmultichestplugin_a507471a	✅ TreasureRunMultiChestPlugin が正常に起動しました！
+hi	JP_CJK_LIKE	ui.auto.treasurerunmultichestplugin_c2111711	🔻 TreasureRunMultiChestPlugin: 無効化
+hi	JP_CJK_LIKE	ui.menu.legacy.toc.message	&6===== 🌟 TreasureRun सामग्री 🌟 =====\n&b1. लक्ष्य\n&f   ・समय सीमा में अधिक से अधिक संदूक खोलें।\n\n&b2. वर्तमान कठिनाई\n&f   ・कठिनाई: &e{difficulty}\n\n&6==================================
+is	ENGLISH_LIKE	favorites.auto.favorite_saved_sneak_rightcl_7a73eb4f	★ Favorite saved! (Sneak+RightClick)
+is	ENGLISH_LIKE	commands.quotefavorite_book_success_o_afe31501	/quoteFavorite book success    - open SUCCESS chapter
+is	ENGLISH_LIKE	commands.success_normal_en_the_obstac_b627a544	【SUCCESS / Normal / en】\nThe obstacle is the way.
+is	ENGLISH_LIKE	commands.time_up_bc0cd646	TIME UP
+is	ENGLISH_LIKE	ui.menu.legacy.toc.message	===== TreasureRun Menu =====\nOpen the rule book from your hotbar to read the rules.
+is	ENGLISH_LIKE	ui.menu.page.contents.rulesItem	1) Rules
+is	ENGLISH_LIKE	ui.menu.page.contents.savedOn	Saved on SUCCESS / TIME_UP
+is	ENGLISH_LIKE	ui.menu.page.contents.tipsItem	2) Tips
+is	ENGLISH_LIKE	ui.menu.page.note.bookFormat	Minecraft books cannot switch tabs by clicking, so sections are shown as pages.
+is	ENGLISH_LIKE	ui.quote.legend.success	= Success / Cleared
+is	ENGLISH_LIKE	ui.quote.legend.timeUp	= Time up
+is	ENGLISH_LIKE	ui.labels.outcome.success	SUCCESS
+is	ENGLISH_LIKE	ui.labels.outcome.timeUp	TIME UP
+is	ENGLISH_LIKE	ui.labels.page	Page {current}/{total}
+is	ENGLISH_LIKE	ui.labels.tabs	Tabs
+is	JP_CJK_LIKE	game.auto.backup_cfe9e6cf	🌊 Backup 海探索で海を検出しました
+is	JP_CJK_LIKE	game.auto.text_e096c9a4	&6特製エメラルド
+is	JP_CJK_LIKE	game.auto.dj_onalltreasurescollected_a871afdd	DJイベントはすでに実行中のため、onAllTreasuresCollected をスキップしました。
+is	JP_CJK_LIKE	game.auto.text_cc353737	全ての宝物を発見しました！
+is	JP_CJK_LIKE	game.auto.congratulations_38fd1594	§6Congratulations! 全ての宝物を見つけました！
+is	JP_CJK_LIKE	commands.text_2bf42ec8	このコマンドはプレイヤーのみが実行できます。
+is	JP_CJK_LIKE	commands.text_2bf42ec8_18	このコマンドはプレイヤーのみが実行できます。
+is	JP_CJK_LIKE	commands.3_3d5021f7	スペシャルエメラルドの作成には、ダイヤモンドが3個必要です。
+is	JP_CJK_LIKE	commands.text_e096c9a4	&6特製エメラルド
+is	JP_CJK_LIKE	commands.3_71b78a44	ダイヤモンド3個でスペシャルエメラルドを作成しました！
+is	JP_CJK_LIKE	commands.text_3030fd61	プレイヤーのみ実行できます
+is	JP_CJK_LIKE	commands.op_10caf0f6	権限がありません（OP限定）
+is	JP_CJK_LIKE	commands.rank_1_2_3_demo_d87f40da	使い方: /rank <1|2|3|demo>
+is	JP_CJK_LIKE	commands.rank_1_2_3_demo_4f3e3084	数字で入力してください: /rank <1|2|3|demo>
+is	JP_CJK_LIKE	commands.1_3_rank_1_2_3_7f459bd0	1〜3だけ使えます: /rank <1|2|3>
+is	JP_CJK_LIKE	commands.db_e5d54fbd	の演出だけ発動しました（ランキング/DBは変更なし）
+is	JP_CJK_LIKE	commands.text_bed3daf7	このコマンドはプレイヤーのみ実行できます。
+is	JP_CJK_LIKE	commands.treasurerun_bcef4fe9	[TreasureRun] ステージ管理が初期化されていません。
+is	JP_CJK_LIKE	commands.text_287fa0f1	個の難易度ブロックを片付けました。
+is	JP_CJK_LIKE	commands.text_44a99db9	このコマンドはプレイヤーからのみ実行できます。
+is	JP_CJK_LIKE	commands.text_fd02f248	制限時間:
+is	JP_CJK_LIKE	commands.text_f166cc04	§a宝探しゲーム開始！ 難易度:
+is	JP_CJK_LIKE	commands.text_2281b097	個のチェストを生成しました。宝物は
+is	JP_CJK_LIKE	items.text_7567bb35	特製エメラルドのレシピを登録しました。
+is	JP_CJK_LIKE	items.text_7a04254b	&e特製リンゴ
+is	JP_CJK_LIKE	items.text_e8d4013d	特製リンゴのレシピを登録しました。
+is	JP_CJK_LIKE	items.text_e42912c7	&7特製鉄ブロック
+is	JP_CJK_LIKE	items.text_c89dea57	特製鉄ブロックのレシピを登録しました。
+it	ENGLISH_LIKE	favorites.auto.favorite_saved_sneak_rightcl_7a73eb4f	★ Favorite saved! (Sneak+RightClick)
+it	ENGLISH_LIKE	commands.quotefavorite_book_success_o_afe31501	/quoteFavorite book success    - open SUCCESS chapter
+it	ENGLISH_LIKE	commands.success_normal_en_the_obstac_b627a544	【SUCCESS / Normal / en】\nThe obstacle is the way.
+it	ENGLISH_LIKE	commands.time_up_bc0cd646	TIME UP
+it	ENGLISH_LIKE	ui.menu.legacy.toc.message	===== TreasureRun Menu =====\nOpen the rule book from your hotbar to read the rules.
+it	ENGLISH_LIKE	ui.menu.page.contents.rulesItem	1) Rules
+it	ENGLISH_LIKE	ui.menu.page.contents.savedOn	Saved on SUCCESS / TIME_UP
+it	ENGLISH_LIKE	ui.menu.page.contents.tipsItem	2) Tips
+it	ENGLISH_LIKE	ui.menu.page.note.bookFormat	Minecraft books cannot switch tabs by clicking, so sections are shown as pages.
+it	ENGLISH_LIKE	ui.quote.legend.success	= Success / Cleared
+it	ENGLISH_LIKE	ui.quote.legend.timeUp	= Time up
+it	ENGLISH_LIKE	ui.labels.outcome.success	SUCCESS
+it	ENGLISH_LIKE	ui.labels.outcome.timeUp	TIME UP
+it	ENGLISH_LIKE	ui.labels.page	Page {current}/{total}
+it	ENGLISH_LIKE	ui.labels.tabs	Tabs
+it	JP_CJK_LIKE	game.auto.backup_cfe9e6cf	🌊 Backup 海探索で海を検出しました
+it	JP_CJK_LIKE	game.auto.text_e096c9a4	&6特製エメラルド
+it	JP_CJK_LIKE	game.auto.dj_onalltreasurescollected_a871afdd	DJイベントはすでに実行中のため、onAllTreasuresCollected をスキップしました。
+it	JP_CJK_LIKE	game.auto.text_cc353737	全ての宝物を発見しました！
+it	JP_CJK_LIKE	game.auto.congratulations_38fd1594	§6Congratulations! 全ての宝物を見つけました！
+it	JP_CJK_LIKE	commands.text_2bf42ec8	このコマンドはプレイヤーのみが実行できます。
+it	JP_CJK_LIKE	commands.text_2bf42ec8_18	このコマンドはプレイヤーのみが実行できます。
+it	JP_CJK_LIKE	commands.3_3d5021f7	スペシャルエメラルドの作成には、ダイヤモンドが3個必要です。
+it	JP_CJK_LIKE	commands.text_e096c9a4	&6特製エメラルド
+it	JP_CJK_LIKE	commands.3_71b78a44	ダイヤモンド3個でスペシャルエメラルドを作成しました！
+it	JP_CJK_LIKE	commands.text_3030fd61	プレイヤーのみ実行できます
+it	JP_CJK_LIKE	commands.op_10caf0f6	権限がありません（OP限定）
+it	JP_CJK_LIKE	commands.rank_1_2_3_demo_d87f40da	使い方: /rank <1|2|3|demo>
+it	JP_CJK_LIKE	commands.rank_1_2_3_demo_4f3e3084	数字で入力してください: /rank <1|2|3|demo>
+it	JP_CJK_LIKE	commands.1_3_rank_1_2_3_7f459bd0	1〜3だけ使えます: /rank <1|2|3>
+it	JP_CJK_LIKE	commands.db_e5d54fbd	の演出だけ発動しました（ランキング/DBは変更なし）
+it	JP_CJK_LIKE	commands.text_bed3daf7	このコマンドはプレイヤーのみ実行できます。
+it	JP_CJK_LIKE	commands.treasurerun_bcef4fe9	[TreasureRun] ステージ管理が初期化されていません。
+it	JP_CJK_LIKE	commands.text_287fa0f1	個の難易度ブロックを片付けました。
+it	JP_CJK_LIKE	commands.text_44a99db9	このコマンドはプレイヤーからのみ実行できます。
+it	JP_CJK_LIKE	commands.text_fd02f248	制限時間:
+it	JP_CJK_LIKE	commands.text_f166cc04	§a宝探しゲーム開始！ 難易度:
+it	JP_CJK_LIKE	commands.text_2281b097	個のチェストを生成しました。宝物は
+it	JP_CJK_LIKE	items.text_7567bb35	特製エメラルドのレシピを登録しました。
+it	JP_CJK_LIKE	items.text_7a04254b	&e特製リンゴ
+it	JP_CJK_LIKE	items.text_e8d4013d	特製リンゴのレシピを登録しました。
+it	JP_CJK_LIKE	items.text_e42912c7	&7特製鉄ブロック
+it	JP_CJK_LIKE	items.text_c89dea57	特製鉄ブロックのレシピを登録しました。
+ja	ENGLISH_LIKE	favorites.auto.favorite_saved_sneak_rightcl_7a73eb4f	★ Favorite saved! (Sneak+RightClick)
+ja	ENGLISH_LIKE	commands.quotefavorite_book_success_o_afe31501	/quoteFavorite book success    - open SUCCESS chapter
+ja	ENGLISH_LIKE	commands.success_normal_en_the_obstac_b627a544	【SUCCESS / Normal / en】\nThe obstacle is the way.
+ja	ENGLISH_LIKE	commands.time_up_bc0cd646	TIME UP
+ja	ENGLISH_LIKE	ui.menu.legacy.toc.message	===== TreasureRun Menu =====\nOpen the rule book from your hotbar to read the rules.
+ja	ENGLISH_LIKE	ui.menu.page.contents.rulesItem	1) Rules
+ja	ENGLISH_LIKE	ui.menu.page.contents.savedOn	Saved on SUCCESS / TIME_UP
+ja	ENGLISH_LIKE	ui.menu.page.contents.tipsItem	2) Tips
+ja	ENGLISH_LIKE	ui.menu.page.note.bookFormat	Minecraft books cannot switch tabs by clicking, so sections are shown as pages.
+ja	ENGLISH_LIKE	ui.quote.legend.success	= Success / Cleared
+ja	ENGLISH_LIKE	ui.quote.legend.timeUp	= Time up
+ja	ENGLISH_LIKE	ui.labels.outcome.success	SUCCESS
+ja	ENGLISH_LIKE	ui.labels.outcome.timeUp	TIME UP
+ja	ENGLISH_LIKE	ui.labels.page	Page {current}/{total}
+ja	ENGLISH_LIKE	ui.labels.tabs	Tabs
+ja	JP_CJK_LIKE	outcome.notice.timeUpGameOver	時間切れです。ゲームオーバーです。
+ja	JP_CJK_LIKE	outcome.notice.retryGuide	別のルートでもう一度挑戦してみてください。
+ja	JP_CJK_LIKE	game.difficulty.easy	&aかんたん
+ja	JP_CJK_LIKE	game.difficulty.normal	&eふつう
+ja	JP_CJK_LIKE	game.difficulty.hard	&cむずかしい
+ja	JP_CJK_LIKE	game.gameStart	['&6========== &eTreasureRun &6==========', '&7難易度: &f{difficulty}', '&7制限時間: &f{timeLimit}秒', '&7総宝箱数: &f{totalChests}', '&7財宝宝箱: &f{treasureChests}', '&7その他宝箱: &f{otherChests}', '&7倍率: &f{xMultiplie
+ja	JP_CJK_LIKE	game.gameStartTitle.subtitle	&7時間内に宝箱を探そう！
+ja	JP_CJK_LIKE	game.timeWarning	['&e残り時間: &f{seconds}秒']
+ja	JP_CJK_LIKE	game.gameEndSuccess	['&a財宝をすべて回収しました！', '&7最終スコア: &f{score}']
+ja	JP_CJK_LIKE	game.gameEndFail	['&c時間切れ！', '&7最終スコア: &f{score}']
+ja	JP_CJK_LIKE	game.rank.header	&6=== ランキング ===
+ja	JP_CJK_LIKE	game.rank.line	&e{rank}位 &f{player} &7- &b{score}
+ja	JP_CJK_LIKE	game.auto.backup_cfe9e6cf	🌊 Backup 海探索で海を検出しました
+ja	JP_CJK_LIKE	game.auto.text_e096c9a4	&6特製エメラルド
+ja	JP_CJK_LIKE	game.auto.dj_onalltreasurescollected_a871afdd	DJイベントはすでに実行中のため、onAllTreasuresCollected をスキップしました。
+ja	JP_CJK_LIKE	game.auto.text_cc353737	全ての宝物を発見しました！
+ja	JP_CJK_LIKE	game.auto.congratulations_38fd1594	§6Congratulations! 全ての宝物を見つけました！
+ja	JP_CJK_LIKE	favorites.chapter.back	目次へ戻る
+ja	JP_CJK_LIKE	favorites.chapter.count	{count} 件
+ja	JP_CJK_LIKE	favorites.chapter.empty	この章にはまだ保存された言葉がありません
+ja	JP_CJK_LIKE	favorites.chapter.otherSub	その他
+ja	JP_CJK_LIKE	favorites.chapter.rereadBook	読み返し本
+ja	JP_CJK_LIKE	favorites.chapter.successSub	成功時に保存した言葉
+ja	JP_CJK_LIKE	favorites.chapter.successTitle	成功
+ja	JP_CJK_LIKE	favorites.chapter.successTpl1	成功時に保存した言葉
+ja	JP_CJK_LIKE	favorites.chapter.successTpl2	クリアした瞬間に残した記録
+ja	JP_CJK_LIKE	favorites.chapter.timeupSub	時間切れ時に保存した言葉
+ja	JP_CJK_LIKE	favorites.chapter.timeupTitle	時間切れ
+ja	JP_CJK_LIKE	favorites.chapter.timeupTpl1	時間切れ時に保存した言葉
+ja	JP_CJK_LIKE	favorites.chapter.timeupTpl2	タイマーが尽きた瞬間の記録
+ja	JP_CJK_LIKE	favorites.cover.badge	TreasureRun お気に入り
+ja	JP_CJK_LIKE	favorites.cover.countLabel	保存数: {count}
+ja	JP_CJK_LIKE	favorites.cover.head	お気に入りアーカイブ
+ja	JP_CJK_LIKE	favorites.cover.hint	/quoteFavorite latest または /quoteFavorite list を使えます
+ja	JP_CJK_LIKE	favorites.cover.openToc	目次を開く
+ja	JP_CJK_LIKE	favorites.cover.reread	読み返し
+ja	JP_CJK_LIKE	favorites.cover.sub	あなたのプレイ中に保存した言葉をまとめた本です
+ja	JP_CJK_LIKE	favorites.empty.head	まだお気に入りはありません
+ja	JP_CJK_LIKE	favorites.empty.noFav	まだ保存されたお気に入りはありません。
+ja	JP_CJK_LIKE	favorites.empty.noFavSub	まずは一行保存して、あなただけのアーカイブを始めましょう
+ja	JP_CJK_LIKE	favorites.empty.reread	まだ読み返せる言葉はありません。
+ja	JP_CJK_LIKE	favorites.empty.rereadBook	まだ読み返し用の本はありません。
+ja	JP_CJK_LIKE	favorites.empty.saveHow	お気に入りの保存方法
+ja	JP_CJK_LIKE	favorites.empty.saveHow1	/quoteFavorite latest を使う
+ja	JP_CJK_LIKE	favorites.empty.saveHow2	または、ルールブックをしゃがみながら右クリックする
+ja	JP_CJK_LIKE	favorites.empty.saveLatest	最新の一行を保存する
+ja	JP_CJK_LIKE	favorites.empty.sub	このアーカイブはまだ空です
+ja	JP_CJK_LIKE	favorites.empty.tryNow	保存したあとに、もう一度この本を開いてください
+ja	JP_CJK_LIKE	favorites.remove	削除
+ja	JP_CJK_LIKE	favorites.reread.head	保存した言葉の読み返し
+ko	ENGLISH_LIKE	favorites.auto.favorite_saved_sneak_rightcl_7a73eb4f	★ Favorite saved! (Sneak+RightClick)
+ko	ENGLISH_LIKE	commands.quotefavorite_book_success_o_afe31501	/quoteFavorite book success    - open SUCCESS chapter
+ko	ENGLISH_LIKE	commands.success_normal_en_the_obstac_b627a544	【SUCCESS / Normal / en】\nThe obstacle is the way.
+ko	ENGLISH_LIKE	commands.time_up_bc0cd646	TIME UP
+ko	ENGLISH_LIKE	ui.menu.legacy.toc.message	===== TreasureRun Menu =====\nOpen the rule book from your hotbar to read the rules.
+ko	ENGLISH_LIKE	ui.menu.page.contents.rulesItem	1) Rules
+ko	ENGLISH_LIKE	ui.menu.page.contents.savedOn	Saved on SUCCESS / TIME_UP
+ko	ENGLISH_LIKE	ui.menu.page.contents.tipsItem	2) Tips
+ko	ENGLISH_LIKE	ui.menu.page.note.bookFormat	Minecraft books cannot switch tabs by clicking, so sections are shown as pages.
+ko	ENGLISH_LIKE	ui.quote.legend.success	= Success / Cleared
+ko	ENGLISH_LIKE	ui.quote.legend.timeUp	= Time up
+ko	ENGLISH_LIKE	ui.labels.outcome.success	SUCCESS
+ko	ENGLISH_LIKE	ui.labels.outcome.timeUp	TIME UP
+ko	ENGLISH_LIKE	ui.labels.page	Page {current}/{total}
+ko	ENGLISH_LIKE	ui.labels.tabs	Tabs
+ko	JP_CJK_LIKE	game.auto.backup_cfe9e6cf	🌊 Backup 海探索で海を検出しました
+ko	JP_CJK_LIKE	game.auto.text_e096c9a4	&6特製エメラルド
+ko	JP_CJK_LIKE	game.auto.dj_onalltreasurescollected_a871afdd	DJイベントはすでに実行中のため、onAllTreasuresCollected をスキップしました。
+ko	JP_CJK_LIKE	game.auto.text_cc353737	全ての宝物を発見しました！
+ko	JP_CJK_LIKE	game.auto.congratulations_38fd1594	§6Congratulations! 全ての宝物を見つけました！
+ko	JP_CJK_LIKE	commands.text_2bf42ec8	このコマンドはプレイヤーのみが実行できます。
+ko	JP_CJK_LIKE	commands.text_2bf42ec8_18	このコマンドはプレイヤーのみが実行できます。
+ko	JP_CJK_LIKE	commands.3_3d5021f7	スペシャルエメラルドの作成には、ダイヤモンドが3個必要です。
+ko	JP_CJK_LIKE	commands.text_e096c9a4	&6特製エメラルド
+ko	JP_CJK_LIKE	commands.3_71b78a44	ダイヤモンド3個でスペシャルエメラルドを作成しました！
+ko	JP_CJK_LIKE	commands.text_3030fd61	プレイヤーのみ実行できます
+ko	JP_CJK_LIKE	commands.op_10caf0f6	権限がありません（OP限定）
+ko	JP_CJK_LIKE	commands.rank_1_2_3_demo_d87f40da	使い方: /rank <1|2|3|demo>
+ko	JP_CJK_LIKE	commands.rank_1_2_3_demo_4f3e3084	数字で入力してください: /rank <1|2|3|demo>
+ko	JP_CJK_LIKE	commands.1_3_rank_1_2_3_7f459bd0	1〜3だけ使えます: /rank <1|2|3>
+ko	JP_CJK_LIKE	commands.db_e5d54fbd	の演出だけ発動しました（ランキング/DBは変更なし）
+ko	JP_CJK_LIKE	commands.text_bed3daf7	このコマンドはプレイヤーのみ実行できます。
+ko	JP_CJK_LIKE	commands.treasurerun_bcef4fe9	[TreasureRun] ステージ管理が初期化されていません。
+ko	JP_CJK_LIKE	commands.text_287fa0f1	個の難易度ブロックを片付けました。
+ko	JP_CJK_LIKE	commands.text_44a99db9	このコマンドはプレイヤーからのみ実行できます。
+ko	JP_CJK_LIKE	commands.text_fd02f248	制限時間:
+ko	JP_CJK_LIKE	commands.text_f166cc04	§a宝探しゲーム開始！ 難易度:
+ko	JP_CJK_LIKE	commands.text_2281b097	個のチェストを生成しました。宝物は
+ko	JP_CJK_LIKE	items.text_7567bb35	特製エメラルドのレシピを登録しました。
+ko	JP_CJK_LIKE	items.text_7a04254b	&e特製リンゴ
+ko	JP_CJK_LIKE	items.text_e8d4013d	特製リンゴのレシピを登録しました。
+ko	JP_CJK_LIKE	items.text_e42912c7	&7特製鉄ブロック
+ko	JP_CJK_LIKE	items.text_c89dea57	特製鉄ブロックのレシピを登録しました。
+la	ENGLISH_LIKE	favorites.auto.favorite_saved_sneak_rightcl_7a73eb4f	★ Favorite saved! (Sneak+RightClick)
+la	ENGLISH_LIKE	commands.quotefavorite_book_success_o_afe31501	/quoteFavorite book success    - open SUCCESS chapter
+la	ENGLISH_LIKE	commands.success_normal_en_the_obstac_b627a544	【SUCCESS / Normal / en】\nThe obstacle is the way.
+la	ENGLISH_LIKE	commands.time_up_bc0cd646	TIME UP
+la	ENGLISH_LIKE	ui.menu.legacy.toc.message	===== TreasureRun Menu =====\nOpen the rule book from your hotbar to read the rules.
+la	ENGLISH_LIKE	ui.menu.page.contents.rulesItem	1) Rules
+la	ENGLISH_LIKE	ui.menu.page.contents.savedOn	Saved on SUCCESS / TIME_UP
+la	ENGLISH_LIKE	ui.menu.page.contents.tipsItem	2) Tips
+la	ENGLISH_LIKE	ui.menu.page.note.bookFormat	Minecraft books cannot switch tabs by clicking, so sections are shown as pages.
+la	ENGLISH_LIKE	ui.quote.legend.success	= Success / Cleared
+la	ENGLISH_LIKE	ui.quote.legend.timeUp	= Time up
+la	ENGLISH_LIKE	ui.labels.outcome.success	SUCCESS
+la	ENGLISH_LIKE	ui.labels.outcome.timeUp	TIME UP
+la	ENGLISH_LIKE	ui.labels.page	Page {current}/{total}
+la	ENGLISH_LIKE	ui.labels.tabs	Tabs
+la	JP_CJK_LIKE	game.auto.backup_cfe9e6cf	🌊 Backup 海探索で海を検出しました
+la	JP_CJK_LIKE	game.auto.text_e096c9a4	&6特製エメラルド
+la	JP_CJK_LIKE	game.auto.dj_onalltreasurescollected_a871afdd	DJイベントはすでに実行中のため、onAllTreasuresCollected をスキップしました。
+la	JP_CJK_LIKE	game.auto.text_cc353737	全ての宝物を発見しました！
+la	JP_CJK_LIKE	game.auto.congratulations_38fd1594	§6Congratulations! 全ての宝物を見つけました！
+la	JP_CJK_LIKE	commands.text_2bf42ec8	このコマンドはプレイヤーのみが実行できます。
+la	JP_CJK_LIKE	commands.text_2bf42ec8_18	このコマンドはプレイヤーのみが実行できます。
+la	JP_CJK_LIKE	commands.3_3d5021f7	スペシャルエメラルドの作成には、ダイヤモンドが3個必要です。
+la	JP_CJK_LIKE	commands.text_e096c9a4	&6特製エメラルド
+la	JP_CJK_LIKE	commands.3_71b78a44	ダイヤモンド3個でスペシャルエメラルドを作成しました！
+la	JP_CJK_LIKE	commands.text_3030fd61	プレイヤーのみ実行できます
+la	JP_CJK_LIKE	commands.op_10caf0f6	権限がありません（OP限定）
+la	JP_CJK_LIKE	commands.rank_1_2_3_demo_d87f40da	使い方: /rank <1|2|3|demo>
+la	JP_CJK_LIKE	commands.rank_1_2_3_demo_4f3e3084	数字で入力してください: /rank <1|2|3|demo>
+la	JP_CJK_LIKE	commands.1_3_rank_1_2_3_7f459bd0	1〜3だけ使えます: /rank <1|2|3>
+la	JP_CJK_LIKE	commands.db_e5d54fbd	の演出だけ発動しました（ランキング/DBは変更なし）
+la	JP_CJK_LIKE	commands.text_bed3daf7	このコマンドはプレイヤーのみ実行できます。
+la	JP_CJK_LIKE	commands.treasurerun_bcef4fe9	[TreasureRun] ステージ管理が初期化されていません。
+la	JP_CJK_LIKE	commands.text_287fa0f1	個の難易度ブロックを片付けました。
+la	JP_CJK_LIKE	commands.text_44a99db9	このコマンドはプレイヤーからのみ実行できます。
+la	JP_CJK_LIKE	commands.text_fd02f248	制限時間:
+la	JP_CJK_LIKE	commands.text_f166cc04	§a宝探しゲーム開始！ 難易度:
+la	JP_CJK_LIKE	commands.text_2281b097	個のチェストを生成しました。宝物は
+la	JP_CJK_LIKE	items.text_7567bb35	特製エメラルドのレシピを登録しました。
+la	JP_CJK_LIKE	items.text_7a04254b	&e特製リンゴ
+la	JP_CJK_LIKE	items.text_e8d4013d	特製リンゴのレシピを登録しました。
+la	JP_CJK_LIKE	items.text_e42912c7	&7特製鉄ブロック
+la	JP_CJK_LIKE	items.text_c89dea57	特製鉄ブロックのレシピを登録しました。
+lzh	MISSING_VISIBLE	commands.1_3_rank_1_2_3_7f459bd0	
+lzh	MISSING_VISIBLE	commands.3_3d5021f7	
+lzh	MISSING_VISIBLE	commands.3_71b78a44	
+lzh	MISSING_VISIBLE	commands.db_e5d54fbd	
+lzh	MISSING_VISIBLE	commands.op_10caf0f6	
+lzh	MISSING_VISIBLE	commands.quotefavorite_book_open_cata_055de855	
+lzh	MISSING_VISIBLE	commands.quotefavorite_book_other_ope_bdcbafba	
+lzh	MISSING_VISIBLE	commands.quotefavorite_book_success_o_afe31501	
+lzh	MISSING_VISIBLE	commands.quotefavorite_book_timeup_op_08b799b0	
+lzh	MISSING_VISIBLE	commands.quotefavorite_book_toc_open__c7d02ede	
+lzh	MISSING_VISIBLE	commands.rank_1_2_3_demo_4f3e3084	
+lzh	MISSING_VISIBLE	commands.rank_1_2_3_demo_d87f40da	
+lzh	MISSING_VISIBLE	commands.success_normal_en_the_obstac_b627a544	
+lzh	MISSING_VISIBLE	commands.text_2281b097	
+lzh	MISSING_VISIBLE	commands.text_287fa0f1	
+lzh	MISSING_VISIBLE	commands.text_2bf42ec8	
+lzh	MISSING_VISIBLE	commands.text_2bf42ec8_18	
+lzh	MISSING_VISIBLE	commands.text_3030fd61	
+lzh	MISSING_VISIBLE	commands.text_44a99db9	
+lzh	MISSING_VISIBLE	commands.text_bed3daf7	
+lzh	MISSING_VISIBLE	commands.text_e096c9a4	
+lzh	MISSING_VISIBLE	commands.text_f166cc04	
+lzh	MISSING_VISIBLE	commands.text_fd02f248	
+lzh	MISSING_VISIBLE	commands.time_up_bc0cd646	
+lzh	MISSING_VISIBLE	commands.treasurerun_bcef4fe9	
+lzh	MISSING_VISIBLE	favorites.auto.favorite_saved_sneak_rightcl_7a73eb4f	
+lzh	MISSING_VISIBLE	favorites.auto.no_text_b87d9ee6	
+lzh	MISSING_VISIBLE	favorites.auto.order_by_created_at_desc_lim_f22988c0	
+lzh	MISSING_VISIBLE	favorites.auto.player_uuid_quote_hash_outco_49f06b31	
+lzh	MISSING_VISIBLE	favorites.auto.treasurerun_favorites_0c778ce1	
+lzh	MISSING_VISIBLE	favorites.auto.treasurerun_favorites_templa_a0a4bf2e	
+lzh	MISSING_VISIBLE	favorites.auto.values_643f4d2f	
+lzh	MISSING_VISIBLE	favorites.auto.where_player_uuid_53558ea9	
+lzh	MISSING_VISIBLE	favorites.auto.where_player_uuid_and_id_f4a80773	
+lzh	MISSING_VISIBLE	favorites.auto.where_player_uuid_and_quote__36106f85	
+lzh	MISSING_VISIBLE	favorites.auto.where_player_uuid_and_quote__81bcaee5	
+lzh	MISSING_VISIBLE	favorites.auto.where_player_uuid_ef617232	
+lzh	MISSING_VISIBLE	favorites.table	
+lzh	MISSING_VISIBLE	game.auto.a_hidden_power_awakens_7620bc4d	
+lzh	MISSING_VISIBLE	game.auto.backup_cfe9e6cf	
+lzh	MISSING_VISIBLE	game.auto.congratulations_38fd1594	
+lzh	MISSING_VISIBLE	game.auto.count_int_not_null_660eadd8	
+lzh	MISSING_VISIBLE	game.auto.cursor_7fabae3f	
+lzh	MISSING_VISIBLE	game.auto.dj_onalltreasurescollected_a871afdd	
+lzh	MISSING_VISIBLE	game.auto.failed_to_save_treasure_coun_9d94c0cc	
+lzh	MISSING_VISIBLE	game.auto.ingredients_snapshot_98cb38c3	
+lzh	MISSING_VISIBLE	game.auto.inventoryclickevent_fired_8520aa1c	
+lzh	MISSING_VISIBLE	game.auto.items_current_0629a198	
+lzh	MISSING_VISIBLE	game.auto.k_llun_r_dj_pinu_16494877	
+lzh	MISSING_VISIBLE	game.auto.merchant_view_title_daf2a73a	
+lzh	ENGLISH_LIKE	ui.labels.page	&8第{page}/{total}頁&r
+lzh	ENGLISH_LIKE	ui.quote.noLogs	尚無引言記錄。 SUCCESS / TIME_UP 時自動存入。
+lzh	ENGLISH_LIKE	ui.menu.page.contents.savedOn	  · 於 SUCCESS / TIME_UP 時存之
+lzh	JP_CJK_LIKE	outcome.notice.timeUpGameOver	時已盡矣，戲遂終。
+lzh	JP_CJK_LIKE	outcome.notice.retryGuide	請更由他途，再試之。
+lzh	JP_CJK_LIKE	ui.labels.tabs	&6籤:&r
+lzh	JP_CJK_LIKE	ui.labels.page	&8第{page}/{total}頁&r
+lzh	JP_CJK_LIKE	ui.labels.tab.all	皆
+lzh	JP_CJK_LIKE	ui.labels.tab.success	成
+lzh	JP_CJK_LIKE	ui.labels.tab.timeUp	時盡
+lzh	JP_CJK_LIKE	ui.labels.tab.favorites	所好
+lzh	JP_CJK_LIKE	ui.labels.latest	★ 新近
+lzh	JP_CJK_LIKE	ui.labels.outcome.success	成
+lzh	JP_CJK_LIKE	ui.labels.outcome.timeUp	時盡
+lzh	JP_CJK_LIKE	ui.quote.title	格言集
+lzh	JP_CJK_LIKE	ui.quote.intro.tabsTitle	分頁
+lzh	JP_CJK_LIKE	ui.quote.intro.legendTitle	例解：
+lzh	JP_CJK_LIKE	ui.quote.intro.storedInDb	存於MySQL資料庫：
+lzh	JP_CJK_LIKE	ui.quote.intro.db.logs	proverb_logs（史錄）
+lzh	JP_CJK_LIKE	ui.quote.intro.db.favorites	proverb_favorites（★ 珍愛）
+lzh	JP_CJK_LIKE	ui.quote.intro.langLine	言：{lang}
+lzh	JP_CJK_LIKE	ui.quote.headerRecent	近錄二十  |  言：{lang}
+lzh	JP_CJK_LIKE	ui.quote.legend.success	= 完遂／成功
+lzh	JP_CJK_LIKE	ui.quote.legend.timeUp	= 時盡
+lzh	JP_CJK_LIKE	ui.quote.legend.favorites	= ★ 所珍引言
+lzh	JP_CJK_LIKE	ui.quote.noLogs	尚無引言記錄。 SUCCESS / TIME_UP 時自動存入。
+lzh	JP_CJK_LIKE	ui.quote.noQuotesInTab	此籤無引言可覽。 （或尚未存入。）\n試覽他籤。
+lzh	JP_CJK_LIKE	ui.quote.no珍藏	尚無珍愛。\n右擊此書，可存 {latestLabel}。
+lzh	JP_CJK_LIKE	ui.quote.tip.rightClickSave	提示：右擊此書，可存 {latestLabel}。
+lzh	JP_CJK_LIKE	ui.quote.footer.dbLogs	（資料庫：proverb_logs）
+lzh	JP_CJK_LIKE	ui.auto.playerscore_b91d4cd3	PlayerScore 插入失敗:
+lzh	JP_CJK_LIKE	ui.auto.translation_missing_77031543	(譯文缺失:
+lzh	JP_CJK_LIKE	ui.auto.translation_missing_77031543_107	(譯文缺失:
+lzh	JP_CJK_LIKE	ui.auto.treasurerun_lang_config_yml__2dde4625	[TreasureRun][Lang] config.yml 無 'language:' 節。
+lzh	JP_CJK_LIKE	ui.auto.click_to_select_aac1569c_76	點擊以選
+lzh	JP_CJK_LIKE	ui.auto.click_to_select_aac1569c_19	點擊以選
+lzh	JP_CJK_LIKE	ui.auto.treasurerun_lang_config_yml__2dde4625_33	[TreasureRun][Lang] config.yml 無 'language:' 節。
+lzh	JP_CJK_LIKE	ui.auto.treasurerun_lang_material_la_bc70a401	[TreasureRun][Lang] 無效 Material: lang=
+lzh	JP_CJK_LIKE	ui.auto.treasurerun_lang_language_ic_4bc2362d	[TreasureRun][Lang] 無 'language.iconMaterial:' 節（皆為PAPER）
+lzh	JP_CJK_LIKE	ui.auto.click_to_select_aac1569c_100	點擊以選
+lzh	JP_CJK_LIKE	ui.auto.treasurerunmultichestplugin_4499e25c	🌈 TreasureRunMultiChestPlugin: 起動 🌈
+lzh	JP_CJK_LIKE	ui.auto.treasurerunmultichestplugin_a507471a	✅ TreasureRunMultiChestPlugin が正常に起動しました！
+lzh	JP_CJK_LIKE	ui.auto.treasurerunmultichestplugin_c2111711	🔻 TreasureRunMultiChestPlugin: 無効化
+lzh	JP_CJK_LIKE	ui.auto.text_4f7e7cfa	得下界合金錠！
+lzh	JP_CJK_LIKE	ui.auto.text_1a6173d3	得鑽石！
+lzh	JP_CJK_LIKE	ui.auto.text_b6568a8d	得金蘋果！
+lzh	JP_CJK_LIKE	ui.auto.gamestart_easy_normal_hard_230bd0bd	再試他途！重試請用 /gamestart <easy|normal|hard>！
+lzh	JP_CJK_LIKE	ui.auto.text_9310a1a7	戲已進行。
+lzh	JP_CJK_LIKE	ui.auto.text_9310a1a7_908	戲已進行。
+lzh	JP_CJK_LIKE	ui.auto.text_9310a1a7_1601	戲已進行。
+lzh	JP_CJK_LIKE	ui.auto.text_f9c4c4e2	戲終！總分:
+lzh	JP_CJK_LIKE	ui.auto.text_ec39d8ad	餘時
+lzh	JP_CJK_LIKE	ui.auto.text_d6e25e00	餘時:
+nl	ENGLISH_LIKE	favorites.auto.favorite_saved_sneak_rightcl_7a73eb4f	★ Favorite saved! (Sneak+RightClick)
+nl	ENGLISH_LIKE	commands.quotefavorite_book_success_o_afe31501	/quoteFavorite book success    - open SUCCESS chapter
+nl	ENGLISH_LIKE	commands.success_normal_en_the_obstac_b627a544	【SUCCESS / Normal / en】\nThe obstacle is the way.
+nl	ENGLISH_LIKE	commands.time_up_bc0cd646	TIME UP
+nl	ENGLISH_LIKE	ui.menu.legacy.toc.message	===== TreasureRun Menu =====\nOpen the rule book from your hotbar to read the rules.
+nl	ENGLISH_LIKE	ui.menu.page.contents.rulesItem	1) Rules
+nl	ENGLISH_LIKE	ui.menu.page.contents.savedOn	Saved on SUCCESS / TIME_UP
+nl	ENGLISH_LIKE	ui.menu.page.contents.tipsItem	2) Tips
+nl	ENGLISH_LIKE	ui.menu.page.note.bookFormat	Minecraft books cannot switch tabs by clicking, so sections are shown as pages.
+nl	ENGLISH_LIKE	ui.quote.legend.success	= Success / Cleared
+nl	ENGLISH_LIKE	ui.quote.legend.timeUp	= Time up
+nl	ENGLISH_LIKE	ui.labels.outcome.success	SUCCESS
+nl	ENGLISH_LIKE	ui.labels.outcome.timeUp	TIME UP
+nl	ENGLISH_LIKE	ui.labels.page	Page {current}/{total}
+nl	ENGLISH_LIKE	ui.labels.tabs	Tabs
+nl	JP_CJK_LIKE	game.auto.backup_cfe9e6cf	🌊 Backup 海探索で海を検出しました
+nl	JP_CJK_LIKE	game.auto.text_e096c9a4	&6特製エメラルド
+nl	JP_CJK_LIKE	game.auto.dj_onalltreasurescollected_a871afdd	DJイベントはすでに実行中のため、onAllTreasuresCollected をスキップしました。
+nl	JP_CJK_LIKE	game.auto.text_cc353737	全ての宝物を発見しました！
+nl	JP_CJK_LIKE	game.auto.congratulations_38fd1594	§6Congratulations! 全ての宝物を見つけました！
+nl	JP_CJK_LIKE	commands.text_2bf42ec8	このコマンドはプレイヤーのみが実行できます。
+nl	JP_CJK_LIKE	commands.text_2bf42ec8_18	このコマンドはプレイヤーのみが実行できます。
+nl	JP_CJK_LIKE	commands.3_3d5021f7	スペシャルエメラルドの作成には、ダイヤモンドが3個必要です。
+nl	JP_CJK_LIKE	commands.text_e096c9a4	&6特製エメラルド
+nl	JP_CJK_LIKE	commands.3_71b78a44	ダイヤモンド3個でスペシャルエメラルドを作成しました！
+nl	JP_CJK_LIKE	commands.text_3030fd61	プレイヤーのみ実行できます
+nl	JP_CJK_LIKE	commands.op_10caf0f6	権限がありません（OP限定）
+nl	JP_CJK_LIKE	commands.rank_1_2_3_demo_d87f40da	使い方: /rank <1|2|3|demo>
+nl	JP_CJK_LIKE	commands.rank_1_2_3_demo_4f3e3084	数字で入力してください: /rank <1|2|3|demo>
+nl	JP_CJK_LIKE	commands.1_3_rank_1_2_3_7f459bd0	1〜3だけ使えます: /rank <1|2|3>
+nl	JP_CJK_LIKE	commands.db_e5d54fbd	の演出だけ発動しました（ランキング/DBは変更なし）
+nl	JP_CJK_LIKE	commands.text_bed3daf7	このコマンドはプレイヤーのみ実行できます。
+nl	JP_CJK_LIKE	commands.treasurerun_bcef4fe9	[TreasureRun] ステージ管理が初期化されていません。
+nl	JP_CJK_LIKE	commands.text_287fa0f1	個の難易度ブロックを片付けました。
+nl	JP_CJK_LIKE	commands.text_44a99db9	このコマンドはプレイヤーからのみ実行できます。
+nl	JP_CJK_LIKE	commands.text_fd02f248	制限時間:
+nl	JP_CJK_LIKE	commands.text_f166cc04	§a宝探しゲーム開始！ 難易度:
+nl	JP_CJK_LIKE	commands.text_2281b097	個のチェストを生成しました。宝物は
+nl	JP_CJK_LIKE	items.text_7567bb35	特製エメラルドのレシピを登録しました。
+nl	JP_CJK_LIKE	items.text_7a04254b	&e特製リンゴ
+nl	JP_CJK_LIKE	items.text_e8d4013d	特製リンゴのレシピを登録しました。
+nl	JP_CJK_LIKE	items.text_e42912c7	&7特製鉄ブロック
+nl	JP_CJK_LIKE	items.text_c89dea57	特製鉄ブロックのレシピを登録しました。
+pt	MISSING_VISIBLE	commands.1_3_rank_1_2_3_7f459bd0	
+pt	MISSING_VISIBLE	commands.3_3d5021f7	
+pt	MISSING_VISIBLE	commands.3_71b78a44	
+pt	MISSING_VISIBLE	commands.db_e5d54fbd	
+pt	MISSING_VISIBLE	commands.op_10caf0f6	
+pt	MISSING_VISIBLE	commands.quotefavorite_book_open_cata_055de855	
+pt	MISSING_VISIBLE	commands.quotefavorite_book_other_ope_bdcbafba	
+pt	MISSING_VISIBLE	commands.quotefavorite_book_success_o_afe31501	
+pt	MISSING_VISIBLE	commands.quotefavorite_book_timeup_op_08b799b0	
+pt	MISSING_VISIBLE	commands.quotefavorite_book_toc_open__c7d02ede	
+pt	MISSING_VISIBLE	commands.rank_1_2_3_demo_4f3e3084	
+pt	MISSING_VISIBLE	commands.rank_1_2_3_demo_d87f40da	
+pt	MISSING_VISIBLE	commands.success_normal_en_the_obstac_b627a544	
+pt	MISSING_VISIBLE	commands.text_2281b097	
+pt	MISSING_VISIBLE	commands.text_287fa0f1	
+pt	MISSING_VISIBLE	commands.text_2bf42ec8	
+pt	MISSING_VISIBLE	commands.text_2bf42ec8_18	
+pt	MISSING_VISIBLE	commands.text_3030fd61	
+pt	MISSING_VISIBLE	commands.text_44a99db9	
+pt	MISSING_VISIBLE	commands.text_bed3daf7	
+pt	MISSING_VISIBLE	commands.text_e096c9a4	
+pt	MISSING_VISIBLE	commands.text_f166cc04	
+pt	MISSING_VISIBLE	commands.text_fd02f248	
+pt	MISSING_VISIBLE	commands.time_up_bc0cd646	
+pt	MISSING_VISIBLE	commands.treasurerun_bcef4fe9	
+pt	MISSING_VISIBLE	favorites.auto.favorite_saved_sneak_rightcl_7a73eb4f	
+pt	MISSING_VISIBLE	favorites.auto.no_text_b87d9ee6	
+pt	MISSING_VISIBLE	favorites.auto.order_by_created_at_desc_lim_f22988c0	
+pt	MISSING_VISIBLE	favorites.auto.player_uuid_quote_hash_outco_49f06b31	
+pt	MISSING_VISIBLE	favorites.auto.treasurerun_favorites_0c778ce1	
+pt	MISSING_VISIBLE	favorites.auto.treasurerun_favorites_templa_a0a4bf2e	
+pt	MISSING_VISIBLE	favorites.auto.values_643f4d2f	
+pt	MISSING_VISIBLE	favorites.auto.where_player_uuid_53558ea9	
+pt	MISSING_VISIBLE	favorites.auto.where_player_uuid_and_id_f4a80773	
+pt	MISSING_VISIBLE	favorites.auto.where_player_uuid_and_quote__36106f85	
+pt	MISSING_VISIBLE	favorites.auto.where_player_uuid_and_quote__81bcaee5	
+pt	MISSING_VISIBLE	favorites.auto.where_player_uuid_ef617232	
+pt	MISSING_VISIBLE	favorites.table	
+pt	MISSING_VISIBLE	game.auto.a_hidden_power_awakens_7620bc4d	
+pt	MISSING_VISIBLE	game.auto.backup_cfe9e6cf	
+pt	MISSING_VISIBLE	game.auto.congratulations_38fd1594	
+pt	MISSING_VISIBLE	game.auto.count_int_not_null_660eadd8	
+pt	MISSING_VISIBLE	game.auto.cursor_7fabae3f	
+pt	MISSING_VISIBLE	game.auto.dj_onalltreasurescollected_a871afdd	
+pt	MISSING_VISIBLE	game.auto.failed_to_save_treasure_coun_9d94c0cc	
+pt	MISSING_VISIBLE	game.auto.ingredients_snapshot_98cb38c3	
+pt	MISSING_VISIBLE	game.auto.inventoryclickevent_fired_8520aa1c	
+pt	MISSING_VISIBLE	game.auto.items_current_0629a198	
+pt	MISSING_VISIBLE	game.auto.k_llun_r_dj_pinu_16494877	
+pt	MISSING_VISIBLE	game.auto.merchant_view_title_daf2a73a	
+pt	ENGLISH_LIKE	ui.labels.page	&8Página {page}/{total}&r
+pt	ENGLISH_LIKE	ui.quote.noLogs	Ainda não há registros de citações. São salvos automaticamente em SUCCESS / TIME_UP.
+pt	ENGLISH_LIKE	ui.menu.page.contents.savedOn	  · Salvo em SUCCESS / TIME_UP
+pt	JP_CJK_LIKE	ui.auto.treasurerunmultichestplugin_4499e25c	🌈 TreasureRunMultiChestPlugin: 起動 🌈
+pt	JP_CJK_LIKE	ui.auto.treasurerunmultichestplugin_a507471a	✅ TreasureRunMultiChestPlugin が正常に起動しました！
+pt	JP_CJK_LIKE	ui.auto.treasurerunmultichestplugin_c2111711	🔻 TreasureRunMultiChestPlugin: 無効化
+pt	JP_CJK_LIKE	ui.menu.legacy.toc.message	&6===== 🌟 TreasureRun Conteúdo 🌟 =====\n&b1. Objetivo\n&f   ・Abra o maior número de baús dentro do limite de tempo.\n\n&b2. Dificuldade atual\n&f   ・Dificuldade: &e{difficulty}\n\n&6==================
+ru	ENGLISH_LIKE	favorites.auto.favorite_saved_sneak_rightcl_7a73eb4f	★ Favorite saved! (Sneak+RightClick)
+ru	ENGLISH_LIKE	commands.quotefavorite_book_success_o_afe31501	/quoteFavorite book success    - open SUCCESS chapter
+ru	ENGLISH_LIKE	commands.success_normal_en_the_obstac_b627a544	【SUCCESS / Normal / en】\nThe obstacle is the way.
+ru	ENGLISH_LIKE	commands.time_up_bc0cd646	TIME UP
+ru	ENGLISH_LIKE	ui.menu.legacy.toc.message	===== TreasureRun Menu =====\nOpen the rule book from your hotbar to read the rules.
+ru	ENGLISH_LIKE	ui.menu.page.contents.rulesItem	1) Rules
+ru	ENGLISH_LIKE	ui.menu.page.contents.savedOn	Saved on SUCCESS / TIME_UP
+ru	ENGLISH_LIKE	ui.menu.page.contents.tipsItem	2) Tips
+ru	ENGLISH_LIKE	ui.menu.page.note.bookFormat	Minecraft books cannot switch tabs by clicking, so sections are shown as pages.
+ru	ENGLISH_LIKE	ui.quote.legend.success	= Success / Cleared
+ru	ENGLISH_LIKE	ui.quote.legend.timeUp	= Time up
+ru	ENGLISH_LIKE	ui.labels.outcome.success	SUCCESS
+ru	ENGLISH_LIKE	ui.labels.outcome.timeUp	TIME UP
+ru	ENGLISH_LIKE	ui.labels.page	Page {current}/{total}
+ru	ENGLISH_LIKE	ui.labels.tabs	Tabs
+ru	JP_CJK_LIKE	game.auto.backup_cfe9e6cf	🌊 Backup 海探索で海を検出しました
+ru	JP_CJK_LIKE	game.auto.text_e096c9a4	&6特製エメラルド
+ru	JP_CJK_LIKE	game.auto.dj_onalltreasurescollected_a871afdd	DJイベントはすでに実行中のため、onAllTreasuresCollected をスキップしました。
+ru	JP_CJK_LIKE	game.auto.text_cc353737	全ての宝物を発見しました！
+ru	JP_CJK_LIKE	game.auto.congratulations_38fd1594	§6Congratulations! 全ての宝物を見つけました！
+ru	JP_CJK_LIKE	commands.text_2bf42ec8	このコマンドはプレイヤーのみが実行できます。
+ru	JP_CJK_LIKE	commands.text_2bf42ec8_18	このコマンドはプレイヤーのみが実行できます。
+ru	JP_CJK_LIKE	commands.3_3d5021f7	スペシャルエメラルドの作成には、ダイヤモンドが3個必要です。
+ru	JP_CJK_LIKE	commands.text_e096c9a4	&6特製エメラルド
+ru	JP_CJK_LIKE	commands.3_71b78a44	ダイヤモンド3個でスペシャルエメラルドを作成しました！
+ru	JP_CJK_LIKE	commands.text_3030fd61	プレイヤーのみ実行できます
+ru	JP_CJK_LIKE	commands.op_10caf0f6	権限がありません（OP限定）
+ru	JP_CJK_LIKE	commands.rank_1_2_3_demo_d87f40da	使い方: /rank <1|2|3|demo>
+ru	JP_CJK_LIKE	commands.rank_1_2_3_demo_4f3e3084	数字で入力してください: /rank <1|2|3|demo>
+ru	JP_CJK_LIKE	commands.1_3_rank_1_2_3_7f459bd0	1〜3だけ使えます: /rank <1|2|3>
+ru	JP_CJK_LIKE	commands.db_e5d54fbd	の演出だけ発動しました（ランキング/DBは変更なし）
+ru	JP_CJK_LIKE	commands.text_bed3daf7	このコマンドはプレイヤーのみ実行できます。
+ru	JP_CJK_LIKE	commands.treasurerun_bcef4fe9	[TreasureRun] ステージ管理が初期化されていません。
+ru	JP_CJK_LIKE	commands.text_287fa0f1	個の難易度ブロックを片付けました。
+ru	JP_CJK_LIKE	commands.text_44a99db9	このコマンドはプレイヤーからのみ実行できます。
+ru	JP_CJK_LIKE	commands.text_fd02f248	制限時間:
+ru	JP_CJK_LIKE	commands.text_f166cc04	§a宝探しゲーム開始！ 難易度:
+ru	JP_CJK_LIKE	commands.text_2281b097	個のチェストを生成しました。宝物は
+ru	JP_CJK_LIKE	items.text_7567bb35	特製エメラルドのレシピを登録しました。
+ru	JP_CJK_LIKE	items.text_7a04254b	&e特製リンゴ
+ru	JP_CJK_LIKE	items.text_e8d4013d	特製リンゴのレシピを登録しました。
+ru	JP_CJK_LIKE	items.text_e42912c7	&7特製鉄ブロック
+ru	JP_CJK_LIKE	items.text_c89dea57	特製鉄ブロックのレシピを登録しました。
+sa	ENGLISH_LIKE	favorites.auto.favorite_saved_sneak_rightcl_7a73eb4f	★ Favorite saved! (Sneak+RightClick)
+sa	ENGLISH_LIKE	commands.quotefavorite_book_success_o_afe31501	/quoteFavorite book success    - open SUCCESS chapter
+sa	ENGLISH_LIKE	commands.success_normal_en_the_obstac_b627a544	【SUCCESS / Normal / en】\nThe obstacle is the way.
+sa	ENGLISH_LIKE	commands.time_up_bc0cd646	TIME UP
+sa	ENGLISH_LIKE	ui.menu.legacy.toc.message	===== TreasureRun Menu =====\nOpen the rule book from your hotbar to read the rules.
+sa	ENGLISH_LIKE	ui.menu.page.contents.rulesItem	1) Rules
+sa	ENGLISH_LIKE	ui.menu.page.contents.savedOn	Saved on SUCCESS / TIME_UP
+sa	ENGLISH_LIKE	ui.menu.page.contents.tipsItem	2) Tips
+sa	ENGLISH_LIKE	ui.menu.page.note.bookFormat	Minecraft books cannot switch tabs by clicking, so sections are shown as pages.
+sa	ENGLISH_LIKE	ui.quote.legend.success	= Success / Cleared
+sa	ENGLISH_LIKE	ui.quote.legend.timeUp	= Time up
+sa	ENGLISH_LIKE	ui.labels.outcome.success	SUCCESS
+sa	ENGLISH_LIKE	ui.labels.outcome.timeUp	TIME UP
+sa	ENGLISH_LIKE	ui.labels.page	Page {current}/{total}
+sa	ENGLISH_LIKE	ui.labels.tabs	Tabs
+sa	JP_CJK_LIKE	game.auto.backup_cfe9e6cf	🌊 Backup 海探索で海を検出しました
+sa	JP_CJK_LIKE	game.auto.text_e096c9a4	&6特製エメラルド
+sa	JP_CJK_LIKE	game.auto.dj_onalltreasurescollected_a871afdd	DJイベントはすでに実行中のため、onAllTreasuresCollected をスキップしました。
+sa	JP_CJK_LIKE	game.auto.text_cc353737	全ての宝物を発見しました！
+sa	JP_CJK_LIKE	game.auto.congratulations_38fd1594	§6Congratulations! 全ての宝物を見つけました！
+sa	JP_CJK_LIKE	commands.text_2bf42ec8	このコマンドはプレイヤーのみが実行できます。
+sa	JP_CJK_LIKE	commands.text_2bf42ec8_18	このコマンドはプレイヤーのみが実行できます。
+sa	JP_CJK_LIKE	commands.3_3d5021f7	スペシャルエメラルドの作成には、ダイヤモンドが3個必要です。
+sa	JP_CJK_LIKE	commands.text_e096c9a4	&6特製エメラルド
+sa	JP_CJK_LIKE	commands.3_71b78a44	ダイヤモンド3個でスペシャルエメラルドを作成しました！
+sa	JP_CJK_LIKE	commands.text_3030fd61	プレイヤーのみ実行できます
+sa	JP_CJK_LIKE	commands.op_10caf0f6	権限がありません（OP限定）
+sa	JP_CJK_LIKE	commands.rank_1_2_3_demo_d87f40da	使い方: /rank <1|2|3|demo>
+sa	JP_CJK_LIKE	commands.rank_1_2_3_demo_4f3e3084	数字で入力してください: /rank <1|2|3|demo>
+sa	JP_CJK_LIKE	commands.1_3_rank_1_2_3_7f459bd0	1〜3だけ使えます: /rank <1|2|3>
+sa	JP_CJK_LIKE	commands.db_e5d54fbd	の演出だけ発動しました（ランキング/DBは変更なし）
+sa	JP_CJK_LIKE	commands.text_bed3daf7	このコマンドはプレイヤーのみ実行できます。
+sa	JP_CJK_LIKE	commands.treasurerun_bcef4fe9	[TreasureRun] ステージ管理が初期化されていません。
+sa	JP_CJK_LIKE	commands.text_287fa0f1	個の難易度ブロックを片付けました。
+sa	JP_CJK_LIKE	commands.text_44a99db9	このコマンドはプレイヤーからのみ実行できます。
+sa	JP_CJK_LIKE	commands.text_fd02f248	制限時間:
+sa	JP_CJK_LIKE	commands.text_f166cc04	§a宝探しゲーム開始！ 難易度:
+sa	JP_CJK_LIKE	commands.text_2281b097	個のチェストを生成しました。宝物は
+sa	JP_CJK_LIKE	items.text_7567bb35	特製エメラルドのレシピを登録しました。
+sa	JP_CJK_LIKE	items.text_7a04254b	&e特製リンゴ
+sa	JP_CJK_LIKE	items.text_e8d4013d	特製リンゴのレシピを登録しました。
+sa	JP_CJK_LIKE	items.text_e42912c7	&7特製鉄ブロック
+sa	JP_CJK_LIKE	items.text_c89dea57	特製鉄ブロックのレシピを登録しました。
+sv	MISSING_VISIBLE	ui.gameMenu.pluginNotReady	
+sv	MISSING_VISIBLE	ui.symbol.activeMarker	
+sv	MISSING_VISIBLE	ui.symbol.bookPrefix	
+sv	MISSING_VISIBLE	ui.symbol.dbBullet	
+sv	MISSING_VISIBLE	ui.symbol.favoriteIdPrefix	
+sv	MISSING_VISIBLE	ui.symbol.favoritePrefix	
+sv	MISSING_VISIBLE	ui.symbol.indexPrefix	
+sv	MISSING_VISIBLE	ui.symbol.labelClose	
+sv	MISSING_VISIBLE	ui.symbol.labelOpen	
+sv	MISSING_VISIBLE	ui.symbol.legendPrefix	
+sv	MISSING_VISIBLE	ui.symbol.metaClose	
+sv	MISSING_VISIBLE	ui.symbol.metaOpen	
+sv	MISSING_VISIBLE	ui.symbol.tabActiveClose	
+sv	MISSING_VISIBLE	ui.symbol.tabActiveOpen	
+sv	MISSING_VISIBLE	ui.symbol.tabInactiveClose	
+sv	MISSING_VISIBLE	ui.symbol.tabInactiveOpen	
+sv	ENGLISH_LIKE	favorites.auto.favorite_saved_sneak_rightcl_7a73eb4f	★ Favorite saved! (Sneak+RightClick)
+sv	ENGLISH_LIKE	commands.quotefavorite_book_success_o_afe31501	/quoteFavorite book success    - open SUCCESS chapter
+sv	ENGLISH_LIKE	commands.success_normal_en_the_obstac_b627a544	【SUCCESS / Normal / en】\nThe obstacle is the way.
+sv	ENGLISH_LIKE	commands.time_up_bc0cd646	TIME UP
+sv	ENGLISH_LIKE	ui.menu.legacy.toc.message	===== TreasureRun Menu =====\nOpen the rule book from your hotbar to read the rules.
+sv	ENGLISH_LIKE	ui.menu.page.contents.rulesItem	1) Rules
+sv	ENGLISH_LIKE	ui.menu.page.contents.savedOn	Saved on SUCCESS / TIME_UP
+sv	ENGLISH_LIKE	ui.menu.page.contents.tipsItem	2) Tips
+sv	ENGLISH_LIKE	ui.menu.page.note.bookFormat	Minecraft books cannot switch tabs by clicking, so sections are shown as pages.
+sv	ENGLISH_LIKE	ui.quote.legend.success	= Success / Cleared
+sv	ENGLISH_LIKE	ui.quote.legend.timeUp	= Time up
+sv	ENGLISH_LIKE	ui.labels.outcome.success	SUCCESS
+sv	ENGLISH_LIKE	ui.labels.outcome.timeUp	TIME UP
+sv	ENGLISH_LIKE	ui.labels.page	Page {current}/{total}
+sv	ENGLISH_LIKE	ui.labels.tabs	Tabs
+sv	JP_CJK_LIKE	game.auto.backup_cfe9e6cf	🌊 Backup 海探索で海を検出しました
+sv	JP_CJK_LIKE	game.auto.text_e096c9a4	&6特製エメラルド
+sv	JP_CJK_LIKE	game.auto.dj_onalltreasurescollected_a871afdd	DJイベントはすでに実行中のため、onAllTreasuresCollected をスキップしました。
+sv	JP_CJK_LIKE	game.auto.text_cc353737	全ての宝物を発見しました！
+sv	JP_CJK_LIKE	game.auto.congratulations_38fd1594	§6Congratulations! 全ての宝物を見つけました！
+sv	JP_CJK_LIKE	commands.text_2bf42ec8	このコマンドはプレイヤーのみが実行できます。
+sv	JP_CJK_LIKE	commands.text_2bf42ec8_18	このコマンドはプレイヤーのみが実行できます。
+sv	JP_CJK_LIKE	commands.3_3d5021f7	スペシャルエメラルドの作成には、ダイヤモンドが3個必要です。
+sv	JP_CJK_LIKE	commands.text_e096c9a4	&6特製エメラルド
+sv	JP_CJK_LIKE	commands.3_71b78a44	ダイヤモンド3個でスペシャルエメラルドを作成しました！
+sv	JP_CJK_LIKE	commands.text_3030fd61	プレイヤーのみ実行できます
+sv	JP_CJK_LIKE	commands.op_10caf0f6	権限がありません（OP限定）
+sv	JP_CJK_LIKE	commands.rank_1_2_3_demo_d87f40da	使い方: /rank <1|2|3|demo>
+sv	JP_CJK_LIKE	commands.rank_1_2_3_demo_4f3e3084	数字で入力してください: /rank <1|2|3|demo>
+sv	JP_CJK_LIKE	commands.1_3_rank_1_2_3_7f459bd0	1〜3だけ使えます: /rank <1|2|3>
+sv	JP_CJK_LIKE	commands.db_e5d54fbd	の演出だけ発動しました（ランキング/DBは変更なし）
+sv	JP_CJK_LIKE	commands.text_bed3daf7	このコマンドはプレイヤーのみ実行できます。
+sv	JP_CJK_LIKE	commands.treasurerun_bcef4fe9	[TreasureRun] ステージ管理が初期化されていません。
+sv	JP_CJK_LIKE	commands.text_287fa0f1	個の難易度ブロックを片付けました。
+sv	JP_CJK_LIKE	commands.text_44a99db9	このコマンドはプレイヤーからのみ実行できます。
+sv	JP_CJK_LIKE	commands.text_fd02f248	制限時間:
+sv	JP_CJK_LIKE	commands.text_f166cc04	§a宝探しゲーム開始！ 難易度:
+sv	JP_CJK_LIKE	commands.text_2281b097	個のチェストを生成しました。宝物は
+sv	JP_CJK_LIKE	items.text_7567bb35	特製エメラルドのレシピを登録しました。
+sv	JP_CJK_LIKE	items.text_7a04254b	&e特製リンゴ
+sv	JP_CJK_LIKE	items.text_e8d4013d	特製リンゴのレシピを登録しました。
+sv	JP_CJK_LIKE	items.text_e42912c7	&7特製鉄ブロック
+sv	JP_CJK_LIKE	items.text_c89dea57	特製鉄ブロックのレシピを登録しました。
+zh_tw	MISSING_VISIBLE	commands.1_3_rank_1_2_3_7f459bd0	
+zh_tw	MISSING_VISIBLE	commands.3_3d5021f7	
+zh_tw	MISSING_VISIBLE	commands.3_71b78a44	
+zh_tw	MISSING_VISIBLE	commands.db_e5d54fbd	
+zh_tw	MISSING_VISIBLE	commands.op_10caf0f6	
+zh_tw	MISSING_VISIBLE	commands.quotefavorite_book_open_cata_055de855	
+zh_tw	MISSING_VISIBLE	commands.quotefavorite_book_other_ope_bdcbafba	
+zh_tw	MISSING_VISIBLE	commands.quotefavorite_book_success_o_afe31501	
+zh_tw	MISSING_VISIBLE	commands.quotefavorite_book_timeup_op_08b799b0	
+zh_tw	MISSING_VISIBLE	commands.quotefavorite_book_toc_open__c7d02ede	
+zh_tw	MISSING_VISIBLE	commands.rank_1_2_3_demo_4f3e3084	
+zh_tw	MISSING_VISIBLE	commands.rank_1_2_3_demo_d87f40da	
+zh_tw	MISSING_VISIBLE	commands.success_normal_en_the_obstac_b627a544	
+zh_tw	MISSING_VISIBLE	commands.text_2281b097	
+zh_tw	MISSING_VISIBLE	commands.text_287fa0f1	
+zh_tw	MISSING_VISIBLE	commands.text_2bf42ec8	
+zh_tw	MISSING_VISIBLE	commands.text_2bf42ec8_18	
+zh_tw	MISSING_VISIBLE	commands.text_3030fd61	
+zh_tw	MISSING_VISIBLE	commands.text_44a99db9	
+zh_tw	MISSING_VISIBLE	commands.text_bed3daf7	
+zh_tw	MISSING_VISIBLE	commands.text_e096c9a4	
+zh_tw	MISSING_VISIBLE	commands.text_f166cc04	
+zh_tw	MISSING_VISIBLE	commands.text_fd02f248	
+zh_tw	MISSING_VISIBLE	commands.time_up_bc0cd646	
+zh_tw	MISSING_VISIBLE	commands.treasurerun_bcef4fe9	
+zh_tw	MISSING_VISIBLE	favorites.auto.favorite_saved_sneak_rightcl_7a73eb4f	
+zh_tw	MISSING_VISIBLE	favorites.auto.no_text_b87d9ee6	
+zh_tw	MISSING_VISIBLE	favorites.auto.order_by_created_at_desc_lim_f22988c0	
+zh_tw	MISSING_VISIBLE	favorites.auto.player_uuid_quote_hash_outco_49f06b31	
+zh_tw	MISSING_VISIBLE	favorites.auto.treasurerun_favorites_0c778ce1	
+zh_tw	MISSING_VISIBLE	favorites.auto.treasurerun_favorites_templa_a0a4bf2e	
+zh_tw	MISSING_VISIBLE	favorites.auto.values_643f4d2f	
+zh_tw	MISSING_VISIBLE	favorites.auto.where_player_uuid_53558ea9	
+zh_tw	MISSING_VISIBLE	favorites.auto.where_player_uuid_and_id_f4a80773	
+zh_tw	MISSING_VISIBLE	favorites.auto.where_player_uuid_and_quote__36106f85	
+zh_tw	MISSING_VISIBLE	favorites.auto.where_player_uuid_and_quote__81bcaee5	
+zh_tw	MISSING_VISIBLE	favorites.auto.where_player_uuid_ef617232	
+zh_tw	MISSING_VISIBLE	favorites.table	
+zh_tw	MISSING_VISIBLE	game.auto.a_hidden_power_awakens_7620bc4d	
+zh_tw	MISSING_VISIBLE	game.auto.backup_cfe9e6cf	
+zh_tw	MISSING_VISIBLE	game.auto.congratulations_38fd1594	
+zh_tw	MISSING_VISIBLE	game.auto.count_int_not_null_660eadd8	
+zh_tw	MISSING_VISIBLE	game.auto.cursor_7fabae3f	
+zh_tw	MISSING_VISIBLE	game.auto.dj_onalltreasurescollected_a871afdd	
+zh_tw	MISSING_VISIBLE	game.auto.failed_to_save_treasure_coun_9d94c0cc	
+zh_tw	MISSING_VISIBLE	game.auto.ingredients_snapshot_98cb38c3	
+zh_tw	MISSING_VISIBLE	game.auto.inventoryclickevent_fired_8520aa1c	
+zh_tw	MISSING_VISIBLE	game.auto.items_current_0629a198	
+zh_tw	MISSING_VISIBLE	game.auto.k_llun_r_dj_pinu_16494877	
+zh_tw	MISSING_VISIBLE	game.auto.merchant_view_title_daf2a73a	
+zh_tw	ENGLISH_LIKE	ui.labels.page	&8第 {page}/{total} 頁&r
+zh_tw	ENGLISH_LIKE	ui.menu.page.contents.savedOn	  · 於 SUCCESS / TIME_UP 時保存
+zh_tw	JP_CJK_LIKE	outcome.notice.timeUpGameOver	時間到了，遊戲結束。
+zh_tw	JP_CJK_LIKE	outcome.notice.retryGuide	請換一條路線再試一次。
+zh_tw	JP_CJK_LIKE	ui.labels.tabs	&6分頁:&r
+zh_tw	JP_CJK_LIKE	ui.labels.page	&8第 {page}/{total} 頁&r
+zh_tw	JP_CJK_LIKE	ui.labels.tab.all	全部
+zh_tw	JP_CJK_LIKE	ui.labels.tab.success	成功
+zh_tw	JP_CJK_LIKE	ui.labels.tab.timeUp	時間到
+zh_tw	JP_CJK_LIKE	ui.labels.tab.favorites	收藏
+zh_tw	JP_CJK_LIKE	ui.labels.latest	★ 最新
+zh_tw	JP_CJK_LIKE	ui.labels.outcome.success	成功
+zh_tw	JP_CJK_LIKE	ui.labels.outcome.timeUp	時間到
+zh_tw	JP_CJK_LIKE	ui.quote.title	格言集
+zh_tw	JP_CJK_LIKE	ui.quote.intro.tabsTitle	分頁
+zh_tw	JP_CJK_LIKE	ui.quote.intro.legendTitle	圖例：
+zh_tw	JP_CJK_LIKE	ui.quote.intro.storedInDb	儲存於 MySQL DB：
+zh_tw	JP_CJK_LIKE	ui.quote.intro.db.logs	proverb_logs（歷史紀錄）
+zh_tw	JP_CJK_LIKE	ui.quote.intro.db.favorites	proverb_favorites（★ 我的最愛）
+zh_tw	JP_CJK_LIKE	ui.quote.intro.langLine	語言：{lang}
+zh_tw	JP_CJK_LIKE	ui.quote.headerRecent	最近 20 筆  |  語言：{lang}
+zh_tw	JP_CJK_LIKE	ui.quote.legend.success	= 完成 / 成功
+zh_tw	JP_CJK_LIKE	ui.quote.legend.timeUp	= 時間到
+zh_tw	JP_CJK_LIKE	ui.quote.legend.favorites	= ★ 已儲存的引言
+zh_tw	JP_CJK_LIKE	ui.quote.noLogs	目前尚無引言記錄。 成功或時間到時會自動儲存。
+zh_tw	JP_CJK_LIKE	ui.quote.noQuotesInTab	此分頁沒有可顯示的引言。 （可能尚未儲存。）\n請試試其他分頁。
+zh_tw	JP_CJK_LIKE	ui.quote.no我的最愛	目前尚無我的最愛。\n右鍵點擊此書以儲存 {latestLabel}。
+zh_tw	JP_CJK_LIKE	ui.quote.tip.rightClickSave	提示：右鍵點擊此書以儲存 {latestLabel}。
+zh_tw	JP_CJK_LIKE	ui.quote.footer.dbLogs	（資料庫：proverb_logs）
+zh_tw	JP_CJK_LIKE	ui.auto.playerscore_b91d4cd3	PlayerScore 插入失敗:
+zh_tw	JP_CJK_LIKE	ui.auto.translation_missing_77031543	(找不到翻譯:
+zh_tw	JP_CJK_LIKE	ui.auto.translation_missing_77031543_107	(找不到翻譯:
+zh_tw	JP_CJK_LIKE	ui.auto.treasurerun_lang_config_yml__2dde4625	[TreasureRun][Lang] config.yml 中找不到 'language:' 區段。
+zh_tw	JP_CJK_LIKE	ui.auto.click_to_select_aac1569c_76	點擊選擇
+zh_tw	JP_CJK_LIKE	ui.auto.click_to_select_aac1569c_19	點擊選擇
+zh_tw	JP_CJK_LIKE	ui.auto.treasurerun_lang_config_yml__2dde4625_33	[TreasureRun][Lang] config.yml 中找不到 'language:' 區段。
+zh_tw	JP_CJK_LIKE	ui.auto.treasurerun_lang_material_la_bc70a401	[TreasureRun][Lang] 無效的 Material: lang=
+zh_tw	JP_CJK_LIKE	ui.auto.treasurerun_lang_language_ic_4bc2362d	[TreasureRun][Lang] 找不到 'language.iconMaterial:' 區段（全部改為PAPER）
+zh_tw	JP_CJK_LIKE	ui.auto.click_to_select_aac1569c_100	點擊選擇
+zh_tw	JP_CJK_LIKE	ui.auto.treasurerunmultichestplugin_4499e25c	🌈 TreasureRunMultiChestPlugin: 起動 🌈
+zh_tw	JP_CJK_LIKE	ui.auto.treasurerunmultichestplugin_a507471a	✅ TreasureRunMultiChestPlugin が正常に起動しました！
+zh_tw	JP_CJK_LIKE	ui.auto.treasurerunmultichestplugin_c2111711	🔻 TreasureRunMultiChestPlugin: 無効化
+zh_tw	JP_CJK_LIKE	ui.auto.text_4f7e7cfa	獲得下界合金錠！
+zh_tw	JP_CJK_LIKE	ui.auto.text_1a6173d3	獲得鑽石！
+zh_tw	JP_CJK_LIKE	ui.auto.text_b6568a8d	獲得金蘋果！
+zh_tw	JP_CJK_LIKE	ui.auto.gamestart_easy_normal_hard_230bd0bd	下次試試不同路線！如要重試請使用 /gamestart <easy|normal|hard>！
+zh_tw	JP_CJK_LIKE	ui.auto.text_9310a1a7	遊戲已在進行中。
+zh_tw	JP_CJK_LIKE	ui.auto.text_9310a1a7_908	遊戲已在進行中。
+zh_tw	JP_CJK_LIKE	ui.auto.text_9310a1a7_1601	遊戲已在進行中。
+zh_tw	JP_CJK_LIKE	ui.auto.text_f9c4c4e2	遊戲結束！總分:
+zh_tw	JP_CJK_LIKE	ui.auto.text_ec39d8ad	剩餘時間
+zh_tw	JP_CJK_LIKE	ui.auto.text_d6e25e00	剩餘時間:

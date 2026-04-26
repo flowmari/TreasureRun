@@ -1,0 +1,989 @@
+outcome:
+  notice:
+    timeUpGameOver: 시간이 다 되었습니다. 게임 오버입니다.
+    retryGuide: 다른 경로로 다시 도전해 보세요.
+  success:
+    common:
+      pool: []
+    easy:
+      pool:
+      - '해냈어.
+
+        진실은 그대로 남아 있어.'
+      - '작은 한 걸음이었을 뿐이어도,
+
+        넌 끝까지 버텼어.'
+      - '넌 들었고,
+
+        길은 열렸어.'
+      - "> 여기까지 왔어.\n> \n> 규칙은 단순했어 —\n> \n> 선택은 너의 몫이었지."
+      - "> 거리는 의미가 되었고,\n> \n> 시간은 네 발걸음에 답했어."
+      - "> 모든 빛이 영원히 빛나지는 않아.\n> \n> 하지만 이 순간은 빛났어."
+      - '빛이 고르게 내려앉고,
+
+        모든 그림자가 사라졌어.'
+      - '바람이 잠잠해졌고,
+
+        모든 것이 제자리로 돌아갔어.'
+      - '짧은 침묵.
+
+        세상은 다시 숨을 골랐어.'
+      - '기록은 모래 깊숙이 새겨졌어 —
+
+        바람이 닿지 못하는 곳에.'
+      - '균형이 되돌아왔어.
+
+        모든 것은 이 순간을 향해 있었어.'
+      - '시간은 조용히 흘러가,
+
+        기억의 구석에 머물렀어.'
+      - '하늘은 색을 바꾸었고,
+
+        하나의 이야기는 끝에 닿았어.'
+      - '파도는 잔잔해졌고,
+
+        바다는 다시 깊이를 숨겼어.'
+      - '발걸음은 멈추고,
+
+        그 자리만 남았어.'
+      - '승리와 패배는
+
+        모래알에 지나지 않아.'
+      - '길은 이어지거나 — 끝나거나.
+
+        어느 쪽이든 같은 땅 위에 놓여 있어.'
+    normal:
+      pool:
+      - '거리는 의미를 찾았고,
+
+        시간은 네 여정에 답했어.'
+      - '시간은 끝났어.
+
+        하지만 모든 것이 끝난 건 아니야.'
+      - '축은 발견되었고,
+
+        세상은 움직임을 멈췄어.'
+      - '유리는 숨을 참고,
+
+        넌 그 자리에 버텼어.'
+      - '고요한 하늘 아래,
+
+        네 마음은 흔들리지 않았어.'
+      - '영원히 빛나는 것은 많지 않아.
+
+        하지만 이 순간은 선명히 빛났어.'
+      - '넌 깨지기 쉬운 땅을 건넜고,
+
+        시야를 잃지 않았어.'
+      - '순간은 지나갔어.
+
+        남은 것은 계속 남아 있어.'
+      - '운은 금세 희미해져.
+
+        질서는 남아.'
+      - '하늘은 끝없는 원 안에서 멈추지 않고,
+
+        너 역시 멈추지 않았어.'
+      - '중심에 닿았어.
+
+        세상은 가만히 멈췄어.'
+      - '마침내 여기.
+
+        진실은 여전히 단단해.'
+      - '넌 끝까지 갔어.
+
+        기억해. 이 길을 선택한 건 너였고, 다른 누구도 아니었어.'
+      - '시간은 침묵 속으로 스며들어,
+
+        마음 깊은 곳에 자리를 잡았어.'
+      - '하늘이 변하는 동안,
+
+        이야기는 자신의 끝에 도달했어.'
+      - '물결은 잔잔해졌고,
+
+        하늘은 다시 그 깊이를 감췄어.'
+      - '발걸음은 멎었고,
+
+        그 자리만 남았어.'
+      - '빛이 고르게 내려앉고,
+
+        모든 그림자가 사라졌어.'
+      - '바람이 잠잠해졌고,
+
+        모든 것이 제자리로 돌아갔어.'
+      - '짧은 침묵.
+
+        세상은 다시 숨을 골랐어.'
+      - '기록은 모래 깊숙이 새겨졌어 —
+
+        바람이 닿지 못하는 곳에.'
+      - '균형이 되돌아왔어.
+
+        모든 것은 이 순간을 향해 있었어.'
+      - '주행 완료.
+
+        분명해. 찾았어.
+
+        그걸로 충분해.'
+      - '주행 완료.
+
+        길은 버텼고,
+
+        너도 버텼어.'
+      - '하늘은 계속 움직였어.
+
+        너도 그럴 수 있어.'
+      - '주행 완료.
+
+        조용한 결과.
+
+        진짜 노력의 무게.'
+      - '넌 그저 세상이 네 앞에 놓아 둔
+
+        길을 걸었을 뿐이야.'
+      - '땅은 무너지지 않았어.
+
+        네 발걸음을 믿었으니까.'
+      - '이 순간은
+
+        별들의 오래된 리듬과 맞아떨어졌어.'
+      - '넌 아무것도 빼앗지 않았어.
+
+        무언가를 이해했을 뿐이야.'
+      - '넌 아무것도 얻지 않았어.
+
+        진실을 있는 그대로 보았을 뿐이야.'
+      - '넌 이곳을 차지한 게 아니야.
+
+        이곳에 속해 있었어.'
+      - '넌 기억보다 오래된
+
+        길을 걸었어.'
+      - '땅은 저항하지 않았어.
+
+        너를 알아보았으니까.'
+      - '이 순간은
+
+        별들의 고요와 맞아떨어졌어.'
+    hard:
+      pool:
+      - '북쪽 바람 속에서도,
+
+        선명함은 속도보다 오래 남아.'
+      - '중심을 찾았고,
+
+        세상은 쉬어 갔어.'
+      - '별들은 말이 없어.
+
+        네 기록이 대신 말해 줘.'
+      - '결과는 남았고,
+
+        위치는 달라졌어.'
+      - '얼음과 유리 사이에서,
+
+        넌 통제를 선택했어.'
+      - '파도는 조용해졌고,
+
+        바다는 숨겨 둔 깊이를 되찾았어.'
+      - '아직 기다리는 보물이 있어.
+
+        다음엔 다른 길이야.'
+      - '하늘은 변하지 않았어.
+
+        변한 건 너야.'
+      - '순간은 지나갔어.
+
+        남은 것은 질서였어.'
+      - '겨울은 정직해.
+
+        네 주행도 그랬어.'
+      - '별들이 잠시 제자리를 찾았고,
+
+        넌 그걸 알아챘어.'
+      - '거리는 좁혀졌어.
+
+        시간은 그렇지 않았어.'
+      - '세상의 규칙은 굳건했고,
+
+        가능성의 신호는 분명했어.'
+      - '길은 조용히 닫혔어.
+
+        넌 이미 건너온 뒤였어.'
+      - '아무것도 변하지 않았어.
+
+        네 위치만 달라졌어.'
+      - '운이 아니었어.
+
+        맞아떨어진 거야.'
+      - '순간은 지나갔고,
+
+        기록은 남았어.'
+      - '결과는 바뀌지 않았어.
+
+        그래도 넌 앞으로 나아갔어.'
+      - '출구는 바뀌지 않았어.
+
+        하지만 넌 다른 높이에 닿았어.'
+      - '끝은 같았어.
+
+        하지만 그 끝에 도착한 너는 이미 달라져 있었어.'
+      - '목적지는 같아.
+
+        하지만 넌 더 이상 예전의 여행자가 아니야.'
+      - '빛이 고르게 내려앉고,
+
+        모든 그림자가 사라졌어.'
+      - '바람이 잠잠해졌고,
+
+        모든 것이 제자리로 돌아갔어.'
+      - '짧은 침묵.
+
+        세상은 다시 숨을 골랐어.'
+      - '기록은 모래 깊숙이 새겨졌어 —
+
+        바람이 닿지 못하는 곳에.'
+      - '균형이 되돌아왔어.
+
+        모든 것은 이 순간을 향해 있었어.'
+      - '시간은 조용히 흘러가,
+
+        기억의 구석에 머물렀어.'
+      - '하늘은 색을 바꾸었고,
+
+        하나의 이야기는 끝에 닿았어.'
+      - '파도는 잔잔해졌고,
+
+        바다는 다시 깊이를 숨겼어.'
+      - '발걸음은 멈추고,
+
+        그 자리만 남았어.'
+      - '승리와 패배는
+
+        모래알에 지나지 않아.'
+      - '길은 이어지거나 — 끝나거나.
+
+        어느 쪽이든 같은 땅 위에 놓여 있어.'
+  timeup:
+    easy:
+      pool:
+      - '시간은 끝났어.
+
+        하지만 넌 끝나지 않았어.'
+      - '보물은 기다릴 수 있어.
+
+        너도 그래.'
+      - '숨을 쉬어.
+
+        그리고 한 번 더.'
+      - '지금은 여기까지.
+
+        다음 걸음으로 가자.'
+      - '넌 아직 여기 있어.
+
+        그게 중요해.'
+      - '주행은 끝났어.
+
+        넌 아니야.'
+      - '시간 종료.
+
+        주행은 끝났어.
+
+        넌 아니야.'
+      - '시간 종료.
+
+        규칙은 바뀌지 않아.
+
+        다시 해 보자.'
+      - '시간 종료.
+
+        ‘거의’도 진짜야.'
+      - '해가 지고,
+
+        그림자가 다시 세상을 덮었어.'
+      - '마지막 모래알이 떨어졌고,
+
+        이야기는 조용히 닫혔어.'
+      - '바람이 지나가고,
+
+        발자국은 흔적 없이 사라졌어.'
+      - '밀물이 차올라,
+
+        그곳에 있던 것은 다시 바다로 돌아갔어.'
+      - '침묵.
+
+        시간만 지나갔어.'
+      - '승리와 패배는
+
+        모래알에 지나지 않아.'
+      - '길은 이어지거나 — 끝나거나.
+
+        어느 쪽이든 같은 땅 위에 놓여 있어.'
+    normal:
+      pool:
+      - '거리는 좁혀졌어.
+
+        시간은 그렇지 않았어.'
+      - '세상은 규칙을 지켰고,
+
+        넌 그 가장자리에 닿았어.'
+      - '도착하지는 못했어.
+
+        하지만 신호는 분명했어.'
+      - '아직 기다리는 보물이 있어.
+
+        다른 길로 다시 가 보자.'
+      - '결과는 남았고,
+
+        위치는 달라졌어.'
+      - '시간은 끝났어.
+
+        의미는 끝나지 않았어.'
+      - '아슬아슬했어.
+
+        소리가 그렇게 말해 줬어.'
+      - '지도는 아직 열려 있어.
+
+        다시 돌아와.'
+      - '세상의 규칙은 굳건했고,
+
+        가능성의 신호는 분명했어.'
+      - 세상은 자신의 규칙을 지켰어.
+      - '순간은 지나갔고,
+
+        기록은 남았어.'
+      - '해가 지고,
+
+        그림자가 다시 세상을 덮었어.'
+      - '마지막 모래알이 떨어졌고,
+
+        이야기는 조용히 닫혔어.'
+      - '바람이 지나가고,
+
+        발자국은 흔적 없이 사라졌어.'
+      - '밀물이 차올라,
+
+        그곳에 있던 것은 다시 바다로 돌아갔어.'
+      - '침묵.
+
+        시간만 지나갔어.'
+      - '승리와 패배는
+
+        모래알에 지나지 않아.'
+      - '길은 이어지거나 — 끝나거나.
+
+        어느 쪽이든 같은 땅 위에 놓여 있어.'
+      - "> 시간은 끝났어.\n> \n> 그 밖의 것은 아직 끝나지 않았어."
+      - "> 결과는 바뀌지 않았어.\n> \n> 하지만 네 위치는 달라졌어."
+    hard:
+      pool:
+      - '오로라조차 희미해져.
+
+        새로운 걸음으로 돌아와.'
+      - '깨지기 쉬운 세상에서는,
+
+        서두름이 선명함을 찾기 전에 먼저 깨뜨려.'
+      - '순간은 빠져나갔어.
+
+        의미는 남았어.'
+      - '겨울은 기다릴 줄 알아.
+
+        너도 그래야 해.'
+      - '하늘은 계속 움직였어.
+
+        너도 계속 움직일 거야.'
+      - '이야기는 이어져.
+
+        끝은 아직 오지 않았어.'
+      - '별들은 그곳에 있었고, 지켜보고 있었어.
+
+        다시 한 번.'
+      - '얼음은 시간을 들여.
+
+        너도 시간을 들여야 해.'
+      - '하늘은 계속 움직였어.
+
+        너도 그럴 수 있어.'
+      - '북쪽은 기다리는 법을 배웠어.
+
+        너도 배워야 해.'
+      - '이건 멈춤일 뿐이야.
+
+        아직 끝이 아니야.'
+      - '떠도는 구름처럼,
+
+        흐름을 잃지 마 — 강물처럼.'
+      - '소리는 가까웠어.
+
+        거리는 실제였어.
+
+        하지만 그 순간은 붙잡을 수 없었어.'
+      - '넌 가까워지고 있었어.
+
+        다만 시간은 그렇지 않았어.'
+      - '세상은 자신의 규칙에 충실했고,
+
+        넌 그 가장자리에 닿았어.'
+      - '보물에 닿지는 못했어.
+
+        하지만 신호는 분명했어.'
+      - '아무것도 변하지 않았어.
+
+        네 위치만 달라졌어.'
+      - '운이 아니었어.
+
+        맞아떨어진 거야.'
+      - '순간은 빠져나갔지만,
+
+        기록은 남았어.'
+      - '넌 깨지기 쉬운 땅을 건넜고,
+
+        지평선은 그대로 남겨 두었어.'
+      - '아무것도 변하지 않았어.
+
+        네 위치만 달라졌어.
+
+        운이 아니었어.
+
+        맞아떨어진 거야.
+
+        순간은 지나갔고,
+
+        기록은 남았어.'
+      - '해가 지고,
+
+        그림자가 다시 세상을 덮었어.'
+      - '마지막 모래알이 떨어졌고,
+
+        이야기는 조용히 닫혔어.'
+      - '바람이 지나가고,
+
+        발자국은 흔적 없이 사라졌어.'
+      - '밀물이 차올라,
+
+        그곳에 있던 것은 다시 바다로 돌아갔어.'
+      - '침묵.
+
+        시간만 지나갔어.'
+      - '승리와 패배는
+
+        모래알에 지나지 않아.'
+      - '길은 이어지거나 — 끝나거나.
+
+        어느 쪽이든 같은 땅 위에 놓여 있어.'
+      - '계절은 닫혔고,
+
+        땅은 남았어.'
+      - '길은 그대로 있어.
+
+        멈춘 건 네 발걸음뿐이야.'
+      - '네 시간은 끝났어.
+
+        하늘은 아니야.'
+      - '거절이 아니야.
+
+        그저 침묵일 뿐.'
+      - '세상은 아직 온전해.
+
+        넌 달라진 채로 돌아올 수 있어.'
+      - '계절은 끝났어.
+
+        숲은 남아 있어.'
+      - '거리는 좁혀지고 있었어.
+
+        시간은 자신의 리듬을 지켰어.'
+      - '네 시간은 멈췄어.
+
+        하늘은 계속 움직였어.'
+      - '거절이 아니야.
+
+        그저 침묵일 뿐.'
+      - '길은 아직 여기 있어.
+
+        넌 달라진 채로 돌아올 수 있어.'
+version: 1
+quotes:
+  outcome:
+    success: null
+    timeup: null
+    other: null
+default:
+  prefix: '&b[&6TreasureRun&b]&r '
+  unknown: '&c(Translation missing: {key})'
+prefix: '&b[&6TreasureRun&b]&r '
+common:
+  true: '&a예'
+  false: '&c아니오'
+  ok: '&aOK'
+  cancel: '&c취소'
+  loading: '&7불러오는 중...'
+  done: '&a완료!'
+  error: '&c오류: {reason}'
+command:
+  checkTreasureEmerald:
+    playersOnly: 이 명령어는 플레이어만 사용할 수 있습니다.
+    resultTrue: 손에 들고 있는 아이템은 Treasure Emerald입니다.
+    resultFalse: 손에 들고 있는 아이템은 Treasure Emerald가 아닙니다.
+  gameStart:
+    playersOnly: 이 명령어는 플레이어만 사용할 수 있습니다.
+    worldNotFound: '[TreasureRun] 시작 월드가 설정되지 않았거나 찾을 수 없습니다.'
+    started: '보물찾기가 시작됩니다! 난이도: {difficulty} | 제한 시간: {timeLimit}초'
+  stageCleanup:
+    playersOnly: '&c이 명령어는 플레이어만 사용할 수 있습니다.'
+    managerNotReady: '[TreasureRun] 스테이지 관리자가 아직 초기화되지 않았습니다.'
+    cleaned: '[TreasureRun] 난이도 블록 {count}개를 정리했습니다.'
+  noPermission: '&c권한이 없습니다.'
+  onlyPlayer: '&c이 명령어는 플레이어만 사용할 수 있습니다.'
+  reload:
+    start: '&7설정/메시지 다시 불러오는 중...'
+    success: '&a리로드 완료.'
+    fail: '&c리로드 실패: {reason}'
+  lang:
+    guiCancelledGameStart: 언어 선택이 취소되었습니다. 다시 시도하려면 /gameStart <easy|normal|hard> 를 실행하세요.
+    guiCancelledGameMenu: 언어 선택이 취소되었습니다. 다시 열려면 /gameMenu gui 를 실행하세요.
+    guiTooManyShown: 허용된 언어가 너무 많이 설정되어 있어 GUI에는 처음 27개만 표시됩니다.
+    playersOnly: 이 명령어는 플레이어만 사용할 수 있습니다.
+    resetDone: ✅ 저장된 언어가 초기화되었습니다. 다음에는 GUI가 열립니다.
+    current: '현재 언어: {lang}'
+    emptyCode: '언어 코드가 비어 있습니다. 예: /lang ja'
+    notAllowed: '해당 언어는 허용되지 않습니다: {lang}'
+    allowedList: '허용된 언어: {allowed}'
+    changed: '✅ 언어가 변경되었습니다: {displayName} ({lang})'
+    changedButNotSaved: '⚠ 언어는 변경되었지만 영구 저장에 실패했습니다: {lang}'
+    list:
+      title: === 언어 ===
+      default: '기본값: {default}'
+      allowed: '허용됨: {allowed}'
+      usage: '사용법: /lang <code> 예: /lang ja'
+      gui: 'GUI: /lang 또는 /lang gui'
+    guiNotReady: 언어 GUI가 초기화되지 않았습니다.
+  craftSpecialEmerald:
+    playersOnly: '&c이 명령어는 플레이어만 사용할 수 있습니다.'
+    needDiamonds: '&c특제 에메랄드를 제작하려면 다이아몬드 3개가 필요합니다.'
+    success: '&b다이아몬드 3개로 특제 에메랄드를 제작했습니다!'
+  quoteFavorite:
+    latestSaved: 최신 명언이 즐겨찾기에 저장되었습니다.
+    latestNotSaved: 최신 명언을 저장할 수 없습니다. 아직 기록이 없거나 이미 즐겨찾기에 등록되었을 수 있습니다.
+    playersOnly: '&c이 명령어는 플레이어만 사용할 수 있습니다.'
+    repositoryNotReady: 즐겨찾기 기능은 아직 사용할 수 없습니다.
+    listHeader: '&b즐겨찾기 ({count})'
+    listSeparator: '&7------------------------------'
+    removeUsage: '&c사용법: /quoteFavorite remove <id>'
+    removeIdNumber: '&cID는 숫자로 입력해야 합니다.'
+    removeSuccess: '&a즐겨찾기 ID {id}를 삭제했습니다.'
+    removeNotFound: '&c지정한 즐겨찾기를 찾을 수 없습니다.'
+    rereadNoQuotes: '&e아직 다시 읽을 수 있는 문장이 없습니다.'
+    bookOpenFailed: '&c즐겨찾기 책 생성에 실패했습니다.'
+    openBookFailed: '&c책을 열지 못했습니다.'
+    unknownSubcommand: '&c알 수 없는 하위 명령어입니다. /quoteFavorite help 를 확인하세요.'
+    shortcutSaved: 최신 명언이 즐겨찾기에 저장되었습니다.
+    shortcutNotSaved: 최신 명언을 저장할 수 없습니다. 아직 기록이 없거나 이미 즐겨찾기에 등록되었을 수 있습니다.
+    help:
+      title: '&bQuoteFavorite 명령어'
+      latest: '&7/quoteFavorite latest  - 최신 문장을 즐겨찾기에 저장'
+      list: '&7/quoteFavorite list    - 즐겨찾기 목록 보기'
+      remove: '&7/quoteFavorite remove <id> - 즐겨찾기 삭제'
+      reread: '&7/quoteFavorite reread - 마지막 문장 다시 보기'
+      rereadTitle: '&b다시보기 명령어'
+      rereadBook: '&7/quoteFavorite reread book - 다시보기 책 다시 열기'
+      book: '&7/quoteFavorite book - 즐겨찾기 책 열기'
+      bookToc: '&7/quoteFavorite book toc - 책 목차 열기'
+      bookSuccess: '&7/quoteFavorite book success - SUCCESS 문장 책 열기'
+      bookTimeup: '&7/quoteFavorite book timeup - TIME_UP 문장 책 열기'
+      bookOther: '&7/quoteFavorite book other - 다른 책 레이아웃 열기'
+gui:
+  language:
+    title: 언어
+    subtitle: '&7언어를 선택하세요'
+    loreDefault:
+    - '&7클릭하여 선택'
+    - '&8선택은 저장됩니다'
+    selected: '&a선택됨: &f{lang}'
+    saved: '&a언어가 저장되었습니다: &f{lang}'
+    reopenHint: '&7언제든지 &f/lang &7로 변경 가능'
+game:
+  difficulty:
+    easy: '&a쉬움'
+    normal: '&e보통'
+    hard: '&c어려움'
+  gameStart:
+  - '&6========== &eTreasureRun &6=========='
+  - '&7난이도: &f{difficulty}'
+  - '&7제한시간: &f{timeLimit}초'
+  - '&7총 상자 수: &f{totalChests}'
+  - '&7보물 상자: &f{treasureChests}'
+  - '&7기타 상자: &f{otherChests}'
+  - '&7배수: &f{xMultiplier}'
+  - '&7페널티: &f{penalty}'
+  - '&a행운을 빌어요, {player}!'
+  gameStartTitle:
+    title: '&eTreasureRun'
+    subtitle: '&7시간 안에 상자를 찾아보세요!'
+  timeWarning:
+  - '&e남은 시간: &f{seconds}초'
+  gameEndSuccess:
+  - '&a모든 보물을 모았습니다!'
+  - '&7최종 점수: &f{score}'
+  gameEndFail:
+  - '&c시간 종료!'
+  - '&7최종 점수: &f{score}'
+  rank:
+    header: '&6=== 랭킹 ==='
+    line: '&e#{rank} &f{player} &7- &b{score}'
+  auto:
+    backup_cfe9e6cf: 🌊 Backup 海探索で海を検出しました
+    treasure_shop_4b968fbd: Treasure Shop
+    text_e096c9a4: '&6特製エメラルド'
+    inventoryclickevent_fired_8520aa1c: InventoryClickEvent fired
+    items_current_0629a198: items current=
+    cursor_7fabae3f: / cursor=
+    return_whoclicked_is_not_pla_a7675648: 'RETURN: whoClicked is not Player'
+    return_topinventory_is_not_m_9936e6de: 'RETURN: topInventory is not MERCHANT'
+    return_not_result_slot_expec_9eb8c2c8: 'RETURN: not result slot. expected rawSlot=2 but was'
+    shift_53e51de9: ', shift='
+    return_topinventory_is_merch_fa2f5d98: 'RETURN: topInventory is MERCHANT but not MerchantInventory instance'
+    merchant_view_title_daf2a73a: merchant view title=
+    treasure_shop_2574a694: treasure shop
+    return_not_treasure_shop_tit_8e65ad3d: 'RETURN: not Treasure Shop title. plainTitle='
+    return_current_item_is_null_0f27c9fd: 'RETURN: current item is null'
+    return_current_item_is_air_76b5e623: 'RETURN: current item is AIR'
+    return_current_item_is_not_g_d1d65218: 'RETURN: current item is not GOLDEN_APPLE. type='
+    return_game_is_not_running_048d7edb: 'RETURN: game is not running'
+    ingredients_snapshot_98cb38c3: ingredients snapshot
+    return_ingredient_check_fail_673860d5: 'RETURN: ingredient check failed (need TreasureEmerald>=5 and slot1 empty)'
+    ok_passed_all_checks_schedul_11e17905: 'OK: passed all checks -> scheduling effect with runTaskLater'
+    run_runtasklater_executed_96d7e049: 'RUN: runTaskLater executed'
+    return_later_game_is_not_run_9cc569aa: 'RETURN(LATER): game is not running'
+    return_later_player_is_offli_863a8cdc: 'RETURN(LATER): player is offline'
+    return_later_openinventory_t_7b809b57: 'RETURN(LATER): openInventory/topInventory is null'
+    return_later_topinventory_is_f8714cf5: 'RETURN(LATER): topInventory is not MERCHANT. type='
+    treasure_shop_2574a694_822: treasure shop
+    return_later_not_treasure_sh_fcce2bb9: 'RETURN(LATER): not Treasure Shop title. plainTitle='
+    ok_later_playing_effects_now_b80a2e0e: 'OK(LATER): playing effects now'
+    k_llun_r_dj_pinu_16494877: '&6&lKöllun úr djúpinu'
+    trade_complete_4a4b1d6f: Trade complete!
+    a_hidden_power_awakens_7620bc4d: A hidden power awakens…
+    mobcontrol_wolf_allowed_cust_a5459084: '[MobControl] WOLF allowed (CUSTOM). name='
+    rainbow_wolf_b3cc6257: Rainbow Wolf
+    mobcontrol_wolf_allowed_name_9cc5a59a: '[MobControl] WOLF allowed (name match). reason='
+    mobcontrol_wolf_cancelled_re_1a3b2e1a: '[MobControl] WOLF cancelled! reason='
+    stagemobcontrollistener_refl_08ad690a: '⚠ StageMobControlListener: カウントダウン判定(reflection)に失敗。ゲーム中のみ制御します。原因:'
+    stagemobcontrollistener_refl_d8a61972: '⚠ StageMobControlListener: reflection初期化に失敗。ゲーム中のみ制御します。原因:'
+    mysql_connection_established_47452dfd: MySQL connection established successfully!
+    failed_to_connect_to_mysql_95e4d50a: 'Failed to connect to MySQL:'
+    create_table_if_not_exists_p_136a7833: CREATE TABLE IF NOT EXISTS player_treasure_count (
+    player_name_varchar_50_prima_79b8331b: player_name VARCHAR(50) PRIMARY KEY,
+    count_int_not_null_660eadd8: count INT NOT NULL)
+    failed_to_create_table_68199f98: 'Failed to create table:'
+    reset_treasure_count_for_pla_96b152d2: 'Reset treasure count for player:'
+    dj_onalltreasurescollected_a871afdd: DJイベントはすでに実行中のため、onAllTreasuresCollected をスキップしました。
+    on_duplicate_key_update_coun_a1543779: ON DUPLICATE KEY UPDATE count = ?
+    failed_to_save_treasure_coun_9d94c0cc: 'Failed to save treasure count:'
+    dj_triggerultimatedjevent_eb01ecae: DJイベントはすでに実行中のため、triggerUltimateDJEvent をスキップしました。
+    treasure_complete_8360fbe9: 🎵 Treasure Complete! 🎵
+    text_cc353737: 全ての宝物を発見しました！
+    congratulations_38fd1594: §6Congratulations! 全ての宝物を見つけました！
+    time_s_up_c5b3ef74: §c§lTIME'S UP!
+    treasures_collected_ca7eab31: '§7Treasures collected: §e'
+    try_a_different_route_next_t_721a4d8b: §7Try a different route next time — or use §e/gamestart §7<§eeasy§7|§enormal§7|§ehard§7>
+      §7to retry.
+sound:
+  sparkle: '&b* 반짝 *'
+  start: '&7(BGM 시작...)'
+  end: '&7(BGM 종료...)'
+chestSound:
+  actionBarDebug: chestSound.actionBarDebug
+  debug: chestSound.debug
+favorites:
+  chapter:
+    back: 목차로 돌아가기
+    count: '{count}개'
+    empty: 이 장에는 아직 저장된 문장이 없습니다
+    otherSub: 기타
+    rereadBook: 다시 읽기 책
+    successSub: 성공한 플레이에서 저장한 문장
+    successTitle: 성공
+    successTpl1: 성공 시 저장한 문장
+    successTpl2: 플레이를 클리어한 순간의 기록
+    timeupSub: 시간이 끝났을 때 저장한 문장
+    timeupTitle: 시간 종료
+    timeupTpl1: 시간 종료 시 저장한 문장
+    timeupTpl2: 타이머가 끝난 순간의 기록
+  cover:
+    badge: TreasureRun 즐겨찾기
+    countLabel: '저장됨: {count}'
+    head: 즐겨찾기 보관함
+    hint: /quoteFavorite latest 또는 /quoteFavorite list 를 사용하세요
+    openToc: 목차 열기
+    reread: 다시 읽기
+    sub: 플레이 중 저장한 문장을 모아 둔 책입니다
+  empty:
+    head: 아직 즐겨찾기가 없습니다
+    noFav: 아직 저장된 즐겨찾기가 없습니다.
+    noFavSub: 문장을 하나 먼저 저장해서 보관함을 시작해 보세요
+    reread: 아직 다시 읽을 문장이 없습니다.
+    rereadBook: 아직 다시 읽기용 책이 없습니다.
+    saveHow: 즐겨찾기 저장 방법
+    saveHow1: /quoteFavorite latest 사용
+    saveHow2: 또는 웅크린 상태로 규칙서를 우클릭
+    saveLatest: 가장 최근 문장 저장
+    sub: 보관함이 아직 비어 있습니다
+    tryNow: 저장한 뒤 이 책을 다시 열어 보세요
+  remove: 삭제
+  reread:
+    head: 저장한 문장 다시 읽기
+    noQuotes: 아직 저장한 문장이 없습니다.
+  table: favorites.table
+  title: 즐겨찾기
+  toc:
+    clickable: 장은 클릭해서 열 수 있습니다
+    head: 목차
+    howto: 장을 열면 저장한 문장을 다시 읽을 수 있습니다
+    howtoShift: '&7웅크리기 + 우클릭으로 즐겨찾기 보관함을 엽니다'
+    manage: 저장한 문장 관리
+    reread: 다시 읽기
+    rereadTitle: 다시 읽기
+    sub: 장별로 둘러보기
+  auto:
+    treasurerun_favorites_templa_a0a4bf2e: '[TreasureRun] favorites_templates.yml created.'
+    mysql_repository_not_ready_72df0af1: MySQL / Repository not ready.
+    favorite_saved_sneak_rightcl_7a73eb4f: ★ Favorite saved! (Sneak+RightClick)
+    quotefavoritestore_reloaded__3ba623a3: '[QuoteFavoriteStore] Reloaded DB: host='
+    where_player_uuid_and_quote__36106f85: WHERE player_uuid=? AND quote_hash=? LIMIT 1
+    quotefavoritestore_exists_fa_7d08adba: '[QuoteFavoriteStore] exists failed:'
+    player_uuid_quote_hash_outco_49f06b31: (player_uuid, quote_hash, outcome, difficulty, lang, quote_text)
+    values_643f4d2f: VALUES (?, ?, ?, ?, ?, ?)
+    quotefavoritestore_addfavori_44fb1d75: '[QuoteFavoriteStore] addFavorite failed:'
+    where_player_uuid_and_quote__81bcaee5: WHERE player_uuid=? AND quote_hash=?
+    quotefavoritestore_removefav_8180a1e4: '[QuoteFavoriteStore] removeFavorite failed:'
+    where_player_uuid_and_id_f4a80773: WHERE player_uuid=? AND id=?
+    quotefavoritestore_removefav_d024b1e5: '[QuoteFavoriteStore] removeFavoriteById failed:'
+    where_player_uuid_53558ea9: WHERE player_uuid=?
+    order_by_created_at_desc_lim_f22988c0: ORDER BY created_at DESC LIMIT ?
+    quotefavoritestore_listfavor_f3e976d4: '[QuoteFavoriteStore] list즐겨찾기 failed:'
+    where_player_uuid_ef617232: WHERE player_uuid=?
+    quotefavoritestore_countfavo_69291680: '[QuoteFavoriteStore] count즐겨찾기 failed:'
+    treasurerun_favorites_0c778ce1: TreasureRun 즐겨찾기
+    no_text_b87d9ee6: (no text)
+commands:
+  text_2bf42ec8: このコマンドはプレイヤーのみが実行できます。
+  text_2bf42ec8_18: このコマンドはプレイヤーのみが実行できます。
+  3_3d5021f7: スペシャルエメラルドの作成には、ダイヤモンドが3個必要です。
+  text_e096c9a4: '&6特製エメラルド'
+  3_71b78a44: ダイヤモンド3個でスペシャルエメラルドを作成しました！
+  text_3030fd61: プレイヤーのみ実行できます
+  op_10caf0f6: 権限がありません（OP限定）
+  debug_mode_is_off_config_yml_b3d27428: 'Debug mode is OFF. config.yml の debug: true にしてください'
+  rank_1_2_3_demo_d87f40da: '使い方: /rank <1|2|3|demo>'
+  rank_1_2_3_demo_4f3e3084: '数字で入力してください: /rank <1|2|3|demo>'
+  1_3_rank_1_2_3_7f459bd0: '1〜3だけ使えます: /rank <1|2|3>'
+  db_e5d54fbd: の演出だけ発動しました（ランキング/DBは変更なし）
+  debug_rank_3f69f429: 'DEBUG: rank'
+  text_bed3daf7: このコマンドはプレイヤーのみ実行できます。
+  treasurerun_bcef4fe9: '[TreasureRun] ステージ管理が初期化されていません。'
+  text_287fa0f1: 個の難易度ブロックを片付けました。
+  text_44a99db9: このコマンドはプレイヤーからのみ実行できます。
+  text_fd02f248: '制限時間:'
+  text_f166cc04: '§a宝探しゲーム開始！ 難易度:'
+  text_2281b097: 個のチェストを生成しました。宝物は
+  mysql_repository_not_ready_72df0af1: MySQL / Repository not ready.
+  mysql_repository_not_ready_72df0af1_93: MySQL / Repository not ready.
+  mysql_repository_not_ready_72df0af1_119: MySQL / Repository not ready.
+  quotefavorite_book_open_cata_055de855: /quoteFavorite book            - open catalog (full)
+  quotefavorite_book_toc_open__c7d02ede: /quoteFavorite book toc        - open catalog (TOC only)
+  quotefavorite_book_success_o_afe31501: /quoteFavorite book success    - open SUCCESS chapter
+  quotefavorite_book_timeup_op_08b799b0: /quoteFavorite book timeup     - open TIME_UP chapter
+  quotefavorite_book_other_ope_bdcbafba: /quoteFavorite book other      - open OTHER chapter
+  success_normal_en_the_obstac_b627a544: 【SUCCESS / Normal / en】\nThe obstacle is the way.
+  time_up_bc0cd646: TIME UP
+debug:
+  istreasureemerald_fb6fecec: isTreasureEmerald =
+  chestsound_start_called_16th_e2a7414b: §b[ChestSound] start() called (16th-grid mode)
+  chestsound_chests_0_82465b3c: §7[ChestSound] chests=0
+  chestsound_d_1fm_s_t_2f_step_6e3e0fdb: §b[ChestSound] §fD=§e%.1fm §7(%s§7) §ft=§a%.2f §7step=%d bar=%d
+  chestsound_nearest_1fm_s_t_2_e2465135: §b[ChestSound] nearest=%.1fm %s  t=%.2f
+  reward_giverankrewardwitheff_5e361189: '[Reward] giveRankRewardWithEffect called player='
+  starttheme_startgame_called__9cf42cbe: '[StartTheme] startGame called by'
+items:
+  text_7567bb35: 特製エメラルドのレシピを登録しました。
+  text_7a04254b: '&e特製リンゴ'
+  text_e8d4013d: 特製リンゴのレシピを登録しました。
+  text_e42912c7: '&7特製鉄ブロック'
+  text_c89dea57: 特製鉄ブロックのレシピを登録しました。
+  specialEmerald:
+    displayName: '&6특별한 에메랄드'
+    loreCrafted: '&7TreasureRun에서 제작한'
+    loreSpecial: '&7특별한 에메랄드'
+  material:
+    diamond: 다이아몬드
+    gold_ingot: 금 주괴
+    iron_ingot: 철 주괴
+    emerald: 에메랄드
+    apple: 사과
+    netherite_ingot: 네더라이트 주괴
+    lapis_lazuli: 청금석
+    redstone: 레드스톤
+    coal: 석탄
+    enchanted_golden_apple: 마법이 부여된 황금 사과
+    diamond_block: 다이아몬드 블록
+    gold_block: 금 블록
+    emerald_block: 에메랄드 블록
+    iron_block: 철 블록
+    tnt: TNT
+ui:
+  menu:
+    book:
+      fallbackTitle: TreasureRun 규칙
+      fallbackDisplayName: TreasureRun 규칙서
+      hotbarGiven: 📖 규칙서가 핫바에 지급되었습니다.
+      hotbarHint: 손에 든 뒤 우클릭하면 언제든 다시 읽을 수 있습니다.
+      latestHint: (이 책을 우클릭하면 최신 명언을 저장할 수 있습니다.)
+      openFailed: Could not open the rule book.
+    toc:
+      message: '&6📌 TreasureRun 메뉴를 열었습니다. 규칙서를 확인하세요.'
+    legacy:
+      toc:
+        message: '===== TreasureRun Menu =====
+
+          Open the rule book from your hotbar to read the rules.'
+    page:
+      contents:
+        difficulty: 'Difficulty: {difficulty}'
+        howToPlay: 플레이 방법
+        language: 'Language: {lang}'
+        rulesItem: 1) Rules
+        savedOn: Saved on SUCCESS / TIME_UP
+        scoreRoute: 점수와 경로
+        tipsItem: 2) Tips
+        title: 목차
+        yourQuotes: Your saved quotes
+      hint:
+        reopenMenu: 'Hint: use /gameMenu to open this again.'
+      note:
+        bookFormat: Minecraft books cannot switch tabs by clicking, so sections are shown as pages.
+  quote:
+    footer:
+      dbLogs: '(DB: proverb_logs)'
+    title: 명언 모음
+    intro:
+      tabsTitle: 탭
+      db:
+        favorites: proverb_favorites (★)
+        logs: proverb_logs (history)
+      langLine: 'Language: {lang}'
+      legendTitle: Legend
+      storedInDb: Stored in DB
+    headerRecent: 'Recent 20  |  lang: {lang}'
+    legend:
+      favorites: = Favorites
+      success: = Success / Cleared
+      timeUp: = Time up
+    noFavorites: No favorites yet.
+    noLogs: No quote logs yet.
+    noQuotesInTab: No quotes are available in this tab yet.
+    tip:
+      rightClickSave: 'Tip: right-click this book to save the latest quote.'
+  favorites:
+    footer:
+      dbFavorites: '(DB: proverb_favorites)'
+    headerLatest: 'Latest 20  |  lang: {lang}'
+    title: Favorites
+  gameMenu:
+    pluginNotReady: 플러그인이 아직 준비되지 않았습니다.
+  symbol:
+    bookPrefix: '📖 '
+    legendPrefix: '■ '
+    dbBullet: '- '
+    indexPrefix: '#'
+    favoriteIdPrefix: ★#
+    favoritePrefix: ★
+    metaOpen: (
+    metaClose: )
+    labelOpen: '['
+    labelClose: ']'
+    tabActiveOpen: 【
+    tabActiveClose: 】
+    tabInactiveOpen: '['
+    tabInactiveClose: ']'
+    activeMarker: '▶ '
+  rankTicker:
+    updated: 🏁 리더보드가 업데이트되었습니다! ({which})
+    mode:
+      weekly: 주간
+      allTime: 종합
+      monthly: 월간
+  labels:
+    tab:
+      all: 전체
+      success: 성공
+      timeUp: 시간 종료
+      favorites: 즐겨찾기
+    latest: Latest
+    outcome:
+      success: SUCCESS
+      timeUp: TIME UP
+    page: Page {current}/{total}
+    tabs: Tabs
+  error:
+    noData: No data.
+gameplay:
+  pickup:
+    scoreNone: 아직 점수가 없습니다.
+    gameEndTotalScore: '게임 종료! 총점: {score}'
+    treasureFound: '보물: {name} ×{amount}'
+    scoreAdded: '점수 +{add} (누적: {total})'
+    remainingChests: '남은 상자: {count}'
+  result:
+    runCompleteTitle: 완주!
+    timeUpTitle: 시간 종료!
+    treasuresCollected: '획득한 보물: {got}/{total} (남은 수 {missing})'
+    overcomingAdversity: 역경을 넘어
+    label:
+      score: 점수
+      time: 시간
+      rank: 순위
+    allChestsOpenedBroadcast: '{player}님이 모든 상자를 열었습니다! 최종 점수: {score}'
+    summaryLine: '시간: {time}  점수: {score}  순위: {rank}'
+    gotLine: '상자: {got}/{total}'
+  setup:
+    chestsPlaced: 상자 {count}개를 배치했습니다!
+  success:
+    allChestsOpened: 모든 상자를 열었습니다! 게임 종료!
+    treasureCompleteTitle: 🎵 보물 찾기 완료! 🎵
+    allTreasuresFoundTitle: 모든 보물을 찾았습니다!
+    allTreasuresFoundChat: 축하합니다! 모든 보물을 찾았습니다!
+  start:
+    startingIn: 시작까지…
+    go: 시작!
+  shop:
+    tradeCompleteTitle: 거래 완료!
+    hiddenPowerAwakens: 숨겨진 힘이 깨어난다…
+    hiddenPowerChat: Treasure Shop의 숨겨진 힘이 느껴집니다…
+  timer:
+    remainingBossbar: 남은 시간
+    remainingLine: '남은 시간: {seconds}초'
+rewards:
+  rank:
+    netheriteIngot: 네더라이트 주괴를 획득했습니다!
+    diamond: 다이아몬드를 획득했습니다!
+    goldenApple: 황금 사과를 획득했습니다!
+rankTicker:
+  weeklyTitle: 주간 TreasureRun
+  allTimeTitle: 종합 TreasureRun
+  monthlyTitle: 월간 TreasureRun
+  footerHint: /gameRank weekly|all|monthly
+rank:
+  command:
+    timeTop10Title: === 🌟 TreasureRun TOP 10 (최고 기록) 🌟 ===
+    timeTop10Line: '#{rank} {player}  {time}초  {score}점  난이도: {difficulty}'
+    dbUnavailable: DB 연결을 사용할 수 없습니다.
+    loadError: 랭킹을 불러오는 중 오류가 발생했습니다.
+    playsTitleWeekly: === 🎖️ TreasureRun 주간 TOP 10 (플레이 기록) ===
+    playsTitleAllTime: === 🎖️ TreasureRun 종합 TOP 10 (플레이 기록) ===
+    playsTitleMonthly: === 🎖️ TreasureRun 월간 TOP 10 (플레이 기록) ===
+    playsLine: '#{rank} {player}  {score}점  {time}초  ({difficulty}) [{lang}]'
+    weeklyEmpty: 최근 7일간 기록된 플레이가 없습니다.
+    weeklySwitch: '보기 전환: /gameRank all | /gameRank monthly'
+    allTimeEmpty: 아직 기록이 없습니다.
+    allTimeSwitch: '보기 전환: /gameRank weekly | /gameRank monthly'
+    monthlyEmpty: 이번 달 기록이 아직 없습니다.
+    monthlySwitch: '보기 전환: /gameRank weekly | /gameRank all'

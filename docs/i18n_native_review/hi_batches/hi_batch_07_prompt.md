@@ -1,0 +1,35 @@
+# hi outcome translation batch 07
+
+以下のTSVを翻訳してください。
+
+ルール:
+1. translation 列だけ埋める
+2. 行数・順番・pool・index は絶対に変えない
+3. \n は改行記号として保持する
+4. 格言調・自然な文にする
+5. 英語をそのまま残さない
+6. TSV だけ返す
+
+```tsv
+lang	pool	index	en_source	translation	note
+hi	outcome.timeup.hard.pool	1	Even the aurora fades.\nCome back with a new stride.		exact_en_158_full_rebuild
+hi	outcome.timeup.hard.pool	2	In a fragile world,\nhaste shatters clarity before it can be found.		exact_en_158_full_rebuild
+hi	outcome.timeup.hard.pool	3	The moment slipped away.\nThe meaning did not.		exact_en_158_full_rebuild
+hi	outcome.timeup.hard.pool	4	Winter is patient.\nBe the same.		exact_en_158_full_rebuild
+hi	outcome.timeup.hard.pool	5	The sky kept moving.\nSo will you.		exact_en_158_full_rebuild
+hi	outcome.timeup.hard.pool	6	The story moves on.\nThe end is not yet.		exact_en_158_full_rebuild
+hi	outcome.timeup.hard.pool	7	The stars were there, watching.\nAgain.		exact_en_158_full_rebuild
+hi	outcome.timeup.hard.pool	8	Ice takes its time.\nNeither do you.		exact_en_158_full_rebuild
+hi	outcome.timeup.hard.pool	9	The sky kept moving.\nSo can you.		exact_en_158_full_rebuild
+hi	outcome.timeup.hard.pool	10	The north has learned to wait.\nSo should you.		exact_en_158_full_rebuild
+hi	outcome.timeup.hard.pool	11	This is an interlude\n—It’s not over.		exact_en_158_full_rebuild
+hi	outcome.timeup.hard.pool	12	Like drifting clouds,\ndon’t lose your flow—like a river.		exact_en_158_full_rebuild
+hi	outcome.timeup.hard.pool	13	The sound was near.\nThe distance was real.\nBut that moment can’t be saved.		exact_en_158_full_rebuild
+hi	outcome.timeup.hard.pool	14	You were closing in.\nOnly time wasn’t.		exact_en_158_full_rebuild
+hi	outcome.timeup.hard.pool	15	The world held to its rules.\nYou touched the edge of them.		exact_en_158_full_rebuild
+hi	outcome.timeup.hard.pool	16	You didn’t reach the treasure. \nBut the signal was real.		exact_en_158_full_rebuild
+hi	outcome.timeup.hard.pool	17	Nothing changed.\nOnly your position did.		exact_en_158_full_rebuild
+hi	outcome.timeup.hard.pool	18	It wasn’t luck.\nAlignment.		exact_en_158_full_rebuild
+hi	outcome.timeup.hard.pool	19	The moment slipped away,\nbut the record stayed.		exact_en_158_full_rebuild
+hi	outcome.timeup.hard.pool	20	You crossed fragile ground\nand left the horizon unbroken.		exact_en_158_full_rebuild
+```

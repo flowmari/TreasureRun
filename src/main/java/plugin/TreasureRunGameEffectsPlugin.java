@@ -324,9 +324,9 @@ public class TreasureRunGameEffectsPlugin implements Listener {
       if (!p.isOnline()) return;
 
       if (trPluginFinal != null) {
-        p.sendMessage(ChatColor.GRAY + trPluginFinal.getI18n().tr(outcomeLangFinal, "outcome.notice.retryGuide"));
+        // retryGuide is sent by TreasureRunMultiChestPlugin. Do not duplicate it here.
       } else {
-        p.sendMessage("§7Try a different route next time. To retry, use /gamestart <easy|normal|hard>.");
+        // retryGuide is sent by TreasureRunMultiChestPlugin. Do not duplicate it here.
       }
     }, 10L);
 

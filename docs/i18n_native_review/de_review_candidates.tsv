@@ -1,0 +1,107 @@
+line	reason	text
+8	EN_WORD	prefix: '&b[&6TreasureRun&b]&r '
+10	EN_WORD	prefix: '&b[&6TreasureRun&b]&r '
+26	EN_WORD	worldNotFound: '[TreasureRun] Die Startwelt ist nicht konfiguriert oder konnte
+32	EN_WORD	managerNotReady: '[TreasureRun] Die Stufenverwaltung ist noch nicht initialisiert.'
+33	EN_WORD	cleaned: '[TreasureRun] {count} Schwierigkeitsblöcke wurden entfernt.'
+37	EN_WORD	start: '&7Neu laden...'
+41	EN_WORD	guiCancelledGameStart: Die Sprachauswahl wurde abgebrochen. Zum erneuten Versuch
+43	EN_WORD	guiCancelledGameMenu: Die Sprachauswahl wurde abgebrochen. Zum erneuten Öffnen
+76	EN_WORD	removeUsage: '&cVerwendung: /quoteFavorite remove <id>'
+80	EN_WORD	rereadNoQuotes: '&eEs gibt noch keine Zitate zum erneuten Lesen.'
+83	EN_WORD	unknownSubcommand: '&cUnbekannter Unterbefehl. Sieh dir /quoteFavorite help an.'
+88	EN_WORD	title: '&bQuoteFavorite-Befehle'
+89	DOUBLE_SPACE,EN_WORD	latest: '&7/quoteFavorite latest  - neuestes Zitat als Favorit speichern'
+90	DOUBLE_SPACE,EN_WORD	list: '&7/quoteFavorite list    - Favoriten anzeigen'
+91	EN_WORD	remove: '&7/quoteFavorite remove <id> - Favorit entfernen'
+92	EN_WORD	reread: '&7/quoteFavorite reread - letztes Zitat erneut anzeigen'
+94	EN_WORD	rereadBook: '&7/quoteFavorite reread book - Wiederlese-Buch erneut öffnen'
+95	EN_WORD	book: '&7/quoteFavorite book - Favoritenbuch öffnen'
+96	EN_WORD	bookToc: '&7/quoteFavorite book toc - Inhaltsverzeichnis des Buchs öffnen'
+97	EN_WORD	bookSuccess: '&7/quoteFavorite book success - SUCCESS-Zitatebuch öffnen'
+98	EN_WORD	bookTimeup: '&7/quoteFavorite book timeup - TIME_UP-Zitatebuch öffnen'
+99	EN_WORD	bookOther: '&7/quoteFavorite book other - alternatives Buchlayout öffnen'
+126	EN_WORD	title: '&eTreasureRun'
+138	EN_WORD	line: '&e#{rank} &f{player} &7- &b{score}'
+141	EN_WORD	treasure_shop_4b968fbd: Treasure Shop
+154	EN_WORD	treasure_shop_2574a694: treasure shop
+155	EN_WORD	return_not_treasure_shop_tit_8e65ad3d: 'RETURN: not Treasure Shop title. plainTitle='
+160	EN_WORD	return_game_is_not_running_048d7edb: 'RETURN: game is not running'
+167	EN_WORD	return_later_game_is_not_run_9cc569aa: 'RETURN(LATER): game is not running'
+173	EN_WORD	treasure_shop_2574a694_822: treasure shop
+174	EN_WORD	return_later_not_treasure_sh_fcce2bb9: 'RETURN(LATER): not Treasure Shop title.
+203	EN_WORD	time_s_up_c5b3ef74: §c§lTIME'S UP!
+209	EN_WORD	start: '&7(BGM startet...)'
+230	EN_WORD	badge: TreasureRun-Favoriten
+233	EN_WORD	hint: Nutze /quoteFavorite latest oder /quoteFavorite list
+244	EN_WORD	saveHow1: Benutze /quoteFavorite latest
+252	EN_WORD	noQuotes: Du hast noch keine Zeilen gespeichert.
+253	EN_WORD	table: favorites.table
+265	EN_WORD	treasurerun_favorites_templa_a0a4bf2e: '[TreasureRun] favorites_templates.yml
+269	EN_WORD	quotefavoritestore_reloaded__3ba623a3: '[QuoteFavoriteStore] Reloaded DB: host='
+270	EN_WORD	where_player_uuid_and_quote__36106f85: WHERE player_uuid=? AND quote_hash=? LIMIT
+272	EN_WORD	quotefavoritestore_exists_fa_7d08adba: '[QuoteFavoriteStore] exists failed:'
+273	EN_WORD	player_uuid_quote_hash_outco_49f06b31: (player_uuid, quote_hash, outcome, difficulty,
+276	EN_WORD	quotefavoritestore_addfavori_44fb1d75: '[QuoteFavoriteStore] addFavorite failed:'
+277	EN_WORD	where_player_uuid_and_quote__81bcaee5: WHERE player_uuid=? AND quote_hash=?
+278	EN_WORD	quotefavoritestore_removefav_8180a1e4: '[QuoteFavoriteStore] removeFavorite failed:'
+280	EN_WORD	quotefavoritestore_removefav_d024b1e5: '[QuoteFavoriteStore] removeFavoriteById
+284	EN_WORD	quotefavoritestore_listfavor_f3e976d4: '[QuoteFavoriteStore] listFavoriten failed:'
+286	EN_WORD	quotefavoritestore_countfavo_69291680: '[QuoteFavoriteStore] countFavoriten failed:'
+287	EN_WORD	treasurerun_favorites_0c778ce1: TreasureRun Favoriten
+299	EN_WORD	rank_1_2_3_demo_d87f40da: '使い方: /rank <1|2|3|demo>'
+300	EN_WORD	rank_1_2_3_demo_4f3e3084: '数字で入力してください: /rank <1|2|3|demo>'
+301	EN_WORD	1_3_rank_1_2_3_7f459bd0: '1〜3だけ使えます: /rank <1|2|3>'
+303	EN_WORD	debug_rank_3f69f429: 'DEBUG: rank'
+305	EN_WORD	treasurerun_bcef4fe9: '[TreasureRun] ステージ管理が初期化されていません。'
+314	DOUBLE_SPACE,EN_WORD	quotefavorite_book_open_cata_055de855: /quoteFavorite book            - open catalog
+316	DOUBLE_SPACE,EN_WORD	quotefavorite_book_toc_open__c7d02ede: /quoteFavorite book toc        - open catalog
+318	DOUBLE_SPACE,EN_WORD	quotefavorite_book_success_o_afe31501: /quoteFavorite book success    - open SUCCESS
+320	DOUBLE_SPACE,EN_WORD	quotefavorite_book_timeup_op_08b799b0: /quoteFavorite book timeup     - open TIME_UP
+322	DOUBLE_SPACE,EN_WORD	quotefavorite_book_other_ope_bdcbafba: /quoteFavorite book other      - open OTHER
+329	EN_WORD	chestsound_start_called_16th_e2a7414b: §b[ChestSound] start() called (16th-grid
+334	DOUBLE_SPACE	chestsound_nearest_1fm_s_t_2_e2465135: §b[ChestSound] nearest=%.1fm %s  t=%.2f
+335	EN_WORD	reward_giverankrewardwitheff_5e361189: '[Reward] giveRankRewardWithEffect called
+337	EN_WORD	starttheme_startgame_called__9cf42cbe: '[StartTheme] startGame called by'
+346	EN_WORD	loreCrafted: '&7In TreasureRun hergestellt'
+367	EN_WORD	fallbackTitle: TreasureRun-Regeln
+368	EN_WORD	fallbackDisplayName: TreasureRun-Regelbuch
+374	EN_WORD	message: '&6📌 TreasureRun-Menü geöffnet. Bitte sieh ins Regelbuch.'
+377	EN_WORD	message: '===== TreasureRun Menu =====
+390	EN_WORD	yourQuotes: Your saved quotes
+392	EN_WORD	reopenMenu: 'Hint: use /gameMenu to open this again.'
+403	EN_WORD	favorites: proverb_favorites (★)
+408	DOUBLE_SPACE	headerRecent: 'Recent 20  |  lang: {lang}'
+410	EN_WORD	favorites: = Favorites
+413	EN_WORD	noFavorites: No favorites yet.
+414	EN_WORD	noLogs: No quote logs yet.
+415	EN_WORD	noQuotesInTab: No quotes are available in this tab yet.
+417	EN_WORD	rightClickSave: 'Tip: right-click this book to save the latest quote.'
+420	EN_WORD	dbFavorites: '(DB: proverb_favorites)'
+421	DOUBLE_SPACE	headerLatest: 'Latest 20  |  lang: {lang}'
+422	EN_WORD	title: Favorites
+444	EN_WORD	weekly: Wöchentlich
+446	EN_WORD	monthly: Monatlich
+452	EN_WORD	favorites: Favoriten
+518	EN_WORD	timeUpGameOver: Zeit abgelaufen! Spiel beendet!
+519	EN_WORD	retryGuide: Probiere beim nächsten Mal eine andere Route. Zum Neustart nutze /gamestart
+526	EN_WORD	gameEndTotalScore: 'Spiel beendet! Gesamtpunktzahl: {score}'
+538	EN_WORD	rank: Rang
+540	DOUBLE_SPACE,EN_WORD	summaryLine: 'Zeit: {time}  Punkte: {score}  Rang: {rank}'
+550	EN_WORD	startingIn: Startet in …
+555	EN_WORD	hiddenPowerChat: Du spürst die verborgene Kraft des Treasure Shops…
+565	EN_WORD	weeklyTitle: Wöchentliche TreasureRun-Rangliste
+566	EN_WORD	allTimeTitle: TreasureRun-Gesamtrangliste
+567	EN_WORD	monthlyTitle: Monatliche TreasureRun-Rangliste
+568	EN_WORD	footerHint: /gameRank weekly|all|monthly
+571	EN_WORD	timeTop10Title: === 🌟 TreasureRun TOP 10 (Bestzeiten) 🌟 ===
+572	DOUBLE_SPACE,EN_WORD	timeTop10Line: '#{rank} {player}  {time}s  {score} Punkte  Schwierigkeit: {difficulty}'
+575	EN_WORD	playsTitleWeekly: === 🎖️ TreasureRun Wochenrangliste TOP 10 (Läufe) ===
+576	EN_WORD	playsTitleAllTime: === 🎖️ TreasureRun Gesamtrangliste TOP 10 (Läufe) ===
+577	EN_WORD	playsTitleMonthly: === 🎖️ TreasureRun Monatsrangliste TOP 10 (Läufe) ===
+578	DOUBLE_SPACE,EN_WORD	playsLine: '#{rank} {player}  {score} Punkte  {time}s  ({difficulty}) [{lang}]'
+579	EN_WORD	weeklyEmpty: In den letzten 7 Tagen wurden keine Läufe aufgezeichnet.
+580	EN_WORD	weeklySwitch: 'Ansicht wechseln: /gameRank all | /gameRank monthly'
+582	EN_WORD	allTimeSwitch: 'Ansicht wechseln: /gameRank weekly | /gameRank monthly'
+583	EN_WORD	monthlyEmpty: In diesem Monat sind noch keine Einträge vorhanden.
+584	EN_WORD	monthlySwitch: 'Ansicht wechseln: /gameRank weekly | /gameRank all'

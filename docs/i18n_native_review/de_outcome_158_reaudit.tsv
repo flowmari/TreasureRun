@@ -1,0 +1,7 @@
+lang	pool	kind	meta	value
+de	outcome.success.easy.pool	POOL_MISSING		
+de	outcome.success.normal.pool	POOL_MISSING		
+de	outcome.success.hard.pool	COUNT	32	
+de	outcome.timeup.easy.pool	COUNT	16	
+de	outcome.timeup.normal.pool	POOL_MISSING		
+de	outcome.timeup.hard.pool	POOL_MISSING		

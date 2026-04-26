@@ -1,0 +1,19 @@
+pool	index	freq	value
+outcome.success.easy.pool	1	7	You made it. The truth remains.
+outcome.success.easy.pool	2	7	You listened, and the path opened.
+outcome.success.easy.pool	3	7	Distance found its meaning, and time answered your steps.
+outcome.success.hard.pool	1	7	In the north wind, clarity outlasts speed.
+outcome.success.hard.pool	2	7	Not luck. Alignment.
+outcome.success.hard.pool	3	7	The world did not change. Your place in it did.
+outcome.success.normal.pool	1	7	Distance found its meaning. Time answered your journey.
+outcome.success.normal.pool	2	7	Run complete. A quiet result, backed by real work.
+outcome.success.normal.pool	3	7	The moment passed. The record remained.
+outcome.timeup.easy.pool	1	7	Time ran out. Nothing else did.
+outcome.timeup.easy.pool	2	7	The run ended. You didn’t.
+outcome.timeup.easy.pool	3	7	Take a breath. Then another.
+outcome.timeup.hard.pool	1	7	Even the aurora fades. Come back with a new stride.
+outcome.timeup.hard.pool	2	7	The moment slipped away. The meaning did not.
+outcome.timeup.hard.pool	3	7	The sky kept moving. So can you.
+outcome.timeup.normal.pool	1	7	The distance closed. Time did not.
+outcome.timeup.normal.pool	2	7	The map is still open. Come back to it.
+outcome.timeup.normal.pool	3	7	The treasure remained out of reach, but the signal was real.

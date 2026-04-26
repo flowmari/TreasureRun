@@ -1,0 +1,29 @@
+# Player-visible candidate classes
+
+- src/main/java/plugin/CheckTreasureEmeraldCommand.java
+- src/main/java/plugin/ChestProximitySoundService.java
+- src/main/java/plugin/CraftSpecialEmeraldCommand.java
+- src/main/java/plugin/CustomRecipeLoader.java
+- src/main/java/plugin/GameMenu.java
+- src/main/java/plugin/GameOutcome.java
+- src/main/java/plugin/GameStageManager.java
+- src/main/java/plugin/LangCommand.java
+- src/main/java/plugin/LanguageSelectGui.java
+- src/main/java/plugin/MySQLManager.java
+- src/main/java/plugin/OutcomeMessageService.java
+- src/main/java/plugin/QuoteFavoriteBookClickListener.java
+- src/main/java/plugin/RankDebugCommand.java
+- src/main/java/plugin/RankRewardManager.java
+- src/main/java/plugin/RealtimeRankTicker.java
+- src/main/java/plugin/StageCleanupCommand.java
+- src/main/java/plugin/TreasureExportLangCommand.java
+- src/main/java/plugin/TreasureItemFactory.java
+- src/main/java/plugin/TreasureRunGameEffectsPlugin.java
+- src/main/java/plugin/TreasureRunMultiChestPlugin.java
+- src/main/java/plugin/TreasureRunPlugin.java
+- src/main/java/plugin/TreasureRunStartCommand.java
+- src/main/java/plugin/UfoCaravanController.java
+- src/main/java/plugin/quote/QuoteFavoriteCommand.java
+- src/main/java/plugin/quote/QuoteFavoriteShortcutListener.java
+- src/main/java/plugin/quote/QuoteFavoritesBookBuilder.java
+- src/main/java/plugin/quote/QuoteRereadService.java

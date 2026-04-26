@@ -1,0 +1,7 @@
+lang	pool	rows
+sv	outcome.success.easy.pool	14
+sv	outcome.success.normal.pool	32
+sv	outcome.success.hard.pool	29
+sv	outcome.timeup.easy.pool	13
+sv	outcome.timeup.normal.pool	17
+sv	outcome.timeup.hard.pool	35

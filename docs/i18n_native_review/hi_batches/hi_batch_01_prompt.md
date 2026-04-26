@@ -1,0 +1,35 @@
+# hi outcome translation batch 01
+
+以下のTSVを翻訳してください。
+
+ルール:
+1. translation 列だけ埋める
+2. 行数・順番・pool・index は絶対に変えない
+3. \n は改行記号として保持する
+4. 格言調・自然な文にする
+5. 英語をそのまま残さない
+6. TSV だけ返す
+
+```tsv
+lang	pool	index	en_source	translation	note
+hi	outcome.success.easy.pool	1	You’ve made it.\nThe truth remains.		exact_en_158_full_rebuild
+hi	outcome.success.easy.pool	2	Even if it was only a small step,\nyou held your ground.		exact_en_158_full_rebuild
+hi	outcome.success.easy.pool	3	You listened.\n The path opened.		exact_en_158_full_rebuild
+hi	outcome.success.easy.pool	4	> You made it here\n> \n> The rules were simple —\n> \n> the choice was yours.		exact_en_158_full_rebuild
+hi	outcome.success.easy.pool	5	> Distance became meaning.\n> \n> and time answered your footsteps.		exact_en_158_full_rebuild
+hi	outcome.success.easy.pool	6	> Not everything shines forever.\n> \n> But this moment did.		exact_en_158_full_rebuild
+hi	outcome.success.easy.pool	7	Light fell evenly, ,\nand every shadow vanished.		exact_en_158_full_rebuild
+hi	outcome.success.easy.pool	8	The wind fell silent.\nand everything returned to where it belonged.		exact_en_158_full_rebuild
+hi	outcome.success.easy.pool	9	A moment of silence.\nThe world steadied its breath.		exact_en_158_full_rebuild
+hi	outcome.success.easy.pool	10	The record is etched deep in the sand—\nbeyond the reach of the wind.		exact_en_158_full_rebuild
+hi	outcome.success.easy.pool	11	Harmony was restored.\nEverything had been for this moment.		exact_en_158_full_rebuild
+hi	outcome.success.easy.pool	12	Time slipped by in silence,\ntucked away in the corners of memory.		exact_en_158_full_rebuild
+hi	outcome.success.easy.pool	13	The sky shifted in color,\nand one story came to its end.		exact_en_158_full_rebuild
+hi	outcome.success.easy.pool	14	The waves grew calm,\nand the sea hid its depths once more.		exact_en_158_full_rebuild
+hi	outcome.success.easy.pool	15	The footsteps stopped,\nand only the place remained.		exact_en_158_full_rebuild
+hi	outcome.success.easy.pool	16	Victory and defeat \nare nothing more than grains of sand.		exact_en_158_full_rebuild
+hi	outcome.success.easy.pool	17	The road goes on—or it ends.\nEither way, it lies on the same earth.		exact_en_158_full_rebuild
+hi	outcome.success.normal.pool	1	The distance has found its meaning.\nTime has rewarded your journey.		exact_en_158_full_rebuild
+hi	outcome.success.normal.pool	2	The time is up.\nbut the rest is far from over.		exact_en_158_full_rebuild
+hi	outcome.success.normal.pool	3	The axis is found.\nthe world has cased its motion.		exact_en_158_full_rebuild
+```

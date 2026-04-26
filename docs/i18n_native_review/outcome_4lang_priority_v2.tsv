@@ -1,0 +1,5 @@
+lang	priority_score	counts_status	structure_summary	content_summary
+hi	2027	OK	missing=0,count_mismatch=0,empty=0	exact_en=158,english_like=149,cjk_mixed=0
+pt	2027	OK	missing=0,count_mismatch=0,empty=0	exact_en=158,english_like=149,cjk_mixed=0
+sv	1805	OK	missing=0,count_mismatch=0,empty=0	exact_en=140,english_like=135,cjk_mixed=0
+de	267	OK	missing=0,count_mismatch=0,empty=0	exact_en=0,english_like=89,cjk_mixed=0

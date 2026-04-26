@@ -1,0 +1,21 @@
+lang	pool	index	en_source	translation	note
+sv	outcome.timeup.normal.pool	16	Silence.\nOnly time passed through.		unresolved_after_real_sv_apply
+sv	outcome.timeup.normal.pool	17	Victory and defeat \nare nothing more than grains of sand.		unresolved_after_real_sv_apply
+sv	outcome.timeup.normal.pool	18	The road goes on—or it ends.\nEither way, it lies on the same earth.		unresolved_after_real_sv_apply
+sv	outcome.timeup.normal.pool	19	> Time ran out.\n> \n> Nothing else did.		unresolved_after_real_sv_apply
+sv	outcome.timeup.normal.pool	20	> The outcome didn’t change.\n> \n> But your position did.		unresolved_after_real_sv_apply
+sv	outcome.timeup.hard.pool	4	Winter is patient.\nBe the same.		unresolved_after_real_sv_apply
+sv	outcome.timeup.hard.pool	5	The sky kept moving.\nSo will you.		unresolved_after_real_sv_apply
+sv	outcome.timeup.hard.pool	6	The story moves on.\nThe end is not yet.		unresolved_after_real_sv_apply
+sv	outcome.timeup.hard.pool	7	The stars were there, watching.\nAgain.		unresolved_after_real_sv_apply
+sv	outcome.timeup.hard.pool	8	Ice takes its time.\nNeither do you.		unresolved_after_real_sv_apply
+sv	outcome.timeup.hard.pool	9	The sky kept moving.\nSo can you.		unresolved_after_real_sv_apply
+sv	outcome.timeup.hard.pool	10	The north has learned to wait.\nSo should you.		unresolved_after_real_sv_apply
+sv	outcome.timeup.hard.pool	11	This is an interlude\n—It’s not over.		unresolved_after_real_sv_apply
+sv	outcome.timeup.hard.pool	12	Like drifting clouds,\ndon’t lose your flow—like a river.		unresolved_after_real_sv_apply
+sv	outcome.timeup.hard.pool	13	The sound was near.\nThe distance was real.\nBut that moment can’t be saved.		unresolved_after_real_sv_apply
+sv	outcome.timeup.hard.pool	14	You were closing in.\nOnly time wasn’t.		unresolved_after_real_sv_apply
+sv	outcome.timeup.hard.pool	15	The world held to its rules.\nYou touched the edge of them.		unresolved_after_real_sv_apply
+sv	outcome.timeup.hard.pool	16	You didn’t reach the treasure. \nBut the signal was real.		unresolved_after_real_sv_apply
+sv	outcome.timeup.hard.pool	17	Nothing changed.\nOnly your position did.		unresolved_after_real_sv_apply
+sv	outcome.timeup.hard.pool	18	It wasn’t luck.\nAlignment.		unresolved_after_real_sv_apply
