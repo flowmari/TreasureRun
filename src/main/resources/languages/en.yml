@@ -892,8 +892,8 @@ finalAudit:
     reloadBlockedRunning: "Reload is disabled while the game is running. Please run /gameEnd first."
     noPermission: "You do not have permission to use this command."
     noPermissionOp: "You do not have permission to use this command. Operator permission is required."
-    treasureReloadDone: "✅ TreasureRun config reloaded, including the language GUI."
-    guiReloadedReopen: "The GUI has been refreshed. Run /gameStart again to open it."
+    treasureReloadDone: "✅ TreasureRun settings have been reloaded, including the language GUI."
+    guiReloadedReopen: "The GUI has been refreshed. Please run /gameStart again to reopen it."
   debug:
     chestSoundStart: "[ChestSound] Started in 16-grid mode."
     chestSoundNoChests: "[ChestSound] No chests found."

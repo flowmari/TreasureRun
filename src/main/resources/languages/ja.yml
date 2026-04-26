@@ -613,8 +613,8 @@ finalAudit:
     reloadBlockedRunning: "ゲーム中は reload できません。先に /gameEnd を実行してください。"
     noPermission: "このコマンドを使う権限がありません。"
     noPermissionOp: "このコマンドを使う権限がありません。OP権限が必要です。"
-    treasureReloadDone: "✅ TreasureRun config を再読み込みしました（言語GUIを含む）。"
-    guiReloadedReopen: "GUIを更新しました。もう一度 /gameStart で開いてください。"
+    treasureReloadDone: "✅ TreasureRun の設定を再読み込みしました。言語GUIの設定も反映されています。"
+    guiReloadedReopen: "GUIを更新しました。もう一度 /gameStart を実行して開き直してください。"
   debug:
     chestSoundStart: "[ChestSound] 16分割グリッドモードで開始しました。"
     chestSoundNoChests: "[ChestSound] 宝箱が見つかりません。"
