@@ -1067,4 +1067,5 @@ finalAudit:
     chestSoundNoChests: "[ChestSound] कोई chest नहीं मिला।"
     chestSoundNearest: "[ChestSound] nearest={distance}m inRange={range} t={t}"
   reward:
+    label: "इनाम"
     rainbowWolf: "Rainbow Wolf"

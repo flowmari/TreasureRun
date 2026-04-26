@@ -944,4 +944,5 @@ finalAudit:
     chestSoundNoChests: "[ChestSound] पेटिका न प्राप्ता।"
     chestSoundNearest: "[ChestSound] nearest={distance}m inRange={range} t={t}"
   reward:
+    label: "पुरस्कारः"
     rainbowWolf: "Rainbow Wolf"

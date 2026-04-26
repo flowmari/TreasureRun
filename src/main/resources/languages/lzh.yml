@@ -1049,4 +1049,5 @@ finalAudit:
     chestSoundNoChests: "[ChestSound] 未見寶箱。"
     chestSoundNearest: "[ChestSound] 最近={distance}m 範圍內={range} t={t}"
   reward:
+    label: "賞"
     rainbowWolf: "虹狼"

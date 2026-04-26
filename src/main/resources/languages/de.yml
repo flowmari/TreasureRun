@@ -919,4 +919,5 @@ finalAudit:
     chestSoundNoChests: "[ChestSound] Keine Truhen gefunden."
     chestSoundNearest: "[ChestSound] nächste={distance}m inReichweite={range} t={t}"
   reward:
+    label: "Belohnung"
     rainbowWolf: "Regenbogenwolf"

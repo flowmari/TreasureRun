@@ -934,4 +934,5 @@ finalAudit:
     chestSoundNoChests: "[ChestSound] Engar kistur fundust."
     chestSoundNearest: "[ChestSound] næst={distance}m innanSviðs={range} t={t}"
   reward:
+    label: "Verðlaun"
     rainbowWolf: "Regnbogaúlfur"

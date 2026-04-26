@@ -1068,4 +1068,5 @@ finalAudit:
     chestSoundNoChests: "[ChestSound] Nenhum baú encontrado."
     chestSoundNearest: "[ChestSound] mais próximo={distance}m noAlcance={range} t={t}"
   reward:
+    label: "Recompensa"
     rainbowWolf: "Lobo arco-íris"

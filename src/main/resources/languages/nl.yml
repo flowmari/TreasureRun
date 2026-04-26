@@ -938,4 +938,5 @@ finalAudit:
     chestSoundNoChests: "[ChestSound] Geen kisten gevonden."
     chestSoundNearest: "[ChestSound] dichtstbij={distance}m binnenBereik={range} t={t}"
   reward:
+    label: "Beloning"
     rainbowWolf: "Regenboogwolf"

@@ -940,4 +940,5 @@ finalAudit:
     chestSoundNoChests: "[ChestSound] Arkkuja ei löytynyt."
     chestSoundNearest: "[ChestSound] lähin={distance}m kantamalla={range} t={t}"
   reward:
+    label: "Palkinto"
     rainbowWolf: "Sateenkaarisusi"

@@ -942,4 +942,5 @@ finalAudit:
     chestSoundNoChests: "[ChestSound] Aucun coffre trouvé."
     chestSoundNearest: "[ChestSound] plus proche={distance}m àPortée={range} t={t}"
   reward:
+    label: "Récompense"
     rainbowWolf: "Loup arc-en-ciel"

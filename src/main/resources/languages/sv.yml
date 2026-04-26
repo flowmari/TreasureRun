@@ -930,4 +930,5 @@ finalAudit:
     chestSoundNoChests: "[ChestSound] Inga kistor hittades."
     chestSoundNearest: "[ChestSound] närmast={distance}m inomRäckhåll={range} t={t}"
   reward:
+    label: "Belöning"
     rainbowWolf: "Regnbågsvarg"

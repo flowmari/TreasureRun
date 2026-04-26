@@ -946,4 +946,5 @@ finalAudit:
     chestSoundNoChests: "[ChestSound] Сундуки не найдены."
     chestSoundNearest: "[ChestSound] ближайший={distance}м вЗоне={range} t={t}"
   reward:
+    label: "Награда"
     rainbowWolf: "Радужный волк"

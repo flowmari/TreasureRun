@@ -633,4 +633,5 @@ finalAudit:
     chestSoundNoChests: "[ChestSound] 宝箱が見つかりません。"
     chestSoundNearest: "[ChestSound] 最寄り={distance}m 範囲内={range} t={t}"
   reward:
+    label: "報酬"
     rainbowWolf: "Rainbow Wolf"

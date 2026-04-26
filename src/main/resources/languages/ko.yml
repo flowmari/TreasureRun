@@ -928,4 +928,5 @@ finalAudit:
     chestSoundNoChests: "[ChestSound] 상자를 찾을 수 없습니다."
     chestSoundNearest: "[ChestSound] 가장 가까움={distance}m 범위내={range} t={t}"
   reward:
+    label: "보상"
     rainbowWolf: "무지개 늑대"

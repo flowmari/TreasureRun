@@ -932,4 +932,5 @@ finalAudit:
     chestSoundNoChests: "[ChestSound] CHEST NONE FOUND."
     chestSoundNearest: "[ChestSound] NEAR={distance}m RANGE={range} t={t}"
   reward:
+    label: "REWARD"
     rainbowWolf: "RAINBOW WOLF"

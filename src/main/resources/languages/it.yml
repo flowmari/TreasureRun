@@ -932,4 +932,5 @@ finalAudit:
     chestSoundNoChests: "[ChestSound] Nessun forziere trovato."
     chestSoundNearest: "[ChestSound] più vicino={distance}m nelRaggio={range} t={t}"
   reward:
+    label: "Ricompensa"
     rainbowWolf: "Lupo arcobaleno"
