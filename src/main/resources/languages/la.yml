@@ -940,4 +940,4 @@ finalAudit:
     chestSoundNoChests: "[ChestSound] Nullae arcae inventae sunt."
     chestSoundNearest: "[ChestSound] proxima={distance}m intraFinem={range} t={t}"
   reward:
-    rainbowWolf: "Lupus irideus"
+    rainbowWolf: "Lupus arcobaleni"
