@@ -1700,7 +1700,7 @@ customRecipes:
   result:
     material: APPLE
     amount: 1
-    displayName: '&e特製リンゴ'
+    displayName: '&eSpecial Apple'
   ingredients:
   - GOLD_INGOT
   - GOLD_INGOT
@@ -1710,7 +1710,7 @@ customRecipes:
   result:
     material: IRON_BLOCK
     amount: 1
-    displayName: '&7特製鉄ブロック'
+    displayName: '&7Special Iron Block'
   shape:
   - III
   - III

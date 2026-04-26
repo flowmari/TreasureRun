@@ -43,6 +43,27 @@ import java.util.UUID;
  */
 public class UfoCaravanController {
 
+  private String trUfo(String key) {
+    try {
+      if (plugin instanceof TreasureRunMultiChestPlugin trp && trp.getI18n() != null) {
+        String lang = "en";
+        try {
+          if (trp.getPlayerLanguageStore() != null) {
+            for (org.bukkit.entity.Player p : org.bukkit.Bukkit.getOnlinePlayers()) {
+              if (p != null && p.isOnline()) {
+                lang = trp.getPlayerLanguageStore().getLang(p, lang);
+                break;
+              }
+            }
+          }
+        } catch (Throwable ignored) {}
+        return trp.getI18n().tr(lang, key);
+      }
+    } catch (Throwable ignored) {}
+    return "Treasure Shop";
+  }
+
+
   // ============================================================
   // プラグイン参照
   // ============================================================
@@ -545,7 +566,7 @@ public class UfoCaravanController {
             // 見栄え系（任意）
             try { trader.setPersistent(true); } catch (Exception ignored) {}
             trader.setGlowing(true);
-            trader.setCustomName(ChatColor.GOLD + "" + ChatColor.BOLD + "Treasure Shop");
+            trader.setCustomName(ChatColor.GOLD + "" + ChatColor.BOLD + trUfo("finalAudit.shop.treasureShop"));
             trader.setCustomNameVisible(true);
 
             // レシピ（TreasureRunMultiChestPlugin のときだけ作れる）
