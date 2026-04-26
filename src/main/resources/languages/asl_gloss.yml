@@ -535,7 +535,7 @@ command:
     playersOnly: '&cONLY PLAYER CAN USE THIS COMMAND.'
     managerNotReady: '[TreasureRun] STAGE MANAGER NOT READY YET.'
     cleaned: '[TreasureRun] CLEANUP COMPLETE. {count} DIFFICULTY BLOCKS REMOVED.'
-  noPermission: '&cNO PERMISSION.'
+  noPermission: "YOU PERMISSION NONE USE COMMAND."
   onlyPlayer: '&cONLY PLAYER CAN USE COMMAND.'
   reload:
     start: '&7RELOAD NOW...'
@@ -861,7 +861,7 @@ gameplay:
   shop:
     tradeCompleteTitle: TRADE COMPLETE!
     hiddenPowerAwakens: HIDDEN POWER AWAKEN…
-    hiddenPowerChat: YOU FEEL TREASURE SHOP HIDDEN POWER…
+    hiddenPowerChat: "TREASURE SHOP INSIDE HIDDEN POWER YOU FEEL…"
   timer:
     remainingBossbar: TIME LEFT
     remainingLine: 'TIME LEFT: {seconds}S'

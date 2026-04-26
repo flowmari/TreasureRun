@@ -498,14 +498,6 @@ quotes:
     timeup: null
     other: null
   success:
-  - '[TreasureRun][Lang] ''language.iconMaterial:'' セクションが見つかりません（全部PAPERになります）'
-  - '⚠ /rank が plugin.yml に見つかりません（commands: rank を追加済みか確認してください）'
-  - === 🌟 TreasureRun ランキング TOP10（タイム優先）🌟 ===
-  - ゲーム中は reload できません（安全のため）。/gameEnd してから実行してください。
-  - ✅ TreasureRun config を再読み込みしました（language GUI含む）。
-  - '点（累計:'
-  - 権限がありません（OP限定）
-  - の演出だけ発動しました（ランキング/DBは変更なし）
   - Light fell evenly, ,\nand every shadow vanished.\n（光が等しく降り注ぎ、すべての影が消えた。）
   - The wind fell silent.\nand everything returned to where it belonged.\n（風が止み、あるべき場所に、あるべきものが戻った。）
   - A moment of silence.\nThe world steadied its breath.\n（一瞬の静寂。世界がその呼吸を整えた。）
@@ -984,7 +976,7 @@ gameplay:
   shop:
     tradeCompleteTitle: 交易既成！
     hiddenPowerAwakens: 幽力將醒……
-    hiddenPowerChat: 若覺 Treasure Shop 之幽力……
+    hiddenPowerChat: "汝覺寶肆之中幽力微動……"
   timer:
     remainingBossbar: 餘時
     remainingLine: 餘時：{seconds}秒

@@ -514,14 +514,6 @@ quotes:
     timeup: null
     other: null
   success:
-  - '[TreasureRun][Lang] ''language.iconMaterial:'' セクションが見つかりません（全部PAPERになります）'
-  - '⚠ /rank が plugin.yml に見つかりません（commands: rank を追加済みか確認してください）'
-  - === 🌟 TreasureRun ランキング TOP10（タイム優先）🌟 ===
-  - ゲーム中は reload できません（安全のため）。/gameEnd してから実行してください。
-  - ✅ TreasureRun config を再読み込みしました（language GUI含む）。
-  - '点（累計:'
-  - 権限がありません（OP限定）
-  - の演出だけ発動しました（ランキング/DBは変更なし）
   - Light fell evenly, ,\nand every shadow vanished.\n（光が等しく降り注ぎ、すべての影が消えた。）
   - The wind fell silent.\nand everything returned to where it belonged.\n（風が止み、あるべき場所に、あるべきものが戻った。）
   - A moment of silence.\nThe world steadied its breath.\n（一瞬の静寂。世界がその呼吸を整えた。）
@@ -1003,7 +995,7 @@ gameplay:
   shop:
     tradeCompleteTitle: Troca concluída!
     hiddenPowerAwakens: Um poder oculto desperta…
-    hiddenPowerChat: Você sente um poder oculto na Treasure Shop…
+    hiddenPowerChat: "Você sente um poder oculto na loja do tesouro…"
   timer:
     remainingBossbar: Tempo restante
     remainingLine: 'Tempo restante: {seconds}s'
@@ -1044,19 +1036,19 @@ finalAudit:
     specialApple: "Maçã especial"
     specialIronBlock: "Bloco de ferro especial"
   command:
-    playerOnly: "Apenas jogadores podem usar este comando."
+    playerOnly: "Somente jogadores podem usar este comando."
     opOnly: "Você precisa de permissão de operador para usar este comando."
-    rankDebugOff: "O debug do ranking está desativado. Defina rankDebug.enabled como true no config.yml."
+    rankDebugOff: "O debug do ranking está desativado. Defina rankDebug.enabled como true em config.yml."
     rankUsage: "Uso: /rank <1|2|3|demo>"
     rankNumberOnly: "Digite um número: /rank <1|2|3|demo>"
     rankOnlyOneToThree: "Escolha 1, 2 ou 3: /rank <1|2|3>"
     gameAlreadyRunning: "O jogo já está em andamento."
     invalidDifficulty: "Escolha Easy, Normal ou Hard."
-    languageGuiNotReady: "A interface de seleção de idioma ainda não está pronta."
-    reloadBlockedRunning: "O reload fica desativado durante a partida. Use /gameEnd primeiro."
+    languageGuiNotReady: "O menu de seleção de idioma ainda não está pronto."
+    reloadBlockedRunning: "Reload fica desativado enquanto o jogo está em andamento. Execute /gameEnd primeiro."
     noPermission: "Você não tem permissão para usar este comando."
     noPermissionOp: "Você não tem permissão para usar este comando. Permissão de operador é necessária."
   debug:
-    chestSoundStart: "[ChestSound] Iniciado no modo grade 16."
+    chestSoundStart: "[ChestSound] Iniciado no modo de grade 16."
     chestSoundNoChests: "[ChestSound] Nenhum baú encontrado."
     chestSoundNearest: "[ChestSound] mais próximo={distance}m noAlcance={range} t={t}"

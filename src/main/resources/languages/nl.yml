@@ -541,7 +541,7 @@ command:
     playersOnly: '&cAlleen spelers kunnen dit commando gebruiken.'
     managerNotReady: '[TreasureRun] De stagemanager is nog niet geïnitialiseerd.'
     cleaned: '[TreasureRun] {count} moeilijkheidsblokken zijn opgeruimd.'
-  noPermission: '&cGeen toestemming.'
+  noPermission: "Je hebt geen toestemming om dit commando te gebruiken."
   onlyPlayer: '&cDit commando kan alleen door een speler worden gebruikt.'
   reload:
     start: '&7Herladen...'
@@ -867,7 +867,7 @@ gameplay:
   shop:
     tradeCompleteTitle: Ruil voltooid!
     hiddenPowerAwakens: Een verborgen kracht ontwaakt…
-    hiddenPowerChat: Je voelt een verborgen kracht in de Treasure Shop…
+    hiddenPowerChat: "Je voelt een verborgen kracht in de schattenwinkel…"
   timer:
     remainingBossbar: Resterende tijd
     remainingLine: 'Resterende tijd: {seconds}s'
@@ -901,21 +901,21 @@ rank:
 # Final visible-surface i18n audit keys
 finalAudit:
   shop:
-    treasureShop: "Schatwinkel"
+    treasureShop: "Schattenwinkel"
   item:
     specialApple: "Speciale appel"
     specialIronBlock: "Speciaal ijzerblok"
   command:
     playerOnly: "Alleen spelers kunnen dit commando gebruiken."
-    opOnly: "Je hebt operatorrechten nodig om dit commando te gebruiken."
+    opOnly: "Voor dit commando heb je operatorrechten nodig."
     rankDebugOff: "Rank-debug staat uit. Zet rankDebug.enabled op true in config.yml."
     rankUsage: "Gebruik: /rank <1|2|3|demo>"
-    rankNumberOnly: "Voer een nummer in: /rank <1|2|3|demo>"
+    rankNumberOnly: "Voer een getal in: /rank <1|2|3|demo>"
     rankOnlyOneToThree: "Kies 1, 2 of 3: /rank <1|2|3>"
     gameAlreadyRunning: "Het spel is al bezig."
     invalidDifficulty: "Kies Easy, Normal of Hard."
     languageGuiNotReady: "Het taalkeuzemenu is nog niet klaar."
-    reloadBlockedRunning: "Reload is uitgeschakeld terwijl het spel loopt. Voer eerst /gameEnd uit."
+    reloadBlockedRunning: "Reload is uitgeschakeld zolang het spel bezig is. Voer eerst /gameEnd uit."
     noPermission: "Je hebt geen toestemming om dit commando te gebruiken."
     noPermissionOp: "Je hebt geen toestemming om dit commando te gebruiken. Operatorrechten zijn vereist."
   debug:

@@ -502,7 +502,7 @@ command:
     playersOnly: '&cOnly players can use this command.'
     cleaned: '[TreasureRun] Cleaned up {count} difficulty blocks.'
     managerNotReady: '[TreasureRun] The stage manager is not initialized.'
-  noPermission: '&cYou don''t have permission.'
+  noPermission: "You do not have permission to use this command."
   onlyPlayer: '&cThis command can only be used by a player.'
   reload:
     start: '&7Reloading config/messages...'
@@ -841,7 +841,7 @@ gameplay:
   shop:
     tradeCompleteTitle: Trade complete!
     hiddenPowerAwakens: A hidden power awakens…
-    hiddenPowerChat: You sense a hidden power within the Treasure Shop…
+    hiddenPowerChat: "You sense a hidden power within the Treasure Shop…"
   timer:
     remainingBossbar: Remaining Time
     remainingLine: 'Remaining time: {seconds}s'
@@ -881,8 +881,8 @@ finalAudit:
     specialIronBlock: "Special Iron Block"
   command:
     playerOnly: "Only players can run this command."
-    opOnly: "You need operator permission to use this command."
-    rankDebugOff: "Rank debug is off. Set rankDebug.enabled to true in config.yml."
+    opOnly: "Operator permission is required for this command."
+    rankDebugOff: "Rank debug is disabled. Set rankDebug.enabled to true in config.yml."
     rankUsage: "Usage: /rank <1|2|3|demo>"
     rankNumberOnly: "Please enter a number: /rank <1|2|3|demo>"
     rankOnlyOneToThree: "Please choose 1, 2, or 3: /rank <1|2|3>"

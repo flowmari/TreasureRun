@@ -543,7 +543,7 @@ command:
     playersOnly: '&cSolo los jugadores pueden usar este comando.'
     managerNotReady: '[TreasureRun] El administrador del escenario todavía no se ha inicializado.'
     cleaned: '[TreasureRun] Se han limpiado {count} bloques de dificultad.'
-  noPermission: '&cNo tienes permiso.'
+  noPermission: "No tienes permiso para usar este comando."
   onlyPlayer: '&cEste comando solo puede ser usado por un jugador.'
   reload:
     start: '&7Recargando...'
@@ -869,7 +869,7 @@ gameplay:
   shop:
     tradeCompleteTitle: ¡Intercambio completado!
     hiddenPowerAwakens: Un poder oculto despierta…
-    hiddenPowerChat: Sientes un poder oculto en la Treasure Shop…
+    hiddenPowerChat: "Sientes un poder oculto en la tienda del tesoro…"
   timer:
     remainingBossbar: Tiempo restante
     remainingLine: 'Tiempo restante: {seconds} s'
@@ -910,17 +910,17 @@ finalAudit:
   command:
     playerOnly: "Solo los jugadores pueden usar este comando."
     opOnly: "Necesitas permisos de operador para usar este comando."
-    rankDebugOff: "La depuración de clasificación está desactivada. Pon rankDebug.enabled en true en config.yml."
+    rankDebugOff: "La depuración de ranking está desactivada. Activa rankDebug.enabled en config.yml."
     rankUsage: "Uso: /rank <1|2|3|demo>"
     rankNumberOnly: "Introduce un número: /rank <1|2|3|demo>"
     rankOnlyOneToThree: "Elige 1, 2 o 3: /rank <1|2|3>"
     gameAlreadyRunning: "La partida ya está en curso."
     invalidDifficulty: "Elige Easy, Normal o Hard."
-    languageGuiNotReady: "La interfaz de selección de idioma aún no está lista."
-    reloadBlockedRunning: "No se puede recargar durante una partida. Usa /gameEnd primero."
+    languageGuiNotReady: "El menú de selección de idioma aún no está listo."
+    reloadBlockedRunning: "No se puede recargar mientras la partida está en curso. Ejecuta /gameEnd primero."
     noPermission: "No tienes permiso para usar este comando."
     noPermissionOp: "No tienes permiso para usar este comando. Se requieren permisos de operador."
   debug:
-    chestSoundStart: "[ChestSound] Iniciado en modo cuadrícula 16."
+    chestSoundStart: "[ChestSound] Iniciado en modo de cuadrícula de 16."
     chestSoundNoChests: "[ChestSound] No se encontraron cofres."
     chestSoundNearest: "[ChestSound] más cercano={distance}m enRango={range} t={t}"

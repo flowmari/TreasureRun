@@ -535,7 +535,7 @@ command:
     playersOnly: '&cSolo i giocatori possono usare questo comando.'
     managerNotReady: '[TreasureRun] Il gestore dello stage non è ancora inizializzato.'
     cleaned: '[TreasureRun] Rimossi {count} blocchi di difficoltà.'
-  noPermission: '&cPermesso negato.'
+  noPermission: "Non hai il permesso di usare questo comando."
   onlyPlayer: '&cQuesto comando può essere usato solo da un giocatore.'
   reload:
     start: '&7Ricaricamento...'
@@ -861,7 +861,7 @@ gameplay:
   shop:
     tradeCompleteTitle: Scambio completato!
     hiddenPowerAwakens: Un potere nascosto si risveglia…
-    hiddenPowerChat: Percepisci il potere nascosto del Treasure Shop…
+    hiddenPowerChat: "Percepisci un potere nascosto nella bottega dei tesori…"
   timer:
     remainingBossbar: Tempo rimanente
     remainingLine: 'Tempo rimanente: {seconds}s'
@@ -895,7 +895,7 @@ rank:
 # Final visible-surface i18n audit keys
 finalAudit:
   shop:
-    treasureShop: "Bottega del tesoro"
+    treasureShop: "Bottega dei tesori"
   item:
     specialApple: "Mela speciale"
     specialIronBlock: "Blocco di ferro speciale"
@@ -908,10 +908,10 @@ finalAudit:
     rankOnlyOneToThree: "Scegli 1, 2 o 3: /rank <1|2|3>"
     gameAlreadyRunning: "La partita è già in corso."
     invalidDifficulty: "Scegli Easy, Normal o Hard."
-    languageGuiNotReady: "La schermata di selezione della lingua non è ancora pronta."
-    reloadBlockedRunning: "Il reload è disattivato durante una partita. Usa prima /gameEnd."
+    languageGuiNotReady: "Il menu di selezione della lingua non è ancora pronto."
+    reloadBlockedRunning: "Reload è disattivato mentre la partita è in corso. Esegui prima /gameEnd."
     noPermission: "Non hai il permesso di usare questo comando."
-    noPermissionOp: "Non hai il permesso di usare questo comando. Servono i permessi da operatore."
+    noPermissionOp: "Non hai il permesso di usare questo comando. Sono necessari i permessi da operatore."
   debug:
     chestSoundStart: "[ChestSound] Avviato in modalità griglia 16."
     chestSoundNoChests: "[ChestSound] Nessun forziere trovato."

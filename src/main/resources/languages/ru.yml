@@ -549,7 +549,7 @@ command:
     playersOnly: '&cТолько игроки могут использовать эту команду.'
     managerNotReady: '[TreasureRun] Менеджер этапа ещё не инициализирован.'
     cleaned: '[TreasureRun] Удалено блоков сложности: {count}.'
-  noPermission: '&cУ вас нет прав.'
+  noPermission: "У вас нет прав для использования этой команды."
   onlyPlayer: '&cЭту команду может использовать только игрок.'
   reload:
     start: '&7Перезагрузка...'
@@ -875,7 +875,7 @@ gameplay:
   shop:
     tradeCompleteTitle: Обмен завершён!
     hiddenPowerAwakens: Пробуждается скрытая сила…
-    hiddenPowerChat: Вы чувствуете скрытую силу Treasure Shop…
+    hiddenPowerChat: "Вы ощущаете скрытую силу лавки сокровищ…"
   timer:
     remainingBossbar: Оставшееся время
     remainingLine: 'Осталось времени: {seconds} с'
@@ -914,7 +914,7 @@ finalAudit:
     specialApple: "Особое яблоко"
     specialIronBlock: "Особый железный блок"
   command:
-    playerOnly: "Эту команду могут выполнять только игроки."
+    playerOnly: "Эту команду могут использовать только игроки."
     opOnly: "Для этой команды нужны права оператора."
     rankDebugOff: "Отладка рейтинга отключена. Установите rankDebug.enabled: true в config.yml."
     rankUsage: "Использование: /rank <1|2|3|demo>"
@@ -929,4 +929,4 @@ finalAudit:
   debug:
     chestSoundStart: "[ChestSound] Запущено в режиме сетки 16."
     chestSoundNoChests: "[ChestSound] Сундуки не найдены."
-    chestSoundNearest: "[ChestSound] ближайший={distance}м вРадиусе={range} t={t}"
+    chestSoundNearest: "[ChestSound] ближайший={distance}м вЗоне={range} t={t}"

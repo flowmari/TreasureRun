@@ -51,7 +51,7 @@ public class CustomRecipeLoader {
   }
 
   /**
-   * サンプル2: 金3個で特製リンゴ
+   * Sample 2: 3 gold ingots create a special apple
    */
   private void registerGoldenAppleCustomRecipe() {
     ItemStack result = new ItemStack(Material.APPLE, 1);
@@ -71,7 +71,7 @@ public class CustomRecipeLoader {
   }
 
   /**
-   * サンプル3: 鉄3個で特製鉄ブロック
+   * Sample 3: 3 iron ingots create a special iron block
    */
   private void registerSpecialIronBlockRecipe() {
     ItemStack result = new ItemStack(Material.IRON_BLOCK, 1);

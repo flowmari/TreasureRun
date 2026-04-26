@@ -545,7 +545,7 @@ command:
     playersOnly: '&cSeuls les joueurs peuvent utiliser cette commande.'
     managerNotReady: '[TreasureRun] Le gestionnaire de niveau n’est pas encore initialisé.'
     cleaned: '[TreasureRun] {count} blocs de difficulté ont été retirés.'
-  noPermission: '&cPermission refusée.'
+  noPermission: "Vous n’avez pas l’autorisation d’utiliser cette commande."
   onlyPlayer: '&cCette commande ne peut être utilisée que par un joueur.'
   reload:
     start: '&7Rechargement...'
@@ -871,7 +871,7 @@ gameplay:
   shop:
     tradeCompleteTitle: Échange terminé !
     hiddenPowerAwakens: Un pouvoir caché s’éveille…
-    hiddenPowerChat: Vous sentez le pouvoir caché du Treasure Shop…
+    hiddenPowerChat: "Vous sentez une puissance cachée dans la boutique aux trésors…"
   timer:
     remainingBossbar: Temps restant
     remainingLine: 'Temps restant : {seconds} s'

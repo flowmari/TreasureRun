@@ -230,7 +230,7 @@ command:
     playersOnly: '&cこのコマンドはプレイヤーのみ使用できます。'
     cleaned: '[TreasureRun] 難易度ブロックを {count} 個片付けました。'
     managerNotReady: '[TreasureRun] ステージ管理が初期化されていません。'
-  noPermission: '&c権限がありません。'
+  noPermission: "このコマンドを使う権限がありません。"
   onlyPlayer: '&cこのコマンドはプレイヤーのみ実行できます。'
   reload:
     start: '&7設定/メッセージを再読み込み中...'
@@ -536,7 +536,6 @@ gameplay:
     scoreNone: まだスコアがありません。
     gameEndTotalScore: 'ゲーム終了！合計スコア: {score}'
     treasureFound: '宝物: {name} ×{amount}'
-    scoreAdded: 'スコア +{add}点（累計: {total}点）'
     remainingChests: '残りの宝箱: {count}個'
   result:
     runCompleteTitle: 完走！
@@ -563,7 +562,7 @@ gameplay:
   shop:
     tradeCompleteTitle: 取引完了！
     hiddenPowerAwakens: 秘められた力が目覚める…
-    hiddenPowerChat: Treasure Shop の秘められた力を感じた…
+    hiddenPowerChat: "Treasure Shop の奥に眠る力を感じた…"
   timer:
     remainingBossbar: 残り時間
     remainingLine: '残り時間: {seconds}秒'
@@ -603,18 +602,18 @@ finalAudit:
     specialIronBlock: "特製鉄ブロック"
   command:
     playerOnly: "このコマンドはプレイヤーのみ実行できます。"
-    opOnly: "このコマンドはOPのみ実行できます。"
+    opOnly: "このコマンドはOP権限が必要です。"
     rankDebugOff: "Rank debug は無効です。config.yml の rankDebug.enabled を true にしてください。"
     rankUsage: "使い方: /rank <1|2|3|demo>"
     rankNumberOnly: "数字で入力してください: /rank <1|2|3|demo>"
-    rankOnlyOneToThree: "1〜3 のみ指定できます: /rank <1|2|3>"
+    rankOnlyOneToThree: "1、2、3 のいずれかを指定してください: /rank <1|2|3>"
     gameAlreadyRunning: "ゲームはすでに実行中です。"
-    invalidDifficulty: "難易度は Easy / Normal / Hard のいずれかを指定してください。"
-    languageGuiNotReady: "言語選択GUIがまだ初期化されていません。"
-    reloadBlockedRunning: "ゲーム中は reload できません。/gameEnd で終了してから実行してください。"
+    invalidDifficulty: "難易度は Easy、Normal、Hard のいずれかを指定してください。"
+    languageGuiNotReady: "言語選択GUIはまだ準備できていません。"
+    reloadBlockedRunning: "ゲーム中は reload できません。先に /gameEnd を実行してください。"
     noPermission: "このコマンドを使う権限がありません。"
     noPermissionOp: "このコマンドを使う権限がありません。OP権限が必要です。"
   debug:
-    chestSoundStart: "[ChestSound] 開始しました（16分割グリッドモード）"
-    chestSoundNoChests: "[ChestSound] 宝箱が見つかりません"
+    chestSoundStart: "[ChestSound] 16分割グリッドモードで開始しました。"
+    chestSoundNoChests: "[ChestSound] 宝箱が見つかりません。"
     chestSoundNearest: "[ChestSound] 最寄り={distance}m 範囲内={range} t={t}"

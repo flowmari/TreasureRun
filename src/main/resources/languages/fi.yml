@@ -543,7 +543,7 @@ command:
     playersOnly: '&cVain pelaajat voivat käyttää tätä komentoa.'
     managerNotReady: '[TreasureRun] Kentänhallintaa ei ole vielä alustettu.'
     cleaned: '[TreasureRun] {count} vaikeuslohkoa siivottiin.'
-  noPermission: '&cEi oikeuksia.'
+  noPermission: "Sinulla ei ole oikeutta käyttää tätä komentoa."
   onlyPlayer: '&cVain pelaaja voi käyttää tätä komentoa.'
   reload:
     start: '&7Ladataan uudelleen...'
@@ -869,7 +869,7 @@ gameplay:
   shop:
     tradeCompleteTitle: Kauppa tehty!
     hiddenPowerAwakens: Piilotettu voima herää…
-    hiddenPowerChat: Tunnet Treasure Shopin piilotetun voiman…
+    hiddenPowerChat: "Tunnet aarrekaupan kätketyn voiman…"
   timer:
     remainingBossbar: Jäljellä oleva aika
     remainingLine: 'Aikaa jäljellä: {seconds}s'
@@ -905,22 +905,22 @@ finalAudit:
   shop:
     treasureShop: "Aarrekauppa"
   item:
-    specialApple: "Erikoisomena"
-    specialIronBlock: "Erikoisrautakuutio"
+    specialApple: "Erityinen omena"
+    specialIronBlock: "Erityinen rautalohko"
   command:
     playerOnly: "Vain pelaajat voivat käyttää tätä komentoa."
     opOnly: "Tämän komennon käyttö vaatii operaattorioikeudet."
-    rankDebugOff: "Rank-debug on pois päältä. Aseta config.yml-tiedostossa rankDebug.enabled arvoksi true."
+    rankDebugOff: "Rank-debug on pois käytöstä. Aseta config.yml-tiedostossa rankDebug.enabled arvoksi true."
     rankUsage: "Käyttö: /rank <1|2|3|demo>"
     rankNumberOnly: "Anna numero: /rank <1|2|3|demo>"
     rankOnlyOneToThree: "Valitse 1, 2 tai 3: /rank <1|2|3>"
     gameAlreadyRunning: "Peli on jo käynnissä."
     invalidDifficulty: "Valitse Easy, Normal tai Hard."
-    languageGuiNotReady: "Kielenvalintavalikko ei ole vielä valmis."
-    reloadBlockedRunning: "Reload ei ole käytössä pelin aikana. Suorita ensin /gameEnd."
+    languageGuiNotReady: "Kielivalikko ei ole vielä valmis."
+    reloadBlockedRunning: "Reload ei ole käytettävissä pelin aikana. Suorita ensin /gameEnd."
     noPermission: "Sinulla ei ole oikeutta käyttää tätä komentoa."
     noPermissionOp: "Sinulla ei ole oikeutta käyttää tätä komentoa. Operaattorioikeudet vaaditaan."
   debug:
     chestSoundStart: "[ChestSound] Käynnistetty 16-ruudukon tilassa."
     chestSoundNoChests: "[ChestSound] Arkkuja ei löytynyt."
-    chestSoundNearest: "[ChestSound] lähin={distance}m alueella={range} t={t}"
+    chestSoundNearest: "[ChestSound] lähin={distance}m kantamalla={range} t={t}"

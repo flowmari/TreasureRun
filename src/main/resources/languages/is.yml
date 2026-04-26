@@ -537,7 +537,7 @@ command:
     playersOnly: '&cAðeins leikmenn geta notað þessa skipun.'
     managerNotReady: '[TreasureRun] Borðstýringin er ekki tilbúin enn.'
     cleaned: '[TreasureRun] Hreinsaði {count} erfiðleikablokka.'
-  noPermission: '&cEngin heimild.'
+  noPermission: "Þú hefur ekki heimild til að nota þessa skipun."
   onlyPlayer: '&cAðeins spilari getur notað þessa skipun.'
   reload:
     start: '&7Endurhleð...'
@@ -863,7 +863,7 @@ gameplay:
   shop:
     tradeCompleteTitle: Viðskiptum lokið!
     hiddenPowerAwakens: Dulinn kraftur vaknar…
-    hiddenPowerChat: Þú finnur dulinn kraft í Treasure Shop…
+    hiddenPowerChat: "Þú finnur falinn kraft í fjársjóðsbúðinni…"
   timer:
     remainingBossbar: Tími eftir
     remainingLine: 'Tími eftir: {seconds}s'
@@ -904,14 +904,14 @@ finalAudit:
   command:
     playerOnly: "Aðeins leikmenn geta notað þessa skipun."
     opOnly: "Þú þarft stjórnandaréttindi til að nota þessa skipun."
-    rankDebugOff: "Rank-debug er óvirkt. Settu rankDebug.enabled á true í config.yml."
+    rankDebugOff: "Rank-debug er óvirkt. Stilltu rankDebug.enabled á true í config.yml."
     rankUsage: "Notkun: /rank <1|2|3|demo>"
     rankNumberOnly: "Sláðu inn tölu: /rank <1|2|3|demo>"
     rankOnlyOneToThree: "Veldu 1, 2 eða 3: /rank <1|2|3>"
     gameAlreadyRunning: "Leikurinn er þegar í gangi."
     invalidDifficulty: "Veldu Easy, Normal eða Hard."
     languageGuiNotReady: "Tungumálavalmyndin er ekki tilbúin enn."
-    reloadBlockedRunning: "Reload er óvirkt á meðan leikurinn er í gangi. Notaðu /gameEnd fyrst."
+    reloadBlockedRunning: "Reload er óvirkt á meðan leikurinn er í gangi. Keyrðu fyrst /gameEnd."
     noPermission: "Þú hefur ekki heimild til að nota þessa skipun."
     noPermissionOp: "Þú hefur ekki heimild til að nota þessa skipun. Stjórnandaréttindi eru nauðsynleg."
   debug:

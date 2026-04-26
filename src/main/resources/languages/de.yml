@@ -522,7 +522,7 @@ command:
     playersOnly: '&cDiesen Befehl können nur Spieler verwenden.'
     managerNotReady: '[TreasureRun] Die Stufenverwaltung ist noch nicht initialisiert.'
     cleaned: '[TreasureRun] {count} Schwierigkeitsblöcke wurden entfernt.'
-  noPermission: '&cKeine Berechtigung.'
+  noPermission: "Du hast keine Berechtigung, diesen Befehl zu verwenden."
   onlyPlayer: '&cDieser Befehl kann nur von einem Spieler verwendet werden.'
   reload:
     start: '&7Neu laden...'
@@ -848,7 +848,7 @@ gameplay:
   shop:
     tradeCompleteTitle: Handel abgeschlossen!
     hiddenPowerAwakens: Eine verborgene Kraft erwacht…
-    hiddenPowerChat: Du spürst die verborgene Kraft des Treasure Shops…
+    hiddenPowerChat: "Du spürst eine verborgene Kraft im Schatzladen…"
   timer:
     remainingBossbar: Verbleibende Zeit
     remainingLine: 'Verbleibende Zeit: {seconds}s'

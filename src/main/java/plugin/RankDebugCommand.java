@@ -50,7 +50,7 @@ public class RankDebugCommand implements CommandExecutor {
       return true;
     }
 
-    // OP限定（安全）
+    // Operator-only command for safety
     if (!player.isOp()) {
       player.sendMessage(tr(player, "finalAudit.command.opOnly"));
       return true;

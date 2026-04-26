@@ -543,7 +543,7 @@ command:
     playersOnly: '&cHoc mandato soli lusores uti possunt.'
     managerNotReady: '[TreasureRun] Moderator scaenae nondum paratus est.'
     cleaned: '[TreasureRun] {count} lateres difficultatis amoti sunt.'
-  noPermission: '&cPotestas deest.'
+  noPermission: "Non licet tibi hac iussione uti."
   onlyPlayer: '&cHoc mandatum a solo lusore adhiberi potest.'
   reload:
     start: '&7Iterum onerans...'
@@ -869,7 +869,7 @@ gameplay:
   shop:
     tradeCompleteTitle: Commercium perfectum!
     hiddenPowerAwakens: Vis occulta excitatur…
-    hiddenPowerChat: Vim occultam Treasure Shop sentis…
+    hiddenPowerChat: "Vim occultam in taberna thesauri sentis…"
   timer:
     remainingBossbar: Tempus reliquum
     remainingLine: 'Tempus reliquum: {seconds}s'
@@ -903,10 +903,10 @@ rank:
 # Final visible-surface i18n audit keys
 finalAudit:
   shop:
-    treasureShop: "Taberna Thesauri"
+    treasureShop: "Taberna thesauri"
   item:
-    specialApple: "Malum Singulare"
-    specialIronBlock: "Massa Ferrea Singularis"
+    specialApple: "Malum singulare"
+    specialIronBlock: "Massa ferrea singularis"
   command:
     playerOnly: "Hac iussione soli lusores uti possunt."
     opOnly: "Ad hanc iussionem iura operatoris requiruntur."
