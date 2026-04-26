@@ -1140,7 +1140,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     else {
       if (args != null && args.length >= 2) player = Bukkit.getPlayerExact(args[1]);
       if (player == null) player = Bukkit.getOnlinePlayers().stream().findFirst().orElse(null);
-      if (player == null) { sender.sendMessage("Only players can run this command, and no online player was found."); return true; }
+      if (player == null) { sender.sendMessage(getI18n().tr(getConfig().getString("language.default", "en"), "finalAudit.command.playerOnlyConsoleNoOnline")); return true; }
     }
 // === END AUTO PATCH v6.2 ===
 

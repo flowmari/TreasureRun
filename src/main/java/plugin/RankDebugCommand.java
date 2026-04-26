@@ -46,7 +46,7 @@ public class RankDebugCommand implements CommandExecutor {
 
     // プレイヤーのみ
     if (!(sender instanceof Player player)) {
-      sender.sendMessage("Only players can run this command.");
+      sender.sendMessage(plugin.getI18n().tr("en", "finalAudit.command.playerOnly"));
       return true;
     }
 

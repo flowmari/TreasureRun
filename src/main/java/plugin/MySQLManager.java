@@ -9,6 +9,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.CommandExecutor;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import plugin.mapper.PlayerScoreMapper;
 
@@ -148,13 +149,30 @@ public class MySQLManager implements CommandExecutor {
     }
   }
 
+
+  private String trSender(CommandSender sender, String key) {
+    String lang = "en";
+    try {
+      if (sender instanceof Player player
+          && plugin instanceof TreasureRunMultiChestPlugin trPlugin
+          && trPlugin.getPlayerLanguageStore() != null) {
+        lang = trPlugin.getPlayerLanguageStore().getLang(player, lang);
+      }
+      if (plugin instanceof TreasureRunMultiChestPlugin trPlugin && trPlugin.getI18n() != null) {
+        return trPlugin.getI18n().tr(lang, key);
+      }
+    } catch (Throwable ignored) {
+    }
+    return key;
+  }
+
   @Override
   public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
     if (command.getName().equalsIgnoreCase("dbstatus")) {
       if (isConnected()) {
-        sender.sendMessage(ChatColor.GREEN + "[TreasureRun] MySQL is connected.");
+        sender.sendMessage(ChatColor.GREEN + trSender(sender, "finalAudit.command.dbConnected"));
       } else {
-        sender.sendMessage(ChatColor.RED + "[TreasureRun] MySQL is not connected.");
+        sender.sendMessage(ChatColor.RED + trSender(sender, "finalAudit.command.dbNotConnected"));
       }
       return true;
     }

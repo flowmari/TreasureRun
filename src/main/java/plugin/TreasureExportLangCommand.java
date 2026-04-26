@@ -18,6 +18,17 @@ public class TreasureExportLangCommand implements CommandExecutor {
     this.plugin = plugin;
   }
 
+
+  private String tr(String key) {
+    try {
+      String lang = plugin.getConfig().getString("language.default", "en");
+      if (lang == null || lang.isBlank()) lang = "en";
+      return plugin.getI18n().tr(lang, key);
+    } catch (Throwable ignored) {
+      return key;
+    }
+  }
+
   @Override
   public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 
@@ -29,15 +40,15 @@ public class TreasureExportLangCommand implements CommandExecutor {
     // 1) Source data: messages.translation in config.yml
     ConfigurationSection root = plugin.getConfig().getConfigurationSection("messages.translation");
     if (root == null) {
-      sender.sendMessage(ChatColor.RED + "❌ messages.translation was not found in config.yml.");
-      sender.sendMessage(ChatColor.GRAY + "Example: messages.translation.ja.favorites.title: ...");
+      sender.sendMessage(ChatColor.RED + tr("finalAudit.command.exportMissingRoot"));
+      sender.sendMessage(ChatColor.GRAY + tr("finalAudit.command.exportExample"));
       return true;
     }
 
     // 2) Output folder: plugins/TreasureRun/languages/
     File dir = new File(plugin.getDataFolder(), "languages");
     if (!dir.exists() && !dir.mkdirs()) {
-      sender.sendMessage(ChatColor.RED + "❌ Could not create the languages/ folder: " + dir.getAbsolutePath());
+      sender.sendMessage(ChatColor.RED + tr("finalAudit.command.exportCreateFolderFailed").replace("{path}", dir.getAbsolutePath()));
       return true;
     }
 
@@ -53,7 +64,7 @@ public class TreasureExportLangCommand implements CommandExecutor {
     }
 
     if (langs.isEmpty()) {
-      sender.sendMessage(ChatColor.RED + "❌ No languages are configured for export.");
+      sender.sendMessage(ChatColor.RED + tr("finalAudit.command.exportNoLanguages"));
       return true;
     }
 
@@ -90,19 +101,19 @@ public class TreasureExportLangCommand implements CommandExecutor {
         y.save(out);
         written++;
       } catch (Throwable t) {
-        sender.sendMessage(ChatColor.RED + "❌ Export failed: " + lang + " (" + t.getMessage() + ")");
+        sender.sendMessage(ChatColor.RED + tr("finalAudit.command.exportFailed").replace("{lang}", lang).replace("{error}", String.valueOf(t.getMessage())));
       }
     }
 
-    sender.sendMessage(ChatColor.GREEN + "✅ Export complete: wrote " + written + " file(s).");
-    sender.sendMessage(ChatColor.GRAY + "Output folder: " + dir.getAbsolutePath());
+    sender.sendMessage(ChatColor.GREEN + tr("finalAudit.command.exportComplete").replace("{count}", String.valueOf(written)));
+    sender.sendMessage(ChatColor.GRAY + tr("finalAudit.command.exportOutputFolder").replace("{path}", dir.getAbsolutePath()));
 
     if (!skipped.isEmpty()) {
-      sender.sendMessage(ChatColor.YELLOW + "⚠ Skipped existing file(s): " + String.join(", ", skipped));
-      sender.sendMessage(ChatColor.GRAY + "To overwrite existing files, run: /treasureExportLang overwrite");
+      sender.sendMessage(ChatColor.YELLOW + tr("finalAudit.command.exportSkippedExisting").replace("{langs}", String.join(", ", skipped)));
+      sender.sendMessage(ChatColor.GRAY + tr("finalAudit.command.exportOverwriteHint"));
     }
 
-    sender.sendMessage(ChatColor.AQUA + "Next: make I18n read languages/*.yml to apply these translations.");
+    sender.sendMessage(ChatColor.AQUA + tr("finalAudit.command.exportNextStep"));
     return true;
   }
 

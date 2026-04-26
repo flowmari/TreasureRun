@@ -356,6 +356,19 @@ public class RankRewardManager {
     runWolfParade(player, w, wolf, start, end, keepTicks);
   }
 
+
+  private String trReward(Player player, String key) {
+    String lang = plugin.getConfig().getString("language.default", "en");
+    try {
+      if (plugin.getPlayerLanguageStore() != null) {
+        lang = plugin.getPlayerLanguageStore().getLang(player, lang);
+      }
+      return plugin.getI18n().tr(lang, key);
+    } catch (Throwable ignored) {
+      return key;
+    }
+  }
+
   private void setupRainbowWolf(Wolf wo, Player player) {
     try {
       wo.setAI(false);
@@ -366,7 +379,7 @@ public class RankRewardManager {
 
       wo.setGlowing(false); // ★ここを false に（または行自体削除）
 
-      wo.setCustomName(ChatColor.LIGHT_PURPLE + "" + ChatColor.BOLD + "Rainbow Wolf");
+      wo.setCustomName(ChatColor.LIGHT_PURPLE + "" + ChatColor.BOLD + trReward(player, "finalAudit.reward.rainbowWolf"));
       wo.setCustomNameVisible(true);
 
       wo.setTamed(true);
