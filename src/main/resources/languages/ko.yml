@@ -908,7 +908,11 @@ finalAudit:
     reloadBlockedRunning: "게임 중에는 reload를 사용할 수 없습니다. 먼저 /gameEnd를 실행하세요."
     noPermission: "이 명령어를 사용할 권한이 없습니다."
     noPermissionOp: "이 명령어를 사용할 권한이 없습니다. OP 권한이 필요합니다."
+    treasureReloadDone: "✅ 언어 GUI를 포함한 TreasureRun 설정을 다시 불러왔습니다."
+    guiReloadedReopen: "GUI가 새로고침되었습니다. 다시 열려면 /gameStart를 실행하세요."
   debug:
     chestSoundStart: "[ChestSound] 16분할 그리드 모드로 시작했습니다."
     chestSoundNoChests: "[ChestSound] 상자를 찾을 수 없습니다."
     chestSoundNearest: "[ChestSound] 가장 가까움={distance}m 범위내={range} t={t}"
+  reward:
+    rainbowWolf: "무지개 늑대"

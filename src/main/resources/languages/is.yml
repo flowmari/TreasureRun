@@ -914,7 +914,11 @@ finalAudit:
     reloadBlockedRunning: "Reload er óvirkt á meðan leikurinn er í gangi. Keyrðu fyrst /gameEnd."
     noPermission: "Þú hefur ekki heimild til að nota þessa skipun."
     noPermissionOp: "Þú hefur ekki heimild til að nota þessa skipun. Stjórnandaréttindi eru nauðsynleg."
+    treasureReloadDone: "✅ TreasureRun-stillingar voru endurhlaðnar, þar á meðal tungumálavalmyndin."
+    guiReloadedReopen: "Valmyndin hefur verið endurhlaðin. Keyrðu /gameStart aftur til að opna hana."
   debug:
     chestSoundStart: "[ChestSound] Ræst í 16-reita ham."
     chestSoundNoChests: "[ChestSound] Engar kistur fundust."
     chestSoundNearest: "[ChestSound] næst={distance}m innanSviðs={range} t={t}"
+  reward:
+    rainbowWolf: "Regnbogaúlfur"

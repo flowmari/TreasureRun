@@ -1047,7 +1047,11 @@ finalAudit:
     reloadBlockedRunning: "गेम चलने के दौरान reload बंद है। पहले /gameEnd चलाएँ।"
     noPermission: "आपके पास यह कमांड इस्तेमाल करने की अनुमति नहीं है।"
     noPermissionOp: "आपके पास यह कमांड इस्तेमाल करने की अनुमति नहीं है। ऑपरेटर अनुमति आवश्यक है।"
+    treasureReloadDone: "✅ भाषा GUI सहित TreasureRun config फिर से लोड हो गया।"
+    guiReloadedReopen: "GUI अपडेट हो गया है। इसे खोलने के लिए फिर से /gameStart चलाएँ।"
   debug:
     chestSoundStart: "[ChestSound] 16-grid mode में शुरू हुआ।"
     chestSoundNoChests: "[ChestSound] कोई chest नहीं मिला।"
     chestSoundNearest: "[ChestSound] nearest={distance}m inRange={range} t={t}"
+  reward:
+    rainbowWolf: "इंद्रधनुषी भेड़िया"

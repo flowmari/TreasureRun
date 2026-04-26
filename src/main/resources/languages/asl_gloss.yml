@@ -912,7 +912,11 @@ finalAudit:
     reloadBlockedRunning: "GAME RUN NOW. RELOAD CANNOT. FIRST /gameEnd."
     noPermission: "YOU PERMISSION NONE USE COMMAND."
     noPermissionOp: "YOU PERMISSION NONE USE COMMAND. OP PERMISSION NEED."
+    treasureReloadDone: "✅ TREASURERUN CONFIG RELOAD FINISH, LANGUAGE GUI INCLUDE."
+    guiReloadedReopen: "GUI REFRESH FINISH. /gameStart AGAIN OPEN."
   debug:
     chestSoundStart: "[ChestSound] START 16-GRID MODE."
     chestSoundNoChests: "[ChestSound] CHEST NONE FOUND."
     chestSoundNearest: "[ChestSound] NEAR={distance}m RANGE={range} t={t}"
+  reward:
+    rainbowWolf: "RAINBOW WOLF"

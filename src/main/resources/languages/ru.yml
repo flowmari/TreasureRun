@@ -926,7 +926,11 @@ finalAudit:
     reloadBlockedRunning: "Reload отключён во время игры. Сначала выполните /gameEnd."
     noPermission: "У вас нет прав для использования этой команды."
     noPermissionOp: "У вас нет прав для использования этой команды. Требуются права оператора."
+    treasureReloadDone: "✅ Конфигурация TreasureRun перезагружена, включая меню языка."
+    guiReloadedReopen: "Интерфейс обновлён. Выполните /gameStart ещё раз, чтобы открыть его."
   debug:
     chestSoundStart: "[ChestSound] Запущено в режиме сетки 16."
     chestSoundNoChests: "[ChestSound] Сундуки не найдены."
     chestSoundNearest: "[ChestSound] ближайший={distance}м вЗоне={range} t={t}"
+  reward:
+    rainbowWolf: "Радужный волк"

@@ -152,9 +152,9 @@ public class MySQLManager implements CommandExecutor {
   public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
     if (command.getName().equalsIgnoreCase("dbstatus")) {
       if (isConnected()) {
-        sender.sendMessage(ChatColor.GREEN + "[EnemyDown] MySQL は接続されています。");
+        sender.sendMessage(ChatColor.GREEN + "[TreasureRun] MySQL is connected.");
       } else {
-        sender.sendMessage(ChatColor.RED + "[EnemyDown] MySQL は接続されていません。");
+        sender.sendMessage(ChatColor.RED + "[TreasureRun] MySQL is not connected.");
       }
       return true;
     }

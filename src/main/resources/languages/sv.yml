@@ -910,7 +910,11 @@ finalAudit:
     reloadBlockedRunning: "Reload är avstängt medan spelet pågår. Kör /gameEnd först."
     noPermission: "Du har inte behörighet att använda det här kommandot."
     noPermissionOp: "Du har inte behörighet att använda det här kommandot. Operatörsbehörighet krävs."
+    treasureReloadDone: "✅ TreasureRun-konfigurationen har laddats om, inklusive språkmenyn."
+    guiReloadedReopen: "Menyn har uppdaterats. Kör /gameStart igen för att öppna den."
   debug:
     chestSoundStart: "[ChestSound] Startat i 16-rutnätsläge."
     chestSoundNoChests: "[ChestSound] Inga kistor hittades."
     chestSoundNearest: "[ChestSound] närmast={distance}m inomRäckhåll={range} t={t}"
+  reward:
+    rainbowWolf: "Regnbågsvarg"

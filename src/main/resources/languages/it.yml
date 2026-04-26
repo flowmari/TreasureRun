@@ -912,7 +912,11 @@ finalAudit:
     reloadBlockedRunning: "Reload è disattivato mentre la partita è in corso. Esegui prima /gameEnd."
     noPermission: "Non hai il permesso di usare questo comando."
     noPermissionOp: "Non hai il permesso di usare questo comando. Sono necessari i permessi da operatore."
+    treasureReloadDone: "✅ Configurazione di TreasureRun ricaricata, incluso il menu lingua."
+    guiReloadedReopen: "Il menu è stato aggiornato. Usa di nuovo /gameStart per aprirlo."
   debug:
     chestSoundStart: "[ChestSound] Avviato in modalità griglia 16."
     chestSoundNoChests: "[ChestSound] Nessun forziere trovato."
     chestSoundNearest: "[ChestSound] più vicino={distance}m nelRaggio={range} t={t}"
+  reward:
+    rainbowWolf: "Lupo arcobaleno"

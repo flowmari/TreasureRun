@@ -1029,7 +1029,11 @@ finalAudit:
     reloadBlockedRunning: "遊戲進行中不可 reload。請先行 /gameEnd。"
     noPermission: "汝無權用此命令。"
     noPermissionOp: "汝無權用此命令。須有管理者之權。"
+    treasureReloadDone: "✅ TreasureRun 設定已重載，並含語言介面。"
+    guiReloadedReopen: "介面已新。請復行 /gameStart 以開之。"
   debug:
     chestSoundStart: "[ChestSound] 十六格模式已啟。"
     chestSoundNoChests: "[ChestSound] 未見寶箱。"
     chestSoundNearest: "[ChestSound] 最近={distance}m 範圍內={range} t={t}"
+  reward:
+    rainbowWolf: "虹狼"

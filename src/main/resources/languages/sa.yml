@@ -924,7 +924,11 @@ finalAudit:
     reloadBlockedRunning: "क्रीडायां प्रवर्तमानायां reload निषिद्धम्। प्रथमं /gameEnd प्रयोजयतु।"
     noPermission: "एतत् आदेशं प्रयोक्तुं भवतः अनुमतिः नास्ति।"
     noPermissionOp: "एतत् आदेशं प्रयोक्तुं भवतः अनुमतिः नास्ति। सञ्चालकाधिकारः आवश्यकः।"
+    treasureReloadDone: "✅ भाषा-GUI सहितं TreasureRun config पुनः आरोपितम्।"
+    guiReloadedReopen: "GUI नवीकृतम्। उद्घाटयितुं पुनः /gameStart प्रयोजयतु।"
   debug:
     chestSoundStart: "[ChestSound] १६-grid mode आरब्धम्।"
     chestSoundNoChests: "[ChestSound] पेटिका न प्राप्ता।"
     chestSoundNearest: "[ChestSound] nearest={distance}m inRange={range} t={t}"
+  reward:
+    rainbowWolf: "इन्द्रधनुष-वृकः"

@@ -899,7 +899,11 @@ finalAudit:
     reloadBlockedRunning: "Reload ist während eines laufenden Spiels deaktiviert. Führe bitte zuerst /gameEnd aus."
     noPermission: "Du hast keine Berechtigung, diesen Befehl zu verwenden."
     noPermissionOp: "Du hast keine Berechtigung, diesen Befehl zu verwenden. Operatorrechte sind erforderlich."
+    treasureReloadDone: "✅ TreasureRun-Konfiguration wurde neu geladen, einschließlich der Sprachauswahl."
+    guiReloadedReopen: "Die GUI wurde aktualisiert. Führe /gameStart erneut aus, um sie zu öffnen."
   debug:
     chestSoundStart: "[ChestSound] Im 16-Raster-Modus gestartet."
     chestSoundNoChests: "[ChestSound] Keine Truhen gefunden."
     chestSoundNearest: "[ChestSound] nächste={distance}m inReichweite={range} t={t}"
+  reward:
+    rainbowWolf: "Regenbogenwolf"

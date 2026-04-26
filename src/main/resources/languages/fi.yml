@@ -920,7 +920,11 @@ finalAudit:
     reloadBlockedRunning: "Reload ei ole käytettävissä pelin aikana. Suorita ensin /gameEnd."
     noPermission: "Sinulla ei ole oikeutta käyttää tätä komentoa."
     noPermissionOp: "Sinulla ei ole oikeutta käyttää tätä komentoa. Operaattorioikeudet vaaditaan."
+    treasureReloadDone: "✅ TreasureRun-asetukset ladattiin uudelleen, kielivalikko mukaan lukien."
+    guiReloadedReopen: "Käyttöliittymä päivitettiin. Avaa se uudelleen komennolla /gameStart."
   debug:
     chestSoundStart: "[ChestSound] Käynnistetty 16-ruudukon tilassa."
     chestSoundNoChests: "[ChestSound] Arkkuja ei löytynyt."
     chestSoundNearest: "[ChestSound] lähin={distance}m kantamalla={range} t={t}"
+  reward:
+    rainbowWolf: "Sateenkaar susi"

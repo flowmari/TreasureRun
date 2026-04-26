@@ -29,15 +29,15 @@ public class TreasureExportLangCommand implements CommandExecutor {
     // 1) 元データ：config.yml の messages.translation
     ConfigurationSection root = plugin.getConfig().getConfigurationSection("messages.translation");
     if (root == null) {
-      sender.sendMessage(ChatColor.RED + "❌ config.yml に messages.translation が見つかりません。");
-      sender.sendMessage(ChatColor.GRAY + "例: messages.translation.ja.favorites.title: ...");
+      sender.sendMessage(ChatColor.RED + "❌ messages.translation was not found in config.yml.");
+      sender.sendMessage(ChatColor.GRAY + "Example: messages.translation.ja.favorites.title: ...");
       return true;
     }
 
     // 2) 出力先：plugins/TreasureRun/languages/
     File dir = new File(plugin.getDataFolder(), "languages");
     if (!dir.exists() && !dir.mkdirs()) {
-      sender.sendMessage(ChatColor.RED + "❌ languages/ フォルダを作れませんでした: " + dir.getAbsolutePath());
+      sender.sendMessage(ChatColor.RED + "❌ Could not create the languages/ folder: " + dir.getAbsolutePath());
       return true;
     }
 
@@ -53,7 +53,7 @@ public class TreasureExportLangCommand implements CommandExecutor {
     }
 
     if (langs.isEmpty()) {
-      sender.sendMessage(ChatColor.RED + "❌ 書き出し対象の言語がありません。");
+      sender.sendMessage(ChatColor.RED + "❌ No languages are configured for export.");
       return true;
     }
 
@@ -90,19 +90,19 @@ public class TreasureExportLangCommand implements CommandExecutor {
         y.save(out);
         written++;
       } catch (Throwable t) {
-        sender.sendMessage(ChatColor.RED + "❌ 書き出し失敗: " + lang + " (" + t.getMessage() + ")");
+        sender.sendMessage(ChatColor.RED + "❌ Export failed: " + lang + " (" + t.getMessage() + ")");
       }
     }
 
-    sender.sendMessage(ChatColor.GREEN + "✅ Export 完了: " + written + " ファイルを書き出しました。");
-    sender.sendMessage(ChatColor.GRAY + "出力先: " + dir.getAbsolutePath());
+    sender.sendMessage(ChatColor.GREEN + "✅ Export complete: wrote " + written + " file(s).");
+    sender.sendMessage(ChatColor.GRAY + "Output folder: " + dir.getAbsolutePath());
 
     if (!skipped.isEmpty()) {
-      sender.sendMessage(ChatColor.YELLOW + "⚠ 既存ファイルのためスキップ: " + String.join(", ", skipped));
-      sender.sendMessage(ChatColor.GRAY + "上書きするなら: /treasureExportLang overwrite");
+      sender.sendMessage(ChatColor.YELLOW + "⚠ Skipped existing file(s): " + String.join(", ", skipped));
+      sender.sendMessage(ChatColor.GRAY + "To overwrite existing files, run: /treasureExportLang overwrite");
     }
 
-    sender.sendMessage(ChatColor.AQUA + "次: languages/*.yml を I18n が読む方式に切り替えると反映されます。");
+    sender.sendMessage(ChatColor.AQUA + "Next: make I18n read languages/*.yml to apply these translations.");
     return true;
   }
 

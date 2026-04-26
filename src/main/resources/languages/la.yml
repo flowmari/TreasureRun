@@ -920,7 +920,11 @@ finalAudit:
     reloadBlockedRunning: "Reload dum ludus currit non licet. Primum /gameEnd exsequere."
     noPermission: "Non licet tibi hac iussione uti."
     noPermissionOp: "Non licet tibi hac iussione uti. Iura operatoris requiruntur."
+    treasureReloadDone: "✅ Configuratio TreasureRun iterum onerata est, tabula linguae inclusa."
+    guiReloadedReopen: "Tabula renovata est. Iterum /gameStart exsequere ut aperiatur."
   debug:
     chestSoundStart: "[ChestSound] Modus reticuli XVI coepit."
     chestSoundNoChests: "[ChestSound] Nullae arcae inventae sunt."
     chestSoundNearest: "[ChestSound] proxima={distance}m intraFinem={range} t={t}"
+  reward:
+    rainbowWolf: "Lupus irideus"

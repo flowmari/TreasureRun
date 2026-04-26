@@ -1181,12 +1181,12 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
         try {
           if (p.getOpenInventory() != null && LANGUAGE_GUI_TITLE.equals(p.getOpenInventory().getTitle())) {
             p.closeInventory();
-            p.sendMessage(ChatColor.YELLOW + "GUIを更新しました。もう一度 /gameStart で開いてください。");
+            p.sendMessage(ChatColor.YELLOW + getI18n().tr(getPlayerLangOrDefault(p.getUniqueId()), "finalAudit.command.guiReloadedReopen"));
           }
         } catch (Throwable ignored) {}
       }
 
-      player.sendMessage(ChatColor.GREEN + "✅ TreasureRun config を再読み込みしました（language GUI含む）。");
+      player.sendMessage(ChatColor.GREEN + getI18n().tr(getPlayerLangOrDefault(player.getUniqueId()), "finalAudit.command.treasureReloadDone"));
       return true;
     }
 

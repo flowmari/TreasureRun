@@ -922,7 +922,11 @@ finalAudit:
     reloadBlockedRunning: "Le rechargement est désactivé pendant une partie. Veuillez d’abord utiliser /gameEnd."
     noPermission: "Vous n’avez pas l’autorisation d’utiliser cette commande."
     noPermissionOp: "Vous n’avez pas l’autorisation d’utiliser cette commande. Les droits d’opérateur sont requis."
+    treasureReloadDone: "✅ La configuration de TreasureRun a été rechargée, y compris l’interface de langue."
+    guiReloadedReopen: "L’interface a été actualisée. Utilisez à nouveau /gameStart pour l’ouvrir."
   debug:
     chestSoundStart: "[ChestSound] Démarré en mode grille 16."
     chestSoundNoChests: "[ChestSound] Aucun coffre trouvé."
     chestSoundNearest: "[ChestSound] plus proche={distance}m àPortée={range} t={t}"
+  reward:
+    rainbowWolf: "Loup arc-en-ciel"

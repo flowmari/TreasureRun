@@ -1048,7 +1048,11 @@ finalAudit:
     reloadBlockedRunning: "Reload fica desativado enquanto o jogo está em andamento. Execute /gameEnd primeiro."
     noPermission: "Você não tem permissão para usar este comando."
     noPermissionOp: "Você não tem permissão para usar este comando. Permissão de operador é necessária."
+    treasureReloadDone: "✅ A configuração do TreasureRun foi recarregada, incluindo o menu de idioma."
+    guiReloadedReopen: "A interface foi atualizada. Execute /gameStart novamente para abri-la."
   debug:
     chestSoundStart: "[ChestSound] Iniciado no modo de grade 16."
     chestSoundNoChests: "[ChestSound] Nenhum baú encontrado."
     chestSoundNearest: "[ChestSound] mais próximo={distance}m noAlcance={range} t={t}"
+  reward:
+    rainbowWolf: "Lobo arco-íris"
