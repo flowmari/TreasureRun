@@ -30,7 +30,10 @@ public class RealtimeRankTicker {
 
   private BukkitTask task;
 
-  private int lastDigest = 0;
+  // Modeごとに前回ランキング状態を保存する。
+  // これにより Weekly / All-time / Monthly の表示切替だけでは
+  // 「Leaderboard updated!」を出さない。
+  private final Map<Mode, Integer> lastDigestByMode = new EnumMap<>(Mode.class);
 
   // 表示モード（デフォルト weekly）
   private Mode mode = Mode.WEEKLY;
@@ -79,12 +82,17 @@ public class RealtimeRankTicker {
     }
 
     int digest = digest(top, mode);
-    boolean changed = (digest != lastDigest);
+    Integer previousDigest = lastDigestByMode.get(mode);
+
+    // 初回表示は「更新」ではないので通知しない。
+    // 2回目以降、同じmode内で順位・スコア・タイム・言語が変わった時だけ通知する。
+    boolean changed = (previousDigest != null && digest != previousDigest);
 
     renderSidebar(top, mode);
 
+    lastDigestByMode.put(mode, digest);
+
     if (changed) {
-      lastDigest = digest;
       notifyLeaderboardUpdatedChat(mode);
     }
 
