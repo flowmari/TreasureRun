@@ -7,7 +7,6 @@
 .gradle/
 build/
 out/
-
 # Minecraft runtime (アップしない)
 server/
 plugins/
@@ -16,13 +15,10 @@ spigot-data/
 logs/
 *.log
 eula.txt
-
 # DB data (絶対アップしない)
 mysql-data/
 mysql_data/
-mysql-data/
 mysql-init/
-
 # env/secrets
 .env
 # local backups
@@ -30,22 +26,16 @@ mysql-init/
 *.bak_*
 *.bak.*
 *.bak-*
-
 # --- local markers / scripts / archives ---
 __THIS_IS_LATEST_PROJECT__.txt
 msz_run.sh
-
 # stray duplicate files (root-level)
 plugin.yml
-
 # archives
 *.zip
-
 # backup files
-*.bak
 *.bak2
 *.backup
-
 # local-only artifacts (do not commit)
 backups/
 _local_only/
@@ -54,10 +44,35 @@ src/main/resources/languages/__thin_backup__*/
 src/main/resources/languages_bak_*/
 src/main/resources/languages/*.broken_*
 _local_backup/
-
 # local backup artifacts
 backup/
-*.bak.*
-
 # temporary files
 tmp/
+# ---- TreasureRun local generated / audit / backup files ----
+# Local backup folders created during patching
+backup_*/
+backup*/
+# Temporary i18n/audit scripts and generated work files
+tmp_i18n_fix/
+tmp_restore_langs/
+tmp_fix_*.py
+tmp_fix_*.sh
+tmp_i18n_fix_fix_java_and_build.sh
+# Local DB backup files
+db_backups/
+# Java source backup snapshots
+*.before_*
+*.broken.*
+*.langfix_*
+*.pre_exact*
+*.runtime_debug_backup*
+*.wave*
+# Local audit candidate outputs not meant for repository
+docs/i18n_audit/visible_java_surface_candidates.tsv
+docs/i18n_audit/final_visible_direct_literal_audit_refined.tsv
+docs/i18n_audit/final_visible_direct_literal_audit_after_reward_patch.tsv
+# macOS / IDE noise
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/usage.statistics.xml
+.idea/shelf/
