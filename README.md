@@ -151,6 +151,8 @@ RESULT=OK_DUPLICATE_KEYS
 RESULT=OK_BUILD
 ```
 
+![i18n audit result](docs/images/i18n-audit-result.png)
+
 サーバー側でも、古い `plugins/TreasureRun/languages` が優先されないように退避し、最新JAR同梱のlanguageファイルから再生成されることを確認しました。
 
 ```text
@@ -358,6 +360,8 @@ RESULT=OK_REFERENCED_KEYS
 RESULT=OK_DUPLICATE_KEYS
 RESULT=OK_BUILD
 ```
+
+![i18n audit result](docs/images/i18n-audit-result.png)
 
 The Docker-based Spigot runtime was also checked to ensure that old server-side language files do not override the latest bundled language files.
 
