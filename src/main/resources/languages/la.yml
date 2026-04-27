@@ -849,9 +849,8 @@ gameplay:
     timeUpTitle: TEMPUS EXHAUSTUM!
     treasuresCollected: 'Thesauri collecti: {got}/{total} ({missing} reliqui)'
     overcomingAdversity: ADVERSITATE SUPERATA
-    label: "Praemium"
-      time: Tempus
-      rank: Ordo
+    time: Tempus
+    rank: Ordo
     allChestsOpenedBroadcast: '{player} omnes arcas aperuit! Summa punctorum ultima: {score}'
     summaryLine: 'Tempus: {time}  Puncta: {score}  Ordo: {rank}'
     gotLine: 'Arcae: {got}/{total}'

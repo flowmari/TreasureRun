@@ -849,9 +849,8 @@ gameplay:
     timeUpTitle: AIKA LOPPUI!
     treasuresCollected: 'Aarteita kerätty: {got}/{total} ({missing} jäljellä)'
     overcomingAdversity: VASTOINKÄYMISTEN YLI
-    label: "Palkinto"
-      time: Aika
-      rank: Sija
+    time: Aika
+    rank: Sija
     allChestsOpenedBroadcast: '{player} avasi kaikki arkut! Lopputulos: {score}'
     summaryLine: 'Aika: {time}  Pisteet: {score}  Sijoitus: {rank}'
     gotLine: 'Arkkuja: {got}/{total}'

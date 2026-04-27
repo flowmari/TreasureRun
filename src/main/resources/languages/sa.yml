@@ -853,9 +853,8 @@ gameplay:
     timeUpTitle: कालः समाप्तः!
     treasuresCollected: 'संगृहीत-निधयः: {got}/{total} (अवशिष्टाः {missing})'
     overcomingAdversity: विपत्तेः अतिक्रमः
-    label: "फलम्"
-      time: कालः
-      rank: स्थानम्
+    time: कालः
+    rank: स्थानम्
     allChestsOpenedBroadcast: '{player} सर्वाः पेटिकाः उद्घाटितवान्! अन्तिमाङ्काः: {score}'
     summaryLine: समयः {time}  अङ्काः {score}  क्रमः {rank}
     gotLine: 'पेटिकाः: {got}/{total}'

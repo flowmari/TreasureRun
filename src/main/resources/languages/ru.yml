@@ -855,9 +855,8 @@ gameplay:
     timeUpTitle: ВРЕМЯ ВЫШЛО!
     treasuresCollected: 'Собрано сокровищ: {got}/{total} (осталось {missing})'
     overcomingAdversity: ПРЕОДОЛЕВАЯ ТРУДНОСТИ
-    label: "Награда"
-      time: Время
-      rank: Ранг
+    time: Время
+    rank: Ранг
     allChestsOpenedBroadcast: '{player} открыл(а) все сундуки! Итоговый счёт: {score}'
     summaryLine: 'Время: {time}  Очки: {score}  Ранг: {rank}'
     gotLine: 'Сундуки: {got}/{total}'

@@ -841,9 +841,8 @@ gameplay:
     timeUpTitle: TIME-UP!
     treasuresCollected: 'TREASURES COLLECTED: {got}/{total} ({missing} LEFT)'
     overcomingAdversity: OVERCOME ADVERSITY
-    label: "REWARD"
-      time: TIME
-      rank: RANK
+    time: TIME
+    rank: RANK
     allChestsOpenedBroadcast: '{player} OPEN ALL CHESTS! FINAL SCORE: {score}'
     summaryLine: 'TIME: {time}  SCORE: {score}  RANK: {rank}'
     gotLine: 'CHESTS: {got}/{total}'

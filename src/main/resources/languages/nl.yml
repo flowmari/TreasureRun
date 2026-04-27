@@ -847,9 +847,8 @@ gameplay:
     timeUpTitle: TIJD OM!
     treasuresCollected: 'Schatten verzameld: {got}/{total} ({missing} over)'
     overcomingAdversity: TEGENSPOED OVERWONNEN
-    label: "Beloning"
-      time: Tijd
-      rank: Rang
+    time: Tijd
+    rank: Rang
     allChestsOpenedBroadcast: '{player} heeft alle kisten geopend! Eindscore: {score}'
     summaryLine: 'Tijd: {time}  Score: {score}  Rang: {rank}'
     gotLine: 'Kisten: {got}/{total}'

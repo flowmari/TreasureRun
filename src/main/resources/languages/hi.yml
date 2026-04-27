@@ -974,9 +974,8 @@ gameplay:
     timeUpTitle: समय समाप्त!
     treasuresCollected: 'इकट्ठे किए गए खजाने: {got}/{total} (शेष {missing})'
     overcomingAdversity: विपरीत परिस्थितियों पर विजय
-    label: "इनाम"
-      time: 時間
-      rank: रैंक
+    time: 時間
+    rank: रैंक
     allChestsOpenedBroadcast: '{player} ने सभी संदूक खोल दिए! अंतिम स्कोर: {score}'
     summaryLine: 'समय: {time}  स्कोर: {score}  रैंक: {rank}'
     gotLine: 'संदूक: {got}/{total}'

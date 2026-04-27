@@ -956,9 +956,8 @@ gameplay:
     timeUpTitle: 時盡！
     treasuresCollected: 所得寶箱：{got}/{total}（餘 {missing}）
     overcomingAdversity: 越逆境
-    label: "賞"
-      time: 時間
-      rank: 名次
+    time: 時間
+    rank: 名次
     allChestsOpenedBroadcast: '{player}盡啟諸寶箱！終分：{score}'
     summaryLine: 時：{time}  分：{score}  位：{rank}
     gotLine: 已得：{got}/{total}

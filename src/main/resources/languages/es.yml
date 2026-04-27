@@ -849,9 +849,8 @@ gameplay:
     timeUpTitle: ¡SE ACABÓ EL TIEMPO!
     treasuresCollected: 'Tesoros recogidos: {got}/{total} ({missing} restantes)'
     overcomingAdversity: SUPERANDO LA ADVERSIDAD
-    label: "Recompensa"
-      time: Tiempo
-      rank: Rango
+    time: Tiempo
+    rank: Rango
     allChestsOpenedBroadcast: '¡{player} abrió todos los cofres! Puntuación final: {score}'
     summaryLine: 'Tiempo: {time}  Puntuación: {score}  Rango: {rank}'
     gotLine: 'Cofres: {got}/{total}'

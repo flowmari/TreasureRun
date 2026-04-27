@@ -841,9 +841,8 @@ gameplay:
     timeUpTitle: TEMPO SCADUTO!
     treasuresCollected: 'Tesori raccolti: {got}/{total} ({missing} rimasti)'
     overcomingAdversity: SUPERARE LE AVVERSITÀ
-    label: "Ricompensa"
-      time: Tempo
-      rank: Posizione
+    time: Tempo
+    rank: Posizione
     allChestsOpenedBroadcast: '{player} ha aperto tutti i forzieri! Punteggio finale: {score}'
     summaryLine: 'Tempo: {time}  Punteggio: {score}  Posizione: {rank}'
     gotLine: 'Forzieri: {got}/{total}'

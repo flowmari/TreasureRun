@@ -837,9 +837,8 @@ gameplay:
     timeUpTitle: 시간 종료!
     treasuresCollected: '획득한 보물: {got}/{total} (남은 수 {missing})'
     overcomingAdversity: 역경을 넘어
-    label: "보상"
-      time: 시간
-      rank: 순위
+    time: 시간
+    rank: 순위
     allChestsOpenedBroadcast: '{player}님이 모든 상자를 열었습니다! 최종 점수: {score}'
     summaryLine: '시간: {time}  점수: {score}  순위: {rank}'
     gotLine: '상자: {got}/{total}'
