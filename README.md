@@ -12,9 +12,11 @@ This repository is designed as a portfolio project that demonstrates not only ga
 
 ---
 
-## 日本語 | [English](#english)
+## [日本語](#japanese) | [English](#english)
 
 ---
+
+<a id="japanese"></a>
 
 ## 日本語
 
@@ -212,6 +214,10 @@ docker logs --tail=200 minecraft_spigot
 - バグ修正、検証、再発防止まで含めた開発プロセス
 
 ---
+
+<a id="english"></a>
+
+<div lang="en" translate="no">
 
 ## English
 
@@ -415,6 +421,8 @@ TreasureRun demonstrates practical backend/plugin engineering skills beyond a si
 - 19-language i18n architecture
 - CI-based quality control
 - Debugging, validation, and maintainability-focused development
+
+</div>
 
 ---
 
