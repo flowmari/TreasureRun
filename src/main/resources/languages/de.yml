@@ -1,4 +1,8 @@
 outcome:
+  fallback:
+    runComplete: "Run complete."
+    timeUp: "Time's up."
+    trader: "Trade complete."
   notice:
     timeUpGameOver: 'Die Zeit ist abgelaufen. Das Spiel ist vorbei.'
     retryGuide: 'Versuche es noch einmal über eine andere Route.'

@@ -1,4 +1,8 @@
 outcome:
+  fallback:
+    runComplete: "クリアしました。"
+    timeUp: "時間切れです。"
+    trader: "交換が完了しました。"
   notice:
     timeUpGameOver: '時間切れです。ゲームオーバーです。'
     retryGuide: '別のルートでもう一度挑戦してみてください。'

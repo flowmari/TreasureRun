@@ -1,4 +1,8 @@
 outcome:
+  fallback:
+    runComplete: "Run complete."
+    timeUp: "Time's up."
+    trader: "Trade complete."
   notice:
     timeUpGameOver: Tíminn er runninn út. Leiknum er lokið.
     retryGuide: Reyndu aftur og farðu aðra leið.
