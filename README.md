@@ -6,6 +6,8 @@
 > **A Minecraft Spigot mini-game plugin focused on maintainable Java architecture, 19-language i18n, CI quality gates, Docker-based validation, MySQL persistence, and effect-rich gameplay.**
 
 TreasureRun is a custom treasure-hunt mini-game plugin for Minecraft Spigot 1.20.1.  
+
+TreasureRun separates internal game logic from player-facing display text, making the plugin easier to localize, audit, and maintain across 19 language packs.
 Players search for treasure chests within a time limit, earn scores, trigger visual/audio effects, and interact with multilingual in-game UI.
 
 This repository is designed as a portfolio project that demonstrates not only gameplay implementation, but also **engineering discipline: internationalization, quality control, runtime verification, and maintainable plugin design**.
