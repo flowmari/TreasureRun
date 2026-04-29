@@ -73,6 +73,40 @@ ja, en, de, fr, it, sv, es, fi, nl, ru, ko, zh_tw, pt, hi, la, lzh, is, sa, asl_
 
 ---
 
+<!-- TREASURERUN_DOCS_SPLIT_JA_START -->
+### 使い方・設計ドキュメント
+
+README本体は概要を短く保ち、詳細な使い方・コマンド仕様・設計意図は外部ドキュメントに分離しています。
+
+| Document | 内容 |
+|---|---|
+| [`docs/COMMANDS.md`](docs/COMMANDS.md) | プレイヤー向け・OP向けコマンド、権限、alias、サブコマンド |
+| [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) | Module / Layer構成、Mermaid構成図、Tech Highlights、Runtime Flow |
+
+#### Quick Start / Local Runtime
+
+```bash
+./gradlew clean build
+docker compose up -d
+cp build/libs/TreasureRun-1.0-SNAPSHOT-all.jar spigot-data/plugins/
+docker restart minecraft_spigot
+docker logs -f minecraft_spigot
+```
+
+#### Tech Highlights
+
+| Area | このプロジェクトで示していること |
+|---|---|
+| Concurrency / Scheduler | Bukkit schedulerによるゲーム進行、演出、遅延実行、cleanup |
+| Security / Permissions | `plugin.yml` permissions、OP限定コマンド、debug gate |
+| Performance / Runtime Safety | 生成ブロック・entity・taskのcleanup、演出のbounded execution |
+| Resilience / Fallback / Reload | i18n fallback chain、JAR同梱language filesからの再生成、`/treasureReload` |
+
+> TreasureRun は Spigot plugin であり REST API service ではないため、Swagger/OpenAPI は使わず、`docs/COMMANDS.md` と `docs/ARCHITECTURE.md` に外部化しています。
+
+---
+<!-- TREASURERUN_DOCS_SPLIT_JA_END -->
+
 ### CI品質ゲート
 
 GitHub Actionsで以下を検証しています。
@@ -282,6 +316,40 @@ ja, en, de, fr, it, sv, es, fi, nl, ru, ko, zh_tw, pt, hi, la, lzh, is, sa, asl_
 ```
 
 ---
+
+<!-- TREASURERUN_DOCS_SPLIT_EN_START -->
+### Usage and Design Documentation
+
+The README is intentionally kept as a concise project overview. Detailed usage, command behavior, and architectural design are externalized into dedicated documents.
+
+| Document | Content |
+|---|---|
+| [`docs/COMMANDS.md`](docs/COMMANDS.md) | Player/admin commands, permissions, aliases, and subcommands |
+| [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) | Module/layer structure, Mermaid architecture diagram, tech highlights, and runtime flow |
+
+#### Quick Start / Local Runtime
+
+```bash
+./gradlew clean build
+docker compose up -d
+cp build/libs/TreasureRun-1.0-SNAPSHOT-all.jar spigot-data/plugins/
+docker restart minecraft_spigot
+docker logs -f minecraft_spigot
+```
+
+#### Tech Highlights
+
+| Area | What this project demonstrates |
+|---|---|
+| Concurrency / Scheduler | Bukkit scheduler usage for gameplay flow, effects, delayed execution, and cleanup |
+| Security / Permissions | `plugin.yml` permissions, operator-only commands, and debug gating |
+| Performance / Runtime Safety | Cleanup of generated blocks, entities, tasks, and bounded visual/audio effects |
+| Resilience / Fallback / Reload | i18n fallback chain, regeneration from bundled language files, and `/treasureReload` |
+
+> TreasureRun is a Spigot plugin, not a REST API service. Swagger/OpenAPI is intentionally not used; command and architecture documentation are externalized instead.
+
+---
+<!-- TREASURERUN_DOCS_SPLIT_EN_END -->
 
 ### CI Quality Gates
 
