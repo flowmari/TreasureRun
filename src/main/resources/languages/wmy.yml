@@ -625,7 +625,7 @@ finalAudit:
     rankNumberOnly: "数にて入れ給へ: /rank <1|2|3|demo>"
     rankOnlyOneToThree: "1、2、3 のいずれかを定め給へ: /rank <1|2|3>"
     gameAlreadyRunning: "遊戯はすでに実行中なり。"
-    invalidDifficulty: "難きほどは Easy、Normal、Hard のいずれかを定め給へ。"
+    invalidDifficulty: "難きほどは、やすし・なみ・かたしのいづれかを定め給へ。"
     languageGuiNotReady: "言の葉選びGUIはまだ準備できていません。"
     reloadBlockedRunning: "遊戯中は reload できません。先に /gameEnd を実行し給へ。"
     noPermission: "この命を用ゐる権なし。"
