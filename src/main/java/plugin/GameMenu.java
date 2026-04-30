@@ -794,7 +794,7 @@ public class GameMenu {
     String fmt = plugin.getI18n().tr(
         lang,
         GameMenuKeys.UI_LABEL_PAGE, // ui.labels.page
-        I18n.Placeholder.of("{page}", String.valueOf(pageIndex)),
+        I18n.Placeholder.of("{page}", wmyPageNumber(lang, pageIndex)),
         I18n.Placeholder.of("{total}", String.valueOf(totalPages))
     );
 
@@ -1084,4 +1084,30 @@ public class GameMenu {
     if (s == null) return "";
     return ChatColor.stripColor(colorize(s));
   }
+
+  private static String wmyPageNumber(String lang, int n) {
+    if (lang == null || !lang.equalsIgnoreCase("wmy")) {
+      return String.valueOf(n);
+    }
+    return toWmyKanjiNumber(n);
+  }
+
+  private static String toWmyKanjiNumber(int n) {
+    if (n <= 0) return String.valueOf(n);
+
+    String[] one = {"", "一", "二", "三", "四", "五", "六", "七", "八", "九"};
+
+    if (n < 10) return one[n];
+    if (n == 10) return "十";
+    if (n < 20) return "十" + one[n - 10];
+
+    if (n < 100) {
+      int tens = n / 10;
+      int rest = n % 10;
+      return one[tens] + "十" + (rest == 0 ? "" : one[rest]);
+    }
+
+    return String.valueOf(n);
+  }
+
 }

@@ -506,7 +506,7 @@ ui:
     outcome:
       success: 成就
       timeUp: 時尽きぬ
-    page: '今の頁 {current}'
+    page: '今の頁 {page}'
     tabs: 章
   error:
     noData: 記しなし。
