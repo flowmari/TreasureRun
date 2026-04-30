@@ -1,223 +1,185 @@
-# ============================================================
-# TreasureRun language file: WMY / Classical Japanese style
-# 言語コード: wmy
-#
-# 20th language for TreasureRun i18n.
-# Based on ja.yml and rewritten toward readable classical Japanese.
-#
-# Design policy:
-# - Same key structure as ja.yml.
-# - No Java hardcoding.
-# - Player is translated as 仕手.
-# - All 158 outcome proverb/quote pool entries remain present.
-# - Minecraft UI remains readable.
-# ============================================================
-
 outcome:
   fallback:
-    runComplete: "成し遂げたり。"
-    timeUp: "時尽きたり。"
-    trader: "交換が終はりぬ。"
+    runComplete: 成し遂げ給ひぬ。
+    timeUp: 時、尽きにけり。
+    trader: 交易、すでに果てにけり。
   notice:
-    timeUpGameOver: '時尽きたり。遊戯オーバーなり。'
-    retryGuide: '別のルートでいま一度挑みしてみてし給へ。'
+    timeUpGameOver: 時、尽きにけり。遊びはここに果てぬ。
+    retryGuide: 別なる道を取り、いま一度挑み給へ。
   success:
     common:
       pool: []
     easy:
       pool:
-      - たどり着きぬ。まことは、まことのままに。
-      - 小さき一歩なれど、汝は守り果てたり。
-      - 耳を澄ませば、道おのづから開けたり。
-      - '汝は辿り着いた。
-
-
-        御掟は単純なりき。
-
-
-        選びしは、汝自身。'
-      - '隔たりが意味になり、
-
-
-        時が汝の足取りに応えた。'
-      - 'すべてがとこしへに輝くにはあらず。
-
-
-        されど、この刹那はさなりき。'
-      - 光が等しく降り注ぎ、すべての影が消えた。
-      - 風が止み、あるべき場所に、あるべきものが戻った。
-      - 一瞬のしじま。世がその呼吸を整えた。
-      - 記しは砂に深く刻まれ、風もそれを動かせない。
-      - 調べが訪れた。すべては、この刹那のためにあった。
-      - 時は静かに流れ、記憶の隅に収まった。
-      - 天の色が変わり、一つの物語が完結を告げた。
-      - 波は穏やかになり、海は再びその深淵を隠した。
-      - 歩みは止まり、場所だけがそこに残された。
+      - たどり着き給ひぬ。まことは、まことのままにあり。
+      - 小さき一歩なれど、汝はよく守り果て給ひぬ。
+      - 耳を澄ませば、道はおのづから開けにけり。
+      - 汝、つひに辿り着き給ひぬ。\n\n御掟はただ一つなり。\n\n選びしは、ほかならぬ汝なり。
+      - 隔たりはしるしとなり、\n\n時は汝の足取りに応へにけり。
+      - すべてのもの、とこしへに輝くにはあらず。\n\nされど、この刹那ばかりは、まこと輝きたり。
+      - 光あまねく降りそそぎ、影はことごとく消えにけり。
+      - 風やみて、あるべきものは、あるべき所へ帰りぬ。
+      - 一瞬のしじま。世は静かに息を整へたり。
+      - 記しは砂に深く刻まれ、風もこれを動かし得ず。
+      - 調べは訪れぬ。すべては、この刹那のためにありき。
+      - 時は静かに流れ、記憶の隅に収まりぬ。
+      - 天の色あらたまり、一つの物語は結びを告げぬ。
+      - 波は穏やかになり、海はふたたび深き底を隠しぬ。
+      - 歩みは止まり、ただその場所のみ残りたり。
       - 勝ちも負けも、同じ砂の一粒に過ぎず。
-      - 道は続き、あるいは途切る。いづれも同じ大地の上にあり。
+      - 道は続き、または途切る。いづれも同じ大地の上にあり。
     normal:
       pool:
-      - 隔たりが意味になった。時が汝の歩みに答えた。
-      - 時は終わった。ほかは終わっていない。
-      - 軸(中心)は見出された。世はその運動を止めた。
-      - ガラスは割れなかった。汝も折れなかった。
-      - 静かな天の下で、意志は持ちこたえた。
-      - とこしへに輝くものなんてほとんどないけれど、この刹那は別格だった。
-      - 脆い地面を渡り切った。地平線景色をしっかりと握りしめたまま。
-      - 刹那は過ぎ去った。遺されたもの記し・功績は残る。
-      - 運は速やかに消え、整い秩序は永続する。
-      - 天はその終わりなき循環に休止を知らぬ。汝もまた、止まらず。
-      - 中心は到達された。世は立ち尽くし静止した。
-      - ついに、ここへ辿り着いた。まことは屈することなく、そこに在る。
-      - 完遂。この道を選んだのは他でもない汝だ。
-      - 時はしじまへと漂い、精神の奥底の隅に自らの居場所を見出だしぬ。
-      - 天が姿を変えるとともに、一つの物語はその最終的な完結を見出した。
-      - 波は静まり、天は再びその深淵を覆い隠した。
-      - 歩みは途絶え、ただ場所だけがそこに在り続けた。
-      - 光が等しく降り注ぎ、すべての影が消えた。
-      - 風が止み、あるべき場所に、あるべきものが戻った。
-      - 一瞬のしじま。世がその呼吸を整えた。
-      - 記しは砂に深く刻まれ、風もそれを動かせない。
-      - 調べが訪れた。すべては、この刹那のためにあった。
-      - 成就。見出だしぬ。それにて足れり。
-      - 道は持ちこたへたり。汝もまた然り。
-      - 天はずっと歩み続けていた。汝も進み続けられる。
-      - 静かな果て。本物の積み重ね。
-      - 世が用意していた道を、汝は歩いただけ。
-      - 大地は壊れなかった。汝の足取りを、信じていた。
-      - この刹那は、星々の長いリズムと重なった。
-      - 何かを奪ったわけじゃない。何かを、理解した。
-      - 手に入れたのは何かではない。まことを、見抜いただけだ。
-      - 征服せしにあらず。ここに属していたり。
-      - 記憶より古い道を、汝は辿った。
-      - 大地は抗わず、汝を認識した。
-      - この刹那は、星々の静けさと重なった。
+      - 隔たりはしるしとなり、時は汝の歩みに応へたり。
+      - 時は果てぬ。されど、ほかはまだ果てず。
+      - 軸は見出だされぬ。世はそのめぐりを止めたり。
+      - 硝子は砕けず。汝もまた、折れざりき。
+      - 静かなる天の下、志はよく持ちこたへたり。
+      - とこしへに輝くものは多からず。されど、この刹那は別なりき。
+      - 脆き地を渡り果て、汝は地平の景を手放さざりき。
+      - 刹那は過ぎぬ。されど記しと功は残りたり。
+      - 運はたちまち消ゆ。されど整ひは長く残るものなり。
+      - 天はめぐりを休まず。汝もまた、止まることなかれ。
+      - 中心に至りぬ。世は立ち尽くし、静まりたり。
+      - つひに、ここへ至り給ひぬ。まことは屈せず、そこにあり。
+      - 完遂せり。この道を選びしは、ほかならぬ汝なり。
+      - 時はしじまへ漂ひ、心の奥にその居所を得たり。
+      - 天、姿を変へ、一つの物語はここに結びを得たり。
+      - 波は静まり、天はふたたび深きものを覆ひ隠しぬ。
+      - 歩みは途絶え、ただ場所のみ、そこにあり続けたり。
+      - 光あまねく降りそそぎ、影はことごとく消えにけり。
+      - 風やみて、あるべきものは、あるべき所へ帰りぬ。
+      - 一瞬のしじま。世は静かに息を整へたり。
+      - 記しは砂に深く刻まれ、風もこれを動かし得ず。
+      - 調べは訪れぬ。すべては、この刹那のためにありき。
+      - 成就せり。見出だし給ひぬ。それにて足れり。
+      - 道は持ちこたへたり。汝もまた、然り。
+      - 天は歩みをやめざりき。汝もまた、進み続け給へ。
+      - 静かなる果て。まことの積み重ねなり。
+      - 世の備へし道を、汝はただ歩み給ひぬ。
+      - 大地は崩れず。汝の足取りを、信じたり。
+      - この刹那、星々の長き調べと重なりぬ。
+      - 何かを奪ひしにはあらず。ただ、何かを悟り給ひぬ。
+      - 手に入れしは物にあらず。まことを見抜き給ひしのみ。
+      - 征服せしにあらず。汝は、もとよりここに属し給ひき。
+      - 記憶よりも古き道を、汝は辿り給ひぬ。
+      - 大地は抗はず、汝を認めたり。
+      - この刹那、星々の静けさと重なりぬ。
     hard:
       pool:
-      - 北風の中にて、速さより明晰さぞ生き残る。
-      - 軸(中心)は見出された。世はその運動を止めた。
-      - 星は黙っている。語るのは汝の記しだ。
-      - 果ては残った。ありかは変わった。
-      - 氷とガラスのあいだで、汝は制御を選んだ。
-      - 波は静まり、海はその隠された深淵を再び自らのものとした。
-      - 待つ宝もある。次は、別の道を。
-      - 天は変わらなかった。変わったのは汝。
-      - 刹那は過ぎた。整いは残った。
-      - 冬は正直だ。汝の走りもそうだった。
-      - 星は束の間そろった。汝はそれに気づいた。
-      - 隔たりは縮んでいた。時は縮まらなかった。
-      - 世の御掟は、厳然としてそこにあった。可能性（信号）は本物だった。
-      - 道は静かに閉じた。汝はもう抜けていた。
-      - 何も変わらない。ただ、汝のありかだけが変わった。
+      - 北風の中にては、速さよりも明らけき心こそ残る。
+      - 軸は見出だされぬ。世はそのめぐりを止めたり。
+      - 星は黙せり。語るは、汝の記しのみ。
+      - 果ては残れり。されど、ありかは移りぬ。
+      - 氷と硝子のあはひにて、汝は乱れぬ歩みを選び給ひぬ。
+      - 波は静まり、海は隠せし深淵をふたたび己がものとせり。
+      - 待つ宝もあり。次は、別なる道へ。
+      - 天は変はらず。変はりしは、汝なり。
+      - 刹那は過ぎぬ。されど、整ひは残れり。
+      - 冬は正直なり。汝の走りもまた然り。
+      - 星はしばし並びたり。汝はそれを見逃さざりき。
+      - 隔たりは縮みたり。されど、時は縮まざりき。
+      - 世の御掟は、厳としてそこにあり。しるしは、まことなりき。
+      - 道は静かに閉ぢぬ。汝はすでに、その外へ抜けたり。
+      - 何も変はらず。ただ、汝のありかのみ変はりぬ。
       - 運にあらず。整ひなり。
       - 刹那は過ぎぬ。記しは残れり。
-      - 果てに違いはなかった。それでも、汝は前に進んだ。
-      - 出力は変わらないままだが、汝は新しいレベルに到達した。
-      - 結末は同じだが、そこに辿り着いた人間は変わった。
-      - 目的地は同じだが、汝はもう以前と同じ旅人ではない。
-      - 光が等しく降り注ぎ、すべての影が消えた。
-      - 風が止み、あるべき場所に、あるべきものが戻った。
-      - 一瞬のしじま。世がその呼吸を整えた。
-      - 記しは砂に深く刻まれ、風もそれを動かせない。
-      - 調べが訪れた。すべては、この刹那のためにあった。
-      - 時は静かに流れ、記憶の隅に収まった。
-      - 天の色が変わり、一つの物語が完結を告げた。
-      - 波は穏やかになり、海は再びその深淵を隠した。
-      - 歩みは止まり、場所だけがそこに残された。
+      - 果てに違ひはなかりき。されど、汝は前へ進み給ひぬ。
+      - 得られしものは変はらず。されど、汝は一つ高き境へ至りぬ。
+      - 結びは同じなり。されど、そこへ至りし汝は、もはや同じにあらず。
+      - 目指す地は同じなり。されど、汝はもはや昔日の旅人にあらず。
+      - 光あまねく降りそそぎ、影はことごとく消えにけり。
+      - 風やみて、あるべきものは、あるべき所へ帰りぬ。
+      - 一瞬のしじま。世は静かに息を整へたり。
+      - 記しは砂に深く刻まれ、風もこれを動かし得ず。
+      - 調べは訪れぬ。すべては、この刹那のためにありき。
+      - 時は静かに流れ、記憶の隅に収まりぬ。
+      - 天の色あらたまり、一つの物語は結びを告げぬ。
+      - 波は穏やかになり、海はふたたび深き底を隠しぬ。
+      - 歩みは止まり、ただその場所のみ残りたり。
       - 勝ちも負けも、同じ砂の一粒に過ぎず。
-      - 道は続き、あるいは途切る。いづれも同じ大地の上にあり。
+      - 道は続き、または途切る。いづれも同じ大地の上にあり。
   timeup:
     easy:
       pool:
-      - 時は終わった。ほかは終わっていない。
-      - 宝は待てり。汝もまた、待つことを知る。
-      - 息をして。いま一度。
-      - 此度はここまで。次なる一歩へ。
-      - いまだここに在り。それこそ大事なり。
-      - 走りは止まりぬ。されど汝は止まらず。
-      - 時は止まった。でも、汝は止まっていない。
-      - 御掟は変わらない。いま一度。
+      - 時は果てぬ。されど、ほかはまだ果てず。
+      - 宝は待てり。汝もまた、待つことを知り給へ。
+      - 息を整へ給へ。いま一度。
+      - こたびはここまで。次なる一歩へ進み給へ。
+      - 汝はなほ、ここにあり。それこそ大事なり。
+      - 走りは止まりぬ。されど、汝は止まらず。
+      - 時は止まりぬ。されど、汝はまだ止まらず。
+      - 御掟は変はらず。いま一度。
       - 惜しきこと、まことなり。
-      - 日は入り、影ふたたび世を覆ひぬ。
+      - 日は入り、影はふたたび世を覆ひぬ。
       - 砂はことごとく落ち、物語は静かに幕を閉ぢぬ。
-      - 風吹き抜け、足跡は跡形もなく消えぬ。
-      - 潮満ちぬ。かつてそこにありしものは、海へ還りたり。
+      - 風は吹き抜け、足跡は跡形もなく消えぬ。
+      - 潮満ちぬ。かつてそこにありしものは、海へ還りぬ。
       - 沈黙。ただ時のみ、そこを過ぎ行きぬ。
       - 勝ちも負けも、同じ砂の一粒に過ぎず。
-      - 道は続き、あるいは途切る。いづれも同じ大地の上にあり。
+      - 道は続き、または途切る。いづれも同じ大地の上にあり。
     normal:
       pool:
-      - 隔たりは縮んだ。時は縮まらなかった。
-      - 世は御掟を守った。汝は境界に触れた。
-      - 届かざりき。されど合図はまことなり。
-      - 待つ宝もあり。別の道を試み給へ。
-      - 果ては残った。ありかは変わった。
-      - 時は終わった。意味は終わっていない。
+      - 隔たりは縮みたり。されど、時は縮まざりき。
+      - 世は御掟を守れり。汝はその境に触れたり。
+      - 届かざりき。されど、しるしはまことなり。
+      - 待つ宝もあり。別なる道を試み給へ。
+      - 果ては残れり。されど、ありかは移りぬ。
+      - 時は果てぬ。されど、しるしはまだ果てず。
       - 惜しかりき。音もまた、さう告げたり。
-      - 地図は開きたりまま。戻っておいで。
-      - 世の御掟は厳然としてそこにあった。可能性（信号）は本物だった。
-      - 世は御掟を守った。
+      - 地図はなほ開かれたり。帰り来給へ。
+      - 世の御掟は、厳としてそこにあり。しるしは、まことなりき。
+      - 世は御掟を守れり。
       - 刹那は過ぎぬ。記しは残れり。
-      - 日は入り、影ふたたび世を覆ひぬ。
+      - 日は入り、影はふたたび世を覆ひぬ。
       - 砂はことごとく落ち、物語は静かに幕を閉ぢぬ。
-      - 風吹き抜け、足跡は跡形もなく消えぬ。
-      - 潮満ちぬ。かつてそこにありしものは、海へ還りたり。
+      - 風は吹き抜け、足跡は跡形もなく消えぬ。
+      - 潮満ちぬ。かつてそこにありしものは、海へ還りぬ。
       - 沈黙。ただ時のみ、そこを過ぎ行きぬ。
       - 勝ちも負けも、同じ砂の一粒に過ぎず。
-      - 道は続き、あるいは途切る。いづれも同じ大地の上にあり。
-      - '時は終わった。
-
-
-        それ以外は、終わっていない。'
-      - '果ては変わらなかった。
-
-
-        でも、汝のありかは変わった。'
+      - 道は続き、または途切る。いづれも同じ大地の上にあり。
+      - 時は果てぬ。\n\nされど、それ以外はまだ果てず。
+      - 果ては変はらざりき。\n\nされど、汝のありかは変はりぬ。
     hard:
       pool:
-      - 極光すら消ゆ。新しき歩みにて戻り給へ。
-      - 脆い世では、焦りが明晰さの発見を壊してしまう。
-      - 逃したのは刹那。意味ではない。
-      - 冬は忍耐強い。汝もそうであれ。
-      - 天は進み続けた。汝も進む。
+      - 極光すら消ゆ。新しき歩みにて帰り来給へ。
+      - 脆き世にては、焦りこそ明らけき心を砕くものなり。
+      - 逃ししは刹那なり。しるしにはあらず。
+      - 冬は忍び待つものなり。汝もまた、さあれ。
+      - 天は進み続けたり。汝もまた進み給へ。
       - 叙事は頁をめくる。これは終はりにあらず。
-      - 星は見守っていた。いま一度。
-      - 氷は急がない。汝も急ぐ必要はない。
-      - 天は動き続けた。汝も動き続けられる。
-      - 北は『待つこと』を覚えたり。そこより学び給へ。
+      - 星は見守りたり。いま一度。
+      - 氷は急がず。汝も急ぐことなかれ。
+      - 天は動き続けたり。汝もまた、動き続け得る。
+      - 北は待つことを知れり。そこより学び給へ。
       - これは休止なり。終はりにはあらず。
-      - 雲が動き続けるように。川のように、流れを失わないで。
-      - 音は近かった。隔たりは本物だった。でも、その刹那は記し置きできない。
-      - 近づいていた。時だけが近づかなかった。
-      - 世は御掟を守った。汝はその縁に触れた。
-      - 宝には届かざりき。されど合図はまことなり。
-      - 何も変わらない。ただ、汝のありかだけが変わった。
+      - 雲の動きやまぬがごとく、川の流れ絶えぬがごとく。
+      - 音は近かりき。隔たりはまことなりき。されど、その刹那は記し置き得ざりき。
+      - 近づきたり。されど、時のみ近づかざりき。
+      - 世は御掟を守れり。汝はその縁に触れたり。
+      - 宝には届かざりき。されど、しるしはまことなり。
+      - 何も変はらず。ただ、汝のありかのみ変はりぬ。
       - 運にあらず。整ひなり。
       - 刹那は過ぎぬ。記しは残れり。
-      - 脆い地面を渡った。視界（景色）を壊さずに。
-      - '何も変わらない。ただ、汝のありかだけが変わった。
-
-        運にあらず。整ひなり。
-
-        刹那は過ぎぬ。記しは残れり。'
-      - 日は入り、影ふたたび世を覆ひぬ。
+      - 脆き地を渡りたり。景を壊さぬままに。
+      - 何も変はらず。ただ、汝のありかのみ変はりぬ。\n運にあらず。整ひなり。\n刹那は過ぎぬ。記しは残れり。
+      - 日は入り、影はふたたび世を覆ひぬ。
       - 砂はことごとく落ち、物語は静かに幕を閉ぢぬ。
-      - 風吹き抜け、足跡は跡形もなく消えぬ。
-      - 潮満ちぬ。かつてそこにありしものは、海へ還りたり。
+      - 風は吹き抜け、足跡は跡形もなく消えぬ。
+      - 潮満ちぬ。かつてそこにありしものは、海へ還りぬ。
       - 沈黙。ただ時のみ、そこを過ぎ行きぬ。
       - 勝ちも負けも、同じ砂の一粒に過ぎず。
-      - 道は続き、あるいは途切る。いづれも同じ大地の上にあり。
-      - 季節は閉ぢぬ。大地は、なほ残れり。
-      - 道は、まだそこにある。汝が歩みを止めただけ。
-      - 汝の時は終わった。天は、終わっていない。
-      - 拒みにあらず。ただ、沈黙なりき。
-      - 世は形を保っている。変わった汝で、戻れる。
-      - 季節は終はりぬ。森は、なほ残れり。
+      - 道は続き、または途切る。いづれも同じ大地の上にあり。
+      - 季節は閉ぢぬ。されど、大地はなほ残れり。
+      - 道はなほ、そこにあり。歩みを止めしは、ただ汝なり。
+      - 汝の時は果てぬ。されど、天は果てず。
+      - 拒みにはあらず。ただ、沈黙なりき。
+      - 世は形を保てり。変はりし汝にて、また帰り来べし。
+      - 季節は終はりぬ。されど、森はなほ残れり。
       - 隔たりは縮んでいた。時は、リズムを保った。
       - 汝の時は止まった。天は、止まらなかった。
       - 拒みにあらず。ただの沈黙。
       - 道は、まだここにある。違う汝で、戻れる。
-
 version: 1
 quotes:
   outcome:
@@ -249,7 +211,7 @@ command:
     playersOnly: '&cこの命は仕手のみ用ゐるべし。'
     cleaned: '[TreasureRun] 難きほどブロックを {count} 個片付けました。'
     managerNotReady: '[TreasureRun] ステージ管理がいまだ整はず。'
-  noPermission: "この命を用ゐる権なし。"
+  noPermission: この命を用ゐる権なし。
   onlyPlayer: '&cこの命は仕手のみ行ふべし。'
   reload:
     start: '&7定め/メッセージを読み直し中...'
@@ -411,8 +373,7 @@ favorites:
     quotefavoritestore_exists_fa_7d08adba: '[QuoteFavoriteStore] exists failed:'
     quotefavoritestore_addfavori_44fb1d75: '[QuoteFavoriteStore] addFavorite failed:'
     quotefavoritestore_removefav_8180a1e4: '[QuoteFavoriteStore] removeFavorite failed:'
-    quotefavoritestore_removefav_d024b1e5: '[QuoteFavoriteStore] removeFavoriteById
-      failed:'
+    quotefavoritestore_removefav_d024b1e5: '[QuoteFavoriteStore] removeFavoriteById failed:'
     quotefavoritestore_listfavor_f3e976d4: '[QuoteFavoriteStore] list秘蔵 failed:'
     quotefavoritestore_countfavo_69291680: '[QuoteFavoriteStore] count秘蔵 failed:'
 commands:
@@ -421,17 +382,12 @@ commands:
   rank_1_2_3_demo_4f3e3084: '数にて入れ給へ: /rank <1|2|3|demo>'
   mysql_repository_not_ready_72df0af1_93: MySQL / Repository not ready.
   mysql_repository_not_ready_72df0af1_119: MySQL / Repository not ready.
-  quotefavorite_book_open_cata_055de855: /quoteFavorite book            - open catalog
-    (full)
-  quotefavorite_book_toc_open__c7d02ede: /quoteFavorite book toc        - open catalog
-    (TOC only)
-  quotefavorite_book_success_o_afe31501: /quoteFavorite book success    - open 成就
-    chapter
-  quotefavorite_book_timeup_op_08b799b0: /quoteFavorite book timeup     - open 時尽きぬ
-    chapter
-  quotefavorite_book_other_ope_bdcbafba: /quoteFavorite book other      - open OTHER
-    chapter
-debug:
+  quotefavorite_book_open_cata_055de855: /quoteFavorite book            - open catalog (full)
+  quotefavorite_book_toc_open__c7d02ede: /quoteFavorite book toc        - open catalog (TOC only)
+  quotefavorite_book_success_o_afe31501: /quoteFavorite book success    - open 成就 chapter
+  quotefavorite_book_timeup_op_08b799b0: /quoteFavorite book timeup     - open 時尽きぬ chapter
+  quotefavorite_book_other_ope_bdcbafba: /quoteFavorite book other      - open OTHER chapter
+debug: null
 items:
   specialEmerald:
     displayName: '&6特製の翠玉'
@@ -481,10 +437,9 @@ ui:
         title: 目録
         yourQuotes: 記し置きたる言の葉
       hint:
-        reopenMenu: 'しるべ：/gameMenu にて、ふたたび開き給へ。'
+        reopenMenu: しるべ：/gameMenu にて、ふたたび開き給へ。
       note:
-        bookFormat: Minecraft books cannot switch 章 by clicking, so sections are
-          shown as pages.
+        bookFormat: Minecraft books cannot switch 章 by clicking, so sections are shown as pages.
   quote:
     footer:
       dbLogs: '（DB: proverb_logs）'
@@ -506,7 +461,7 @@ ui:
     noLogs: 言の葉の記し、いまだなし。
     noQuotesInTab: この章に示す言の葉、いまだなし。
     tip:
-      rightClickSave: 'しるべ：この巻を右押しすれば、最新の言の葉を記し置くべし。'
+      rightClickSave: しるべ：この巻を右押しすれば、最新の言の葉を記し置くべし。
   favorites:
     footer:
       dbFavorites: '（DB: proverb_favorites）'
@@ -546,7 +501,7 @@ ui:
     outcome:
       success: 成就
       timeUp: 時尽きぬ
-    page: "{current}/{total} 頁"
+    page: '{current}/{total} 頁'
     tabs: 章
   error:
     noData: 記しなし。
@@ -579,10 +534,10 @@ gameplay:
   shop:
     tradeCompleteTitle: 取引完了！
     hiddenPowerAwakens: 秘められた力が目覚める…
-    hiddenPowerChat: "Treasure Shop の奥に眠る力を感じた…"
+    hiddenPowerChat: Treasure Shop の奥に眠る力を感じた…
   timer:
     remainingBossbar: 残れる時
-    remainingLine: '残れる時： {seconds}秒'
+    remainingLine: 残れる時： {seconds}秒
 rewards:
   rank:
     netheriteIngot: ネザライトインゴット得たり！
@@ -609,46 +564,44 @@ rank:
     allTimeSwitch: '表示切替: /gameRank weekly | /gameRank monthly'
     monthlyEmpty: 今月の記しはまだなし。
     monthlySwitch: '表示切替: /gameRank weekly | /gameRank all'
-
-# Final visible-surface i18n audit keys
 finalAudit:
   shop:
-    treasureShop: "Treasure Shop"
+    treasureShop: Treasure Shop
   item:
-    specialApple: "特製林檎"
-    specialIronBlock: "特製鉄の塊"
+    specialApple: 特製林檎
+    specialIronBlock: 特製鉄の塊
   command:
-    playerOnly: "この命は仕手のみ行ふべし。"
-    opOnly: "このコマンドはOPの権を要す。"
-    rankDebugOff: "Rank debug は無効なり。config.yml の rankDebug.enabled を true にし給へ。"
-    rankUsage: "用ゐ方: /rank <1|2|3|demo>"
-    rankNumberOnly: "数にて入れ給へ: /rank <1|2|3|demo>"
-    rankOnlyOneToThree: "1、2、3 のいずれかを定め給へ: /rank <1|2|3>"
-    gameAlreadyRunning: "遊戯はすでに実行中なり。"
-    invalidDifficulty: "難きほどは、やすし・なみ・かたしのいづれかを定め給へ。"
-    languageGuiNotReady: "言の葉選びGUIはまだ準備できていません。"
-    reloadBlockedRunning: "遊戯中は reload できません。先に /gameEnd を実行し給へ。"
-    noPermission: "この命を用ゐる権なし。"
-    noPermissionOp: "この命を用ゐる権なし。OPの権を要す。"
-    treasureReloadDone: "✅ TreasureRun の定めを読み直ししました。言の葉GUIの定めも反映されていたり。"
-    guiReloadedReopen: "GUIを更新しました。いま一度 /gameStart を実行して開き直し給へ。"
-    dbConnected: "MySQL につながりたり。"
-    dbNotConnected: "MySQL につながらず。"
-    exportMissingRoot: "❌ config.yml に messages.translation が見つかりません。"
-    exportExample: "例: messages.translation.ja.favorites.title: ..."
-    exportCreateFolderFailed: "❌ languages/ フォルダを作成できませんでした: {path}"
-    exportNoLanguages: "❌ 書き出し対象の言の葉が定めされず。"
-    exportFailed: "❌ 書き出しに不成し遂げたり: {lang} ({error})"
-    exportComplete: "✅ 書き出しが終はりぬ: {count} ファイルを作成しました。"
-    exportOutputFolder: "出力先: {path}"
-    exportSkippedExisting: "⚠ 既存ファイルのためスキップしました: {langs}"
-    exportOverwriteHint: "既存ファイルを上書きする場合は /treasureExportLang overwrite を実行し給へ。"
-    exportNextStep: "次に、I18n が languages/*.yml を読む構成にすると翻訳が反映されたり。"
-    playerOnlyConsoleNoOnline: "このコマンドは仕手用なり。今オンラインの仕手も見つかりませんでした。"
+    playerOnly: この命は仕手のみ行ふべし。
+    opOnly: このコマンドはOPの権を要す。
+    rankDebugOff: Rank debug は無効なり。config.yml の rankDebug.enabled を true にし給へ。
+    rankUsage: '用ゐ方: /rank <1|2|3|demo>'
+    rankNumberOnly: '数にて入れ給へ: /rank <1|2|3|demo>'
+    rankOnlyOneToThree: '1、2、3 のいずれかを定め給へ: /rank <1|2|3>'
+    gameAlreadyRunning: 遊戯はすでに実行中なり。
+    invalidDifficulty: 難きほどは、やすし・なみ・かたしのいづれかを定め給へ。
+    languageGuiNotReady: 言の葉選びGUIはまだ準備できていません。
+    reloadBlockedRunning: 遊戯中は reload できません。先に /gameEnd を実行し給へ。
+    noPermission: この命を用ゐる権なし。
+    noPermissionOp: この命を用ゐる権なし。OPの権を要す。
+    treasureReloadDone: ✅ TreasureRun の定めを読み直ししました。言の葉GUIの定めも反映されていたり。
+    guiReloadedReopen: GUIを更新しました。いま一度 /gameStart を実行して開き直し給へ。
+    dbConnected: MySQL につながりたり。
+    dbNotConnected: MySQL につながらず。
+    exportMissingRoot: ❌ config.yml に messages.translation が見つかりません。
+    exportExample: '例: messages.translation.ja.favorites.title: ...'
+    exportCreateFolderFailed: '❌ languages/ フォルダを作成できませんでした: {path}'
+    exportNoLanguages: ❌ 書き出し対象の言の葉が定めされず。
+    exportFailed: '❌ 書き出しに不成し遂げたり: {lang} ({error})'
+    exportComplete: '✅ 書き出しが終はりぬ: {count} ファイルを作成しました。'
+    exportOutputFolder: '出力先: {path}'
+    exportSkippedExisting: '⚠ 既存ファイルのためスキップしました: {langs}'
+    exportOverwriteHint: 既存ファイルを上書きする場合は /treasureExportLang overwrite を実行し給へ。
+    exportNextStep: 次に、I18n が languages/*.yml を読む構成にすると翻訳が反映されたり。
+    playerOnlyConsoleNoOnline: このコマンドは仕手用なり。今オンラインの仕手も見つかりませんでした。
   debug:
-    chestSoundStart: "[ChestSound] 16分割グリッドモードで始まりぬ。"
-    chestSoundNoChests: "[ChestSound] 宝の櫃が見つかりません。"
-    chestSoundNearest: "[ChestSound] 最寄り={distance}m 範囲内={range} t={t}"
+    chestSoundStart: '[ChestSound] 16分割グリッドモードで始まりぬ。'
+    chestSoundNoChests: '[ChestSound] 宝の櫃が見つかりません。'
+    chestSoundNearest: '[ChestSound] 最寄り={distance}m 範囲内={range} t={t}'
   reward:
-    label: "賜りもの"
-    rainbowWolf: "Rainbow Wolf"
+    label: 賜りもの
+    rainbowWolf: Rainbow Wolf
