@@ -388,7 +388,7 @@ favorites:
     saveHow: 秘蔵の記し置き方法
     saveHow1: /quoteFavorite latest を使う
     saveHow2: または、御掟の巻をしゃがみながら右クリックする
-    save最新: 最新の一行を記し置きする
+    saveLatest: 最新の一行を記し置きする
     sub: このアーカイブはまだ天なり
     tryNow: 記し置きしたあとに、いま一度この本を開いてし給へ
   remove: 削除
@@ -490,7 +490,7 @@ ui:
       dbLogs: '（DB: proverb_logs）'
     title: 言の葉集
     intro:
-      章Title: タブ
+      tabsTitle: 章
       db:
         favorites: proverb_favorites (★)
         logs: proverb_logs (history)
@@ -502,15 +502,15 @@ ui:
       favorites: = 秘蔵
       success: = 成就
       timeUp: = 時尽きぬ
-    no秘蔵: 秘蔵はいまだなし。
+    noFavorites: 秘蔵はいまだなし。
     noLogs: 言の葉の記し、いまだなし。
     noQuotesInTab: この章に示す言の葉、いまだなし。
     tip:
       rightClickSave: 'しるべ：この巻を右押しすれば、最新の言の葉を記し置くべし。'
   favorites:
     footer:
-      db秘蔵: '（DB: proverb_favorites）'
-    header最新: '最新 20  |  lang: {lang}'
+      dbFavorites: '（DB: proverb_favorites）'
+    headerLatest: '近き二十件  |  言の葉: {lang}'
     title: 秘蔵
   gameMenu:
     pluginNotReady: プラグインのいまだ支度整はず。
