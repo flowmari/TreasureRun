@@ -511,6 +511,7 @@ gameplay:
     treasureFound: '宝を得たり: {name} ×{amount}'
     remainingChests: '残れる宝の櫃: {count}'
     gameEndTotalScore: '遊び果てぬ。総得点: {score}'
+    scoreAdded: '得点を得たり: +{score}'
   result:
     runCompleteTitle: 完走せり！
     timeUpTitle: 時尽きぬ！
@@ -614,7 +615,7 @@ finalAudit:
     noPermission: この命を用ゐる権なし。
     noPermissionOp: この命を用ゐる権なし。OPの権を要す。
     treasureReloadDone: ✅ TreasureRun の定めを読み直ししました。言の葉GUIの定めも反映されていたり。
-    guiReloadedReopen: GUIを更新しました。いま一度 /gameStart を実行して開き直し給へ。
+    guiReloadedReopen: GUIを改めたり。いま一度 /gameStart を実行して開き直し給へ。
     dbConnected: MySQL につながりたり。
     dbNotConnected: MySQL につながらず。
     exportMissingRoot: ❌ config.yml に messages.translation が見つかりません。
