@@ -8,7 +8,12 @@ outcome:
     retryGuide: 別なる道を取り、いま一度挑み給へ。
   success:
     common:
-      pool: []
+      pool:
+      - いとめでたし！
+      - 見事なり！
+      - 宝をことごとく見出だし給ひぬ！
+      - 遊戯、よく果たし給へり。
+      - この勝ち、まことにあっぱれなり。
     easy:
       pool:
       - たどり着き給ひぬ。まことは、まことのままにあり。
@@ -395,20 +400,20 @@ items:
     loreSpecial: '&7特別な翠玉'
   material:
     diamond: 金剛石
-    gold_ingot: 金インゴット
-    iron_ingot: 鉄インゴット
+    gold_ingot: こがねの延べ金
+    iron_ingot: くろがねの延べ金
     emerald: 翠玉
     apple: 林檎
-    netherite_ingot: ネザライトインゴット
+    netherite_ingot: ネザライトの延べ金
     lapis_lazuli: 瑠璃
     redstone: 赤石
-    coal: 石炭
+    coal: いしずみ
     enchanted_golden_apple: エンチャント黄金の林檎
     diamond_block: 金剛石ブロック
-    gold_block: 黄金の塊
+    gold_block: こがねの塊
     emerald_block: 翠玉ブロック
-    iron_block: 鉄の塊
-    tnt: TNT
+    iron_block: くろがねの塊
+    tnt: 火薬の箱
 ui:
   menu:
     book:
@@ -488,9 +493,9 @@ ui:
   rankTicker:
     updated: 🏁 位階を改めたり！ ({which})
     mode:
-      weekly: 今週
+      weekly: この七日
       allTime: 永代
-      monthly: 今月
+      monthly: この月
   labels:
     tab:
       all: すべて
@@ -535,7 +540,7 @@ gameplay:
     message:
       runComplete: 完走せり！
       timeUp: 時、尽きにけり。
-      congratulations: 祝着至れり！
+      congratulations: いとめでたし！
       allTreasuresFound: すべての宝を見出だし給ひぬ！
       totalScore: '総得点: {score}'
       time: '時: {time}'
@@ -552,7 +557,7 @@ gameplay:
     allChestsOpened: すべての宝の櫃を開きたり！遊戯、終はりぬ！
     treasureCompleteTitle: 🎵 宝探し成就！ 🎵
     allTreasuresFoundTitle: すべての宝を見出だしぬ！
-    allTreasuresFoundChat: おめでとうございたり！すべての宝を見出だしぬ！
+    allTreasuresFoundChat: いとめでたし！すべての宝を見出だし給ひぬ！
   start:
     startingIn: 始めまで…
     go: 始め！
@@ -564,20 +569,20 @@ gameplay:
     remainingBossbar: 残れる時
     remainingLine: '残れる時: {seconds}秒'
   rank:
-    weeklyTitle: 今週の TreasureRun
+    weeklyTitle: この七日の TreasureRun
     allTimeTitle: 永代 TreasureRun
     rankLabel: 位
     scoreLabel: 得点
     timeLabel: 時
 rewards:
   rank:
-    netheriteIngot: ネザライトインゴットを得たり！
+    netheriteIngot: ネザライトの延べ金を得たり！
     diamond: 金剛石を得たり！
     goldenApple: 黄金の林檎を得たり！
 rankTicker:
-  weeklyTitle: 今週の TreasureRun
-  allTimeTitle: 永代 TreasureRun
-  monthlyTitle: 今月の TreasureRun
+  weeklyTitle: この七日の TreasureRun
+  allTimeTitle: 永代の TreasureRun
+  monthlyTitle: この月の TreasureRun
   footerHint: /gameRank weekly|all|monthly
 rank:
   command:
@@ -585,22 +590,22 @@ rank:
     timeTop10Line: '{rank}位 {player}  {time}秒  {score}点  難きほど: {difficulty}'
     dbUnavailable: データベースへ繋がらず。
     loadError: 位階を読み込む折、あやまち起これり。
-    playsTitleWeekly: === 🎖️ TreasureRun 今週の十傑 ===
+    playsTitleWeekly: === 🎖️ TreasureRun この七日の十傑 ===
     playsTitleAllTime: === 🎖️ TreasureRun 永代の十傑 ===
-    playsTitleMonthly: === 🎖️ TreasureRun 今月の十傑 ===
+    playsTitleMonthly: === 🎖️ TreasureRun この月の十傑 ===
     playsLine: '{rank}位 {player}  {score}点  {time}秒  ({difficulty}) [{lang}]'
     weeklyEmpty: 直近七日の記しはなし。
     weeklySwitch: '表示を改む: /gameRank all | /gameRank monthly'
     allTimeEmpty: いまだ記しなし。
     allTimeSwitch: '表示を改む: /gameRank weekly | /gameRank monthly'
-    monthlyEmpty: 今月の記しは、いまだなし。
+    monthlyEmpty: この月の記しは、いまだなし。
     monthlySwitch: '表示を改む: /gameRank weekly | /gameRank all'
 finalAudit:
   shop:
     treasureShop: Treasure Shop
   item:
     specialApple: 特製林檎
-    specialIronBlock: 特製鉄の塊
+    specialIronBlock: 特製くろがねの塊
   command:
     playerOnly: この命は仕手のみ行ふべし。
     opOnly: このコマンドはOPの権を要す。
