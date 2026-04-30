@@ -507,12 +507,12 @@ ui:
     noData: 記しなし。
 gameplay:
   pickup:
-    scoreNone: まだ得点がなし。
+    scoreNone: まだ得点なし。
     treasureFound: '宝: {name} ×{amount}'
-    remainingChests: '残りの宝の櫃: {count}個'
+    remainingChests: '残れる宝の櫃: {count}'
     gameEndTotalScore: '遊び果てぬ。総得点: {score}'
   result:
-    runCompleteTitle: 完走！
+    runCompleteTitle: 完走せり！
     timeUpTitle: 時尽きぬ！
     treasuresCollected: '納めした宝の櫃: {got}/{total}（残り {missing}）'
     overcomingAdversity: 逆境を越えて
@@ -521,6 +521,30 @@ gameplay:
     allChestsOpenedBroadcast: '【{player}】が全ての宝の櫃を開きたり！最終得点: {score}'
     summaryLine: 'タイム: {time}  得点: {score}  ランク: {rank}'
     gotLine: '納め: {got}/{total}'
+    label:
+      score: 得点
+      time: 時
+      rank: 位
+      totalScore: 総得点
+      treasure: 宝
+      treasures: 宝
+      complete: 完走
+      runComplete: 完走せり
+      timeUp: 時尽きぬ
+    message:
+      runComplete: 完走せり！
+      timeUp: 時尽きぬ。
+      congratulations: 祝着至れり！
+      allTreasuresFound: すべての宝を見出だし給ひぬ！
+      totalScore: '総得点: {score}'
+      time: '時: {time}'
+      rank: '位: {rank}'
+    title:
+      runComplete: 完走せり！
+      timeUp: 時尽きぬ！
+      rank: 位
+      score: 得点
+      time: 時
   setup:
     chestsPlaced: 宝の櫃 {count} 個を配置しました！
   success:
@@ -538,13 +562,19 @@ gameplay:
   timer:
     remainingBossbar: 残れる時
     remainingLine: 残れる時： {seconds}秒
+  rank:
+    weeklyTitle: 今週の TreasureRun
+    allTimeTitle: 永代 TreasureRun
+    rankLabel: 位
+    scoreLabel: 得点
+    timeLabel: 時
 rewards:
   rank:
     netheriteIngot: ネザライトインゴット得たり！
     diamond: 金剛石得たり！
     goldenApple: 黄金の林檎得たり！
 rankTicker:
-  weeklyTitle: 週間 TreasureRun
+  weeklyTitle: 今週の TreasureRun
   allTimeTitle: 総合 TreasureRun
   monthlyTitle: 月間 TreasureRun
   footerHint: /gameRank weekly|all|monthly
