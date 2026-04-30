@@ -516,7 +516,7 @@ gameplay:
     treasureFound: '宝を得たり: {name} ×{amount}'
     remainingChests: '残れる宝の櫃: {count}'
     gameEndTotalScore: '遊び果てぬ。総得点: {score}'
-    scoreAdded: '得点を得たり: +{score}'
+    scoreAdded: '得点を得たり: +{add}（総得点: {total}）'
   result:
     runCompleteTitle: 完走せり！
     timeUpTitle: 時尽きぬ！
