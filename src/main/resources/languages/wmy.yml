@@ -508,7 +508,6 @@ ui:
 gameplay:
   pickup:
     scoreNone: まだ得点がなし。
-    gameEnd総じて得点: '遊戯、終はりぬ！合計得点: {score}'
     treasureFound: '宝: {name} ×{amount}'
     remainingChests: '残りの宝の櫃: {count}個'
     gameEndTotalScore: '遊び果てぬ。総得点: {score}'
