@@ -1,0 +1,654 @@
+# ============================================================
+# TreasureRun language file: WMY / Kobun / Classical Japanese style
+# 言語コード: wmy
+#
+# 20th language for TreasureRun i18n.
+# Based on ja.yml and rewritten toward readable classical Japanese.
+#
+# Design policy:
+# - Same key structure as ja.yml.
+# - No Java hardcoding.
+# - Player is translated as 仕手.
+# - All 158 outcome proverb/quote pool entries remain present.
+# - Minecraft UI remains readable.
+# ============================================================
+
+outcome:
+  fallback:
+    runComplete: "成し遂げたり。"
+    timeUp: "時尽きたり。"
+    trader: "交換が終はりぬ。"
+  notice:
+    timeUpGameOver: '時尽きたり。遊戯オーバーです。'
+    retryGuide: '別のルートでいま一度挑みしてみてください。'
+  success:
+    common:
+      pool: []
+    easy:
+      pool:
+      - たどり着きぬ。まことは、まことのままに。
+      - 小さき一歩なれど、汝は守り果てたり。
+      - 耳を澄ませば、道おのづから開けたり。
+      - '汝は辿り着いた。
+
+
+        御掟は単純なりき。
+
+
+        選びしは、汝自身。'
+      - '隔たりが意味になり、
+
+
+        時が汝の足取りに応えた。'
+      - 'すべてがとこしへに輝くにはあらず。
+
+
+        されど、この刹那はさなりき。'
+      - 光が等しく降り注ぎ、すべての影が消えた。
+      - 風が止み、あるべき場所に、あるべきものが戻った。
+      - 一瞬のしじま。世がその呼吸を整えた。
+      - 記しは砂に深く刻まれ、風もそれを動かせない。
+      - 調べが訪れた。すべては、この刹那のためにあった。
+      - 時は静かに流れ、記憶の隅に収まった。
+      - 天の色が変わり、一つの物語が完結を告げた。
+      - 波は穏やかになり、海は再びその深淵を隠した。
+      - 歩みは止まり、場所だけがそこに残された。
+      - 勝ちも負けも、同じ砂の一粒に過ぎず。
+      - 道は続き、あるいは途切る。いづれも同じ大地の上にあり。
+    normal:
+      pool:
+      - 隔たりが意味になった。時が汝の歩みに答えた。
+      - 時は終わった。ほかは終わっていない。
+      - 軸(中心)は見出された。世はその運動を止めた。
+      - ガラスは割れなかった。汝も折れなかった。
+      - 静かな天の下で、意志は持ちこたえた。
+      - とこしへに輝くものなんてほとんどないけれど、この刹那は別格だった。
+      - 脆い地面を渡り切った。地平線景色をしっかりと握りしめたまま。
+      - 刹那は過ぎ去った。遺されたもの記し・功績は残る。
+      - 運は速やかに消え、整い秩序は永続する。
+      - 天はその終わりなき循環に休止を知らぬ。汝もまた、止まらず。
+      - 中心は到達された。世は立ち尽くし静止した。
+      - ついに、ここへ辿り着いた。まことは屈することなく、そこに在る。
+      - 完遂。この道を選んだのは他でもない汝だ。
+      - 時はしじまへと漂い、精神の奥底の隅に自らの居場所を見出だしぬ。
+      - 天が姿を変えるとともに、一つの物語はその最終的な完結を見出した。
+      - 波は静まり、天は再びその深淵を覆い隠した。
+      - 歩みは途絶え、ただ場所だけがそこに在り続けた。
+      - 光が等しく降り注ぎ、すべての影が消えた。
+      - 風が止み、あるべき場所に、あるべきものが戻った。
+      - 一瞬のしじま。世がその呼吸を整えた。
+      - 記しは砂に深く刻まれ、風もそれを動かせない。
+      - 調べが訪れた。すべては、この刹那のためにあった。
+      - 成就。見出だしぬ。それにて足れり。
+      - 道は持ちこたへたり。汝もまた然り。
+      - 天はずっと歩み続けていた。汝も進み続けられる。
+      - 静かな果て。本物の積み重ね。
+      - 世が用意していた道を、汝は歩いただけ。
+      - 大地は壊れなかった。汝の足取りを、信じていた。
+      - この刹那は、星々の長いリズムと重なった。
+      - 何かを奪ったわけじゃない。何かを、理解した。
+      - 手に入れたのは何かではない。まことを、見抜いただけだ。
+      - 征服せしにあらず。ここに属していたり。
+      - 記憶より古い道を、汝は辿った。
+      - 大地は抗わず、汝を認識した。
+      - この刹那は、星々の静けさと重なった。
+    hard:
+      pool:
+      - 北風の中にて、速さより明晰さぞ生き残る。
+      - 軸(中心)は見出された。世はその運動を止めた。
+      - 星は黙っている。語るのは汝の記しだ。
+      - 果ては残った。ありかは変わった。
+      - 氷とガラスのあいだで、汝は制御を選んだ。
+      - 波は静まり、海はその隠された深淵を再び自らのものとした。
+      - 待つ宝もある。次は、別の道を。
+      - 天は変わらなかった。変わったのは汝。
+      - 刹那は過ぎた。整いは残った。
+      - 冬は正直だ。汝の走りもそうだった。
+      - 星は束の間そろった。汝はそれに気づいた。
+      - 隔たりは縮んでいた。時は縮まらなかった。
+      - 世の御掟は、厳然としてそこにあった。可能性（信号）は本物だった。
+      - 道は静かに閉じた。汝はもう抜けていた。
+      - 何も変わらない。ただ、汝のありかだけが変わった。
+      - 運にあらず。整ひなり。
+      - 刹那は過ぎぬ。記しは残れり。
+      - 果てに違いはなかった。それでも、汝は前に進んだ。
+      - 出力は変わらないままだが、汝は新しいレベルに到達した。
+      - 結末は同じだが、そこに辿り着いた人間は変わった。
+      - 目的地は同じだが、汝はもう以前と同じ旅人ではない。
+      - 光が等しく降り注ぎ、すべての影が消えた。
+      - 風が止み、あるべき場所に、あるべきものが戻った。
+      - 一瞬のしじま。世がその呼吸を整えた。
+      - 記しは砂に深く刻まれ、風もそれを動かせない。
+      - 調べが訪れた。すべては、この刹那のためにあった。
+      - 時は静かに流れ、記憶の隅に収まった。
+      - 天の色が変わり、一つの物語が完結を告げた。
+      - 波は穏やかになり、海は再びその深淵を隠した。
+      - 歩みは止まり、場所だけがそこに残された。
+      - 勝ちも負けも、同じ砂の一粒に過ぎず。
+      - 道は続き、あるいは途切る。いづれも同じ大地の上にあり。
+  timeup:
+    easy:
+      pool:
+      - 時は終わった。ほかは終わっていない。
+      - 宝は待てり。汝もまた、待つことを知る。
+      - 息をして。いま一度。
+      - 此度はここまで。次なる一歩へ。
+      - いまだここに在り。それこそ大事なり。
+      - 走りは止まりぬ。されど汝は止まらず。
+      - 時は止まった。でも、汝は止まっていない。
+      - 御掟は変わらない。いま一度。
+      - 惜しきこと、まことなり。
+      - 日は入り、影ふたたび世を覆ひぬ。
+      - 砂はことごとく落ち、物語は静かに幕を閉ぢぬ。
+      - 風吹き抜け、足跡は跡形もなく消えぬ。
+      - 潮満ちぬ。かつてそこにありしものは、海へ還りたり。
+      - 沈黙。ただ時のみ、そこを過ぎ行きぬ。
+      - 勝ちも負けも、同じ砂の一粒に過ぎず。
+      - 道は続き、あるいは途切る。いづれも同じ大地の上にあり。
+    normal:
+      pool:
+      - 隔たりは縮んだ。時は縮まらなかった。
+      - 世は御掟を守った。汝は境界に触れた。
+      - 届かざりき。されど合図はまことなり。
+      - 待つ宝もあり。別の道を試み給へ。
+      - 果ては残った。ありかは変わった。
+      - 時は終わった。意味は終わっていない。
+      - 惜しかりき。音もまた、さう告げたり。
+      - 地図は開きたりまま。戻っておいで。
+      - 世の御掟は厳然としてそこにあった。可能性（信号）は本物だった。
+      - 世は御掟を守った。
+      - 刹那は過ぎぬ。記しは残れり。
+      - 日は入り、影ふたたび世を覆ひぬ。
+      - 砂はことごとく落ち、物語は静かに幕を閉ぢぬ。
+      - 風吹き抜け、足跡は跡形もなく消えぬ。
+      - 潮満ちぬ。かつてそこにありしものは、海へ還りたり。
+      - 沈黙。ただ時のみ、そこを過ぎ行きぬ。
+      - 勝ちも負けも、同じ砂の一粒に過ぎず。
+      - 道は続き、あるいは途切る。いづれも同じ大地の上にあり。
+      - '時は終わった。
+
+
+        それ以外は、終わっていない。'
+      - '果ては変わらなかった。
+
+
+        でも、汝のありかは変わった。'
+    hard:
+      pool:
+      - 極光すら消ゆ。新しき歩みにて戻り給へ。
+      - 脆い世では、焦りが明晰さの発見を壊してしまう。
+      - 逃したのは刹那。意味ではない。
+      - 冬は忍耐強い。汝もそうであれ。
+      - 天は進み続けた。汝も進む。
+      - 叙事は頁をめくる。これは終はりにあらず。
+      - 星は見守っていた。いま一度。
+      - 氷は急がない。汝も急ぐ必要はない。
+      - 天は動き続けた。汝も動き続けられる。
+      - 北は『待つこと』を覚えたり。そこより学び給へ。
+      - これは休止なり。終はりにはあらず。
+      - 雲が動き続けるように。川のように、流れを失わないで。
+      - 音は近かった。隔たりは本物だった。でも、その刹那は記し置きできない。
+      - 近づいていた。時だけが近づかなかった。
+      - 世は御掟を守った。汝はその縁に触れた。
+      - 宝には届かざりき。されど合図はまことなり。
+      - 何も変わらない。ただ、汝のありかだけが変わった。
+      - 運にあらず。整ひなり。
+      - 刹那は過ぎぬ。記しは残れり。
+      - 脆い地面を渡った。視界（景色）を壊さずに。
+      - '何も変わらない。ただ、汝のありかだけが変わった。
+
+        運にあらず。整ひなり。
+
+        刹那は過ぎぬ。記しは残れり。'
+      - 日は入り、影ふたたび世を覆ひぬ。
+      - 砂はことごとく落ち、物語は静かに幕を閉ぢぬ。
+      - 風吹き抜け、足跡は跡形もなく消えぬ。
+      - 潮満ちぬ。かつてそこにありしものは、海へ還りたり。
+      - 沈黙。ただ時のみ、そこを過ぎ行きぬ。
+      - 勝ちも負けも、同じ砂の一粒に過ぎず。
+      - 道は続き、あるいは途切る。いづれも同じ大地の上にあり。
+      - 季節は閉ぢぬ。大地は、なほ残れり。
+      - 道は、まだそこにある。汝が歩みを止めただけ。
+      - 汝の時は終わった。天は、終わっていない。
+      - 拒みにあらず。ただ、沈黙なりき。
+      - 世は形を保っている。変わった汝で、戻れる。
+      - 季節は終はりぬ。森は、なほ残れり。
+      - 隔たりは縮んでいた。時は、リズムを保った。
+      - 汝の時は止まった。天は、止まらなかった。
+      - 拒みにあらず。ただの沈黙。
+      - 道は、まだここにある。違う汝で、戻れる。
+
+version: 1
+quotes:
+  outcome:
+    success: null
+    timeup: null
+    other: null
+default:
+  prefix: '&b[&6TreasureRun&b]&r '
+  unknown: '&c(Translation missing: {key})'
+prefix: '&b[&6TreasureRun&b]&r '
+common:
+  true: '&aさなり'
+  false: '&cあらず'
+  ok: '&aOK'
+  cancel: '&c取りやめ'
+  loading: '&7読み込み中...'
+  done: '&a完了！'
+  error: '&cあやまち: {reason}'
+command:
+  checkTreasureEmerald:
+    playersOnly: この命は仕手のみ行ふべし。
+    resultTrue: 手に持っているアイテムは Treasure Emerald です。
+    resultFalse: 手に持っているアイテムは Treasure Emerald ではありません。
+  gameStart:
+    playersOnly: この命は仕手よりのみ行ふべし。
+    worldNotFound: '[TreasureRun] 始めワールドが定めされていないか、見つかりませんでした。'
+    started: '§a宝探し遊戯、始まりぬ！ 難きほど: {difficulty} | 限りの時: {timeLimit} 秒'
+  stageCleanup:
+    playersOnly: '&cこの命は仕手のみ用ゐるべし。'
+    cleaned: '[TreasureRun] 難きほどブロックを {count} 個片付けました。'
+    managerNotReady: '[TreasureRun] ステージ管理がいまだ整はず。'
+  noPermission: "この命を用ゐる権なし。"
+  onlyPlayer: '&cこの命は仕手のみ行ふべし。'
+  reload:
+    start: '&7定め/メッセージを読み直し中...'
+    success: '&a読み直し終はりぬ。'
+    fail: '&c読み直しに不成し遂げたり: {reason}'
+  lang:
+    guiCancelledGameStart: 言の葉選びを取りやめしました。再度試すには /gameStart <easy|normal|hard> を実行してください。
+    guiCancelledGameMenu: 言の葉選びを取りやめしました。いま一度開くには /gameMenu gui を実行してください。
+    guiTooManyShown: 許可言の葉が多すぎるため、GUIには先頭27件のみ表示しています。
+    playersOnly: この命は仕手よりのみ行ふべし。
+    resetDone: ✅ 記し置き済み言の葉をリセットしました（次回はGUIが出ます）
+    current: '今の言の葉: {lang}'
+    emptyCode: '言の葉コードが天です。例: /lang ja'
+    notAllowed: 'その言の葉は許可されていません: {lang}'
+    allowedList: '許可されている言の葉: {allowed}'
+    changed: '✅ 言の葉を改めしました: {displayName} ({lang})'
+    changedButNotSaved: '⚠ 言の葉は改めしましたが、永続記し置きに不成し遂げたり: {lang}'
+    list:
+      title: === 言の葉 ===
+      default: 'default: {default}'
+      allowed: 'allowed: {allowed}'
+      usage: '用ゐ方: /lang <code> 例: /lang ja'
+      gui: 'GUI: /lang または /lang gui'
+    guiNotReady: 言の葉GUIがいまだ整はず。
+  craftSpecialEmerald:
+    playersOnly: '&cこの命は仕手のみ用ゐるべし。'
+    needDiamonds: '&c特製の翠玉の作成には金剛石が3個必要です。'
+    success: '&b金剛石3個で特製の翠玉を作成しました！'
+  quoteFavorite:
+    latestSaved: 最新の言の葉を秘蔵に記し置きたり。
+    latestNotSaved: 最新の言の葉は記し置かれざりき。まだ記しがないか、すでに秘蔵登録済みの可能性があります。
+    playersOnly: '&cこの命は仕手のみ用ゐるべし。'
+    repositoryNotReady: 秘蔵機能はまだ利用できません。
+    listHeader: '&b秘蔵の一覧（{count}件）'
+    listSeparator: '&7------------------------------'
+    removeUsage: '&c用ゐ方: /quoteFavorite remove <id>'
+    removeIdNumber: '&cIDは数にて入れ給へ。'
+    removeSuccess: '&a秘蔵 ID {id} を削除しました。'
+    removeNotFound: '&c指定した秘蔵が見つかりませんでした。'
+    rereadNoQuotes: '&e再読できる言の葉がまだありません。'
+    bookOpenFailed: '&c秘蔵図鑑の生成に不成し遂げたり。'
+    openBookFailed: '&c本を開けませんでした。'
+    unknownSubcommand: '&c知れぬ副命なり。/quoteFavorite help を見定めしてください。'
+    shortcutSaved: 最新の言の葉を秘蔵に記し置きたり。
+    shortcutNotSaved: 最新の言の葉は記し置かれざりき。まだ記しがないか、すでに秘蔵登録済みの可能性があります。
+    help:
+      title: '&bQuoteFavorite コマンド一覧'
+      latest: '&7/quoteFavorite latest : 最新の言の葉を秘蔵記し置き'
+      list: '&7/quoteFavorite list : 秘蔵の一覧を表示'
+      remove: '&7/quoteFavorite remove <id> : 秘蔵を削除'
+      reread: '&7/quoteFavorite reread [chat|title|book] : 言の葉を再読'
+      rereadTitle: '&7title はタイトル表示で再読します'
+      rereadBook: '&7book は本形式で再読します'
+      book: '&7/quoteFavorite book [toc|success|timeup|other|full] : 図鑑を開く'
+      bookToc: '&7toc は目録だけを開きます'
+      bookSuccess: '&7success は成就言の葉だけを表示します'
+      bookTimeup: '&7timeup は時尽きぬ言の葉だけを表示します'
+      bookOther: '&7other はその他の言の葉だけを表示します'
+gui:
+  language:
+    title: 言の葉
+    subtitle: '&7言の葉を選び給へ'
+    loreDefault:
+    - '&7押して選び給へ'
+    - '&8選びは記し置きされます'
+    selected: '&a選びたるもの: &f{lang}'
+    saved: '&a言の葉を記し置きたり: &f{lang}'
+    reopenHint: '&7いづれの時にも &f/lang &7で改むることかなふ'
+game:
+  difficulty:
+    easy: '&aやすし'
+    normal: '&eなみ'
+    hard: '&cかたし'
+  gameStart:
+  - '&6========== &eTreasureRun &6=========='
+  - '&7難きほど: &f{difficulty}'
+  - '&7限りの時: &f{timeLimit}秒'
+  - '&7総宝の櫃数: &f{totalChests}'
+  - '&7財宝の櫃: &f{treasureChests}'
+  - '&7その他宝の櫃: &f{otherChests}'
+  - '&7倍の利: &f{xMultiplier}'
+  - '&7咎: &f{penalty}'
+  - '&aがんばってください、{player}！'
+  gameStartTitle:
+    title: '&eTreasureRun'
+    subtitle: '&7時内に宝の櫃を尋ね給へ！'
+  timeWarning:
+  - '&e残れる時: &f{seconds}秒'
+  gameEndSuccess:
+  - '&a財をすべて納めたり！'
+  - '&7最終得点: &f{score}'
+  gameEndFail:
+  - '&c時尽きぬ！'
+  - '&7最終得点: &f{score}'
+  rank:
+    header: '&6=== 位階 ==='
+    line: '&e{rank}位 &f{player} &7- &b{score}'
+  auto:
+    treasure_shop_2574a694_822: treasure shop
+sound:
+  sparkle: '&b* キラキラ *'
+  start: '&7(BGM始め...)'
+  end: '&7(BGM終はり...)'
+chestSound:
+  actionBarDebug: chestSound.actionBarDebug
+  debug: chestSound.debug
+favorites:
+  chapter:
+    back: 目録へ参る帰る
+    count: '{count} 件'
+    empty: この章にはまだ記し置きされた言葉がありません
+    otherSub: その他
+    rereadBook: 読み返し本
+    successSub: 成就時に記し置きした言葉
+    successTitle: 成就
+    successTpl1: 成就時に記し置きした言葉
+    successTpl2: 成就した刹那に残した記し
+    timeupSub: 時尽きぬ時に記し置きした言葉
+    timeupTitle: 時尽きぬ
+    timeupTpl1: 時尽きぬ時に記し置きした言葉
+    timeupTpl2: タイマーが尽きた刹那の記し
+  cover:
+    badge: TreasureRun 秘蔵
+    countLabel: '記し置き数: {count}'
+    head: 秘蔵の蔵
+    hint: /quoteFavorite latest または /quoteFavorite list を使えます
+    openToc: 目録を開く
+    reread: 読み返し
+    sub: 汝のプレイ中に記し置きした言葉をまとめた本です
+  empty:
+    head: まだ秘蔵はありません
+    noFav: まだ記し置きされた秘蔵はありません。
+    noFavSub: まずは一行記し置きして、汝だけのアーカイブを始めましょう
+    reread: まだ読み返せる言葉はありません。
+    rereadBook: まだ読み返し用の本はありません。
+    saveHow: 秘蔵の記し置き方法
+    saveHow1: /quoteFavorite latest を使う
+    saveHow2: または、御掟の巻をしゃがみながら右クリックする
+    saveLatest: 最新の一行を記し置きする
+    sub: このアーカイブはまだ天です
+    tryNow: 記し置きしたあとに、いま一度この本を開いてください
+  remove: 削除
+  reread:
+    head: 記し置きした言葉の読み返し
+    noQuotes: まだ記し置きされた言葉はありません。
+  table: favorites.table
+  title: 秘蔵
+  toc:
+    clickable: 章はクリックして開けます
+    head: 目録
+    howto: 章を開くと記し置きした言葉を読み返せます
+    howtoShift: '&7しゃがみ + 右クリックで秘蔵の蔵を開きます'
+    manage: 記し置きした言葉を整理する
+    reread: 読み返し
+    rereadTitle: 読み返し
+    sub: 章ごとに読み返せます
+  auto:
+    quotefavoritestore_reloaded__3ba623a3: '[QuoteFavoriteStore] Reloaded DB: host='
+    quotefavoritestore_exists_fa_7d08adba: '[QuoteFavoriteStore] exists failed:'
+    quotefavoritestore_addfavori_44fb1d75: '[QuoteFavoriteStore] addFavorite failed:'
+    quotefavoritestore_removefav_8180a1e4: '[QuoteFavoriteStore] removeFavorite failed:'
+    quotefavoritestore_removefav_d024b1e5: '[QuoteFavoriteStore] removeFavoriteById
+      failed:'
+    quotefavoritestore_listfavor_f3e976d4: '[QuoteFavoriteStore] list秘蔵 failed:'
+    quotefavoritestore_countfavo_69291680: '[QuoteFavoriteStore] count秘蔵 failed:'
+commands:
+  text_2bf42ec8_18: このコマンドは仕手のみが実行できます。
+  rank_1_2_3_demo_d87f40da: '用ゐ方: /rank <1|2|3|demo>'
+  rank_1_2_3_demo_4f3e3084: '数にて入れ給へ: /rank <1|2|3|demo>'
+  mysql_repository_not_ready_72df0af1_93: MySQL / Repository not ready.
+  mysql_repository_not_ready_72df0af1_119: MySQL / Repository not ready.
+  quotefavorite_book_open_cata_055de855: /quoteFavorite book            - open catalog
+    (full)
+  quotefavorite_book_toc_open__c7d02ede: /quoteFavorite book toc        - open catalog
+    (TOC only)
+  quotefavorite_book_success_o_afe31501: /quoteFavorite book success    - open SUCCESS
+    chapter
+  quotefavorite_book_timeup_op_08b799b0: /quoteFavorite book timeup     - open TIME_UP
+    chapter
+  quotefavorite_book_other_ope_bdcbafba: /quoteFavorite book other      - open OTHER
+    chapter
+debug:
+items:
+  specialEmerald:
+    displayName: '&6特製の翠玉'
+    loreCrafted: '&7TreasureRunでクラフトした'
+    loreSpecial: '&7特別な翠玉'
+  material:
+    diamond: 金剛石
+    gold_ingot: 金インゴット
+    iron_ingot: 鉄インゴット
+    emerald: 翠玉
+    apple: 林檎
+    netherite_ingot: ネザライトインゴット
+    lapis_lazuli: 瑠璃
+    redstone: 赤石
+    coal: 石炭
+    enchanted_golden_apple: エンチャント黄金の林檎
+    diamond_block: 金剛石ブロック
+    gold_block: 黄金の塊
+    emerald_block: 翠玉ブロック
+    iron_block: 鉄の塊
+    tnt: TNT
+ui:
+  menu:
+    book:
+      fallbackTitle: TreasureRun 御掟
+      fallbackDisplayName: TreasureRun 御掟の巻
+      hotbarGiven: 📖 御掟の巻をホットバーに配布しました。
+      hotbarHint: 手に持って右クリックすると、いづれの時にも読み直せます。
+      latestHint: （この本を右クリックすると最新の言の葉を記し置きできます）
+      openFailed: Could not open the rule book.
+    toc:
+      message: '&6📌 TreasureRun メニューを開きました。御掟の巻を見定めしてください。'
+    legacy:
+      toc:
+        message: '===== TreasureRun Menu =====
+
+          Open the rule book from your hotbar to read the rules.'
+    page:
+      contents:
+        difficulty: 'Difficulty: {difficulty}'
+        howToPlay: 遊びの作法
+        language: 'Language: {lang}'
+        rulesItem: 1) Rules
+        savedOn: Saved on SUCCESS / TIME_UP
+        scoreRoute: 得点とルート
+        tipsItem: 2) Tips
+        title: 目録
+        yourQuotes: Your saved quotes
+      hint:
+        reopenMenu: 'Hint: use /gameMenu to open this again.'
+      note:
+        bookFormat: Minecraft books cannot switch tabs by clicking, so sections are
+          shown as pages.
+  quote:
+    footer:
+      dbLogs: '（DB: proverb_logs）'
+    title: 言の葉集
+    intro:
+      tabsTitle: タブ
+      db:
+        favorites: proverb_favorites (★)
+        logs: proverb_logs (history)
+      langLine: 'Language: {lang}'
+      legendTitle: Legend
+      storedInDb: Stored in DB
+    headerRecent: 'Recent 20  |  lang: {lang}'
+    legend:
+      favorites: = Favorites
+      success: = Success / Cleared
+      timeUp: = Time up
+    noFavorites: No favorites yet.
+    noLogs: No quote logs yet.
+    noQuotesInTab: No quotes are available in this tab yet.
+    tip:
+      rightClickSave: 'Tip: right-click this book to save the latest quote.'
+  favorites:
+    footer:
+      dbFavorites: '（DB: proverb_favorites）'
+    headerLatest: 'Latest 20  |  lang: {lang}'
+    title: Favorites
+  gameMenu:
+    pluginNotReady: プラグインのいまだ支度整はず。
+  symbol:
+    bookPrefix: '📖 '
+    legendPrefix: '■ '
+    dbBullet: '- '
+    indexPrefix: '#'
+    favoriteIdPrefix: ★#
+    favoritePrefix: ★
+    metaOpen: (
+    metaClose: )
+    labelOpen: '['
+    labelClose: ']'
+    tabActiveOpen: 【
+    tabActiveClose: 】
+    tabInactiveOpen: '['
+    tabInactiveClose: ']'
+    activeMarker: '▶ '
+  rankTicker:
+    updated: 🏁 位階を更新しました！ ({which})
+    mode:
+      weekly: 週間
+      allTime: 総合
+      monthly: 月間
+  labels:
+    tab:
+      all: すべて
+      success: 成就
+      timeUp: 時尽きぬ
+      favorites: 秘蔵
+    latest: Latest
+    outcome:
+      success: SUCCESS
+      timeUp: TIME UP
+    page: Page {current}/{total}
+    tabs: Tabs
+  error:
+    noData: No data.
+gameplay:
+  pickup:
+    scoreNone: まだ得点がありません。
+    gameEndTotalScore: '遊戯、終はりぬ！合計得点: {score}'
+    treasureFound: '宝: {name} ×{amount}'
+    remainingChests: '残りの宝の櫃: {count}個'
+  result:
+    runCompleteTitle: 完走！
+    timeUpTitle: 時尽きぬ！
+    treasuresCollected: '納めした宝の櫃: {got}/{total}（残り {missing}）'
+    overcomingAdversity: 逆境を越えて
+    time: タイム
+    rank: 位
+    allChestsOpenedBroadcast: '【{player}】が全ての宝の櫃を開きたり！最終得点: {score}'
+    summaryLine: 'タイム: {time}  得点: {score}  ランク: {rank}'
+    gotLine: '納め: {got}/{total}'
+  setup:
+    chestsPlaced: 宝の櫃 {count} 個を配置しました！
+  success:
+    allChestsOpened: すべての宝の櫃を開きたり！遊戯、終はりぬ！
+    treasureCompleteTitle: 🎵 宝探し成就！ 🎵
+    allTreasuresFoundTitle: すべての宝を見出だしぬ！
+    allTreasuresFoundChat: おめでとうございます！すべての宝を見出だしぬ！
+  start:
+    startingIn: 始めまで…
+    go: 始め！
+  shop:
+    tradeCompleteTitle: 取引完了！
+    hiddenPowerAwakens: 秘められた力が目覚める…
+    hiddenPowerChat: "Treasure Shop の奥に眠る力を感じた…"
+  timer:
+    remainingBossbar: 残れる時
+    remainingLine: '残れる時: {seconds}秒'
+rewards:
+  rank:
+    netheriteIngot: ネザライトインゴット得たり！
+    diamond: 金剛石得たり！
+    goldenApple: 黄金の林檎得たり！
+rankTicker:
+  weeklyTitle: 週間 TreasureRun
+  allTimeTitle: 総合 TreasureRun
+  monthlyTitle: 月間 TreasureRun
+  footerHint: /gameRank weekly|all|monthly
+rank:
+  command:
+    timeTop10Title: === 🌟 TreasureRun TOP10（最速タイム）🌟 ===
+    timeTop10Line: '{rank}位 {player}  {time}秒  {score}点  難きほど: {difficulty}'
+    dbUnavailable: データベースに接続できません。
+    loadError: 位階の読み込み中にあやまちが発生しました。
+    playsTitleWeekly: === 🎖️ TreasureRun 週間TOP10（プレイ記し） ===
+    playsTitleAllTime: === 🎖️ TreasureRun 総合TOP10（プレイ記し） ===
+    playsTitleMonthly: === 🎖️ TreasureRun 月間TOP10（プレイ記し） ===
+    playsLine: '{rank}位 {player}  {score}pt  {time}s  ({difficulty}) [{lang}]'
+    weeklyEmpty: 直近7日間の記しはありません。
+    weeklySwitch: '表示切替: /gameRank all | /gameRank monthly'
+    allTimeEmpty: まだ記しがありません。
+    allTimeSwitch: '表示切替: /gameRank weekly | /gameRank monthly'
+    monthlyEmpty: 今月の記しはまだありません。
+    monthlySwitch: '表示切替: /gameRank weekly | /gameRank all'
+
+# Final visible-surface i18n audit keys
+finalAudit:
+  shop:
+    treasureShop: "Treasure Shop"
+  item:
+    specialApple: "特製林檎"
+    specialIronBlock: "特製鉄の塊"
+  command:
+    playerOnly: "この命は仕手のみ行ふべし。"
+    opOnly: "このコマンドはOPの権を要す。"
+    rankDebugOff: "Rank debug は無効です。config.yml の rankDebug.enabled を true にしてください。"
+    rankUsage: "用ゐ方: /rank <1|2|3|demo>"
+    rankNumberOnly: "数にて入れ給へ: /rank <1|2|3|demo>"
+    rankOnlyOneToThree: "1、2、3 のいずれかを定め給へ: /rank <1|2|3>"
+    gameAlreadyRunning: "遊戯はすでに実行中です。"
+    invalidDifficulty: "難きほどは Easy、Normal、Hard のいずれかを定め給へ。"
+    languageGuiNotReady: "言の葉選びGUIはまだ準備できていません。"
+    reloadBlockedRunning: "遊戯中は reload できません。先に /gameEnd を実行してください。"
+    noPermission: "この命を用ゐる権なし。"
+    noPermissionOp: "この命を用ゐる権なし。OPの権を要す。"
+    treasureReloadDone: "✅ TreasureRun の定めを読み直ししました。言の葉GUIの定めも反映されています。"
+    guiReloadedReopen: "GUIを更新しました。いま一度 /gameStart を実行して開き直してください。"
+    dbConnected: "MySQL につながりたり。"
+    dbNotConnected: "MySQL につながらず。"
+    exportMissingRoot: "❌ config.yml に messages.translation が見つかりません。"
+    exportExample: "例: messages.translation.ja.favorites.title: ..."
+    exportCreateFolderFailed: "❌ languages/ フォルダを作成できませんでした: {path}"
+    exportNoLanguages: "❌ 書き出し対象の言の葉が定めされていません。"
+    exportFailed: "❌ 書き出しに不成し遂げたり: {lang} ({error})"
+    exportComplete: "✅ 書き出しが終はりぬ: {count} ファイルを作成しました。"
+    exportOutputFolder: "出力先: {path}"
+    exportSkippedExisting: "⚠ 既存ファイルのためスキップしました: {langs}"
+    exportOverwriteHint: "既存ファイルを上書きする場合は /treasureExportLang overwrite を実行してください。"
+    exportNextStep: "次に、I18n が languages/*.yml を読む構成にすると翻訳が反映されます。"
+    playerOnlyConsoleNoOnline: "このコマンドは仕手用です。今オンラインの仕手も見つかりませんでした。"
+  debug:
+    chestSoundStart: "[ChestSound] 16分割グリッドモードで始まりぬ。"
+    chestSoundNoChests: "[ChestSound] 宝の櫃が見つかりません。"
+    chestSoundNearest: "[ChestSound] 最寄り={distance}m 範囲内={range} t={t}"
+  reward:
+    label: "報酬"
+    rainbowWolf: "Rainbow Wolf"
