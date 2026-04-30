@@ -19,8 +19,8 @@ outcome:
     timeUp: "時尽きたり。"
     trader: "交換が終はりぬ。"
   notice:
-    timeUpGameOver: '時尽きたり。遊戯オーバーです。'
-    retryGuide: '別のルートでいま一度挑みしてみてください。'
+    timeUpGameOver: '時尽きたり。遊戯オーバーなり。'
+    retryGuide: '別のルートでいま一度挑みしてみてし給へ。'
   success:
     common:
       pool: []
@@ -231,16 +231,16 @@ prefix: '&b[&6TreasureRun&b]&r '
 common:
   true: '&aさなり'
   false: '&cあらず'
-  ok: '&aOK'
+  ok: '&aよし'
   cancel: '&c取りやめ'
-  loading: '&7読み込み中...'
-  done: '&a完了！'
+  loading: '&7読み込み中…'
+  done: '&a終はりぬ！'
   error: '&cあやまち: {reason}'
 command:
   checkTreasureEmerald:
     playersOnly: この命は仕手のみ行ふべし。
-    resultTrue: 手に持っているアイテムは Treasure Emerald です。
-    resultFalse: 手に持っているアイテムは Treasure Emerald ではありません。
+    resultTrue: 手に持っているアイテムは Treasure Emerald なり。
+    resultFalse: 手に持っているアイテムは Treasure Emerald ではなし。
   gameStart:
     playersOnly: この命は仕手よりのみ行ふべし。
     worldNotFound: '[TreasureRun] 始めワールドが定めされていないか、見つかりませんでした。'
@@ -256,16 +256,16 @@ command:
     success: '&a読み直し終はりぬ。'
     fail: '&c読み直しに不成し遂げたり: {reason}'
   lang:
-    guiCancelledGameStart: 言の葉選びを取りやめしました。再度試すには /gameStart <easy|normal|hard> を実行してください。
-    guiCancelledGameMenu: 言の葉選びを取りやめしました。いま一度開くには /gameMenu gui を実行してください。
-    guiTooManyShown: 許可言の葉が多すぎるため、GUIには先頭27件のみ表示しています。
+    guiCancelledGameStart: 言の葉選びを取りやめたり。再度試すには /gameStart <easy|normal|hard> を実行し給へ。
+    guiCancelledGameMenu: 言の葉選びを取りやめたり。いま一度開くには /gameMenu gui を実行し給へ。
+    guiTooManyShown: 許可言の葉が多すぎるため、GUIには先頭27件のみ示せり。
     playersOnly: この命は仕手よりのみ行ふべし。
-    resetDone: ✅ 記し置き済み言の葉をリセットしました（次回はGUIが出ます）
+    resetDone: ✅ 記し置き済み言の葉をリセットしました（次回はGUIが出たり）
     current: '今の言の葉: {lang}'
-    emptyCode: '言の葉コードが天です。例: /lang ja'
-    notAllowed: 'その言の葉は許可されていません: {lang}'
+    emptyCode: '言の葉コードが天なり。例: /lang ja'
+    notAllowed: 'その言の葉は許可されず: {lang}'
     allowedList: '許可されている言の葉: {allowed}'
-    changed: '✅ 言の葉を改めしました: {displayName} ({lang})'
+    changed: '✅ 言の葉を改めたり: {displayName} ({lang})'
     changedButNotSaved: '⚠ 言の葉は改めしましたが、永続記し置きに不成し遂げたり: {lang}'
     list:
       title: === 言の葉 ===
@@ -276,11 +276,11 @@ command:
     guiNotReady: 言の葉GUIがいまだ整はず。
   craftSpecialEmerald:
     playersOnly: '&cこの命は仕手のみ用ゐるべし。'
-    needDiamonds: '&c特製の翠玉の作成には金剛石が3個必要です。'
+    needDiamonds: '&c特製の翠玉の作成には金剛石が3個必要なり。'
     success: '&b金剛石3個で特製の翠玉を作成しました！'
   quoteFavorite:
     latestSaved: 最新の言の葉を秘蔵に記し置きたり。
-    latestNotSaved: 最新の言の葉は記し置かれざりき。まだ記しがないか、すでに秘蔵登録済みの可能性があります。
+    latestNotSaved: 最新の言の葉は記し置かれざりき。いまだ記しなきか、すでに秘蔵に納められしものならむ。
     playersOnly: '&cこの命は仕手のみ用ゐるべし。'
     repositoryNotReady: 秘蔵機能はまだ利用できません。
     listHeader: '&b秘蔵の一覧（{count}件）'
@@ -289,33 +289,33 @@ command:
     removeIdNumber: '&cIDは数にて入れ給へ。'
     removeSuccess: '&a秘蔵 ID {id} を削除しました。'
     removeNotFound: '&c指定した秘蔵が見つかりませんでした。'
-    rereadNoQuotes: '&e再読できる言の葉がまだありません。'
+    rereadNoQuotes: '&e再読できる言の葉がまだなし。'
     bookOpenFailed: '&c秘蔵図鑑の生成に不成し遂げたり。'
     openBookFailed: '&c本を開けませんでした。'
-    unknownSubcommand: '&c知れぬ副命なり。/quoteFavorite help を見定めしてください。'
+    unknownSubcommand: '&c知れぬ副命なり。/quoteFavorite help を見定めし給へ。'
     shortcutSaved: 最新の言の葉を秘蔵に記し置きたり。
-    shortcutNotSaved: 最新の言の葉は記し置かれざりき。まだ記しがないか、すでに秘蔵登録済みの可能性があります。
+    shortcutNotSaved: 最新の言の葉は記し置かれざりき。いまだ記しなきか、すでに秘蔵に納められしものならむ。
     help:
       title: '&bQuoteFavorite コマンド一覧'
       latest: '&7/quoteFavorite latest : 最新の言の葉を秘蔵記し置き'
       list: '&7/quoteFavorite list : 秘蔵の一覧を表示'
       remove: '&7/quoteFavorite remove <id> : 秘蔵を削除'
       reread: '&7/quoteFavorite reread [chat|title|book] : 言の葉を再読'
-      rereadTitle: '&7title はタイトル表示で再読します'
-      rereadBook: '&7book は本形式で再読します'
+      rereadTitle: '&7title はタイトル表示で再読したり'
+      rereadBook: '&7book は本形式で再読したり'
       book: '&7/quoteFavorite book [toc|success|timeup|other|full] : 図鑑を開く'
-      bookToc: '&7toc は目録だけを開きます'
-      bookSuccess: '&7success は成就言の葉だけを表示します'
-      bookTimeup: '&7timeup は時尽きぬ言の葉だけを表示します'
-      bookOther: '&7other はその他の言の葉だけを表示します'
+      bookToc: '&7toc は目録だけを開きたり'
+      bookSuccess: '&7success は成就言の葉だけを表示したり'
+      bookTimeup: '&7timeup は時尽きぬ言の葉だけを表示したり'
+      bookOther: '&7other はその他の言の葉だけを表示したり'
 gui:
   language:
     title: 言の葉
     subtitle: '&7言の葉を選び給へ'
     loreDefault:
     - '&7押して選び給へ'
-    - '&8選びは記し置きされます'
-    selected: '&a選びたるもの: &f{lang}'
+    - '&8選びは記し置きされたり'
+    selected: '&a選びたる言の葉: &f{lang}'
     saved: '&a言の葉を記し置きたり: &f{lang}'
     reopenHint: '&7いづれの時にも &f/lang &7で改むることかなふ'
 game:
@@ -332,12 +332,12 @@ game:
   - '&7その他宝の櫃: &f{otherChests}'
   - '&7倍の利: &f{xMultiplier}'
   - '&7咎: &f{penalty}'
-  - '&aがんばってください、{player}！'
+  - '&aがんばってし給へ、{player}！'
   gameStartTitle:
     title: '&eTreasureRun'
     subtitle: '&7時内に宝の櫃を尋ね給へ！'
   timeWarning:
-  - '&e残れる時: &f{seconds}秒'
+  - '&e残れる時： &f{seconds}秒'
   gameEndSuccess:
   - '&a財をすべて納めたり！'
   - '&7最終得点: &f{score}'
@@ -360,7 +360,7 @@ favorites:
   chapter:
     back: 目録へ参る帰る
     count: '{count} 件'
-    empty: この章にはまだ記し置きされた言葉がありません
+    empty: この章にはまだ記し置きされた言葉がなし
     otherSub: その他
     rereadBook: 読み返し本
     successSub: 成就時に記し置きした言葉
@@ -375,37 +375,37 @@ favorites:
     badge: TreasureRun 秘蔵
     countLabel: '記し置き数: {count}'
     head: 秘蔵の蔵
-    hint: /quoteFavorite latest または /quoteFavorite list を使えます
+    hint: /quoteFavorite latest または /quoteFavorite list を使えたり
     openToc: 目録を開く
     reread: 読み返し
-    sub: 汝のプレイ中に記し置きした言葉をまとめた本です
+    sub: 汝のプレイ中に記し置きした言葉をまとめた本なり
   empty:
-    head: まだ秘蔵はありません
-    noFav: まだ記し置きされた秘蔵はありません。
+    head: まだ秘蔵はなし
+    noFav: まだ記し置きされた秘蔵はなし。
     noFavSub: まずは一行記し置きして、汝だけのアーカイブを始めましょう
-    reread: まだ読み返せる言葉はありません。
-    rereadBook: まだ読み返し用の本はありません。
+    reread: まだ読み返せる言葉はなし。
+    rereadBook: まだ読み返し用の本はなし。
     saveHow: 秘蔵の記し置き方法
     saveHow1: /quoteFavorite latest を使う
     saveHow2: または、御掟の巻をしゃがみながら右クリックする
-    saveLatest: 最新の一行を記し置きする
-    sub: このアーカイブはまだ天です
-    tryNow: 記し置きしたあとに、いま一度この本を開いてください
+    save最新: 最新の一行を記し置きする
+    sub: このアーカイブはまだ天なり
+    tryNow: 記し置きしたあとに、いま一度この本を開いてし給へ
   remove: 削除
   reread:
     head: 記し置きした言葉の読み返し
-    noQuotes: まだ記し置きされた言葉はありません。
+    noQuotes: まだ記し置きされた言葉はなし。
   table: favorites.table
   title: 秘蔵
   toc:
-    clickable: 章はクリックして開けます
+    clickable: 章はクリックして開くべし
     head: 目録
-    howto: 章を開くと記し置きした言葉を読み返せます
-    howtoShift: '&7しゃがみ + 右クリックで秘蔵の蔵を開きます'
+    howto: 章を開くと記し置きした言葉を読み返すべし
+    howtoShift: '&7しゃがみ + 右クリックで秘蔵の蔵を開きたり'
     manage: 記し置きした言葉を整理する
     reread: 読み返し
     rereadTitle: 読み返し
-    sub: 章ごとに読み返せます
+    sub: 章ごとに読み返すべし
   auto:
     quotefavoritestore_reloaded__3ba623a3: '[QuoteFavoriteStore] Reloaded DB: host='
     quotefavoritestore_exists_fa_7d08adba: '[QuoteFavoriteStore] exists failed:'
@@ -416,7 +416,7 @@ favorites:
     quotefavoritestore_listfavor_f3e976d4: '[QuoteFavoriteStore] list秘蔵 failed:'
     quotefavoritestore_countfavo_69291680: '[QuoteFavoriteStore] count秘蔵 failed:'
 commands:
-  text_2bf42ec8_18: このコマンドは仕手のみが実行できます。
+  text_2bf42ec8_18: このコマンドは仕手のみが実行かなふ。
   rank_1_2_3_demo_d87f40da: '用ゐ方: /rank <1|2|3|demo>'
   rank_1_2_3_demo_4f3e3084: '数にて入れ給へ: /rank <1|2|3|demo>'
   mysql_repository_not_ready_72df0af1_93: MySQL / Repository not ready.
@@ -425,9 +425,9 @@ commands:
     (full)
   quotefavorite_book_toc_open__c7d02ede: /quoteFavorite book toc        - open catalog
     (TOC only)
-  quotefavorite_book_success_o_afe31501: /quoteFavorite book success    - open SUCCESS
+  quotefavorite_book_success_o_afe31501: /quoteFavorite book success    - open 成就
     chapter
-  quotefavorite_book_timeup_op_08b799b0: /quoteFavorite book timeup     - open TIME_UP
+  quotefavorite_book_timeup_op_08b799b0: /quoteFavorite book timeup     - open 時尽きぬ
     chapter
   quotefavorite_book_other_ope_bdcbafba: /quoteFavorite book other      - open OTHER
     chapter
@@ -459,59 +459,59 @@ ui:
       fallbackTitle: TreasureRun 御掟
       fallbackDisplayName: TreasureRun 御掟の巻
       hotbarGiven: 📖 御掟の巻をホットバーに配布しました。
-      hotbarHint: 手に持って右クリックすると、いづれの時にも読み直せます。
-      latestHint: （この本を右クリックすると最新の言の葉を記し置きできます）
-      openFailed: Could not open the rule book.
+      hotbarHint: 手に持って右クリックすると、いづれの時にも読み直せたり。
+      latestHint: （この本を右クリックすると最新の言の葉を記し置きかなふ）
+      openFailed: 御掟の巻を開くことかなはざりき。
     toc:
-      message: '&6📌 TreasureRun メニューを開きました。御掟の巻を見定めしてください。'
+      message: '&6📌 TreasureRun メニューを開きました。御掟の巻を見定めし給へ。'
     legacy:
       toc:
         message: '===== TreasureRun Menu =====
 
-          Open the rule book from your hotbar to read the rules.'
+          ホットバーより御掟の巻を開き、御掟を見給へ。'
     page:
       contents:
-        difficulty: 'Difficulty: {difficulty}'
+        difficulty: '難きほど: {difficulty}'
         howToPlay: 遊びの作法
-        language: 'Language: {lang}'
-        rulesItem: 1) Rules
-        savedOn: Saved on SUCCESS / TIME_UP
+        language: '言の葉: {lang}'
+        rulesItem: 1) 御掟
+        savedOn: 成就／時尽きし折に記し置く
         scoreRoute: 得点とルート
-        tipsItem: 2) Tips
+        tipsItem: 2) しるべ
         title: 目録
-        yourQuotes: Your saved quotes
+        yourQuotes: 記し置きたる言の葉
       hint:
-        reopenMenu: 'Hint: use /gameMenu to open this again.'
+        reopenMenu: 'しるべ：/gameMenu にて、ふたたび開き給へ。'
       note:
-        bookFormat: Minecraft books cannot switch tabs by clicking, so sections are
+        bookFormat: Minecraft books cannot switch 章 by clicking, so sections are
           shown as pages.
   quote:
     footer:
       dbLogs: '（DB: proverb_logs）'
     title: 言の葉集
     intro:
-      tabsTitle: タブ
+      章Title: タブ
       db:
         favorites: proverb_favorites (★)
         logs: proverb_logs (history)
-      langLine: 'Language: {lang}'
-      legendTitle: Legend
-      storedInDb: Stored in DB
-    headerRecent: 'Recent 20  |  lang: {lang}'
+      langLine: '言の葉: {lang}'
+      legendTitle: 凡例
+      storedInDb: DBに記し置き
+    headerRecent: '近き二十件  |  言の葉: {lang}'
     legend:
-      favorites: = Favorites
-      success: = Success / Cleared
-      timeUp: = Time up
-    noFavorites: No favorites yet.
-    noLogs: No quote logs yet.
-    noQuotesInTab: No quotes are available in this tab yet.
+      favorites: = 秘蔵
+      success: = 成就
+      timeUp: = 時尽きぬ
+    no秘蔵: 秘蔵はいまだなし。
+    noLogs: 言の葉の記し、いまだなし。
+    noQuotesInTab: この章に示す言の葉、いまだなし。
     tip:
-      rightClickSave: 'Tip: right-click this book to save the latest quote.'
+      rightClickSave: 'しるべ：この巻を右押しすれば、最新の言の葉を記し置くべし。'
   favorites:
     footer:
-      dbFavorites: '（DB: proverb_favorites）'
-    headerLatest: 'Latest 20  |  lang: {lang}'
-    title: Favorites
+      db秘蔵: '（DB: proverb_favorites）'
+    header最新: '最新 20  |  lang: {lang}'
+    title: 秘蔵
   gameMenu:
     pluginNotReady: プラグインのいまだ支度整はず。
   symbol:
@@ -542,18 +542,18 @@ ui:
       success: 成就
       timeUp: 時尽きぬ
       favorites: 秘蔵
-    latest: Latest
+    latest: 最新
     outcome:
-      success: SUCCESS
-      timeUp: TIME UP
-    page: Page {current}/{total}
-    tabs: Tabs
+      success: 成就
+      timeUp: 時尽きぬ
+    page: {current}/{total} 頁
+    章: 章
   error:
-    noData: No data.
+    noData: 記しなし。
 gameplay:
   pickup:
-    scoreNone: まだ得点がありません。
-    gameEndTotalScore: '遊戯、終はりぬ！合計得点: {score}'
+    scoreNone: まだ得点がなし。
+    gameEnd総じて得点: '遊戯、終はりぬ！合計得点: {score}'
     treasureFound: '宝: {name} ×{amount}'
     remainingChests: '残りの宝の櫃: {count}個'
   result:
@@ -572,7 +572,7 @@ gameplay:
     allChestsOpened: すべての宝の櫃を開きたり！遊戯、終はりぬ！
     treasureCompleteTitle: 🎵 宝探し成就！ 🎵
     allTreasuresFoundTitle: すべての宝を見出だしぬ！
-    allTreasuresFoundChat: おめでとうございます！すべての宝を見出だしぬ！
+    allTreasuresFoundChat: おめでとうございたり！すべての宝を見出だしぬ！
   start:
     startingIn: 始めまで…
     go: 始め！
@@ -582,7 +582,7 @@ gameplay:
     hiddenPowerChat: "Treasure Shop の奥に眠る力を感じた…"
   timer:
     remainingBossbar: 残れる時
-    remainingLine: '残れる時: {seconds}秒'
+    remainingLine: '残れる時： {seconds}秒'
 rewards:
   rank:
     netheriteIngot: ネザライトインゴット得たり！
@@ -603,11 +603,11 @@ rank:
     playsTitleAllTime: === 🎖️ TreasureRun 総合TOP10（プレイ記し） ===
     playsTitleMonthly: === 🎖️ TreasureRun 月間TOP10（プレイ記し） ===
     playsLine: '{rank}位 {player}  {score}pt  {time}s  ({difficulty}) [{lang}]'
-    weeklyEmpty: 直近7日間の記しはありません。
+    weeklyEmpty: 直近7日間の記しはなし。
     weeklySwitch: '表示切替: /gameRank all | /gameRank monthly'
-    allTimeEmpty: まだ記しがありません。
+    allTimeEmpty: まだ記しがなし。
     allTimeSwitch: '表示切替: /gameRank weekly | /gameRank monthly'
-    monthlyEmpty: 今月の記しはまだありません。
+    monthlyEmpty: 今月の記しはまだなし。
     monthlySwitch: '表示切替: /gameRank weekly | /gameRank all'
 
 # Final visible-surface i18n audit keys
@@ -620,35 +620,35 @@ finalAudit:
   command:
     playerOnly: "この命は仕手のみ行ふべし。"
     opOnly: "このコマンドはOPの権を要す。"
-    rankDebugOff: "Rank debug は無効です。config.yml の rankDebug.enabled を true にしてください。"
+    rankDebugOff: "Rank debug は無効なり。config.yml の rankDebug.enabled を true にし給へ。"
     rankUsage: "用ゐ方: /rank <1|2|3|demo>"
     rankNumberOnly: "数にて入れ給へ: /rank <1|2|3|demo>"
     rankOnlyOneToThree: "1、2、3 のいずれかを定め給へ: /rank <1|2|3>"
-    gameAlreadyRunning: "遊戯はすでに実行中です。"
+    gameAlreadyRunning: "遊戯はすでに実行中なり。"
     invalidDifficulty: "難きほどは Easy、Normal、Hard のいずれかを定め給へ。"
     languageGuiNotReady: "言の葉選びGUIはまだ準備できていません。"
-    reloadBlockedRunning: "遊戯中は reload できません。先に /gameEnd を実行してください。"
+    reloadBlockedRunning: "遊戯中は reload できません。先に /gameEnd を実行し給へ。"
     noPermission: "この命を用ゐる権なし。"
     noPermissionOp: "この命を用ゐる権なし。OPの権を要す。"
-    treasureReloadDone: "✅ TreasureRun の定めを読み直ししました。言の葉GUIの定めも反映されています。"
-    guiReloadedReopen: "GUIを更新しました。いま一度 /gameStart を実行して開き直してください。"
+    treasureReloadDone: "✅ TreasureRun の定めを読み直ししました。言の葉GUIの定めも反映されていたり。"
+    guiReloadedReopen: "GUIを更新しました。いま一度 /gameStart を実行して開き直し給へ。"
     dbConnected: "MySQL につながりたり。"
     dbNotConnected: "MySQL につながらず。"
     exportMissingRoot: "❌ config.yml に messages.translation が見つかりません。"
     exportExample: "例: messages.translation.ja.favorites.title: ..."
     exportCreateFolderFailed: "❌ languages/ フォルダを作成できませんでした: {path}"
-    exportNoLanguages: "❌ 書き出し対象の言の葉が定めされていません。"
+    exportNoLanguages: "❌ 書き出し対象の言の葉が定めされず。"
     exportFailed: "❌ 書き出しに不成し遂げたり: {lang} ({error})"
     exportComplete: "✅ 書き出しが終はりぬ: {count} ファイルを作成しました。"
     exportOutputFolder: "出力先: {path}"
     exportSkippedExisting: "⚠ 既存ファイルのためスキップしました: {langs}"
-    exportOverwriteHint: "既存ファイルを上書きする場合は /treasureExportLang overwrite を実行してください。"
-    exportNextStep: "次に、I18n が languages/*.yml を読む構成にすると翻訳が反映されます。"
-    playerOnlyConsoleNoOnline: "このコマンドは仕手用です。今オンラインの仕手も見つかりませんでした。"
+    exportOverwriteHint: "既存ファイルを上書きする場合は /treasureExportLang overwrite を実行し給へ。"
+    exportNextStep: "次に、I18n が languages/*.yml を読む構成にすると翻訳が反映されたり。"
+    playerOnlyConsoleNoOnline: "このコマンドは仕手用なり。今オンラインの仕手も見つかりませんでした。"
   debug:
     chestSoundStart: "[ChestSound] 16分割グリッドモードで始まりぬ。"
     chestSoundNoChests: "[ChestSound] 宝の櫃が見つかりません。"
     chestSoundNearest: "[ChestSound] 最寄り={distance}m 範囲内={range} t={t}"
   reward:
-    label: "報酬"
+    label: "賜りもの"
     rainbowWolf: "Rainbow Wolf"
