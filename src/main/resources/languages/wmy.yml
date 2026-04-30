@@ -546,7 +546,7 @@ ui:
     outcome:
       success: 成就
       timeUp: 時尽きぬ
-    page: {current}/{total} 頁
+    page: "{current}/{total} 頁"
     章: 章
   error:
     noData: 記しなし。
