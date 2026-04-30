@@ -201,8 +201,8 @@ common:
 command:
   checkTreasureEmerald:
     playersOnly: この命は仕手のみ行ふべし。
-    resultTrue: 手に持っているアイテムは Treasure Emerald なり。
-    resultFalse: 手に持っているアイテムは Treasure Emerald ではなし。
+    resultTrue: 手に持てる品は Treasure Emerald なり。
+    resultFalse: 手に持てる品は Treasure Emerald にあらず。
   gameStart:
     playersOnly: この命は仕手よりのみ行ふべし。
     worldNotFound: '[TreasureRun] 始めワールドが定めされていないか、見つかりませんでした。'
@@ -486,11 +486,11 @@ ui:
     tabInactiveClose: ']'
     activeMarker: '▶ '
   rankTicker:
-    updated: 🏁 位階を更新しました！ ({which})
+    updated: 🏁 位階を改めたり！ ({which})
     mode:
-      weekly: 週間
-      allTime: 総合
-      monthly: 月間
+      weekly: 今週
+      allTime: 永代
+      monthly: 今月
   labels:
     tab:
       all: すべて
@@ -507,20 +507,20 @@ ui:
     noData: 記しなし。
 gameplay:
   pickup:
-    scoreNone: まだ得点なし。
-    treasureFound: '宝: {name} ×{amount}'
+    scoreNone: いまだ得点なし。
+    treasureFound: '宝を得たり: {name} ×{amount}'
     remainingChests: '残れる宝の櫃: {count}'
     gameEndTotalScore: '遊び果てぬ。総得点: {score}'
   result:
     runCompleteTitle: 完走せり！
     timeUpTitle: 時尽きぬ！
-    treasuresCollected: '納めした宝の櫃: {got}/{total}（残り {missing}）'
-    overcomingAdversity: 逆境を越えて
-    time: タイム
+    treasuresCollected: '納めし宝の櫃: {got}/{total}（残り {missing}）'
+    overcomingAdversity: 逆境を越えたり
+    time: 時
     rank: 位
-    allChestsOpenedBroadcast: '【{player}】が全ての宝の櫃を開きたり！最終得点: {score}'
-    summaryLine: 'タイム: {time}  得点: {score}  ランク: {rank}'
-    gotLine: '納め: {got}/{total}'
+    allChestsOpenedBroadcast: '【{player}】すべての宝の櫃を開き給ひぬ！総得点: {score}'
+    summaryLine: '時: {time}  得点: {score}  位: {rank}'
+    gotLine: '納めし宝: {got}/{total}'
     label:
       score: 得点
       time: 時
@@ -533,7 +533,7 @@ gameplay:
       timeUp: 時尽きぬ
     message:
       runComplete: 完走せり！
-      timeUp: 時尽きぬ。
+      timeUp: 時、尽きにけり。
       congratulations: 祝着至れり！
       allTreasuresFound: すべての宝を見出だし給ひぬ！
       totalScore: '総得点: {score}'
@@ -546,7 +546,7 @@ gameplay:
       score: 得点
       time: 時
   setup:
-    chestsPlaced: 宝の櫃 {count} 個を配置しました！
+    chestsPlaced: 宝の櫃 {count} 個を据ゑたり！
   success:
     allChestsOpened: すべての宝の櫃を開きたり！遊戯、終はりぬ！
     treasureCompleteTitle: 🎵 宝探し成就！ 🎵
@@ -561,7 +561,7 @@ gameplay:
     hiddenPowerChat: Treasure Shop の奥に眠る力を感じた…
   timer:
     remainingBossbar: 残れる時
-    remainingLine: 残れる時： {seconds}秒
+    remainingLine: '残れる時: {seconds}秒'
   rank:
     weeklyTitle: 今週の TreasureRun
     allTimeTitle: 永代 TreasureRun
@@ -570,30 +570,30 @@ gameplay:
     timeLabel: 時
 rewards:
   rank:
-    netheriteIngot: ネザライトインゴット得たり！
-    diamond: 金剛石得たり！
-    goldenApple: 黄金の林檎得たり！
+    netheriteIngot: ネザライトインゴットを得たり！
+    diamond: 金剛石を得たり！
+    goldenApple: 黄金の林檎を得たり！
 rankTicker:
   weeklyTitle: 今週の TreasureRun
-  allTimeTitle: 総合 TreasureRun
-  monthlyTitle: 月間 TreasureRun
+  allTimeTitle: 永代 TreasureRun
+  monthlyTitle: 今月の TreasureRun
   footerHint: /gameRank weekly|all|monthly
 rank:
   command:
-    timeTop10Title: === 🌟 TreasureRun TOP10（最速タイム）🌟 ===
+    timeTop10Title: === 🌟 TreasureRun 最速十傑 🌟 ===
     timeTop10Line: '{rank}位 {player}  {time}秒  {score}点  難きほど: {difficulty}'
-    dbUnavailable: データベースに接続できません。
-    loadError: 位階の読み込み中にあやまちが発生しました。
-    playsTitleWeekly: === 🎖️ TreasureRun 週間TOP10（プレイ記し） ===
-    playsTitleAllTime: === 🎖️ TreasureRun 総合TOP10（プレイ記し） ===
-    playsTitleMonthly: === 🎖️ TreasureRun 月間TOP10（プレイ記し） ===
-    playsLine: '{rank}位 {player}  {score}pt  {time}s  ({difficulty}) [{lang}]'
-    weeklyEmpty: 直近7日間の記しはなし。
-    weeklySwitch: '表示切替: /gameRank all | /gameRank monthly'
-    allTimeEmpty: まだ記しがなし。
-    allTimeSwitch: '表示切替: /gameRank weekly | /gameRank monthly'
-    monthlyEmpty: 今月の記しはまだなし。
-    monthlySwitch: '表示切替: /gameRank weekly | /gameRank all'
+    dbUnavailable: データベースへ繋がらず。
+    loadError: 位階を読み込む折、あやまち起これり。
+    playsTitleWeekly: === 🎖️ TreasureRun 今週の十傑 ===
+    playsTitleAllTime: === 🎖️ TreasureRun 永代の十傑 ===
+    playsTitleMonthly: === 🎖️ TreasureRun 今月の十傑 ===
+    playsLine: '{rank}位 {player}  {score}点  {time}秒  ({difficulty}) [{lang}]'
+    weeklyEmpty: 直近七日の記しはなし。
+    weeklySwitch: '表示を改む: /gameRank all | /gameRank monthly'
+    allTimeEmpty: いまだ記しなし。
+    allTimeSwitch: '表示を改む: /gameRank weekly | /gameRank monthly'
+    monthlyEmpty: 今月の記しは、いまだなし。
+    monthlySwitch: '表示を改む: /gameRank weekly | /gameRank all'
 finalAudit:
   shop:
     treasureShop: Treasure Shop
