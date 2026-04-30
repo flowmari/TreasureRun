@@ -1738,6 +1738,7 @@ language:
   - pt
   - hi
   - lzh
+  - wmy
   - asl_gloss
   displayName:
     ja: 日本語
@@ -1758,6 +1759,7 @@ language:
     pt: Português
     hi: हिंदी
     lzh: 漢文
+    wmy: 古文
     asl_gloss: ASL GLOSS
   shortLabel:
     ja: JA
@@ -1778,6 +1780,7 @@ language:
     pt: PT
     hi: HI
     lzh: LZH
+    wmy: WMY
     asl_gloss: ASL
   iconMaterial:
     ja: WHITE_WOOL
@@ -1798,6 +1801,7 @@ language:
     pt: LIGHT_GRAY_WOOL
     hi: ORANGE_WOOL
     lzh: WHITE_WOOL
+    wmy: YELLOW_WOOL
     asl_gloss: BLACK_WOOL
   loreDefault: Click to select
   lore:
@@ -1813,6 +1817,7 @@ language:
     zh_tw: 點擊選擇
     pt: Clique para escolher
     hi: चुनने के लिए क्लिक करें
+    wmy: 押して選び給へ
 ruleBook:
   title:
     ja: TreasureRun ルール
@@ -1833,6 +1838,7 @@ ruleBook:
     pt: Regras do TreasureRun
     hi: TreasureRun नियम
     lzh: TreasureRun 規則
+    wmy: TreasureRun 御掟
     asl_gloss: TREASURE-RUN RULES
   author: TreasureRun
   displayName:
@@ -1854,6 +1860,7 @@ ruleBook:
     pt: Livro de Regras do TreasureRun
     hi: TreasureRun नियम पुस्तिका
     lzh: TreasureRun 規則書
+    wmy: TreasureRun 御掟の巻
     asl_gloss: TREASURE-RUN RULE BOOK
   difficultyLabel:
     ja:
@@ -1928,6 +1935,10 @@ ruleBook:
       Easy: 易
       Normal: 中
       Hard: 難
+    wmy:
+      Easy: やすし
+      Normal: なみ
+      Hard: かたし
     asl_gloss:
       Easy: EASY
       Normal: MEDIUM
@@ -2637,6 +2648,45 @@ ruleBook:
       右按可存最新格言，
 
       由目錄開篇以再讀。'
+    wmy:
+    - '§b§lTreasureRun 御掟
+
+
+      §1難きほど: %diffLabel%
+
+
+      限りの時内にできるだけ多くの
+
+      宝の櫃を開き給へ！
+
+      レアな宝ほど高得点です。'
+    - '§b★ 基本の流れ
+
+
+      §11. /gameStart <難きほど>
+
+      2. 緑のマークの宝の櫃を探す
+
+      3. 開くと得点 + アイテム
+
+      4. 全て開くとクリア！'
+    - "§b★ ヒント\n\n§1・ネザライト/ブロック系は\n  ジャックポット高得点！\n\n・途中で /gameMenu を打つと\n  この本を再取得できます。\n\
+      \n・タイムアップに注意！"
+    - '§b★ Archive / Favorites
+
+
+      §1TreasureRun Archive は
+
+      SUCCESS（表彰台ログ）と
+
+      TIME_UP（詩集 / 余韻）を
+
+      「秘蔵」として収録します。
+
+
+      右押すで最新格言を記し置き。
+
+      目録から章を開いて再読できます。'
     asl_gloss:
     - '§b§lTREASURE-RUN RULES
 
