@@ -547,7 +547,7 @@ ui:
       success: 成就
       timeUp: 時尽きぬ
     page: "{current}/{total} 頁"
-    章: 章
+    tabs: 章
   error:
     noData: 記しなし。
 gameplay:
