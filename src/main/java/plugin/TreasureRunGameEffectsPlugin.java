@@ -203,7 +203,7 @@ public class TreasureRunGameEffectsPlugin implements Listener {
 
     String chatMsg = (trp != null)
         ? trp.getI18n().tr(successLang, "gameplay.success.allTreasuresFoundChat")
-        : "Congratulations! You found all the treasures!";
+        : "祝着至れり！すべての宝を見出だし給ひぬ！";
     player.sendMessage(ChatColor.GOLD + chatMsg);
 
     new BukkitRunnable() {

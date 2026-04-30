@@ -97,7 +97,7 @@ public class QuoteFavoritesBookBuilder {
         tr(lang, TOC_HEAD, "Contents") + "\n"
             + tr(lang, TOC_SUB, "Browse by chapter") + "\n\n"
             + "1. " + tr(lang, CHAPTER_SUCCESS_TITLE, "Success") + "\n"
-            + "2. " + tr(lang, CHAPTER_TIMEUP_TITLE, "Time Up") + "\n"
+            + "2. " + tr(lang, CHAPTER_TIMEUP_TITLE, "時尽きぬ") + "\n"
             + "3. " + tr(lang, CHAPTER_OTHER_SUB, "Other") + "\n\n"
             + tr(lang, TOC_HOWTO, "Open a chapter to reread saved lines") + "\n"
             + tr(lang, TOC_HOWTO_SHIFT, "Shift+RightClick saves the latest line")
@@ -147,7 +147,7 @@ public class QuoteFavoritesBookBuilder {
     if (mode == ViewMode.FULL || mode == ViewMode.TIME_UP_ONLY) {
       pages.add(makeChapter(
           lang,
-          tr(lang, CHAPTER_TIMEUP_TITLE, "Time Up"),
+          tr(lang, CHAPTER_TIMEUP_TITLE, "時尽きぬ"),
           byKind.getOrDefault("TIME_UP", List.of()),
           tr(lang, TIMEUP_TEMPLATE_1, "Saved time-up lines"),
           tr(lang, TIMEUP_TEMPLATE_2, "Moments the timer ran out")

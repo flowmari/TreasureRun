@@ -302,10 +302,10 @@ game:
   - '&e残れる時： &f{seconds}秒'
   gameEndSuccess:
   - '&a財をすべて納めたり！'
-  - '&7最終得点: &f{score}'
+  - '&7総得点: &f{score}'
   gameEndFail:
   - '&c時尽きぬ！'
-  - '&7最終得点: &f{score}'
+  - '&7総得点: &f{score}'
   rank:
     header: '&6=== 位階 ==='
     line: '&e{rank}位 &f{player} &7- &b{score}'
@@ -634,4 +634,4 @@ finalAudit:
     chestSoundNearest: '[ChestSound] 最寄り={distance}m 範囲内={range} t={t}'
   reward:
     label: 賜りもの
-    rainbowWolf: Rainbow Wolf
+    rainbowWolf: 虹の狼
