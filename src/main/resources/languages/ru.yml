@@ -848,6 +848,10 @@ ui:
   error:
     noData: No data.
 gameplay:
+  death:
+    firework: '{player} попал в взрыв фейерверка.'
+    explosion: '{player} попал во взрыв.'
+    generic: '{player} пал.'
   pickup:
     scoreNone: Очков пока нет.
     gameEndTotalScore: 'Игра окончена! Общий счёт: {score}'

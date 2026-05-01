@@ -949,6 +949,10 @@ items:
     iron_block: 鐵方塊
     tnt: TNT
 gameplay:
+  death:
+    firework: '{player}為煙火之爆所及。'
+    explosion: '{player}為爆裂所及。'
+    generic: '{player}仆。'
   pickup:
     scoreNone: 尚無分數。
     gameEndTotalScore: 戲終！總分：{score}

@@ -840,6 +840,10 @@ ui:
   error:
     noData: No data.
 gameplay:
+  death:
+    firework: '{player} werd getroffen door een vuurwerkexplosie.'
+    explosion: '{player} werd getroffen door een explosie.'
+    generic: '{player} viel.'
   pickup:
     scoreNone: Er is nog geen score.
     gameEndTotalScore: 'Spel afgelopen! Totale score: {score}'

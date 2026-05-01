@@ -832,6 +832,10 @@ ui:
     tabInactiveClose: ']'
     tabInactiveOpen: '['
 gameplay:
+  death:
+    firework: '{player} fastnade i en fyrverkeriexplosion.'
+    explosion: '{player} fastnade i en explosion.'
+    generic: '{player} föll.'
   pickup:
     scoreNone: Det finns ingen poäng ännu.
     gameEndTotalScore: 'Spelet är slut! Totalpoäng: {score}'

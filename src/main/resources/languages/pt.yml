@@ -968,6 +968,10 @@ items:
     iron_block: Bloco de ferro
     tnt: TNT
 gameplay:
+  death:
+    firework: '{player} foi atingido por uma explosão de fogos de artifício.'
+    explosion: '{player} foi atingido por uma explosão.'
+    generic: '{player} caiu.'
   pickup:
     scoreNone: Ainda não há pontuação.
     gameEndTotalScore: 'Fim de jogo! Pontuação total: {score}'

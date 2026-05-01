@@ -846,6 +846,10 @@ ui:
   error:
     noData: No data.
 gameplay:
+  death:
+    firework: '{player} अग्निक्रीडाविस्फोटेन ग्रस्तः।'
+    explosion: '{player} विस्फोटेन ग्रस्तः।'
+    generic: '{player} पतितः।'
   pickup:
     scoreNone: अद्यापि अङ्काः न सन्ति।
     gameEndTotalScore: 'क्रीडा समाप्ता! समग्राङ्कः: {score}'
