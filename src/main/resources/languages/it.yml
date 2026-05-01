@@ -834,6 +834,10 @@ ui:
   error:
     noData: No data.
 gameplay:
+  death:
+    firework: '{player} è stato travolto da un''esplosione di fuochi d''artificio.'
+    explosion: '{player} è stato travolto da un''esplosione.'
+    generic: '{player} è caduto.'
   pickup:
     scoreNone: Non c'è ancora alcun punteggio.
     gameEndTotalScore: 'Partita finita! Punteggio totale: {score}'

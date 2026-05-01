@@ -536,6 +536,10 @@ ui:
   error:
     noData: No data.
 gameplay:
+  death:
+    firework: '{player}は花火の爆発に巻き込まれた。'
+    explosion: '{player}は爆発に巻き込まれた。'
+    generic: '{player}は倒れた。'
   pickup:
     scoreNone: まだスコアがありません。
     gameEndTotalScore: 'ゲーム終了！合計スコア: {score}'

@@ -842,6 +842,10 @@ ui:
   error:
     noData: No data.
 gameplay:
+  death:
+    firework: '{player} flammis ludicris explosis correptus est.'
+    explosion: '{player} explosione correptus est.'
+    generic: '{player} cecidit.'
   pickup:
     scoreNone: Puncta nondum sunt.
     gameEndTotalScore: 'Ludus finitus! Summa punctorum: {score}'

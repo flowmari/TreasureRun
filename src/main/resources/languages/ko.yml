@@ -830,6 +830,10 @@ ui:
   error:
     noData: No data.
 gameplay:
+  death:
+    firework: '{player}님이 폭죽 폭발에 휘말렸습니다.'
+    explosion: '{player}님이 폭발에 휘말렸습니다.'
+    generic: '{player}님이 쓰러졌습니다.'
   pickup:
     scoreNone: 아직 점수가 없습니다.
     gameEndTotalScore: '게임 종료! 총점: {score}'

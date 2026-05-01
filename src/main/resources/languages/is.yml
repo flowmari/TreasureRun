@@ -836,6 +836,10 @@ ui:
   error:
     noData: No data.
 gameplay:
+  death:
+    firework: '{player} lenti í flugeldasprengingu.'
+    explosion: '{player} lenti í sprengingu.'
+    generic: '{player} féll.'
   pickup:
     scoreNone: Engin stig eru komin enn.
     gameEndTotalScore: 'Leik lokið! Heildarskor: {score}'

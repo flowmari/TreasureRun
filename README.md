@@ -512,3 +512,11 @@ TreasureRun demonstrates practical backend/plugin engineering skills beyond a si
 ## License
 
 This project is currently a personal portfolio project.
+
+### Event-Level Localization for Engine-Generated Messages
+
+TreasureRun localizes not only plugin-owned UI text, but also selected Minecraft/Spigot engine-generated messages through Bukkit event listeners.
+
+Vanilla death messages are intercepted via `PlayerDeathEvent`, classified into stable i18n keys such as `gameplay.death.firework`, `gameplay.death.explosion`, and `gameplay.death.generic`, resolved against the player’s selected language, and rendered through the same YAML-based i18n pipeline used by GUI, books, chat, BossBar, ActionBar, and ranking messages.
+
+This keeps all supported languages parallel instead of treating English as the only default source and other languages as secondary translations.

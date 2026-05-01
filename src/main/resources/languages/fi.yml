@@ -842,6 +842,10 @@ ui:
   error:
     noData: No data.
 gameplay:
+  death:
+    firework: '{player} jäi ilotulitusräjähdyksen alle.'
+    explosion: '{player} jäi räjähdyksen alle.'
+    generic: '{player} kaatui.'
   pickup:
     scoreNone: Pisteitä ei vielä ole.
     gameEndTotalScore: 'Peli päättyi! Kokonaispisteet: {score}'

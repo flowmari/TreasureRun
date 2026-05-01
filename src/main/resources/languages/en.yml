@@ -814,6 +814,10 @@ ui:
   error:
     noData: No data.
 gameplay:
+  death:
+    firework: '{player} was caught in a firework blast.'
+    explosion: '{player} was caught in an explosion.'
+    generic: '{player} fell.'
   pickup:
     scoreNone: No score yet.
     gameEndTotalScore: 'Game over! Total score: {score}'

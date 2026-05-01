@@ -967,6 +967,10 @@ items:
     iron_block: लोहे का ब्लॉक
     tnt: TNT
 gameplay:
+  death:
+    firework: '{player} आतिशबाज़ी के विस्फोट में फँस गया।'
+    explosion: '{player} विस्फोट में फँस गया।'
+    generic: '{player} गिर गया।'
   pickup:
     scoreNone: अभी कोई स्कोर नहीं है।
     gameEndTotalScore: 'खेल समाप्त! कुल स्कोर: {score}'

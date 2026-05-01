@@ -511,6 +511,10 @@ ui:
   error:
     noData: 記しなし。
 gameplay:
+  death:
+    firework: '{player}は花火の爆ぜに巻かれ、あへなく倒れにけり。'
+    explosion: '{player}は爆ぜの災ひに遭ひ、あへなく倒れにけり。'
+    generic: '{player}は命の緒、ここに絶えにけり。'
   pickup:
     scoreNone: いまだ得点なし。
     treasureFound: '宝を得たり: {name} ×{amount}'

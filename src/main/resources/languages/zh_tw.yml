@@ -951,6 +951,10 @@ items:
     iron_block: 鐵方塊
     tnt: TNT
 gameplay:
+  death:
+    firework: '{player}被煙火爆炸波及了。'
+    explosion: '{player}被爆炸波及了。'
+    generic: '{player}倒下了。'
   pickup:
     scoreNone: 目前還沒有分數。
     gameEndTotalScore: 遊戲結束！總分：{score}
