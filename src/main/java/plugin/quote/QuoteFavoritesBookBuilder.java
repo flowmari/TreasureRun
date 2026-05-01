@@ -72,7 +72,7 @@ public class QuoteFavoritesBookBuilder {
       if (meta != null) {
         meta.setTitle("TreasureRun");
         meta.setAuthor("TreasureRun");
-        meta.setPages(List.of("TreasureRun"));
+        meta.setPages(safePages(List.of("TreasureRun")));
         book.setItemMeta(meta);
       }
       return book;
@@ -105,7 +105,7 @@ public class QuoteFavoritesBookBuilder {
 
     // TOC_ONLY ならここで終了
     if (mode == ViewMode.TOC_ONLY) {
-      meta.setPages(pages);
+      meta.setPages(safePages(pages));
       book.setItemMeta(meta);
       return book;
     }
@@ -123,7 +123,7 @@ public class QuoteFavoritesBookBuilder {
               + tr(lang, EMPTY_TRY_NOW, "Then open this book again")
       );
 
-      meta.setPages(pages);
+      meta.setPages(safePages(pages));
       book.setItemMeta(meta);
       return book;
     }
@@ -164,7 +164,7 @@ public class QuoteFavoritesBookBuilder {
       ));
     }
 
-    meta.setPages(pages);
+    meta.setPages(safePages(pages));
     book.setItemMeta(meta);
     return book;
   }
@@ -189,7 +189,7 @@ public class QuoteFavoritesBookBuilder {
 
     meta.setTitle(title);
     meta.setAuthor("TreasureRun");
-    meta.setPages(List.of(head + "\n\n" + quoteText));
+    meta.setPages(safePages(List.of(head + "\n\n" + quoteText)));
 
     book.setItemMeta(meta);
     return book;
@@ -208,6 +208,7 @@ public class QuoteFavoritesBookBuilder {
 
       String l = locale.toLowerCase(Locale.ROOT).replace('-', '_');
 
+      if (l.startsWith("ojp")) return "ojp";
       if (l.startsWith("ja")) return "ja";
       if (l.startsWith("en")) return "en";
       if (l.startsWith("de")) return "de";
@@ -279,6 +280,12 @@ public class QuoteFavoritesBookBuilder {
   }
 
   private String extractTextSafe(Object row) {
+    if (row instanceof CharSequence) {
+      String direct = row.toString().trim();
+      if (direct.contains("Translation missing:")) return "";
+      return safeBookText(direct);
+    }
+
     String text = readStringFieldOrGetter(row, "text");
     if (text.isBlank()) text = readStringFieldOrGetter(row, "quote");
     if (text.isBlank()) text = readStringFieldOrGetter(row, "message");
@@ -286,7 +293,7 @@ public class QuoteFavoritesBookBuilder {
     if (text == null) return "";
     text = text.trim();
     if (text.contains("Translation missing:")) return "";
-    return text;
+    return safeBookText(text);
   }
 
   private String readStringFieldOrGetter(Object obj, String name) {
@@ -343,6 +350,66 @@ public class QuoteFavoritesBookBuilder {
 
     int count = (rows == null ? 0 : rows.size());
     return buildFavoritesBook(lang, player.getUniqueId(), count, rows);
+  }
+
+
+
+  private List<String> safePages(List<String> pages) {
+    if (pages == null) return List.of("");
+
+    List<String> out = new ArrayList<>();
+    for (String page : pages) {
+      out.add(safeBookText(page));
+    }
+    return out;
+  }
+
+  /**
+   * Minecraft 1.20 の本 UI で豆腐/HOP箱になりやすい文字を安全化する。
+   *
+   * 重要:
+   * - YAML / DB の元データは壊さない
+   * - BookMeta に渡す直前だけ安全化する
+   * - 古文・上代日本語系の補助平面文字、変体仮名、異体字セレクタ、
+   *   絵文字系など、本UIで壊れやすい文字だけ除去する
+   */
+  private String safeBookText(String input) {
+    if (input == null || input.isBlank()) return "";
+
+    StringBuilder sb = new StringBuilder(input.length());
+
+    input.codePoints().forEach(cp -> {
+      if (cp == '\r') return;
+      if (cp == '\t') {
+        sb.append(' ');
+        return;
+      }
+      if (cp == '\n') {
+        sb.append('\n');
+        return;
+      }
+
+      // Bukkit / Minecraft color code marker
+      if (cp == 0x00A7) {
+        sb.appendCodePoint(cp);
+        return;
+      }
+
+      // Minecraft の本で豆腐/HOP箱になりやすい文字
+      if (cp >= 0x1B000 && cp <= 0x1B16F) return; // Kana Supplement / Kana Extended-A
+      if (cp >= 0x1AFF0 && cp <= 0x1AFFF) return; // Kana Extended-B
+      if (cp >= 0x1F000 && cp <= 0x1FFFF) return; // emoji / supplementary symbols
+      if (cp >= 0xFE00 && cp <= 0xFE0F) return;   // variation selectors
+      if (cp >= 0xE0100 && cp <= 0xE01EF) return; // variation selectors supplement
+      if (Character.isISOControl(cp)) return;
+
+      sb.appendCodePoint(cp);
+    });
+
+    return sb.toString()
+        .replace("  ", " ")
+        .replace(" ,", ",")
+        .trim();
   }
 
 
