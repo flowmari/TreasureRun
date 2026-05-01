@@ -1738,7 +1738,7 @@ language:
   - pt
   - hi
   - lzh
-  - wmy
+  - ojp
   - asl_gloss
   displayName:
     ja: 日本語
@@ -1759,7 +1759,7 @@ language:
     pt: Português
     hi: हिंदी
     lzh: 漢文
-    wmy: 古文
+    ojp: 古文
     asl_gloss: ASL GLOSS
   shortLabel:
     ja: JA
@@ -1780,7 +1780,7 @@ language:
     pt: PT
     hi: HI
     lzh: LZH
-    wmy: WMY
+    ojp: OJP
     asl_gloss: ASL
   iconMaterial:
     ja: WHITE_WOOL
@@ -1801,7 +1801,7 @@ language:
     pt: LIGHT_GRAY_WOOL
     hi: ORANGE_WOOL
     lzh: WHITE_WOOL
-    wmy: YELLOW_WOOL
+    ojp: YELLOW_WOOL
     asl_gloss: BLACK_WOOL
   loreDefault: Click to select
   lore:
@@ -1817,7 +1817,7 @@ language:
     zh_tw: 點擊選擇
     pt: Clique para escolher
     hi: चुनने के लिए क्लिक करें
-    wmy: 押して選び給へ
+    ojp: 押して選び給へ
 ruleBook:
   title:
     ja: TreasureRun ルール
@@ -1838,7 +1838,7 @@ ruleBook:
     pt: Regras do TreasureRun
     hi: TreasureRun नियम
     lzh: TreasureRun 規則
-    wmy: TreasureRun 御掟
+    ojp: TreasureRun 御掟
     asl_gloss: TREASURE-RUN RULES
   author: TreasureRun
   displayName:
@@ -1860,7 +1860,7 @@ ruleBook:
     pt: Livro de Regras do TreasureRun
     hi: TreasureRun नियम पुस्तिका
     lzh: TreasureRun 規則書
-    wmy: TreasureRun 御掟の巻
+    ojp: TreasureRun 御掟の巻
     asl_gloss: TREASURE-RUN RULE BOOK
   difficultyLabel:
     ja:
@@ -1935,7 +1935,7 @@ ruleBook:
       Easy: 易
       Normal: 中
       Hard: 難
-    wmy:
+    ojp:
       Easy: やすし
       Normal: なみ
       Hard: かたし
@@ -2648,7 +2648,7 @@ ruleBook:
       右按可存最新格言，
 
       由目錄開篇以再讀。'
-    wmy:
+    ojp:
     - '§b§lTreasureRun 御掟
 
 

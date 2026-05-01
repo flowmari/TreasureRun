@@ -292,8 +292,8 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
 
     Bukkit.getPluginManager().registerEvents(new StageMobControlListener(this), this);
 
-    // ✅ WMY/Kobun: Minecraft vanilla death messages polish
-    Bukkit.getPluginManager().registerEvents(new WmyDeathMessageListener(this), this);
+    // ✅ OJP/Kobun: Minecraft vanilla death messages polish
+    Bukkit.getPluginManager().registerEvents(new OjpDeathMessageListener(this), this);
 
     TreasureRunGameEffectsPlugin effects = new TreasureRunGameEffectsPlugin(this);
     Bukkit.getPluginManager().registerEvents(effects, this);
