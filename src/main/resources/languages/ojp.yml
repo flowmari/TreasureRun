@@ -227,13 +227,13 @@ command:
     guiCancelledGameMenu: 言の葉選びを取りやめたり。いま一度開くには /gameMenu gui を実行し給へ。
     guiTooManyShown: 許可言の葉が多すぎるため、GUIには先頭27件のみ示せり。
     playersOnly: この命は仕手よりのみ行ふべし。
-    resetDone: ✅ 記し置き済み言の葉をリセットしました（次回はGUIが出たり）
+    resetDone: ✅ 記し置きたる言の葉を消し改めたり。次にはGUIの出で来たるべし。
     current: '今の言の葉: {lang}'
     emptyCode: '言の葉コードが天なり。例: /lang ja'
     notAllowed: 'その言の葉は許可されず: {lang}'
     allowedList: '許可されている言の葉: {allowed}'
     changed: '✅ 言の葉を改めたり: {displayName} ({lang})'
-    changedButNotSaved: '⚠ 言の葉は改めしましたが、永続記し置きに不成し遂げたり: {lang}'
+    changedButNotSaved: '⚠ 言の葉は改まりたれど、長き記し置きはかなはざりき: {lang}'
     list:
       title: === 言の葉 ===
       default: 'default: {default}'
@@ -327,7 +327,7 @@ favorites:
   chapter:
     back: 目録へ参る帰る
     count: '{count} 件'
-    empty: この章にはまだ記し置きされた言葉がなし
+    empty: この章には、いまだ記し置きたる言の葉なし
     otherSub: その他
     rereadBook: 読み返し本
     successSub: 成就時に記し置きした言葉
@@ -348,27 +348,27 @@ favorites:
     sub: 汝のプレイ中に記し置きした言葉をまとめた本なり
   empty:
     head: まだ秘蔵はなし
-    noFav: まだ記し置きされた秘蔵はなし。
-    noFavSub: まずは一行記し置きして、汝だけのアーカイブを始めましょう
+    noFav: いまだ秘蔵に納めし言の葉なし。
+    noFavSub: まず一行を記し置き、汝ひとりの言の葉の蔵を開き給へ
     reread: まだ読み返せる言葉はなし。
     rereadBook: まだ読み返し用の本はなし。
     saveHow: 秘蔵の記し置き方法
     saveHow1: /quoteFavorite latest を使う
-    saveHow2: または、御掟の巻をしゃがみながら右クリックする
+    saveHow2: または、かがみつつ御掟の巻を右押し給へ
     saveLatest: 最新の一行を記し置きする
     sub: このアーカイブはまだ天なり
-    tryNow: 記し置きしたあとに、いま一度この本を開いてし給へ
+    tryNow: 記し置きたるのち、いま一度この巻を開き給へ
   remove: 削除
   reread:
     head: 記し置きした言葉の読み返し
-    noQuotes: まだ記し置きされた言葉はなし。
+    noQuotes: いまだ記し置きたる言の葉なし。
   table: favorites.table
   title: 秘蔵
   toc:
     clickable: 章はクリックして開くべし
     head: 目録
     howto: 章を開くと記し置きした言葉を読み返すべし
-    howtoShift: '&7しゃがみ + 右クリックで秘蔵の蔵を開きたり'
+    howtoShift: '&7かがみつつ右押しせば、秘蔵の蔵を開き給ふ'
     manage: 記し置きした言葉を整理する
     reread: 読み返し
     rereadTitle: 読み返し
@@ -419,9 +419,9 @@ ui:
     book:
       fallbackTitle: TreasureRun 御掟
       fallbackDisplayName: TreasureRun 御掟の巻
-      hotbarGiven: 📖 御掟の巻をホットバーに配布しました。
-      hotbarHint: 手に持って右クリックすると、いづれの時にも読み直せたり。
-      latestHint: （この本を右クリックすると最新の言の葉を記し置きかなふ）
+      hotbarGiven: 📖 御掟の巻、手持ちの列に授け奉りぬ。
+      hotbarHint: 手に取りて右押しせば、いつにても読み返し給ふべし。
+      latestHint: （この巻を右押しせば、直近の言の葉を秘蔵に記し置くことかなふ）
       openFailed: 御掟の巻を開くことかなはざりき。
     toc:
       message: '&6📌 御掟の巻、いま開かれたり。心しづかに見定め給へ。'
@@ -429,14 +429,14 @@ ui:
       toc:
         message: '===== TreasureRun Menu =====
 
-          ホットバーより御掟の巻を開き、御掟を見給へ。'
+          手持ちの列より御掟の巻を開き、その定めを見給へ。'
     page:
       contents:
         difficulty: '難きほど: {difficulty}'
         howToPlay: 遊びの作法
         language: '言の葉: {lang}'
         rulesItem: 1) 御掟
-        savedOn: 成就／時尽きし折に記し置く
+        savedOn: 成就、または時尽きし折の言の葉を記し置く
         scoreRoute: 得点とルート
         tipsItem: 2) しるべ
         title: 目録
@@ -444,7 +444,7 @@ ui:
       hint:
         reopenMenu: しるべ：/gameMenu にて、ふたたび開き給へ。
       note:
-        bookFormat: Minecraft books cannot switch 章 by clicking, so sections are shown as pages.
+        bookFormat: この巻は章を押して移ることかなはねば、頁ごとに章を分かちて示す。
   quote:
     footer:
       dbLogs: '（DB: proverb_logs）'
@@ -456,7 +456,7 @@ ui:
         logs: proverb_logs (history)
       langLine: '言の葉: {lang}'
       legendTitle: 凡例
-      storedInDb: DBに記し置き
+      storedInDb: 記しの蔵に納めたり
     headerRecent: '近き二十件  |  言の葉: {lang}'
     legend:
       favorites: = 秘蔵
@@ -466,7 +466,7 @@ ui:
     noLogs: 言の葉の記し、いまだなし。
     noQuotesInTab: この章に示す言の葉、いまだなし。
     tip:
-      rightClickSave: しるべ：この巻を右押しすれば、最新の言の葉を記し置くべし。
+      rightClickSave: しるべ：この巻を右押しせば、直近の言の葉を秘蔵に記し置くことかなふ。
   favorites:
     footer:
       dbFavorites: '（DB: proverb_favorites）'
@@ -619,7 +619,7 @@ finalAudit:
     reloadBlockedRunning: 遊戯中は reload できません。先に /gameEnd を実行し給へ。
     noPermission: この命を用ゐる権なし。
     noPermissionOp: この命を用ゐる権なし。OPの権を要す。
-    treasureReloadDone: ✅ TreasureRun の定めを読み直ししました。言の葉GUIの定めも反映されていたり。
+    treasureReloadDone: ✅ TreasureRun の定めを読み直しぬ。言の葉GUIの定めも、すでに映りたり。
     guiReloadedReopen: GUIを改めたり。いま一度 /gameStart を実行して開き直し給へ。
     dbConnected: MySQL につながりたり。
     dbNotConnected: MySQL につながらず。
