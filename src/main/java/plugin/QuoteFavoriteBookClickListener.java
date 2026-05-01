@@ -275,7 +275,7 @@ public class QuoteFavoriteBookClickListener implements Listener {
       List<String> pages = buildBookPages(player, rows);
       if (pages.isEmpty()) return null;
 
-      bm.setPages(pages);
+      bm.setPages(safePages(pages));
       book.setItemMeta(bm);
       return book;
 
@@ -307,7 +307,7 @@ public class QuoteFavoriteBookClickListener implements Listener {
       String text = ChatColor.stripColor(row);
       if (text == null) continue;
 
-      String trimmed = text.trim();
+      String trimmed = safeBookText(text.trim());
       if (trimmed.isEmpty()) continue;
 
       String entry = "• " + trimmed + "\n\n";
@@ -368,6 +368,69 @@ public class QuoteFavoriteBookClickListener implements Listener {
 
     return false;
   }
+
+
+  private List<String> safePages(List<String> pages) {
+    if (pages == null || pages.isEmpty()) return java.util.List.of("");
+
+    List<String> out = new ArrayList<>();
+    for (String page : pages) {
+      String cleaned = safeBookText(page);
+      if (cleaned == null || cleaned.isBlank()) cleaned = " ";
+      out.add(cleaned);
+    }
+    return out;
+  }
+
+  private String safeBookText(String input) {
+    if (input == null || input.isBlank()) return "";
+
+    StringBuilder sb = new StringBuilder(input.length());
+
+    for (int i = 0; i < input.length(); ) {
+      int cp = input.codePointAt(i);
+      i += Character.charCount(cp);
+
+      if (cp == '\r') continue;
+      if (cp == '\t') {
+        sb.append(' ');
+        continue;
+      }
+      if (cp == '\n') {
+        sb.append('\n');
+        continue;
+      }
+
+      if (cp == 0x00A7) {
+        sb.appendCodePoint(cp);
+        continue;
+      }
+
+      if (cp >= 0xD800 && cp <= 0xDFFF) continue;
+      if (cp >= 0xE000 && cp <= 0xF8FF) continue;
+      if (cp >= 0xF0000 && cp <= 0xFFFFD) continue;
+      if (cp >= 0x100000 && cp <= 0x10FFFD) continue;
+      if (cp >= 0xFE00 && cp <= 0xFE0F) continue;
+      if (cp >= 0xE0100 && cp <= 0xE01EF) continue;
+      if (cp >= 0x1B000 && cp <= 0x1B16F) continue;
+      if (cp >= 0x1AFF0 && cp <= 0x1AFFF) continue;
+      if (cp >= 0x1F000 && cp <= 0x1FFFF) continue;
+      if (cp > 0xFFFF) continue;
+      if (Character.isISOControl(cp)) continue;
+
+      sb.appendCodePoint(cp);
+    }
+
+    return sb.toString()
+        .replace("光が等しく降り注ぎ、全ての影が消えた。", "雲間より光さし、道の末はほのかに明らみけり。")
+        .replace("すべての影が消えた。", "影といふ影、跡なく消えにけり。")
+        .replace("全ての影が消えた。", "影といふ影、跡なく消えにけり。")
+        .replace("光が等しく降り注ぎ", "雲間より光さし")
+        .replace("  ", " ")
+        .replace(" ,", ",")
+        .trim();
+  }
+
 
 
   private String tr(Player player, String key) {
