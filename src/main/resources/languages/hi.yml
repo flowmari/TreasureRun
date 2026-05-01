@@ -967,6 +967,14 @@ items:
     iron_block: लोहे का ब्लॉक
     tnt: TNT
 gameplay:
+  system:
+    join: '{player} TreasureRun में आया।'
+    quit: '{player} TreasureRun से चला गया।'
+    kick: '{player} को TreasureRun से हटाया गया। कारण: {reason}'
+    advancement: '{player} ने प्रगति प्राप्त की: {advancement}'
+    serverMotd: '{server} — बहुभाषी खजाना खोज।'
+    unknownCommand: 'अज्ञात कमांड: {command}'
+    noPermission: 'आपको {command} इस्तेमाल करने की अनुमति नहीं है।'
   death:
     firework: '{player} आतिशबाज़ी के विस्फोट में फँस गया।'
     explosion: '{player} विस्फोट में फँस गया।'

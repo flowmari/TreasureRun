@@ -968,6 +968,14 @@ items:
     iron_block: Bloco de ferro
     tnt: TNT
 gameplay:
+  system:
+    join: '{player} entrou no TreasureRun.'
+    quit: '{player} saiu do TreasureRun.'
+    kick: '{player} foi removido do TreasureRun. Motivo: {reason}'
+    advancement: '{player} obteve um avanço: {advancement}'
+    serverMotd: '{server} — caça ao tesouro multilíngue.'
+    unknownCommand: 'Comando desconhecido: {command}'
+    noPermission: 'Você não tem permissão para usar {command}.'
   death:
     firework: '{player} foi atingido por uma explosão de fogos de artifício.'
     explosion: '{player} foi atingido por uma explosão.'

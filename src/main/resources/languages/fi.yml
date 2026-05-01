@@ -842,6 +842,14 @@ ui:
   error:
     noData: No data.
 gameplay:
+  system:
+    join: '{player} liittyi TreasureRuniin.'
+    quit: '{player} poistui TreasureRunista.'
+    kick: '{player} poistettiin TreasureRunista. Syy: {reason}'
+    advancement: '{player} saavutti edistysaskeleen: {advancement}'
+    serverMotd: '{server} — monikielinen aarteenetsintä.'
+    unknownCommand: 'Tuntematon komento: {command}'
+    noPermission: 'Sinulla ei ole oikeutta käyttää komentoa {command}.'
   death:
     firework: '{player} jäi ilotulitusräjähdyksen alle.'
     explosion: '{player} jäi räjähdyksen alle.'

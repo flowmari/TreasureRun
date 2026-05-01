@@ -2766,3 +2766,10 @@ command:
       repositoryNotReady: MySQL / Repository not ready.
       bookOpenFailed: Failed to open book.
       openBookFailed: openBook() failed on this server.
+
+# Bukkit event-layer engine/system message localization.
+# Client-side/network/authentication messages are outside the plugin layer.
+systemMessages:
+  enabled: true
+  suppressVanillaAdvancements: true
+

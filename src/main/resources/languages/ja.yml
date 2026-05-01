@@ -536,6 +536,14 @@ ui:
   error:
     noData: No data.
 gameplay:
+  system:
+    join: '{player}がTreasureRunに参加しました。'
+    quit: '{player}がTreasureRunから退出しました。'
+    kick: '{player}がTreasureRunから退出させられました。理由: {reason}'
+    advancement: '{player}が進捗を達成しました: {advancement}'
+    serverMotd: '{server} — 20言語対応の宝探しゲーム。'
+    unknownCommand: '不明なコマンドです: {command}'
+    noPermission: '{command}を使う権限がありません。'
   death:
     firework: '{player}は花火の爆発に巻き込まれた。'
     explosion: '{player}は爆発に巻き込まれた。'

@@ -832,6 +832,14 @@ ui:
     tabInactiveClose: ']'
     tabInactiveOpen: '['
 gameplay:
+  system:
+    join: '{player} gick in i TreasureRun.'
+    quit: '{player} lämnade TreasureRun.'
+    kick: '{player} togs bort från TreasureRun. Orsak: {reason}'
+    advancement: '{player} gjorde framsteg: {advancement}'
+    serverMotd: '{server} — flerspråkig skattjakt.'
+    unknownCommand: 'Okänt kommando: {command}'
+    noPermission: 'Du har inte behörighet att använda {command}.'
   death:
     firework: '{player} fastnade i en fyrverkeriexplosion.'
     explosion: '{player} fastnade i en explosion.'

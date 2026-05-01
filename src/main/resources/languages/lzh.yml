@@ -949,6 +949,14 @@ items:
     iron_block: 鐵方塊
     tnt: TNT
 gameplay:
+  system:
+    join: '{player}入 TreasureRun。'
+    quit: '{player}去 TreasureRun。'
+    kick: '{player}自 TreasureRun 見逐。故：{reason}'
+    advancement: '{player}得進度：{advancement}'
+    serverMotd: '{server} — 多語尋寶。'
+    unknownCommand: '未知之令：{command}'
+    noPermission: '汝無權用 {command}。'
   death:
     firework: '{player}為煙火之爆所及。'
     explosion: '{player}為爆裂所及。'

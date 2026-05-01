@@ -295,6 +295,9 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     // ✅ i18n: localize Minecraft/Spigot engine-generated death messages
     Bukkit.getPluginManager().registerEvents(new LocalizedDeathMessageListener(this), this);
 
+    // ✅ i18n: localize Bukkit event-layer engine/system messages
+    Bukkit.getPluginManager().registerEvents(new LocalizedSystemMessageListener(this), this);
+
     TreasureRunGameEffectsPlugin effects = new TreasureRunGameEffectsPlugin(this);
     Bukkit.getPluginManager().registerEvents(effects, this);
     this.treasureRunGameEffectsPlugin = effects;

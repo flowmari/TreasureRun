@@ -842,6 +842,14 @@ ui:
   error:
     noData: No data.
 gameplay:
+  system:
+    join: '{player} in TreasureRun intravit.'
+    quit: '{player} TreasureRun reliquit.'
+    kick: '{player} e TreasureRun remotus est. Causa: {reason}'
+    advancement: '{player} progressum adeptus est: {advancement}'
+    serverMotd: '{server} — venatio thesauri multilinguis.'
+    unknownCommand: 'Imperium ignotum: {command}'
+    noPermission: 'Tibi non licet uti {command}.'
   death:
     firework: '{player} flammis ludicris explosis correptus est.'
     explosion: '{player} explosione correptus est.'

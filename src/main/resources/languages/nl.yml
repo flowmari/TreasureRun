@@ -840,6 +840,14 @@ ui:
   error:
     noData: No data.
 gameplay:
+  system:
+    join: '{player} is TreasureRun binnengekomen.'
+    quit: '{player} heeft TreasureRun verlaten.'
+    kick: '{player} is uit TreasureRun verwijderd. Reden: {reason}'
+    advancement: '{player} heeft vooruitgang geboekt: {advancement}'
+    serverMotd: '{server} — meertalige schattenjacht.'
+    unknownCommand: 'Onbekend commando: {command}'
+    noPermission: 'Je hebt geen toestemming om {command} te gebruiken.'
   death:
     firework: '{player} werd getroffen door een vuurwerkexplosie.'
     explosion: '{player} werd getroffen door een explosie.'

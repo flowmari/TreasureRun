@@ -834,6 +834,14 @@ ui:
   error:
     noData: No data.
 gameplay:
+  system:
+    join: '{player} è entrato in TreasureRun.'
+    quit: '{player} ha lasciato TreasureRun.'
+    kick: '{player} è stato rimosso da TreasureRun. Motivo: {reason}'
+    advancement: '{player} ha ottenuto un progresso: {advancement}'
+    serverMotd: '{server} — caccia al tesoro multilingue.'
+    unknownCommand: 'Comando sconosciuto: {command}'
+    noPermission: 'Non hai il permesso di usare {command}.'
   death:
     firework: '{player} è stato travolto da un''esplosione di fuochi d''artificio.'
     explosion: '{player} è stato travolto da un''esplosione.'

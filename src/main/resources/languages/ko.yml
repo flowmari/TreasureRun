@@ -830,6 +830,14 @@ ui:
   error:
     noData: No data.
 gameplay:
+  system:
+    join: '{player}님이 TreasureRun에 들어왔습니다.'
+    quit: '{player}님이 TreasureRun을 떠났습니다.'
+    kick: '{player}님이 TreasureRun에서 내보내졌습니다. 이유: {reason}'
+    advancement: '{player}님이 발전 과제를 달성했습니다: {advancement}'
+    serverMotd: '{server} — 다국어 보물찾기.'
+    unknownCommand: '알 수 없는 명령어입니다: {command}'
+    noPermission: '{command} 명령을 사용할 권한이 없습니다.'
   death:
     firework: '{player}님이 폭죽 폭발에 휘말렸습니다.'
     explosion: '{player}님이 폭발에 휘말렸습니다.'

@@ -836,6 +836,14 @@ ui:
   error:
     noData: No data.
 gameplay:
+  system:
+    join: '{player} gekk inn í TreasureRun.'
+    quit: '{player} yfirgaf TreasureRun.'
+    kick: '{player} var fjarlægður úr TreasureRun. Ástæða: {reason}'
+    advancement: '{player} náði framför: {advancement}'
+    serverMotd: '{server} — fjöltyngd fjársjóðsleit.'
+    unknownCommand: 'Óþekkt skipun: {command}'
+    noPermission: 'Þú hefur ekki leyfi til að nota {command}.'
   death:
     firework: '{player} lenti í flugeldasprengingu.'
     explosion: '{player} lenti í sprengingu.'
