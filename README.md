@@ -520,3 +520,14 @@ TreasureRun localizes not only plugin-owned UI text, but also selected Minecraft
 Vanilla death messages are intercepted via `PlayerDeathEvent`, classified into stable i18n keys such as `gameplay.death.firework`, `gameplay.death.explosion`, and `gameplay.death.generic`, resolved against the player’s selected language, and rendered through the same YAML-based i18n pipeline used by GUI, books, chat, BossBar, ActionBar, and ranking messages.
 
 This keeps all supported languages parallel instead of treating English as the only default source and other languages as secondary translations.
+
+### Bukkit Event-Layer System Message Localization
+
+TreasureRun extends its YAML-based i18n pipeline beyond plugin-owned UI text into selected Minecraft/Spigot engine-generated system messages.
+
+The plugin intercepts Bukkit event-layer messages such as player join, quit, kick, advancement announcements, server list MOTD, unknown commands, no-permission command feedback, and death messages. Each message is resolved through the player's selected language and the same `languages/<lang>.yml` files used by GUI, books, chat, BossBar, ActionBar, rankings, and gameplay results.
+
+For advancement announcements, TreasureRun suppresses the vanilla global announcement and rebroadcasts a localized message per online receiver. This demonstrates a dynamic localization pipeline where the same server event can be rendered differently for different players depending on their stored language preference.
+
+Scope note: client-side, authentication, network, and pre-login errors are outside the Bukkit plugin layer, so TreasureRun describes this feature as Bukkit event-layer system message localization rather than full client/protocol localization.
+

@@ -511,6 +511,14 @@ ui:
   error:
     noData: 記しなし。
 gameplay:
+  system:
+    join: '{player}、TreasureRun の世に入り給ひぬ。'
+    quit: '{player}、TreasureRun の世を離れ給ひぬ。'
+    kick: '{player}、TreasureRun の世より退けられにけり。ゆゑ: {reason}'
+    advancement: '{player}、しるしを得給ひぬ: {advancement}'
+    serverMotd: '{server} — 二十の言の葉にて開かるる宝探し。'
+    unknownCommand: 'その命、いまだ知られず: {command}'
+    noPermission: '{command} を行ふ権、汝にはまだ許されず。'
   death:
     firework: '{player}は花火の爆ぜに巻かれ、あへなく倒れにけり。'
     explosion: '{player}は爆ぜの災ひに遭ひ、あへなく倒れにけり。'

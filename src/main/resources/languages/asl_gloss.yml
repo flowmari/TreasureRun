@@ -834,6 +834,14 @@ ui:
   error:
     noData: No data.
 gameplay:
+  system:
+    join: '{player} TREASURE-RUN ENTER.'
+    quit: '{player} TREASURE-RUN LEAVE.'
+    kick: '{player} TREASURE-RUN REMOVE. REASON: {reason}'
+    advancement: '{player} PROGRESS GET: {advancement}'
+    serverMotd: '{server} — MANY LANGUAGE TREASURE GAME.'
+    unknownCommand: 'COMMAND UNKNOWN: {command}'
+    noPermission: 'YOU PERMISSION NONE USE {command}.'
   death:
     firework: '{player} FIREWORK EXPLOSION HIT FALL.'
     explosion: '{player} EXPLOSION HIT FALL.'

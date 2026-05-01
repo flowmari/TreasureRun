@@ -846,6 +846,14 @@ ui:
   error:
     noData: No data.
 gameplay:
+  system:
+    join: '{player} TreasureRun मध्ये प्रविष्टः।'
+    quit: '{player} TreasureRun त्यक्तवान्।'
+    kick: '{player} TreasureRun तः निष्कासितः। कारणम्: {reason}'
+    advancement: '{player} सिद्धिं प्राप्तवान्: {advancement}'
+    serverMotd: '{server} — बहुभाषिकः निध्यन्वेषणक्रीडा।'
+    unknownCommand: 'अज्ञात आदेशः: {command}'
+    noPermission: '{command} उपयोक्तुं भवतः अधिकारः नास्ति।'
   death:
     firework: '{player} अग्निक्रीडाविस्फोटेन ग्रस्तः।'
     explosion: '{player} विस्फोटेन ग्रस्तः।'
