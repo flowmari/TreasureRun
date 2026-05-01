@@ -264,7 +264,7 @@ command:
     shortcutNotSaved: 最新の言の葉は記し置かれざりき。いまだ記しなきか、すでに秘蔵に納められしものならむ。
     help:
       title: '&bQuoteFavorite コマンド一覧'
-      latest: '&7/quoteFavorite latest : 最新の言の葉を秘蔵記し置き'
+      latest: '&7/quoteFavorite latest : 直近の言の葉を秘蔵に記し置く'
       list: '&7/quoteFavorite list : 秘蔵の一覧を表示'
       remove: '&7/quoteFavorite remove <id> : 秘蔵を削除'
       reread: '&7/quoteFavorite reread [chat|title|book] : 言の葉を再読'
@@ -281,7 +281,7 @@ gui:
     subtitle: '&7言の葉を選び給へ'
     loreDefault:
     - '&7押して選び給へ'
-    - '&8選びは記し置きされたり'
+    - '&8この選び、記しに留め置かれたり'
     selected: '&a選びたる言の葉: &f{lang}'
     saved: '&a言の葉を記し置きたり: &f{lang}'
     reopenHint: '&7いづれの時にも &f/lang &7で改むることかなふ'
@@ -330,9 +330,9 @@ favorites:
     empty: この章には、いまだ記し置きたる言の葉なし
     otherSub: その他
     rereadBook: 読み返し本
-    successSub: 成就時に記し置きした言葉
+    successSub: 成就の折に記し置きたる言の葉
     successTitle: 成就
-    successTpl1: 成就時に記し置きした言葉
+    successTpl1: 成就の折に記し置きたる言の葉
     successTpl2: 成就した刹那に残した記し
     timeupSub: 時尽きぬ時に記し置きした言葉
     timeupTitle: 時尽きぬ
@@ -350,7 +350,7 @@ favorites:
     head: まだ秘蔵はなし
     noFav: いまだ秘蔵に納めし言の葉なし。
     noFavSub: まず一行を記し置き、汝ひとりの言の葉の蔵を開き給へ
-    reread: まだ読み返せる言葉はなし。
+    reread: いまだ読み返すべき言の葉なし。
     rereadBook: まだ読み返し用の本はなし。
     saveHow: 秘蔵の記し置き方法
     saveHow1: /quoteFavorite latest を使う
@@ -360,7 +360,7 @@ favorites:
     tryNow: 記し置きたるのち、いま一度この巻を開き給へ
   remove: 削除
   reread:
-    head: 記し置きした言葉の読み返し
+    head: 記し置きたる言の葉を読み返す
     noQuotes: いまだ記し置きたる言の葉なし。
   table: favorites.table
   title: 秘蔵
