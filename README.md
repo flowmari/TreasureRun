@@ -536,12 +536,17 @@ Scope note: client-side, authentication, network, and pre-login errors are outsi
 
 TreasureRun stores weekly and all-time ranking data in MySQL.
 
-The database schema is documented here:
+The ranking schema is managed through a bundled SQL migration file:
 
+- [`src/main/resources/db/migration/V1__create_ranking_tables.sql`](src/main/resources/db/migration/V1__create_ranking_tables.sql)
 - [`docs/sql/V1__create_ranking_tables.sql`](docs/sql/V1__create_ranking_tables.sql)
+
+On plugin startup, TreasureRun runs an automatic migration check through `MigrationRunner`.
+
+Applied migrations are recorded in the `schema_migrations` table, so the same migration is not executed twice after a server restart. This prevents runtime schema drift such as missing tables, missing columns, or incompatible database defaults.
 
 Runtime verification is documented here:
 
 - [`docs/verification/ranking-persistence.md`](docs/verification/ranking-persistence.md)
 
-This feature demonstrates Java repository-layer persistence, MySQL schema design, weekly/all-time ranking separation, foreign key integrity, unique-key based upsert design, selected-language tracking, and Docker-based runtime verification.
+This feature demonstrates Java repository-layer persistence, MySQL schema design, weekly/all-time ranking separation, foreign key integrity, unique-key based upsert design, selected-language tracking, Docker-based runtime verification, and startup-safe database migration.
