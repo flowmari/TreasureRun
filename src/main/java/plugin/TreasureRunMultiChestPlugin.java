@@ -380,6 +380,14 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     setupDatabase();
 
     // ✅ ここに追加（Weekly/All-time ranking repositories）
+    // ✅ DB migration: apply bundled SQL migrations before ranking repositories are used
+    try {
+      new MigrationRunner(this).runAll();
+    } catch (Throwable t) {
+      getLogger().warning("[Migration] startup migration failed: " + t.getMessage());
+      t.printStackTrace();
+    }
+
     this.seasonRepository = new SeasonRepository(this);
     this.seasonScoreRepository = new SeasonScoreRepository(this);
 
