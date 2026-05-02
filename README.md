@@ -531,3 +531,17 @@ For advancement announcements, TreasureRun suppresses the vanilla global announc
 
 Scope note: client-side, authentication, network, and pre-login errors are outside the Bukkit plugin layer, so TreasureRun describes this feature as Bukkit event-layer system message localization rather than full client/protocol localization.
 
+
+### MySQL Ranking Persistence
+
+TreasureRun stores weekly and all-time ranking data in MySQL.
+
+The database schema is documented here:
+
+- [`docs/sql/V1__create_ranking_tables.sql`](docs/sql/V1__create_ranking_tables.sql)
+
+Runtime verification is documented here:
+
+- [`docs/verification/ranking-persistence.md`](docs/verification/ranking-persistence.md)
+
+This feature demonstrates Java repository-layer persistence, MySQL schema design, weekly/all-time ranking separation, foreign key integrity, unique-key based upsert design, selected-language tracking, and Docker-based runtime verification.
