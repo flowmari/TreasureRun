@@ -19,6 +19,9 @@ dependencies {
     // Spigot API（コンパイル時のみ）
     compileOnly 'org.spigotmc:spigot-api:1.20.1-R0.1-SNAPSHOT'
 
+    // ProtocolLib（パケット監査・置換用 / サーバー側にはProtocolLib.jarを別途配置）
+    compileOnly 'net.dmulloy2:ProtocolLib:5.4.0'
+
     // Lombok（コンパイル時のみ）
     compileOnly 'org.projectlombok:lombok:1.18.32'
     annotationProcessor 'org.projectlombok:lombok:1.18.32'
