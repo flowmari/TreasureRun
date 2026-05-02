@@ -532,6 +532,25 @@ For advancement announcements, TreasureRun suppresses the vanilla global announc
 
 Scope note: client-side, authentication, network, and pre-login errors are outside the Bukkit plugin layer, so TreasureRun describes this feature as Bukkit event-layer system message localization rather than full client/protocol localization.
 
+#### Repository Layer
+
+TreasureRun separates ranking persistence from the main gameplay flow into dedicated repository classes:
+
+- `SeasonRepository`
+  - resolves the current ISO weekly season
+  - creates a season row if it does not exist
+  - returns a stable `season_id`
+
+- `SeasonScoreRepository`
+  - writes weekly ranking data to `season_scores`
+  - writes all-time ranking data to `alltime_scores`
+  - updates score, win count, best clear time, and selected language code
+
+This design keeps database persistence responsibilities separate from gameplay orchestration, making the ranking system easier to test, maintain, and extend.
+
+In Japanese terms, the ranking persistence logic is separated from the core game flow.  
+`SeasonRepository` is responsible for resolving or creating the current ISO weekly season, while `SeasonScoreRepository` is responsible for updating weekly and all-time ranking records.
+
 #### Ranking Persistence ER Diagram
 
 ```mermaid
