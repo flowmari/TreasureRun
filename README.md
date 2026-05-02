@@ -532,6 +532,52 @@ For advancement announcements, TreasureRun suppresses the vanilla global announc
 
 Scope note: client-side, authentication, network, and pre-login errors are outside the Bukkit plugin layer, so TreasureRun describes this feature as Bukkit event-layer system message localization rather than full client/protocol localization.
 
+#### Ranking Persistence ER Diagram
+
+```mermaid
+erDiagram
+    seasons ||--o{ season_scores : contains
+
+    seasons {
+        bigint id PK
+        string season_type
+        int year
+        int week
+        string season_key
+        datetime starts_at
+        datetime ends_at
+        datetime created_at
+    }
+
+    season_scores {
+        bigint id PK
+        bigint season_id FK
+        string uuid
+        string name
+        int score
+        int wins
+        bigint best_time_ms
+        string lang_code
+        datetime created_at
+        datetime updated_at
+    }
+
+    alltime_scores {
+        bigint id PK
+        string uuid
+        string name
+        int score
+        int wins
+        bigint best_time_ms
+        string lang_code
+        datetime created_at
+        datetime updated_at
+    }
+```
+
+Weekly ranking rows are stored in `season_scores` and linked to `seasons` by `season_scores.season_id -> seasons.id`.
+
+All-time ranking rows are stored independently in `alltime_scores`, because they are not tied to a specific weekly season.
 
 ### MySQL Ranking Persistence
 
