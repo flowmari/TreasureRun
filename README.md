@@ -292,6 +292,7 @@ This project emphasizes engineering practices that are important in real-world s
 - Time-limited game flow
 - Chest collection, time, score, and rank display
 - Result messages and in-game effects
+- MySQL-backed weekly/all-time ranking persistence with startup-safe SQL migrations
 
 #### Visual and Audio Effects
 
