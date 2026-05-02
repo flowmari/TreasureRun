@@ -649,3 +649,16 @@ finalAudit:
   reward:
     label: "報酬"
     rainbowWolf: "Rainbow Wolf"
+
+minecraft:
+  packet:
+    multiplayer:
+      player:
+        joined: "&e{arg0} がゲームに参加しました"
+        left: "&e{arg0} がゲームから退出しました"
+    commands:
+      generic:
+        unknown: "&c不明または未完成のコマンドです。"
+        permission: "&cこのコマンドを使う権限がありません。"
+    sleep:
+      players_sleeping: "&7睡眠中のプレイヤー: {arg0}"

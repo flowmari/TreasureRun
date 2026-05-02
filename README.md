@@ -532,6 +532,39 @@ For advancement announcements, TreasureRun suppresses the vanilla global announc
 
 Scope note: client-side, authentication, network, and pre-login errors are outside the Bukkit plugin layer, so TreasureRun describes this feature as Bukkit event-layer system message localization rather than full client/protocol localization.
 
+#### Two-Layer i18n Architecture
+
+TreasureRun now uses a two-layer localization strategy for player-visible messages.
+
+1. **Bukkit event layer**
+   - localizes join / quit / death / advancement-style messages where Bukkit events expose the message safely
+   - uses TreasureRun's existing i18n pipeline and per-player language preference
+
+2. **ProtocolLib packet layer**
+   - intercepts server-to-client chat/system packets such as `SYSTEM_CHAT` and `CHAT`
+   - audits vanilla JSON components that contain Minecraft `translate` keys
+   - maps detected keys into TreasureRun YAML keys such as:
+
+```text
+minecraft.packet.multiplayer.player.joined
+minecraft.packet.multiplayer.player.left
+```
+
+The first goal is not to translate every vanilla message at once.  
+Instead, TreasureRun can run with `packetMessages.audit: true` and collect the actual Minecraft `translate` keys that appear in the running Spigot environment.
+
+When a key appears in the audit log, it can be added safely to `languages/*.yml` as a TreasureRun-managed translation key. This makes the packet-level localization scope evidence-based rather than guess-based.
+
+This demonstrates a layered i18n design:
+
+- Bukkit event-level localization for safe, high-level events
+- ProtocolLib packet-level auditing for lower-level vanilla/system messages
+- YAML-backed 20-language translation expansion
+- per-player language preference integration
+
+This is intentionally designed as an extensible localization foundation rather than a one-off string replacement.
+
+
 #### Repository Layer
 
 TreasureRun separates ranking persistence from the main gameplay flow into dedicated repository classes:

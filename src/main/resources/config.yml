@@ -2773,3 +2773,12 @@ systemMessages:
   enabled: true
   suppressVanillaAdvancements: true
 
+# ============================================================
+# ProtocolLib packet-level i18n
+# - Bukkitイベント層で拾えない標準文を、サーバー→プレイヤーのパケットで監査・置換する
+# - 最初は audit=true で「何が流れているか」をログ確認する
+# ============================================================
+packetMessages:
+  enabled: true
+  audit: true
+  replaceTranslatedComponents: true

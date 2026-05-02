@@ -962,3 +962,16 @@ finalAudit:
   reward:
     label: "Награда"
     rainbowWolf: "Радужный волк"
+
+minecraft:
+  packet:
+    multiplayer:
+      player:
+        joined: "&e{arg0} joined the game"
+        left: "&e{arg0} left the game"
+    commands:
+      generic:
+        unknown: "&cUnknown or incomplete command."
+        permission: "&cYou do not have permission to use this command."
+    sleep:
+      players_sleeping: "&7Sleeping players: {arg0}"
