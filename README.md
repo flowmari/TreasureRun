@@ -551,11 +551,11 @@ This design keeps database persistence responsibilities separate from gameplay o
 In Japanese terms, the ranking persistence logic is separated from the core game flow.  
 `SeasonRepository` is responsible for resolving or creating the current ISO weekly season, while `SeasonScoreRepository` is responsible for updating weekly and all-time ranking records.
 
-#### Ranking Persistence ER Diagram
+#### Ranking Database Design
 
 ```mermaid
 erDiagram
-    seasons ||--o{ season_scores : contains
+    seasons ||--o{ season_scores : has
 
     seasons {
         bigint id PK
@@ -597,6 +597,36 @@ erDiagram
 Weekly ranking rows are stored in `season_scores` and linked to `seasons` by `season_scores.season_id -> seasons.id`.
 
 All-time ranking rows are stored independently in `alltime_scores`, because they are not tied to a specific weekly season.
+
+#### Ranking Database Constraints
+
+The ranking persistence schema is designed with production-style database constraints:
+
+- `PRIMARY KEY`
+  - `seasons.id`
+  - `season_scores.id`
+  - `alltime_scores.id`
+
+- `FOREIGN KEY`
+  - `season_scores.season_id -> seasons.id`
+  - guarantees that weekly score records always belong to a valid season
+
+- `UNIQUE KEY`
+  - `uniq_season_type_year_week` prevents duplicate season rows for the same ISO week
+  - `uniq_season_uuid` prevents duplicate weekly ranking rows for the same player and season
+  - `uniq_alltime_uuid` prevents duplicate all-time ranking rows for the same player
+
+- `NOT NULL / NULL policy`
+  - required aggregate values such as `score` and `wins` use `NOT NULL` defaults
+  - optional values such as `best_time_ms` and `lang_code` allow `NULL` when unavailable
+
+- `ON DUPLICATE KEY UPDATE`
+  - updates accumulated score and win count
+  - keeps the best clear time by preserving the lower `best_time_ms`
+  - updates the player's latest selected language code
+
+This makes the ranking system more than simple data storage. It supports season-aware aggregation, all-time ranking accumulation, multilingual gameplay tracking, and database-level integrity.
+
 
 ### MySQL Ranking Persistence
 
