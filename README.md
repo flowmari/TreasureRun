@@ -567,6 +567,8 @@ This is intentionally designed as an extensible localization foundation rather t
 Runtime verification for the packet-level audit layer is documented here:
 
 - [`docs/verification/packet-i18n-audit.md`](docs/verification/packet-i18n-audit.md)
+- [`docs/verification/packet-i18n-scope.md`](docs/verification/packet-i18n-scope.md)
+- [`docs/dev/packet-i18n-audit-commands.md`](docs/dev/packet-i18n-audit-commands.md)
 
 
 
