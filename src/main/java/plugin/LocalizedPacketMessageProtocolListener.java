@@ -9,42 +9,34 @@ import com.comphenix.protocol.events.PacketEvent;
 import com.comphenix.protocol.reflect.StructureModifier;
 import com.comphenix.protocol.wrappers.WrappedChatComponent;
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Locale;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * ProtocolLib packet-level i18n layer.
+ * ProtocolLib packet-level i18n audit layer.
  *
  * Purpose:
- * - Intercept server -> client chat/system packets.
- * - Detect vanilla JSON components with "translate": "...".
- * - Convert them to TreasureRun languages/*.yml keys:
+ * - Bukkit event layer handles safe high-level messages.
+ * - This packet layer audits lower-level vanilla/system JSON messages.
+ * - It detects Minecraft translate keys such as:
+ *   multiplayer.player.joined
+ *   multiplayer.player.left
  *
- *   minecraft.packet.<vanilla translate key>
- *
- * Example:
- *   JSON translate: multiplayer.player.joined
- *   YAML key:       minecraft.packet.multiplayer.player.joined
- *
- * Notes:
- * - This is intentionally conservative.
- * - Bukkit event-layer messages should stay in LocalizedSystemMessageListener / LocalizedDeathMessageListener.
- * - This class covers the lower packet layer for messages that escape Bukkit events.
+ * This class intentionally starts as an audit-first foundation.
+ * Replacement can be expanded safely after real runtime packet keys are observed.
  */
 public final class LocalizedPacketMessageProtocolListener {
 
   private static final Pattern TRANSLATE_PATTERN =
-      Pattern.compile("\\\"translate\\\"\\s*:\\s*\\\"([^\\\"]+)\\\"");
-
-  private static final Pattern TEXT_ARG_PATTERN =
-      Pattern.compile("\\\"text\\\"\\s*:\\s*\\\"([^\\\"]*)\\\"");
+      Pattern.compile("\"translate\"\\s*:\\s*\"([^\"]+)\"");
 
   private final TreasureRunMultiChestPlugin plugin;
   private PacketAdapter adapter;
@@ -54,7 +46,7 @@ public final class LocalizedPacketMessageProtocolListener {
   }
 
   public void enable() {
-    if (!enabled()) {
+    if (!plugin.getConfig().getBoolean("packetMessages.enabled", true)) {
       plugin.getLogger().info("[PacketI18n] disabled by config: packetMessages.enabled=false");
       return;
     }
@@ -65,20 +57,32 @@ public final class LocalizedPacketMessageProtocolListener {
       return;
     }
 
+    List<PacketType> packetTypes = detectPacketTypes();
+
+    if (packetTypes.isEmpty()) {
+      plugin.getLogger().warning("[PacketI18n] no supported chat packet types detected. Packet-level i18n skipped.");
+      return;
+    }
+
     adapter = new PacketAdapter(
         plugin,
         ListenerPriority.NORMAL,
-        PacketType.Play.Server.SYSTEM_CHAT,
-        PacketType.Play.Server.CHAT
+        packetTypes.toArray(new PacketType[0])
     ) {
       @Override
       public void onPacketSending(PacketEvent event) {
-        handlePacket(event);
+        try {
+          handlePacket(event);
+        } catch (Throwable t) {
+          plugin.getLogger().warning("[PacketI18n] packet handling failed: "
+              + t.getClass().getSimpleName() + ": " + t.getMessage());
+        }
       }
     };
 
     ProtocolLibrary.getProtocolManager().addPacketListener(adapter);
-    plugin.getLogger().info("[PacketI18n] ProtocolLib packet listener registered: SYSTEM_CHAT / CHAT");
+
+    plugin.getLogger().info("[PacketI18n] ProtocolLib packet listener registered: " + packetTypeNames(packetTypes));
   }
 
   public void disable() {
@@ -88,171 +92,147 @@ public final class LocalizedPacketMessageProtocolListener {
         adapter = null;
       }
     } catch (Throwable ignored) {
-      // no-op
     }
   }
 
-  private void handlePacket(PacketEvent event) {
-    if (event == null || event.isCancelled()) return;
-    if (!enabled()) return;
+  private List<PacketType> detectPacketTypes() {
+    List<PacketType> out = new ArrayList<>();
 
+    // Keep this layer conservative for Spigot 1.20.1 + ProtocolLib.
+    // TITLE is exposed by some ProtocolLib builds but can be unregistered at runtime,
+    // so we intentionally avoid title/boss/tab packets here.
+    addPacketTypeIfExists(out, "SYSTEM_CHAT");
+    addPacketTypeIfExists(out, "CHAT");
+    addPacketTypeIfExists(out, "PLAYER_CHAT");
+    addPacketTypeIfExists(out, "DISGUISED_CHAT");
+
+    return out;
+  }
+
+  private void addPacketTypeIfExists(List<PacketType> out, String name) {
+    try {
+      Field f = PacketType.Play.Server.class.getField(name);
+      Object v = f.get(null);
+
+      if (v instanceof PacketType) {
+        PacketType type = (PacketType) v;
+        out.add(type);
+        plugin.getLogger().info("[PacketI18n] detected packet type: " + name);
+      }
+    } catch (Throwable ignored) {
+      // ProtocolLib version does not expose this packet name.
+    }
+  }
+
+  private String packetTypeNames(List<PacketType> packetTypes) {
+    List<String> names = new ArrayList<>();
+    for (PacketType t : packetTypes) {
+      names.add(t.name());
+    }
+    return String.join(" / ", names);
+  }
+
+  private void handlePacket(PacketEvent event) {
     Player player = event.getPlayer();
     if (player == null) return;
 
     PacketContainer packet = event.getPacket();
-    if (packet == null) return;
+    String packetName = event.getPacketType().name();
 
+    boolean audit = plugin.getConfig().getBoolean("packetMessages.audit", true);
+    boolean debug = plugin.getConfig().getBoolean("packetMessages.debug", false);
+    boolean auditAllJson = plugin.getConfig().getBoolean("packetMessages.auditAllJson", true);
+
+    if (!audit && !debug) return;
+
+    Set<String> jsons = new LinkedHashSet<>();
+
+    // 1) WrappedChatComponent fields
     try {
-      StructureModifier<WrappedChatComponent> components = packet.getChatComponents();
-      if (components == null || components.size() <= 0) return;
-
-      WrappedChatComponent component = components.read(0);
-      if (component == null) return;
-
-      String json = component.getJson();
-      if (json == null || json.isBlank()) return;
-
-      audit(player, json);
-
-      if (!replaceTranslatedComponents()) return;
-
-      String localized = localizeJsonComponent(player, json);
-      if (localized == null || localized.isBlank()) return;
-
-      components.write(0, WrappedChatComponent.fromText(localized));
-    } catch (Throwable t) {
-      if (auditEnabled()) {
-        plugin.getLogger().warning("[PacketI18n] packet handling failed: " + t.getClass().getSimpleName() + ": " + t.getMessage());
-      }
-    }
-  }
-
-  private String localizeJsonComponent(Player player, String json) {
-    String translateKey = extractTranslateKey(json);
-    if (translateKey == null || translateKey.isBlank()) return null;
-
-    String yamlKey = "minecraft.packet." + translateKey;
-    String lang = resolvePlayerLang(player);
-
-    List<String> args = extractTextArgs(json);
-    I18n.Placeholder[] placeholders = new I18n.Placeholder[Math.min(args.size(), 10)];
-    for (int i = 0; i < placeholders.length; i++) {
-      placeholders[i] = I18n.Placeholder.of("{arg" + i + "}", strip(args.get(i)));
-    }
-
-    String translated = plugin.getI18n().tr(lang, yamlKey, placeholders);
-
-    if (!valid(translated)) {
-      if (auditEnabled()) {
-        plugin.getLogger().info("[PacketI18n] missing yaml key: " + yamlKey + " lang=" + lang);
-      }
-      return null;
-    }
-
-    return translated;
-  }
-
-  private String extractTranslateKey(String json) {
-    Matcher m = TRANSLATE_PATTERN.matcher(json);
-    if (!m.find()) return null;
-    return unescapeJson(m.group(1));
-  }
-
-  private List<String> extractTextArgs(String json) {
-    List<String> args = new ArrayList<>();
-    Matcher m = TEXT_ARG_PATTERN.matcher(json);
-    while (m.find() && args.size() < 10) {
-      String value = unescapeJson(m.group(1));
-      if (value != null && !value.isBlank()) {
-        args.add(value);
-      }
-    }
-    return args;
-  }
-
-  private String resolvePlayerLang(Player player) {
-    String lang = "ja";
-
-    try {
-      lang = plugin.getConfig().getString("language.default", "ja");
-    } catch (Throwable ignored) {
-      lang = "ja";
-    }
-
-    try {
-      if (plugin.getPlayerLanguageStore() != null) {
-        lang = plugin.getPlayerLanguageStore().getLang(player, lang);
+      StructureModifier<WrappedChatComponent> comps = packet.getChatComponents();
+      for (int i = 0; i < comps.size(); i++) {
+        WrappedChatComponent c = comps.readSafely(i);
+        if (c != null && c.getJson() != null) {
+          jsons.add(c.getJson());
+        }
       }
     } catch (Throwable ignored) {
-      // fall through
     }
 
-    if (lang == null || lang.isBlank()) return "ja";
-    return lang.toLowerCase(Locale.ROOT);
-  }
-
-  private boolean enabled() {
+    // 2) Raw String fields that may contain JSON
     try {
-      return plugin.getConfig().getBoolean("packetMessages.enabled", true);
+      StructureModifier<String> strings = packet.getStrings();
+      for (int i = 0; i < strings.size(); i++) {
+        String s = strings.readSafely(i);
+        if (s != null && looksLikeJsonOrTranslate(s)) {
+          jsons.add(s);
+        }
+      }
     } catch (Throwable ignored) {
-      return true;
     }
-  }
 
-  private boolean auditEnabled() {
-    try {
-      return plugin.getConfig().getBoolean("packetMessages.audit", true);
-    } catch (Throwable ignored) {
-      return true;
-    }
-  }
-
-  private boolean replaceTranslatedComponents() {
-    try {
-      return plugin.getConfig().getBoolean("packetMessages.replaceTranslatedComponents", true);
-    } catch (Throwable ignored) {
-      return true;
-    }
-  }
-
-  private void audit(Player player, String json) {
-    if (!auditEnabled()) return;
-    if (json == null || json.isBlank()) return;
-
-    String translateKey = extractTranslateKey(json);
-    if (translateKey != null && !translateKey.isBlank()) {
-      plugin.getLogger().info("[PacketI18n][AUDIT] player=" + player.getName()
-          + " translate=" + translateKey
-          + " yaml=minecraft.packet." + translateKey);
+    // 3) Debug fallback: packet summary when no JSON was found
+    if (jsons.isEmpty()) {
+      if (debug) {
+        plugin.getLogger().info("[PacketI18n][DEBUG] player=" + player.getName()
+            + " packet=" + packetName
+            + " json=NONE");
+      }
       return;
     }
 
-    // ログが巨大化しないよう短く切る
-    String compact = json.replace('\n', ' ').replace('\r', ' ');
-    if (compact.length() > 220) compact = compact.substring(0, 220) + "...";
-    plugin.getLogger().info("[PacketI18n][AUDIT] player=" + player.getName() + " json=" + compact);
+    for (String json : jsons) {
+      auditJson(player, packetName, json, auditAllJson);
+    }
   }
 
-  private boolean valid(String message) {
-    return message != null
-        && !message.isBlank()
-        && !message.contains("Translation missing:")
-        && !message.contains("default.unknown");
+  private boolean looksLikeJsonOrTranslate(String s) {
+    String t = s.trim();
+    return t.startsWith("{")
+        || t.startsWith("[")
+        || t.contains("\"translate\"")
+        || t.contains("multiplayer.player.")
+        || t.contains("death.")
+        || t.contains("chat.type.")
+        || t.contains("advancements.");
   }
 
-  private String strip(String s) {
-    if (s == null) return "";
-    String stripped = ChatColor.stripColor(s);
-    return stripped == null ? "" : stripped;
+  private void auditJson(Player player, String packetName, String json, boolean auditAllJson) {
+    if (json == null || json.isBlank()) return;
+
+    Matcher m = TRANSLATE_PATTERN.matcher(json);
+    boolean foundTranslate = false;
+
+    while (m.find()) {
+      foundTranslate = true;
+      String translateKey = m.group(1);
+      String yamlKey = toYamlKey(translateKey);
+
+      plugin.getLogger().info("[PacketI18n][AUDIT] player=" + player.getName()
+          + " packet=" + packetName
+          + " translate=" + translateKey
+          + " yaml=" + yamlKey);
+    }
+
+    if (!foundTranslate && auditAllJson) {
+      plugin.getLogger().info("[PacketI18n][AUDIT] player=" + player.getName()
+          + " packet=" + packetName
+          + " json=" + compact(json));
+    }
   }
 
-  private String unescapeJson(String s) {
-    if (s == null) return "";
-    return s
-        .replace("\\\"", "\"")
-        .replace("\\\\", "\\")
-        .replace("\\n", "\n")
-        .replace("\\r", "\r")
-        .replace("\\t", "\t");
+  private String toYamlKey(String translateKey) {
+    if (translateKey == null || translateKey.isBlank()) {
+      return "minecraft.packet.unknown";
+    }
+    return "minecraft.packet." + translateKey;
+  }
+
+  private String compact(String s) {
+    String x = s.replace('\n', ' ').replace('\r', ' ').trim();
+    if (x.length() > 500) {
+      return x.substring(0, 500) + "...";
+    }
+    return x;
   }
 }
