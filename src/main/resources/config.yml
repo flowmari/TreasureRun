@@ -2779,6 +2779,7 @@ systemMessages:
 # - 最初は audit=true で「何が流れているか」をログ確認する
 # ============================================================
 packetMessages:
+  auditAllJson: true
   enabled: true
   audit: true
   replaceTranslatedComponents: true
