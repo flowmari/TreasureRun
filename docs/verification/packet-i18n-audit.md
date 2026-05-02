@@ -174,3 +174,61 @@ Interpretation:
 - Runtime  JSON was captured for player .
 - No Minecraft  keys were observed in this run, so the current evidence supports packet JSON auditing, not expanded vanilla translate-key replacement yet.
 - Packet audit logging was turned off after verification to keep normal server logs quiet.
+
+## Corrected Additional Runtime Evidence
+
+Recorded at: 2026-05-03 08:40:11
+
+Evidence files:
+
+- docs/verification/runtime-evidence/packet-i18n-audit-20260503_083448.txt
+- docs/verification/runtime-evidence/packet-i18n-translate-keys-20260503_083448.txt
+
+Observed translate keys:
+
+~~~text
+No Minecraft translate keys were observed in this audit run.
+~~~
+
+Recent PacketI18n audit log excerpt:
+
+~~~text
+[22:41:55] [Server thread/INFO]: [TreasureRun] [PacketI18n] detected packet type: TAB_COMPLETE
+[22:41:55] [Server thread/INFO]: [TreasureRun] [PacketI18n] ProtocolLib packet listener registered: SYSTEM_CHAT / CHAT / DISGUISED_CHAT / TITLE / SET_TITLE_TEXT / SET_SUBTITLE_TEXT / SET_ACTION_BAR_TEXT / BOSS / TAB_COMPLETE
+[22:45:53] [Server thread/INFO]: [TreasureRun] [PacketI18n] skipped unsupported packet type: SYSTEM_CHAT
+[22:45:53] [Server thread/INFO]: [TreasureRun] [PacketI18n] skipped unsupported packet type: CHAT
+[22:45:53] [Server thread/INFO]: [TreasureRun] [PacketI18n] skipped unsupported packet type: DISGUISED_CHAT
+[22:45:53] [Server thread/INFO]: [TreasureRun] [PacketI18n] skipped unsupported packet type: TITLE
+[22:45:53] [Server thread/INFO]: [TreasureRun] [PacketI18n] skipped unsupported packet type: SET_TITLE_TEXT
+[22:45:53] [Server thread/INFO]: [TreasureRun] [PacketI18n] skipped unsupported packet type: SET_SUBTITLE_TEXT
+[22:45:53] [Server thread/INFO]: [TreasureRun] [PacketI18n] skipped unsupported packet type: SET_ACTION_BAR_TEXT
+[22:45:53] [Server thread/INFO]: [TreasureRun] [PacketI18n] skipped unsupported packet type: BOSS
+[22:45:53] [Server thread/INFO]: [TreasureRun] [PacketI18n] skipped unsupported packet type: TAB_COMPLETE
+[22:45:53] [Server thread/WARN]: [TreasureRun] [PacketI18n] no supported chat packet types detected. Packet-level i18n skipped.
+[22:48:56] [Server thread/INFO]: [TreasureRun] [PacketI18n] detected packet type: SYSTEM_CHAT
+[22:48:56] [Server thread/INFO]: [TreasureRun] [PacketI18n] detected packet type: CHAT
+[22:48:56] [Server thread/INFO]: [TreasureRun] [PacketI18n] detected packet type: DISGUISED_CHAT
+[22:48:56] [Server thread/INFO]: [TreasureRun] [PacketI18n] ProtocolLib packet listener registered: SYSTEM_CHAT / CHAT / DISGUISED_CHAT
+[22:52:22] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT json={"extra":[{"text":"flowmari、TreasureRun の世に入り給ひぬ。"}],"text":""}
+[22:52:38] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT json={"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"green","text":"✅ 言の葉を改めたり: {古文} ({ojp})"}],"text":""}
+[22:53:54] [Server thread/INFO]: [TreasureRun] [PacketI18n][DEBUG] player=flowmari packet=CHAT json=NONE
+[22:59:07] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT json={"extra":[{"text":"flowmari、TreasureRun の世に入り給ひぬ。"}],"text":""}
+[23:13:03] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT json={"extra":[{"text":"flowmariは命の緒、ここに絶えにけり。"}],"text":""}
+[23:21:37] [Server thread/INFO]: [TreasureRun] [PacketI18n] detected packet type: SYSTEM_CHAT
+[23:21:37] [Server thread/INFO]: [TreasureRun] [PacketI18n] detected packet type: CHAT
+[23:21:37] [Server thread/INFO]: [TreasureRun] [PacketI18n] detected packet type: DISGUISED_CHAT
+[23:21:37] [Server thread/INFO]: [TreasureRun] [PacketI18n] ProtocolLib packet listener registered: SYSTEM_CHAT / CHAT / DISGUISED_CHAT
+[23:25:41] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT json={"extra":[{"text":"flowmari、TreasureRun の世に入り給ひぬ。"}],"text":""}
+[23:26:03] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT json={"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"green","text":"✅ 言の葉を改めたり: {古文} ({ojp})"}],"text":""}
+[23:26:14] [Server thread/INFO]: [TreasureRun] [PacketI18n][DEBUG] player=flowmari packet=CHAT json=NONE
+[23:28:46] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT json={"extra":[{"text":"flowmari、TreasureRun の世に入り給ひぬ。"}],"text":""}
+[23:29:01] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT json={"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"green","text":"✅ 言の葉を改めたり: {古文} ({ojp})"}],"text":""}
+~~~
+
+Interpretation:
+
+- The ProtocolLib packet listener registered successfully.
+- SYSTEM_CHAT / CHAT / DISGUISED_CHAT are the current conservative packet targets.
+- Runtime SYSTEM_CHAT JSON was captured for player flowmari.
+- No Minecraft translate keys were observed in this run, so the current evidence supports packet JSON auditing, not expanded vanilla translate-key replacement yet.
+- Packet audit logging was turned off after verification to keep normal server logs quiet.
