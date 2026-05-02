@@ -564,6 +564,11 @@ This demonstrates a layered i18n design:
 
 This is intentionally designed as an extensible localization foundation rather than a one-off string replacement.
 
+Runtime verification for the packet-level audit layer is documented here:
+
+- [`docs/verification/packet-i18n-audit.md`](docs/verification/packet-i18n-audit.md)
+
+
 
 #### Repository Layer
 

@@ -2779,7 +2779,12 @@ systemMessages:
 # - 最初は audit=true で「何が流れているか」をログ確認する
 # ============================================================
 packetMessages:
-  auditAllJson: true
+  # Packet-level i18n foundation using ProtocolLib.
+  # Keep enabled=true so the layer can be used when ProtocolLib is installed.
+  # Audit is disabled by default to avoid noisy production logs.
+  # Turn audit/auditAllJson/debug on only during verification.
   enabled: true
-  audit: true
-  replaceTranslatedComponents: true
+  audit: false
+  auditAllJson: false
+  debug: false
+  replaceTranslatedComponents: false
