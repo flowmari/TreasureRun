@@ -5,6 +5,10 @@ api-version: 1.20
 softdepend: [ProtocolLib]
 
 commands:
+  packetI18nProbe:
+    description: Send Minecraft translatable component samples for PacketI18n audit.
+    usage: /packetI18nProbe
+    permission: treasure.admin
   gameReload:
     description: Reload TreasureRun config.yml (including language settings)
     usage: /<command>

@@ -443,6 +443,16 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     this.rankRewardManager = new RankRewardManager(this);
 
     // ✅ /rank は常に登録（ON/OFFは RankDebugCommand 側で rankDebug.enabled を見る）
+    try {
+      if (getCommand("packetI18nProbe") != null) {
+        getCommand("packetI18nProbe").setExecutor(new PacketI18nProbeCommand(this));
+        getLogger().info("[PacketI18nProbe] /packetI18nProbe executor registered");
+      }
+    } catch (Throwable t) {
+      getLogger().warning("[PacketI18nProbe] registration failed: " + t.getMessage());
+    }
+
+
     if (getCommand("rank") != null) {
       getCommand("rank").setExecutor(new RankDebugCommand(this));
       getLogger().info("✅ /rank executor registered");

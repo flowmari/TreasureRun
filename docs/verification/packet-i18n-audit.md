@@ -259,3 +259,30 @@ Interpretation:
 
 This verifies PacketI18n as an audit-ready ProtocolLib foundation.  
 Future vanilla-message localization should be expanded only when real `translate` keys are observed in runtime packets, rather than guessing unsupported packet behavior.
+
+## PacketI18n Translate-Key Probe Evidence
+
+Recorded at: 20260503_162639
+
+Evidence files:
+
+- docs/verification/runtime-evidence/packet-i18n-probe-audit-20260503_162639.txt
+- docs/verification/runtime-evidence/packet-i18n-probe-translate-keys-20260503_162639.txt
+
+Purpose:
+
+This probe verifies whether ProtocolLib can observe Minecraft-style JSON components containing `translate` keys when such components are sent through the server-to-client chat/system packet layer.
+
+Observed translate keys:
+
+~~~text
+No Minecraft translate keys were observed in this probe run.
+~~~
+
+Interpretation:
+
+- This is a controlled probe, not a claim that every Minecraft client-side message can be localized.
+- If translate keys appear above, ProtocolLib can observe those server-to-client translatable chat/system components in this runtime environment.
+- Future packet-level localization should add only observed keys to `languages/*.yml`, then verify each key in-game.
+- Packet audit was disabled again after verification to keep normal logs quiet.
+
