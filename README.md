@@ -14,6 +14,51 @@ This repository is designed as a portfolio project that demonstrates not only ga
 
 ---
 
+## Hybrid Minecraft Standard-Message i18n
+
+TreasureRun implements a hybrid i18n architecture that combines Bukkit/Adventure, ProtocolLib, and a server-side resource pack.
+
+### 日本語概要
+
+TreasureRun では、Bukkit/Adventure・ProtocolLib・server-side resource pack を統合したハイブリッド i18n 基盤を実装しました。
+
+PacketI18n で server-to-client の標準メッセージを監査・置換しつつ、resource pack 側では client lang key override を担わせることで、参加後に表示される Minecraft 標準文を多言語化する現実的な最大到達点を狙う設計に整理しています。
+
+ResourcePack の送信、accept、load も実行ログで検証し、PacketI18n についても translate audit / replace / missing warning を数値で追跡できる状態にしました。
+
+### Minimal PoC
+
+This repository also documents a minimal hybrid i18n PoC for Minecraft standard messages.
+
+The PoC combines:
+
+- ProtocolLib packet audit / replace
+- server-side resource pack delivery
+- Mojang official Minecraft 1.20.1 language assets
+- client language-key overrides
+- runtime verification logs
+
+See: [`docs/poc/minimal-hybrid-standard-message-i18n-poc.md`](docs/poc/minimal-hybrid-standard-message-i18n-poc.md)
+
+### Verified architecture
+
+- Bukkit/Adventure-based plugin message layer
+- ProtocolLib PacketI18n audit / replace layer
+- Mojang official Minecraft 1.20.1 language assets based server-side resource pack
+- Official Minecraft 1.20.1 client-jar `en_us.json` base for English-derived pack files
+- TreasureRun custom standard-message overrides
+- Runtime verification for ResourcePack sent / accepted / loaded
+- Runtime verification for PacketI18n translate audit / replace
+- `Translation missing: 0`
+- `I18n Missing key warning: 0`
+
+### Scope
+
+This targets the practical maximum range of Minecraft standard messages visible after server join.
+
+It does not claim absolute control over pre-login, authentication, client settings screens, purely client-local UI, or every Minecraft engine/client string.
+
+See: [`docs/architecture/hybrid-minecraft-standard-message-i18n.md`](docs/architecture/hybrid-minecraft-standard-message-i18n.md)
 ## [日本語](#japanese) | [English](#english)
 
 ---
