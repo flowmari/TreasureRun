@@ -2790,9 +2790,39 @@ systemMessages:
 # pre-login, authentication, settings, and purely client-local UI text are not
 # guaranteed to be controllable from a server plugin.
 # ============================================================
+
+# ============================================================
+# MAX practical mode for Hybrid Minecraft i18n.
+# Server-observable translatable packets are audited and known keys are replaced.
+# Unknown keys are collected as evidence for future YAML/resource-pack expansion.
+#
+# Honest limitation:
+# pre-login, authentication, settings, and purely client-local UI text are not
+# guaranteed to be controllable from a server plugin.
+# ============================================================
 packetMessages:
   enabled: true
   audit: true
   debug: false
   replaceTranslatedComponents: true
+
+# ============================================================
+# Server-side Resource Pack delivery for Hybrid Minecraft i18n.
+# This pack contains Minecraft 1.20.1 vanilla language keys for TreasureRun's
+# 20 supported languages and is delivered to players on join.
+#
+# This complements ProtocolLib PacketI18n:
+# - ProtocolLib handles observable server packets.
+# - Resource Pack handles client-resolved language keys after the pack is loaded.
+#
+# Honest limitation:
+# this maximizes practical localization coverage, but it does not guarantee
+# absolute control over every pre-login/authentication/settings/client-only string.
+# ============================================================
+resourcePack:
+  enabled: true
+  force: true
+  url: "https://raw.githubusercontent.com/flowmari/TreasureRun/77a06c45216322a1410108539fe607ba26827b0b/resourcepacks/generated/treasurerun-i18n-pack.zip"
+  sha1: "17500006569f628a0dc5e18d2ca8135917c82a2d"
+  prompt: "TreasureRun uses a multilingual Minecraft resource pack to localize Minecraft language keys. Please accept it for the full i18n experience."
 

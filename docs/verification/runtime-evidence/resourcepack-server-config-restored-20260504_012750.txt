@@ -1,0 +1,105 @@
+============================================================
+ResourcePack server config restored
+generated: Mon May  4 01:28:24 JST 2026
+============================================================
+
+PACK_URL=https://raw.githubusercontent.com/flowmari/TreasureRun/77a06c45216322a1410108539fe607ba26827b0b/resourcepacks/generated/treasurerun-i18n-pack.zip
+SHA1=17500006569f628a0dc5e18d2ca8135917c82a2d
+
+=== Source config packetMessages ===
+2800-# pre-login, authentication, settings, and purely client-local UI text are not
+2801-# guaranteed to be controllable from a server plugin.
+2802-# ============================================================
+2803:packetMessages:
+2804-  enabled: true
+2805-  audit: true
+2806-  debug: false
+2807-  replaceTranslatedComponents: true
+2808-
+2809-# ============================================================
+2810-# Server-side Resource Pack delivery for Hybrid Minecraft i18n.
+2811-# This pack contains Minecraft 1.20.1 vanilla language keys for TreasureRun's
+
+=== Source config resourcePack ===
+2819-# this maximizes practical localization coverage, but it does not guarantee
+2820-# absolute control over every pre-login/authentication/settings/client-only string.
+2821-# ============================================================
+2822:resourcePack:
+2823-  enabled: true
+2824-  force: true
+2825-  url: "https://raw.githubusercontent.com/flowmari/TreasureRun/77a06c45216322a1410108539fe607ba26827b0b/resourcepacks/generated/treasurerun-i18n-pack.zip"
+2826-  sha1: "17500006569f628a0dc5e18d2ca8135917c82a2d"
+2827-  prompt: "TreasureRun uses a multilingual Minecraft resource pack to localize Minecraft language keys. Please accept it for the full i18n experience."
+2828-
+
+=== Docker server config packetMessages ===
+2786-# Server-observable translatable packets are audited and known keys are replaced.
+2787-# Unknown keys are collected as evidence for future YAML/resource-pack expansion.
+2788-# ============================================================
+2789:packetMessages:
+2790-  enabled: true
+2791-  audit: true
+2792-  debug: false
+2793-  replaceTranslatedComponents: true
+2794-
+2795-# ============================================================
+2796-# Server-side Resource Pack delivery for Hybrid Minecraft i18n.
+2797-# ============================================================
+
+=== Docker server config resourcePack ===
+2795-# ============================================================
+2796-# Server-side Resource Pack delivery for Hybrid Minecraft i18n.
+2797-# ============================================================
+2798:resourcePack:
+2799-  enabled: true
+2800-  force: true
+2801-  url: "https://raw.githubusercontent.com/flowmari/TreasureRun/77a06c45216322a1410108539fe607ba26827b0b/resourcepacks/generated/treasurerun-i18n-pack.zip"
+2802-  sha1: "17500006569f628a0dc5e18d2ca8135917c82a2d"
+2803-  prompt: "TreasureRun uses a multilingual Minecraft resource pack to localize Minecraft language keys. Please accept it for the full i18n experience."
+2804-
+
+=== Latest ResourcePack / PacketI18n logs ===
+[07:58:18] [Server thread/INFO]: [TreasureRun] [PacketI18n] detected packet type: SYSTEM_CHAT
+[07:58:18] [Server thread/INFO]: [TreasureRun] [PacketI18n] detected packet type: CHAT
+[07:58:18] [Server thread/INFO]: [TreasureRun] [PacketI18n] detected packet type: DISGUISED_CHAT
+[07:58:18] [Server thread/INFO]: [TreasureRun] [PacketI18n] ProtocolLib packet listener registered: SYSTEM_CHAT / CHAT / DISGUISED_CHAT
+[07:58:18] [Server thread/INFO]: [TreasureRun] [PacketI18nProbe] /packetI18nProbe executor registered
+[09:32:29] [Server thread/INFO]: [TreasureRun] [PacketI18n] detected packet type: SYSTEM_CHAT
+[09:32:29] [Server thread/INFO]: [TreasureRun] [PacketI18n] detected packet type: CHAT
+[09:32:29] [Server thread/INFO]: [TreasureRun] [PacketI18n] detected packet type: DISGUISED_CHAT
+[09:32:29] [Server thread/INFO]: [TreasureRun] [PacketI18n] ProtocolLib packet listener registered: SYSTEM_CHAT / CHAT / DISGUISED_CHAT
+[09:32:30] [Server thread/INFO]: [TreasureRun] [PacketI18nProbe] /packetI18nProbe executor registered
+[09:42:08] [Server thread/INFO]: [TreasureRun] [PacketI18n] detected packet type: SYSTEM_CHAT
+[09:42:08] [Server thread/INFO]: [TreasureRun] [PacketI18n] detected packet type: CHAT
+[09:42:08] [Server thread/INFO]: [TreasureRun] [PacketI18n] detected packet type: DISGUISED_CHAT
+[09:42:08] [Server thread/INFO]: [TreasureRun] [PacketI18n] ProtocolLib packet listener registered: SYSTEM_CHAT / CHAT / DISGUISED_CHAT
+[09:42:08] [Server thread/INFO]: [TreasureRun] [PacketI18nProbe] /packetI18nProbe executor registered
+[10:54:23] [Server thread/INFO]: [TreasureRun] [PacketI18n] detected packet type: SYSTEM_CHAT
+[10:54:23] [Server thread/INFO]: [TreasureRun] [PacketI18n] detected packet type: CHAT
+[10:54:23] [Server thread/INFO]: [TreasureRun] [PacketI18n] detected packet type: DISGUISED_CHAT
+[10:54:23] [Server thread/INFO]: [TreasureRun] [PacketI18n] ProtocolLib packet listener registered: SYSTEM_CHAT / CHAT / DISGUISED_CHAT
+[10:54:23] [Server thread/INFO]: [TreasureRun] [PacketI18nProbe] /packetI18nProbe executor registered
+[10:54:23] [Server thread/INFO]: [TreasureRun] [ResourcePack] delivery listener registered
+[11:39:05] [Server thread/INFO]: [TreasureRun] [PacketI18n] detected packet type: SYSTEM_CHAT
+[11:39:05] [Server thread/INFO]: [TreasureRun] [PacketI18n] detected packet type: CHAT
+[11:39:05] [Server thread/INFO]: [TreasureRun] [PacketI18n] detected packet type: DISGUISED_CHAT
+[11:39:05] [Server thread/INFO]: [TreasureRun] [PacketI18n] ProtocolLib packet listener registered: SYSTEM_CHAT / CHAT / DISGUISED_CHAT
+[11:39:06] [Server thread/INFO]: [TreasureRun] [PacketI18nProbe] /packetI18nProbe executor registered
+[11:39:06] [Server thread/INFO]: [TreasureRun] [ResourcePack] delivery listener registered
+[11:47:42] [Server thread/INFO]: [TreasureRun] [ResourcePack] sent multilingual pack to flowmari force=true sha1=17500006569f628a0dc5e18d2ca8135917c82a2d
+[11:50:24] [Server thread/INFO]: [TreasureRun] [ResourcePack][STATUS] player=flowmari uuid=470d7dc8-8ce4-48d7-a0e1-fa8a1acf30b5 status=ACCEPTED
+[11:50:26] [Server thread/INFO]: [TreasureRun] [ResourcePack][STATUS] player=flowmari uuid=470d7dc8-8ce4-48d7-a0e1-fa8a1acf30b5 status=SUCCESSFULLY_LOADED
+[11:52:19] [Server thread/INFO]: flowmari issued server command: /packeti18nprobe
+[11:52:19] [Server thread/INFO]: [TreasureRun] [PacketI18nProbe] sent translatable component samples to flowmari
+[12:27:02] [Server thread/INFO]: [TreasureRun] [PacketI18n] detected packet type: SYSTEM_CHAT
+[12:27:02] [Server thread/INFO]: [TreasureRun] [PacketI18n] detected packet type: CHAT
+[12:27:02] [Server thread/INFO]: [TreasureRun] [PacketI18n] detected packet type: DISGUISED_CHAT
+[12:27:02] [Server thread/INFO]: [TreasureRun] [PacketI18n] ProtocolLib packet listener registered: SYSTEM_CHAT / CHAT / DISGUISED_CHAT
+[12:27:02] [Server thread/INFO]: [TreasureRun] [PacketI18nProbe] /packetI18nProbe executor registered
+[12:27:02] [Server thread/INFO]: [TreasureRun] [ResourcePack] delivery listener registered
+[16:28:22] [Server thread/INFO]: [TreasureRun] [PacketI18n] detected packet type: SYSTEM_CHAT
+[16:28:22] [Server thread/INFO]: [TreasureRun] [PacketI18n] detected packet type: CHAT
+[16:28:22] [Server thread/INFO]: [TreasureRun] [PacketI18n] detected packet type: DISGUISED_CHAT
+[16:28:22] [Server thread/INFO]: [TreasureRun] [PacketI18n] ProtocolLib packet listener registered: SYSTEM_CHAT / CHAT / DISGUISED_CHAT
+[16:28:22] [Server thread/INFO]: [TreasureRun] [PacketI18nProbe] /packetI18nProbe executor registered
+[16:28:22] [Server thread/INFO]: [TreasureRun] [ResourcePack] delivery listener registered
