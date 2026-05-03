@@ -451,6 +451,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
       // Server-side resource pack delivery for hybrid Minecraft i18n.
       try {
         getServer().getPluginManager().registerEvents(new ResourcePackDeliveryListener(this), this);
+        getServer().getPluginManager().registerEvents(new ResourcePackStatusAuditListener(this), this);
         getLogger().info("[ResourcePack] delivery listener registered");
       } catch (Throwable t) {
         getLogger().warning("[ResourcePack] delivery listener registration failed: " + t.getMessage());

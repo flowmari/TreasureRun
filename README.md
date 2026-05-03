@@ -708,3 +708,4 @@ Verification notes:
 - [`docs/verification/packet-i18n-audit.md`](docs/verification/packet-i18n-audit.md)
 - [`docs/verification/resource-pack/server-side-resource-pack-i18n.md`](docs/verification/resource-pack/server-side-resource-pack-i18n.md)
 
+- [`docs/verification/resource-pack/resource-pack-status-audit.md`](docs/verification/resource-pack/resource-pack-status-audit.md)
