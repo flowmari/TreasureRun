@@ -292,7 +292,7 @@ This project emphasizes engineering practices that are important in real-world s
 - Time-limited game flow
 - Chest collection, time, score, and rank display
 - Result messages and in-game effects
-- MySQL-backed weekly/all-time ranking persistence with startup-safe SQL migrations
+- MySQL-backed weekly/monthly/all-time ranking persistence with startup-safe SQL migrations
 
 #### Visual and Audio Effects
 
@@ -582,14 +582,14 @@ TreasureRun separates ranking persistence from the main gameplay flow into dedic
   - returns a stable `season_id`
 
 - `SeasonScoreRepository`
-  - writes weekly ranking data to `season_scores`
+  - writes weekly and monthly ranking data to `season_scores`
   - writes all-time ranking data to `alltime_scores`
   - updates score, win count, best clear time, and selected language code
 
 This design keeps database persistence responsibilities separate from gameplay orchestration, making the ranking system easier to test, maintain, and extend.
 
 In Japanese terms, the ranking persistence logic is separated from the core game flow.  
-`SeasonRepository` is responsible for resolving or creating the current ISO weekly season, while `SeasonScoreRepository` is responsible for updating weekly and all-time ranking records.
+`SeasonRepository` is responsible for resolving or creating weekly and monthly seasons, while `SeasonScoreRepository` is responsible for updating weekly, monthly, and all-time ranking records.
 
 #### Ranking Database Design
 
@@ -634,9 +634,9 @@ erDiagram
     }
 ```
 
-Weekly ranking rows are stored in `season_scores` and linked to `seasons` by `season_scores.season_id -> seasons.id`.
+Weekly and monthly ranking rows are stored in `season_scores` and linked to `seasons` by `season_scores.season_id -> seasons.id`.
 
-All-time ranking rows are stored independently in `alltime_scores`, because they are not tied to a specific weekly season.
+All-time ranking rows are stored independently in `alltime_scores`, because they are not tied to a specific season row.
 
 #### Ranking Database Constraints
 
@@ -652,7 +652,7 @@ The ranking persistence schema is designed with production-style database constr
   - guarantees that weekly score records always belong to a valid season
 
 - `UNIQUE KEY`
-  - `uniq_season_type_year_week` prevents duplicate season rows for the same ISO week
+  - `uniq_season_type_year_week` prevents duplicate season rows for the same season identity (`season_type`, `year`, `week`, `season_key`)
   - `uniq_season_uuid` prevents duplicate weekly ranking rows for the same player and season
   - `uniq_alltime_uuid` prevents duplicate all-time ranking rows for the same player
 
@@ -670,12 +670,14 @@ This makes the ranking system more than simple data storage. It supports season-
 
 ### MySQL Ranking Persistence
 
-TreasureRun stores weekly and all-time ranking data in MySQL.
+TreasureRun stores weekly, monthly, and all-time ranking data in MySQL.
 
 The ranking schema is managed through a bundled SQL migration file:
 
 - [`src/main/resources/db/migration/V1__create_ranking_tables.sql`](src/main/resources/db/migration/V1__create_ranking_tables.sql)
+- [`src/main/resources/db/migration/V2__support_monthly_seasons.sql`](src/main/resources/db/migration/V2__support_monthly_seasons.sql)
 - [`docs/sql/V1__create_ranking_tables.sql`](docs/sql/V1__create_ranking_tables.sql)
+- [`docs/sql/V2__support_monthly_seasons.sql`](docs/sql/V2__support_monthly_seasons.sql)
 
 On plugin startup, TreasureRun runs an automatic migration check through `MigrationRunner`.
 
@@ -685,4 +687,4 @@ Runtime verification is documented here:
 
 - [`docs/verification/ranking-persistence.md`](docs/verification/ranking-persistence.md)
 
-This feature demonstrates Java repository-layer persistence, MySQL schema design, weekly/all-time ranking separation, foreign key integrity, unique-key based upsert design, selected-language tracking, Docker-based runtime verification, and startup-safe database migration.
+This feature demonstrates Java repository-layer persistence, MySQL schema design, weekly/monthly/all-time ranking separation, foreign key integrity, unique-key based upsert design, selected-language tracking, Docker-based runtime verification, and startup-safe database migration.

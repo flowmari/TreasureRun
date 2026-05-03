@@ -4,7 +4,7 @@ This document records the runtime verification of TreasureRun's MySQL-backed ran
 
 ## Feature
 
-TreasureRun stores gameplay ranking data in MySQL-backed weekly and all-time ranking tables.
+TreasureRun stores gameplay ranking data in MySQL-backed weekly, monthly, and all-time ranking tables.
 
 The ranking persistence stores:
 
@@ -24,9 +24,9 @@ The ranking persistence stores:
 
 ## Design
 
-Weekly ranking data is stored in `season_scores`.
+Weekly and monthly ranking data are stored in `season_scores`.
 
-Each weekly score row is linked to a season row through:
+Each season-based score row is linked to a season row through:
 
 ```text
 season_scores.season_id -> seasons.id
@@ -34,7 +34,7 @@ season_scores.season_id -> seasons.id
 
 All-time ranking data is stored separately in `alltime_scores`.
 
-This separation allows TreasureRun to support both weekly and all-time ranking views while keeping season-based data structurally consistent.
+This separation allows TreasureRun to support weekly, monthly, and all-time ranking views while keeping season-based data structurally consistent.
 
 ## Runtime Verification
 
@@ -51,24 +51,48 @@ Open a treasure chest or progress until score persistence is triggered.
 Verification query:
 
 ```sql
-SELECT id, season_id, uuid, name, score, wins, best_time_ms, lang_code, created_at, updated_at
-FROM season_scores
-ORDER BY id DESC
-LIMIT 5;
+SELECT
+  s.season_type,
+  s.season_key,
+  ss.uuid,
+  ss.name,
+  ss.score,
+  ss.wins,
+  ss.best_time_ms,
+  ss.lang_code,
+  ss.created_at
+FROM season_scores ss
+JOIN seasons s ON s.id = ss.season_id
+WHERE s.season_type IN ('WEEKLY','MONTHLY')
 
-SELECT id, uuid, name, score, wins, best_time_ms, lang_code, created_at, updated_at
-FROM alltime_scores
-ORDER BY id DESC
-LIMIT 5;
+UNION ALL
+
+SELECT
+  'ALLTIME' AS season_type,
+  'ALLTIME' AS season_key,
+  a.uuid,
+  a.name,
+  a.score,
+  a.wins,
+  a.best_time_ms,
+  a.lang_code,
+  a.created_at
+FROM alltime_scores a
+
+ORDER BY created_at DESC
+LIMIT 50;
 ```
 
 Verified result:
 
 ```text
-season_scores:
+MONTHLY:
 flowmari / score=2600 / wins=1 / best_time_ms=72376 / lang_code=ojp
 
-alltime_scores:
+WEEKLY:
+flowmari / score=2600 / wins=1 / best_time_ms=72376 / lang_code=ojp
+
+ALLTIME:
 flowmari / score=2600 / wins=1 / best_time_ms=72376 / lang_code=ojp
 ```
 
@@ -78,7 +102,7 @@ This feature demonstrates:
 
 - Java repository-layer persistence
 - MySQL schema design
-- weekly and all-time ranking separation
+- weekly / monthly / all-time ranking separation
 - foreign key integrity
 - unique-key based upsert design
 - selected-language tracking for multilingual gameplay data
