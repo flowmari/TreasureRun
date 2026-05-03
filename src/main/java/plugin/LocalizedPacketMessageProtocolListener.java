@@ -264,9 +264,25 @@ public final class LocalizedPacketMessageProtocolListener {
 
     if (!isUsableLocalizedText(localized)) return null;
     if (localized.equals(yamlKey) || localized.equals(translateKey)) return null;
-    if (localized.startsWith("Translation missing:")) return null;
+    if (isMissingTranslationFallback(localized, yamlKey, translateKey)) return null;
 
     return localized;
+  }
+
+  private boolean isMissingTranslationFallback(String localized, String yamlKey, String translateKey) {
+    if (localized == null) return true;
+
+    String plain = localized
+        .replace("§c", "")
+        .replace("§r", "")
+        .trim();
+
+    return plain.equals(yamlKey)
+        || plain.equals(translateKey)
+        || plain.contains("Translation missing:")
+        || plain.contains("(Translation missing:")
+        || plain.contains(yamlKey + ")")
+        || plain.contains(translateKey + ")");
   }
 
   private String resolvePlayerLang(Player player) {
