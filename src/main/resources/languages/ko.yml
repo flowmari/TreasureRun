@@ -957,3 +957,36 @@ minecraft:
         permission: "&cYou do not have permission to use this command."
     sleep:
       players_sleeping: "&7Sleeping players: {arg0}"
+
+# ============================================================
+# Minecraft packet-level i18n
+# - Observed by ProtocolLib PacketI18n runtime audit/probe
+# - Exact 20-language TreasureRun set; no wmy
+# - Evidence-based baseline for observable vanilla translate keys
+# ============================================================
+minecraft:
+  packet:
+    chat:
+      type:
+        admin: '[{arg0}: {arg1}]'
+        text: '<{arg0}> {arg1}'
+    command:
+      context:
+        here: '<--[여기]'
+      unknown:
+        command: '알 수 없거나 완전하지 않은 명령어입니다. 아래 오류를 확인하세요.'
+    commands:
+      help:
+        header: '--- 도움말 페이지 {arg0}/{arg1} ---'
+      op:
+        success: '{arg0}님에게 서버 관리자 권한을 부여했습니다'
+      stop:
+        stopping: 'commands.stop.stopping'
+    death:
+      attack:
+        generic: '{arg0}님이 사망했습니다'
+        outOfWorld: '{arg0}님이 세계 밖으로 떨어졌습니다'
+    multiplayer:
+      player:
+        joined: '{arg0}님이 게임에 참가했습니다'
+        left: '{arg0}님이 게임에서 나갔습니다'

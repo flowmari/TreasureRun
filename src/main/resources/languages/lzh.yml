@@ -1078,3 +1078,36 @@ minecraft:
         permission: "&cYou do not have permission to use this command."
     sleep:
       players_sleeping: "&7Sleeping players: {arg0}"
+
+# ============================================================
+# Minecraft packet-level i18n
+# - Observed by ProtocolLib PacketI18n runtime audit/probe
+# - Exact 20-language TreasureRun set; no wmy
+# - Evidence-based baseline for observable vanilla translate keys
+# ============================================================
+minecraft:
+  packet:
+    chat:
+      type:
+        admin: '【{arg0}：{arg1}】'
+        text: '〈{arg0}〉{arg1}'
+    command:
+      context:
+        here: '<--【此】'
+      unknown:
+        command: '令不明，或未備。其誤見下。'
+    commands:
+      help:
+        header: '--- 助頁 {arg0} / {arg1} ---'
+      op:
+        success: '已授 {arg0} 為伺服之司'
+      stop:
+        stopping: 'commands.stop.stopping'
+    death:
+      attack:
+        generic: '{arg0} 歿'
+        outOfWorld: '{arg0} 墜於世外'
+    multiplayer:
+      player:
+        joined: '{arg0} 入戲'
+        left: '{arg0} 去戲'
