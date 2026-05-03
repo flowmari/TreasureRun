@@ -1096,3 +1096,36 @@ minecraft:
         permission: "&cYou do not have permission to use this command."
     sleep:
       players_sleeping: "&7Sleeping players: {arg0}"
+
+# ============================================================
+# Minecraft packet-level i18n
+# - Observed by ProtocolLib PacketI18n runtime audit/probe
+# - Exact 20-language TreasureRun set; no wmy
+# - Evidence-based baseline for observable vanilla translate keys
+# ============================================================
+minecraft:
+  packet:
+    chat:
+      type:
+        admin: '[{arg0}: {arg1}]'
+        text: '<{arg0}> {arg1}'
+    command:
+      context:
+        here: '<--[यहाँ]'
+      unknown:
+        command: 'अज्ञात या अधूरा कमांड। नीचे दी गई त्रुटि देखें।'
+    commands:
+      help:
+        header: '--- सहायता पृष्ठ {arg0} / {arg1} ---'
+      op:
+        success: '{arg0} को सर्वर ऑपरेटर बना दिया गया'
+      stop:
+        stopping: 'commands.stop.stopping'
+    death:
+      attack:
+        generic: '{arg0} मर गया'
+        outOfWorld: '{arg0} दुनिया से बाहर गिर गया'
+    multiplayer:
+      player:
+        joined: '{arg0} खेल में शामिल हुआ'
+        left: '{arg0} ने खेल छोड़ दिया'

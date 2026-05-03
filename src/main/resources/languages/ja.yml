@@ -662,3 +662,36 @@ minecraft:
         permission: "&cこのコマンドを使う権限がありません。"
     sleep:
       players_sleeping: "&7睡眠中のプレイヤー: {arg0}"
+
+# ============================================================
+# Minecraft packet-level i18n
+# - Observed by ProtocolLib PacketI18n runtime audit/probe
+# - Exact 20-language TreasureRun set; no wmy
+# - Evidence-based baseline for observable vanilla translate keys
+# ============================================================
+minecraft:
+  packet:
+    chat:
+      type:
+        admin: '[{arg0}: {arg1}]'
+        text: '<{arg0}> {arg1}'
+    command:
+      context:
+        here: '<--[ここ]'
+      unknown:
+        command: '不明または不完全なコマンドです。以下のエラーをご確認ください。'
+    commands:
+      help:
+        header: '--- ヘルプページ {arg0} / {arg1} ---'
+      op:
+        success: '{arg0} にサーバー管理者権限を付与しました'
+      stop:
+        stopping: 'commands.stop.stopping'
+    death:
+      attack:
+        generic: '{arg0} は死亡しました'
+        outOfWorld: '{arg0} は奈落の底へ落ちました'
+    multiplayer:
+      player:
+        joined: '{arg0} がゲームに参加しました'
+        left: '{arg0} がゲームから退出しました'

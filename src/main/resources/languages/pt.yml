@@ -1097,3 +1097,36 @@ minecraft:
         permission: "&cYou do not have permission to use this command."
     sleep:
       players_sleeping: "&7Sleeping players: {arg0}"
+
+# ============================================================
+# Minecraft packet-level i18n
+# - Observed by ProtocolLib PacketI18n runtime audit/probe
+# - Exact 20-language TreasureRun set; no wmy
+# - Evidence-based baseline for observable vanilla translate keys
+# ============================================================
+minecraft:
+  packet:
+    chat:
+      type:
+        admin: '[{arg0}: {arg1}]'
+        text: '<{arg0}> {arg1}'
+    command:
+      context:
+        here: '<--[AQUI]'
+      unknown:
+        command: 'Comando desconhecido ou incompleto. Veja o erro abaixo.'
+    commands:
+      help:
+        header: '--- Página de ajuda {arg0} de {arg1} ---'
+      op:
+        success: '{arg0} agora é operador do servidor'
+      stop:
+        stopping: 'commands.stop.stopping'
+    death:
+      attack:
+        generic: '{arg0} morreu'
+        outOfWorld: '{arg0} caiu para fora do mundo'
+    multiplayer:
+      player:
+        joined: '{arg0} entrou no jogo'
+        left: '{arg0} saiu do jogo'

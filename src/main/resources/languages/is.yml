@@ -963,3 +963,36 @@ minecraft:
         permission: "&cYou do not have permission to use this command."
     sleep:
       players_sleeping: "&7Sleeping players: {arg0}"
+
+# ============================================================
+# Minecraft packet-level i18n
+# - Observed by ProtocolLib PacketI18n runtime audit/probe
+# - Exact 20-language TreasureRun set; no wmy
+# - Evidence-based baseline for observable vanilla translate keys
+# ============================================================
+minecraft:
+  packet:
+    chat:
+      type:
+        admin: '[{arg0}: {arg1}]'
+        text: '<{arg0}> {arg1}'
+    command:
+      context:
+        here: '<--[HÉR]'
+      unknown:
+        command: 'Óþekkt eða ófullgerð skipun. Sjá villuna hér fyrir neðan.'
+    commands:
+      help:
+        header: '--- Hjálparsíða {arg0} af {arg1} ---'
+      op:
+        success: '{arg0} hefur verið gerður að stjórnanda þjónsins'
+      stop:
+        stopping: 'commands.stop.stopping'
+    death:
+      attack:
+        generic: '{arg0} dó'
+        outOfWorld: '{arg0} féll út úr heiminum'
+    multiplayer:
+      player:
+        joined: '{arg0} gekk inn í leikinn'
+        left: '{arg0} yfirgaf leikinn'
