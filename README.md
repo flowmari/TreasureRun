@@ -710,3 +710,4 @@ Verification notes:
 
 - [`docs/verification/resource-pack/resource-pack-status-audit.md`](docs/verification/resource-pack/resource-pack-status-audit.md)
 - [`docs/verification/resource-pack/final-hybrid-i18n-runtime.md`](docs/verification/resource-pack/final-hybrid-i18n-runtime.md)
+- [`docs/verification/resource-pack/hybrid-i18n-safe-runtime.md`](docs/verification/resource-pack/hybrid-i18n-safe-runtime.md)
