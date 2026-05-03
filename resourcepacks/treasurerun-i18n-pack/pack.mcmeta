@@ -2,5 +2,32 @@
   "pack": {
     "pack_format": 15,
     "description": "TreasureRun Hybrid i18n Resource Pack - Minecraft 1.20.1 official lang base"
+  },
+  "language": {
+    "ojp_jp": {
+      "name": "Classical Japanese",
+      "region": "TreasureRun",
+      "bidirectional": false
+    },
+    "lzh_hant": {
+      "name": "Classical Chinese",
+      "region": "TreasureRun",
+      "bidirectional": false
+    },
+    "la_la": {
+      "name": "Latin",
+      "region": "TreasureRun",
+      "bidirectional": false
+    },
+    "sa_in": {
+      "name": "Sanskrit",
+      "region": "TreasureRun",
+      "bidirectional": false
+    },
+    "asl_us": {
+      "name": "ASL Gloss",
+      "region": "TreasureRun",
+      "bidirectional": false
+    }
   }
 }
