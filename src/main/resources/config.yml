@@ -2810,6 +2810,6 @@ packetMessages:
 resourcePack:
   enabled: true
   force: true
-  url: "https://raw.githubusercontent.com/flowmari/TreasureRun/77a06c45216322a1410108539fe607ba26827b0b/resourcepacks/generated/treasurerun-i18n-pack.zip"
-  sha1: "17500006569f628a0dc5e18d2ca8135917c82a2d"
+  url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
+  sha1: "33b80018de13a137a5d78368880e25626bcd0292"
   prompt: "TreasureRun uses a multilingual Minecraft resource pack to localize Minecraft language keys. Please accept it for the full i18n experience."
