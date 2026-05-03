@@ -232,3 +232,30 @@ Interpretation:
 - Runtime SYSTEM_CHAT JSON was captured for player flowmari.
 - No Minecraft translate keys were observed in this run, so the current evidence supports packet JSON auditing, not expanded vanilla translate-key replacement yet.
 - Packet audit logging was turned off after verification to keep normal server logs quiet.
+
+## Deep Runtime Audit Evidence
+
+A later deep audit was performed with `packetMessages.audit`, `auditAllJson`, and `debug` temporarily enabled.
+
+Evidence files:
+
+- `docs/verification/runtime-evidence/packet-i18n-deep-audit-20260503_160807.txt`
+- `docs/verification/runtime-evidence/packet-i18n-json-samples-20260503_160807.txt`
+- `docs/verification/runtime-evidence/packet-i18n-translate-keys-deep-20260503_160807.txt`
+
+Result:
+
+- ProtocolLib registered the conservative packet targets successfully:
+  - `SYSTEM_CHAT`
+  - `CHAT`
+  - `DISGUISED_CHAT`
+- PacketI18n captured actual server-to-client JSON messages during gameplay.
+- The audit captured join messages, language-change messages, game-start messages, countdown messages, treasure reward messages, score messages, and remaining-chest messages.
+- No Minecraft `translate` keys were observed in this audit run.
+- This is not considered a failure, because the purpose of this stage was to verify that the packet layer can capture runtime JSON and that audit logging can be enabled/disabled safely.
+- Packet audit was disabled again after verification to keep normal server logs quiet.
+
+Interpretation:
+
+This verifies PacketI18n as an audit-ready ProtocolLib foundation.  
+Future vanilla-message localization should be expanded only when real `translate` keys are observed in runtime packets, rather than guessing unsupported packet behavior.
