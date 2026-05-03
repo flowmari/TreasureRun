@@ -2788,3 +2788,20 @@ packetMessages:
   auditAllJson: false
   debug: false
   replaceTranslatedComponents: false
+
+# ============================================================
+# Server-side Resource Pack delivery
+# - Hybrid Minecraft i18n Architecture layer
+# - This pack contains the full Minecraft 1.20.1 vanilla language-key set
+#   for TreasureRun's exact 20 languages.
+# - Unknown/untranslated vanilla keys fall back to English.
+# - Observed minecraft.packet.* keys are overlaid from TreasureRun YAML.
+# - Honest limitation: pre-login/authentication/client-only UI is not
+#   guaranteed to be controllable from a server plugin.
+# ============================================================
+resourcePack:
+  enabled: true
+  force: true
+  url: "https://raw.githubusercontent.com/flowmari/TreasureRun/03ca968042c3b35dad03ec810525b8f18fa96f53/resourcepacks/generated/treasurerun-i18n-pack.zip"
+  sha1: "17500006569f628a0dc5e18d2ca8135917c82a2d"
+  prompt: "TreasureRun uses a multilingual Minecraft resource pack to localize vanilla language keys. Please accept it for the full i18n experience."
