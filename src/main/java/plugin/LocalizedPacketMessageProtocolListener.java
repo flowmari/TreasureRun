@@ -194,6 +194,29 @@ public final class LocalizedPacketMessageProtocolListener {
         String s = strings.readSafely(i);
         if (s != null && looksLikeJsonOrTranslate(s)) {
           jsons.add(s);
+
+          if (replace) {
+            String localized = localizeJson(player, s);
+            if (isUsableLocalizedText(localized)) {
+              try {
+                String replacementJson = WrappedChatComponent.fromText(localized).getJson();
+                strings.write(i, replacementJson);
+                touched = true;
+
+                if (audit) {
+                  plugin.getLogger().info("[PacketI18n][REPLACE] player=" + player.getName()
+                      + " packet=" + packetName
+                      + " source=STRING"
+                      + " text=" + compact(localized));
+                }
+              } catch (Throwable writeFailure) {
+                if (debug || audit) {
+                  plugin.getLogger().warning("[PacketI18n] string replacement failed: "
+                      + writeFailure.getClass().getSimpleName() + ": " + writeFailure.getMessage());
+                }
+              }
+            }
+          }
         }
       }
     } catch (Throwable ignored) {
