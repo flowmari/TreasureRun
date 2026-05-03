@@ -1,8 +1,8 @@
 outcome:
   fallback:
-    runComplete: "Run complete."
-    timeUp: "Time's up."
-    trader: "Trade complete."
+    runComplete: Run complete.
+    timeUp: Time's up.
+    trader: Trade complete.
   notice:
     timeUpGameOver: समय समाप्त हो गया। खेल खत्म हो गया।
     retryGuide: किसी दूसरे रास्ते से फिर कोशिश करें।
@@ -732,8 +732,7 @@ ui:
     treasurerun_lang_default_60887a83_111: '[TreasureRun][Lang] default='
     run_complete_46d920e5_580: Run complete.
     run_complete_46d920e5_589: Run complete.
-    gamestart_easy_normal_hard_230bd0bd: अगली बार अलग रास्ता आज़माएं! पुनः प्रयास के लिए /gamestart <easy|normal|hard> उपयोग
-      करें!
+    gamestart_easy_normal_hard_230bd0bd: अगली बार अलग रास्ता आज़माएं! पुनः प्रयास के लिए /gamestart <easy|normal|hard> उपयोग करें!
     text_9310a1a7_908: खेल पहले से चल रहा है।
     text_9310a1a7_1601: खेल पहले से चल रहा है।
     run_complete_d258363d_1214: Run Complete!
@@ -777,8 +776,7 @@ ui:
         difficulty: 'कठिनाई: {difficulty}'
         tipsItem: 2) सुझाव
       note:
-        bookFormat: 'नोट: Minecraft की किताबों में क्लिक करके टैब नहीं बदले जा सकते, इसलिए सामग्री को अलग-अलग खंडों में व्यवस्थित
-          किया गया है।'
+        bookFormat: 'नोट: Minecraft की किताबों में क्लिक करके टैब नहीं बदले जा सकते, इसलिए सामग्री को अलग-अलग खंडों में व्यवस्थित किया गया है।'
       hint:
         reopenMenu: 'सुझाव: इसे फिर से खोलने के लिए /gameMenu चलाएँ।'
   error:
@@ -827,7 +825,7 @@ game:
     easy: '&aEasy'
     normal: '&eNormal'
     hard: '&cHard'
-  auto:
+  auto: null
 favorites:
   title: पसंदीदा
   cover:
@@ -877,7 +875,7 @@ favorites:
   reread:
     head: सहेजी गई पंक्तियाँ फिर से पढ़ें
     noQuotes: आपने अभी तक कोई पंक्ति सहेजी नहीं है।
-  auto:
+  auto: null
 command:
   checkTreasureEmerald:
     playersOnly: यह कमांड केवल खिलाड़ी ही चला सकते हैं।
@@ -974,7 +972,7 @@ gameplay:
     advancement: '{player} ने प्रगति प्राप्त की: {advancement}'
     serverMotd: '{server} — बहुभाषी खजाना खोज।'
     unknownCommand: 'अज्ञात कमांड: {command}'
-    noPermission: 'आपको {command} इस्तेमाल करने की अनुमति नहीं है।'
+    noPermission: आपको {command} इस्तेमाल करने की अनुमति नहीं है।
   death:
     firework: '{player} आतिशबाज़ी के विस्फोट में फँस गया।'
     explosion: '{player} विस्फोट में फँस गया।'
@@ -1008,7 +1006,7 @@ gameplay:
   shop:
     tradeCompleteTitle: व्यापार पूरा हुआ!
     hiddenPowerAwakens: एक छिपी हुई शक्ति जाग उठती है…
-    hiddenPowerChat: "आप खज़ाने की दुकान में छिपी शक्ति महसूस करते हैं…"
+    hiddenPowerChat: आप खज़ाने की दुकान में छिपी शक्ति महसूस करते हैं…
   timer:
     remainingBossbar: शेष समय
     remainingLine: 'शेष समय: {seconds} सेकंड'
@@ -1044,83 +1042,63 @@ commands:
   rank_1_2_3_demo_4f3e3084: 'कृपया एक संख्या दर्ज करें: /rank <1|2|3|demo>'
 finalAudit:
   shop:
-    treasureShop: "खज़ाने की दुकान"
+    treasureShop: खज़ाने की दुकान
   item:
-    specialApple: "विशेष सेब"
-    specialIronBlock: "विशेष लोहे का ब्लॉक"
+    specialApple: विशेष सेब
+    specialIronBlock: विशेष लोहे का ब्लॉक
   command:
-    playerOnly: "यह कमांड केवल खिलाड़ी चला सकते हैं।"
-    opOnly: "इस कमांड का उपयोग करने के लिए ऑपरेटर अनुमति चाहिए।"
-    rankDebugOff: "Rank debug बंद है। config.yml में rankDebug.enabled को true करें।"
-    rankUsage: "उपयोग: /rank <1|2|3|demo>"
-    rankNumberOnly: "कृपया संख्या दर्ज करें: /rank <1|2|3|demo>"
-    rankOnlyOneToThree: "कृपया 1, 2 या 3 चुनें: /rank <1|2|3>"
-    gameAlreadyRunning: "गेम पहले से चल रहा है।"
-    invalidDifficulty: "Easy, Normal या Hard चुनें।"
-    languageGuiNotReady: "भाषा चयन GUI अभी तैयार नहीं है।"
-    reloadBlockedRunning: "गेम चलने के दौरान reload बंद है। पहले /gameEnd चलाएँ।"
-    noPermission: "आपके पास यह कमांड इस्तेमाल करने की अनुमति नहीं है।"
-    noPermissionOp: "आपके पास यह कमांड इस्तेमाल करने की अनुमति नहीं है। ऑपरेटर अनुमति आवश्यक है।"
-    treasureReloadDone: "✅ भाषा GUI सहित TreasureRun की सेटिंग फिर से लोड हो गई है।"
-    guiReloadedReopen: "GUI अपडेट हो गया है। इसे फिर से खोलने के लिए /gameStart दोबारा चलाएँ।"
-    dbConnected: "MySQL जुड़ा हुआ है।"
-    dbNotConnected: "MySQL जुड़ा हुआ नहीं है।"
-    exportMissingRoot: "❌ config.yml में messages.translation नहीं मिला।"
-    exportExample: "उदाहरण: messages.translation.ja.favorites.title: ..."
-    exportCreateFolderFailed: "❌ languages/ फ़ोल्डर नहीं बनाया जा सका: {path}"
-    exportNoLanguages: "❌ export के लिए कोई भाषा सेट नहीं है।"
-    exportFailed: "❌ export विफल: {lang} ({error})"
-    exportComplete: "✅ export पूरा हुआ: {count} file(s) लिखी गईं।"
-    exportOutputFolder: "Output folder: {path}"
-    exportSkippedExisting: "⚠ मौजूदा file(s) छोड़ी गईं: {langs}"
-    exportOverwriteHint: "मौजूदा files overwrite करने के लिए चलाएँ: /treasureExportLang overwrite"
-    exportNextStep: "अगला चरण: इन अनुवादों को लागू करने के लिए I18n को languages/*.yml पढ़ने दें।"
-    playerOnlyConsoleNoOnline: "यह कमांड केवल खिलाड़ी चला सकते हैं, और कोई online खिलाड़ी नहीं मिला।"
+    playerOnly: यह कमांड केवल खिलाड़ी चला सकते हैं।
+    opOnly: इस कमांड का उपयोग करने के लिए ऑपरेटर अनुमति चाहिए।
+    rankDebugOff: Rank debug बंद है। config.yml में rankDebug.enabled को true करें।
+    rankUsage: 'उपयोग: /rank <1|2|3|demo>'
+    rankNumberOnly: 'कृपया संख्या दर्ज करें: /rank <1|2|3|demo>'
+    rankOnlyOneToThree: 'कृपया 1, 2 या 3 चुनें: /rank <1|2|3>'
+    gameAlreadyRunning: गेम पहले से चल रहा है।
+    invalidDifficulty: Easy, Normal या Hard चुनें।
+    languageGuiNotReady: भाषा चयन GUI अभी तैयार नहीं है।
+    reloadBlockedRunning: गेम चलने के दौरान reload बंद है। पहले /gameEnd चलाएँ।
+    noPermission: आपके पास यह कमांड इस्तेमाल करने की अनुमति नहीं है।
+    noPermissionOp: आपके पास यह कमांड इस्तेमाल करने की अनुमति नहीं है। ऑपरेटर अनुमति आवश्यक है।
+    treasureReloadDone: ✅ भाषा GUI सहित TreasureRun की सेटिंग फिर से लोड हो गई है।
+    guiReloadedReopen: GUI अपडेट हो गया है। इसे फिर से खोलने के लिए /gameStart दोबारा चलाएँ।
+    dbConnected: MySQL जुड़ा हुआ है।
+    dbNotConnected: MySQL जुड़ा हुआ नहीं है।
+    exportMissingRoot: ❌ config.yml में messages.translation नहीं मिला।
+    exportExample: 'उदाहरण: messages.translation.ja.favorites.title: ...'
+    exportCreateFolderFailed: '❌ languages/ फ़ोल्डर नहीं बनाया जा सका: {path}'
+    exportNoLanguages: ❌ export के लिए कोई भाषा सेट नहीं है।
+    exportFailed: '❌ export विफल: {lang} ({error})'
+    exportComplete: '✅ export पूरा हुआ: {count} file(s) लिखी गईं।'
+    exportOutputFolder: 'Output folder: {path}'
+    exportSkippedExisting: '⚠ मौजूदा file(s) छोड़ी गईं: {langs}'
+    exportOverwriteHint: 'मौजूदा files overwrite करने के लिए चलाएँ: /treasureExportLang overwrite'
+    exportNextStep: 'अगला चरण: इन अनुवादों को लागू करने के लिए I18n को languages/*.yml पढ़ने दें।'
+    playerOnlyConsoleNoOnline: यह कमांड केवल खिलाड़ी चला सकते हैं, और कोई online खिलाड़ी नहीं मिला।
   debug:
-    chestSoundStart: "[ChestSound] 16-grid mode में शुरू हुआ।"
-    chestSoundNoChests: "[ChestSound] कोई chest नहीं मिला।"
-    chestSoundNearest: "[ChestSound] nearest={distance}m inRange={range} t={t}"
+    chestSoundStart: '[ChestSound] 16-grid mode में शुरू हुआ।'
+    chestSoundNoChests: '[ChestSound] कोई chest नहीं मिला।'
+    chestSoundNearest: '[ChestSound] nearest={distance}m inRange={range} t={t}'
   reward:
-    label: "इनाम"
-    rainbowWolf: "Rainbow Wolf"
-
-minecraft:
-  packet:
-    multiplayer:
-      player:
-        joined: "&e{arg0} joined the game"
-        left: "&e{arg0} left the game"
-    commands:
-      generic:
-        unknown: "&cUnknown or incomplete command."
-        permission: "&cYou do not have permission to use this command."
-    sleep:
-      players_sleeping: "&7Sleeping players: {arg0}"
-
-# ============================================================
-# Minecraft packet-level i18n
-# - Observed by ProtocolLib PacketI18n runtime audit/probe
-# - Exact 20-language TreasureRun set; no wmy
-# - Evidence-based baseline for observable vanilla translate keys
-# ============================================================
+    label: इनाम
+    rainbowWolf: Rainbow Wolf
 minecraft:
   packet:
     chat:
       type:
         admin: '[{arg0}: {arg1}]'
-        text: '<{arg0}> {arg1}'
+        text: <{arg0}> {arg1}
     command:
       context:
-        here: '<--[यहाँ]'
+        here: <--[यहाँ]
       unknown:
-        command: 'अज्ञात या अधूरा कमांड। नीचे दी गई त्रुटि देखें।'
+        command: अज्ञात या अधूरा कमांड। नीचे दी गई त्रुटि देखें।
     commands:
       help:
         header: '--- सहायता पृष्ठ {arg0} / {arg1} ---'
       op:
         success: '{arg0} को सर्वर ऑपरेटर बना दिया गया'
       stop:
-        stopping: 'commands.stop.stopping'
+        stopping: सर्वर बंद किया जा रहा है
     death:
       attack:
         generic: '{arg0} मर गया'

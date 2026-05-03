@@ -1,8 +1,8 @@
 outcome:
   fallback:
-    runComplete: "Run complete."
-    timeUp: "Time's up."
-    trader: "Trade complete."
+    runComplete: Run complete.
+    timeUp: Time's up.
+    trader: Trade complete.
   notice:
     timeUpGameOver: Tempus finitum est. Ludus peractus est.
     retryGuide: Iterum tenta per aliam viam.
@@ -547,7 +547,7 @@ command:
     playersOnly: '&cHoc mandato soli lusores uti possunt.'
     managerNotReady: '[TreasureRun] Moderator scaenae nondum paratus est.'
     cleaned: '[TreasureRun] {count} lateres difficultatis amoti sunt.'
-  noPermission: "Non licet tibi hac iussione uti."
+  noPermission: Non licet tibi hac iussione uti.
   onlyPlayer: '&cHoc mandatum a solo lusore adhiberi potest.'
   reload:
     start: '&7Iterum onerans...'
@@ -723,7 +723,7 @@ commands:
   quotefavorite_book_success_o_afe31501: /quoteFavorite book success    - open SUCCESS chapter
   quotefavorite_book_timeup_op_08b799b0: /quoteFavorite book timeup     - open TIME_UP chapter
   quotefavorite_book_other_ope_bdcbafba: /quoteFavorite book other      - open OTHER chapter
-debug:
+debug: null
 items:
   specialEmerald:
     displayName: '&6Smaragdus specialis'
@@ -849,7 +849,7 @@ gameplay:
     advancement: '{player} progressum adeptus est: {advancement}'
     serverMotd: '{server} — venatio thesauri multilinguis.'
     unknownCommand: 'Imperium ignotum: {command}'
-    noPermission: 'Tibi non licet uti {command}.'
+    noPermission: Tibi non licet uti {command}.
   death:
     firework: '{player} flammis ludicris explosis correptus est.'
     explosion: '{player} explosione correptus est.'
@@ -883,7 +883,7 @@ gameplay:
   shop:
     tradeCompleteTitle: Commercium perfectum!
     hiddenPowerAwakens: Vis occulta excitatur…
-    hiddenPowerChat: "Vim occultam in taberna thesauri sentis…"
+    hiddenPowerChat: Vim occultam in taberna thesauri sentis…
   timer:
     remainingBossbar: Tempus reliquum
     remainingLine: 'Tempus reliquum: {seconds}s'
@@ -913,87 +913,65 @@ rank:
     allTimeSwitch: 'Muta aspectum: /gameRank weekly | /gameRank monthly'
     monthlyEmpty: Hoc mense nondum sunt tabulae.
     monthlySwitch: 'Muta aspectum: /gameRank weekly | /gameRank all'
-
-# Final visible-surface i18n audit keys
 finalAudit:
   shop:
-    treasureShop: "Taberna thesauri"
+    treasureShop: Taberna thesauri
   item:
-    specialApple: "Malum singulare"
-    specialIronBlock: "Massa ferrea singularis"
+    specialApple: Malum singulare
+    specialIronBlock: Massa ferrea singularis
   command:
-    playerOnly: "Hac iussione soli lusores uti possunt."
-    opOnly: "Ad hanc iussionem iura operatoris requiruntur."
-    rankDebugOff: "Exploratio ordinis clausa est. Pone rankDebug.enabled: true in config.yml."
-    rankUsage: "Usus: /rank <1|2|3|demo>"
-    rankNumberOnly: "Numerum inscribe: /rank <1|2|3|demo>"
-    rankOnlyOneToThree: "Elige 1, 2, vel 3: /rank <1|2|3>"
-    gameAlreadyRunning: "Ludus iam currit."
-    invalidDifficulty: "Elige Easy, Normal, vel Hard."
-    languageGuiNotReady: "Tabula linguae eligendae nondum parata est."
-    reloadBlockedRunning: "Reload dum ludus currit non licet. Primum /gameEnd exsequere."
-    noPermission: "Non licet tibi hac iussione uti."
-    noPermissionOp: "Non licet tibi hac iussione uti. Iura operatoris requiruntur."
-    treasureReloadDone: "✅ Configuratio TreasureRun iterum onerata est, etiam tabula linguae."
-    guiReloadedReopen: "Tabula renovata est. Iterum /gameStart exsequere ut rursus aperiatur."
-    dbConnected: "MySQL coniunctum est."
-    dbNotConnected: "MySQL coniunctum non est."
-    exportMissingRoot: "❌ messages.translation in config.yml non inventum est."
-    exportExample: "Exemplum: messages.translation.ja.favorites.title: ..."
-    exportCreateFolderFailed: "❌ Directorium languages/ creari non potuit: {path}"
-    exportNoLanguages: "❌ Nulla lingua ad exportandum configurata est."
-    exportFailed: "❌ Exportatio defecit: {lang} ({error})"
-    exportComplete: "✅ Exportatio perfecta: {count} fasciculus/fasciculi scripti."
-    exportOutputFolder: "Directorium output: {path}"
-    exportSkippedExisting: "⚠ Fasciculi iam existentes praetermissi: {langs}"
-    exportOverwriteHint: "Ut fasciculos existentes superscribas, exsequere: /treasureExportLang overwrite"
-    exportNextStep: "Deinde: I18n languages/*.yml legat ut hae translationes adhibeantur."
-    playerOnlyConsoleNoOnline: "Hac iussione soli lusores uti possunt, nec ullus lusor online inventus est."
+    playerOnly: Hac iussione soli lusores uti possunt.
+    opOnly: Ad hanc iussionem iura operatoris requiruntur.
+    rankDebugOff: 'Exploratio ordinis clausa est. Pone rankDebug.enabled: true in config.yml.'
+    rankUsage: 'Usus: /rank <1|2|3|demo>'
+    rankNumberOnly: 'Numerum inscribe: /rank <1|2|3|demo>'
+    rankOnlyOneToThree: 'Elige 1, 2, vel 3: /rank <1|2|3>'
+    gameAlreadyRunning: Ludus iam currit.
+    invalidDifficulty: Elige Easy, Normal, vel Hard.
+    languageGuiNotReady: Tabula linguae eligendae nondum parata est.
+    reloadBlockedRunning: Reload dum ludus currit non licet. Primum /gameEnd exsequere.
+    noPermission: Non licet tibi hac iussione uti.
+    noPermissionOp: Non licet tibi hac iussione uti. Iura operatoris requiruntur.
+    treasureReloadDone: ✅ Configuratio TreasureRun iterum onerata est, etiam tabula linguae.
+    guiReloadedReopen: Tabula renovata est. Iterum /gameStart exsequere ut rursus aperiatur.
+    dbConnected: MySQL coniunctum est.
+    dbNotConnected: MySQL coniunctum non est.
+    exportMissingRoot: ❌ messages.translation in config.yml non inventum est.
+    exportExample: 'Exemplum: messages.translation.ja.favorites.title: ...'
+    exportCreateFolderFailed: '❌ Directorium languages/ creari non potuit: {path}'
+    exportNoLanguages: ❌ Nulla lingua ad exportandum configurata est.
+    exportFailed: '❌ Exportatio defecit: {lang} ({error})'
+    exportComplete: '✅ Exportatio perfecta: {count} fasciculus/fasciculi scripti.'
+    exportOutputFolder: 'Directorium output: {path}'
+    exportSkippedExisting: '⚠ Fasciculi iam existentes praetermissi: {langs}'
+    exportOverwriteHint: 'Ut fasciculos existentes superscribas, exsequere: /treasureExportLang overwrite'
+    exportNextStep: 'Deinde: I18n languages/*.yml legat ut hae translationes adhibeantur.'
+    playerOnlyConsoleNoOnline: Hac iussione soli lusores uti possunt, nec ullus lusor online inventus est.
   debug:
-    chestSoundStart: "[ChestSound] Modus reticuli XVI coepit."
-    chestSoundNoChests: "[ChestSound] Nullae arcae inventae sunt."
-    chestSoundNearest: "[ChestSound] proxima={distance}m intraFinem={range} t={t}"
+    chestSoundStart: '[ChestSound] Modus reticuli XVI coepit.'
+    chestSoundNoChests: '[ChestSound] Nullae arcae inventae sunt.'
+    chestSoundNearest: '[ChestSound] proxima={distance}m intraFinem={range} t={t}'
   reward:
-    label: "Praemium"
-    rainbowWolf: "Lupus arcobaleni"
-
-minecraft:
-  packet:
-    multiplayer:
-      player:
-        joined: "&e{arg0} joined the game"
-        left: "&e{arg0} left the game"
-    commands:
-      generic:
-        unknown: "&cUnknown or incomplete command."
-        permission: "&cYou do not have permission to use this command."
-    sleep:
-      players_sleeping: "&7Sleeping players: {arg0}"
-
-# ============================================================
-# Minecraft packet-level i18n
-# - Observed by ProtocolLib PacketI18n runtime audit/probe
-# - Exact 20-language TreasureRun set; no wmy
-# - Evidence-based baseline for observable vanilla translate keys
-# ============================================================
+    label: Praemium
+    rainbowWolf: Lupus arcobaleni
 minecraft:
   packet:
     chat:
       type:
         admin: '[{arg0}: {arg1}]'
-        text: '<{arg0}> {arg1}'
+        text: <{arg0}> {arg1}
     command:
       context:
-        here: '<--[HIC]'
+        here: <--[HIC]
       unknown:
-        command: 'Praeceptum ignotum aut imperfectum est. Errorem infra vide.'
+        command: Praeceptum ignotum aut imperfectum est. Errorem infra vide.
     commands:
       help:
         header: '--- Pagina auxilii {arg0} ex {arg1} ---'
       op:
         success: '{arg0} operator servientis factus est'
       stop:
-        stopping: 'commands.stop.stopping'
+        stopping: Serviens sistitur
     death:
       attack:
         generic: '{arg0} mortuus est'

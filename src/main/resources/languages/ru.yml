@@ -1,8 +1,8 @@
 outcome:
   fallback:
-    runComplete: "Run complete."
-    timeUp: "Time's up."
-    trader: "Trade complete."
+    runComplete: Run complete.
+    timeUp: Time's up.
+    trader: Trade complete.
   notice:
     timeUpGameOver: Время вышло. Игра окончена.
     retryGuide: Попробуйте снова, выбрав другой путь.
@@ -553,7 +553,7 @@ command:
     playersOnly: '&cТолько игроки могут использовать эту команду.'
     managerNotReady: '[TreasureRun] Менеджер этапа ещё не инициализирован.'
     cleaned: '[TreasureRun] Удалено блоков сложности: {count}.'
-  noPermission: "У вас нет прав для использования этой команды."
+  noPermission: У вас нет прав для использования этой команды.
   onlyPlayer: '&cЭту команду может использовать только игрок.'
   reload:
     start: '&7Перезагрузка...'
@@ -729,7 +729,7 @@ commands:
   quotefavorite_book_success_o_afe31501: /quoteFavorite book success    - open SUCCESS chapter
   quotefavorite_book_timeup_op_08b799b0: /quoteFavorite book timeup     - open TIME_UP chapter
   quotefavorite_book_other_ope_bdcbafba: /quoteFavorite book other      - open OTHER chapter
-debug:
+debug: null
 items:
   specialEmerald:
     displayName: '&6Особый изумруд'
@@ -855,7 +855,7 @@ gameplay:
     advancement: '{player} получил достижение: {advancement}'
     serverMotd: '{server} — многоязычная охота за сокровищами.'
     unknownCommand: 'Неизвестная команда: {command}'
-    noPermission: 'У вас нет прав для использования {command}.'
+    noPermission: У вас нет прав для использования {command}.
   death:
     firework: '{player} попал в взрыв фейерверка.'
     explosion: '{player} попал во взрыв.'
@@ -889,7 +889,7 @@ gameplay:
   shop:
     tradeCompleteTitle: Обмен завершён!
     hiddenPowerAwakens: Пробуждается скрытая сила…
-    hiddenPowerChat: "Вы ощущаете скрытую силу лавки сокровищ…"
+    hiddenPowerChat: Вы ощущаете скрытую силу лавки сокровищ…
   timer:
     remainingBossbar: Оставшееся время
     remainingLine: 'Осталось времени: {seconds} с'
@@ -919,87 +919,65 @@ rank:
     allTimeSwitch: 'Сменить вид: /gameRank weekly | /gameRank monthly'
     monthlyEmpty: В этом месяце записей пока нет.
     monthlySwitch: 'Сменить вид: /gameRank weekly | /gameRank all'
-
-# Final visible-surface i18n audit keys
 finalAudit:
   shop:
-    treasureShop: "Лавка сокровищ"
+    treasureShop: Лавка сокровищ
   item:
-    specialApple: "Особое яблоко"
-    specialIronBlock: "Особый железный блок"
+    specialApple: Особое яблоко
+    specialIronBlock: Особый железный блок
   command:
-    playerOnly: "Эту команду могут использовать только игроки."
-    opOnly: "Для этой команды нужны права оператора."
-    rankDebugOff: "Отладка рейтинга отключена. Установите rankDebug.enabled: true в config.yml."
-    rankUsage: "Использование: /rank <1|2|3|demo>"
-    rankNumberOnly: "Введите число: /rank <1|2|3|demo>"
-    rankOnlyOneToThree: "Выберите 1, 2 или 3: /rank <1|2|3>"
-    gameAlreadyRunning: "Игра уже запущена."
-    invalidDifficulty: "Выберите Easy, Normal или Hard."
-    languageGuiNotReady: "Меню выбора языка ещё не готово."
-    reloadBlockedRunning: "Reload отключён во время игры. Сначала выполните /gameEnd."
-    noPermission: "У вас нет прав для использования этой команды."
-    noPermissionOp: "У вас нет прав для использования этой команды. Требуются права оператора."
-    treasureReloadDone: "✅ Настройки TreasureRun перезагружены, включая меню выбора языка."
-    guiReloadedReopen: "Интерфейс обновлён. Выполните /gameStart ещё раз, чтобы открыть его снова."
-    dbConnected: "MySQL подключён."
-    dbNotConnected: "MySQL не подключён."
-    exportMissingRoot: "❌ messages.translation не найден в config.yml."
-    exportExample: "Пример: messages.translation.ja.favorites.title: ..."
-    exportCreateFolderFailed: "❌ Не удалось создать папку languages/: {path}"
-    exportNoLanguages: "❌ Языки для экспорта не настроены."
-    exportFailed: "❌ Ошибка экспорта: {lang} ({error})"
-    exportComplete: "✅ Экспорт завершён: записано файлов: {count}."
-    exportOutputFolder: "Папка вывода: {path}"
-    exportSkippedExisting: "⚠ Пропущены существующие файлы: {langs}"
-    exportOverwriteHint: "Чтобы перезаписать существующие файлы, выполните: /treasureExportLang overwrite"
-    exportNextStep: "Далее: настройте I18n на чтение languages/*.yml, чтобы применить эти переводы."
-    playerOnlyConsoleNoOnline: "Эту команду могут использовать только игроки, и ни один онлайн-игрок не найден."
+    playerOnly: Эту команду могут использовать только игроки.
+    opOnly: Для этой команды нужны права оператора.
+    rankDebugOff: 'Отладка рейтинга отключена. Установите rankDebug.enabled: true в config.yml.'
+    rankUsage: 'Использование: /rank <1|2|3|demo>'
+    rankNumberOnly: 'Введите число: /rank <1|2|3|demo>'
+    rankOnlyOneToThree: 'Выберите 1, 2 или 3: /rank <1|2|3>'
+    gameAlreadyRunning: Игра уже запущена.
+    invalidDifficulty: Выберите Easy, Normal или Hard.
+    languageGuiNotReady: Меню выбора языка ещё не готово.
+    reloadBlockedRunning: Reload отключён во время игры. Сначала выполните /gameEnd.
+    noPermission: У вас нет прав для использования этой команды.
+    noPermissionOp: У вас нет прав для использования этой команды. Требуются права оператора.
+    treasureReloadDone: ✅ Настройки TreasureRun перезагружены, включая меню выбора языка.
+    guiReloadedReopen: Интерфейс обновлён. Выполните /gameStart ещё раз, чтобы открыть его снова.
+    dbConnected: MySQL подключён.
+    dbNotConnected: MySQL не подключён.
+    exportMissingRoot: ❌ messages.translation не найден в config.yml.
+    exportExample: 'Пример: messages.translation.ja.favorites.title: ...'
+    exportCreateFolderFailed: '❌ Не удалось создать папку languages/: {path}'
+    exportNoLanguages: ❌ Языки для экспорта не настроены.
+    exportFailed: '❌ Ошибка экспорта: {lang} ({error})'
+    exportComplete: '✅ Экспорт завершён: записано файлов: {count}.'
+    exportOutputFolder: 'Папка вывода: {path}'
+    exportSkippedExisting: '⚠ Пропущены существующие файлы: {langs}'
+    exportOverwriteHint: 'Чтобы перезаписать существующие файлы, выполните: /treasureExportLang overwrite'
+    exportNextStep: 'Далее: настройте I18n на чтение languages/*.yml, чтобы применить эти переводы.'
+    playerOnlyConsoleNoOnline: Эту команду могут использовать только игроки, и ни один онлайн-игрок не найден.
   debug:
-    chestSoundStart: "[ChestSound] Запущено в режиме сетки 16."
-    chestSoundNoChests: "[ChestSound] Сундуки не найдены."
-    chestSoundNearest: "[ChestSound] ближайший={distance}м вЗоне={range} t={t}"
+    chestSoundStart: '[ChestSound] Запущено в режиме сетки 16.'
+    chestSoundNoChests: '[ChestSound] Сундуки не найдены.'
+    chestSoundNearest: '[ChestSound] ближайший={distance}м вЗоне={range} t={t}'
   reward:
-    label: "Награда"
-    rainbowWolf: "Радужный волк"
-
-minecraft:
-  packet:
-    multiplayer:
-      player:
-        joined: "&e{arg0} joined the game"
-        left: "&e{arg0} left the game"
-    commands:
-      generic:
-        unknown: "&cUnknown or incomplete command."
-        permission: "&cYou do not have permission to use this command."
-    sleep:
-      players_sleeping: "&7Sleeping players: {arg0}"
-
-# ============================================================
-# Minecraft packet-level i18n
-# - Observed by ProtocolLib PacketI18n runtime audit/probe
-# - Exact 20-language TreasureRun set; no wmy
-# - Evidence-based baseline for observable vanilla translate keys
-# ============================================================
+    label: Награда
+    rainbowWolf: Радужный волк
 minecraft:
   packet:
     chat:
       type:
         admin: '[{arg0}: {arg1}]'
-        text: '<{arg0}> {arg1}'
+        text: <{arg0}> {arg1}
     command:
       context:
-        here: '<--[ЗДЕСЬ]'
+        here: <--[ЗДЕСЬ]
       unknown:
-        command: 'Неизвестная или неполная команда. Смотрите ошибку ниже.'
+        command: Неизвестная или неполная команда. Смотрите ошибку ниже.
     commands:
       help:
         header: '--- Страница справки {arg0} из {arg1} ---'
       op:
         success: '{arg0} теперь оператор сервера'
       stop:
-        stopping: 'commands.stop.stopping'
+        stopping: Сервер останавливается
     death:
       attack:
         generic: '{arg0} погиб'

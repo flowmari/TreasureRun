@@ -1,8 +1,8 @@
 outcome:
   fallback:
-    runComplete: "Run complete."
-    timeUp: "Time's up."
-    trader: "Trade complete."
+    runComplete: Run complete.
+    timeUp: Time's up.
+    trader: Trade complete.
   notice:
     timeUpGameOver: Aika loppui. Peli päättyi.
     retryGuide: Yritä uudelleen toista reittiä pitkin.
@@ -547,7 +547,7 @@ command:
     playersOnly: '&cVain pelaajat voivat käyttää tätä komentoa.'
     managerNotReady: '[TreasureRun] Kentänhallintaa ei ole vielä alustettu.'
     cleaned: '[TreasureRun] {count} vaikeuslohkoa siivottiin.'
-  noPermission: "Sinulla ei ole oikeutta käyttää tätä komentoa."
+  noPermission: Sinulla ei ole oikeutta käyttää tätä komentoa.
   onlyPlayer: '&cVain pelaaja voi käyttää tätä komentoa.'
   reload:
     start: '&7Ladataan uudelleen...'
@@ -723,7 +723,7 @@ commands:
   quotefavorite_book_success_o_afe31501: /quoteFavorite book success    - open SUCCESS chapter
   quotefavorite_book_timeup_op_08b799b0: /quoteFavorite book timeup     - open TIME_UP chapter
   quotefavorite_book_other_ope_bdcbafba: /quoteFavorite book other      - open OTHER chapter
-debug:
+debug: null
 items:
   specialEmerald:
     displayName: '&6Erikoissmaragdi'
@@ -849,7 +849,7 @@ gameplay:
     advancement: '{player} saavutti edistysaskeleen: {advancement}'
     serverMotd: '{server} — monikielinen aarteenetsintä.'
     unknownCommand: 'Tuntematon komento: {command}'
-    noPermission: 'Sinulla ei ole oikeutta käyttää komentoa {command}.'
+    noPermission: Sinulla ei ole oikeutta käyttää komentoa {command}.
   death:
     firework: '{player} jäi ilotulitusräjähdyksen alle.'
     explosion: '{player} jäi räjähdyksen alle.'
@@ -883,7 +883,7 @@ gameplay:
   shop:
     tradeCompleteTitle: Kauppa tehty!
     hiddenPowerAwakens: Piilotettu voima herää…
-    hiddenPowerChat: "Tunnet aarrekaupan kätketyn voiman…"
+    hiddenPowerChat: Tunnet aarrekaupan kätketyn voiman…
   timer:
     remainingBossbar: Jäljellä oleva aika
     remainingLine: 'Aikaa jäljellä: {seconds}s'
@@ -913,87 +913,65 @@ rank:
     allTimeSwitch: 'Vaihda näkymää: /gameRank weekly | /gameRank monthly'
     monthlyEmpty: Tältä kuukaudelta ei vielä ole tuloksia.
     monthlySwitch: 'Vaihda näkymää: /gameRank weekly | /gameRank all'
-
-# Final visible-surface i18n audit keys
 finalAudit:
   shop:
-    treasureShop: "Aarrekauppa"
+    treasureShop: Aarrekauppa
   item:
-    specialApple: "Erityinen omena"
-    specialIronBlock: "Erityinen rautalohko"
+    specialApple: Erityinen omena
+    specialIronBlock: Erityinen rautalohko
   command:
-    playerOnly: "Vain pelaajat voivat käyttää tätä komentoa."
-    opOnly: "Tämän komennon käyttö vaatii operaattorioikeudet."
-    rankDebugOff: "Rank-debug on pois käytöstä. Aseta config.yml-tiedostossa rankDebug.enabled arvoksi true."
-    rankUsage: "Käyttö: /rank <1|2|3|demo>"
-    rankNumberOnly: "Anna numero: /rank <1|2|3|demo>"
-    rankOnlyOneToThree: "Valitse 1, 2 tai 3: /rank <1|2|3>"
-    gameAlreadyRunning: "Peli on jo käynnissä."
-    invalidDifficulty: "Valitse Easy, Normal tai Hard."
-    languageGuiNotReady: "Kielivalikko ei ole vielä valmis."
-    reloadBlockedRunning: "Reload ei ole käytettävissä pelin aikana. Suorita ensin /gameEnd."
-    noPermission: "Sinulla ei ole oikeutta käyttää tätä komentoa."
-    noPermissionOp: "Sinulla ei ole oikeutta käyttää tätä komentoa. Operaattorioikeudet vaaditaan."
-    treasureReloadDone: "✅ TreasureRun-asetukset ladattiin uudelleen, myös kielivalikon asetukset."
-    guiReloadedReopen: "Käyttöliittymä on päivitetty. Avaa se uudelleen komennolla /gameStart."
-    dbConnected: "MySQL-yhteys on muodostettu."
-    dbNotConnected: "MySQL-yhteyttä ei ole muodostettu."
-    exportMissingRoot: "❌ messages.translation-osaa ei löytynyt config.yml-tiedostosta."
-    exportExample: "Esimerkki: messages.translation.ja.favorites.title: ..."
-    exportCreateFolderFailed: "❌ languages/-kansiota ei voitu luoda: {path}"
-    exportNoLanguages: "❌ Vientiin ei ole määritetty kieliä."
-    exportFailed: "❌ Vienti epäonnistui: {lang} ({error})"
-    exportComplete: "✅ Vienti valmis: kirjoitettiin {count} tiedosto(a)."
-    exportOutputFolder: "Tulostuskansio: {path}"
-    exportSkippedExisting: "⚠ Olemassa olevat tiedostot ohitettiin: {langs}"
-    exportOverwriteHint: "Jos haluat korvata olemassa olevat tiedostot, suorita: /treasureExportLang overwrite"
-    exportNextStep: "Seuraavaksi: aseta I18n lukemaan languages/*.yml, jotta käännökset tulevat käyttöön."
-    playerOnlyConsoleNoOnline: "Vain pelaajat voivat käyttää tätä komentoa, eikä yhtään online-pelaajaa löytynyt."
+    playerOnly: Vain pelaajat voivat käyttää tätä komentoa.
+    opOnly: Tämän komennon käyttö vaatii operaattorioikeudet.
+    rankDebugOff: Rank-debug on pois käytöstä. Aseta config.yml-tiedostossa rankDebug.enabled arvoksi true.
+    rankUsage: 'Käyttö: /rank <1|2|3|demo>'
+    rankNumberOnly: 'Anna numero: /rank <1|2|3|demo>'
+    rankOnlyOneToThree: 'Valitse 1, 2 tai 3: /rank <1|2|3>'
+    gameAlreadyRunning: Peli on jo käynnissä.
+    invalidDifficulty: Valitse Easy, Normal tai Hard.
+    languageGuiNotReady: Kielivalikko ei ole vielä valmis.
+    reloadBlockedRunning: Reload ei ole käytettävissä pelin aikana. Suorita ensin /gameEnd.
+    noPermission: Sinulla ei ole oikeutta käyttää tätä komentoa.
+    noPermissionOp: Sinulla ei ole oikeutta käyttää tätä komentoa. Operaattorioikeudet vaaditaan.
+    treasureReloadDone: ✅ TreasureRun-asetukset ladattiin uudelleen, myös kielivalikon asetukset.
+    guiReloadedReopen: Käyttöliittymä on päivitetty. Avaa se uudelleen komennolla /gameStart.
+    dbConnected: MySQL-yhteys on muodostettu.
+    dbNotConnected: MySQL-yhteyttä ei ole muodostettu.
+    exportMissingRoot: ❌ messages.translation-osaa ei löytynyt config.yml-tiedostosta.
+    exportExample: 'Esimerkki: messages.translation.ja.favorites.title: ...'
+    exportCreateFolderFailed: '❌ languages/-kansiota ei voitu luoda: {path}'
+    exportNoLanguages: ❌ Vientiin ei ole määritetty kieliä.
+    exportFailed: '❌ Vienti epäonnistui: {lang} ({error})'
+    exportComplete: '✅ Vienti valmis: kirjoitettiin {count} tiedosto(a).'
+    exportOutputFolder: 'Tulostuskansio: {path}'
+    exportSkippedExisting: '⚠ Olemassa olevat tiedostot ohitettiin: {langs}'
+    exportOverwriteHint: 'Jos haluat korvata olemassa olevat tiedostot, suorita: /treasureExportLang overwrite'
+    exportNextStep: 'Seuraavaksi: aseta I18n lukemaan languages/*.yml, jotta käännökset tulevat käyttöön.'
+    playerOnlyConsoleNoOnline: Vain pelaajat voivat käyttää tätä komentoa, eikä yhtään online-pelaajaa löytynyt.
   debug:
-    chestSoundStart: "[ChestSound] Käynnistetty 16-ruudukon tilassa."
-    chestSoundNoChests: "[ChestSound] Arkkuja ei löytynyt."
-    chestSoundNearest: "[ChestSound] lähin={distance}m kantamalla={range} t={t}"
+    chestSoundStart: '[ChestSound] Käynnistetty 16-ruudukon tilassa.'
+    chestSoundNoChests: '[ChestSound] Arkkuja ei löytynyt.'
+    chestSoundNearest: '[ChestSound] lähin={distance}m kantamalla={range} t={t}'
   reward:
-    label: "Palkinto"
-    rainbowWolf: "Sateenkaarisusi"
-
-minecraft:
-  packet:
-    multiplayer:
-      player:
-        joined: "&e{arg0} joined the game"
-        left: "&e{arg0} left the game"
-    commands:
-      generic:
-        unknown: "&cUnknown or incomplete command."
-        permission: "&cYou do not have permission to use this command."
-    sleep:
-      players_sleeping: "&7Sleeping players: {arg0}"
-
-# ============================================================
-# Minecraft packet-level i18n
-# - Observed by ProtocolLib PacketI18n runtime audit/probe
-# - Exact 20-language TreasureRun set; no wmy
-# - Evidence-based baseline for observable vanilla translate keys
-# ============================================================
+    label: Palkinto
+    rainbowWolf: Sateenkaarisusi
 minecraft:
   packet:
     chat:
       type:
         admin: '[{arg0}: {arg1}]'
-        text: '<{arg0}> {arg1}'
+        text: <{arg0}> {arg1}
     command:
       context:
-        here: '<--[TÄSSÄ]'
+        here: <--[TÄSSÄ]
       unknown:
-        command: 'Tuntematon tai keskeneräinen komento. Katso virhe alta.'
+        command: Tuntematon tai keskeneräinen komento. Katso virhe alta.
     commands:
       help:
         header: '--- Ohjesivu {arg0}/{arg1} ---'
       op:
         success: '{arg0} on nyt palvelimen operaattori'
       stop:
-        stopping: 'commands.stop.stopping'
+        stopping: Palvelinta pysäytetään
     death:
       attack:
         generic: '{arg0} kuoli'

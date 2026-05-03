@@ -506,7 +506,7 @@ ui:
     outcome:
       success: 成就
       timeUp: 時尽きぬ
-    page: '今の頁 {page}'
+    page: 今の頁 {page}
     tabs: 章
   error:
     noData: 記しなし。
@@ -653,44 +653,24 @@ finalAudit:
   reward:
     label: 賜りもの
     rainbowWolf: 虹の狼
-
-minecraft:
-  packet:
-    multiplayer:
-      player:
-        joined: "&e{arg0} joined the game"
-        left: "&e{arg0} left the game"
-    commands:
-      generic:
-        unknown: "&cUnknown or incomplete command."
-        permission: "&cYou do not have permission to use this command."
-    sleep:
-      players_sleeping: "&7Sleeping players: {arg0}"
-
-# ============================================================
-# Minecraft packet-level i18n
-# - Observed by ProtocolLib PacketI18n runtime audit/probe
-# - Exact 20-language TreasureRun set; no wmy
-# - Evidence-based baseline for observable vanilla translate keys
-# ============================================================
 minecraft:
   packet:
     chat:
       type:
         admin: '[{arg0}: {arg1}]'
-        text: '<{arg0}> {arg1}'
+        text: <{arg0}> {arg1}
     command:
       context:
-        here: '<--[ここ]'
+        here: <--[ここ]
       unknown:
-        command: '不明または不完全なる命なり。下の誤りを見給へ。'
+        command: 不明または不完全なる命なり。下の誤りを見給へ。
     commands:
       help:
         header: '--- 助けの頁 {arg0} / {arg1} ---'
       op:
         success: '{arg0} に仕手の権を授けたり'
       stop:
-        stopping: 'commands.stop.stopping'
+        stopping: 伺ひの世、いま閉ぢむとして候
     death:
       attack:
         generic: '{arg0} は命の緒、ここに絶えにけり'

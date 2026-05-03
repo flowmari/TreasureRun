@@ -1,8 +1,8 @@
 outcome:
   fallback:
-    runComplete: "Run complete."
-    timeUp: "Time's up."
-    trader: "Trade complete."
+    runComplete: Run complete.
+    timeUp: Time's up.
+    trader: Trade complete.
   notice:
     timeUpGameOver: TIME-UP. GAME OVER.
     retryGuide: TRY AGAIN DIFFERENT ROUTE.
@@ -539,7 +539,7 @@ command:
     playersOnly: '&cONLY PLAYER CAN USE THIS COMMAND.'
     managerNotReady: '[TreasureRun] STAGE MANAGER NOT READY YET.'
     cleaned: '[TreasureRun] CLEANUP COMPLETE. {count} DIFFICULTY BLOCKS REMOVED.'
-  noPermission: "YOU PERMISSION NONE USE COMMAND."
+  noPermission: YOU PERMISSION NONE USE COMMAND.
   onlyPlayer: '&cONLY PLAYER CAN USE COMMAND.'
   reload:
     start: '&7RELOAD NOW...'
@@ -715,7 +715,7 @@ commands:
   quotefavorite_book_success_o_afe31501: /quoteFavorite book success    - open SUCCESS chapter
   quotefavorite_book_timeup_op_08b799b0: /quoteFavorite book timeup     - open TIME_UP chapter
   quotefavorite_book_other_ope_bdcbafba: /quoteFavorite book other      - open OTHER chapter
-debug:
+debug: null
 items:
   specialEmerald:
     displayName: '&6SPECIAL EMERALD'
@@ -841,7 +841,7 @@ gameplay:
     advancement: '{player} PROGRESS GET: {advancement}'
     serverMotd: '{server} — MANY LANGUAGE TREASURE GAME.'
     unknownCommand: 'COMMAND UNKNOWN: {command}'
-    noPermission: 'YOU PERMISSION NONE USE {command}.'
+    noPermission: YOU PERMISSION NONE USE {command}.
   death:
     firework: '{player} FIREWORK EXPLOSION HIT FALL.'
     explosion: '{player} EXPLOSION HIT FALL.'
@@ -875,7 +875,7 @@ gameplay:
   shop:
     tradeCompleteTitle: TRADE COMPLETE!
     hiddenPowerAwakens: HIDDEN POWER AWAKEN…
-    hiddenPowerChat: "TREASURE SHOP INSIDE HIDDEN POWER YOU FEEL…"
+    hiddenPowerChat: TREASURE SHOP INSIDE HIDDEN POWER YOU FEEL…
   timer:
     remainingBossbar: TIME LEFT
     remainingLine: 'TIME LEFT: {seconds}S'
@@ -905,87 +905,65 @@ rank:
     allTimeSwitch: 'SWITCH VIEW: /gameRank weekly | /gameRank monthly'
     monthlyEmpty: THIS MONTH RECORD NONE YET.
     monthlySwitch: 'SWITCH VIEW: /gameRank weekly | /gameRank all'
-
-# Final visible-surface i18n audit keys
 finalAudit:
   shop:
-    treasureShop: "TREASURE SHOP"
+    treasureShop: TREASURE SHOP
   item:
-    specialApple: "SPECIAL APPLE"
-    specialIronBlock: "SPECIAL IRON BLOCK"
+    specialApple: SPECIAL APPLE
+    specialIronBlock: SPECIAL IRON BLOCK
   command:
-    playerOnly: "PLAYER ONLY CAN USE COMMAND."
-    opOnly: "OP PERMISSION NEED."
-    rankDebugOff: "RANK DEBUG OFF. CONFIG rankDebug.enabled TRUE SET."
-    rankUsage: "USE: /rank <1|2|3|demo>"
-    rankNumberOnly: "NUMBER TYPE PLEASE: /rank <1|2|3|demo>"
-    rankOnlyOneToThree: "CHOOSE 1 2 3 ONLY: /rank <1|2|3>"
-    gameAlreadyRunning: "GAME ALREADY RUN."
-    invalidDifficulty: "CHOOSE EASY NORMAL HARD."
-    languageGuiNotReady: "LANGUAGE GUI NOT READY YET."
-    reloadBlockedRunning: "GAME RUN NOW. RELOAD CANNOT. FIRST /gameEnd."
-    noPermission: "YOU PERMISSION NONE USE COMMAND."
-    noPermissionOp: "YOU PERMISSION NONE USE COMMAND. OP PERMISSION NEED."
-    treasureReloadDone: "✅ TREASURERUN CONFIG RELOAD FINISH. LANGUAGE GUI INCLUDE."
-    guiReloadedReopen: "GUI REFRESH FINISH. /gameStart AGAIN OPEN."
-    dbConnected: "MYSQL CONNECT YES."
-    dbNotConnected: "MYSQL CONNECT NO."
-    exportMissingRoot: "❌ CONFIG messages.translation FIND NONE."
-    exportExample: "EXAMPLE: messages.translation.ja.favorites.title: ..."
-    exportCreateFolderFailed: "❌ languages/ FOLDER MAKE CANNOT: {path}"
-    exportNoLanguages: "❌ EXPORT LANGUAGE SET NONE."
-    exportFailed: "❌ EXPORT FAIL: {lang} ({error})"
-    exportComplete: "✅ EXPORT FINISH: {count} FILE WRITE."
-    exportOutputFolder: "OUTPUT FOLDER: {path}"
-    exportSkippedExisting: "⚠ OLD FILE SKIP: {langs}"
-    exportOverwriteHint: "OLD FILE OVERWRITE WANT, RUN: /treasureExportLang overwrite"
-    exportNextStep: "NEXT: I18N READ languages/*.yml, TRANSLATION APPLY."
-    playerOnlyConsoleNoOnline: "PLAYER ONLY COMMAND. ONLINE PLAYER FIND NONE."
+    playerOnly: PLAYER ONLY CAN USE COMMAND.
+    opOnly: OP PERMISSION NEED.
+    rankDebugOff: RANK DEBUG OFF. CONFIG rankDebug.enabled TRUE SET.
+    rankUsage: 'USE: /rank <1|2|3|demo>'
+    rankNumberOnly: 'NUMBER TYPE PLEASE: /rank <1|2|3|demo>'
+    rankOnlyOneToThree: 'CHOOSE 1 2 3 ONLY: /rank <1|2|3>'
+    gameAlreadyRunning: GAME ALREADY RUN.
+    invalidDifficulty: CHOOSE EASY NORMAL HARD.
+    languageGuiNotReady: LANGUAGE GUI NOT READY YET.
+    reloadBlockedRunning: GAME RUN NOW. RELOAD CANNOT. FIRST /gameEnd.
+    noPermission: YOU PERMISSION NONE USE COMMAND.
+    noPermissionOp: YOU PERMISSION NONE USE COMMAND. OP PERMISSION NEED.
+    treasureReloadDone: ✅ TREASURERUN CONFIG RELOAD FINISH. LANGUAGE GUI INCLUDE.
+    guiReloadedReopen: GUI REFRESH FINISH. /gameStart AGAIN OPEN.
+    dbConnected: MYSQL CONNECT YES.
+    dbNotConnected: MYSQL CONNECT NO.
+    exportMissingRoot: ❌ CONFIG messages.translation FIND NONE.
+    exportExample: 'EXAMPLE: messages.translation.ja.favorites.title: ...'
+    exportCreateFolderFailed: '❌ languages/ FOLDER MAKE CANNOT: {path}'
+    exportNoLanguages: ❌ EXPORT LANGUAGE SET NONE.
+    exportFailed: '❌ EXPORT FAIL: {lang} ({error})'
+    exportComplete: '✅ EXPORT FINISH: {count} FILE WRITE.'
+    exportOutputFolder: 'OUTPUT FOLDER: {path}'
+    exportSkippedExisting: '⚠ OLD FILE SKIP: {langs}'
+    exportOverwriteHint: 'OLD FILE OVERWRITE WANT, RUN: /treasureExportLang overwrite'
+    exportNextStep: 'NEXT: I18N READ languages/*.yml, TRANSLATION APPLY.'
+    playerOnlyConsoleNoOnline: PLAYER ONLY COMMAND. ONLINE PLAYER FIND NONE.
   debug:
-    chestSoundStart: "[ChestSound] START 16-GRID MODE."
-    chestSoundNoChests: "[ChestSound] CHEST NONE FOUND."
-    chestSoundNearest: "[ChestSound] NEAR={distance}m RANGE={range} t={t}"
+    chestSoundStart: '[ChestSound] START 16-GRID MODE.'
+    chestSoundNoChests: '[ChestSound] CHEST NONE FOUND.'
+    chestSoundNearest: '[ChestSound] NEAR={distance}m RANGE={range} t={t}'
   reward:
-    label: "REWARD"
-    rainbowWolf: "RAINBOW WOLF"
-
-minecraft:
-  packet:
-    multiplayer:
-      player:
-        joined: "&e{arg0} joined the game"
-        left: "&e{arg0} left the game"
-    commands:
-      generic:
-        unknown: "&cUnknown or incomplete command."
-        permission: "&cYou do not have permission to use this command."
-    sleep:
-      players_sleeping: "&7Sleeping players: {arg0}"
-
-# ============================================================
-# Minecraft packet-level i18n
-# - Observed by ProtocolLib PacketI18n runtime audit/probe
-# - Exact 20-language TreasureRun set; no wmy
-# - Evidence-based baseline for observable vanilla translate keys
-# ============================================================
+    label: REWARD
+    rainbowWolf: RAINBOW WOLF
 minecraft:
   packet:
     chat:
       type:
         admin: '[{arg0}: {arg1}]'
-        text: '<{arg0}> {arg1}'
+        text: <{arg0}> {arg1}
     command:
       context:
-        here: '<--[HERE]'
+        here: <--[HERE]
       unknown:
-        command: 'COMMAND UNKNOWN OR NOT-COMPLETE. ERROR BELOW SEE.'
+        command: COMMAND UNKNOWN OR NOT-COMPLETE. ERROR BELOW SEE.
     commands:
       help:
         header: '--- HELP PAGE {arg0} OF {arg1} ---'
       op:
         success: '{arg0} SERVER OP GIVE FINISH'
       stop:
-        stopping: 'commands.stop.stopping'
+        stopping: SERVER STOP NOW
     death:
       attack:
         generic: '{arg0} DIE'

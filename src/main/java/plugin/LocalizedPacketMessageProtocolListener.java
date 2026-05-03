@@ -21,22 +21,27 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * ProtocolLib packet-level i18n audit layer.
+ * ProtocolLib packet-level i18n layer.
  *
  * Purpose:
- * - Bukkit event layer handles safe high-level messages.
- * - This packet layer audits lower-level vanilla/system JSON messages.
- * - It detects Minecraft translate keys such as:
- *   multiplayer.player.joined
- *   multiplayer.player.left
+ * - Audit observable server-to-client chat/system packets.
+ * - Detect Minecraft JSON components containing "translate".
+ * - Optionally replace observed translate keys with TreasureRun YAML-backed text:
  *
- * This class intentionally starts as an audit-first foundation.
- * Replacement can be expanded safely after real runtime packet keys are observed.
+ *   minecraft.packet.<vanilla translate key>
+ *
+ * Scope:
+ * - Conservative packet targets for Spigot 1.20.1 + ProtocolLib.
+ * - This does not claim full Minecraft client UI localization.
+ * - Client-side screens still require a resource pack.
  */
 public final class LocalizedPacketMessageProtocolListener {
 
   private static final Pattern TRANSLATE_PATTERN =
       Pattern.compile("\"translate\"\\s*:\\s*\"([^\"]+)\"");
+
+  private static final Pattern TEXT_PATTERN =
+      Pattern.compile("\"text\"\\s*:\\s*\"([^\"]*)\"");
 
   private final TreasureRunMultiChestPlugin plugin;
   private PacketAdapter adapter;
@@ -81,7 +86,6 @@ public final class LocalizedPacketMessageProtocolListener {
     };
 
     ProtocolLibrary.getProtocolManager().addPacketListener(adapter);
-
     plugin.getLogger().info("[PacketI18n] ProtocolLib packet listener registered: " + packetTypeNames(packetTypes));
   }
 
@@ -98,9 +102,8 @@ public final class LocalizedPacketMessageProtocolListener {
   private List<PacketType> detectPacketTypes() {
     List<PacketType> out = new ArrayList<>();
 
-    // Keep this layer conservative for Spigot 1.20.1 + ProtocolLib.
-    // TITLE is exposed by some ProtocolLib builds but can be unregistered at runtime,
-    // so we intentionally avoid title/boss/tab packets here.
+    // Keep this layer conservative.
+    // Some ProtocolLib builds expose title/boss/tab constants that are not registered at runtime.
     addPacketTypeIfExists(out, "SYSTEM_CHAT");
     addPacketTypeIfExists(out, "CHAT");
     addPacketTypeIfExists(out, "PLAYER_CHAT");
@@ -114,8 +117,7 @@ public final class LocalizedPacketMessageProtocolListener {
       Field f = PacketType.Play.Server.class.getField(name);
       Object v = f.get(null);
 
-      if (v instanceof PacketType) {
-        PacketType type = (PacketType) v;
+      if (v instanceof PacketType type) {
         out.add(type);
         plugin.getLogger().info("[PacketI18n] detected packet type: " + name);
       }
@@ -133,33 +135,59 @@ public final class LocalizedPacketMessageProtocolListener {
   }
 
   private void handlePacket(PacketEvent event) {
+    if (event == null || event.isCancelled()) return;
+
     Player player = event.getPlayer();
     if (player == null) return;
 
     PacketContainer packet = event.getPacket();
+    if (packet == null) return;
+
     String packetName = event.getPacketType().name();
 
-    boolean audit = plugin.getConfig().getBoolean("packetMessages.audit", true);
+    boolean audit = plugin.getConfig().getBoolean("packetMessages.audit", false);
     boolean debug = plugin.getConfig().getBoolean("packetMessages.debug", false);
-    boolean auditAllJson = plugin.getConfig().getBoolean("packetMessages.auditAllJson", true);
+    boolean auditAllJson = plugin.getConfig().getBoolean("packetMessages.auditAllJson", false);
+    boolean replace = plugin.getConfig().getBoolean("packetMessages.replaceTranslatedComponents", false);
 
-    if (!audit && !debug) return;
+    if (!audit && !debug && !replace) return;
 
+    boolean touched = false;
     Set<String> jsons = new LinkedHashSet<>();
 
-    // 1) WrappedChatComponent fields
     try {
       StructureModifier<WrappedChatComponent> comps = packet.getChatComponents();
+
       for (int i = 0; i < comps.size(); i++) {
-        WrappedChatComponent c = comps.readSafely(i);
-        if (c != null && c.getJson() != null) {
-          jsons.add(c.getJson());
+        WrappedChatComponent component = comps.readSafely(i);
+        if (component == null) continue;
+
+        String json = component.getJson();
+        if (json == null || json.isBlank()) continue;
+
+        jsons.add(json);
+
+        if (replace) {
+          String localized = localizeJson(player, json);
+          if (isUsableLocalizedText(localized)) {
+            comps.write(i, WrappedChatComponent.fromText(localized));
+            touched = true;
+
+            if (audit) {
+              plugin.getLogger().info("[PacketI18n][REPLACE] player=" + player.getName()
+                  + " packet=" + packetName
+                  + " text=" + compact(localized));
+            }
+          }
         }
       }
-    } catch (Throwable ignored) {
+    } catch (Throwable t) {
+      if (debug || audit) {
+        plugin.getLogger().warning("[PacketI18n] chat component scan failed: "
+            + t.getClass().getSimpleName() + ": " + t.getMessage());
+      }
     }
 
-    // 2) Raw String fields that may contain JSON
     try {
       StructureModifier<String> strings = packet.getStrings();
       for (int i = 0; i < strings.size(); i++) {
@@ -171,7 +199,6 @@ public final class LocalizedPacketMessageProtocolListener {
     } catch (Throwable ignored) {
     }
 
-    // 3) Debug fallback: packet summary when no JSON was found
     if (jsons.isEmpty()) {
       if (debug) {
         plugin.getLogger().info("[PacketI18n][DEBUG] player=" + player.getName()
@@ -181,9 +208,83 @@ public final class LocalizedPacketMessageProtocolListener {
       return;
     }
 
-    for (String json : jsons) {
-      auditJson(player, packetName, json, auditAllJson);
+    if (audit || debug) {
+      for (String json : jsons) {
+        auditJson(player, packetName, json, auditAllJson);
+      }
     }
+
+    if (touched && debug) {
+      plugin.getLogger().info("[PacketI18n][DEBUG] packet component replaced for " + player.getName());
+    }
+  }
+
+  private String localizeJson(Player player, String json) {
+    String translateKey = extractTranslateKey(json);
+    if (translateKey == null || translateKey.isBlank()) return null;
+
+    String yamlKey = toYamlKey(translateKey);
+    String lang = resolvePlayerLang(player);
+
+    List<String> args = extractTextArgs(json);
+    List<I18n.Placeholder> placeholders = new ArrayList<>();
+
+    for (int i = 0; i < args.size() && i < 10; i++) {
+      placeholders.add(I18n.Placeholder.of("{arg" + i + "}", args.get(i)));
+    }
+
+    String localized = plugin.getI18n().tr(
+        lang,
+        yamlKey,
+        placeholders.toArray(new I18n.Placeholder[0])
+    );
+
+    if (!isUsableLocalizedText(localized)) return null;
+    if (localized.equals(yamlKey) || localized.equals(translateKey)) return null;
+    if (localized.startsWith("Translation missing:")) return null;
+
+    return localized;
+  }
+
+  private String resolvePlayerLang(Player player) {
+    String lang = plugin.getConfig().getString("language.default", "ja");
+
+    try {
+      if (plugin.getPlayerLanguageStore() != null) {
+        lang = plugin.getPlayerLanguageStore().getLang(player, lang);
+      }
+    } catch (Throwable ignored) {
+    }
+
+    if (lang == null || lang.isBlank()) lang = "ja";
+    return lang;
+  }
+
+  private String extractTranslateKey(String json) {
+    Matcher m = TRANSLATE_PATTERN.matcher(json);
+    if (!m.find()) return null;
+    return unescapeJson(m.group(1));
+  }
+
+  private List<String> extractTextArgs(String json) {
+    List<String> out = new ArrayList<>();
+
+    Matcher m = TEXT_PATTERN.matcher(json);
+    while (m.find() && out.size() < 10) {
+      String value = unescapeJson(m.group(1));
+      if (value == null) continue;
+
+      // Root JSON often has "text":"" beside the real translatable component.
+      if (value.isBlank()) continue;
+
+      out.add(value);
+    }
+
+    return out;
+  }
+
+  private boolean isUsableLocalizedText(String s) {
+    return s != null && !s.isBlank();
   }
 
   private boolean looksLikeJsonOrTranslate(String s) {
@@ -194,6 +295,8 @@ public final class LocalizedPacketMessageProtocolListener {
         || t.contains("multiplayer.player.")
         || t.contains("death.")
         || t.contains("chat.type.")
+        || t.contains("command.")
+        || t.contains("commands.")
         || t.contains("advancements.");
   }
 
@@ -205,7 +308,7 @@ public final class LocalizedPacketMessageProtocolListener {
 
     while (m.find()) {
       foundTranslate = true;
-      String translateKey = m.group(1);
+      String translateKey = unescapeJson(m.group(1));
       String yamlKey = toYamlKey(translateKey);
 
       plugin.getLogger().info("[PacketI18n][AUDIT] player=" + player.getName()
@@ -226,6 +329,16 @@ public final class LocalizedPacketMessageProtocolListener {
       return "minecraft.packet.unknown";
     }
     return "minecraft.packet." + translateKey;
+  }
+
+  private String unescapeJson(String s) {
+    if (s == null) return "";
+    return s
+        .replace("\\\\", "\\")
+        .replace("\\\"", "\"")
+        .replace("\\n", "\n")
+        .replace("\\r", "\r")
+        .replace("\\t", "\t");
   }
 
   private String compact(String s) {

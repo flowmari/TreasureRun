@@ -1,0 +1,11 @@
+chat.type.admin
+chat.type.text
+command.context.here
+command.unknown.command
+commands.help.header
+commands.op.success
+commands.stop.stopping
+death.attack.generic
+death.attack.outOfWorld
+multiplayer.player.joined
+multiplayer.player.left

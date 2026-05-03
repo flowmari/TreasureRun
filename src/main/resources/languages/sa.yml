@@ -1,8 +1,8 @@
 outcome:
   fallback:
-    runComplete: "Run complete."
-    timeUp: "Time's up."
-    trader: "Trade complete."
+    runComplete: Run complete.
+    timeUp: Time's up.
+    trader: Trade complete.
   notice:
     timeUpGameOver: समयः समाप्तः। क्रीडा समाप्ता।
     retryGuide: अन्येन मार्गेण पुनः प्रयतस्व।
@@ -551,7 +551,7 @@ command:
     playersOnly: '&cएतत् आदेशं केवलं क्रीडकाः एव उपयोक्तुं शक्नुवन्ति।'
     managerNotReady: '[TreasureRun] स्तरव्यवस्थापकः अद्यापि सज्जो नास्ति।'
     cleaned: '[TreasureRun] {count} कठिनताखण्डाः अपसारिताः।'
-  noPermission: "एतत् आदेशं प्रयोक्तुं भवतः अनुमतिः नास्ति।"
+  noPermission: एतत् आदेशं प्रयोक्तुं भवतः अनुमतिः नास्ति।
   onlyPlayer: '&cअयं आदेशः केवलं क्रीडकेन एव उपयोक्तुं शक्यते।'
   reload:
     start: '&7पुनः लोड्यते...'
@@ -727,7 +727,7 @@ commands:
   quotefavorite_book_success_o_afe31501: /quoteFavorite book success    - open SUCCESS chapter
   quotefavorite_book_timeup_op_08b799b0: /quoteFavorite book timeup     - open TIME_UP chapter
   quotefavorite_book_other_ope_bdcbafba: /quoteFavorite book other      - open OTHER chapter
-debug:
+debug: null
 items:
   specialEmerald:
     displayName: '&6विशेषमरकत'
@@ -887,7 +887,7 @@ gameplay:
   shop:
     tradeCompleteTitle: वाणिज्यं सम्पन्नम्!
     hiddenPowerAwakens: गूढशक्तिः प्रबुध्यते…
-    hiddenPowerChat: "निधि-आपणे निहितां शक्तिं अनुभवसि…"
+    hiddenPowerChat: निधि-आपणे निहितां शक्तिं अनुभवसि…
   timer:
     remainingBossbar: अवशिष्टः समयः
     remainingLine: 'अवशिष्टः समयः: {seconds} सेकण्डाः'
@@ -917,87 +917,65 @@ rank:
     allTimeSwitch: 'दृश्यं परिवर्तय: /gameRank weekly | /gameRank monthly'
     monthlyEmpty: अस्मिन् मासि अद्यापि अभिलेखाः न सन्ति।
     monthlySwitch: 'दृश्यं परिवर्तय: /gameRank weekly | /gameRank all'
-
-# Final visible-surface i18n audit keys
 finalAudit:
   shop:
-    treasureShop: "निधि-आपणः"
+    treasureShop: निधि-आपणः
   item:
-    specialApple: "विशेषम् आम्रफलम्"
-    specialIronBlock: "विशेषः लौहखण्डः"
+    specialApple: विशेषम् आम्रफलम्
+    specialIronBlock: विशेषः लौहखण्डः
   command:
-    playerOnly: "एष आदेशः केवलं क्रीडकैः एव प्रयोक्तुं शक्यते।"
-    opOnly: "एतस्य आदेशस्य प्रयोगाय सञ्चालकाधिकारः आवश्यकः।"
-    rankDebugOff: "Rank debug निष्क्रियः अस्ति। config.yml मध्ये rankDebug.enabled इति true कुरुत।"
-    rankUsage: "प्रयोगः: /rank <1|2|3|demo>"
-    rankNumberOnly: "कृपया सङ्ख्यां प्रविशतु: /rank <1|2|3|demo>"
-    rankOnlyOneToThree: "कृपया १, २, अथवा ३ चिनुत: /rank <1|2|3>"
-    gameAlreadyRunning: "क्रीडा पूर्वमेव प्रवर्तते।"
-    invalidDifficulty: "Easy, Normal, अथवा Hard चिनुत।"
-    languageGuiNotReady: "भाषा-चयन-GUI अद्यापि सज्जं नास्ति।"
-    reloadBlockedRunning: "क्रीडायां प्रवर्तमानायां reload निषिद्धम्। प्रथमं /gameEnd प्रयोजयतु।"
-    noPermission: "एतत् आदेशं प्रयोक्तुं भवतः अनुमतिः नास्ति।"
-    noPermissionOp: "एतत् आदेशं प्रयोक्तुं भवतः अनुमतिः नास्ति। सञ्चालकाधिकारः आवश्यकः।"
-    treasureReloadDone: "✅ भाषा-GUI सहितं TreasureRun-विन्यासः पुनः आरोपितः।"
-    guiReloadedReopen: "GUI नवीकृतम्। पुनः उद्घाटयितुं /gameStart पुनः प्रयोजयतु।"
-    dbConnected: "MySQL सम्बद्धम् अस्ति।"
-    dbNotConnected: "MySQL सम्बद्धं नास्ति।"
-    exportMissingRoot: "❌ config.yml मध्ये messages.translation न प्राप्तम्।"
-    exportExample: "उदाहरणम्: messages.translation.ja.favorites.title: ..."
-    exportCreateFolderFailed: "❌ languages/ सञ्चिका-समूहः निर्मातुं न शक्यते: {path}"
-    exportNoLanguages: "❌ निर्याताय भाषाः न निर्धारिताः।"
-    exportFailed: "❌ निर्यातः विफलः: {lang} ({error})"
-    exportComplete: "✅ निर्यातः समाप्तः: {count} file(s) लिखितानि।"
-    exportOutputFolder: "निर्गम-स्थानम्: {path}"
-    exportSkippedExisting: "⚠ पूर्वस्थितानि file(s) त्यक्तानि: {langs}"
-    exportOverwriteHint: "पूर्वस्थितानि files overwrite कर्तुं चलयतु: /treasureExportLang overwrite"
-    exportNextStep: "अनन्तरं: I18n languages/*.yml पठतु, अनुवादाः प्रवर्तन्ताम्।"
-    playerOnlyConsoleNoOnline: "एष आदेशः केवलं क्रीडकैः प्रयोक्तव्यः, online क्रीडकः न प्राप्तः।"
+    playerOnly: एष आदेशः केवलं क्रीडकैः एव प्रयोक्तुं शक्यते।
+    opOnly: एतस्य आदेशस्य प्रयोगाय सञ्चालकाधिकारः आवश्यकः।
+    rankDebugOff: Rank debug निष्क्रियः अस्ति। config.yml मध्ये rankDebug.enabled इति true कुरुत।
+    rankUsage: 'प्रयोगः: /rank <1|2|3|demo>'
+    rankNumberOnly: 'कृपया सङ्ख्यां प्रविशतु: /rank <1|2|3|demo>'
+    rankOnlyOneToThree: 'कृपया १, २, अथवा ३ चिनुत: /rank <1|2|3>'
+    gameAlreadyRunning: क्रीडा पूर्वमेव प्रवर्तते।
+    invalidDifficulty: Easy, Normal, अथवा Hard चिनुत।
+    languageGuiNotReady: भाषा-चयन-GUI अद्यापि सज्जं नास्ति।
+    reloadBlockedRunning: क्रीडायां प्रवर्तमानायां reload निषिद्धम्। प्रथमं /gameEnd प्रयोजयतु।
+    noPermission: एतत् आदेशं प्रयोक्तुं भवतः अनुमतिः नास्ति।
+    noPermissionOp: एतत् आदेशं प्रयोक्तुं भवतः अनुमतिः नास्ति। सञ्चालकाधिकारः आवश्यकः।
+    treasureReloadDone: ✅ भाषा-GUI सहितं TreasureRun-विन्यासः पुनः आरोपितः।
+    guiReloadedReopen: GUI नवीकृतम्। पुनः उद्घाटयितुं /gameStart पुनः प्रयोजयतु।
+    dbConnected: MySQL सम्बद्धम् अस्ति।
+    dbNotConnected: MySQL सम्बद्धं नास्ति।
+    exportMissingRoot: ❌ config.yml मध्ये messages.translation न प्राप्तम्।
+    exportExample: 'उदाहरणम्: messages.translation.ja.favorites.title: ...'
+    exportCreateFolderFailed: '❌ languages/ सञ्चिका-समूहः निर्मातुं न शक्यते: {path}'
+    exportNoLanguages: ❌ निर्याताय भाषाः न निर्धारिताः।
+    exportFailed: '❌ निर्यातः विफलः: {lang} ({error})'
+    exportComplete: '✅ निर्यातः समाप्तः: {count} file(s) लिखितानि।'
+    exportOutputFolder: 'निर्गम-स्थानम्: {path}'
+    exportSkippedExisting: '⚠ पूर्वस्थितानि file(s) त्यक्तानि: {langs}'
+    exportOverwriteHint: 'पूर्वस्थितानि files overwrite कर्तुं चलयतु: /treasureExportLang overwrite'
+    exportNextStep: 'अनन्तरं: I18n languages/*.yml पठतु, अनुवादाः प्रवर्तन्ताम्।'
+    playerOnlyConsoleNoOnline: एष आदेशः केवलं क्रीडकैः प्रयोक्तव्यः, online क्रीडकः न प्राप्तः।
   debug:
-    chestSoundStart: "[ChestSound] १६-grid mode आरब्धम्।"
-    chestSoundNoChests: "[ChestSound] पेटिका न प्राप्ता।"
-    chestSoundNearest: "[ChestSound] nearest={distance}m inRange={range} t={t}"
+    chestSoundStart: '[ChestSound] १६-grid mode आरब्धम्।'
+    chestSoundNoChests: '[ChestSound] पेटिका न प्राप्ता।'
+    chestSoundNearest: '[ChestSound] nearest={distance}m inRange={range} t={t}'
   reward:
-    label: "फलम्"
-    rainbowWolf: "Rainbow Wolf"
-
-minecraft:
-  packet:
-    multiplayer:
-      player:
-        joined: "&e{arg0} joined the game"
-        left: "&e{arg0} left the game"
-    commands:
-      generic:
-        unknown: "&cUnknown or incomplete command."
-        permission: "&cYou do not have permission to use this command."
-    sleep:
-      players_sleeping: "&7Sleeping players: {arg0}"
-
-# ============================================================
-# Minecraft packet-level i18n
-# - Observed by ProtocolLib PacketI18n runtime audit/probe
-# - Exact 20-language TreasureRun set; no wmy
-# - Evidence-based baseline for observable vanilla translate keys
-# ============================================================
+    label: फलम्
+    rainbowWolf: Rainbow Wolf
 minecraft:
   packet:
     chat:
       type:
         admin: '[{arg0}: {arg1}]'
-        text: '<{arg0}> {arg1}'
+        text: <{arg0}> {arg1}
     command:
       context:
-        here: '<--[अत्र]'
+        here: <--[अत्र]
       unknown:
-        command: 'अज्ञातम् अथवा अपूर्णम् आदेशः। अधः दोषं पश्य।'
+        command: अज्ञातम् अथवा अपूर्णम् आदेशः। अधः दोषं पश्य।
     commands:
       help:
         header: '--- साहाय्यपृष्ठम् {arg0} / {arg1} ---'
       op:
         success: '{arg0} सर्वर्-प्रचालकः कृतः'
       stop:
-        stopping: 'commands.stop.stopping'
+        stopping: सर्वरः निरुध्यते
     death:
       attack:
         generic: '{arg0} मृतः'
