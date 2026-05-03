@@ -1,0 +1,14 @@
+{
+  "chat.type.admin": "[{arg0}: {arg1}]",
+  "chat.type.text": "<{arg0}> {arg1}",
+  "command.context.here": "<--[這裡]",
+  "command.unknown.command": "未知或不完整的指令。請查看下方錯誤。",
+  "commands.help.header": "--- 說明頁面 {arg0} / {arg1} ---",
+  "commands.op.success": "已將 {arg0} 設為伺服器管理員",
+  "commands.stop.stopping": "正在停止伺服器",
+  "death.attack.generic": "{arg0} 死亡了",
+  "death.attack.outOfWorld": "{arg0} 掉出了世界",
+  "multiplayer.player.joined": "{arg0} 加入了遊戲",
+  "multiplayer.player.left": "{arg0} 離開了遊戲",
+  "treasurerun.resourcepack.loaded": "TreasureRun i18n resource pack loaded: zh_tw"
+}

@@ -1,0 +1,14 @@
+{
+  "chat.type.admin": "[{arg0}: {arg1}]",
+  "chat.type.text": "<{arg0}> {arg1}",
+  "command.context.here": "<--[HIC]",
+  "command.unknown.command": "Praeceptum ignotum aut imperfectum est. Errorem infra vide.",
+  "commands.help.header": "--- Pagina auxilii {arg0} ex {arg1} ---",
+  "commands.op.success": "{arg0} operator servientis factus est",
+  "commands.stop.stopping": "Serviens sistitur",
+  "death.attack.generic": "{arg0} mortuus est",
+  "death.attack.outOfWorld": "{arg0} extra mundum cecidit",
+  "multiplayer.player.joined": "{arg0} ludum intravit",
+  "multiplayer.player.left": "{arg0} ludum reliquit",
+  "treasurerun.resourcepack.loaded": "TreasureRun i18n resource pack loaded: la"
+}

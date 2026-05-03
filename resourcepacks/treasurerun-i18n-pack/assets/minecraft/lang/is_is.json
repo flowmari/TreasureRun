@@ -1,0 +1,14 @@
+{
+  "chat.type.admin": "[{arg0}: {arg1}]",
+  "chat.type.text": "<{arg0}> {arg1}",
+  "command.context.here": "<--[HÉR]",
+  "command.unknown.command": "Óþekkt eða ófullgerð skipun. Sjá villuna hér fyrir neðan.",
+  "commands.help.header": "--- Hjálparsíða {arg0} af {arg1} ---",
+  "commands.op.success": "{arg0} hefur verið gerður að stjórnanda þjónsins",
+  "commands.stop.stopping": "Verið er að stöðva þjóninn",
+  "death.attack.generic": "{arg0} dó",
+  "death.attack.outOfWorld": "{arg0} féll út úr heiminum",
+  "multiplayer.player.joined": "{arg0} gekk inn í leikinn",
+  "multiplayer.player.left": "{arg0} yfirgaf leikinn",
+  "treasurerun.resourcepack.loaded": "TreasureRun i18n resource pack loaded: is"
+}

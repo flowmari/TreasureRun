@@ -1,0 +1,14 @@
+{
+  "chat.type.admin": "[{arg0}: {arg1}]",
+  "chat.type.text": "<{arg0}> {arg1}",
+  "command.context.here": "<--[अत्र]",
+  "command.unknown.command": "अज्ञातम् अथवा अपूर्णम् आदेशः। अधः दोषं पश्य।",
+  "commands.help.header": "--- साहाय्यपृष्ठम् {arg0} / {arg1} ---",
+  "commands.op.success": "{arg0} सर्वर्-प्रचालकः कृतः",
+  "commands.stop.stopping": "सर्वरः निरुध्यते",
+  "death.attack.generic": "{arg0} मृतः",
+  "death.attack.outOfWorld": "{arg0} जगतः बहिः पतितः",
+  "multiplayer.player.joined": "{arg0} क्रीडायां प्रविष्टः",
+  "multiplayer.player.left": "{arg0} क्रीडां त्यक्तवान्",
+  "treasurerun.resourcepack.loaded": "TreasureRun i18n resource pack loaded: sa"
+}

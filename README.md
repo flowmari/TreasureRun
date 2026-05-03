@@ -688,3 +688,19 @@ Runtime verification is documented here:
 - [`docs/verification/ranking-persistence.md`](docs/verification/ranking-persistence.md)
 
 This feature demonstrates Java repository-layer persistence, MySQL schema design, weekly/monthly/all-time ranking separation, foreign key integrity, unique-key based upsert design, selected-language tracking, Docker-based runtime verification, and startup-safe database migration.
+
+### Hybrid Minecraft i18n Architecture
+
+TreasureRun uses a hybrid i18n architecture to maximize localization coverage across Minecraft's different text paths:
+
+- plugin-level YAML translations for TreasureRun gameplay text,
+- ProtocolLib packet-level translation for observable server packets,
+- server-side resource-pack language JSON files for client-resolved Minecraft translation keys.
+
+This architecture is intentionally documented with realistic boundaries. Some pre-login, authentication, disconnect, settings, and client-only UI text remains outside guaranteed server-side control.
+
+Verification notes:
+
+- [`docs/verification/packet-i18n-audit.md`](docs/verification/packet-i18n-audit.md)
+- [`docs/verification/resource-pack/server-side-resource-pack-i18n.md`](docs/verification/resource-pack/server-side-resource-pack-i18n.md)
+

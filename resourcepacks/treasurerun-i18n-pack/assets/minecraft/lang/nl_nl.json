@@ -1,0 +1,14 @@
+{
+  "chat.type.admin": "[{arg0}: {arg1}]",
+  "chat.type.text": "<{arg0}> {arg1}",
+  "command.context.here": "<--[HIER]",
+  "command.unknown.command": "Onbekend of onvolledig commando. Zie de fout hieronder.",
+  "commands.help.header": "--- Help-pagina {arg0} van {arg1} ---",
+  "commands.op.success": "{arg0} is serveroperator gemaakt",
+  "commands.stop.stopping": "Server wordt gestopt",
+  "death.attack.generic": "{arg0} is gestorven",
+  "death.attack.outOfWorld": "{arg0} viel uit de wereld",
+  "multiplayer.player.joined": "{arg0} is het spel binnengekomen",
+  "multiplayer.player.left": "{arg0} heeft het spel verlaten",
+  "treasurerun.resourcepack.loaded": "TreasureRun i18n resource pack loaded: nl"
+}
