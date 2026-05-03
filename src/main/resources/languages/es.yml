@@ -1,8 +1,8 @@
 outcome:
   fallback:
-    runComplete: "Run complete."
-    timeUp: "Time's up."
-    trader: "Trade complete."
+    runComplete: Run complete.
+    timeUp: Time's up.
+    trader: Trade complete.
   notice:
     timeUpGameOver: Se acabó el tiempo. Fin de la partida.
     retryGuide: Inténtalo de nuevo por una ruta diferente.
@@ -547,7 +547,7 @@ command:
     playersOnly: '&cSolo los jugadores pueden usar este comando.'
     managerNotReady: '[TreasureRun] El administrador del escenario todavía no se ha inicializado.'
     cleaned: '[TreasureRun] Se han limpiado {count} bloques de dificultad.'
-  noPermission: "No tienes permiso para usar este comando."
+  noPermission: No tienes permiso para usar este comando.
   onlyPlayer: '&cEste comando solo puede ser usado por un jugador.'
   reload:
     start: '&7Recargando...'
@@ -723,7 +723,7 @@ commands:
   quotefavorite_book_success_o_afe31501: /quoteFavorite book success    - open SUCCESS chapter
   quotefavorite_book_timeup_op_08b799b0: /quoteFavorite book timeup     - open TIME_UP chapter
   quotefavorite_book_other_ope_bdcbafba: /quoteFavorite book other      - open OTHER chapter
-debug:
+debug: null
 items:
   specialEmerald:
     displayName: '&6Esmeralda especial'
@@ -849,7 +849,7 @@ gameplay:
     advancement: '{player} logró un avance: {advancement}'
     serverMotd: '{server} — búsqueda del tesoro multilingüe.'
     unknownCommand: 'Comando desconocido: {command}'
-    noPermission: 'No tienes permiso para usar {command}.'
+    noPermission: No tienes permiso para usar {command}.
   death:
     firework: '{player} quedó atrapado en una explosión de fuegos artificiales.'
     explosion: '{player} quedó atrapado en una explosión.'
@@ -883,7 +883,7 @@ gameplay:
   shop:
     tradeCompleteTitle: ¡Intercambio completado!
     hiddenPowerAwakens: Un poder oculto despierta…
-    hiddenPowerChat: "Sientes un poder oculto en la tienda del tesoro…"
+    hiddenPowerChat: Sientes un poder oculto en la tienda del tesoro…
   timer:
     remainingBossbar: Tiempo restante
     remainingLine: 'Tiempo restante: {seconds} s'
@@ -913,87 +913,65 @@ rank:
     allTimeSwitch: 'Cambiar vista: /gameRank weekly | /gameRank monthly'
     monthlyEmpty: Todavía no hay registros este mes.
     monthlySwitch: 'Cambiar vista: /gameRank weekly | /gameRank all'
-
-# Final visible-surface i18n audit keys
 finalAudit:
   shop:
-    treasureShop: "Tienda del tesoro"
+    treasureShop: Tienda del tesoro
   item:
-    specialApple: "Manzana especial"
-    specialIronBlock: "Bloque de hierro especial"
+    specialApple: Manzana especial
+    specialIronBlock: Bloque de hierro especial
   command:
-    playerOnly: "Solo los jugadores pueden usar este comando."
-    opOnly: "Necesitas permisos de operador para usar este comando."
-    rankDebugOff: "La depuración de ranking está desactivada. Activa rankDebug.enabled en config.yml."
-    rankUsage: "Uso: /rank <1|2|3|demo>"
-    rankNumberOnly: "Introduce un número: /rank <1|2|3|demo>"
-    rankOnlyOneToThree: "Elige 1, 2 o 3: /rank <1|2|3>"
-    gameAlreadyRunning: "La partida ya está en curso."
-    invalidDifficulty: "Elige Easy, Normal o Hard."
-    languageGuiNotReady: "El menú de selección de idioma aún no está listo."
-    reloadBlockedRunning: "No se puede recargar mientras la partida está en curso. Ejecuta /gameEnd primero."
-    noPermission: "No tienes permiso para usar este comando."
-    noPermissionOp: "No tienes permiso para usar este comando. Se requieren permisos de operador."
-    treasureReloadDone: "✅ Se ha recargado la configuración de TreasureRun, incluido el menú de idioma."
-    guiReloadedReopen: "La interfaz se ha actualizado. Ejecuta /gameStart de nuevo para volver a abrirla."
-    dbConnected: "MySQL está conectado."
-    dbNotConnected: "MySQL no está conectado."
-    exportMissingRoot: "❌ No se encontró messages.translation en config.yml."
-    exportExample: "Ejemplo: messages.translation.ja.favorites.title: ..."
-    exportCreateFolderFailed: "❌ No se pudo crear la carpeta languages/: {path}"
-    exportNoLanguages: "❌ No hay idiomas configurados para exportar."
-    exportFailed: "❌ Error al exportar: {lang} ({error})"
-    exportComplete: "✅ Exportación completada: se escribieron {count} archivo(s)."
-    exportOutputFolder: "Carpeta de salida: {path}"
-    exportSkippedExisting: "⚠ Archivo(s) existente(s) omitido(s): {langs}"
-    exportOverwriteHint: "Para sobrescribir archivos existentes, ejecuta: /treasureExportLang overwrite"
-    exportNextStep: "Siguiente paso: haz que I18n lea languages/*.yml para aplicar estas traducciones."
-    playerOnlyConsoleNoOnline: "Solo los jugadores pueden usar este comando, y no se encontró ningún jugador en línea."
+    playerOnly: Solo los jugadores pueden usar este comando.
+    opOnly: Necesitas permisos de operador para usar este comando.
+    rankDebugOff: La depuración de ranking está desactivada. Activa rankDebug.enabled en config.yml.
+    rankUsage: 'Uso: /rank <1|2|3|demo>'
+    rankNumberOnly: 'Introduce un número: /rank <1|2|3|demo>'
+    rankOnlyOneToThree: 'Elige 1, 2 o 3: /rank <1|2|3>'
+    gameAlreadyRunning: La partida ya está en curso.
+    invalidDifficulty: Elige Easy, Normal o Hard.
+    languageGuiNotReady: El menú de selección de idioma aún no está listo.
+    reloadBlockedRunning: No se puede recargar mientras la partida está en curso. Ejecuta /gameEnd primero.
+    noPermission: No tienes permiso para usar este comando.
+    noPermissionOp: No tienes permiso para usar este comando. Se requieren permisos de operador.
+    treasureReloadDone: ✅ Se ha recargado la configuración de TreasureRun, incluido el menú de idioma.
+    guiReloadedReopen: La interfaz se ha actualizado. Ejecuta /gameStart de nuevo para volver a abrirla.
+    dbConnected: MySQL está conectado.
+    dbNotConnected: MySQL no está conectado.
+    exportMissingRoot: ❌ No se encontró messages.translation en config.yml.
+    exportExample: 'Ejemplo: messages.translation.ja.favorites.title: ...'
+    exportCreateFolderFailed: '❌ No se pudo crear la carpeta languages/: {path}'
+    exportNoLanguages: ❌ No hay idiomas configurados para exportar.
+    exportFailed: '❌ Error al exportar: {lang} ({error})'
+    exportComplete: '✅ Exportación completada: se escribieron {count} archivo(s).'
+    exportOutputFolder: 'Carpeta de salida: {path}'
+    exportSkippedExisting: '⚠ Archivo(s) existente(s) omitido(s): {langs}'
+    exportOverwriteHint: 'Para sobrescribir archivos existentes, ejecuta: /treasureExportLang overwrite'
+    exportNextStep: 'Siguiente paso: haz que I18n lea languages/*.yml para aplicar estas traducciones.'
+    playerOnlyConsoleNoOnline: Solo los jugadores pueden usar este comando, y no se encontró ningún jugador en línea.
   debug:
-    chestSoundStart: "[ChestSound] Iniciado en modo de cuadrícula de 16."
-    chestSoundNoChests: "[ChestSound] No se encontraron cofres."
-    chestSoundNearest: "[ChestSound] más cercano={distance}m enRango={range} t={t}"
+    chestSoundStart: '[ChestSound] Iniciado en modo de cuadrícula de 16.'
+    chestSoundNoChests: '[ChestSound] No se encontraron cofres.'
+    chestSoundNearest: '[ChestSound] más cercano={distance}m enRango={range} t={t}'
   reward:
-    label: "Recompensa"
-    rainbowWolf: "Lobo arcoíris"
-
-minecraft:
-  packet:
-    multiplayer:
-      player:
-        joined: "&e{arg0} joined the game"
-        left: "&e{arg0} left the game"
-    commands:
-      generic:
-        unknown: "&cUnknown or incomplete command."
-        permission: "&cYou do not have permission to use this command."
-    sleep:
-      players_sleeping: "&7Sleeping players: {arg0}"
-
-# ============================================================
-# Minecraft packet-level i18n
-# - Observed by ProtocolLib PacketI18n runtime audit/probe
-# - Exact 20-language TreasureRun set; no wmy
-# - Evidence-based baseline for observable vanilla translate keys
-# ============================================================
+    label: Recompensa
+    rainbowWolf: Lobo arcoíris
 minecraft:
   packet:
     chat:
       type:
         admin: '[{arg0}: {arg1}]'
-        text: '<{arg0}> {arg1}'
+        text: <{arg0}> {arg1}
     command:
       context:
-        here: '<--[AQUÍ]'
+        here: <--[AQUÍ]
       unknown:
-        command: 'Comando desconocido o incompleto. Mira el error de abajo.'
+        command: Comando desconocido o incompleto. Mira el error de abajo.
     commands:
       help:
         header: '--- Mostrando la página de ayuda {arg0} de {arg1} ---'
       op:
         success: '{arg0} ahora es operador del servidor'
       stop:
-        stopping: 'commands.stop.stopping'
+        stopping: Deteniendo el servidor
     death:
       attack:
         generic: '{arg0} ha muerto'

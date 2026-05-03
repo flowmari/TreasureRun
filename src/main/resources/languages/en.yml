@@ -1,11 +1,11 @@
 outcome:
   fallback:
-    runComplete: "Run complete."
-    timeUp: "Time's up."
-    trader: "Trade complete."
+    runComplete: Run complete.
+    timeUp: Time's up.
+    trader: Trade complete.
   notice:
-    timeUpGameOver: 'Time is up. Game over.'
-    retryGuide: 'Try again using a different route.'
+    timeUpGameOver: Time is up. Game over.
+    retryGuide: Try again using a different route.
   success:
     common:
       pool: []
@@ -472,7 +472,6 @@ outcome:
       - 'The path is still here.
 
         You can come back—changed.'
-
 version: 1
 quotes:
   outcome:
@@ -498,27 +497,22 @@ command:
     resultFalse: The item in your hand is not a Treasure Emerald.
   gameStart:
     playersOnly: This command can only be used by players.
-    worldNotFound: '[TreasureRun] The start world is not configured or could not be
-      found.'
-    started: '§aTreasure hunt started! Difficulty: {difficulty} | Time limit: {timeLimit}
-      seconds'
+    worldNotFound: '[TreasureRun] The start world is not configured or could not be found.'
+    started: '§aTreasure hunt started! Difficulty: {difficulty} | Time limit: {timeLimit} seconds'
   stageCleanup:
     playersOnly: '&cOnly players can use this command.'
     cleaned: '[TreasureRun] Cleaned up {count} difficulty blocks.'
     managerNotReady: '[TreasureRun] The stage manager is not initialized.'
-  noPermission: "You do not have permission to use this command."
+  noPermission: You do not have permission to use this command.
   onlyPlayer: '&cThis command can only be used by a player.'
   reload:
     start: '&7Reloading config/messages...'
     success: '&aReload complete.'
     fail: '&cReload failed: {reason}'
   lang:
-    guiCancelledGameStart: Language selection was cancelled. To try again, run /gameStart
-      <easy|normal|hard>.
-    guiCancelledGameMenu: Language selection was cancelled. To open it again, run
-      /gameMenu gui.
-    guiTooManyShown: Too many allowed languages were configured, so only the first
-      27 are shown in the GUI.
+    guiCancelledGameStart: Language selection was cancelled. To try again, run /gameStart <easy|normal|hard>.
+    guiCancelledGameMenu: Language selection was cancelled. To open it again, run /gameMenu gui.
+    guiTooManyShown: Too many allowed languages were configured, so only the first 27 are shown in the GUI.
     playersOnly: This command can only be used by players.
     resetDone: ✅ Your saved language has been reset. The GUI will open next time.
     current: 'Current language: {lang}'
@@ -540,8 +534,7 @@ command:
     success: '&bYou crafted a Special Emerald using 3 diamonds!'
   quoteFavorite:
     latestSaved: The latest quote was saved to Favorites.
-    latestNotSaved: The latest quote could not be saved. There may be no log yet,
-      or it may already be in Favorites.
+    latestNotSaved: The latest quote could not be saved. There may be no log yet, or it may already be in Favorites.
     playersOnly: '&cThis command can only be used by players.'
     repositoryNotReady: Favorites are not available yet.
     listHeader: '&bFavorites ({count})'
@@ -555,8 +548,7 @@ command:
     openBookFailed: '&cFailed to open the book.'
     unknownSubcommand: '&cUnknown subcommand. See /quoteFavorite help.'
     shortcutSaved: The latest quote was saved to Favorites.
-    shortcutNotSaved: The latest quote could not be saved. There may be no log yet,
-      or it may already be in Favorites.
+    shortcutNotSaved: The latest quote could not be saved. There may be no log yet, or it may already be in Favorites.
     help:
       title: '&bQuote Favorite commands'
       latest: '&7/quoteFavorite latest : save the latest quote to Favorites'
@@ -565,8 +557,7 @@ command:
       reread: '&7/quoteFavorite reread [chat|title|book] : reread a quote'
       rereadTitle: '&7title rereads using the title display'
       rereadBook: '&7book rereads using a written book'
-      book: '&7/quoteFavorite book [toc|success|timeup|other|full] : open the archive
-        book'
+      book: '&7/quoteFavorite book [toc|success|timeup|other|full] : open the archive book'
       bookToc: '&7toc opens only the table of contents'
       bookSuccess: '&7success shows only successful quotes'
       bookTimeup: '&7timeup shows only time-up quotes'
@@ -674,8 +665,7 @@ favorites:
     quotefavoritestore_exists_fa_7d08adba: '[QuoteFavoriteStore] exists failed:'
     quotefavoritestore_addfavori_44fb1d75: '[QuoteFavoriteStore] addFavorite failed:'
     quotefavoritestore_removefav_8180a1e4: '[QuoteFavoriteStore] removeFavorite failed:'
-    quotefavoritestore_removefav_d024b1e5: '[QuoteFavoriteStore] removeFavoriteById
-      failed:'
+    quotefavoritestore_removefav_d024b1e5: '[QuoteFavoriteStore] removeFavoriteById failed:'
     quotefavoritestore_listfavor_f3e976d4: '[QuoteFavoriteStore] listFavorites failed:'
     quotefavoritestore_countfavo_69291680: '[QuoteFavoriteStore] countFavorites failed:'
 commands:
@@ -684,17 +674,12 @@ commands:
   rank_1_2_3_demo_4f3e3084: '数字で入力してください: /rank <1|2|3|demo>'
   mysql_repository_not_ready_72df0af1_93: MySQL / Repository not ready.
   mysql_repository_not_ready_72df0af1_119: MySQL / Repository not ready.
-  quotefavorite_book_open_cata_055de855: /quoteFavorite book            - open catalog
-    (full)
-  quotefavorite_book_toc_open__c7d02ede: /quoteFavorite book toc        - open catalog
-    (TOC only)
-  quotefavorite_book_success_o_afe31501: /quoteFavorite book success    - open SUCCESS
-    chapter
-  quotefavorite_book_timeup_op_08b799b0: /quoteFavorite book timeup     - open TIME_UP
-    chapter
-  quotefavorite_book_other_ope_bdcbafba: /quoteFavorite book other      - open OTHER
-    chapter
-debug:
+  quotefavorite_book_open_cata_055de855: /quoteFavorite book            - open catalog (full)
+  quotefavorite_book_toc_open__c7d02ede: /quoteFavorite book toc        - open catalog (TOC only)
+  quotefavorite_book_success_o_afe31501: /quoteFavorite book success    - open SUCCESS chapter
+  quotefavorite_book_timeup_op_08b799b0: /quoteFavorite book timeup     - open TIME_UP chapter
+  quotefavorite_book_other_ope_bdcbafba: /quoteFavorite book other      - open OTHER chapter
+debug: null
 items:
   specialEmerald:
     displayName: '&6Special Emerald'
@@ -746,8 +731,7 @@ ui:
       hint:
         reopenMenu: 'Hint: use /gameMenu to open this again.'
       note:
-        bookFormat: Minecraft books cannot switch tabs by clicking, so sections are
-          shown as pages.
+        bookFormat: Minecraft books cannot switch tabs by clicking, so sections are shown as pages.
   quote:
     footer:
       dbLogs: '(DB: proverb_logs)'
@@ -821,7 +805,7 @@ gameplay:
     advancement: '{player} made progress: {advancement}'
     serverMotd: '{server} — multilingual treasure hunt.'
     unknownCommand: 'Unknown command: {command}'
-    noPermission: 'You do not have permission to use {command}.'
+    noPermission: You do not have permission to use {command}.
   death:
     firework: '{player} was caught in a firework blast.'
     explosion: '{player} was caught in an explosion.'
@@ -855,7 +839,7 @@ gameplay:
   shop:
     tradeCompleteTitle: Trade complete!
     hiddenPowerAwakens: A hidden power awakens…
-    hiddenPowerChat: "You sense a hidden power within the Treasure Shop…"
+    hiddenPowerChat: You sense a hidden power within the Treasure Shop…
   timer:
     remainingBossbar: Remaining Time
     remainingLine: 'Remaining time: {seconds}s'
@@ -885,87 +869,65 @@ rank:
     allTimeSwitch: 'Switch view: /gameRank weekly | /gameRank monthly'
     monthlyEmpty: No records this month yet.
     monthlySwitch: 'Switch view: /gameRank weekly | /gameRank all'
-
-# Final visible-surface i18n audit keys
 finalAudit:
   shop:
-    treasureShop: "Treasure Shop"
+    treasureShop: Treasure Shop
   item:
-    specialApple: "Special Apple"
-    specialIronBlock: "Special Iron Block"
+    specialApple: Special Apple
+    specialIronBlock: Special Iron Block
   command:
-    playerOnly: "Only players can run this command."
-    opOnly: "Operator permission is required for this command."
-    rankDebugOff: "Rank debug is disabled. Set rankDebug.enabled to true in config.yml."
-    rankUsage: "Usage: /rank <1|2|3|demo>"
-    rankNumberOnly: "Please enter a number: /rank <1|2|3|demo>"
-    rankOnlyOneToThree: "Please choose 1, 2, or 3: /rank <1|2|3>"
-    gameAlreadyRunning: "The game is already running."
-    invalidDifficulty: "Please choose Easy, Normal, or Hard."
-    languageGuiNotReady: "The language selection GUI is not ready yet."
-    reloadBlockedRunning: "Reload is disabled while the game is running. Please run /gameEnd first."
-    noPermission: "You do not have permission to use this command."
-    noPermissionOp: "You do not have permission to use this command. Operator permission is required."
-    treasureReloadDone: "✅ TreasureRun settings have been reloaded, including the language GUI."
-    guiReloadedReopen: "The GUI has been refreshed. Please run /gameStart again to reopen it."
-    dbConnected: "MySQL is connected."
-    dbNotConnected: "MySQL is not connected."
-    exportMissingRoot: "❌ messages.translation was not found in config.yml."
-    exportExample: "Example: messages.translation.ja.favorites.title: ..."
-    exportCreateFolderFailed: "❌ Could not create the languages/ folder: {path}"
-    exportNoLanguages: "❌ No languages are configured for export."
-    exportFailed: "❌ Export failed: {lang} ({error})"
-    exportComplete: "✅ Export complete: wrote {count} file(s)."
-    exportOutputFolder: "Output folder: {path}"
-    exportSkippedExisting: "⚠ Skipped existing file(s): {langs}"
-    exportOverwriteHint: "To overwrite existing files, run: /treasureExportLang overwrite"
-    exportNextStep: "Next: make I18n read languages/*.yml to apply these translations."
-    playerOnlyConsoleNoOnline: "Only players can run this command, and no online player was found."
+    playerOnly: Only players can run this command.
+    opOnly: Operator permission is required for this command.
+    rankDebugOff: Rank debug is disabled. Set rankDebug.enabled to true in config.yml.
+    rankUsage: 'Usage: /rank <1|2|3|demo>'
+    rankNumberOnly: 'Please enter a number: /rank <1|2|3|demo>'
+    rankOnlyOneToThree: 'Please choose 1, 2, or 3: /rank <1|2|3>'
+    gameAlreadyRunning: The game is already running.
+    invalidDifficulty: Please choose Easy, Normal, or Hard.
+    languageGuiNotReady: The language selection GUI is not ready yet.
+    reloadBlockedRunning: Reload is disabled while the game is running. Please run /gameEnd first.
+    noPermission: You do not have permission to use this command.
+    noPermissionOp: You do not have permission to use this command. Operator permission is required.
+    treasureReloadDone: ✅ TreasureRun settings have been reloaded, including the language GUI.
+    guiReloadedReopen: The GUI has been refreshed. Please run /gameStart again to reopen it.
+    dbConnected: MySQL is connected.
+    dbNotConnected: MySQL is not connected.
+    exportMissingRoot: ❌ messages.translation was not found in config.yml.
+    exportExample: 'Example: messages.translation.ja.favorites.title: ...'
+    exportCreateFolderFailed: '❌ Could not create the languages/ folder: {path}'
+    exportNoLanguages: ❌ No languages are configured for export.
+    exportFailed: '❌ Export failed: {lang} ({error})'
+    exportComplete: '✅ Export complete: wrote {count} file(s).'
+    exportOutputFolder: 'Output folder: {path}'
+    exportSkippedExisting: '⚠ Skipped existing file(s): {langs}'
+    exportOverwriteHint: 'To overwrite existing files, run: /treasureExportLang overwrite'
+    exportNextStep: 'Next: make I18n read languages/*.yml to apply these translations.'
+    playerOnlyConsoleNoOnline: Only players can run this command, and no online player was found.
   debug:
-    chestSoundStart: "[ChestSound] Started in 16-grid mode."
-    chestSoundNoChests: "[ChestSound] No chests found."
-    chestSoundNearest: "[ChestSound] nearest={distance}m inRange={range} t={t}"
+    chestSoundStart: '[ChestSound] Started in 16-grid mode.'
+    chestSoundNoChests: '[ChestSound] No chests found.'
+    chestSoundNearest: '[ChestSound] nearest={distance}m inRange={range} t={t}'
   reward:
-    label: "Reward"
-    rainbowWolf: "Rainbow Wolf"
-
-minecraft:
-  packet:
-    multiplayer:
-      player:
-        joined: "&e{arg0} joined the game"
-        left: "&e{arg0} left the game"
-    commands:
-      generic:
-        unknown: "&cUnknown or incomplete command."
-        permission: "&cYou do not have permission to use this command."
-    sleep:
-      players_sleeping: "&7Sleeping players: {arg0}"
-
-# ============================================================
-# Minecraft packet-level i18n
-# - Observed by ProtocolLib PacketI18n runtime audit/probe
-# - Exact 20-language TreasureRun set; no wmy
-# - Evidence-based baseline for observable vanilla translate keys
-# ============================================================
+    label: Reward
+    rainbowWolf: Rainbow Wolf
 minecraft:
   packet:
     chat:
       type:
         admin: '[{arg0}: {arg1}]'
-        text: '<{arg0}> {arg1}'
+        text: <{arg0}> {arg1}
     command:
       context:
-        here: '<--[HERE]'
+        here: <--[HERE]
       unknown:
-        command: 'Unknown or incomplete command. See below for error.'
+        command: Unknown or incomplete command. See below for error.
     commands:
       help:
         header: '--- Showing help page {arg0} of {arg1} ---'
       op:
-        success: 'Made {arg0} a server operator'
+        success: Made {arg0} a server operator
       stop:
-        stopping: 'commands.stop.stopping'
+        stopping: Stopping the server
     death:
       attack:
         generic: '{arg0} died'

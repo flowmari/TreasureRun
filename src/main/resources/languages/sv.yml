@@ -1,8 +1,8 @@
 outcome:
   fallback:
-    runComplete: "Run complete."
-    timeUp: "Time's up."
-    trader: "Trade complete."
+    runComplete: Run complete.
+    timeUp: Time's up.
+    trader: Trade complete.
   notice:
     timeUpGameOver: Tiden är ute. Spelet är över.
     retryGuide: Försök igen med en annan väg.
@@ -566,8 +566,7 @@ command:
     success: '&bDu skapade en specialsmaragd med 3 diamanter!'
   quoteFavorite:
     latestSaved: Det senaste citatet sparades i Favoriter.
-    latestNotSaved: Det gick inte att spara det senaste citatet. Antingen finns det ingen logg ännu, eller så finns det redan
-      i Favoriter.
+    latestNotSaved: Det gick inte att spara det senaste citatet. Antingen finns det ingen logg ännu, eller så finns det redan i Favoriter.
     playersOnly: '&cDetta kommando kan bara användas av spelare.'
     repositoryNotReady: Favoriter är inte tillgängliga ännu.
     listHeader: '&bFavoriter ({count})'
@@ -581,8 +580,7 @@ command:
     openBookFailed: '&cDet gick inte att öppna boken.'
     unknownSubcommand: '&cOkänt underkommando. Se /quoteFavorite help.'
     shortcutSaved: Det senaste citatet sparades i Favoriter.
-    shortcutNotSaved: Det gick inte att spara det senaste citatet. Antingen finns det ingen logg ännu, eller så finns det
-      redan i Favoriter.
+    shortcutNotSaved: Det gick inte att spara det senaste citatet. Antingen finns det ingen logg ännu, eller så finns det redan i Favoriter.
     help:
       title: '&bQuoteFavorite-kommandon'
       latest: '&7/quoteFavorite latest  - lägg till det senaste citatet i Favoriter'
@@ -713,7 +711,7 @@ commands:
   quotefavorite_book_success_o_afe31501: /quoteFavorite book success    - öppna SUCCESS-kapitlet
   quotefavorite_book_timeup_op_08b799b0: /quoteFavorite book timeup     - open TIME_UP chapter
   quotefavorite_book_other_ope_bdcbafba: /quoteFavorite book other      - open OTHER chapter
-debug:
+debug: null
 items:
   specialEmerald:
     displayName: '&6Specialsmaragd'
@@ -839,7 +837,7 @@ gameplay:
     advancement: '{player} gjorde framsteg: {advancement}'
     serverMotd: '{server} — flerspråkig skattjakt.'
     unknownCommand: 'Okänt kommando: {command}'
-    noPermission: 'Du har inte behörighet att använda {command}.'
+    noPermission: Du har inte behörighet att använda {command}.
   death:
     firework: '{player} fastnade i en fyrverkeriexplosion.'
     explosion: '{player} fastnade i en explosion.'
@@ -903,87 +901,65 @@ rank:
     allTimeSwitch: 'Byt vy: /gameRank weekly | /gameRank monthly'
     monthlyEmpty: Inga resultat den här månaden ännu.
     monthlySwitch: 'Byt vy: /gameRank weekly | /gameRank all'
-
-# Final visible-surface i18n audit keys
 finalAudit:
   shop:
-    treasureShop: "Skattbutik"
+    treasureShop: Skattbutik
   item:
-    specialApple: "Särskilt äpple"
-    specialIronBlock: "Särskilt järnblock"
+    specialApple: Särskilt äpple
+    specialIronBlock: Särskilt järnblock
   command:
-    playerOnly: "Endast spelare kan använda det här kommandot."
-    opOnly: "Du behöver operatörsbehörighet för att använda det här kommandot."
-    rankDebugOff: "Rank-debug är avstängt. Sätt rankDebug.enabled till true i config.yml."
-    rankUsage: "Användning: /rank <1|2|3|demo>"
-    rankNumberOnly: "Ange en siffra: /rank <1|2|3|demo>"
-    rankOnlyOneToThree: "Välj 1, 2 eller 3: /rank <1|2|3>"
-    gameAlreadyRunning: "Spelet är redan igång."
-    invalidDifficulty: "Välj Easy, Normal eller Hard."
-    languageGuiNotReady: "Språkmenyn är inte redo än."
-    reloadBlockedRunning: "Reload är avstängt medan spelet pågår. Kör /gameEnd först."
-    noPermission: "Du har inte behörighet att använda det här kommandot."
-    noPermissionOp: "Du har inte behörighet att använda det här kommandot. Operatörsbehörighet krävs."
-    treasureReloadDone: "✅ TreasureRun-inställningarna har laddats om, inklusive språkmenyn."
-    guiReloadedReopen: "Gränssnittet har uppdaterats. Kör /gameStart igen för att öppna det på nytt."
-    dbConnected: "MySQL är anslutet."
-    dbNotConnected: "MySQL är inte anslutet."
-    exportMissingRoot: "❌ messages.translation hittades inte i config.yml."
-    exportExample: "Exempel: messages.translation.ja.favorites.title: ..."
-    exportCreateFolderFailed: "❌ Det gick inte att skapa mappen languages/: {path}"
-    exportNoLanguages: "❌ Inga språk är konfigurerade för export."
-    exportFailed: "❌ Exporten misslyckades: {lang} ({error})"
-    exportComplete: "✅ Export klar: skrev {count} fil(er)."
-    exportOutputFolder: "Utdatamapp: {path}"
-    exportSkippedExisting: "⚠ Befintliga filer hoppades över: {langs}"
-    exportOverwriteHint: "För att skriva över befintliga filer, kör: /treasureExportLang overwrite"
-    exportNextStep: "Nästa steg: låt I18n läsa languages/*.yml för att använda översättningarna."
-    playerOnlyConsoleNoOnline: "Endast spelare kan använda det här kommandot, och ingen online-spelare hittades."
+    playerOnly: Endast spelare kan använda det här kommandot.
+    opOnly: Du behöver operatörsbehörighet för att använda det här kommandot.
+    rankDebugOff: Rank-debug är avstängt. Sätt rankDebug.enabled till true i config.yml.
+    rankUsage: 'Användning: /rank <1|2|3|demo>'
+    rankNumberOnly: 'Ange en siffra: /rank <1|2|3|demo>'
+    rankOnlyOneToThree: 'Välj 1, 2 eller 3: /rank <1|2|3>'
+    gameAlreadyRunning: Spelet är redan igång.
+    invalidDifficulty: Välj Easy, Normal eller Hard.
+    languageGuiNotReady: Språkmenyn är inte redo än.
+    reloadBlockedRunning: Reload är avstängt medan spelet pågår. Kör /gameEnd först.
+    noPermission: Du har inte behörighet att använda det här kommandot.
+    noPermissionOp: Du har inte behörighet att använda det här kommandot. Operatörsbehörighet krävs.
+    treasureReloadDone: ✅ TreasureRun-inställningarna har laddats om, inklusive språkmenyn.
+    guiReloadedReopen: Gränssnittet har uppdaterats. Kör /gameStart igen för att öppna det på nytt.
+    dbConnected: MySQL är anslutet.
+    dbNotConnected: MySQL är inte anslutet.
+    exportMissingRoot: ❌ messages.translation hittades inte i config.yml.
+    exportExample: 'Exempel: messages.translation.ja.favorites.title: ...'
+    exportCreateFolderFailed: '❌ Det gick inte att skapa mappen languages/: {path}'
+    exportNoLanguages: ❌ Inga språk är konfigurerade för export.
+    exportFailed: '❌ Exporten misslyckades: {lang} ({error})'
+    exportComplete: '✅ Export klar: skrev {count} fil(er).'
+    exportOutputFolder: 'Utdatamapp: {path}'
+    exportSkippedExisting: '⚠ Befintliga filer hoppades över: {langs}'
+    exportOverwriteHint: 'För att skriva över befintliga filer, kör: /treasureExportLang overwrite'
+    exportNextStep: 'Nästa steg: låt I18n läsa languages/*.yml för att använda översättningarna.'
+    playerOnlyConsoleNoOnline: Endast spelare kan använda det här kommandot, och ingen online-spelare hittades.
   debug:
-    chestSoundStart: "[ChestSound] Startat i 16-rutnätsläge."
-    chestSoundNoChests: "[ChestSound] Inga kistor hittades."
-    chestSoundNearest: "[ChestSound] närmast={distance}m inomRäckhåll={range} t={t}"
+    chestSoundStart: '[ChestSound] Startat i 16-rutnätsläge.'
+    chestSoundNoChests: '[ChestSound] Inga kistor hittades.'
+    chestSoundNearest: '[ChestSound] närmast={distance}m inomRäckhåll={range} t={t}'
   reward:
-    label: "Belöning"
-    rainbowWolf: "Regnbågsvarg"
-
-minecraft:
-  packet:
-    multiplayer:
-      player:
-        joined: "&e{arg0} joined the game"
-        left: "&e{arg0} left the game"
-    commands:
-      generic:
-        unknown: "&cUnknown or incomplete command."
-        permission: "&cYou do not have permission to use this command."
-    sleep:
-      players_sleeping: "&7Sleeping players: {arg0}"
-
-# ============================================================
-# Minecraft packet-level i18n
-# - Observed by ProtocolLib PacketI18n runtime audit/probe
-# - Exact 20-language TreasureRun set; no wmy
-# - Evidence-based baseline for observable vanilla translate keys
-# ============================================================
+    label: Belöning
+    rainbowWolf: Regnbågsvarg
 minecraft:
   packet:
     chat:
       type:
         admin: '[{arg0}: {arg1}]'
-        text: '<{arg0}> {arg1}'
+        text: <{arg0}> {arg1}
     command:
       context:
-        here: '<--[HÄR]'
+        here: <--[HÄR]
       unknown:
-        command: 'Okänt eller ofullständigt kommando. Se felet nedan.'
+        command: Okänt eller ofullständigt kommando. Se felet nedan.
     commands:
       help:
         header: '--- Visar hjälpsida {arg0} av {arg1} ---'
       op:
         success: '{arg0} är nu serveroperatör'
       stop:
-        stopping: 'commands.stop.stopping'
+        stopping: Servern stoppas
     death:
       attack:
         generic: '{arg0} dog'

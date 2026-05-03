@@ -1,8 +1,8 @@
 outcome:
   fallback:
-    runComplete: "Run complete."
-    timeUp: "Time's up."
-    trader: "Trade complete."
+    runComplete: Run complete.
+    timeUp: Time's up.
+    trader: Trade complete.
   notice:
     timeUpGameOver: 時已盡矣，戲遂終。
     retryGuide: 請更由他途，再試之。
@@ -809,7 +809,7 @@ game:
     easy: '&aEasy'
     normal: '&eNormal'
     hard: '&cHard'
-  auto:
+  auto: null
 favorites:
   title: 所好
   cover:
@@ -859,7 +859,7 @@ favorites:
   reread:
     head: 重覽所存之句
     noQuotes: 爾尚未存一語。
-  auto:
+  auto: null
 command:
   checkTreasureEmerald:
     playersOnly: 此令唯玩家可用。
@@ -955,8 +955,8 @@ gameplay:
     kick: '{player}自 TreasureRun 見逐。故：{reason}'
     advancement: '{player}得進度：{advancement}'
     serverMotd: '{server} — 多語尋寶。'
-    unknownCommand: '未知之令：{command}'
-    noPermission: '汝無權用 {command}。'
+    unknownCommand: 未知之令：{command}
+    noPermission: 汝無權用 {command}。
   death:
     firework: '{player}為煙火之爆所及。'
     explosion: '{player}為爆裂所及。'
@@ -990,7 +990,7 @@ gameplay:
   shop:
     tradeCompleteTitle: 交易既成！
     hiddenPowerAwakens: 幽力將醒……
-    hiddenPowerChat: "汝覺寶肆之中幽力微動……"
+    hiddenPowerChat: 汝覺寶肆之中幽力微動……
   timer:
     remainingBossbar: 餘時
     remainingLine: 餘時：{seconds}秒
@@ -1026,83 +1026,63 @@ commands:
   rank_1_2_3_demo_4f3e3084: 請以數字輸入：/rank <1|2|3|demo>
 finalAudit:
   shop:
-    treasureShop: "寶肆"
+    treasureShop: 寶肆
   item:
-    specialApple: "特製蘋果"
-    specialIronBlock: "特製鐵塊"
+    specialApple: 特製蘋果
+    specialIronBlock: 特製鐵塊
   command:
-    playerOnly: "此令唯玩家可行。"
-    opOnly: "行此令須有管理者之權。"
-    rankDebugOff: "排行榜除錯未啟。請於 config.yml 設 rankDebug.enabled 為 true。"
-    rankUsage: "用法：/rank <1|2|3|demo>"
-    rankNumberOnly: "請輸數字：/rank <1|2|3|demo>"
-    rankOnlyOneToThree: "請擇一、二、三：/rank <1|2|3>"
-    gameAlreadyRunning: "遊戲已行。"
-    invalidDifficulty: "請擇 Easy、Normal 或 Hard。"
-    languageGuiNotReady: "語言選擇介面尚未備。"
-    reloadBlockedRunning: "遊戲進行中不可 reload。請先行 /gameEnd。"
-    noPermission: "汝無權用此命令。"
-    noPermissionOp: "汝無權用此命令。須有管理者之權。"
-    treasureReloadDone: "✅ TreasureRun 之設定已重載，語言介面亦已反映。"
-    guiReloadedReopen: "介面已新。請復行 /gameStart 以重開之。"
-    dbConnected: "MySQL 已連。"
-    dbNotConnected: "MySQL 未連。"
-    exportMissingRoot: "❌ config.yml 中未見 messages.translation。"
-    exportExample: "例：messages.translation.ja.favorites.title: ..."
-    exportCreateFolderFailed: "❌ 不能作 languages/ 目錄：{path}"
-    exportNoLanguages: "❌ 未設可匯出之語言。"
-    exportFailed: "❌ 匯出失敗：{lang}（{error}）"
-    exportComplete: "✅ 匯出已成：寫入 {count} 檔。"
-    exportOutputFolder: "輸出之所：{path}"
-    exportSkippedExisting: "⚠ 既有檔已略：{langs}"
-    exportOverwriteHint: "欲覆既有檔，請行：/treasureExportLang overwrite"
-    exportNextStep: "次步：令 I18n 讀 languages/*.yml，以用諸譯。"
-    playerOnlyConsoleNoOnline: "此令唯玩家可行，且未見在線玩家。"
+    playerOnly: 此令唯玩家可行。
+    opOnly: 行此令須有管理者之權。
+    rankDebugOff: 排行榜除錯未啟。請於 config.yml 設 rankDebug.enabled 為 true。
+    rankUsage: 用法：/rank <1|2|3|demo>
+    rankNumberOnly: 請輸數字：/rank <1|2|3|demo>
+    rankOnlyOneToThree: 請擇一、二、三：/rank <1|2|3>
+    gameAlreadyRunning: 遊戲已行。
+    invalidDifficulty: 請擇 Easy、Normal 或 Hard。
+    languageGuiNotReady: 語言選擇介面尚未備。
+    reloadBlockedRunning: 遊戲進行中不可 reload。請先行 /gameEnd。
+    noPermission: 汝無權用此命令。
+    noPermissionOp: 汝無權用此命令。須有管理者之權。
+    treasureReloadDone: ✅ TreasureRun 之設定已重載，語言介面亦已反映。
+    guiReloadedReopen: 介面已新。請復行 /gameStart 以重開之。
+    dbConnected: MySQL 已連。
+    dbNotConnected: MySQL 未連。
+    exportMissingRoot: ❌ config.yml 中未見 messages.translation。
+    exportExample: '例：messages.translation.ja.favorites.title: ...'
+    exportCreateFolderFailed: ❌ 不能作 languages/ 目錄：{path}
+    exportNoLanguages: ❌ 未設可匯出之語言。
+    exportFailed: ❌ 匯出失敗：{lang}（{error}）
+    exportComplete: ✅ 匯出已成：寫入 {count} 檔。
+    exportOutputFolder: 輸出之所：{path}
+    exportSkippedExisting: ⚠ 既有檔已略：{langs}
+    exportOverwriteHint: 欲覆既有檔，請行：/treasureExportLang overwrite
+    exportNextStep: 次步：令 I18n 讀 languages/*.yml，以用諸譯。
+    playerOnlyConsoleNoOnline: 此令唯玩家可行，且未見在線玩家。
   debug:
-    chestSoundStart: "[ChestSound] 十六格模式已啟。"
-    chestSoundNoChests: "[ChestSound] 未見寶箱。"
-    chestSoundNearest: "[ChestSound] 最近={distance}m 範圍內={range} t={t}"
+    chestSoundStart: '[ChestSound] 十六格模式已啟。'
+    chestSoundNoChests: '[ChestSound] 未見寶箱。'
+    chestSoundNearest: '[ChestSound] 最近={distance}m 範圍內={range} t={t}'
   reward:
-    label: "賞"
-    rainbowWolf: "虹狼"
-
-minecraft:
-  packet:
-    multiplayer:
-      player:
-        joined: "&e{arg0} joined the game"
-        left: "&e{arg0} left the game"
-    commands:
-      generic:
-        unknown: "&cUnknown or incomplete command."
-        permission: "&cYou do not have permission to use this command."
-    sleep:
-      players_sleeping: "&7Sleeping players: {arg0}"
-
-# ============================================================
-# Minecraft packet-level i18n
-# - Observed by ProtocolLib PacketI18n runtime audit/probe
-# - Exact 20-language TreasureRun set; no wmy
-# - Evidence-based baseline for observable vanilla translate keys
-# ============================================================
+    label: 賞
+    rainbowWolf: 虹狼
 minecraft:
   packet:
     chat:
       type:
-        admin: '【{arg0}：{arg1}】'
-        text: '〈{arg0}〉{arg1}'
+        admin: 【{arg0}：{arg1}】
+        text: 〈{arg0}〉{arg1}
     command:
       context:
-        here: '<--【此】'
+        here: <--【此】
       unknown:
-        command: '令不明，或未備。其誤見下。'
+        command: 令不明，或未備。其誤見下。
     commands:
       help:
         header: '--- 助頁 {arg0} / {arg1} ---'
       op:
-        success: '已授 {arg0} 為伺服之司'
+        success: 已授 {arg0} 為伺服之司
       stop:
-        stopping: 'commands.stop.stopping'
+        stopping: 伺服將止
     death:
       attack:
         generic: '{arg0} 歿'

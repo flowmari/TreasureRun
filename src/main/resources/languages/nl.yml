@@ -1,8 +1,8 @@
 outcome:
   fallback:
-    runComplete: "Run complete."
-    timeUp: "Time's up."
-    trader: "Trade complete."
+    runComplete: Run complete.
+    timeUp: Time's up.
+    trader: Trade complete.
   notice:
     timeUpGameOver: De tijd is om. Het spel is voorbij.
     retryGuide: Probeer het opnieuw via een andere route.
@@ -545,7 +545,7 @@ command:
     playersOnly: '&cAlleen spelers kunnen dit commando gebruiken.'
     managerNotReady: '[TreasureRun] De stagemanager is nog niet geïnitialiseerd.'
     cleaned: '[TreasureRun] {count} moeilijkheidsblokken zijn opgeruimd.'
-  noPermission: "Je hebt geen toestemming om dit commando te gebruiken."
+  noPermission: Je hebt geen toestemming om dit commando te gebruiken.
   onlyPlayer: '&cDit commando kan alleen door een speler worden gebruikt.'
   reload:
     start: '&7Herladen...'
@@ -721,7 +721,7 @@ commands:
   quotefavorite_book_success_o_afe31501: /quoteFavorite book success    - open SUCCESS chapter
   quotefavorite_book_timeup_op_08b799b0: /quoteFavorite book timeup     - open TIME_UP chapter
   quotefavorite_book_other_ope_bdcbafba: /quoteFavorite book other      - open OTHER chapter
-debug:
+debug: null
 items:
   specialEmerald:
     displayName: '&6Speciale smaragd'
@@ -847,7 +847,7 @@ gameplay:
     advancement: '{player} heeft vooruitgang geboekt: {advancement}'
     serverMotd: '{server} — meertalige schattenjacht.'
     unknownCommand: 'Onbekend commando: {command}'
-    noPermission: 'Je hebt geen toestemming om {command} te gebruiken.'
+    noPermission: Je hebt geen toestemming om {command} te gebruiken.
   death:
     firework: '{player} werd getroffen door een vuurwerkexplosie.'
     explosion: '{player} werd getroffen door een explosie.'
@@ -881,7 +881,7 @@ gameplay:
   shop:
     tradeCompleteTitle: Ruil voltooid!
     hiddenPowerAwakens: Een verborgen kracht ontwaakt…
-    hiddenPowerChat: "Je voelt een verborgen kracht in de schattenwinkel…"
+    hiddenPowerChat: Je voelt een verborgen kracht in de schattenwinkel…
   timer:
     remainingBossbar: Resterende tijd
     remainingLine: 'Resterende tijd: {seconds}s'
@@ -911,87 +911,65 @@ rank:
     allTimeSwitch: 'Weergave wisselen: /gameRank weekly | /gameRank monthly'
     monthlyEmpty: Er zijn deze maand nog geen records.
     monthlySwitch: 'Weergave wisselen: /gameRank weekly | /gameRank all'
-
-# Final visible-surface i18n audit keys
 finalAudit:
   shop:
-    treasureShop: "Schattenwinkel"
+    treasureShop: Schattenwinkel
   item:
-    specialApple: "Speciale appel"
-    specialIronBlock: "Speciaal ijzerblok"
+    specialApple: Speciale appel
+    specialIronBlock: Speciaal ijzerblok
   command:
-    playerOnly: "Alleen spelers kunnen dit commando gebruiken."
-    opOnly: "Voor dit commando heb je operatorrechten nodig."
-    rankDebugOff: "Rank-debug staat uit. Zet rankDebug.enabled op true in config.yml."
-    rankUsage: "Gebruik: /rank <1|2|3|demo>"
-    rankNumberOnly: "Voer een getal in: /rank <1|2|3|demo>"
-    rankOnlyOneToThree: "Kies 1, 2 of 3: /rank <1|2|3>"
-    gameAlreadyRunning: "Het spel is al bezig."
-    invalidDifficulty: "Kies Easy, Normal of Hard."
-    languageGuiNotReady: "Het taalkeuzemenu is nog niet klaar."
-    reloadBlockedRunning: "Reload is uitgeschakeld zolang het spel bezig is. Voer eerst /gameEnd uit."
-    noPermission: "Je hebt geen toestemming om dit commando te gebruiken."
-    noPermissionOp: "Je hebt geen toestemming om dit commando te gebruiken. Operatorrechten zijn vereist."
-    treasureReloadDone: "✅ De TreasureRun-instellingen zijn opnieuw geladen, inclusief het taalmenu."
-    guiReloadedReopen: "De GUI is bijgewerkt. Voer /gameStart opnieuw uit om deze weer te openen."
-    dbConnected: "MySQL is verbonden."
-    dbNotConnected: "MySQL is niet verbonden."
-    exportMissingRoot: "❌ messages.translation is niet gevonden in config.yml."
-    exportExample: "Voorbeeld: messages.translation.ja.favorites.title: ..."
-    exportCreateFolderFailed: "❌ De map languages/ kon niet worden aangemaakt: {path}"
-    exportNoLanguages: "❌ Er zijn geen talen ingesteld voor export."
-    exportFailed: "❌ Export mislukt: {lang} ({error})"
-    exportComplete: "✅ Export voltooid: {count} bestand(en) geschreven."
-    exportOutputFolder: "Uitvoermap: {path}"
-    exportSkippedExisting: "⚠ Bestaande bestand(en) overgeslagen: {langs}"
-    exportOverwriteHint: "Gebruik /treasureExportLang overwrite om bestaande bestanden te overschrijven."
-    exportNextStep: "Volgende stap: laat I18n languages/*.yml lezen om deze vertalingen toe te passen."
-    playerOnlyConsoleNoOnline: "Alleen spelers kunnen dit commando gebruiken, en er is geen online speler gevonden."
+    playerOnly: Alleen spelers kunnen dit commando gebruiken.
+    opOnly: Voor dit commando heb je operatorrechten nodig.
+    rankDebugOff: Rank-debug staat uit. Zet rankDebug.enabled op true in config.yml.
+    rankUsage: 'Gebruik: /rank <1|2|3|demo>'
+    rankNumberOnly: 'Voer een getal in: /rank <1|2|3|demo>'
+    rankOnlyOneToThree: 'Kies 1, 2 of 3: /rank <1|2|3>'
+    gameAlreadyRunning: Het spel is al bezig.
+    invalidDifficulty: Kies Easy, Normal of Hard.
+    languageGuiNotReady: Het taalkeuzemenu is nog niet klaar.
+    reloadBlockedRunning: Reload is uitgeschakeld zolang het spel bezig is. Voer eerst /gameEnd uit.
+    noPermission: Je hebt geen toestemming om dit commando te gebruiken.
+    noPermissionOp: Je hebt geen toestemming om dit commando te gebruiken. Operatorrechten zijn vereist.
+    treasureReloadDone: ✅ De TreasureRun-instellingen zijn opnieuw geladen, inclusief het taalmenu.
+    guiReloadedReopen: De GUI is bijgewerkt. Voer /gameStart opnieuw uit om deze weer te openen.
+    dbConnected: MySQL is verbonden.
+    dbNotConnected: MySQL is niet verbonden.
+    exportMissingRoot: ❌ messages.translation is niet gevonden in config.yml.
+    exportExample: 'Voorbeeld: messages.translation.ja.favorites.title: ...'
+    exportCreateFolderFailed: '❌ De map languages/ kon niet worden aangemaakt: {path}'
+    exportNoLanguages: ❌ Er zijn geen talen ingesteld voor export.
+    exportFailed: '❌ Export mislukt: {lang} ({error})'
+    exportComplete: '✅ Export voltooid: {count} bestand(en) geschreven.'
+    exportOutputFolder: 'Uitvoermap: {path}'
+    exportSkippedExisting: '⚠ Bestaande bestand(en) overgeslagen: {langs}'
+    exportOverwriteHint: Gebruik /treasureExportLang overwrite om bestaande bestanden te overschrijven.
+    exportNextStep: 'Volgende stap: laat I18n languages/*.yml lezen om deze vertalingen toe te passen.'
+    playerOnlyConsoleNoOnline: Alleen spelers kunnen dit commando gebruiken, en er is geen online speler gevonden.
   debug:
-    chestSoundStart: "[ChestSound] Gestart in 16-rastermodus."
-    chestSoundNoChests: "[ChestSound] Geen kisten gevonden."
-    chestSoundNearest: "[ChestSound] dichtstbij={distance}m binnenBereik={range} t={t}"
+    chestSoundStart: '[ChestSound] Gestart in 16-rastermodus.'
+    chestSoundNoChests: '[ChestSound] Geen kisten gevonden.'
+    chestSoundNearest: '[ChestSound] dichtstbij={distance}m binnenBereik={range} t={t}'
   reward:
-    label: "Beloning"
-    rainbowWolf: "Regenboogwolf"
-
-minecraft:
-  packet:
-    multiplayer:
-      player:
-        joined: "&e{arg0} joined the game"
-        left: "&e{arg0} left the game"
-    commands:
-      generic:
-        unknown: "&cUnknown or incomplete command."
-        permission: "&cYou do not have permission to use this command."
-    sleep:
-      players_sleeping: "&7Sleeping players: {arg0}"
-
-# ============================================================
-# Minecraft packet-level i18n
-# - Observed by ProtocolLib PacketI18n runtime audit/probe
-# - Exact 20-language TreasureRun set; no wmy
-# - Evidence-based baseline for observable vanilla translate keys
-# ============================================================
+    label: Beloning
+    rainbowWolf: Regenboogwolf
 minecraft:
   packet:
     chat:
       type:
         admin: '[{arg0}: {arg1}]'
-        text: '<{arg0}> {arg1}'
+        text: <{arg0}> {arg1}
     command:
       context:
-        here: '<--[HIER]'
+        here: <--[HIER]
       unknown:
-        command: 'Onbekend of onvolledig commando. Zie de fout hieronder.'
+        command: Onbekend of onvolledig commando. Zie de fout hieronder.
     commands:
       help:
         header: '--- Help-pagina {arg0} van {arg1} ---'
       op:
         success: '{arg0} is serveroperator gemaakt'
       stop:
-        stopping: 'commands.stop.stopping'
+        stopping: Server wordt gestopt
     death:
       attack:
         generic: '{arg0} is gestorven'

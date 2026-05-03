@@ -1,8 +1,8 @@
 outcome:
   fallback:
-    runComplete: "Run complete."
-    timeUp: "Time's up."
-    trader: "Trade complete."
+    runComplete: Run complete.
+    timeUp: Time's up.
+    trader: Trade complete.
   notice:
     timeUpGameOver: O tempo acabou. Fim de jogo.
     retryGuide: Tente novamente por uma rota diferente.
@@ -776,8 +776,7 @@ ui:
         difficulty: 'Dificuldade: {difficulty}'
         tipsItem: 2) Dicas
       note:
-        bookFormat: 'Observação: nos livros do Minecraft não dá para trocar de aba clicando, então o conteúdo foi organizado
-          em seções.'
+        bookFormat: 'Observação: nos livros do Minecraft não dá para trocar de aba clicando, então o conteúdo foi organizado em seções.'
       hint:
         reopenMenu: 'Dica: execute /gameMenu para abrir isto novamente.'
   error:
@@ -826,7 +825,7 @@ game:
     easy: '&aEasy'
     normal: '&eNormal'
     hard: '&cHard'
-  auto:
+  auto: null
 favorites:
   title: Favoritos
   cover:
@@ -876,7 +875,7 @@ favorites:
   reread:
     head: Reler linhas salvas
     noQuotes: Você ainda não salvou nenhuma linha.
-  auto:
+  auto: null
 command:
   checkTreasureEmerald:
     playersOnly: Somente jogadores podem usar este comando.
@@ -916,8 +915,7 @@ command:
   onlyPlayer: '&cEste comando só pode ser usado por um jogador.'
   quoteFavorite:
     latestSaved: A citação mais recente foi salva nos Favoritos.
-    latestNotSaved: Não foi possível salvar a citação mais recente. Talvez ainda não exista registro, ou ela já esteja nos
-      Favoritos.
+    latestNotSaved: Não foi possível salvar a citação mais recente. Talvez ainda não exista registro, ou ela já esteja nos Favoritos.
     playersOnly: '&cEste comando só pode ser usado por jogadores.'
     repositoryNotReady: Favoritos ainda não estão disponíveis.
     listHeader: '&bFavoritos ({count})'
@@ -931,8 +929,7 @@ command:
     openBookFailed: '&cNão foi possível abrir o livro.'
     unknownSubcommand: '&cSubcomando desconhecido. Veja /quoteFavorite help.'
     shortcutSaved: A citação mais recente foi salva nos Favoritos.
-    shortcutNotSaved: Não foi possível salvar a citação mais recente. Talvez ainda não exista registro, ou ela já esteja nos
-      Favoritos.
+    shortcutNotSaved: Não foi possível salvar a citação mais recente. Talvez ainda não exista registro, ou ela já esteja nos Favoritos.
     help:
       title: '&bComandos do QuoteFavorite'
       latest: '&7/quoteFavorite latest  - salvar a citação mais recente nos Favoritos'
@@ -975,7 +972,7 @@ gameplay:
     advancement: '{player} obteve um avanço: {advancement}'
     serverMotd: '{server} — caça ao tesouro multilíngue.'
     unknownCommand: 'Comando desconhecido: {command}'
-    noPermission: 'Você não tem permissão para usar {command}.'
+    noPermission: Você não tem permissão para usar {command}.
   death:
     firework: '{player} foi atingido por uma explosão de fogos de artifício.'
     explosion: '{player} foi atingido por uma explosão.'
@@ -1009,7 +1006,7 @@ gameplay:
   shop:
     tradeCompleteTitle: Troca concluída!
     hiddenPowerAwakens: Um poder oculto desperta…
-    hiddenPowerChat: "Você sente um poder oculto na loja do tesouro…"
+    hiddenPowerChat: Você sente um poder oculto na loja do tesouro…
   timer:
     remainingBossbar: Tempo restante
     remainingLine: 'Tempo restante: {seconds}s'
@@ -1045,83 +1042,63 @@ commands:
   rank_1_2_3_demo_4f3e3084: 'Digite um número: /rank <1|2|3|demo>'
 finalAudit:
   shop:
-    treasureShop: "Loja do tesouro"
+    treasureShop: Loja do tesouro
   item:
-    specialApple: "Maçã especial"
-    specialIronBlock: "Bloco de ferro especial"
+    specialApple: Maçã especial
+    specialIronBlock: Bloco de ferro especial
   command:
-    playerOnly: "Somente jogadores podem usar este comando."
-    opOnly: "Você precisa de permissão de operador para usar este comando."
-    rankDebugOff: "O debug do ranking está desativado. Defina rankDebug.enabled como true em config.yml."
-    rankUsage: "Uso: /rank <1|2|3|demo>"
-    rankNumberOnly: "Digite um número: /rank <1|2|3|demo>"
-    rankOnlyOneToThree: "Escolha 1, 2 ou 3: /rank <1|2|3>"
-    gameAlreadyRunning: "O jogo já está em andamento."
-    invalidDifficulty: "Escolha Easy, Normal ou Hard."
-    languageGuiNotReady: "O menu de seleção de idioma ainda não está pronto."
-    reloadBlockedRunning: "Reload fica desativado enquanto o jogo está em andamento. Execute /gameEnd primeiro."
-    noPermission: "Você não tem permissão para usar este comando."
-    noPermissionOp: "Você não tem permissão para usar este comando. Permissão de operador é necessária."
-    treasureReloadDone: "✅ As configurações do TreasureRun foram recarregadas, incluindo o menu de idioma."
-    guiReloadedReopen: "A interface foi atualizada. Execute /gameStart novamente para reabri-la."
-    dbConnected: "MySQL está conectado."
-    dbNotConnected: "MySQL não está conectado."
-    exportMissingRoot: "❌ messages.translation não foi encontrado em config.yml."
-    exportExample: "Exemplo: messages.translation.ja.favorites.title: ..."
-    exportCreateFolderFailed: "❌ Não foi possível criar a pasta languages/: {path}"
-    exportNoLanguages: "❌ Nenhum idioma está configurado para exportação."
-    exportFailed: "❌ Falha na exportação: {lang} ({error})"
-    exportComplete: "✅ Exportação concluída: {count} arquivo(s) gravado(s)."
-    exportOutputFolder: "Pasta de saída: {path}"
-    exportSkippedExisting: "⚠ Arquivo(s) existente(s) ignorado(s): {langs}"
-    exportOverwriteHint: "Para substituir arquivos existentes, execute: /treasureExportLang overwrite"
-    exportNextStep: "Próximo passo: faça o I18n ler languages/*.yml para aplicar estas traduções."
-    playerOnlyConsoleNoOnline: "Somente jogadores podem usar este comando, e nenhum jogador online foi encontrado."
+    playerOnly: Somente jogadores podem usar este comando.
+    opOnly: Você precisa de permissão de operador para usar este comando.
+    rankDebugOff: O debug do ranking está desativado. Defina rankDebug.enabled como true em config.yml.
+    rankUsage: 'Uso: /rank <1|2|3|demo>'
+    rankNumberOnly: 'Digite um número: /rank <1|2|3|demo>'
+    rankOnlyOneToThree: 'Escolha 1, 2 ou 3: /rank <1|2|3>'
+    gameAlreadyRunning: O jogo já está em andamento.
+    invalidDifficulty: Escolha Easy, Normal ou Hard.
+    languageGuiNotReady: O menu de seleção de idioma ainda não está pronto.
+    reloadBlockedRunning: Reload fica desativado enquanto o jogo está em andamento. Execute /gameEnd primeiro.
+    noPermission: Você não tem permissão para usar este comando.
+    noPermissionOp: Você não tem permissão para usar este comando. Permissão de operador é necessária.
+    treasureReloadDone: ✅ As configurações do TreasureRun foram recarregadas, incluindo o menu de idioma.
+    guiReloadedReopen: A interface foi atualizada. Execute /gameStart novamente para reabri-la.
+    dbConnected: MySQL está conectado.
+    dbNotConnected: MySQL não está conectado.
+    exportMissingRoot: ❌ messages.translation não foi encontrado em config.yml.
+    exportExample: 'Exemplo: messages.translation.ja.favorites.title: ...'
+    exportCreateFolderFailed: '❌ Não foi possível criar a pasta languages/: {path}'
+    exportNoLanguages: ❌ Nenhum idioma está configurado para exportação.
+    exportFailed: '❌ Falha na exportação: {lang} ({error})'
+    exportComplete: '✅ Exportação concluída: {count} arquivo(s) gravado(s).'
+    exportOutputFolder: 'Pasta de saída: {path}'
+    exportSkippedExisting: '⚠ Arquivo(s) existente(s) ignorado(s): {langs}'
+    exportOverwriteHint: 'Para substituir arquivos existentes, execute: /treasureExportLang overwrite'
+    exportNextStep: 'Próximo passo: faça o I18n ler languages/*.yml para aplicar estas traduções.'
+    playerOnlyConsoleNoOnline: Somente jogadores podem usar este comando, e nenhum jogador online foi encontrado.
   debug:
-    chestSoundStart: "[ChestSound] Iniciado no modo de grade 16."
-    chestSoundNoChests: "[ChestSound] Nenhum baú encontrado."
-    chestSoundNearest: "[ChestSound] mais próximo={distance}m noAlcance={range} t={t}"
+    chestSoundStart: '[ChestSound] Iniciado no modo de grade 16.'
+    chestSoundNoChests: '[ChestSound] Nenhum baú encontrado.'
+    chestSoundNearest: '[ChestSound] mais próximo={distance}m noAlcance={range} t={t}'
   reward:
-    label: "Recompensa"
-    rainbowWolf: "Lobo arco-íris"
-
-minecraft:
-  packet:
-    multiplayer:
-      player:
-        joined: "&e{arg0} joined the game"
-        left: "&e{arg0} left the game"
-    commands:
-      generic:
-        unknown: "&cUnknown or incomplete command."
-        permission: "&cYou do not have permission to use this command."
-    sleep:
-      players_sleeping: "&7Sleeping players: {arg0}"
-
-# ============================================================
-# Minecraft packet-level i18n
-# - Observed by ProtocolLib PacketI18n runtime audit/probe
-# - Exact 20-language TreasureRun set; no wmy
-# - Evidence-based baseline for observable vanilla translate keys
-# ============================================================
+    label: Recompensa
+    rainbowWolf: Lobo arco-íris
 minecraft:
   packet:
     chat:
       type:
         admin: '[{arg0}: {arg1}]'
-        text: '<{arg0}> {arg1}'
+        text: <{arg0}> {arg1}
     command:
       context:
-        here: '<--[AQUI]'
+        here: <--[AQUI]
       unknown:
-        command: 'Comando desconhecido ou incompleto. Veja o erro abaixo.'
+        command: Comando desconhecido ou incompleto. Veja o erro abaixo.
     commands:
       help:
         header: '--- Página de ajuda {arg0} de {arg1} ---'
       op:
         success: '{arg0} agora é operador do servidor'
       stop:
-        stopping: 'commands.stop.stopping'
+        stopping: Parando o servidor
     death:
       attack:
         generic: '{arg0} morreu'

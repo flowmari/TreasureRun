@@ -286,3 +286,26 @@ Interpretation:
 - Future packet-level localization should add only observed keys to `languages/*.yml`, then verify each key in-game.
 - Packet audit was disabled again after verification to keep normal logs quiet.
 
+
+## PacketI18n Replacement Verification
+
+Recorded at: 20260503_184144
+
+Evidence files:
+
+- docs/verification/runtime-evidence/packet-i18n-replacement-verify-20260503_184144.txt
+- docs/verification/runtime-evidence/packet-i18n-replacement-keys-20260503_184144.txt
+
+Result:
+
+- The PacketI18n listener can observe Minecraft translatable component keys.
+-  was tested temporarily.
+- Observed keys are mapped to  YAML entries.
+- Server-side audit and replacement were disabled again after verification.
+
+Important scope note:
+
+This verifies server-to-client chat/system packet replacement for observable translatable components.
+It does not claim full Minecraft client UI localization.
+Client-side screens and built-in GUI language resources require a resource-pack layer.
+
