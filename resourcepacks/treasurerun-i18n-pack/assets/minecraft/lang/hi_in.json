@@ -1,0 +1,14 @@
+{
+  "chat.type.admin": "[{arg0}: {arg1}]",
+  "chat.type.text": "<{arg0}> {arg1}",
+  "command.context.here": "<--[यहाँ]",
+  "command.unknown.command": "अज्ञात या अधूरा कमांड। नीचे दी गई त्रुटि देखें।",
+  "commands.help.header": "--- सहायता पृष्ठ {arg0} / {arg1} ---",
+  "commands.op.success": "{arg0} को सर्वर ऑपरेटर बना दिया गया",
+  "commands.stop.stopping": "सर्वर बंद किया जा रहा है",
+  "death.attack.generic": "{arg0} मर गया",
+  "death.attack.outOfWorld": "{arg0} दुनिया से बाहर गिर गया",
+  "multiplayer.player.joined": "{arg0} खेल में शामिल हुआ",
+  "multiplayer.player.left": "{arg0} ने खेल छोड़ दिया",
+  "treasurerun.resourcepack.loaded": "TreasureRun i18n resource pack loaded: hi"
+}

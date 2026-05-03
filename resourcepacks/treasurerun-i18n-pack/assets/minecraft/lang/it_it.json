@@ -1,0 +1,14 @@
+{
+  "chat.type.admin": "[{arg0}: {arg1}]",
+  "chat.type.text": "<{arg0}> {arg1}",
+  "command.context.here": "<--[QUI]",
+  "command.unknown.command": "Comando sconosciuto o incompleto. Vedi l’errore qui sotto.",
+  "commands.help.header": "--- Pagina di aiuto {arg0} di {arg1} ---",
+  "commands.op.success": "{arg0} è ora operatore del server",
+  "commands.stop.stopping": "Arresto del server in corso",
+  "death.attack.generic": "{arg0} è morto",
+  "death.attack.outOfWorld": "{arg0} è caduto fuori dal mondo",
+  "multiplayer.player.joined": "{arg0} è entrato in partita",
+  "multiplayer.player.left": "{arg0} ha lasciato la partita",
+  "treasurerun.resourcepack.loaded": "TreasureRun i18n resource pack loaded: it"
+}

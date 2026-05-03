@@ -1,0 +1,14 @@
+{
+  "chat.type.admin": "[{arg0}: {arg1}]",
+  "chat.type.text": "<{arg0}> {arg1}",
+  "command.context.here": "<--[TÄSSÄ]",
+  "command.unknown.command": "Tuntematon tai keskeneräinen komento. Katso virhe alta.",
+  "commands.help.header": "--- Ohjesivu {arg0}/{arg1} ---",
+  "commands.op.success": "{arg0} on nyt palvelimen operaattori",
+  "commands.stop.stopping": "Palvelinta pysäytetään",
+  "death.attack.generic": "{arg0} kuoli",
+  "death.attack.outOfWorld": "{arg0} putosi maailman ulkopuolelle",
+  "multiplayer.player.joined": "{arg0} liittyi peliin",
+  "multiplayer.player.left": "{arg0} poistui pelistä",
+  "treasurerun.resourcepack.loaded": "TreasureRun i18n resource pack loaded: fi"
+}

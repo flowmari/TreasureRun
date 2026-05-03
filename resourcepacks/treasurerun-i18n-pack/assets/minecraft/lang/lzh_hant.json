@@ -1,0 +1,14 @@
+{
+  "chat.type.admin": "【{arg0}：{arg1}】",
+  "chat.type.text": "〈{arg0}〉{arg1}",
+  "command.context.here": "<--【此】",
+  "command.unknown.command": "令不明，或未備。其誤見下。",
+  "commands.help.header": "--- 助頁 {arg0} / {arg1} ---",
+  "commands.op.success": "已授 {arg0} 為伺服之司",
+  "commands.stop.stopping": "伺服將止",
+  "death.attack.generic": "{arg0} 歿",
+  "death.attack.outOfWorld": "{arg0} 墜於世外",
+  "multiplayer.player.joined": "{arg0} 入戲",
+  "multiplayer.player.left": "{arg0} 去戲",
+  "treasurerun.resourcepack.loaded": "TreasureRun i18n resource pack loaded: lzh"
+}

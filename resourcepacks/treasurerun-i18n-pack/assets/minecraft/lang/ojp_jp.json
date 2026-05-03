@@ -1,0 +1,14 @@
+{
+  "chat.type.admin": "[{arg0}: {arg1}]",
+  "chat.type.text": "<{arg0}> {arg1}",
+  "command.context.here": "<--[ここ]",
+  "command.unknown.command": "不明または不完全なる命なり。下の誤りを見給へ。",
+  "commands.help.header": "--- 助けの頁 {arg0} / {arg1} ---",
+  "commands.op.success": "{arg0} に仕手の権を授けたり",
+  "commands.stop.stopping": "伺ひの世、いま閉ぢむとして候",
+  "death.attack.generic": "{arg0} は命の緒、ここに絶えにけり",
+  "death.attack.outOfWorld": "{arg0} は奈落の底へ落ちにけり",
+  "multiplayer.player.joined": "{arg0}、遊びの世に入り給ひぬ",
+  "multiplayer.player.left": "{arg0}、遊びの世を去り給ひぬ",
+  "treasurerun.resourcepack.loaded": "TreasureRun i18n resource pack loaded: ojp"
+}

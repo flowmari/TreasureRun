@@ -1,0 +1,14 @@
+{
+  "chat.type.admin": "[{arg0}: {arg1}]",
+  "chat.type.text": "<{arg0}> {arg1}",
+  "command.context.here": "<--[ここ]",
+  "command.unknown.command": "不明または不完全なコマンドです。以下のエラーをご確認ください。",
+  "commands.help.header": "--- ヘルプページ {arg0} / {arg1} ---",
+  "commands.op.success": "{arg0} にサーバー管理者権限を付与しました",
+  "commands.stop.stopping": "サーバーを停止しています",
+  "death.attack.generic": "{arg0} は死亡しました",
+  "death.attack.outOfWorld": "{arg0} は奈落の底へ落ちました",
+  "multiplayer.player.joined": "{arg0} がゲームに参加しました",
+  "multiplayer.player.left": "{arg0} がゲームから退出しました",
+  "treasurerun.resourcepack.loaded": "TreasureRun i18n resource pack loaded: ja"
+}

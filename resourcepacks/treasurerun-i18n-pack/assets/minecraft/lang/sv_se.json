@@ -1,0 +1,14 @@
+{
+  "chat.type.admin": "[{arg0}: {arg1}]",
+  "chat.type.text": "<{arg0}> {arg1}",
+  "command.context.here": "<--[HÄR]",
+  "command.unknown.command": "Okänt eller ofullständigt kommando. Se felet nedan.",
+  "commands.help.header": "--- Visar hjälpsida {arg0} av {arg1} ---",
+  "commands.op.success": "{arg0} är nu serveroperatör",
+  "commands.stop.stopping": "Servern stoppas",
+  "death.attack.generic": "{arg0} dog",
+  "death.attack.outOfWorld": "{arg0} föll ut ur världen",
+  "multiplayer.player.joined": "{arg0} gick med i spelet",
+  "multiplayer.player.left": "{arg0} lämnade spelet",
+  "treasurerun.resourcepack.loaded": "TreasureRun i18n resource pack loaded: sv"
+}

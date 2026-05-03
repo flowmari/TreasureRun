@@ -1,0 +1,14 @@
+{
+  "chat.type.admin": "[{arg0}: {arg1}]",
+  "chat.type.text": "<{arg0}> {arg1}",
+  "command.context.here": "<--[여기]",
+  "command.unknown.command": "알 수 없거나 완전하지 않은 명령어입니다. 아래 오류를 확인하세요.",
+  "commands.help.header": "--- 도움말 페이지 {arg0}/{arg1} ---",
+  "commands.op.success": "{arg0}님에게 서버 관리자 권한을 부여했습니다",
+  "commands.stop.stopping": "서버를 중지하는 중입니다",
+  "death.attack.generic": "{arg0}님이 사망했습니다",
+  "death.attack.outOfWorld": "{arg0}님이 세계 밖으로 떨어졌습니다",
+  "multiplayer.player.joined": "{arg0}님이 게임에 참가했습니다",
+  "multiplayer.player.left": "{arg0}님이 게임에서 나갔습니다",
+  "treasurerun.resourcepack.loaded": "TreasureRun i18n resource pack loaded: ko"
+}
