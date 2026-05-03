@@ -31,7 +31,8 @@ public class MigrationRunner {
   private final TreasureRunMultiChestPlugin plugin;
 
   private static final List<String> MIGRATIONS = List.of(
-      "V1__create_ranking_tables.sql"
+      "V1__create_ranking_tables.sql",
+      "V2__support_monthly_seasons.sql"
   );
 
   public MigrationRunner(TreasureRunMultiChestPlugin plugin) {
