@@ -1,20 +1,18 @@
-# TreasureRun i18n Resource Pack Layer
+# TreasureRun i18n Resource Pack
 
-This resource pack is part of TreasureRun's hybrid i18n architecture.
+This resource pack is part of TreasureRun's hybrid Minecraft i18n architecture.
 
-It complements:
+It contains `assets/minecraft/lang/*.json` files generated from the official Minecraft 1.20.1 vanilla `en_us.json`.
 
-1. plugin-level YAML i18n,
-2. ProtocolLib packet-level translation for observable server packets,
-3. client-side Minecraft language-key overrides through `assets/minecraft/lang/*.json`.
+## Strategy
 
-## Important Scope Note
+- Include all vanilla Minecraft language keys as a complete fallback base.
+- Use English fallback for keys that have not yet been manually translated.
+- Overlay TreasureRun's observed `minecraft.packet.*` translations from `src/main/resources/languages/*.yml`.
+- Combine this with ProtocolLib PacketI18n replacement for server-observable translatable packet components.
 
-This layer improves coverage for Minecraft language keys that the client resolves from language JSON files.
+## Honest limitation
 
-It does **not** guarantee total control over every Minecraft client-side string. Some UI, pre-login, authentication, disconnect, client-only, and modded/client-controlled text can remain outside server-side control.
+This pack can override client language keys only when the client accepts and applies the resource pack.
 
-Recommended wording:
-
-> TreasureRun uses a hybrid i18n architecture combining plugin YAML translations, ProtocolLib packet-level translation, and a server-side resource-pack language layer. This maximizes localization coverage for server-observable and client language-key based messages while documenting client-only limitations honestly.
-
+It should not be described as absolute control over pre-login, authentication, disconnect, settings, or every client-only UI string.

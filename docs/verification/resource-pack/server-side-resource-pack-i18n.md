@@ -1,10 +1,10 @@
 # Server-Side Resource Pack i18n Layer
 
-TreasureRun adds a server-side resource pack layer as part of its hybrid i18n architecture.
+TreasureRun includes a server-side resource pack layer as part of its hybrid i18n architecture.
 
 ## Purpose
 
-Minecraft has multiple text paths:
+Minecraft text appears through multiple paths:
 
 1. plugin-controlled text,
 2. server packet text,
@@ -12,31 +12,34 @@ Minecraft has multiple text paths:
 4. client-side language-key text,
 5. client-only / pre-login UI text.
 
-TreasureRun already handles plugin-controlled text through `languages/*.yml` and packet-observable server messages through ProtocolLib.
+TreasureRun handles plugin-controlled text through `languages/*.yml` and packet-observable server messages through ProtocolLib PacketI18n.
 
-This resource pack layer adds `assets/minecraft/lang/*.json` files so Minecraft language keys can be overridden on the client side when the resource pack is applied.
+This resource pack layer adds `assets/minecraft/lang/*.json` files so Minecraft language keys can be overridden on the client side when the resource pack is accepted and applied.
 
-## Generated files
+## Current implementation
+
+The generated resource pack now includes the full set of vanilla Minecraft 1.20.1 language keys extracted from the official Mojang client jar's `assets/minecraft/lang/en_us.json`.
+
+For all 20 TreasureRun languages:
+
+- every vanilla key is present,
+- unknown/untranslated keys fall back to English,
+- observed and verified `minecraft.packet.*` keys are overlaid from `src/main/resources/languages/*.yml`,
+- the pack is zipped and SHA1-hashed for server-side distribution.
+
+Generated files:
 
 - `resourcepacks/treasurerun-i18n-pack/assets/minecraft/lang/*.json`
 - `resourcepacks/generated/treasurerun-i18n-pack.zip`
 - `resourcepacks/generated/treasurerun-i18n-pack.zip.sha1`
 
-## Current scope
+## Why this is a hybrid design
 
-This pack currently includes the Minecraft translate keys observed and verified through PacketI18n runtime audit/probe evidence:
+ProtocolLib PacketI18n is used for server-observable translatable packet components.
 
-- `chat.type.admin`
-- `chat.type.text`
-- `command.context.here`
-- `command.unknown.command`
-- `commands.help.header`
-- `commands.op.success`
-- `commands.stop.stopping`
-- `death.attack.generic`
-- `death.attack.outOfWorld`
-- `multiplayer.player.joined`
-- `multiplayer.player.left`
+The resource pack is used for client-resolved language keys.
+
+Together, these layers maximize localization coverage across Minecraft's server and client text paths.
 
 ## Honest limitation
 
@@ -46,15 +49,14 @@ Some text is controlled by the client before or outside the server's runtime rea
 
 Recommended portfolio wording:
 
-> TreasureRun implements a hybrid i18n architecture combining plugin YAML translations, ProtocolLib packet-level translation, and a server-side resource-pack language layer. This maximizes localization coverage for server-observable and client language-key based messages while documenting client-only limitations honestly.
+> TreasureRun implements a hybrid i18n architecture combining plugin YAML translations, ProtocolLib packet-level translation, and a server-side resource-pack language layer. The resource pack contains the full vanilla Minecraft 1.20.1 language-key set for 20 languages with English fallback and verified custom overlays. This maximizes localization coverage for server-observable and client language-key based messages while documenting client-only limitations honestly.
 
 ## Next expansion path
 
-To expand coverage:
+To improve natural translation quality:
 
 1. observe more `translate` keys through PacketI18n audit,
-2. add the keys to `languages/*.yml`,
+2. add natural translations to `languages/*.yml`,
 3. regenerate this resource pack,
 4. verify in-game with the resource pack applied,
 5. keep unsupported or client-only areas documented rather than overclaiming complete control.
-

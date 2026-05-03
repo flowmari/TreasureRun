@@ -697,6 +697,9 @@ TreasureRun uses a hybrid i18n architecture to maximize localization coverage ac
 - ProtocolLib packet-level translation for observable server packets,
 - server-side resource-pack language JSON files for client-resolved Minecraft translation keys.
 
+The resource pack contains the full vanilla Minecraft 1.20.1 language-key set for the exact 20 TreasureRun languages.  
+Untranslated vanilla keys use English fallback, while observed and verified `minecraft.packet.*` keys are overlaid from TreasureRun's YAML language files.
+
 This architecture is intentionally documented with realistic boundaries. Some pre-login, authentication, disconnect, settings, and client-only UI text remains outside guaranteed server-side control.
 
 Verification notes:
