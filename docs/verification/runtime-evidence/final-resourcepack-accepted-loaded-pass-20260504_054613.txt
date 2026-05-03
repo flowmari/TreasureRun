@@ -1,0 +1,40 @@
+[20:07:25] [Server thread/INFO]: [TreasureRun] [PacketI18n] detected packet type: SYSTEM_CHAT
+[20:07:25] [Server thread/INFO]: [TreasureRun] [PacketI18n] detected packet type: CHAT
+[20:07:25] [Server thread/INFO]: [TreasureRun] [PacketI18n] detected packet type: DISGUISED_CHAT
+[20:07:25] [Server thread/INFO]: [TreasureRun] [PacketI18n] ProtocolLib packet listener registered: SYSTEM_CHAT / CHAT / DISGUISED_CHAT
+[20:07:26] [Server thread/INFO]: [TreasureRun] [PacketI18nProbe] /packetI18nProbe executor registered
+[20:07:26] [Server thread/INFO]: [TreasureRun] [ResourcePack] delivery listener registered
+[20:24:31] [Server thread/INFO]: [TreasureRun] [ResourcePack] sent multilingual pack to flowmari force=true sha1=891770c1ad775938565afd668eaf09f7864be8f8
+[20:25:06] [Server thread/INFO]: flowmari issued server command: /lang ojp
+[20:25:24] [Server thread/INFO]: flowmari issued server command: /packeti18nprobe
+[20:25:24] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=flowmari、遊びの世に入り給ひぬ
+[20:25:24] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.player.joined yaml=minecraft.packet.multiplayer.player.joined
+[20:25:24] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=flowmari、遊びの世を去り給ひぬ
+[20:25:24] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.player.left yaml=minecraft.packet.multiplayer.player.left
+[20:25:24] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=flowmari は命の緒、ここに絶えにけり
+[20:25:24] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.generic yaml=minecraft.packet.death.attack.generic
+[20:25:24] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=flowmari は奈落の底へ落ちにけり
+[20:25:24] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.outOfWorld yaml=minecraft.packet.death.attack.outOfWorld
+[20:25:24] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=<flowmari> hello from PacketI18n probe
+[20:25:24] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=chat.type.text yaml=minecraft.packet.chat.type.text
+[20:25:24] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=--- 助けの頁 PacketI18n / {arg1} ---
+[20:25:24] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=commands.help.header yaml=minecraft.packet.commands.help.header
+[20:25:24] [Server thread/INFO]: [TreasureRun] [PacketI18nProbe] sent translatable component samples to flowmari
+[20:38:16] [Server thread/INFO]: [TreasureRun] [ResourcePack] sent multilingual pack to flowmari force=true sha1=891770c1ad775938565afd668eaf09f7864be8f8
+[20:38:16] [Server thread/INFO]: [TreasureRun] [ResourcePack][STATUS] player=flowmari uuid=470d7dc8-8ce4-48d7-a0e1-fa8a1acf30b5 status=ACCEPTED
+[20:38:19] [Server thread/INFO]: [TreasureRun] [ResourcePack][STATUS] player=flowmari uuid=470d7dc8-8ce4-48d7-a0e1-fa8a1acf30b5 status=SUCCESSFULLY_LOADED
+[20:38:43] [Server thread/INFO]: flowmari issued server command: /lang ojp
+[20:39:03] [Server thread/INFO]: flowmari issued server command: /packeti18nprobe
+[20:39:03] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=flowmari、遊びの世に入り給ひぬ
+[20:39:03] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.player.joined yaml=minecraft.packet.multiplayer.player.joined
+[20:39:03] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=flowmari、遊びの世を去り給ひぬ
+[20:39:03] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.player.left yaml=minecraft.packet.multiplayer.player.left
+[20:39:03] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=flowmari は命の緒、ここに絶えにけり
+[20:39:03] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.generic yaml=minecraft.packet.death.attack.generic
+[20:39:03] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=flowmari は奈落の底へ落ちにけり
+[20:39:03] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.outOfWorld yaml=minecraft.packet.death.attack.outOfWorld
+[20:39:03] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=<flowmari> hello from PacketI18n probe
+[20:39:03] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=chat.type.text yaml=minecraft.packet.chat.type.text
+[20:39:03] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=--- 助けの頁 PacketI18n / {arg1} ---
+[20:39:03] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=commands.help.header yaml=minecraft.packet.commands.help.header
+[20:39:03] [Server thread/INFO]: [TreasureRun] [PacketI18nProbe] sent translatable component samples to flowmari
