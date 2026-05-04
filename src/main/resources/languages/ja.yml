@@ -6006,3 +6006,445 @@ minecraft:
         zombie_spawn_egg: Zombie Spawn Egg
         zombie_villager_spawn_egg: Zombie Villager Spawn Egg
         zombified_piglin_spawn_egg: Zombified Piglin Spawn Egg
+    clear:
+      failed:
+        multiple: "No items were found on %s players"
+        single: "No items were found on player %s"
+    container:
+      barrel: Barrel
+      beacon: Beacon
+      beehive:
+        bees: "ミツバチの数：%s／%s"
+        honey: "ハチミツ：%s／%s"
+      blast_furnace: Blast Furnace
+      brewing: Brewing Stand
+      cartography_table: Cartography Table
+      chest: Chest
+      chestDouble: Large Chest
+      crafter: 自動作業台
+      crafting: Crafting
+      creative: Item Selection
+      dispenser: Dispenser
+      dropper: Dropper
+      enchant:
+        _value: Enchant
+        clue: "%s . . . ?"
+        lapis:
+          many: "%s Lapis Lazuli"
+          one: 1 Lapis Lazuli
+        level:
+          many: "%s Enchantment Levels"
+          one: 1 Enchantment Level
+          requirement: "Level Requirement: %s"
+      enderchest: Ender Chest
+      furnace: Furnace
+      grindstone_title: "Repair & Disenchant"
+      hopper: Item Hopper
+      inventory: Inventory
+      isLocked: "%s is locked!"
+      lectern: Lectern
+      loom: Loom
+      repair:
+        _value: "Repair & Name"
+        cost: "Enchantment Cost: %1$s"
+        expensive: "Too Expensive!"
+      shulkerBox:
+        _value: Shulker Box
+        itemCount: "%s %s個"
+        more: "and %s more..."
+        unknownContents: ？？？
+      smoker: Smoker
+      spectatorCantOpen: Unable to open. Loot not generated yet.
+      stonecutter: Stonecutter
+      upgrade:
+        _value: Upgrade Gear
+        error_tooltip: Item can't be upgraded this way
+        missing_template_tooltip: Add Smithing Template
+    dataPack:
+      bundle:
+        description: Enables experimental Bundle item
+        name: Bundles
+      locator_bar:
+        description: マルチプレイにおいて、他のプレイヤーの方向を表示します
+        name: 方向バー
+      minecart_improvements:
+        description: トロッコの挙動を改善します
+        name: トロッコの改善
+      redstone_experiments:
+        description: レッドストーンに関する実験的な変更
+        name: レッドストーンの実験的要素
+      title: Select Data Packs
+      trade_rebalance:
+        description: 村人との新たな取引
+        name: 村人の取引の再調整
+      update_1_20:
+        description: New features and content for Minecraft 1.20
+        name: Update 1.20
+      update_1_21:
+        description: Minecraft 1.21に向けた新要素
+        name: 1.21のアップデート
+      validation:
+        back: Go Back
+        failed: "Data pack validation failed!"
+        reset: Reset to Default
+        working: Validating selected data packs...
+      vanilla:
+        description: The default data for Minecraft
+        name: Default
+      winter_drop:
+        description: 冬季の小規模アップデートに向けた新要素
+        name: 冬季の小規模アップデート
+    datapackFailure:
+      safeMode:
+        _value: Safe Mode
+        failed:
+          description: This world contains invalid or corrupted save data.
+          title: Failed to load world in Safe Mode.
+      title: "Errors in currently selected data packs prevented the world from loading.\nYou can either try to load it with only the vanilla data pack (\"safe mode\"), or go back to the title screen and fix it manually."
+    difficulty:
+      lock:
+        question: "Are you sure you want to lock the difficulty of this world? This will set this world to always be %1$s, and you will never be able to change that again."
+        title: Lock World Difficulty
+    editGamerule:
+      default: "Default: %s"
+      inGame:
+        button: ゲームルールを編集…
+        disabled:
+          tooltip: ゲームルールの更新には管理者権限が必要です。
+        discardChanges:
+          message: 編集中のゲームルールの変更を破棄してもよろしいですか？
+          title: ゲームルールの変更
+        downloadingGamerules: ゲームルールを取得中…
+      title: Edit Game Rules
+    event:
+      minecraft:
+        raid:
+          _value: Raid
+          defeat:
+            _value: Defeat
+            full: 襲撃 - 敗北
+          raiders_remaining: "Raiders Remaining: %s"
+          victory:
+            _value: Victory
+            full: 襲撃 - 勝利
+    gameMode:
+      adventure: Adventure Mode
+      changed: "Your game mode has been updated to %s"
+      creative: Creative Mode
+      hardcore: "Hardcore Mode!"
+      spectator: Spectator Mode
+      survival: Survival Mode
+    hanging_sign:
+      edit: Edit Hanging Sign Message
+    instrument:
+      minecraft:
+        admire_goat_horn: Admire
+        call_goat_horn: Call
+        dream_goat_horn: Dream
+        feel_goat_horn: Feel
+        ponder_goat_horn: Ponder
+        seek_goat_horn: Seek
+        sing_goat_horn: Sing
+        yearn_goat_horn: Yearn
+    inventory:
+      binSlot: Destroy Item
+      hotbarInfo: "Save hotbar with %1$s+%2$s"
+      hotbarSaved: "Item hotbar saved (restore with %1$s+%2$s)"
+    jigsaw_block:
+      final_state: "Turns into:"
+      generate: Generate
+      joint:
+        aligned: Aligned
+        rollable: Rollable
+      joint_label: "Joint Type:"
+      keep_jigsaws: Keep Jigsaws
+      levels: "Levels: %s"
+      name: "Name:"
+      placement_priority:
+        _value: 設置優先度：
+        tooltip: "この値は、大きな構造物の生成におけるこのジグソーブロックに接続するピースの処理の優先度です。\n\n構造物のピースはこの値が大きい順に処理されます。同じ値のピースの処理順はランダムです。"
+      pool: "Target Pool:"
+      selection_priority:
+        _value: 選択優先度：
+        tooltip: "この値は、一つ前のピースの接続相手の選択時におけるこのジグソーブロックの接続試行の優先度です。\n\n構造物のピースはこの値が大きい順に処理されます。同じ値のピースの処理順はランダムです。"
+      target: "Target Name:"
+    mirror:
+      front_back: ↑ ↓
+      left_right: ← →
+      none: "|"
+    pack:
+      available:
+        title: Available
+      copyFailure: Failed to copy packs
+      dropConfirm: Do you want to add the following packs to Minecraft?
+      dropInfo: Drag and drop files into this window to add packs
+      dropRejected:
+        message: "以下の項目は有効なパックではないため、コピーされませんでした\n %s"
+        title: パックでない項目
+      folderInfo: (Place pack files here)
+      incompatible:
+        _value: Incompatible
+        confirm:
+          new: This pack was made for a newer version of Minecraft and may not work correctly.
+          old: This pack was made for an older version of Minecraft and may no longer work correctly.
+          title: Are you sure you want to load this pack?
+          unknown: このパックは破損しているか未知のバージョンのMinecraft向けに作られたもので、正常に動作しない可能性があります。
+        new: (Made for a newer version of Minecraft)
+        old: (Made for an older version of Minecraft)
+        unknown: （破損または非対応）
+      nameAndSource: "%s (%s)"
+      openFolder: Open Pack Folder
+      selected:
+        title: Selected
+      source:
+        builtin: built-in
+        feature: feature
+        local: local
+        server: server
+        world: world
+    painting:
+      dimensions: "%sx%s"
+      minecraft:
+        alban:
+          author: Kristoffer Zetterstrand
+          title: Albanian
+        aztec:
+          author: Kristoffer Zetterstrand
+          title: de_aztec
+        aztec2:
+          author: Kristoffer Zetterstrand
+          title: de_aztec
+        backyard:
+          author: Kristoffer Zetterstrand
+          title: Backyard
+        baroque:
+          author: Sarah Boeving
+          title: Baroque
+        bomb:
+          author: Kristoffer Zetterstrand
+          title: Target Successfully Bombed
+        bouquet:
+          author: Kristoffer Zetterstrand
+          title: Bouquet
+        burning_skull:
+          author: Kristoffer Zetterstrand
+          title: Skull On Fire
+        bust:
+          author: Kristoffer Zetterstrand
+          title: Bust
+        cavebird:
+          author: Kristoffer Zetterstrand
+          title: Cavebird
+        changing:
+          author: Kristoffer Zetterstrand
+          title: Changing
+        cotan:
+          author: Kristoffer Zetterstrand
+          title: Cotán
+        courbet:
+          author: Kristoffer Zetterstrand
+          title: Bonjour Monsieur Courbet
+        creebet:
+          author: Kristoffer Zetterstrand
+          title: Creebet
+        dennis:
+          author: Sarah Boeving
+          title: Dennis
+        donkey_kong:
+          author: Kristoffer Zetterstrand
+          title: Kong
+        earth:
+          author: Mojang
+          title: Earth
+        endboss:
+          author: Kristoffer Zetterstrand
+          title: Endboss
+        fern:
+          author: Kristoffer Zetterstrand
+          title: Fern
+        fighters:
+          author: Kristoffer Zetterstrand
+          title: Fighters
+        finding:
+          author: Kristoffer Zetterstrand
+          title: Finding
+        fire:
+          author: Mojang
+          title: Fire
+        graham:
+          author: Kristoffer Zetterstrand
+          title: Graham
+        humble:
+          author: Sarah Boeving
+          title: Humble
+        kebab:
+          author: Kristoffer Zetterstrand
+          title: Kebab med tre pepperoni
+        lowmist:
+          author: Kristoffer Zetterstrand
+          title: Lowmist
+        match:
+          author: Kristoffer Zetterstrand
+          title: Match
+        meditative:
+          author: Sarah Boeving
+          title: Meditative
+        orb:
+          author: Kristoffer Zetterstrand
+          title: Orb
+        owlemons:
+          author: Kristoffer Zetterstrand
+          title: Owlemons
+        passage:
+          author: Kristoffer Zetterstrand
+          title: Passage
+        pigscene:
+          author: Kristoffer Zetterstrand
+          title: Pigscene
+        plant:
+          author: Kristoffer Zetterstrand
+          title: Paradisträd
+        pointer:
+          author: Kristoffer Zetterstrand
+          title: Pointer
+        pond:
+          author: Kristoffer Zetterstrand
+          title: Pond
+        pool:
+          author: Kristoffer Zetterstrand
+          title: The Pool
+        prairie_ride:
+          author: Sarah Boeving
+          title: Prairie Ride
+        sea:
+          author: Kristoffer Zetterstrand
+          title: Seaside
+        skeleton:
+          author: Kristoffer Zetterstrand
+          title: Mortal Coil
+        skull_and_roses:
+          author: Kristoffer Zetterstrand
+          title: Skull and Roses
+        stage:
+          author: Kristoffer Zetterstrand
+          title: The Stage Is Set
+        sunflowers:
+          author: Kristoffer Zetterstrand
+          title: Sunflowers
+        sunset:
+          author: Kristoffer Zetterstrand
+          title: sunset_dense
+        tides:
+          author: Kristoffer Zetterstrand
+          title: Tides
+        unpacked:
+          author: Sarah Boeving
+          title: Unpacked
+        void:
+          author: Kristoffer Zetterstrand
+          title: The void
+        wanderer:
+          author: Kristoffer Zetterstrand
+          title: Wanderer
+        wasteland:
+          author: Kristoffer Zetterstrand
+          title: Wasteland
+        water:
+          author: Mojang
+          title: Water
+        wind:
+          author: Mojang
+          title: Wind
+        wither:
+          author: Mojang
+          title: Wither
+      random: Random variant
+    record:
+      nowPlaying: "Now Playing: %s"
+    sign:
+      edit: Edit Sign Message
+    structure_block:
+      button:
+        detect_size: DETECT
+        load: LOAD
+        save: SAVE
+      custom_data: Custom Data Tag Name
+      detect_size: "Detect Structure Size and Position:"
+      hover:
+        corner: "Corner: %s"
+        data: "Data: %s"
+        load: "Load: %s"
+        save: "Save: %s"
+      include_entities: "Include Entities:"
+      integrity:
+        _value: Structure Integrity and Seed
+        integrity: Structure Integrity
+        seed: Structure Seed
+      invalid_structure_name: "Invalid structure name '%s'"
+      load_not_found: "Structure '%s' is not available"
+      load_prepare: "Structure '%s' position prepared"
+      load_success: "Structure loaded from '%s'"
+      mode:
+        corner: Corner
+        data: Data
+        load: Load
+        save: Save
+      mode_info:
+        corner: Corner Mode - Placement and Size Marker
+        data: Data Mode - Game Logic Marker
+        load: Load Mode - Load from File
+        save: Save Mode - Write to File
+      position:
+        _value: Relative Position
+        x: relative Position x
+        y: relative position y
+        z: relative position z
+      save_failure: "Unable to save structure '%s'"
+      save_success: "Structure saved as '%s'"
+      show_air: "Show Invisible Blocks:"
+      show_boundingbox: "Show Bounding Box:"
+      size:
+        _value: Structure Size
+        x: structure size x
+        y: structure size y
+        z: structure size z
+      size_failure: Unable to detect structure size. Add corners with matching structure names
+      size_success: "Size successfully detected for '%s'"
+      strict: 厳密な配置：
+      structure_name: Structure Name
+    trim_material:
+      minecraft:
+        amethyst: Amethyst Material
+        copper: Copper Material
+        diamond: Diamond Material
+        emerald: Emerald Material
+        gold: Gold Material
+        iron: Iron Material
+        lapis: Lapis Material
+        netherite: Netherite Material
+        quartz: Quartz Material
+        redstone: Redstone Material
+        resin: 樹脂素材
+    trim_pattern:
+      minecraft:
+        bolt: ネジ止め風の装飾
+        coast: Coast Armor Trim
+        dune: Dune Armor Trim
+        eye: Eye Armor Trim
+        flow: 旋風の装飾
+        host: Host Armor Trim
+        raiser: Raiser Armor Trim
+        rib: Rib Armor Trim
+        sentry: Sentry Armor Trim
+        shaper: Shaper Armor Trim
+        silence: Silence Armor Trim
+        snout: Snout Armor Trim
+        spire: Spire Armor Trim
+        tide: Tide Armor Trim
+        vex: Vex Armor Trim
+        ward: Ward Armor Trim
+        wayfinder: Wayfinder Armor Trim
+        wild: Wild Armor Trim
+    upgrade:
+      minecraft:
+        netherite_upgrade: Netherite Upgrade

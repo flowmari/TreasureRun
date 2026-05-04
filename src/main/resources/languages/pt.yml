@@ -6433,3 +6433,445 @@ minecraft:
         zombie_spawn_egg: Ovo Gerador de Zumbi
         zombie_villager_spawn_egg: Ovo Gerador de Aldeão Zumbi
         zombified_piglin_spawn_egg: Ovo Gerador de Piglin-Zumbi
+    clear:
+      failed:
+        multiple: "Nenhum item encontrado no inventário de %s jogadores"
+        single: "Nenhum item encontrado no inventário de %s"
+    container:
+      barrel: Barril
+      beacon: Sinalizador
+      beehive:
+        bees: "Abelha(s): %s / %s"
+        honey: "Mel: %s / %s"
+      blast_furnace: Alto-forno
+      brewing: Suporte de Poções
+      cartography_table: Bancada de Cartografia
+      chest: Baú
+      chestDouble: Baú Grande
+      crafter: Bancada Automática
+      crafting: Fabricação
+      creative: Seleção de itens
+      dispenser: Ejetor
+      dropper: Liberador
+      enchant:
+        _value: Encantar
+        clue: "%s . . . ?"
+        lapis:
+          many: "%s lápis-lazúlis"
+          one: 1 lápis-lazúli
+        level:
+          many: "%s níveis de experiência"
+          one: 1 nível de experiência
+          requirement: "Nível necessário: %s"
+      enderchest: Baú de Ender
+      furnace: Fornalha
+      grindstone_title: Reparar e desencantar
+      hopper: Funil
+      inventory: Inventário
+      isLocked: "%s está trancado!"
+      lectern: Atril
+      loom: Tear
+      repair:
+        _value: Reparar e renomear
+        cost: "Custo do encantamento: %1$s"
+        expensive: "Muito caro!"
+      shulkerBox:
+        _value: Caixa de Shulker
+        itemCount: "%s x%s"
+        more: "e mais %s..."
+        unknownContents: ???????
+      smoker: Defumador
+      spectatorCantOpen: Não foi possível abrir. O conteúdo ainda não foi gerado.
+      stonecutter: Cortador de Pedras
+      upgrade:
+        _value: Melhorar equipamento
+        error_tooltip: O item não pode ser melhorado assim
+        missing_template_tooltip: Adicione um Molde de Ferraria
+    dataPack:
+      bundle:
+        description: Ativa o item experimental Trouxa
+        name: Trouxas
+      locator_bar:
+        description: Mostra a direção de outros jogadores em servidores
+        name: Barra Localizadora
+      minecart_improvements:
+        description: Movimentação melhorada dos Carrinhos de Mina
+        name: Melhorias dos Carrinhos de Mina
+      redstone_experiments:
+        description: Mudanças experimentais de Redstone
+        name: Experimentos de Redstone
+      title: Selecionar pacotes de dados
+      trade_rebalance:
+        description: Novas trocas para os Aldeões
+        name: Rebalanceamento das trocas dos Aldeões
+      update_1_20:
+        description: Novas funcionalidades e conteúdos para o Minecraft 1.20
+        name: Atualização 1.20
+      update_1_21:
+        description: Novas funcionalidades e conteúdos para o Minecraft 1.21
+        name: Atualização 1.21
+      validation:
+        back: Voltar
+        failed: "A validação de pacotes de dados falhou!"
+        reset: Redefinir para o padrão
+        working: Validando pacotes de dados selecionados...
+      vanilla:
+        description: Dados padrão do Minecraft
+        name: Padrão
+      winter_drop:
+        description: Novos conteúdos para o Drop de Fim de Ano
+        name: Drop de Fim de Ano
+    datapackFailure:
+      safeMode:
+        _value: Modo Seguro
+        failed:
+          description: Esse mundo contém dados inválidos ou corrompidos.
+          title: Falha ao carregar o mundo no Modo Seguro.
+      title: "Erros nos pacotes de dados selecionados impediram o carregamento do mundo.\nTente carregá-lo apenas com o pacote de dados padrão (Modo Seguro) ou volte ao menu principal e corrija manualmente."
+    difficulty:
+      lock:
+        question: "Deseja mesmo bloquear a dificuldade do mundo? Estará para sempre em %1$s e você nunca mais poderá mudá-la."
+        title: Bloquear a dificuldade do mundo
+    editGamerule:
+      default: "Padrão: %s"
+      inGame:
+        button: Editar regras do jogo...
+        disabled:
+          tooltip: Atualizar as regras do jogo requer permissões de operador.
+        discardChanges:
+          message: Deseja mesmo descartar as mudanças pendentes nas regras do jogo?
+          title: Mudanças nas regras do jogo
+        downloadingGamerules: Baixando regras do jogo...
+      title: Editar regras do jogo
+    event:
+      minecraft:
+        raid:
+          _value: Invasão
+          defeat:
+            _value: Derrota
+            full: Invasão — Derrota
+          raiders_remaining: "Invasores restantes: %s"
+          victory:
+            _value: Vitória
+            full: Invasão — Vitória
+    gameMode:
+      adventure: Modo Aventura
+      changed: "Seu modo de jogo foi alterado para %s"
+      creative: Modo Criativo
+      hardcore: Modo Intenso
+      spectator: Modo Espectador
+      survival: Modo Sobrevivência
+    hanging_sign:
+      edit: Editar mensagem da placa suspensa
+    instrument:
+      minecraft:
+        admire_goat_horn: Encanto
+        call_goat_horn: Chamado
+        dream_goat_horn: Devaneio
+        feel_goat_horn: Sensação
+        ponder_goat_horn: Reflexão
+        seek_goat_horn: Busca
+        sing_goat_horn: Canto
+        yearn_goat_horn: Anseio
+    inventory:
+      binSlot: Destruir item
+      hotbarInfo: "Salve a barra rápida com %1$s + %2$s"
+      hotbarSaved: "Barra rápida salva (restaure-a com %1$s + %2$s)"
+    jigsaw_block:
+      final_state: "Torna-se:"
+      generate: Gerar
+      joint:
+        aligned: Fixa
+        rollable: Rotativa
+      joint_label: "Tipo de ligação:"
+      keep_jigsaws: Manter BQCs
+      levels: "Níveis: %s"
+      name: "Nome:"
+      placement_priority:
+        _value: "Prioridade da posição:"
+        tooltip: "Quando o bloco-quebra-cabeça se conecta a uma peça, essa é a ordem em que a peça é processada para conexões em estruturas mais largas.\n\nO processo ocorre em ordem decrescente, seguindo a ordem de inserção em caso de empate."
+      pool: "Conjunto:"
+      selection_priority:
+        _value: "Prioridade de seleção:"
+        tooltip: "Ao processar a peça associada às conexões, essa é a ordem em que o bloco-quebra-cabeça tentará conectar-se à peça-alvo.\n\nO processo ocorre em ordem decrescente, ou aleatoriamente em caso de empate."
+      target: "Nome do alvo:"
+    mirror:
+      front_back: ↑ ↓
+      left_right: ← →
+      none: "|"
+    pack:
+      available:
+        title: Disponíveis
+      copyFailure: Falha ao copiar os pacotes
+      dropConfirm: Deseja adicionar os seguintes pacotes ao Minecraft?
+      dropInfo: Arraste os pacotes até essa janela para adicioná-los
+      dropRejected:
+        message: "As seguintes entradas não eram pacotes válidos e não foram copiadas:\n %s"
+        title: Pacotes inválidos
+      folderInfo: (Coloque os arquivos dos pacotes aqui)
+      incompatible:
+        _value: Incompatível
+        confirm:
+          new: Esse pacote foi feito para uma versão mais recente do Minecraft e pode não funcionar corretamente.
+          old: Esse pacote foi feito para uma versão antiga do Minecraft e pode não funcionar corretamente.
+          title: Deseja mesmo carregar esse pacote?
+          unknown: Esse pacote está corrompido ou foi feito para uma versão desconhecida do Minecraft e pode não funcionar corretamente.
+        new: (Feito para uma versão mais recente do Minecraft)
+        old: (Feito para uma versão mais antiga do Minecraft)
+        unknown: (Corrompido ou incompatível)
+      nameAndSource: "%s (%s)"
+      openFolder: Abrir pasta de pacotes
+      selected:
+        title: Selecionados
+      source:
+        builtin: interno
+        feature: conteúdo
+        local: local
+        server: servidor
+        world: mundo
+    painting:
+      dimensions: "%sx%s"
+      minecraft:
+        alban:
+          author: Kristoffer Zetterstrand
+          title: Albanian
+        aztec:
+          author: Kristoffer Zetterstrand
+          title: de_aztec
+        aztec2:
+          author: Kristoffer Zetterstrand
+          title: de_aztec
+        backyard:
+          author: Kristoffer Zetterstrand
+          title: Backyard
+        baroque:
+          author: Sarah Boeving
+          title: Baroque
+        bomb:
+          author: Kristoffer Zetterstrand
+          title: Target Successfully Bombed
+        bouquet:
+          author: Kristoffer Zetterstrand
+          title: Bouquet
+        burning_skull:
+          author: Kristoffer Zetterstrand
+          title: Skull On Fire
+        bust:
+          author: Kristoffer Zetterstrand
+          title: Bust
+        cavebird:
+          author: Kristoffer Zetterstrand
+          title: Cavebird
+        changing:
+          author: Kristoffer Zetterstrand
+          title: Changing
+        cotan:
+          author: Kristoffer Zetterstrand
+          title: Cotán
+        courbet:
+          author: Kristoffer Zetterstrand
+          title: Bonjour Monsieur Courbet
+        creebet:
+          author: Kristoffer Zetterstrand
+          title: Creebet
+        dennis:
+          author: Sarah Boeving
+          title: Dennis
+        donkey_kong:
+          author: Kristoffer Zetterstrand
+          title: Kong
+        earth:
+          author: Mojang
+          title: Earth
+        endboss:
+          author: Kristoffer Zetterstrand
+          title: Endboss
+        fern:
+          author: Kristoffer Zetterstrand
+          title: Fern
+        fighters:
+          author: Kristoffer Zetterstrand
+          title: Fighters
+        finding:
+          author: Kristoffer Zetterstrand
+          title: Finding
+        fire:
+          author: Mojang
+          title: Fire
+        graham:
+          author: Kristoffer Zetterstrand
+          title: Graham
+        humble:
+          author: Sarah Boeving
+          title: Humble
+        kebab:
+          author: Kristoffer Zetterstrand
+          title: Kebab med tre pepperoni
+        lowmist:
+          author: Kristoffer Zetterstrand
+          title: Lowmist
+        match:
+          author: Kristoffer Zetterstrand
+          title: Match
+        meditative:
+          author: Sarah Boeving
+          title: Meditative
+        orb:
+          author: Kristoffer Zetterstrand
+          title: Orb
+        owlemons:
+          author: Kristoffer Zetterstrand
+          title: Owlemons
+        passage:
+          author: Kristoffer Zetterstrand
+          title: Passage
+        pigscene:
+          author: Kristoffer Zetterstrand
+          title: Pigscene
+        plant:
+          author: Kristoffer Zetterstrand
+          title: Paradisträd
+        pointer:
+          author: Kristoffer Zetterstrand
+          title: Pointer
+        pond:
+          author: Kristoffer Zetterstrand
+          title: Pond
+        pool:
+          author: Kristoffer Zetterstrand
+          title: The Pool
+        prairie_ride:
+          author: Sarah Boeving
+          title: Prairie Ride
+        sea:
+          author: Kristoffer Zetterstrand
+          title: Seaside
+        skeleton:
+          author: Kristoffer Zetterstrand
+          title: Mortal Coil
+        skull_and_roses:
+          author: Kristoffer Zetterstrand
+          title: Skull and Roses
+        stage:
+          author: Kristoffer Zetterstrand
+          title: The Stage Is Set
+        sunflowers:
+          author: Kristoffer Zetterstrand
+          title: Sunflowers
+        sunset:
+          author: Kristoffer Zetterstrand
+          title: sunset_dense
+        tides:
+          author: Kristoffer Zetterstrand
+          title: Tides
+        unpacked:
+          author: Sarah Boeving
+          title: Unpacked
+        void:
+          author: Kristoffer Zetterstrand
+          title: The void
+        wanderer:
+          author: Kristoffer Zetterstrand
+          title: Wanderer
+        wasteland:
+          author: Kristoffer Zetterstrand
+          title: Wasteland
+        water:
+          author: Mojang
+          title: Water
+        wind:
+          author: Mojang
+          title: Wind
+        wither:
+          author: Mojang
+          title: Wither
+      random: Variante aleatória
+    record:
+      nowPlaying: "Tocando: %s"
+    sign:
+      edit: Editar mensagem da placa
+    structure_block:
+      button:
+        detect_size: DETECTAR
+        load: CARREGAR
+        save: SALVAR
+      custom_data: Nome da data tag personalizada
+      detect_size: "Detectar posição e tamanho da estrutura:"
+      hover:
+        corner: "Cantos: %s"
+        data: "Dados: %s"
+        load: "Carregar: %s"
+        save: "Salvar: %s"
+      include_entities: "Incluir entidades:"
+      integrity:
+        _value: Integridade e semente da estrutura
+        integrity: Integridade da estrutura
+        seed: Semente da estrutura
+      invalid_structure_name: "Nome da estrutura inválido: %s"
+      load_not_found: "A estrutura \"%s\" não foi encontrada"
+      load_prepare: "A posição da estrutura \"%s\" foi preparada"
+      load_success: "Estrutura carregada de \"%s\""
+      mode:
+        corner: Canto
+        data: Dados
+        load: Carregar
+        save: Salvar
+      mode_info:
+        corner: Canto — Marcador de posição e tamanho
+        data: Dados — Marcador lógico do jogo
+        load: Carregamento — Carregar do arquivo
+        save: Salvamento — Salvar no arquivo
+      position:
+        _value: Posição relativa
+        x: posição x relativa
+        y: posição y relativa
+        z: posição z relativa
+      save_failure: "Não foi possível salvar a estrutura \"%s\""
+      save_success: "Estrutura salva como \"%s\""
+      show_air: "Mostrar blocos invisíveis:"
+      show_boundingbox: "Mostrar bordas:"
+      size:
+        _value: Tamanho da estrutura
+        x: tamanho x da estrutura
+        y: tamanho y da estrutura
+        z: tamanho z da estrutura
+      size_failure: Não foi possível detectar o tamanho da estrutura. Adicione cantos com nomes correspondentes aos da estrutura
+      size_success: "Tamanho da estrutura \"%s\" detectado"
+      strict: "Posicionamento exato:"
+      structure_name: Nome da estrutura
+    trim_material:
+      minecraft:
+        amethyst: Material de Ametista
+        copper: Material de Cobre
+        diamond: Material de Diamante
+        emerald: Material de Esmeralda
+        gold: Material de Ouro
+        iron: Material de Ferro
+        lapis: Material de Lápis-Lazúli
+        netherite: Material de Netherita
+        quartz: Material de Quartzo
+        redstone: Material de Redstone
+        resin: Material de Resina
+    trim_pattern:
+      minecraft:
+        bolt: Enfeite de Parafuso
+        coast: Enfeite do Litoral
+        dune: Enfeite de Dunas
+        eye: Enfeite de Olho
+        flow: Enfeite de Fluxo
+        host: Enfeite de Hospedeiro
+        raiser: Enfeite de Levante
+        rib: Enfeite de Costelas
+        sentry: Enfeite de Sentinela
+        shaper: Enfeite de Moldador
+        silence: Enfeite de Silêncio
+        snout: Enfeite de Focinho
+        spire: Enfeite de Espiral
+        tide: Enfeite de Maré
+        vex: Enfeite de Vex
+        ward: Enfeite das Profundezas
+        wayfinder: Enfeite de Navegador
+        wild: Enfeite da Selva
+    upgrade:
+      minecraft:
+        netherite_upgrade: Melhoria de netherita

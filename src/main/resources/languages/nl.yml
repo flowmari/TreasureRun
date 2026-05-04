@@ -6319,3 +6319,445 @@ minecraft:
         zombie_spawn_egg: Zombie Spawn Egg
         zombie_villager_spawn_egg: Zombie Villager Spawn Egg
         zombified_piglin_spawn_egg: Zombified Piglin Spawn Egg
+    clear:
+      failed:
+        multiple: "No items were found on %s players"
+        single: "No items were found on player %s"
+    container:
+      barrel: Barrel
+      beacon: Beacon
+      beehive:
+        bees: "Bijen: %s/%s"
+        honey: "Honing: %s/%s"
+      blast_furnace: Blast Furnace
+      brewing: Brewing Stand
+      cartography_table: Cartography Table
+      chest: Chest
+      chestDouble: Large Chest
+      crafter: Vervaardigingsmachine
+      crafting: Crafting
+      creative: Item Selection
+      dispenser: Dispenser
+      dropper: Dropper
+      enchant:
+        _value: Enchant
+        clue: "%s . . . ?"
+        lapis:
+          many: "%s Lapis Lazuli"
+          one: 1 Lapis Lazuli
+        level:
+          many: "%s Enchantment Levels"
+          one: 1 Enchantment Level
+          requirement: "Level Requirement: %s"
+      enderchest: Ender Chest
+      furnace: Furnace
+      grindstone_title: "Repair & Disenchant"
+      hopper: Item Hopper
+      inventory: Inventory
+      isLocked: "%s is locked!"
+      lectern: Lectern
+      loom: Loom
+      repair:
+        _value: "Repair & Name"
+        cost: "Enchantment Cost: %1$s"
+        expensive: "Too Expensive!"
+      shulkerBox:
+        _value: Shulker Box
+        itemCount: "%s ×%s"
+        more: "and %s more..."
+        unknownContents: ???????
+      smoker: Smoker
+      spectatorCantOpen: Unable to open. Loot not generated yet.
+      stonecutter: Stonecutter
+      upgrade:
+        _value: Upgrade Gear
+        error_tooltip: Item can't be upgraded this way
+        missing_template_tooltip: Add Smithing Template
+    dataPack:
+      bundle:
+        description: Enables experimental Bundle item
+        name: Bundles
+      locator_bar:
+        description: De richting van anderen weergeven tijdens het samen spelen
+        name: Opsporingsbalk
+      minecart_improvements:
+        description: Verbeterde voortbeweging van mijnkarren
+        name: Mijnkarverbeteringen
+      redstone_experiments:
+        description: Experimentele Redstonewijzigingen
+        name: Redstone-experimenten
+      title: Select Data Packs
+      trade_rebalance:
+        description: Veranderd handelswaar van dorpelingen
+        name: Herijking van dorpelingenhandel
+      update_1_20:
+        description: New features and content for Minecraft 1.20
+        name: Update 1.20
+      update_1_21:
+        description: Nieuwe functies en inhoud voor Minecraft 1.21
+        name: Update 1.21
+      validation:
+        back: Go Back
+        failed: "Data pack validation failed!"
+        reset: Reset to Default
+        working: Validating selected data packs...
+      vanilla:
+        description: The default data for Minecraft
+        name: Default
+      winter_drop:
+        description: Nieuwe functionaliteit en inhoud voor de kleine winterupdate
+        name: Kleine winterupdate
+    datapackFailure:
+      safeMode:
+        _value: Safe Mode
+        failed:
+          description: This world contains invalid or corrupted save data.
+          title: Failed to load world in Safe Mode.
+      title: "Errors in currently selected data packs prevented the world from loading.\nYou can either try to load it with only the vanilla data pack (\"safe mode\"), or go back to the title screen and fix it manually."
+    difficulty:
+      lock:
+        question: "Are you sure you want to lock the difficulty of this world? This will set this world to always be %1$s, and you will never be able to change that again."
+        title: Lock World Difficulty
+    editGamerule:
+      default: "Default: %s"
+      inGame:
+        button: Spelregels bewerken
+        disabled:
+          tooltip: Je moet een beheerder zijn om spelregels te bewerken.
+        discardChanges:
+          message: Weet je zeker dat je de openstaande spelregelwijzigingen wilt annuleren?
+          title: Spelregelwijzigingen
+        downloadingGamerules: Spelregels ophalen...
+      title: Edit Game Rules
+    event:
+      minecraft:
+        raid:
+          _value: Raid
+          defeat:
+            _value: Defeat
+            full: Overval - verloren
+          raiders_remaining: "Raiders Remaining: %s"
+          victory:
+            _value: Victory
+            full: Overval - overwinning
+    gameMode:
+      adventure: Adventure Mode
+      changed: "Your game mode has been updated to %s"
+      creative: Creative Mode
+      hardcore: "Hardcore Mode!"
+      spectator: Spectator Mode
+      survival: Survival Mode
+    hanging_sign:
+      edit: Edit Hanging Sign Message
+    instrument:
+      minecraft:
+        admire_goat_horn: Admire
+        call_goat_horn: Call
+        dream_goat_horn: Dream
+        feel_goat_horn: Feel
+        ponder_goat_horn: Ponder
+        seek_goat_horn: Seek
+        sing_goat_horn: Sing
+        yearn_goat_horn: Yearn
+    inventory:
+      binSlot: Destroy Item
+      hotbarInfo: "Save hotbar with %1$s+%2$s"
+      hotbarSaved: "Item hotbar saved (restore with %1$s+%2$s)"
+    jigsaw_block:
+      final_state: "Turns into:"
+      generate: Generate
+      joint:
+        aligned: Aligned
+        rollable: Rollable
+      joint_label: "Joint Type:"
+      keep_jigsaws: Keep Jigsaws
+      levels: "Levels: %s"
+      name: "Name:"
+      placement_priority:
+        _value: "Plaatsingsprioriteit:"
+        tooltip: "Dit is de volgorde waarin dit puzzelstuk wordt behandeld bij verbindingen in de bredere constructie wanneer het aansluit bij een ander stuk.\n\nStukken worden in aflopende prioriteit behandeld, waar het moment van toevoeging wordt gebruikt in geval van gelijke prioriteit."
+      pool: "Target Pool:"
+      selection_priority:
+        _value: "Selectieprioriteit:"
+        tooltip: "Dit is de volgorde waarin dit puzzelblok probeert zich te verbinden met het doelstuk bij het behandelen van de verbindingen van het doelstuk.\n\nPuzzelblokken worden in aflopende prioriteit behandeld, waarbij een willekeurig bepaalde volgorde wordt gebruikt in geval van gelijke prioriteit."
+      target: "Target Name:"
+    mirror:
+      front_back: ↑ ↓
+      left_right: ← →
+      none: "|"
+    pack:
+      available:
+        title: Available
+      copyFailure: Failed to copy packs
+      dropConfirm: Do you want to add the following packs to Minecraft?
+      dropInfo: Drag and drop files into this window to add packs
+      dropRejected:
+        message: "De volgende lijst bevat ongeldige pakketten en werden niet gekopieerd:\n %s"
+        title: Elementen die geen pakket zijn
+      folderInfo: (Place pack files here)
+      incompatible:
+        _value: Incompatible
+        confirm:
+          new: This pack was made for a newer version of Minecraft and may not work correctly.
+          old: This pack was made for an older version of Minecraft and may no longer work correctly.
+          title: Are you sure you want to load this pack?
+          unknown: Dit pakket is defect of gemaakt voor een onbekende Minecraftversie en werkt mogelijk niet goed.
+        new: (Made for a newer version of Minecraft)
+        old: (Made for an older version of Minecraft)
+        unknown: (defect of incompatibel)
+      nameAndSource: "%s (%s)"
+      openFolder: Open Pack Folder
+      selected:
+        title: Selected
+      source:
+        builtin: built-in
+        feature: feature
+        local: local
+        server: server
+        world: world
+    painting:
+      dimensions: "%sx%s"
+      minecraft:
+        alban:
+          author: Kristoffer Zetterstrand
+          title: Albanian
+        aztec:
+          author: Kristoffer Zetterstrand
+          title: de_aztec
+        aztec2:
+          author: Kristoffer Zetterstrand
+          title: de_aztec
+        backyard:
+          author: Kristoffer Zetterstrand
+          title: Binnenplaats
+        baroque:
+          author: Sarah Boeving
+          title: Barok
+        bomb:
+          author: Kristoffer Zetterstrand
+          title: Target Successfully Bombed
+        bouquet:
+          author: Kristoffer Zetterstrand
+          title: Boeket
+        burning_skull:
+          author: Kristoffer Zetterstrand
+          title: Skull On Fire
+        bust:
+          author: Kristoffer Zetterstrand
+          title: Bust
+        cavebird:
+          author: Kristoffer Zetterstrand
+          title: Grottenvogel
+        changing:
+          author: Kristoffer Zetterstrand
+          title: Verandering
+        cotan:
+          author: Kristoffer Zetterstrand
+          title: Cotán
+        courbet:
+          author: Kristoffer Zetterstrand
+          title: Bonjour Monsieur Courbet
+        creebet:
+          author: Kristoffer Zetterstrand
+          title: Creebet
+        dennis:
+          author: Sarah Boeving
+          title: Dennis
+        donkey_kong:
+          author: Kristoffer Zetterstrand
+          title: Kong
+        earth:
+          author: Mojang
+          title: Earth
+        endboss:
+          author: Kristoffer Zetterstrand
+          title: Eindbaas
+        fern:
+          author: Kristoffer Zetterstrand
+          title: Varen
+        fighters:
+          author: Kristoffer Zetterstrand
+          title: Fighters
+        finding:
+          author: Kristoffer Zetterstrand
+          title: Opgraving
+        fire:
+          author: Mojang
+          title: Fire
+        graham:
+          author: Kristoffer Zetterstrand
+          title: Graham
+        humble:
+          author: Sarah Boeving
+          title: Nederig
+        kebab:
+          author: Kristoffer Zetterstrand
+          title: Kebab med tre pepperoni
+        lowmist:
+          author: Kristoffer Zetterstrand
+          title: Lage nevel
+        match:
+          author: Kristoffer Zetterstrand
+          title: Match
+        meditative:
+          author: Sarah Boeving
+          title: Meditatief
+        orb:
+          author: Kristoffer Zetterstrand
+          title: Bol
+        owlemons:
+          author: Kristoffer Zetterstrand
+          title: Citruil
+        passage:
+          author: Kristoffer Zetterstrand
+          title: Galerij
+        pigscene:
+          author: Kristoffer Zetterstrand
+          title: Pigscene
+        plant:
+          author: Kristoffer Zetterstrand
+          title: Paradisträd
+        pointer:
+          author: Kristoffer Zetterstrand
+          title: Pointer
+        pond:
+          author: Kristoffer Zetterstrand
+          title: Vijver
+        pool:
+          author: Kristoffer Zetterstrand
+          title: The Pool
+        prairie_ride:
+          author: Sarah Boeving
+          title: Rit over de prairie
+        sea:
+          author: Kristoffer Zetterstrand
+          title: Seaside
+        skeleton:
+          author: Kristoffer Zetterstrand
+          title: Mortal Coil
+        skull_and_roses:
+          author: Kristoffer Zetterstrand
+          title: Skull and Roses
+        stage:
+          author: Kristoffer Zetterstrand
+          title: The Stage Is Set
+        sunflowers:
+          author: Kristoffer Zetterstrand
+          title: Zonnebloemen
+        sunset:
+          author: Kristoffer Zetterstrand
+          title: sunset_dense
+        tides:
+          author: Kristoffer Zetterstrand
+          title: Getij
+        unpacked:
+          author: Sarah Boeving
+          title: Uitgepakt
+        void:
+          author: Kristoffer Zetterstrand
+          title: The void
+        wanderer:
+          author: Kristoffer Zetterstrand
+          title: Wanderer
+        wasteland:
+          author: Kristoffer Zetterstrand
+          title: Wasteland
+        water:
+          author: Mojang
+          title: Water
+        wind:
+          author: Mojang
+          title: Wind
+        wither:
+          author: Mojang
+          title: Wither
+      random: Random variant
+    record:
+      nowPlaying: "Now Playing: %s"
+    sign:
+      edit: Edit Sign Message
+    structure_block:
+      button:
+        detect_size: DETECT
+        load: LOAD
+        save: SAVE
+      custom_data: Custom Data Tag Name
+      detect_size: "Detect Structure Size and Position:"
+      hover:
+        corner: "Corner: %s"
+        data: "Data: %s"
+        load: "Load: %s"
+        save: "Save: %s"
+      include_entities: "Include Entities:"
+      integrity:
+        _value: Structure Integrity and Seed
+        integrity: Structure Integrity
+        seed: Structure Seed
+      invalid_structure_name: "Invalid structure name '%s'"
+      load_not_found: "Structure '%s' is not available"
+      load_prepare: "Structure '%s' position prepared"
+      load_success: "Structure loaded from '%s'"
+      mode:
+        corner: Corner
+        data: Data
+        load: Load
+        save: Save
+      mode_info:
+        corner: Corner Mode - Placement and Size Marker
+        data: Data Mode - Game Logic Marker
+        load: Load Mode - Load from File
+        save: Save Mode - Write to File
+      position:
+        _value: Relative Position
+        x: relative Position x
+        y: relative position y
+        z: relative position z
+      save_failure: "Unable to save structure '%s'"
+      save_success: "Structure saved as '%s'"
+      show_air: "Show Invisible Blocks:"
+      show_boundingbox: "Show Bounding Box:"
+      size:
+        _value: Structure Size
+        x: structure size x
+        y: structure size y
+        z: structure size z
+      size_failure: Unable to detect structure size. Add corners with matching structure names
+      size_success: "Size successfully detected for '%s'"
+      strict: "Strikt plaatsen:"
+      structure_name: Structure Name
+    trim_material:
+      minecraft:
+        amethyst: Amethyst Material
+        copper: Copper Material
+        diamond: Diamond Material
+        emerald: Emerald Material
+        gold: Gold Material
+        iron: Iron Material
+        lapis: Lapis Material
+        netherite: Netherite Material
+        quartz: Quartz Material
+        redstone: Redstone Material
+        resin: Harsmateriaal
+    trim_pattern:
+      minecraft:
+        bolt: Harnasversiering 'bout'
+        coast: Coast Armor Trim
+        dune: Dune Armor Trim
+        eye: Eye Armor Trim
+        flow: Harnasversiering 'windstroming'
+        host: Host Armor Trim
+        raiser: Raiser Armor Trim
+        rib: Rib Armor Trim
+        sentry: Sentry Armor Trim
+        shaper: Shaper Armor Trim
+        silence: Silence Armor Trim
+        snout: Snout Armor Trim
+        spire: Spire Armor Trim
+        tide: Tide Armor Trim
+        vex: Vex Armor Trim
+        ward: Ward Armor Trim
+        wayfinder: Wayfinder Armor Trim
+        wild: Wild Armor Trim
+    upgrade:
+      minecraft:
+        netherite_upgrade: Netherite Upgrade
