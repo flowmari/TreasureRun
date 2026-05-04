@@ -60,6 +60,13 @@ public class LocalizedSystemMessageListener implements Listener {
     if (valid(message)) {
       event.setJoinMessage(message);
     }
+    final String playerLang = langOf(player);
+    Bukkit.getScheduler().runTaskLater(plugin, () -> {
+      try {
+        byte[] data = playerLang.getBytes(java.nio.charset.StandardCharsets.UTF_8);
+        player.sendPluginMessage(plugin, "treasurerun:lang", data);
+      } catch (Throwable ignored) {}
+    }, 40L);
   }
 
   @EventHandler(priority = EventPriority.HIGHEST)

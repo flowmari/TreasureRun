@@ -88,6 +88,7 @@ public class LangCommand implements CommandExecutor, TabCompleter {
 
     boolean saved = setPlayerLang(player.getUniqueId(), lang);
     trySetLangToLanguageStore(player.getUniqueId(), lang);
+    sendLangToClient(player, lang);
 
     String displayName = plugin.getConfig().getString("language.displayName." + lang, lang);
 
@@ -300,5 +301,12 @@ public class LangCommand implements CommandExecutor, TabCompleter {
     }
 
     return ChatColor.translateAlternateColorCodes('&', out);
+  }
+
+  private void sendLangToClient(Player player, String lang) {
+    try {
+      byte[] data = lang.getBytes(java.nio.charset.StandardCharsets.UTF_8);
+      player.sendPluginMessage(plugin, "treasurerun:lang", data);
+    } catch (Throwable ignored) {}
   }
 }
