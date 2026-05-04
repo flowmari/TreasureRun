@@ -2,6 +2,7 @@ package plugin;
 
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.ConfigurationSection;
 
 import java.util.Collections;
 import java.util.List;
@@ -166,9 +167,31 @@ public class I18n {
     return List.of(unknown.replace("{key}", key));
   }
 
+  // PACKET_I18N_SECTION_VALUE_FIX
+  // Minecraft translation keys can be both a leaf and a parent:
+  //   death.attack.anvil
+  //   death.attack.anvil.player
+  // Nested YAML cannot store both a String and a Section at the same path.
+  // We store the parent leaf text as "_value" and read it here.
   private String getStringSafe(FileConfiguration cfg, String path) {
-    try { return (cfg == null) ? null : cfg.getString(path); }
-    catch (Throwable ignored) { return null; }
+    try {
+      if (cfg == null || path == null || path.isBlank()) return null;
+
+      Object raw = cfg.get(path);
+
+      if (raw instanceof String) {
+        return (String) raw;
+      }
+
+      if (raw instanceof ConfigurationSection) {
+        String sectionValue = ((ConfigurationSection) raw).getString("_value");
+        if (sectionValue != null) return sectionValue;
+      }
+
+      return cfg.getString(path);
+    } catch (Throwable ignored) {
+      return null;
+    }
   }
 
   private List<String> getStringListSafe(FileConfiguration cfg, String path) {

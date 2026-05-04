@@ -963,7 +963,51 @@ minecraft:
     chat:
       type:
         admin: '[{arg0}: {arg1}]'
-        text: <{arg0}> {arg1}
+        text:
+          narrate: '%s says %s'
+          _value: <%s> %s
+        advancement:
+          challenge: '%s has completed the challenge %s'
+          goal: '%s has reached the goal %s'
+          task: '%s has made the advancement %s'
+        announcement: '[%s] %s'
+        emote: '* %s %s'
+        team:
+          hover: Message Team
+          sent: -> %s <%s> %s
+          text: '%s <%s> %s'
+      cannotSend: Cannot send chat message
+      coordinates:
+        tooltip: Click to teleport
+        _value: '%s, %s, %s'
+      copy:
+        click: Click to Copy to Clipboard
+        _value: Copy to Clipboard
+      deleted_marker: This chat message has been deleted by the server.
+      disabled:
+        chain_broken: Chat disabled due to broken chain. Please try reconnecting.
+        expiredProfileKey: Chat disabled due to expired profile public key. Please try reconnecting.
+        launcher: Chat disabled by launcher option. Cannot send message.
+        missingProfileKey: Chat disabled due to missing profile public key. Please try reconnecting.
+        options: Chat disabled in client options.
+        profile:
+          moreInfo: Chat not allowed by account settings. Cannot send or view messages.
+          _value: Chat not allowed by account settings. Press '%s' again for more information.
+      editBox: chat
+      filtered: Filtered by the server.
+      filtered_full: The server has hidden your message for some players.
+      link:
+        confirm: Are you sure you want to open the following website?
+        confirmTrusted: Do you want to open this link or copy it to your clipboard?
+        open: Open in Browser
+        warning: Never open links from people that you don't trust!
+      queue: '[+%s pending lines]'
+      square_brackets: '[%s]'
+      tag:
+        modified: 'Message modified by the server. Original:'
+        not_secure: Unverified message. Cannot be reported.
+        system: Server message. Cannot be reported.
+        system_single_player: Server message.
     command:
       context:
         here: <--[अत्र]
@@ -972,15 +1016,1556 @@ minecraft:
     commands:
       help:
         header: '--- साहाय्यपृष्ठम् {arg0} / {arg1} ---'
+        failed: Unknown command or insufficient permissions
       op:
         success: '{arg0} सर्वर्-प्रचालकः कृतः'
+        failed: Nothing changed. The player already is an operator
       stop:
         stopping: सर्वरः निरुध्यते
+      advancement:
+        advancementNotFound: No advancement was found by the name '%1$s'
+        criterionNotFound: The advancement %1$s does not contain the criterion '%2$s'
+        grant:
+          criterion:
+            to:
+              many:
+                failure: Couldn't grant criterion '%s' of advancement %s to %s players as they already have it
+                success: Granted criterion '%s' of advancement %s to %s players
+              one:
+                failure: Couldn't grant criterion '%s' of advancement %s to %s as they already have it
+                success: Granted criterion '%s' of advancement %s to %s
+          many:
+            to:
+              many:
+                failure: Couldn't grant %s advancements to %s players as they already have them
+                success: Granted %s advancements to %s players
+              one:
+                failure: Couldn't grant %s advancements to %s as they already have them
+                success: Granted %s advancements to %s
+          one:
+            to:
+              many:
+                failure: Couldn't grant advancement %s to %s players as they already have it
+                success: Granted the advancement %s to %s players
+              one:
+                failure: Couldn't grant advancement %s to %s as they already have it
+                success: Granted the advancement %s to %s
+        revoke:
+          criterion:
+            to:
+              many:
+                failure: Couldn't revoke criterion '%s' of advancement %s from %s players as they don't have it
+                success: Revoked criterion '%s' of advancement %s from %s players
+              one:
+                failure: Couldn't revoke criterion '%s' of advancement %s from %s as they don't have it
+                success: Revoked criterion '%s' of advancement %s from %s
+          many:
+            to:
+              many:
+                failure: Couldn't revoke %s advancements from %s players as they don't have them
+                success: Revoked %s advancements from %s players
+              one:
+                failure: Couldn't revoke %s advancements from %s as they don't have them
+                success: Revoked %s advancements from %s
+          one:
+            to:
+              many:
+                failure: Couldn't revoke advancement %s from %s players as they don't have it
+                success: Revoked the advancement %s from %s players
+              one:
+                failure: Couldn't revoke advancement %s from %s as they don't have it
+                success: Revoked the advancement %s from %s
+      attribute:
+        base_value:
+          get:
+            success: Base value of attribute %s for entity %s is %s
+          set:
+            success: Base value for attribute %s for entity %s set to %s
+        failed:
+          entity: '%s is not a valid entity for this command'
+          modifier_already_present: Modifier %s is already present on attribute %s for entity %s
+          no_attribute: Entity %s has no attribute %s
+          no_modifier: Attribute %s for entity %s has no modifier %s
+        modifier:
+          add:
+            success: Added modifier %s to attribute %s for entity %s
+          remove:
+            success: Removed modifier %s from attribute %s for entity %s
+          value:
+            get:
+              success: Value of modifier %s on attribute %s for entity %s is %s
+        value:
+          get:
+            success: Value of attribute %s for entity %s is %s
+      ban:
+        failed: Nothing changed. The player is already banned
+        success: 'Banned %s: %s'
+      banip:
+        failed: Nothing changed. That IP is already banned
+        info: 'This ban affects %s player(s): %s'
+        invalid: Invalid IP address or unknown player
+        success: 'Banned IP %s: %s'
+      banlist:
+        entry: '%s was banned by %s: %s'
+        list: 'There are %s ban(s):'
+        none: There are no bans
+      bossbar:
+        create:
+          failed: A bossbar already exists with the ID '%s'
+          success: Created custom bossbar %s
+        get:
+          max: Custom bossbar %s has a maximum of %s
+          players:
+            none: Custom bossbar %s has no players currently online
+            some: 'Custom bossbar %s has %s player(s) currently online: %s'
+          value: Custom bossbar %s has a value of %s
+          visible:
+            hidden: Custom bossbar %s is currently hidden
+            visible: Custom bossbar %s is currently shown
+        list:
+          bars:
+            none: There are no custom bossbars active
+            some: 'There are %s custom bossbar(s) active: %s'
+        remove:
+          success: Removed custom bossbar %s
+        set:
+          color:
+            success: Custom bossbar %s has changed color
+            unchanged: Nothing changed. That's already the color of this bossbar
+          max:
+            success: Custom bossbar %s has changed maximum to %s
+            unchanged: Nothing changed. That's already the max of this bossbar
+          name:
+            success: Custom bossbar %s has been renamed
+            unchanged: Nothing changed. That's already the name of this bossbar
+          players:
+            success:
+              none: Custom bossbar %s no longer has any players
+              some: 'Custom bossbar %s now has %s player(s): %s'
+            unchanged: Nothing changed. Those players are already on the bossbar with nobody to add or remove
+          style:
+            success: Custom bossbar %s has changed style
+            unchanged: Nothing changed. That's already the style of this bossbar
+          value:
+            success: Custom bossbar %s has changed value to %s
+            unchanged: Nothing changed. That's already the value of this bossbar
+          visibility:
+            unchanged:
+              hidden: Nothing changed. The bossbar is already hidden
+              visible: Nothing changed. The bossbar is already visible
+          visible:
+            success:
+              hidden: Custom bossbar %s is now hidden
+              visible: Custom bossbar %s is now visible
+        unknown: No bossbar exists with the ID '%s'
+      clear:
+        success:
+          multiple: Removed %s item(s) from %s players
+          single: Removed %s item(s) from player %s
+        test:
+          multiple: Found %s matching item(s) on %s players
+          single: Found %s matching item(s) on player %s
+      clone:
+        failed: No blocks were cloned
+        overlap: The source and destination areas cannot overlap
+        success: Successfully cloned %s block(s)
+        toobig: Too many blocks in the specified area (maximum %s, specified %s)
+      damage:
+        invulnerable: Target is invulnerable to the given damage type
+        success: Applied %s damage to %s
+      data:
+        block:
+          get: '%s on block %s, %s, %s after scale factor of %s is %s'
+          invalid: The target block is not a block entity
+          modified: Modified block data of %s, %s, %s
+          query: '%s, %s, %s has the following block data: %s'
+        entity:
+          get: '%s on %s after scale factor of %s is %s'
+          invalid: Unable to modify player data
+          modified: Modified entity data of %s
+          query: '%s has the following entity data: %s'
+        get:
+          invalid: Can't get %s; only numeric tags are allowed
+          multiple: This argument accepts a single NBT value
+          unknown: Can't get %s; tag doesn't exist
+        merge:
+          failed: Nothing changed. The specified properties already have these values
+        modify:
+          expected_list: 'Expected list, got: %s'
+          expected_object: 'Expected object, got: %s'
+          expected_value: 'Expected value, got: %s'
+          invalid_index: 'Invalid list index: %s'
+          invalid_substring: 'Invalid substring indices: %s to %s'
+        storage:
+          get: '%s in storage %s after scale factor of %s is %s'
+          modified: Modified storage %s
+          query: 'Storage %s has the following contents: %s'
+      datapack:
+        disable:
+          failed: Pack '%s' is not enabled!
+        enable:
+          failed:
+            no_flags: 'Pack ''%s'' cannot be enabled, since required flags are not enabled in this world: %s!'
+            _value: Pack '%s' is already enabled!
+        list:
+          available:
+            none: There are no more data packs available
+            success: 'There are %s data pack(s) available: %s'
+          enabled:
+            none: There are no data packs enabled
+            success: 'There are %s data pack(s) enabled: %s'
+        modify:
+          disable: Disabling data pack %s
+          enable: Enabling data pack %s
+        unknown: Unknown data pack '%s'
+      debug:
+        alreadyRunning: The tick profiler is already started
+        function:
+          noRecursion: Can't trace from inside of function
+          success:
+            multiple: Traced %s command(s) from %s functions to output file %s
+            single: Traced %s command(s) from function '%s' to output file %s
+          traceFailed: Failed to trace function
+        notRunning: The tick profiler hasn't started
+        started: Started tick profiling
+        stopped: Stopped tick profiling after %s seconds and %s ticks (%s ticks per second)
+      defaultgamemode:
+        success: The default game mode is now %s
+      deop:
+        failed: Nothing changed. The player is not an operator
+        success: Made %s no longer a server operator
+      difficulty:
+        failure: The difficulty did not change; it is already set to %s
+        query: The difficulty is %s
+        success: The difficulty has been set to %s
+      drop:
+        no_held_items: Entity can't hold any items
+        no_loot_table: Entity %s has no loot table
+        success:
+          multiple: Dropped %s items
+          multiple_with_table: Dropped %s items from loot table %s
+          single: Dropped %s %s
+          single_with_table: Dropped %s %s from loot table %s
+      effect:
+        clear:
+          everything:
+            failed: Target has no effects to remove
+            success:
+              multiple: Removed every effect from %s targets
+              single: Removed every effect from %s
+          specific:
+            failed: Target doesn't have the requested effect
+            success:
+              multiple: Removed effect %s from %s targets
+              single: Removed effect %s from %s
+        give:
+          failed: Unable to apply this effect (target is either immune to effects, or has something stronger)
+          success:
+            multiple: Applied effect %s to %s targets
+            single: Applied effect %s to %s
+      enchant:
+        failed:
+          entity: '%s is not a valid entity for this command'
+          incompatible: '%s cannot support that enchantment'
+          itemless: '%s is not holding any item'
+          level: '%s is higher than the maximum level of %s supported by that enchantment'
+          _value: Nothing changed. Targets either have no item in their hands or the enchantment could not be applied
+        success:
+          multiple: Applied enchantment %s to %s entities
+          single: Applied enchantment %s to %s's item
+      execute:
+        blocks:
+          toobig: Too many blocks in the specified area (maximum %s, specified %s)
+        conditional:
+          fail: Test failed
+          fail_count: 'Test failed, count: %s'
+          pass: Test passed
+          pass_count: 'Test passed, count: %s'
+      experience:
+        add:
+          levels:
+            success:
+              multiple: Gave %s experience levels to %s players
+              single: Gave %s experience levels to %s
+          points:
+            success:
+              multiple: Gave %s experience points to %s players
+              single: Gave %s experience points to %s
+        query:
+          levels: '%s has %s experience levels'
+          points: '%s has %s experience points'
+        set:
+          levels:
+            success:
+              multiple: Set %s experience levels on %s players
+              single: Set %s experience levels on %s
+          points:
+            invalid: Cannot set experience points above the maximum points for the player's current level
+            success:
+              multiple: Set %s experience points on %s players
+              single: Set %s experience points on %s
+      fill:
+        failed: No blocks were filled
+        success: Successfully filled %s block(s)
+        toobig: Too many blocks in the specified area (maximum %s, specified %s)
+      fillbiome:
+        success:
+          count: '%s biome entry/entries set between %s, %s, %s and %s, %s, %s'
+          _value: Biomes set between %s, %s, %s and %s, %s, %s
+        toobig: Too many blocks in the specified volume (maximum %s, specified %s)
+      forceload:
+        added:
+          failure: No chunks were marked for force loading
+          multiple: Marked %s chunks in %s from %s to %s to be force loaded
+          none: No force loaded chunks were found in %s
+          single: Marked chunk %s in %s to be force loaded
+        list:
+          multiple: '%s force loaded chunks were found in %s at: %s'
+          single: 'A force loaded chunk was found in %s at: %s'
+        query:
+          failure: Chunk at %s in %s is not marked for force loading
+          success: Chunk at %s in %s is marked for force loading
+        removed:
+          all: Unmarked all force loaded chunks in %s
+          failure: No chunks were removed from force loading
+          multiple: Unmarked %s chunks in %s from %s to %s for force loading
+          single: Unmarked chunk %s in %s for force loading
+        toobig: Too many chunks in the specified area (maximum %s, specified %s)
+      function:
+        success:
+          multiple:
+            result: Executed %s functions
+            _value: Executed %s command(s) from %s functions
+          single:
+            result: Function '%2$s' returned %1$s
+            _value: Executed %s command(s) from function '%s'
+      gamemode:
+        success:
+          other: Set %s's game mode to %s
+          self: Set own game mode to %s
+      gamerule:
+        query: 'Gamerule %s is currently set to: %s'
+        set: 'Gamerule %s is now set to: %s'
+      give:
+        failed:
+          toomanyitems: Can't give more than %s of %s
+        success:
+          multiple: Gave %s %s to %s players
+          single: Gave %s %s to %s
+      item:
+        block:
+          set:
+            success: Replaced a slot at %s, %s, %s with %s
+        entity:
+          set:
+            success:
+              multiple: Replaced a slot on %s entities with %s
+              single: Replaced a slot on %s with %s
+        source:
+          no_such_slot: The source does not have slot %s
+          not_a_container: Source position %s, %s, %s is not a container
+        target:
+          no_changed:
+            known_item: No targets accepted item %s into slot %s
+          no_changes: No targets accepted item into slot %s
+          no_such_slot: The target does not have slot %s
+          not_a_container: Target position %s, %s, %s is not a container
+      jfr:
+        dump:
+          failed: 'Failed to dump JFR recording: %s'
+        start:
+          failed: Failed to start JFR profiling
+        started: JFR profiling started
+        stopped: JFR profiling stopped and dumped to %s
+      kick:
+        success: 'Kicked %s: %s'
+      kill:
+        success:
+          multiple: Killed %s entities
+          single: Killed %s
+      list:
+        nameAndId: '%s (%s)'
+        players: 'There are %s of a max of %s players online: %s'
+      locate:
+        biome:
+          not_found: Could not find a biome of type "%s" within reasonable distance
+          success: The nearest %s is at %s (%s blocks away)
+        poi:
+          not_found: Could not find a point of interest of type "%s" within reasonable distance
+          success: The nearest %s is at %s (%s blocks away)
+        structure:
+          invalid: There is no structure with type "%s"
+          not_found: Could not find a structure of type "%s" nearby
+          success: The nearest %s is at %s (%s blocks away)
+      message:
+        display:
+          incoming: '%s whispers to you: %s'
+          outgoing: 'You whisper to %s: %s'
+      pardon:
+        failed: Nothing changed. The player isn't banned
+        success: Unbanned %s
+      pardonip:
+        failed: Nothing changed. That IP isn't banned
+        invalid: Invalid IP address
+        success: Unbanned IP %s
+      particle:
+        failed: The particle was not visible for anybody
+        success: Displaying particle %s
+      perf:
+        alreadyRunning: The performance profiler is already started
+        notRunning: The performance profiler hasn't started
+        reportFailed: Failed to create debug report
+        reportSaved: Created debug report in %s
+        started: Started 10 second performance profiling run (use '/perf stop' to stop early)
+        stopped: Stopped performance profiling after %s second(s) and %s tick(s) (%s tick(s) per second)
+      place:
+        feature:
+          failed: Failed to place feature
+          invalid: There is no feature with type "%s"
+          success: Placed "%s" at %s, %s, %s
+        jigsaw:
+          failed: Failed to generate jigsaw
+          invalid: There is no template pool with type "%s"
+          success: Generated jigsaw at %s, %s, %s
+        structure:
+          failed: Failed to place structure
+          invalid: There is no structure with type "%s"
+          success: Generated structure "%s" at %s, %s, %s
+        template:
+          failed: Failed to place template
+          invalid: There is no template with id "%s"
+          success: Loaded template "%s" at %s, %s, %s
+      playsound:
+        failed: The sound is too far away to be heard
+        success:
+          multiple: Played sound %s to %s players
+          single: Played sound %s to %s
+      publish:
+        alreadyPublished: Multiplayer game is already hosted on port %s
+        failed: Unable to host local game
+        started: Local game hosted on port %s
+        success: Multiplayer game is now hosted on port %s
+      recipe:
+        give:
+          failed: No new recipes were learned
+          success:
+            multiple: Unlocked %s recipes for %s players
+            single: Unlocked %s recipes for %s
+        take:
+          failed: No recipes could be forgotten
+          success:
+            multiple: Took %s recipes from %s players
+            single: Took %s recipes from %s
+      reload:
+        failure: Reload failed; keeping old data
+        success: Reloading!
+      ride:
+        already_riding: '%s is already riding %s'
+        dismount:
+          success: '%s stopped riding %s'
+        mount:
+          failure:
+            cant_ride_players: Players can't be ridden
+            generic: '%s couldn''t start riding %s'
+            loop: Can't mount entity on itself or any of its passengers
+            wrong_dimension: Can't mount entity in different dimension
+          success: '%s started riding %s'
+        not_riding: '%s is not riding any vehicle'
+      save:
+        alreadyOff: Saving is already turned off
+        alreadyOn: Saving is already turned on
+        disabled: Automatic saving is now disabled
+        enabled: Automatic saving is now enabled
+        failed: Unable to save the game (is there enough disk space?)
+        saving: Saving the game (this may take a moment!)
+        success: Saved the game
+      schedule:
+        cleared:
+          failure: No schedules with id %s
+          success: Removed %s schedule(s) with id %s
+        created:
+          function: Scheduled function '%s' in %s tick(s) at gametime %s
+          tag: Scheduled tag '%s' in %s ticks at gametime %s
+        same_tick: Can't schedule for current tick
+      scoreboard:
+        objectives:
+          add:
+            duplicate: An objective already exists by that name
+            success: Created new objective %s
+          display:
+            alreadyEmpty: Nothing changed. That display slot is already empty
+            alreadySet: Nothing changed. That display slot is already showing that objective
+            cleared: Cleared any objectives in display slot %s
+            set: Set display slot %s to show objective %s
+          list:
+            empty: There are no objectives
+            success: 'There are %s objective(s): %s'
+          modify:
+            displayname: Changed the display name of %s to %s
+            rendertype: Changed the render type of objective %s
+          remove:
+            success: Removed objective %s
+        players:
+          add:
+            success:
+              multiple: Added %s to %s for %s entities
+              single: Added %s to %s for %s (now %s)
+          enable:
+            failed: Nothing changed. That trigger is already enabled
+            invalid: Enable only works on trigger-objectives
+            success:
+              multiple: Enabled trigger %s for %s entities
+              single: Enabled trigger %s for %s
+          get:
+            'null': Can't get value of %s for %s; none is set
+            success: '%s has %s %s'
+          list:
+            empty: There are no tracked entities
+            entity:
+              empty: '%s has no scores to show'
+              entry: '%s: %s'
+              success: '%s has %s score(s):'
+            success: 'There are %s tracked entity/entities: %s'
+          operation:
+            success:
+              multiple: Updated %s for %s entities
+              single: Set %s for %s to %s
+          remove:
+            success:
+              multiple: Removed %s from %s for %s entities
+              single: Removed %s from %s for %s (now %s)
+          reset:
+            all:
+              multiple: Reset all scores for %s entities
+              single: Reset all scores for %s
+            specific:
+              multiple: Reset %s for %s entities
+              single: Reset %s for %s
+          set:
+            success:
+              multiple: Set %s for %s entities to %s
+              single: Set %s for %s to %s
+      seed:
+        success: 'Seed: %s'
+      setblock:
+        failed: Could not set the block
+        success: Changed the block at %s, %s, %s
+      setidletimeout:
+        success: The player idle timeout is now %s minute(s)
+      setworldspawn:
+        success: Set the world spawn point to %s, %s, %s [%s]
+      spawnpoint:
+        success:
+          multiple: Set spawn point to %s, %s, %s [%s] in %s for %s players
+          single: Set spawn point to %s, %s, %s [%s] in %s for %s
+      spectate:
+        not_spectator: '%s is not in spectator mode'
+        self: Cannot spectate yourself
+        success:
+          started: Now spectating %s
+          stopped: No longer spectating an entity
+      spreadplayers:
+        failed:
+          entities: Could not spread %s entity/entities around %s, %s (too many entities for space - try using spread of at most %s)
+          invalid:
+            height: Invalid maxHeight %s; expected higher than world minimum %s
+          teams: Could not spread %s team(s) around %s, %s (too many entities for space - try using spread of at most %s)
+        success:
+          entities: Spread %s player(s) around %s, %s with an average distance of %s blocks apart
+          teams: Spread %s team(s) around %s, %s with an average distance of %s blocks apart
+      stopsound:
+        success:
+          source:
+            any: Stopped all '%s' sounds
+            sound: Stopped sound '%s' on source '%s'
+          sourceless:
+            any: Stopped all sounds
+            sound: Stopped sound '%s'
+      summon:
+        failed:
+          uuid: Unable to summon entity due to duplicate UUIDs
+          _value: Unable to summon entity
+        invalidPosition: Invalid position for summon
+        success: Summoned new %s
+      tag:
+        add:
+          failed: Target either already has the tag or has too many tags
+          success:
+            multiple: Added tag '%s' to %s entities
+            single: Added tag '%s' to %s
+        list:
+          multiple:
+            empty: There are no tags on the %s entities
+            success: 'The %s entities have %s total tags: %s'
+          single:
+            empty: '%s has no tags'
+            success: '%s has %s tags: %s'
+        remove:
+          failed: Target does not have this tag
+          success:
+            multiple: Removed tag '%s' from %s entities
+            single: Removed tag '%s' from %s
+      team:
+        add:
+          duplicate: A team already exists by that name
+          success: Created team %s
+        empty:
+          success: Removed %s member(s) from team %s
+          unchanged: Nothing changed. That team is already empty
+        join:
+          success:
+            multiple: Added %s members to team %s
+            single: Added %s to team %s
+        leave:
+          success:
+            multiple: Removed %s members from any team
+            single: Removed %s from any team
+        list:
+          members:
+            empty: There are no members on team %s
+            success: 'Team %s has %s member(s): %s'
+          teams:
+            empty: There are no teams
+            success: 'There are %s team(s): %s'
+        option:
+          collisionRule:
+            success: Collision rule for team %s is now "%s"
+            unchanged: Nothing changed. Collision rule is already that value
+          color:
+            success: Updated the color for team %s to %s
+            unchanged: Nothing changed. That team already has that color
+          deathMessageVisibility:
+            success: Death message visibility for team %s is now "%s"
+            unchanged: Nothing changed. Death message visibility is already that value
+          friendlyfire:
+            alreadyDisabled: Nothing changed. Friendly fire is already disabled for that team
+            alreadyEnabled: Nothing changed. Friendly fire is already enabled for that team
+            disabled: Disabled friendly fire for team %s
+            enabled: Enabled friendly fire for team %s
+          name:
+            success: Updated the name of team %s
+            unchanged: Nothing changed. That team already has that name
+          nametagVisibility:
+            success: Nametag visibility for team %s is now "%s"
+            unchanged: Nothing changed. Nametag visibility is already that value
+          prefix:
+            success: Team prefix set to %s
+          seeFriendlyInvisibles:
+            alreadyDisabled: Nothing changed. That team already can't see invisible teammates
+            alreadyEnabled: Nothing changed. That team can already see invisible teammates
+            disabled: Team %s can no longer see invisible teammates
+            enabled: Team %s can now see invisible teammates
+          suffix:
+            success: Team suffix set to %s
+        remove:
+          success: Removed team %s
+      teammsg:
+        failed:
+          noteam: You must be on a team to message your team
+      teleport:
+        invalidPosition: Invalid position for teleport
+        success:
+          entity:
+            multiple: Teleported %s entities to %s
+            single: Teleported %s to %s
+          location:
+            multiple: Teleported %s entities to %s, %s, %s
+            single: Teleported %s to %s, %s, %s
+      time:
+        query: The time is %s
+        set: Set the time to %s
+      title:
+        cleared:
+          multiple: Cleared titles for %s players
+          single: Cleared titles for %s
+        reset:
+          multiple: Reset title options for %s players
+          single: Reset title options for %s
+        show:
+          actionbar:
+            multiple: Showing new actionbar title for %s players
+            single: Showing new actionbar title for %s
+          subtitle:
+            multiple: Showing new subtitle for %s players
+            single: Showing new subtitle for %s
+          title:
+            multiple: Showing new title for %s players
+            single: Showing new title for %s
+        times:
+          multiple: Changed title display times for %s players
+          single: Changed title display times for %s
+      trigger:
+        add:
+          success: Triggered %s (added %s to value)
+        failed:
+          invalid: You can only trigger objectives that are 'trigger' type
+          unprimed: You cannot trigger this objective yet
+        set:
+          success: Triggered %s (set value to %s)
+        simple:
+          success: Triggered %s
+      weather:
+        set:
+          clear: Set the weather to clear
+          rain: Set the weather to rain
+          thunder: Set the weather to rain & thunder
+      whitelist:
+        add:
+          failed: Player is already whitelisted
+          success: Added %s to the whitelist
+        alreadyOff: Whitelist is already turned off
+        alreadyOn: Whitelist is already turned on
+        disabled: Whitelist is now turned off
+        enabled: Whitelist is now turned on
+        list: 'There are %s whitelisted player(s): %s'
+        none: There are no whitelisted players
+        reloaded: Reloaded the whitelist
+        remove:
+          failed: Player is not whitelisted
+          success: Removed %s from the whitelist
+      worldborder:
+        center:
+          failed: Nothing changed. The world border is already centered there
+          success: Set the center of the world border to %s, %s
+        damage:
+          amount:
+            failed: Nothing changed. The world border damage is already that amount
+            success: Set the world border damage to %s per block each second
+          buffer:
+            failed: Nothing changed. The world border damage buffer is already that distance
+            success: Set the world border damage buffer to %s block(s)
+        get: The world border is currently %s block(s) wide
+        set:
+          failed:
+            big: World border cannot be bigger than %s blocks wide
+            far: World border cannot be further out than %s blocks
+            nochange: Nothing changed. The world border is already that size
+            small: World border cannot be smaller than 1 block wide
+          grow: Growing the world border to %s blocks wide over %s seconds
+          immediate: Set the world border to %s block(s) wide
+          shrink: Shrinking the world border to %s block(s) wide over %s second(s)
+        warning:
+          distance:
+            failed: Nothing changed. The world border warning is already that distance
+            success: Set the world border warning distance to %s block(s)
+          time:
+            failed: Nothing changed. The world border warning is already that amount of time
+            success: Set the world border warning time to %s second(s)
     death:
       attack:
-        generic: '{arg0} मृतः'
-        outOfWorld: '{arg0} जगतः बहिः पतितः'
+        generic:
+          player: '%1$s died because of %2$s'
+          _value: '%1$s died'
+        outOfWorld:
+          player: '%1$s didn''t want to live in the same world as %2$s'
+          _value: '%1$s fell out of the world'
+        anvil:
+          player: '%1$s was squashed by a falling anvil whilst fighting %2$s'
+          _value: '%1$s was squashed by a falling anvil'
+        arrow:
+          item: '%1$s was shot by %2$s using %3$s'
+          _value: '%1$s was shot by %2$s'
+        badRespawnPoint:
+          link: Intentional Game Design
+          message: '%1$s was killed by %2$s'
+        cactus:
+          player: '%1$s walked into a cactus whilst trying to escape %2$s'
+          _value: '%1$s was pricked to death'
+        cramming:
+          player: '%1$s was squashed by %2$s'
+          _value: '%1$s was squished too much'
+        dragonBreath:
+          player: '%1$s was roasted in dragon''s breath by %2$s'
+          _value: '%1$s was roasted in dragon''s breath'
+        drown:
+          player: '%1$s drowned whilst trying to escape %2$s'
+          _value: '%1$s drowned'
+        dryout:
+          player: '%1$s died from dehydration whilst trying to escape %2$s'
+          _value: '%1$s died from dehydration'
+        even_more_magic: '%1$s was killed by even more magic'
+        explosion:
+          player:
+            item: '%1$s was blown up by %2$s using %3$s'
+            _value: '%1$s was blown up by %2$s'
+          _value: '%1$s blew up'
+        fall:
+          player: '%1$s hit the ground too hard whilst trying to escape %2$s'
+          _value: '%1$s hit the ground too hard'
+        fallingBlock:
+          player: '%1$s was squashed by a falling block whilst fighting %2$s'
+          _value: '%1$s was squashed by a falling block'
+        fallingStalactite:
+          player: '%1$s was skewered by a falling stalactite whilst fighting %2$s'
+          _value: '%1$s was skewered by a falling stalactite'
+        fireball:
+          item: '%1$s was fireballed by %2$s using %3$s'
+          _value: '%1$s was fireballed by %2$s'
+        fireworks:
+          item: '%1$s went off with a bang due to a firework fired from %3$s by %2$s'
+          player: '%1$s went off with a bang whilst fighting %2$s'
+          _value: '%1$s went off with a bang'
+        flyIntoWall:
+          player: '%1$s experienced kinetic energy whilst trying to escape %2$s'
+          _value: '%1$s experienced kinetic energy'
+        freeze:
+          player: '%1$s was frozen to death by %2$s'
+          _value: '%1$s froze to death'
+        genericKill:
+          player: '%1$s was killed whilst fighting %2$s'
+          _value: '%1$s was killed'
+        hotFloor:
+          player: '%1$s walked into the danger zone due to %2$s'
+          _value: '%1$s discovered the floor was lava'
+        inFire:
+          player: '%1$s walked into fire whilst fighting %2$s'
+          _value: '%1$s went up in flames'
+        inWall:
+          player: '%1$s suffocated in a wall whilst fighting %2$s'
+          _value: '%1$s suffocated in a wall'
+        indirectMagic:
+          item: '%1$s was killed by %2$s using %3$s'
+          _value: '%1$s was killed by %2$s using magic'
+        lava:
+          player: '%1$s tried to swim in lava to escape %2$s'
+          _value: '%1$s tried to swim in lava'
+        lightningBolt:
+          player: '%1$s was struck by lightning whilst fighting %2$s'
+          _value: '%1$s was struck by lightning'
+        magic:
+          player: '%1$s was killed by magic whilst trying to escape %2$s'
+          _value: '%1$s was killed by magic'
+        message_too_long: 'Actually, the message was too long to deliver fully. Sorry! Here''s stripped version: %s'
+        mob:
+          item: '%1$s was slain by %2$s using %3$s'
+          _value: '%1$s was slain by %2$s'
+        onFire:
+          item: '%1$s was burnt to a crisp whilst fighting %2$s wielding %3$s'
+          player: '%1$s was burnt to a crisp whilst fighting %2$s'
+          _value: '%1$s burned to death'
+        outsideBorder:
+          player: '%1$s left the confines of this world whilst fighting %2$s'
+          _value: '%1$s left the confines of this world'
+        player:
+          item: '%1$s was slain by %2$s using %3$s'
+          _value: '%1$s was slain by %2$s'
+        sonic_boom:
+          item: '%1$s was obliterated by a sonically-charged shriek whilst trying to escape %2$s wielding %3$s'
+          player: '%1$s was obliterated by a sonically-charged shriek whilst trying to escape %2$s'
+          _value: '%1$s was obliterated by a sonically-charged shriek'
+        stalagmite:
+          player: '%1$s was impaled on a stalagmite whilst fighting %2$s'
+          _value: '%1$s was impaled on a stalagmite'
+        starve:
+          player: '%1$s starved to death whilst fighting %2$s'
+          _value: '%1$s starved to death'
+        sting:
+          item: '%1$s was stung to death by %2$s using %3$s'
+          player: '%1$s was stung to death by %2$s'
+          _value: '%1$s was stung to death'
+        sweetBerryBush:
+          player: '%1$s was poked to death by a sweet berry bush whilst trying to escape %2$s'
+          _value: '%1$s was poked to death by a sweet berry bush'
+        thorns:
+          item: '%1$s was killed by %3$s trying to hurt %2$s'
+          _value: '%1$s was killed trying to hurt %2$s'
+        thrown:
+          item: '%1$s was pummeled by %2$s using %3$s'
+          _value: '%1$s was pummeled by %2$s'
+        trident:
+          item: '%1$s was impaled by %2$s with %3$s'
+          _value: '%1$s was impaled by %2$s'
+        wither:
+          player: '%1$s withered away whilst fighting %2$s'
+          _value: '%1$s withered away'
+        witherSkull:
+          item: '%1$s was shot by a skull from %2$s using %3$s'
+          _value: '%1$s was shot by a skull from %2$s'
+      fell:
+        accident:
+          generic: '%1$s fell from a high place'
+          ladder: '%1$s fell off a ladder'
+          other_climbable: '%1$s fell while climbing'
+          scaffolding: '%1$s fell off scaffolding'
+          twisting_vines: '%1$s fell off some twisting vines'
+          vines: '%1$s fell off some vines'
+          weeping_vines: '%1$s fell off some weeping vines'
+        assist:
+          item: '%1$s was doomed to fall by %2$s using %3$s'
+          _value: '%1$s was doomed to fall by %2$s'
+        finish:
+          item: '%1$s fell too far and was finished by %2$s using %3$s'
+          _value: '%1$s fell too far and was finished by %2$s'
+        killer: '%1$s was doomed to fall'
     multiplayer:
       player:
-        joined: '{arg0} क्रीडायां प्रविष्टः'
+        joined:
+          renamed: '%s (formerly known as %s) joined the game'
+          _value: '%s joined the game'
         left: '{arg0} क्रीडां त्यक्तवान्'
+        list:
+          narration: 'Online players: %s'
+      applyingPack: Applying resource pack
+      disconnect:
+        authservers_down: Authentication servers are down. Please try again later, sorry!
+        banned:
+          expiration: '
+
+            Your ban will be removed on %s'
+          reason: 'You are banned from this server.
+
+            Reason: %s'
+          _value: You are banned from this server
+        banned_ip:
+          expiration: '
+
+            Your ban will be removed on %s'
+          reason: 'Your IP address is banned from this server.
+
+            Reason: %s'
+        chat_validation_failed: Chat message validation failure
+        duplicate_login: You logged in from another location
+        expired_public_key: Expired profile public key. Check that your system time is synchronized, and try restarting your game.
+        flying: Flying is not enabled on this server
+        generic: Disconnected
+        idling: You have been idle for too long!
+        illegal_characters: Illegal characters in chat
+        incompatible: Incompatible client! Please use %s
+        invalid_entity_attacked: Attempting to attack an invalid entity
+        invalid_packet: Server sent an invalid packet
+        invalid_player_data: Invalid player data
+        invalid_player_movement: Invalid move player packet received
+        invalid_public_key_signature:
+          new: 'Invalid signature for profile public key.
+
+            Try restarting your game.'
+          _value: 'Invalid signature for profile public key.
+
+            Try restarting your game.'
+        invalid_vehicle_movement: Invalid move vehicle packet received
+        ip_banned: You have been IP banned from this server
+        kicked: Kicked by an operator
+        missing_tags: 'Incomplete set of tags received from server.
+
+          Please contact server operator.'
+        name_taken: That name is already taken
+        not_whitelisted: You are not white-listed on this server!
+        out_of_order_chat: Out-of-order chat packet received. Did your system time change?
+        outdated_client: Incompatible client! Please use %s
+        outdated_server: Incompatible client! Please use %s
+        server_full: The server is full!
+        server_shutdown: Server closed
+        slow_login: Took too long to log in
+        too_many_pending_chats: Too many unacknowledged chat messages
+        unexpected_query_response: Unexpected custom data from client
+        unsigned_chat: Received chat packet with missing or invalid signature.
+        unverified_username: Failed to verify username!
+      downloadingStats: Retrieving statistics...
+      downloadingTerrain: Loading terrain...
+      lan:
+        server_found: 'New server found: %s'
+      message_not_delivered: 'Can''t deliver chat message, check server logs: %s'
+      requiredTexturePrompt:
+        disconnect: Server requires a custom resource pack
+        line1: This server requires the use of a custom resource pack.
+        line2: Rejecting this custom resource pack will disconnect you from this server.
+      socialInteractions:
+        not_available: Social Interactions are only available in Multiplayer worlds
+      status:
+        and_more: '... and %s more ...'
+        cancelled: Cancelled
+        cannot_connect: Can't connect to server
+        cannot_resolve: Can't resolve hostname
+        finished: Finished
+        incompatible: Incompatible version!
+        motd:
+          narration: 'Message of the day: %s'
+        no_connection: (no connection)
+        old: Old
+        online: Online
+        ping:
+          narration: Ping %s milliseconds
+          _value: '%s ms'
+        pinging: Pinging...
+        player_count:
+          narration: '%s out of %s players online'
+        quitting: Quitting
+        request_handled: Status request has been handled
+        unknown: ???
+        unrequested: Received unrequested status
+        version:
+          narration: 'Server version: %s'
+      stopSleeping: Leave Bed
+      texturePrompt:
+        failure:
+          line1: Server resource pack couldn't be applied
+          line2: Any functionality that requires custom resources might not work as expected
+        line1: This server recommends the use of a custom resource pack.
+        line2: Would you like to download and install it automagically?
+        serverPrompt: '%s
+
+
+          Message from server:
+
+          %s'
+      title: Play Multiplayer
+      unsecureserver:
+        toast:
+          title: Chat messages can't be verified
+          _value: Messages sent on this server may be modified and might not reflect the original message
+    advancements:
+      adventure:
+        adventuring_time:
+          description: Discover every biome
+          title: Adventuring Time
+        arbalistic:
+          description: Kill five unique mobs with one crossbow shot
+          title: Arbalistic
+        avoid_vibration:
+          description: Sneak near a Sculk Sensor or Warden to prevent it from detecting you
+          title: Sneak 100
+        bullseye:
+          description: Hit the bullseye of a Target block from at least 30 meters away
+          title: Bullseye
+        craft_decorated_pot_using_only_sherds:
+          description: Make a Decorated Pot out of 4 Pottery Sherds
+          title: Careful Restoration
+        fall_from_world_height:
+          description: Free fall from the top of the world (build limit) to the bottom of the world and survive
+          title: Caves & Cliffs
+        hero_of_the_village:
+          description: Successfully defend a village from a raid
+          title: Hero of the Village
+        honey_block_slide:
+          description: Jump into a Honey Block to break your fall
+          title: Sticky Situation
+        kill_a_mob:
+          description: Kill any hostile monster
+          title: Monster Hunter
+        kill_all_mobs:
+          description: Kill one of every hostile monster
+          title: Monsters Hunted
+        kill_mob_near_sculk_catalyst:
+          description: Kill a mob near a Sculk Catalyst
+          title: It Spreads
+        lightning_rod_with_villager_no_fire:
+          description: Protect a Villager from an undesired shock without starting a fire
+          title: Surge Protector
+        ol_betsy:
+          description: Shoot a Crossbow
+          title: Ol' Betsy
+        play_jukebox_in_meadows:
+          description: Make the Meadows come alive with the sound of music from a Jukebox
+          title: Sound of Music
+        read_power_from_chiseled_bookshelf:
+          description: Read the power signal of a Chiseled Bookshelf using a Comparator
+          title: The Power of Books
+        root:
+          description: Adventure, exploration and combat
+          title: Adventure
+        salvage_sherd:
+          description: Brush a Suspicious block to obtain a Pottery Sherd
+          title: Respecting the Remnants
+        shoot_arrow:
+          description: Shoot something with an Arrow
+          title: Take Aim
+        sleep_in_bed:
+          description: Sleep in a Bed to change your respawn point
+          title: Sweet Dreams
+        sniper_duel:
+          description: Kill a Skeleton from at least 50 meters away
+          title: Sniper Duel
+        spyglass_at_dragon:
+          description: Look at the Ender Dragon through a Spyglass
+          title: Is It a Plane?
+        spyglass_at_ghast:
+          description: Look at a Ghast through a Spyglass
+          title: Is It a Balloon?
+        spyglass_at_parrot:
+          description: Look at a Parrot through a Spyglass
+          title: Is It a Bird?
+        summon_iron_golem:
+          description: Summon an Iron Golem to help defend a village
+          title: Hired Help
+        throw_trident:
+          description: 'Throw a Trident at something.
+
+            Note: Throwing away your only weapon is not a good idea.'
+          title: A Throwaway Joke
+        totem_of_undying:
+          description: Use a Totem of Undying to cheat death
+          title: Postmortal
+        trade:
+          description: Successfully trade with a Villager
+          title: What a Deal!
+        trade_at_world_height:
+          description: Trade with a Villager at the build height limit
+          title: Star Trader
+        trim_with_all_exclusive_armor_patterns:
+          description: 'Apply these smithing templates at least once: Spire, Snout, Rib, Ward, Silence, Vex, Tide, Wayfinder'
+          title: Smithing with Style
+        trim_with_any_armor_pattern:
+          description: Craft a trimmed armor at a Smithing Table
+          title: Crafting a New Look
+        two_birds_one_arrow:
+          description: Kill two Phantoms with a piercing Arrow
+          title: Two Birds, One Arrow
+        very_very_frightening:
+          description: Strike a Villager with lightning
+          title: Very Very Frightening
+        voluntary_exile:
+          description: 'Kill a raid captain.
+
+            Maybe consider staying away from villages for the time being...'
+          title: Voluntary Exile
+        walk_on_powder_snow_with_leather_boots:
+          description: Walk on Powder Snow... without sinking in it
+          title: Light as a Rabbit
+        whos_the_pillager_now:
+          description: Give a Pillager a taste of their own medicine
+          title: Who's the Pillager Now?
+      empty: There doesn't seem to be anything here...
+      end:
+        dragon_breath:
+          description: Collect Dragon's Breath in a Glass Bottle
+          title: You Need a Mint
+        dragon_egg:
+          description: Hold the Dragon Egg
+          title: The Next Generation
+        elytra:
+          description: Find Elytra
+          title: Sky's the Limit
+        enter_end_gateway:
+          description: Escape the island
+          title: Remote Getaway
+        find_end_city:
+          description: Go on in, what could happen?
+          title: The City at the End of the Game
+        kill_dragon:
+          description: Good luck
+          title: Free the End
+        levitate:
+          description: Levitate up 50 blocks from the attacks of a Shulker
+          title: Great View From Up Here
+        respawn_dragon:
+          description: Respawn the Ender Dragon
+          title: The End... Again...
+        root:
+          description: Or the beginning?
+          title: The End
+      husbandry:
+        allay_deliver_cake_to_note_block:
+          description: Have an Allay drop a Cake at a Note Block
+          title: Birthday Song
+        allay_deliver_item_to_player:
+          description: Have an Allay deliver items to you
+          title: You've Got a Friend in Me
+        axolotl_in_a_bucket:
+          description: Catch an Axolotl in a Bucket
+          title: The Cutest Predator
+        balanced_diet:
+          description: Eat everything that is edible, even if it's not good for you
+          title: A Balanced Diet
+        breed_all_animals:
+          description: Breed all the animals!
+          title: Two by Two
+        breed_an_animal:
+          description: Breed two animals together
+          title: The Parrots and the Bats
+        complete_catalogue:
+          description: Tame all Cat variants!
+          title: A Complete Catalogue
+        feed_snifflet:
+          description: Feed a Snifflet
+          title: Little Sniffs
+        fishy_business:
+          description: Catch a fish
+          title: Fishy Business
+        froglights:
+          description: Have all Froglights in your inventory
+          title: With Our Powers Combined!
+        kill_axolotl_target:
+          description: Team up with an Axolotl and win a fight
+          title: The Healing Power of Friendship!
+        leash_all_frog_variants:
+          description: Get each Frog variant on a Lead
+          title: When the Squad Hops into Town
+        make_a_sign_glow:
+          description: Make the text of any kind of sign glow
+          title: Glow and Behold!
+        netherite_hoe:
+          description: Use a Netherite Ingot to upgrade a Hoe, and then reevaluate your life choices
+          title: Serious Dedication
+        obtain_sniffer_egg:
+          description: Obtain a Sniffer Egg
+          title: Smells Interesting
+        plant_any_sniffer_seed:
+          description: Plant any Sniffer seed
+          title: Planting the Past
+        plant_seed:
+          description: Plant a seed and watch it grow
+          title: A Seedy Place
+        ride_a_boat_with_a_goat:
+          description: Get in a Boat and float with a Goat
+          title: Whatever Floats Your Goat!
+        root:
+          description: The world is full of friends and food
+          title: Husbandry
+        safely_harvest_honey:
+          description: Use a Campfire to collect Honey from a Beehive using a Glass Bottle without aggravating the Bees
+          title: Bee Our Guest
+        silk_touch_nest:
+          description: Move a Bee Nest, with 3 Bees inside, using Silk Touch
+          title: Total Beelocation
+        tactical_fishing:
+          description: Catch a Fish... without a Fishing Rod!
+          title: Tactical Fishing
+        tadpole_in_a_bucket:
+          description: Catch a Tadpole in a Bucket
+          title: Bukkit Bukkit
+        tame_an_animal:
+          description: Tame an animal
+          title: Best Friends Forever
+        wax_off:
+          description: Scrape Wax off of a Copper block!
+          title: Wax Off
+        wax_on:
+          description: Apply Honeycomb to a Copper block!
+          title: Wax On
+      nether:
+        all_effects:
+          description: Have every effect applied at the same time
+          title: How Did We Get Here?
+        all_potions:
+          description: Have every potion effect applied at the same time
+          title: A Furious Cocktail
+        brew_potion:
+          description: Brew a Potion
+          title: Local Brewery
+        charge_respawn_anchor:
+          description: Charge a Respawn Anchor to the maximum
+          title: Not Quite "Nine" Lives
+        create_beacon:
+          description: Construct and place a Beacon
+          title: Bring Home the Beacon
+        create_full_beacon:
+          description: Bring a Beacon to full power
+          title: Beaconator
+        distract_piglin:
+          description: Distract Piglins with gold
+          title: Oh Shiny
+        explore_nether:
+          description: Explore all Nether biomes
+          title: Hot Tourist Destinations
+        fast_travel:
+          description: Use the Nether to travel 7 km in the Overworld
+          title: Subspace Bubble
+        find_bastion:
+          description: Enter a Bastion Remnant
+          title: Those Were the Days
+        find_fortress:
+          description: Break your way into a Nether Fortress
+          title: A Terrible Fortress
+        get_wither_skull:
+          description: Obtain a Wither Skeleton's skull
+          title: Spooky Scary Skeleton
+        loot_bastion:
+          description: Loot a Chest in a Bastion Remnant
+          title: War Pigs
+        netherite_armor:
+          description: Get a full suit of Netherite armor
+          title: Cover Me in Debris
+        obtain_ancient_debris:
+          description: Obtain Ancient Debris
+          title: Hidden in the Depths
+        obtain_blaze_rod:
+          description: Relieve a Blaze of its rod
+          title: Into Fire
+        obtain_crying_obsidian:
+          description: Obtain Crying Obsidian
+          title: Who is Cutting Onions?
+        return_to_sender:
+          description: Destroy a Ghast with a fireball
+          title: Return to Sender
+        ride_strider:
+          description: Ride a Strider with a Warped Fungus on a Stick
+          title: This Boat Has Legs
+        ride_strider_in_overworld_lava:
+          description: Take a Strider for a loooong ride on a lava lake in the Overworld
+          title: Feels Like Home
+        root:
+          description: Bring summer clothes
+          title: Nether
+        summon_wither:
+          description: Summon the Wither
+          title: Withering Heights
+        uneasy_alliance:
+          description: Rescue a Ghast from the Nether, bring it safely home to the Overworld... and then kill it
+          title: Uneasy Alliance
+        use_lodestone:
+          description: Use a Compass on a Lodestone
+          title: Country Lode, Take Me Home
+      sad_label: :(
+      story:
+        cure_zombie_villager:
+          description: Weaken and then cure a Zombie Villager
+          title: Zombie Doctor
+        deflect_arrow:
+          description: Deflect a projectile with a Shield
+          title: Not Today, Thank You
+        enchant_item:
+          description: Enchant an item at an Enchanting Table
+          title: Enchanter
+        enter_the_end:
+          description: Enter the End Portal
+          title: The End?
+        enter_the_nether:
+          description: Build, light and enter a Nether Portal
+          title: We Need to Go Deeper
+        follow_ender_eye:
+          description: Follow an Eye of Ender
+          title: Eye Spy
+        form_obsidian:
+          description: Obtain a block of Obsidian
+          title: Ice Bucket Challenge
+        iron_tools:
+          description: Upgrade your Pickaxe
+          title: Isn't It Iron Pick
+        lava_bucket:
+          description: Fill a Bucket with lava
+          title: Hot Stuff
+        mine_diamond:
+          description: Acquire diamonds
+          title: Diamonds!
+        mine_stone:
+          description: Mine Stone with your new Pickaxe
+          title: Stone Age
+        obtain_armor:
+          description: Protect yourself with a piece of iron armor
+          title: Suit Up
+        root:
+          description: The heart and story of the game
+          title: Minecraft
+        shiny_gear:
+          description: Diamond armor saves lives
+          title: Cover Me with Diamonds
+        smelt_iron:
+          description: Smelt an Iron Ingot
+          title: Acquire Hardware
+        upgrade_tools:
+          description: Construct a better Pickaxe
+          title: Getting an Upgrade
+      toast:
+        challenge: Challenge Complete!
+        goal: Goal Reached!
+        task: Advancement Made!
+    argument:
+      anchor:
+        invalid: Invalid entity anchor position %s
+      angle:
+        incomplete: Incomplete (expected 1 angle)
+        invalid: Invalid angle
+      block:
+        id:
+          invalid: Unknown block type '%s'
+        property:
+          duplicate: Property '%s' can only be set once for block %s
+          invalid: Block %s does not accept '%s' for %s property
+          novalue: Expected value for property '%s' on block %s
+          unclosed: Expected closing ] for block state properties
+          unknown: Block %s does not have property '%s'
+        tag:
+          disallowed: Tags aren't allowed here, only actual blocks
+      color:
+        invalid: Unknown color '%s'
+      component:
+        invalid: 'Invalid chat component: %s'
+      criteria:
+        invalid: Unknown criterion '%s'
+      dimension:
+        invalid: Unknown dimension '%s'
+      double:
+        big: Double must not be more than %s, found %s
+        low: Double must not be less than %s, found %s
+      entity:
+        invalid: Invalid name or UUID
+        notfound:
+          entity: No entity was found
+          player: No player was found
+        options:
+          advancements:
+            description: Players with advancements
+          distance:
+            description: Distance to entity
+            negative: Distance cannot be negative
+          dx:
+            description: Entities between x and x + dx
+          dy:
+            description: Entities between y and y + dy
+          dz:
+            description: Entities between z and z + dz
+          gamemode:
+            description: Players with game mode
+          inapplicable: Option '%s' isn't applicable here
+          level:
+            description: Experience level
+            negative: Level shouldn't be negative
+          limit:
+            description: Maximum number of entities to return
+            toosmall: Limit must be at least 1
+          mode:
+            invalid: Invalid or unknown game mode '%s'
+          name:
+            description: Entity name
+          nbt:
+            description: Entities with NBT
+          predicate:
+            description: Custom predicate
+          scores:
+            description: Entities with scores
+          sort:
+            description: Sort the entities
+            irreversible: Invalid or unknown sort type '%s'
+          tag:
+            description: Entities with tag
+          team:
+            description: Entities on team
+          type:
+            description: Entities of type
+            invalid: Invalid or unknown entity type '%s'
+          unknown: Unknown option '%s'
+          unterminated: Expected end of options
+          valueless: Expected value for option '%s'
+          x:
+            description: x position
+          x_rotation:
+            description: Entity's x rotation
+          y:
+            description: y position
+          y_rotation:
+            description: Entity's y rotation
+          z:
+            description: z position
+        selector:
+          allEntities: All entities
+          allPlayers: All players
+          missing: Missing selector type
+          nearestPlayer: Nearest player
+          not_allowed: Selector not allowed
+          randomPlayer: Random player
+          self: Current entity
+          unknown: Unknown selector type '%s'
+        toomany: Only one entity is allowed, but the provided selector allows more than one
+      enum:
+        invalid: Invalid value "%s"
+      float:
+        big: Float must not be more than %s, found %s
+        low: Float must not be less than %s, found %s
+      gamemode:
+        invalid: 'Unknown game mode: %s'
+      id:
+        invalid: Invalid ID
+        unknown: 'Unknown ID: %s'
+      integer:
+        big: Integer must not be more than %s, found %s
+        low: Integer must not be less than %s, found %s
+      item:
+        id:
+          invalid: Unknown item '%s'
+        tag:
+          disallowed: Tags aren't allowed here, only actual items
+      literal:
+        incorrect: Expected literal %s
+      long:
+        big: Long must not be more than %s, found %s
+        low: Long must not be less than %s, found %s
+      nbt:
+        array:
+          invalid: Invalid array type '%s'
+          mixed: Can't insert %s into %s
+        expected:
+          key: Expected key
+          value: Expected value
+        list:
+          mixed: Can't insert %s into list of %s
+        trailing: Unexpected trailing data
+      player:
+        entities: Only players may be affected by this command, but the provided selector includes entities
+        toomany: Only one player is allowed, but the provided selector allows more than one
+        unknown: That player does not exist
+      pos:
+        missing:
+          double: Expected a coordinate
+          int: Expected a block position
+        mixed: Cannot mix world & local coordinates (everything must either use ^ or not)
+        outofbounds: That position is outside the allowed boundaries.
+        outofworld: That position is out of this world!
+        unloaded: That position is not loaded
+      pos2d:
+        incomplete: Incomplete (expected 2 coordinates)
+      pos3d:
+        incomplete: Incomplete (expected 3 coordinates)
+      range:
+        empty: Expected value or range of values
+        ints: Only whole numbers allowed, not decimals
+        swapped: Min cannot be bigger than max
+      resource:
+        invalid_type: Element '%s' has wrong type '%s' (expected '%s')
+        not_found: Can't find element '%s' of type '%s'
+      resource_tag:
+        invalid_type: Tag '%s' has wrong type '%s' (expected '%s')
+        not_found: Can't find tag '%s' of type '%s'
+      rotation:
+        incomplete: Incomplete (expected 2 coordinates)
+      scoreHolder:
+        empty: No relevant score holders could be found
+      scoreboardDisplaySlot:
+        invalid: Unknown display slot '%s'
+      time:
+        invalid_tick_count: Tick count must be non-negative
+        invalid_unit: Invalid unit
+        tick_count_too_low: Tick count must not be less than %s, found %s
+      uuid:
+        invalid: Invalid UUID
+    connect:
+      aborted: Aborted
+      authorizing: Logging in...
+      connecting: Connecting to the server...
+      encrypting: Encrypting...
+      failed: Failed to connect to the server
+      joining: Joining world...
+      negotiating: Negotiating...
+    disconnect:
+      closed: Connection closed
+      disconnected: Disconnected by Server
+      endOfStream: End of stream
+      exceeded_packet_rate: Kicked for exceeding packet rate limit
+      genericReason: '%s'
+      ignoring_status_request: Ignoring status request
+      kicked: Was kicked from the game
+      loginFailed: Failed to log in
+      loginFailedInfo:
+        insufficientPrivileges: Multiplayer is disabled. Please check your Microsoft account settings.
+        invalidSession: Invalid session (Try restarting your game and the launcher)
+        serversUnavailable: The authentication servers are currently not reachable. Please try again.
+        userBanned: You are banned from playing online
+        _value: 'Failed to log in: %s'
+      lost: Connection Lost
+      overflow: Buffer overflow
+      quitting: Quitting
+      spam: Kicked for spamming
+      timeout: Timed out
+      unknownHost: Unknown host
+    resourcePack:
+      broken_assets: BROKEN ASSETS DETECTED
+      high_contrast:
+        name: High Contrast
+      load_fail: Resource reload failed
+      programmer_art:
+        name: Programmer Art
+      server:
+        name: World Specific Resources
+      title: Select Resource Packs
+      vanilla:
+        description: The default look and feel of Minecraft
+        name: Default

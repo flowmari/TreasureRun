@@ -1086,7 +1086,51 @@ minecraft:
     chat:
       type:
         admin: '[{arg0}: {arg1}]'
-        text: <{arg0}> {arg1}
+        text:
+          narrate: '%s disse: %s'
+          _value: <%s> %s
+        advancement:
+          challenge: '%s concluiu o desafio %s'
+          goal: '%s atingiu o objetivo %s'
+          task: '%s alcançou o progresso %s'
+        announcement: '[%s] %s'
+        emote: '* %s %s'
+        team:
+          hover: Conversar com a equipe
+          sent: -> %s <%s> %s
+          text: '%s <%s> %s'
+      cannotSend: Não é possível enviar a mensagem no chat
+      coordinates:
+        tooltip: Clique para se teletransportar
+        _value: '%s, %s, %s'
+      copy:
+        click: Clique para copiar
+        _value: Copy to Clipboard
+      deleted_marker: Essa mensagem foi apagada pelo servidor.
+      disabled:
+        chain_broken: Chat desativado devido à corrente de mensagens corrompida. Tente reconectar.
+        expiredProfileKey: Chat desativado devido à expiração da chave pública do perfil. Tente reconectar.
+        launcher: Chat desativado nas opções do Launcher. Não é possível enviar mensagens.
+        missingProfileKey: Chat desativado devido à ausência da chave pública do perfil. Tente reconectar.
+        options: Chat desativado nas opções do cliente.
+        profile:
+          moreInfo: Chat desativado nas configurações da conta. Não é possível enviar ou ler mensagens.
+          _value: Chat not allowed by account settings. Press '%s' again for more information.
+      editBox: chat
+      filtered: Filtrado pelo servidor.
+      filtered_full: O servidor ocultou a sua mensagem para alguns jogadores.
+      link:
+        confirm: Deseja mesmo abrir a página?
+        confirmTrusted: Deseja abrir o link ou copiá-lo para a área de transferência?
+        open: Abrir no navegador
+        warning: Nunca abra links de pessoas desconhecidas!
+      queue: '[+%s linha(s) pendente(s)]'
+      square_brackets: '[%s]'
+      tag:
+        modified: 'Mensagem modificada pelo servidor. Original:'
+        not_secure: Mensagem não verificada. Não é possível denunciar.
+        system: Mensagem do servidor. Não é possível denunciar.
+        system_single_player: Mensagem do servidor.
     command:
       context:
         here: <--[AQUI]
@@ -1095,15 +1139,1556 @@ minecraft:
     commands:
       help:
         header: '--- Página de ajuda {arg0} de {arg1} ---'
+        failed: Comando desconhecido ou permissões insuficientes
       op:
         success: '{arg0} agora é operador do servidor'
+        failed: Nada mudou. O jogador já é um operador
       stop:
         stopping: Parando o servidor
+      advancement:
+        advancementNotFound: No advancement was found by the name '%1$s'
+        criterionNotFound: O progresso %1$s não contém o critério "%2$s"
+        grant:
+          criterion:
+            to:
+              many:
+                failure: Não foi possível conceder o critério "%s" do progresso %s a %s jogadores porque eles já o possuem
+                success: Critério "%s" do progresso %s concedido a %s jogadores
+              one:
+                failure: Não foi possível conceder o critério "%s" do progresso %s a %s porque o jogador já o possui
+                success: Critério "%s" do progresso %s concedido a %s
+          many:
+            to:
+              many:
+                failure: Não foi possível conceder %s progressos a %s jogadores porque eles já o possuem
+                success: '%s progressos concedidos a %s jogadores'
+              one:
+                failure: Não foi possível conceder %s progressos a %s porque o jogador já os possui
+                success: '%s progressos concedidos a %s'
+          one:
+            to:
+              many:
+                failure: Não foi possível conceder o progresso %s a %s jogadores porque eles já o possuem
+                success: Progresso %s concedido a %s jogadores
+              one:
+                failure: Não foi possível conceder o progresso %s a %s porque o jogador já o possui
+                success: Progresso %s concedido a %s
+        revoke:
+          criterion:
+            to:
+              many:
+                failure: Não foi possível revogar o critério "%s" do progresso %s de %s jogadores porque eles não o possuem
+                success: Critério "%s" do progresso %s revogado de %s jogadores
+              one:
+                failure: Não foi possível retirar o critério "%s" do progresso %s de %s porque o jogador não o possui
+                success: Critério "%s" do progresso %s revogado de %s
+          many:
+            to:
+              many:
+                failure: Não foi possível revogar %s progressos de %s jogadores porque eles não os possuem
+                success: '%s progressos revogados de %s jogadores'
+              one:
+                failure: Não foi possível revogar %s progressos de %s porque o jogador não os possui
+                success: '%s progressos revogados de %s'
+          one:
+            to:
+              many:
+                failure: Não foi possível revogar o progresso %s de %s jogadores porque eles não o possuem
+                success: Progresso %s revogado de %s jogadores
+              one:
+                failure: Não foi possível revogar o progresso %s de %s porque o jogador não o possui
+                success: Progresso %s revogado de %s
+      attribute:
+        base_value:
+          get:
+            success: O valor-base do atributo %s para a entidade %s é %s
+          set:
+            success: O valor-base do atributo %s para a entidade %s foi definido para %s
+        failed:
+          entity: '%s não é uma entidade válida para esse comando'
+          modifier_already_present: Modificador %s já presente no atributo %s da entidade %s
+          no_attribute: A entidade %s não tem o atributo %s
+          no_modifier: O atributo %s da entidade %s não tem o modificador %s
+        modifier:
+          add:
+            success: Modificador %s adicionado ao atributo %s da entidade %s
+          remove:
+            success: Modificador %s removido do atributo %s da entidade %s
+          value:
+            get:
+              success: O valor do modificador %s no atributo %s para a entidade %s é %s
+        value:
+          get:
+            success: O valor do atributo %s para a entidade %s é %s
+      ban:
+        failed: Nada mudou. O jogador já está banido
+        success: '%s foi banido(a): %s'
+      banip:
+        failed: Nada mudou. Esse endereço IP já está banido
+        info: 'Esse banimento afeta %s jogador(es): %s'
+        invalid: Endereço IP inválido ou jogador desconhecido
+        success: 'Endereço IP %s banido: %s'
+      banlist:
+        entry: '%2$s baniu %1$s: %3$s'
+        list: 'Há %s banimento(s):'
+        none: Nenhum banimento
+      bossbar:
+        create:
+          failed: Já existe uma barra de chefe com o ID "%s"
+          success: Barra de chefe personalizada %s criada
+        get:
+          max: A barra de chefe personalizada %s tem um valor máximo de %s
+          players:
+            none: Barra de chefe personalizada %s sem jogadores online
+            some: 'Barra de chefe personalizada %s com %s jogador(es) online: %s'
+          value: A barra de chefe personalizada %s tem um valor de %s
+          visible:
+            hidden: Barra de chefe personalizada %s oculta
+            visible: Barra de chefe personalizada %s visível
+        list:
+          bars:
+            none: Nenhuma barra de chefe personalizada ativa
+            some: 'Há %s barra(s) de chefe personalizada(s) ativa(s): %s'
+        remove:
+          success: Barra de chefe personalizada %s removida
+        set:
+          color:
+            success: Cor da barra de chefe personalizada %s alterada
+            unchanged: Nada mudou. Essa já é a cor da barra de chefe
+          max:
+            success: Valor máximo da barra de chefe personalizada %s alterado para %s
+            unchanged: Nada mudou. Esse já é o valor máximo da barra de chefe
+          name:
+            success: Barra de chefe personalizada %s renomeada
+            unchanged: Nada mudou. Esse já é o nome da barra de chefe
+          players:
+            success:
+              none: A barra de chefe personalizada %s não tem mais jogadores
+              some: 'A barra de chefe personalizada %s tem %s jogador(es): %s'
+            unchanged: Nada mudou. Esses jogadores já estão na barra de chefe sem ninguém para adicionar ou retirar
+          style:
+            success: Estilo da barra de chefe personalizada %s alterado
+            unchanged: Nada mudou. Esse já é o estilo da barra de chefe
+          value:
+            success: Valor da barra de chefe personalizada %s alterado para %s
+            unchanged: Nada mudou. Esse já é o valor da barra de chefe
+          visibility:
+            unchanged:
+              hidden: Nada mudou. A barra de chefe já está oculta
+              visible: Nada mudou. A barra de chefe já está visível
+          visible:
+            success:
+              hidden: Barra de chefe personalizada %s oculta
+              visible: Barra de chefe personalizada %s visível
+        unknown: Nenhuma barra de chefe encontrada com o ID "%s"
+      clear:
+        success:
+          multiple: '%s item(ns) removido(s) de %s jogadores'
+          single: '%s item(ns) removido(s) de %s'
+        test:
+          multiple: '%s item(ns) correspondente(s) no inventário de %s jogadores'
+          single: '%s item(ns) correspondente(s) no inventário de %s'
+      clone:
+        failed: Nenhum bloco clonado
+        overlap: As áreas de origem e destino não podem se sobrepor
+        success: '%s bloco(s) clonado(s)'
+        toobig: 'Há blocos demais na área especificada (máximo: %s, especificados: %s)'
+      damage:
+        invulnerable: O alvo é invulnerável a esse tipo de dano
+        success: '%s de dano causado a %s'
+      data:
+        block:
+          get: A propriedade %s do bloco (em %s, %s, %s), após um fator de escala de %s, é %s
+          invalid: O bloco de destino não é um bloco-entidade
+          modified: Dados do bloco em %s, %s, %s modificados
+          query: 'O bloco em %s, %s, %s tem os seguintes dados: %s'
+        entity:
+          get: A propriedade %s de %s, após o fator de escala de %s, é %s
+          invalid: Não foi possível modificar os dados do jogador
+          modified: Dados da entidade %s modificados
+          query: 'A entidade %s tem os seguintes dados: %s'
+        get:
+          invalid: Não foi possível obter %s, só são permitidas marcações numéricas
+          multiple: Esse argumento aceita um único valor NBT
+          unknown: Não foi possível obter %s, a marcação não existe
+        merge:
+          failed: Nada mudou. As propriedades especificadas já têm esses valores
+        modify:
+          expected_list: 'Espera-se uma lista, obteve-se: %s'
+          expected_object: 'Espera-se um objeto, obteve-se: %s'
+          expected_value: 'Espera-se um valor, obteve-se: %s'
+          invalid_index: 'Índice de lista inválido: %s'
+          invalid_substring: 'Índices de sublinha inválidos: %s para %s'
+        storage:
+          get: '%s no armazenamento %s, após o fator de escala de %s, é %s'
+          modified: 'Armazenamento alterado: %s'
+          query: 'O armazenamento %s contém: %s'
+      datapack:
+        disable:
+          failed: O pacote de dados "%s" não está ativado!
+        enable:
+          failed:
+            no_flags: 'Não é possível ativar o pacote "%s" porque as variáveis necessárias estão desativadas nesse mundo: %s!'
+            _value: Pack '%s' is already enabled!
+        list:
+          available:
+            none: Nenhum pacote de dados disponível
+            success: 'Há %s pacote(s) de dado(s) disponível(is): %s'
+          enabled:
+            none: Nenhum pacote de dados ativado
+            success: 'Há %s pacote(s) de dado(s) ativado(s): %s'
+        modify:
+          disable: Desativando o pacote de dados %s
+          enable: Ativando o pacote de dados %s
+        unknown: 'Pacote de dados desconhecido: %s'
+      debug:
+        alreadyRunning: A análise de tiques já foi iniciada
+        function:
+          noRecursion: Não é possível rastrear no interior da função
+          success:
+            multiple: '%s comando(s) rastreado(s) de %s funções para o arquivo de saída %s'
+            single: '%s comando(s) rastreado(s) da função "%s" para o arquivo de saída %s'
+          traceFailed: Falha ao rastrear a função
+        notRunning: A análise de tiques não foi iniciada
+        started: Análise de tiques iniciada
+        stopped: Análise de tiques interrompida após %s segundo(s) e %s tique(s) [%s tique(s) por segundo]
+      defaultgamemode:
+        success: Modo de jogo padrão definido para %s
+      deop:
+        failed: Nada mudou. O jogador não é um operador
+        success: '%s não é mais operador(a) do servidor'
+      difficulty:
+        failure: A dificuldade não mudou porque já está definida como %s
+        query: A dificuldade é %s
+        success: Dificuldade definida como %s
+      drop:
+        no_held_items: A entidade não pode segurar um item
+        no_loot_table: A entidade %s não tem uma tabela de itens
+        success:
+          multiple: '%s itens largados'
+          multiple_with_table: '%s itens largados da tabela %s'
+          single: 'Itens largados: %sx %s'
+          single_with_table: 'Itens largados da tabela %3$s: %1$sx %2$s'
+      effect:
+        clear:
+          everything:
+            failed: O alvo não tem efeitos a serem removidos
+            success:
+              multiple: Removidos todos os efeitos de %s alvos
+              single: Removidos todos os efeitos de %s
+          specific:
+            failed: O alvo não tem o efeito solicitado
+            success:
+              multiple: Efeito %s removido de %s alvos
+              single: Efeito %s removido de %s
+        give:
+          failed: Não foi possível aplicar esse efeito (o alvo é imune a efeitos ou tem algo mais forte)
+          success:
+            multiple: Efeito %s aplicado a %s alvos
+            single: Efeito %s aplicado a %s
+      enchant:
+        failed:
+          entity: '%s não é uma entidade válida nesse comando'
+          incompatible: '%s é incompatível com esse encantamento'
+          itemless: '%s não está segurando nenhum item'
+          level: '%s é superior ao nível máximo do encantamento (%s)'
+          _value: Nothing changed. Targets either have no item in their hands or the enchantment could not be applied
+        success:
+          multiple: Encantamento %s aplicado a %s entidades
+          single: Encantamento %s aplicado ao item de %s
+      execute:
+        blocks:
+          toobig: 'Há blocos demais na área especificada (máximo: %s, especificados: %s)'
+        conditional:
+          fail: Teste malsucedido
+          fail_count: 'Teste malsucedido. Quantidade: %s'
+          pass: Teste concluído
+          pass_count: 'Teste concluído. Quantidade: %s'
+      experience:
+        add:
+          levels:
+            success:
+              multiple: '%s nível(eis) de experiência concedidos a %s jogadores'
+              single: '%2$s recebeu %1$s nível(eis) de experiência'
+          points:
+            success:
+              multiple: '%2$s jogadores receberam %1$s ponto(s) de experiência'
+              single: '%2$s recebeu %1$s ponto(s) de experiência'
+        query:
+          levels: '%s tem %s nível(eis) de experiência'
+          points: '%s tem %s ponto(s) de experiência'
+        set:
+          levels:
+            success:
+              multiple: Níveis de experiência de %2$s jogadores definidos para %1$s
+              single: Níveis de experiência de %2$s definidos para %1$s
+          points:
+            invalid: Não é possível definir pontos de experiência acima do máximo para o nível atual do jogador
+            success:
+              multiple: Pontos de experiência de %2$s jogadores definidos para %1$s
+              single: Pontos de experiência de %2$s definidos para %1$s
+      fill:
+        failed: Nenhum bloco preenchido
+        success: '%s bloco(s) preenchido(s)'
+        toobig: 'Há blocos demais na área especificada (máximo: %s, especificados: %s)'
+      fillbiome:
+        success:
+          count: '%s entrada(s) de biomas definida(s) entre %s, %s, %s e %s, %s, %s'
+          _value: Biomes set between %s, %s, %s and %s, %s, %s
+        toobig: 'Há blocos demais no volume especificado (máximo: %s, especificados: %s)'
+      forceload:
+        added:
+          failure: Nenhum chunk marcado para carregamento forçado
+          multiple: '%s chunks na dimensão %s, de %s a %s, marcados para carregamento forçado'
+          none: Nenhum chunk com carregamento forçado encontrado na dimensão %s
+          single: Chunk %s na dimensão %s marcado para carregamento forçado
+        list:
+          multiple: '%s chunks com carregamento forçado encontrados na dimensão %s em: %s'
+          single: 'Um chunk com carregamento forçado foi encontrado na dimensão %s em: %s'
+        query:
+          failure: Chunk %s na dimensão %s desmarcado para carregamento forçado
+          success: Chunk %s na dimensão %s marcado para carregamento forçado
+        removed:
+          all: Desmarcados todos os chunks com carregamento forçado na dimensão %s
+          failure: Nenhum chunk removido do carregamento forçado
+          multiple: '%s chunks na dimensão %s, de %s a %s, desmarcados do carregamento forçado'
+          single: Chunk %s na dimensão %s desmarcado do carregamento forçado
+        toobig: 'Há chunks demais na área especificada (máximo: %s, especificados: %s)'
+      function:
+        success:
+          multiple:
+            result: '%s funções executadas'
+            _value: Executed %s command(s) from %s functions
+          single:
+            result: A função "%2$s" devolveu %1$s
+            _value: Executed %s command(s) from function '%s'
+      gamemode:
+        success:
+          other: Modo de jogo de %s definido para %s
+          self: Modo de jogo definido para %s
+      gamerule:
+        query: 'Regra do jogo %s definida como: %s'
+        set: 'Regra do jogo %s definida como: %s'
+      give:
+        failed:
+          toomanyitems: Não é possível dar mais de %s (%s)
+        success:
+          multiple: '%3$s jogadores receberam %1$sx %2$s'
+          single: '%3$s recebeu %1$sx %2$s'
+      item:
+        block:
+          set:
+            success: Espaço em %s, %s, %s substituído por %s
+        entity:
+          set:
+            success:
+              multiple: Espaço em %s entidades substituído por %s
+              single: Espaço em %s substituído por %s
+        source:
+          no_such_slot: A origem não tem o espaço %s
+          not_a_container: A posição de origem %s, %s, %s não é um recipiente
+        target:
+          no_changed:
+            known_item: Nenhum alvo aceitou o item %s no espaço %s
+          no_changes: Nenhum alvo aceitou o item no espaço %s
+          no_such_slot: O alvo não tem o espaço %s
+          not_a_container: A posição de destino %s, %s, %s não é um recipiente
+      jfr:
+        dump:
+          failed: 'Falha ao salvar a análise JFR: %s'
+        start:
+          failed: Falha ao iniciar a análise JFR
+        started: Análise JFR iniciada
+        stopped: Análise JFR interrompida e salva em %s
+      kick:
+        success: '%s foi expulso(a): %s'
+      kill:
+        success:
+          multiple: '%s entidades mortas'
+          single: '%s morreu'
+      list:
+        nameAndId: '%s (%s)'
+        players: 'Há %s de %s jogadores online: %s'
+      locate:
+        biome:
+          not_found: Não foi possível localizar o bioma "%s" a uma distância razoável
+          success: O bioma %s mais próximo está em %s (a %s blocos de distância)
+        poi:
+          not_found: Não foi possível localizar um ponto de interesse do tipo "%s" a uma distância razoável
+          success: O ponto de interesse %s mais próximo está em %s (a %s blocos de distância)
+        structure:
+          invalid: Nenhuma estrutura encontrada do tipo "%s"
+          not_found: Não foi possível encontrar uma estrutura do tipo "%s" por perto
+          success: A estrutura do tipo %s mais próxima está em %s (a %s blocos de distância)
+      message:
+        display:
+          incoming: '%s sussurrou para você: %s'
+          outgoing: 'Você sussurrou para %s: %s'
+      pardon:
+        failed: Nada mudou. O jogador não está banido
+        success: Banimento de %s removido
+      pardonip:
+        failed: Nada mudou. Esse endereço IP não está banido
+        invalid: Endereço IP inválido
+        success: Endereço IP %s desbanido
+      particle:
+        failed: A partícula não estava visível para ninguém
+        success: Exibindo partícula %s
+      perf:
+        alreadyRunning: A análise de desempenho já foi iniciada
+        notRunning: A análise de desempenho não foi iniciada
+        reportFailed: Falha ao criar o relatório de depuração
+        reportSaved: Relatório de depuração criado em %s
+        started: Análise de desempenho iniciada por 10 segundos ("/perf stop" para interrompê-la)
+        stopped: 'Análise de desempenho interrompida após %s segundo(s) e %s tique(s) [tique(s) por segundo: %s]'
+      place:
+        feature:
+          failed: Falha ao colocar o elemento
+          invalid: Nenhum elemento encontrado do tipo "%s"
+          success: Elemento "%s" colocado em %s, %s, %s
+        jigsaw:
+          failed: Falha ao gerar o bloco-quebra-cabeça
+          invalid: Nenhum conjunto modelo encontrado do tipo "%s"
+          success: Bloco-quebra-cabeça gerado em %s, %s, %s
+        structure:
+          failed: Falha ao gerar a estrutura
+          invalid: Nenhuma estrutura encontrada do tipo "%s"
+          success: Estrutura do tipo "%s" gerada em %s, %s, %s
+        template:
+          failed: Falha ao colocar o modelo
+          invalid: Nenhum modelo encontrado com o ID "%s"
+          success: Modelo "%s" carregado em %s, %s, %s
+      playsound:
+        failed: O som está longe demais para ser ouvido
+        success:
+          multiple: Som %s reproduzido para %s jogadores
+          single: Som %s reproduzido para %s
+      publish:
+        alreadyPublished: Jogo multijogador já hospedado na porta %s
+        failed: Não foi possível hospedar o jogo local
+        started: Jogo local hospedado na porta %s
+        success: Jogo multijogador hospedado na porta %s
+      recipe:
+        give:
+          failed: Nenhuma receita nova aprendida
+          success:
+            multiple: '%s receita(s) desbloqueada(s) para %s jogadores'
+            single: '%s receita(s) desbloqueada(s) para %s'
+        take:
+          failed: Nenhuma receita pôde ser esquecida
+          success:
+            multiple: '%s receita(s) retirada(s) de %s jogadores'
+            single: '%s receita(s) retirada(s) de %s'
+      reload:
+        failure: Falha ao recarregar. Os dados antigos serão mantidos
+        success: Recarregando!
+      ride:
+        already_riding: '%s já está montando um(a) %s'
+        dismount:
+          success: '%s desceu do(a) %s'
+        mount:
+          failure:
+            cant_ride_players: Não é possível montar em jogadores
+            generic: '%s não conseguiu montar um(a) %s'
+            loop: Não é possível fazer a entidade montar em si mesma nem em seus passageiros
+            wrong_dimension: Não é possível montar numa entidade de outra dimensão
+          success: '%s começou a montar um(a) %s'
+        not_riding: '%s não está numa montaria'
+      save:
+        alreadyOff: Salvamento já desativado
+        alreadyOn: Salvamento já ativado
+        disabled: Salvamento automático desativado
+        enabled: Salvamento automático ativado
+        failed: Não foi possível salvar o jogo (há espaço suficiente no disco rígido?)
+        saving: Salvando o jogo (pode demorar um pouco!)
+        success: Jogo salvo
+      schedule:
+        cleared:
+          failure: Nenhuma programação encontrada com o ID %s
+          success: '%s programação(ões) removida(s) com o ID %s'
+        created:
+          function: Função "%s" programada em %s tique(s) no tempo de jogo %s
+          tag: Marcação "%s" programada em %s tique(s) no tempo de jogo %s
+        same_tick: Não é possível programar no tique atual
+      scoreboard:
+        objectives:
+          add:
+            duplicate: Já existe um objetivo com esse nome
+            success: 'Novo objetivo criado: %s'
+          display:
+            alreadyEmpty: Nada mudou. Esse espaço de exibição já está vazio
+            alreadySet: Nada mudou. Esse espaço de exibição já está mostrando o objetivo
+            cleared: Objetivos no espaço de exibição %s apagados
+            set: Espaço de exibição %s definido para mostrar o objetivo %s
+          list:
+            empty: Nenhum objetivo
+            success: 'Há %s objetivo(s): %s'
+          modify:
+            displayname: Nome de exibição do objetivo %s alterado para %s
+            rendertype: Tipo de exibição do objetivo %s alterado
+          remove:
+            success: 'Objetivo removido: %s'
+        players:
+          add:
+            success:
+              multiple: '%s pontos adicionados ao objetivo %s em %s entidades'
+              single: '%s ponto(s) adicionado(s) ao objetivo %s em %s [agora tem %s ponto(s)]'
+          enable:
+            failed: Nada mudou. Esse gatilho já está ativado
+            invalid: A função enable só funciona em objetivos do tipo trigger
+            success:
+              multiple: Gatilho %s ativado em %s entidades
+              single: Gatilho %s ativado em %s
+          get:
+            'null': Não foi possível obter a pontuação %s de %s porque não foi definida
+            success: A pontuação do objetivo %3$s para %1$s é %2$s
+          list:
+            empty: Nenhuma entidade registrada
+            entity:
+              empty: '%s não tem pontuações para mostrar'
+              entry: '%s: %s'
+              success: '%s tem %s de pontuação'
+            success: 'Há %s entidade(s) registrada(s): %s'
+          operation:
+            success:
+              multiple: Pontuação do objetivo %s atualizada em %s entidades
+              single: Pontuação do objetivo %s para %s definida em %s
+          remove:
+            success:
+              multiple: '%s ponto(s) removido(s) do objetivo %s em %s entidades'
+              single: '%s ponto(s) removido(s) do objetivo %s em %s [agora tem %s ponto(s)]'
+          reset:
+            all:
+              multiple: Redefinidas todas as pontuações de %s entidades
+              single: Redefinidas todas as pontuações de %s
+            specific:
+              multiple: Pontuação do objetivo %s em %s entidades redefinida
+              single: Pontuação do objetivo %s em %s redefinida
+          set:
+            success:
+              multiple: Pontuação do objetivo %s em %s entidades definida a %s
+              single: Pontuação do objetivo %s em %s definida para %s
+      seed:
+        success: 'Semente: %s'
+      setblock:
+        failed: Não foi possível colocar o bloco
+        success: Bloco em %s, %s, %s alterado
+      setidletimeout:
+        success: Tempo limite de inatividade dos jogadores definido para %s minuto(s)
+      setworldspawn:
+        success: Ponto de renascimento do mundo definido para %s, %s, %s [%s]
+      spawnpoint:
+        success:
+          multiple: Ponto de renascimento de %6$s jogadores definido para %1$s, %2$s, %3$s [%4$s] na dimensão %5$s
+          single: Ponto de renascimento de %6$s definido para %1$s, %2$s, %3$s [%4$s] na dimensão %5$s
+      spectate:
+        not_spectator: '%s não está no Modo Espectador'
+        self: Não é possível se espectar
+        success:
+          started: Visão de %s
+          stopped: Não está mais espectando a uma entidade
+      spreadplayers:
+        failed:
+          entities: Não foi possível distribuir %s entidade(s) ao redor de %s, %s (há entidades demais para o espaço, tente usar um afastamento de até %s blocos)
+          invalid:
+            height: Parâmetro maxHeight (%s) inválido. Espera-se um valor maior do que o mínimo %s do mundo
+          teams: Não foi possível distribuir %s equipe(s) ao redor de %s, %s (há entidades demais para o espaço, tente usar um afastamento de até %s blocos)
+        success:
+          entities: '%s entidade(s) distribuída(s) ao redor de %s, %s com uma distância média de %s bloco(s)'
+          teams: '%s equipe(s) distribuída(s) ao redor de %s, %s com uma distância média de %s bloco(s)'
+      stopsound:
+        success:
+          source:
+            any: Interrompidos todos os sons "%s"
+            sound: Som "%s" de origem "%s" interrompido
+          sourceless:
+            any: Interrompidos todos os sons
+            sound: 'Som interrompido: %s'
+      summon:
+        failed:
+          uuid: Não foi possível invocar a entidade por causa de UUIDs duplicados
+          _value: Unable to summon entity
+        invalidPosition: Posição inválida para invocação
+        success: 'Entidade invocada: %s'
+      tag:
+        add:
+          failed: O destino já tem uma ou muitas marcações
+          success:
+            multiple: Marcação "%s" adicionada a %s entidades
+            single: Marcação "%s" adicionada a %s
+        list:
+          multiple:
+            empty: Nenhuma marcação em %s entidades
+            success: 'As %s entidades têm um total de %s marcação(ões): %s'
+          single:
+            empty: '%s não tem marcações'
+            success: '%s tem %s marcação(ões): %s'
+        remove:
+          failed: O destino não tem essa marcação
+          success:
+            multiple: Marcação "%s" removida de %s entidades
+            single: Marcação "%s" removida de %s
+      team:
+        add:
+          duplicate: Já existe uma equipe com esse nome
+          success: 'Equipe criada: %s'
+        empty:
+          success: '%s membro(s) removido(s) da equipe %s'
+          unchanged: Nada mudou. Essa equipe já está vazia
+        join:
+          success:
+            multiple: '%s membros adicionados à equipe %s'
+            single: '%s adicionado(a) à equipe %s'
+        leave:
+          success:
+            multiple: '%s membros removidos de suas respectivas equipes'
+            single: '%s removido(a) da equipe'
+        list:
+          members:
+            empty: Nenhum membro na equipe %s
+            success: 'A equipe %s contém %s membro(s): %s'
+          teams:
+            empty: Nenhuma equipe
+            success: 'Há %s equipe(s): %s'
+        option:
+          collisionRule:
+            success: Regra de colisão da equipe %s definida para "%s"
+            unchanged: Nada mudou. A regra de colisão já tem esse valor
+          color:
+            success: Cor da equipe %s atualizada para %s
+            unchanged: Nada mudou. Essa equipe já tem essa cor
+          deathMessageVisibility:
+            success: Visibilidade de mensagens de morte para a equipe %s definida para "%s"
+            unchanged: Nada mudou. A visibilidade de mensagens de morte já tem esse valor
+          friendlyfire:
+            alreadyDisabled: Nada mudou. O fogo amigo já está desativado nessa equipe
+            alreadyEnabled: Nada mudou. O fogo amigo já está ativado nessa equipe
+            disabled: Fogo amigo desativado na equipe %s
+            enabled: Fogo amigo ativado na equipe %s
+          name:
+            success: Nome da equipe %s atualizado
+            unchanged: Nada mudou. Essa equipe já tem esse nome
+          nametagVisibility:
+            success: Visibilidade de nomes para a equipe %s definida para "%s"
+            unchanged: Nada mudou. A visibilidade de nomes já tem esse valor
+          prefix:
+            success: Prefixo da equipe definido para %s
+          seeFriendlyInvisibles:
+            alreadyDisabled: Nada mudou. Os membros dessa equipe já não podem ver os colegas invisíveis
+            alreadyEnabled: Nada mudou. Os membros dessa equipe já podem ver os colegas invisíveis
+            disabled: A equipe %s não pode mais ver os colegas invisíveis
+            enabled: A equipe %s pode ver os colegas invisíveis
+          suffix:
+            success: Sufixo da equipe definido para %s
+        remove:
+          success: Equipe %s removida
+      teammsg:
+        failed:
+          noteam: Você deve estar numa equipe para conversar
+      teleport:
+        invalidPosition: Posição inválida para teletransporte
+        success:
+          entity:
+            multiple: '%s entidades teletransportadas para %s'
+            single: '%s teletransportado(a) para %s'
+          location:
+            multiple: '%s entidades teletransportadas para %s, %s, %s'
+            single: '%s teletransportou-se para %s, %s, %s'
+      time:
+        query: 'Tempo em tiques: %s'
+        set: Tempo definido para %s tiques
+      title:
+        cleared:
+          multiple: Títulos retirados de %s jogadores
+          single: Títulos retirados de %s
+        reset:
+          multiple: Opções de títulos redefinidas para %s jogadores
+          single: Opções de títulos redefinidas para %s
+        show:
+          actionbar:
+            multiple: Novo título da barra em exibição para %s jogadores
+            single: Novo título da barra em exibição para %s
+          subtitle:
+            multiple: Novo subtítulo em exibição para %s jogadores
+            single: Novo subtítulo em exibição para %s
+          title:
+            multiple: Novo título em exibição para %s jogadores
+            single: Novo título para %s em exibição
+        times:
+          multiple: Tempo de exibição do título alterado para %s jogadores
+          single: Tempo de exibição do título alterado para %s
+      trigger:
+        add:
+          success: Gatilho %s ativado (valor aumentado em %s)
+        failed:
+          invalid: Você só pode ativar objetivos do tipo trigger
+          unprimed: Você não pode ativar esse objetivo ainda
+        set:
+          success: Gatilho %s ativado (valor definido para %s)
+        simple:
+          success: Gatilho %s ativado
+      weather:
+        set:
+          clear: Tempo definido para limpo
+          rain: Tempo definido para chuvoso
+          thunder: Tempo definido para temporal
+      whitelist:
+        add:
+          failed: O jogador já está na lista branca
+          success: '%s adicionado(a) à lista branca'
+        alreadyOff: A lista branca já está desativada
+        alreadyOn: A lista branca já está ativada
+        disabled: Lista branca desativada
+        enabled: Lista branca ativada
+        list: 'Há %s jogador(es) na lista branca: %s'
+        none: Nenhum jogador na lista branca
+        reloaded: Lista branca recarregada
+        remove:
+          failed: O jogador não está na lista branca
+          success: '%s removido(a) da lista branca'
+      worldborder:
+        center:
+          failed: Nada mudou. A barreira do mundo já está centralizada nessa posição
+          success: Centro da barreira do mundo definido para %s, %s
+        damage:
+          amount:
+            failed: Nada mudou. A barreira do mundo já causa essa quantidade de dano
+            success: Dano da barreira do mundo definido para %s por bloco a cada segundo
+          buffer:
+            failed: Nada mudou. A zona segura fora da barreira do mundo já tem essa distância
+            success: Zona segura fora da barreira do mundo definida para %s bloco(s)
+        get: 'Blocos de extensão da barreira do mundo: %s'
+        set:
+          failed:
+            big: A barreira do mundo não pode exceder %s blocos de extensão
+            far: A barreira do mundo não pode exceder %s blocos de extensão
+            nochange: Nada mudou. A barreira do mundo já tem esse tamanho
+            small: A barreira do mundo não pode ser inferior a 1 bloco de extensão
+          grow: Expandindo a barreira do mundo para %s blocos de extensão ao longo de %s segundos
+          immediate: Barreira do mundo definida para %s bloco(s) de extensão
+          shrink: Reduzindo a barreira do mundo para %s bloco(s) de extensão ao longo de %s segundo(s)
+        warning:
+          distance:
+            failed: Nada mudou. O aviso da barreira do mundo já tem essa distância
+            success: Distância de aviso da barreira do mundo definida para %s bloco(s)
+          time:
+            failed: Nada mudou. O aviso da barreira do mundo já tem esse período de tempo
+            success: Tempo de aviso da barreira do mundo definido para %s segundo(s)
     death:
       attack:
-        generic: '{arg0} morreu'
-        outOfWorld: '{arg0} caiu para fora do mundo'
+        generic:
+          player: '%1$s morreu por causa de %2$s'
+          _value: '%1$s died'
+        outOfWorld:
+          player: '%1$s não quis viver no mesmo mundo que %2$s'
+          _value: '%1$s fell out of the world'
+        anvil:
+          player: Uma bigorna esmagou %1$s enquanto lutava com %2$s
+          _value: '%1$s was squashed by a falling anvil'
+        arrow:
+          item: '%2$s atingiu %1$s com %3$s'
+          _value: '%1$s was shot by %2$s'
+        badRespawnPoint:
+          link: A programação intencional do jogo
+          message: '%2$s matou %1$s'
+        cactus:
+          player: '%1$s esbarrou num cacto enquanto tentava fugir de %2$s'
+          _value: '%1$s was pricked to death'
+        cramming:
+          player: '%2$s esmagou %1$s'
+          _value: '%1$s was squished too much'
+        dragonBreath:
+          player: '%2$s assou %1$s no bafo do dragão'
+          _value: '%1$s was roasted in dragon''s breath'
+        drown:
+          player: '%1$s se afogou enquanto tentava fugir de %2$s'
+          _value: '%1$s drowned'
+        dryout:
+          player: '%1$s morreu de desidratação enquanto tentava fugir de %2$s'
+          _value: '%1$s died from dehydration'
+        even_more_magic: '%1$s morreu com muito mais magia'
+        explosion:
+          player:
+            item: '%2$s explodiu %1$s com %3$s'
+            _value: '%1$s was blown up by %2$s'
+          _value: '%1$s blew up'
+        fall:
+          player: '%1$s esbarrou violentamente no chão enquanto tentava fugir de %2$s'
+          _value: '%1$s hit the ground too hard'
+        fallingBlock:
+          player: Um bloco esmagou %1$s enquanto lutava com %2$s
+          _value: '%1$s was squashed by a falling block'
+        fallingStalactite:
+          player: Uma estalactite atingiu %1$s enquanto lutava com %2$s
+          _value: '%1$s was skewered by a falling stalactite'
+        fireball:
+          item: '%2$s atingiu %1$s com uma bola de fogo enquanto usava %3$s'
+          _value: '%1$s was fireballed by %2$s'
+        fireworks:
+          item: '%1$s se foi com um estouro por um fogo de artifício lançado com %3$s por %2$s'
+          player: '%1$s se foi com um estouro enquanto lutava com %2$s'
+          _value: '%1$s went off with a bang'
+        flyIntoWall:
+          player: '%1$s experimentou a energia cinética enquanto tentava fugir de %2$s'
+          _value: '%1$s experienced kinetic energy'
+        freeze:
+          player: '%2$s congelou %1$s até à morte'
+          _value: '%1$s froze to death'
+        genericKill:
+          player: '%1$s morreu enquanto lutava com %2$s'
+          _value: '%1$s was killed'
+        hotFloor:
+          player: '%1$s entrou numa zona de perigo por causa de %2$s'
+          _value: '%1$s discovered the floor was lava'
+        inFire:
+          player: '%1$s andou no fogo enquanto lutava com %2$s'
+          _value: '%1$s went up in flames'
+        inWall:
+          player: '%1$s sufocou-se numa parede enquanto lutava com %2$s'
+          _value: '%1$s suffocated in a wall'
+        indirectMagic:
+          item: '%2$s matou %1$s com %3$s'
+          _value: '%1$s was killed by %2$s using magic'
+        lava:
+          player: '%1$s tentou nadar na lava enquanto fugia de %2$s'
+          _value: '%1$s tried to swim in lava'
+        lightningBolt:
+          player: Um raio atingiu %1$s enquanto lutava com %2$s
+          _value: '%1$s was struck by lightning'
+        magic:
+          player: '%1$s morreu com magia enquanto tentava fugir de %2$s'
+          _value: '%1$s was killed by magic'
+        message_too_long: 'A mensagem era longa demais para ser enviada totalmente. Desculpe! Aqui está a versão reduzida: %s'
+        mob:
+          item: '%2$s matou %1$s com %3$s'
+          _value: '%1$s was slain by %2$s'
+        onFire:
+          item: '%1$s reduziu a cinzas enquanto lutava com %2$s e segurava %3$s'
+          player: '%1$s reduziu a cinzas enquanto lutava com %2$s'
+          _value: '%1$s burned to death'
+        outsideBorder:
+          player: '%1$s saiu dos confins desse mundo enquanto lutava com %2$s'
+          _value: '%1$s left the confines of this world'
+        player:
+          item: '%2$s matou %1$s com %3$s'
+          _value: '%1$s was slain by %2$s'
+        sonic_boom:
+          item: Um ataque sônico obliterou %1$s enquanto tentava fugir de %2$s com %3$s
+          player: Um ataque sônico obliterou %1$s enquanto tentava fugir de %2$s
+          _value: '%1$s was obliterated by a sonically-charged shriek'
+        stalagmite:
+          player: Uma estalagmite empalou %1$s enquanto lutava com %2$s
+          _value: '%1$s was impaled on a stalagmite'
+        starve:
+          player: '%1$s morreu de fome enquanto lutava com %2$s'
+          _value: '%1$s starved to death'
+        sting:
+          item: '%2$s ferroou %1$s até à morte com %3$s'
+          player: '%2$s ferroou %1$s até à morte'
+          _value: '%1$s was stung to death'
+        sweetBerryBush:
+          player: Um arbusto de bagas doces espetou %1$s até à morte enquanto tentava fugir de %2$s
+          _value: '%1$s was poked to death by a sweet berry bush'
+        thorns:
+          item: '%3$s matou %1$s tentando ferir %2$s'
+          _value: '%1$s was killed trying to hurt %2$s'
+        thrown:
+          item: '%2$s agrediu %1$s com %3$s'
+          _value: '%1$s was pummeled by %2$s'
+        trident:
+          item: '%2$s empalou %1$s com %3$s'
+          _value: '%1$s was impaled by %2$s'
+        wither:
+          player: '%1$s entrou em decomposição enquanto lutava com %2$s'
+          _value: '%1$s withered away'
+        witherSkull:
+          item: '%2$s atingiu %1$s com um crânio enquanto usava %3$s'
+          _value: '%1$s was shot by a skull from %2$s'
+      fell:
+        accident:
+          generic: '%1$s caiu de um lugar alto'
+          ladder: '%1$s caiu de uma escada'
+          other_climbable: '%1$s caiu enquanto escalava'
+          scaffolding: '%1$s caiu de um andaime'
+          twisting_vines: '%1$s caiu de umas trepadeiras retorcidas'
+          vines: '%1$s caiu de umas trepadeiras'
+          weeping_vines: '%1$s caiu de umas trepadeiras choronas'
+        assist:
+          item: '%1$s recebeu uma sentença de morte por %2$s com %3$s'
+          _value: '%1$s was doomed to fall by %2$s'
+        finish:
+          item: '%2$s finalizou %1$s em queda com %3$s'
+          _value: '%1$s fell too far and was finished by %2$s'
+        killer: '%1$s recebeu uma sentença de morte'
     multiplayer:
       player:
-        joined: '{arg0} entrou no jogo'
+        joined:
+          renamed: '%s (previamente como %s) entrou no jogo'
+          _value: '%s joined the game'
         left: '{arg0} saiu do jogo'
+        list:
+          narration: 'Jogadores online: %s'
+      applyingPack: Aplicando pacote de recursos
+      disconnect:
+        authservers_down: Servidores de autenticação indisponíveis. Tente novamente mais tarde!
+        banned:
+          expiration: '
+
+            Banimento válido até: %s'
+          reason: 'Você foi banido(a) desse servidor.
+
+            Motivo: %s'
+          _value: You are banned from this server
+        banned_ip:
+          expiration: '
+
+            Banimento válido até: %s'
+          reason: 'Seu endereço IP foi banido desse servidor.
+
+            Motivo: %s'
+        chat_validation_failed: Falha ao validar a mensagem
+        duplicate_login: Você iniciou sessão a partir de outro local
+        expired_public_key: Chave pública do perfil expirada. Verifique se a hora do sistema está sincronizada e reinicie o jogo.
+        flying: O voo não é permitido nesse servidor
+        generic: Desconectado
+        idling: Você ficou ausente por muito tempo!
+        illegal_characters: Caracteres não permitidos no chat
+        incompatible: Cliente incompatível! Use a versão %s
+        invalid_entity_attacked: Tentativa de atacar uma entidade inválida
+        invalid_packet: O servidor enviou um pacote inválido
+        invalid_player_data: Dados inválidos do jogador
+        invalid_player_movement: Pacote de movimento inválido de jogador recebido
+        invalid_public_key_signature:
+          new: 'Assinatura inválida para a chave pública do perfil.
+
+            Tente reiniciar seu jogo.'
+          _value: 'Invalid signature for profile public key.
+
+            Try restarting your game.'
+        invalid_vehicle_movement: Pacote de movimento inválido de veículo recebido
+        ip_banned: Seu endereço IP foi banido desse servidor
+        kicked: Expulsão por um operador
+        missing_tags: 'Conjunto de marcações incompletas recebidas do servidor.
+
+          Fale com um operador do servidor.'
+        name_taken: Esse nome já está em uso
+        not_whitelisted: Você não está na lista branca desse servidor!
+        out_of_order_chat: Pacote de chat corrompido recebido. A hora do sistema mudou?
+        outdated_client: Cliente incompatível! Use a versão %s
+        outdated_server: Cliente incompatível! Use a versão %s
+        server_full: O servidor está lotado!
+        server_shutdown: Servidor fechado
+        slow_login: Demorou muito para iniciar sessão
+        too_many_pending_chats: Há muitas mensagens não confirmadas
+        unexpected_query_response: Dados personalizados inesperados do cliente
+        unsigned_chat: Foi recebido um pacote de chat com uma assinatura inválida ou ausente.
+        unverified_username: Falha ao verificar o nome de usuário!
+      downloadingStats: Obtendo estatísticas...
+      downloadingTerrain: Carregando terreno...
+      lan:
+        server_found: 'Novo servidor encontrado: %s'
+      message_not_delivered: 'Não foi possível enviar a mensagem de chat. Veja os registros do servidor: %s'
+      requiredTexturePrompt:
+        disconnect: Esse servidor requer um pacote de recursos personalizado
+        line1: Esse servidor requer o uso de um pacote de recursos personalizado.
+        line2: A conexão com o servidor será interrompida ao recusar esse pacote de recursos personalizado.
+      socialInteractions:
+        not_available: As interações sociais só estão disponíveis em mundos multijogador
+      status:
+        and_more: '... e mais %s...'
+        cancelled: Conexão cancelada
+        cannot_connect: Não foi possível conectar-se ao servidor
+        cannot_resolve: Não foi possível resolver o nome do host
+        finished: Concluído
+        incompatible: Versão incompatível!
+        motd:
+          narration: 'Mensagem do dia: %s'
+        no_connection: (sem conexão)
+        old: Desatualizado
+        online: Online
+        ping:
+          narration: Latência de %s milissegundos
+          _value: '%s ms'
+        pinging: Calculando latência...
+        player_count:
+          narration: '%s de %s jogadores online'
+        quitting: Saindo
+        request_handled: Pedido de status processado
+        unknown: '?'
+        unrequested: Atualização de status não solicitada recebida
+        version:
+          narration: 'Versão do servidor: %s'
+      stopSleeping: Levantar da cama
+      texturePrompt:
+        failure:
+          line1: Não foi possível aplicar o pacote de recursos do servidor.
+          line2: Qualquer funcionalidade dependente de recursos personalizados pode não funcionar corretamente.
+        line1: Esse servidor recomenda o uso de um pacote de recursos personalizado.
+        line2: Deseja baixar e instalá-lo automagicamente?
+        serverPrompt: '%s
+
+
+          Mensagem do servidor:
+
+          %s'
+      title: Multijogador
+      unsecureserver:
+        toast:
+          title: Não é possível verificar as mensagens
+          _value: Messages sent on this server may be modified and might not reflect the original message
+    advancements:
+      adventure:
+        adventuring_time:
+          description: Descubra todos os biomas
+          title: Hora de aventura
+        arbalistic:
+          description: Mate cinco criaturas diferentes com um só tiro de Besta
+          title: Tiro certeiro
+        avoid_vibration:
+          description: Ande furtivamente perto de um Sensor de Sculk ou Defensor para evitar a detecção
+          title: Um lugar silencioso
+        bullseye:
+          description: Acerte o centro de um Alvo a pelo menos 30 metros de distância
+          title: Na mosca!
+        craft_decorated_pot_using_only_sherds:
+          description: Crie um Vaso Decorado com 4 Óstracos
+          title: Restauração cuidadosa
+        fall_from_world_height:
+          description: Sobreviva a uma queda do ponto mais alto do mundo (altura máxima) ao mais baixo
+          title: Estrela cadente
+        hero_of_the_village:
+          description: Defenda uma vila de uma invasão
+          title: Herói da vila
+        honey_block_slide:
+          description: Deslize em um Bloco de Mel para amortecer sua queda
+          title: Situação melada
+        kill_a_mob:
+          description: Mate uma criatura hostil
+          title: Caçador de monstros
+        kill_all_mobs:
+          description: Mate uma criatura hostil de cada tipo
+          title: Sem piedade
+        kill_mob_near_sculk_catalyst:
+          description: Mate uma criatura perto de um Catalisador de Sculk
+          title: Contágio
+        lightning_rod_with_villager_no_fire:
+          description: Proteja um Aldeão de uma descarga elétrica sem causar um incêndio
+          title: Filtro de linha
+        ol_betsy:
+          description: Atire com uma Besta
+          title: Primeiro disparo
+        play_jukebox_in_meadows:
+          description: Faça as pradarias ganharem vida ao som de um Toca-discos
+          title: Valsa das flores
+        read_power_from_chiseled_bookshelf:
+          description: Capte o sinal de Redstone de um Porta-livros com um Comparador
+          title: Saber é poder
+        root:
+          description: Aventura, exploração e combate
+          title: Aventura
+        salvage_sherd:
+          description: Escove um bloco suspeito para obter um Óstraco
+          title: Seu lugar é no museu
+        shoot_arrow:
+          description: Atire em algo com uma Flecha
+          title: Boa mira
+        sleep_in_bed:
+          description: Durma numa Cama para mudar seu ponto de renascimento
+          title: Bons sonhos
+        sniper_duel:
+          description: Mate um Esqueleto a pelo menos 50 metros de distância
+          title: Duelo de atiradores
+        spyglass_at_dragon:
+          description: Observe o Dragão Ender com uma Luneta
+          title: É um avião?
+        spyglass_at_ghast:
+          description: Observe um Ghast com uma Luneta
+          title: É um balão?
+        spyglass_at_parrot:
+          description: Observe um Papagaio com uma Luneta
+          title: É um pássaro?
+        summon_iron_golem:
+          description: Invoque um Golem de Ferro para ajudar a defender uma vila
+          title: O guarda-costas
+        throw_trident:
+          description: 'Lance um Tridente contra algo.
+
+            Aviso: jogar fora a sua única arma não é uma boa ideia.'
+          title: Jogada de mestre
+        totem_of_undying:
+          description: Use um Totem da Imortalidade para enganar a morte
+          title: À beira da morte
+        trade:
+          description: Faça uma troca com um Aldeão
+          title: Negócio fechado!
+        trade_at_world_height:
+          description: Faça uma troca com um Aldeão na altura máxima de construção
+          title: Preços nas alturas
+        trim_with_all_exclusive_armor_patterns:
+          description: 'Aplique ao menos uma vez os moldes de ferraria de: Espiral, Focinho, Costelas, Profundezas, Silêncio, Vex, Marés e Navegador'
+          title: Roupa nova
+        trim_with_any_armor_pattern:
+          description: Enfeite uma armadura numa Bancada de Ferraria
+          title: A última moda
+        two_birds_one_arrow:
+          description: Mate dois Espectros com uma Flecha perfurante
+          title: Dois coelhos com uma flechada só
+        very_very_frightening:
+          description: Acerte um Aldeão com um raio
+          title: Choque do trovão
+        voluntary_exile:
+          description: 'Mate um capitão invasor.
+
+            Talvez seja melhor passar um tempo longe das vilas...'
+          title: Exílio voluntário
+        walk_on_powder_snow_with_leather_boots:
+          description: Ande sobre a Neve Fofa sem afundar
+          title: Leve como a lebre
+        whos_the_pillager_now:
+          description: Faça um Saqueador provar do próprio veneno
+          title: Ladrão que rouba ladrão
+      empty: Parece que não há nada aqui...
+      end:
+        dragon_breath:
+          description: Recolha o Bafo do Dragão num Frasco de Vidro
+          title: Aceita uma pastilha?
+        dragon_egg:
+          description: Obtenha o Ovo do Dragão
+          title: A nova geração
+        elytra:
+          description: Encontre os Élitros
+          title: Ao infinito e além!
+        enter_end_gateway:
+          description: Fuja da ilha
+          title: O começo do fim
+        find_end_city:
+          description: Entre, o que poderia acontecer?
+          title: A cidade no fim do jogo
+        kill_dragon:
+          description: Boa sorte
+          title: Liberte o End
+        levitate:
+          description: Levite até 50 blocos de altura com os ataques de um Shulker
+          title: A vista é ótima daqui de cima
+        respawn_dragon:
+          description: Invoque novamente o Dragão Ender
+          title: A volta dos que não foram
+        root:
+          description: Ou é só o começo?
+          title: O End
+      husbandry:
+        allay_deliver_cake_to_note_block:
+          description: Faça um Allay largar um Bolo sobre um Bloco Musical
+          title: Parabéns pra você
+        allay_deliver_item_to_player:
+          description: Receba um item de um Allay
+          title: Amigo, estou aqui
+        axolotl_in_a_bucket:
+          description: Capture um Axolote com um Balde
+          title: Fofos e furiosos
+        balanced_diet:
+          description: Coma tudo o que puder, mesmo que não seja bom para você
+          title: Uma dieta equilibrada
+        breed_all_animals:
+          description: Acasale todos os animais!
+          title: De dois em dois
+        breed_an_animal:
+          description: Acasale dois animais
+          title: O amor está no ar
+        complete_catalogue:
+          description: Domestique todos os tipos de Gatos!
+          title: Um gatálogo completo
+        feed_snifflet:
+          description: Alimente um Farejador Bebê
+          title: Aromas
+        fishy_business:
+          description: Capture um Peixe
+          title: O mar está pra peixe
+        froglights:
+          description: Tenha todos os Anfibrilhos no inventário
+          title: União tricolor!
+        kill_axolotl_target:
+          description: Junte-se a um Axolote e ganhe uma batalha
+          title: A união faz a força!
+        leash_all_frog_variants:
+          description: Capture todos os tipos de Sapo com um Laço
+          title: Os três mosqueteiros
+        make_a_sign_glow:
+          description: Faça o texto de uma Placa brilhar
+          title: Brilhe e admire!
+        netherite_hoe:
+          description: Use um Lingote de Netherita para melhorar uma Enxada e reflita sobre as suas escolhas de vida
+          title: Dedicação exclusiva
+        obtain_sniffer_egg:
+          description: Obtenha um Ovo de Farejador
+          title: Cheirim bão
+        plant_any_sniffer_seed:
+          description: Plante uma semente de um Farejador
+          title: Paleobotânico
+        plant_seed:
+          description: Plante uma Semente e a veja crescer
+          title: Elas crescem tão rápido...
+        ride_a_boat_with_a_goat:
+          description: Entre num Bote com uma Cabra
+          title: Cabra à vista!
+        root:
+          description: O mundo está repleto de amigos e comida
+          title: Agropecuária
+        safely_harvest_honey:
+          description: Faça uma Fogueira para coletar Mel de uma Colmeia com um Frasco de Vidro, sem irritar as Abelhas
+          title: Você é mel convidado
+        silk_touch_nest:
+          description: Mova uma Colmeia natural ou artificial, com 3 Abelhas dentro, usando o Toque Suave
+          title: Reabelhitação total
+        tactical_fishing:
+          description: Capture um Peixe, sem uma Vara de Pesca!
+          title: Pesca tática
+        tadpole_in_a_bucket:
+          description: Capture um Girino com um Balde
+          title: Coaxa d'água
+        tame_an_animal:
+          description: Domestique um animal
+          title: Amigos para sempre
+        wax_off:
+          description: Remova a Cera de um Bloco de Cobre!
+          title: Tira cera
+        wax_on:
+          description: Encere um Bloco de Cobre com um Favo de Mel!
+          title: Bota cera
+      nether:
+        all_effects:
+          description: Obtenha todos os efeitos ao mesmo tempo
+          title: A que ponto chegamos?
+        all_potions:
+          description: Obtenha todos os efeitos de poções ao mesmo tempo
+          title: Mistura explosiva
+        brew_potion:
+          description: Prepare uma Poção
+          title: Aprendiz de químico
+        charge_respawn_anchor:
+          description: Carregue uma Âncora de Renascimento ao nível máximo
+          title: Quase sete vidas
+        create_beacon:
+          description: Fabrique e posicione um Sinalizador
+          title: Haja luz
+        create_full_beacon:
+          description: Carregue um Sinalizador ao máximo
+          title: E houve luz!
+        distract_piglin:
+          description: Distraia um Piglin com ouro
+          title: Meu precioso!
+        explore_nether:
+          description: Descubra todos os biomas do Nether
+          title: Destinos escaldantes
+        fast_travel:
+          description: Use o Nether para percorrer 7 km na Superfície
+          title: Bolha subespacial
+        find_bastion:
+          description: Entre num Bastião em Ruínas
+          title: Anos dourados
+        find_fortress:
+          description: Adentre uma Fortaleza do Nether
+          title: Uma terrível fortaleza
+        get_wither_skull:
+          description: Obtenha o crânio de um Esqueleto Wither
+          title: Cortem-lhe a cabeça!
+        loot_bastion:
+          description: Saqueie um Baú num Bastião em Ruínas
+          title: Achado não é roubado
+        netherite_armor:
+          description: Obtenha uma armadura completa de Netherita
+          title: Duro de matar
+        obtain_ancient_debris:
+          description: Obtenha os Detritos Ancestrais
+          title: Adeus, diamantes!
+        obtain_blaze_rod:
+          description: Obtenha a vara de um Blaze
+          title: Brincando com fogo
+        obtain_crying_obsidian:
+          description: Obtenha a Obsidiana Chorona
+          title: Quem tá cortando cebola?
+        return_to_sender:
+          description: Mate um Ghast com uma Bola de Fogo
+          title: Recepção calorosa
+        ride_strider:
+          description: Monte num Lavagante usando uma Vara com Fungo Distorcido
+          title: Um bote com pernas
+        ride_strider_in_overworld_lava:
+          description: Leve um Lavagante para um loooongo passeio num lago de lava na Superfície
+          title: Lava, doce lava
+        root:
+          description: Traga um protetor solar
+          title: Nether
+        summon_wither:
+          description: Invoque o Wither
+          title: O poderoso chefão
+        uneasy_alliance:
+          description: Resgate um Ghast do Nether, traga-o são e salvo à Superfície... e depois mate-o
+          title: Falsa aliança
+        use_lodestone:
+          description: Use uma Bússola numa Magnetita
+          title: Um caminho com volta
+      sad_label: :(
+      story:
+        cure_zombie_villager:
+          description: Enfraqueça e cure um Aldeão Zumbi
+          title: Zumbiólogo
+        deflect_arrow:
+          description: Desvie um projétil com um Escudo
+          title: Hoje não, valeu
+        enchant_item:
+          description: Encante um item numa Mesa de Encantamentos
+          title: Aprendiz de feiticeiro
+        enter_the_end:
+          description: Atravesse o Portal do End
+          title: É o fim?
+        enter_the_nether:
+          description: Construa, ative e entre num Portal do Nether
+          title: O buraco é mais embaixo
+        follow_ender_eye:
+          description: Siga um Olho de Ender
+          title: O olho que o fim vê
+        form_obsidian:
+          description: Obtenha um bloco de Obsidiana
+          title: Entrando numa fria
+        iron_tools:
+          description: Melhore sua Picareta
+          title: Ferrou!
+        lava_bucket:
+          description: Encha um Balde com lava
+          title: Temperatura máxima
+        mine_diamond:
+          description: Obtenha diamantes
+          title: Diamantes!
+        mine_stone:
+          description: Minere Pedras com sua nova Picareta
+          title: A Idade da Pedra
+        obtain_armor:
+          description: Proteja-se com uma peça de armadura de ferro
+          title: Quem com ferro fere...
+        root:
+          description: O coração e a história do jogo
+          title: Minecraft
+        shiny_gear:
+          description: Uma armadura de diamante salva vidas
+          title: Cubra-me de diamantes
+        smelt_iron:
+          description: Funda um Lingote de Ferro
+          title: A Idade do Ferro
+        upgrade_tools:
+          description: Faça uma Picareta melhor
+          title: Salto de qualidade
+      toast:
+        challenge: Desafio concluído!
+        goal: Objetivo alcançado!
+        task: Progresso feito!
+    argument:
+      anchor:
+        invalid: 'Posição de âncora da entidade inválida: %s'
+      angle:
+        incomplete: Incompleto (espera-se 1 ângulo)
+        invalid: Ângulo inválido
+      block:
+        id:
+          invalid: 'Tipo de bloco desconhecido: %s'
+        property:
+          duplicate: A propriedade "%s" só pode ser definida uma vez para o bloco %s
+          invalid: O bloco %s não aceita "%s" para a propriedade %s
+          novalue: Espera-se um valor para a propriedade "%s" do bloco %s
+          unclosed: Espera-se um ] para fechar as propriedades do bloco
+          unknown: O bloco %s não possui a propriedade "%s"
+        tag:
+          disallowed: As marcações não são permitidas aqui, apenas blocos
+      color:
+        invalid: 'Cor desconhecida: %s'
+      component:
+        invalid: 'Componente de chat inválido: %s'
+      criteria:
+        invalid: 'Critério desconhecido: %s'
+      dimension:
+        invalid: 'Dimensão desconhecida: %s'
+      double:
+        big: 'O valor double não deve ser maior que %s (encontrado: %s)'
+        low: 'O valor double não deve ser menor que %s (encontrado: %s)'
+      entity:
+        invalid: Nome ou UUID inválidos
+        notfound:
+          entity: Nenhuma entidade encontrada
+          player: Nenhum jogador encontrado
+        options:
+          advancements:
+            description: Jogadores com progressos
+          distance:
+            description: Distância para a entidade
+            negative: A distância não pode ser negativa
+          dx:
+            description: Entidades entre x e x + dx
+          dy:
+            description: Entidades entre y e y + dy
+          dz:
+            description: Entidades entre z e z + dz
+          gamemode:
+            description: Jogadores no modo de jogo
+          inapplicable: A opção "%s" não é aplicável aqui
+          level:
+            description: Nível de experiência
+            negative: O nível não pode ser negativo
+          limit:
+            description: Número máximo de entidades para retorno
+            toosmall: O limite deve ser de pelo menos 1
+          mode:
+            invalid: 'Modo de jogo inválido ou desconhecido: %s'
+          name:
+            description: Nome da entidade
+          nbt:
+            description: Entidades com uma NBT
+          predicate:
+            description: Predicado personalizado
+          scores:
+            description: Entidades com pontuações
+          sort:
+            description: Ordenar as entidades
+            irreversible: 'Tipo de ordenação inválido ou desconhecido: %s'
+          tag:
+            description: Entidades com a marcação
+          team:
+            description: Entidades numa equipe
+          type:
+            description: Entidades de um tipo
+            invalid: 'Tipo de entidade inválido ou desconhecido: %s'
+          unknown: 'Opção desconhecida: %s'
+          unterminated: Espera-se um fim para as opções
+          valueless: Espera-se um valor para a opção "%s"
+          x:
+            description: Posição x
+          x_rotation:
+            description: Rotação da entidade no eixo x
+          y:
+            description: Posição y
+          y_rotation:
+            description: Rotação da entidade no eixo y
+          z:
+            description: Posição z
+        selector:
+          allEntities: Todas as entidades
+          allPlayers: Todos os jogadores
+          missing: Tipo de seletor ausente
+          nearestPlayer: Jogador mais próximo
+          not_allowed: Seletor não permitido
+          randomPlayer: Jogador aleatório
+          self: Entidade atual
+          unknown: 'Tipo de seletor desconhecido: %s'
+        toomany: Só é permitida uma entidade, mas o seletor usado permite mais de uma
+      enum:
+        invalid: 'Valor inválido: %s'
+      float:
+        big: 'O valor float não deve ser maior que %s (encontrado: %s)'
+        low: 'O valor float não deve ser menor que %s (encontrado: %s)'
+      gamemode:
+        invalid: 'Modo de jogo desconhecido: %s'
+      id:
+        invalid: ID inválido
+        unknown: 'ID desconhecido: %s'
+      integer:
+        big: 'O número inteiro não deve ser maior que %s (encontrado: %s)'
+        low: 'O número inteiro não deve ser menor que %s (encontrado: %s)'
+      item:
+        id:
+          invalid: 'Item desconhecido: %s'
+        tag:
+          disallowed: As marcações não são permitidas aqui, apenas itens
+      literal:
+        incorrect: Espera-se o valor literal %s
+      long:
+        big: 'O valor long não deve ser maior que %s (encontrado: %s)'
+        low: 'O valor long não deve ser menor que %s (encontrado: %s)'
+      nbt:
+        array:
+          invalid: 'Tipo de matriz inválido: %s'
+          mixed: Não foi possível inserir %s em %s
+        expected:
+          key: Espera-se uma chave
+          value: Espera-se um valor
+        list:
+          mixed: Não foi possível inserir %s numa lista de %s
+        trailing: Dados excedentes inesperados
+      player:
+        entities: O comando só afeta jogadores, mas o seletor usado inclui entidades
+        toomany: Só é permitido um jogador, mas o seletor usado permite mais de um
+        unknown: Nenhum jogador encontrado
+      pos:
+        missing:
+          double: Espera-se uma coordenada
+          int: Espera-se uma posição de um bloco
+        mixed: Não é possível combinar as coordenadas globais e locais (todas devem usar ^ ou não)
+        outofbounds: Essa posição está fora dos limites permitidos.
+        outofworld: Essa posição está fora do mundo!
+        unloaded: Essa posição não está carregada
+      pos2d:
+        incomplete: Incompleto (esperam-se 2 coordenadas)
+      pos3d:
+        incomplete: Incompleto (esperam-se 3 coordenadas)
+      range:
+        empty: Espera-se um valor ou intervalo de valores
+        ints: Só são permitidos números inteiros, não decimais
+        swapped: O mínimo não pode ser maior que o máximo
+      resource:
+        invalid_type: O elemento "%s" contém um tipo "%s" errado (espera-se "%s")
+        not_found: Não é possível encontrar o elemento "%s" do tipo "%s"
+      resource_tag:
+        invalid_type: A marcação "%s" contém um tipo "%s" errado (espera-se "%s")
+        not_found: Não foi possível encontrar a marcação "%s" do tipo "%s"
+      rotation:
+        incomplete: Incompleto (esperam-se 2 coordenadas)
+      scoreHolder:
+        empty: Nenhum detentor relevante da pontuação encontrado
+      scoreboardDisplaySlot:
+        invalid: 'Espaço de exibição desconhecido: %s'
+      time:
+        invalid_tick_count: O número de tiques deve ser não negativo
+        invalid_unit: Unidade inválida
+        tick_count_too_low: 'O número de tiques não deve ser menor que %s (encontrado: %s)'
+      uuid:
+        invalid: UUID inválido
+    connect:
+      aborted: Conexão interrompida
+      authorizing: Iniciando sessão...
+      connecting: Conectando-se ao servidor...
+      encrypting: Criptografando...
+      failed: Falha ao conectar-se ao servidor
+      joining: Entrando no mundo...
+      negotiating: Estabelecendo conexão...
+    disconnect:
+      closed: Connection closed
+      disconnected: Disconnected by Server
+      endOfStream: Fim da transmissão
+      exceeded_packet_rate: Expulsão por atingir o limite de envio de pacotes
+      genericReason: '%s'
+      ignoring_status_request: Pedido de status ignorado
+      kicked: Was kicked from the game
+      loginFailed: Failed to log in
+      loginFailedInfo:
+        insufficientPrivileges: Modo multijogador desativado. Veja as definições da sua conta Microsoft.
+        invalidSession: Sessão inválida (tente reiniciar o jogo e o Launcher)
+        serversUnavailable: Os servidores de autenticação estão indisponíveis. Tente novamente mais tarde.
+        userBanned: Sua conta está banida do modo online
+        _value: 'Failed to log in: %s'
+      lost: Conexão perdida
+      overflow: Buffer overflow
+      quitting: Quitting
+      spam: Expulsão por spam
+      timeout: Tempo esgotado
+      unknownHost: Host desconhecido
+    resourcePack:
+      broken_assets: RECURSOS CORROMPIDOS DETECTADOS
+      high_contrast:
+        name: Alto contraste
+      load_fail: Falha ao recarregar recursos
+      programmer_art:
+        name: Arte do programador
+      server:
+        name: Recursos específicos do mundo
+      title: Selecionar pacotes de recursos
+      vanilla:
+        description: A aparência padrão do Minecraft
+        name: Padrão

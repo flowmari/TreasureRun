@@ -1,6 +1,7 @@
 package plugin;
 
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
@@ -137,4 +138,32 @@ public class LanguagesYamlStore {
       plugin.getLogger().warning("[Lang] failed to scan extra language files: " + t.getMessage());
     }
   }
+
+  // PACKET_I18N_SECTION_VALUE_FIX
+  // Minecraft translation keys can be both a leaf and a parent:
+  //   death.attack.anvil
+  //   death.attack.anvil.player
+  // Nested YAML cannot store a String and a Section at the same path.
+  // We store the parent leaf text as "_value" and read it here.
+  private String getStringOrSectionValue(YamlConfiguration yml, String path) {
+    if (yml == null || path == null) return null;
+
+    Object raw = yml.get(path);
+
+    if (raw instanceof String) {
+      return (String) raw;
+    }
+
+    if (raw instanceof ConfigurationSection) {
+      String sectionValue = ((ConfigurationSection) raw).getString("_value");
+      if (sectionValue != null) return sectionValue;
+    }
+
+    String direct = getStringOrSectionValue(yml, path);
+    if (direct != null) return direct;
+
+    return null;
+  }
+
+
 }
