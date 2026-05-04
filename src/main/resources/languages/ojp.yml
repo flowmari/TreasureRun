@@ -2264,3 +2264,3759 @@ minecraft:
       vanilla:
         description: The default look and feel of Minecraft
         name: Default
+
+    advancement:
+      advancementNotFound: "Unknown advancement: %s"
+    arguments:
+      block:
+        tag:
+          unknown: "Unknown block tag '%s'"
+      function:
+        tag:
+          unknown: "Unknown function tag '%s'"
+        unknown: "Unknown function %s"
+      item:
+        component:
+          expected: アイテムコンポーネントが必要です
+          malformed: "不正な「%s」のコンポーネントの形式です：%s"
+          repeated: "アイテムコンポーネント「%s」は一つしか指定できませんが、複数回指定されています"
+          unknown: "「%s」は不明なアイテムコンポーネントです"
+        malformed: "不正なアイテムの形式です：%s"
+        overstacked: "%s can only stack up to %s"
+        predicate:
+          malformed: "不正な「%s」の条件の形式です：%s"
+          unknown: "「%s」は不明なアイテム条件です"
+        tag:
+          unknown: "Unknown item tag '%s'"
+      nbtpath:
+        node:
+          invalid: Invalid NBT path element
+        nothing_found: "Found no elements matching %s"
+        too_deep: Resulting NBT too deeply nested
+        too_large: Resulting NBT too large
+      objective:
+        notFound: "Unknown scoreboard objective '%s'"
+        readonly: "Scoreboard objective '%s' is read-only"
+      operation:
+        div0: Cannot divide by zero
+        invalid: Invalid operation
+      swizzle:
+        invalid: Invalid swizzle, expected combination of 'x', 'y' and 'z'
+    attribute:
+      modifier:
+        equals:
+          0: "%s %s"
+          1: "%s%% %s"
+          2: "%s%% %s"
+        plus:
+          0: "+%s %s"
+          1: "+%s%% %s"
+          2: "+%s%% %s"
+        take:
+          0: "-%s %s"
+          1: "-%s%% %s"
+          2: "-%s%% %s"
+      name:
+        air_drag_modifier: 空気抵抗係数
+        armor: 防御力
+        armor_toughness: 防具強度
+        attack_damage: 攻撃力
+        attack_knockback: ノックバック力
+        attack_speed: 攻撃速度
+        below_name_distance: ネームタグ下のスコアの表示距離
+        block_break_speed: ブロック破壊速度
+        block_interaction_range: ブロック操作範囲
+        bounciness: 弾性係数
+        burning_time: 炎上時間
+        camera_distance: カメラ距離
+        entity_interaction_range: エンティティ操作範囲
+        explosion_knockback_resistance: 爆発ノックバック耐性
+        fall_damage_multiplier: 落下ダメージ倍率
+        flying_speed: 飛行速度
+        follow_range: Mobの追跡範囲
+        friction_modifier: 摩擦係数
+        generic:
+          armor: Armor
+          armor_toughness: Armor Toughness
+          attack_damage: Attack Damage
+          attack_knockback: Attack Knockback
+          attack_speed: Attack Speed
+          block_interaction_range: ブロック操作範囲
+          burning_time: 炎上時間
+          entity_interaction_range: エンティティ操作範囲
+          explosion_knockback_resistance: 爆発ノックバック耐性
+          fall_damage_multiplier: 落下ダメージ倍率
+          flying_speed: Flying Speed
+          follow_range: Mob Follow Range
+          gravity: 重力
+          jump_strength: 跳躍力
+          knockback_resistance: Knockback Resistance
+          luck: Luck
+          max_absorption: 衝撃吸収レベルの上限
+          max_health: Max Health
+          movement_efficiency: 移動効率
+          movement_speed: Speed
+          oxygen_bonus: 酸素ボーナス
+          safe_fall_distance: 安全落下高度
+          scale: サイズ
+          step_height: 段差上限
+          water_movement_efficiency: 水中移動効率
+        gravity: 重力
+        horse:
+          jump_strength: Horse Jump Strength
+        jump_strength: 跳躍力
+        knockback_resistance: ノックバック耐性
+        luck: 運
+        max_absorption: 衝撃吸収レベルの上限
+        max_health: 最大体力
+        mining_efficiency: 採掘効率
+        movement_efficiency: 移動効率
+        movement_speed: 移動速度
+        nameplate_distance: ネームタグの表示距離
+        oxygen_bonus: 酸素ボーナス
+        player:
+          block_break_speed: ブロック破壊速度
+          block_interaction_range: ブロック操作範囲
+          entity_interaction_range: エンティティ操作範囲
+          mining_efficiency: 採掘効率
+          sneaking_speed: スニーク速度
+          submerged_mining_speed: 水中採掘速度
+          sweeping_damage_ratio: なぎ払いダメージの比率
+        safe_fall_distance: 安全落下高度
+        scale: 大きさ
+        sneaking_speed: スニーク速度
+        spawn_reinforcements: ゾンビの増援
+        step_height: 段差上限
+        submerged_mining_speed: 水中採掘速度
+        sweeping_damage_ratio: なぎ払いダメージの比率
+        tempt_range: Mobの誘引される範囲
+        water_movement_efficiency: 水中移動効率
+        waypoint_receive_range: ウェイポイント受信距離
+        waypoint_transmit_range: ウェイポイント伝達距離
+        zombie:
+          spawn_reinforcements: Zombie Reinforcements
+    biome:
+      minecraft:
+        badlands: Badlands
+        bamboo_jungle: Bamboo Jungle
+        basalt_deltas: Basalt Deltas
+        beach: Beach
+        birch_forest: Birch Forest
+        cherry_grove: Cherry Grove
+        cold_ocean: Cold Ocean
+        crimson_forest: Crimson Forest
+        dark_forest: Dark Forest
+        deep_cold_ocean: Deep Cold Ocean
+        deep_dark: Deep Dark
+        deep_frozen_ocean: Deep Frozen Ocean
+        deep_lukewarm_ocean: Deep Lukewarm Ocean
+        deep_ocean: Deep Ocean
+        desert: Desert
+        dripstone_caves: Dripstone Caves
+        end_barrens: End Barrens
+        end_highlands: End Highlands
+        end_midlands: End Midlands
+        eroded_badlands: Eroded Badlands
+        flower_forest: Flower Forest
+        forest: Forest
+        frozen_ocean: Frozen Ocean
+        frozen_peaks: Frozen Peaks
+        frozen_river: Frozen River
+        grove: Grove
+        ice_spikes: Ice Spikes
+        jagged_peaks: Jagged Peaks
+        jungle: Jungle
+        lukewarm_ocean: Lukewarm Ocean
+        lush_caves: Lush Caves
+        mangrove_swamp: Mangrove Swamp
+        meadow: Meadow
+        mushroom_fields: Mushroom Fields
+        nether_wastes: Nether Wastes
+        ocean: Ocean
+        old_growth_birch_forest: Old Growth Birch Forest
+        old_growth_pine_taiga: Old Growth Pine Taiga
+        old_growth_spruce_taiga: Old Growth Spruce Taiga
+        pale_garden: ペールガーデン
+        plains: Plains
+        river: River
+        savanna: Savanna
+        savanna_plateau: Savanna Plateau
+        small_end_islands: Small End Islands
+        snowy_beach: Snowy Beach
+        snowy_plains: Snowy Plains
+        snowy_slopes: Snowy Slopes
+        snowy_taiga: Snowy Taiga
+        soul_sand_valley: Soul Sand Valley
+        sparse_jungle: Sparse Jungle
+        stony_peaks: Stony Peaks
+        stony_shore: Stony Shore
+        sulfur_caves: 硫黄の洞窟
+        sunflower_plains: Sunflower Plains
+        swamp: Swamp
+        taiga: Taiga
+        the_end: The End
+        the_void: The Void
+        warm_ocean: Warm Ocean
+        warped_forest: Warped Forest
+        windswept_forest: Windswept Forest
+        windswept_gravelly_hills: Windswept Gravelly Hills
+        windswept_hills: Windswept Hills
+        windswept_savanna: Windswept Savanna
+        wooded_badlands: Wooded Badlands
+    build:
+      spawn_protection: "%sはリスポーン地点の保護下にあります"
+      tooHigh: "Height limit for building is %s"
+      tooLow: "建築高度下限は%sです"
+    chat_screen:
+      commands_not_allowed: コマンドの送信は許可されていません
+      message: "Message to send: %s"
+      messages_not_allowed: チャットメッセージの送信は許可されていません
+      restricted:
+        _value: チャットが制限されています。詳細を確認するには、このメッセージをクリックしてください。
+        narration: チャットが制限されています。ここからワールド設定の「制限」画面に移動できます。
+      title: Chat screen
+      usage: Input message and press Enter to send
+    color:
+      minecraft:
+        black: Black
+        blue: Blue
+        brown: Brown
+        cyan: Cyan
+        gray: Gray
+        green: Green
+        light_blue: Light Blue
+        light_gray: Light Gray
+        lime: Lime
+        magenta: Magenta
+        orange: Orange
+        pink: Pink
+        purple: Purple
+        red: Red
+        white: White
+        yellow: Yellow
+    effect:
+      duration:
+        infinite: ∞
+      minecraft:
+        absorption: Absorption
+        bad_omen: Bad Omen
+        blindness: Blindness
+        breath_of_the_nautilus: オウムガイの息吹
+        conduit_power: Conduit Power
+        darkness: Darkness
+        dolphins_grace: Dolphin's Grace
+        fire_resistance: Fire Resistance
+        glowing: Glowing
+        haste: Haste
+        health_boost: Health Boost
+        hero_of_the_village: Hero of the Village
+        hunger: Hunger
+        infested: 虫食い
+        instant_damage: Instant Damage
+        instant_health: Instant Health
+        invisibility: Invisibility
+        jump_boost: Jump Boost
+        levitation: Levitation
+        luck: Luck
+        mining_fatigue: Mining Fatigue
+        nausea: Nausea
+        night_vision: Night Vision
+        oozing: 滲出
+        poison: Poison
+        raid_omen: 襲撃の予感
+        regeneration: Regeneration
+        resistance: Resistance
+        saturation: Saturation
+        slow_falling: Slow Falling
+        slowness: Slowness
+        speed: Speed
+        strength: Strength
+        trial_omen: 試練の予感
+        unluck: Bad Luck
+        water_breathing: Water Breathing
+        weakness: Weakness
+        weaving: 巣張り
+        wind_charged: 蓄風
+        wither: Wither
+      none: No Effects
+    enchantment:
+      level:
+        1: I
+        10: X
+        2: II
+        3: III
+        4: IV
+        5: V
+        6: VI
+        7: VII
+        8: VIII
+        9: IX
+      minecraft:
+        aqua_affinity: Aqua Affinity
+        bane_of_arthropods: Bane of Arthropods
+        binding_curse: Curse of Binding
+        blast_protection: Blast Protection
+        breach: 防具貫通
+        channeling: Channeling
+        density: 重撃
+        depth_strider: Depth Strider
+        efficiency: Efficiency
+        feather_falling: Feather Falling
+        fire_aspect: Fire Aspect
+        fire_protection: Fire Protection
+        flame: Flame
+        fortune: Fortune
+        frost_walker: Frost Walker
+        impaling: Impaling
+        infinity: Infinity
+        knockback: Knockback
+        looting: Looting
+        loyalty: Loyalty
+        luck_of_the_sea: Luck of the Sea
+        lunge: 突進
+        lure: Lure
+        mending: Mending
+        multishot: Multishot
+        piercing: Piercing
+        power: Power
+        projectile_protection: Projectile Protection
+        protection: Protection
+        punch: Punch
+        quick_charge: Quick Charge
+        respiration: Respiration
+        riptide: Riptide
+        sharpness: Sharpness
+        silk_touch: Silk Touch
+        smite: Smite
+        soul_speed: Soul Speed
+        sweeping: Sweeping Edge
+        sweeping_edge: 範囲ダメージ増加
+        swift_sneak: Swift Sneak
+        thorns: Thorns
+        unbreaking: Unbreaking
+        vanishing_curse: Curse of Vanishing
+        wind_burst: ウィンドバースト
+    entity:
+      minecraft:
+        acacia_boat: アカシアのボート
+        acacia_chest_boat: チェスト付きのアカシアのボート
+        allay: Allay
+        area_effect_cloud: Area Effect Cloud
+        armadillo: アルマジロ
+        armor_stand: Armor Stand
+        arrow: Arrow
+        axolotl: Axolotl
+        bamboo_chest_raft: チェスト付きの竹のイカダ
+        bamboo_raft: 竹のイカダ
+        bat: Bat
+        bee: Bee
+        birch_boat: シラカバのボート
+        birch_chest_boat: チェスト付きのシラカバのボート
+        blaze: Blaze
+        block_display: Block Display
+        boat: Boat
+        bogged: ボグド
+        breeze: ブリーズ
+        breeze_wind_charge: ウィンドチャージ
+        camel: Camel
+        camel_husk: ラクダハスク
+        cat: Cat
+        cave_spider: Cave Spider
+        cherry_boat: サクラのボート
+        cherry_chest_boat: チェスト付きのサクラのボート
+        chest_boat: Boat with Chest
+        chest_minecart: Minecart with Chest
+        chicken: Chicken
+        cod: Cod
+        command_block_minecart: Minecart with Command Block
+        copper_golem: カッパーゴーレム
+        cow: Cow
+        creaking: クリーキング
+        creaking_transient: クリーキング
+        creeper: Creeper
+        dark_oak_boat: ダークオークのボート
+        dark_oak_chest_boat: チェスト付きのダークオークのボート
+        dolphin: Dolphin
+        donkey: Donkey
+        dragon_fireball: Dragon Fireball
+        drowned: Drowned
+        egg: Thrown Egg
+        elder_guardian: Elder Guardian
+        end_crystal: End Crystal
+        ender_dragon: Ender Dragon
+        ender_pearl: Thrown Ender Pearl
+        enderman: Enderman
+        endermite: Endermite
+        evoker: Evoker
+        evoker_fangs: Evoker Fangs
+        experience_bottle: Thrown Bottle o' Enchanting
+        experience_orb: Experience Orb
+        eye_of_ender: Eye of Ender
+        falling_block: Falling Block
+        falling_block_type: "Falling %s"
+        fireball: Fireball
+        firework_rocket: Firework Rocket
+        fishing_bobber: Fishing Bobber
+        fox: Fox
+        frog: Frog
+        furnace_minecart: Minecart with Furnace
+        ghast: Ghast
+        giant: Giant
+        glow_item_frame: Glow Item Frame
+        glow_squid: Glow Squid
+        goat: Goat
+        guardian: Guardian
+        happy_ghast: ハッピーガスト
+        hoglin: Hoglin
+        hopper_minecart: Minecart with Hopper
+        horse: Horse
+        husk: Husk
+        illusioner: Illusioner
+        interaction: Interaction
+        iron_golem: Iron Golem
+        item: Item
+        item_display: Item Display
+        item_frame: Item Frame
+        jungle_boat: ジャングルのボート
+        jungle_chest_boat: チェスト付きのジャングルのボート
+        killer_bunny: The Killer Bunny
+        leash_knot: Leash Knot
+        lightning_bolt: Lightning Bolt
+        lingering_potion: 残留ポーション
+        llama: Llama
+        llama_spit: Llama Spit
+        magma_cube: Magma Cube
+        mangrove_boat: マングローブのボート
+        mangrove_chest_boat: チェスト付きのマングローブのボート
+        mannequin:
+          _value: マネキン
+          label: NPC
+        marker: Marker
+        minecart: Minecart
+        mooshroom: Mooshroom
+        mule: Mule
+        nautilus: オウムガイ
+        oak_boat: オークのボート
+        oak_chest_boat: チェスト付きのオークのボート
+        ocelot: Ocelot
+        ominous_item_spawner: 不吉なアイテムスポナー
+        painting: Painting
+        pale_oak_boat: ペールオークのボート
+        pale_oak_chest_boat: チェスト付きのペールオークのボート
+        panda: Panda
+        parched: パーチド
+        parrot: Parrot
+        phantom: Phantom
+        pig: Pig
+        piglin: Piglin
+        piglin_brute: Piglin Brute
+        pillager: Pillager
+        player: Player
+        polar_bear: Polar Bear
+        potion: Potion
+        pufferfish: Pufferfish
+        rabbit: Rabbit
+        ravager: Ravager
+        salmon: Salmon
+        sheep: Sheep
+        shulker: Shulker
+        shulker_bullet: Shulker Bullet
+        silverfish: Silverfish
+        skeleton: Skeleton
+        skeleton_horse: Skeleton Horse
+        slime: Slime
+        small_fireball: Small Fireball
+        sniffer: Sniffer
+        snow_golem: Snow Golem
+        snowball: Snowball
+        spawner_minecart: Minecart with Monster Spawner
+        spectral_arrow: Spectral Arrow
+        spider: Spider
+        splash_potion: スプラッシュポーション
+        spruce_boat: トウヒのボート
+        spruce_chest_boat: チェスト付きのトウヒのボート
+        squid: Squid
+        stray: Stray
+        strider: Strider
+        sulfur_cube:
+          _value: サルファーキューブ
+          content: "中身：%s"
+        tadpole: Tadpole
+        text_display: Text Display
+        tnt: Primed TNT
+        tnt_minecart: Minecart with TNT
+        trader_llama: Trader Llama
+        trident: Trident
+        tropical_fish:
+          _value: Tropical Fish
+          predefined:
+            0: Anemone
+            1: Black Tang
+            10: Moorish Idol
+            11: Ornate Butterflyfish
+            12: Parrotfish
+            13: Queen Angelfish
+            14: Red Cichlid
+            15: Red Lipped Blenny
+            16: Red Snapper
+            17: Threadfin
+            18: Tomato Clownfish
+            19: Triggerfish
+            2: Blue Tang
+            20: Yellowtail Parrotfish
+            21: Yellow Tang
+            3: Butterflyfish
+            4: Cichlid
+            5: Clownfish
+            6: Cotton Candy Betta
+            7: Dottyback
+            8: Emperor Red Snapper
+            9: Goatfish
+          type:
+            betty: Betty
+            blockfish: Blockfish
+            brinely: Brinely
+            clayfish: Clayfish
+            dasher: Dasher
+            flopper: Flopper
+            glitter: Glitter
+            kob: Kob
+            snooper: Snooper
+            spotty: Spotty
+            stripey: Stripey
+            sunstreak: Sunstreak
+        turtle: Turtle
+        vex: Vex
+        villager:
+          _value: Villager
+          armorer: Armorer
+          butcher: Butcher
+          cartographer: Cartographer
+          cleric: Cleric
+          farmer: Farmer
+          fisherman: Fisherman
+          fletcher: Fletcher
+          leatherworker: Leatherworker
+          librarian: Librarian
+          mason: Mason
+          nitwit: Nitwit
+          none: Villager
+          shepherd: Shepherd
+          toolsmith: Toolsmith
+          weaponsmith: Weaponsmith
+        vindicator: Vindicator
+        wandering_trader: Wandering Trader
+        warden: Warden
+        wind_charge: ウィンドチャージ
+        witch: Witch
+        wither: Wither
+        wither_skeleton: Wither Skeleton
+        wither_skull: Wither Skull
+        wolf: Wolf
+        zoglin: Zoglin
+        zombie: Zombie
+        zombie_horse: Zombie Horse
+        zombie_nautilus: ゾンビオウムガイ
+        zombie_villager: Zombie Villager
+        zombified_piglin: Zombified Piglin
+      not_summonable: "Can't summon entity of type %s"
+    filled_map:
+      buried_treasure: Buried Treasure Map
+      explorer_jungle: ジャングル探検家の地図
+      explorer_swamp: 沼地探検家の地図
+      id: "Id #%s"
+      level: "(Level %s/%s)"
+      locked: Locked
+      mansion: Woodland Explorer Map
+      monument: Ocean Explorer Map
+      scale: "Scaling at 1:%s"
+      trial_chambers: 試練の間の地図
+      unknown: Unknown Map
+      village_desert: 砂漠の村の地図
+      village_plains: 平原の村の地図
+      village_savanna: サバンナの村の地図
+      village_snowy: 雪原の村の地図
+      village_taiga: タイガの村の地図
+    gamerule:
+      allowEnteringNetherUsingPortals:
+        _value: ネザーの許可
+        description: プレイヤーがネザーに入ることができるかどうかを設定できます
+      allowFireTicksAwayFromPlayer:
+        _value: プレイヤーから遠い炎のティック処理
+        description: どのプレイヤーからも8チャンク以上離れた位置の炎・溶岩がティック処理を受けることができるかどうかを設定できます
+      announceAdvancements: Announce advancements
+      blockExplosionDropDecay:
+        _value: In block interaction explosions, some blocks won't drop their loot
+        description: Some of the drops from blocks destroyed by explosions caused by block interactions are lost in the explosion.
+      category:
+        chat: Chat
+        drops: Drops
+        misc: Miscellaneous
+        mobs: Mobs
+        player: Player
+        spawning: Spawning
+        updates: World Updates
+      commandBlockOutput: Broadcast command block output
+      commandBlocksEnabled: コマンドブロックの有効化
+      commandModificationBlockLimit:
+        _value: Command Modification Block Limit
+        description: Number of blocks that can be changed at once by one command, such as fill or clone.
+      disableElytraMovementCheck: Disable elytra movement check
+      disablePlayerMovementCheck: プレイヤーの速度チェックの無効化
+      disableRaids: Disable raids
+      doDaylightCycle: Advance time of day
+      doEntityDrops:
+        _value: Drop entity equipment
+        description: Controls drops from minecarts (including inventories), item frames, boats, etc.
+      doFireTick: Update fire
+      doImmediateRespawn: Respawn immediately
+      doInsomnia: Spawn phantoms
+      doLimitedCrafting:
+        _value: Require recipe for crafting
+        description: If enabled, players will be able to craft only unlocked recipes.
+      doMobLoot:
+        _value: Drop mob loot
+        description: Controls resource drops from mobs, including experience orbs.
+      doMobSpawning:
+        _value: Spawn mobs
+        description: Some entities might have separate rules.
+      doPatrolSpawning: Spawn pillager patrols
+      doTileDrops:
+        _value: Drop blocks
+        description: Controls resource drops from blocks, including experience orbs.
+      doTraderSpawning: Spawn Wandering Traders
+      doVinesSpread:
+        _value: Vines spread
+        description: Controls whether or not the Vines block spreads randomly to adjacent blocks. Does not affect other type of vine blocks such as Weeping Vines, Twisting Vines, etc.
+      doWardenSpawning: Spawn Wardens
+      doWeatherCycle: Update weather
+      drowningDamage: Deal drowning damage
+      enableCommandBlocks: コマンドブロックの有効化
+      enderPearlsVanishOnDeath:
+        _value: プレイヤー死亡時のエンダーパールの消滅
+        description: プレイヤーの投げたエンダーパールが、投げたプレイヤーが死亡したときに消滅するかを設定できます。
+      entitiesWithPassengersCanUsePortals:
+        _value: 何かが乗っているエンティティのポータル使用可否
+        description: 何かが乗っているエンティティが、ネザーポータル、エンドポータル、エンドゲートウェイを通過してテレポートするかを設定できます。
+      fallDamage: Deal fall damage
+      fireDamage: Deal fire damage
+      forgiveDeadPlayers:
+        _value: Forgive dead players
+        description: Angered neutral mobs stop being angry when the targeted player dies nearby.
+      freezeDamage: Deal freeze damage
+      globalSoundEvents:
+        _value: Global sound events
+        description: When certain game events happen, like a boss spawning, the sound is heard everywhere.
+      keepInventory: Keep inventory after death
+      lavaSourceConversion:
+        _value: Lava converts to source
+        description: When flowing lava is surrounded on two sides by lava sources it converts into a source.
+      locatorBar:
+        _value: プレイヤーの方向バーの有効化
+        description: 有効にすると、他のプレイヤーの方向を示すバーが画面に表示されます。
+      logAdminCommands: Broadcast admin commands
+      maxCommandChainLength:
+        _value: Command chain size limit
+        description: Applies to command block chains and functions.
+      maxCommandForkCount:
+        _value: コマンドの最大実行文脈数
+        description: 「execute as」などのコマンドで使用できる実行文脈の最大数
+      maxEntityCramming: Entity cramming threshold
+      minecartMaxSpeed:
+        _value: トロッコの最高速度
+        description: 地上を走るトロッコのデフォルトの最高速度
+      minecraft:
+        elytra_movement_check: エリトラの速度チェック
+        fire_spread_radius_around_player:
+          _value: 炎の延焼が起こる半径
+          description: プレイヤーの周囲の炎の延焼が発生しうる範囲の半径（ブロック）
+        player_movement_check: プレイヤーの速度チェック
+        raids: 襲撃の発生
+        universal_anger:
+          description: 敵対状態になった中立Mob が、敵対させた本人だけでなく他のプレイヤーにも攻撃するかを設定できます。forgive_dead_playersが無効になっている際に最適です。
+      mobExplosionDropDecay:
+        _value: In mob explosions, some blocks won't drop their loot
+        description: Some of the drops from blocks destroyed by explosions caused by mobs are lost in the explosion.
+      mobGriefing: Allow destructive mob actions
+      naturalRegeneration: Regenerate health
+      playersNetherPortalCreativeDelay:
+        _value: クリエイティブモードでのネザーポータルの待機時間
+        description: クリエイティブモードのプレイヤーがディメンションを移動するまでにネザーポータル内に立っている必要のある時間（ティック）
+      playersNetherPortalDefaultDelay:
+        _value: 非クリエイティブモードでのネザーポータルの待機時間
+        description: クリエイティブモード以外のプレイヤーがディメンションを移動するまでにネザーポータル内に立っている必要のある時間（ティック）
+      playersSleepingPercentage:
+        _value: Sleep percentage
+        description: The percentage of players who must be sleeping to skip the night.
+      projectilesCanBreakBlocks:
+        _value: 飛び道具によるブロック破壊の可否
+        description: 飛び道具の着弾によって破壊されうるブロックが実際に破壊されるかどうかを設定できます。
+      pvp:
+        _value: PvPの有効化
+        description: プレイヤーが他のプレイヤーに対してダメージを与えることができるかどうかを設定できます
+      randomTickSpeed: Random tick speed rate
+      reducedDebugInfo:
+        _value: Reduce debug info
+        description: Limits contents of debug screen.
+      sendCommandFeedback: Send command feedback
+      showDeathMessages: Show death messages
+      snowAccumulationHeight:
+        _value: Snow accumulation height
+        description: When it snows, layers of snow form on the ground up to at most this number of layers.
+      spawnChunkRadius:
+        _value: スポーンチャンクの半径
+        description: オーバーワールドのスポーン地点周辺の、常に読み込まれているチャンクの量。
+      spawnMonsters:
+        _value: モンスターのスポーン
+        description: モンスターが自然にスポーンするかどうかを設定できます
+      spawnRadius:
+        _value: Respawn location radius
+        description: スポーン地点を中心とした、プレイヤーがスポーンする可能性のある範囲の大きさを調整できます。
+      spawnerBlocksEnabled: スポナーの有効化
+      spectatorsGenerateChunks: Allow spectators to generate terrain
+      tntExplodes: TNTの点火及び爆発の許可
+      tntExplosionDropDecay:
+        _value: In TNT explosions, some blocks won't drop their loot
+        description: Some of the drops from blocks destroyed by explosions caused by TNT are lost in the explosion.
+      universalAnger:
+        _value: Universal anger
+        description: Angered neutral mobs attack any nearby player, not just the player that angered them. Works best if forgiveDeadPlayers is disabled.
+      waterSourceConversion:
+        _value: Water converts to source
+        description: When flowing water is surrounded on two sides by water sources it converts into a source.
+    item_modifier:
+      unknown: "Unknown item modifier: %s"
+    lectern:
+      take_book: Take Book
+    menu:
+      convertingLevel: Converting world
+      custom_options:
+        _value: カスタム設定…
+        title: カスタム設定
+        tooltip: "注意：カスタム設定はサードパーティ製のサーバーまたはコンテンツによって提供されています。\n慎重に設定してください！"
+      custom_screen_info:
+        button_narration: これはカスタムスクリーンです。詳細はこちら。
+        contents: "この画面のコンテンツはMojang StudiosやMicrosoftの所有・運営・管理下にないサードパーティー製サーバーやマップによって制御されています。\n\n慎重に取り扱ってください！リンクをたどる際は常に注意し、ログイン情報を含む個人情報は絶対に教えないでください。\n\nこの画面がプレイを妨げる場合は、下にあるボタンで現在のサーバーから切断することもできます。"
+        disconnect: カスタムスクリーンが拒否されました
+        title: カスタムスクリーンとは
+        tooltip: これはカスタムスクリーンです。ここをクリックして詳しい情報を確認できます。
+      disconnect: Disconnect
+      feedback:
+        _value: フィードバック…
+        title: フィードバック
+      game: Game Menu
+      generatingLevel: Generating world
+      generatingTerrain: Building terrain
+      loadingForcedChunks: "Loading forced chunks for dimension %s"
+      loadingLevel: Loading world
+      modded:  (Modded)
+      multiplayer: Multiplayer
+      online: Minecraft Realms
+      options: Options...
+      paused: Game Paused
+      playdemo: Play Demo World
+      playerReporting: Player Reporting
+      preparingSpawn: "Preparing spawn area: %s%%"
+      quick_actions:
+        _value: クイックアクション…
+        title: クイックアクション
+      quit: Quit Game
+      reportBugs: Report Bugs
+      resetdemo: Reset Demo World
+      respawning: Respawning
+      returnToGame: Back to Game
+      returnToMenu: Save and Quit to Title
+      savingChunks: Saving chunks
+      savingLevel: Saving world
+      sendFeedback: Give Feedback
+      server_links:
+        _value: サーバーリンク…
+        title: サーバーリンク
+      shareToLan: Open to LAN
+      singleplayer: Singleplayer
+      working: Working...
+    merchant:
+      current_level: Trader's current level
+      deprecated: Villagers restock up to two times per day.
+      level:
+        1: Novice
+        2: Apprentice
+        3: Journeyman
+        4: Expert
+        5: Master
+      next_level: Trader's next level
+      title: "%s - %s"
+      trades: Trades
+    mount:
+      onboard: "Press %1$s to Dismount"
+    parsing:
+      bool:
+        expected: Expected boolean
+        invalid: "Invalid boolean, expected 'true' or 'false' but found '%s'"
+      double:
+        expected: Expected double
+        invalid: "Invalid double '%s'"
+      expected: "Expected '%s'"
+      float:
+        expected: Expected float
+        invalid: "Invalid float '%s'"
+      int:
+        expected: Expected integer
+        invalid: "Invalid integer '%s'"
+      long:
+        expected: Expected long
+        invalid: "Invalid long '%s'"
+      quote:
+        escape: "Invalid escape sequence '\\%s' in quoted string"
+        expected:
+          end: Unclosed quoted string
+          start: Expected quote to start a string
+    particle:
+      invalidOptions: "パーティクルの設定を解析出来ません：%s"
+      notFound: "Unknown particle: %s"
+    potion:
+      potency:
+        0: ''
+        1: II
+        2: III
+        3: IV
+        4: V
+        5: VI
+      whenDrank: "When Applied:"
+      withAmplifier: "%s %s"
+      withDuration: "%s (%s)"
+    predicate:
+      unknown: "Unknown predicate: %s"
+    recipe:
+      notFound: "Unknown recipe: %s"
+      toast:
+        description: Check your recipe book
+        title: "New Recipes Unlocked!"
+    resourcepack:
+      downloading: Downloading Resource Pack
+      progress: "Downloading file (%s MB)..."
+      requesting: Making Request...
+    slot:
+      only_single_allowed: "スロットは一つしか指定できませんが、「%s」が渡されました"
+      unknown: "Unknown slot '%s'"
+    soundCategory:
+      ambient: Ambient/Environment
+      block: Blocks
+      hostile: Hostile Creatures
+      master: Master Volume
+      music: Music
+      neutral: Friendly Creatures
+      player: Players
+      record: Jukebox/Note Blocks
+      ui: UI
+      voice: Voice/Speech
+      weather: Weather
+    stat:
+      generalButton: General
+      itemsButton: Items
+      minecraft:
+        animals_bred: Animals Bred
+        aviate_one_cm: Distance by Elytra
+        bell_ring: Bells Rung
+        boat_one_cm: Distance by Boat
+        clean_armor: Armor Pieces Cleaned
+        clean_banner: Banners Cleaned
+        clean_shulker_box: Shulker Boxes Cleaned
+        climb_one_cm: Distance Climbed
+        crouch_one_cm: Distance Crouched
+        damage_absorbed: Damage Absorbed
+        damage_blocked_by_shield: Damage Blocked by Shield
+        damage_dealt: Damage Dealt
+        damage_dealt_absorbed: Damage Dealt (Absorbed)
+        damage_dealt_resisted: Damage Dealt (Resisted)
+        damage_resisted: Damage Resisted
+        damage_taken: Damage Taken
+        deaths: Number of Deaths
+        drop: Items Dropped
+        eat_cake_slice: Cake Slices Eaten
+        enchant_item: Items Enchanted
+        fall_one_cm: Distance Fallen
+        fill_cauldron: Cauldrons Filled
+        fish_caught: Fish Caught
+        fly_one_cm: Distance Flown
+        happy_ghast_one_cm: ハッピーガストで移動した距離
+        horse_one_cm: Distance by Horse
+        inspect_dispenser: Dispensers Searched
+        inspect_dropper: Droppers Searched
+        inspect_hopper: Hoppers Searched
+        interact_with_anvil: Interactions with Anvil
+        interact_with_beacon: Interactions with Beacon
+        interact_with_blast_furnace: Interactions with Blast Furnace
+        interact_with_brewingstand: Interactions with Brewing Stand
+        interact_with_campfire: Interactions with Campfire
+        interact_with_cartography_table: Interactions with Cartography Table
+        interact_with_crafting_table: Interactions with Crafting Table
+        interact_with_furnace: Interactions with Furnace
+        interact_with_grindstone: Interactions with Grindstone
+        interact_with_lectern: Interactions with Lectern
+        interact_with_loom: Interactions with Loom
+        interact_with_smithing_table: Interactions with Smithing Table
+        interact_with_smoker: Interactions with Smoker
+        interact_with_stonecutter: Interactions with Stonecutter
+        jump: Jumps
+        junk_fished: Junk Fished
+        leave_game: Games Quit
+        minecart_one_cm: Distance by Minecart
+        mob_kills: Mob Kills
+        nautilus_one_cm: オウムガイで移動した距離
+        open_barrel: Barrels Opened
+        open_chest: Chests Opened
+        open_enderchest: Ender Chests Opened
+        open_shulker_box: Shulker Boxes Opened
+        pig_one_cm: Distance by Pig
+        play_noteblock: Note Blocks Played
+        play_record: Music Discs Played
+        play_time: Time Played
+        player_kills: Player Kills
+        pot_flower: Plants Potted
+        raid_trigger: Raids Triggered
+        raid_win: Raids Won
+        ring_bell: Bells Rung
+        sleep_in_bed: Times Slept in a Bed
+        sneak_time: Sneak Time
+        sprint_one_cm: Distance Sprinted
+        strider_one_cm: Distance by Strider
+        swim_one_cm: Distance Swum
+        talked_to_villager: Talked to Villagers
+        target_hit: Targets Hit
+        time_since_death: Time Since Last Death
+        time_since_rest: Time Since Last Rest
+        total_world_time: Time with World Open
+        traded_with_villager: Traded with Villagers
+        treasure_fished: Treasure Fished
+        trigger_trapped_chest: Trapped Chests Triggered
+        tune_noteblock: Note Blocks Tuned
+        use_cauldron: Water Taken from Cauldron
+        walk_on_water_one_cm: Distance Walked on Water
+        walk_one_cm: Distance Walked
+        walk_under_water_one_cm: Distance Walked under Water
+      mobsButton: Mobs
+    stat_type:
+      minecraft:
+        broken: Times Broken
+        crafted: Times Crafted
+        dropped: Dropped
+        killed:
+          _value: "You killed %s %s"
+          none: "You have never killed %s"
+        killed_by:
+          _value: "%s killed you %s time(s)"
+          none: "You have never been killed by %s"
+        mined: Times Mined
+        picked_up: Picked Up
+        used: Times Used
+    stats:
+      none: "-"
+      tooltip:
+        type:
+          statistic: Statistic
+    team:
+      collision:
+        always: Always
+        never: Never
+        pushOtherTeams: Push other teams
+        pushOwnTeam: Push own team
+      notFound: "Unknown team '%s'"
+      visibility:
+        always: Always
+        hideForOtherTeams: Hide for other teams
+        hideForOwnTeam: Hide for own team
+        never: Never
+    title:
+      32bit:
+        deprecation:
+          _value: "32-bit system detected: this may prevent you from playing in the future as a 64-bit system will be required!"
+          realms:
+            _value: Minecraft will soon require a 64-bit system, which will prevent you from playing or using Realms on this device. You will need to manually cancel any Realms subscription.
+            check: Do not show this screen again
+            header: 32-bit system detected
+      credits: Copyright Mojang AB. 配布禁止！
+      multiplayer:
+        disabled:
+          _value: Multiplayer is disabled. Please check your Microsoft account settings.
+          banned:
+            name: オンラインでプレイするには名前の変更が必要です
+            permanent: Your account is permanently suspended from online play
+            temporary: Your account is temporarily suspended from online play
+        lan: Multiplayer (LAN)
+        other: Multiplayer (3rd-party Server)
+        realms: Multiplayer (Realms)
+      singleplayer: Singleplayer
+    translation:
+      test:
+        args: "%s %s"
+        complex: "Prefix, %s%2$s again %s and %1$s lastly %s and also %1$s again!"
+        escape: "%%s %%%s %%%%s %%%%%s"
+        invalid: "hi %"
+        invalid2: "hi %  s"
+        none: "Hello, world!"
+        world: world
+    block:
+      minecraft:
+        acacia_button: Acacia Button
+        acacia_door: Acacia Door
+        acacia_fence: Acacia Fence
+        acacia_fence_gate: Acacia Fence Gate
+        acacia_hanging_sign: Acacia Hanging Sign
+        acacia_leaves: Acacia Leaves
+        acacia_log: Acacia Log
+        acacia_planks: Acacia Planks
+        acacia_pressure_plate: Acacia Pressure Plate
+        acacia_sapling: Acacia Sapling
+        acacia_shelf: アカシアの棚
+        acacia_sign: Acacia Sign
+        acacia_slab: Acacia Slab
+        acacia_stairs: Acacia Stairs
+        acacia_trapdoor: Acacia Trapdoor
+        acacia_wall_hanging_sign: Acacia Wall Hanging Sign
+        acacia_wall_sign: Acacia Wall Sign
+        acacia_wood: Acacia Wood
+        activator_rail: Activator Rail
+        air: Air
+        allium: Allium
+        amethyst_block: Block of Amethyst
+        amethyst_cluster: Amethyst Cluster
+        ancient_debris: Ancient Debris
+        andesite: Andesite
+        andesite_slab: Andesite Slab
+        andesite_stairs: Andesite Stairs
+        andesite_wall: Andesite Wall
+        anvil: Anvil
+        attached_melon_stem: Attached Melon Stem
+        attached_pumpkin_stem: Attached Pumpkin Stem
+        azalea: Azalea
+        azalea_leaves: Azalea Leaves
+        azure_bluet: Azure Bluet
+        bamboo: Bamboo
+        bamboo_block: Block of Bamboo
+        bamboo_button: Bamboo Button
+        bamboo_door: Bamboo Door
+        bamboo_fence: Bamboo Fence
+        bamboo_fence_gate: Bamboo Fence Gate
+        bamboo_hanging_sign: Bamboo Hanging Sign
+        bamboo_mosaic: Bamboo Mosaic
+        bamboo_mosaic_slab: Bamboo Mosaic Slab
+        bamboo_mosaic_stairs: Bamboo Mosaic Stairs
+        bamboo_planks: Bamboo Planks
+        bamboo_pressure_plate: Bamboo Pressure Plate
+        bamboo_sapling: Bamboo Shoot
+        bamboo_shelf: 竹の棚
+        bamboo_sign: Bamboo Sign
+        bamboo_slab: Bamboo Slab
+        bamboo_stairs: Bamboo Stairs
+        bamboo_trapdoor: Bamboo Trapdoor
+        bamboo_wall_hanging_sign: Bamboo Wall Hanging Sign
+        bamboo_wall_sign: Bamboo Wall Sign
+        banner:
+          base:
+            black: Fully Black Field
+            blue: Fully Blue Field
+            brown: Fully Brown Field
+            cyan: Fully Cyan Field
+            gray: Fully Gray Field
+            green: Fully Green Field
+            light_blue: Fully Light Blue Field
+            light_gray: Fully Light Gray Field
+            lime: Fully Lime Field
+            magenta: Fully Magenta Field
+            orange: Fully Orange Field
+            pink: Fully Pink Field
+            purple: Fully Purple Field
+            red: Fully Red Field
+            white: Fully White Field
+            yellow: Fully Yellow Field
+          border:
+            black: Black Bordure
+            blue: Blue Bordure
+            brown: Brown Bordure
+            cyan: Cyan Bordure
+            gray: Gray Bordure
+            green: Green Bordure
+            light_blue: Light Blue Bordure
+            light_gray: Light Gray Bordure
+            lime: Lime Bordure
+            magenta: Magenta Bordure
+            orange: Orange Bordure
+            pink: Pink Bordure
+            purple: Purple Bordure
+            red: Red Bordure
+            white: White Bordure
+            yellow: Yellow Bordure
+          bricks:
+            black: Black Field Masoned
+            blue: Blue Field Masoned
+            brown: Brown Field Masoned
+            cyan: Cyan Field Masoned
+            gray: Gray Field Masoned
+            green: Green Field Masoned
+            light_blue: Light Blue Field Masoned
+            light_gray: Light Gray Field Masoned
+            lime: Lime Field Masoned
+            magenta: Magenta Field Masoned
+            orange: Orange Field Masoned
+            pink: Pink Field Masoned
+            purple: Purple Field Masoned
+            red: Red Field Masoned
+            white: White Field Masoned
+            yellow: Yellow Field Masoned
+          circle:
+            black: Black Roundel
+            blue: Blue Roundel
+            brown: Brown Roundel
+            cyan: Cyan Roundel
+            gray: Gray Roundel
+            green: Green Roundel
+            light_blue: Light Blue Roundel
+            light_gray: Light Gray Roundel
+            lime: Lime Roundel
+            magenta: Magenta Roundel
+            orange: Orange Roundel
+            pink: Pink Roundel
+            purple: Purple Roundel
+            red: Red Roundel
+            white: White Roundel
+            yellow: Yellow Roundel
+          creeper:
+            black: Black Creeper Charge
+            blue: Blue Creeper Charge
+            brown: Brown Creeper Charge
+            cyan: Cyan Creeper Charge
+            gray: Gray Creeper Charge
+            green: Green Creeper Charge
+            light_blue: Light Blue Creeper Charge
+            light_gray: Light Gray Creeper Charge
+            lime: Lime Creeper Charge
+            magenta: Magenta Creeper Charge
+            orange: Orange Creeper Charge
+            pink: Pink Creeper Charge
+            purple: Purple Creeper Charge
+            red: Red Creeper Charge
+            white: White Creeper Charge
+            yellow: Yellow Creeper Charge
+          cross:
+            black: Black Saltire
+            blue: Blue Saltire
+            brown: Brown Saltire
+            cyan: Cyan Saltire
+            gray: Gray Saltire
+            green: Green Saltire
+            light_blue: Light Blue Saltire
+            light_gray: Light Gray Saltire
+            lime: Lime Saltire
+            magenta: Magenta Saltire
+            orange: Orange Saltire
+            pink: Pink Saltire
+            purple: Purple Saltire
+            red: Red Saltire
+            white: White Saltire
+            yellow: Yellow Saltire
+          curly_border:
+            black: Black Bordure Indented
+            blue: Blue Bordure Indented
+            brown: Brown Bordure Indented
+            cyan: Cyan Bordure Indented
+            gray: Gray Bordure Indented
+            green: Green Bordure Indented
+            light_blue: Light Blue Bordure Indented
+            light_gray: Light Gray Bordure Indented
+            lime: Lime Bordure Indented
+            magenta: Magenta Bordure Indented
+            orange: Orange Bordure Indented
+            pink: Pink Bordure Indented
+            purple: Purple Bordure Indented
+            red: Red Bordure Indented
+            white: White Bordure Indented
+            yellow: Yellow Bordure Indented
+          diagonal_left:
+            black: Black Per Bend Sinister
+            blue: Blue Per Bend Sinister
+            brown: Brown Per Bend Sinister
+            cyan: Cyan Per Bend Sinister
+            gray: Gray Per Bend Sinister
+            green: Green Per Bend Sinister
+            light_blue: Light Blue Per Bend Sinister
+            light_gray: Light Gray Per Bend Sinister
+            lime: Lime Per Bend Sinister
+            magenta: Magenta Per Bend Sinister
+            orange: Orange Per Bend Sinister
+            pink: Pink Per Bend Sinister
+            purple: Purple Per Bend Sinister
+            red: Red Per Bend Sinister
+            white: White Per Bend Sinister
+            yellow: Yellow Per Bend Sinister
+          diagonal_right:
+            black: Black Per Bend
+            blue: Blue Per Bend
+            brown: Brown Per Bend
+            cyan: Cyan Per Bend
+            gray: Gray Per Bend
+            green: Green Per Bend
+            light_blue: Light Blue Per Bend
+            light_gray: Light Gray Per Bend
+            lime: Lime Per Bend
+            magenta: Magenta Per Bend
+            orange: Orange Per Bend
+            pink: Pink Per Bend
+            purple: Purple Per Bend
+            red: Red Per Bend
+            white: White Per Bend
+            yellow: Yellow Per Bend
+          diagonal_up_left:
+            black: Black Per Bend Inverted
+            blue: Blue Per Bend Inverted
+            brown: Brown Per Bend Inverted
+            cyan: Cyan Per Bend Inverted
+            gray: Gray Per Bend Inverted
+            green: Green Per Bend Inverted
+            light_blue: Light Blue Per Bend Inverted
+            light_gray: Light Gray Per Bend Inverted
+            lime: Lime Per Bend Inverted
+            magenta: Magenta Per Bend Inverted
+            orange: Orange Per Bend Inverted
+            pink: Pink Per Bend Inverted
+            purple: Purple Per Bend Inverted
+            red: Red Per Bend Inverted
+            white: White Per Bend Inverted
+            yellow: Yellow Per Bend Inverted
+          diagonal_up_right:
+            black: Black Per Bend Sinister Inverted
+            blue: Blue Per Bend Sinister Inverted
+            brown: Brown Per Bend Sinister Inverted
+            cyan: Cyan Per Bend Sinister Inverted
+            gray: Gray Per Bend Sinister Inverted
+            green: Green Per Bend Sinister Inverted
+            light_blue: Light Blue Per Bend Sinister Inverted
+            light_gray: Light Gray Per Bend Sinister Inverted
+            lime: Lime Per Bend Sinister Inverted
+            magenta: Magenta Per Bend Sinister Inverted
+            orange: Orange Per Bend Sinister Inverted
+            pink: Pink Per Bend Sinister Inverted
+            purple: Purple Per Bend Sinister Inverted
+            red: Red Per Bend Sinister Inverted
+            white: White Per Bend Sinister Inverted
+            yellow: Yellow Per Bend Sinister Inverted
+          flow:
+            black: 黒色の渦巻き模様
+            blue: 青色の渦巻き模様
+            brown: 茶色の渦巻き模様
+            cyan: 青緑色の渦巻き模様
+            gray: 灰色の渦巻き模様
+            green: 緑色の渦巻き模様
+            light_blue: 空色の渦巻き模様
+            light_gray: 薄灰色の渦巻き模様
+            lime: 黄緑色の渦巻き模様
+            magenta: 赤紫色の渦巻き模様
+            orange: 橙色の渦巻き模様
+            pink: 桃色の渦巻き模様
+            purple: 紫色の渦巻き模様
+            red: 赤色の渦巻き模様
+            white: 白色の渦巻き模様
+            yellow: 黄色の渦巻き模様
+          flower:
+            black: Black Flower Charge
+            blue: Blue Flower Charge
+            brown: Brown Flower Charge
+            cyan: Cyan Flower Charge
+            gray: Gray Flower Charge
+            green: Green Flower Charge
+            light_blue: Light Blue Flower Charge
+            light_gray: Light Gray Flower Charge
+            lime: Lime Flower Charge
+            magenta: Magenta Flower Charge
+            orange: Orange Flower Charge
+            pink: Pink Flower Charge
+            purple: Purple Flower Charge
+            red: Red Flower Charge
+            white: White Flower Charge
+            yellow: Yellow Flower Charge
+          globe:
+            black: Black Globe
+            blue: Blue Globe
+            brown: Brown Globe
+            cyan: Cyan Globe
+            gray: Gray Globe
+            green: Green Globe
+            light_blue: Light Blue Globe
+            light_gray: Light Gray Globe
+            lime: Lime Globe
+            magenta: Magenta Globe
+            orange: Orange Globe
+            pink: Pink Globe
+            purple: Purple Globe
+            red: Red Globe
+            white: White Globe
+            yellow: Yellow Globe
+          gradient:
+            black: Black Gradient
+            blue: Blue Gradient
+            brown: Brown Gradient
+            cyan: Cyan Gradient
+            gray: Gray Gradient
+            green: Green Gradient
+            light_blue: Light Blue Gradient
+            light_gray: Light Gray Gradient
+            lime: Lime Gradient
+            magenta: Magenta Gradient
+            orange: Orange Gradient
+            pink: Pink Gradient
+            purple: Purple Gradient
+            red: Red Gradient
+            white: White Gradient
+            yellow: Yellow Gradient
+          gradient_up:
+            black: Black Base Gradient
+            blue: Blue Base Gradient
+            brown: Brown Base Gradient
+            cyan: Cyan Base Gradient
+            gray: Gray Base Gradient
+            green: Green Base Gradient
+            light_blue: Light Blue Base Gradient
+            light_gray: Light Gray Base Gradient
+            lime: Lime Base Gradient
+            magenta: Magenta Base Gradient
+            orange: Orange Base Gradient
+            pink: Pink Base Gradient
+            purple: Purple Base Gradient
+            red: Red Base Gradient
+            white: White Base Gradient
+            yellow: Yellow Base Gradient
+          guster:
+            black: 黒色の風巻く者の模様
+            blue: 青色の風巻く者の模様
+            brown: 茶色の風巻く者の模様
+            cyan: 青緑色の風巻く者の模様
+            gray: 灰色の風巻く者の模様
+            green: 緑色の風巻く者の模様
+            light_blue: 空色の風巻く者の模様
+            light_gray: 薄灰色の風巻く者の模様
+            lime: 黄緑色の風巻く者の模様
+            magenta: 赤紫色の風巻く者の模様
+            orange: 橙色の風巻く者の模様
+            pink: 桃色の風巻く者の模様
+            purple: 紫色の風巻く者の模様
+            red: 赤色の風巻く者の模様
+            white: 白色の風巻く者の模様
+            yellow: 黄色の風巻く者の模様
+          half_horizontal:
+            black: Black Per Fess
+            blue: Blue Per Fess
+            brown: Brown Per Fess
+            cyan: Cyan Per Fess
+            gray: Gray Per Fess
+            green: Green Per Fess
+            light_blue: Light Blue Per Fess
+            light_gray: Light Gray Per Fess
+            lime: Lime Per Fess
+            magenta: Magenta Per Fess
+            orange: Orange Per Fess
+            pink: Pink Per Fess
+            purple: Purple Per Fess
+            red: Red Per Fess
+            white: White Per Fess
+            yellow: Yellow Per Fess
+          half_horizontal_bottom:
+            black: Black Per Fess Inverted
+            blue: Blue Per Fess Inverted
+            brown: Brown Per Fess Inverted
+            cyan: Cyan Per Fess Inverted
+            gray: Gray Per Fess Inverted
+            green: Green Per Fess Inverted
+            light_blue: Light Blue Per Fess Inverted
+            light_gray: Light Gray Per Fess Inverted
+            lime: Lime Per Fess Inverted
+            magenta: Magenta Per Fess Inverted
+            orange: Orange Per Fess Inverted
+            pink: Pink Per Fess Inverted
+            purple: Purple Per Fess Inverted
+            red: Red Per Fess Inverted
+            white: White Per Fess Inverted
+            yellow: Yellow Per Fess Inverted
+          half_vertical:
+            black: Black Per Pale
+            blue: Blue Per Pale
+            brown: Brown Per Pale
+            cyan: Cyan Per Pale
+            gray: Gray Per Pale
+            green: Green Per Pale
+            light_blue: Light Blue Per Pale
+            light_gray: Light Gray Per Pale
+            lime: Lime Per Pale
+            magenta: Magenta Per Pale
+            orange: Orange Per Pale
+            pink: Pink Per Pale
+            purple: Purple Per Pale
+            red: Red Per Pale
+            white: White Per Pale
+            yellow: Yellow Per Pale
+          half_vertical_right:
+            black: Black Per Pale Inverted
+            blue: Blue Per Pale Inverted
+            brown: Brown Per Pale Inverted
+            cyan: Cyan Per Pale Inverted
+            gray: Gray Per Pale Inverted
+            green: Green Per Pale Inverted
+            light_blue: Light Blue Per Pale Inverted
+            light_gray: Light Gray Per Pale Inverted
+            lime: Lime Per Pale Inverted
+            magenta: Magenta Per Pale Inverted
+            orange: Orange Per Pale Inverted
+            pink: Pink Per Pale Inverted
+            purple: Purple Per Pale Inverted
+            red: Red Per Pale Inverted
+            white: White Per Pale Inverted
+            yellow: Yellow Per Pale Inverted
+          mojang:
+            black: Black Thing
+            blue: Blue Thing
+            brown: Brown Thing
+            cyan: Cyan Thing
+            gray: Gray Thing
+            green: Green Thing
+            light_blue: Light Blue Thing
+            light_gray: Light Gray Thing
+            lime: Lime Thing
+            magenta: Magenta Thing
+            orange: Orange Thing
+            pink: Pink Thing
+            purple: Purple Thing
+            red: Red Thing
+            white: White Thing
+            yellow: Yellow Thing
+          piglin:
+            black: Black Snout
+            blue: Blue Snout
+            brown: Brown Snout
+            cyan: Cyan Snout
+            gray: Gray Snout
+            green: Green Snout
+            light_blue: Light Blue Snout
+            light_gray: Light Gray Snout
+            lime: Lime Snout
+            magenta: Magenta Snout
+            orange: Orange Snout
+            pink: Pink Snout
+            purple: Purple Snout
+            red: Red Snout
+            white: White Snout
+            yellow: Yellow Snout
+          rhombus:
+            black: Black Lozenge
+            blue: Blue Lozenge
+            brown: Brown Lozenge
+            cyan: Cyan Lozenge
+            gray: Gray Lozenge
+            green: Green Lozenge
+            light_blue: Light Blue Lozenge
+            light_gray: Light Gray Lozenge
+            lime: Lime Lozenge
+            magenta: Magenta Lozenge
+            orange: Orange Lozenge
+            pink: Pink Lozenge
+            purple: Purple Lozenge
+            red: Red Lozenge
+            white: White Lozenge
+            yellow: Yellow Lozenge
+          skull:
+            black: Black Skull Charge
+            blue: Blue Skull Charge
+            brown: Brown Skull Charge
+            cyan: Cyan Skull Charge
+            gray: Gray Skull Charge
+            green: Green Skull Charge
+            light_blue: Light Blue Skull Charge
+            light_gray: Light Gray Skull Charge
+            lime: Lime Skull Charge
+            magenta: Magenta Skull Charge
+            orange: Orange Skull Charge
+            pink: Pink Skull Charge
+            purple: Purple Skull Charge
+            red: Red Skull Charge
+            white: White Skull Charge
+            yellow: Yellow Skull Charge
+          small_stripes:
+            black: Black Paly
+            blue: Blue Paly
+            brown: Brown Paly
+            cyan: Cyan Paly
+            gray: Gray Paly
+            green: Green Paly
+            light_blue: Light Blue Paly
+            light_gray: Light Gray Paly
+            lime: Lime Paly
+            magenta: Magenta Paly
+            orange: Orange Paly
+            pink: Pink Paly
+            purple: Purple Paly
+            red: Red Paly
+            white: White Paly
+            yellow: Yellow Paly
+          square_bottom_left:
+            black: Black Base Dexter Canton
+            blue: Blue Base Dexter Canton
+            brown: Brown Base Dexter Canton
+            cyan: Cyan Base Dexter Canton
+            gray: Gray Base Dexter Canton
+            green: Green Base Dexter Canton
+            light_blue: Light Blue Base Dexter Canton
+            light_gray: Light Gray Base Dexter Canton
+            lime: Lime Base Dexter Canton
+            magenta: Magenta Base Dexter Canton
+            orange: Orange Base Dexter Canton
+            pink: Pink Base Dexter Canton
+            purple: Purple Base Dexter Canton
+            red: Red Base Dexter Canton
+            white: White Base Dexter Canton
+            yellow: Yellow Base Dexter Canton
+          square_bottom_right:
+            black: Black Base Sinister Canton
+            blue: Blue Base Sinister Canton
+            brown: Brown Base Sinister Canton
+            cyan: Cyan Base Sinister Canton
+            gray: Gray Base Sinister Canton
+            green: Green Base Sinister Canton
+            light_blue: Light Blue Base Sinister Canton
+            light_gray: Light Gray Base Sinister Canton
+            lime: Lime Base Sinister Canton
+            magenta: Magenta Base Sinister Canton
+            orange: Orange Base Sinister Canton
+            pink: Pink Base Sinister Canton
+            purple: Purple Base Sinister Canton
+            red: Red Base Sinister Canton
+            white: White Base Sinister Canton
+            yellow: Yellow Base Sinister Canton
+          square_top_left:
+            black: Black Chief Dexter Canton
+            blue: Blue Chief Dexter Canton
+            brown: Brown Chief Dexter Canton
+            cyan: Cyan Chief Dexter Canton
+            gray: Gray Chief Dexter Canton
+            green: Green Chief Dexter Canton
+            light_blue: Light Blue Chief Dexter Canton
+            light_gray: Light Gray Chief Dexter Canton
+            lime: Lime Chief Dexter Canton
+            magenta: Magenta Chief Dexter Canton
+            orange: Orange Chief Dexter Canton
+            pink: Pink Chief Dexter Canton
+            purple: Purple Chief Dexter Canton
+            red: Red Chief Dexter Canton
+            white: White Chief Dexter Canton
+            yellow: Yellow Chief Dexter Canton
+          square_top_right:
+            black: Black Chief Sinister Canton
+            blue: Blue Chief Sinister Canton
+            brown: Brown Chief Sinister Canton
+            cyan: Cyan Chief Sinister Canton
+            gray: Gray Chief Sinister Canton
+            green: Green Chief Sinister Canton
+            light_blue: Light Blue Chief Sinister Canton
+            light_gray: Light Gray Chief Sinister Canton
+            lime: Lime Chief Sinister Canton
+            magenta: Magenta Chief Sinister Canton
+            orange: Orange Chief Sinister Canton
+            pink: Pink Chief Sinister Canton
+            purple: Purple Chief Sinister Canton
+            red: Red Chief Sinister Canton
+            white: White Chief Sinister Canton
+            yellow: Yellow Chief Sinister Canton
+          straight_cross:
+            black: Black Cross
+            blue: Blue Cross
+            brown: Brown Cross
+            cyan: Cyan Cross
+            gray: Gray Cross
+            green: Green Cross
+            light_blue: Light Blue Cross
+            light_gray: Light Gray Cross
+            lime: Lime Cross
+            magenta: Magenta Cross
+            orange: Orange Cross
+            pink: Pink Cross
+            purple: Purple Cross
+            red: Red Cross
+            white: White Cross
+            yellow: Yellow Cross
+          stripe_bottom:
+            black: Black Base
+            blue: Blue Base
+            brown: Brown Base
+            cyan: Cyan Base
+            gray: Gray Base
+            green: Green Base
+            light_blue: Light Blue Base
+            light_gray: Light Gray Base
+            lime: Lime Base
+            magenta: Magenta Base
+            orange: Orange Base
+            pink: Pink Base
+            purple: Purple Base
+            red: Red Base
+            white: White Base
+            yellow: Yellow Base
+          stripe_center:
+            black: Black Pale
+            blue: Blue Pale
+            brown: Brown Pale
+            cyan: Cyan Pale
+            gray: Gray Pale
+            green: Green Pale
+            light_blue: Light Blue Pale
+            light_gray: Light Gray Pale
+            lime: Lime Pale
+            magenta: Magenta Pale
+            orange: Orange Pale
+            pink: Pink Pale
+            purple: Purple Pale
+            red: Red Pale
+            white: White Pale
+            yellow: Yellow Pale
+          stripe_downleft:
+            black: Black Bend Sinister
+            blue: Blue Bend Sinister
+            brown: Brown Bend Sinister
+            cyan: Cyan Bend Sinister
+            gray: Gray Bend Sinister
+            green: Green Bend Sinister
+            light_blue: Light Blue Bend Sinister
+            light_gray: Light Gray Bend Sinister
+            lime: Lime Bend Sinister
+            magenta: Magenta Bend Sinister
+            orange: Orange Bend Sinister
+            pink: Pink Bend Sinister
+            purple: Purple Bend Sinister
+            red: Red Bend Sinister
+            white: White Bend Sinister
+            yellow: Yellow Bend Sinister
+          stripe_downright:
+            black: Black Bend
+            blue: Blue Bend
+            brown: Brown Bend
+            cyan: Cyan Bend
+            gray: Gray Bend
+            green: Green Bend
+            light_blue: Light Blue Bend
+            light_gray: Light Gray Bend
+            lime: Lime Bend
+            magenta: Magenta Bend
+            orange: Orange Bend
+            pink: Pink Bend
+            purple: Purple Bend
+            red: Red Bend
+            white: White Bend
+            yellow: Yellow Bend
+          stripe_left:
+            black: Black Pale Dexter
+            blue: Blue Pale Dexter
+            brown: Brown Pale Dexter
+            cyan: Cyan Pale Dexter
+            gray: Gray Pale Dexter
+            green: Green Pale Dexter
+            light_blue: Light Blue Pale Dexter
+            light_gray: Light Gray Pale Dexter
+            lime: Lime Pale Dexter
+            magenta: Magenta Pale Dexter
+            orange: Orange Pale Dexter
+            pink: Pink Pale Dexter
+            purple: Purple Pale Dexter
+            red: Red Pale Dexter
+            white: White Pale Dexter
+            yellow: Yellow Pale Dexter
+          stripe_middle:
+            black: Black Fess
+            blue: Blue Fess
+            brown: Brown Fess
+            cyan: Cyan Fess
+            gray: Gray Fess
+            green: Green Fess
+            light_blue: Light Blue Fess
+            light_gray: Light Gray Fess
+            lime: Lime Fess
+            magenta: Magenta Fess
+            orange: Orange Fess
+            pink: Pink Fess
+            purple: Purple Fess
+            red: Red Fess
+            white: White Fess
+            yellow: Yellow Fess
+          stripe_right:
+            black: Black Pale Sinister
+            blue: Blue Pale Sinister
+            brown: Brown Pale Sinister
+            cyan: Cyan Pale Sinister
+            gray: Gray Pale Sinister
+            green: Green Pale Sinister
+            light_blue: Light Blue Pale Sinister
+            light_gray: Light Gray Pale Sinister
+            lime: Lime Pale Sinister
+            magenta: Magenta Pale Sinister
+            orange: Orange Pale Sinister
+            pink: Pink Pale Sinister
+            purple: Purple Pale Sinister
+            red: Red Pale Sinister
+            white: White Pale Sinister
+            yellow: Yellow Pale Sinister
+          stripe_top:
+            black: Black Chief
+            blue: Blue Chief
+            brown: Brown Chief
+            cyan: Cyan Chief
+            gray: Gray Chief
+            green: Green Chief
+            light_blue: Light Blue Chief
+            light_gray: Light Gray Chief
+            lime: Lime Chief
+            magenta: Magenta Chief
+            orange: Orange Chief
+            pink: Pink Chief
+            purple: Purple Chief
+            red: Red Chief
+            white: White Chief
+            yellow: Yellow Chief
+          triangle_bottom:
+            black: Black Chevron
+            blue: Blue Chevron
+            brown: Brown Chevron
+            cyan: Cyan Chevron
+            gray: Gray Chevron
+            green: Green Chevron
+            light_blue: Light Blue Chevron
+            light_gray: Light Gray Chevron
+            lime: Lime Chevron
+            magenta: Magenta Chevron
+            orange: Orange Chevron
+            pink: Pink Chevron
+            purple: Purple Chevron
+            red: Red Chevron
+            white: White Chevron
+            yellow: Yellow Chevron
+          triangle_top:
+            black: Black Inverted Chevron
+            blue: Blue Inverted Chevron
+            brown: Brown Inverted Chevron
+            cyan: Cyan Inverted Chevron
+            gray: Gray Inverted Chevron
+            green: Green Inverted Chevron
+            light_blue: Light Blue Inverted Chevron
+            light_gray: Light Gray Inverted Chevron
+            lime: Lime Inverted Chevron
+            magenta: Magenta Inverted Chevron
+            orange: Orange Inverted Chevron
+            pink: Pink Inverted Chevron
+            purple: Purple Inverted Chevron
+            red: Red Inverted Chevron
+            white: White Inverted Chevron
+            yellow: Yellow Inverted Chevron
+          triangles_bottom:
+            black: Black Base Indented
+            blue: Blue Base Indented
+            brown: Brown Base Indented
+            cyan: Cyan Base Indented
+            gray: Gray Base Indented
+            green: Green Base Indented
+            light_blue: Light Blue Base Indented
+            light_gray: Light Gray Base Indented
+            lime: Lime Base Indented
+            magenta: Magenta Base Indented
+            orange: Orange Base Indented
+            pink: Pink Base Indented
+            purple: Purple Base Indented
+            red: Red Base Indented
+            white: White Base Indented
+            yellow: Yellow Base Indented
+          triangles_top:
+            black: Black Chief Indented
+            blue: Blue Chief Indented
+            brown: Brown Chief Indented
+            cyan: Cyan Chief Indented
+            gray: Gray Chief Indented
+            green: Green Chief Indented
+            light_blue: Light Blue Chief Indented
+            light_gray: Light Gray Chief Indented
+            lime: Lime Chief Indented
+            magenta: Magenta Chief Indented
+            orange: Orange Chief Indented
+            pink: Pink Chief Indented
+            purple: Purple Chief Indented
+            red: Red Chief Indented
+            white: White Chief Indented
+            yellow: Yellow Chief Indented
+        barrel: Barrel
+        barrier: Barrier
+        basalt: Basalt
+        beacon:
+          _value: Beacon
+          primary: Primary Power
+          secondary: Secondary Power
+        bed:
+          no_sleep: You can sleep only at night or during thunderstorms
+          not_safe: You may not rest now; there are monsters nearby
+          obstructed: This bed is obstructed
+          occupied: This bed is occupied
+          too_far_away: You may not rest now; the bed is too far away
+        bedrock: Bedrock
+        bee_nest: Bee Nest
+        beehive: Beehive
+        beetroots: Beetroots
+        bell: Bell
+        big_dripleaf: Big Dripleaf
+        big_dripleaf_stem: Big Dripleaf Stem
+        birch_button: Birch Button
+        birch_door: Birch Door
+        birch_fence: Birch Fence
+        birch_fence_gate: Birch Fence Gate
+        birch_hanging_sign: Birch Hanging Sign
+        birch_leaves: Birch Leaves
+        birch_log: Birch Log
+        birch_planks: Birch Planks
+        birch_pressure_plate: Birch Pressure Plate
+        birch_sapling: Birch Sapling
+        birch_shelf: シラカバの棚
+        birch_sign: Birch Sign
+        birch_slab: Birch Slab
+        birch_stairs: Birch Stairs
+        birch_trapdoor: Birch Trapdoor
+        birch_wall_hanging_sign: Birch Wall Hanging Sign
+        birch_wall_sign: Birch Wall Sign
+        birch_wood: Birch Wood
+        black_banner: Black Banner
+        black_bed: Black Bed
+        black_candle: Black Candle
+        black_candle_cake: Cake with Black Candle
+        black_carpet: Black Carpet
+        black_concrete: Black Concrete
+        black_concrete_powder: Black Concrete Powder
+        black_glazed_terracotta: Black Glazed Terracotta
+        black_shulker_box: Black Shulker Box
+        black_stained_glass: Black Stained Glass
+        black_stained_glass_pane: Black Stained Glass Pane
+        black_terracotta: Black Terracotta
+        black_wool: Black Wool
+        blackstone: Blackstone
+        blackstone_slab: Blackstone Slab
+        blackstone_stairs: Blackstone Stairs
+        blackstone_wall: Blackstone Wall
+        blast_furnace: Blast Furnace
+        blue_banner: Blue Banner
+        blue_bed: Blue Bed
+        blue_candle: Blue Candle
+        blue_candle_cake: Cake with Blue Candle
+        blue_carpet: Blue Carpet
+        blue_concrete: Blue Concrete
+        blue_concrete_powder: Blue Concrete Powder
+        blue_glazed_terracotta: Blue Glazed Terracotta
+        blue_ice: Blue Ice
+        blue_orchid: Blue Orchid
+        blue_shulker_box: Blue Shulker Box
+        blue_stained_glass: Blue Stained Glass
+        blue_stained_glass_pane: Blue Stained Glass Pane
+        blue_terracotta: Blue Terracotta
+        blue_wool: Blue Wool
+        bone_block: Bone Block
+        bookshelf: Bookshelf
+        brain_coral: Brain Coral
+        brain_coral_block: Brain Coral Block
+        brain_coral_fan: Brain Coral Fan
+        brain_coral_wall_fan: Brain Coral Wall Fan
+        brewing_stand: Brewing Stand
+        brick_slab: Brick Slab
+        brick_stairs: Brick Stairs
+        brick_wall: Brick Wall
+        bricks: Bricks
+        brown_banner: Brown Banner
+        brown_bed: Brown Bed
+        brown_candle: Brown Candle
+        brown_candle_cake: Cake with Brown Candle
+        brown_carpet: Brown Carpet
+        brown_concrete: Brown Concrete
+        brown_concrete_powder: Brown Concrete Powder
+        brown_glazed_terracotta: Brown Glazed Terracotta
+        brown_mushroom: Brown Mushroom
+        brown_mushroom_block: Brown Mushroom Block
+        brown_shulker_box: Brown Shulker Box
+        brown_stained_glass: Brown Stained Glass
+        brown_stained_glass_pane: Brown Stained Glass Pane
+        brown_terracotta: Brown Terracotta
+        brown_wool: Brown Wool
+        bubble_column: Bubble Column
+        bubble_coral: Bubble Coral
+        bubble_coral_block: Bubble Coral Block
+        bubble_coral_fan: Bubble Coral Fan
+        bubble_coral_wall_fan: Bubble Coral Wall Fan
+        budding_amethyst: Budding Amethyst
+        bush: 茂み
+        cactus: Cactus
+        cactus_flower: サボテンの花
+        cake: Cake
+        calcite: Calcite
+        calibrated_sculk_sensor: Calibrated Sculk Sensor
+        campfire: Campfire
+        candle: Candle
+        candle_cake: Cake with Candle
+        carrots: Carrots
+        cartography_table: Cartography Table
+        carved_pumpkin: Carved Pumpkin
+        cauldron: Cauldron
+        cave_air: Cave Air
+        cave_vines: Cave Vines
+        cave_vines_plant: Cave Vines Plant
+        chain: Chain
+        chain_command_block: Chain Command Block
+        cherry_button: Cherry Button
+        cherry_door: Cherry Door
+        cherry_fence: Cherry Fence
+        cherry_fence_gate: Cherry Fence Gate
+        cherry_hanging_sign: Cherry Hanging Sign
+        cherry_leaves: Cherry Leaves
+        cherry_log: Cherry Log
+        cherry_planks: Cherry Planks
+        cherry_pressure_plate: Cherry Pressure Plate
+        cherry_sapling: Cherry Sapling
+        cherry_shelf: サクラの棚
+        cherry_sign: Cherry Sign
+        cherry_slab: Cherry Slab
+        cherry_stairs: Cherry Stairs
+        cherry_trapdoor: Cherry Trapdoor
+        cherry_wall_hanging_sign: Cherry Wall Hanging Sign
+        cherry_wall_sign: Cherry Wall Sign
+        cherry_wood: Cherry Wood
+        chest: Chest
+        chipped_anvil: Chipped Anvil
+        chiseled_bookshelf: Chiseled Bookshelf
+        chiseled_cinnabar: 模様入りの辰砂
+        chiseled_copper: 模様入りの銅
+        chiseled_deepslate: Chiseled Deepslate
+        chiseled_nether_bricks: Chiseled Nether Bricks
+        chiseled_polished_blackstone: Chiseled Polished Blackstone
+        chiseled_quartz_block: Chiseled Quartz Block
+        chiseled_red_sandstone: Chiseled Red Sandstone
+        chiseled_resin_bricks: 模様入りの樹脂レンガ
+        chiseled_sandstone: Chiseled Sandstone
+        chiseled_stone_bricks: Chiseled Stone Bricks
+        chiseled_sulfur: 模様入りの硫黄
+        chiseled_tuff: 模様入りの凝灰岩
+        chiseled_tuff_bricks: 模様入りの凝灰岩レンガ
+        chorus_flower: Chorus Flower
+        chorus_plant: Chorus Plant
+        cinnabar: 辰砂
+        cinnabar_brick_slab: 辰砂レンガのハーフブロック
+        cinnabar_brick_stairs: 辰砂レンガの階段
+        cinnabar_brick_wall: 辰砂レンガの塀
+        cinnabar_bricks: 辰砂レンガ
+        cinnabar_slab: 辰砂のハーフブロック
+        cinnabar_stairs: 辰砂の階段
+        cinnabar_wall: 辰砂の塀
+        clay: Clay
+        closed_eyeblossom: 閉じたヒトミソウ
+        coal_block: Block of Coal
+        coal_ore: Coal Ore
+        coarse_dirt: Coarse Dirt
+        cobbled_deepslate: Cobbled Deepslate
+        cobbled_deepslate_slab: Cobbled Deepslate Slab
+        cobbled_deepslate_stairs: Cobbled Deepslate Stairs
+        cobbled_deepslate_wall: Cobbled Deepslate Wall
+        cobblestone: Cobblestone
+        cobblestone_slab: Cobblestone Slab
+        cobblestone_stairs: Cobblestone Stairs
+        cobblestone_wall: Cobblestone Wall
+        cobweb: Cobweb
+        cocoa: Cocoa
+        command_block: Command Block
+        comparator: Redstone Comparator
+        composter: Composter
+        conduit: Conduit
+        copper_bars: 銅格子
+        copper_block: Block of Copper
+        copper_bulb: 銅の電球
+        copper_chain: 銅の鎖
+        copper_chest: 銅のチェスト
+        copper_door: 銅のドア
+        copper_golem_statue: カッパーゴーレムの像
+        copper_grate: 銅の金網
+        copper_lantern: 銅のランタン
+        copper_ore: Copper Ore
+        copper_torch: 銅の松明
+        copper_trapdoor: 銅のトラップドア
+        copper_wall_torch: 壁に付けられた銅の松明
+        cornflower: Cornflower
+        cracked_deepslate_bricks: Cracked Deepslate Bricks
+        cracked_deepslate_tiles: Cracked Deepslate Tiles
+        cracked_nether_bricks: Cracked Nether Bricks
+        cracked_polished_blackstone_bricks: Cracked Polished Blackstone Bricks
+        cracked_stone_bricks: Cracked Stone Bricks
+        crafter: 自動作業台
+        crafting_table: Crafting Table
+        creaking_heart: クリーキングの心臓
+        creeper_head: Creeper Head
+        creeper_wall_head: Creeper Wall Head
+        crimson_button: Crimson Button
+        crimson_door: Crimson Door
+        crimson_fence: Crimson Fence
+        crimson_fence_gate: Crimson Fence Gate
+        crimson_fungus: Crimson Fungus
+        crimson_hanging_sign: Crimson Hanging Sign
+        crimson_hyphae: Crimson Hyphae
+        crimson_nylium: Crimson Nylium
+        crimson_planks: Crimson Planks
+        crimson_pressure_plate: Crimson Pressure Plate
+        crimson_roots: Crimson Roots
+        crimson_shelf: 真紅の棚
+        crimson_sign: Crimson Sign
+        crimson_slab: Crimson Slab
+        crimson_stairs: Crimson Stairs
+        crimson_stem: Crimson Stem
+        crimson_trapdoor: Crimson Trapdoor
+        crimson_wall_hanging_sign: Crimson Wall Hanging Sign
+        crimson_wall_sign: Crimson Wall Sign
+        crying_obsidian: Crying Obsidian
+        cut_copper: Cut Copper
+        cut_copper_slab: Cut Copper Slab
+        cut_copper_stairs: Cut Copper Stairs
+        cut_red_sandstone: Cut Red Sandstone
+        cut_red_sandstone_slab: Cut Red Sandstone Slab
+        cut_sandstone: Cut Sandstone
+        cut_sandstone_slab: Cut Sandstone Slab
+        cyan_banner: Cyan Banner
+        cyan_bed: Cyan Bed
+        cyan_candle: Cyan Candle
+        cyan_candle_cake: Cake with Cyan Candle
+        cyan_carpet: Cyan Carpet
+        cyan_concrete: Cyan Concrete
+        cyan_concrete_powder: Cyan Concrete Powder
+        cyan_glazed_terracotta: Cyan Glazed Terracotta
+        cyan_shulker_box: Cyan Shulker Box
+        cyan_stained_glass: Cyan Stained Glass
+        cyan_stained_glass_pane: Cyan Stained Glass Pane
+        cyan_terracotta: Cyan Terracotta
+        cyan_wool: Cyan Wool
+        damaged_anvil: Damaged Anvil
+        dandelion: Dandelion
+        dark_oak_button: Dark Oak Button
+        dark_oak_door: Dark Oak Door
+        dark_oak_fence: Dark Oak Fence
+        dark_oak_fence_gate: Dark Oak Fence Gate
+        dark_oak_hanging_sign: Dark Oak Hanging Sign
+        dark_oak_leaves: Dark Oak Leaves
+        dark_oak_log: Dark Oak Log
+        dark_oak_planks: Dark Oak Planks
+        dark_oak_pressure_plate: Dark Oak Pressure Plate
+        dark_oak_sapling: Dark Oak Sapling
+        dark_oak_shelf: ダークオークの棚
+        dark_oak_sign: Dark Oak Sign
+        dark_oak_slab: Dark Oak Slab
+        dark_oak_stairs: Dark Oak Stairs
+        dark_oak_trapdoor: Dark Oak Trapdoor
+        dark_oak_wall_hanging_sign: Dark Oak Wall Hanging Sign
+        dark_oak_wall_sign: Dark Oak Wall Sign
+        dark_oak_wood: Dark Oak Wood
+        dark_prismarine: Dark Prismarine
+        dark_prismarine_slab: Dark Prismarine Slab
+        dark_prismarine_stairs: Dark Prismarine Stairs
+        daylight_detector: Daylight Detector
+        dead_brain_coral: Dead Brain Coral
+        dead_brain_coral_block: Dead Brain Coral Block
+        dead_brain_coral_fan: Dead Brain Coral Fan
+        dead_brain_coral_wall_fan: Dead Brain Coral Wall Fan
+        dead_bubble_coral: Dead Bubble Coral
+        dead_bubble_coral_block: Dead Bubble Coral Block
+        dead_bubble_coral_fan: Dead Bubble Coral Fan
+        dead_bubble_coral_wall_fan: Dead Bubble Coral Wall Fan
+        dead_bush: Dead Bush
+        dead_fire_coral: Dead Fire Coral
+        dead_fire_coral_block: Dead Fire Coral Block
+        dead_fire_coral_fan: Dead Fire Coral Fan
+        dead_fire_coral_wall_fan: Dead Fire Coral Wall Fan
+        dead_horn_coral: Dead Horn Coral
+        dead_horn_coral_block: Dead Horn Coral Block
+        dead_horn_coral_fan: Dead Horn Coral Fan
+        dead_horn_coral_wall_fan: Dead Horn Coral Wall Fan
+        dead_tube_coral: Dead Tube Coral
+        dead_tube_coral_block: Dead Tube Coral Block
+        dead_tube_coral_fan: Dead Tube Coral Fan
+        dead_tube_coral_wall_fan: Dead Tube Coral Wall Fan
+        decorated_pot: Decorated Pot
+        deepslate: Deepslate
+        deepslate_brick_slab: Deepslate Brick Slab
+        deepslate_brick_stairs: Deepslate Brick Stairs
+        deepslate_brick_wall: Deepslate Brick Wall
+        deepslate_bricks: Deepslate Bricks
+        deepslate_coal_ore: Deepslate Coal Ore
+        deepslate_copper_ore: Deepslate Copper Ore
+        deepslate_diamond_ore: Deepslate Diamond Ore
+        deepslate_emerald_ore: Deepslate Emerald Ore
+        deepslate_gold_ore: Deepslate Gold Ore
+        deepslate_iron_ore: Deepslate Iron Ore
+        deepslate_lapis_ore: Deepslate Lapis Lazuli Ore
+        deepslate_redstone_ore: Deepslate Redstone Ore
+        deepslate_tile_slab: Deepslate Tile Slab
+        deepslate_tile_stairs: Deepslate Tile Stairs
+        deepslate_tile_wall: Deepslate Tile Wall
+        deepslate_tiles: Deepslate Tiles
+        detector_rail: Detector Rail
+        diamond_block: Block of Diamond
+        diamond_ore: Diamond Ore
+        diorite: Diorite
+        diorite_slab: Diorite Slab
+        diorite_stairs: Diorite Stairs
+        diorite_wall: Diorite Wall
+        dirt: Dirt
+        dirt_path: Dirt Path
+        dispenser: Dispenser
+        dragon_egg: Dragon Egg
+        dragon_head: Dragon Head
+        dragon_wall_head: Dragon Wall Head
+        dried_ghast: 乾燥したガスト
+        dried_kelp_block: Dried Kelp Block
+        dripstone_block: Dripstone Block
+        dropper: Dropper
+        emerald_block: Block of Emerald
+        emerald_ore: Emerald Ore
+        enchanting_table: Enchanting Table
+        end_gateway: End Gateway
+        end_portal: End Portal
+        end_portal_frame: End Portal Frame
+        end_rod: End Rod
+        end_stone: End Stone
+        end_stone_brick_slab: End Stone Brick Slab
+        end_stone_brick_stairs: End Stone Brick Stairs
+        end_stone_brick_wall: End Stone Brick Wall
+        end_stone_bricks: End Stone Bricks
+        ender_chest: Ender Chest
+        exposed_chiseled_copper: 風化した模様入りの銅
+        exposed_copper: Exposed Copper
+        exposed_copper_bars: 風化した銅格子
+        exposed_copper_bulb: 風化した銅の電球
+        exposed_copper_chain: 風化した銅の鎖
+        exposed_copper_chest: 風化した銅のチェスト
+        exposed_copper_door: 風化した銅のドア
+        exposed_copper_golem_statue: 風化したカッパーゴーレムの像
+        exposed_copper_grate: 風化した銅の金網
+        exposed_copper_lantern: 風化した銅のランタン
+        exposed_copper_trapdoor: 風化した銅のトラップドア
+        exposed_cut_copper: Exposed Cut Copper
+        exposed_cut_copper_slab: Exposed Cut Copper Slab
+        exposed_cut_copper_stairs: Exposed Cut Copper Stairs
+        exposed_lightning_rod: 風化した避雷針
+        farmland: Farmland
+        fern: Fern
+        fire: Fire
+        fire_coral: Fire Coral
+        fire_coral_block: Fire Coral Block
+        fire_coral_fan: Fire Coral Fan
+        fire_coral_wall_fan: Fire Coral Wall Fan
+        firefly_bush: ホタルの茂み
+        fletching_table: Fletching Table
+        flower_pot: Flower Pot
+        flowering_azalea: Flowering Azalea
+        flowering_azalea_leaves: Flowering Azalea Leaves
+        frogspawn: Frogspawn
+        frosted_ice: Frosted Ice
+        furnace: Furnace
+        gilded_blackstone: Gilded Blackstone
+        glass: Glass
+        glass_pane: Glass Pane
+        glow_lichen: Glow Lichen
+        glowstone: Glowstone
+        gold_block: Block of Gold
+        gold_ore: Gold Ore
+        golden_dandelion: 金のタンポポ
+        granite: Granite
+        granite_slab: Granite Slab
+        granite_stairs: Granite Stairs
+        granite_wall: Granite Wall
+        grass: Grass
+        grass_block: Grass Block
+        gravel: Gravel
+        gray_banner: Gray Banner
+        gray_bed: Gray Bed
+        gray_candle: Gray Candle
+        gray_candle_cake: Cake with Gray Candle
+        gray_carpet: Gray Carpet
+        gray_concrete: Gray Concrete
+        gray_concrete_powder: Gray Concrete Powder
+        gray_glazed_terracotta: Gray Glazed Terracotta
+        gray_shulker_box: Gray Shulker Box
+        gray_stained_glass: Gray Stained Glass
+        gray_stained_glass_pane: Gray Stained Glass Pane
+        gray_terracotta: Gray Terracotta
+        gray_wool: Gray Wool
+        green_banner: Green Banner
+        green_bed: Green Bed
+        green_candle: Green Candle
+        green_candle_cake: Cake with Green Candle
+        green_carpet: Green Carpet
+        green_concrete: Green Concrete
+        green_concrete_powder: Green Concrete Powder
+        green_glazed_terracotta: Green Glazed Terracotta
+        green_shulker_box: Green Shulker Box
+        green_stained_glass: Green Stained Glass
+        green_stained_glass_pane: Green Stained Glass Pane
+        green_terracotta: Green Terracotta
+        green_wool: Green Wool
+        grindstone: Grindstone
+        hanging_roots: Hanging Roots
+        hay_block: Hay Bale
+        heavy_core: ヘビーコア
+        heavy_weighted_pressure_plate: Heavy Weighted Pressure Plate
+        honey_block: Honey Block
+        honeycomb_block: Honeycomb Block
+        hopper: Hopper
+        horn_coral: Horn Coral
+        horn_coral_block: Horn Coral Block
+        horn_coral_fan: Horn Coral Fan
+        horn_coral_wall_fan: Horn Coral Wall Fan
+        ice: Ice
+        infested_chiseled_stone_bricks: Infested Chiseled Stone Bricks
+        infested_cobblestone: Infested Cobblestone
+        infested_cracked_stone_bricks: Infested Cracked Stone Bricks
+        infested_deepslate: Infested Deepslate
+        infested_mossy_stone_bricks: Infested Mossy Stone Bricks
+        infested_stone: Infested Stone
+        infested_stone_bricks: Infested Stone Bricks
+        iron_bars: Iron Bars
+        iron_block: Block of Iron
+        iron_chain: 鉄の鎖
+        iron_door: Iron Door
+        iron_ore: Iron Ore
+        iron_trapdoor: Iron Trapdoor
+        jack_o_lantern: Jack o'Lantern
+        jigsaw: Jigsaw Block
+        jukebox: Jukebox
+        jungle_button: Jungle Button
+        jungle_door: Jungle Door
+        jungle_fence: Jungle Fence
+        jungle_fence_gate: Jungle Fence Gate
+        jungle_hanging_sign: Jungle Hanging Sign
+        jungle_leaves: Jungle Leaves
+        jungle_log: Jungle Log
+        jungle_planks: Jungle Planks
+        jungle_pressure_plate: Jungle Pressure Plate
+        jungle_sapling: Jungle Sapling
+        jungle_shelf: ジャングルの棚
+        jungle_sign: Jungle Sign
+        jungle_slab: Jungle Slab
+        jungle_stairs: Jungle Stairs
+        jungle_trapdoor: Jungle Trapdoor
+        jungle_wall_hanging_sign: Jungle Wall Hanging Sign
+        jungle_wall_sign: Jungle Wall Sign
+        jungle_wood: Jungle Wood
+        kelp: Kelp
+        kelp_plant: Kelp Plant
+        ladder: Ladder
+        lantern: Lantern
+        lapis_block: Block of Lapis Lazuli
+        lapis_ore: Lapis Lazuli Ore
+        large_amethyst_bud: Large Amethyst Bud
+        large_fern: Large Fern
+        lava: Lava
+        lava_cauldron: Lava Cauldron
+        leaf_litter: 落ち葉
+        lectern: Lectern
+        lever: Lever
+        light: Light
+        light_blue_banner: Light Blue Banner
+        light_blue_bed: Light Blue Bed
+        light_blue_candle: Light Blue Candle
+        light_blue_candle_cake: Cake with Light Blue Candle
+        light_blue_carpet: Light Blue Carpet
+        light_blue_concrete: Light Blue Concrete
+        light_blue_concrete_powder: Light Blue Concrete Powder
+        light_blue_glazed_terracotta: Light Blue Glazed Terracotta
+        light_blue_shulker_box: Light Blue Shulker Box
+        light_blue_stained_glass: Light Blue Stained Glass
+        light_blue_stained_glass_pane: Light Blue Stained Glass Pane
+        light_blue_terracotta: Light Blue Terracotta
+        light_blue_wool: Light Blue Wool
+        light_gray_banner: Light Gray Banner
+        light_gray_bed: Light Gray Bed
+        light_gray_candle: Light Gray Candle
+        light_gray_candle_cake: Cake with Light Gray Candle
+        light_gray_carpet: Light Gray Carpet
+        light_gray_concrete: Light Gray Concrete
+        light_gray_concrete_powder: Light Gray Concrete Powder
+        light_gray_glazed_terracotta: Light Gray Glazed Terracotta
+        light_gray_shulker_box: Light Gray Shulker Box
+        light_gray_stained_glass: Light Gray Stained Glass
+        light_gray_stained_glass_pane: Light Gray Stained Glass Pane
+        light_gray_terracotta: Light Gray Terracotta
+        light_gray_wool: Light Gray Wool
+        light_weighted_pressure_plate: Light Weighted Pressure Plate
+        lightning_rod: Lightning Rod
+        lilac: Lilac
+        lily_of_the_valley: Lily of the Valley
+        lily_pad: Lily Pad
+        lime_banner: Lime Banner
+        lime_bed: Lime Bed
+        lime_candle: Lime Candle
+        lime_candle_cake: Cake with Lime Candle
+        lime_carpet: Lime Carpet
+        lime_concrete: Lime Concrete
+        lime_concrete_powder: Lime Concrete Powder
+        lime_glazed_terracotta: Lime Glazed Terracotta
+        lime_shulker_box: Lime Shulker Box
+        lime_stained_glass: Lime Stained Glass
+        lime_stained_glass_pane: Lime Stained Glass Pane
+        lime_terracotta: Lime Terracotta
+        lime_wool: Lime Wool
+        lodestone: Lodestone
+        loom: Loom
+        magenta_banner: Magenta Banner
+        magenta_bed: Magenta Bed
+        magenta_candle: Magenta Candle
+        magenta_candle_cake: Cake with Magenta Candle
+        magenta_carpet: Magenta Carpet
+        magenta_concrete: Magenta Concrete
+        magenta_concrete_powder: Magenta Concrete Powder
+        magenta_glazed_terracotta: Magenta Glazed Terracotta
+        magenta_shulker_box: Magenta Shulker Box
+        magenta_stained_glass: Magenta Stained Glass
+        magenta_stained_glass_pane: Magenta Stained Glass Pane
+        magenta_terracotta: Magenta Terracotta
+        magenta_wool: Magenta Wool
+        magma_block: Magma Block
+        mangrove_button: Mangrove Button
+        mangrove_door: Mangrove Door
+        mangrove_fence: Mangrove Fence
+        mangrove_fence_gate: Mangrove Fence Gate
+        mangrove_hanging_sign: Mangrove Hanging Sign
+        mangrove_leaves: Mangrove Leaves
+        mangrove_log: Mangrove Log
+        mangrove_planks: Mangrove Planks
+        mangrove_pressure_plate: Mangrove Pressure Plate
+        mangrove_propagule: Mangrove Propagule
+        mangrove_roots: Mangrove Roots
+        mangrove_shelf: マングローブの棚
+        mangrove_sign: Mangrove Sign
+        mangrove_slab: Mangrove Slab
+        mangrove_stairs: Mangrove Stairs
+        mangrove_trapdoor: Mangrove Trapdoor
+        mangrove_wall_hanging_sign: Mangrove Wall Hanging Sign
+        mangrove_wall_sign: Mangrove Wall Sign
+        mangrove_wood: Mangrove Wood
+        medium_amethyst_bud: Medium Amethyst Bud
+        melon: Melon
+        melon_stem: Melon Stem
+        moss_block: Moss Block
+        moss_carpet: Moss Carpet
+        mossy_cobblestone: Mossy Cobblestone
+        mossy_cobblestone_slab: Mossy Cobblestone Slab
+        mossy_cobblestone_stairs: Mossy Cobblestone Stairs
+        mossy_cobblestone_wall: Mossy Cobblestone Wall
+        mossy_stone_brick_slab: Mossy Stone Brick Slab
+        mossy_stone_brick_stairs: Mossy Stone Brick Stairs
+        mossy_stone_brick_wall: Mossy Stone Brick Wall
+        mossy_stone_bricks: Mossy Stone Bricks
+        moving_piston: Moving Piston
+        mud: Mud
+        mud_brick_slab: Mud Brick Slab
+        mud_brick_stairs: Mud Brick Stairs
+        mud_brick_wall: Mud Brick Wall
+        mud_bricks: Mud Bricks
+        muddy_mangrove_roots: Muddy Mangrove Roots
+        mushroom_stem: Mushroom Stem
+        mycelium: Mycelium
+        nether_brick_fence: Nether Brick Fence
+        nether_brick_slab: Nether Brick Slab
+        nether_brick_stairs: Nether Brick Stairs
+        nether_brick_wall: Nether Brick Wall
+        nether_bricks: Nether Bricks
+        nether_gold_ore: Nether Gold Ore
+        nether_portal: Nether Portal
+        nether_quartz_ore: Nether Quartz Ore
+        nether_sprouts: Nether Sprouts
+        nether_wart: Nether Wart
+        nether_wart_block: Nether Wart Block
+        netherite_block: Block of Netherite
+        netherrack: Netherrack
+        note_block: Note Block
+        oak_button: Oak Button
+        oak_door: Oak Door
+        oak_fence: Oak Fence
+        oak_fence_gate: Oak Fence Gate
+        oak_hanging_sign: Oak Hanging Sign
+        oak_leaves: Oak Leaves
+        oak_log: Oak Log
+        oak_planks: Oak Planks
+        oak_pressure_plate: Oak Pressure Plate
+        oak_sapling: Oak Sapling
+        oak_shelf: オークの棚
+        oak_sign: Oak Sign
+        oak_slab: Oak Slab
+        oak_stairs: Oak Stairs
+        oak_trapdoor: Oak Trapdoor
+        oak_wall_hanging_sign: Oak Wall Hanging Sign
+        oak_wall_sign: Oak Wall Sign
+        oak_wood: Oak Wood
+        observer: Observer
+        obsidian: Obsidian
+        ochre_froglight: Ochre Froglight
+        ominous_banner: Ominous Banner
+        open_eyeblossom: 開いたヒトミソウ
+        orange_banner: Orange Banner
+        orange_bed: Orange Bed
+        orange_candle: Orange Candle
+        orange_candle_cake: Cake with Orange Candle
+        orange_carpet: Orange Carpet
+        orange_concrete: Orange Concrete
+        orange_concrete_powder: Orange Concrete Powder
+        orange_glazed_terracotta: Orange Glazed Terracotta
+        orange_shulker_box: Orange Shulker Box
+        orange_stained_glass: Orange Stained Glass
+        orange_stained_glass_pane: Orange Stained Glass Pane
+        orange_terracotta: Orange Terracotta
+        orange_tulip: Orange Tulip
+        orange_wool: Orange Wool
+        oxeye_daisy: Oxeye Daisy
+        oxidized_chiseled_copper: 酸化した模様入りの銅
+        oxidized_copper: Oxidized Copper
+        oxidized_copper_bars: 酸化した銅格子
+        oxidized_copper_bulb: 酸化した銅の電球
+        oxidized_copper_chain: 酸化した銅の鎖
+        oxidized_copper_chest: 酸化した銅のチェスト
+        oxidized_copper_door: 酸化した銅のドア
+        oxidized_copper_golem_statue: 酸化したカッパーゴーレムの像
+        oxidized_copper_grate: 酸化した銅の金網
+        oxidized_copper_lantern: 酸化した銅のランタン
+        oxidized_copper_trapdoor: 酸化した銅のトラップドア
+        oxidized_cut_copper: Oxidized Cut Copper
+        oxidized_cut_copper_slab: Oxidized Cut Copper Slab
+        oxidized_cut_copper_stairs: Oxidized Cut Copper Stairs
+        oxidized_lightning_rod: 酸化した避雷針
+        packed_ice: Packed Ice
+        packed_mud: Packed Mud
+        pale_hanging_moss: 色あせた垂れ苔
+        pale_moss_block: 色あせた苔ブロック
+        pale_moss_carpet: 色あせた苔のカーペット
+        pale_oak_button: ペールオークのボタン
+        pale_oak_door: ペールオークのドア
+        pale_oak_fence: ペールオークのフェンス
+        pale_oak_fence_gate: ペールオークのフェンスゲート
+        pale_oak_hanging_sign: ペールオークの吊り看板
+        pale_oak_leaves: ペールオークの葉
+        pale_oak_log: ペールオークの原木
+        pale_oak_planks: ペールオークの板材
+        pale_oak_pressure_plate: ペールオークの感圧板
+        pale_oak_sapling: ペールオークの苗木
+        pale_oak_shelf: ペールオークの棚
+        pale_oak_sign: ペールオークの看板
+        pale_oak_slab: ペールオークのハーフブロック
+        pale_oak_stairs: ペールオークの階段
+        pale_oak_trapdoor: ペールオークのトラップドア
+        pale_oak_wall_hanging_sign: 壁に付けられたペールオークの吊り看板
+        pale_oak_wall_sign: 壁に付けられたペールオークの看板
+        pale_oak_wood: ペールオークの木
+        pearlescent_froglight: Pearlescent Froglight
+        peony: Peony
+        petrified_oak_slab: Petrified Oak Slab
+        piglin_head: Piglin Head
+        piglin_wall_head: Piglin Wall Head
+        pink_banner: Pink Banner
+        pink_bed: Pink Bed
+        pink_candle: Pink Candle
+        pink_candle_cake: Cake with Pink Candle
+        pink_carpet: Pink Carpet
+        pink_concrete: Pink Concrete
+        pink_concrete_powder: Pink Concrete Powder
+        pink_glazed_terracotta: Pink Glazed Terracotta
+        pink_petals: Pink Petals
+        pink_shulker_box: Pink Shulker Box
+        pink_stained_glass: Pink Stained Glass
+        pink_stained_glass_pane: Pink Stained Glass Pane
+        pink_terracotta: Pink Terracotta
+        pink_tulip: Pink Tulip
+        pink_wool: Pink Wool
+        piston: Piston
+        piston_head: Piston Head
+        pitcher_crop: Pitcher Crop
+        pitcher_plant: Pitcher Plant
+        player_head:
+          _value: Player Head
+          named: "%s's Head"
+        player_wall_head: Player Wall Head
+        podzol: Podzol
+        pointed_dripstone: Pointed Dripstone
+        polished_andesite: Polished Andesite
+        polished_andesite_slab: Polished Andesite Slab
+        polished_andesite_stairs: Polished Andesite Stairs
+        polished_basalt: Polished Basalt
+        polished_blackstone: Polished Blackstone
+        polished_blackstone_brick_slab: Polished Blackstone Brick Slab
+        polished_blackstone_brick_stairs: Polished Blackstone Brick Stairs
+        polished_blackstone_brick_wall: Polished Blackstone Brick Wall
+        polished_blackstone_bricks: Polished Blackstone Bricks
+        polished_blackstone_button: Polished Blackstone Button
+        polished_blackstone_pressure_plate: Polished Blackstone Pressure Plate
+        polished_blackstone_slab: Polished Blackstone Slab
+        polished_blackstone_stairs: Polished Blackstone Stairs
+        polished_blackstone_wall: Polished Blackstone Wall
+        polished_cinnabar: 磨かれた辰砂
+        polished_cinnabar_slab: 磨かれた辰砂のハーフブロック
+        polished_cinnabar_stairs: 磨かれた辰砂の階段
+        polished_cinnabar_wall: 磨かれた辰砂の塀
+        polished_deepslate: Polished Deepslate
+        polished_deepslate_slab: Polished Deepslate Slab
+        polished_deepslate_stairs: Polished Deepslate Stairs
+        polished_deepslate_wall: Polished Deepslate Wall
+        polished_diorite: Polished Diorite
+        polished_diorite_slab: Polished Diorite Slab
+        polished_diorite_stairs: Polished Diorite Stairs
+        polished_granite: Polished Granite
+        polished_granite_slab: Polished Granite Slab
+        polished_granite_stairs: Polished Granite Stairs
+        polished_sulfur: 磨かれた硫黄
+        polished_sulfur_slab: 磨かれた硫黄のハーフブロック
+        polished_sulfur_stairs: 磨かれた硫黄の階段
+        polished_sulfur_wall: 磨かれた硫黄の塀
+        polished_tuff: 磨かれた凝灰岩
+        polished_tuff_slab: 磨かれた凝灰岩のハーフブロック
+        polished_tuff_stairs: 磨かれた凝灰岩の階段
+        polished_tuff_wall: 磨かれた凝灰岩の塀
+        poppy: Poppy
+        potatoes: Potatoes
+        potent_sulfur: 強力な硫黄
+        potted_acacia_sapling: Potted Acacia Sapling
+        potted_allium: Potted Allium
+        potted_azalea_bush: Potted Azalea
+        potted_azure_bluet: Potted Azure Bluet
+        potted_bamboo: Potted Bamboo
+        potted_birch_sapling: Potted Birch Sapling
+        potted_blue_orchid: Potted Blue Orchid
+        potted_brown_mushroom: Potted Brown Mushroom
+        potted_cactus: Potted Cactus
+        potted_cherry_sapling: Potted Cherry Sapling
+        potted_closed_eyeblossom: 閉じたヒトミソウ入り植木鉢
+        potted_cornflower: Potted Cornflower
+        potted_crimson_fungus: Potted Crimson Fungus
+        potted_crimson_roots: Potted Crimson Roots
+        potted_dandelion: Potted Dandelion
+        potted_dark_oak_sapling: Potted Dark Oak Sapling
+        potted_dead_bush: Potted Dead Bush
+        potted_fern: Potted Fern
+        potted_flowering_azalea_bush: Potted Flowering Azalea
+        potted_golden_dandelion: 金のタンポポ入り植木鉢
+        potted_jungle_sapling: Potted Jungle Sapling
+        potted_lily_of_the_valley: Potted Lily of the Valley
+        potted_mangrove_propagule: Potted Mangrove Propagule
+        potted_oak_sapling: Potted Oak Sapling
+        potted_open_eyeblossom: 開いたヒトミソウ入り植木鉢
+        potted_orange_tulip: Potted Orange Tulip
+        potted_oxeye_daisy: Potted Oxeye Daisy
+        potted_pale_oak_sapling: ペールオークの苗木入り植木鉢
+        potted_pink_tulip: Potted Pink Tulip
+        potted_poppy: Potted Poppy
+        potted_red_mushroom: Potted Red Mushroom
+        potted_red_tulip: Potted Red Tulip
+        potted_spruce_sapling: Potted Spruce Sapling
+        potted_torchflower: Potted Torchflower
+        potted_warped_fungus: Potted Warped Fungus
+        potted_warped_roots: Potted Warped Roots
+        potted_white_tulip: Potted White Tulip
+        potted_wither_rose: Potted Wither Rose
+        powder_snow: Powder Snow
+        powder_snow_cauldron: Powder Snow Cauldron
+        powered_rail: Powered Rail
+        prismarine: Prismarine
+        prismarine_brick_slab: Prismarine Brick Slab
+        prismarine_brick_stairs: Prismarine Brick Stairs
+        prismarine_bricks: Prismarine Bricks
+        prismarine_slab: Prismarine Slab
+        prismarine_stairs: Prismarine Stairs
+        prismarine_wall: Prismarine Wall
+        pumpkin: Pumpkin
+        pumpkin_stem: Pumpkin Stem
+        purple_banner: Purple Banner
+        purple_bed: Purple Bed
+        purple_candle: Purple Candle
+        purple_candle_cake: Cake with Purple Candle
+        purple_carpet: Purple Carpet
+        purple_concrete: Purple Concrete
+        purple_concrete_powder: Purple Concrete Powder
+        purple_glazed_terracotta: Purple Glazed Terracotta
+        purple_shulker_box: Purple Shulker Box
+        purple_stained_glass: Purple Stained Glass
+        purple_stained_glass_pane: Purple Stained Glass Pane
+        purple_terracotta: Purple Terracotta
+        purple_wool: Purple Wool
+        purpur_block: Purpur Block
+        purpur_pillar: Purpur Pillar
+        purpur_slab: Purpur Slab
+        purpur_stairs: Purpur Stairs
+        quartz_block: Block of Quartz
+        quartz_bricks: Quartz Bricks
+        quartz_pillar: Quartz Pillar
+        quartz_slab: Quartz Slab
+        quartz_stairs: Quartz Stairs
+        rail: Rail
+        raw_copper_block: Block of Raw Copper
+        raw_gold_block: Block of Raw Gold
+        raw_iron_block: Block of Raw Iron
+        red_banner: Red Banner
+        red_bed: Red Bed
+        red_candle: Red Candle
+        red_candle_cake: Cake with Red Candle
+        red_carpet: Red Carpet
+        red_concrete: Red Concrete
+        red_concrete_powder: Red Concrete Powder
+        red_glazed_terracotta: Red Glazed Terracotta
+        red_mushroom: Red Mushroom
+        red_mushroom_block: Red Mushroom Block
+        red_nether_brick_slab: Red Nether Brick Slab
+        red_nether_brick_stairs: Red Nether Brick Stairs
+        red_nether_brick_wall: Red Nether Brick Wall
+        red_nether_bricks: Red Nether Bricks
+        red_sand: Red Sand
+        red_sandstone: Red Sandstone
+        red_sandstone_slab: Red Sandstone Slab
+        red_sandstone_stairs: Red Sandstone Stairs
+        red_sandstone_wall: Red Sandstone Wall
+        red_shulker_box: Red Shulker Box
+        red_stained_glass: Red Stained Glass
+        red_stained_glass_pane: Red Stained Glass Pane
+        red_terracotta: Red Terracotta
+        red_tulip: Red Tulip
+        red_wool: Red Wool
+        redstone_block: Block of Redstone
+        redstone_lamp: Redstone Lamp
+        redstone_ore: Redstone Ore
+        redstone_torch: Redstone Torch
+        redstone_wall_torch: Redstone Wall Torch
+        redstone_wire: Redstone Wire
+        reinforced_deepslate: Reinforced Deepslate
+        repeater: Redstone Repeater
+        repeating_command_block: Repeating Command Block
+        resin_block: 樹脂ブロック
+        resin_brick_slab: 樹脂レンガのハーフブロック
+        resin_brick_stairs: 樹脂レンガの階段
+        resin_brick_wall: 樹脂レンガの塀
+        resin_bricks: 樹脂レンガ
+        resin_clump: 樹脂の塊
+        respawn_anchor: Respawn Anchor
+        rooted_dirt: Rooted Dirt
+        rose_bush: Rose Bush
+        sand: Sand
+        sandstone: Sandstone
+        sandstone_slab: Sandstone Slab
+        sandstone_stairs: Sandstone Stairs
+        sandstone_wall: Sandstone Wall
+        scaffolding: Scaffolding
+        sculk: Sculk
+        sculk_catalyst: Sculk Catalyst
+        sculk_sensor: Sculk Sensor
+        sculk_shrieker: Sculk Shrieker
+        sculk_vein: Sculk Vein
+        sea_lantern: Sea Lantern
+        sea_pickle: Sea Pickle
+        seagrass: Seagrass
+        set_spawn: Respawn point set
+        short_dry_grass: 背の低い枯れ草
+        short_grass: 背の低い草
+        shroomlight: Shroomlight
+        shulker_box: Shulker Box
+        skeleton_skull: Skeleton Skull
+        skeleton_wall_skull: Skeleton Wall Skull
+        slime_block: Slime Block
+        small_amethyst_bud: Small Amethyst Bud
+        small_dripleaf: Small Dripleaf
+        smithing_table: Smithing Table
+        smoker: Smoker
+        smooth_basalt: Smooth Basalt
+        smooth_quartz: Smooth Quartz Block
+        smooth_quartz_slab: Smooth Quartz Slab
+        smooth_quartz_stairs: Smooth Quartz Stairs
+        smooth_red_sandstone: Smooth Red Sandstone
+        smooth_red_sandstone_slab: Smooth Red Sandstone Slab
+        smooth_red_sandstone_stairs: Smooth Red Sandstone Stairs
+        smooth_sandstone: Smooth Sandstone
+        smooth_sandstone_slab: Smooth Sandstone Slab
+        smooth_sandstone_stairs: Smooth Sandstone Stairs
+        smooth_stone: Smooth Stone
+        smooth_stone_slab: Smooth Stone Slab
+        sniffer_egg: Sniffer Egg
+        snow: Snow
+        snow_block: Snow Block
+        soul_campfire: Soul Campfire
+        soul_fire: Soul Fire
+        soul_lantern: Soul Lantern
+        soul_sand: Soul Sand
+        soul_soil: Soul Soil
+        soul_torch: Soul Torch
+        soul_wall_torch: Soul Wall Torch
+        spawn:
+          not_valid: You have no home bed or charged respawn anchor, or it was obstructed
+        spawner:
+          _value: Monster Spawner
+          desc1: "Interact with Spawn Egg:"
+          desc2: Sets Mob Type
+        sponge: Sponge
+        spore_blossom: Spore Blossom
+        spruce_button: Spruce Button
+        spruce_door: Spruce Door
+        spruce_fence: Spruce Fence
+        spruce_fence_gate: Spruce Fence Gate
+        spruce_hanging_sign: Spruce Hanging Sign
+        spruce_leaves: Spruce Leaves
+        spruce_log: Spruce Log
+        spruce_planks: Spruce Planks
+        spruce_pressure_plate: Spruce Pressure Plate
+        spruce_sapling: Spruce Sapling
+        spruce_shelf: トウヒの棚
+        spruce_sign: Spruce Sign
+        spruce_slab: Spruce Slab
+        spruce_stairs: Spruce Stairs
+        spruce_trapdoor: Spruce Trapdoor
+        spruce_wall_hanging_sign: Spruce Wall Hanging Sign
+        spruce_wall_sign: Spruce Wall Sign
+        spruce_wood: Spruce Wood
+        sticky_piston: Sticky Piston
+        stone: Stone
+        stone_brick_slab: Stone Brick Slab
+        stone_brick_stairs: Stone Brick Stairs
+        stone_brick_wall: Stone Brick Wall
+        stone_bricks: Stone Bricks
+        stone_button: Stone Button
+        stone_pressure_plate: Stone Pressure Plate
+        stone_slab: Stone Slab
+        stone_stairs: Stone Stairs
+        stonecutter: Stonecutter
+        stripped_acacia_log: Stripped Acacia Log
+        stripped_acacia_wood: Stripped Acacia Wood
+        stripped_bamboo_block: Block of Stripped Bamboo
+        stripped_birch_log: Stripped Birch Log
+        stripped_birch_wood: Stripped Birch Wood
+        stripped_cherry_log: Stripped Cherry Log
+        stripped_cherry_wood: Stripped Cherry Wood
+        stripped_crimson_hyphae: Stripped Crimson Hyphae
+        stripped_crimson_stem: Stripped Crimson Stem
+        stripped_dark_oak_log: Stripped Dark Oak Log
+        stripped_dark_oak_wood: Stripped Dark Oak Wood
+        stripped_jungle_log: Stripped Jungle Log
+        stripped_jungle_wood: Stripped Jungle Wood
+        stripped_mangrove_log: Stripped Mangrove Log
+        stripped_mangrove_wood: Stripped Mangrove Wood
+        stripped_oak_log: Stripped Oak Log
+        stripped_oak_wood: Stripped Oak Wood
+        stripped_pale_oak_log: 樹皮を剥いだペールオークの原木
+        stripped_pale_oak_wood: 樹皮を剥いだペールオークの木
+        stripped_spruce_log: Stripped Spruce Log
+        stripped_spruce_wood: Stripped Spruce Wood
+        stripped_warped_hyphae: Stripped Warped Hyphae
+        stripped_warped_stem: Stripped Warped Stem
+        structure_block: Structure Block
+        structure_void: Structure Void
+        sugar_cane: Sugar Cane
+        sulfur: 硫黄
+        sulfur_brick_slab: 硫黄レンガのハーフブロック
+        sulfur_brick_stairs: 硫黄レンガの階段
+        sulfur_brick_wall: 硫黄レンガの塀
+        sulfur_bricks: 硫黄レンガ
+        sulfur_slab: 硫黄のハーフブロック
+        sulfur_spike: 硫黄の結晶柱
+        sulfur_stairs: 硫黄の階段
+        sulfur_wall: 硫黄の塀
+        sunflower: Sunflower
+        suspicious_gravel: Suspicious Gravel
+        suspicious_sand: Suspicious Sand
+        sweet_berry_bush: Sweet Berry Bush
+        tall_dry_grass: 背の高い枯れ草
+        tall_grass: Tall Grass
+        tall_seagrass: Tall Seagrass
+        target: Target
+        terracotta: Terracotta
+        test_block: テストブロック
+        test_instance_block: テストインスタンスブロック
+        tinted_glass: Tinted Glass
+        tnt:
+          _value: TNT
+          disabled: TNTの爆発は無効化されています
+        torch: Torch
+        torchflower: Torchflower
+        torchflower_crop: Torchflower Crop
+        trapped_chest: Trapped Chest
+        trial_spawner: 試練のスポナー
+        tripwire: Tripwire
+        tripwire_hook: Tripwire Hook
+        tube_coral: Tube Coral
+        tube_coral_block: Tube Coral Block
+        tube_coral_fan: Tube Coral Fan
+        tube_coral_wall_fan: Tube Coral Wall Fan
+        tuff: Tuff
+        tuff_brick_slab: 凝灰岩レンガのハーフブロック
+        tuff_brick_stairs: 凝灰岩レンガの階段
+        tuff_brick_wall: 凝灰岩レンガの塀
+        tuff_bricks: 凝灰岩レンガ
+        tuff_slab: 凝灰岩のハーフブロック
+        tuff_stairs: 凝灰岩の階段
+        tuff_wall: 凝灰岩の塀
+        turtle_egg: Turtle Egg
+        twisting_vines: Twisting Vines
+        twisting_vines_plant: Twisting Vines Plant
+        vault: 宝物庫
+        verdant_froglight: Verdant Froglight
+        vine: Vines
+        void_air: Void Air
+        wall_torch: Wall Torch
+        warped_button: Warped Button
+        warped_door: Warped Door
+        warped_fence: Warped Fence
+        warped_fence_gate: Warped Fence Gate
+        warped_fungus: Warped Fungus
+        warped_hanging_sign: Warped Hanging Sign
+        warped_hyphae: Warped Hyphae
+        warped_nylium: Warped Nylium
+        warped_planks: Warped Planks
+        warped_pressure_plate: Warped Pressure Plate
+        warped_roots: Warped Roots
+        warped_shelf: 歪んだ棚
+        warped_sign: Warped Sign
+        warped_slab: Warped Slab
+        warped_stairs: Warped Stairs
+        warped_stem: Warped Stem
+        warped_trapdoor: Warped Trapdoor
+        warped_wall_hanging_sign: Warped Wall Hanging Sign
+        warped_wall_sign: Warped Wall Sign
+        warped_wart_block: Warped Wart Block
+        water: Water
+        water_cauldron: Water Cauldron
+        waxed_chiseled_copper: 錆止めされた模様入りの銅
+        waxed_copper_bars: 錆止めされた銅格子
+        waxed_copper_block: Waxed Block of Copper
+        waxed_copper_bulb: 錆止めされた銅の電球
+        waxed_copper_chain: 錆止めされた銅の鎖
+        waxed_copper_chest: 錆止めされた銅のチェスト
+        waxed_copper_door: 錆止めされた銅のドア
+        waxed_copper_golem_statue: 錆止めされたカッパーゴーレムの像
+        waxed_copper_grate: 錆止めされた銅の金網
+        waxed_copper_lantern: 錆止めされた銅のランタン
+        waxed_copper_trapdoor: 錆止めされた銅のトラップドア
+        waxed_cut_copper: Waxed Cut Copper
+        waxed_cut_copper_slab: Waxed Cut Copper Slab
+        waxed_cut_copper_stairs: Waxed Cut Copper Stairs
+        waxed_exposed_chiseled_copper: 錆止めされた風化した模様入りの銅
+        waxed_exposed_copper: Waxed Exposed Copper
+        waxed_exposed_copper_bars: 錆止めされた風化した銅格子
+        waxed_exposed_copper_bulb: 錆止めされた風化した銅の電球
+        waxed_exposed_copper_chain: 錆止めされた風化した銅の鎖
+        waxed_exposed_copper_chest: 錆止めされた風化した銅のチェスト
+        waxed_exposed_copper_door: 錆止めされた風化した銅のドア
+        waxed_exposed_copper_golem_statue: 錆止めされた風化したカッパーゴーレムの像
+        waxed_exposed_copper_grate: 錆止めされた風化した銅の金網
+        waxed_exposed_copper_lantern: 錆止めされた風化した銅のランタン
+        waxed_exposed_copper_trapdoor: 錆止めされた風化した銅のトラップドア
+        waxed_exposed_cut_copper: Waxed Exposed Cut Copper
+        waxed_exposed_cut_copper_slab: Waxed Exposed Cut Copper Slab
+        waxed_exposed_cut_copper_stairs: Waxed Exposed Cut Copper Stairs
+        waxed_exposed_lightning_rod: 錆止めされた風化した避雷針
+        waxed_lightning_rod: 錆止めされた避雷針
+        waxed_oxidized_chiseled_copper: 錆止めされた酸化した模様入りの銅
+        waxed_oxidized_copper: Waxed Oxidized Copper
+        waxed_oxidized_copper_bars: 錆止めされた酸化した銅格子
+        waxed_oxidized_copper_bulb: 錆止めされた酸化した銅の電球
+        waxed_oxidized_copper_chain: 錆止めされた酸化した銅の鎖
+        waxed_oxidized_copper_chest: 錆止めされた酸化した銅のチェスト
+        waxed_oxidized_copper_door: 錆止めされた酸化した銅のドア
+        waxed_oxidized_copper_golem_statue: 錆止めされた酸化したカッパーゴーレムの像
+        waxed_oxidized_copper_grate: 錆止めされた酸化した銅の金網
+        waxed_oxidized_copper_lantern: 錆止めされた酸化した銅のランタン
+        waxed_oxidized_copper_trapdoor: 錆止めされた酸化した銅のトラップドア
+        waxed_oxidized_cut_copper: Waxed Oxidized Cut Copper
+        waxed_oxidized_cut_copper_slab: Waxed Oxidized Cut Copper Slab
+        waxed_oxidized_cut_copper_stairs: Waxed Oxidized Cut Copper Stairs
+        waxed_oxidized_lightning_rod: 錆止めされた酸化した避雷針
+        waxed_weathered_chiseled_copper: 錆止めされた錆びた模様入りの銅
+        waxed_weathered_copper: Waxed Weathered Copper
+        waxed_weathered_copper_bars: 錆止めされた錆びた銅格子
+        waxed_weathered_copper_bulb: 錆止めされた錆びた銅の電球
+        waxed_weathered_copper_chain: 錆止めされた錆びた銅の鎖
+        waxed_weathered_copper_chest: 錆止めされた錆びた銅のチェスト
+        waxed_weathered_copper_door: 錆止めされた錆びた銅のドア
+        waxed_weathered_copper_golem_statue: 錆止めされた錆びたカッパーゴーレムの像
+        waxed_weathered_copper_grate: 錆止めされた錆びた銅の金網
+        waxed_weathered_copper_lantern: 錆止めされた錆びた銅のランタン
+        waxed_weathered_copper_trapdoor: 錆止めされた錆びた銅のトラップドア
+        waxed_weathered_cut_copper: Waxed Weathered Cut Copper
+        waxed_weathered_cut_copper_slab: Waxed Weathered Cut Copper Slab
+        waxed_weathered_cut_copper_stairs: Waxed Weathered Cut Copper Stairs
+        waxed_weathered_lightning_rod: 錆止めされた錆びた避雷針
+        weathered_chiseled_copper: 錆びた模様入りの銅
+        weathered_copper: Weathered Copper
+        weathered_copper_bars: 錆びた銅格子
+        weathered_copper_bulb: 錆びた銅の電球
+        weathered_copper_chain: 錆びた銅の鎖
+        weathered_copper_chest: 錆びた銅のチェスト
+        weathered_copper_door: 錆びた銅のドア
+        weathered_copper_golem_statue: 錆びたカッパーゴーレムの像
+        weathered_copper_grate: 錆びた銅の金網
+        weathered_copper_lantern: 錆びた銅のランタン
+        weathered_copper_trapdoor: 錆びた銅のトラップドア
+        weathered_cut_copper: Weathered Cut Copper
+        weathered_cut_copper_slab: Weathered Cut Copper Slab
+        weathered_cut_copper_stairs: Weathered Cut Copper Stairs
+        weathered_lightning_rod: 錆びた避雷針
+        weeping_vines: Weeping Vines
+        weeping_vines_plant: Weeping Vines Plant
+        wet_sponge: Wet Sponge
+        wheat: Wheat Crops
+        white_banner: White Banner
+        white_bed: White Bed
+        white_candle: White Candle
+        white_candle_cake: Cake with White Candle
+        white_carpet: White Carpet
+        white_concrete: White Concrete
+        white_concrete_powder: White Concrete Powder
+        white_glazed_terracotta: White Glazed Terracotta
+        white_shulker_box: White Shulker Box
+        white_stained_glass: White Stained Glass
+        white_stained_glass_pane: White Stained Glass Pane
+        white_terracotta: White Terracotta
+        white_tulip: White Tulip
+        white_wool: White Wool
+        wildflowers: 野花
+        wither_rose: Wither Rose
+        wither_skeleton_skull: Wither Skeleton Skull
+        wither_skeleton_wall_skull: Wither Skeleton Wall Skull
+        yellow_banner: Yellow Banner
+        yellow_bed: Yellow Bed
+        yellow_candle: Yellow Candle
+        yellow_candle_cake: Cake with Yellow Candle
+        yellow_carpet: Yellow Carpet
+        yellow_concrete: Yellow Concrete
+        yellow_concrete_powder: Yellow Concrete Powder
+        yellow_glazed_terracotta: Yellow Glazed Terracotta
+        yellow_shulker_box: Yellow Shulker Box
+        yellow_stained_glass: Yellow Stained Glass
+        yellow_stained_glass_pane: Yellow Stained Glass Pane
+        yellow_terracotta: Yellow Terracotta
+        yellow_wool: Yellow Wool
+        zombie_head: Zombie Head
+        zombie_wall_head: Zombie Wall Head
+    item:
+      minecraft:
+        acacia_boat: Acacia Boat
+        acacia_chest_boat: Acacia Boat with Chest
+        allay_spawn_egg: Allay Spawn Egg
+        amethyst_shard: Amethyst Shard
+        angler_pottery_shard: Angler Pottery Shard
+        angler_pottery_sherd: Angler Pottery Sherd
+        apple: Apple
+        archer_pottery_shard: Archer Pottery Shard
+        archer_pottery_sherd: Archer Pottery Sherd
+        armadillo_scute: アルマジロのウロコ
+        armadillo_spawn_egg: アルマジロのスポーンエッグ
+        armor_stand: Armor Stand
+        arms_up_pottery_shard: Arms Up Pottery Shard
+        arms_up_pottery_sherd: Arms Up Pottery Sherd
+        arrow: Arrow
+        axolotl_bucket: Bucket of Axolotl
+        axolotl_spawn_egg: Axolotl Spawn Egg
+        baked_potato: Baked Potato
+        bamboo_chest_raft: Bamboo Raft with Chest
+        bamboo_raft: Bamboo Raft
+        bat_spawn_egg: Bat Spawn Egg
+        bee_spawn_egg: Bee Spawn Egg
+        beef: Raw Beef
+        beetroot: Beetroot
+        beetroot_seeds: Beetroot Seeds
+        beetroot_soup: Beetroot Soup
+        birch_boat: Birch Boat
+        birch_chest_boat: Birch Boat with Chest
+        black_bundle: 黒色のバンドル
+        black_dye: Black Dye
+        black_harness: 黒色のハーネス
+        blade_pottery_shard: Blade Pottery Shard
+        blade_pottery_sherd: Blade Pottery Sherd
+        blaze_powder: Blaze Powder
+        blaze_rod: Blaze Rod
+        blaze_spawn_egg: Blaze Spawn Egg
+        blue_bundle: 青色のバンドル
+        blue_dye: Blue Dye
+        blue_egg: 青色の卵
+        blue_harness: 青色のハーネス
+        bogged_spawn_egg: ボグドのスポーンエッグ
+        bolt_armor_trim_smithing_template:
+          _value: 鍛冶型
+          new: ネジ止め風の装飾
+        bone: Bone
+        bone_meal: Bone Meal
+        book: Book
+        bordure_indented_banner_pattern: 山形波の縁取りの旗の模様
+        bow: Bow
+        bowl: Bowl
+        bread: Bread
+        breeze_rod: ブリーズロッド
+        breeze_spawn_egg: ブリーズのスポーンエッグ
+        brewer_pottery_shard: Brewer Pottery Shard
+        brewer_pottery_sherd: Brewer Pottery Sherd
+        brewing_stand: Brewing Stand
+        brick: Brick
+        brown_bundle: 茶色のバンドル
+        brown_dye: Brown Dye
+        brown_egg: 茶色の卵
+        brown_harness: 茶色のハーネス
+        brush: Brush
+        bucket: Bucket
+        bundle:
+          _value: Bundle
+          empty:
+            _value: 空
+            description: 複数種類のアイテムを1スタック分まで一緒にしまうことができます
+          full: 満杯
+          fullness: "%s/%s"
+        burn_pottery_shard: Burn Pottery Shard
+        burn_pottery_sherd: Burn Pottery Sherd
+        camel_husk_spawn_egg: ラクダハスクのスポーンエッグ
+        camel_spawn_egg: Camel Spawn Egg
+        carrot: Carrot
+        carrot_on_a_stick: Carrot on a Stick
+        cat_spawn_egg: Cat Spawn Egg
+        cauldron: Cauldron
+        cave_spider_spawn_egg: Cave Spider Spawn Egg
+        chainmail_boots: Chainmail Boots
+        chainmail_chestplate: Chainmail Chestplate
+        chainmail_helmet: Chainmail Helmet
+        chainmail_leggings: Chainmail Leggings
+        charcoal: Charcoal
+        cherry_boat: Cherry Boat
+        cherry_chest_boat: Cherry Boat with Chest
+        chest_minecart: Minecart with Chest
+        chicken: Raw Chicken
+        chicken_spawn_egg: Chicken Spawn Egg
+        chorus_fruit: Chorus Fruit
+        clay_ball: Clay Ball
+        clock: Clock
+        coal: Coal
+        coast_armor_trim_smithing_template:
+          _value: 鍛冶型
+          new: 海洋風の装飾
+        cocoa_beans: Cocoa Beans
+        cod: Raw Cod
+        cod_bucket: Bucket of Cod
+        cod_spawn_egg: Cod Spawn Egg
+        command_block_minecart: Minecart with Command Block
+        compass: Compass
+        cooked_beef: Steak
+        cooked_chicken: Cooked Chicken
+        cooked_cod: Cooked Cod
+        cooked_mutton: Cooked Mutton
+        cooked_porkchop: Cooked Porkchop
+        cooked_rabbit: Cooked Rabbit
+        cooked_salmon: Cooked Salmon
+        cookie: Cookie
+        copper_axe: 銅の斧
+        copper_boots: 銅のブーツ
+        copper_chestplate: 銅のチェストプレート
+        copper_golem_spawn_egg: カッパーゴーレムのスポーンエッグ
+        copper_helmet: 銅のヘルメット
+        copper_hoe: 銅のクワ
+        copper_horse_armor: 銅の馬鎧
+        copper_ingot: Copper Ingot
+        copper_leggings: 銅のレギンス
+        copper_nautilus_armor: 銅のオウムガイの鎧
+        copper_nugget: 銅塊
+        copper_pickaxe: 銅のツルハシ
+        copper_shovel: 銅のシャベル
+        copper_spear: 銅の槍
+        copper_sword: 銅の剣
+        cow_spawn_egg: Cow Spawn Egg
+        creaking_spawn_egg: クリーキングのスポーンエッグ
+        creeper_banner_pattern:
+          _value: Banner Pattern
+          desc: Creeper Charge
+          new: クリーパーの旗の模様
+        creeper_spawn_egg: Creeper Spawn Egg
+        crossbow:
+          _value: Crossbow
+          projectile:
+            _value: "Projectile:"
+            multiple: "発射物：%2$s x %1$s"
+            single: "発射物：%s"
+        cyan_bundle: 青緑色のバンドル
+        cyan_dye: Cyan Dye
+        cyan_harness: 青緑色のハーネス
+        danger_pottery_shard: Danger Pottery Shard
+        danger_pottery_sherd: Danger Pottery Sherd
+        dark_oak_boat: Dark Oak Boat
+        dark_oak_chest_boat: Dark Oak Boat with Chest
+        debug_stick:
+          _value: Debug Stick
+          empty: "%s has no properties"
+          select: "selected \"%s\" (%s)"
+          update: "\"%s\" to %s"
+        diamond: Diamond
+        diamond_axe: Diamond Axe
+        diamond_boots: Diamond Boots
+        diamond_chestplate: Diamond Chestplate
+        diamond_helmet: Diamond Helmet
+        diamond_hoe: Diamond Hoe
+        diamond_horse_armor: Diamond Horse Armor
+        diamond_leggings: Diamond Leggings
+        diamond_nautilus_armor: ダイヤモンドのオウムガイの鎧
+        diamond_pickaxe: Diamond Pickaxe
+        diamond_shovel: Diamond Shovel
+        diamond_spear: ダイヤモンドの槍
+        diamond_sword: Diamond Sword
+        disc_fragment_5:
+          _value: Disc Fragment
+          desc: Music Disc - 5
+        dolphin_spawn_egg: Dolphin Spawn Egg
+        donkey_spawn_egg: Donkey Spawn Egg
+        dragon_breath: Dragon's Breath
+        dried_kelp: Dried Kelp
+        drowned_spawn_egg: Drowned Spawn Egg
+        dune_armor_trim_smithing_template:
+          _value: 鍛冶型
+          new: 砂丘風の装飾
+        echo_shard: Echo Shard
+        egg: Egg
+        elder_guardian_spawn_egg: Elder Guardian Spawn Egg
+        elytra: Elytra
+        emerald: Emerald
+        enchanted_book: Enchanted Book
+        enchanted_golden_apple: Enchanted Golden Apple
+        end_crystal: End Crystal
+        ender_dragon_spawn_egg: Ender Dragon Spawn Egg
+        ender_eye: Eye of Ender
+        ender_pearl: Ender Pearl
+        enderman_spawn_egg: Enderman Spawn Egg
+        endermite_spawn_egg: Endermite Spawn Egg
+        evoker_spawn_egg: Evoker Spawn Egg
+        experience_bottle: Bottle o' Enchanting
+        explorer_pottery_shard: Explorer Pottery Shard
+        explorer_pottery_sherd: Explorer Pottery Sherd
+        eye_armor_trim_smithing_template:
+          _value: 鍛冶型
+          new: エンダーアイ風の装飾
+        feather: Feather
+        fermented_spider_eye: Fermented Spider Eye
+        field_masoned_banner_pattern: レンガの旗の模様
+        filled_map: Map
+        fire_charge: Fire Charge
+        firework_rocket:
+          _value: Firework Rocket
+          flight: "Flight Duration:"
+          multiple_stars: "%2$s x %1$s"
+          single_star: "%s"
+        firework_star:
+          _value: Firework Star
+          black: Black
+          blue: Blue
+          brown: Brown
+          custom_color: Custom
+          cyan: Cyan
+          fade_to: Fade to
+          flicker: Twinkle
+          gray: Gray
+          green: Green
+          light_blue: Light Blue
+          light_gray: Light Gray
+          lime: Lime
+          magenta: Magenta
+          orange: Orange
+          pink: Pink
+          purple: Purple
+          red: Red
+          shape:
+            _value: Unknown Shape
+            burst: Burst
+            creeper: Creeper-shaped
+            large_ball: Large Ball
+            small_ball: Small Ball
+            star: Star-shaped
+          trail: Trail
+          white: White
+          yellow: Yellow
+        fishing_rod: Fishing Rod
+        flint: Flint
+        flint_and_steel: Flint and Steel
+        flow_armor_trim_smithing_template:
+          _value: 鍛冶型
+          new: 旋風の装飾
+        flow_banner_pattern:
+          _value: 旗の模様
+          desc: 渦巻き模様
+          new: 渦巻きの旗の模様
+        flow_pottery_sherd: 渦巻きの壺の欠片
+        flower_banner_pattern:
+          _value: Banner Pattern
+          desc: Flower Charge
+          new: 花の旗の模様
+        flower_pot: Flower Pot
+        fox_spawn_egg: Fox Spawn Egg
+        friend_pottery_shard: Friend Pottery Shard
+        friend_pottery_sherd: Friend Pottery Sherd
+        frog_spawn_egg: Frog Spawn Egg
+        furnace_minecart: Minecart with Furnace
+        ghast_spawn_egg: Ghast Spawn Egg
+        ghast_tear: Ghast Tear
+        glass_bottle: Glass Bottle
+        glistering_melon_slice: Glistering Melon Slice
+        globe_banner_pattern:
+          _value: Banner Pattern
+          desc: Globe
+          new: 地球の旗の模様
+        glow_berries: Glow Berries
+        glow_ink_sac: Glow Ink Sac
+        glow_item_frame: Glow Item Frame
+        glow_squid_spawn_egg: Glow Squid Spawn Egg
+        glowstone_dust: Glowstone Dust
+        goat_horn: Goat Horn
+        goat_spawn_egg: Goat Spawn Egg
+        gold_ingot: Gold Ingot
+        gold_nugget: Gold Nugget
+        golden_apple: Golden Apple
+        golden_axe: Golden Axe
+        golden_boots: Golden Boots
+        golden_carrot: Golden Carrot
+        golden_chestplate: Golden Chestplate
+        golden_helmet: Golden Helmet
+        golden_hoe: Golden Hoe
+        golden_horse_armor: Golden Horse Armor
+        golden_leggings: Golden Leggings
+        golden_nautilus_armor: 金のオウムガイの鎧
+        golden_pickaxe: Golden Pickaxe
+        golden_shovel: Golden Shovel
+        golden_spear: 金の槍
+        golden_sword: Golden Sword
+        gray_bundle: 灰色のバンドル
+        gray_dye: Gray Dye
+        gray_harness: 灰色のハーネス
+        green_bundle: 緑色のバンドル
+        green_dye: Green Dye
+        green_harness: 緑色のハーネス
+        guardian_spawn_egg: Guardian Spawn Egg
+        gunpowder: Gunpowder
+        guster_banner_pattern:
+          _value: 旗の模様
+          desc: 風巻く者の模様
+          new: 風巻く者の旗の模様
+        guster_pottery_sherd: 風巻く者の壺の欠片
+        happy_ghast_spawn_egg: ハッピーガストのスポーンエッグ
+        harness: ハーネス
+        heart_of_the_sea: Heart of the Sea
+        heart_pottery_shard: Heart Pottery Shard
+        heart_pottery_sherd: Heart Pottery Sherd
+        heartbreak_pottery_shard: Heartbreak Pottery Shard
+        heartbreak_pottery_sherd: Heartbreak Pottery Sherd
+        hoglin_spawn_egg: Hoglin Spawn Egg
+        honey_bottle: Honey Bottle
+        honeycomb: Honeycomb
+        hopper_minecart: Minecart with Hopper
+        horse_spawn_egg: Horse Spawn Egg
+        host_armor_trim_smithing_template:
+          _value: 鍛冶型
+          new: 主人風の装飾
+        howl_pottery_shard: Howl Pottery Shard
+        howl_pottery_sherd: Howl Pottery Sherd
+        husk_spawn_egg: Husk Spawn Egg
+        ink_sac: Ink Sac
+        iron_axe: Iron Axe
+        iron_boots: Iron Boots
+        iron_chestplate: Iron Chestplate
+        iron_golem_spawn_egg: Iron Golem Spawn Egg
+        iron_helmet: Iron Helmet
+        iron_hoe: Iron Hoe
+        iron_horse_armor: Iron Horse Armor
+        iron_ingot: Iron Ingot
+        iron_leggings: Iron Leggings
+        iron_nautilus_armor: 鉄のオウムガイの鎧
+        iron_nugget: Iron Nugget
+        iron_pickaxe: Iron Pickaxe
+        iron_shovel: Iron Shovel
+        iron_spear: 鉄の槍
+        iron_sword: Iron Sword
+        item_frame: Item Frame
+        jungle_boat: Jungle Boat
+        jungle_chest_boat: Jungle Boat with Chest
+        knowledge_book: Knowledge Book
+        lapis_lazuli: Lapis Lazuli
+        lava_bucket: Lava Bucket
+        lead: Lead
+        leather: Leather
+        leather_boots: Leather Boots
+        leather_chestplate: Leather Tunic
+        leather_helmet: Leather Cap
+        leather_horse_armor: Leather Horse Armor
+        leather_leggings: Leather Pants
+        light_blue_bundle: 空色のバンドル
+        light_blue_dye: Light Blue Dye
+        light_blue_harness: 空色のハーネス
+        light_gray_bundle: 薄灰色のバンドル
+        light_gray_dye: Light Gray Dye
+        light_gray_harness: 薄灰色のハーネス
+        lime_bundle: 黄緑色のバンドル
+        lime_dye: Lime Dye
+        lime_harness: 黄緑色のハーネス
+        lingering_potion:
+          _value: Lingering Potion
+          effect:
+            awkward: Awkward Lingering Potion
+            empty: Lingering Uncraftable Potion
+            fire_resistance: Lingering Potion of Fire Resistance
+            harming: Lingering Potion of Harming
+            healing: Lingering Potion of Healing
+            infested: 虫食いの残留ポーション
+            invisibility: Lingering Potion of Invisibility
+            leaping: Lingering Potion of Leaping
+            levitation: Lingering Potion of Levitation
+            luck: Lingering Potion of Luck
+            mundane: Mundane Lingering Potion
+            night_vision: Lingering Potion of Night Vision
+            oozing: 滲出の残留ポーション
+            poison: Lingering Potion of Poison
+            regeneration: Lingering Potion of Regeneration
+            slow_falling: Lingering Potion of Slow Falling
+            slowness: Lingering Potion of Slowness
+            strength: Lingering Potion of Strength
+            swiftness: Lingering Potion of Swiftness
+            thick: Thick Lingering Potion
+            turtle_master: Lingering Potion of the Turtle Master
+            water: Lingering Water Bottle
+            water_breathing: Lingering Potion of Water Breathing
+            weakness: Lingering Potion of Weakness
+            weaving: 巣張りの残留ポーション
+            wind_charged: 蓄風の残留ポーション
+        llama_spawn_egg: Llama Spawn Egg
+        lodestone_compass: Lodestone Compass
+        mace: メイス
+        magenta_bundle: 赤紫色のバンドル
+        magenta_dye: Magenta Dye
+        magenta_harness: 赤紫色のハーネス
+        magma_cream: Magma Cream
+        magma_cube_spawn_egg: Magma Cube Spawn Egg
+        mangrove_boat: Mangrove Boat
+        mangrove_chest_boat: Mangrove Boat with Chest
+        map: Empty Map
+        melon_seeds: Melon Seeds
+        melon_slice: Melon Slice
+        milk_bucket: Milk Bucket
+        minecart: Minecart
+        miner_pottery_shard: Miner Pottery Shard
+        miner_pottery_sherd: Miner Pottery Sherd
+        mojang_banner_pattern:
+          _value: Banner Pattern
+          desc: Thing
+          new: 何かの旗の模様
+        mooshroom_spawn_egg: Mooshroom Spawn Egg
+        mourner_pottery_shard: Mourner Pottery Shard
+        mourner_pottery_sherd: Mourner Pottery Sherd
+        mule_spawn_egg: Mule Spawn Egg
+        mushroom_stew: Mushroom Stew
+        music_disc_11:
+          _value: Music Disc
+          desc: C418 - 11
+        music_disc_13:
+          _value: Music Disc
+          desc: C418 - 13
+        music_disc_5:
+          _value: Music Disc
+          desc: Samuel Åberg - 5
+        music_disc_blocks:
+          _value: Music Disc
+          desc: C418 - blocks
+        music_disc_cat:
+          _value: Music Disc
+          desc: C418 - cat
+        music_disc_chirp:
+          _value: Music Disc
+          desc: C418 - chirp
+        music_disc_creator:
+          _value: レコード
+          desc: Lena Raine - Creator
+        music_disc_creator_music_box:
+          _value: レコード
+          desc: Lena Raine - Creator（オルゴール）
+        music_disc_far:
+          _value: Music Disc
+          desc: C418 - far
+        music_disc_lava_chicken:
+          _value: レコード
+          desc: Hyper Potions - Lava Chicken
+        music_disc_mall:
+          _value: Music Disc
+          desc: C418 - mall
+        music_disc_mellohi:
+          _value: Music Disc
+          desc: C418 - mellohi
+        music_disc_otherside:
+          _value: Music Disc
+          desc: Lena Raine - otherside
+        music_disc_pigstep:
+          _value: Music Disc
+          desc: Lena Raine - Pigstep
+        music_disc_precipice:
+          _value: レコード
+          desc: Aaron Cherof - Precipice
+        music_disc_relic:
+          _value: Music Disc
+          desc: Aaron Cherof - Relic
+        music_disc_stal:
+          _value: Music Disc
+          desc: C418 - stal
+        music_disc_strad:
+          _value: Music Disc
+          desc: C418 - strad
+        music_disc_tears:
+          _value: レコード
+          desc: Amos Roddy - Tears
+        music_disc_wait:
+          _value: Music Disc
+          desc: C418 - wait
+        music_disc_ward:
+          _value: Music Disc
+          desc: C418 - ward
+        mutton: Raw Mutton
+        name_tag: Name Tag
+        nautilus_shell: Nautilus Shell
+        nautilus_spawn_egg: オウムガイのスポーンエッグ
+        nether_brick: Nether Brick
+        nether_star: Nether Star
+        nether_wart: Nether Wart
+        netherite_axe: Netherite Axe
+        netherite_boots: Netherite Boots
+        netherite_chestplate: Netherite Chestplate
+        netherite_helmet: Netherite Helmet
+        netherite_hoe: Netherite Hoe
+        netherite_horse_armor: ネザライトの馬鎧
+        netherite_ingot: Netherite Ingot
+        netherite_leggings: Netherite Leggings
+        netherite_nautilus_armor: ネザライトのオウムガイの鎧
+        netherite_pickaxe: Netherite Pickaxe
+        netherite_scrap: Netherite Scrap
+        netherite_shovel: Netherite Shovel
+        netherite_spear: ネザライトの槍
+        netherite_sword: Netherite Sword
+        netherite_upgrade_smithing_template:
+          _value: 鍛冶型
+          new: ネザライト強化
+        oak_boat: Oak Boat
+        oak_chest_boat: Oak Boat with Chest
+        ocelot_spawn_egg: Ocelot Spawn Egg
+        ominous_bottle: 不吉な瓶
+        ominous_trial_key: 不吉な試練の鍵
+        orange_bundle: 橙色のバンドル
+        orange_dye: Orange Dye
+        orange_harness: 橙色のハーネス
+        painting: Painting
+        pale_oak_boat: ペールオークのボート
+        pale_oak_chest_boat: チェスト付きのペールオークのボート
+        panda_spawn_egg: Panda Spawn Egg
+        paper: Paper
+        parched_spawn_egg: パーチドのスポーンエッグ
+        parrot_spawn_egg: Parrot Spawn Egg
+        phantom_membrane: Phantom Membrane
+        phantom_spawn_egg: Phantom Spawn Egg
+        pig_spawn_egg: Pig Spawn Egg
+        piglin_banner_pattern:
+          _value: Banner Pattern
+          desc: Snout
+          new: ブタの鼻の旗の模様
+        piglin_brute_spawn_egg: Piglin Brute Spawn Egg
+        piglin_spawn_egg: Piglin Spawn Egg
+        pillager_spawn_egg: Pillager Spawn Egg
+        pink_bundle: 桃色のバンドル
+        pink_dye: Pink Dye
+        pink_harness: 桃色のハーネス
+        pitcher_plant: Pitcher Plant
+        pitcher_pod: Pitcher Pod
+        plenty_pottery_shard: Plenty Pottery Shard
+        plenty_pottery_sherd: Plenty Pottery Sherd
+        poisonous_potato: Poisonous Potato
+        polar_bear_spawn_egg: Polar Bear Spawn Egg
+        popped_chorus_fruit: Popped Chorus Fruit
+        porkchop: Raw Porkchop
+        potato: Potato
+        potion:
+          _value: Potion
+          effect:
+            awkward: Awkward Potion
+            empty: Uncraftable Potion
+            fire_resistance: Potion of Fire Resistance
+            harming: Potion of Harming
+            healing: Potion of Healing
+            infested: 虫食いのポーション
+            invisibility: Potion of Invisibility
+            leaping: Potion of Leaping
+            levitation: Potion of Levitation
+            luck: Potion of Luck
+            mundane: Mundane Potion
+            night_vision: Potion of Night Vision
+            oozing: 滲出のポーション
+            poison: Potion of Poison
+            regeneration: Potion of Regeneration
+            slow_falling: Potion of Slow Falling
+            slowness: Potion of Slowness
+            strength: Potion of Strength
+            swiftness: Potion of Swiftness
+            thick: Thick Potion
+            turtle_master: Potion of the Turtle Master
+            water: Water Bottle
+            water_breathing: Potion of Water Breathing
+            weakness: Potion of Weakness
+            weaving: 巣張りのポーション
+            wind_charged: 蓄風のポーション
+        pottery_shard_archer: Archer Pottery Shard
+        pottery_shard_arms_up: Arms Up Pottery Shard
+        pottery_shard_prize: Prize Pottery Shard
+        pottery_shard_skull: Skull Pottery Shard
+        powder_snow_bucket: Powder Snow Bucket
+        prismarine_crystals: Prismarine Crystals
+        prismarine_shard: Prismarine Shard
+        prize_pottery_shard: Prize Pottery Shard
+        prize_pottery_sherd: Prize Pottery Sherd
+        pufferfish: Pufferfish
+        pufferfish_bucket: Bucket of Pufferfish
+        pufferfish_spawn_egg: Pufferfish Spawn Egg
+        pumpkin_pie: Pumpkin Pie
+        pumpkin_seeds: Pumpkin Seeds
+        purple_bundle: 紫色のバンドル
+        purple_dye: Purple Dye
+        purple_harness: 紫色のハーネス
+        quartz: Nether Quartz
+        rabbit: Raw Rabbit
+        rabbit_foot: Rabbit's Foot
+        rabbit_hide: Rabbit Hide
+        rabbit_spawn_egg: Rabbit Spawn Egg
+        rabbit_stew: Rabbit Stew
+        raiser_armor_trim_smithing_template:
+          _value: 鍛冶型
+          new: 牧者風の装飾
+        ravager_spawn_egg: Ravager Spawn Egg
+        raw_copper: Raw Copper
+        raw_gold: Raw Gold
+        raw_iron: Raw Iron
+        recovery_compass: Recovery Compass
+        red_bundle: 赤色のバンドル
+        red_dye: Red Dye
+        red_harness: 赤色のハーネス
+        redstone: Redstone Dust
+        resin_brick: 樹脂レンガ
+        resin_clump: 樹脂の塊
+        rib_armor_trim_smithing_template:
+          _value: 鍛冶型
+          new: あばら模様の装飾
+        rotten_flesh: Rotten Flesh
+        saddle: Saddle
+        salmon: Raw Salmon
+        salmon_bucket: Bucket of Salmon
+        salmon_spawn_egg: Salmon Spawn Egg
+        scrape_pottery_sherd: 斧の壺の欠片
+        scute: Scute
+        sentry_armor_trim_smithing_template:
+          _value: 鍛冶型
+          new: 略奪者風の装飾
+        shaper_armor_trim_smithing_template:
+          _value: 鍛冶型
+          new: 職人風の装飾
+        sheaf_pottery_shard: Sheaf Pottery Shard
+        sheaf_pottery_sherd: Sheaf Pottery Sherd
+        shears: Shears
+        sheep_spawn_egg: Sheep Spawn Egg
+        shelter_pottery_shard: Shelter Pottery Shard
+        shelter_pottery_sherd: Shelter Pottery Sherd
+        shield:
+          _value: Shield
+          black: Black Shield
+          blue: Blue Shield
+          brown: Brown Shield
+          cyan: Cyan Shield
+          gray: Gray Shield
+          green: Green Shield
+          light_blue: Light Blue Shield
+          light_gray: Light Gray Shield
+          lime: Lime Shield
+          magenta: Magenta Shield
+          orange: Orange Shield
+          pink: Pink Shield
+          purple: Purple Shield
+          red: Red Shield
+          white: White Shield
+          yellow: Yellow Shield
+        shulker_shell: Shulker Shell
+        shulker_spawn_egg: Shulker Spawn Egg
+        sign: Sign
+        silence_armor_trim_smithing_template:
+          _value: 鍛冶型
+          new: 静寂の装飾
+        silverfish_spawn_egg: Silverfish Spawn Egg
+        skeleton_horse_spawn_egg: Skeleton Horse Spawn Egg
+        skeleton_spawn_egg: Skeleton Spawn Egg
+        skull_banner_pattern:
+          _value: Banner Pattern
+          desc: Skull Charge
+          new: 骸骨の旗の模様
+        skull_pottery_shard: Skull Pottery Shard
+        skull_pottery_sherd: Skull Pottery Sherd
+        slime_ball: Slimeball
+        slime_spawn_egg: Slime Spawn Egg
+        smithing_template:
+          _value: Smithing Template
+          applies_to: "Applies to:"
+          armor_trim:
+            additions_slot_description: Add ingot or crystal
+            applies_to: Armor
+            base_slot_description: Add a piece of armor
+            ingredients: "Ingots & Crystals"
+          ingredients: "Ingredients:"
+          netherite_upgrade:
+            additions_slot_description: Add Netherite Ingot
+            applies_to: Diamond Equipment
+            base_slot_description: Add diamond armor, weapon, or tool
+            ingredients: Netherite Ingot
+          upgrade: "Upgrade: "
+        sniffer_spawn_egg: Sniffer Spawn Egg
+        snort_pottery_shard: Snort Pottery Shard
+        snort_pottery_sherd: Snort Pottery Sherd
+        snout_armor_trim_smithing_template:
+          _value: 鍛冶型
+          new: ブタの鼻風の装飾
+        snow_golem_spawn_egg: Snow Golem Spawn Egg
+        snowball: Snowball
+        spectral_arrow: Spectral Arrow
+        spider_eye: Spider Eye
+        spider_spawn_egg: Spider Spawn Egg
+        spire_armor_trim_smithing_template:
+          _value: 鍛冶型
+          new: 尖塔風の装飾
+        splash_potion:
+          _value: Splash Potion
+          effect:
+            awkward: Awkward Splash Potion
+            empty: Splash Uncraftable Potion
+            fire_resistance: Splash Potion of Fire Resistance
+            harming: Splash Potion of Harming
+            healing: Splash Potion of Healing
+            infested: 虫食いのスプラッシュポーション
+            invisibility: Splash Potion of Invisibility
+            leaping: Splash Potion of Leaping
+            levitation: Splash Potion of Levitation
+            luck: Splash Potion of Luck
+            mundane: Mundane Splash Potion
+            night_vision: Splash Potion of Night Vision
+            oozing: 滲出のスプラッシュポーション
+            poison: Splash Potion of Poison
+            regeneration: Splash Potion of Regeneration
+            slow_falling: Splash Potion of Slow Falling
+            slowness: Splash Potion of Slowness
+            strength: Splash Potion of Strength
+            swiftness: Splash Potion of Swiftness
+            thick: Thick Splash Potion
+            turtle_master: Splash Potion of the Turtle Master
+            water: Splash Water Bottle
+            water_breathing: Splash Potion of Water Breathing
+            weakness: Splash Potion of Weakness
+            weaving: 巣張りのスプラッシュポーション
+            wind_charged: 蓄風のスプラッシュポーション
+        spruce_boat: Spruce Boat
+        spruce_chest_boat: Spruce Boat with Chest
+        spyglass: Spyglass
+        squid_spawn_egg: Squid Spawn Egg
+        stick: Stick
+        stone_axe: Stone Axe
+        stone_hoe: Stone Hoe
+        stone_pickaxe: Stone Pickaxe
+        stone_shovel: Stone Shovel
+        stone_spear: 石の槍
+        stone_sword: Stone Sword
+        stray_spawn_egg: Stray Spawn Egg
+        strider_spawn_egg: Strider Spawn Egg
+        string: String
+        sugar: Sugar
+        sulfur_cube_bucket: サルファーキューブ入りバケツ
+        sulfur_cube_spawn_egg: サルファーキューブのスポーンエッグ
+        suspicious_stew: Suspicious Stew
+        sweet_berries: Sweet Berries
+        tadpole_bucket: Bucket of Tadpole
+        tadpole_spawn_egg: Tadpole Spawn Egg
+        tide_armor_trim_smithing_template:
+          _value: 鍛冶型
+          new: 潮流風の装飾
+        tipped_arrow:
+          _value: Tipped Arrow
+          effect:
+            awkward: Tipped Arrow
+            empty: Uncraftable Tipped Arrow
+            fire_resistance: Arrow of Fire Resistance
+            harming: Arrow of Harming
+            healing: Arrow of Healing
+            infested: 虫食いの矢
+            invisibility: Arrow of Invisibility
+            leaping: Arrow of Leaping
+            levitation: Arrow of Levitation
+            luck: Arrow of Luck
+            mundane: Tipped Arrow
+            night_vision: Arrow of Night Vision
+            oozing: 滲出の矢
+            poison: Arrow of Poison
+            regeneration: Arrow of Regeneration
+            slow_falling: Arrow of Slow Falling
+            slowness: Arrow of Slowness
+            strength: Arrow of Strength
+            swiftness: Arrow of Swiftness
+            thick: Tipped Arrow
+            turtle_master: Arrow of the Turtle Master
+            water: Arrow of Splashing
+            water_breathing: Arrow of Water Breathing
+            weakness: Arrow of Weakness
+            weaving: 巣張りの矢
+            wind_charged: 蓄風の矢
+        tnt_minecart: Minecart with TNT
+        torchflower_seeds: Torchflower Seeds
+        totem_of_undying: Totem of Undying
+        trader_llama_spawn_egg: Trader Llama Spawn Egg
+        trial_key: 試練の鍵
+        trident: Trident
+        tropical_fish: Tropical Fish
+        tropical_fish_bucket: Bucket of Tropical Fish
+        tropical_fish_spawn_egg: Tropical Fish Spawn Egg
+        turtle_helmet: Turtle Shell
+        turtle_scute: カメのウロコ
+        turtle_spawn_egg: Turtle Spawn Egg
+        vex_armor_trim_smithing_template:
+          _value: 鍛冶型
+          new: ヴェックス風の装飾
+        vex_spawn_egg: Vex Spawn Egg
+        villager_spawn_egg: Villager Spawn Egg
+        vindicator_spawn_egg: Vindicator Spawn Egg
+        wandering_trader_spawn_egg: Wandering Trader Spawn Egg
+        ward_armor_trim_smithing_template:
+          _value: 鍛冶型
+          new: 監獄風の装飾
+        warden_spawn_egg: Warden Spawn Egg
+        warped_fungus_on_a_stick: Warped Fungus on a Stick
+        water_bucket: Water Bucket
+        wayfinder_armor_trim_smithing_template:
+          _value: 鍛冶型
+          new: 先駆者風の装飾
+        wheat: Wheat
+        wheat_seeds: Wheat Seeds
+        white_bundle: 白色のバンドル
+        white_dye: White Dye
+        white_harness: 白色のハーネス
+        wild_armor_trim_smithing_template:
+          _value: 鍛冶型
+          new: 大自然風の装飾
+        wind_charge: ウィンドチャージ
+        witch_spawn_egg: Witch Spawn Egg
+        wither_skeleton_spawn_egg: Wither Skeleton Spawn Egg
+        wither_spawn_egg: Wither Spawn Egg
+        wolf_armor: オオカミの鎧
+        wolf_spawn_egg: Wolf Spawn Egg
+        wooden_axe: Wooden Axe
+        wooden_hoe: Wooden Hoe
+        wooden_pickaxe: Wooden Pickaxe
+        wooden_shovel: Wooden Shovel
+        wooden_spear: 木の槍
+        wooden_sword: Wooden Sword
+        writable_book: Book and Quill
+        written_book: Written Book
+        yellow_bundle: 黄色のバンドル
+        yellow_dye: Yellow Dye
+        yellow_harness: 黄色のハーネス
+        zoglin_spawn_egg: Zoglin Spawn Egg
+        zombie_horse_spawn_egg: Zombie Horse Spawn Egg
+        zombie_nautilus_spawn_egg: ゾンビオウムガイのスポーンエッグ
+        zombie_spawn_egg: Zombie Spawn Egg
+        zombie_villager_spawn_egg: Zombie Villager Spawn Egg
+        zombified_piglin_spawn_egg: Zombified Piglin Spawn Egg
