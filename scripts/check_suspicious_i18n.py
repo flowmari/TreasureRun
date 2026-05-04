@@ -12,7 +12,12 @@ non_en_patterns = [
     "Easy（ゆったり）",
     "Normal（標準）",
     "Hard（高難度）",
-    "Contents",
+    # "Contents" is intentionally NOT checked as a bare substring here.
+    # Reason:
+    #   Minecraft standard-message keys may contain safe internal names such as
+    #   minecraft.packet.container.unknownContents.
+    # A bare "Contents" substring check creates false positives after importing
+    # Mojang official language assets into TreasureRun's 20-language i18n set.
     "How to play",
     "Score & route",
 ]
