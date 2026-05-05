@@ -758,3 +758,55 @@ Verification notes:
 - [`docs/verification/resource-pack/hybrid-i18n-safe-runtime.md`](docs/verification/resource-pack/hybrid-i18n-safe-runtime.md)
 
 - Runtime i18n verification includes a missing-translation fallback guard for PacketI18n, preventing unresolved Minecraft translation keys from being rewritten into player-visible fallback error text.
+
+<!-- TREASURERUN_MINECRAFT_STANDARD_I18N_HOTSWAP -->
+
+## Minecraft Standard i18n / Runtime Hot-Swap Architecture
+
+TreasureRun includes a hybrid Minecraft standard-message i18n architecture for Minecraft 1.20.1.
+
+This work is not a direct modification of the Minecraft engine binary.  
+Instead, TreasureRun works around Minecraft platform boundaries by combining multiple layers:
+
+- Spigot plugin logic
+- ProtocolLib packet audit / rewrite
+- Server-side ResourcePack language assets
+- Fabric client mod language assets
+- Runtime language synchronization from server to client
+
+### What was achieved
+
+- Minecraft standard translation assets are aligned across Fabric Mod and ResourcePack layers.
+- Each locale JSON is normalized to the same 8039-key standard-message set.
+- Mojang official translations are applied where official Minecraft assets exist.
+- Custom / unofficial language coverage is kept functional and separated as translation-review debt.
+- Runtime communication does not send huge 20-language JSON payloads.
+- The server sends only the selected language code, such as `ja`, `en`, `de`, or `zh_tw`.
+- The Fabric Mod receives that language code and applies it on the client side.
+
+### Runtime hot-swap design
+
+The Fabric Mod updates the Minecraft client language at runtime by using Minecraft's own resource reload path:
+
+```java
+client.options.language = langCode;
+client.options.write();
+client.getLanguageManager().setLanguage(langCode);
+client.reloadResources();
+```
+
+This means TreasureRun avoids directly mutating Minecraft's fragile internal `TranslationStorage` map.  
+Instead, it asks Minecraft to rebuild its translation storage through the normal resource lifecycle.
+
+### Why this matters
+
+This design demonstrates:
+
+- Platform-boundary analysis
+- Performance-aware payload design
+- Safe client/server responsibility separation
+- Runtime verification
+- Resource integrity management
+- A fallback-oriented architecture for modded and non-modded clients
+
+In practical terms, TreasureRun treats Minecraft standard-message i18n as a systems-design problem, not just a translation task.
