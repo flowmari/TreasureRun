@@ -304,9 +304,6 @@ public class LangCommand implements CommandExecutor, TabCompleter {
   }
 
   private void sendLangToClient(Player player, String lang) {
-    try {
-      byte[] data = lang.getBytes(java.nio.charset.StandardCharsets.UTF_8);
-      player.sendPluginMessage(plugin, "treasurerun:lang", data);
-    } catch (Throwable ignored) {}
+    LanguageSyncService.syncSelectedLanguage(plugin, player, lang, "command:/lang");
   }
 }

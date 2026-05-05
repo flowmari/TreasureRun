@@ -62,10 +62,7 @@ public class LocalizedSystemMessageListener implements Listener {
     }
     final String playerLang = langOf(player);
     Bukkit.getScheduler().runTaskLater(plugin, () -> {
-      try {
-        byte[] data = playerLang.getBytes(java.nio.charset.StandardCharsets.UTF_8);
-        player.sendPluginMessage(plugin, "treasurerun:lang", data);
-      } catch (Throwable ignored) {}
+      LanguageSyncService.syncSelectedLanguage(plugin, player, playerLang, "join:auto-sync");
     }, 40L);
   }
 
