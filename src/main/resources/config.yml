@@ -2811,5 +2811,5 @@ resourcePack:
   enabled: true
   force: true
   url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-  sha1: "63a10f9dd0f008719de44ceb3d37536611263539"
+  sha1: "f020675e3d6308c3f6f66b1fe1bbc6cf5e8c8d60"
   prompt: "TreasureRun uses a multilingual Minecraft resource pack to localize Minecraft language keys. Please accept it for the full i18n experience."

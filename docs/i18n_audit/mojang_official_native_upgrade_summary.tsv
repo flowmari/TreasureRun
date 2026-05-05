@@ -1,0 +1,22 @@
+file	mojang_source	official_available	before	after	official_used	existing_used	en_us_fallback_used	key_fallback_used	todo_needed
+asl_us.json		no	6218	8039	0	6216	0	1823	8039
+de_de.json	de_de.json	yes	8039	8039	7945	92	0	2	0
+en_us.json	en_us.json	no	6218	8039	0	6216	0	1823	8039
+es_es.json	es_es.json	yes	8039	8039	7945	92	0	2	0
+fi_fi.json	fi_fi.json	yes	8039	8039	7945	92	0	2	0
+fr_fr.json	fr_fr.json	yes	8039	8039	7945	92	0	2	0
+hi_in.json	hi_in.json	yes	8039	8039	7945	92	0	2	0
+is_is.json	is_is.json	yes	8038	8039	7944	92	0	3	0
+it_it.json	it_it.json	yes	8039	8039	7944	92	0	3	0
+ja_jp.json	ja_jp.json	yes	8039	8039	7945	92	0	2	0
+ko_kr.json	ko_kr.json	yes	8039	8039	7945	92	0	2	0
+la_la.json		no	6218	8039	0	6216	0	1823	8039
+lzh_hant.json	lzh.json	yes	8039	8039	7945	92	0	2	0
+nl_nl.json	nl_nl.json	yes	8039	8039	7945	92	0	2	0
+ojp_jp.json		no	8039	8039	0	8037	0	2	8039
+pt_br.json	pt_br.json	yes	7945	8039	7945	0	92	2	0
+pt_pt.json		no	6218	8039	0	6216	0	1823	8039
+ru_ru.json	ru_ru.json	yes	8039	8039	7945	92	0	2	0
+sa_in.json		no	6218	8039	0	6216	0	1823	8039
+sv_se.json	sv_se.json	yes	8039	8039	7945	92	0	2	0
+zh_tw.json	zh_tw.json	yes	8039	8039	7945	92	0	2	0
