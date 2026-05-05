@@ -1,0 +1,74 @@
+name: i18n-expansion-ci
+on:
+  push:
+    branches: [ main, fix/** ]
+    paths:
+      - 'src/main/resources/languages/**'
+      - 'resourcepacks/treasurerun-i18n-pack/assets/minecraft/lang/**'
+      - 'fabric-i18n-mod/**'
+      - 'scripts/check_minecraft_packet_coverage.py'
+      - 'scripts/check_fabric_lang_mapping.py'
+  pull_request:
+    paths:
+      - 'src/main/resources/languages/**'
+      - 'resourcepacks/treasurerun-i18n-pack/assets/minecraft/lang/**'
+      - 'fabric-i18n-mod/**'
+jobs:
+  i18n-expansion:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install pyyaml
+      - name: "[Gate 1] minecraft.packet coverage >= threshold in all 20 languages"
+        run: python3 scripts/check_minecraft_packet_coverage.py
+      - name: "[Gate 2] Fabric mod toMinecraftLang() covers all YAML languages"
+        run: python3 scripts/check_fabric_lang_mapping.py
+      - name: "[Gate 3] YAML syntax valid"
+        run: python3 scripts/check_i18n_yaml_syntax.py
+      - name: "[Gate 4] No duplicate keys"
+        run: python3 scripts/check_yaml_duplicate_keys.py
+      - name: "[Gate 5] ResourcePack JSON key count consistent"
+        run: |
+          python3 -c "
+          import json
+          from pathlib import Path
+          lang_dir = Path('resourcepacks/treasurerun-i18n-pack/assets/minecraft/lang')
+          en_count = len(json.loads((lang_dir / 'en_us.json').read_text()))
+          failures = []
+          for f in sorted(lang_dir.glob('*.json')):
+              count = len(json.loads(f.read_text()))
+              ratio = count / en_count
+              print(f'  {\"✓\" if ratio >= 0.77 else \"✗\"} {f.name}: {count} ({ratio:.1%})')
+              if ratio < 0.77: failures.append(f.name)
+          if failures: print(f'FAIL: {failures}'); exit(1)
+          else: print('PASS')
+          "
+      - name: "[Gate 6] All YAML languages have JSON in Fabric mod"
+        run: |
+          python3 -c "
+          from pathlib import Path
+          yaml_to_json = {'en':'en_us','ja':'ja_jp','de':'de_de','fr':'fr_fr','es':'es_es','it':'it_it','ko':'ko_kr','ru':'ru_ru','zh_tw':'zh_tw','pt':'pt_br','nl':'nl_nl','fi':'fi_fi','sv':'sv_se','is':'is_is','la':'la_la','hi':'hi_in','sa':'sa_in','lzh':'lzh_hant','ojp':'ojp_jp','asl_gloss':'asl_us'}
+          mod_dir = Path('fabric-i18n-mod/src/main/resources/assets/minecraft/lang')
+          failures = [yl for yl, jl in yaml_to_json.items() if not (mod_dir / f'{jl}.json').exists()]
+          if failures: print(f'FAIL: {failures}'); exit(1)
+          else: print(f'PASS: All {len(yaml_to_json)} langs present in Fabric mod')
+          "
+      - name: "i18n expansion summary"
+        if: always()
+        run: |
+          python3 -c "
+          import json, yaml
+          from pathlib import Path
+          print('=== i18n Expansion Summary ===')
+          print(f'YAML files: {len(list(Path(\"src/main/resources/languages\").glob(\"*.yml\")))}')
+          en = json.loads(Path('resourcepacks/treasurerun-i18n-pack/assets/minecraft/lang/en_us.json').read_text())
+          print(f'en_us.json keys: {len(en)}')
+          with open('src/main/resources/languages/ja.yml') as f:
+              d = yaml.safe_load(f)
+          mc = d.get('minecraft',{}).get('packet',{})
+          def cl(x): return 1 if not isinstance(x, dict) else sum(cl(v) for v in x.values())
+          print(f'minecraft.packet keys (ja.yml): {cl(mc)}')
+          "

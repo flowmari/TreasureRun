@@ -1,0 +1,42 @@
+name: resourcepack-sha1-autoupdate
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'resourcepacks/treasurerun-i18n-pack/**'
+      - 'src/main/resources/languages/*.yml'
+jobs:
+  rebuild-resourcepack:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Regenerate ResourcePack ZIP
+        run: |
+          cd resourcepacks/treasurerun-i18n-pack
+          zip -r ../../resourcepacks/generated/treasurerun-i18n-pack.zip . -q
+          cd ../..
+      - name: Compute SHA1 and update config.yml
+        run: |
+          SHA1=$(sha1sum resourcepacks/generated/treasurerun-i18n-pack.zip | awk '{print $1}')
+          python3 -c "
+          import re, pathlib
+          sha1 = '$SHA1'
+          config = pathlib.Path('src/main/resources/config.yml')
+          c = config.read_text()
+          c = re.sub(r'  sha1: \"[a-f0-9]+\"', f'  sha1: \"{sha1}\"', c)
+          c = re.sub(r'  url: \"https://raw\.githubusercontent\.com/[^\"]+\"',
+              '  url: \"https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip\"', c)
+          config.write_text(c)
+          print('SHA1 updated:', sha1)
+          "
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add resourcepacks/generated/ src/main/resources/config.yml
+          git diff --staged --quiet && echo "No changes" || \
+            git commit -m "ci: auto-regenerate ResourcePack ZIP + SHA1 [skip ci]" && git push
