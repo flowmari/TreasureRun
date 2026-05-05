@@ -12,6 +12,46 @@ Players search for treasure chests within a time limit, earn scores, trigger vis
 
 This repository is designed as a portfolio project that demonstrates not only gameplay implementation, but also **engineering discipline: internationalization, quality control, runtime verification, and maintainable plugin design**.
 
+<!-- TREASURERUN_PLATFORM_BOUNDARY_I18N_HIGHLIGHT -->
+
+## Engineering Highlight: Platform-Boundary i18n
+
+TreasureRun includes a hybrid Minecraft standard-message i18n architecture for Minecraft 1.20.1.
+
+Minecraft standard UI text cannot be fully controlled by a Spigot plugin alone.  
+To work around that limitation, TreasureRun combines **Spigot / ProtocolLib / ResourcePack / Fabric Mod** into a multi-layer architecture.
+
+### Key Technical Decisions
+
+- **8039-key standard-message coverage**  
+  Minecraft standard translation assets are aligned across both the Fabric Mod and ResourcePack layers.
+
+- **Lightweight runtime payload**  
+  The server does not send huge 20-language JSON payloads at runtime.  
+  It sends only the player's selected language code, such as `ja`, `en`, `de`, or `zh_tw`.
+
+- **Safe client-side reload path**  
+  The Fabric client applies the selected language through Minecraft's own runtime resource lifecycle:
+  - update the selected language
+  - call Minecraft's `LanguageManager`
+  - trigger `client.reloadResources()`
+  - reload the bundled 8039-key language assets without restarting Minecraft
+
+- **Avoiding fragile internal mutation**  
+  TreasureRun does not directly mutate Minecraft's internal `TranslationStorage` map.  
+  Instead, it asks Minecraft to rebuild translation storage through the normal resource reload lifecycle.
+
+### 日本語要約
+
+Minecraft標準文のi18n制約に対し、TreasureRunでは **Spigot / ProtocolLib / ResourcePack / Fabric Mod** を組み合わせた多層アーキテクチャを設計しました。
+
+8039キーの標準翻訳資産をFabric ModとResourcePackで整列し、実行時は20言語分の巨大データを送らず、選択言語コードのみを軽量payloadとして同期します。
+
+Fabric側では `LanguageManager` と `client.reloadResources()` を使い、内部 `TranslationStorage` を直接書き換えずに、Minecraftの通常のresource reload経路で再起動なしの言語反映を行います。
+
+This is more than a translation feature.  
+It is a systems-design solution for a real platform constraint.
+
 ---
 
 ## Hybrid Minecraft Standard-Message i18n
