@@ -52,6 +52,21 @@ Fabric側では `LanguageManager` と `client.reloadResources()` を使い、内
 This is more than a translation feature.  
 It is a systems-design solution for a real platform constraint.
 
+<!-- TREASURERUN_REVIEWER_ENGINEERING_SIGNAL -->
+
+### Engineering Design Summary
+
+This part of TreasureRun focuses on more than feature implementation:
+
+- platform constraint analysis
+- multi-layer architecture design
+- runtime client/server synchronization
+- lightweight payload design
+- CI/CD quality gates
+- maintainable i18n operations
+
+In short, the project demonstrates **platform constraints / architecture / runtime design / CI/CD / quality gates / maintainability** through a working Minecraft i18n system.
+
 <!-- TREASURERUN_QUALITY_CONTROL_NOTE -->
 
 ## Quality Control Notes
