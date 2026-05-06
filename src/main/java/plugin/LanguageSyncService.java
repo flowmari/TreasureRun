@@ -16,13 +16,6 @@ import java.util.concurrent.ConcurrentHashMap;
  * - Do NOT send 8039 keys x 20 languages over the network.
  * - The heavy language JSON assets are shipped ahead of time by Fabric Mod / ResourcePack.
  * - At runtime, the server sends only a tiny selected-language payload such as "ja" or "de".
- *
- * Fallback design:
- * - If the player has the Fabric Mod, it receives this payload on treasurerun:lang
- *   and switches the Minecraft client locale automatically.
- * - If the player does not have the Fabric Mod, the plugin message is ignored
- *   by the vanilla client. ResourcePack delivery and ProtocolLib packet rewriting still
- *   provide the server-side / resource-pack fallback path.
  */
 public final class LanguageSyncService {
 
@@ -49,6 +42,24 @@ public final class LanguageSyncService {
       return;
     }
 
+    // Send immediately + delayed retries.
+    // This makes runtime sync robust against resource-pack loading / client join timing.
+    sendOnce(plugin, player, normalized, payload, reason, "now");
+
+    long[] delays = new long[] {10L, 40L, 80L};
+    for (long delay : delays) {
+      final String lang = normalized;
+      final byte[] copy = payload.clone();
+      final String r = reason;
+      plugin.getServer().getScheduler().runTaskLater(plugin, () -> {
+        if (player.isOnline()) {
+          sendOnce(plugin, player, lang, copy, r, "delay_" + delay + "t");
+        }
+      }, delay);
+    }
+  }
+
+  private static void sendOnce(Plugin plugin, Player player, String normalized, byte[] payload, String reason, String timing) {
     String last = LAST_SENT.get(player.getUniqueId());
     boolean sameAsLast = normalized.equals(last);
 
@@ -61,11 +72,12 @@ public final class LanguageSyncService {
           + " lang=" + normalized
           + " bytes=" + payload.length
           + " reason=" + safeReason(reason)
+          + " timing=" + timing
           + " duplicate=" + sameAsLast
-          + " mode=fabric_payload_or_modless_ignore_resourcepack_fallback");
+          + " channel=" + CHANNEL);
     } catch (Throwable t) {
       plugin.getLogger().warning("[LanguageSync] failed for "
-          + player.getName() + " lang=" + normalized + ": " + t.getMessage());
+          + player.getName() + " lang=" + normalized + " timing=" + timing + ": " + t.getMessage());
     }
   }
 
