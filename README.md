@@ -67,6 +67,31 @@ This part of TreasureRun focuses on more than feature implementation:
 
 In short, the project demonstrates **platform constraints / architecture / runtime design / CI/CD / quality gates / maintainability** through a working Minecraft i18n system.
 
+<!-- TREASURERUN_DATA_DRIVEN_LANGMAP_ARCHITECTURE -->
+
+### Data-Driven Language Mapping
+
+TreasureRun uses `lang-map.yml` as a single source of truth for language routing.
+
+Earlier versions relied on Java-side `switch` logic to map TreasureRun language codes to Minecraft language asset files.  
+That approach works for a small fixed set of languages, but it does not scale well because every new language would require a code change.
+
+The current design moves that mapping into data:
+
+- `src/main/resources/lang-map.yml`
+- `fabric-i18n-mod/src/main/resources/lang-map.yml`
+
+The Fabric client mod, validation scripts, and GitHub Actions checks all read the same mapping definition.
+
+This means language expansion is handled as a configuration-and-assets change, not a Java control-flow change.  
+When a new language is added, the intended path is:
+
+1. add the language mapping to `lang-map.yml`
+2. add the matching language assets
+3. let GitHub Actions validate the ResourcePack, Fabric Mod mapping, and i18n coverage
+
+This keeps the Minecraft i18n system maintainable as the language set grows, without adding new hardcoded Java branches for every locale.
+
 <!-- TREASURERUN_QUALITY_CONTROL_NOTE -->
 
 ## Quality Control Notes
