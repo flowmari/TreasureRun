@@ -1,9 +1,14 @@
 plugins {
+    id 'java'
     id 'fabric-loom' version '1.3-SNAPSHOT'
 }
 
 version = project.mod_version
 group = project.maven_group
+
+base {
+    archivesName = project.archives_base_name
+}
 
 repositories {
     maven { url = 'https://maven.fabricmc.net/' }
@@ -21,6 +26,18 @@ java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(project.java_version as int)
     }
+    withSourcesJar()
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main/java']
+        }
+        resources {
+            srcDirs = ['src/main/resources']
+        }
+    }
 }
 
 processResources {
@@ -35,3 +52,35 @@ tasks.withType(JavaCompile).configureEach {
     it.options.encoding = "UTF-8"
     it.options.release = project.java_version as int
 }
+
+/*
+ * TreasureRun Fabric runtime packaging
+ *
+ * Why this exists:
+ * - The project was compiling correctly.
+ * - build/classes and build/resources were generated.
+ * - But the default runtime jar became a 261B MANIFEST-only jar.
+ *
+ * Fix:
+ * - Build an explicit runtimeJarInput from sourceSets.main.output.
+ * - Feed that jar into Loom's remapJar.
+ * - Verify the final jar contains fabric.mod.json, lang-map.yml, and the client initializer class.
+ */
+tasks.register('runtimeJarInput', Jar) {
+    dependsOn classes
+    archiveClassifier.set('runtime-input')
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    from(sourceSets.main.output)
+}
+
+tasks.named('jar') {
+    enabled = false
+}
+
+tasks.named('remapJar') {
+    dependsOn tasks.named('runtimeJarInput')
+    inputFile.set(tasks.named('runtimeJarInput').flatMap { it.archiveFile })
+    archiveFileName.set("${project.archives_base_name}-${project.version}.jar")
+}
+
+build.dependsOn remapJar
