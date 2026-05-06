@@ -63,6 +63,23 @@ This keeps CI useful without hiding real localization issues.
 
 See: [`docs/quality/i18n-audit-noise-classification.md`](docs/quality/i18n-audit-noise-classification.md)
 
+<!-- TREASURERUN_CICD_VERIFICATION_NOTE -->
+
+## CI/CD Verification
+
+TreasureRun uses GitHub Actions to protect build quality and i18n coverage.
+
+The latest `main` workflow set passed:
+
+- `CI`
+- `i18n-check`
+- `i18n-ci`
+- `i18n-expansion-ci`
+
+This verifies that the plugin build, i18n checks, and 4-layer i18n expansion guard run automatically on GitHub Actions.
+
+Evidence: [`docs/verification/ci-cd/github-actions-main-success-20260506_090148.md`](docs/verification/ci-cd/github-actions-main-success-20260506_090148.md)
+
 ---
 
 ## Hybrid Minecraft Standard-Message i18n
