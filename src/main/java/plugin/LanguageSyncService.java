@@ -1,5 +1,6 @@
 package plugin;
 
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 
@@ -75,6 +76,15 @@ public final class LanguageSyncService {
           + " timing=" + timing
           + " duplicate=" + sameAsLast
           + " channel=" + CHANNEL);
+
+      // Visible proof for debugging: show every sync on the player's screen.
+      // This makes it obvious whether /lang en or /lang de actually reached the sync layer.
+      try {
+        player.sendMessage(ChatColor.DARK_AQUA
+            + "[TreasureRun i18n sync] sent to Fabric: "
+            + ChatColor.YELLOW + normalized
+            + ChatColor.GRAY + " (" + timing + ")");
+      } catch (Throwable ignored) {}
     } catch (Throwable t) {
       plugin.getLogger().warning("[LanguageSync] failed for "
           + player.getName() + " lang=" + normalized + " timing=" + timing + ": " + t.getMessage());

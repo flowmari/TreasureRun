@@ -1,34 +1,34 @@
-# lang-map.yml — Single Source of Truth for language mapping
+# lang-map.yml — Single Source of Truth for TreasureRun language sync
 #
-# To add a new language (e.g. Welsh "cy"):
-#   1. Add one line here:              cy: cy_gb
-#   2. Add cy.yml to languages/        (copy from en.yml, translate)
-#   3. Add cy_gb.json to:
-#      - resourcepacks/treasurerun-i18n-pack/assets/minecraft/lang/
-#      - fabric-i18n-mod/src/main/resources/assets/minecraft/lang/
-#   4. git push → CI validates everything automatically.
-#      NO Java code change. NO script change. Ever.
+# Format:
+#   <TreasureRun /lang code>: <Minecraft client locale code>
 #
-# Format:  <TreasureRun lang code>: <Minecraft locale code>
+# Fabric Mod reads this file dynamically at startup.
+# Add one line here to add a new serverLang -> Minecraft locale mapping.
 #
+# Important:
+# - This file must use mappings: because TreasureRunI18nMod.java currently parses mappings.
+# - resourcePackLangFile / Fabric assets must contain assets/minecraft/lang/<locale>.json.
+
 mappings:
-  ja:        ja_jp
-  en:        en_us
-  de:        de_de
-  fr:        fr_fr
-  es:        es_es
-  it:        it_it
-  ko:        ko_kr
-  ru:        ru_ru
-  zh_tw:     zh_tw
-  pt:        pt_br
-  nl:        nl_nl
-  fi:        fi_fi
-  sv:        sv_se
-  is:        is_is
-  la:        la_la
-  hi:        hi_in
-  sa:        sa_in
-  lzh:       lzh_hant
-  ojp:       ojp_jp
+  ja: ja_jp
+  en: en_us
+  de: de_de
+  fr: fr_fr
+  es: es_es
+  it: it_it
+  sv: sv_se
+  nl: nl_nl
+  pt: pt_br
+  ru: ru_ru
+  ko: ko_kr
+  zh_tw: zh_tw
+  hi: hi_in
+  fi: fi_fi
+  is: is_is
+  la: la_la
+  sa: sa_in
+  lzh: lzh_hant
+  wmy: ojp_jp
+  ojp: ojp_jp
   asl_gloss: asl_us

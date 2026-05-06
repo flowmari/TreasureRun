@@ -47,7 +47,12 @@ public class TreasureRunI18nMod implements ClientModInitializer {
       LOGGER.info("[TreasureRun i18n] lang sync received rawBytes={} treasureRun='{}' minecraft='{}'",
           payload.length, trLang, mcLang);
 
-      client.execute(() -> applyLanguage(client, mcLang, "server-payload:/lang"));
+      client.execute(() -> {
+        if (client.player != null) {
+          client.player.sendMessage(Text.literal("§b[TreasureRun i18n] payload received: " + trLang + " -> " + mcLang), false);
+        }
+        applyLanguage(client, mcLang, "server-payload:/lang");
+      });
     });
 
     ClientCommandRegistrationCallback.EVENT.register((dispatcher, registryAccess) -> {
@@ -60,6 +65,19 @@ public class TreasureRunI18nMod implements ClientModInitializer {
 
                 LOGGER.info("[TreasureRun i18n] /trlang command treasureRun='{}' minecraft='{}'", trLang, mcLang);
                 client.execute(() -> applyLanguage(client, mcLang, "client-command:/trlang"));
+
+                return 1;
+              })));
+
+      dispatcher.register(literal("trlanguage")
+          .then(argument("code", StringArgumentType.word())
+              .executes(ctx -> {
+                String trLang = StringArgumentType.getString(ctx, "code");
+                String mcLang = toMinecraftLang(trLang);
+                MinecraftClient client = MinecraftClient.getInstance();
+
+                LOGGER.info("[TreasureRun i18n] /trlanguage command treasureRun='{}' minecraft='{}'", trLang, mcLang);
+                client.execute(() -> applyLanguage(client, mcLang, "client-command:/trlanguage"));
 
                 return 1;
               })));

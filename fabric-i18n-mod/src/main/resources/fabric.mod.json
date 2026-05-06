@@ -4,17 +4,24 @@
   "version": "1.0.0",
   "name": "TreasureRun i18n Language Pack",
   "description": "20-language translations for all 8039 Minecraft standard messages including client-side UI (options/subtitles/gui/key/selectWorld) unreachable by server plugins.",
-  "authors": ["TreasureRun"],
-  "contact": { "sources": "https://github.com/flowmari/TreasureRun" },
+  "authors": [
+    "TreasureRun"
+  ],
+  "contact": {
+    "sources": "https://github.com/flowmari/TreasureRun"
+  },
   "license": "MIT",
   "environment": "client",
   "entrypoints": {
-    "client": ["plugin.i18nmod.TreasureRunI18nMod"]
+    "client": [
+      "plugin.i18nmod.TreasureRunI18nMod"
+    ]
   },
   "mixins": [],
   "depends": {
-    "fabricloader": ">=0.14.0",
-    "minecraft": "~1.20.1",
-    "java": ">=17"
+    "fabricloader": ">=0.14.22",
+    "minecraft": "1.20.1",
+    "java": ">=17",
+    "fabric-api": "*"
   }
 }
