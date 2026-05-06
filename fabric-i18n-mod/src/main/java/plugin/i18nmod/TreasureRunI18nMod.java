@@ -9,109 +9,70 @@ import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.atomic.AtomicBoolean;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
 
 @Environment(EnvType.CLIENT)
 public class TreasureRunI18nMod implements ClientModInitializer {
 
   public static final Logger LOGGER = LoggerFactory.getLogger("treasurerun_i18n");
   private static final Identifier LANG_CHANNEL = new Identifier("treasurerun", "lang");
-
-  private static final AtomicBoolean RELOAD_IN_FLIGHT = new AtomicBoolean(false);
-  private static String lastAppliedLanguage = "";
+  private static final Map<String, String> LANG_MAP = new HashMap<>();
 
   @Override
   public void onInitializeClient() {
-    LOGGER.info("[TreasureRun i18n] Fabric runtime language hot-swap enabled.");
-    LOGGER.info("[TreasureRun i18n] Runtime payload strategy: selected language code only, not full JSON data.");
-
+    loadLangMap();
+    LOGGER.info("[TreasureRun i18n] {} languages loaded from lang-map.yml", LANG_MAP.size());
     ClientPlayNetworking.registerGlobalReceiver(LANG_CHANNEL, (client, handler, buf, responseSender) -> {
-      String treasureRunLang = buf.readString(64);
-      String minecraftLang = toMinecraftLang(treasureRunLang);
-
-      LOGGER.info("[TreasureRun i18n] lang payload received: treasureRunLang={} minecraftLang={}",
-          treasureRunLang, minecraftLang);
-
-      client.execute(() -> applyLanguageHotSwap(client, minecraftLang, "server-payload:" + sanitize(treasureRunLang)));
+      String trLang = buf.readString(64).toLowerCase().trim();
+      String mcLang = toMinecraftLang(trLang);
+      LOGGER.info("[TreasureRun i18n] lang sync: {} -> {}", trLang, mcLang);
+      client.execute(() -> applyLanguage(client, mcLang));
     });
-
-    LOGGER.info("[TreasureRun i18n] Listening on channel: {}", LANG_CHANNEL);
+    LOGGER.info("[TreasureRun i18n] Auto-sync active. Add languages via lang-map.yml only.");
   }
 
-  private static void applyLanguageHotSwap(MinecraftClient client, String langCode, String reason) {
-    try {
-      if (client == null || langCode == null || langCode.isBlank()) return;
-
-      String before = client.options.language == null ? "" : client.options.language;
-
-      if (langCode.equals(before) && langCode.equals(lastAppliedLanguage) && !RELOAD_IN_FLIGHT.get()) {
-        LOGGER.info("[TreasureRun i18n] language already active; skip reload lang={} reason={}", langCode, reason);
-        return;
+  private static void loadLangMap() {
+    try (InputStream is = TreasureRunI18nMod.class.getClassLoader()
+        .getResourceAsStream("lang-map.yml")) {
+      if (is == null) { LOGGER.warn("[TreasureRun i18n] lang-map.yml not found."); return; }
+      boolean inMappings = false;
+      Scanner scanner = new Scanner(is, StandardCharsets.UTF_8);
+      while (scanner.hasNextLine()) {
+        String line = scanner.nextLine();
+        String trimmed = line.trim();
+        if (trimmed.equals("mappings:")) { inMappings = true; continue; }
+        if (!inMappings || trimmed.startsWith("#") || trimmed.isEmpty()) continue;
+        if (!line.startsWith(" ") && !line.startsWith("\t")) { inMappings = false; continue; }
+        if (trimmed.contains(":")) {
+          String[] parts = trimmed.split(":\\s*", 2);
+          if (parts.length == 2 && !parts[0].trim().isEmpty() && !parts[1].trim().isEmpty())
+            LANG_MAP.put(parts[0].trim(), parts[1].trim());
+        }
       }
+      LOGGER.info("[TreasureRun i18n] lang-map.yml: {} entries", LANG_MAP.size());
+    } catch (Throwable t) { LOGGER.warn("[TreasureRun i18n] lang-map load failed: {}", t.getMessage()); }
+  }
 
-      LOGGER.info("[TreasureRun i18n] runtime language hot-swap start: {} -> {} reason={}",
-          before, langCode, reason);
+  private static String toMinecraftLang(String trLang) {
+    if (trLang == null || trLang.isBlank()) return "en_us";
+    String mc = LANG_MAP.get(trLang);
+    if (mc != null) return mc;
+    LOGGER.warn("[TreasureRun i18n] '{}' not in lang-map.yml — add it.", trLang);
+    return trLang.replace('-', '_');
+  }
 
+  private static void applyLanguage(MinecraftClient client, String langCode) {
+    try {
+      if (langCode.equals(client.options.language)) return;
+      LOGGER.info("[TreasureRun i18n] Switching: {} -> {}", client.options.language, langCode);
       client.options.language = langCode;
       client.options.write();
       client.getLanguageManager().setLanguage(langCode);
-      lastAppliedLanguage = langCode;
-
-      if (!RELOAD_IN_FLIGHT.compareAndSet(false, true)) {
-        LOGGER.info("[TreasureRun i18n] resource reload already in flight; language state saved lang={}", langCode);
-        return;
-      }
-
-      CompletableFuture<Void> reloadFuture = client.reloadResources();
-      reloadFuture.whenComplete((ignored, throwable) -> client.execute(() -> {
-        RELOAD_IN_FLIGHT.set(false);
-
-        if (throwable != null) {
-          LOGGER.warn("[TreasureRun i18n] runtime language hot-swap reload failed lang={} error={}",
-              langCode, throwable.getMessage());
-          return;
-        }
-
-        LOGGER.info("[TreasureRun i18n] runtime language hot-swap complete lang={} via resource reload", langCode);
-      }));
-    } catch (Throwable t) {
-      RELOAD_IN_FLIGHT.set(false);
-      LOGGER.warn("[TreasureRun i18n] runtime language hot-swap failed lang={} error={}",
-          langCode, t.getMessage());
-    }
-  }
-
-  private static String toMinecraftLang(String treasureRunLang) {
-    if (treasureRunLang == null || treasureRunLang.isBlank()) return "en_us";
-
-    return switch (treasureRunLang.toLowerCase().trim()) {
-      case "ja"        -> "ja_jp";
-      case "en"        -> "en_us";
-      case "de"        -> "de_de";
-      case "fr"        -> "fr_fr";
-      case "es"        -> "es_es";
-      case "it"        -> "it_it";
-      case "ko"        -> "ko_kr";
-      case "ru"        -> "ru_ru";
-      case "zh_tw"     -> "zh_tw";
-      case "pt"        -> "pt_br";
-      case "nl"        -> "nl_nl";
-      case "fi"        -> "fi_fi";
-      case "sv"        -> "sv_se";
-      case "is"        -> "is_is";
-      case "la"        -> "la_la";
-      case "hi"        -> "hi_in";
-      case "sa"        -> "sa_in";
-      case "lzh"       -> "lzh_hant";
-      case "ojp"       -> "ojp_jp";
-      case "asl_gloss" -> "asl_us";
-      default          -> treasureRunLang.toLowerCase().trim().replace('-', '_');
-    };
-  }
-
-  private static String sanitize(String value) {
-    if (value == null || value.isBlank()) return "unknown";
-    return value.replaceAll("[^a-zA-Z0-9_:/.-]", "_");
+      client.reloadResources();
+    } catch (Throwable t) { LOGGER.warn("[TreasureRun i18n] Switch failed: {}", t.getMessage()); }
   }
 }
