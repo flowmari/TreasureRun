@@ -92,6 +92,24 @@ When a new language is added, the intended path is:
 
 This keeps the Minecraft i18n system maintainable as the language set grows, without adding new hardcoded Java branches for every locale.
 
+<!-- TREASURERUN_RUNTIME_HOTSWAP_DEMO -->
+
+## Runtime Language Hot-Swap Demo
+
+_GIF evidence will be added after recording ._
+
+This demo verifies the runtime language-switching flow:
+
+- the server sends only the selected language code
+- the Fabric client applies it through Minecraft's 
+- the client calls 
+- Minecraft standard-message language assets are reloaded without restarting the game
+
+Evidence:
+
+- [Runtime demo guide](docs/verification/runtime-demo/language-hot-swap-demo-guide-20260506_122416.md)
+- [Server-side runtime log](docs/verification/runtime-demo/language-hot-swap-server-log-20260506_122416.txt)
+
 <!-- TREASURERUN_QUALITY_CONTROL_NOTE -->
 
 ## Quality Control Notes

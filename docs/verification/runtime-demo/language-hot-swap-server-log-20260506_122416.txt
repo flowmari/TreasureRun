@@ -1,0 +1,388 @@
+Runtime evidence captured at: Wed May  6 12:24:16 JST 2026
+
+=== git HEAD ===
+2084975 docs: document data-driven language mapping architecture
+81d7d50 feat: replace hardcoded switch with data-driven lang-map.yml (SSOT) — adding a language now requires zero code changes, CI auto-validates all 3 asset layers, Fabric mod resolves mappings dynamically at runtime; scales to 100 languages with 1 YAML line
+aed52fd docs: clarify platform-boundary engineering design
+0420676 docs: add GitHub Actions CI/CD verification evidence
+360ebd4 ci: add 4-layer i18n CI/CD — 6-gate coverage regression guard, auto-regenerate ResourcePack ZIP+SHA1 on lang file changes, validate Fabric mod mapping completeness across all 20 languages
+
+=== recent docker server logs: ResourcePack / lang / PacketI18n / reload keywords ===
+[20:16:26] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s died from dehydration
+[20:16:26] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.dryout yaml=minecraft.packet.death.attack.dryout
+[20:16:26] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s died from dehydration whilst trying to escape %2$s
+[20:16:26] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.dryout.player yaml=minecraft.packet.death.attack.dryout.player
+[20:16:26] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s was killed by even more magic
+[20:16:26] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.even_more_magic yaml=minecraft.packet.death.attack.even_more_magic
+[20:16:26] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s blew up
+[20:16:26] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.explosion yaml=minecraft.packet.death.attack.explosion
+[20:16:26] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s was blown up by %2$s
+[20:16:26] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.explosion.player yaml=minecraft.packet.death.attack.explosion.player
+[20:16:26] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s was blown up by %2$s using %3$s
+[20:16:26] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.explosion.player.item yaml=minecraft.packet.death.attack.explosion.player.item
+[20:16:26] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s hit the ground too hard
+[20:16:26] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.fall yaml=minecraft.packet.death.attack.fall
+[20:16:26] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s hit the ground too hard whilst trying to escape %2$s
+[20:16:26] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.fall.player yaml=minecraft.packet.death.attack.fall.player
+[20:16:27] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s was squashed by a falling block
+[20:16:27] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.fallingBlock yaml=minecraft.packet.death.attack.fallingBlock
+[20:16:27] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s was squashed by a falling block whilst fighting %2$s
+[20:16:27] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.fallingBlock.player yaml=minecraft.packet.death.attack.fallingBlock.player
+[20:16:27] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s was skewered by a falling stalactite
+[20:16:27] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.fallingStalactite yaml=minecraft.packet.death.attack.fallingStalactite
+[20:16:27] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s was skewered by a falling stalactite whilst fighting %2$s
+[20:16:27] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.fallingStalactite.player yaml=minecraft.packet.death.attack.fallingStalactite.player
+[20:16:27] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s was fireballed by %2$s
+[20:16:27] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.fireball yaml=minecraft.packet.death.attack.fireball
+[20:16:27] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s was fireballed by %2$s using %3$s
+[20:16:27] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.fireball.item yaml=minecraft.packet.death.attack.fireball.item
+[20:16:27] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s went off with a bang
+[20:16:27] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.fireworks yaml=minecraft.packet.death.attack.fireworks
+[20:16:27] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s went off with a bang due to a firework fired from %3$s by %2$s
+[20:16:27] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.fireworks.item yaml=minecraft.packet.death.attack.fireworks.item
+[20:16:28] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s went off with a bang whilst fighting %2$s
+[20:16:28] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.fireworks.player yaml=minecraft.packet.death.attack.fireworks.player
+[20:16:28] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s experienced kinetic energy
+[20:16:28] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.flyIntoWall yaml=minecraft.packet.death.attack.flyIntoWall
+[20:16:28] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s experienced kinetic energy whilst trying to escape %2$s
+[20:16:28] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.flyIntoWall.player yaml=minecraft.packet.death.attack.flyIntoWall.player
+[20:16:28] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s froze to death
+[20:16:28] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.freeze yaml=minecraft.packet.death.attack.freeze
+[20:16:28] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s was frozen to death by %2$s
+[20:16:28] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.freeze.player yaml=minecraft.packet.death.attack.freeze.player
+[20:16:28] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s died
+[20:16:28] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.generic yaml=minecraft.packet.death.attack.generic
+[20:16:28] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s died because of %2$s
+[20:16:28] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.generic.player yaml=minecraft.packet.death.attack.generic.player
+[20:16:29] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s was killed
+[20:16:29] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.genericKill yaml=minecraft.packet.death.attack.genericKill
+[20:16:29] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s was killed whilst fighting %2$s
+[20:16:29] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.genericKill.player yaml=minecraft.packet.death.attack.genericKill.player
+[20:16:29] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s discovered the floor was lava
+[20:16:29] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.hotFloor yaml=minecraft.packet.death.attack.hotFloor
+[20:16:29] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s walked into the danger zone due to %2$s
+[20:16:29] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.hotFloor.player yaml=minecraft.packet.death.attack.hotFloor.player
+[20:16:29] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s went up in flames
+[20:16:29] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.inFire yaml=minecraft.packet.death.attack.inFire
+[20:16:29] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s walked into fire whilst fighting %2$s
+[20:16:29] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.inFire.player yaml=minecraft.packet.death.attack.inFire.player
+[20:16:29] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s suffocated in a wall
+[20:16:29] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.inWall yaml=minecraft.packet.death.attack.inWall
+[20:16:29] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s suffocated in a wall whilst fighting %2$s
+[20:16:29] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.inWall.player yaml=minecraft.packet.death.attack.inWall.player
+[20:16:30] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s was killed by %2$s using magic
+[20:16:30] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.indirectMagic yaml=minecraft.packet.death.attack.indirectMagic
+[20:16:30] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s was killed by %2$s using %3$s
+[20:16:30] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.indirectMagic.item yaml=minecraft.packet.death.attack.indirectMagic.item
+[20:16:30] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s tried to swim in lava
+[20:16:30] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.lava yaml=minecraft.packet.death.attack.lava
+[20:16:30] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s tried to swim in lava to escape %2$s
+[20:16:30] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.lava.player yaml=minecraft.packet.death.attack.lava.player
+[20:16:30] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s was struck by lightning
+[20:16:30] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.lightningBolt yaml=minecraft.packet.death.attack.lightningBolt
+[20:16:30] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s was struck by lightning whilst fighting %2$s
+[20:16:30] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.lightningBolt.player yaml=minecraft.packet.death.attack.lightningBolt.player
+[20:16:30] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s was killed by magic
+[20:16:30] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.magic yaml=minecraft.packet.death.attack.magic
+[20:16:30] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s was killed by magic whilst trying to escape %2$s
+[20:16:30] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.magic.player yaml=minecraft.packet.death.attack.magic.player
+[20:16:31] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Actually, the message was too long to deliver fully. Sorry! Here's stripped version: %s
+[20:16:31] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.message_too_long yaml=minecraft.packet.death.attack.message_too_long
+[20:16:31] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s was slain by %2$s
+[20:16:31] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.mob yaml=minecraft.packet.death.attack.mob
+[20:16:31] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s was slain by %2$s using %3$s
+[20:16:31] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.mob.item yaml=minecraft.packet.death.attack.mob.item
+[20:16:31] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s burned to death
+[20:16:31] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.onFire yaml=minecraft.packet.death.attack.onFire
+[20:16:31] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s was burnt to a crisp whilst fighting %2$s wielding %3$s
+[20:16:31] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.onFire.item yaml=minecraft.packet.death.attack.onFire.item
+[20:16:31] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s was burnt to a crisp whilst fighting %2$s
+[20:16:31] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.onFire.player yaml=minecraft.packet.death.attack.onFire.player
+[20:16:31] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s fell out of the world
+[20:16:31] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.outOfWorld yaml=minecraft.packet.death.attack.outOfWorld
+[20:16:31] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s didn't want to live in the same world as %2$s
+[20:16:31] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.outOfWorld.player yaml=minecraft.packet.death.attack.outOfWorld.player
+[20:16:32] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s left the confines of this world
+[20:16:32] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.outsideBorder yaml=minecraft.packet.death.attack.outsideBorder
+[20:16:32] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s left the confines of this world whilst fighting %2$s
+[20:16:32] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.outsideBorder.player yaml=minecraft.packet.death.attack.outsideBorder.player
+[20:16:32] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s was slain by %2$s
+[20:16:32] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.player yaml=minecraft.packet.death.attack.player
+[20:16:32] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s was slain by %2$s using %3$s
+[20:16:32] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.player.item yaml=minecraft.packet.death.attack.player.item
+[20:16:32] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s was obliterated by a sonically-charged shriek
+[20:16:32] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.sonic_boom yaml=minecraft.packet.death.attack.sonic_boom
+[20:16:32] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s was obliterated by a sonically-charged shriek whilst trying to escape %2$s wielding %3$s
+[20:16:32] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.sonic_boom.item yaml=minecraft.packet.death.attack.sonic_boom.item
+[20:16:32] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s was obliterated by a sonically-charged shriek whilst trying to escape %2$s
+[20:16:32] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.sonic_boom.player yaml=minecraft.packet.death.attack.sonic_boom.player
+[20:16:32] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s was impaled on a stalagmite
+[20:16:32] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.stalagmite yaml=minecraft.packet.death.attack.stalagmite
+[20:16:33] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s was impaled on a stalagmite whilst fighting %2$s
+[20:16:33] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.stalagmite.player yaml=minecraft.packet.death.attack.stalagmite.player
+[20:16:33] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s starved to death
+[20:16:33] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.starve yaml=minecraft.packet.death.attack.starve
+[20:16:33] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s starved to death whilst fighting %2$s
+[20:16:33] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.starve.player yaml=minecraft.packet.death.attack.starve.player
+[20:16:33] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s was stung to death
+[20:16:33] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.sting yaml=minecraft.packet.death.attack.sting
+[20:16:33] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s was stung to death by %2$s using %3$s
+[20:16:33] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.sting.item yaml=minecraft.packet.death.attack.sting.item
+[20:16:33] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s was stung to death by %2$s
+[20:16:33] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.sting.player yaml=minecraft.packet.death.attack.sting.player
+[20:16:33] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s was poked to death by a sweet berry bush
+[20:16:33] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.sweetBerryBush yaml=minecraft.packet.death.attack.sweetBerryBush
+[20:16:33] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s was poked to death by a sweet berry bush whilst trying to escape %2$s
+[20:16:33] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.sweetBerryBush.player yaml=minecraft.packet.death.attack.sweetBerryBush.player
+[20:16:34] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s was killed trying to hurt %2$s
+[20:16:34] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.thorns yaml=minecraft.packet.death.attack.thorns
+[20:16:34] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s was killed by %3$s trying to hurt %2$s
+[20:16:34] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.thorns.item yaml=minecraft.packet.death.attack.thorns.item
+[20:16:34] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s was pummeled by %2$s
+[20:16:34] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.thrown yaml=minecraft.packet.death.attack.thrown
+[20:16:34] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s was pummeled by %2$s using %3$s
+[20:16:34] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.thrown.item yaml=minecraft.packet.death.attack.thrown.item
+[20:16:34] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s was impaled by %2$s
+[20:16:34] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.trident yaml=minecraft.packet.death.attack.trident
+[20:16:34] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s was impaled by %2$s with %3$s
+[20:16:34] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.trident.item yaml=minecraft.packet.death.attack.trident.item
+[20:16:34] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s withered away
+[20:16:34] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.wither yaml=minecraft.packet.death.attack.wither
+[20:16:34] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s withered away whilst fighting %2$s
+[20:16:34] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.wither.player yaml=minecraft.packet.death.attack.wither.player
+[20:16:35] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s was shot by a skull from %2$s
+[20:16:35] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.witherSkull yaml=minecraft.packet.death.attack.witherSkull
+[20:16:35] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s was shot by a skull from %2$s using %3$s
+[20:16:35] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.attack.witherSkull.item yaml=minecraft.packet.death.attack.witherSkull.item
+[20:16:35] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s fell from a high place
+[20:16:35] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.fell.accident.generic yaml=minecraft.packet.death.fell.accident.generic
+[20:16:35] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s fell off a ladder
+[20:16:35] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.fell.accident.ladder yaml=minecraft.packet.death.fell.accident.ladder
+[20:16:35] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s fell while climbing
+[20:16:35] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.fell.accident.other_climbable yaml=minecraft.packet.death.fell.accident.other_climbable
+[20:16:35] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s fell off scaffolding
+[20:16:35] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.fell.accident.scaffolding yaml=minecraft.packet.death.fell.accident.scaffolding
+[20:16:35] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s fell off some twisting vines
+[20:16:35] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.fell.accident.twisting_vines yaml=minecraft.packet.death.fell.accident.twisting_vines
+[20:16:35] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s fell off some vines
+[20:16:35] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.fell.accident.vines yaml=minecraft.packet.death.fell.accident.vines
+[20:16:36] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s fell off some weeping vines
+[20:16:36] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.fell.accident.weeping_vines yaml=minecraft.packet.death.fell.accident.weeping_vines
+[20:16:36] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s was doomed to fall by %2$s
+[20:16:36] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.fell.assist yaml=minecraft.packet.death.fell.assist
+[20:16:36] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s was doomed to fall by %2$s using %3$s
+[20:16:36] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.fell.assist.item yaml=minecraft.packet.death.fell.assist.item
+[20:16:36] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s fell too far and was finished by %2$s
+[20:16:36] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.fell.finish yaml=minecraft.packet.death.fell.finish
+[20:16:36] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s fell too far and was finished by %2$s using %3$s
+[20:16:36] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.fell.finish.item yaml=minecraft.packet.death.fell.finish.item
+[20:16:36] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%1$s was doomed to fall
+[20:16:36] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=death.fell.killer yaml=minecraft.packet.death.fell.killer
+[20:16:36] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Connection closed
+[20:16:36] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=disconnect.closed yaml=minecraft.packet.disconnect.closed
+[20:16:36] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Disconnected by Server
+[20:16:36] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=disconnect.disconnected yaml=minecraft.packet.disconnect.disconnected
+[20:16:37] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=End of stream
+[20:16:37] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=disconnect.endOfStream yaml=minecraft.packet.disconnect.endOfStream
+[20:16:37] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Kicked for exceeding packet rate limit
+[20:16:37] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=disconnect.exceeded_packet_rate yaml=minecraft.packet.disconnect.exceeded_packet_rate
+[20:16:37] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%s
+[20:16:37] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=disconnect.genericReason yaml=minecraft.packet.disconnect.genericReason
+[20:16:37] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Ignoring status request
+[20:16:37] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=disconnect.ignoring_status_request yaml=minecraft.packet.disconnect.ignoring_status_request
+[20:16:37] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Was kicked from the game
+[20:16:37] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=disconnect.kicked yaml=minecraft.packet.disconnect.kicked
+[20:16:37] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Failed to log in
+[20:16:37] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=disconnect.loginFailed yaml=minecraft.packet.disconnect.loginFailed
+[20:16:37] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Failed to log in: %s
+[20:16:37] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=disconnect.loginFailedInfo yaml=minecraft.packet.disconnect.loginFailedInfo
+[20:16:37] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Multiplayer is disabled. Please check your Microsoft account settings.
+[20:16:37] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=disconnect.loginFailedInfo.insufficientPrivileges yaml=minecraft.packet.disconnect.loginFailedInfo.insufficientPrivileges
+[20:16:38] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Invalid session (Try restarting your game and the launcher)
+[20:16:38] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=disconnect.loginFailedInfo.invalidSession yaml=minecraft.packet.disconnect.loginFailedInfo.invalidSession
+[20:16:38] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=The authentication servers are currently not reachable. Please try again.
+[20:16:38] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=disconnect.loginFailedInfo.serversUnavailable yaml=minecraft.packet.disconnect.loginFailedInfo.serversUnavailable
+[20:16:38] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=You are banned from playing online
+[20:16:38] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=disconnect.loginFailedInfo.userBanned yaml=minecraft.packet.disconnect.loginFailedInfo.userBanned
+[20:16:38] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Connection Lost
+[20:16:38] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=disconnect.lost yaml=minecraft.packet.disconnect.lost
+[20:16:38] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Buffer overflow
+[20:16:38] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=disconnect.overflow yaml=minecraft.packet.disconnect.overflow
+[20:16:38] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Quitting
+[20:16:38] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=disconnect.quitting yaml=minecraft.packet.disconnect.quitting
+[20:16:38] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Kicked for spamming
+[20:16:38] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=disconnect.spam yaml=minecraft.packet.disconnect.spam
+[20:16:39] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Timed out
+[20:16:39] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=disconnect.timeout yaml=minecraft.packet.disconnect.timeout
+[20:16:39] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Unknown host
+[20:16:39] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=disconnect.unknownHost yaml=minecraft.packet.disconnect.unknownHost
+[20:16:39] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Applying resource pack
+[20:16:39] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.applyingPack yaml=minecraft.packet.multiplayer.applyingPack
+[20:16:39] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Authentication servers are down. Please try again later, sorry!
+[20:16:39] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.disconnect.authservers_down yaml=minecraft.packet.multiplayer.disconnect.authservers_down
+[20:16:39] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=You are banned from this server
+[20:16:39] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.disconnect.banned yaml=minecraft.packet.multiplayer.disconnect.banned
+[20:16:39] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Your ban will be removed on %s
+[20:16:39] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.disconnect.banned.expiration yaml=minecraft.packet.multiplayer.disconnect.banned.expiration
+[20:16:39] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=You are banned from this server. Reason: %s
+[20:16:39] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.disconnect.banned.reason yaml=minecraft.packet.multiplayer.disconnect.banned.reason
+[20:16:39] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Your ban will be removed on %s
+[20:16:39] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.disconnect.banned_ip.expiration yaml=minecraft.packet.multiplayer.disconnect.banned_ip.expiration
+[20:16:40] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Your IP address is banned from this server. Reason: %s
+[20:16:40] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.disconnect.banned_ip.reason yaml=minecraft.packet.multiplayer.disconnect.banned_ip.reason
+[20:16:40] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Chat message validation failure
+[20:16:40] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.disconnect.chat_validation_failed yaml=minecraft.packet.multiplayer.disconnect.chat_validation_failed
+[20:16:40] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=You logged in from another location
+[20:16:40] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.disconnect.duplicate_login yaml=minecraft.packet.multiplayer.disconnect.duplicate_login
+[20:16:40] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Expired profile public key. Check that your system time is synchronized, and try restarting your game.
+[20:16:40] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.disconnect.expired_public_key yaml=minecraft.packet.multiplayer.disconnect.expired_public_key
+[20:16:40] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Flying is not enabled on this server
+[20:16:40] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.disconnect.flying yaml=minecraft.packet.multiplayer.disconnect.flying
+[20:16:40] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Disconnected
+[20:16:40] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.disconnect.generic yaml=minecraft.packet.multiplayer.disconnect.generic
+[20:16:40] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=You have been idle for too long!
+[20:16:40] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.disconnect.idling yaml=minecraft.packet.multiplayer.disconnect.idling
+[20:16:40] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Illegal characters in chat
+[20:16:40] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.disconnect.illegal_characters yaml=minecraft.packet.multiplayer.disconnect.illegal_characters
+[20:16:41] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Incompatible client! Please use %s
+[20:16:41] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.disconnect.incompatible yaml=minecraft.packet.multiplayer.disconnect.incompatible
+[20:16:41] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Attempting to attack an invalid entity
+[20:16:41] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.disconnect.invalid_entity_attacked yaml=minecraft.packet.multiplayer.disconnect.invalid_entity_attacked
+[20:16:41] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Server sent an invalid packet
+[20:16:41] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.disconnect.invalid_packet yaml=minecraft.packet.multiplayer.disconnect.invalid_packet
+[20:16:41] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Invalid player data
+[20:16:41] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.disconnect.invalid_player_data yaml=minecraft.packet.multiplayer.disconnect.invalid_player_data
+[20:16:41] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Invalid move player packet received
+[20:16:41] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.disconnect.invalid_player_movement yaml=minecraft.packet.multiplayer.disconnect.invalid_player_movement
+[20:16:41] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Invalid signature for profile public key. Try restarting your game.
+[20:16:41] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.disconnect.invalid_public_key_signature yaml=minecraft.packet.multiplayer.disconnect.invalid_public_key_signature
+[20:16:41] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Invalid signature for profile public key. Try restarting your game.
+[20:16:41] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.disconnect.invalid_public_key_signature.new yaml=minecraft.packet.multiplayer.disconnect.invalid_public_key_signature.new
+[20:16:41] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Invalid move vehicle packet received
+[20:16:41] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.disconnect.invalid_vehicle_movement yaml=minecraft.packet.multiplayer.disconnect.invalid_vehicle_movement
+[20:16:42] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=You have been IP banned from this server
+[20:16:42] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.disconnect.ip_banned yaml=minecraft.packet.multiplayer.disconnect.ip_banned
+[20:16:42] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Kicked by an operator
+[20:16:42] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.disconnect.kicked yaml=minecraft.packet.multiplayer.disconnect.kicked
+[20:16:42] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Incomplete set of tags received from server. Please contact server operator.
+[20:16:42] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.disconnect.missing_tags yaml=minecraft.packet.multiplayer.disconnect.missing_tags
+[20:16:42] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=That name is already taken
+[20:16:42] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.disconnect.name_taken yaml=minecraft.packet.multiplayer.disconnect.name_taken
+[20:16:42] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=You are not white-listed on this server!
+[20:16:42] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.disconnect.not_whitelisted yaml=minecraft.packet.multiplayer.disconnect.not_whitelisted
+[20:16:42] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Out-of-order chat packet received. Did your system time change?
+[20:16:42] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.disconnect.out_of_order_chat yaml=minecraft.packet.multiplayer.disconnect.out_of_order_chat
+[20:16:42] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Incompatible client! Please use %s
+[20:16:42] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.disconnect.outdated_client yaml=minecraft.packet.multiplayer.disconnect.outdated_client
+[20:16:42] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Incompatible client! Please use %s
+[20:16:42] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.disconnect.outdated_server yaml=minecraft.packet.multiplayer.disconnect.outdated_server
+[20:16:43] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=The server is full!
+[20:16:43] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.disconnect.server_full yaml=minecraft.packet.multiplayer.disconnect.server_full
+[20:16:43] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Server closed
+[20:16:43] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.disconnect.server_shutdown yaml=minecraft.packet.multiplayer.disconnect.server_shutdown
+[20:16:43] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Took too long to log in
+[20:16:43] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.disconnect.slow_login yaml=minecraft.packet.multiplayer.disconnect.slow_login
+[20:16:43] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Too many unacknowledged chat messages
+[20:16:43] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.disconnect.too_many_pending_chats yaml=minecraft.packet.multiplayer.disconnect.too_many_pending_chats
+[20:16:43] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Unexpected custom data from client
+[20:16:43] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.disconnect.unexpected_query_response yaml=minecraft.packet.multiplayer.disconnect.unexpected_query_response
+[20:16:43] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Received chat packet with missing or invalid signature.
+[20:16:43] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.disconnect.unsigned_chat yaml=minecraft.packet.multiplayer.disconnect.unsigned_chat
+[20:16:43] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Failed to verify username!
+[20:16:43] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.disconnect.unverified_username yaml=minecraft.packet.multiplayer.disconnect.unverified_username
+[20:16:44] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Retrieving statistics...
+[20:16:44] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.downloadingStats yaml=minecraft.packet.multiplayer.downloadingStats
+[20:16:44] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Loading terrain...
+[20:16:44] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.downloadingTerrain yaml=minecraft.packet.multiplayer.downloadingTerrain
+[20:16:44] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=New server found: %s
+[20:16:44] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.lan.server_found yaml=minecraft.packet.multiplayer.lan.server_found
+[20:16:44] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Can't deliver chat message, check server logs: %s
+[20:16:44] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.message_not_delivered yaml=minecraft.packet.multiplayer.message_not_delivered
+[20:16:44] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%s joined the game
+[20:16:44] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.player.joined yaml=minecraft.packet.multiplayer.player.joined
+[20:16:44] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%s (formerly known as %s) joined the game
+[20:16:44] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.player.joined.renamed yaml=minecraft.packet.multiplayer.player.joined.renamed
+[20:16:44] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=flowmari、遊びの世を去り給ひぬ
+[20:16:44] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.player.left yaml=minecraft.packet.multiplayer.player.left
+[20:16:44] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Online players: %s
+[20:16:44] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.player.list.narration yaml=minecraft.packet.multiplayer.player.list.narration
+[20:16:45] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Server requires a custom resource pack
+[20:16:45] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.requiredTexturePrompt.disconnect yaml=minecraft.packet.multiplayer.requiredTexturePrompt.disconnect
+[20:16:45] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=This server requires the use of a custom resource pack.
+[20:16:45] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.requiredTexturePrompt.line1 yaml=minecraft.packet.multiplayer.requiredTexturePrompt.line1
+[20:16:45] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Rejecting this custom resource pack will disconnect you from this server.
+[20:16:45] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.requiredTexturePrompt.line2 yaml=minecraft.packet.multiplayer.requiredTexturePrompt.line2
+[20:16:45] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Social Interactions are only available in Multiplayer worlds
+[20:16:45] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.socialInteractions.not_available yaml=minecraft.packet.multiplayer.socialInteractions.not_available
+[20:16:45] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=... and %s more ...
+[20:16:45] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.status.and_more yaml=minecraft.packet.multiplayer.status.and_more
+[20:16:45] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Cancelled
+[20:16:45] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.status.cancelled yaml=minecraft.packet.multiplayer.status.cancelled
+[20:16:45] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Can't connect to server
+[20:16:45] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.status.cannot_connect yaml=minecraft.packet.multiplayer.status.cannot_connect
+[20:16:45] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Can't resolve hostname
+[20:16:45] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.status.cannot_resolve yaml=minecraft.packet.multiplayer.status.cannot_resolve
+[20:16:46] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Finished
+[20:16:46] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.status.finished yaml=minecraft.packet.multiplayer.status.finished
+[20:16:46] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Incompatible version!
+[20:16:46] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.status.incompatible yaml=minecraft.packet.multiplayer.status.incompatible
+[20:16:46] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Message of the day: %s
+[20:16:46] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.status.motd.narration yaml=minecraft.packet.multiplayer.status.motd.narration
+[20:16:46] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=(no connection)
+[20:16:46] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.status.no_connection yaml=minecraft.packet.multiplayer.status.no_connection
+[20:16:46] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Old
+[20:16:46] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.status.old yaml=minecraft.packet.multiplayer.status.old
+[20:16:46] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Online
+[20:16:46] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.status.online yaml=minecraft.packet.multiplayer.status.online
+[20:16:46] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%s ms
+[20:16:46] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.status.ping yaml=minecraft.packet.multiplayer.status.ping
+[20:16:46] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Ping %s milliseconds
+[20:16:46] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.status.ping.narration yaml=minecraft.packet.multiplayer.status.ping.narration
+[20:16:46] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Pinging...
+[20:16:46] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.status.pinging yaml=minecraft.packet.multiplayer.status.pinging
+[20:16:47] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%s out of %s players online
+[20:16:47] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.status.player_count.narration yaml=minecraft.packet.multiplayer.status.player_count.narration
+[20:16:47] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Quitting
+[20:16:47] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.status.quitting yaml=minecraft.packet.multiplayer.status.quitting
+[20:16:47] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Status request has been handled
+[20:16:47] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.status.request_handled yaml=minecraft.packet.multiplayer.status.request_handled
+[20:16:47] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=???
+[20:16:47] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.status.unknown yaml=minecraft.packet.multiplayer.status.unknown
+[20:16:47] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Received unrequested status
+[20:16:47] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.status.unrequested yaml=minecraft.packet.multiplayer.status.unrequested
+[20:16:47] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Server version: %s
+[20:16:47] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.status.version.narration yaml=minecraft.packet.multiplayer.status.version.narration
+[20:16:47] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Leave Bed
+[20:16:47] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.stopSleeping yaml=minecraft.packet.multiplayer.stopSleeping
+[20:16:47] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Server resource pack couldn't be applied
+[20:16:47] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.texturePrompt.failure.line1 yaml=minecraft.packet.multiplayer.texturePrompt.failure.line1
+[20:16:48] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Any functionality that requires custom resources might not work as expected
+[20:16:48] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.texturePrompt.failure.line2 yaml=minecraft.packet.multiplayer.texturePrompt.failure.line2
+[20:16:48] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=This server recommends the use of a custom resource pack.
+[20:16:48] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.texturePrompt.line1 yaml=minecraft.packet.multiplayer.texturePrompt.line1
+[20:16:48] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Would you like to download and install it automagically?
+[20:16:48] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.texturePrompt.line2 yaml=minecraft.packet.multiplayer.texturePrompt.line2
+[20:16:48] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=%s  Message from server: %s
+[20:16:48] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.texturePrompt.serverPrompt yaml=minecraft.packet.multiplayer.texturePrompt.serverPrompt
+[20:16:48] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Play Multiplayer
+[20:16:48] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.title yaml=minecraft.packet.multiplayer.title
+[20:16:48] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Messages sent on this server may be modified and might not reflect the original message
+[20:16:48] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.unsecureserver.toast yaml=minecraft.packet.multiplayer.unsecureserver.toast
+[20:16:48] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Chat messages can't be verified
+[20:16:48] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=multiplayer.unsecureserver.toast.title yaml=minecraft.packet.multiplayer.unsecureserver.toast.title
+[20:16:48] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=BROKEN ASSETS DETECTED
+[20:16:48] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=resourcePack.broken_assets yaml=minecraft.packet.resourcePack.broken_assets
+[20:16:49] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=High Contrast
+[20:16:49] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=resourcePack.high_contrast.name yaml=minecraft.packet.resourcePack.high_contrast.name
+[20:16:49] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Resource reload failed
+[20:16:49] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=resourcePack.load_fail yaml=minecraft.packet.resourcePack.load_fail
+[20:16:49] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Programmer Art
+[20:16:49] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=resourcePack.programmer_art.name yaml=minecraft.packet.resourcePack.programmer_art.name
+[20:16:49] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=World Specific Resources
+[20:16:49] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=resourcePack.server.name yaml=minecraft.packet.resourcePack.server.name
+[20:16:49] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Select Resource Packs
+[20:16:49] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=resourcePack.title yaml=minecraft.packet.resourcePack.title
+[20:16:49] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=The default look and feel of Minecraft
+[20:16:49] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=resourcePack.vanilla.description yaml=minecraft.packet.resourcePack.vanilla.description
+[20:16:49] [Server thread/INFO]: [TreasureRun] [PacketI18n][REPLACE] player=flowmari packet=SYSTEM_CHAT source=STRING text=Default
+[20:16:49] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=resourcePack.vanilla.name yaml=minecraft.packet.resourcePack.vanilla.name
