@@ -27,9 +27,15 @@ public class TreasureRunI18nMod implements ClientModInitializer {
     loadLangMap();
     LOGGER.info("[TreasureRun i18n] {} languages loaded from lang-map.yml", LANG_MAP.size());
     ClientPlayNetworking.registerGlobalReceiver(LANG_CHANNEL, (client, handler, buf, responseSender) -> {
-      String trLang = buf.readString(64).toLowerCase().trim();
+      byte[] payload = new byte[buf.readableBytes()];
+      buf.readBytes(payload);
+
+      String trLang = new String(payload, StandardCharsets.UTF_8)
+          .toLowerCase()
+          .trim();
+
       String mcLang = toMinecraftLang(trLang);
-      LOGGER.info("[TreasureRun i18n] lang sync: {} -> {}", trLang, mcLang);
+      LOGGER.info("[TreasureRun i18n] lang sync raw payload='{}' -> minecraft='{}'", trLang, mcLang);
       client.execute(() -> applyLanguage(client, mcLang));
     });
     LOGGER.info("[TreasureRun i18n] Auto-sync active. Add languages via lang-map.yml only.");
