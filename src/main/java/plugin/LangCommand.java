@@ -305,5 +305,13 @@ public class LangCommand implements CommandExecutor, TabCompleter {
 
   private void sendLangToClient(Player player, String lang) {
     LanguageSyncService.syncSelectedLanguage(plugin, player, lang, "command:/lang");
+    try {
+      FabricModDetector det = plugin.getFabricModDetector();
+      if (det != null && det.hasFabricMod(player)) return;
+      ResourcePackFallbackService fb = plugin.getResourcePackFallbackService();
+      if (fb != null) fb.sendFallbackPack(player, lang);
+    } catch (Throwable t) {
+      plugin.getLogger().warning("[LangCommand] fallback error: " + t.getMessage());
+    }
   }
 }

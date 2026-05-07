@@ -132,19 +132,16 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
   // ✅ 言語切替（LanguageStore / LanguageSelectGui）
   // - /treasureReload で GUI を作り直して Listener 再登録するため
   // =======================================================
-  private LanguageStore languageStore;          // ✅ final じゃなくする（安全に運用）
-  private LanguageSelectGui languageSelectGui;  // ✅ reloadで作り直す
-
+  private LanguageStore languageStore;
+  private LanguageSelectGui languageSelectGui;
+  private FabricModDetector fabricModDetector;
+  private ResourcePackFallbackService resourcePackFallbackService;
   public LanguageStore getLanguageStore() { return languageStore; }
   public LanguageSelectGui getLanguageSelectGui() { return languageSelectGui; }
-  public plugin.PlayerLanguageStore getPlayerLanguageStore() {
-    return playerLanguageStore;
-  }
-
-  // i18n getter が欲しい場合
-  public plugin.I18n getI18n() {
-    return i18n;
-  }
+  public plugin.PlayerLanguageStore getPlayerLanguageStore() { return playerLanguageStore; }
+  public plugin.I18n getI18n() { return i18n; }
+  public FabricModDetector getFabricModDetector() { return fabricModDetector; }
+  public ResourcePackFallbackService getResourcePackFallbackService() { return resourcePackFallbackService; }
 
   private String uiLang(Player player) {
     String lang = getConfig().getString("language.default", "en");
@@ -239,6 +236,9 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     saveDefaultConfig();
     reloadConfig();
     getServer().getMessenger().registerOutgoingPluginChannel(this, "treasurerun:lang");
+    fabricModDetector = new FabricModDetector(this); fabricModDetector.register();
+    resourcePackFallbackService = new ResourcePackFallbackService(this);
+    try { getServer().getPluginManager().registerEvents(new ResourcePackFallbackJoinListener(this), this); getLogger().info("[ResourcePackFallback] join listener registered"); } catch (Throwable t) { getLogger().warning("[ResourcePackFallback] failed: " + t.getMessage()); }
 
     // ✅ 安全設計：Join自動スタートはデフォルトOFF（必要時だけON）
     boolean autoStart = getConfig().getBoolean("debug.autoStartOnJoin", false);

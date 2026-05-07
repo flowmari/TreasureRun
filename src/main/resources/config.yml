@@ -2813,3 +2813,30 @@ resourcePack:
   url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
   sha1: dfff2891d1326e06df4474bb72a843f815c7d4ad
   prompt: "TreasureRun uses a multilingual Minecraft resource pack to localize Minecraft language keys. Please accept it for the full i18n experience."
+
+resourcePackFallback:
+  enabled: true
+  force: false
+  prompt: "TreasureRun i18n"
+  packs:
+    ja:
+      url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack-ja.zip"
+      sha1: "FILL_AFTER_GENERATE"
+    en:
+      url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack-en.zip"
+      sha1: "FILL_AFTER_GENERATE"
+    de:
+      url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack-de.zip"
+      sha1: "FILL_AFTER_GENERATE"
+    fr:
+      url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack-fr.zip"
+      sha1: "FILL_AFTER_GENERATE"
+    es:
+      url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack-es.zip"
+      sha1: "FILL_AFTER_GENERATE"
+    ko:
+      url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack-ko.zip"
+      sha1: "FILL_AFTER_GENERATE"
+    ru:
+      url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack-ru.zip"
+      sha1: "FILL_AFTER_GENERATE"
