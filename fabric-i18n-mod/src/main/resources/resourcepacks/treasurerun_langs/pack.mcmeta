@@ -1,0 +1,33 @@
+{
+  "pack": {
+    "pack_format": 15,
+    "description": "TreasureRun custom language metadata"
+  },
+  "language": {
+    "sa_in": {
+      "name": "संस्कृतम्",
+      "region": "Sanskrit",
+      "bidirectional": false
+    },
+    "ojp_jp": {
+      "name": "上代日本語",
+      "region": "Old Japanese",
+      "bidirectional": false
+    },
+    "la_la": {
+      "name": "Latina",
+      "region": "Latin",
+      "bidirectional": false
+    },
+    "lzh_hant": {
+      "name": "文言",
+      "region": "Classical Chinese",
+      "bidirectional": false
+    },
+    "asl_us": {
+      "name": "ASL Gloss",
+      "region": "ASL Gloss",
+      "bidirectional": false
+    }
+  }
+}
