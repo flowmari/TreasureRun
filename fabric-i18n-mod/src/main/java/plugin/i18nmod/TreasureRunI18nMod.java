@@ -21,6 +21,10 @@ import java.util.Scanner;
 
 import static net.fabricmc.fabric.api.client.command.v2.ClientCommandManager.argument;
 import static net.fabricmc.fabric.api.client.command.v2.ClientCommandManager.literal;
+import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
+import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
+import net.fabricmc.loader.api.FabricLoader;
+import net.fabricmc.loader.api.ModContainer;
 
 @Environment(EnvType.CLIENT)
 public class TreasureRunI18nMod implements ClientModInitializer {
@@ -31,6 +35,19 @@ public class TreasureRunI18nMod implements ClientModInitializer {
 
   @Override
   public void onInitializeClient() {
+
+    ModContainer treasureRunMod = FabricLoader.getInstance()
+        .getModContainer("treasurerun_i18n")
+        .orElseThrow(() -> new IllegalStateException("treasurerun_i18n mod container not found"));
+
+    boolean builtInLangPackRegistered = ResourceManagerHelper.registerBuiltinResourcePack(
+        new Identifier("treasurerun_i18n", "treasurerun_langs"),
+        treasureRunMod,
+        ResourcePackActivationType.ALWAYS_ENABLED
+    );
+
+    LOGGER.info("[TreasureRun i18n] built-in lang pack '{}:treasurerun_langs' registered={}", "treasurerun_i18n", builtInLangPackRegistered);
+
     loadLangMap();
 
     LOGGER.info("[TreasureRun i18n] initialized");
