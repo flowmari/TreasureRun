@@ -884,3 +884,7 @@ Verification notes:
 - [`docs/verification/resource-pack/hybrid-i18n-safe-runtime.md`](docs/verification/resource-pack/hybrid-i18n-safe-runtime.md)
 
 - Runtime i18n verification includes a missing-translation fallback guard for PacketI18n, preventing unresolved Minecraft translation keys from being rewritten into player-visible fallback error text.
+
+## Additional technical notes
+
+- [ResourcePack aliasing fallback for Minecraft client language limits](docs/I18N_RESOURCEPACK_ALIASING_FALLBACK.md)
