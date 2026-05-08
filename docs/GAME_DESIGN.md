@@ -91,11 +91,14 @@ I do not think a small game needs to explain all of this to the player. But I do
 
 This vision did not come together cleanly.
 
-I spent a long time trying to understand what I was actually making. At first, the project was mainly a Minecraft plugin with gameplay systems, rankings, effects, and multilingual support. Over time, the setting became more important. The ocean, the trader, the llamas, the floating architecture, and the multilingual layer started to feel connected.
+Before I could continue building, I had to stop and ask myself what kind of game I actually wanted to make, and what I wanted the game to express. I did not want TreasureRun to be only a programming exercise. I wanted it to become a small fantasy world that combined the things I genuinely care about: oceanic utopias, science fiction, ecology, multilingual culture, history, music, philosophy, UFO-like strangeness, and my personal affection for languages such as German.
+
+That process took longer than I expected. The stage, the colors, the music, the trader, the llamas, and the contrast between cold glass architecture and warmer human-scale imagery all took a lot of trial and error. I kept revising because I wanted the game to feel like one coherent world, not just a collection of features.
 
 The engineering work has been difficult in a concrete way: Java, Spigot, Fabric, ResourcePacks, MySQL, CI, i18n, and debugging. The creative work has been difficult in a different way. There is no compiler error that tells you when a world feels wrong. You have to keep revising until the atmosphere begins to feel honest.
 
 TreasureRun is still unfinished, but it has become the first project where the engineering and the creative vision feel connected to me.
+
 
 ## Why This Matters to the Project
 

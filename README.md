@@ -142,11 +142,11 @@ Evidence: [`docs/verification/ci-cd/github-actions-main-success-20260506_090148.
 
 <!-- TREASURERUN_GAME_DESIGN_LINK -->
 
-## Game Design & Creative Vision
+## Game Design Notes
 
-Beyond the engineering work, TreasureRun also has a creative direction: a post-collapse floating world shaped by oceanic utopias, barter economies, multilingual memory, and the tension between futuristic infrastructure and small human-scale survival.
+TreasureRun also includes a short design note explaining how its setting, multilingual worldbuilding, and player-facing atmosphere connect to the game systems.
 
-See [`docs/GAME_DESIGN.md`](docs/GAME_DESIGN.md) for the full creative vision.
+See [`docs/GAME_DESIGN.md`](docs/GAME_DESIGN.md) for details.
 
 ---
 
