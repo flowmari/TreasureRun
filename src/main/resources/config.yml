@@ -2875,7 +2875,7 @@ resourcePackFallback:
       sha1: "c9ed38d5c2314297e67891be95bbb0aeddd70f24"
     ojp:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack-ojp.zip"
-      sha1: "87c4bb9958ba1716e884162c12ce29fd20c8a851"
+      sha1: "26e0b26c18e5bac2bcb7fa2ef83545ac0003b3c2"
     asl_gloss:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack-asl_gloss.zip"
       sha1: "72d6aa4d301c32108d0b989e5b5bbeed973fcf8c"
