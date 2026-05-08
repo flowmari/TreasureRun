@@ -140,6 +140,16 @@ Evidence: [`docs/verification/ci-cd/github-actions-main-success-20260506_090148.
 
 ---
 
+<!-- TREASURERUN_GAME_DESIGN_LINK -->
+
+## Game Design & Creative Vision
+
+Beyond the engineering work, TreasureRun also has a creative direction: a post-collapse floating world shaped by oceanic utopias, barter economies, multilingual memory, and the tension between futuristic infrastructure and small human-scale survival.
+
+See [`docs/GAME_DESIGN.md`](docs/GAME_DESIGN.md) for the full creative vision.
+
+---
+
 ## Hybrid Minecraft Standard-Message i18n
 
 TreasureRun implements a hybrid i18n architecture that combines Bukkit/Adventure, ProtocolLib, and a server-side resource pack.
