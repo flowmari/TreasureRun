@@ -2866,10 +2866,10 @@ resourcePackFallback:
       sha1: "88a6ac66a0260a3d5435b81ef54ed7a297ea5150"
     la:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack-la.zip"
-      sha1: "a8293536955709ba22454232a4d0beb8cc2fb9a1"
+      sha1: "2fdabf2e276382f6ae4f198833b7888026ab6769"
     sa:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack-sa.zip"
-      sha1: "32c76bdeff9385470d833f97dcfea9442075e1f3"
+      sha1: "2791b52a238a61af4f35804ddd3a879e9ccee0eb"
     lzh:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack-lzh.zip"
       sha1: "c9ed38d5c2314297e67891be95bbb0aeddd70f24"
@@ -2878,4 +2878,4 @@ resourcePackFallback:
       sha1: "26e0b26c18e5bac2bcb7fa2ef83545ac0003b3c2"
     asl_gloss:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack-asl_gloss.zip"
-      sha1: "72d6aa4d301c32108d0b989e5b5bbeed973fcf8c"
+      sha1: "9cbee974d2dfbca217f69b226340107761fc5733"
