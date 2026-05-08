@@ -2869,7 +2869,7 @@ resourcePackFallback:
       sha1: "ca4411039d9840ddf38928bee87a7411dff9c51d"
     sa:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack-sa.zip"
-      sha1: "2791b52a238a61af4f35804ddd3a879e9ccee0eb"
+      sha1: "3f860c11a04ae2e3a348b5c0c3c89d809625218e"
     lzh:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack-lzh.zip"
       sha1: "c9ed38d5c2314297e67891be95bbb0aeddd70f24"
