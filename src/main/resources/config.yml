@@ -2811,7 +2811,7 @@ resourcePack:
   enabled: true
   force: true
   url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-  sha1: 70fe1f30d5cb4a05e9e30ed21a475dfd8e938d99
+  sha1: b738659083e5cec8cfab62d4db48b80f7f6adfba
   prompt: "TreasureRun uses a multilingual Minecraft resource pack to localize Minecraft language keys. Please accept it for the full i18n experience."
 
 resourcePackFallback:
@@ -2878,4 +2878,4 @@ resourcePackFallback:
       sha1: "dce86a7019b3e02dfc9baf455527ea0c29a03e0b"
     asl_gloss:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack-asl_gloss.zip"
-      sha1: "dab8da7dfc5a76ad6db2a1f07a1b35a466ed6a17"
+      sha1: "8a94c0843d85afed0e2113afb987f3c1b7d9b12c"
