@@ -896,3 +896,8 @@ Verification notes:
 - [`docs/verification/resource-pack/hybrid-i18n-safe-runtime.md`](docs/verification/resource-pack/hybrid-i18n-safe-runtime.md)
 
 - Runtime i18n verification includes a missing-translation fallback guard for PacketI18n, preventing unresolved Minecraft translation keys from being rewritten into player-visible fallback error text.
+
+## Verification notes
+
+- [Hybrid i18n verification: Fabric runtime sync and non-mod ResourcePack fallback](docs/verification/i18n/non-mod-resourcepack-fallback.md)  
+  Fabric Mod導入環境でのruntime language syncと、Mod未導入環境向けResourcePack alias fallbackについて、20言語分の8039キー整合性、SHA1整合性、Java側fallback分岐を検証した記録。
