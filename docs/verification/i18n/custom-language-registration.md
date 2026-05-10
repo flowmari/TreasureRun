@@ -75,9 +75,9 @@ For `ojp_jp`:
 ```text
 menu.game = 遊びの目録
 menu.returnToGame = 遊びにかへる
-menu.options = しつらへ...
+menu.options = 仕立て（設え定む）...
 menu.disconnect = 離れ去る
-options.title = しつらへ
+options.title = 仕立て（設え定む）
 options.language = 言の葉...
 gui.done = 終はり
 multiplayer.title = もろ人と遊ぶ
