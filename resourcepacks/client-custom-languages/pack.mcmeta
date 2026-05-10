@@ -1,0 +1,33 @@
+{
+  "pack": {
+    "pack_format": 15,
+    "description": "TreasureRun client custom language registration pack for Minecraft 1.20.1"
+  },
+  "language": {
+    "ojp_jp": {
+      "name": "上代日本語",
+      "region": "Old Japanese / TreasureRun",
+      "bidirectional": false
+    },
+    "asl_us": {
+      "name": "ASL Gloss",
+      "region": "ASL Gloss / TreasureRun",
+      "bidirectional": false
+    },
+    "sa_in": {
+      "name": "संस्कृतम्",
+      "region": "Sanskrit / TreasureRun",
+      "bidirectional": false
+    },
+    "la_la": {
+      "name": "Latina",
+      "region": "Latin / TreasureRun",
+      "bidirectional": false
+    },
+    "lzh_hant": {
+      "name": "文言",
+      "region": "Classical Chinese / TreasureRun",
+      "bidirectional": false
+    }
+  }
+}
