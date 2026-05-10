@@ -18,6 +18,10 @@ This repository is designed as a portfolio project that demonstrates not only ga
 
 TreasureRun includes a hybrid Minecraft standard-message i18n architecture for Minecraft 1.20.1.
 
+This project demonstrates **platform-boundary i18n engineering for Minecraft standard UI text**, going beyond normal plugin-owned localization.
+
+It is structured as a **contributor-ready localization system for a global open-source project**: custom Minecraft language registration, reproducible ResourcePack assets, Fabric runtime language sync, ProtocolLib packet auditing, verification docs, and CI-backed quality gates make the system easier to inspect, reproduce, and extend.
+
 Minecraft standard UI text cannot be fully controlled by a Spigot plugin alone.  
 To work around that limitation, TreasureRun combines **Spigot / ProtocolLib / ResourcePack / Fabric Mod** into a multi-layer architecture.
 
@@ -900,4 +904,8 @@ Verification notes:
 ## Verification notes
 
 - [Hybrid i18n verification: Fabric runtime sync and non-mod ResourcePack fallback](docs/verification/i18n/non-mod-resourcepack-fallback.md)  
+  Fabric Mod導入環境でのruntime language syncと、Mod未導入環境向けResourcePack alias fallbackについて、20言語分の8039キー整合性、SHA1整合性、Java側fallback分岐を検証した記録。
+
+- [Custom Minecraft language registration verification](docs/verification/i18n/custom-language-registration.md)  
+  Client ResourcePack metadataによって `ojp_jp` / `asl_us` / `sa_in` / `la_la` / `lzh_hant` をMinecraftの言語一覧に登録し、標準UIへ反映できることを検証した記録。
   Fabric Mod導入環境でのruntime language syncと、Mod未導入環境向けResourcePack alias fallbackについて、20言語分の8039キー整合性、SHA1整合性、Java側fallback分岐を検証した記録。
