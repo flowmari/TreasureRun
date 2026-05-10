@@ -907,4 +907,4 @@ Verification notes:
   Fabric Mod導入環境でのruntime language syncと、Mod未導入環境向けResourcePack alias fallbackについて、20言語分の8039キー整合性、SHA1整合性、Java側fallback分岐を検証した記録。
 
 - [Custom Minecraft language registration verification](docs/verification/i18n/custom-language-registration.md)  
-  Client ResourcePack metadataによって `ojp_jp` / `asl_us` / `sa_in` / `la_la` / `lzh_hant` をMinecraftの言語一覧に登録し、標準UIへ反映できることを検証した記録。Spigot単体では制御できないMinecraft標準UI文言を、クライアントResourcePack層とFabric runtime syncで扱うための検証。
+  This verification records how TreasureRun registers custom Minecraft client languages (`ojp_jp`, `asl_us`, `sa_in`, `la_la`, and `lzh_hant`) through client ResourcePack metadata, and applies them to standard Minecraft UI text that cannot be controlled by a Spigot plugin alone.
