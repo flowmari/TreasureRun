@@ -76,3 +76,6 @@ docs/i18n_audit/final_visible_direct_literal_audit_after_reward_patch.tsv
 .idea/tasks.xml
 .idea/usage.statistics.xml
 .idea/shelf/
+tmp_*.sh
+tmp_*.txt
+tmp_resourcepack_http_8008.pid
