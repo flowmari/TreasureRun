@@ -1,0 +1,42 @@
+name: Translation request
+description: Request or improve a TreasureRun translation
+title: "[Translation]: "
+labels: ["i18n", "translation"]
+body:
+  - type: input
+    id: language
+    attributes:
+      label: Language / locale
+      placeholder: "Example: ja, en, de, ojp, asl_gloss"
+    validations:
+      required: true
+
+  - type: textarea
+    id: target
+    attributes:
+      label: Target text or key
+      description: Which message, UI text, or translation key should be changed?
+    validations:
+      required: true
+
+  - type: textarea
+    id: current
+    attributes:
+      label: Current wording
+    validations:
+      required: false
+
+  - type: textarea
+    id: proposed
+    attributes:
+      label: Proposed wording
+    validations:
+      required: true
+
+  - type: textarea
+    id: reason
+    attributes:
+      label: Why is this better?
+      description: Explain naturalness, accuracy, tone, or UI context.
+    validations:
+      required: true

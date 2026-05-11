@@ -892,6 +892,13 @@ This architecture is intentionally documented with realistic boundaries. Some pr
 
 Verification notes:
 
+- [v0.1.0-alpha release checklist](docs/release/v0.1.0-alpha-checklist.md)  
+  Early alpha release checklist for OSS readiness, verification, and portfolio review.
+
+- [PacketI18n boundary refactor verification](docs/verification/i18n/packet-i18n-boundary-refactor.md)  
+  Verification record for separating the ProtocolLib packet boundary adapter from the pure-Java packet JSON localizer.
+
+
 - [PacketI18n boundary refactor verification](docs/verification/i18n/packet-i18n-boundary-refactor.md)  
   ProtocolLib境界層とpure-Java packet JSON localizerを分離し、Minecraft依存の重い境界とテスト可能なi18nロジックを分けた検証記録。
 
