@@ -1,5 +1,6 @@
 package plugin;
 
+import plugin.i18n.PacketI18nJsonLocalizer;
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.ProtocolLibrary;
 import com.comphenix.protocol.events.ListenerPriority;
@@ -107,7 +108,7 @@ public final class LocalizedPacketMessageProtocolListener {
         jsons.add(json);
         if (replace) {
           String loc = localizeJsonDeep(player, json);
-          if (isUsable(loc)) { comps.write(i, WrappedChatComponent.fromText(loc)); touched = true;
+          if (isUsable(loc)) { comps.write(i, WrappedChatComponent.fromJson(loc)); touched = true;
             if (audit) plugin.getLogger().info("[PacketI18n][REPLACE] " + player.getName() + " packet=" + packetName + " text=" + compact(loc)); }
         }
       }
@@ -121,7 +122,7 @@ public final class LocalizedPacketMessageProtocolListener {
           if (replace) {
             String loc = localizeJsonDeep(player, s);
             if (isUsable(loc)) {
-              try { strings.write(i, WrappedChatComponent.fromText(loc).getJson()); touched = true;
+              try { strings.write(i, WrappedChatComponent.fromJson(loc).getJson()); touched = true;
                 if (audit) plugin.getLogger().info("[PacketI18n][REPLACE] " + player.getName() + " packet=" + packetName + " src=STRING text=" + compact(loc)); }
               catch (Throwable w) { if (debug) plugin.getLogger().warning("[PacketI18n] write: " + w.getMessage()); }
             }
@@ -134,17 +135,29 @@ public final class LocalizedPacketMessageProtocolListener {
   }
 
   private String localizeJsonDeep(Player player, String json) {
-    String topKey = extractTranslateKey(json);
-    if (topKey == null || topKey.isBlank()) return null;
     String lang = resolvePlayerLang(player);
-    String yamlKey = toYamlKey(topKey);
-    List<String> resolvedArgs = resolveWithArgs(player, json, lang);
-    List<I18n.Placeholder> placeholders = new ArrayList<>();
-    for (int i = 0; i < resolvedArgs.size() && i < 10; i++)
-      placeholders.add(I18n.Placeholder.of("{arg" + i + "}", resolvedArgs.get(i)));
-    String loc = plugin.getI18n().tr(lang, yamlKey, placeholders.toArray(new I18n.Placeholder[0]));
-    if (!isUsable(loc) || isFallback(loc, yamlKey, topKey)) return null;
-    return loc;
+
+    return PacketI18nJsonLocalizer.localizeJson(
+        json,
+        lang,
+        (targetLang, yamlKey, args) -> {
+          I18n.Placeholder[] placeholders = new I18n.Placeholder[Math.min(args.length, 10)];
+          for (int i = 0; i < placeholders.length; i++) {
+            placeholders[i] = I18n.Placeholder.of("{" + args[i].name() + "}", args[i].value());
+          }
+
+          String loc = plugin.getI18n().tr(targetLang, yamlKey, placeholders);
+          String translateKey = yamlKey.startsWith("minecraft.packet.")
+              ? yamlKey.substring("minecraft.packet.".length())
+              : yamlKey;
+
+          if (!isUsable(loc) || isFallback(loc, yamlKey, translateKey)) {
+            return null;
+          }
+
+          return loc;
+        }
+    );
   }
 
   private List<String> resolveWithArgs(Player player, String json, String lang) {
