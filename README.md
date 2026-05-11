@@ -1,5 +1,9 @@
 # TreasureRun — Treasure Hunt Mini-Game Plugin for Spigot 1.20.1
 
+> **Status:** `v0.1.0-alpha` released — a testable multi-layer i18n architecture for Minecraft 1.20.1.  
+> TreasureRun separates Minecraft-specific boundary code from pure packet-localization logic using a **ProtocolLib boundary adapter**, **ResourcePack language layer**, **Fabric runtime sync support**, and a **pure Java packet localizer**.  
+> This release verifies ResourcePack ZIP/SHA consistency, 21 language JSON files, focused PacketI18n tests, full Gradle build checks, and OSS-ready project files.
+
 [![CI](https://github.com/flowmari/TreasureRun/actions/workflows/ci.yml/badge.svg)](https://github.com/flowmari/TreasureRun/actions/workflows/ci.yml)
 [![i18n CI](https://github.com/flowmari/TreasureRun/actions/workflows/i18n-ci.yml/badge.svg)](https://github.com/flowmari/TreasureRun/actions/workflows/i18n-ci.yml)
 
@@ -756,7 +760,6 @@ Runtime verification for the packet-level audit layer is documented here:
 - [`docs/verification/packet-i18n-audit.md`](docs/verification/packet-i18n-audit.md)
 - [`docs/verification/packet-i18n-scope.md`](docs/verification/packet-i18n-scope.md)
 - [`docs/dev/packet-i18n-audit-commands.md`](docs/dev/packet-i18n-audit-commands.md)
-
 
 
 #### Repository Layer
