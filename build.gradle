@@ -15,6 +15,14 @@ repositories {
 
 // === resolutionStrategy を削除 ===
 
+// Test runtime needs the same provided server-side APIs that the plugin sees at runtime.
+// In production these are provided by Spigot/ProtocolLib/Minecraft server,
+// but JUnit runs outside the server, so tests need them on the test classpath.
+configurations {
+    testImplementation.extendsFrom compileOnly
+    testRuntimeOnly.extendsFrom compileOnly
+}
+
 dependencies {
     // Spigot API（コンパイル時のみ）
     compileOnly 'org.spigotmc:spigot-api:1.20.1-R0.1-SNAPSHOT'
