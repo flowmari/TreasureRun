@@ -892,6 +892,10 @@ This architecture is intentionally documented with realistic boundaries. Some pr
 
 Verification notes:
 
+- [PacketI18n boundary refactor verification](docs/verification/i18n/packet-i18n-boundary-refactor.md)  
+  ProtocolLib境界層とpure-Java packet JSON localizerを分離し、Minecraft依存の重い境界とテスト可能なi18nロジックを分けた検証記録。
+
+
 - [`docs/verification/packet-i18n-audit.md`](docs/verification/packet-i18n-audit.md)
 - [`docs/verification/resource-pack/server-side-resource-pack-i18n.md`](docs/verification/resource-pack/server-side-resource-pack-i18n.md)
 
