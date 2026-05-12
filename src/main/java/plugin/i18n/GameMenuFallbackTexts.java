@@ -1,7 +1,5 @@
 package plugin.i18n;
 
-import org.bukkit.entity.Player;
-
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
@@ -34,38 +32,34 @@ public final class GameMenuFallbackTexts {
     PLUGIN_NOT_READY.put("asl_gloss", "PLUGIN NOT READY YET.");
   }
 
-  public static String pluginNotReady(Player player) {
-    String lang = detect(player);
+  public static String pluginNotReadyForLocale(String locale) {
+    String lang = detect(locale);
     return PLUGIN_NOT_READY.getOrDefault(lang, PLUGIN_NOT_READY.get("en"));
   }
 
-  private static String detect(Player player) {
-    if (player == null) return "en";
-    try {
-      String locale = player.getLocale();
-      if (locale == null || locale.isBlank()) return "en";
-      String l = locale.toLowerCase(Locale.ROOT);
+  private static String detect(String locale) {
+    if (locale == null || locale.isBlank()) return "en";
 
-      if (l.startsWith("ja")) return "ja";
-      if (l.startsWith("en")) return "en";
-      if (l.startsWith("de")) return "de";
-      if (l.startsWith("es")) return "es";
-      if (l.startsWith("fi")) return "fi";
-      if (l.startsWith("fr")) return "fr";
-      if (l.startsWith("hi")) return "hi";
-      if (l.startsWith("is")) return "is";
-      if (l.startsWith("it")) return "it";
-      if (l.startsWith("ko")) return "ko";
-      if (l.startsWith("la")) return "la";
-      if (l.startsWith("zh_tw") || l.startsWith("zh_hant") || l.startsWith("zh-tw")) return "zh_tw";
-      if (l.startsWith("nl")) return "nl";
-      if (l.startsWith("pt")) return "pt";
-      if (l.startsWith("ru")) return "ru";
-      if (l.startsWith("sa")) return "sa";
-      if (l.startsWith("sv")) return "sv";
-      return "en";
-    } catch (Throwable ignored) {
-      return "en";
-    }
+    String l = locale.toLowerCase(Locale.ROOT);
+
+    if (l.startsWith("ja")) return "ja";
+    if (l.startsWith("en")) return "en";
+    if (l.startsWith("de")) return "de";
+    if (l.startsWith("es")) return "es";
+    if (l.startsWith("fi")) return "fi";
+    if (l.startsWith("fr")) return "fr";
+    if (l.startsWith("hi")) return "hi";
+    if (l.startsWith("is")) return "is";
+    if (l.startsWith("it")) return "it";
+    if (l.startsWith("ko")) return "ko";
+    if (l.startsWith("la")) return "la";
+    if (l.startsWith("zh_tw") || l.startsWith("zh_hant") || l.startsWith("zh-tw")) return "zh_tw";
+    if (l.startsWith("nl")) return "nl";
+    if (l.startsWith("pt")) return "pt";
+    if (l.startsWith("ru")) return "ru";
+    if (l.startsWith("sa")) return "sa";
+    if (l.startsWith("sv")) return "sv";
+
+    return "en";
   }
 }

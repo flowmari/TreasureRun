@@ -61,7 +61,7 @@ public class GameMenu {
     if (plugin == null) {
       // 最低限フォールバック（GameMenu.java にプレイヤー向け直書きを残さない）
       player.sendMessage(ChatColor.GOLD + GameMenuFallbackTexts.BRAND_TITLE);
-      player.sendMessage(ChatColor.RED + GameMenuFallbackTexts.pluginNotReady(player));
+      player.sendMessage(ChatColor.RED + GameMenuFallbackTexts.pluginNotReadyForLocale(player.getLocale()));
       return;
     }
 
