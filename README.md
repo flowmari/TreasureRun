@@ -4,6 +4,31 @@
 > TreasureRun separates Minecraft-specific boundary code from pure packet-localization logic using a **ProtocolLib boundary adapter**, **ResourcePack language layer**, **Fabric runtime sync support**, and a **pure Java packet localizer**.  
 > This release verifies ResourcePack ZIP/SHA consistency, 21 language JSON files, focused PacketI18n tests, full Gradle build checks, and OSS-ready project files.
 
+
+### Architecture at a Glance — Packet i18n
+
+The hard part of TreasureRun's i18n is not the translation strings. It is that Minecraft's standard-UI text path is split between server and client, and a Spigot plugin alone cannot reach every part of it. The codebase is therefore deliberately split into four layers, with a testable pure core at the centre:
+
+| Layer | What it does | Where it lives |
+| --- | --- | --- |
+| **ProtocolLib adapter** | Intercepts server-to-client chat / title / actionbar / bossbar / disconnect / advancement packets | [`plugin.LocalizedPacketMessageProtocolListener`](src/main/java/plugin/LocalizedPacketMessageProtocolListener.java) |
+| **Pure Java packet localizer** | Parses Minecraft `{"translate":…,"with":…}` JSON, calls a translator port, rewrites the JSON. No Bukkit / ProtocolLib / Fabric imports. | [`plugin.i18n.PacketI18nJsonLocalizer`](src/main/java/plugin/i18n/PacketI18nJsonLocalizer.java) |
+| **ResourcePack layer** | Per-language fallback packs, SHA-1 verified, auto-rebuilt by CI | `ResourcePackFallbackService` + [`resourcepacks/`](resourcepacks/) |
+| **Fabric runtime sync** | Server sends only the selected language code (~3 bytes); client mod applies via `LanguageManager#setLanguage` + `client.reloadResources()` — no Minecraft restart | `LanguageSyncService` + [`fabric-i18n-mod/`](fabric-i18n-mod/) |
+
+The boundary between the ProtocolLib adapter and the pure core is **enforced by tests, not by convention**. Two architectural fitness functions guard the boundary in **both directions**:
+
+- [`PureI18nPackageBoundaryTest`](src/test/java/plugin/i18n/PureI18nPackageBoundaryTest.java) scans `plugin/i18n/*.java` at build time and fails the build if any file in the pure package imports `org.bukkit.*`, `com.comphenix.protocol.*`, `net.fabricmc.*`, or `net.minecraft.*`.
+- [`LocalizedPacketMessageProtocolListenerTest`](src/test/java/plugin/LocalizedPacketMessageProtocolListenerTest.java) scans the adapter and fails the build if JSON parsing (`JsonParser.parseString`, `new Gson(`) leaks into the boundary listener.
+
+This is the technique described in *Building Evolutionary Architectures* (Ford, Parsons, Kua) for keeping intended boundaries from rotting silently over time.
+
+Design rationale and trade-offs are recorded in [`docs/adr/ADR-001-packet-i18n-ports-and-adapters.md`](docs/adr/ADR-001-packet-i18n-ports-and-adapters.md).
+
+#### Why this matters beyond Minecraft
+
+The same shape generalises to any platform where a host runtime owns half the UI surface and the application can only reach the other half: mobile webview bridges, embedded systems with closed-firmware UI, proprietary game engines, OS-managed system dialogs. The translation target changes; the four-layer separation and the fitness-function discipline do not.
+
 [![CI](https://github.com/flowmari/TreasureRun/actions/workflows/ci.yml/badge.svg)](https://github.com/flowmari/TreasureRun/actions/workflows/ci.yml)
 [![i18n CI](https://github.com/flowmari/TreasureRun/actions/workflows/i18n-ci.yml/badge.svg)](https://github.com/flowmari/TreasureRun/actions/workflows/i18n-ci.yml)
 
