@@ -29,6 +29,21 @@ Design rationale and trade-offs are recorded in [`docs/adr/ADR-001-packet-i18n-p
 
 The same shape generalises to any platform where a host runtime owns half the UI surface and the application can only reach the other half: mobile webview bridges, embedded systems with closed-firmware UI, proprietary game engines, OS-managed system dialogs. The translation target changes; the four-layer separation and the fitness-function discipline do not.
 
+## For Reviewers
+
+If you are reviewing this project for engineering quality, start here:
+
+1. **Project overview**: [`docs/PROJECT_OVERVIEW.md`](docs/PROJECT_OVERVIEW.md)
+2. **Architecture decision**: [`docs/adr/ADR-001-packet-i18n-ports-and-adapters.md`](docs/adr/ADR-001-packet-i18n-ports-and-adapters.md)
+3. **Boundary verification**: [`docs/verification/i18n/packet-i18n-boundary-refactor.md`](docs/verification/i18n/packet-i18n-boundary-refactor.md)
+4. **Key implementation files**:
+   - [`LocalizedPacketMessageProtocolListener`](src/main/java/plugin/LocalizedPacketMessageProtocolListener.java)
+   - [`PacketI18nJsonLocalizer`](src/main/java/plugin/i18n/PacketI18nJsonLocalizer.java)
+   - [`PureI18nPackageBoundaryTest`](src/test/java/plugin/i18n/PureI18nPackageBoundaryTest.java)
+   - [`LocalizedPacketMessageProtocolListenerTest`](src/test/java/plugin/LocalizedPacketMessageProtocolListenerTest.java)
+
+The core engineering point is the separation between Minecraft-dependent boundary code and platform-free localization logic.
+
 [![CI](https://github.com/flowmari/TreasureRun/actions/workflows/ci.yml/badge.svg)](https://github.com/flowmari/TreasureRun/actions/workflows/ci.yml)
 [![i18n CI](https://github.com/flowmari/TreasureRun/actions/workflows/i18n-ci.yml/badge.svg)](https://github.com/flowmari/TreasureRun/actions/workflows/i18n-ci.yml)
 
