@@ -1,4 +1,4 @@
-# Architecture Review Guide: TreasureRun
+# Project Overview: TreasureRun
 
 TreasureRun is a Java-based Minecraft Spigot 1.20.1 plugin that demonstrates backend/plugin engineering, i18n architecture, and platform-boundary problem solving under real Minecraft client/server constraints.
 
@@ -211,7 +211,7 @@ Areas for future improvement include:
 
 ---
 
-## Short summary for recruiters
+## Short technical summary
 
 TreasureRun is a Java Spigot plugin project that demonstrates how to solve a real Minecraft platform-boundary problem.
 
