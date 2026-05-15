@@ -20,6 +20,7 @@ The boundary between the ProtocolLib adapter and the pure core is **enforced by 
 
 - [`PureI18nPackageBoundaryTest`](src/test/java/plugin/i18n/PureI18nPackageBoundaryTest.java) scans `plugin/i18n/*.java` at build time and fails the build if any file in the pure package imports `org.bukkit.*`, `com.comphenix.protocol.*`, `net.fabricmc.*`, or `net.minecraft.*`.
 - [`LocalizedPacketMessageProtocolListenerTest`](src/test/java/plugin/LocalizedPacketMessageProtocolListenerTest.java) scans the adapter and fails the build if JSON parsing (`JsonParser.parseString`, `new Gson(`) leaks into the boundary listener.
+- [`ResourcePackArtifactIntegrityTest`](src/test/java/plugin/i18n/ResourcePackArtifactIntegrityTest.java) verifies the generated ResourcePack artifact: ZIP/SHA/config.yml consistency, 21 language JSON files, 8039-key coverage per language, and important Minecraft standard UI keys.
 
 This is the technique described in *Building Evolutionary Architectures* (Ford, Parsons, Kua) for keeping intended boundaries from rotting silently over time.
 
@@ -41,8 +42,11 @@ If you are reviewing this project for engineering quality, start here:
    - [`PacketI18nJsonLocalizer`](src/main/java/plugin/i18n/PacketI18nJsonLocalizer.java)
    - [`PureI18nPackageBoundaryTest`](src/test/java/plugin/i18n/PureI18nPackageBoundaryTest.java)
    - [`LocalizedPacketMessageProtocolListenerTest`](src/test/java/plugin/LocalizedPacketMessageProtocolListenerTest.java)
+   - [`ResourcePackArtifactIntegrityTest`](src/test/java/plugin/i18n/ResourcePackArtifactIntegrityTest.java)
 
 The core engineering point is the separation between Minecraft-dependent boundary code and platform-free localization logic.
+
+ResourcePack artifact claims are documented separately in [`docs/verification/i18n/resourcepack-artifact-integrity-test.md`](docs/verification/i18n/resourcepack-artifact-integrity-test.md), keeping the README short while making the claim-to-test path reviewable.
 
 [![CI](https://github.com/flowmari/TreasureRun/actions/workflows/ci.yml/badge.svg)](https://github.com/flowmari/TreasureRun/actions/workflows/ci.yml)
 [![i18n CI](https://github.com/flowmari/TreasureRun/actions/workflows/i18n-ci.yml/badge.svg)](https://github.com/flowmari/TreasureRun/actions/workflows/i18n-ci.yml)
