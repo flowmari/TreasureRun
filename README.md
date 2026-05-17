@@ -11,7 +11,7 @@
 
 ![TreasureRun standard UI i18n demo](docs/assets/treasurerun-standard-ui-i18n-demo.gif)
 
-This demo shows Minecraft standard UI text switching at runtime through TreasureRun's hybrid i18n architecture: English → German → OJP / Classical Japanese → English. The recording is cropped to focus on the Minecraft UI itself, and demonstrates ResourcePack language assets, Fabric runtime language sync, and server-side packet-localization support.
+This demo shows TreasureRun switching Minecraft standard UI text at runtime across the Minecraft server/client boundary: English → German → OJP / Classical Japanese → English. It demonstrates how ResourcePack language assets, Fabric runtime language synchronization, and server-side packet-localization support work together to extend i18n beyond plugin-owned messages.
 
 ### Architecture at a Glance — Packet i18n
 
