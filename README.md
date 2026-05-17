@@ -21,6 +21,7 @@ The boundary between the ProtocolLib adapter and the pure core is **enforced by 
 - [`PureI18nPackageBoundaryTest`](src/test/java/plugin/i18n/PureI18nPackageBoundaryTest.java) scans `plugin/i18n/*.java` at build time and fails the build if any file in the pure package imports `org.bukkit.*`, `com.comphenix.protocol.*`, `net.fabricmc.*`, or `net.minecraft.*`.
 - [`LocalizedPacketMessageProtocolListenerTest`](src/test/java/plugin/LocalizedPacketMessageProtocolListenerTest.java) scans the adapter and fails the build if JSON parsing (`JsonParser.parseString`, `new Gson(`) leaks into the boundary listener.
 - [`ResourcePackArtifactIntegrityTest`](src/test/java/plugin/i18n/ResourcePackArtifactIntegrityTest.java) verifies the generated ResourcePack artifact: ZIP/SHA/config.yml consistency, 21 language JSON files, 8039-key coverage per language, and important Minecraft standard UI keys.
+- [`I18nLanguagesYamlStoreFallbackTest`](src/test/java/plugin/I18nLanguagesYamlStoreFallbackTest.java), [`SeasonRepositoryTest`](src/test/java/plugin/rank/SeasonRepositoryTest.java), and [`SeasonScoreRepositoryTest`](src/test/java/plugin/rank/SeasonScoreRepositoryTest.java) verify core i18n fallback, weekly season lookup / creation, and ranking persistence transaction behavior.
 
 This is the technique described in *Building Evolutionary Architectures* (Ford, Parsons, Kua) for keeping intended boundaries from rotting silently over time.
 
@@ -47,6 +48,8 @@ If you are reviewing this project for engineering quality, start here:
 The core engineering point is the separation between Minecraft-dependent boundary code and platform-free localization logic.
 
 ResourcePack artifact claims are documented separately in [`docs/verification/i18n/resourcepack-artifact-integrity-test.md`](docs/verification/i18n/resourcepack-artifact-integrity-test.md), keeping the README short while making the claim-to-test path reviewable.
+
+Core i18n and ranking persistence tests are documented separately in [`docs/verification/core/core-i18n-ranking-persistence-tests.md`](docs/verification/core/core-i18n-ranking-persistence-tests.md), keeping the README short while making the core test coverage reviewable.
 
 [![CI](https://github.com/flowmari/TreasureRun/actions/workflows/ci.yml/badge.svg)](https://github.com/flowmari/TreasureRun/actions/workflows/ci.yml)
 [![i18n CI](https://github.com/flowmari/TreasureRun/actions/workflows/i18n-ci.yml/badge.svg)](https://github.com/flowmari/TreasureRun/actions/workflows/i18n-ci.yml)
