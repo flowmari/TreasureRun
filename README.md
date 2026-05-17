@@ -5,6 +5,14 @@
 > This release verifies ResourcePack ZIP/SHA consistency, 21 language JSON files, focused PacketI18n tests, full Gradle build checks, and OSS-ready project files.
 
 
+## Demo
+
+### Minecraft standard UI i18n hot-swap
+
+![TreasureRun standard UI i18n demo](docs/assets/treasurerun-standard-ui-i18n-demo.gif)
+
+This demo shows Minecraft standard UI text being switched through TreasureRun's hybrid i18n architecture: ResourcePack language assets, Fabric runtime language sync, and server-side packet-localization support.
+
 ### Architecture at a Glance — Packet i18n
 
 The hard part of TreasureRun's i18n is not the translation strings. It is that Minecraft's standard-UI text path is split between server and client, and a Spigot plugin alone cannot reach every part of it. The codebase is therefore deliberately split into four layers, with a testable pure core at the centre:
@@ -151,13 +159,13 @@ This keeps the Minecraft i18n system maintainable as the language set grows, wit
 
 ## Runtime Language Hot-Swap Demo
 
-_GIF evidence will be added after recording ._
+The demo GIF is shown near the top of this README: [`docs/assets/treasurerun-standard-ui-i18n-demo.gif`](docs/assets/treasurerun-standard-ui-i18n-demo.gif).
 
 This demo verifies the runtime language-switching flow:
 
 - the server sends only the selected language code
-- the Fabric client applies it through Minecraft's 
-- the client calls 
+- the Fabric client applies it through Minecraft's language manager
+- the client calls resource reload
 - Minecraft standard-message language assets are reloaded without restarting the game
 
 Evidence:
