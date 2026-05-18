@@ -113,6 +113,10 @@ The most important tests to review are:
 - `src/test/java/plugin/i18n/PacketI18nJsonLocalizerTest.java`
 - `src/test/java/plugin/i18n/PureI18nPackageBoundaryTest.java`
 - `src/test/java/plugin/LocalizedPacketMessageProtocolListenerTest.java`
+- `src/test/java/plugin/i18n/ResourcePackArtifactIntegrityTest.java`
+- `src/test/java/plugin/i18n/ResourcePackExactKeySetConsistencyTest.java`
+- `src/test/java/plugin/i18n/LanguageCodeMappingIntegrityTest.java`
+- `src/test/java/plugin/i18n/PacketI18nSafeFallbackBehaviorTest.java`
 
 `PureI18nPackageBoundaryTest` acts as an architectural fitness function. It scans the pure i18n package and fails the build if platform APIs are imported into the pure localization layer.
 
@@ -124,6 +128,10 @@ The forbidden imports include:
 - `net.minecraft.*`
 
 This means the boundary is not just documented. It is checked automatically.
+
+The ResourcePack and locale-mapping tests also make the generated i18n assets reviewable. They verify ZIP/SHA-1 consistency, exact language JSON key-set consistency, internal language-code mapping to Minecraft locale files, and safe fallback behavior for packet JSON localization.
+
+See `docs/verification/i18n/i18n-test-coverage.md` for the claim-to-test summary.
 
 ---
 
@@ -140,6 +148,11 @@ For a quick technical review, start with these files:
 | `src/main/java/plugin/i18n/PacketI18nJsonLocalizer.java` | Pure Java packet-localization core |
 | `src/test/java/plugin/i18n/PureI18nPackageBoundaryTest.java` | Test that protects the pure i18n package from platform imports |
 | `src/test/java/plugin/i18n/PacketI18nJsonLocalizerTest.java` | Unit tests for packet JSON localization |
+| `src/test/java/plugin/i18n/ResourcePackArtifactIntegrityTest.java` | Tests for generated ResourcePack ZIP, SHA-1, config, and 8039-key coverage |
+| `src/test/java/plugin/i18n/ResourcePackExactKeySetConsistencyTest.java` | Test that every ResourcePack language JSON has the exact same key set |
+| `src/test/java/plugin/i18n/LanguageCodeMappingIntegrityTest.java` | Test that TreasureRun internal language codes map to Minecraft locale files |
+| `src/test/java/plugin/i18n/PacketI18nSafeFallbackBehaviorTest.java` | Test that packet i18n fails safely when replacement is unsafe |
+| `docs/verification/i18n/i18n-test-coverage.md` | Claim-to-test summary for automated i18n verification |
 | `.github/workflows/i18n-expansion-ci.yml` | CI checks for i18n expansion and language mapping |
 | `.github/workflows/resourcepack-sha1.yml` | ResourcePack ZIP / SHA-1 verification workflow |
 

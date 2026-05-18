@@ -2,7 +2,7 @@
 
 > **Status:** `v0.1.1-alpha` released — a testable multi-layer i18n architecture for Minecraft 1.20.1.  
 > TreasureRun separates Minecraft-specific boundary code from pure packet-localization logic using a **ProtocolLib boundary adapter**, **ResourcePack language layer**, **Fabric runtime sync support**, and a **pure Java packet localizer**.  
-> This release verifies ResourcePack ZIP/SHA consistency, 21 language JSON files, focused PacketI18n tests, full Gradle build checks, and OSS-ready project files.
+> This release verifies ResourcePack ZIP/SHA consistency, exact ResourcePack key-set consistency, locale mapping, safe PacketI18n fallback behavior, full Gradle build checks, and OSS-ready project files.
 
 
 ## Demo
@@ -29,6 +29,9 @@ The boundary between the ProtocolLib adapter and the pure core is **enforced by 
 - [`PureI18nPackageBoundaryTest`](src/test/java/plugin/i18n/PureI18nPackageBoundaryTest.java) scans `plugin/i18n/*.java` at build time and fails the build if any file in the pure package imports `org.bukkit.*`, `com.comphenix.protocol.*`, `net.fabricmc.*`, or `net.minecraft.*`.
 - [`LocalizedPacketMessageProtocolListenerTest`](src/test/java/plugin/LocalizedPacketMessageProtocolListenerTest.java) scans the adapter and fails the build if JSON parsing (`JsonParser.parseString`, `new Gson(`) leaks into the boundary listener.
 - [`ResourcePackArtifactIntegrityTest`](src/test/java/plugin/i18n/ResourcePackArtifactIntegrityTest.java) verifies the generated ResourcePack artifact: ZIP/SHA/config.yml consistency, 21 language JSON files, 8039-key coverage per language, and important Minecraft standard UI keys.
+- [`ResourcePackExactKeySetConsistencyTest`](src/test/java/plugin/i18n/ResourcePackExactKeySetConsistencyTest.java) verifies that every generated ResourcePack language JSON has the exact same key set, not only the same key count.
+- [`LanguageCodeMappingIntegrityTest`](src/test/java/plugin/i18n/LanguageCodeMappingIntegrityTest.java) verifies TreasureRun internal language-code mappings to Minecraft locale file names such as `ojp -> ojp_jp`, `sa -> sa_in`, and `asl_gloss -> asl_us`.
+- [`PacketI18nSafeFallbackBehaviorTest`](src/test/java/plugin/i18n/PacketI18nSafeFallbackBehaviorTest.java) verifies that packet i18n fails safely when replacement is unavailable or unsafe.
 - [`I18nLanguagesYamlStoreFallbackTest`](src/test/java/plugin/I18nLanguagesYamlStoreFallbackTest.java), [`SeasonRepositoryTest`](src/test/java/plugin/rank/SeasonRepositoryTest.java), and [`SeasonScoreRepositoryTest`](src/test/java/plugin/rank/SeasonScoreRepositoryTest.java) verify core i18n fallback, weekly season lookup / creation, and ranking persistence transaction behavior.
 
 This is the technique described in *Building Evolutionary Architectures* (Ford, Parsons, Kua) for keeping intended boundaries from rotting silently over time.
@@ -56,6 +59,8 @@ If you are reviewing this project for engineering quality, start here:
 The core engineering point is the separation between Minecraft-dependent boundary code and platform-free localization logic.
 
 ResourcePack artifact claims are documented separately in [`docs/verification/i18n/resourcepack-artifact-integrity-test.md`](docs/verification/i18n/resourcepack-artifact-integrity-test.md), keeping the README short while making the claim-to-test path reviewable.
+
+Automated i18n test coverage is summarized in [`docs/verification/i18n/i18n-test-coverage.md`](docs/verification/i18n/i18n-test-coverage.md), including ResourcePack exact key-set consistency, locale mapping, and safe PacketI18n fallback behavior.
 
 Core i18n and ranking persistence tests are documented separately in [`docs/verification/core/core-i18n-ranking-persistence-tests.md`](docs/verification/core/core-i18n-ranking-persistence-tests.md), keeping the README short while making the core test coverage reviewable.
 
