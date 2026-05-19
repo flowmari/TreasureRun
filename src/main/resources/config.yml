@@ -1740,69 +1740,146 @@ language:
   - lzh
   - ojp
   - asl_gloss
+  - ang
+  - non
   displayName:
-    ja: 日本語
-    en: English
-    de: Deutsch
-    it: Italiano
-    sv: Svenska
-    es: Español
-    la: Latina
-    is: Íslenska
-    fi: Suomi
-    nl: Nederlands
-    fr: Français
-    ru: Русский
-    ko: 한국어
-    zh_tw: 中文（繁體）
-    sa: Sanskrit
-    pt: Português
-    hi: हिंदी
-    lzh: 漢文
-    ojp: 古文
-    asl_gloss: ASL GLOSS
+    ja: "日本語"
+    en: "English"
+    de: "Deutsch"
+    it: "Italiano"
+    sv: "Svenska"
+    es: "Español"
+    la: "Latina"
+    is: "Íslenska"
+    fi: "Suomi"
+    nl: "Nederlands"
+    fr: "Français"
+    ru: "Русский"
+    ko: "한국어"
+    zh_tw: "中文（繁體）"
+    sa: "Sanskrit"
+    pt: "Português"
+    hi: "हिंदी"
+    lzh: "漢文"
+    ojp: "古文"
+    asl_gloss: "ASL GLOSS"
+    ang: "Ænglisc"
+    non: "Dǫnsk tunga"
   shortLabel:
-    ja: JA
-    en: EN
-    de: DE
-    it: IT
-    sv: SV
-    es: ES
-    la: LA
-    is: IS
-    fi: FI
-    nl: NL
-    fr: FR
-    ru: RU
-    ko: KO
-    zh_tw: ZH
-    sa: SA
-    pt: PT
-    hi: HI
-    lzh: LZH
-    ojp: OJP
-    asl_gloss: ASL
+    ja: "JA"
+    en: "EN"
+    de: "DE"
+    it: "IT"
+    sv: "SV"
+    es: "ES"
+    la: "LA"
+    is: "IS"
+    fi: "FI"
+    nl: "NL"
+    fr: "FR"
+    ru: "RU"
+    ko: "KO"
+    zh_tw: "ZH"
+    sa: "SA"
+    pt: "PT"
+    hi: "HI"
+    lzh: "LZH"
+    ojp: "OJP"
+    asl_gloss: "ASL"
+    ang: "ANG"
+    non: "NON"
   iconMaterial:
-    ja: WHITE_WOOL
-    en: BLUE_WOOL
-    de: BLACK_WOOL
-    it: YELLOW_WOOL
-    sv: CYAN_WOOL
-    es: ORANGE_WOOL
-    la: PURPLE_WOOL
-    is: LIGHT_BLUE_WOOL
-    fi: LIME_WOOL
-    nl: GREEN_WOOL
-    fr: RED_WOOL
-    ru: MAGENTA_WOOL
-    ko: PINK_WOOL
-    zh_tw: BROWN_WOOL
-    sa: GRAY_WOOL
-    pt: LIGHT_GRAY_WOOL
-    hi: ORANGE_WOOL
-    lzh: WHITE_WOOL
-    ojp: YELLOW_WOOL
-    asl_gloss: BLACK_WOOL
+    ja: "WHITE_WOOL"
+    en: "BLUE_WOOL"
+    de: "BLACK_WOOL"
+    it: "YELLOW_WOOL"
+    sv: "CYAN_WOOL"
+    es: "ORANGE_WOOL"
+    la: "PURPLE_WOOL"
+    is: "LIGHT_BLUE_WOOL"
+    fi: "LIME_WOOL"
+    nl: "GREEN_WOOL"
+    fr: "RED_WOOL"
+    ru: "MAGENTA_WOOL"
+    ko: "PINK_WOOL"
+    zh_tw: "BROWN_WOOL"
+    sa: "GRAY_WOOL"
+    pt: "LIGHT_GRAY_WOOL"
+    hi: "ORANGE_WOOL"
+    lzh: "WHITE_WOOL"
+    ojp: "YELLOW_WOOL"
+    asl_gloss: "BLACK_WOOL"
+    ang: "BROWN_WOOL"
+    non: "GRAY_WOOL"
+  selectHint:
+    ja: "押して選択"
+    en: "Click to select"
+    de: "Zum Auswählen klicken"
+    it: "Clicca per selezionare"
+    sv: "Klicka för att välja"
+    es: "Haz clic para seleccionar"
+    la: "Preme ut eligas"
+    is: "Smelltu til að velja"
+    fi: "Valitse napsauttamalla"
+    nl: "Klik om te selecteren"
+    fr: "Cliquez pour sélectionner"
+    ru: "Нажмите, чтобы выбрать"
+    ko: "클릭하여 선택"
+    zh_tw: "點擊以選擇"
+    sa: "वरणाय क्लिक् कुरुत"
+    pt: "Clique para selecionar"
+    hi: "चुनने के लिए क्लिक करें"
+    lzh: "按此而擇"
+    ojp: "押して選び給へ"
+    asl_gloss: "CLICK SELECT"
+    ang: "Select Old English"
+    non: "Select Old Norse"
+  rulesTitle:
+    ja: "TreasureRun ルール"
+    en: "TreasureRun Rules"
+    de: "TreasureRun Regeln"
+    it: "Regole di TreasureRun"
+    sv: "TreasureRun-regler"
+    es: "Reglas de TreasureRun"
+    la: "Regulae TreasureRun"
+    is: "TreasureRun reglur"
+    fi: "TreasureRun-säännöt"
+    nl: "TreasureRun-regels"
+    fr: "Règles de TreasureRun"
+    ru: "Правила TreasureRun"
+    ko: "TreasureRun 규칙"
+    zh_tw: "TreasureRun 規則"
+    sa: "TreasureRun नियमाः"
+    pt: "Regras do TreasureRun"
+    hi: "TreasureRun नियम"
+    lzh: "TreasureRun 規則"
+    ojp: "TreasureRun 御掟"
+    asl_gloss: "TREASURE-RUN RULES"
+    ang: "TreasureRun Rules"
+    non: "TreasureRun Rules"
+  ruleBookTitle:
+    ja: "TreasureRun ルールブック"
+    en: "TreasureRun Rule Book"
+    de: "TreasureRun Regelbuch"
+    it: "Libro delle regole di TreasureRun"
+    sv: "TreasureRun regelbok"
+    es: "Libro de reglas de TreasureRun"
+    la: "Liber Regularum TreasureRun"
+    is: "TreasureRun reglubók"
+    fi: "TreasureRun-sääntökirja"
+    nl: "TreasureRun-regelboek"
+    fr: "Livre des règles de TreasureRun"
+    ru: "Книга правил TreasureRun"
+    ko: "TreasureRun 규칙 책"
+    zh_tw: "TreasureRun 規則書"
+    sa: "TreasureRun नियमपुस्तकम्"
+    pt: "Livro de regras do TreasureRun"
+    hi: "TreasureRun नियम पुस्तिका"
+    lzh: "TreasureRun 規則書"
+    ojp: "TreasureRun 御掟の巻"
+    asl_gloss: "TREASURE-RUN RULE BOOK"
+    ang: "TreasureRun Rule Book"
+    non: "TreasureRun Rule Book"
   loreDefault: Click to select
   lore:
     ja: クリックして選択
@@ -1818,6 +1895,8 @@ language:
     pt: Clique para escolher
     hi: चुनने के लिए क्लिक करें
     ojp: 押して選び給へ
+    ang: Select Old English
+    non: Select Old Norse
 ruleBook:
   title:
     ja: TreasureRun ルール
@@ -1840,910 +1919,32 @@ ruleBook:
     lzh: TreasureRun 規則
     ojp: TreasureRun 御掟
     asl_gloss: TREASURE-RUN RULES
+    ang: TreasureRun Rules
+    non: TreasureRun Rules
   author: TreasureRun
   displayName:
-    ja: TreasureRun ルールブック
-    en: TreasureRun Rule Book
-    de: TreasureRun Regelbuch
-    it: Libro delle Regole TreasureRun
-    sv: TreasureRun Regelbok
-    es: Libro de Reglas de TreasureRun
-    la: Liber Regularum TreasureRun
-    is: TreasureRun Reglubók
-    fi: TreasureRun Sääntökirja
-    nl: TreasureRun Regelboek
-    fr: Livre des Règles TreasureRun
-    ru: Книга правил TreasureRun
-    ko: TreasureRun 규칙서
-    zh_tw: TreasureRun 規則書
-    sa: TreasureRun नियमपुस्तकः
-    pt: Livro de Regras do TreasureRun
-    hi: TreasureRun नियम पुस्तिका
-    lzh: TreasureRun 規則書
-    ojp: TreasureRun 御掟の巻
-    asl_gloss: TREASURE-RUN RULE BOOK
-  difficultyLabel:
-    ja:
-      Easy: やさしい
-      Normal: ふつう
-      Hard: むずかしい
-    en:
-      Easy: Easy
-      Normal: Normal
-      Hard: Hard
-    de:
-      Easy: Leicht
-      Normal: Mittel
-      Hard: Schwer
-    it:
-      Easy: Facile
-      Normal: Medio
-      Hard: Difficile
-    sv:
-      Easy: Lätt
-      Normal: Medel
-      Hard: Svår
-    es:
-      Easy: Fácil
-      Normal: Medio
-      Hard: Difícil
-    la:
-      Easy: Facilis
-      Normal: Media
-      Hard: Difficilis
-    is:
-      Easy: Auðvelt
-      Normal: Miðlungs
-      Hard: Erfitt
-    fi:
-      Easy: Helppo
-      Normal: Keskivaikea
-      Hard: Vaikea
-    nl:
-      Easy: Makkelijk
-      Normal: Gemiddeld
-      Hard: Moeilijk
-    fr:
-      Easy: Facile
-      Normal: Moyen
-      Hard: Difficile
-    ru:
-      Easy: Лёгкий
-      Normal: Средний
-      Hard: Сложный
-    ko:
-      Easy: 쉬움
-      Normal: 보통
-      Hard: 어려움
-    zh_tw:
-      Easy: 簡單
-      Normal: 中等
-      Hard: 困難
-    sa:
-      Easy: सुलभम्
-      Normal: मध्यमम्
-      Hard: दुष्करम्
-    pt:
-      Easy: Fácil
-      Normal: Médio
-      Hard: Difícil
-    hi:
-      Easy: आसान
-      Normal: मध्यम
-      Hard: कठिन
-    lzh:
-      Easy: 易
-      Normal: 中
-      Hard: 難
-    ojp:
-      Easy: やすし
-      Normal: なみ
-      Hard: かたし
-    asl_gloss:
-      Easy: EASY
-      Normal: MEDIUM
-      Hard: HARD
-  pages:
-    ja:
-    - '§b§lTreasureRun ルール
-
-
-      §1難易度: %diffLabel%
-
-
-      制限時間内にできるだけ多くの
-
-      宝箱を開けよう！
-
-      レアな宝物ほど高得点です。'
-    - '§b★ 基本の流れ
-
-
-      §11. /gameStart <難易度>
-
-      2. 緑のマークの宝箱を探す
-
-      3. 開けるとスコア + アイテム
-
-      4. 全て開けるとクリア！'
-    - "§b★ ヒント\n\n§1・ネザライト/ブロック系は\n  ジャックポット高得点！\n\n・途中で /gameMenu を打つと\n  この本を再取得できます。\n\
-      \n・タイムアップに注意！"
-    - '§b★ Archive / Favorites
-
-
-      §1TreasureRun Archive は
-
-      SUCCESS（表彰台ログ）と
-
-      TIME_UP（詩集 / 余韻）を
-
-      「お気に入り」として収録します。
-
-
-      右クリックで最新格言を保存。
-
-      目次から章を開いて再読できます。'
-    en:
-    - '§b§lTreasureRun Rules
-
-
-      §1Difficulty: %diffLabel%
-
-
-      Open as many chests as you can
-
-      before time runs out!
-
-      The rarer the treasure, the higher the score.'
-    - '§b★ Basic Flow
-
-
-      §11. /gameStart <difficulty>
-
-      2. Find chests with the green mark
-
-      3. Open to score points and get items
-
-      4. Open them all to clear!'
-    - "§b★ Tips\n\n§1・Netherite / block items are\n  high-score jackpots!\n\n・Type\
-      \ /gameMenu anytime to\n  get this book again.\n\n・Be careful to not run out\
-      \ of time!"
-    - '§b★ Archive / Favorites
-
-
-      §1TreasureRun Archive stores
-
-      SUCCESS (Podium Records) and
-
-      TIME_UP (Poems / Echo)
-
-      as your Favorites.
-
-
-      Right click to save the latest quote.
-
-      Open chapters from the Catalog to re-read.'
-    de:
-    - '§b§lTreasureRun Regeln
-
-
-      §1Schwierigkeit: %diffLabel%
-
-
-      Öffne innerhalb der Zeit so viele
-
-      Truhen wie möglich!
-
-      Je seltener der Schatz, desto mehr Punkte.'
-    - '§b★ Ablauf
-
-
-      §11. /gameStart <Schwierigkeit>
-
-      2. Truhen mit dem grünen Zeichen suchen
-
-      3. Öffnen bringt Punkte und Items
-
-      4. Alle öffnen = geschafft!'
-    - "§b★ Tipps\n\n§1・Netherit / Block-Items sind\n  Jackpot mit vielen Punkten!\n\
-      \n・Mit /gameMenu kannst du\n  dieses Buch erneut bekommen.\n\n・Achte auf die\
-      \ Zeit!"
-    - '§b★ Archiv / Favoriten
-
-
-      §1TreasureRun Archiv speichert
-
-      SUCCESS (Podiumsprotokolle) und
-
-      TIME_UP (Gedichte / Echo)
-
-      als deine Favoriten.
-
-
-      Rechtsklick: neuestes Zitat speichern.
-
-      Kapitel im Katalog öffnen und neu lesen.'
-    it:
-    - '§b§lRegole di TreasureRun
-
-
-      §1Difficoltà: %diffLabel%
-
-
-      Apri quante più casse possibile
-
-      prima che finisca il tempo!
-
-      Più raro è il tesoro, più alto sarà il punteggio.'
-    - '§b★ Flusso di gioco
-
-
-      §11. /gameStart <difficoltà>
-
-      2. Cerca le casse con il segno verde
-
-      3. Aprile per ottenere punti e raccogliere oggetti
-
-      4. Aprile tutte per completare!'
-    - "§b★ Suggerimenti\n\n§1・Netherite / oggetti a blocco sono\n  jackpot con punteggi\
-      \ altissimi!\n\n・Scrivi /gameMenu in qualsiasi momento\n  per ricevere di nuovo\
-      \ questo libro.\n\n・Attento al tempo!"
-    - '§b★ Archivio / Preferiti
-
-
-      §1L''Archivio TreasureRun conserva
-
-      SUCCESS (Registri del Podio) e
-
-      TIME_UP (Poesie / Eco)
-
-      come Preferiti.
-
-
-      Clic destro: salva l''ultima citazione.
-
-      Apri i capitoli dal Catalogo per rileggere.'
-    sv:
-    - '§b§lTreasureRun Regler
-
-
-      §1Svårighetsgrad: %diffLabel%
-
-
-      Öppna så många kistor du kan
-
-      innan tiden tar slut!
-
-      Ju mer sällsynt skatten är, desto högre poäng.'
-    - '§b★ Grundflöde
-
-
-      §11. /gameStart <svårighetsgrad>
-
-      2. Leta efter kistor med den gröna markeringen
-
-      3. Öppna dem för att få poäng och samla föremål
-
-      4. Öppna alla för att klara spelet!'
-    - "§b★ Tips\n\n§1・Netherite / blockföremål är\n  jackpot med höga poäng!\n\n・Skriv\
-      \ /gameMenu när som helst\n  för att få boken igen.\n\n・Håll koll på tiden!"
-    - '§b★ Arkiv / Favoriter
-
-
-      §1TreasureRun Arkiv sparar
-
-      SUCCESS (Pallprotokoll) och
-
-      TIME_UP (Dikter / Eko)
-
-      som Favoriter.
-
-
-      Högerklick: spara senaste citatet.
-
-      Öppna kapitel från Katalogen för att läsa om.'
-    es:
-    - '§b§lReglas de TreasureRun
-
-
-      §1Dificultad: %diffLabel%
-
-
-      ¡Abre tantos cofres como puedas
-
-      antes de que se acabe el tiempo!
-
-      Cuanto más raro el tesoro, más puntos.'
-    - '§b★ Flujo básico
-
-
-      §11. /gameStart <dificultad>
-
-      2. Busca cofres con la marca verde
-
-      3. Ábrelos para ganar puntos y objetos
-
-      4. ¡Ábrelos todos para completar!'
-    - "§b★ Consejos\n\n§1・Netherite / bloques son\n  ¡jackpots de alta puntuación!\n\
-      \n・Escribe /gameMenu para\n  recibir este libro otra vez.\n\n・¡Cuidado con el\
-      \ tiempo!"
-    - '§b★ Archivo / Favoritos
-
-
-      §1El Archivo TreasureRun guarda
-
-      SUCCESS (Registros del Podio) y
-
-      TIME_UP (Poemas / Eco)
-
-      como Favoritos.
-
-
-      Clic derecho: guarda la última cita.
-
-      Abre capítulos desde el Catálogo para releer.'
-    la:
-    - '§b§lRegulae TreasureRun
-
-
-      §1Difficultas: %diffLabel%
-
-
-      Aperī quam plurimas cistās potes
-
-      antequam tempus finiatur!
-
-      Quo rarior thesaurus, eo plura puncta.'
-    - '§b★ Ordo ludendi
-
-
-      §11. /gameStart <difficultas>
-
-      2. Cistās cum signo viridi quaere
-
-      3. Aperī: puncta + res accipies
-
-      4. Omnēs aperī = perfectum!'
-    - "§b★ Consilia\n\n§1・Netherite / res in formā bloci\n  sunt jackpot cum multis\
-      \ punctis!\n\n・Scribe /gameMenu ut\n  librum iterum accipias.\n\n・Tempus observa!"
-    - '§b★ Tabularium / Favorita
-
-
-      §1Tabularium TreasureRun servat
-
-      SUCCESS (Acta Podii) et
-
-      TIME_UP (Carmina / Echo)
-
-      ut Favorita.
-
-
-      Dexter cliccare: serva recentissimum dictum.
-
-      Aperī capitula ex Catalogo ut releges.'
-    is:
-    - '§b§lTreasureRun Reglur
-
-
-      §1Erfiðleiki: %diffLabel%
-
-
-      Opnaðu eins margar kistur og þú getur
-
-      áður en tíminn rennur út!
-
-      Því sjaldgæfari sem fjársjóðurinn er, því fleiri stig.'
-    - '§b★ Grunnferli
-
-
-      §11. /gameStart <erfiðleiki>
-
-      2. Finndu kistur með græna merkinu
-
-      3. Opnaðu til að fá stig og hluti
-
-      4. Opnaðu allar = klárað!'
-    - "§b★ Ráð\n\n§1・Netherite / blokk-hlutir eru\n  jackpot með háum stigum!\n\n\
-      ・Sláðu inn /gameMenu til að\n  fá bókina aftur.\n\n・Passaðu tímann!"
-    - '§b★ Safn / Uppáhald
-
-
-      §1TreasureRun Safn geymir
-
-      SUCCESS (Verðlaunapalls-skrár) og
-
-      TIME_UP (Ljóð / Echo)
-
-      sem uppáhald.
-
-
-      Hægri smellur: vista nýjustu tilvitnun.
-
-      Opna kafla úr skránni til að endurlesa.'
-    fi:
-    - '§b§lTreasureRun Säännöt
-
-
-      §1Vaikeus: %diffLabel%
-
-
-      Avaa mahdollisimman monta arkkua
-
-      ennen kuin aika loppuu!
-
-      Mitä harvinaisempi aarre, sitä enemmän pisteitä.'
-    - '§b★ Pelin kulku
-
-
-      §11. /gameStart <vaikeus>
-
-      2. Etsi arkkuja vihreällä merkillä
-
-      3. Avaa: saat pisteitä ja esineitä
-
-      4. Avaa kaikki = läpäisty!'
-    - "§b★ Vinkit\n\n§1・Netherite / lohkoesineet ovat\n  piste-jackpot!\n\n・Kirjoita\
-      \ /gameMenu saadaksesi\n  kirjan uudelleen.\n\n・Pidä silmällä aikaa!"
-    - '§b★ Arkisto / Suosikit
-
-
-      §1TreasureRun Arkisto tallentaa
-
-      SUCCESS (Palkintokorokkeen lokit) ja
-
-      TIME_UP (Runot / Echo)
-
-      suosikkeihin.
-
-
-      Oikea klikkaus: tallenna uusin sitaatti.
-
-      Avaa luvut luettelosta ja lue uudelleen.'
-    nl:
-    - '§b§lTreasureRun Regels
-
-
-      §1Moeilijkheid: %diffLabel%
-
-
-      Open zoveel mogelijk kisten
-
-      voordat de tijd om is!
-
-      Hoe zeldzamer de schat, hoe hoger de score.'
-    - '§b★ Basisverloop
-
-
-      §11. /gameStart <moeilijkheid>
-
-      2. Zoek kisten met de groene markering
-
-      3. Open voor punten en items
-
-      4. Open ze allemaal = gehaald!'
-    - "§b★ Tips\n\n§1・Netherite / blok-items zijn\n  jackpots met hoge scores!\n\n\
-      ・Typ /gameMenu om\n  dit boek opnieuw te krijgen.\n\n・Let op dat de tijd niet\
-      \ opraakt!"
-    - '§b★ Archief / Favorieten
-
-
-      §1TreasureRun Archief bewaart
-
-      SUCCESS (Podiumlogs) en
-
-      TIME_UP (Gedichten / Echo)
-
-      als Favorieten.
-
-
-      Rechtsklik: sla de laatste quote op.
-
-      Open hoofdstukken via de Catalogus om te herlezen.'
-    fr:
-    - '§b§lRègles de TreasureRun
-
-
-      §1Difficulté: %diffLabel%
-
-
-      Ouvre autant de coffres que possible
-
-      avant la fin du temps !
-
-      Plus le trésor est rare, plus le score est élevé.'
-    - '§b★ Déroulement
-
-
-      §11. /gameStart <difficulté>
-
-      2. Trouve les coffres avec la marque verte
-
-      3. Ouvre pour gagner des points et des objets
-
-      4. Ouvre-les tous pour réussir !'
-    - "§b★ Conseils\n\n§1・Netherite / objets en blocs :\n  jackpot de points !\n\n\
-      ・Tape /gameMenu à tout moment\n  pour récupérer ce livre.\n\n・Attention au temps\
-      \ !"
-    - '§b★ Archives / Favoris
-
-
-      §1Les Archives TreasureRun conservent
-
-      SUCCESS (Journal du Podium) et
-
-      TIME_UP (Poèmes / Echo)
-
-      comme Favoris.
-
-
-      Clic droit : enregistrer la dernière citation.
-
-      Ouvrez les chapitres via le Catalogue pour relire.'
-    ru:
-    - '§b§lПравила TreasureRun
-
-
-      §1Сложность: %diffLabel%
-
-
-      Открой как можно больше сундуков,
-
-      пока не закончилось время!
-
-      Чем реже сокровище, тем выше очки.'
-    - '§b★ Основной ход
-
-
-      §11. /gameStart <сложность>
-
-      2. Найди сундуки с зелёной меткой
-
-      3. Открой: получи очки и предметы
-
-      4. Открой все = пройдено!'
-    - "§b★ Подсказки\n\n§1・Незерит / предметы-блоки —\n  джекпот с большим количеством\
-      \ очков!\n\n・Введи /gameMenu в любой момент,\n  чтобы снова получить эту книгу.\n\
-      \n・Следи за временем!"
-    - '§b★ Архив / Избранное
-
-
-      §1Архив TreasureRun хранит
-
-      SUCCESS (Записи пьедестала) и
-
-      TIME_UP (Стихи / Echo)
-
-      как Избранное.
-
-
-      ПКМ: сохранить последнюю цитату.
-
-      Открой главы из каталога и перечитай.'
-    ko:
-    - '§b§lTreasureRun 규칙
-
-
-      §1난이도: %diffLabel%
-
-
-      시간 안에 가능한 한 많은
-
-      상자를 여세요!
-
-      보물이 희귀할수록 점수가 높아집니다.'
-    - '§b★ 기본 진행
-
-
-      §11. /gameStart <난이도>
-
-      2. 초록 표시가 있는 상자를 찾기
-
-      3. 열면 점수 + 아이템 획득
-
-      4. 전부 열면 클리어!'
-    - "§b★ 팁\n\n§1・네더라이트/블록 아이템은\n  고득점 잭팟!\n\n・/gameMenu 를 입력하면\n  이 책을 다시 받을 수 있어요.\n\
-      \n・시간 초과에 주의!"
-    - '§b★ 아카이브 / 즐겨찾기
-
-
-      §1TreasureRun 아카이브는
-
-      SUCCESS(포디움 기록)과
-
-      TIME_UP(시집 / 에코)를
-
-      즐겨찾기로 보관합니다.
-
-
-      우클릭: 최신 문장 저장
-
-      카탈로그에서 챕터를 열어 다시 읽을 수 있어요.'
-    zh_tw:
-    - '§b§lTreasureRun 規則
-
-
-      §1難度：%diffLabel%
-
-
-      請在時間內盡可能打開更多寶箱！
-
-      寶物越稀有，分數越高。'
-    - '§b★ 基本流程
-
-
-      §11. /gameStart <難度>
-
-      2. 尋找有綠色標記的寶箱
-
-      3. 打開可得分數與道具
-
-      4. 全部打開即通關！'
-    - "§b★ 提示\n\n§1・獄髓/方塊類道具是\n  高分大獎！\n\n・輸入 /gameMenu 可\n  再次取得此書。\n\n・注意時間！"
-    - '§b★ 檔案 / 收藏
-
-
-      §1TreasureRun 檔案收錄
-
-      SUCCESS（頒獎台紀錄）與
-
-      TIME_UP（詩集 / 回聲）
-
-      作為收藏。
-
-
-      右鍵：儲存最新格言
-
-      從目錄開啟章節即可重讀。'
-    sa:
-    - '§b§lTreasureRun नियमाः
-
-
-      §1दुस्तरता: %diffLabel%
-
-
-      समयसीमायां यावत् शक्यं
-
-      तावत् काष्ठपेटिकाः उद्घाटय!
-
-      यः निधिः विरलः, तस्य अधिकाः अंकाः।'
-    - '§b★ मूल-प्रवाहः
-
-
-      §11. /gameStart <दुस्तरता>
-
-      2. हरित-चिह्नयुक्ताः पेटिकाः अन्वेषय
-
-      3. उद्घाटने अंकाः + वस्तूनि
-
-      4. सर्वाः उद्घाट्य = सिद्धम्!'
-    - "§b★ सूचनाः\n\n§1・Netherite / block-वस्तूनि\n  उच्चाङ्क-जैकपॉट!\n\n・/gameMenu\
-      \ लिखित्वा\n  पुस्तकं पुनः प्राप्नुहि।\n\n・समयम् अवलोकय!"
-    - '§b★ Archive / Favorites
-
-
-      §1TreasureRun Archive मध्ये
-
-      SUCCESS (मञ्च-लेखाः) तथा
-
-      TIME_UP (अपूर्ण प्रतिध्वनि-काव्यम्)
-
-      प्रिय-वचनरूपेण संगृह्यते।
-
-
-      दायाँ क्लिक: नवीनतम वचन सहेजें।
-
-      Catalog से अध्याय खोलकर पुनःपठन करें।'
-    pt:
-    - '§b§lRegras do TreasureRun
-
-
-      §1Dificuldade: %diffLabel%
-
-
-      Abra o máximo de baús que conseguir
-
-      antes que o tempo acabe!
-
-      Quanto mais raro o tesouro, maior a pontuação.'
-    - '§b★ Fluxo básico
-
-
-      §11. /gameStart <dificuldade>
-
-      2. Procure baús com a marca verde
-
-      3. Abra para ganhar pontos e itens
-
-      4. Abra todos para concluir!'
-    - "§b★ Dicas\n\n§1・Netherite / itens em bloco são\n  jackpots de alta pontuação!\n\
-      \n・Digite /gameMenu para\n  pegar este livro novamente.\n\n・Cuidado para não\
-      \ ficar sem tempo!"
-    - '§b★ Arquivo / Favoritos
-
-
-      §1O Arquivo TreasureRun guarda
-
-      SUCCESS (Registros do Pódio) e
-
-      TIME_UP (Poemas / Eco)
-
-      como Favoritos.
-
-
-      Clique direito: salvar a última citação.
-
-      Abra capítulos pelo Catálogo para reler.'
-    hi:
-    - '§b§lTreasureRun नियम
-
-
-      §1कठिनाई: %diffLabel%
-
-
-      समय समाप्त होने से पहले
-
-      जितने हो सकें उतने संदूक खोलें!
-
-      खजाना जितना दुर्लभ, अंक उतने अधिक।'
-    - '§b★ मूल प्रवाह
-
-
-      §11. /gameStart <कठिनाई>
-
-      2. हरे निशान वाले संदूक ढूँढें
-
-      3. खोलने पर अंक + आइटम मिलेंगे
-
-      4. सब खोलें = गेम क्लियर!'
-    - "§b★ सुझाव\n\n§1・Netherite / ब्लॉक आइटम\n  हाई-स्कोर जैकपॉट!\n\n・/gameMenu लिखकर\n\
-      \  यह किताब फिर से लें।\n\n・समय पर ध्यान दें!"
-    - '§b★ Archive / Favorites
-
-
-      §1TreasureRun Archive में
-
-      SUCCESS (पोडियम रिकॉर्ड) और
-
-      TIME_UP (अपूर्ण प्रतिध्वनि की कविताएँ)
-
-      पसंदीदा के रूप में संग्रहीत होते हैं।
-
-
-      राइट क्लिक: नवीनतम कथन सहेजें।
-
-      कैटलॉग से अध्याय खोलकर पुनः पढ़ें।'
-    lzh:
-    - '§b§lTreasureRun 規則
-
-
-      §1難易：%diffLabel%
-
-
-      限時之內 盡開寶匣。
-
-      珍稀之寶 得點尤高。'
-    - '§b★ 基本之次第
-
-
-      §11. /gameStart <難易>
-
-      2. 尋綠標之匣
-
-      3. 開之 得點與物
-
-      4. 盡開則成！'
-    - "§b★ 提示\n\n§1・Netherite／方塊類\n  高得點之巨賞！\n\n・以 /gameMenu 可再得此書。\n\n・慎勿失時！"
-    - '§b★ 典蔵 / 愛蔵
-
-
-      §1TreasureRun 典蔵所収：
-
-      SUCCESS（表彰台錄）
-
-      TIME_UP（未竟回響詩）
-
-      皆為愛蔵之章。
-
-
-      右按可存最新格言，
-
-      由目錄開篇以再讀。'
-    ojp:
-    - '§b§lTreasureRun 御掟
-
-
-      §1難きほど: %diffLabel%
-
-
-      限りの時のうちに、
-
-      できるかぎり多くの宝の櫃を
-
-      開き給へ。
-
-
-      珍しき宝ほど、得点高し。'
-    - '§b★ 基本の流れ
-
-
-      §11. /gameStart <難きほど>
-
-      2. 緑のしるしある宝の櫃を探す
-
-      3. 開けば得点と品を得る
-
-      4. すべて開けば成就なり'
-    - '§b★ しるべ
-
-
-      §1・ネザライト、金剛石の塊などは
-
-        高き得点となるものなり。
-
-
-      ・途中で /gameMenu を打てば、
-
-        この巻をふたたび受け取るべし。
-
-
-      ・時尽きぬ前に急ぎ給へ。'
-    - '§b★ 秘蔵 / 言の葉
-
-
-      §1TreasureRun の秘蔵には、
-
-      成就の記しと、時尽きし折の余韻を
-
-      言の葉として納む。
-
-
-      右押しにて最新の言の葉を記し置き、
-
-      目録より章を開き、読み返し給へ。'
-
-    asl_gloss:
-    - '§b§lTREASURE-RUN RULES
-
-
-      §1[TOPIC] DIFFICULTY %diffLabel%
-
-
-      TIME-LIMIT. TRY OPEN MANY CHEST.
-
-      TREASURE RARE -> SCORE MORE.'
-    - '§b★ BASIC FLOW
-
-
-      §11) TYPE /gameStart DIFFICULTY
-
-      2) FIND CHEST GREEN-MARK
-
-      3) OPEN -> SCORE ADD, ITEM GET
-
-      4) OPEN ALL CHEST -> CLEAR FINISH'
-    - '§b★ TIPS
-
-
-      §1NETHERITE, BLOCK-ITEM = JACKPOT SCORE BIG
-
-
-      ANYTIME TYPE /gameMenu -> GET BOOK AGAIN
-
-
-      WATCH TIME. TIME RUN-OUT [NEG]'
-    - '§b★ ARCHIVE / FAVORITES
-
-
-      §1ARCHIVE STORE:
-
-      SUCCESS = PODIUM RECORDS
-
-      TIME_UP = POEMS / ECHO
-
-
-      RIGHT-CLICK SAVE LATEST QUOTE.
-
-      OPEN CHAPTER FROM CATALOG -> REREAD.'
+    ja: "TreasureRun ルールブック"
+    en: "TreasureRun Rule Book"
+    de: "TreasureRun Regelbuch"
+    it: "Libro delle Regole TreasureRun"
+    sv: "TreasureRun Regelbok"
+    es: "Libro de Reglas de TreasureRun"
+    la: "Liber Regularum TreasureRun"
+    is: "TreasureRun Reglubók"
+    fi: "TreasureRun Sääntökirja"
+    nl: "TreasureRun Regelboek"
+    fr: "Livre des Règles TreasureRun"
+    ru: "Книга правил TreasureRun"
+    ko: "TreasureRun 규칙서"
+    zh_tw: "TreasureRun 規則書"
+    sa: "TreasureRun नियमपुस्तकः"
+    pt: "Livro de Regras do TreasureRun"
+    hi: "TreasureRun नियम पुस्तिका"
+    lzh: "TreasureRun 規則書"
+    ojp: "TreasureRun 御掟の巻"
+    asl_gloss: "TREASURE-RUN RULE BOOK"
+    ang: "TreasureRun Regolbōc"
+    non: "TreasureRun Reglubók"
 chestSound:
   debug: false
   actionBarDebug: false
@@ -2778,6 +1979,7 @@ systemMessages:
 # - Bukkitイベント層で拾えない標準文を、サーバー→プレイヤーのパケットで監査・置換する
 # - 最初は audit=true で「何が流れているか」をログ確認する
 # ============================================================
+
 # ============================================================
 # PacketI18n
 # ------------------------------------------------------------
@@ -2811,7 +2013,7 @@ resourcePack:
   enabled: true
   force: true
   url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-  sha1: 461b663681b61b982cfd7b7e36f2d6793ee1ed66
+  sha1: "bfa4720d2958999ebd210a2817368c618d91fab5"
   prompt: "TreasureRun uses a multilingual Minecraft resource pack to localize Minecraft language keys. Please accept it for the full i18n experience."
 
 resourcePackFallback:
@@ -2821,61 +2023,67 @@ resourcePackFallback:
   packs:
     ja:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "461b663681b61b982cfd7b7e36f2d6793ee1ed66"
+      sha1: "bfa4720d2958999ebd210a2817368c618d91fab5"
     en:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "461b663681b61b982cfd7b7e36f2d6793ee1ed66"
+      sha1: "bfa4720d2958999ebd210a2817368c618d91fab5"
     de:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "461b663681b61b982cfd7b7e36f2d6793ee1ed66"
+      sha1: "bfa4720d2958999ebd210a2817368c618d91fab5"
     es:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "461b663681b61b982cfd7b7e36f2d6793ee1ed66"
+      sha1: "bfa4720d2958999ebd210a2817368c618d91fab5"
     fr:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "461b663681b61b982cfd7b7e36f2d6793ee1ed66"
+      sha1: "bfa4720d2958999ebd210a2817368c618d91fab5"
     ko:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "461b663681b61b982cfd7b7e36f2d6793ee1ed66"
+      sha1: "bfa4720d2958999ebd210a2817368c618d91fab5"
     ru:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "461b663681b61b982cfd7b7e36f2d6793ee1ed66"
+      sha1: "bfa4720d2958999ebd210a2817368c618d91fab5"
     zh_tw:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "461b663681b61b982cfd7b7e36f2d6793ee1ed66"
+      sha1: "bfa4720d2958999ebd210a2817368c618d91fab5"
     fi:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "461b663681b61b982cfd7b7e36f2d6793ee1ed66"
+      sha1: "bfa4720d2958999ebd210a2817368c618d91fab5"
     it:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "461b663681b61b982cfd7b7e36f2d6793ee1ed66"
+      sha1: "bfa4720d2958999ebd210a2817368c618d91fab5"
     nl:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "461b663681b61b982cfd7b7e36f2d6793ee1ed66"
+      sha1: "bfa4720d2958999ebd210a2817368c618d91fab5"
     pt:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "461b663681b61b982cfd7b7e36f2d6793ee1ed66"
+      sha1: "bfa4720d2958999ebd210a2817368c618d91fab5"
     hi:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "461b663681b61b982cfd7b7e36f2d6793ee1ed66"
+      sha1: "bfa4720d2958999ebd210a2817368c618d91fab5"
     sv:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "461b663681b61b982cfd7b7e36f2d6793ee1ed66"
+      sha1: "bfa4720d2958999ebd210a2817368c618d91fab5"
     is:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "461b663681b61b982cfd7b7e36f2d6793ee1ed66"
+      sha1: "bfa4720d2958999ebd210a2817368c618d91fab5"
     la:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "461b663681b61b982cfd7b7e36f2d6793ee1ed66"
+      sha1: "bfa4720d2958999ebd210a2817368c618d91fab5"
     sa:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "461b663681b61b982cfd7b7e36f2d6793ee1ed66"
+      sha1: "bfa4720d2958999ebd210a2817368c618d91fab5"
     lzh:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "461b663681b61b982cfd7b7e36f2d6793ee1ed66"
+      sha1: "bfa4720d2958999ebd210a2817368c618d91fab5"
     ojp:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "461b663681b61b982cfd7b7e36f2d6793ee1ed66"
+      sha1: "bfa4720d2958999ebd210a2817368c618d91fab5"
     asl_gloss:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: 461b663681b61b982cfd7b7e36f2d6793ee1ed66
+      sha1: "bfa4720d2958999ebd210a2817368c618d91fab5"
+    ang:
+      url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
+      sha1: "bfa4720d2958999ebd210a2817368c618d91fab5"
+    non:
+      url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
+      sha1: "bfa4720d2958999ebd210a2817368c618d91fab5"

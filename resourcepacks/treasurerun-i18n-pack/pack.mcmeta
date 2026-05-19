@@ -28,6 +28,16 @@
       "name": "ASL Gloss",
       "region": "TreasureRun",
       "bidirectional": false
+    },
+    "ang_gb": {
+      "name": "Ænglisc",
+      "region": "Old English / Experimental",
+      "bidirectional": false
+    },
+    "non_is": {
+      "name": "Dǫnsk tunga",
+      "region": "Old Norse / Experimental",
+      "bidirectional": false
     }
   }
 }

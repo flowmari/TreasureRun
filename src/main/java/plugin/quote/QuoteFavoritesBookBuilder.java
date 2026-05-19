@@ -227,6 +227,8 @@ public class QuoteFavoritesBookBuilder {
       if (l.startsWith("nl")) return "nl";
       if (l.startsWith("ru")) return "ru";
       if (l.startsWith("sa")) return "sa";
+      if (l.startsWith("ang")) return "ang";
+      if (l.startsWith("non")) return "non";
       if (l.startsWith("asl")) return "asl_gloss";
     } catch (Throwable ignored) {}
 

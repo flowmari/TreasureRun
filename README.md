@@ -1,7 +1,7 @@
 # TreasureRun — Treasure Hunt Mini-Game Plugin for Spigot 1.20.1
 
-> **Status:** `v0.1.1-alpha` released — a testable multi-layer i18n architecture for Minecraft 1.20.1.  
-> TreasureRun separates Minecraft-specific boundary code from pure packet-localization logic using a **ProtocolLib boundary adapter**, **ResourcePack language layer**, **Fabric runtime sync support**, and a **pure Java packet localizer**.  
+> **Status:** `v0.1.1-alpha` released — a testable multi-layer i18n architecture for Minecraft 1.20.1.
+> TreasureRun separates Minecraft-specific boundary code from pure packet-localization logic using a **ProtocolLib boundary adapter**, **ResourcePack language layer**, **Fabric runtime sync support**, and a **pure Java packet localizer**.
 > This release verifies ResourcePack ZIP/SHA consistency, exact ResourcePack key-set consistency, locale mapping, safe PacketI18n fallback behavior, full Gradle build checks, and OSS-ready project files.
 
 
@@ -28,7 +28,7 @@ The boundary between the ProtocolLib adapter and the pure core is **enforced by 
 
 - [`PureI18nPackageBoundaryTest`](src/test/java/plugin/i18n/PureI18nPackageBoundaryTest.java) scans `plugin/i18n/*.java` at build time and fails the build if any file in the pure package imports `org.bukkit.*`, `com.comphenix.protocol.*`, `net.fabricmc.*`, or `net.minecraft.*`.
 - [`LocalizedPacketMessageProtocolListenerTest`](src/test/java/plugin/LocalizedPacketMessageProtocolListenerTest.java) scans the adapter and fails the build if JSON parsing (`JsonParser.parseString`, `new Gson(`) leaks into the boundary listener.
-- [`ResourcePackArtifactIntegrityTest`](src/test/java/plugin/i18n/ResourcePackArtifactIntegrityTest.java) verifies the generated ResourcePack artifact: ZIP/SHA/config.yml consistency, 21 language JSON files, 8039-key coverage per language, and important Minecraft standard UI keys.
+- [`ResourcePackArtifactIntegrityTest`](src/test/java/plugin/i18n/ResourcePackArtifactIntegrityTest.java) verifies the generated ResourcePack artifact: ZIP/SHA/config.yml consistency, 23 language JSON files, 8039-key coverage per language, and important Minecraft standard UI keys.
 - [`ResourcePackExactKeySetConsistencyTest`](src/test/java/plugin/i18n/ResourcePackExactKeySetConsistencyTest.java) verifies that every generated ResourcePack language JSON has the exact same key set, not only the same key count.
 - [`LanguageCodeMappingIntegrityTest`](src/test/java/plugin/i18n/LanguageCodeMappingIntegrityTest.java) verifies TreasureRun internal language-code mappings to Minecraft locale file names such as `ojp -> ojp_jp`, `sa -> sa_in`, and `asl_gloss -> asl_us`.
 - [`PacketI18nSafeFallbackBehaviorTest`](src/test/java/plugin/i18n/PacketI18nSafeFallbackBehaviorTest.java) verifies that packet i18n fails safely when replacement is unavailable or unsafe.
@@ -60,6 +60,9 @@ The core engineering point is the separation between Minecraft-dependent boundar
 
 ResourcePack artifact claims are documented separately in [`docs/verification/i18n/resourcepack-artifact-integrity-test.md`](docs/verification/i18n/resourcepack-artifact-integrity-test.md), keeping the README short while making the claim-to-test path reviewable.
 
+
+Experimental historical Germanic locales are included as reviewable i18n architecture paths: `ang -> ang_gb` for Old English and `non -> non_is` for Old Norse. They are wired through the same ResourcePack, Fabric language assets, SHA-1, config fallback, and JUnit verification path as the other languages; translation quality is intentionally treated as a separate review phase.
+
 Automated i18n test coverage is summarized in [`docs/verification/i18n/i18n-test-coverage.md`](docs/verification/i18n/i18n-test-coverage.md), including ResourcePack exact key-set consistency, locale mapping, and safe PacketI18n fallback behavior.
 
 Core i18n and ranking persistence tests are documented separately in [`docs/verification/core/core-i18n-ranking-persistence-tests.md`](docs/verification/core/core-i18n-ranking-persistence-tests.md), keeping the README short while making the core test coverage reviewable.
@@ -69,7 +72,7 @@ Core i18n and ranking persistence tests are documented separately in [`docs/veri
 
 > **A Minecraft Spigot mini-game plugin focused on maintainable Java architecture, 19-language i18n, CI quality gates, Docker-based validation, MySQL persistence, and effect-rich gameplay.**
 
-TreasureRun is a custom treasure-hunt mini-game plugin for Minecraft Spigot 1.20.1.  
+TreasureRun is a custom treasure-hunt mini-game plugin for Minecraft Spigot 1.20.1.
 
 TreasureRun separates internal game logic from player-facing display text, making the plugin easier to localize, audit, and maintain across 19 language packs.
 Players search for treasure chests within a time limit, earn scores, trigger visual/audio effects, and interact with multilingual in-game UI.
@@ -86,38 +89,38 @@ This project demonstrates **platform-boundary i18n engineering for Minecraft sta
 
 It is structured as a **contributor-ready localization system for a global open-source project**: custom Minecraft language registration, reproducible ResourcePack assets, Fabric runtime language sync, ProtocolLib packet auditing, verification docs, and CI-backed quality gates make the system easier to inspect, reproduce, and extend.
 
-Minecraft standard UI text cannot be fully controlled by a Spigot plugin alone.  
+Minecraft standard UI text cannot be fully controlled by a Spigot plugin alone.
 To work around that limitation, TreasureRun combines **Spigot / ProtocolLib / ResourcePack / Fabric Mod** into a multi-layer architecture.
 
 ### Key Technical Decisions
 
-- **8039-key standard-message coverage**  
+- **8039-key standard-message coverage**
   Minecraft standard translation assets are aligned across both the Fabric Mod and ResourcePack layers.
 
-- **Lightweight runtime payload**  
-  The server does not send huge 20-language JSON payloads at runtime.  
+- **Lightweight runtime payload**
+  The server does not send huge 22-language JSON payloads at runtime.
   It sends only the player's selected language code, such as `ja`, `en`, `de`, or `zh_tw`.
 
-- **Safe client-side reload path**  
+- **Safe client-side reload path**
   The Fabric client applies the selected language through Minecraft's own runtime resource lifecycle:
   - update the selected language
   - call Minecraft's `LanguageManager`
   - trigger `client.reloadResources()`
   - reload the bundled 8039-key language assets without restarting Minecraft
 
-- **Avoiding fragile internal mutation**  
-  TreasureRun does not directly mutate Minecraft's internal `TranslationStorage` map.  
+- **Avoiding fragile internal mutation**
+  TreasureRun does not directly mutate Minecraft's internal `TranslationStorage` map.
   Instead, it asks Minecraft to rebuild translation storage through the normal resource reload lifecycle.
 
 ### 日本語要約
 
 Minecraft標準文のi18n制約に対し、TreasureRunでは **Spigot / ProtocolLib / ResourcePack / Fabric Mod** を組み合わせた多層アーキテクチャを設計しました。
 
-8039キーの標準翻訳資産をFabric ModとResourcePackで整列し、実行時は20言語分の巨大データを送らず、選択言語コードのみを軽量payloadとして同期します。
+8039キーの標準翻訳資産をFabric ModとResourcePackで整列し、実行時は22言語分の巨大データを送らず、選択言語コードのみを軽量payloadとして同期します。
 
 Fabric側では `LanguageManager` と `client.reloadResources()` を使い、内部 `TranslationStorage` を直接書き換えずに、Minecraftの通常のresource reload経路で再起動なしの言語反映を行います。
 
-This is more than a translation feature.  
+This is more than a translation feature.
 It is a systems-design solution for a real platform constraint.
 
 <!-- TREASURERUN_REVIEWER_ENGINEERING_SIGNAL -->
@@ -141,7 +144,7 @@ In short, the project demonstrates **platform constraints / architecture / runti
 
 TreasureRun uses `lang-map.yml` as a single source of truth for language routing.
 
-Earlier versions relied on Java-side `switch` logic to map TreasureRun language codes to Minecraft language asset files.  
+Earlier versions relied on Java-side `switch` logic to map TreasureRun language codes to Minecraft language asset files.
 That approach works for a small fixed set of languages, but it does not scale well because every new language would require a code change.
 
 The current design moves that mapping into data:
@@ -151,7 +154,7 @@ The current design moves that mapping into data:
 
 The Fabric client mod, validation scripts, and GitHub Actions checks all read the same mapping definition.
 
-This means language expansion is handled as a configuration-and-assets change, not a Java control-flow change.  
+This means language expansion is handled as a configuration-and-assets change, not a Java control-flow change.
 When a new language is added, the intended path is:
 
 1. add the language mapping to `lang-map.yml`
@@ -184,7 +187,7 @@ Evidence:
 
 TreasureRun keeps i18n quality checks separate from build success.
 
-Suspicious i18n findings are classified as player-visible text, internal diagnostic logs, generated legacy keys, or Minecraft standard asset text.  
+Suspicious i18n findings are classified as player-visible text, internal diagnostic logs, generated legacy keys, or Minecraft standard asset text.
 This keeps CI useful without hiding real localization issues.
 
 See: [`docs/quality/i18n-audit-noise-classification.md`](docs/quality/i18n-audit-noise-classification.md)
@@ -317,7 +320,7 @@ See: [`docs/architecture/hybrid-minecraft-standard-message-i18n.md`](docs/archit
 対応言語例：
 
 ```text
-ja, en, de, fr, it, sv, es, fi, nl, ru, ko, zh_tw, pt, hi, la, lzh, is, sa, asl_gloss
+ja, en, de, fr, it, sv, es, fi, nl, ru, ko, zh_tw, pt, hi, la, lzh, is, sa, asl_gloss, ang, non
 ```
 
 ---
@@ -563,7 +566,7 @@ This project emphasizes engineering practices that are important in real-world s
 Supported language packs include:
 
 ```text
-ja, en, de, fr, it, sv, es, fi, nl, ru, ko, zh_tw, pt, hi, la, lzh, is, sa, asl_gloss
+ja, en, de, fr, it, sv, es, fi, nl, ru, ko, zh_tw, pt, hi, la, lzh, is, sa, asl_gloss, ang, non
 ```
 
 ---
@@ -801,7 +804,7 @@ minecraft.packet.multiplayer.player.joined
 minecraft.packet.multiplayer.player.left
 ```
 
-The first goal is not to translate every vanilla message at once.  
+The first goal is not to translate every vanilla message at once.
 Instead, TreasureRun can run with `packetMessages.audit: true` and collect the actual Minecraft `translate` keys that appear in the running Spigot environment.
 
 When a key appears in the audit log, it can be added safely to `languages/*.yml` as a TreasureRun-managed translation key. This makes the packet-level localization scope evidence-based rather than guess-based.
@@ -810,7 +813,7 @@ This demonstrates a layered i18n design:
 
 - Bukkit event-level localization for safe, high-level events
 - ProtocolLib packet-level auditing for lower-level vanilla/system messages
-- YAML-backed 20-language translation expansion
+- YAML-backed 22-language translation expansion
 - per-player language preference integration
 
 This is intentionally designed as an extensible localization foundation rather than a one-off string replacement.
@@ -838,7 +841,7 @@ TreasureRun separates ranking persistence from the main gameplay flow into dedic
 
 This design keeps database persistence responsibilities separate from gameplay orchestration, making the ranking system easier to test, maintain, and extend.
 
-In Japanese terms, the ranking persistence logic is separated from the core game flow.  
+In Japanese terms, the ranking persistence logic is separated from the core game flow.
 `SeasonRepository` is responsible for resolving or creating weekly and monthly seasons, while `SeasonScoreRepository` is responsible for updating weekly, monthly, and all-time ranking records.
 
 #### Ranking Database Design
@@ -948,21 +951,21 @@ TreasureRun uses a hybrid i18n architecture to maximize localization coverage ac
 - server-side resource-pack language JSON files for client-resolved Minecraft translation keys,
 - automatic resource-pack delivery on player join using the committed ZIP URL and SHA1 hash.
 
-The resource pack contains the full vanilla Minecraft 1.20.1 language-key set for the exact 20 TreasureRun languages.  
+The resource pack contains the full vanilla Minecraft 1.20.1 language-key set for the exact 20 TreasureRun languages.
 Untranslated vanilla keys use English fallback, while observed and verified `minecraft.packet.*` keys are overlaid from TreasureRun's YAML language files.
 
 This architecture is intentionally documented with realistic boundaries. Some pre-login, authentication, disconnect, settings, and client-only UI text remains outside guaranteed server-side control.
 
 Verification notes:
 
-- [v0.1.0-alpha release checklist](docs/release/v0.1.0-alpha-checklist.md)  
+- [v0.1.0-alpha release checklist](docs/release/v0.1.0-alpha-checklist.md)
   Early alpha release checklist for OSS readiness, verification, and portfolio review.
 
-- [PacketI18n boundary refactor verification](docs/verification/i18n/packet-i18n-boundary-refactor.md)  
+- [PacketI18n boundary refactor verification](docs/verification/i18n/packet-i18n-boundary-refactor.md)
   Verification record for separating the ProtocolLib packet boundary adapter from the pure-Java packet JSON localizer.
 
 
-- [PacketI18n boundary refactor verification](docs/verification/i18n/packet-i18n-boundary-refactor.md)  
+- [PacketI18n boundary refactor verification](docs/verification/i18n/packet-i18n-boundary-refactor.md)
   ProtocolLib境界層とpure-Java packet JSON localizerを分離し、Minecraft依存の重い境界とテスト可能なi18nロジックを分けた検証記録。
 
 
@@ -977,8 +980,8 @@ Verification notes:
 
 ## Verification notes
 
-- [Hybrid i18n verification: Fabric runtime sync and non-mod ResourcePack fallback](docs/verification/i18n/non-mod-resourcepack-fallback.md)  
-  Fabric Mod導入環境でのruntime language syncと、Mod未導入環境向けResourcePack alias fallbackについて、20言語分の8039キー整合性、SHA1整合性、Java側fallback分岐を検証した記録。
+- [Hybrid i18n verification: Fabric runtime sync and non-mod ResourcePack fallback](docs/verification/i18n/non-mod-resourcepack-fallback.md)
+  Fabric Mod導入環境でのruntime language syncと、Mod未導入環境向けResourcePack alias fallbackについて、22言語分の8039キー整合性、SHA1整合性、Java側fallback分岐を検証した記録。
 
-- [Custom Minecraft language registration verification](docs/verification/i18n/custom-language-registration.md)  
+- [Custom Minecraft language registration verification](docs/verification/i18n/custom-language-registration.md)
   This verification records how TreasureRun registers custom Minecraft client languages (`ojp_jp`, `asl_us`, `sa_in`, `la_la`, and `lzh_hant`) through client ResourcePack metadata, and applies them to standard Minecraft UI text that cannot be controlled by a Spigot plugin alone.

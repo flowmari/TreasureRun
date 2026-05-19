@@ -32,3 +32,5 @@ mappings:
   lzh:       lzh_hant
   ojp:       ojp_jp
   asl_gloss: asl_us
+  ang:       ang_gb
+  non:       non_is

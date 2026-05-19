@@ -21,6 +21,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  * - ojp       -> ojp_jp
  * - sa        -> sa_in
  * - asl_gloss -> asl_us
+ * - ang       -> ang_gb
+ * - non       -> non_is
  */
 class LanguageCodeMappingIntegrityTest {
 
@@ -40,6 +42,8 @@ class LanguageCodeMappingIntegrityTest {
         assertEquals("ojp_jp", mappings.get("ojp"));
         assertEquals("sa_in", mappings.get("sa"));
         assertEquals("asl_us", mappings.get("asl_gloss"));
+        assertEquals("ang_gb", mappings.get("ang"));
+        assertEquals("non_is", mappings.get("non"));
         assertEquals("zh_tw", mappings.get("zh_tw"));
         assertEquals("en_us", mappings.get("en"));
         assertEquals("ja_jp", mappings.get("ja"));

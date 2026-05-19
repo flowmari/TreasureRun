@@ -233,3 +233,11 @@ A Spigot plugin alone cannot fully control Minecraft standard UI text, so the pr
 The most important part is that the Minecraft-dependent boundary and the pure localization logic are separated and protected by tests.
 
 This makes TreasureRun a strong portfolio case study for Java, i18n architecture, platform constraints, CI verification, and maintainable engineering design.
+
+
+## Experimental historical Germanic locales
+
+- `ang -> ang_gb`: Old English / Ænglisc
+- `non -> non_is`: Old Norse / Dǫnsk tunga
+
+These locales are intentionally marked experimental. They demonstrate that new non-standard Minecraft locale paths can be added through the same mapping, ResourcePack, Fabric language asset, SHA-1, config fallback, and JUnit verification path as existing locales. Full historical-language translation quality is tracked separately from architecture correctness.

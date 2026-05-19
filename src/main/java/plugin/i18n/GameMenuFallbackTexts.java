@@ -30,6 +30,8 @@ public final class GameMenuFallbackTexts {
     PLUGIN_NOT_READY.put("sv", "Pluginen är inte redo än.");
     PLUGIN_NOT_READY.put("zh_tw", "外掛尚未就緒。");
     PLUGIN_NOT_READY.put("asl_gloss", "PLUGIN NOT READY YET.");
+    PLUGIN_NOT_READY.put("ang", "Plugin is not ready yet.");
+    PLUGIN_NOT_READY.put("non", "Plugin is not ready yet.");
   }
 
   public static String pluginNotReadyForLocale(String locale) {

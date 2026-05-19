@@ -51,3 +51,11 @@ The goal is to keep TreasureRun's i18n architecture maintainable and reviewable:
 - unsafe packet localization falls back safely instead of corrupting packet JSON
 
 This makes the i18n system easier to inspect, reproduce, and maintain as an open-source Java project.
+
+
+## Experimental historical Germanic locales
+
+- `ang -> ang_gb`: Old English / Ænglisc
+- `non -> non_is`: Old Norse / Dǫnsk tunga
+
+These locales are intentionally marked experimental. They demonstrate that new non-standard Minecraft locale paths can be added through the same mapping, ResourcePack, Fabric language asset, SHA-1, config fallback, and JUnit verification path as existing locales. Full historical-language translation quality is tracked separately from architecture correctness.
