@@ -740,7 +740,7 @@ ui:
   quote:
     footer:
       dbLogs: '(DB: proverb_logs)'
-    title: Quote Collection
+    title: Tilvitnanasafn
     intro:
       tabsTitle: Tabs
       db:
