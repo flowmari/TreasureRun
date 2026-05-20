@@ -1,16 +1,11 @@
-# TreasureRun Old English / Ænglisc
-# Experimental historical Germanic locale. Initial version uses English fallback for most gameplay strings; philological review is planned.
-# This file is intentionally wired into the same i18n loading path as other languages.
-# Translation quality is tracked separately from architecture correctness.
-
 outcome:
   fallback:
-    runComplete: Run complete.
-    timeUp: Time's up.
-    trader: Trade complete.
+    runComplete: Run is gefylled.
+    timeUp: Tīd is āgān.
+    trader: Ceap is gedōn.
   notice:
-    timeUpGameOver: Time is up. Game over.
-    retryGuide: Try again using a different route.
+    timeUpGameOver: Tīd is āgān. Plega geendod.
+    retryGuide: Fanda eft mid ōðrum wege.
   success:
     common:
       pool: []
@@ -427,7 +422,8 @@ outcome:
       - 'You crossed fragile ground
 
         and left the horizon unbroken.'
-      - "Nothing changed.\n Only your position did.\nNot luck.\nAlignment.\nThe moment passed.\nThe record remains."
+      - "Nothing changed.\n Only your position did.\nNot luck.\nAlignment.\nThe moment\
+        \ passed.\nThe record remains."
       - 'The sun sank,
 
         and shadow covered the world once again.'
@@ -490,10 +486,10 @@ prefix: '&b[&6TreasureRun&b]&r '
 common:
   true: '&aYes'
   false: '&cNo'
-  ok: '&aOK'
-  cancel: '&cCancel'
-  loading: '&7Loading...'
-  done: '&aDone!'
+  ok: '&aGōd'
+  cancel: '&cĀbregdan'
+  loading: '&7Hlādende...'
+  done: '&aGedōn!'
   error: '&cError: {reason}'
 command:
   checkTreasureEmerald:
@@ -502,35 +498,40 @@ command:
     resultFalse: The item in your hand is not a Treasure Emerald.
   gameStart:
     playersOnly: This command can only be used by players.
-    worldNotFound: '[TreasureRun] The start world is not configured or could not be found.'
-    started: '§aTreasure hunt started! Difficulty: {difficulty} | Time limit: {timeLimit} seconds'
+    worldNotFound: '[TreasureRun] The start world is not configured or could not be
+      found.'
+    started: '§aTreasure hunt started! Difficulty: {difficulty} | Time limit: {timeLimit}
+      seconds'
   stageCleanup:
     playersOnly: '&cOnly players can use this command.'
     cleaned: '[TreasureRun] Cleaned up {count} difficulty blocks.'
     managerNotReady: '[TreasureRun] The stage manager is not initialized.'
-  noPermission: You do not have permission to use this command.
-  onlyPlayer: '&cThis command can only be used by a player.'
+  noPermission: Þū ne mōst þis bebod brūcan.
+  onlyPlayer: '&cĀn plegere mæg þis bebod brūcan.'
   reload:
-    start: '&7Reloading config/messages...'
-    success: '&aReload complete.'
+    start: '&7Stillingas eft hlādende...'
+    success: '&aEft-hlādung gedōn.'
     fail: '&cReload failed: {reason}'
   lang:
-    guiCancelledGameStart: Language selection was cancelled. To try again, run /gameStart <easy|normal|hard>.
-    guiCancelledGameMenu: Language selection was cancelled. To open it again, run /gameMenu gui.
-    guiTooManyShown: Too many allowed languages were configured, so only the first 27 are shown in the GUI.
-    playersOnly: This command can only be used by players.
+    guiCancelledGameStart: Language selection was cancelled. To try again, run /gameStart
+      <easy|normal|hard>.
+    guiCancelledGameMenu: Language selection was cancelled. To open it again, run
+      /gameMenu gui.
+    guiTooManyShown: Too many allowed languages were configured, so only the first
+      27 are shown in the GUI.
+    playersOnly: Ān plegere mæg þis bebod brūcan.
     resetDone: ✅ Your saved language has been reset. The GUI will open next time.
-    current: 'Current language: {lang}'
-    emptyCode: 'Language code is empty. Example: /lang ja'
-    notAllowed: 'That language is not allowed: {lang}'
-    allowedList: 'Allowed languages: {allowed}'
-    changed: '✅ Language changed: {displayName} ({lang})'
+    current: 'Nūƿe sprǣc: {lang}'
+    emptyCode: 'Sprǣc-cōd is ǣmtig. Bysen: /lang ja'
+    notAllowed: 'Sēo sprǣc nis ālȳfed: {lang}'
+    allowedList: 'Ālȳfede sprǣca: {allowed}'
+    changed: '✅ Sprǣc āwend: {displayName} ({lang})'
     changedButNotSaved: '⚠ Language changed, but failed to persist it: {lang}'
     list:
-      title: === Languages ===
+      title: === Sprǣca ===
       default: 'default: {default}'
       allowed: 'allowed: {allowed}'
-      usage: 'Usage: /lang <code> Example: /lang ja'
+      usage: 'Brūcung: /lang <code> Bysen: /lang ang'
       gui: 'GUI: /lang or /lang gui'
     guiNotReady: Language GUI is not initialized.
   craftSpecialEmerald:
@@ -539,7 +540,8 @@ command:
     success: '&bYou crafted a Special Emerald using 3 diamonds!'
   quoteFavorite:
     latestSaved: The latest quote was saved to Favorites.
-    latestNotSaved: The latest quote could not be saved. There may be no log yet, or it may already be in Favorites.
+    latestNotSaved: The latest quote could not be saved. There may be no log yet,
+      or it may already be in Favorites.
     playersOnly: '&cThis command can only be used by players.'
     repositoryNotReady: Favorites are not available yet.
     listHeader: '&bFavorites ({count})'
@@ -553,7 +555,8 @@ command:
     openBookFailed: '&cFailed to open the book.'
     unknownSubcommand: '&cUnknown subcommand. See /quoteFavorite help.'
     shortcutSaved: The latest quote was saved to Favorites.
-    shortcutNotSaved: The latest quote could not be saved. There may be no log yet, or it may already be in Favorites.
+    shortcutNotSaved: The latest quote could not be saved. There may be no log yet,
+      or it may already be in Favorites.
     help:
       title: '&bQuote Favorite commands'
       latest: '&7/quoteFavorite latest : save the latest quote to Favorites'
@@ -562,7 +565,8 @@ command:
       reread: '&7/quoteFavorite reread [chat|title|book] : reread a quote'
       rereadTitle: '&7title rereads using the title display'
       rereadBook: '&7book rereads using a written book'
-      book: '&7/quoteFavorite book [toc|success|timeup|other|full] : open the archive book'
+      book: '&7/quoteFavorite book [toc|success|timeup|other|full] : open the archive
+        book'
       bookToc: '&7toc opens only the table of contents'
       bookSuccess: '&7success shows only successful quotes'
       bookTimeup: '&7timeup shows only time-up quotes'
@@ -655,7 +659,7 @@ favorites:
     head: Saved lines reread
     noQuotes: No saved lines yet.
   table: favorites.table
-  title: Favorites
+  title: Lēofe spræca
   toc:
     clickable: Chapters can be opened by clicking
     head: Contents
@@ -670,7 +674,8 @@ favorites:
     quotefavoritestore_exists_fa_7d08adba: '[QuoteFavoriteStore] exists failed:'
     quotefavoritestore_addfavori_44fb1d75: '[QuoteFavoriteStore] addFavorite failed:'
     quotefavoritestore_removefav_8180a1e4: '[QuoteFavoriteStore] removeFavorite failed:'
-    quotefavoritestore_removefav_d024b1e5: '[QuoteFavoriteStore] removeFavoriteById failed:'
+    quotefavoritestore_removefav_d024b1e5: '[QuoteFavoriteStore] removeFavoriteById
+      failed:'
     quotefavoritestore_listfavor_f3e976d4: '[QuoteFavoriteStore] listFavorites failed:'
     quotefavoritestore_countfavo_69291680: '[QuoteFavoriteStore] countFavorites failed:'
 commands:
@@ -679,11 +684,16 @@ commands:
   rank_1_2_3_demo_4f3e3084: '数字で入力してください: /rank <1|2|3|demo>'
   mysql_repository_not_ready_72df0af1_93: MySQL / Repository not ready.
   mysql_repository_not_ready_72df0af1_119: MySQL / Repository not ready.
-  quotefavorite_book_open_cata_055de855: /quoteFavorite book            - open catalog (full)
-  quotefavorite_book_toc_open__c7d02ede: /quoteFavorite book toc        - open catalog (TOC only)
-  quotefavorite_book_success_o_afe31501: /quoteFavorite book success    - open SUCCESS chapter
-  quotefavorite_book_timeup_op_08b799b0: /quoteFavorite book timeup     - open TIME_UP chapter
-  quotefavorite_book_other_ope_bdcbafba: /quoteFavorite book other      - open OTHER chapter
+  quotefavorite_book_open_cata_055de855: /quoteFavorite book            - open catalog
+    (full)
+  quotefavorite_book_toc_open__c7d02ede: /quoteFavorite book toc        - open catalog
+    (TOC only)
+  quotefavorite_book_success_o_afe31501: /quoteFavorite book success    - open SUCCESS
+    chapter
+  quotefavorite_book_timeup_op_08b799b0: /quoteFavorite book timeup     - open TIME_UP
+    chapter
+  quotefavorite_book_other_ope_bdcbafba: /quoteFavorite book other      - open OTHER
+    chapter
 debug: null
 items:
   specialEmerald:
@@ -736,7 +746,8 @@ ui:
       hint:
         reopenMenu: 'Hint: use /gameMenu to open this again.'
       note:
-        bookFormat: Minecraft books cannot switch tabs by clicking, so sections are shown as pages.
+        bookFormat: Minecraft books cannot switch tabs by clicking, so sections are
+          shown as pages.
   quote:
     footer:
       dbLogs: '(DB: proverb_logs)'
@@ -890,11 +901,15 @@ finalAudit:
     gameAlreadyRunning: The game is already running.
     invalidDifficulty: Please choose Easy, Normal, or Hard.
     languageGuiNotReady: The language selection GUI is not ready yet.
-    reloadBlockedRunning: Reload is disabled while the game is running. Please run /gameEnd first.
+    reloadBlockedRunning: Reload is disabled while the game is running. Please run
+      /gameEnd first.
     noPermission: You do not have permission to use this command.
-    noPermissionOp: You do not have permission to use this command. Operator permission is required.
-    treasureReloadDone: ✅ TreasureRun settings have been reloaded, including the language GUI.
-    guiReloadedReopen: The GUI has been refreshed. Please run /gameStart again to reopen it.
+    noPermissionOp: You do not have permission to use this command. Operator permission
+      is required.
+    treasureReloadDone: ✅ TreasureRun settings have been reloaded, including the language
+      GUI.
+    guiReloadedReopen: The GUI has been refreshed. Please run /gameStart again to
+      reopen it.
     dbConnected: MySQL is connected.
     dbNotConnected: MySQL is not connected.
     exportMissingRoot: ❌ messages.translation was not found in config.yml.
@@ -907,7 +922,8 @@ finalAudit:
     exportSkippedExisting: '⚠ Skipped existing file(s): {langs}'
     exportOverwriteHint: 'To overwrite existing files, run: /treasureExportLang overwrite'
     exportNextStep: 'Next: make I18n read languages/*.yml to apply these translations.'
-    playerOnlyConsoleNoOnline: Only players can run this command, and no online player was found.
+    playerOnlyConsoleNoOnline: Only players can run this command, and no online player
+      was found.
   debug:
     chestSoundStart: '[ChestSound] Started in 16-grid mode.'
     chestSoundNoChests: '[ChestSound] No chests found.'
@@ -943,13 +959,16 @@ minecraft:
       deleted_marker: This chat message has been deleted by the server.
       disabled:
         chain_broken: Chat disabled due to broken chain. Please try reconnecting.
-        expiredProfileKey: Chat disabled due to expired profile public key. Please try reconnecting.
+        expiredProfileKey: Chat disabled due to expired profile public key. Please
+          try reconnecting.
         launcher: Chat disabled by launcher option. Cannot send message.
-        missingProfileKey: Chat disabled due to missing profile public key. Please try reconnecting.
+        missingProfileKey: Chat disabled due to missing profile public key. Please
+          try reconnecting.
         options: Chat disabled in client options.
         profile:
           moreInfo: Chat not allowed by account settings. Cannot send or view messages.
-          _value: Chat not allowed by account settings. Press '%s' again for more information.
+          _value: Chat not allowed by account settings. Press '%s' again for more
+            information.
       editBox: chat
       filtered: Filtered by the server.
       filtered_full: The server has hidden your message for some players.
@@ -986,51 +1005,63 @@ minecraft:
           criterion:
             to:
               many:
-                failure: Couldn't grant criterion '%s' of advancement %s to %s players as they already have it
+                failure: Couldn't grant criterion '%s' of advancement %s to %s players
+                  as they already have it
                 success: Granted criterion '%s' of advancement %s to %s players
               one:
-                failure: Couldn't grant criterion '%s' of advancement %s to %s as they already have it
+                failure: Couldn't grant criterion '%s' of advancement %s to %s as
+                  they already have it
                 success: Granted criterion '%s' of advancement %s to %s
           many:
             to:
               many:
-                failure: Couldn't grant %s advancements to %s players as they already have them
+                failure: Couldn't grant %s advancements to %s players as they already
+                  have them
                 success: Granted %s advancements to %s players
               one:
-                failure: Couldn't grant %s advancements to %s as they already have them
+                failure: Couldn't grant %s advancements to %s as they already have
+                  them
                 success: Granted %s advancements to %s
           one:
             to:
               many:
-                failure: Couldn't grant advancement %s to %s players as they already have it
+                failure: Couldn't grant advancement %s to %s players as they already
+                  have it
                 success: Granted the advancement %s to %s players
               one:
-                failure: Couldn't grant advancement %s to %s as they already have it
+                failure: Couldn't grant advancement %s to %s as they already have
+                  it
                 success: Granted the advancement %s to %s
         revoke:
           criterion:
             to:
               many:
-                failure: Couldn't revoke criterion '%s' of advancement %s from %s players as they don't have it
+                failure: Couldn't revoke criterion '%s' of advancement %s from %s
+                  players as they don't have it
                 success: Revoked criterion '%s' of advancement %s from %s players
               one:
-                failure: Couldn't revoke criterion '%s' of advancement %s from %s as they don't have it
+                failure: Couldn't revoke criterion '%s' of advancement %s from %s
+                  as they don't have it
                 success: Revoked criterion '%s' of advancement %s from %s
           many:
             to:
               many:
-                failure: Couldn't revoke %s advancements from %s players as they don't have them
+                failure: Couldn't revoke %s advancements from %s players as they don't
+                  have them
                 success: Revoked %s advancements from %s players
               one:
-                failure: Couldn't revoke %s advancements from %s as they don't have them
+                failure: Couldn't revoke %s advancements from %s as they don't have
+                  them
                 success: Revoked %s advancements from %s
           one:
             to:
               many:
-                failure: Couldn't revoke advancement %s from %s players as they don't have it
+                failure: Couldn't revoke advancement %s from %s players as they don't
+                  have it
                 success: Revoked the advancement %s from %s players
               one:
-                failure: Couldn't revoke advancement %s from %s as they don't have it
+                failure: Couldn't revoke advancement %s from %s as they don't have
+                  it
                 success: Revoked the advancement %s from %s
       attribute:
         base_value:
@@ -1040,7 +1071,8 @@ minecraft:
             success: Base value for attribute %s for entity %s set to %s
         failed:
           entity: '%s is not a valid entity for this command'
-          modifier_already_present: Modifier %s is already present on attribute %s for entity %s
+          modifier_already_present: Modifier %s is already present on attribute %s
+            for entity %s
           no_attribute: Entity %s has no attribute %s
           no_modifier: Attribute %s for entity %s has no modifier %s
         modifier:
@@ -1099,7 +1131,8 @@ minecraft:
             success:
               none: Custom bossbar %s no longer has any players
               some: 'Custom bossbar %s now has %s player(s): %s'
-            unchanged: Nothing changed. Those players are already on the bossbar with nobody to add or remove
+            unchanged: Nothing changed. Those players are already on the bossbar with
+              nobody to add or remove
           style:
             success: Custom bossbar %s has changed style
             unchanged: Nothing changed. That's already the style of this bossbar
@@ -1162,7 +1195,8 @@ minecraft:
           failed: Pack '%s' is not enabled!
         enable:
           failed:
-            no_flags: 'Pack ''%s'' cannot be enabled, since required flags are not enabled in this world: %s!'
+            no_flags: 'Pack ''%s'' cannot be enabled, since required flags are not
+              enabled in this world: %s!'
             _value: Pack '%s' is already enabled!
         list:
           available:
@@ -1185,7 +1219,8 @@ minecraft:
           traceFailed: Failed to trace function
         notRunning: The tick profiler hasn't started
         started: Started tick profiling
-        stopped: Stopped tick profiling after %s seconds and %s ticks (%s ticks per second)
+        stopped: Stopped tick profiling after %s seconds and %s ticks (%s ticks per
+          second)
       defaultgamemode:
         success: The default game mode is now %s
       deop:
@@ -1216,7 +1251,8 @@ minecraft:
               multiple: Removed effect %s from %s targets
               single: Removed effect %s from %s
         give:
-          failed: Unable to apply this effect (target is either immune to effects, or has something stronger)
+          failed: Unable to apply this effect (target is either immune to effects,
+            or has something stronger)
           success:
             multiple: Applied effect %s to %s targets
             single: Applied effect %s to %s
@@ -1226,7 +1262,8 @@ minecraft:
           incompatible: '%s cannot support that enchantment'
           itemless: '%s is not holding any item'
           level: '%s is higher than the maximum level of %s supported by that enchantment'
-          _value: Nothing changed. Targets either have no item in their hands or the enchantment could not be applied
+          _value: Nothing changed. Targets either have no item in their hands or the
+            enchantment could not be applied
         success:
           multiple: Applied enchantment %s to %s entities
           single: Applied enchantment %s to %s's item
@@ -1257,7 +1294,8 @@ minecraft:
               multiple: Set %s experience levels on %s players
               single: Set %s experience levels on %s
           points:
-            invalid: Cannot set experience points above the maximum points for the player's current level
+            invalid: Cannot set experience points above the maximum points for the
+              player's current level
             success:
               multiple: Set %s experience points on %s players
               single: Set %s experience points on %s
@@ -1348,7 +1386,8 @@ minecraft:
           not_found: Could not find a biome of type "%s" within reasonable distance
           success: The nearest %s is at %s (%s blocks away)
         poi:
-          not_found: Could not find a point of interest of type "%s" within reasonable distance
+          not_found: Could not find a point of interest of type "%s" within reasonable
+            distance
           success: The nearest %s is at %s (%s blocks away)
         structure:
           invalid: There is no structure with type "%s"
@@ -1373,8 +1412,10 @@ minecraft:
         notRunning: The performance profiler hasn't started
         reportFailed: Failed to create debug report
         reportSaved: Created debug report in %s
-        started: Started 10 second performance profiling run (use '/perf stop' to stop early)
-        stopped: Stopped performance profiling after %s second(s) and %s tick(s) (%s tick(s) per second)
+        started: Started 10 second performance profiling run (use '/perf stop' to
+          stop early)
+        stopped: Stopped performance profiling after %s second(s) and %s tick(s) (%s
+          tick(s) per second)
       place:
         feature:
           failed: Failed to place feature
@@ -1451,7 +1492,8 @@ minecraft:
             success: Created new objective %s
           display:
             alreadyEmpty: Nothing changed. That display slot is already empty
-            alreadySet: Nothing changed. That display slot is already showing that objective
+            alreadySet: Nothing changed. That display slot is already showing that
+              objective
             cleared: Cleared any objectives in display slot %s
             set: Set display slot %s to show objective %s
           list:
@@ -1523,13 +1565,17 @@ minecraft:
           stopped: No longer spectating an entity
       spreadplayers:
         failed:
-          entities: Could not spread %s entity/entities around %s, %s (too many entities for space - try using spread of at most %s)
+          entities: Could not spread %s entity/entities around %s, %s (too many entities
+            for space - try using spread of at most %s)
           invalid:
             height: Invalid maxHeight %s; expected higher than world minimum %s
-          teams: Could not spread %s team(s) around %s, %s (too many entities for space - try using spread of at most %s)
+          teams: Could not spread %s team(s) around %s, %s (too many entities for
+            space - try using spread of at most %s)
         success:
-          entities: Spread %s player(s) around %s, %s with an average distance of %s blocks apart
-          teams: Spread %s team(s) around %s, %s with an average distance of %s blocks apart
+          entities: Spread %s player(s) around %s, %s with an average distance of
+            %s blocks apart
+          teams: Spread %s team(s) around %s, %s with an average distance of %s blocks
+            apart
       stopsound:
         success:
           source:
@@ -1595,8 +1641,10 @@ minecraft:
             success: Death message visibility for team %s is now "%s"
             unchanged: Nothing changed. Death message visibility is already that value
           friendlyfire:
-            alreadyDisabled: Nothing changed. Friendly fire is already disabled for that team
-            alreadyEnabled: Nothing changed. Friendly fire is already enabled for that team
+            alreadyDisabled: Nothing changed. Friendly fire is already disabled for
+              that team
+            alreadyEnabled: Nothing changed. Friendly fire is already enabled for
+              that team
             disabled: Disabled friendly fire for team %s
             enabled: Enabled friendly fire for team %s
           name:
@@ -1608,7 +1656,8 @@ minecraft:
           prefix:
             success: Team prefix set to %s
           seeFriendlyInvisibles:
-            alreadyDisabled: Nothing changed. That team already can't see invisible teammates
+            alreadyDisabled: Nothing changed. That team already can't see invisible
+              teammates
             alreadyEnabled: Nothing changed. That team can already see invisible teammates
             disabled: Team %s can no longer see invisible teammates
             enabled: Team %s can now see invisible teammates
@@ -1689,7 +1738,8 @@ minecraft:
             failed: Nothing changed. The world border damage is already that amount
             success: Set the world border damage to %s per block each second
           buffer:
-            failed: Nothing changed. The world border damage buffer is already that distance
+            failed: Nothing changed. The world border damage buffer is already that
+              distance
             success: Set the world border damage buffer to %s block(s)
         get: The world border is currently %s block(s) wide
         set:
@@ -1706,7 +1756,8 @@ minecraft:
             failed: Nothing changed. The world border warning is already that distance
             success: Set the world border warning distance to %s block(s)
           time:
-            failed: Nothing changed. The world border warning is already that amount of time
+            failed: Nothing changed. The world border warning is already that amount
+              of time
             success: Set the world border warning time to %s second(s)
     death:
       attack:
@@ -1792,7 +1843,8 @@ minecraft:
         magic:
           player: '%1$s was killed by magic whilst trying to escape %2$s'
           _value: '%1$s was killed by magic'
-        message_too_long: 'Actually, the message was too long to deliver fully. Sorry! Here''s stripped version: %s'
+        message_too_long: 'Actually, the message was too long to deliver fully. Sorry!
+          Here''s stripped version: %s'
         mob:
           item: '%1$s was slain by %2$s using %3$s'
           _value: '%1$s was slain by %2$s'
@@ -1807,8 +1859,10 @@ minecraft:
           item: '%1$s was slain by %2$s using %3$s'
           _value: '%1$s was slain by %2$s'
         sonic_boom:
-          item: '%1$s was obliterated by a sonically-charged shriek whilst trying to escape %2$s wielding %3$s'
-          player: '%1$s was obliterated by a sonically-charged shriek whilst trying to escape %2$s'
+          item: '%1$s was obliterated by a sonically-charged shriek whilst trying
+            to escape %2$s wielding %3$s'
+          player: '%1$s was obliterated by a sonically-charged shriek whilst trying
+            to escape %2$s'
           _value: '%1$s was obliterated by a sonically-charged shriek'
         stalagmite:
           player: '%1$s was impaled on a stalagmite whilst fighting %2$s'
@@ -1821,7 +1875,8 @@ minecraft:
           player: '%1$s was stung to death by %2$s'
           _value: '%1$s was stung to death'
         sweetBerryBush:
-          player: '%1$s was poked to death by a sweet berry bush whilst trying to escape %2$s'
+          player: '%1$s was poked to death by a sweet berry bush whilst trying to
+            escape %2$s'
           _value: '%1$s was poked to death by a sweet berry bush'
         thorns:
           item: '%1$s was killed by %3$s trying to hurt %2$s'
@@ -1864,7 +1919,8 @@ minecraft:
           narration: 'Online players: %s'
       applyingPack: Applying resource pack
       disconnect:
-        authservers_down: Authentication servers are down. Please try again later, sorry!
+        authservers_down: Authentication servers are down. Please try again later,
+          sorry!
         banned:
           expiration: '
 
@@ -1882,7 +1938,8 @@ minecraft:
             Reason: %s'
         chat_validation_failed: Chat message validation failure
         duplicate_login: You logged in from another location
-        expired_public_key: Expired profile public key. Check that your system time is synchronized, and try restarting your game.
+        expired_public_key: Expired profile public key. Check that your system time
+          is synchronized, and try restarting your game.
         flying: Flying is not enabled on this server
         generic: Disconnected
         idling: You have been idle for too long!
@@ -1907,7 +1964,8 @@ minecraft:
           Please contact server operator.'
         name_taken: That name is already taken
         not_whitelisted: You are not white-listed on this server!
-        out_of_order_chat: Out-of-order chat packet received. Did your system time change?
+        out_of_order_chat: Out-of-order chat packet received. Did your system time
+          change?
         outdated_client: Incompatible client! Please use %s
         outdated_server: Incompatible client! Please use %s
         server_full: The server is full!
@@ -1956,7 +2014,8 @@ minecraft:
       texturePrompt:
         failure:
           line1: Server resource pack couldn't be applied
-          line2: Any functionality that requires custom resources might not work as expected
+          line2: Any functionality that requires custom resources might not work as
+            expected
         line1: This server recommends the use of a custom resource pack.
         line2: Would you like to download and install it automagically?
         serverPrompt: '%s
@@ -1969,7 +2028,8 @@ minecraft:
       unsecureserver:
         toast:
           title: Chat messages can't be verified
-          _value: Messages sent on this server may be modified and might not reflect the original message
+          _value: Messages sent on this server may be modified and might not reflect
+            the original message
     advancements:
       adventure:
         adventuring_time:
@@ -1979,16 +2039,19 @@ minecraft:
           description: Kill five unique mobs with one crossbow shot
           title: Arbalistic
         avoid_vibration:
-          description: Sneak near a Sculk Sensor or Warden to prevent it from detecting you
+          description: Sneak near a Sculk Sensor or Warden to prevent it from detecting
+            you
           title: Sneak 100
         bullseye:
-          description: Hit the bullseye of a Target block from at least 30 meters away
+          description: Hit the bullseye of a Target block from at least 30 meters
+            away
           title: Bullseye
         craft_decorated_pot_using_only_sherds:
           description: Make a Decorated Pot out of 4 Pottery Sherds
           title: Careful Restoration
         fall_from_world_height:
-          description: Free fall from the top of the world (build limit) to the bottom of the world and survive
+          description: Free fall from the top of the world (build limit) to the bottom
+            of the world and survive
           title: Caves & Cliffs
         hero_of_the_village:
           description: Successfully defend a village from a raid
@@ -2006,13 +2069,15 @@ minecraft:
           description: Kill a mob near a Sculk Catalyst
           title: It Spreads
         lightning_rod_with_villager_no_fire:
-          description: Protect a Villager from an undesired shock without starting a fire
+          description: Protect a Villager from an undesired shock without starting
+            a fire
           title: Surge Protector
         ol_betsy:
           description: Shoot a Crossbow
           title: Ol' Betsy
         play_jukebox_in_meadows:
-          description: Make the Meadows come alive with the sound of music from a Jukebox
+          description: Make the Meadows come alive with the sound of music from a
+            Jukebox
           title: Sound of Music
         read_power_from_chiseled_bookshelf:
           description: Read the power signal of a Chiseled Bookshelf using a Comparator
@@ -2059,7 +2124,8 @@ minecraft:
           description: Trade with a Villager at the build height limit
           title: Star Trader
         trim_with_all_exclusive_armor_patterns:
-          description: 'Apply these smithing templates at least once: Spire, Snout, Rib, Ward, Silence, Vex, Tide, Wayfinder'
+          description: 'Apply these smithing templates at least once: Spire, Snout,
+            Rib, Ward, Silence, Vex, Tide, Wayfinder'
           title: Smithing with Style
         trim_with_any_armor_pattern:
           description: Craft a trimmed armor at a Smithing Table
@@ -2151,7 +2217,8 @@ minecraft:
           description: Make the text of any kind of sign glow
           title: Glow and Behold!
         netherite_hoe:
-          description: Use a Netherite Ingot to upgrade a Hoe, and then reevaluate your life choices
+          description: Use a Netherite Ingot to upgrade a Hoe, and then reevaluate
+            your life choices
           title: Serious Dedication
         obtain_sniffer_egg:
           description: Obtain a Sniffer Egg
@@ -2169,7 +2236,8 @@ minecraft:
           description: The world is full of friends and food
           title: Husbandry
         safely_harvest_honey:
-          description: Use a Campfire to collect Honey from a Beehive using a Glass Bottle without aggravating the Bees
+          description: Use a Campfire to collect Honey from a Beehive using a Glass
+            Bottle without aggravating the Bees
           title: Bee Our Guest
         silk_touch_nest:
           description: Move a Bee Nest, with 3 Bees inside, using Silk Touch
@@ -2257,7 +2325,8 @@ minecraft:
           description: Summon the Wither
           title: Withering Heights
         uneasy_alliance:
-          description: Rescue a Ghast from the Nether, bring it safely home to the Overworld... and then kill it
+          description: Rescue a Ghast from the Nether, bring it safely home to the
+            Overworld... and then kill it
           title: Uneasy Alliance
         use_lodestone:
           description: Use a Compass on a Lodestone
@@ -2412,7 +2481,8 @@ minecraft:
           randomPlayer: Random player
           self: Current entity
           unknown: Unknown selector type '%s'
-        toomany: Only one entity is allowed, but the provided selector allows more than one
+        toomany: Only one entity is allowed, but the provided selector allows more
+          than one
       enum:
         invalid: Invalid value "%s"
       float:
@@ -2447,14 +2517,17 @@ minecraft:
           mixed: Can't insert %s into list of %s
         trailing: Unexpected trailing data
       player:
-        entities: Only players may be affected by this command, but the provided selector includes entities
-        toomany: Only one player is allowed, but the provided selector allows more than one
+        entities: Only players may be affected by this command, but the provided selector
+          includes entities
+        toomany: Only one player is allowed, but the provided selector allows more
+          than one
         unknown: That player does not exist
       pos:
         missing:
           double: Expected a coordinate
           int: Expected a block position
-        mixed: Cannot mix world & local coordinates (everything must either use ^ or not)
+        mixed: Cannot mix world & local coordinates (everything must either use ^
+          or not)
         outofbounds: That position is outside the allowed boundaries.
         outofworld: That position is out of this world!
         unloaded: That position is not loaded
@@ -2502,9 +2575,11 @@ minecraft:
       kicked: Was kicked from the game
       loginFailed: Failed to log in
       loginFailedInfo:
-        insufficientPrivileges: Multiplayer is disabled. Please check your Microsoft account settings.
+        insufficientPrivileges: Multiplayer is disabled. Please check your Microsoft
+          account settings.
         invalidSession: Invalid session (Try restarting your game and the launcher)
-        serversUnavailable: The authentication servers are currently not reachable. Please try again.
+        serversUnavailable: The authentication servers are currently not reachable.
+          Please try again.
         userBanned: You are banned from playing online
         _value: 'Failed to log in: %s'
       lost: Connection Lost
@@ -2526,30 +2601,29 @@ minecraft:
       vanilla:
         description: The default look and feel of Minecraft
         name: Default
-
     advancement:
-      advancementNotFound: "Unknown advancement: %s"
+      advancementNotFound: 'Unknown advancement: %s'
     arguments:
       block:
         tag:
-          unknown: "Unknown block tag '%s'"
+          unknown: Unknown block tag '%s'
       function:
         tag:
-          unknown: "Unknown function tag '%s'"
-        unknown: "Unknown function %s"
+          unknown: Unknown function tag '%s'
+        unknown: Unknown function %s
       item:
-        overstacked: "%s can only stack up to %s"
+        overstacked: '%s can only stack up to %s'
         tag:
-          unknown: "Unknown item tag '%s'"
+          unknown: Unknown item tag '%s'
       nbtpath:
         node:
           invalid: Invalid NBT path element
-        nothing_found: "Found no elements matching %s"
+        nothing_found: Found no elements matching %s
         too_deep: Resulting NBT too deeply nested
         too_large: Resulting NBT too large
       objective:
-        notFound: "Unknown scoreboard objective '%s'"
-        readonly: "Scoreboard objective '%s' is read-only"
+        notFound: Unknown scoreboard objective '%s'
+        readonly: Scoreboard objective '%s' is read-only
       operation:
         div0: Cannot divide by zero
         invalid: Invalid operation
@@ -2558,17 +2632,17 @@ minecraft:
     attribute:
       modifier:
         equals:
-          0: "%s %s"
-          1: "%s%% %s"
-          2: "%s%% %s"
+          0: '%s %s'
+          1: '%s%% %s'
+          2: '%s%% %s'
         plus:
-          0: "+%s %s"
-          1: "+%s%% %s"
-          2: "+%s%% %s"
+          0: +%s %s
+          1: +%s%% %s
+          2: +%s%% %s
         take:
-          0: "-%s %s"
-          1: "-%s%% %s"
-          2: "-%s%% %s"
+          0: -%s %s
+          1: -%s%% %s
+          2: -%s%% %s
       name:
         generic:
           armor: Armor
@@ -2653,9 +2727,9 @@ minecraft:
         windswept_savanna: Windswept Savanna
         wooded_badlands: Wooded Badlands
     build:
-      tooHigh: "Height limit for building is %s"
+      tooHigh: Height limit for building is %s
     chat_screen:
-      message: "Message to send: %s"
+      message: 'Message to send: %s'
       title: Chat screen
       usage: Input message and press Enter to send
     color:
@@ -2805,7 +2879,7 @@ minecraft:
         experience_orb: Experience Orb
         eye_of_ender: Eye of Ender
         falling_block: Falling Block
-        falling_block_type: "Falling %s"
+        falling_block_type: Falling %s
         fireball: Fireball
         firework_rocket: Firework Rocket
         fishing_bobber: Fishing Bobber
@@ -2947,21 +3021,22 @@ minecraft:
         zombie_horse: Zombie Horse
         zombie_villager: Zombie Villager
         zombified_piglin: Zombified Piglin
-      not_summonable: "Can't summon entity of type %s"
+      not_summonable: Can't summon entity of type %s
     filled_map:
       buried_treasure: Buried Treasure Map
-      id: "Id #%s"
-      level: "(Level %s/%s)"
+      id: 'Id #%s'
+      level: (Level %s/%s)
       locked: Locked
       mansion: Woodland Explorer Map
       monument: Ocean Explorer Map
-      scale: "Scaling at 1:%s"
+      scale: Scaling at 1:%s
       unknown: Unknown Map
     gamerule:
       announceAdvancements: Announce advancements
       blockExplosionDropDecay:
         _value: In block interaction explosions, some blocks won't drop their loot
-        description: Some of the drops from blocks destroyed by explosions caused by block interactions are lost in the explosion.
+        description: Some of the drops from blocks destroyed by explosions caused
+          by block interactions are lost in the explosion.
       category:
         chat: Chat
         drops: Drops
@@ -2973,13 +3048,15 @@ minecraft:
       commandBlockOutput: Broadcast command block output
       commandModificationBlockLimit:
         _value: Command Modification Block Limit
-        description: Number of blocks that can be changed at once by one command, such as fill or clone.
+        description: Number of blocks that can be changed at once by one command,
+          such as fill or clone.
       disableElytraMovementCheck: Disable elytra movement check
       disableRaids: Disable raids
       doDaylightCycle: Advance time of day
       doEntityDrops:
         _value: Drop entity equipment
-        description: Controls drops from minecarts (including inventories), item frames, boats, etc.
+        description: Controls drops from minecarts (including inventories), item frames,
+          boats, etc.
       doFireTick: Update fire
       doImmediateRespawn: Respawn immediately
       doInsomnia: Spawn phantoms
@@ -2999,7 +3076,9 @@ minecraft:
       doTraderSpawning: Spawn Wandering Traders
       doVinesSpread:
         _value: Vines spread
-        description: Controls whether or not the Vines block spreads randomly to adjacent blocks. Does not affect other type of vine blocks such as Weeping Vines, Twisting Vines, etc.
+        description: Controls whether or not the Vines block spreads randomly to adjacent
+          blocks. Does not affect other type of vine blocks such as Weeping Vines,
+          Twisting Vines, etc.
       doWardenSpawning: Spawn Wardens
       doWeatherCycle: Update weather
       drowningDamage: Deal drowning damage
@@ -3007,15 +3086,18 @@ minecraft:
       fireDamage: Deal fire damage
       forgiveDeadPlayers:
         _value: Forgive dead players
-        description: Angered neutral mobs stop being angry when the targeted player dies nearby.
+        description: Angered neutral mobs stop being angry when the targeted player
+          dies nearby.
       freezeDamage: Deal freeze damage
       globalSoundEvents:
         _value: Global sound events
-        description: When certain game events happen, like a boss spawning, the sound is heard everywhere.
+        description: When certain game events happen, like a boss spawning, the sound
+          is heard everywhere.
       keepInventory: Keep inventory after death
       lavaSourceConversion:
         _value: Lava converts to source
-        description: When flowing lava is surrounded on two sides by lava sources it converts into a source.
+        description: When flowing lava is surrounded on two sides by lava sources
+          it converts into a source.
       logAdminCommands: Broadcast admin commands
       maxCommandChainLength:
         _value: Command chain size limit
@@ -3023,7 +3105,8 @@ minecraft:
       maxEntityCramming: Entity cramming threshold
       mobExplosionDropDecay:
         _value: In mob explosions, some blocks won't drop their loot
-        description: Some of the drops from blocks destroyed by explosions caused by mobs are lost in the explosion.
+        description: Some of the drops from blocks destroyed by explosions caused
+          by mobs are lost in the explosion.
       mobGriefing: Allow destructive mob actions
       naturalRegeneration: Regenerate health
       playersSleepingPercentage:
@@ -3037,20 +3120,24 @@ minecraft:
       showDeathMessages: Show death messages
       snowAccumulationHeight:
         _value: Snow accumulation height
-        description: When it snows, layers of snow form on the ground up to at most this number of layers.
+        description: When it snows, layers of snow form on the ground up to at most
+          this number of layers.
       spawnRadius: Respawn location radius
       spectatorsGenerateChunks: Allow spectators to generate terrain
       tntExplosionDropDecay:
         _value: In TNT explosions, some blocks won't drop their loot
-        description: Some of the drops from blocks destroyed by explosions caused by TNT are lost in the explosion.
+        description: Some of the drops from blocks destroyed by explosions caused
+          by TNT are lost in the explosion.
       universalAnger:
         _value: Universal anger
-        description: Angered neutral mobs attack any nearby player, not just the player that angered them. Works best if forgiveDeadPlayers is disabled.
+        description: Angered neutral mobs attack any nearby player, not just the player
+          that angered them. Works best if forgiveDeadPlayers is disabled.
       waterSourceConversion:
         _value: Water converts to source
-        description: When flowing water is surrounded on two sides by water sources it converts into a source.
+        description: When flowing water is surrounded on two sides by water sources
+          it converts into a source.
     item_modifier:
-      unknown: "Unknown item modifier: %s"
+      unknown: 'Unknown item modifier: %s'
     lectern:
       take_book: Take Book
     menu:
@@ -3059,16 +3146,16 @@ minecraft:
       game: Game Menu
       generatingLevel: Generating world
       generatingTerrain: Building terrain
-      loadingForcedChunks: "Loading forced chunks for dimension %s"
+      loadingForcedChunks: Loading forced chunks for dimension %s
       loadingLevel: Loading world
-      modded:  (Modded)
+      modded: (Modded)
       multiplayer: Multiplayer
       online: Minecraft Realms
       options: Options...
       paused: Game Paused
       playdemo: Play Demo World
       playerReporting: Player Reporting
-      preparingSpawn: "Preparing spawn area: %s%%"
+      preparingSpawn: 'Preparing spawn area: %s%%'
       quit: Quit Game
       reportBugs: Report Bugs
       resetdemo: Reset Demo World
@@ -3093,31 +3180,31 @@ minecraft:
       next_level: Trader's next level
       trades: Trades
     mount:
-      onboard: "Press %1$s to Dismount"
+      onboard: Press %1$s to Dismount
     parsing:
       bool:
         expected: Expected boolean
-        invalid: "Invalid boolean, expected 'true' or 'false' but found '%s'"
+        invalid: Invalid boolean, expected 'true' or 'false' but found '%s'
       double:
         expected: Expected double
-        invalid: "Invalid double '%s'"
-      expected: "Expected '%s'"
+        invalid: Invalid double '%s'
+      expected: Expected '%s'
       float:
         expected: Expected float
-        invalid: "Invalid float '%s'"
+        invalid: Invalid float '%s'
       int:
         expected: Expected integer
-        invalid: "Invalid integer '%s'"
+        invalid: Invalid integer '%s'
       long:
         expected: Expected long
-        invalid: "Invalid long '%s'"
+        invalid: Invalid long '%s'
       quote:
-        escape: "Invalid escape sequence '\\%s' in quoted string"
+        escape: Invalid escape sequence '\%s' in quoted string
         expected:
           end: Unclosed quoted string
           start: Expected quote to start a string
     particle:
-      notFound: "Unknown particle: %s"
+      notFound: 'Unknown particle: %s'
     potion:
       potency:
         0: ''
@@ -3126,22 +3213,22 @@ minecraft:
         3: IV
         4: V
         5: VI
-      whenDrank: "When Applied:"
-      withAmplifier: "%s %s"
-      withDuration: "%s (%s)"
+      whenDrank: 'When Applied:'
+      withAmplifier: '%s %s'
+      withDuration: '%s (%s)'
     predicate:
-      unknown: "Unknown predicate: %s"
+      unknown: 'Unknown predicate: %s'
     recipe:
-      notFound: "Unknown recipe: %s"
+      notFound: 'Unknown recipe: %s'
       toast:
         description: Check your recipe book
-        title: "New Recipes Unlocked!"
+        title: New Recipes Unlocked!
     resourcepack:
       downloading: Downloading Resource Pack
-      progress: "Downloading file (%s MB)..."
+      progress: Downloading file (%s MB)...
       requesting: Making Request...
     slot:
-      unknown: "Unknown slot '%s'"
+      unknown: Unknown slot '%s'
     soundCategory:
       ambient: Ambient/Environment
       block: Blocks
@@ -3242,11 +3329,11 @@ minecraft:
         crafted: Times Crafted
         dropped: Dropped
         killed:
-          _value: "You killed %s %s"
-          none: "You have never killed %s"
+          _value: You killed %s %s
+          none: You have never killed %s
         killed_by:
-          _value: "%s killed you %s time(s)"
-          none: "You have never been killed by %s"
+          _value: '%s killed you %s time(s)'
+          none: You have never been killed by %s
         mined: Times Mined
         picked_up: Picked Up
         used: Times Used
@@ -3260,7 +3347,7 @@ minecraft:
         never: Never
         pushOtherTeams: Push other teams
         pushOwnTeam: Push own team
-      notFound: "Unknown team '%s'"
+      notFound: Unknown team '%s'
       visibility:
         always: Always
         hideForOtherTeams: Hide for other teams
@@ -3269,9 +3356,12 @@ minecraft:
     title:
       32bit:
         deprecation:
-          _value: "32-bit system detected: this may prevent you from playing in the future as a 64-bit system will be required!"
+          _value: '32-bit system detected: this may prevent you from playing in the
+            future as a 64-bit system will be required!'
           realms:
-            _value: Minecraft will soon require a 64-bit system, which will prevent you from playing or using Realms on this device. You will need to manually cancel any Realms subscription.
+            _value: Minecraft will soon require a 64-bit system, which will prevent
+              you from playing or using Realms on this device. You will need to manually
+              cancel any Realms subscription.
             check: Do not show this screen again
             header: 32-bit system detected
       multiplayer:
@@ -3286,12 +3376,12 @@ minecraft:
       singleplayer: Singleplayer
     translation:
       test:
-        args: "%s %s"
-        complex: "Prefix, %s%2$s again %s and %1$s lastly %s and also %1$s again!"
-        escape: "%%s %%%s %%%%s %%%%%s"
-        invalid: "hi %"
-        invalid2: "hi %  s"
-        none: "Hello, world!"
+        args: '%s %s'
+        complex: Prefix, %s%2$s again %s and %1$s lastly %s and also %1$s again!
+        escape: '%%s %%%s %%%%s %%%%%s'
+        invalid: hi %
+        invalid2: hi %  s
+        none: Hello, world!
         world: world
     block:
       minecraft:
@@ -4648,7 +4738,7 @@ minecraft:
         pitcher_plant: Pitcher Plant
         player_head:
           _value: Player Head
-          named: "%s's Head"
+          named: '%s''s Head'
         player_wall_head: Player Wall Head
         podzol: Podzol
         pointed_dripstone: Pointed Dripstone
@@ -4837,7 +4927,7 @@ minecraft:
           not_valid: You have no home bed or charged respawn anchor, or it was obstructed
         spawner:
           _value: Monster Spawner
-          desc1: "Interact with Spawn Egg:"
+          desc1: 'Interact with Spawn Egg:'
           desc2: Sets Mob Type
         sponge: Sponge
         spore_blossom: Spore Blossom
@@ -5048,7 +5138,7 @@ minecraft:
         bucket: Bucket
         bundle:
           _value: Bundle
-          fullness: "%s/%s"
+          fullness: '%s/%s'
         burn_pottery_shard: Burn Pottery Shard
         burn_pottery_sherd: Burn Pottery Sherd
         camel_spawn_egg: Camel Spawn Egg
@@ -5093,7 +5183,7 @@ minecraft:
         creeper_spawn_egg: Creeper Spawn Egg
         crossbow:
           _value: Crossbow
-          projectile: "Projectile:"
+          projectile: 'Projectile:'
         cyan_dye: Cyan Dye
         danger_pottery_shard: Danger Pottery Shard
         danger_pottery_sherd: Danger Pottery Sherd
@@ -5101,9 +5191,9 @@ minecraft:
         dark_oak_chest_boat: Dark Oak Boat with Chest
         debug_stick:
           _value: Debug Stick
-          empty: "%s has no properties"
-          select: "selected \"%s\" (%s)"
-          update: "\"%s\" to %s"
+          empty: '%s has no properties'
+          select: selected "%s" (%s)
+          update: '"%s" to %s'
         diamond: Diamond
         diamond_axe: Diamond Axe
         diamond_boots: Diamond Boots
@@ -5146,7 +5236,7 @@ minecraft:
         fire_charge: Fire Charge
         firework_rocket:
           _value: Firework Rocket
-          flight: "Flight Duration:"
+          flight: 'Flight Duration:'
         firework_star:
           _value: Firework Star
           black: Black
@@ -5500,19 +5590,19 @@ minecraft:
         slime_spawn_egg: Slime Spawn Egg
         smithing_template:
           _value: Smithing Template
-          applies_to: "Applies to:"
+          applies_to: 'Applies to:'
           armor_trim:
             additions_slot_description: Add ingot or crystal
             applies_to: Armor
             base_slot_description: Add a piece of armor
-            ingredients: "Ingots & Crystals"
-          ingredients: "Ingredients:"
+            ingredients: Ingots & Crystals
+          ingredients: 'Ingredients:'
           netherite_upgrade:
             additions_slot_description: Add Netherite Ingot
             applies_to: Diamond Equipment
             base_slot_description: Add diamond armor, weapon, or tool
             ingredients: Netherite Ingot
-          upgrade: "Upgrade: "
+          upgrade: 'Upgrade: '
         sniffer_spawn_egg: Sniffer Spawn Egg
         snort_pottery_shard: Snort Pottery Shard
         snort_pottery_sherd: Snort Pottery Sherd
@@ -5628,8 +5718,8 @@ minecraft:
         zombified_piglin_spawn_egg: Zombified Piglin Spawn Egg
     clear:
       failed:
-        multiple: "No items were found on %s players"
-        single: "No items were found on player %s"
+        multiple: No items were found on %s players
+        single: No items were found on player %s
     container:
       barrel: Barrel
       beacon: Beacon
@@ -5644,29 +5734,29 @@ minecraft:
       dropper: Dropper
       enchant:
         _value: Enchant
-        clue: "%s . . . ?"
+        clue: '%s . . . ?'
         lapis:
-          many: "%s Lapis Lazuli"
+          many: '%s Lapis Lazuli'
           one: 1 Lapis Lazuli
         level:
-          many: "%s Enchantment Levels"
+          many: '%s Enchantment Levels'
           one: 1 Enchantment Level
-          requirement: "Level Requirement: %s"
+          requirement: 'Level Requirement: %s'
       enderchest: Ender Chest
       furnace: Furnace
-      grindstone_title: "Repair & Disenchant"
+      grindstone_title: Repair & Disenchant
       hopper: Item Hopper
       inventory: Inventory
-      isLocked: "%s is locked!"
+      isLocked: '%s is locked!'
       lectern: Lectern
       loom: Loom
       repair:
-        _value: "Repair & Name"
-        cost: "Enchantment Cost: %1$s"
-        expensive: "Too Expensive!"
+        _value: Repair & Name
+        cost: 'Enchantment Cost: %1$s'
+        expensive: Too Expensive!
       shulkerBox:
         _value: Shulker Box
-        more: "and %s more..."
+        more: and %s more...
       smoker: Smoker
       spectatorCantOpen: Unable to open. Loot not generated yet.
       stonecutter: Stonecutter
@@ -5684,7 +5774,7 @@ minecraft:
         name: Update 1.20
       validation:
         back: Go Back
-        failed: "Data pack validation failed!"
+        failed: Data pack validation failed!
         reset: Reset to Default
         working: Validating selected data packs...
       vanilla:
@@ -5696,26 +5786,31 @@ minecraft:
         failed:
           description: This world contains invalid or corrupted save data.
           title: Failed to load world in Safe Mode.
-      title: "Errors in currently selected data packs prevented the world from loading.\nYou can either try to load it with only the vanilla data pack (\"safe mode\"), or go back to the title screen and fix it manually."
+      title: 'Errors in currently selected data packs prevented the world from loading.
+
+        You can either try to load it with only the vanilla data pack ("safe mode"),
+        or go back to the title screen and fix it manually.'
     difficulty:
       lock:
-        question: "Are you sure you want to lock the difficulty of this world? This will set this world to always be %1$s, and you will never be able to change that again."
+        question: Are you sure you want to lock the difficulty of this world? This
+          will set this world to always be %1$s, and you will never be able to change
+          that again.
         title: Lock World Difficulty
     editGamerule:
-      default: "Default: %s"
+      default: 'Default: %s'
       title: Edit Game Rules
     event:
       minecraft:
         raid:
           _value: Raid
           defeat: Defeat
-          raiders_remaining: "Raiders Remaining: %s"
+          raiders_remaining: 'Raiders Remaining: %s'
           victory: Victory
     gameMode:
       adventure: Adventure Mode
-      changed: "Your game mode has been updated to %s"
+      changed: Your game mode has been updated to %s
       creative: Creative Mode
-      hardcore: "Hardcore Mode!"
+      hardcore: Hardcore Mode!
       spectator: Spectator Mode
       survival: Survival Mode
     hanging_sign:
@@ -5732,24 +5827,24 @@ minecraft:
         yearn_goat_horn: Yearn
     inventory:
       binSlot: Destroy Item
-      hotbarInfo: "Save hotbar with %1$s+%2$s"
-      hotbarSaved: "Item hotbar saved (restore with %1$s+%2$s)"
+      hotbarInfo: Save hotbar with %1$s+%2$s
+      hotbarSaved: Item hotbar saved (restore with %1$s+%2$s)
     jigsaw_block:
-      final_state: "Turns into:"
+      final_state: 'Turns into:'
       generate: Generate
       joint:
         aligned: Aligned
         rollable: Rollable
-      joint_label: "Joint Type:"
+      joint_label: 'Joint Type:'
       keep_jigsaws: Keep Jigsaws
-      levels: "Levels: %s"
-      name: "Name:"
-      pool: "Target Pool:"
-      target: "Target Name:"
+      levels: 'Levels: %s'
+      name: 'Name:'
+      pool: 'Target Pool:'
+      target: 'Target Name:'
     mirror:
       front_back: ↑ ↓
       left_right: ← →
-      none: "|"
+      none: '|'
     pack:
       available:
         title: Available
@@ -5760,12 +5855,14 @@ minecraft:
       incompatible:
         _value: Incompatible
         confirm:
-          new: This pack was made for a newer version of Minecraft and may not work correctly.
-          old: This pack was made for an older version of Minecraft and may no longer work correctly.
+          new: This pack was made for a newer version of Minecraft and may not work
+            correctly.
+          old: This pack was made for an older version of Minecraft and may no longer
+            work correctly.
           title: Are you sure you want to load this pack?
         new: (Made for a newer version of Minecraft)
         old: (Made for an older version of Minecraft)
-      nameAndSource: "%s (%s)"
+      nameAndSource: '%s (%s)'
       openFolder: Open Pack Folder
       selected:
         title: Selected
@@ -5776,7 +5873,7 @@ minecraft:
         server: server
         world: world
     painting:
-      dimensions: "%sx%s"
+      dimensions: '%sx%s'
       minecraft:
         alban:
           author: Kristoffer Zetterstrand
@@ -5870,7 +5967,7 @@ minecraft:
           title: Wither
       random: Random variant
     record:
-      nowPlaying: "Now Playing: %s"
+      nowPlaying: 'Now Playing: %s'
     sign:
       edit: Edit Sign Message
     structure_block:
@@ -5879,21 +5976,21 @@ minecraft:
         load: LOAD
         save: SAVE
       custom_data: Custom Data Tag Name
-      detect_size: "Detect Structure Size and Position:"
+      detect_size: 'Detect Structure Size and Position:'
       hover:
-        corner: "Corner: %s"
-        data: "Data: %s"
-        load: "Load: %s"
-        save: "Save: %s"
-      include_entities: "Include Entities:"
+        corner: 'Corner: %s'
+        data: 'Data: %s'
+        load: 'Load: %s'
+        save: 'Save: %s'
+      include_entities: 'Include Entities:'
       integrity:
         _value: Structure Integrity and Seed
         integrity: Structure Integrity
         seed: Structure Seed
-      invalid_structure_name: "Invalid structure name '%s'"
-      load_not_found: "Structure '%s' is not available"
-      load_prepare: "Structure '%s' position prepared"
-      load_success: "Structure loaded from '%s'"
+      invalid_structure_name: Invalid structure name '%s'
+      load_not_found: Structure '%s' is not available
+      load_prepare: Structure '%s' position prepared
+      load_success: Structure loaded from '%s'
       mode:
         corner: Corner
         data: Data
@@ -5909,17 +6006,18 @@ minecraft:
         x: relative Position x
         y: relative position y
         z: relative position z
-      save_failure: "Unable to save structure '%s'"
-      save_success: "Structure saved as '%s'"
-      show_air: "Show Invisible Blocks:"
-      show_boundingbox: "Show Bounding Box:"
+      save_failure: Unable to save structure '%s'
+      save_success: Structure saved as '%s'
+      show_air: 'Show Invisible Blocks:'
+      show_boundingbox: 'Show Bounding Box:'
       size:
         _value: Structure Size
         x: structure size x
         y: structure size y
         z: structure size z
-      size_failure: Unable to detect structure size. Add corners with matching structure names
-      size_success: "Size successfully detected for '%s'"
+      size_failure: Unable to detect structure size. Add corners with matching structure
+        names
+      size_success: Size successfully detected for '%s'
       structure_name: Structure Name
     trim_material:
       minecraft:
