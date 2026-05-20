@@ -81,6 +81,18 @@ This repository is designed as a portfolio project that demonstrates not only ga
 
 <!-- TREASURERUN_PLATFORM_BOUNDARY_I18N_HIGHLIGHT -->
 
+## Runtime Evidence
+
+TreasureRun includes runtime evidence for its platform-boundary i18n system:
+
+- ResourcePack SHA1 synchronization
+- Fabric client language payload sync
+- `ang -> ang_gb` and `non -> non_is` runtime application
+- Minecraft `options.txt` persistence
+- ResourcePack-resolved ESC menu key verification
+
+See: [`docs/verification/i18n/ang-non-runtime-final-evidence.md`](docs/verification/i18n/ang-non-runtime-final-evidence.md)
+
 ## Engineering Highlight: Platform-Boundary i18n
 
 TreasureRun includes a hybrid Minecraft standard-message i18n architecture for Minecraft 1.20.1.
