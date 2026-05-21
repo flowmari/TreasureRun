@@ -11,468 +11,523 @@ outcome:
       pool: []
     easy:
       pool:
-      - 'You’ve made it.
+      - 'Þū hider becōme.
 
-        The truth remains.'
-      - 'Even if it was only a small step,
+        Sōþfæstnes belīfþ.'
+      - 'Þēah hit lȳtel stæpe wǣre,
 
-        you held your ground.'
-      - "You listened.\n The path opened."
-      - "> You made it here\n> \n> The rules were simple —\n> \n> the choice was yours."
-      - "> Distance became meaning.\n> \n> and time answered your footsteps."
-      - "> Not everything shines forever.\n> \n> But this moment did."
-      - 'Light fell evenly, ,
+        þū þīnne stede geheolde.'
+      - 'Þū gehȳrdest.
 
-        and every shadow vanished.'
-      - 'The wind fell silent.
+        Se weg onēode.'
+      - '> Þū hider becōme
 
-        and everything returned to where it belonged.'
-      - 'A moment of silence.
+        >
 
-        The world steadied its breath.'
-      - 'The record is etched deep in the sand—
+        > Þā laga wǣron eaðe —
 
-        beyond the reach of the wind.'
-      - 'Harmony was restored.
+        >
 
-        Everything had been for this moment.'
-      - 'Time slipped by in silence,
+        > sēo cyre wæs þīn.'
+      - '> Fæc wearþ andgit.
 
-        tucked away in the corners of memory.'
-      - 'The sky shifted in color,
+        >
 
-        and one story came to its end.'
-      - 'The waves grew calm,
+        > and tīd andswarode þīnum fōtlastum.'
+      - '> Ne scīnþ eall þing āwa.
 
-        and the sea hid its depths once more.'
-      - 'The footsteps stopped,
+        >
 
-        and only the place remained.'
-      - "Victory and defeat \nare nothing more than grains of sand."
-      - 'The road goes on—or it ends.
+        > Ac þes stunde scān.'
+      - 'Lēoht fēoll emnlīce,
 
-        Either way, it lies on the same earth.'
+        and ǣlc sceadu gewāt.'
+      - 'Se wind geswāc.
+
+        and eall þing hwearf tō his stede.'
+      - 'Ān swigunge stund.
+
+        Middangeard his ǣþm gestillde.'
+      - 'Se gemearc is dēope on sande āwriten—
+
+        būtan windes gewealde.'
+      - 'Friþ wearþ eft ārǣred.
+
+        Eall wæs for þissum stunde.'
+      - 'Tīd glād stille fram,
+
+        and wearþ on gemyndes hyrnum gehealden.'
+      - 'Se heofon his blēo wende,
+
+        and ān spell tō ende becōm.'
+      - 'Þā ȳða gestilledon,
+
+        and sǣ eft hire dēopnesse behȳdde.'
+      - 'Þā fōtlastas geswicon,
+
+        and se stede āna belāf.'
+      - 'Sige and lyre
+
+        sind nā mā þonne sandes corn.'
+      - 'Se weg gǣþ forþ — oþþe endaþ.
+
+        Hwæðer swā, hē līþ on ānre eorðan.'
     normal:
       pool:
-      - 'The distance has found its meaning.
+      - 'Se fæc hæfþ his andgit funden.
 
-        Time has rewarded your journey.'
-      - 'The time is up.
+        Tīd forgeald þīnne sīð.'
+      - 'Sēo tīd is āgān.
 
-        but the rest is far from over.'
-      - 'The axis is found.
+        Ac nalles eall is geendod.'
+      - 'Se eax is funden.
 
-        the world has cased its motion.'
-      - 'The glass held its breath,
+        Middangeard his styrunge geswāc.'
+      - 'Þæt glæs his ǣþm geheold,
 
-        and you held your ground.'
-      - 'Under the stillness of the sky,
+        and þū þīnne stede geheolde.'
+      - 'Under stille heofone,
 
-        your spirit did not waver.'
-      - 'Few things shine forever.
+        þīn mōd ne āswāc.'
+      - 'Fēawa þing scīnaþ āwa.
 
-        but this moment was radiant.'
-      - 'You traversed the fragile earth,
+        Ac þes stunde wæs beorht.'
+      - 'Þū ofer brēacne eorðan fērdest,
 
-        without losing the view.'
-      - 'The moment has passed.
+        and þone gesihþ ne forlure.'
+      - 'Sēo stund gewāt.
 
-        The legacy remains.'
-      - 'Luck fades fast.
+        Þæt lǣf belīfþ.'
+      - 'Hwyrft fordwīnþ hrædlīce.
 
-        order endures.'
-      - 'The sky knows no pause in endless circle,
+        Endebyrdnes þurhwunaþ.'
+      - 'Se heofon nānne reste cnāwþ on ēce hring,
 
-        nor shall you find yours.'
-      - 'The center has been reached.
+        ne þū þīnne findst.'
+      - 'Se middel is gerǣht.
 
-        The world stood still.'
-      - 'Finally here.
+        Middangeard stille stōd.'
+      - 'Nū æt nēhstan hēr.
 
-        The truth remains unyielding.'
-      - 'You have seen it through.
+        Sōþfæstnes belīfþ unābrocen.'
+      - 'Þū hit þurhseah.
 
-        And mark this: it was you, and no one else, who chose this path.'
-      - 'Time drifted into silence,
+        And gemearca þis: þū, nān ōþer, þisne weg geceas.'
+      - 'Tīd glād on swigunge,
 
-        finding its place in the recesses of the mind.'
-      - 'As the sky transformed,
+        and fand hire stede on mōdes dēopum hyrnum.'
+      - 'Þā se heofon wende,
 
-        the tale found its final resolved.'
-      - 'The waters fell calm,
+        þæt spell his ende gemette.'
+      - 'Þā wæteru gestilledon,
 
-        and the sky once more veiled its abyss.'
-      - 'The footsteps ceased,
+        and se heofon eft his dēopnesse bewreah.'
+      - 'Þā fōtlastas geswicon,
 
-        only the place remained.'
-      - 'Light fell evenly, ,
+        se stede āna belāf.'
+      - 'Lēoht fēoll emnlīce,
 
-        and every shadow vanished.'
-      - 'The wind fell silent.
+        and ǣlc sceadu gewāt.'
+      - 'Se wind geswāc.
 
-        and everything returned to where it belonged.'
-      - 'A moment of silence.
+        and eall þing hwearf tō his stede.'
+      - 'Ān swigunge stund.
 
-        The world steadied its breath.'
-      - 'The record is etched deep in the sand—
+        Middangeard his ǣþm gestillde.'
+      - 'Se gemearc is dēope on sande āwriten—
 
-        beyond the reach of the wind.'
-      - 'Harmony was restored.
+        būtan windes gewealde.'
+      - 'Friþ wearþ eft ārǣred.
 
-        Everything had been for this moment.'
-      - 'RUN COMPLETE.
+        Eall wæs for þissum stunde.'
+      - 'RYNE GEFYLLED.
 
-        Clear. Found it.
+        Hlūtor. Fundon.
 
-        That''s enough.'
-      - 'RUN COMPLETE.
+        Þæt genōh is.'
+      - 'RYNE GEFYLLED.
 
-        The path held.
+        Se weg geheold.
 
-        So did you.'
-      - 'The sky has kept moving.
+        Swā dyde þū.'
+      - 'Se heofon gǣþ gēn.
 
-        So can you.'
-      - 'RUN COMPLETE.
+        Swā miht þū.'
+      - 'RYNE GEFYLLED.
 
-        A quiet result.
+        Stille endebyrdnes.
 
-        The weight of real work.'
-      - 'You only walked the path
+        Þæs sōþan weorces hefignes.'
+      - 'Þū ēodest þone weg ānne
 
-        the world had laid out for you.'
-      - 'The ground didn’t give way.
+        þe middangeard þē gelægde.'
+      - 'Sēo eorðe ne āswāc.
 
-        It trusted your steps.'
-      - 'This moment aligned
+        Hēo truwode þīnum stæpum.'
+      - 'Þes stunde samod fēoll
 
-        with the stars’ ancient rhythm.'
-      - "You didn’t take anything.\n You understood something."
-      - 'You didn’t gain a thing.
+        mid þām ealdan rīme steorrana.'
+      - 'Þū nāht ne genāme.
 
-        You only saw the truth for what it was.'
-      - 'You didn’t take this place.
+        Þū sum þing ongeate.'
+      - 'Þū nān þing ne gestrȳndest.
 
-        You belonged here.'
-      - 'You walked a road
+        Þū gesāwe þæt sōþ swā hit wæs.'
+      - 'Þū þisne stede ne genāme.
 
-        older than memory itself.'
-      - 'The earth did not resist.
+        Þū hēr tō belumpe.'
+      - 'Þū ēodest weg
 
-        It recognized you.'
-      - "This moment aligned\n with the stillness of the stars."
+        ealdor þonne gemynd sylf.'
+      - 'Sēo eorðe ne wiðsōc.
+
+        Hēo þē oncneow.'
+      - 'Þes stunde samod fēoll
+
+        mid steorrana stillnesse.'
     hard:
       pool:
-      - 'In the north wind,
+      - 'On norþan winde,
 
-        clarity outlasts speed.'
-      - "The center was found.\n The world came to rest."
-      - 'The stars stay silent.
+        beorhtnes oferlibbaþ ofste.'
+      - 'Se middel wearþ funden.
 
-        Your record does the speaking.'
-      - 'The result  remained.
+        Middangeard tō reste becōm.'
+      - 'Þā steorran stille belīfaþ.
 
-        The position changed.'
-      - 'Between ice and glass,
+        Þīn gemearc spricþ.'
+      - 'Se ende belāf.
 
-        you chose control.'
-      - 'The waves fell quiet,
+        Se stede wearþ awend.'
+      - 'Betwēox īse and glæse,
 
-        and the sea reclaimed its hidden depths.'
-      - 'Some treasures still await.
+        þū geweald gecease.'
+      - 'Þā ȳða gestilledon,
 
-        Next time, a different path.'
-      - 'The sky didn’t change.
+        and sǣ eft hire dēopnesse genam.'
+      - 'Sume māðmas gēn bīdaþ.
 
-        You did.'
-      - 'The moment passed.
+        Næhstan sīðe, ōþer weg.'
+      - 'Se heofon ne wende.
 
-        What remained was order.'
-      - 'Winter is honest.
+        Þū wende.'
+      - 'Sēo stund gewāt.
 
-        So was your run.'
-      - 'The stars aligned for a moment.
+        Þæt belāf wæs endebyrdnes.'
+      - 'Winter is sōþfæst.
 
-        You noticed.'
-      - 'The distance closed.
+        Swā wæs þīn ryne.'
+      - 'Þā steorran āne hwīle samod fēollon.
 
-        Time did not.'
-      - "The world’s rules stood firm.\n And the signal of possibility was real."
-      - 'The path closed quietly.
+        Þū hit gemunde.'
+      - 'Se fæc becōm tō ende.
 
-        You were already through.'
-      - 'Nothing changed.
+        Tīd ne dyde.'
+      - 'Middangeardes laga stōdon fæste.
 
-        Only your position did.'
-      - 'Not luck.
+        And þæt tācen mihte wæs sōþ.'
+      - 'Se weg stille belocen wearþ.
 
-        Alignment.'
-      - 'The moment passed.
+        Þū wǣre ǣr þurh.'
+      - 'Nāht ne wende.
 
-        The record remains.'
-      - 'The outcome didn’t change.
+        Ānunga þīn stede wende.'
+      - 'Næs hit wyrd.
 
-        Still, you moved forward.'
-      - 'The output didn’t change.
+        Ac samod-fylgd.'
+      - 'Sēo stund gewāt.
 
-        But you reached a new level.'
-      - 'The ending was the same.
+        Se gemearc belīfþ.'
+      - 'Se ende ne wende.
 
-        But the one who reached it had changed.'
-      - 'The destination is the same
+        Þū ēode hwæðre forþ.'
+      - 'Se andwyrde ne wende.
 
-        —but you’re no longer the traveler you once were.'
-      - 'Light fell evenly, ,
+        Ac þū nīwne stæpe gerǣhtest.'
+      - 'Se ende wæs se ilca.
 
-        and every shadow vanished.'
-      - 'The wind fell silent.
+        Ac sē þe hine gerǣhte wæs awend.'
+      - 'Se stede is se ilca
 
-        and everything returned to where it belonged.'
-      - 'A moment of silence.
+        — ac þū ne eart se ilca wegfara.'
+      - 'Lēoht fēoll emnlīce,
 
-        The world steadied its breath.'
-      - 'The record is etched deep in the sand—
+        and ǣlc sceadu gewāt.'
+      - 'Se wind geswāc.
 
-        beyond the reach of the wind.'
-      - 'Harmony was restored.
+        and eall þing hwearf tō his stede.'
+      - 'Ān swigunge stund.
 
-        Everything had been for this moment.'
-      - 'Time slipped by in silence,
+        Middangeard his ǣþm gestillde.'
+      - 'Se gemearc is dēope on sande āwriten—
 
-        tucked away in the corners of memory.'
-      - 'The sky shifted in color,
+        būtan windes gewealde.'
+      - 'Friþ wearþ eft ārǣred.
 
-        and one story came to its end.'
-      - 'The waves grew calm,
+        Eall wæs for þissum stunde.'
+      - 'Tīd glād stille fram,
 
-        and the sea hid its depths once more.'
-      - 'The footsteps stopped,
+        and wearþ on gemyndes hyrnum gehealden.'
+      - 'Se heofon his blēo wende,
 
-        and only the place remained.'
-      - "Victory and defeat \nare nothing more than grains of sand."
-      - 'The road goes on—or it ends.
+        and ān spell tō ende becōm.'
+      - 'Þā ȳða gestilledon,
 
-        Either way, it lies on the same earth.'
+        and sǣ eft hire dēopnesse behȳdde.'
+      - 'Þā fōtlastas geswicon,
+
+        and se stede āna belāf.'
+      - 'Sige and lyre
+
+        sind nā mā þonne sandes corn.'
+      - 'Se weg gǣþ forþ — oþþe endaþ.
+
+        Hwæðer swā, hē līþ on ānre eorðan.'
   timeup:
     easy:
       pool:
-      - 'Time ran out.
+      - 'Tīd forarn.
 
-        Nothing else did.'
-      - 'The treasure can wait.
+        Nāht elles dyde.'
+      - 'Se māðm mæg bīdan.
 
-        So can you.'
-      - 'Breathe in.
+        Swā miht þū.'
+      - 'Drinc ǣþm.
 
-        Then again.'
-      - 'That’s all for now.
+        Þonne eft.'
+      - 'Þæt is genōg nū.
 
-        On to the next step.'
-      - 'You''re still here.
+        Forþ tō þām næhstan stæpe.'
+      - 'Þū eart gēn hēr.
 
-        That’s what matters.'
-      - 'The run ended.
+        Þæt is þæt þearflic.'
+      - 'Se ryne geendode.
 
-        You didn’t.'
-      - 'TIME''S UP.
+        Þū ne geendodest.'
+      - 'TĪD IS ĀGĀN.
 
-        The run ended.
+        Se ryne geendode.
 
-        You didn''t.'
-      - 'TIME''S UP.
+        Þū ne geendodest.'
+      - 'TĪD IS ĀGĀN.
 
-        The rules don’t change.
+        Þā laga ne wendaþ.
 
-        Again.'
-      - 'TIME''S UP.
+        Eft.'
+      - 'TĪD IS ĀGĀN.
 
-        “So close” is real.'
-      - 'The sun sank,
+        “Swa nēah” is sōþ.'
+      - 'Sēo sunne sāh,
 
-        and shadow covered the world once again.'
-      - 'The last grains of sand fell,
+        and sceadu eft middangeard oferbrǣdde.'
+      - 'Þā ytemestan sandcorn fēollon,
 
-        and the story quietly came to a close.'
-      - 'The wind swept through,
+        and þæt spell stille belocen wearþ.'
+      - 'Se wind þurh swēop,
 
-        and the footprints vanished without a trace.'
-      - 'The tide came in,
+        and þā fōtlastas būtan lāste gewiton.'
+      - 'Flōd inn becōm,
 
-        What once had been there returned to the sea.'
-      - 'Silence.
+        and þæt þe ǣr wæs eft tō sǣ hwearf.'
+      - 'Swigung.
 
-        Only time passed through.'
-      - "Victory and defeat \nare nothing more than grains of sand."
-      - 'The road goes on—or it ends.
+        Ānunga tīd þurhfōr.'
+      - 'Sige and lyre
 
-        Either way, it lies on the same earth.'
+        sind nā mā þonne sandes corn.'
+      - 'Se weg gǣþ forþ — oþþe endaþ.
+
+        Hwæðer swā, hē līþ on ānre eorðan.'
     normal:
       pool:
-      - 'The distance closed.
+      - 'Se fæc becōm tō ende.
 
-        Time did not.'
-      - 'The world kept its rules.
+        Tīd ne dyde.'
+      - 'Middangeard his laga geheold.
 
-        You touched the edge.'
-      - 'You didn’t make it.
+        Þū þone rand hrān.'
+      - 'Þū hit ne gerǣhtest.
 
-        But the signal was real.'
-      - 'Some treasures still await.
+        Ac þæt tācen wæs sōþ.'
+      - 'Sume māðmas gēn bīdaþ.
 
-        Let’s try a different path.'
-      - 'The result remained.
+        Uton fandian ōþerne weg.'
+      - 'Se ende belāf.
 
-        The position changed.'
-      - 'Time ran out.
+        Se stede wearþ awend.'
+      - 'Tīd forarn.
 
-        Meaning didn''t.'
-      - 'So close.
+        Andgit ne forarn.'
+      - 'Swā nēah.
 
-        The sound said so.'
-      - 'The map is still open.
+        Se sweg hit sægde.'
+      - 'Sēo landbōc is gēn open.
 
-        Come back to it.'
-      - 'The world’s rules stood firm.
+        Cym eft tō hire.'
+      - 'Middangeardes laga stōdon fæste.
 
-        The signal of possibility was real.'
-      - The world kept its rules.
-      - 'The moment passed.
+        Þæt tācen mihte wæs sōþ.'
+      - Middangeard his laga geheold.
+      - 'Sēo stund gewāt.
 
-        The record remains.'
-      - 'The sun sank,
+        Se gemearc belīfþ.'
+      - 'Sēo sunne sāh,
 
-        and shadow covered the world once again.'
-      - 'The last grains of sand fell,
+        and sceadu eft middangeard oferbrǣdde.'
+      - 'Þā ytemestan sandcorn fēollon,
 
-        and the story quietly came to a close.'
-      - 'The wind swept through,
+        and þæt spell stille belocen wearþ.'
+      - 'Se wind þurh swēop,
 
-        and the footprints vanished without a trace.'
-      - 'The tide came in,
+        and þā fōtlastas būtan lāste gewiton.'
+      - 'Flōd inn becōm,
 
-        What once had been there returned to the sea.'
-      - 'Silence.
+        and þæt þe ǣr wæs eft tō sǣ hwearf.'
+      - 'Swigung.
 
-        Only time passed through.'
-      - "Victory and defeat \nare nothing more than grains of sand."
-      - 'The road goes on—or it ends.
+        Ānunga tīd þurhfōr.'
+      - 'Sige and lyre
 
-        Either way, it lies on the same earth.'
-      - "> Time ran out.\n> \n> Nothing else did."
-      - "> The outcome didn’t change.\n> \n> But your position did."
+        sind nā mā þonne sandes corn.'
+      - 'Se weg gǣþ forþ — oþþe endaþ.
+
+        Hwæðer swā, hē līþ on ānre eorðan.'
+      - '> Tīd forarn.
+
+        >
+
+        > Nāht elles dyde.'
+      - '> Se ende ne wende.
+
+        >
+
+        > Ac þīn stede dyde.'
     hard:
       pool:
-      - 'Even the aurora fades.
+      - 'Eac norþlēoma fordwīnþ.
 
-        Come back with a new stride.'
-      - 'In a fragile world,
+        Cym eft mid nīwum stæpe.'
+      - 'On brēacnum middangearde,
 
-        haste shatters clarity before it can be found.'
-      - 'The moment slipped away.
+        ofste tōbrȳt beorhtnesse ǣr hēo funden sīe.'
+      - 'Sēo stund ætglād.
 
-        The meaning did not.'
-      - 'Winter is patient.
+        Þæt andgit ne dyde.'
+      - 'Winter cann bīdan.
 
-        Be the same.'
-      - 'The sky kept moving.
+        Wes þū swā.'
+      - 'Se heofon fōr forþ.
 
-        So will you.'
-      - 'The story moves on.
+        Swā wylt þū.'
+      - 'Þæt spell gǣþ forþ.
 
-        The end is not yet.'
-      - 'The stars were there, watching.
+        Se ende nis gēn.'
+      - 'Þā steorran wǣron þǣr, lociende.
 
-        Again.'
-      - 'Ice takes its time.
+        Eft.'
+      - 'Īs nimþ his tīd.
 
-        Neither do you.'
-      - 'The sky kept moving.
+        Ne forlǣt þū þīne.'
+      - 'Se heofon fōr forþ.
 
-        So can you.'
-      - 'The north has learned to wait.
+        Swā miht þū.'
+      - 'Norþ hafað bīdan geleornod.
 
-        So should you.'
-      - 'This is an interlude
+        Swā scealt þū.'
+      - 'Þis is betweox-stund
 
-        —It’s not over.'
-      - 'Like drifting clouds,
+        — hit nis geendod.'
+      - 'Swā scūdas flēotaþ,
 
-        don’t lose your flow—like a river.'
-      - 'The sound was near.
+        ne forlǣt þū þīnne stream.'
+      - 'Se sweg wæs nēah.
 
-        The distance was real.
+        Se fæc wæs sōþ.
 
-        But that moment can’t be saved.'
-      - 'You were closing in.
+        Ac þā stund ne mæg gehealden bēon.'
+      - 'Þū wǣre nēalǣcende.
 
-        Only time wasn’t.'
-      - 'The world held to its rules.
+        Ānunga tīd ne wæs.'
+      - 'Middangeard his laga geheold.
 
-        You touched the edge of them.'
-      - "You didn’t reach the treasure. \nBut the signal was real."
-      - 'Nothing changed.
+        Þū heora rand hrān.'
+      - 'Þū þone māðm ne gerǣhtest.
 
-        Only your position did.'
-      - 'It wasn’t luck.
+        Ac þæt tācen wæs sōþ.'
+      - 'Nāht ne wende.
 
-        Alignment.'
-      - 'The moment slipped away,
+        Ānunga þīn stede dyde.'
+      - 'Næs hit wyrd.
 
-        but the record stayed.'
-      - 'You crossed fragile ground
+        Ac samod-fylgd.'
+      - 'Sēo stund ætglād,
 
-        and left the horizon unbroken.'
-      - "Nothing changed.\n Only your position did.\nNot luck.\nAlignment.\nThe moment\
-        \ passed.\nThe record remains."
-      - 'The sun sank,
+        ac se gemearc belāf.'
+      - 'Þū ofer brēacne grund fērdest
 
-        and shadow covered the world once again.'
-      - 'The last grains of sand fell,
+        and þone heofonrand ne brǣce.'
+      - 'Nāht ne wende.
 
-        and the story quietly came to a close.'
-      - 'The wind swept through,
+        Ānunga þīn stede dyde.
 
-        and the footprints vanished without a trace.'
-      - 'The tide came in,
+        Næs hit wyrd.
 
-        What once had been there returned to the sea.'
-      - 'Silence.
+        Ac samod-fylgd.
 
-        Only time passed through.'
-      - "Victory and defeat \nare nothing more than grains of sand."
-      - 'The road goes on—or it ends.
+        Sēo stund gewāt.
 
-        Either way, it lies on the same earth.'
-      - 'The season closed.
+        Se gemearc belīfþ.'
+      - 'Sēo sunne sāh,
 
-        The land remained.'
-      - 'The path The path remains.
+        and sceadu eft middangeard oferbrǣdde.'
+      - 'Þā ytemestan sandcorn fēollon,
 
-        Only your steps stopped.'
-      - 'Your time ran out.
+        and þæt spell stille belocen wearþ.'
+      - 'Se wind þurh swēop,
 
-        The sky didn’t.'
-      - 'It wasn’t rejection.
+        and þā fōtlastas būtan lāste gewiton.'
+      - 'Flōd inn becōm,
 
-        Only silence.'
-      - 'The world is still intact.
+        and þæt þe ǣr wæs eft tō sǣ hwearf.'
+      - 'Swigung.
 
-        You can return—changed.'
-      - 'The season ended.
+        Ānunga tīd þurhfōr.'
+      - 'Sige and lyre
 
-        The forest remains.'
-      - 'The distance was closing.
+        sind nā mā þonne sandes corn.'
+      - 'Se weg gǣþ forþ — oþþe endaþ.
 
-        Time kept its rhythm.'
-      - 'Your time came to a halt.
+        Hwæðer swā, hē līþ on ānre eorðan.'
+      - 'Sēo tīd belocen wearþ.
 
-        The sky kept moving.'
-      - 'Not rejection
+        Sēo eorðe belāf.'
+      - 'Se weg belīfþ.
 
-        Just silence.'
-      - 'The path is still here.
+        Ānunga þīne stæpas geswicon.'
+      - 'Þīn tīd forarn.
 
-        You can come back—changed.'
+        Se heofon ne dyde.'
+      - 'Næs hit wiðsacu.
+
+        Ānunga swigung.'
+      - 'Middangeard is gēn gesund.
+
+        Þū miht eft cuman — awend.'
+      - 'Sēo tīd geendode.
+
+        Se wudu belīfþ.'
+      - 'Se fæc nēalǣhte.
+
+        Tīd heold hire rīm.'
+      - 'Þīn tīd ætstōd.
+
+        Se heofon fōr forþ.'
+      - 'Næs wiðsacu.
+
+        Ānunga swigung.'
+      - 'Se weg is gēn hēr.
+
+        Þū miht eft cuman — awend.'
 version: 1
 quotes:
   outcome:
@@ -498,10 +553,8 @@ command:
     resultFalse: The item in your hand is not a Treasure Emerald.
   gameStart:
     playersOnly: This command can only be used by players.
-    worldNotFound: '[TreasureRun] The start world is not configured or could not be
-      found.'
-    started: '§aTreasure hunt started! Difficulty: {difficulty} | Time limit: {timeLimit}
-      seconds'
+    worldNotFound: '[TreasureRun] The start world is not configured or could not be found.'
+    started: '§aTreasure hunt started! Difficulty: {difficulty} | Time limit: {timeLimit} seconds'
   stageCleanup:
     playersOnly: '&cOnly players can use this command.'
     cleaned: '[TreasureRun] Cleaned up {count} difficulty blocks.'
@@ -513,12 +566,9 @@ command:
     success: '&aEft-hlādung gedōn.'
     fail: '&cReload failed: {reason}'
   lang:
-    guiCancelledGameStart: Language selection was cancelled. To try again, run /gameStart
-      <easy|normal|hard>.
-    guiCancelledGameMenu: Language selection was cancelled. To open it again, run
-      /gameMenu gui.
-    guiTooManyShown: Too many allowed languages were configured, so only the first
-      27 are shown in the GUI.
+    guiCancelledGameStart: Language selection was cancelled. To try again, run /gameStart <easy|normal|hard>.
+    guiCancelledGameMenu: Language selection was cancelled. To open it again, run /gameMenu gui.
+    guiTooManyShown: Too many allowed languages were configured, so only the first 27 are shown in the GUI.
     playersOnly: Ān plegere mæg þis bebod brūcan.
     resetDone: ✅ Your saved language has been reset. The GUI will open next time.
     current: 'Nūƿe sprǣc: {lang}'
@@ -540,8 +590,7 @@ command:
     success: '&bYou crafted a Special Emerald using 3 diamonds!'
   quoteFavorite:
     latestSaved: The latest quote was saved to Favorites.
-    latestNotSaved: The latest quote could not be saved. There may be no log yet,
-      or it may already be in Favorites.
+    latestNotSaved: The latest quote could not be saved. There may be no log yet, or it may already be in Favorites.
     playersOnly: '&cThis command can only be used by players.'
     repositoryNotReady: Favorites are not available yet.
     listHeader: '&bFavorites ({count})'
@@ -555,8 +604,7 @@ command:
     openBookFailed: '&cFailed to open the book.'
     unknownSubcommand: '&cUnknown subcommand. See /quoteFavorite help.'
     shortcutSaved: The latest quote was saved to Favorites.
-    shortcutNotSaved: The latest quote could not be saved. There may be no log yet,
-      or it may already be in Favorites.
+    shortcutNotSaved: The latest quote could not be saved. There may be no log yet, or it may already be in Favorites.
     help:
       title: '&bQuote Favorite commands'
       latest: '&7/quoteFavorite latest : save the latest quote to Favorites'
@@ -565,8 +613,7 @@ command:
       reread: '&7/quoteFavorite reread [chat|title|book] : reread a quote'
       rereadTitle: '&7title rereads using the title display'
       rereadBook: '&7book rereads using a written book'
-      book: '&7/quoteFavorite book [toc|success|timeup|other|full] : open the archive
-        book'
+      book: '&7/quoteFavorite book [toc|success|timeup|other|full] : open the archive book'
       bookToc: '&7toc opens only the table of contents'
       bookSuccess: '&7success shows only successful quotes'
       bookTimeup: '&7timeup shows only time-up quotes'
@@ -674,8 +721,7 @@ favorites:
     quotefavoritestore_exists_fa_7d08adba: '[QuoteFavoriteStore] exists failed:'
     quotefavoritestore_addfavori_44fb1d75: '[QuoteFavoriteStore] addFavorite failed:'
     quotefavoritestore_removefav_8180a1e4: '[QuoteFavoriteStore] removeFavorite failed:'
-    quotefavoritestore_removefav_d024b1e5: '[QuoteFavoriteStore] removeFavoriteById
-      failed:'
+    quotefavoritestore_removefav_d024b1e5: '[QuoteFavoriteStore] removeFavoriteById failed:'
     quotefavoritestore_listfavor_f3e976d4: '[QuoteFavoriteStore] listFavorites failed:'
     quotefavoritestore_countfavo_69291680: '[QuoteFavoriteStore] countFavorites failed:'
 commands:
@@ -684,16 +730,11 @@ commands:
   rank_1_2_3_demo_4f3e3084: '数字で入力してください: /rank <1|2|3|demo>'
   mysql_repository_not_ready_72df0af1_93: MySQL / Repository not ready.
   mysql_repository_not_ready_72df0af1_119: MySQL / Repository not ready.
-  quotefavorite_book_open_cata_055de855: /quoteFavorite book            - open catalog
-    (full)
-  quotefavorite_book_toc_open__c7d02ede: /quoteFavorite book toc        - open catalog
-    (TOC only)
-  quotefavorite_book_success_o_afe31501: /quoteFavorite book success    - open SUCCESS
-    chapter
-  quotefavorite_book_timeup_op_08b799b0: /quoteFavorite book timeup     - open TIME_UP
-    chapter
-  quotefavorite_book_other_ope_bdcbafba: /quoteFavorite book other      - open OTHER
-    chapter
+  quotefavorite_book_open_cata_055de855: /quoteFavorite book            - open catalog (full)
+  quotefavorite_book_toc_open__c7d02ede: /quoteFavorite book toc        - open catalog (TOC only)
+  quotefavorite_book_success_o_afe31501: /quoteFavorite book success    - open SUCCESS chapter
+  quotefavorite_book_timeup_op_08b799b0: /quoteFavorite book timeup     - open TIME_UP chapter
+  quotefavorite_book_other_ope_bdcbafba: /quoteFavorite book other      - open OTHER chapter
 debug: null
 items:
   specialEmerald:
@@ -746,8 +787,7 @@ ui:
       hint:
         reopenMenu: 'Hint: use /gameMenu to open this again.'
       note:
-        bookFormat: Minecraft books cannot switch tabs by clicking, so sections are
-          shown as pages.
+        bookFormat: Minecraft books cannot switch tabs by clicking, so sections are shown as pages.
   quote:
     footer:
       dbLogs: '(DB: proverb_logs)'
@@ -901,15 +941,11 @@ finalAudit:
     gameAlreadyRunning: The game is already running.
     invalidDifficulty: Please choose Easy, Normal, or Hard.
     languageGuiNotReady: The language selection GUI is not ready yet.
-    reloadBlockedRunning: Reload is disabled while the game is running. Please run
-      /gameEnd first.
+    reloadBlockedRunning: Reload is disabled while the game is running. Please run /gameEnd first.
     noPermission: You do not have permission to use this command.
-    noPermissionOp: You do not have permission to use this command. Operator permission
-      is required.
-    treasureReloadDone: ✅ TreasureRun settings have been reloaded, including the language
-      GUI.
-    guiReloadedReopen: The GUI has been refreshed. Please run /gameStart again to
-      reopen it.
+    noPermissionOp: You do not have permission to use this command. Operator permission is required.
+    treasureReloadDone: ✅ TreasureRun settings have been reloaded, including the language GUI.
+    guiReloadedReopen: The GUI has been refreshed. Please run /gameStart again to reopen it.
     dbConnected: MySQL is connected.
     dbNotConnected: MySQL is not connected.
     exportMissingRoot: ❌ messages.translation was not found in config.yml.
@@ -922,8 +958,7 @@ finalAudit:
     exportSkippedExisting: '⚠ Skipped existing file(s): {langs}'
     exportOverwriteHint: 'To overwrite existing files, run: /treasureExportLang overwrite'
     exportNextStep: 'Next: make I18n read languages/*.yml to apply these translations.'
-    playerOnlyConsoleNoOnline: Only players can run this command, and no online player
-      was found.
+    playerOnlyConsoleNoOnline: Only players can run this command, and no online player was found.
   debug:
     chestSoundStart: '[ChestSound] Started in 16-grid mode.'
     chestSoundNoChests: '[ChestSound] No chests found.'
@@ -959,16 +994,13 @@ minecraft:
       deleted_marker: This chat message has been deleted by the server.
       disabled:
         chain_broken: Chat disabled due to broken chain. Please try reconnecting.
-        expiredProfileKey: Chat disabled due to expired profile public key. Please
-          try reconnecting.
+        expiredProfileKey: Chat disabled due to expired profile public key. Please try reconnecting.
         launcher: Chat disabled by launcher option. Cannot send message.
-        missingProfileKey: Chat disabled due to missing profile public key. Please
-          try reconnecting.
+        missingProfileKey: Chat disabled due to missing profile public key. Please try reconnecting.
         options: Chat disabled in client options.
         profile:
           moreInfo: Chat not allowed by account settings. Cannot send or view messages.
-          _value: Chat not allowed by account settings. Press '%s' again for more
-            information.
+          _value: Chat not allowed by account settings. Press '%s' again for more information.
       editBox: chat
       filtered: Filtered by the server.
       filtered_full: The server has hidden your message for some players.
@@ -1005,63 +1037,51 @@ minecraft:
           criterion:
             to:
               many:
-                failure: Couldn't grant criterion '%s' of advancement %s to %s players
-                  as they already have it
+                failure: Couldn't grant criterion '%s' of advancement %s to %s players as they already have it
                 success: Granted criterion '%s' of advancement %s to %s players
               one:
-                failure: Couldn't grant criterion '%s' of advancement %s to %s as
-                  they already have it
+                failure: Couldn't grant criterion '%s' of advancement %s to %s as they already have it
                 success: Granted criterion '%s' of advancement %s to %s
           many:
             to:
               many:
-                failure: Couldn't grant %s advancements to %s players as they already
-                  have them
+                failure: Couldn't grant %s advancements to %s players as they already have them
                 success: Granted %s advancements to %s players
               one:
-                failure: Couldn't grant %s advancements to %s as they already have
-                  them
+                failure: Couldn't grant %s advancements to %s as they already have them
                 success: Granted %s advancements to %s
           one:
             to:
               many:
-                failure: Couldn't grant advancement %s to %s players as they already
-                  have it
+                failure: Couldn't grant advancement %s to %s players as they already have it
                 success: Granted the advancement %s to %s players
               one:
-                failure: Couldn't grant advancement %s to %s as they already have
-                  it
+                failure: Couldn't grant advancement %s to %s as they already have it
                 success: Granted the advancement %s to %s
         revoke:
           criterion:
             to:
               many:
-                failure: Couldn't revoke criterion '%s' of advancement %s from %s
-                  players as they don't have it
+                failure: Couldn't revoke criterion '%s' of advancement %s from %s players as they don't have it
                 success: Revoked criterion '%s' of advancement %s from %s players
               one:
-                failure: Couldn't revoke criterion '%s' of advancement %s from %s
-                  as they don't have it
+                failure: Couldn't revoke criterion '%s' of advancement %s from %s as they don't have it
                 success: Revoked criterion '%s' of advancement %s from %s
           many:
             to:
               many:
-                failure: Couldn't revoke %s advancements from %s players as they don't
-                  have them
+                failure: Couldn't revoke %s advancements from %s players as they don't have them
                 success: Revoked %s advancements from %s players
               one:
-                failure: Couldn't revoke %s advancements from %s as they don't have
-                  them
+                failure: Couldn't revoke %s advancements from %s as they don't have them
                 success: Revoked %s advancements from %s
           one:
             to:
               many:
-                failure: Couldn't revoke advancement %s from %s players as they don't
-                  have it
+                failure: Couldn't revoke advancement %s from %s players as they don't have it
                 success: Revoked the advancement %s from %s players
               one:
-                failure: Couldn't revoke advancement %s from %s as they don't have
-                  it
+                failure: Couldn't revoke advancement %s from %s as they don't have it
                 success: Revoked the advancement %s from %s
       attribute:
         base_value:
@@ -1071,8 +1091,7 @@ minecraft:
             success: Base value for attribute %s for entity %s set to %s
         failed:
           entity: '%s is not a valid entity for this command'
-          modifier_already_present: Modifier %s is already present on attribute %s
-            for entity %s
+          modifier_already_present: Modifier %s is already present on attribute %s for entity %s
           no_attribute: Entity %s has no attribute %s
           no_modifier: Attribute %s for entity %s has no modifier %s
         modifier:
@@ -1131,8 +1150,7 @@ minecraft:
             success:
               none: Custom bossbar %s no longer has any players
               some: 'Custom bossbar %s now has %s player(s): %s'
-            unchanged: Nothing changed. Those players are already on the bossbar with
-              nobody to add or remove
+            unchanged: Nothing changed. Those players are already on the bossbar with nobody to add or remove
           style:
             success: Custom bossbar %s has changed style
             unchanged: Nothing changed. That's already the style of this bossbar
@@ -1195,8 +1213,7 @@ minecraft:
           failed: Pack '%s' is not enabled!
         enable:
           failed:
-            no_flags: 'Pack ''%s'' cannot be enabled, since required flags are not
-              enabled in this world: %s!'
+            no_flags: 'Pack ''%s'' cannot be enabled, since required flags are not enabled in this world: %s!'
             _value: Pack '%s' is already enabled!
         list:
           available:
@@ -1219,8 +1236,7 @@ minecraft:
           traceFailed: Failed to trace function
         notRunning: The tick profiler hasn't started
         started: Started tick profiling
-        stopped: Stopped tick profiling after %s seconds and %s ticks (%s ticks per
-          second)
+        stopped: Stopped tick profiling after %s seconds and %s ticks (%s ticks per second)
       defaultgamemode:
         success: The default game mode is now %s
       deop:
@@ -1251,8 +1267,7 @@ minecraft:
               multiple: Removed effect %s from %s targets
               single: Removed effect %s from %s
         give:
-          failed: Unable to apply this effect (target is either immune to effects,
-            or has something stronger)
+          failed: Unable to apply this effect (target is either immune to effects, or has something stronger)
           success:
             multiple: Applied effect %s to %s targets
             single: Applied effect %s to %s
@@ -1262,8 +1277,7 @@ minecraft:
           incompatible: '%s cannot support that enchantment'
           itemless: '%s is not holding any item'
           level: '%s is higher than the maximum level of %s supported by that enchantment'
-          _value: Nothing changed. Targets either have no item in their hands or the
-            enchantment could not be applied
+          _value: Nothing changed. Targets either have no item in their hands or the enchantment could not be applied
         success:
           multiple: Applied enchantment %s to %s entities
           single: Applied enchantment %s to %s's item
@@ -1294,8 +1308,7 @@ minecraft:
               multiple: Set %s experience levels on %s players
               single: Set %s experience levels on %s
           points:
-            invalid: Cannot set experience points above the maximum points for the
-              player's current level
+            invalid: Cannot set experience points above the maximum points for the player's current level
             success:
               multiple: Set %s experience points on %s players
               single: Set %s experience points on %s
@@ -1386,8 +1399,7 @@ minecraft:
           not_found: Could not find a biome of type "%s" within reasonable distance
           success: The nearest %s is at %s (%s blocks away)
         poi:
-          not_found: Could not find a point of interest of type "%s" within reasonable
-            distance
+          not_found: Could not find a point of interest of type "%s" within reasonable distance
           success: The nearest %s is at %s (%s blocks away)
         structure:
           invalid: There is no structure with type "%s"
@@ -1412,10 +1424,8 @@ minecraft:
         notRunning: The performance profiler hasn't started
         reportFailed: Failed to create debug report
         reportSaved: Created debug report in %s
-        started: Started 10 second performance profiling run (use '/perf stop' to
-          stop early)
-        stopped: Stopped performance profiling after %s second(s) and %s tick(s) (%s
-          tick(s) per second)
+        started: Started 10 second performance profiling run (use '/perf stop' to stop early)
+        stopped: Stopped performance profiling after %s second(s) and %s tick(s) (%s tick(s) per second)
       place:
         feature:
           failed: Failed to place feature
@@ -1492,8 +1502,7 @@ minecraft:
             success: Created new objective %s
           display:
             alreadyEmpty: Nothing changed. That display slot is already empty
-            alreadySet: Nothing changed. That display slot is already showing that
-              objective
+            alreadySet: Nothing changed. That display slot is already showing that objective
             cleared: Cleared any objectives in display slot %s
             set: Set display slot %s to show objective %s
           list:
@@ -1565,17 +1574,13 @@ minecraft:
           stopped: No longer spectating an entity
       spreadplayers:
         failed:
-          entities: Could not spread %s entity/entities around %s, %s (too many entities
-            for space - try using spread of at most %s)
+          entities: Could not spread %s entity/entities around %s, %s (too many entities for space - try using spread of at most %s)
           invalid:
             height: Invalid maxHeight %s; expected higher than world minimum %s
-          teams: Could not spread %s team(s) around %s, %s (too many entities for
-            space - try using spread of at most %s)
+          teams: Could not spread %s team(s) around %s, %s (too many entities for space - try using spread of at most %s)
         success:
-          entities: Spread %s player(s) around %s, %s with an average distance of
-            %s blocks apart
-          teams: Spread %s team(s) around %s, %s with an average distance of %s blocks
-            apart
+          entities: Spread %s player(s) around %s, %s with an average distance of %s blocks apart
+          teams: Spread %s team(s) around %s, %s with an average distance of %s blocks apart
       stopsound:
         success:
           source:
@@ -1641,10 +1646,8 @@ minecraft:
             success: Death message visibility for team %s is now "%s"
             unchanged: Nothing changed. Death message visibility is already that value
           friendlyfire:
-            alreadyDisabled: Nothing changed. Friendly fire is already disabled for
-              that team
-            alreadyEnabled: Nothing changed. Friendly fire is already enabled for
-              that team
+            alreadyDisabled: Nothing changed. Friendly fire is already disabled for that team
+            alreadyEnabled: Nothing changed. Friendly fire is already enabled for that team
             disabled: Disabled friendly fire for team %s
             enabled: Enabled friendly fire for team %s
           name:
@@ -1656,8 +1659,7 @@ minecraft:
           prefix:
             success: Team prefix set to %s
           seeFriendlyInvisibles:
-            alreadyDisabled: Nothing changed. That team already can't see invisible
-              teammates
+            alreadyDisabled: Nothing changed. That team already can't see invisible teammates
             alreadyEnabled: Nothing changed. That team can already see invisible teammates
             disabled: Team %s can no longer see invisible teammates
             enabled: Team %s can now see invisible teammates
@@ -1738,8 +1740,7 @@ minecraft:
             failed: Nothing changed. The world border damage is already that amount
             success: Set the world border damage to %s per block each second
           buffer:
-            failed: Nothing changed. The world border damage buffer is already that
-              distance
+            failed: Nothing changed. The world border damage buffer is already that distance
             success: Set the world border damage buffer to %s block(s)
         get: The world border is currently %s block(s) wide
         set:
@@ -1756,8 +1757,7 @@ minecraft:
             failed: Nothing changed. The world border warning is already that distance
             success: Set the world border warning distance to %s block(s)
           time:
-            failed: Nothing changed. The world border warning is already that amount
-              of time
+            failed: Nothing changed. The world border warning is already that amount of time
             success: Set the world border warning time to %s second(s)
     death:
       attack:
@@ -1843,8 +1843,7 @@ minecraft:
         magic:
           player: '%1$s was killed by magic whilst trying to escape %2$s'
           _value: '%1$s was killed by magic'
-        message_too_long: 'Actually, the message was too long to deliver fully. Sorry!
-          Here''s stripped version: %s'
+        message_too_long: 'Actually, the message was too long to deliver fully. Sorry! Here''s stripped version: %s'
         mob:
           item: '%1$s was slain by %2$s using %3$s'
           _value: '%1$s was slain by %2$s'
@@ -1859,10 +1858,8 @@ minecraft:
           item: '%1$s was slain by %2$s using %3$s'
           _value: '%1$s was slain by %2$s'
         sonic_boom:
-          item: '%1$s was obliterated by a sonically-charged shriek whilst trying
-            to escape %2$s wielding %3$s'
-          player: '%1$s was obliterated by a sonically-charged shriek whilst trying
-            to escape %2$s'
+          item: '%1$s was obliterated by a sonically-charged shriek whilst trying to escape %2$s wielding %3$s'
+          player: '%1$s was obliterated by a sonically-charged shriek whilst trying to escape %2$s'
           _value: '%1$s was obliterated by a sonically-charged shriek'
         stalagmite:
           player: '%1$s was impaled on a stalagmite whilst fighting %2$s'
@@ -1875,8 +1872,7 @@ minecraft:
           player: '%1$s was stung to death by %2$s'
           _value: '%1$s was stung to death'
         sweetBerryBush:
-          player: '%1$s was poked to death by a sweet berry bush whilst trying to
-            escape %2$s'
+          player: '%1$s was poked to death by a sweet berry bush whilst trying to escape %2$s'
           _value: '%1$s was poked to death by a sweet berry bush'
         thorns:
           item: '%1$s was killed by %3$s trying to hurt %2$s'
@@ -1919,8 +1915,7 @@ minecraft:
           narration: 'Online players: %s'
       applyingPack: Applying resource pack
       disconnect:
-        authservers_down: Authentication servers are down. Please try again later,
-          sorry!
+        authservers_down: Authentication servers are down. Please try again later, sorry!
         banned:
           expiration: '
 
@@ -1938,8 +1933,7 @@ minecraft:
             Reason: %s'
         chat_validation_failed: Chat message validation failure
         duplicate_login: You logged in from another location
-        expired_public_key: Expired profile public key. Check that your system time
-          is synchronized, and try restarting your game.
+        expired_public_key: Expired profile public key. Check that your system time is synchronized, and try restarting your game.
         flying: Flying is not enabled on this server
         generic: Disconnected
         idling: You have been idle for too long!
@@ -1964,8 +1958,7 @@ minecraft:
           Please contact server operator.'
         name_taken: That name is already taken
         not_whitelisted: You are not white-listed on this server!
-        out_of_order_chat: Out-of-order chat packet received. Did your system time
-          change?
+        out_of_order_chat: Out-of-order chat packet received. Did your system time change?
         outdated_client: Incompatible client! Please use %s
         outdated_server: Incompatible client! Please use %s
         server_full: The server is full!
@@ -2014,8 +2007,7 @@ minecraft:
       texturePrompt:
         failure:
           line1: Server resource pack couldn't be applied
-          line2: Any functionality that requires custom resources might not work as
-            expected
+          line2: Any functionality that requires custom resources might not work as expected
         line1: This server recommends the use of a custom resource pack.
         line2: Would you like to download and install it automagically?
         serverPrompt: '%s
@@ -2028,8 +2020,7 @@ minecraft:
       unsecureserver:
         toast:
           title: Chat messages can't be verified
-          _value: Messages sent on this server may be modified and might not reflect
-            the original message
+          _value: Messages sent on this server may be modified and might not reflect the original message
     advancements:
       adventure:
         adventuring_time:
@@ -2039,19 +2030,16 @@ minecraft:
           description: Kill five unique mobs with one crossbow shot
           title: Arbalistic
         avoid_vibration:
-          description: Sneak near a Sculk Sensor or Warden to prevent it from detecting
-            you
+          description: Sneak near a Sculk Sensor or Warden to prevent it from detecting you
           title: Sneak 100
         bullseye:
-          description: Hit the bullseye of a Target block from at least 30 meters
-            away
+          description: Hit the bullseye of a Target block from at least 30 meters away
           title: Bullseye
         craft_decorated_pot_using_only_sherds:
           description: Make a Decorated Pot out of 4 Pottery Sherds
           title: Careful Restoration
         fall_from_world_height:
-          description: Free fall from the top of the world (build limit) to the bottom
-            of the world and survive
+          description: Free fall from the top of the world (build limit) to the bottom of the world and survive
           title: Caves & Cliffs
         hero_of_the_village:
           description: Successfully defend a village from a raid
@@ -2069,15 +2057,13 @@ minecraft:
           description: Kill a mob near a Sculk Catalyst
           title: It Spreads
         lightning_rod_with_villager_no_fire:
-          description: Protect a Villager from an undesired shock without starting
-            a fire
+          description: Protect a Villager from an undesired shock without starting a fire
           title: Surge Protector
         ol_betsy:
           description: Shoot a Crossbow
           title: Ol' Betsy
         play_jukebox_in_meadows:
-          description: Make the Meadows come alive with the sound of music from a
-            Jukebox
+          description: Make the Meadows come alive with the sound of music from a Jukebox
           title: Sound of Music
         read_power_from_chiseled_bookshelf:
           description: Read the power signal of a Chiseled Bookshelf using a Comparator
@@ -2124,8 +2110,7 @@ minecraft:
           description: Trade with a Villager at the build height limit
           title: Star Trader
         trim_with_all_exclusive_armor_patterns:
-          description: 'Apply these smithing templates at least once: Spire, Snout,
-            Rib, Ward, Silence, Vex, Tide, Wayfinder'
+          description: 'Apply these smithing templates at least once: Spire, Snout, Rib, Ward, Silence, Vex, Tide, Wayfinder'
           title: Smithing with Style
         trim_with_any_armor_pattern:
           description: Craft a trimmed armor at a Smithing Table
@@ -2217,8 +2202,7 @@ minecraft:
           description: Make the text of any kind of sign glow
           title: Glow and Behold!
         netherite_hoe:
-          description: Use a Netherite Ingot to upgrade a Hoe, and then reevaluate
-            your life choices
+          description: Use a Netherite Ingot to upgrade a Hoe, and then reevaluate your life choices
           title: Serious Dedication
         obtain_sniffer_egg:
           description: Obtain a Sniffer Egg
@@ -2236,8 +2220,7 @@ minecraft:
           description: The world is full of friends and food
           title: Husbandry
         safely_harvest_honey:
-          description: Use a Campfire to collect Honey from a Beehive using a Glass
-            Bottle without aggravating the Bees
+          description: Use a Campfire to collect Honey from a Beehive using a Glass Bottle without aggravating the Bees
           title: Bee Our Guest
         silk_touch_nest:
           description: Move a Bee Nest, with 3 Bees inside, using Silk Touch
@@ -2325,8 +2308,7 @@ minecraft:
           description: Summon the Wither
           title: Withering Heights
         uneasy_alliance:
-          description: Rescue a Ghast from the Nether, bring it safely home to the
-            Overworld... and then kill it
+          description: Rescue a Ghast from the Nether, bring it safely home to the Overworld... and then kill it
           title: Uneasy Alliance
         use_lodestone:
           description: Use a Compass on a Lodestone
@@ -2481,8 +2463,7 @@ minecraft:
           randomPlayer: Random player
           self: Current entity
           unknown: Unknown selector type '%s'
-        toomany: Only one entity is allowed, but the provided selector allows more
-          than one
+        toomany: Only one entity is allowed, but the provided selector allows more than one
       enum:
         invalid: Invalid value "%s"
       float:
@@ -2517,17 +2498,14 @@ minecraft:
           mixed: Can't insert %s into list of %s
         trailing: Unexpected trailing data
       player:
-        entities: Only players may be affected by this command, but the provided selector
-          includes entities
-        toomany: Only one player is allowed, but the provided selector allows more
-          than one
+        entities: Only players may be affected by this command, but the provided selector includes entities
+        toomany: Only one player is allowed, but the provided selector allows more than one
         unknown: That player does not exist
       pos:
         missing:
           double: Expected a coordinate
           int: Expected a block position
-        mixed: Cannot mix world & local coordinates (everything must either use ^
-          or not)
+        mixed: Cannot mix world & local coordinates (everything must either use ^ or not)
         outofbounds: That position is outside the allowed boundaries.
         outofworld: That position is out of this world!
         unloaded: That position is not loaded
@@ -2575,11 +2553,9 @@ minecraft:
       kicked: Was kicked from the game
       loginFailed: Failed to log in
       loginFailedInfo:
-        insufficientPrivileges: Multiplayer is disabled. Please check your Microsoft
-          account settings.
+        insufficientPrivileges: Multiplayer is disabled. Please check your Microsoft account settings.
         invalidSession: Invalid session (Try restarting your game and the launcher)
-        serversUnavailable: The authentication servers are currently not reachable.
-          Please try again.
+        serversUnavailable: The authentication servers are currently not reachable. Please try again.
         userBanned: You are banned from playing online
         _value: 'Failed to log in: %s'
       lost: Connection Lost
@@ -3035,8 +3011,7 @@ minecraft:
       announceAdvancements: Announce advancements
       blockExplosionDropDecay:
         _value: In block interaction explosions, some blocks won't drop their loot
-        description: Some of the drops from blocks destroyed by explosions caused
-          by block interactions are lost in the explosion.
+        description: Some of the drops from blocks destroyed by explosions caused by block interactions are lost in the explosion.
       category:
         chat: Chat
         drops: Drops
@@ -3048,15 +3023,13 @@ minecraft:
       commandBlockOutput: Broadcast command block output
       commandModificationBlockLimit:
         _value: Command Modification Block Limit
-        description: Number of blocks that can be changed at once by one command,
-          such as fill or clone.
+        description: Number of blocks that can be changed at once by one command, such as fill or clone.
       disableElytraMovementCheck: Disable elytra movement check
       disableRaids: Disable raids
       doDaylightCycle: Advance time of day
       doEntityDrops:
         _value: Drop entity equipment
-        description: Controls drops from minecarts (including inventories), item frames,
-          boats, etc.
+        description: Controls drops from minecarts (including inventories), item frames, boats, etc.
       doFireTick: Update fire
       doImmediateRespawn: Respawn immediately
       doInsomnia: Spawn phantoms
@@ -3076,9 +3049,7 @@ minecraft:
       doTraderSpawning: Spawn Wandering Traders
       doVinesSpread:
         _value: Vines spread
-        description: Controls whether or not the Vines block spreads randomly to adjacent
-          blocks. Does not affect other type of vine blocks such as Weeping Vines,
-          Twisting Vines, etc.
+        description: Controls whether or not the Vines block spreads randomly to adjacent blocks. Does not affect other type of vine blocks such as Weeping Vines, Twisting Vines, etc.
       doWardenSpawning: Spawn Wardens
       doWeatherCycle: Update weather
       drowningDamage: Deal drowning damage
@@ -3086,18 +3057,15 @@ minecraft:
       fireDamage: Deal fire damage
       forgiveDeadPlayers:
         _value: Forgive dead players
-        description: Angered neutral mobs stop being angry when the targeted player
-          dies nearby.
+        description: Angered neutral mobs stop being angry when the targeted player dies nearby.
       freezeDamage: Deal freeze damage
       globalSoundEvents:
         _value: Global sound events
-        description: When certain game events happen, like a boss spawning, the sound
-          is heard everywhere.
+        description: When certain game events happen, like a boss spawning, the sound is heard everywhere.
       keepInventory: Keep inventory after death
       lavaSourceConversion:
         _value: Lava converts to source
-        description: When flowing lava is surrounded on two sides by lava sources
-          it converts into a source.
+        description: When flowing lava is surrounded on two sides by lava sources it converts into a source.
       logAdminCommands: Broadcast admin commands
       maxCommandChainLength:
         _value: Command chain size limit
@@ -3105,8 +3073,7 @@ minecraft:
       maxEntityCramming: Entity cramming threshold
       mobExplosionDropDecay:
         _value: In mob explosions, some blocks won't drop their loot
-        description: Some of the drops from blocks destroyed by explosions caused
-          by mobs are lost in the explosion.
+        description: Some of the drops from blocks destroyed by explosions caused by mobs are lost in the explosion.
       mobGriefing: Allow destructive mob actions
       naturalRegeneration: Regenerate health
       playersSleepingPercentage:
@@ -3120,22 +3087,18 @@ minecraft:
       showDeathMessages: Show death messages
       snowAccumulationHeight:
         _value: Snow accumulation height
-        description: When it snows, layers of snow form on the ground up to at most
-          this number of layers.
+        description: When it snows, layers of snow form on the ground up to at most this number of layers.
       spawnRadius: Respawn location radius
       spectatorsGenerateChunks: Allow spectators to generate terrain
       tntExplosionDropDecay:
         _value: In TNT explosions, some blocks won't drop their loot
-        description: Some of the drops from blocks destroyed by explosions caused
-          by TNT are lost in the explosion.
+        description: Some of the drops from blocks destroyed by explosions caused by TNT are lost in the explosion.
       universalAnger:
         _value: Universal anger
-        description: Angered neutral mobs attack any nearby player, not just the player
-          that angered them. Works best if forgiveDeadPlayers is disabled.
+        description: Angered neutral mobs attack any nearby player, not just the player that angered them. Works best if forgiveDeadPlayers is disabled.
       waterSourceConversion:
         _value: Water converts to source
-        description: When flowing water is surrounded on two sides by water sources
-          it converts into a source.
+        description: When flowing water is surrounded on two sides by water sources it converts into a source.
     item_modifier:
       unknown: 'Unknown item modifier: %s'
     lectern:
@@ -3356,12 +3319,9 @@ minecraft:
     title:
       32bit:
         deprecation:
-          _value: '32-bit system detected: this may prevent you from playing in the
-            future as a 64-bit system will be required!'
+          _value: '32-bit system detected: this may prevent you from playing in the future as a 64-bit system will be required!'
           realms:
-            _value: Minecraft will soon require a 64-bit system, which will prevent
-              you from playing or using Realms on this device. You will need to manually
-              cancel any Realms subscription.
+            _value: Minecraft will soon require a 64-bit system, which will prevent you from playing or using Realms on this device. You will need to manually cancel any Realms subscription.
             check: Do not show this screen again
             header: 32-bit system detected
       multiplayer:
@@ -5788,13 +5748,10 @@ minecraft:
           title: Failed to load world in Safe Mode.
       title: 'Errors in currently selected data packs prevented the world from loading.
 
-        You can either try to load it with only the vanilla data pack ("safe mode"),
-        or go back to the title screen and fix it manually.'
+        You can either try to load it with only the vanilla data pack ("safe mode"), or go back to the title screen and fix it manually.'
     difficulty:
       lock:
-        question: Are you sure you want to lock the difficulty of this world? This
-          will set this world to always be %1$s, and you will never be able to change
-          that again.
+        question: Are you sure you want to lock the difficulty of this world? This will set this world to always be %1$s, and you will never be able to change that again.
         title: Lock World Difficulty
     editGamerule:
       default: 'Default: %s'
@@ -5855,10 +5812,8 @@ minecraft:
       incompatible:
         _value: Incompatible
         confirm:
-          new: This pack was made for a newer version of Minecraft and may not work
-            correctly.
-          old: This pack was made for an older version of Minecraft and may no longer
-            work correctly.
+          new: This pack was made for a newer version of Minecraft and may not work correctly.
+          old: This pack was made for an older version of Minecraft and may no longer work correctly.
           title: Are you sure you want to load this pack?
         new: (Made for a newer version of Minecraft)
         old: (Made for an older version of Minecraft)
@@ -6015,8 +5970,7 @@ minecraft:
         x: structure size x
         y: structure size y
         z: structure size z
-      size_failure: Unable to detect structure size. Add corners with matching structure
-        names
+      size_failure: Unable to detect structure size. Add corners with matching structure names
       size_success: Size successfully detected for '%s'
       structure_name: Structure Name
     trim_material:
