@@ -2013,7 +2013,7 @@ resourcePack:
   enabled: true
   force: true
   url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-  sha1: "1ed8584318a819029e98cad889b842896c7e2d17"
+  sha1: "dc652f6f334b0d70338e8e8dba9825ecc0470d23"
   prompt: "TreasureRun uses a multilingual Minecraft resource pack to localize Minecraft language keys. Please accept it for the full i18n experience."
 
 resourcePackFallback:
@@ -2023,67 +2023,67 @@ resourcePackFallback:
   packs:
     ja:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "1ed8584318a819029e98cad889b842896c7e2d17"
+      sha1: "dc652f6f334b0d70338e8e8dba9825ecc0470d23"
     en:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "1ed8584318a819029e98cad889b842896c7e2d17"
+      sha1: "dc652f6f334b0d70338e8e8dba9825ecc0470d23"
     de:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "1ed8584318a819029e98cad889b842896c7e2d17"
+      sha1: "dc652f6f334b0d70338e8e8dba9825ecc0470d23"
     es:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "1ed8584318a819029e98cad889b842896c7e2d17"
+      sha1: "dc652f6f334b0d70338e8e8dba9825ecc0470d23"
     fr:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "1ed8584318a819029e98cad889b842896c7e2d17"
+      sha1: "dc652f6f334b0d70338e8e8dba9825ecc0470d23"
     ko:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "1ed8584318a819029e98cad889b842896c7e2d17"
+      sha1: "dc652f6f334b0d70338e8e8dba9825ecc0470d23"
     ru:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "1ed8584318a819029e98cad889b842896c7e2d17"
+      sha1: "dc652f6f334b0d70338e8e8dba9825ecc0470d23"
     zh_tw:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "1ed8584318a819029e98cad889b842896c7e2d17"
+      sha1: "dc652f6f334b0d70338e8e8dba9825ecc0470d23"
     fi:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "1ed8584318a819029e98cad889b842896c7e2d17"
+      sha1: "dc652f6f334b0d70338e8e8dba9825ecc0470d23"
     it:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "1ed8584318a819029e98cad889b842896c7e2d17"
+      sha1: "dc652f6f334b0d70338e8e8dba9825ecc0470d23"
     nl:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "1ed8584318a819029e98cad889b842896c7e2d17"
+      sha1: "dc652f6f334b0d70338e8e8dba9825ecc0470d23"
     pt:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "1ed8584318a819029e98cad889b842896c7e2d17"
+      sha1: "dc652f6f334b0d70338e8e8dba9825ecc0470d23"
     hi:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "1ed8584318a819029e98cad889b842896c7e2d17"
+      sha1: "dc652f6f334b0d70338e8e8dba9825ecc0470d23"
     sv:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "1ed8584318a819029e98cad889b842896c7e2d17"
+      sha1: "dc652f6f334b0d70338e8e8dba9825ecc0470d23"
     is:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "1ed8584318a819029e98cad889b842896c7e2d17"
+      sha1: "dc652f6f334b0d70338e8e8dba9825ecc0470d23"
     la:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "1ed8584318a819029e98cad889b842896c7e2d17"
+      sha1: "dc652f6f334b0d70338e8e8dba9825ecc0470d23"
     sa:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "1ed8584318a819029e98cad889b842896c7e2d17"
+      sha1: "dc652f6f334b0d70338e8e8dba9825ecc0470d23"
     lzh:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "1ed8584318a819029e98cad889b842896c7e2d17"
+      sha1: "dc652f6f334b0d70338e8e8dba9825ecc0470d23"
     ojp:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "1ed8584318a819029e98cad889b842896c7e2d17"
+      sha1: "dc652f6f334b0d70338e8e8dba9825ecc0470d23"
     asl_gloss:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "1ed8584318a819029e98cad889b842896c7e2d17"
+      sha1: "dc652f6f334b0d70338e8e8dba9825ecc0470d23"
     ang:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "1ed8584318a819029e98cad889b842896c7e2d17"
+      sha1: "dc652f6f334b0d70338e8e8dba9825ecc0470d23"
     non:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "1ed8584318a819029e98cad889b842896c7e2d17"
+      sha1: "dc652f6f334b0d70338e8e8dba9825ecc0470d23"
