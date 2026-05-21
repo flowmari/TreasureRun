@@ -297,7 +297,7 @@ See: [`docs/architecture/hybrid-minecraft-standard-message-i18n.md`](docs/archit
 このプロジェクトでは、単なるゲーム機能だけでなく、以下のような **実務で評価されやすい設計・品質管理** を重視しています。
 
 - Javaコード内のユーザー向け直書き文字列を削減
-- 19言語の `languages/*.yml` によるi18n管理
+- 23言語の `languages/*.yml` によるプラグインi18n管理
 - 翻訳キー欠落、YAML構文、重複キーをCIで検査
 - Docker上のSpigotサーバーで実行検証
 - MySQLによるスコア・ログ永続化
@@ -325,7 +325,7 @@ See: [`docs/architecture/hybrid-minecraft-standard-message-i18n.md`](docs/archit
 
 #### i18n / 多言語対応
 
-- 19言語の `languages/*.yml`
+- 23言語の `languages/*.yml`
 - プレイヤーごとの言語設定
 - `/lang` による言語選択
 - GUI上の言語表示
@@ -378,7 +378,7 @@ docker logs -f minecraft_spigot
 
 GitHub Actionsで以下を検証しています。
 
-- 19言語YAMLの構文チェック
+- 23言語YAMLの構文チェック
 - 必須キーの存在チェック
 - Javaコードから参照されるi18nキーの存在チェック
 - 重複キーの検出
@@ -465,7 +465,7 @@ RESULT=OK_BUILD
 [Lang] copied from jar: languages/asl_gloss.yml
 ```
 
-最終的にDocker上のSpigotサーバーでも19言語が有効化されていることを確認しています。
+最終的にDocker上のSpigotサーバーでも23言語のプラグイン言語設定が有効化されていることを確認しています。
 
 ```text
 Server languages count: 19
@@ -514,7 +514,7 @@ docker logs --tail=200 minecraft_spigot
 - Javaでの状態管理、イベント処理、コマンド実装
 - MySQL連携によるスコア永続化
 - Dockerを使ったローカル実行検証
-- 19言語i18nの設計と運用
+- 23言語プラグインi18nの設計と運用
 - GitHub ActionsによるCI品質ゲート
 - バグ修正、検証、再発防止まで含めた開発プロセス
 
