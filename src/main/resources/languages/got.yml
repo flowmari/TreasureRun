@@ -1,7 +1,3 @@
-# Gothic / Gutiska experimental locale for TreasureRun.
-# Bootstrapped from the existing historical-language i18n layer.
-# This file proves the full wiring path first; linguistic polishing is a separate review phase.
-
 outcome:
   fallback:
     runComplete: Run is gefylled.
@@ -15,523 +11,493 @@ outcome:
       pool: []
     easy:
       pool:
-      - 'Þū hider becōme.
+      - 'Þū qamt.
 
-        Sōþfæstnes belīfþ.'
-      - 'Þēah hit lȳtel stæpe wǣre,
+        Sōþ standiþ.'
+      - 'Leitils staps ist auk staps.
 
-        þū þīnne stede geheolde.'
-      - 'Þū gehȳrdest.
+        Þū stōþst fast.'
+      - 'Þū hausidedes.
 
-        Se weg onēode.'
-      - '> Þū hider becōme
+        Sa wigs uslauk.'
+      - 'Þata mēl fullnōda.
 
-        >
+        Þīn gawal was þuk.'
+      - 'Stafs warþ andnumans.
 
-        > Þā laga wǣron eaðe —
+        Jah mēl andhafida þīnam fotum.'
+      - 'Ni allata liuhteiþ sinteino.
 
-        >
+        Ak þis mēl liuhtida.'
+      - 'Liuhad draus samaleiko,
 
-        > sēo cyre wæs þīn.'
-      - '> Fæc wearþ andgit.
+        jah all riqis afiddja.'
+      - 'Sa winds gaswōg.
 
-        >
+        Jah allata aftar stadja seinamma warþ.'
+      - 'Ains sweigs mēls.
 
-        > and tīd andswarode þīnum fōtlastum.'
-      - '> Ne scīnþ eall þing āwa.
+        Fairƕus andanahtida.'
+      - 'Taikns ist djūpo ana malmin writans,
 
-        >
+        ni fram walda windis.'
+      - 'Friþus aftra urrais.
 
-        > Ac þes stunde scān.'
-      - 'Lēoht fēoll emnlīce,
+        Allata was du þamma mēla.'
+      - 'Mēl galaiþ sweigjande,
 
-        and ǣlc sceadu gewāt.'
-      - 'Se wind geswāc.
+        jah in gamunds stadja gafand.'
+      - 'Himins lit seinana inwandida,
 
-        and eall þing hwearf tō his stede.'
-      - 'Ān swigunge stund.
+        jah ain spill du andja qam.'
+      - 'Ahwa gaswōgida,
 
-        Middangeard his ǣþm gestillde.'
-      - 'Se gemearc is dēope on sande āwriten—
+        jah marei djupiþa seina aftra gahulida.'
+      - 'Fotjus gaswikon,
 
-        būtan windes gewealde.'
-      - 'Friþ wearþ eft ārǣred.
+        ak sa staths ains aflif.'
+      - 'Sigis jah fralusts
 
-        Eall wæs for þissum stunde.'
-      - 'Tīd glād stille fram,
+        sind swē malma leitila.'
+      - 'Sa wigs gaggith faurþis — aiþþau andeiþ.
 
-        and wearþ on gemyndes hyrnum gehealden.'
-      - 'Se heofon his blēo wende,
-
-        and ān spell tō ende becōm.'
-      - 'Þā ȳða gestilledon,
-
-        and sǣ eft hire dēopnesse behȳdde.'
-      - 'Þā fōtlastas geswicon,
-
-        and se stede āna belāf.'
-      - 'Sige and lyre
-
-        sind nā mā þonne sandes corn.'
-      - 'Se weg gǣþ forþ — oþþe endaþ.
-
-        Hwæðer swā, hē līþ on ānre eorðan.'
+        Swaþauh ligith ana ainai airþai.'
     normal:
       pool:
-      - 'Se fæc hæfþ his andgit funden.
+      - 'Þū qamt.
 
-        Tīd forgeald þīnne sīð.'
-      - 'Sēo tīd is āgān.
+        Sōþ standiþ.'
+      - 'Leitils staps ist auk staps.
 
-        Ac nalles eall is geendod.'
-      - 'Se eax is funden.
+        Þū stōþst fast.'
+      - 'Þū hausidedes.
 
-        Middangeard his styrunge geswāc.'
-      - 'Þæt glæs his ǣþm geheold,
+        Sa wigs uslauk.'
+      - 'Þata mēl fullnōda.
 
-        and þū þīnne stede geheolde.'
-      - 'Under stille heofone,
+        Þīn gawal was þuk.'
+      - 'Stafs warþ andnumans.
 
-        þīn mōd ne āswāc.'
-      - 'Fēawa þing scīnaþ āwa.
+        Jah mēl andhafida þīnam fotum.'
+      - 'Ni allata liuhteiþ sinteino.
 
-        Ac þes stunde wæs beorht.'
-      - 'Þū ofer brēacne eorðan fērdest,
+        Ak þis mēl liuhtida.'
+      - 'Liuhad draus samaleiko,
 
-        and þone gesihþ ne forlure.'
-      - 'Sēo stund gewāt.
+        jah all riqis afiddja.'
+      - 'Sa winds gaswōg.
 
-        Þæt lǣf belīfþ.'
-      - 'Hwyrft fordwīnþ hrædlīce.
+        Jah allata aftar stadja seinamma warþ.'
+      - 'Ains sweigs mēls.
 
-        Endebyrdnes þurhwunaþ.'
-      - 'Se heofon nānne reste cnāwþ on ēce hring,
+        Fairƕus andanahtida.'
+      - 'Taikns ist djūpo ana malmin writans,
 
-        ne þū þīnne findst.'
-      - 'Se middel is gerǣht.
+        ni fram walda windis.'
+      - 'Friþus aftra urrais.
 
-        Middangeard stille stōd.'
-      - 'Nū æt nēhstan hēr.
+        Allata was du þamma mēla.'
+      - 'Mēl galaiþ sweigjande,
 
-        Sōþfæstnes belīfþ unābrocen.'
-      - 'Þū hit þurhseah.
+        jah in gamunds stadja gafand.'
+      - 'Himins lit seinana inwandida,
 
-        And gemearca þis: þū, nān ōþer, þisne weg geceas.'
-      - 'Tīd glād on swigunge,
+        jah ain spill du andja qam.'
+      - 'Ahwa gaswōgida,
 
-        and fand hire stede on mōdes dēopum hyrnum.'
-      - 'Þā se heofon wende,
+        jah marei djupiþa seina aftra gahulida.'
+      - 'Fotjus gaswikon,
 
-        þæt spell his ende gemette.'
-      - 'Þā wæteru gestilledon,
+        ak sa staths ains aflif.'
+      - 'Sigis jah fralusts
 
-        and se heofon eft his dēopnesse bewreah.'
-      - 'Þā fōtlastas geswicon,
+        sind swē malma leitila.'
+      - 'Sa wigs gaggith faurþis — aiþþau andeiþ.
 
-        se stede āna belāf.'
-      - 'Lēoht fēoll emnlīce,
+        Swaþauh ligith ana ainai airþai.'
+      - 'Sōþ waurd ist hard,
 
-        and ǣlc sceadu gewāt.'
-      - 'Se wind geswāc.
+        ak nasjand ist.'
+      - 'Saei leitilamma triggws ist,
 
-        and eall þing hwearf tō his stede.'
-      - 'Ān swigunge stund.
+        mikilamma triggws wairþiþ.'
+      - 'Þairh arbaiþ jah þulains
 
-        Middangeard his ǣþm gestillde.'
-      - 'Se gemearc is dēope on sande āwriten—
+        mahts wairþiþ.'
+      - 'Gōþs hugs
 
-        būtan windes gewealde.'
-      - 'Friþ wearþ eft ārǣred.
+        gōþ waurstw waurkeiþ.'
+      - 'Liuhad leitil
 
-        Eall wæs for þissum stunde.'
-      - 'RYNE GEFYLLED.
+        mikil riqis afdrībeiþ.'
+      - 'Witubni ist huzd,
 
-        Hlūtor. Fundon.
+        þatei þiubs niman ni mag.'
+      - 'Þulains ist brugga
 
-        Þæt genōh is.'
-      - 'RYNE GEFYLLED.
+        ufar aggwidu.'
+      - 'Gōþs wilja
 
-        Se weg geheold.
+        halbs waurstw ist.'
+      - 'Sa ni fraihniþ,
 
-        Swā dyde þū.'
-      - 'Se heofon gǣþ gēn.
+        ni laiseiþ.'
+      - 'Ain liuhad af liuhada
 
-        Swā miht þū.'
-      - 'RYNE GEFYLLED.
+        ni wanaiþ.'
+      - 'Sa in friþa waurkeiþ,
 
-        Stille endebyrdnes.
+        in friþa libaiþ.'
+      - 'Sōþs sigis ist
 
-        Þæs sōþan weorces hefignes.'
-      - 'Þū ēodest þone weg ānne
+        sigis ana sik silban.'
+      - 'Gōþ namō
 
-        þe middangeard þē gelægde.'
-      - 'Sēo eorðe ne āswāc.
+        batizo ist þan gabeigs huzd.'
+      - 'Sa sōþ sokjands
 
-        Hēo truwode þīnum stæpum.'
-      - 'Þes stunde samod fēoll
+        ni afletiþ.'
+      - 'Triggwa ist hardizo
 
-        mid þām ealdan rīme steorrana.'
-      - 'Þū nāht ne genāme.
+        þan eisarn.'
+      - 'Gōþ waurd
 
-        Þū sum þing ongeate.'
-      - 'Þū nān þing ne gestrȳndest.
+        hairtō ustiuhþiþ.'
+      - 'Ni managai waurda,
 
-        Þū gesāwe þæt sōþ swā hit wæs.'
-      - 'Þū þisne stede ne genāme.
+        ak gōþ waurstw mann kunniþ.'
+      - 'Sa þulaiþ,
 
-        Þū hēr tō belumpe.'
-      - 'Þū ēodest weg
-
-        ealdor þonne gemynd sylf.'
-      - 'Sēo eorðe ne wiðsōc.
-
-        Hēo þē oncneow.'
-      - 'Þes stunde samod fēoll
-
-        mid steorrana stillnesse.'
+        sigis habaiþ.'
     hard:
       pool:
-      - 'On norþan winde,
+      - 'Þū qamt.
 
-        beorhtnes oferlibbaþ ofste.'
-      - 'Se middel wearþ funden.
+        Sōþ standiþ.'
+      - 'Leitils staps ist auk staps.
 
-        Middangeard tō reste becōm.'
-      - 'Þā steorran stille belīfaþ.
+        Þū stōþst fast.'
+      - 'Þū hausidedes.
 
-        Þīn gemearc spricþ.'
-      - 'Se ende belāf.
+        Sa wigs uslauk.'
+      - 'Þata mēl fullnōda.
 
-        Se stede wearþ awend.'
-      - 'Betwēox īse and glæse,
+        Þīn gawal was þuk.'
+      - 'Stafs warþ andnumans.
 
-        þū geweald gecease.'
-      - 'Þā ȳða gestilledon,
+        Jah mēl andhafida þīnam fotum.'
+      - 'Ni allata liuhteiþ sinteino.
 
-        and sǣ eft hire dēopnesse genam.'
-      - 'Sume māðmas gēn bīdaþ.
+        Ak þis mēl liuhtida.'
+      - 'Liuhad draus samaleiko,
 
-        Næhstan sīðe, ōþer weg.'
-      - 'Se heofon ne wende.
+        jah all riqis afiddja.'
+      - 'Sa winds gaswōg.
 
-        Þū wende.'
-      - 'Sēo stund gewāt.
+        Jah allata aftar stadja seinamma warþ.'
+      - 'Ains sweigs mēls.
 
-        Þæt belāf wæs endebyrdnes.'
-      - 'Winter is sōþfæst.
+        Fairƕus andanahtida.'
+      - 'Taikns ist djūpo ana malmin writans,
 
-        Swā wæs þīn ryne.'
-      - 'Þā steorran āne hwīle samod fēollon.
+        ni fram walda windis.'
+      - 'Friþus aftra urrais.
 
-        Þū hit gemunde.'
-      - 'Se fæc becōm tō ende.
+        Allata was du þamma mēla.'
+      - 'Mēl galaiþ sweigjande,
 
-        Tīd ne dyde.'
-      - 'Middangeardes laga stōdon fæste.
+        jah in gamunds stadja gafand.'
+      - 'Himins lit seinana inwandida,
 
-        And þæt tācen mihte wæs sōþ.'
-      - 'Se weg stille belocen wearþ.
+        jah ain spill du andja qam.'
+      - 'Ahwa gaswōgida,
 
-        Þū wǣre ǣr þurh.'
-      - 'Nāht ne wende.
+        jah marei djupiþa seina aftra gahulida.'
+      - 'Fotjus gaswikon,
 
-        Ānunga þīn stede wende.'
-      - 'Næs hit wyrd.
+        ak sa staths ains aflif.'
+      - 'Sigis jah fralusts
 
-        Ac samod-fylgd.'
-      - 'Sēo stund gewāt.
+        sind swē malma leitila.'
+      - 'Sa wigs gaggith faurþis — aiþþau andeiþ.
 
-        Se gemearc belīfþ.'
-      - 'Se ende ne wende.
+        Swaþauh ligith ana ainai airþai.'
+      - 'Sōþ waurd ist hard,
 
-        Þū ēode hwæðre forþ.'
-      - 'Se andwyrde ne wende.
+        ak nasjand ist.'
+      - 'Saei leitilamma triggws ist,
 
-        Ac þū nīwne stæpe gerǣhtest.'
-      - 'Se ende wæs se ilca.
+        mikilamma triggws wairþiþ.'
+      - 'Þairh arbaiþ jah þulains
 
-        Ac sē þe hine gerǣhte wæs awend.'
-      - 'Se stede is se ilca
+        mahts wairþiþ.'
+      - 'Gōþs hugs
 
-        — ac þū ne eart se ilca wegfara.'
-      - 'Lēoht fēoll emnlīce,
+        gōþ waurstw waurkeiþ.'
+      - 'Liuhad leitil
 
-        and ǣlc sceadu gewāt.'
-      - 'Se wind geswāc.
+        mikil riqis afdrībeiþ.'
+      - 'Witubni ist huzd,
 
-        and eall þing hwearf tō his stede.'
-      - 'Ān swigunge stund.
+        þatei þiubs niman ni mag.'
+      - 'Þulains ist brugga
 
-        Middangeard his ǣþm gestillde.'
-      - 'Se gemearc is dēope on sande āwriten—
+        ufar aggwidu.'
+      - 'Gōþs wilja
 
-        būtan windes gewealde.'
-      - 'Friþ wearþ eft ārǣred.
+        halbs waurstw ist.'
+      - 'Sa ni fraihniþ,
 
-        Eall wæs for þissum stunde.'
-      - 'Tīd glād stille fram,
+        ni laiseiþ.'
+      - 'Ain liuhad af liuhada
 
-        and wearþ on gemyndes hyrnum gehealden.'
-      - 'Se heofon his blēo wende,
+        ni wanaiþ.'
+      - 'Sa in friþa waurkeiþ,
 
-        and ān spell tō ende becōm.'
-      - 'Þā ȳða gestilledon,
+        in friþa libaiþ.'
+      - 'Sōþs sigis ist
 
-        and sǣ eft hire dēopnesse behȳdde.'
-      - 'Þā fōtlastas geswicon,
+        sigis ana sik silban.'
+      - 'Gōþ namō
 
-        and se stede āna belāf.'
-      - 'Sige and lyre
+        batizo ist þan gabeigs huzd.'
+      - 'Sa sōþ sokjands
 
-        sind nā mā þonne sandes corn.'
-      - 'Se weg gǣþ forþ — oþþe endaþ.
+        ni afletiþ.'
+      - 'Triggwa ist hardizo
 
-        Hwæðer swā, hē līþ on ānre eorðan.'
+        þan eisarn.'
   timeup:
     easy:
       pool:
-      - 'Tīd forarn.
+      - 'Mēl usiddja.
 
-        Nāht elles dyde.'
-      - 'Se māðm mæg bīdan.
+        Ak sa wigs aftra standiþ.'
+      - 'Sa dags andaiþ.
 
-        Swā miht þū.'
-      - 'Drinc ǣþm.
+        Ni allata ist fralusans.'
+      - 'Hasteins qam du andja.
 
-        Þonne eft.'
-      - 'Þæt is genōg nū.
+        Gagg aftra miþ nīujamma hugja.'
+      - 'Sa winds nam þata mēl.
 
-        Forþ tō þām næhstan stæpe.'
-      - 'Þū eart gēn hēr.
+        Þū magt aftra qiman.'
+      - 'Ni sigis himma sinþa.
 
-        Þæt is þæt þearflic.'
-      - 'Se ryne geendode.
+        Ak laiseins aflif.'
+      - 'Mēl ni beid.
 
-        Þū ne geendodest.'
-      - 'TĪD IS ĀGĀN.
+        Ak fraþiþa wairþiþ.'
+      - 'Þata augō gasah leitil.
 
-        Se ryne geendode.
+        Nist waiht — aftra saiƕ.'
+      - 'Sa staths swigida.
 
-        Þū ne geendodest.'
-      - 'TĪD IS ĀGĀN.
+        Þīn wigs ni andaiþ.'
+      - 'Mēl galaiþ.
 
-        Þā laga ne wendaþ.
+        Triggwa aftra urreisiþ.'
+      - 'Riqis qam.
 
-        Eft.'
-      - 'TĪD IS ĀGĀN.
+        Ak liuhad ni fraqistnōda.'
+      - 'Ni þū fralusans,
 
-        “Swa nēah” is sōþ.'
-      - 'Sēo sunne sāh,
+        ak sa sinþs gataiknōþs.'
+      - 'Sa mēl-stains draus.
 
-        and sceadu eft middangeard oferbrǣdde.'
-      - 'Þā ytemestan sandcorn fēollon,
+        Ak fotus aftra standiþ.'
+      - 'Afta qam sa andeis.
 
-        and þæt spell stille belocen wearþ.'
-      - 'Se wind þurh swēop,
+        Afta qimiþ fruma.'
+      - 'Þū ni bigite.
 
-        and þā fōtlastas būtan lāste gewiton.'
-      - 'Flōd inn becōm,
+        Ak þū laisidedes.'
+      - 'Sa wigs warþ gaþaursans.
 
-        and þæt þe ǣr wæs eft tō sǣ hwearf.'
-      - 'Swigung.
+        Ak wilja ni.'
+      - 'Mēl brann swe liuhad.
 
-        Ānunga tīd þurhfōr.'
-      - 'Sige and lyre
-
-        sind nā mā þonne sandes corn.'
-      - 'Se weg gǣþ forþ — oþþe endaþ.
-
-        Hwæðer swā, hē līþ on ānre eorðan.'
+        Gamunds aflif.'
     normal:
       pool:
-      - 'Se fæc becōm tō ende.
+      - 'Mēl usiddja.
 
-        Tīd ne dyde.'
-      - 'Middangeard his laga geheold.
+        Ak sa wigs aftra standiþ.'
+      - 'Sa dags andaiþ.
 
-        Þū þone rand hrān.'
-      - 'Þū hit ne gerǣhtest.
+        Ni allata ist fralusans.'
+      - 'Hasteins qam du andja.
 
-        Ac þæt tācen wæs sōþ.'
-      - 'Sume māðmas gēn bīdaþ.
+        Gagg aftra miþ nīujamma hugja.'
+      - 'Sa winds nam þata mēl.
 
-        Uton fandian ōþerne weg.'
-      - 'Se ende belāf.
+        Þū magt aftra qiman.'
+      - 'Ni sigis himma sinþa.
 
-        Se stede wearþ awend.'
-      - 'Tīd forarn.
+        Ak laiseins aflif.'
+      - 'Mēl ni beid.
 
-        Andgit ne forarn.'
-      - 'Swā nēah.
+        Ak fraþiþa wairþiþ.'
+      - 'Þata augō gasah leitil.
 
-        Se sweg hit sægde.'
-      - 'Sēo landbōc is gēn open.
+        Nist waiht — aftra saiƕ.'
+      - 'Sa staths swigida.
 
-        Cym eft tō hire.'
-      - 'Middangeardes laga stōdon fæste.
+        Þīn wigs ni andaiþ.'
+      - 'Mēl galaiþ.
 
-        Þæt tācen mihte wæs sōþ.'
-      - Middangeard his laga geheold.
-      - 'Sēo stund gewāt.
+        Triggwa aftra urreisiþ.'
+      - 'Riqis qam.
 
-        Se gemearc belīfþ.'
-      - 'Sēo sunne sāh,
+        Ak liuhad ni fraqistnōda.'
+      - 'Ni þū fralusans,
 
-        and sceadu eft middangeard oferbrǣdde.'
-      - 'Þā ytemestan sandcorn fēollon,
+        ak sa sinþs gataiknōþs.'
+      - 'Sa mēl-stains draus.
 
-        and þæt spell stille belocen wearþ.'
-      - 'Se wind þurh swēop,
+        Ak fotus aftra standiþ.'
+      - 'Afta qam sa andeis.
 
-        and þā fōtlastas būtan lāste gewiton.'
-      - 'Flōd inn becōm,
+        Afta qimiþ fruma.'
+      - 'Þū ni bigite.
 
-        and þæt þe ǣr wæs eft tō sǣ hwearf.'
-      - 'Swigung.
+        Ak þū laisidedes.'
+      - 'Sa wigs warþ gaþaursans.
 
-        Ānunga tīd þurhfōr.'
-      - 'Sige and lyre
+        Ak wilja ni.'
+      - 'Mēl brann swe liuhad.
 
-        sind nā mā þonne sandes corn.'
-      - 'Se weg gǣþ forþ — oþþe endaþ.
+        Gamunds aflif.'
+      - 'Nū gaswōg.
 
-        Hwæðer swā, hē līþ on ānre eorðan.'
-      - '> Tīd forarn.
+        Aftra gagg.'
+      - 'Sa fairƕus ni andbeiþ.
 
-        >
+        Ak sa frōda aftra tilōiþ.'
+      - 'Þatei ni fullnōda,
 
-        > Nāht elles dyde.'
-      - '> Se ende ne wende.
+        mag aftra fullnan.'
+      - 'Himins gawandida sik.
 
-        >
-
-        > Ac þīn stede dyde.'
+        Þū magt auk gawandjan.'
     hard:
       pool:
-      - 'Eac norþlēoma fordwīnþ.
+      - 'Mēl usiddja.
 
-        Cym eft mid nīwum stæpe.'
-      - 'On brēacnum middangearde,
+        Ak sa wigs aftra standiþ.'
+      - 'Sa dags andaiþ.
 
-        ofste tōbrȳt beorhtnesse ǣr hēo funden sīe.'
-      - 'Sēo stund ætglād.
+        Ni allata ist fralusans.'
+      - 'Hasteins qam du andja.
 
-        Þæt andgit ne dyde.'
-      - 'Winter cann bīdan.
+        Gagg aftra miþ nīujamma hugja.'
+      - 'Sa winds nam þata mēl.
 
-        Wes þū swā.'
-      - 'Se heofon fōr forþ.
+        Þū magt aftra qiman.'
+      - 'Ni sigis himma sinþa.
 
-        Swā wylt þū.'
-      - 'Þæt spell gǣþ forþ.
+        Ak laiseins aflif.'
+      - 'Mēl ni beid.
 
-        Se ende nis gēn.'
-      - 'Þā steorran wǣron þǣr, lociende.
+        Ak fraþiþa wairþiþ.'
+      - 'Þata augō gasah leitil.
 
-        Eft.'
-      - 'Īs nimþ his tīd.
+        Nist waiht — aftra saiƕ.'
+      - 'Sa staths swigida.
 
-        Ne forlǣt þū þīne.'
-      - 'Se heofon fōr forþ.
+        Þīn wigs ni andaiþ.'
+      - 'Mēl galaiþ.
 
-        Swā miht þū.'
-      - 'Norþ hafað bīdan geleornod.
+        Triggwa aftra urreisiþ.'
+      - 'Riqis qam.
 
-        Swā scealt þū.'
-      - 'Þis is betweox-stund
+        Ak liuhad ni fraqistnōda.'
+      - 'Ni þū fralusans,
 
-        — hit nis geendod.'
-      - 'Swā scūdas flēotaþ,
+        ak sa sinþs gataiknōþs.'
+      - 'Sa mēl-stains draus.
 
-        ne forlǣt þū þīnne stream.'
-      - 'Se sweg wæs nēah.
+        Ak fotus aftra standiþ.'
+      - 'Afta qam sa andeis.
 
-        Se fæc wæs sōþ.
+        Afta qimiþ fruma.'
+      - 'Þū ni bigite.
 
-        Ac þā stund ne mæg gehealden bēon.'
-      - 'Þū wǣre nēalǣcende.
+        Ak þū laisidedes.'
+      - 'Sa wigs warþ gaþaursans.
 
-        Ānunga tīd ne wæs.'
-      - 'Middangeard his laga geheold.
+        Ak wilja ni.'
+      - 'Mēl brann swe liuhad.
 
-        Þū heora rand hrān.'
-      - 'Þū þone māðm ne gerǣhtest.
+        Gamunds aflif.'
+      - 'Nū gaswōg.
 
-        Ac þæt tācen wæs sōþ.'
-      - 'Nāht ne wende.
+        Aftra gagg.'
+      - 'Sa fairƕus ni andbeiþ.
 
-        Ānunga þīn stede dyde.'
-      - 'Næs hit wyrd.
+        Ak sa frōda aftra tilōiþ.'
+      - 'Þatei ni fullnōda,
 
-        Ac samod-fylgd.'
-      - 'Sēo stund ætglād,
+        mag aftra fullnan.'
+      - 'Himins gawandida sik.
 
-        ac se gemearc belāf.'
-      - 'Þū ofer brēacne grund fērdest
+        Þū magt auk gawandjan.'
+      - 'Mēl gatauh.
 
-        and þone heofonrand ne brǣce.'
-      - 'Nāht ne wende.
+        Hugs standiþ.'
+      - 'Fralusts ist laiseins,
 
-        Ānunga þīn stede dyde.
+        jabai þū hausjais.'
+      - 'Ni allata usgaggith swe þū wiljais.
 
-        Næs hit wyrd.
+        Ak allata mag laisjan.'
+      - 'Sinteino ni sigis.
 
-        Ac samod-fylgd.
+        Sinteino þulains.'
+      - 'Sa ni qam himma sinþa,
 
-        Sēo stund gewāt.
+        qimaiþ anþaramma.'
+      - 'Mēl afslauþ.
 
-        Se gemearc belīfþ.'
-      - 'Sēo sunne sāh,
+        Hairtō aftra urreisiþ.'
+      - 'Leitil fralusts
 
-        and sceadu eft middangeard oferbrǣdde.'
-      - 'Þā ytemestan sandcorn fēollon,
+        mikila frōdei bairiþ.'
+      - 'Gagg aftra.
 
-        and þæt spell stille belocen wearþ.'
-      - 'Se wind þurh swēop,
+        Wigs ni gadauþnōda.'
+      - 'Þata riqis ni ist andeis.
 
-        and þā fōtlastas būtan lāste gewiton.'
-      - 'Flōd inn becōm,
+        Ak frauja laiseinois.'
+      - 'Sa staps gatauh.
 
-        and þæt þe ǣr wæs eft tō sǣ hwearf.'
-      - 'Swigung.
+        Sa wilja standiþ.'
+      - 'Mēl ist hard.
 
-        Ānunga tīd þurhfōr.'
-      - 'Sige and lyre
+        Þulains hardizo.'
+      - 'Himma daga ni.
 
-        sind nā mā þonne sandes corn.'
-      - 'Se weg gǣþ forþ — oþþe endaþ.
+        Afta daga mag.'
+      - Sōþs gards us laiseinim timrjada.
+      - 'Sa wair ni drus,
 
-        Hwæðer swā, hē līþ on ānre eorðan.'
-      - 'Sēo tīd belocen wearþ.
+        sa aftra urrais.'
+      - 'Ni swēþauh andeis.
 
-        Sēo eorðe belāf.'
-      - 'Se weg belīfþ.
+        Ak hlaifs wigs.'
+      - 'Mēl qam.
 
-        Ānunga þīne stæpas geswicon.'
-      - 'Þīn tīd forarn.
+        Mēl iddja.
 
-        Se heofon ne dyde.'
-      - 'Næs hit wiðsacu.
+        Þū standis.'
+      - 'Aftra kius.
 
-        Ānunga swigung.'
-      - 'Middangeard is gēn gesund.
+        Aftra gagg.
 
-        Þū miht eft cuman — awend.'
-      - 'Sēo tīd geendode.
+        Aftra lais.'
+      - 'Þata unsēlida mēl
 
-        Se wudu belīfþ.'
-      - 'Se fæc nēalǣhte.
-
-        Tīd heold hire rīm.'
-      - 'Þīn tīd ætstōd.
-
-        Se heofon fōr forþ.'
-      - 'Næs wiðsacu.
-
-        Ānunga swigung.'
-      - 'Se weg is gēn hēr.
-
-        Þū miht eft cuman — awend.'
+        mag du sēlida laisein wairþan.'
 version: 1
 quotes:
   outcome:
@@ -624,14 +590,14 @@ command:
       bookOther: '&7other shows only other quotes'
 gui:
   language:
-    title: Sprǣc
-    subtitle: '&7Þā sprǣce geceos'
+    title: Gutiska
+    subtitle: '&7Kius þō razdō þīna'
     loreDefault:
-    - '&7Ceos þās sprǣce'
-    - '&8Þīn cyre bið gehealden'
-    selected: '&aGecoren: &f{lang}'
-    saved: '&aÞīn sprǣc is gehealden: &f{lang}'
-    reopenHint: '&7Þū miht þā sprǣce āwa mid &f/lang &7awendan'
+    - '&7Kius þō gutiskōn razdō'
+    - '&8Þeins gawal ist gafastaid'
+    selected: '&aGawaliþ: &f{lang}'
+    saved: '&aÞīn razda ist gafastaid: &f{lang}'
+    reopenHint: '&7Þū magt razdō aftra wairpan miþ &f/lang'
 game:
   difficulty:
     easy: '&aEasy'
@@ -1578,7 +1544,8 @@ minecraft:
           stopped: No longer spectating an entity
       spreadplayers:
         failed:
-          entities: Could not spread %s entity/entities around %s, %s (too many entities for space - try using spread of at most %s)
+          entities: Could not spread %s entity/entities around %s, %s (too many entities for space - try using spread of at
+            most %s)
           invalid:
             height: Invalid maxHeight %s; expected higher than world minimum %s
           teams: Could not spread %s team(s) around %s, %s (too many entities for space - try using spread of at most %s)
@@ -1937,7 +1904,8 @@ minecraft:
             Reason: %s'
         chat_validation_failed: Chat message validation failure
         duplicate_login: You logged in from another location
-        expired_public_key: Expired profile public key. Check that your system time is synchronized, and try restarting your game.
+        expired_public_key: Expired profile public key. Check that your system time is synchronized, and try restarting your
+          game.
         flying: Flying is not enabled on this server
         generic: Disconnected
         idling: You have been idle for too long!
@@ -3053,7 +3021,8 @@ minecraft:
       doTraderSpawning: Spawn Wandering Traders
       doVinesSpread:
         _value: Vines spread
-        description: Controls whether or not the Vines block spreads randomly to adjacent blocks. Does not affect other type of vine blocks such as Weeping Vines, Twisting Vines, etc.
+        description: Controls whether or not the Vines block spreads randomly to adjacent blocks. Does not affect other type
+          of vine blocks such as Weeping Vines, Twisting Vines, etc.
       doWardenSpawning: Spawn Wardens
       doWeatherCycle: Update weather
       drowningDamage: Deal drowning damage
@@ -3099,7 +3068,8 @@ minecraft:
         description: Some of the drops from blocks destroyed by explosions caused by TNT are lost in the explosion.
       universalAnger:
         _value: Universal anger
-        description: Angered neutral mobs attack any nearby player, not just the player that angered them. Works best if forgiveDeadPlayers is disabled.
+        description: Angered neutral mobs attack any nearby player, not just the player that angered them. Works best if forgiveDeadPlayers
+          is disabled.
       waterSourceConversion:
         _value: Water converts to source
         description: When flowing water is surrounded on two sides by water sources it converts into a source.
@@ -3325,7 +3295,8 @@ minecraft:
         deprecation:
           _value: '32-bit system detected: this may prevent you from playing in the future as a 64-bit system will be required!'
           realms:
-            _value: Minecraft will soon require a 64-bit system, which will prevent you from playing or using Realms on this device. You will need to manually cancel any Realms subscription.
+            _value: Minecraft will soon require a 64-bit system, which will prevent you from playing or using Realms on this
+              device. You will need to manually cancel any Realms subscription.
             check: Do not show this screen again
             header: 32-bit system detected
       multiplayer:
@@ -5752,10 +5723,12 @@ minecraft:
           title: Failed to load world in Safe Mode.
       title: 'Errors in currently selected data packs prevented the world from loading.
 
-        You can either try to load it with only the vanilla data pack ("safe mode"), or go back to the title screen and fix it manually.'
+        You can either try to load it with only the vanilla data pack ("safe mode"), or go back to the title screen and fix
+        it manually.'
     difficulty:
       lock:
-        question: Are you sure you want to lock the difficulty of this world? This will set this world to always be %1$s, and you will never be able to change that again.
+        question: Are you sure you want to lock the difficulty of this world? This will set this world to always be %1$s,
+          and you will never be able to change that again.
         title: Lock World Difficulty
     editGamerule:
       default: 'Default: %s'
