@@ -38,6 +38,11 @@
       "name": "Dǫnsk tunga",
       "region": "Old Norse / Experimental",
       "bidirectional": false
+    },
+    "got_de": {
+      "name": "Gutiska",
+      "region": "TreasureRun",
+      "bidirectional": false
     }
   }
 }

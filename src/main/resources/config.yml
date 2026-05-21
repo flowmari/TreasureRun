@@ -2022,7 +2022,7 @@ resourcePack:
   enabled: true
   force: true
   url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-  sha1: "c487b83d0366079e2619a21179f24d1296d8f821"
+  sha1: "3ece2e48e19ddcc6c0dca2fdf514a1432c24232a"
   prompt: "TreasureRun uses a multilingual Minecraft resource pack to localize Minecraft language keys. Please accept it for the full i18n experience."
 
 resourcePackFallback:
@@ -2032,70 +2032,70 @@ resourcePackFallback:
   packs:
     ja:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "c487b83d0366079e2619a21179f24d1296d8f821"
+      sha1: "3ece2e48e19ddcc6c0dca2fdf514a1432c24232a"
     en:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "c487b83d0366079e2619a21179f24d1296d8f821"
+      sha1: "3ece2e48e19ddcc6c0dca2fdf514a1432c24232a"
     de:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "c487b83d0366079e2619a21179f24d1296d8f821"
+      sha1: "3ece2e48e19ddcc6c0dca2fdf514a1432c24232a"
     es:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "c487b83d0366079e2619a21179f24d1296d8f821"
+      sha1: "3ece2e48e19ddcc6c0dca2fdf514a1432c24232a"
     fr:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "c487b83d0366079e2619a21179f24d1296d8f821"
+      sha1: "3ece2e48e19ddcc6c0dca2fdf514a1432c24232a"
     ko:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "c487b83d0366079e2619a21179f24d1296d8f821"
+      sha1: "3ece2e48e19ddcc6c0dca2fdf514a1432c24232a"
     ru:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "c487b83d0366079e2619a21179f24d1296d8f821"
+      sha1: "3ece2e48e19ddcc6c0dca2fdf514a1432c24232a"
     zh_tw:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "c487b83d0366079e2619a21179f24d1296d8f821"
+      sha1: "3ece2e48e19ddcc6c0dca2fdf514a1432c24232a"
     fi:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "c487b83d0366079e2619a21179f24d1296d8f821"
+      sha1: "3ece2e48e19ddcc6c0dca2fdf514a1432c24232a"
     it:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "c487b83d0366079e2619a21179f24d1296d8f821"
+      sha1: "3ece2e48e19ddcc6c0dca2fdf514a1432c24232a"
     nl:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "c487b83d0366079e2619a21179f24d1296d8f821"
+      sha1: "3ece2e48e19ddcc6c0dca2fdf514a1432c24232a"
     pt:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "c487b83d0366079e2619a21179f24d1296d8f821"
+      sha1: "3ece2e48e19ddcc6c0dca2fdf514a1432c24232a"
     hi:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "c487b83d0366079e2619a21179f24d1296d8f821"
+      sha1: "3ece2e48e19ddcc6c0dca2fdf514a1432c24232a"
     sv:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "c487b83d0366079e2619a21179f24d1296d8f821"
+      sha1: "3ece2e48e19ddcc6c0dca2fdf514a1432c24232a"
     is:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "c487b83d0366079e2619a21179f24d1296d8f821"
+      sha1: "3ece2e48e19ddcc6c0dca2fdf514a1432c24232a"
     la:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "c487b83d0366079e2619a21179f24d1296d8f821"
+      sha1: "3ece2e48e19ddcc6c0dca2fdf514a1432c24232a"
     sa:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "c487b83d0366079e2619a21179f24d1296d8f821"
+      sha1: "3ece2e48e19ddcc6c0dca2fdf514a1432c24232a"
     lzh:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "c487b83d0366079e2619a21179f24d1296d8f821"
+      sha1: "3ece2e48e19ddcc6c0dca2fdf514a1432c24232a"
     ojp:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "c487b83d0366079e2619a21179f24d1296d8f821"
+      sha1: "3ece2e48e19ddcc6c0dca2fdf514a1432c24232a"
     asl_gloss:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "c487b83d0366079e2619a21179f24d1296d8f821"
+      sha1: "3ece2e48e19ddcc6c0dca2fdf514a1432c24232a"
     ang:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "c487b83d0366079e2619a21179f24d1296d8f821"
+      sha1: "3ece2e48e19ddcc6c0dca2fdf514a1432c24232a"
     non:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "c487b83d0366079e2619a21179f24d1296d8f821"
+      sha1: "3ece2e48e19ddcc6c0dca2fdf514a1432c24232a"
     got:
       url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-      sha1: "c487b83d0366079e2619a21179f24d1296d8f821"
+      sha1: "3ece2e48e19ddcc6c0dca2fdf514a1432c24232a"
