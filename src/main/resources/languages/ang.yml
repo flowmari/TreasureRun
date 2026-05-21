@@ -620,14 +620,14 @@ command:
       bookOther: '&7other shows only other quotes'
 gui:
   language:
-    title: Language
-    subtitle: '&7Select your language'
+    title: Sprǣc
+    subtitle: '&7Þā sprǣce geceos'
     loreDefault:
-    - '&7Click to select'
-    - '&8Your selection is saved'
-    selected: '&aSelected: &f{lang}'
-    saved: '&aSaved your language: &f{lang}'
-    reopenHint: '&7You can change anytime with &f/lang'
+    - '&7Ceos þās sprǣce'
+    - '&8Þīn cyre bið gehealden'
+    selected: '&aGecoren: &f{lang}'
+    saved: '&aÞīn sprǣc is gehealden: &f{lang}'
+    reopenHint: '&7Þū miht þā sprǣce āwa mid &f/lang &7awendan'
 game:
   difficulty:
     easy: '&aEasy'

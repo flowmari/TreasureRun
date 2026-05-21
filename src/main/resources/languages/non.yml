@@ -620,14 +620,14 @@ command:
       bookOther: '&7other shows only other quotes'
 gui:
   language:
-    title: Language
-    subtitle: '&7Select your language'
+    title: Tunga
+    subtitle: '&7Vel tungu þína'
     loreDefault:
-    - '&7Click to select'
-    - '&8Your selection is saved'
-    selected: '&aSelected: &f{lang}'
-    saved: '&aSaved your language: &f{lang}'
-    reopenHint: '&7You can change anytime with &f/lang'
+    - '&7Vel þessa tungu'
+    - '&8Val þitt er varðveitt'
+    selected: '&aValit: &f{lang}'
+    saved: '&aTunga þín er varðveitt: &f{lang}'
+    reopenHint: '&7Þú mátt jafnan skipta um tungu með &f/lang'
 game:
   difficulty:
     easy: '&aEasy'
