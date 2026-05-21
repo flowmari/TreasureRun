@@ -44,6 +44,8 @@ The same shape generalises to any platform where a host runtime owns half the UI
 
 ## For Reviewers
 
+- [Architecture Review Guide](docs/ARCHITECTURE_REVIEW_GUIDE.md) — concise technical-review summary of the platform-boundary i18n architecture and evidence.
+
 If you are reviewing this project for engineering quality, start here:
 
 1. **Project overview**: [`docs/PROJECT_OVERVIEW.md`](docs/PROJECT_OVERVIEW.md)
@@ -70,11 +72,11 @@ Core i18n and ranking persistence tests are documented separately in [`docs/veri
 [![CI](https://github.com/flowmari/TreasureRun/actions/workflows/ci.yml/badge.svg)](https://github.com/flowmari/TreasureRun/actions/workflows/ci.yml)
 [![i18n CI](https://github.com/flowmari/TreasureRun/actions/workflows/i18n-ci.yml/badge.svg)](https://github.com/flowmari/TreasureRun/actions/workflows/i18n-ci.yml)
 
-> **A Minecraft Spigot mini-game plugin focused on maintainable Java architecture, 19-language i18n, CI quality gates, Docker-based validation, MySQL persistence, and effect-rich gameplay.**
+> **A Minecraft Spigot mini-game plugin focused on maintainable Java architecture, 23-language plugin i18n, CI quality gates, Docker-based validation, MySQL persistence, and effect-rich gameplay.**
 
 TreasureRun is a custom treasure-hunt mini-game plugin for Minecraft Spigot 1.20.1.
 
-TreasureRun separates internal game logic from player-facing display text, making the plugin easier to localize, audit, and maintain across 19 language packs.
+TreasureRun separates internal game logic from player-facing display text, making the plugin easier to localize, audit, and maintain across 23 plugin language packs.
 Players search for treasure chests within a time limit, earn scores, trigger visual/audio effects, and interact with multilingual in-game UI.
 
 This repository is designed as a portfolio project that demonstrates not only gameplay implementation, but also **engineering discipline: internationalization, quality control, runtime verification, and maintainable plugin design**.
@@ -110,7 +112,7 @@ To work around that limitation, TreasureRun combines **Spigot / ProtocolLib / Re
   Minecraft standard translation assets are aligned across both the Fabric Mod and ResourcePack layers.
 
 - **Lightweight runtime payload**
-  The server does not send huge 22-language JSON payloads at runtime.
+  The server does not send huge multi-language JSON payloads at runtime.
   It sends only the player's selected language code, such as `ja`, `en`, `de`, or `zh_tw`.
 
 - **Safe client-side reload path**
@@ -128,7 +130,7 @@ To work around that limitation, TreasureRun combines **Spigot / ProtocolLib / Re
 
 Minecraft標準文のi18n制約に対し、TreasureRunでは **Spigot / ProtocolLib / ResourcePack / Fabric Mod** を組み合わせた多層アーキテクチャを設計しました。
 
-8039キーの標準翻訳資産をFabric ModとResourcePackで整列し、実行時は22言語分の巨大データを送らず、選択言語コードのみを軽量payloadとして同期します。
+8039キーの標準翻訳資産をFabric ModとResourcePackで整列し、実行時は多言語分の巨大データを送らず、選択言語コードのみを軽量payloadとして同期します。
 
 Fabric側では `LanguageManager` と `client.reloadResources()` を使い、内部 `TranslationStorage` を直接書き換えずに、Minecraftの通常のresource reload経路で再起動なしの言語反映を行います。
 
@@ -530,7 +532,7 @@ docker logs --tail=200 minecraft_spigot
 
 Players search for treasure chests within a time limit, earn scores, experience visual/audio effects, and view ranking-related feedback in-game.
 
-This project is designed not only as a playable mini-game, but also as a portfolio project demonstrating **maintainable Java plugin architecture, 19-language internationalization, CI quality gates, Docker-based runtime validation, and MySQL-backed persistence**.
+This project is designed not only as a playable mini-game, but also as a portfolio project demonstrating **maintainable Java plugin architecture, 23-language plugin internationalization, CI quality gates, Docker-based runtime validation, and MySQL-backed persistence**.
 
 ---
 
@@ -540,7 +542,7 @@ This project emphasizes engineering practices that are important in real-world s
 
 - Reducing hardcoded player-facing strings in Java
 - Externalizing UI/game messages into YAML language packs
-- Supporting 19 language files
+- Supporting 23 plugin language files
 - Detecting missing i18n keys through CI
 - Detecting YAML syntax errors before merge
 - Validating the plugin on a Docker-based Spigot server
@@ -759,7 +761,7 @@ TreasureRun demonstrates practical backend/plugin engineering skills beyond a si
 - Runtime state management
 - MySQL-backed persistence
 - Docker-based local verification
-- 19-language i18n architecture
+- 23-language plugin i18n architecture
 - CI-based quality control
 - Debugging, validation, and maintainability-focused development
 
@@ -825,7 +827,7 @@ This demonstrates a layered i18n design:
 
 - Bukkit event-level localization for safe, high-level events
 - ProtocolLib packet-level auditing for lower-level vanilla/system messages
-- YAML-backed 22-language translation expansion
+- YAML-backed 23-language plugin translation expansion
 - per-player language preference integration
 
 This is intentionally designed as an extensible localization foundation rather than a one-off string replacement.
@@ -993,7 +995,7 @@ Verification notes:
 ## Verification notes
 
 - [Hybrid i18n verification: Fabric runtime sync and non-mod ResourcePack fallback](docs/verification/i18n/non-mod-resourcepack-fallback.md)
-  Fabric Mod導入環境でのruntime language syncと、Mod未導入環境向けResourcePack alias fallbackについて、22言語分の8039キー整合性、SHA1整合性、Java側fallback分岐を検証した記録。
+  Fabric Mod導入環境でのruntime language syncと、Mod未導入環境向けResourcePack alias fallbackについて、各言語の8039キー整合性、SHA1整合性、Java側fallback分岐を検証した記録。
 
 - [Custom Minecraft language registration verification](docs/verification/i18n/custom-language-registration.md)
   This verification records how TreasureRun registers custom Minecraft client languages (`ojp_jp`, `asl_us`, `sa_in`, `la_la`, and `lzh_hant`) through client ResourcePack metadata, and applies them to standard Minecraft UI text that cannot be controlled by a Spigot plugin alone.
