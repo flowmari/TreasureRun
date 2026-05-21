@@ -30,7 +30,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  *
  * This protects:
  * - ZIP / .sha1 / config.yml SHA consistency
- * - 23 generated language JSON files
+ * - 24 generated language JSON files
  * - 8039-key coverage per language JSON
  * - important Minecraft standard UI keys
  */
@@ -45,7 +45,7 @@ class ResourcePackArtifactIntegrityTest {
     private static final Path CONFIG_YML =
             Path.of("src/main/resources/config.yml");
 
-    private static final int EXPECTED_LANGUAGE_JSON_COUNT = 23;
+    private static final int EXPECTED_LANGUAGE_JSON_COUNT = 24;
     private static final int EXPECTED_KEY_COUNT_PER_LANGUAGE = 8039;
 
     private static final List<String> IMPORTANT_MINECRAFT_UI_KEYS = List.of(
@@ -106,7 +106,7 @@ class ResourcePackArtifactIntegrityTest {
                     .toList();
 
             assertEquals(EXPECTED_LANGUAGE_JSON_COUNT, langJsonEntries.size(),
-                    "ResourcePack should contain exactly 23 language JSON files.");
+                    "ResourcePack should contain exactly 24 language JSON files.");
 
             for (String entryName : langJsonEntries) {
                 JsonObject json = readJsonObject(zip, entryName);

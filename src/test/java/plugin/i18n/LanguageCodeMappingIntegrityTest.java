@@ -44,6 +44,7 @@ class LanguageCodeMappingIntegrityTest {
         assertEquals("asl_us", mappings.get("asl_gloss"));
         assertEquals("ang_gb", mappings.get("ang"));
         assertEquals("non_is", mappings.get("non"));
+        assertEquals("got_de", mappings.get("got"));
         assertEquals("zh_tw", mappings.get("zh_tw"));
         assertEquals("en_us", mappings.get("en"));
         assertEquals("ja_jp", mappings.get("ja"));

@@ -997,3 +997,14 @@ Verification notes:
 
 - [Custom Minecraft language registration verification](docs/verification/i18n/custom-language-registration.md)
   This verification records how TreasureRun registers custom Minecraft client languages (`ojp_jp`, `asl_us`, `sa_in`, `la_la`, and `lzh_hant`) through client ResourcePack metadata, and applies them to standard Minecraft UI text that cannot be controlled by a Spigot plugin alone.
+
+
+## Experimental Gothic Locale
+
+TreasureRun includes an experimental Gothic locale as part of its platform-boundary i18n work.
+
+- Internal code: `got`
+- Minecraft locale: `got_de`
+- Purpose: prove that a historical/custom language can pass through the same Spigot YAML, ResourcePack, Fabric runtime sync, ZIP, SHA1, and CI validation path as the existing supported languages.
+- Boundary: the first version is a wiring and architecture proof; full linguistic polishing is a later translation-review phase.
+

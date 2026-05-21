@@ -14,7 +14,7 @@ CLIENT_ONLY = {
     'quickplay','compliance','language','multiplayerWarning','sleep','accessibility',
     'outOfMemory','permissions','realms','screenshot','symlink_warning','itemGroup',
 }
-LOW_COVERAGE_LANGS = {'asl_gloss', 'en', 'la', 'sa', 'ang', 'non'}
+LOW_COVERAGE_LANGS = {'asl_gloss', 'en', 'la', 'sa', 'ang', 'non', 'got'}
 en_keys = set(json.loads(LANG_JSON.read_text()).keys())
 server_keys = {k for k in en_keys if k.split('.')[0] not in CLIENT_ONLY}
 print(f"Server-sendable keys: {len(server_keys)}, Languages: {len(lang_map)}")
