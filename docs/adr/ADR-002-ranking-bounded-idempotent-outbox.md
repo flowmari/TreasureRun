@@ -2,7 +2,7 @@
 
 ## Status
 
-Verified on feature branch; awaiting merge.
+Accepted and merged on `main` in Pull Request #4; verification evidence is recorded below.
 
 ## Verification evidence
 
