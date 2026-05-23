@@ -45,6 +45,9 @@ import plugin.UfoCaravanController;
 // ✅ ここに追加（Season）
 import plugin.rank.SeasonRepository;
 import plugin.rank.SeasonScoreRepository;
+import plugin.rank.event.GameResultRecorded;
+
+import java.time.Instant;
 
 public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener, TabExecutor {
 
@@ -190,6 +193,10 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
   }};
 
   private final Map<UUID, Integer> playerScores = new HashMap<>();
+
+  // One id per live run; retained after SUCCESS/TIME_UP until next run or logout.
+  // This blocks duplicate terminal callbacks while deliberately not claiming crash recovery.
+  private final Map<UUID, UUID> activeGameResultIds = new HashMap<>();
 
   private final Map<UUID, Location> originalLocations = new HashMap<>();
   private long previousWorldTime = -1;
@@ -570,7 +577,10 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
   @EventHandler
   public void onPlayerQuit(PlayerQuitEvent event) {
     Player player = event.getPlayer();
-    if (!isRunning) return;
+    if (!isRunning) {
+      activeGameResultIds.remove(player.getUniqueId());
+      return;
+    }
 
     // ✅✅✅ 追加：落ちても保存（WIN扱いにしない）
     try {
@@ -579,7 +589,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
       long elapsedSec = Math.max(0, (System.currentTimeMillis() - startTime) / 1000L);
 
       saveScore(player, score, elapsedSec, difficulty);
-      addSeasonScore(player, score, false, null);
+      addSeasonScore(player, score, false, null, "QUIT");
 
       getLogger().info("[DB] saved on quit: player=" + player.getName()
           + " score=" + score + " time=" + elapsedSec + " diff=" + difficulty);
@@ -618,6 +628,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
 
     isRunning = false;
     playerScores.remove(player.getUniqueId());
+    activeGameResultIds.remove(player.getUniqueId());
     originalLocations.remove(player.getUniqueId());
 
     // ✅ ログアウト時：連続TIME_UPカウントは切る（事故防止）
@@ -1633,7 +1644,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     saveScore(player, finalScore, elapsedSec, difficulty);
 
     // ✅ ここに追加（SUCCESS: weekly + alltime 加算）
-    addSeasonScore(player, finalScore, true, elapsedMs);
+    addSeasonScore(player, finalScore, true, elapsedMs, "SUCCESS");
 
     final int rank = getRunRank(player.getName(), finalScore, elapsedSec, difficulty);
     final String rankLabel = (rank > 0) ? ("#" + rank) : "-";
@@ -2009,7 +2020,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
         saveScore(player, finalScore, elapsedSec, difficulty);
 
         // ✅ ここに追加（TIME_UP: scoreだけ加算 / wins・best_timeは無し）
-        addSeasonScore(player, finalScore, false, null);
+        addSeasonScore(player, finalScore, false, null, "TIME_UP");
 
         if (startThemePlayer != null) startThemePlayer.stop(player);
         stopVanillaMusicSuppress(player);
@@ -2275,6 +2286,9 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
 
     playerScores.put(player.getUniqueId(), 0);
 
+    // Allocate a fresh idempotency key for this live gameplay run.
+    activeGameResultIds.put(player.getUniqueId(), UUID.randomUUID());
+
     if (treasureRunGameEffectsPlugin != null) {
       for (Player p : Bukkit.getOnlinePlayers()) {
         treasureRunGameEffectsPlugin.resetPlayerTreasureCount(p);
@@ -2534,7 +2548,8 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
       Player player,
       int addScore,
       boolean isWin,
-      Long bestTimeMsOrNull
+      Long bestTimeMsOrNull,
+      String outcome
   ) {
     if (player == null) return;
     if (seasonRepository == null || seasonScoreRepository == null) {
@@ -2545,7 +2560,6 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     try {
       long seasonId = seasonRepository.getOrCreateCurrentWeeklySeasonId();
 
-      // ✅ 追加：プレイヤー言語（無ければ ja）
       String langCode = "ja";
       try {
         if (playerLanguageStore != null) {
@@ -2553,21 +2567,37 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
         }
       } catch (Throwable ignored) {}
 
-      seasonScoreRepository.addWeeklyAndAllTime(
+      UUID eventId = activeGameResultIds.computeIfAbsent(
+          player.getUniqueId(),
+          ignored -> UUID.randomUUID()
+      );
+
+      GameResultRecorded event = GameResultRecorded.create(
+          eventId,
+          Instant.now(),
           seasonId,
           player.getUniqueId(),
           player.getName(),
+          outcome,
           addScore,
           isWin ? 1 : 0,
           bestTimeMsOrNull,
           langCode
       );
 
-      rankDirty = true;
+      boolean applied = seasonScoreRepository.addWeeklyAndAllTime(event);
 
-    } catch (Exception e) {
-      getLogger().warning("[RANK] addSeasonScore failed: " + e.getMessage());
-      e.printStackTrace();
+      if (applied) {
+        rankDirty = true;
+      } else {
+        getLogger().info(
+            "[RANK][IDEMPOTENCY] duplicate terminal callback ignored for ranking aggregates: eventId="
+                + eventId
+        );
+      }
+    } catch (Exception exception) {
+      getLogger().warning("[RANK] addSeasonScore failed: " + exception.getMessage());
+      exception.printStackTrace();
     }
   }
 

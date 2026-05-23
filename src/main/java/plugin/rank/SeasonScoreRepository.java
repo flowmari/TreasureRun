@@ -1,14 +1,27 @@
 package plugin.rank;
 
 import plugin.TreasureRunMultiChestPlugin;
+import plugin.rank.event.GameResultRecorded;
 
-import java.sql.*;
-import java.util.UUID;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.sql.Types;
 
 /**
- * season_scores（weekly）と alltime_scores を「同一トランザクション」で加算
+ * Persists ranking aggregate changes and a durable outbox record atomically.
+ *
+ * <p>The outbox insert happens before ranking increments. A duplicate event_id
+ * therefore stops a repeated terminal callback before weekly or all-time
+ * ranking totals can be incremented again.</p>
+ *
+ * <p>This guarantee applies to ranking aggregation only. The existing raw
+ * scores history write remains outside this transaction.</p>
  */
 public class SeasonScoreRepository {
+
+  private static final int MYSQL_DUPLICATE_KEY_ERROR = 1062;
 
   private final TreasureRunMultiChestPlugin plugin;
 
@@ -16,21 +29,23 @@ public class SeasonScoreRepository {
     this.plugin = plugin;
   }
 
-  public void addWeeklyAndAllTime(
-      long seasonId,
-      UUID uuid,
-      String name,
-      int addScore,
-      int addWins,
-      Long bestTimeMsOrNull,
-      String langCode
-  ) throws SQLException {
-
+  /**
+   * Applies one terminal run outcome to ranking aggregates.
+   *
+   * @return true if the event and ranking deltas were newly committed;
+   *         false if that event id had already been committed.
+   */
+  public boolean addWeeklyAndAllTime(GameResultRecorded event) throws SQLException {
     Connection con = plugin.getConnection();
     if (con == null) throw new SQLException("MySQL connection is null");
 
     boolean oldAutoCommit = con.getAutoCommit();
     con.setAutoCommit(false);
+
+    final String SQL_OUTBOX =
+        "INSERT INTO outbox_events " +
+            "(event_id, aggregate_type, aggregate_id, event_type, outcome, payload_json, occurred_at) " +
+            "VALUES (?, ?, ?, ?, ?, ?, ?)";
 
     final String SQL_WEEKLY =
         "INSERT INTO season_scores (season_id, uuid, name, score, wins, best_time_ms, lang_code) " +
@@ -62,36 +77,62 @@ public class SeasonScoreRepository {
             "  END, " +
             "  lang_code = VALUES(lang_code)";
 
-    try (PreparedStatement ps1 = con.prepareStatement(SQL_WEEKLY);
-         PreparedStatement ps2 = con.prepareStatement(SQL_ALLTIME)) {
+    try (PreparedStatement outbox = con.prepareStatement(SQL_OUTBOX);
+         PreparedStatement weekly = con.prepareStatement(SQL_WEEKLY);
+         PreparedStatement allTime = con.prepareStatement(SQL_ALLTIME)) {
 
-      // weekly
-      ps1.setLong(1, seasonId);
-      ps1.setString(2, uuid.toString());
-      ps1.setString(3, name);
-      ps1.setInt(4, addScore);
-      ps1.setInt(5, addWins);
-      if (bestTimeMsOrNull == null) ps1.setNull(6, Types.BIGINT);
-      else ps1.setLong(6, bestTimeMsOrNull);
-      ps1.setString(7, (langCode == null || langCode.isBlank()) ? "ja" : langCode);
-      ps1.executeUpdate();
+      outbox.setString(1, event.eventId().toString());
+      outbox.setString(2, event.aggregateType());
+      outbox.setString(3, event.aggregateId());
+      outbox.setString(4, event.eventType());
+      outbox.setString(5, event.outcome());
+      outbox.setString(6, event.payloadJson());
+      outbox.setTimestamp(7, Timestamp.from(event.occurredAt()));
 
-      // alltime
-      ps2.setString(1, uuid.toString());
-      ps2.setString(2, name);
-      ps2.setInt(3, addScore);
-      ps2.setInt(4, addWins);
-      if (bestTimeMsOrNull == null) ps2.setNull(5, Types.BIGINT);
-      else ps2.setLong(5, bestTimeMsOrNull);
-      ps2.setString(6, (langCode == null || langCode.isBlank()) ? "ja" : langCode);
-      ps2.executeUpdate();
+      try {
+        outbox.executeUpdate();
+      } catch (SQLException exception) {
+        if (exception.getErrorCode() == MYSQL_DUPLICATE_KEY_ERROR) {
+          con.rollback();
+          return false;
+        }
+        throw exception;
+      }
+
+      weekly.setLong(1, event.seasonId());
+      weekly.setString(2, event.playerUuid().toString());
+      weekly.setString(3, event.playerName());
+      weekly.setInt(4, event.scoreDelta());
+      weekly.setInt(5, event.winDelta());
+      if (event.bestTimeMs() == null) weekly.setNull(6, Types.BIGINT);
+      else weekly.setLong(6, event.bestTimeMs());
+      weekly.setString(7, event.langCode());
+      weekly.executeUpdate();
+
+      allTime.setString(1, event.playerUuid().toString());
+      allTime.setString(2, event.playerName());
+      allTime.setInt(3, event.scoreDelta());
+      allTime.setInt(4, event.winDelta());
+      if (event.bestTimeMs() == null) allTime.setNull(5, Types.BIGINT);
+      else allTime.setLong(5, event.bestTimeMs());
+      allTime.setString(6, event.langCode());
+      allTime.executeUpdate();
 
       con.commit();
-    } catch (SQLException e) {
-      try { con.rollback(); } catch (SQLException ignored) {}
-      throw e;
+      return true;
+    } catch (SQLException exception) {
+      try {
+        con.rollback();
+      } catch (SQLException ignored) {
+        // Preserve the original persistence exception.
+      }
+      throw exception;
     } finally {
-      try { con.setAutoCommit(oldAutoCommit); } catch (SQLException ignored) {}
+      try {
+        con.setAutoCommit(oldAutoCommit);
+      } catch (SQLException ignored) {
+        // Preserve the original persistence result.
+      }
     }
   }
 }
