@@ -19,7 +19,7 @@ This document records safe runtime verification after restoring a valid `config.
 | PacketI18n translate audit | 1 |
 | PacketI18n replacement evidence | 1 |
 
-## Correct portfolio wording
+## Accurate technical wording
 
 TreasureRun implements a hybrid i18n architecture that maximizes practical localization coverage by combining plugin YAML translations, ProtocolLib packet-level audit/rewrite, and a server-delivered Minecraft 1.20.1 vanilla-key resource pack.
 

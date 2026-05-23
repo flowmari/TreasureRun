@@ -196,13 +196,13 @@ The engineering focus was:
 - creating repeatable checks for i18n assets and key coverage
 - documenting the architecture so that the project can be reviewed by other engineers
 
-In short, TreasureRun is a portfolio project designed to show platform-boundary reasoning, Java implementation, automated verification, and maintainable i18n architecture.
+In short, TreasureRun is a open-source technical project designed to show platform-boundary reasoning, Java implementation, automated verification, and maintainable i18n architecture.
 
 ---
 
 ## Current maturity
 
-TreasureRun is currently best described as an alpha-stage engineering portfolio project.
+TreasureRun is currently best described as an alpha-stage engineering project.
 
 It already includes:
 
@@ -232,7 +232,7 @@ A Spigot plugin alone cannot fully control Minecraft standard UI text, so the pr
 
 The most important part is that the Minecraft-dependent boundary and the pure localization logic are separated and protected by tests.
 
-This makes TreasureRun a strong portfolio case study for Java, i18n architecture, platform constraints, CI verification, and maintainable engineering design.
+This makes TreasureRun a strong engineering case study for Java, i18n architecture, platform constraints, CI verification, and maintainable engineering design.
 
 
 ## Experimental historical Germanic locales

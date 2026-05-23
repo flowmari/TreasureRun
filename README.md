@@ -42,11 +42,11 @@ Design rationale and trade-offs are recorded in [`docs/adr/ADR-001-packet-i18n-p
 
 The same shape generalises to any platform where a host runtime owns half the UI surface and the application can only reach the other half: mobile webview bridges, embedded systems with closed-firmware UI, proprietary game engines, OS-managed system dialogs. The translation target changes; the four-layer separation and the fitness-function discipline do not.
 
-## For Reviewers
+## Technical Documentation Index
 
-- [Architecture Review Guide](docs/ARCHITECTURE_REVIEW_GUIDE.md) — concise technical-review summary of the platform-boundary i18n architecture and evidence.
+- [Architecture Guide](docs/ARCHITECTURE_GUIDE.md) — concise technical-review summary of the platform-boundary i18n architecture and evidence.
 
-If you are reviewing this project for engineering quality, start here:
+For a guided introduction to the engineering design, start here:
 
 1. **Project overview**: [`docs/PROJECT_OVERVIEW.md`](docs/PROJECT_OVERVIEW.md)
 2. **Architecture decision**: [`docs/adr/ADR-001-packet-i18n-ports-and-adapters.md`](docs/adr/ADR-001-packet-i18n-ports-and-adapters.md)
@@ -60,10 +60,10 @@ If you are reviewing this project for engineering quality, start here:
 
 The core engineering point is the separation between Minecraft-dependent boundary code and platform-free localization logic.
 
-ResourcePack artifact claims are documented separately in [`docs/verification/i18n/resourcepack-artifact-integrity-test.md`](docs/verification/i18n/resourcepack-artifact-integrity-test.md), keeping the README short while making the claim-to-test path reviewable.
+ResourcePack artifact claims are documented separately in [`docs/verification/i18n/resourcepack-artifact-integrity-test.md`](docs/verification/i18n/resourcepack-artifact-integrity-test.md), keeping the README short while making the claim-to-test path traceable.
 
 
-Experimental historical Germanic locales are included as reviewable i18n architecture paths: `ang -> ang_gb` for Old English and `non -> non_is` for Old Norse. They are wired through the same ResourcePack, Fabric language assets, SHA-1, config fallback, and JUnit verification path as the other languages; translation quality is intentionally treated as a separate review phase.
+Experimental historical Germanic locales are included as verifiable i18n architecture paths: `ang -> ang_gb` for Old English and `non -> non_is` for Old Norse. They are wired through the same ResourcePack, Fabric language assets, SHA-1, config fallback, and JUnit verification path as the other languages; translation quality is intentionally treated as a separate review phase.
 
 Automated i18n test coverage is summarized in [`docs/verification/i18n/i18n-test-coverage.md`](docs/verification/i18n/i18n-test-coverage.md), including ResourcePack exact key-set consistency, locale mapping, and safe PacketI18n fallback behavior.
 
@@ -79,7 +79,7 @@ TreasureRun is a custom treasure-hunt mini-game plugin for Minecraft Spigot 1.20
 TreasureRun separates internal game logic from player-facing display text, making the plugin easier to localize, audit, and maintain across 23 plugin language packs.
 Players search for treasure chests within a time limit, earn scores, trigger visual/audio effects, and interact with multilingual in-game UI.
 
-This repository is designed as a portfolio project that demonstrates not only gameplay implementation, but also **engineering discipline: internationalization, quality control, runtime verification, and maintainable plugin design**.
+This repository is designed as a open-source technical project that demonstrates not only gameplay implementation, but also **engineering discipline: internationalization, quality control, runtime verification, and maintainable plugin design**.
 
 <!-- TREASURERUN_PLATFORM_BOUNDARY_I18N_HIGHLIGHT -->
 
@@ -506,7 +506,7 @@ docker logs --tail=200 minecraft_spigot
 
 ---
 
-### 技術レビュー向けの見どころ
+### 技術構成と検証の要点
 
 このリポジトリでは、以下の実装力を確認できます。
 
@@ -532,7 +532,7 @@ docker logs --tail=200 minecraft_spigot
 
 Players search for treasure chests within a time limit, earn scores, experience visual/audio effects, and view ranking-related feedback in-game.
 
-This project is designed not only as a playable mini-game, but also as a portfolio project demonstrating **maintainable Java plugin architecture, 23-language plugin internationalization, CI quality gates, Docker-based runtime validation, and MySQL-backed persistence**.
+This project is designed not only as a playable mini-game, but also as a open-source technical project demonstrating **maintainable Java plugin architecture, 23-language plugin internationalization, CI quality gates, Docker-based runtime validation, and MySQL-backed persistence**.
 
 ---
 
@@ -780,7 +780,7 @@ TreasureRun demonstrates practical backend/plugin engineering skills beyond a si
 
 ## License
 
-This project is currently a personal portfolio project.
+This project is currently a open-source personal development project.
 
 ### Event-Level Localization for Engine-Generated Messages
 
@@ -973,7 +973,7 @@ This architecture is intentionally documented with realistic boundaries. Some pr
 Verification notes:
 
 - [v0.1.0-alpha release checklist](docs/release/v0.1.0-alpha-checklist.md)
-  Early alpha release checklist for OSS readiness, verification, and portfolio review.
+  Early alpha release checklist for OSS readiness, verification, and technical inspection.
 
 - [PacketI18n boundary refactor verification](docs/verification/i18n/packet-i18n-boundary-refactor.md)
   Verification record for separating the ProtocolLib packet boundary adapter from the pure-Java packet JSON localizer.

@@ -1,6 +1,6 @@
 # Architecture Review Guide — TreasureRun
 
-TreasureRun is an open-source Minecraft Spigot plugin project built as a portfolio-grade Java engineering case study.
+TreasureRun is an open-source Minecraft Spigot plugin project built as a Java engineering case study.
 
 The project is not only a mini-game. It demonstrates how to design around a real platform boundary: Minecraft text is split between server-side plugin messages, server-to-client packets, ResourcePack language assets, and client-side language state. A Spigot plugin alone cannot fully control every piece of Minecraft UI text, so TreasureRun uses a layered i18n architecture instead of pretending the boundary does not exist.
 
@@ -96,7 +96,7 @@ TreasureRun does not claim that a Spigot plugin can control all Minecraft client
 
 The project is best understood as a platform-boundary i18n system: it pushes the server-side and ResourcePack-accessible layers as far as practical, while documenting the boundary clearly.
 
-## Suggested reviewer path
+## Suggested reading path
 
 For a quick review:
 

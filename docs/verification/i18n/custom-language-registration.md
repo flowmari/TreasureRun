@@ -99,7 +99,7 @@ menu.options = Vikalpāḥ...
 options.language = Bhāṣā...
 ```
 
-## Portfolio significance
+## Technical significance
 
 This demonstrates that TreasureRun does not only translate plugin-owned text.
 

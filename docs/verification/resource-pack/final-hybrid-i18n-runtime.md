@@ -23,7 +23,7 @@ TreasureRun's Minecraft i18n architecture is verified as a hybrid system:
 | PacketI18n translate audit | 1 |
 | PacketI18n replacement evidence | 0 |
 
-## Correct portfolio wording
+## Accurate technical wording
 
 TreasureRun implements a hybrid i18n architecture that maximizes practical localization coverage by combining plugin YAML translations, ProtocolLib packet-level audit/rewrite, and a server-delivered Minecraft 1.20.1 vanilla-key resource pack.
 

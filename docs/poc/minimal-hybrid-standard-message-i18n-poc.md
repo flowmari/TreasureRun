@@ -59,7 +59,7 @@ It does not claim absolute control over:
 - purely client-local UI
 - text rendered before server-side packet/resource-pack control is available
 
-## Portfolio wording
+## Technical wording
 
 Japanese:
 

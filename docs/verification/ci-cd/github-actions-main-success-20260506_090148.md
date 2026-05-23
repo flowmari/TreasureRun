@@ -96,7 +96,7 @@ It also includes CI/CD quality control around the platform-boundary i18n archite
 - Fabric Mod language mapping verification
 - ResourcePack ZIP / SHA1 automation for language asset changes
 
-## Portfolio interpretation
+## Technical interpretation
 
 This supports the engineering story that TreasureRun treats Minecraft standard-message i18n as a system-maintenance problem:
 

@@ -102,7 +102,7 @@ TreasureRun is still unfinished, but it has become the first project where the e
 
 ## Why This Matters to the Project
 
-TreasureRun is not only a technical portfolio piece. It is also a small attempt to build a world with a coherent idea behind it.
+TreasureRun is not only a technical project. It is also a small attempt to build a world with a coherent idea behind it.
 
 The engineering side shows systems thinking: localization architecture, client/server boundaries, persistence, testing, and deployment.
 

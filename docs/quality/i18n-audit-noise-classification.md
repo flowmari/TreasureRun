@@ -40,6 +40,6 @@ This process shows that TreasureRun treats i18n as an operational quality system
 - separate real user-facing issues from internal diagnostic noise
 - avoid hiding problems blindly
 - keep CI useful by reducing false positives
-- keep README and documentation readable for reviewers
+- keep README and documentation readable for maintainers
 
 This is part of the project's quality-control story, not just a translation task.

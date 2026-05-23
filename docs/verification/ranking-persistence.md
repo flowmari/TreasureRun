@@ -96,7 +96,7 @@ ALLTIME:
 flowmari / score=2600 / wins=1 / best_time_ms=72376 / lang_code=ojp
 ```
 
-## Portfolio Point
+## Technical Evidence Point
 
 This feature demonstrates:
 

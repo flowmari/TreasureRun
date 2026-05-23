@@ -1,6 +1,6 @@
 # ResourcePack Alias Fallback for Minecraft Client Language Limitations
 
-## Portfolio Summary
+## Technical Summary
 
 TreasureRun implements a hybrid Minecraft i18n architecture that handles both Fabric and non-Fabric clients.
 

@@ -63,7 +63,7 @@ TreasureRun should expand packet-level localization in this order:
 
 This makes the localization scope evidence-based rather than guess-based.
 
-## Why This Is Portfolio-Relevant
+## Why This Is Technically Relevant
 
 This demonstrates practical engineering judgment:
 

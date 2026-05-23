@@ -115,7 +115,7 @@ packetMessages:
   replaceTranslatedComponents: false
 ```
 
-## Portfolio Point
+## Technical Evidence Point
 
 This work demonstrates:
 
