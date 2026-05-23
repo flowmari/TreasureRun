@@ -12,6 +12,8 @@ MySQL 8 verification evidence for the bounded database guarantee is recorded in:
 
 The evidence distinguishes Java unit-test coverage from transaction-shaped validation on disposable MySQL 8.
 
+Automated repository-level integration coverage was added on `main` in Pull Request #6 via [`SeasonScoreRepositoryMySqlIntegrationTest`](../../src/test/java/plugin/rank/SeasonScoreRepositoryMySqlIntegrationTest.java). Using a disposable MySQL 8 container, the test applies the existing migrations and invokes the actual `SeasonScoreRepository` JDBC path.
+
 ## Context
 
 TreasureRun maintains `season_scores` and `alltime_scores` as ranking aggregates. A terminal gameplay callback can potentially be invoked more than once during one live run. Applying the same score delta twice would corrupt those aggregates.

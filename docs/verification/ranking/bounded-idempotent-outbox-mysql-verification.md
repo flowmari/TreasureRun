@@ -19,7 +19,7 @@ Two complementary checks were used:
 1. Java unit tests verify repository behavior, including transaction ordering, duplicate-event handling and rollback behavior.
 2. A disposable MySQL 8 container verifies the real migration schema, unique-key enforcement and transaction rollback behavior.
 
-The database verification used transaction-shaped SQL corresponding to the persistence flow. It is not presented as a full Java-to-MySQL integration test.
+When this document was first written, database verification executed SQL statements that mirrored the transaction flow; it did not execute the Java repository itself. Pull Request #6 subsequently added an automated Testcontainers-backed integration test that invokes the actual repository implementation against disposable MySQL 8.
 
 ## Environment
 
@@ -75,6 +75,23 @@ Observed state after rollback:
 
 This confirms that partial second-result state is not retained after rollback.
 
+### Automated Java-to-MySQL integration coverage
+
+Pull Request #6 added `src/test/java/plugin/rank/SeasonScoreRepositoryMySqlIntegrationTest.java`, together with test-scoped Testcontainers dependencies in `build.gradle`.
+
+The automated test:
+
+- starts a disposable `mysql:8.0.36` container
+- applies the existing `V1`, `V2` and `V3` migration scripts
+- invokes the actual `SeasonScoreRepository.addWeeklyAndAllTime(...)` Java/JDBC path
+- verifies committed state in `outbox_events`, `season_scores` and `alltime_scores`
+- verifies that reusing the same `event_id` does not double-count ranking aggregates
+- triggers an all-time write failure using a real database constraint and verifies rollback of the outbox and weekly writes
+
+The integration-test change was merged on `main` in Pull Request #6, and GitHub Actions completed successfully on the resulting main commit.
+
+This closes the earlier proof gap between database-level transaction verification and automated execution of the actual Java repository implementation against MySQL.
+
 ## Explicit non-claims
 
 This verification does not claim:
@@ -87,6 +104,6 @@ This verification does not claim:
 
 ## Conclusion
 
-For the explicitly bounded ranking-aggregation path, the change is supported by unit tests, GitHub Actions checks and real MySQL 8 constraint and rollback verification.
+For the explicitly bounded ranking-aggregation path, the change is supported by unit tests, automated Java-to-MySQL integration testing with Testcontainers, GitHub Actions checks, and MySQL 8 constraint and rollback verification.
 
-The supported claim is deliberately narrow: duplicate ranking aggregation is prevented when repeated handling reuses the same per-live-run event identifier.
+The supported claim remains deliberately narrow: when repeated handling reuses the same per-live-run event identifier, duplicate ranking aggregation is prevented, and that behavior is now exercised automatically through the actual Java repository implementation against disposable MySQL 8.
