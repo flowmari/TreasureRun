@@ -45,6 +45,7 @@ The same shape generalises to any platform where a host runtime owns half the UI
 ## Technical Documentation Index
 
 - [Architecture Guide](docs/ARCHITECTURE_GUIDE.md) — concise technical-review summary of the platform-boundary i18n architecture and evidence.
+- [ADR-002: Bounded Idempotent Ranking Outbox](docs/adr/ADR-002-ranking-bounded-idempotent-outbox.md) — transaction boundary, duplicate-aggregation protection, and MySQL 8 verification trail.
 
 For a guided introduction to the engineering design, start here:
 
