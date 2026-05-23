@@ -1,6 +1,7 @@
 package plugin.rank;
 
 import plugin.TreasureRunMultiChestPlugin;
+import plugin.rank.event.GameResultRecorded;
 
 import org.junit.jupiter.api.Test;
 import org.mockito.InOrder;
@@ -8,144 +9,189 @@ import org.mockito.InOrder;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
+import java.sql.Timestamp;
 import java.sql.Types;
+import java.time.Instant;
 import java.util.UUID;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.contains;
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.ArgumentMatchers.matches;
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.inOrder;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-/**
- * Verifies ranking persistence behavior without a real MySQL server.
- *
- * This protects:
- * - weekly score update
- * - all-time score update
- * - one transaction across both tables
- * - rollback when the second write fails
- */
 class SeasonScoreRepositoryTest {
 
-    @Test
-    void addWeeklyAndAllTimeWritesBothTablesAndCommitsTransaction() throws Exception {
-        TreasureRunMultiChestPlugin plugin = mock(TreasureRunMultiChestPlugin.class);
-        Connection connection = mock(Connection.class);
-        PreparedStatement weeklyStatement = mock(PreparedStatement.class);
-        PreparedStatement allTimeStatement = mock(PreparedStatement.class);
+  private static final UUID EVENT_ID =
+      UUID.fromString("10000000-0000-0000-0000-000000000001");
+  private static final UUID PLAYER_ID =
+      UUID.fromString("00000000-0000-0000-0000-000000000123");
 
-        when(plugin.getConnection()).thenReturn(connection);
-        when(connection.getAutoCommit()).thenReturn(true);
-        when(connection.prepareStatement(contains("season_scores"))).thenReturn(weeklyStatement);
-        when(connection.prepareStatement(contains("alltime_scores"))).thenReturn(allTimeStatement);
+  private GameResultRecorded successEvent() {
+    return GameResultRecorded.create(
+        EVENT_ID,
+        Instant.parse("2026-05-23T00:00:00Z"),
+        42L,
+        PLAYER_ID,
+        "flowmari",
+        "SUCCESS",
+        100,
+        1,
+        12345L,
+        "en"
+    );
+  }
 
-        SeasonScoreRepository repository = new SeasonScoreRepository(plugin);
+  @Test
+  void insertsOutboxBeforeRankingAggregatesAndCommits() throws Exception {
+    TreasureRunMultiChestPlugin plugin = mock(TreasureRunMultiChestPlugin.class);
+    Connection connection = mock(Connection.class);
+    PreparedStatement outbox = mock(PreparedStatement.class);
+    PreparedStatement weekly = mock(PreparedStatement.class);
+    PreparedStatement allTime = mock(PreparedStatement.class);
 
-        UUID uuid = UUID.fromString("00000000-0000-0000-0000-000000000123");
+    when(plugin.getConnection()).thenReturn(connection);
+    when(connection.getAutoCommit()).thenReturn(true);
+    when(connection.prepareStatement(contains("outbox_events"))).thenReturn(outbox);
+    when(connection.prepareStatement(contains("season_scores"))).thenReturn(weekly);
+    when(connection.prepareStatement(contains("alltime_scores"))).thenReturn(allTime);
 
-        repository.addWeeklyAndAllTime(
-                42L,
-                uuid,
-                "flowmari",
-                100,
-                1,
-                12345L,
-                "en"
-        );
+    SeasonScoreRepository repository = new SeasonScoreRepository(plugin);
 
-        verify(connection).setAutoCommit(false);
+    assertTrue(repository.addWeeklyAndAllTime(successEvent()));
 
-        verify(weeklyStatement).setLong(1, 42L);
-        verify(weeklyStatement).setString(2, uuid.toString());
-        verify(weeklyStatement).setString(3, "flowmari");
-        verify(weeklyStatement).setInt(4, 100);
-        verify(weeklyStatement).setInt(5, 1);
-        verify(weeklyStatement).setLong(6, 12345L);
-        verify(weeklyStatement).setString(7, "en");
+    verify(outbox).setString(1, EVENT_ID.toString());
+    verify(outbox).setString(2, "PLAYER_RANKING");
+    verify(outbox).setString(3, PLAYER_ID.toString());
+    verify(outbox).setString(4, "GameResultRecorded");
+    verify(outbox).setString(5, "SUCCESS");
+    verify(outbox).setString(eq(6), matches(".*\"eventId\":\"" + EVENT_ID + "\".*"));
+    verify(outbox).setTimestamp(eq(7), any(Timestamp.class));
 
-        verify(allTimeStatement).setString(1, uuid.toString());
-        verify(allTimeStatement).setString(2, "flowmari");
-        verify(allTimeStatement).setInt(3, 100);
-        verify(allTimeStatement).setInt(4, 1);
-        verify(allTimeStatement).setLong(5, 12345L);
-        verify(allTimeStatement).setString(6, "en");
+    verify(weekly).setLong(1, 42L);
+    verify(weekly).setString(2, PLAYER_ID.toString());
+    verify(weekly).setInt(4, 100);
+    verify(weekly).setInt(5, 1);
+    verify(weekly).setLong(6, 12345L);
+    verify(weekly).setString(7, "en");
 
-        InOrder order = inOrder(connection, weeklyStatement, allTimeStatement);
-        order.verify(connection).setAutoCommit(false);
-        order.verify(weeklyStatement).executeUpdate();
-        order.verify(allTimeStatement).executeUpdate();
-        order.verify(connection).commit();
-        order.verify(connection).setAutoCommit(true);
-    }
+    verify(allTime).setString(1, PLAYER_ID.toString());
+    verify(allTime).setInt(3, 100);
+    verify(allTime).setInt(4, 1);
+    verify(allTime).setLong(5, 12345L);
+    verify(allTime).setString(6, "en");
 
-    @Test
-    void addWeeklyAndAllTimeUsesJapaneseFallbackWhenLanguageCodeIsBlank() throws Exception {
-        TreasureRunMultiChestPlugin plugin = mock(TreasureRunMultiChestPlugin.class);
-        Connection connection = mock(Connection.class);
-        PreparedStatement weeklyStatement = mock(PreparedStatement.class);
-        PreparedStatement allTimeStatement = mock(PreparedStatement.class);
+    InOrder order = inOrder(connection, outbox, weekly, allTime);
+    order.verify(connection).setAutoCommit(false);
+    order.verify(outbox).executeUpdate();
+    order.verify(weekly).executeUpdate();
+    order.verify(allTime).executeUpdate();
+    order.verify(connection).commit();
+    order.verify(connection).setAutoCommit(true);
+  }
 
-        when(plugin.getConnection()).thenReturn(connection);
-        when(connection.getAutoCommit()).thenReturn(true);
-        when(connection.prepareStatement(contains("season_scores"))).thenReturn(weeklyStatement);
-        when(connection.prepareStatement(contains("alltime_scores"))).thenReturn(allTimeStatement);
+  @Test
+  void duplicateTerminalCallbackDoesNotIncrementRankingAgain() throws Exception {
+    TreasureRunMultiChestPlugin plugin = mock(TreasureRunMultiChestPlugin.class);
+    Connection connection = mock(Connection.class);
+    PreparedStatement outbox = mock(PreparedStatement.class);
+    PreparedStatement weekly = mock(PreparedStatement.class);
+    PreparedStatement allTime = mock(PreparedStatement.class);
 
-        SeasonScoreRepository repository = new SeasonScoreRepository(plugin);
+    when(plugin.getConnection()).thenReturn(connection);
+    when(connection.getAutoCommit()).thenReturn(true);
+    when(connection.prepareStatement(contains("outbox_events"))).thenReturn(outbox);
+    when(connection.prepareStatement(contains("season_scores"))).thenReturn(weekly);
+    when(connection.prepareStatement(contains("alltime_scores"))).thenReturn(allTime);
 
-        repository.addWeeklyAndAllTime(
-                1L,
-                UUID.fromString("00000000-0000-0000-0000-000000000456"),
-                "flowmari",
-                50,
-                0,
-                null,
-                " "
-        );
+    doThrow(new SQLIntegrityConstraintViolationException(
+        "Duplicate event id", "23000", 1062
+    )).when(outbox).executeUpdate();
 
-        verify(weeklyStatement).setNull(6, Types.BIGINT);
-        verify(weeklyStatement).setString(7, "ja");
+    SeasonScoreRepository repository = new SeasonScoreRepository(plugin);
 
-        verify(allTimeStatement).setNull(5, Types.BIGINT);
-        verify(allTimeStatement).setString(6, "ja");
+    assertFalse(repository.addWeeklyAndAllTime(successEvent()));
 
-        verify(connection).commit();
-        verify(connection).setAutoCommit(true);
-    }
+    verify(outbox).executeUpdate();
+    verify(weekly, never()).executeUpdate();
+    verify(allTime, never()).executeUpdate();
+    verify(connection).rollback();
+    verify(connection, never()).commit();
+    verify(connection).setAutoCommit(true);
+  }
 
-    @Test
-    void addWeeklyAndAllTimeRollsBackWhenAllTimeWriteFails() throws Exception {
-        TreasureRunMultiChestPlugin plugin = mock(TreasureRunMultiChestPlugin.class);
-        Connection connection = mock(Connection.class);
-        PreparedStatement weeklyStatement = mock(PreparedStatement.class);
-        PreparedStatement allTimeStatement = mock(PreparedStatement.class);
+  @Test
+  void rollsBackOutboxAndWeeklyWriteWhenAllTimeWriteFails() throws Exception {
+    TreasureRunMultiChestPlugin plugin = mock(TreasureRunMultiChestPlugin.class);
+    Connection connection = mock(Connection.class);
+    PreparedStatement outbox = mock(PreparedStatement.class);
+    PreparedStatement weekly = mock(PreparedStatement.class);
+    PreparedStatement allTime = mock(PreparedStatement.class);
 
-        when(plugin.getConnection()).thenReturn(connection);
-        when(connection.getAutoCommit()).thenReturn(true);
-        when(connection.prepareStatement(contains("season_scores"))).thenReturn(weeklyStatement);
-        when(connection.prepareStatement(contains("alltime_scores"))).thenReturn(allTimeStatement);
+    when(plugin.getConnection()).thenReturn(connection);
+    when(connection.getAutoCommit()).thenReturn(true);
+    when(connection.prepareStatement(contains("outbox_events"))).thenReturn(outbox);
+    when(connection.prepareStatement(contains("season_scores"))).thenReturn(weekly);
+    when(connection.prepareStatement(contains("alltime_scores"))).thenReturn(allTime);
 
-        doThrow(new SQLException("alltime write failed"))
-                .when(allTimeStatement)
-                .executeUpdate();
+    doThrow(new SQLException("alltime write failed")).when(allTime).executeUpdate();
 
-        SeasonScoreRepository repository = new SeasonScoreRepository(plugin);
+    SeasonScoreRepository repository = new SeasonScoreRepository(plugin);
 
-        assertThrows(SQLException.class, () -> repository.addWeeklyAndAllTime(
-                9L,
-                UUID.fromString("00000000-0000-0000-0000-000000000789"),
-                "flowmari",
-                10,
-                1,
-                999L,
-                "en"
-        ));
+    assertThrows(SQLException.class, () -> repository.addWeeklyAndAllTime(successEvent()));
 
-        verify(weeklyStatement).executeUpdate();
-        verify(allTimeStatement).executeUpdate();
-        verify(connection).rollback();
-        verify(connection).setAutoCommit(true);
-    }
+    verify(outbox).executeUpdate();
+    verify(weekly).executeUpdate();
+    verify(allTime).executeUpdate();
+    verify(connection).rollback();
+    verify(connection, never()).commit();
+    verify(connection).setAutoCommit(true);
+  }
+
+  @Test
+  void writesNormalizedNullableEventDataToRankingAggregates() throws Exception {
+    TreasureRunMultiChestPlugin plugin = mock(TreasureRunMultiChestPlugin.class);
+    Connection connection = mock(Connection.class);
+    PreparedStatement outbox = mock(PreparedStatement.class);
+    PreparedStatement weekly = mock(PreparedStatement.class);
+    PreparedStatement allTime = mock(PreparedStatement.class);
+
+    when(plugin.getConnection()).thenReturn(connection);
+    when(connection.getAutoCommit()).thenReturn(true);
+    when(connection.prepareStatement(contains("outbox_events"))).thenReturn(outbox);
+    when(connection.prepareStatement(contains("season_scores"))).thenReturn(weekly);
+    when(connection.prepareStatement(contains("alltime_scores"))).thenReturn(allTime);
+
+    GameResultRecorded event = GameResultRecorded.create(
+        EVENT_ID,
+        Instant.parse("2026-05-23T00:00:00Z"),
+        1L,
+        PLAYER_ID,
+        "flowmari",
+        "TIME_UP",
+        50,
+        0,
+        null,
+        " "
+    );
+
+    SeasonScoreRepository repository = new SeasonScoreRepository(plugin);
+
+    assertTrue(repository.addWeeklyAndAllTime(event));
+
+    verify(weekly).setNull(6, Types.BIGINT);
+    verify(weekly).setString(7, "ja");
+    verify(allTime).setNull(5, Types.BIGINT);
+    verify(allTime).setString(6, "ja");
+    verify(connection).commit();
+  }
 }
