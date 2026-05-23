@@ -2,7 +2,15 @@
 
 ## Status
 
-Proposed in feature branch; verification required before merge.
+Verified on feature branch; awaiting merge.
+
+## Verification evidence
+
+MySQL 8 verification evidence for the bounded database guarantee is recorded in:
+
+- [`docs/verification/ranking/bounded-idempotent-outbox-mysql-verification.md`](../verification/ranking/bounded-idempotent-outbox-mysql-verification.md)
+
+The evidence distinguishes Java unit-test coverage from transaction-shaped validation on disposable MySQL 8.
 
 ## Context
 
