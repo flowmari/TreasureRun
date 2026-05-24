@@ -2,10 +2,6 @@ name: ranking-api-ci
 
 on:
   pull_request:
-    paths:
-      - 'ranking-api/**'
-      - 'src/main/resources/db/migration/**'
-      - '.github/workflows/ranking-api-ci.yml'
   push:
     paths:
       - 'ranking-api/**'
@@ -14,6 +10,7 @@ on:
 
 jobs:
   ranking-api-mysql-http-integration:
+    name: ranking-api-mysql-http-integration
     runs-on: ubuntu-latest
     timeout-minutes: 15
 

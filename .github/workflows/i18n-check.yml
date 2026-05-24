@@ -6,6 +6,7 @@ on:
 
 jobs:
   i18n:
+    name: i18n-yaml-build-safety
     runs-on: ubuntu-latest
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
