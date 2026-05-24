@@ -46,6 +46,8 @@ The same shape generalises to any platform where a host runtime owns half the UI
 
 - [Architecture Guide](docs/ARCHITECTURE_GUIDE.md) — concise technical-review summary of the platform-boundary i18n architecture and evidence.
 - [ADR-002: Bounded Idempotent Ranking Outbox](docs/adr/ADR-002-ranking-bounded-idempotent-outbox.md) — transaction boundary, duplicate-aggregation protection, and MySQL 8 verification trail.
+- [ADR-003: Separate Read-Only Ranking API Service Boundary](docs/adr/ADR-003-ranking-read-api-service-boundary.md) — Spring Boot HTTP read boundary over the existing MySQL-backed ranking schema.
+- [Ranking Read API HTTP-to-MySQL Verification](docs/verification/ranking/ranking-read-api-http-mysql-verification.md) — Testcontainers-backed endpoint verification for the read-only leaderboard slice.
 
 For a guided introduction to the engineering design, start here:
 

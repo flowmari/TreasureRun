@@ -1,0 +1,46 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.5.14'
+}
+
+group = 'com.flowmari.treasurerun'
+version = '0.1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation platform('org.springframework.boot:spring-boot-dependencies:3.5.14')
+    testImplementation platform('org.springframework.boot:spring-boot-dependencies:3.5.14')
+
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+    runtimeOnly 'com.mysql:mysql-connector-j'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.testcontainers:junit-jupiter:1.20.6'
+    testImplementation 'org.testcontainers:mysql:1.20.6'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+sourceSets {
+    test {
+        resources {
+            // Reuse the existing plugin-owned schema migrations for contract verification.
+            // The read-only API does not create a second migration source of truth.
+            srcDir '../src/main/resources'
+            include 'db/migration/**'
+        }
+    }
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
