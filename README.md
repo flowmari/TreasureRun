@@ -374,7 +374,7 @@ docker logs -f minecraft_spigot
 | Performance / Runtime Safety | 生成ブロック・entity・taskのcleanup、演出のbounded execution |
 | Resilience / Fallback / Reload | i18n fallback chain、JAR同梱language filesからの再生成、`/treasureReload` |
 
-> TreasureRun のゲーム本体は Spigot plugin であり、コマンド仕様と plugin アーキテクチャは `docs/COMMANDS.md` と `docs/ARCHITECTURE.md` に外部化しています。別境界として追加した読み取り専用の `ranking-api/` サービスは REST API であり、`/v3/api-docs` の OpenAPI contract を Flyway schema compatibility とともに検証します。
+> TreasureRun のゲーム本体は Spigot plugin であり、コマンド仕様と plugin アーキテクチャは `docs/COMMANDS.md` と `docs/ARCHITECTURE.md` に外部化しています。別境界として追加した読み取り専用の `ranking-api/` サービスは REST API であり、`/v3/api-docs` の OpenAPI contract と Flyway による schema compatibility を検証しています。
 
 ---
 <!-- TREASURERUN_DOCS_SPLIT_JA_END -->
