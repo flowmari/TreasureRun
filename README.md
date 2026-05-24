@@ -47,7 +47,9 @@ The same shape generalises to any platform where a host runtime owns half the UI
 - [Architecture Guide](docs/ARCHITECTURE_GUIDE.md) — concise technical-review summary of the platform-boundary i18n architecture and evidence.
 - [ADR-002: Bounded Idempotent Ranking Outbox](docs/adr/ADR-002-ranking-bounded-idempotent-outbox.md) — transaction boundary, duplicate-aggregation protection, and MySQL 8 verification trail.
 - [ADR-003: Separate Read-Only Ranking API Service Boundary](docs/adr/ADR-003-ranking-read-api-service-boundary.md) — Spring Boot HTTP read boundary over the existing MySQL-backed ranking schema.
+- [ADR-004: Ranking API Flyway and OpenAPI Contract](docs/adr/ADR-004-ranking-api-flyway-openapi-contract.md) — Flyway-verified schema compatibility and OpenAPI contract verification.
 - [Ranking Read API HTTP-to-MySQL Verification](docs/verification/ranking/ranking-read-api-http-mysql-verification.md) — Testcontainers-backed endpoint verification for the read-only leaderboard slice.
+- [Ranking API Flyway + OpenAPI Contract Verification](docs/verification/ranking/ranking-api-flyway-openapi-contract-verification.md) — runtime API specification, migration history, boundary and UUID non-exposure evidence.
 
 For a guided introduction to the engineering design, start here:
 
@@ -372,7 +374,7 @@ docker logs -f minecraft_spigot
 | Performance / Runtime Safety | 生成ブロック・entity・taskのcleanup、演出のbounded execution |
 | Resilience / Fallback / Reload | i18n fallback chain、JAR同梱language filesからの再生成、`/treasureReload` |
 
-> TreasureRun は Spigot plugin であり REST API service ではないため、Swagger/OpenAPI は使わず、`docs/COMMANDS.md` と `docs/ARCHITECTURE.md` に外部化しています。
+> TreasureRun のゲーム本体は Spigot plugin であり、コマンド仕様と plugin アーキテクチャは `docs/COMMANDS.md` と `docs/ARCHITECTURE.md` に外部化しています。別境界として追加した読み取り専用の `ranking-api/` サービスは REST API であり、`/v3/api-docs` の OpenAPI contract と Flyway による schema compatibility を検証しています。
 
 ---
 <!-- TREASURERUN_DOCS_SPLIT_JA_END -->
@@ -618,7 +620,7 @@ docker logs -f minecraft_spigot
 | Performance / Runtime Safety | Cleanup of generated blocks, entities, tasks, and bounded visual/audio effects |
 | Resilience / Fallback / Reload | i18n fallback chain, regeneration from bundled language files, and `/treasureReload` |
 
-> TreasureRun is a Spigot plugin, not a REST API service. Swagger/OpenAPI is intentionally not used; command and architecture documentation are externalized instead.
+> The TreasureRun game core is a Spigot plugin; its command behavior and plugin architecture are externalized in `docs/COMMANDS.md` and `docs/ARCHITECTURE.md`. The separate read-only `ranking-api/` boundary is a REST API and verifies its OpenAPI contract at `/v3/api-docs` together with Flyway-based schema compatibility.
 
 ---
 <!-- TREASURERUN_DOCS_SPLIT_EN_END -->

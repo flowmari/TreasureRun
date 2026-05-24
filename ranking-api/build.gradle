@@ -16,7 +16,13 @@ dependencies {
 
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-api:2.8.17'
     runtimeOnly 'com.mysql:mysql-connector-j'
+
+    // The plugin remains the production schema owner.
+    // Flyway is used here to verify the shared migration contract in integration tests.
+    testImplementation 'org.flywaydb:flyway-core'
+    testRuntimeOnly 'org.flywaydb:flyway-mysql'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.testcontainers:junit-jupiter:1.20.6'
