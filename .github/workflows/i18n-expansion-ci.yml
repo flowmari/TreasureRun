@@ -10,13 +10,9 @@ on:
       - 'scripts/check_minecraft_packet_coverage.py'
       - 'scripts/check_fabric_lang_mapping.py'
   pull_request:
-    paths:
-      - 'src/main/resources/lang-map.yml'
-      - 'src/main/resources/languages/**'
-      - 'resourcepacks/treasurerun-i18n-pack/assets/minecraft/lang/**'
-      - 'fabric-i18n-mod/**'
 jobs:
   i18n-expansion:
+    name: i18n-asset-expansion-integrity
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
