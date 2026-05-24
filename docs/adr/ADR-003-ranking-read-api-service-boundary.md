@@ -2,7 +2,7 @@
 
 ## Status
 
-Proposed in feature branch pending review and CI verification.
+Accepted through Pull Request #8 after GitHub Actions verification.
 
 ## Context
 

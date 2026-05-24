@@ -3,7 +3,7 @@ package com.flowmari.treasurerun.rankingapi.api;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.flowmari.treasurerun.rankingapi.RankingApiApplication;
-import org.junit.jupiter.api.BeforeAll;
+import org.flywaydb.core.Flyway;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,18 +17,16 @@ import org.testcontainers.containers.MySQLContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 
-import java.io.InputStream;
-import java.nio.charset.StandardCharsets;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Arrays;
-import java.util.Objects;
-import java.util.stream.Collectors;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @Testcontainers
@@ -51,21 +49,25 @@ class RankingReadApiMySqlIntegrationTest {
   @Autowired
   private ObjectMapper objectMapper;
 
+  @Autowired
+  private Flyway flyway;
+
   @DynamicPropertySource
   static void configureDatabase(DynamicPropertyRegistry registry) {
     registry.add("spring.datasource.url", MYSQL::getJdbcUrl);
     registry.add("spring.datasource.username", MYSQL::getUsername);
     registry.add("spring.datasource.password", MYSQL::getPassword);
-    registry.add("spring.datasource.hikari.read-only", () -> "true");
-  }
 
-  @BeforeAll
-  static void applyExistingPluginMigrations() throws Exception {
-    try (Connection connection = openConnection()) {
-      executeMigration(connection, "db/migration/V1__create_ranking_tables.sql");
-      executeMigration(connection, "db/migration/V2__support_monthly_seasons.sql");
-      executeMigration(connection, "db/migration/V3__create_transactional_outbox.sql");
-    }
+    /*
+     * Integration tests require schema migration and seed-data writes.
+     * Production API endpoints remain read-oriented; this mutable test connection
+     * is used only to construct and verify the disposable test database.
+     */
+    registry.add("spring.datasource.hikari.read-only", () -> "false");
+
+    registry.add("spring.flyway.enabled", () -> "true");
+    registry.add("spring.flyway.locations", () -> "classpath:db/migration");
+    registry.add("spring.flyway.validate-on-migrate", () -> "true");
   }
 
   @BeforeEach
@@ -87,6 +89,22 @@ class RankingReadApiMySqlIntegrationTest {
             ('00000000-0000-0000-0000-000000000003', 'Comet', 300, 4, 12000, 'ja')
           """);
     }
+  }
+
+  @Test
+  void appliesPluginOwnedSchemaThroughFlywayBeforeServingReads() throws Exception {
+    List<String> appliedVersions = Arrays.stream(flyway.info().applied())
+        .map(info -> info.getVersion().getVersion())
+        .toList();
+
+    assertEquals(List.of("1", "2", "3"), appliedVersions);
+    assertEquals(3, intQuery("SELECT COUNT(*) FROM flyway_schema_history WHERE success = 1"));
+    assertEquals(3, intQuery("""
+        SELECT COUNT(*)
+        FROM information_schema.tables
+        WHERE table_schema = DATABASE()
+          AND table_name IN ('alltime_scores', 'seasons', 'outbox_events')
+        """));
   }
 
   @Test
@@ -121,6 +139,55 @@ class RankingReadApiMySqlIntegrationTest {
     assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
   }
 
+  @Test
+  void publishesOpenApiContractForLeaderboardBoundary() throws Exception {
+    ResponseEntity<String> response =
+        restTemplate.getForEntity("/v3/api-docs", String.class);
+
+    assertEquals(HttpStatus.OK, response.getStatusCode());
+
+    JsonNode document = objectMapper.readTree(response.getBody());
+
+    assertTrue(document.get("openapi").asText().startsWith("3."));
+    assertEquals("TreasureRun Ranking Read API",
+        document.at("/info/title").asText());
+    assertEquals("v1", document.at("/info/version").asText());
+
+    JsonNode operation =
+        document.at("/paths/~1api~1v1~1rankings~1all-time/get");
+
+    assertFalse(operation.isMissingNode(), "Expected GET /api/v1/rankings/all-time in OpenAPI.");
+    assertEquals("List all-time leaderboard entries",
+        operation.get("summary").asText());
+    assertTrue(operation.path("responses").has("200"));
+    assertTrue(operation.path("responses").has("400"));
+
+    JsonNode limitParameter = null;
+    for (JsonNode parameter : operation.path("parameters")) {
+      if ("limit".equals(parameter.path("name").asText())) {
+        limitParameter = parameter;
+        break;
+      }
+    }
+
+    assertNotNull(limitParameter, "Expected documented limit query parameter.");
+    assertEquals("query", limitParameter.path("in").asText());
+    assertEquals(10, limitParameter.path("schema").path("default").asInt());
+    assertEquals(1, limitParameter.path("schema").path("minimum").asInt());
+    assertEquals(100, limitParameter.path("schema").path("maximum").asInt());
+
+    JsonNode publicDto =
+        document.at("/components/schemas/LeaderboardEntryResponse/properties");
+
+    assertTrue(publicDto.has("playerName"));
+    assertTrue(publicDto.has("score"));
+    assertTrue(publicDto.has("wins"));
+    assertTrue(publicDto.has("bestTimeMs"));
+    assertTrue(publicDto.has("languageCode"));
+    assertFalse(publicDto.has("uuid"),
+        "OpenAPI public response schema must not expose UUID values.");
+  }
+
   private static Connection openConnection() throws Exception {
     return DriverManager.getConnection(
         MYSQL.getJdbcUrl(),
@@ -136,33 +203,6 @@ class RankingReadApiMySqlIntegrationTest {
 
       assertTrue(resultSet.next(), "Expected one result row for SQL: " + sql);
       return resultSet.getInt(1);
-    }
-  }
-
-  private static void executeMigration(Connection connection, String resourcePath) throws Exception {
-    String sql;
-
-    try (InputStream stream = RankingReadApiMySqlIntegrationTest.class
-        .getClassLoader()
-        .getResourceAsStream(resourcePath)) {
-
-      sql = new String(
-          Objects.requireNonNull(stream, "Missing migration resource: " + resourcePath)
-              .readAllBytes(),
-          StandardCharsets.UTF_8
-      );
-    }
-
-    String executableSql = Arrays.stream(sql.split("\\R"))
-        .filter(line -> !line.trim().startsWith("--"))
-        .collect(Collectors.joining("\n"));
-
-    for (String statementSql : executableSql.split(";")) {
-      if (!statementSql.isBlank()) {
-        try (Statement statement = connection.createStatement()) {
-          statement.execute(statementSql.trim());
-        }
-      }
     }
   }
 }
