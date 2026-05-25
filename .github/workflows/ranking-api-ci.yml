@@ -1,11 +1,19 @@
 name: ranking-api-ci
 
 on:
+  workflow_dispatch:
   pull_request:
   push:
+    branches: [ main ]
     paths:
       - 'ranking-api/**'
       - 'src/main/resources/db/migration/**'
+      - 'src/main/java/plugin/rank/**'
+      - 'src/test/java/plugin/rank/**'
+      - 'src/main/java/plugin/TreasureRunMultiChestPlugin.java'
+      - 'src/main/java/plugin/MigrationRunner.java'
+      - 'src/main/java/plugin/MySQLManager.java'
+      - 'build.gradle'
       - '.github/workflows/ranking-api-ci.yml'
 
 jobs:
@@ -17,21 +25,64 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Decide whether Docker-backed backend evidence is relevant
+        id: relevance
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if [[ "${{ github.event_name }}" != "pull_request" ]]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+            echo "Manual run or filtered main push: execute backend evidence."
+            exit 0
+          fi
+
+          git diff --name-only \
+            "${{ github.event.pull_request.base.sha }}" \
+            "${{ github.event.pull_request.head.sha }}" \
+            > /tmp/treasurerun_changed_files.txt
+
+          echo "Files changed in this pull request:"
+          cat /tmp/treasurerun_changed_files.txt
+
+          if grep -Eq '^(ranking-api/|src/main/resources/db/migration/|src/main/java/plugin/rank/|src/test/java/plugin/rank/|src/main/java/plugin/(TreasureRunMultiChestPlugin|MigrationRunner|MySQLManager)\.java$|build\.gradle$|\.github/workflows/ranking-api-ci\.yml$)' /tmp/treasurerun_changed_files.txt; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+            echo "Backend boundary changed: run Docker-backed evidence."
+          else
+            echo "run=false" >> "$GITHUB_OUTPUT"
+            echo "No backend boundary change: Docker-backed evidence is not required."
+          fi
+
+      - name: Skip optional backend evidence for unrelated pull request
+        if: steps.relevance.outputs.run == 'false'
+        run: |
+          echo "PASS: this pull request does not modify ranking persistence,"
+          echo "      database migrations, or the Ranking API boundary."
+          echo "      No Docker/MySQL integration environment was started."
 
       - name: Set up Java 17
+        if: steps.relevance.outputs.run == 'true'
         uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: '17'
+          cache: gradle
 
       - name: Set up Gradle
+        if: steps.relevance.outputs.run == 'true'
         uses: gradle/actions/setup-gradle@v4
 
       - name: Allow Gradle wrapper execution
+        if: steps.relevance.outputs.run == 'true'
         run: chmod +x ./gradlew
 
-      - name: Build and test existing Spigot plugin
-        run: ./gradlew clean test build --no-daemon
+      - name: Verify plugin MySQL persistence against disposable MySQL 8
+        if: steps.relevance.outputs.run == 'true'
+        run: ./gradlew integrationTest --no-daemon --console=plain
 
-      - name: Build and test Ranking Read API against disposable MySQL 8
-        run: ./gradlew -p ranking-api clean test build --no-daemon
+      - name: Verify Ranking API HTTP/Flyway/OpenAPI/MySQL boundary
+        if: steps.relevance.outputs.run == 'true'
+        run: ./gradlew -p ranking-api integrationTest --no-daemon --console=plain

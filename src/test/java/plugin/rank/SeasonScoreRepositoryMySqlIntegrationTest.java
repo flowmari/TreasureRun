@@ -5,6 +5,7 @@ import plugin.rank.event.GameResultRecorded;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.testcontainers.containers.MySQLContainer;
 import org.testcontainers.junit.jupiter.Container;
@@ -37,6 +38,7 @@ import static org.mockito.Mockito.when;
  * boundary. JDBC statements, transactions, constraints, migrations and
  * persisted rows are exercised against a real MySQL database.</p>
  */
+@Tag("integration")
 @Testcontainers
 class SeasonScoreRepositoryMySqlIntegrationTest {
 

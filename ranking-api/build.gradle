@@ -47,6 +47,22 @@ sourceSets {
     }
 }
 
+// Fast contributor path: Docker-backed backend evidence runs only when requested.
 tasks.named('test') {
-    useJUnitPlatform()
+    useJUnitPlatform {
+        excludeTags 'integration'
+    }
+}
+
+tasks.register('integrationTest', org.gradle.api.tasks.testing.Test) {
+    description = 'Runs Docker-backed HTTP/Flyway/OpenAPI/MySQL evidence tests.'
+    group = 'verification'
+    dependsOn testClasses
+    testClassesDirs = sourceSets.test.output.classesDirs
+    classpath = sourceSets.test.runtimeClasspath
+    shouldRunAfter test
+
+    useJUnitPlatform {
+        includeTags 'integration'
+    }
 }
