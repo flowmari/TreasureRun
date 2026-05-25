@@ -82,6 +82,22 @@ shadowJar {
 // build タスクが実行されたときに shadowJar も実行されるように依存関係を追加
 build.dependsOn shadowJar
 
+// Fast contributor path: Docker-backed MySQL evidence runs only when requested.
 test {
-    useJUnitPlatform()
+    useJUnitPlatform {
+        excludeTags 'integration'
+    }
+}
+
+tasks.register('integrationTest', org.gradle.api.tasks.testing.Test) {
+    description = 'Runs Docker-backed MySQL integration evidence tests.'
+    group = 'verification'
+    dependsOn testClasses
+    testClassesDirs = sourceSets.test.output.classesDirs
+    classpath = sourceSets.test.runtimeClasspath
+    shouldRunAfter test
+
+    useJUnitPlatform {
+        includeTags 'integration'
+    }
 }
