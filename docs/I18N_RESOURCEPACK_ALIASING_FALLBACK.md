@@ -1,179 +1,83 @@
-# ResourcePack Alias Fallback for Minecraft Client Language Limitations
+# Vanilla Client Resource Pack Fallback: Current Runtime Contract
 
-## Technical Summary
+## Purpose
 
-TreasureRun implements a hybrid Minecraft i18n architecture that handles both Fabric and non-Fabric clients.
+TreasureRun uses several i18n layers because Minecraft text is not owned by a single runtime boundary. Plugin messages, server-observable translatable components, resource-pack language assets, and the client's active language setting each require different mechanisms.
 
-The core problem is a Minecraft platform boundary: a Spigot server cannot directly change the client-side `options.language` setting, rewrite `options.txt`, call `LanguageManager#setLanguage`, or trigger `client.reloadResources()` on a vanilla client.
+This document describes the Resource Pack behavior configured on `main`, as verified during this documentation correction.
 
-TreasureRun handles this limitation with a two-path design:
+## Currently Verified Behavior
 
-- **Fabric client available**: synchronize `/lang` through Plugin Messages and apply the selected Minecraft locale on the client side.
-- **Fabric client unavailable**: send a per-language ResourcePack alias fallback so vanilla translation keys resolve to the selected language as far as the client/server boundary allows.
+TreasureRun supports two relevant client paths:
 
-This is not only a translation feature. It is a platform-boundary workaround that combines Spigot, ProtocolLib, ResourcePacks, Fabric integration, runtime capability detection, SHA-1 verified pack delivery, and documented fallback behavior.
+- **Client with the optional Fabric companion mod**: the server can send the selected TreasureRun language code to the companion mod, which can apply the mapped Minecraft locale and reload client resources.
+- **Vanilla client without the optional Fabric companion mod**: the fallback service can send the configured Resource Pack entry associated with the player's stored language selection.
 
-## Problem
-
-Minecraft standard UI text is resolved on the client side.
-
-A Spigot plugin can control many server-sent messages, but it cannot fully control every client-local UI string. In particular, a vanilla client does not expose a server-side API for changing the active Minecraft language.
-
-Without a client mod, the server cannot directly perform these client-side operations:
-
-- change `client.options.language`
-- rewrite `options.txt`
-- call `LanguageManager#setLanguage`
-- call `client.reloadResources()`
-- fully register custom locale metadata in the Minecraft language menu
-
-Therefore, TreasureRun treats vanilla-client support as a fallback architecture, not as a false claim of total client control.
-
-## Design
-
-### Fabric Client Mod Path
-
-When the Fabric Client Mod is available, TreasureRun uses Plugin Message based synchronization.
-
-Runtime flow:
+At present, every configured `resourcePackFallback.packs.*` entry resolves to the same shared multilingual artifact:
 
 ```text
-/lang de
-↓
-Spigot stores the player's TreasureRun language code
-↓
-Spigot sends a lightweight Plugin Message payload
-↓
-Fabric maps TreasureRun language code via lang-map.yml
-↓
-Fabric applies the Minecraft locale code
-↓
-Minecraft reloads bundled ResourcePack / lang JSON assets
+resourcepacks/generated/treasurerun-i18n-pack.zip
 ```
 
-This path is the strongest option because the client mod can operate inside the Minecraft client process.
+The shared pack contains Minecraft language JSON assets for the supported locale mappings. Once the client accepts and applies the pack, it can provide translated values for translation keys resolved through the client's already active locale.
 
-### Non-Fabric ResourcePack Alias Fallback Path
+## Important Boundary
 
-When the Fabric Client Mod is not available, TreasureRun sends a per-language fallback ResourcePack.
+A server-delivered resource pack does not, by itself, change a vanilla client's active language setting.
 
-Example for German:
+Accordingly, the runtime currently configured on `main` does **not** claim that selecting `/lang de`, `/lang ja`, or any other TreasureRun language on a vanilla client causes the server to deliver a distinct language-specific alias ZIP or forces Minecraft to switch to that selected locale.
 
-```text
-/lang de
-↓
-Spigot sends treasurerun-i18n-pack-de.zip
-↓
-The pack contains many locale filenames
-↓
-Each locale JSON contains German translation content
-↓
-The client's currently selected locale resolves keys from German content
-```
+The accurate current claim is:
 
-A German fallback pack can include files such as:
+> TreasureRun currently provides a shared multilingual Resource Pack layer for Minecraft translation-key assets. Applying a selected client language and reloading resources at runtime requires the optional Fabric companion mod.
 
-```text
-assets/minecraft/lang/en_us.json
-assets/minecraft/lang/ja_jp.json
-assets/minecraft/lang/de_de.json
-assets/minecraft/lang/fr_fr.json
-assets/minecraft/lang/ko_kr.json
-assets/minecraft/lang/sa_in.json
-assets/minecraft/lang/ojp_jp.json
-```
+## Layer Responsibilities
 
-Each of these files contains the selected target-language content. This is the aliasing strategy.
-
-The result is not a full client language-setting change. It is a practical fallback that makes Minecraft translation-key based text resolve to the selected language wherever ResourcePack language assets are used.
-
-## Implemented Components
-
-- `FabricModDetector`
-  - Detects whether the player has the Fabric client-side language sync mod installed.
-  - Uses a Plugin Message handshake to distinguish Fabric-capable clients from vanilla clients.
-
-- `ResourcePackFallbackService`
-  - Sends per-language fallback ResourcePacks.
-  - Uses SHA-1 verification for generated packs.
-  - Avoids repeatedly sending the same fallback pack to the same player.
-
-- `ResourcePackFallbackJoinListener`
-  - Restores the saved fallback language pack when a player reconnects.
-  - Keeps non-Fabric clients covered after join.
-
-- `LangCommand`
-  - Routes `/lang` behavior based on client capability.
-  - Fabric-capable clients use Plugin Message based language sync.
-  - Non-Fabric clients receive the selected language's ResourcePack alias fallback.
-
-- `TreasureRunMultiChestPlugin`
-  - Registers the Fabric detector and ResourcePack fallback listener during startup.
-
-- `scripts/generate_fallback_resourcepacks.py`
-  - Generates per-language ResourcePack ZIP files.
-  - Writes selected-language JSON content under multiple Minecraft locale filenames.
-
-- `resourcepacks/generated/treasurerun-i18n-pack-*.zip`
-  - Committed generated fallback packs for the supported TreasureRun languages.
-
-## Runtime Coverage
-
-This architecture covers multiple i18n layers:
-
-| Layer | Strategy |
+| Text or behavior surface | Current mechanism |
 | --- | --- |
-| TreasureRun gameplay text | YAML-backed plugin i18n |
-| Server-sent chat/title/actionbar/bossbar paths | Bukkit / ProtocolLib-side replacement |
-| Minecraft translation-key based text | ResourcePack language JSON assets |
-| Fabric clients | Plugin Message language sync + client reload path |
-| Non-Fabric clients | ResourcePack alias fallback |
-| Rejoin behavior | Saved language fallback pack re-send |
+| TreasureRun-owned gameplay messages | YAML-backed plugin i18n |
+| Server-observable translatable packet content | ProtocolLib boundary adapter and pure Java packet localizer |
+| Minecraft translation-key assets exposed through a server resource pack | Shared multilingual Resource Pack ZIP |
+| Client-side selected-language application and resource reload | Optional Fabric companion mod |
+| Fully client-local or pre-login language surfaces | Outside the control of a Spigot plugin alone |
 
-## Verified Fallback Behavior
+## Retained Language-Specific ZIP Artifacts
 
-The ResourcePack alias fallback is designed to reach the practical maximum for vanilla clients:
+The repository still contains generated language-specific ZIP artifacts, including files such as:
 
 ```text
-/lang de
-↓
-Fabric Mod available?
-├─ yes → Plugin Message sync to Fabric client
-└─ no  → send de fallback ResourcePack
-        ↓
-        multiple locale JSON files contain German content
-        ↓
-        vanilla translation keys resolve to German where ResourcePack language assets apply
+resourcepacks/generated/treasurerun-i18n-pack-de.zip
+resourcepacks/generated/treasurerun-i18n-pack-ja.zip
+resourcepacks/generated/treasurerun-i18n-pack-ojp.zip
 ```
 
-The generated fallback ZIPs are SHA-1 verified and tracked in Git so the server can send stable URLs from `config.yml`.
+Those files remain in the repository as retained generated artifacts for traceability. Their presence does not mean that the configuration currently committed on `main` dispatches a different ZIP for each selected vanilla-client language.
 
-## Limitations
+## Deferred Implementation: Release-Hosted Language-Specific Delivery
 
-This design is intentionally honest about platform limits.
+A separate implementation pull request is planned to add language-specific Resource Pack delivery for vanilla clients. That work would require:
 
-Without a Fabric Client Mod, TreasureRun cannot guarantee control over:
+1. defining the routed language-specific artifact contract;
+2. publishing language-specific ZIP files as GitHub Release assets;
+3. configuring individual URLs and SHA-1 values for the routed artifacts;
+4. extending tests and CI to verify the routed release-hosted artifacts;
+5. recording in-game vanilla-client evidence for representative language selections.
 
-- pre-login screens
-- authentication screens
-- client settings screens
-- every ESC/options menu string
-- Minecraft's language selection menu metadata
-- every purely client-local text path
+That work is not part of this documentation correction.
 
-For custom language codes such as `sa`, `ojp`, `la`, and `asl_gloss`, the ResourcePack alias fallback can still provide practical translation behavior through existing locale filenames, but the languages may not appear as fully native Minecraft language-menu entries without client-side registration support.
+Separately, moving future binary distribution to Release assets would not remove ZIP data already present in Git history. Any history-reduction decision must be evaluated independently because it may affect existing clones, forks, references, and contributor workflows.
 
-## Engineering Value
+## Evidence Pointers
 
-This implementation demonstrates:
+Current runtime evidence should be read from:
 
-- platform constraint analysis
-- client/server boundary awareness
-- fallback architecture under hard technical limits
-- runtime client capability detection
-- ResourcePack generation and SHA-1 verified delivery
-- separation between server-side i18n and client-side language resolution
-- maintainable multilingual asset generation
-- realistic documentation of what is and is not technically controllable
+- `src/main/resources/config.yml`
+- `src/main/java/plugin/ResourcePackFallbackService.java`
+- `src/main/java/plugin/ResourcePackFallbackJoinListener.java`
+- `src/main/java/plugin/LangCommand.java`
+- `src/test/java/plugin/i18n/ResourcePackArtifactIntegrityTest.java`
+- `docs/verification/i18n/shared-resourcepack-runtime-alignment-20260527.md`
 
-The key engineering point is not simply translating strings. It is designing a layered system that works with Minecraft's constraints while maximizing the multilingual player experience across both modded and vanilla clients.
+The earlier verification record has been preserved verbatim at:
+
+- `docs/archive/NON_MOD_RESOURCEPACK_FALLBACK_HISTORICAL_BEFORE_ALIGNMENT_20260527.md`
