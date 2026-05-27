@@ -1,66 +1,128 @@
 # Contributing to TreasureRun
 
-Thank you for your interest in TreasureRun.
+Thank you for taking the time to contribute to TreasureRun.
 
-TreasureRun is a Minecraft Spigot 1.20.1 mini-game plugin focused on maintainable Java architecture, internationalization, ResourcePack-based standard-message localization, Fabric runtime language synchronization, and CI-backed verification.
+## Start Here
 
-## Good first contribution areas
+For most gameplay, documentation, and translation changes, run:
 
-Good first contribution areas include:
+```bash
+./gradlew clean build
+```
 
-- improving documentation
-- reviewing or improving translations
-- reporting language issues
-- testing ResourcePack behavior
-- testing Fabric runtime language synchronization
-- reporting reproducible bugs
+Docker and MySQL are **not required** for the default build.
 
-## Translation contributions
+When your change touches the database boundary or the ranking API, run the optional Docker-backed integration tests:
 
-When contributing translations, please include:
+```bash
+./gradlew integrationTest
+./gradlew -p ranking-api integrationTest
+```
 
-- target language or locale
-- affected file, UI text, or translation key
-- current wording
-- proposed wording
-- reason for the change
-- screenshot or reproduction steps if the change affects visible UI
+The project keeps this deeper verification available without requiring it for unrelated day-to-day contributions.
 
-Please keep translations consistent with the existing language style.
+## Good First Contribution Areas
 
-## Development setup
+Good first contributions include:
 
-Expected environment:
+- improving documentation;
+- reviewing or improving plugin-owned translations;
+- reporting reproducible gameplay or language issues;
+- improving tests for the pure Java localization layer;
+- improving local development instructions.
+
+## Development Setup
+
+For ordinary Java, documentation, and translation contributions, you need:
 
 - Java 17
-- Gradle
-- Spigot 1.20.1 API
-- ProtocolLib for packet-level verification
-- Docker-based local server testing when needed
+- the Gradle wrapper included in this repository
 
-Useful checks:
+Validate ordinary changes with:
 
-- `./gradlew test`
-- `./gradlew clean build`
-- ResourcePack ZIP / SHA verification
-- i18n verification scripts under `tools/`
+```bash
+./gradlew clean build
+```
 
-## Pull request expectations
+## Optional Local Game Runtime
+
+To start an isolated local Spigot server with MySQL provided automatically through Docker:
+
+```bash
+TREASURERUN_OPS=YourMinecraftName ./scripts/contributor-up.sh
+```
+
+Then connect from Minecraft Java Edition 1.20.1:
+
+```text
+localhost:25575
+```
+
+This contributor runtime uses its own Docker project, its own data volumes, and a separate default Minecraft port so that it does not interfere with an existing maintainer setup.
+
+Stop it while keeping local runtime data:
+
+```bash
+./scripts/contributor-down.sh
+```
+
+Remove the runtime and its local data volumes:
+
+```bash
+./scripts/contributor-down.sh --volumes
+```
+
+## When to Run the Integration Tests
+
+Run the Docker-backed integration tests when changing:
+
+- `ranking-api/`;
+- Flyway migrations;
+- ranking repositories or database-boundary code;
+- MySQL configuration behavior;
+- related Gradle or GitHub Actions configuration.
+
+Commands:
+
+```bash
+./gradlew integrationTest
+./gradlew -p ranking-api integrationTest
+```
+
+## Architecture Boundaries
+
+Please keep the current responsibilities clear when contributing or documenting the project:
+
+- the Spigot plugin runs gameplay and owns ranking writes;
+- `ranking-api/` is a separate read-only REST API for leaderboard data;
+- the optional Fabric mod handles client-side language switching and resource reload;
+- pure packet-localization logic remains separate from platform-dependent adapters.
+
+The Fabric mod does not currently send treasure-event writes to `ranking-api`.
+
+## Translation Contributions
+
+For translation changes, please include:
+
+- the target language or locale;
+- the affected file or translation key;
+- the current wording;
+- the proposed wording;
+- a short reason for the change;
+- a screenshot or reproduction steps when the change affects visible UI.
+
+## Pull Request Checklist
 
 Before opening a pull request:
 
-- keep the change focused
-- avoid unrelated formatting changes
-- run the relevant tests
-- explain what changed and why
-- include screenshots or terminal evidence when the change affects runtime behavior
+- keep the change focused;
+- avoid unrelated formatting or generated-file changes;
+- run the relevant validation command;
+- explain what changed and why;
+- include screenshots or terminal evidence for visible runtime behavior.
 
-## Architecture principle
+The previous contribution guide is preserved for reference at:
 
-TreasureRun keeps Minecraft-dependent runtime code at the boundary and moves reusable logic into smaller, testable components where possible.
+- [`docs/archive/CONTRIBUTING_BEFORE_CONTRIBUTOR_ONRAMP.md`](docs/archive/CONTRIBUTING_BEFORE_CONTRIBUTOR_ONRAMP.md)
 
-For PacketI18n, this means:
-
-- ProtocolLib listener = Minecraft packet boundary adapter
-- PacketI18nJsonLocalizer = pure-Java JSON localization logic
-- ResourcePack / Fabric layers = client-side standard-message support
+Thank you for helping make TreasureRun easier to play, understand, and extend.
