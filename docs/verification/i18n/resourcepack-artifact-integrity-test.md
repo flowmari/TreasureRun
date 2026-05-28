@@ -2,88 +2,62 @@
 
 ## Purpose
 
-TreasureRun documents a multi-layer Minecraft i18n architecture, but the important point is that these claims are not left as README-only statements.
+TreasureRun treats Minecraft i18n as a platform-boundary problem rather than a README-only feature claim. The Resource Pack layer is checked through two explicit contracts: the retained shared artifact contract and the configured per-language fallback routing contract.
 
-The generated ResourcePack is verified by a JUnit test so that the documented architecture, generated artifact, and runtime configuration stay aligned over time.
+## What the Test Verifies
 
-This makes the i18n work reviewable as an engineering system:
+[`ResourcePackArtifactIntegrityTest`](../../../src/test/java/plugin/i18n/ResourcePackArtifactIntegrityTest.java) verifies two related but distinct responsibilities.
 
-```text
-Minecraft platform constraint
-→ layered i18n architecture
-→ generated ResourcePack artifact
-→ JUnit artifact-integrity test
-→ CI quality gate
-```
+### Retained shared ResourcePack artifact
 
-## What this test verifies
+The retained shared multilingual ZIP remains locally inspectable and is checked for:
 
-[`ResourcePackArtifactIntegrityTest`](../../../src/test/java/plugin/i18n/ResourcePackArtifactIntegrityTest.java) verifies the generated ResourcePack artifact itself.
+- ZIP / `.sha1` consistency;
+- agreement with the top-level `resourcePack.sha1` configuration field;
+- `pack.mcmeta` presence;
+- 24 language JSON entries;
+- 8039 Minecraft language keys per JSON entry;
+- representative Minecraft standard UI keys.
 
-It checks:
+### Configured versioned fallback routes
 
-- the generated ResourcePack ZIP exists
-- the `.sha1` file exists
-- the SHA-1 value of the ZIP matches the `.sha1` file
-- all ResourcePack SHA values in `src/main/resources/config.yml` match the generated ZIP SHA
-- the ResourcePack contains 21 Minecraft language JSON files
-- every language JSON file contains 8039 Minecraft language keys
-- important Minecraft standard UI keys exist in every language JSON file
+The test also checks:
 
-## Why this matters
+- the committed published-manifest snapshot contains 23 language-specific asset entries;
+- `config.yml` contains the same 23 fallback language routes;
+- each configured URL points to the matching versioned GitHub prerelease asset filename;
+- each configured SHA-1 equals the reviewed SHA-1 stored in the manifest snapshot;
+- the 23 routed languages use distinct URLs and reviewed SHA-1 values.
 
-Minecraft standard UI text is split across server-side and client-side responsibility.
-
-A Spigot plugin alone cannot fully control every Minecraft standard UI string, so TreasureRun uses a layered approach:
-
-- ProtocolLib packet boundary
-- server-side ResourcePack
-- Fabric runtime language sync
-- pure Java packet localizer
-
-The ResourcePack is one of the generated artifacts that makes this workaround practical.  
-Because the ResourcePack is generated and referenced by configuration, it is easy for the ZIP, `.sha1`, and `config.yml` values to drift apart.
-
-This test prevents that drift from silently entering the repository.
-
-## Claim-to-test traceability
-
-| README / architecture claim | Verification |
-| --- | --- |
-| ResourcePack ZIP and SHA values are consistent | ZIP SHA is recalculated and compared with `.sha1` |
-| `config.yml` points to the correct ResourcePack SHA | all `sha1:` values in `config.yml` are compared with the generated ZIP SHA |
-| the ResourcePack contains 21 language JSON files | ZIP entries under `assets/minecraft/lang/*.json` are counted |
-| each language JSON has 8039 Minecraft keys | each JSON object is parsed and its key count is checked |
-| important Minecraft standard UI keys are covered | representative keys such as `menu.singleplayer`, `menu.multiplayer`, `menu.options`, `menu.quit`, `gui.cancel`, `multiplayer.title`, `connect.connecting`, and `connect.encrypting` are checked |
-
-## Engineering value
-
-This turns the ResourcePack layer from a manually inspected asset into a CI-verifiable contract.
-
-In practical terms:
+The manifest fixture is stored at:
 
 ```text
-If the ResourcePack ZIP changes but the SHA is not updated, tests fail.
-If a language JSON file disappears, tests fail.
-If a language JSON loses key coverage, tests fail.
-If important Minecraft UI keys disappear, tests fail.
+src/test/resources/i18n/release-assets/v0.1.2-alpha-resourcepack-fallback.sha1
 ```
 
-That means the project does not merely describe a workaround for Minecraft's server/client language boundary.
+## Why This Matters
 
-It demonstrates a stronger engineering loop:
+Before per-language routing, every fallback entry pointed to one shared ZIP and could be checked against one shared SHA-1 value. After the routing change, that assertion would be wrong: each fallback language has its own published asset and checksum.
 
-1. identify the platform constraint
-2. split the responsibility into testable layers
-3. generate the artifact
-4. verify the artifact directly
-5. protect the result with CI
+The updated test therefore protects both contracts:
 
-## Related files
+```text
+retained shared artifact changes without its checksum/config update
+configured per-language route changes without matching the reviewed manifest snapshot
+```
+
+The separate reproducible-build verification continues to establish that fresh per-language ZIPs are deterministic and match the canonical ResourcePack and Fabric source payloads.
+
+## Evidence Boundary
+
+This test establishes artifact and configuration integrity. It does not claim that a player has already observed every routed language on screen in a vanilla Minecraft client.
+
+Display-level vanilla-client evidence is recorded separately after representative `/lang` runtime tests.
+
+## Related Files
 
 - [`ResourcePackArtifactIntegrityTest`](../../../src/test/java/plugin/i18n/ResourcePackArtifactIntegrityTest.java)
+- [`scripts/check_fallback_resourcepack_generation.py`](../../../scripts/check_fallback_resourcepack_generation.py)
+- [`docs/I18N_RESOURCEPACK_ALIASING_FALLBACK.md`](../../I18N_RESOURCEPACK_ALIASING_FALLBACK.md)
 - [`PacketI18nJsonLocalizer`](../../../src/main/java/plugin/i18n/PacketI18nJsonLocalizer.java)
-- [`LocalizedPacketMessageProtocolListener`](../../../src/main/java/plugin/LocalizedPacketMessageProtocolListener.java)
-- [`PureI18nPackageBoundaryTest`](../../../src/test/java/plugin/i18n/PureI18nPackageBoundaryTest.java)
-- [`LocalizedPacketMessageProtocolListenerTest`](../../../src/test/java/plugin/LocalizedPacketMessageProtocolListenerTest.java)
 - [`ADR-001: Packet i18n Ports and Adapters`](../../adr/ADR-001-packet-i18n-ports-and-adapters.md)

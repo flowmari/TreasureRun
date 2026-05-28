@@ -2,82 +2,77 @@
 
 ## Purpose
 
-TreasureRun uses several i18n layers because Minecraft text is not owned by a single runtime boundary. Plugin messages, server-observable translatable components, resource-pack language assets, and the client's active language setting each require different mechanisms.
+TreasureRun uses several i18n layers because Minecraft text is split across plugin-owned messages, server-observable packet content, resource-pack language assets, and client-side language state.
 
-This document describes the Resource Pack behavior configured on `main`, as verified during this documentation correction.
+This document describes the configured vanilla-client Resource Pack fallback route after the per-language GitHub Release asset routing change.
 
-## Currently Verified Behavior
+## Configured Fallback Routing
 
 TreasureRun supports two relevant client paths:
 
 - **Client with the optional Fabric companion mod**: the server can send the selected TreasureRun language code to the companion mod, which can apply the mapped Minecraft locale and reload client resources.
-- **Vanilla client without the optional Fabric companion mod**: the fallback service can send the configured Resource Pack entry associated with the player's stored language selection.
+- **Vanilla client without the optional Fabric companion mod**: the fallback service reads the player's stored TreasureRun language selection and sends the Resource Pack entry configured for that language.
 
-At present, every configured `resourcePackFallback.packs.*` entry resolves to the same shared multilingual artifact:
+The fallback configuration now maps each of the 23 supported TreasureRun language codes to its own published, versioned GitHub prerelease asset. Each configured route includes the SHA-1 value recorded in the published asset manifest.
+
+Representative routing entries are:
 
 ```text
-resourcepacks/generated/treasurerun-i18n-pack.zip
+/lang de  -> treasurerun-i18n-pack-de.zip
+/lang ja  -> treasurerun-i18n-pack-ja.zip
+/lang got -> treasurerun-i18n-pack-got.zip
 ```
 
-The shared pack contains Minecraft language JSON assets for the supported locale mappings. Once the client accepts and applies the pack, it can provide translated values for translation keys resolved through the client's already active locale.
+The routed configuration is checked by `ResourcePackArtifactIntegrityTest`. Reproducible artifact generation is checked separately by `scripts/check_fallback_resourcepack_generation.py`.
 
 ## Important Boundary
 
-A server-delivered resource pack does not, by itself, change a vanilla client's active language setting.
+A server-delivered Resource Pack does not, by itself, change a vanilla client's active language setting.
 
-Accordingly, the runtime currently configured on `main` does **not** claim that selecting `/lang de`, `/lang ja`, or any other TreasureRun language on a vanilla client causes the server to deliver a distinct language-specific alias ZIP or forces Minecraft to switch to that selected locale.
+The configured routing establishes that TreasureRun can select a language-specific fallback pack for each stored language choice. It does **not** by itself establish that every selected-language display path has been observed in a vanilla Minecraft client.
 
-The accurate current claim is:
+The accurate claim at this stage is:
 
-> TreasureRun currently provides a shared multilingual Resource Pack layer for Minecraft translation-key assets. Applying a selected client language and reloading resources at runtime requires the optional Fabric companion mod.
+> TreasureRun configures language-specific Resource Pack fallback routes for vanilla clients using published GitHub prerelease assets with SHA-1-verified routing metadata. Representative in-game behavior on vanilla clients has not yet been verified; it will be covered in dedicated runtime testing.
 
 ## Layer Responsibilities
 
-| Text or behavior surface | Current mechanism |
+| Text or behavior surface | Mechanism |
 | --- | --- |
 | TreasureRun-owned gameplay messages | YAML-backed plugin i18n |
 | Server-observable translatable packet content | ProtocolLib boundary adapter and pure Java packet localizer |
-| Minecraft translation-key assets exposed through a server resource pack | Shared multilingual Resource Pack ZIP |
+| Minecraft translation-key assets sent to vanilla fallback clients | Versioned language-specific Resource Pack asset selected through `config.yml` |
 | Client-side selected-language application and resource reload | Optional Fabric companion mod |
 | Fully client-local or pre-login language surfaces | Outside the control of a Spigot plugin alone |
 
-## Retained Language-Specific ZIP Artifacts
+## Artifact Contract
 
-The repository still contains generated language-specific ZIP artifacts, including files such as:
+The routed Resource Pack assets were published under the prerelease tag:
 
 ```text
-resourcepacks/generated/treasurerun-i18n-pack-de.zip
-resourcepacks/generated/treasurerun-i18n-pack-ja.zip
-resourcepacks/generated/treasurerun-i18n-pack-ojp.zip
+v0.1.2-alpha-resourcepack-fallback
 ```
 
-Those files remain in the repository as retained generated artifacts for traceability. Their presence does not mean that the configuration currently committed on `main` dispatches a different ZIP for each selected vanilla-client language.
+The repository stores a small SHA-1 manifest fixture for automated route verification:
 
-## Deferred Implementation: Release-Hosted Language-Specific Delivery
+```text
+src/test/resources/i18n/release-assets/v0.1.2-alpha-resourcepack-fallback.sha1
+```
 
-A separate implementation pull request is planned to add language-specific Resource Pack delivery for vanilla clients. That work would require:
+This fixture records the published asset filenames and reviewed SHA-1 values. This routing change does not add new ZIP binaries to the repository.
 
-1. defining the routed language-specific artifact contract;
-2. publishing language-specific ZIP files as GitHub Release assets;
-3. configuring individual URLs and SHA-1 values for the routed artifacts;
-4. extending tests and CI to verify the routed release-hosted artifacts;
-5. recording in-game vanilla-client evidence for representative language selections.
-
-That work is not part of this documentation correction.
-
-Separately, moving future binary distribution to Release assets would not remove ZIP data already present in Git history. Any history-reduction decision must be evaluated independently because it may affect existing clones, forks, references, and contributor workflows.
+A retained shared multilingual ZIP remains in the repository for its existing local artifact-coverage contract. Historical binary cleanup and Git-history decisions are separate concerns.
 
 ## Evidence Pointers
 
-Current runtime evidence should be read from:
+The configured routing contract can be reviewed in:
 
 - `src/main/resources/config.yml`
 - `src/main/java/plugin/ResourcePackFallbackService.java`
 - `src/main/java/plugin/ResourcePackFallbackJoinListener.java`
 - `src/main/java/plugin/LangCommand.java`
 - `src/test/java/plugin/i18n/ResourcePackArtifactIntegrityTest.java`
-- `docs/verification/i18n/shared-resourcepack-runtime-alignment-20260527.md`
+- `src/test/resources/i18n/release-assets/v0.1.2-alpha-resourcepack-fallback.sha1`
+- `scripts/check_fallback_resourcepack_generation.py`
 
-The earlier verification record has been preserved verbatim at:
-
-- `docs/archive/NON_MOD_RESOURCEPACK_FALLBACK_HISTORICAL_BEFORE_ALIGNMENT_20260527.md`
+Historical notes describing the earlier shared-ZIP runtime remain preserved as time-specific evidence rather than being rewritten retroactively.

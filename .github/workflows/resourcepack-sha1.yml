@@ -1,42 +1,79 @@
 name: resourcepack-sha1-autoupdate
+
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
     paths:
       - 'resourcepacks/treasurerun-i18n-pack/**'
-      - 'src/main/resources/languages/*.yml'
+
+permissions:
+  contents: write
+
 jobs:
-  rebuild-resourcepack:
+  update-retained-shared-resourcepack:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
+
     steps:
-      - uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Regenerate ResourcePack ZIP
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Regenerate retained shared multilingual ResourcePack ZIP
         run: |
           cd resourcepacks/treasurerun-i18n-pack
           zip -r ../../resourcepacks/generated/treasurerun-i18n-pack.zip . -q
-          cd ../..
-      - name: Compute SHA1 and update config.yml
+
+      - name: Update retained shared checksum without touching fallback routes
         run: |
-          SHA1=$(sha1sum resourcepacks/generated/treasurerun-i18n-pack.zip | awk '{print $1}')
-          python3 -c "
-          import re, pathlib
-          sha1 = '$SHA1'
-          config = pathlib.Path('src/main/resources/config.yml')
-          c = config.read_text()
-          c = re.sub(r'  sha1: \"[a-f0-9]+\"', f'  sha1: \"{sha1}\"', c)
-          c = re.sub(r'  url: \"https://raw\.githubusercontent\.com/[^\"]+\"',
-              '  url: \"https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip\"', c)
-          config.write_text(c)
-          print('SHA1 updated:', sha1)
-          "
-      - name: Commit and push if changed
+          SHA1="$(sha1sum resourcepacks/generated/treasurerun-i18n-pack.zip | awk '{print $1}')"
+          printf '%s  %s\n' "$SHA1" "treasurerun-i18n-pack.zip" \
+            > resourcepacks/generated/treasurerun-i18n-pack.zip.sha1
+
+          python3 - "$SHA1" <<'PY'
+          from pathlib import Path
+          import re
+          import sys
+
+          sha1 = sys.argv[1]
+          config_path = Path("src/main/resources/config.yml")
+          text = config_path.read_text(encoding="utf-8")
+
+          block_pattern = re.compile(
+              r"(?ms)^(resourcePack:\n)(.*?)(?=^resourcePackFallback:|\Z)"
+          )
+          block_match = block_pattern.search(text)
+          if not block_match:
+              raise SystemExit("resourcePack block not found; refusing to edit config.yml.")
+
+          original_block = block_match.group(0)
+          updated_block, count = re.subn(
+              r'(?m)^(\s{2}sha1:\s*)["\']?[0-9a-fA-F]{40}["\']?\s*$',
+              rf'\1"{sha1}"',
+              original_block,
+              count=1,
+          )
+          if count != 1:
+              raise SystemExit("Expected exactly one top-level retained resourcePack SHA field.")
+
+          updated = text[:block_match.start()] + updated_block + text[block_match.end():]
+          config_path.write_text(updated, encoding="utf-8")
+
+          print("Updated retained shared ResourcePack SHA only:", sha1)
+          print("Preserved resourcePackFallback.packs.* versioned Release-asset routes.")
+          PY
+
+      - name: Commit retained shared artifact update when needed
         run: |
           git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add resourcepacks/generated/ src/main/resources/config.yml
-          git diff --staged --quiet && echo "No changes" || \
-            git commit -m "ci: auto-regenerate ResourcePack ZIP + SHA1 [skip ci]" && git push
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            resourcepacks/generated/treasurerun-i18n-pack.zip \
+            resourcepacks/generated/treasurerun-i18n-pack.zip.sha1 \
+            src/main/resources/config.yml
+
+          if git diff --cached --quiet; then
+            echo "No retained shared ResourcePack checksum update is required."
+          else
+            git commit -m "ci: update retained shared ResourcePack SHA1 [skip ci]"
+            git push
+          fi
