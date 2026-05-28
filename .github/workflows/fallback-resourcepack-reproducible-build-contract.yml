@@ -1,0 +1,33 @@
+name: fallback-resourcepack-reproducible-build-contract
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/generate_fallback_resourcepacks.py'
+      - 'scripts/check_fallback_resourcepack_generation.py'
+      - 'src/main/resources/lang-map.yml'
+      - 'resourcepacks/treasurerun-i18n-pack/assets/minecraft/lang/**'
+      - 'fabric-i18n-mod/src/main/resources/assets/minecraft/lang/**'
+      - '.github/workflows/fallback-resourcepack-reproducible-build-contract.yml'
+  workflow_dispatch:
+
+jobs:
+  verify-reproducible-fallback-resource-pack-builds:
+    name: verify-reproducible-fallback-resource-pack-builds
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up pinned Python toolchain
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install verification dependency
+        run: python -m pip install --disable-pip-version-check pyyaml
+
+      - name: Verify reproducible per-language fallback resource pack builds
+        run: python scripts/check_fallback_resourcepack_generation.py
