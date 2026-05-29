@@ -247,7 +247,7 @@ def main() -> int:
     print("PASS: every generated alias payload matches the ResourcePack source payload.")
     print("PASS: ResourcePack and Fabric source payloads remain semantically aligned.")
     print("PASS: two clean builds are byte-identical and SHA-1 reproducible in the pinned verification toolchain.")
-    print("NOTE: runtime routing is unchanged; public per-language delivery is not enabled by this check.")
+    print("NOTE: this artifact-build check does not modify configured routing or establish vanilla-client in-game display evidence.")
     return 0
 
 
