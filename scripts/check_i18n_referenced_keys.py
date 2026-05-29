@@ -7,6 +7,10 @@ JAVA_DIR = Path("src/main/java")
 LANG_DIR = Path("src/main/resources/languages")
 
 PATTERNS = [
+    # Runtime language lookup shapes used by current player-visible paths.
+    # These keep dynamically selected locale lookups inside CI coverage.
+    re.compile(r'getI18n[(][)][.]tr\s*[(]\s*[^,]+\s*,\s*"([^"]+)"'),
+    re.compile(r'\btrPlayer\s*[(]\s*[^,]+\s*,\s*"([^"]+)"'),
     re.compile(r'i18n\.tr\s*\(\s*player\s*,\s*"([^"]+)"'),
     re.compile(r'i18n\.trDefault\s*\(\s*"([^"]+)"'),
     re.compile(r'\btr\s*\(\s*player\s*,\s*"([^"]+)"'),

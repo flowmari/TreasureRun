@@ -544,6 +544,7 @@ gameplay:
     scoreNone: まだスコアがありません。
     gameEndTotalScore: 'ゲーム終了！合計スコア: {score}'
     treasureFound: '宝物: {name} ×{amount}'
+    scoreAdded: 'スコア +{add}点（累計: {total}点）'
     remainingChests: '残りの宝箱: {count}個'
   result:
     runCompleteTitle: 完走！

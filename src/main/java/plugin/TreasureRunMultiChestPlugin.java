@@ -1709,14 +1709,14 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
 
           String resultLang = getPlayerLangOrDefault(player.getUniqueId());
 
-          String scoreLabel = getI18n().tr(resultLang, "gameplay.result.label.score");
-          String timeLabel  = getI18n().tr(resultLang, "gameplay.result.label.time");
-          String rankText   = getI18n().tr(resultLang, "gameplay.result.label.rank");
-
           String baseSub =
-              ChatColor.GOLD + scoreLabel + ": " + finalScore +
-                  ChatColor.YELLOW + "  " + timeLabel + ": " + timeText +
-                  ChatColor.AQUA + "  " + rankText + ": " + ChatColor.LIGHT_PURPLE + rankLabel;
+              ChatColor.GOLD + getI18n().tr(
+                  resultLang,
+                  "gameplay.result.summaryLine",
+                  I18n.Placeholder.of("{time}", timeText),
+                  I18n.Placeholder.of("{score}", String.valueOf(finalScore)),
+                  I18n.Placeholder.of("{rank}", rankLabel)
+              );
 
           String philoPart = (successPhiloSub == null || successPhiloSub.isBlank())
               ? ""
