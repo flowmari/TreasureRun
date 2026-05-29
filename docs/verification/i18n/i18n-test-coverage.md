@@ -13,7 +13,7 @@ The tests below make those claims reviewable.
 | Pure i18n logic stays independent from Bukkit, ProtocolLib, Fabric, and Minecraft runtime APIs | `PureI18nPackageBoundaryTest` |
 | ProtocolLib boundary code delegates packet JSON localization instead of owning the pure JSON parsing logic | `LocalizedPacketMessageProtocolListenerTest` |
 | Packet JSON localization behavior is tested independently from Minecraft runtime | `PacketI18nJsonLocalizerTest` |
-| Generated ResourcePack ZIP, SHA-1 file, and `config.yml` SHA-1 stay consistent | `ResourcePackArtifactIntegrityTest` |
+| Retained shared ResourcePack ZIP stays consistent with its local and top-level configuration SHA-1 values, while fallback routes match the published Release-asset manifest snapshot | `ResourcePackArtifactIntegrityTest` |
 | Generated ResourcePack contains the expected Minecraft standard UI language JSON files and 8039-key coverage | `ResourcePackArtifactIntegrityTest` |
 | Every generated ResourcePack language JSON has the exact same key set, not only the same key count | `ResourcePackExactKeySetConsistencyTest` |
 | TreasureRun internal language codes map to expected Minecraft locale file names | `LanguageCodeMappingIntegrityTest` |
@@ -46,7 +46,7 @@ The goal is to keep TreasureRun's i18n architecture maintainable and reviewable:
 
 - Minecraft-dependent packet handling remains at the boundary
 - pure packet-localization logic remains testable without a Minecraft server
-- ResourcePack artifacts can be checked automatically
+- retained ResourcePack artifacts and versioned fallback routes can be checked automatically
 - internal language-code mapping is protected from accidental breakage
 - unsafe packet localization falls back safely instead of corrupting packet JSON
 
