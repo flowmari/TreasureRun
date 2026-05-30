@@ -35,7 +35,7 @@ The following folders are intentionally retained, but they are not the main revi
 - `translation-review/`
 - `verification/`
 
-Some files in these folders describe earlier implementation states, such as 19/20/22-language phases or pre-release fallback routing. When a file is historical, prefer the current-facing README, architecture guide, and config/test evidence for the current state.
+Some files in these folders describe earlier implementation states or pre-release fallback-routing designs. When a file is historical, prefer the current-facing README, architecture guide, and config/test evidence for the current state.
 
 ## Current Scope Boundaries
 
