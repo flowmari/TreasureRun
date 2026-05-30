@@ -20,7 +20,7 @@ Instead, it uses Fabric client-side integration and Minecraft's resource reload 
 5. The Fabric Mod calls `client.reloadResources()`.
 6. Minecraft reloads bundled language assets from the Fabric Mod / ResourcePack layer.
 
-## Why not send all 20 languages at runtime?
+## Why not send every supported language at runtime?
 
 The Minecraft standard-message layer contains:
 

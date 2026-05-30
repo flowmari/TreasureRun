@@ -80,4 +80,4 @@ ja, en, de, fr, it, sv, es, fi, nl, ru, ko, zh_tw, pt, hi, la, lzh, is, sa, asl_
 - Player language is persisted per player.
 - Reload behavior is designed for server operation.
 - Debug/demo commands are protected by operator permission and config flags.
-- TreasureRun is a Spigot plugin, not a REST API service. Therefore Swagger/OpenAPI is intentionally not used.
+- TreasureRun's core gameplay is exposed through Spigot commands. The optional ranking-api module is documented separately and includes OpenAPI contract verification for its read-only HTTP boundary.

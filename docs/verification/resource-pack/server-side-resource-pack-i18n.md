@@ -1,3 +1,7 @@
+> Historical note: this document includes earlier 20-language ResourcePack wording.
+> Current `main` uses 23 locale mappings and Release-hosted language-specific
+> fallback packs, while retaining this record as historical verification evidence.
+
 # Server-Side Resource Pack i18n Layer
 
 TreasureRun includes a server-side resource pack layer as part of its hybrid i18n architecture.

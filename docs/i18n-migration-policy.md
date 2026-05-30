@@ -1,7 +1,7 @@
 # i18n Migration Policy
 
 ## Goal
-Migrate TreasureRun from hardcoded strings to a maintainable YAML-based 19-language i18n system.
+Migrate TreasureRun from hardcoded strings to a maintainable 23-locale i18n system backed by YAML, ResourcePack assets, and runtime verification.
 
 ## Migration Strategy
 We use a staged migration approach:

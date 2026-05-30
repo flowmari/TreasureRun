@@ -1,7 +1,7 @@
 # =======================================================
 # ✅ TreasureRunMultiChestPlugin : favorites_templates.yml
 #
-# ✅ Favorites 図鑑 本文テンプレ（19言語）
+# ✅ Favorites 図鑑 本文テンプレ（23ロケール）
 # - 追加箇所は messages.translation.<lang>.favorites.chapter: の中だけ
 # - successTpl1 / successTpl2 / timeupTpl1 / timeupTpl2 を外部化
 #

@@ -1,3 +1,8 @@
+> Historical note: this document records the earlier reproducible-build step before
+> language-specific fallback packs were moved to versioned GitHub Release assets.
+> Current `main` now routes the 23 configured fallback packs through Release URLs,
+> while retaining the shared multilingual ZIP for current config/test coverage.
+
 # Reproducible Per-Language Fallback Resource Pack Builds
 
 ## Purpose
