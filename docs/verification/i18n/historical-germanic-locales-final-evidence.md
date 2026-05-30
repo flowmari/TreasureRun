@@ -1,3 +1,7 @@
+> Historical note: this verification record predates the current 23-locale mapping.
+> It is retained as evidence of the Germanic-locale expansion path, not as the
+> current supported-locale count.
+
 # Historical Germanic Locales Final Evidence
 
 ## Summary

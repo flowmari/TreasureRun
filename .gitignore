@@ -79,3 +79,13 @@ docs/i18n_audit/final_visible_direct_literal_audit_after_reward_patch.tsv
 tmp_*.sh
 tmp_*.txt
 tmp_resourcepack_http_8008.pid
+
+# Generated per-language ResourcePack fallback artifacts are published as
+# versioned GitHub Release assets, not tracked in source control.
+resourcepacks/generated/treasurerun-i18n-pack-*.zip
+resourcepacks/generated/treasurerun-i18n-pack-*.zip.sha1
+
+# Keep the retained shared multilingual ResourcePack artifact tracked because
+# current config/tests still reference it directly.
+!resourcepacks/generated/treasurerun-i18n-pack.zip
+!resourcepacks/generated/treasurerun-i18n-pack.zip.sha1

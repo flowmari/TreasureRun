@@ -1,6 +1,6 @@
 # TreasureRun Architecture
 
-TreasureRun is a Minecraft Spigot 1.20.1 mini-game plugin built with Java 17, Gradle/ShadowJar, Docker-based runtime validation, MySQL persistence, and YAML-based 19-language i18n.
+TreasureRun is a Minecraft Spigot 1.20.1 mini-game plugin built with Java 17, Gradle/ShadowJar, Docker-based runtime validation, MySQL persistence, and a 23-locale YAML/ResourcePack/Fabric i18n architecture.
 
 ---
 
@@ -165,4 +165,4 @@ Cleanup restores generated runtime state
 
 This project demonstrates more than Minecraft gameplay. It shows maintainable Java plugin architecture, production-like configuration management, runtime validation, persistence, localization, quality gates, and safe operational commands.
 
-Because TreasureRun is a Spigot plugin rather than a REST API service, Swagger/OpenAPI is intentionally not used. API-like behavior is represented through command documentation and architecture documentation.
+TreasureRun's core gameplay remains a Spigot plugin, while the optional ranking-api module exposes a read-only HTTP boundary with OpenAPI contract verification. Gameplay commands and plugin behavior are documented separately from that optional backend evidence slice.
