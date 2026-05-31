@@ -1,84 +1,61 @@
 # Fresh Clone QuickStart Evidence
 
-This document records whether a new contributor can clone the repository, start the local runtime, connect to the Minecraft server, and run the basic gameplay path without maintainer-only setup.
-
 ## Current status
 
-Fresh-clone startup measurement is pending.
+Status: **PASS**
 
-The README intentionally avoids claiming a startup time until this has been measured from a clean clone.
+This document records a real fresh-clone measurement for the contributor QuickStart.
 
-## Evidence target
+This evidence was added after PR #18, because PR #18 intentionally created the external alpha readiness surface without claiming that the QuickStart had already been measured.
 
-A successful fresh-clone transcript should prove:
+## Measurement summary
 
-1. A clean clone can be created.
-2. The contributor runtime starts with one documented command.
-3. The plugin JAR is built and installed into the local server.
-4. MySQL and Spigot start in isolated Docker containers.
-5. Minecraft Java Edition 1.20.1 can connect to `localhost:25575`.
-6. `/lang` and `/gamestart normal` can be tested.
-7. Shutdown works through the documented script.
+| Item | Result |
+|---|---|
+| Repository | `https://github.com/flowmari/TreasureRun.git` |
+| Main commit measured | `e1151c408dab99bac0b717b3b2d6a3f4b8f131a9` |
+| Fresh clone commit | `e1151c408dab99bac0b717b3b2d6a3f4b8f131a9` |
+| Operator name used | `flowmari` |
+| Clone time | 30s |
+| Startup command | `TREASURERUN_OPS=flowmari ./scripts/contributor-up.sh` |
+| Startup exit code | `0` |
+| Startup measured time | 39s |
+| Shutdown command | `./scripts/contributor-down.sh` |
+| Shutdown exit code | `0` |
 
-## Measurement procedure
+## Result
 
-Use a temporary directory outside the working repository:
+The documented fresh-clone contributor startup command completed successfully in this local measurement.
 
-```bash
-cd /tmp
-rm -rf treasurerun-fresh-clone-test
-git clone https://github.com/flowmari/TreasureRun.git treasurerun-fresh-clone-test
-cd treasurerun-fresh-clone-test
+## Evidence procedure
 
-time TREASURERUN_OPS=YourMinecraftName ./scripts/contributor-up.sh
-```
+The measurement used a clean temporary clone outside the working repository:
 
-Then connect from Minecraft Java Edition 1.20.1:
+1. Clone `https://github.com/flowmari/TreasureRun.git`.
+2. Check out `main`.
+3. Verify the fresh clone commit matches the current local `origin/main`.
+4. Run the documented contributor startup command.
+5. Capture Docker state and recent logs.
+6. Stop the contributor runtime.
+7. Record the result in this document.
 
-```text
-localhost:25575
-```
+## Important boundary
 
-After testing:
+This evidence proves only the local contributor QuickStart behavior on the measured machine.
 
-```bash
-./scripts/contributor-down.sh --volumes
-```
+It does not claim:
 
-## Evidence to paste after the test
-
-```text
-Date:
-Commit:
-OS:
-Java version:
-Docker version:
-Minecraft version:
-Command used:
-Startup time:
-Connection result:
-Commands tested:
-ResourcePack prompt result:
-Observed errors:
-Shutdown result:
-```
-
-## Current non-claim
-
-Until the transcript above is filled in, TreasureRun should be described as having a documented one-command local runtime, not a measured three-minute fresh-clone setup.
-
-## Expected result
-
-The expected result is that a new contributor can clone the repository, run the documented setup command, join the local Minecraft server, and try the basic TreasureRun gameplay without private maintainer knowledge.
-
-This has not yet been measured from a fresh clone in this document. Until that transcript is added, the project should avoid claims such as "starts in under three minutes" or "works for any new contributor."
-
-## Not measured yet
-
-The following should remain non-claims until evidence is added:
-
-- exact startup time from a fresh clone;
 - Paper compatibility;
-- public SpigotMC Resource installation flow;
-- external user success rate;
-- successful external issue / PR / translation participation.
+- SpigotMC publication readiness;
+- external alpha tester success;
+- production deployment readiness;
+- database migration repair completion;
+- translation quality completion.
+
+## Raw evidence location
+
+The raw local evidence was written outside the repository during measurement:
+
+`/tmp/treasurerun_pr19_fresh_clone_20260531_164410`
+
+The repository intentionally stores this concise summary instead of committing local machine logs.
