@@ -109,3 +109,21 @@ Please open a GitHub issue and include:
 - screenshots if relevant;
 - server logs or error text;
 - steps to reproduce.
+
+## Known limitations for alpha testers
+
+This alpha setup is intentionally narrow.
+
+TreasureRun currently targets **Spigot 1.20.1**. Paper may work, but Paper compatibility should not be claimed until it is tested separately and recorded as evidence.
+
+The local setup is meant to help testers try the gameplay loop, basic commands, ranking behavior, and language/resource-pack behavior. It is not yet a public production server setup.
+
+If something fails, useful feedback includes:
+
+- the operating system;
+- Java version;
+- Minecraft client version;
+- whether the ResourcePack prompt appeared;
+- the command that failed;
+- the relevant server log lines;
+- screenshots or short screen recordings when possible.

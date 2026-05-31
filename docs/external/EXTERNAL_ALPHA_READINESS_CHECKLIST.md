@@ -35,3 +35,16 @@ This checklist tracks what must be true before TreasureRun is promoted beyond po
 - SpigotMC Resource publication.
 - Full translation quality rewrite.
 - Public marketing launch.
+
+## Fresh Clone and Good First Issue gate
+
+Before broader alpha exposure, the project should have:
+
+- a measured Fresh Clone QuickStart transcript;
+- at least three real GitHub issues suitable for first-time contributors;
+- one issue focused on translation wording cleanup;
+- one issue focused on documentation clarity;
+- one issue focused on a small gameplay configuration review;
+- a clear path for alpha testers to report feedback.
+
+PR #18 prepares these surfaces, but it does not complete external validation by itself.

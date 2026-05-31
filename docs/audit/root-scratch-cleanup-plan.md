@@ -198,3 +198,19 @@ For each file, choose one of the following:
 This PR does not delete or move the files.
 
 A later cleanup PR should handle the files in a small, reviewable scope.
+
+
+## Cleanup is deferred
+
+No root scratch files are deleted in PR #18.
+
+Cleanup should happen in a separate pull request so reviewers can distinguish documentation/onboarding work from repository hygiene changes. That later PR should classify each file before deleting or moving it.
+
+Recommended buckets:
+
+- delete temporary one-off scripts that are no longer needed;
+- move useful historical evidence into `docs/archive/` or `docs/audit/`;
+- move reusable scripts into `scripts/`;
+- keep only intentional root-level project files.
+
+The cleanup PR should be reviewed separately and should not be mixed with DB migration repair, ResourcePack publication, or gameplay refactoring.

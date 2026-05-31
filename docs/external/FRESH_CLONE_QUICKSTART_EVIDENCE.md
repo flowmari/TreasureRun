@@ -66,3 +66,19 @@ Shutdown result:
 ## Current non-claim
 
 Until the transcript above is filled in, TreasureRun should be described as having a documented one-command local runtime, not a measured three-minute fresh-clone setup.
+
+## Expected result
+
+The expected result is that a new contributor can clone the repository, run the documented setup command, join the local Minecraft server, and try the basic TreasureRun gameplay without private maintainer knowledge.
+
+This has not yet been measured from a fresh clone in this document. Until that transcript is added, the project should avoid claims such as "starts in under three minutes" or "works for any new contributor."
+
+## Not measured yet
+
+The following should remain non-claims until evidence is added:
+
+- exact startup time from a fresh clone;
+- Paper compatibility;
+- public SpigotMC Resource installation flow;
+- external user success rate;
+- successful external issue / PR / translation participation.

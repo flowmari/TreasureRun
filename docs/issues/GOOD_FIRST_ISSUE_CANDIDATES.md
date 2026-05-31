@@ -110,3 +110,44 @@ Requested evidence:
 - command transcript;
 - screenshot or logs;
 - whether `/lang` and `/gamestart normal` worked.
+
+
+## Acceptance criteria template
+
+Each real GitHub issue created from this document should include a short checklist like this:
+
+- The change is small enough for a first-time contributor.
+- The touched files are listed explicitly.
+- The expected behavior is described in plain English.
+- The command or check needed to verify the change is included.
+- The issue clearly states what is out of scope.
+
+## Suggested real issues to open first
+
+### Issue 1: Review mixed-language translation helper strings
+
+Acceptance criteria:
+
+- Identify a small set of mixed-language or machine-generated helper strings.
+- Limit the change to one or two language files.
+- Keep YAML syntax valid.
+- Run the relevant i18n validation command.
+- Do not attempt a full translation-quality rewrite.
+
+### Issue 2: Improve the alpha tester setup guide with screenshots
+
+Acceptance criteria:
+
+- Add or request screenshots for the ResourcePack prompt and first successful join.
+- Keep the guide short and tester-focused.
+- Do not change runtime behavior.
+- Do not claim Paper compatibility.
+
+### Issue 3: Review one gameplay configuration value
+
+Acceptance criteria:
+
+- Pick one configurable gameplay value, such as time limit, chest count, or score reward.
+- Identify where it is configured and where it is read.
+- Propose a small, safe adjustment or documentation clarification.
+- Do not refactor the gameplay system.
