@@ -35,8 +35,8 @@ Current verified status:
 
 Important boundaries:
 
-- This is not a production-ready server release.
-- This does not claim Paper compatibility yet.
+- This is not a ready for live/public servers server release.
+- This has not been separately validated on Paper yet yet.
 - This has not been published to SpigotMC yet.
 - Translation wording quality is still a review/improvement area.
 - I’m looking for setup feedback first, not large-scale public adoption.
@@ -78,22 +78,22 @@ I’m not looking for a big public launch yet. I only want to know whether anoth
 Known boundaries:
 
 - Spigot 1.20.1 target only.
-- No Paper compatibility claim yet.
-- Not production-ready.
+- No separate Paper validation claim yet.
+- Not ready for live/public servers.
 - Translation wording still needs review.
 
 Would you be willing to try the QuickStart and tell me where it works or breaks?
 
 ## Recruiter-safe summary
 
-TreasureRun is an open-source Java / Spigot Minecraft plugin that demonstrates platform-boundary i18n. A Spigot plugin alone cannot control every Minecraft UI surface, so the project separates plugin-owned YAML messages, ProtocolLib packet boundaries, ResourcePack language assets, optional Fabric runtime sync, and pure Java localization logic. The repository includes CI checks, Docker-based contributor startup, ResourcePack checksum verification, fresh-clone QuickStart evidence, and beginner-friendly issues for external feedback.
+TreasureRun is an open-source Java / Spigot Minecraft plugin that demonstrates platform-boundary i18n. A Spigot plugin alone cannot control every Minecraft UI surface, so the project separates plugin-owned YAML messages, ProtocolLib packet boundaries, ResourcePack language assets, optional Fabric runtime sync, and pure Java localization logic. The repository includes CI checks, Docker-based contributor startup, ResourcePack checksum verification, Fresh Clone QuickStart evidence, and beginner-friendly issues for external feedback.
 
 ## Do not say yet
 
 Do not say:
 
-- “Paper compatible”
-- “production ready”
+- “validated on Paper”
+- “ready for live/public servers”
 - “used by many people”
 - “external contributors are active”
 - “native-quality translation for every language”
