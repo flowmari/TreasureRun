@@ -184,6 +184,12 @@ tr_keys.txt
 tr_keys_messages.txt
 ```
 
+## Deferred cleanup decision
+
+Root scratch cleanup is intentionally deferred to a separate PR.
+
+This PR documents the candidate files and the review policy only. It does not delete, move, rewrite, or archive any root scratch files. Actual cleanup should happen later in a dedicated root-scratch-cleanup PR after the external alpha documentation surface is already merged.
+
 ## Recommended handling
 
 For each file, choose one of the following:
@@ -214,3 +220,5 @@ Recommended buckets:
 - keep only intentional root-level project files.
 
 The cleanup PR should be reviewed separately and should not be mixed with DB migration repair, ResourcePack publication, or gameplay refactoring.
+
+No root scratch files are deleted in PR #18; deletion is deferred to a separate PR.
