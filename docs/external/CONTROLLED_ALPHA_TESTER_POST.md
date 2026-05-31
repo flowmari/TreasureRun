@@ -36,7 +36,7 @@ Current verified status:
 Important boundaries:
 
 - This is not a ready for live/public servers server release.
-- This has not been separately validated on Paper yet yet.
+- This has not been separately validated on Paper yet.
 - This has not been published to SpigotMC yet.
 - Translation wording quality is still a review/improvement area.
 - I’m looking for setup feedback first, not large-scale public adoption.
