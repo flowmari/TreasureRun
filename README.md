@@ -165,4 +165,4 @@ The full README that existed before this contributor-focused entrance was introd
 - Java version: 17
 - License: MIT
 
-Next milestones include measuring a fresh-clone startup, publishing beginner-friendly issues, gathering public alpha feedback, and adding a typed Java/Bukkit extension surface when there is a concrete integration use case.
+Fresh-clone QuickStart PASS is documented, Good first issues are open, and controlled alpha feedback collection has started. The next milestone is to respond to real alpha feedback with a small follow-up PR before broader community publication.
