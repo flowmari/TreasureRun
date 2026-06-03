@@ -2,9 +2,9 @@
 
 ## Purpose
 
-This documentation-only PR responds to first household tester feedback on the alpha setup guide.
+This documentation-only PR responds to early first-reader feedback on the alpha setup guide.
 
-The reviewer described the setup guide as hard to understand, "gibberish," and full of "jargon" for a non-programmer. They also pointed out that many general Minecraft players understand the word "mod," but the guide did not clearly explain whether TreasureRun is a plugin, a mod, a ResourcePack, or a combination of these pieces.
+The first reader described the setup guide as hard to understand, "gibberish," and full of "jargon" for a non-programmer. They also pointed out that many general Minecraft players understand the word "mod," but the guide did not clearly explain whether TreasureRun is a plugin, a mod, a ResourcePack, or a combination of these pieces.
 
 ## Feedback summary
 
@@ -39,6 +39,6 @@ This PR does not:
 
 ## Career-facing value
 
-This is a feedback-response PR: a real human tester found the onboarding confusing, and the project improved the documentation in response.
+This is a feedback-response PR: an early first reader found the onboarding confusing, and the project improved the documentation in response.
 
 For career review, this demonstrates that TreasureRun is not only a technical implementation project, but also a contributor-facing OSS project that responds to human feedback.
