@@ -52,7 +52,7 @@ Reset the local development runtime completely:
 ./scripts/contributor-down.sh --volumes
 ```
 
-> This is a one-command local runtime setup. A specific startup-time claim will only be added after it has been measured from a fresh clone.
+> This is a one-command local runtime setup. Fresh Clone QuickStart PASS evidence is documented in `docs/external/FRESH_CLONE_QUICKSTART_EVIDENCE.md`; one recorded local fresh-clone measurement completed startup successfully in 39s.
 
 ## Contributing: Start Here
 
