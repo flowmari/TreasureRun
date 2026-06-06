@@ -37,8 +37,8 @@ TreasureRun must not currently claim:
 5. Run a dedicated Paper compatibility test before claiming Paper support.
 6. Only after that, prepare a SpigotMC Resource page draft.
 
-## Career-facing interpretation
+## Technical review interpretation
 
-For recruiter or foreign-company review, the strongest honest framing is:
+For external technical review, the strongest honest framing is:
 
 TreasureRun demonstrates that the maintainer can identify a real platform boundary, split responsibilities across appropriate layers, verify behavior with automated and runtime evidence, and prepare the project for external contributors without overstating maturity.

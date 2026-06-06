@@ -95,3 +95,6 @@ resourcepacks/generated/treasurerun-i18n-pack-*.zip.sha1
 # current tests/config still reference this canonical artifact.
 !resourcepacks/generated/treasurerun-i18n-pack.zip
 !resourcepacks/generated/treasurerun-i18n-pack.zip.sha1
+
+# Local one-off scripts and scratch files; never publish.
+.local-scratch/

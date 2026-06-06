@@ -1744,149 +1744,149 @@ language:
   - non
   - got
   displayName:
-    ja: "日本語"
-    en: "English"
-    de: "Deutsch"
-    it: "Italiano"
-    sv: "Svenska"
-    es: "Español"
-    la: "Latina"
-    is: "Íslenska"
-    fi: "Suomi"
-    nl: "Nederlands"
-    fr: "Français"
-    ru: "Русский"
-    ko: "한국어"
-    zh_tw: "中文（繁體）"
-    sa: "Sanskrit"
-    pt: "Português"
-    hi: "हिंदी"
-    lzh: "漢文"
-    ojp: "古文"
-    asl_gloss: "ASL GLOSS"
-    ang: "Ænglisc"
-    non: "Dǫnsk tunga"
-    got: "Gutiska"
+    ja: 日本語
+    en: English
+    de: Deutsch
+    it: Italiano
+    sv: Svenska
+    es: Español
+    la: Latina
+    is: Íslenska
+    fi: Suomi
+    nl: Nederlands
+    fr: Français
+    ru: Русский
+    ko: 한국어
+    zh_tw: 中文（繁體）
+    sa: Sanskrit
+    pt: Português
+    hi: हिंदी
+    lzh: 漢文
+    ojp: 古文
+    asl_gloss: ASL GLOSS
+    ang: Ænglisc
+    non: Dǫnsk tunga
+    got: Gutiska
   shortLabel:
-    ja: "JA"
-    en: "EN"
-    de: "DE"
-    it: "IT"
-    sv: "SV"
-    es: "ES"
-    la: "LA"
-    is: "IS"
-    fi: "FI"
-    nl: "NL"
-    fr: "FR"
-    ru: "RU"
-    ko: "KO"
-    zh_tw: "ZH"
-    sa: "SA"
-    pt: "PT"
-    hi: "HI"
-    lzh: "LZH"
-    ojp: "OJP"
-    asl_gloss: "ASL"
-    ang: "ANG"
-    non: "NON"
-    got: "GOT"
+    ja: JA
+    en: EN
+    de: DE
+    it: IT
+    sv: SV
+    es: ES
+    la: LA
+    is: IS
+    fi: FI
+    nl: NL
+    fr: FR
+    ru: RU
+    ko: KO
+    zh_tw: ZH
+    sa: SA
+    pt: PT
+    hi: HI
+    lzh: LZH
+    ojp: OJP
+    asl_gloss: ASL
+    ang: ANG
+    non: NON
+    got: GOT
   iconMaterial:
-    ja: "WHITE_WOOL"
-    en: "BLUE_WOOL"
-    de: "BLACK_WOOL"
-    it: "YELLOW_WOOL"
-    sv: "CYAN_WOOL"
-    es: "ORANGE_WOOL"
-    la: "PURPLE_WOOL"
-    is: "LIGHT_BLUE_WOOL"
-    fi: "LIME_WOOL"
-    nl: "GREEN_WOOL"
-    fr: "RED_WOOL"
-    ru: "MAGENTA_WOOL"
-    ko: "PINK_WOOL"
-    zh_tw: "BROWN_WOOL"
-    sa: "GRAY_WOOL"
-    pt: "LIGHT_GRAY_WOOL"
-    hi: "ORANGE_WOOL"
-    lzh: "WHITE_WOOL"
-    ojp: "YELLOW_WOOL"
-    asl_gloss: "BLACK_WOOL"
-    ang: "BROWN_WOOL"
-    non: "GRAY_WOOL"
-    got: "RED_WOOL"
+    ja: WHITE_WOOL
+    en: BLUE_WOOL
+    de: BLACK_WOOL
+    it: YELLOW_WOOL
+    sv: CYAN_WOOL
+    es: ORANGE_WOOL
+    la: PURPLE_WOOL
+    is: LIGHT_BLUE_WOOL
+    fi: LIME_WOOL
+    nl: GREEN_WOOL
+    fr: RED_WOOL
+    ru: MAGENTA_WOOL
+    ko: PINK_WOOL
+    zh_tw: BROWN_WOOL
+    sa: GRAY_WOOL
+    pt: LIGHT_GRAY_WOOL
+    hi: ORANGE_WOOL
+    lzh: WHITE_WOOL
+    ojp: YELLOW_WOOL
+    asl_gloss: BLACK_WOOL
+    ang: BROWN_WOOL
+    non: GRAY_WOOL
+    got: RED_WOOL
   selectHint:
-    ja: "押して選択"
-    en: "Click to select"
-    de: "Zum Auswählen klicken"
-    it: "Clicca per selezionare"
-    sv: "Klicka för att välja"
-    es: "Haz clic para seleccionar"
-    la: "Preme ut eligas"
-    is: "Smelltu til að velja"
-    fi: "Valitse napsauttamalla"
-    nl: "Klik om te selecteren"
-    fr: "Cliquez pour sélectionner"
-    ru: "Нажмите, чтобы выбрать"
-    ko: "클릭하여 선택"
-    zh_tw: "點擊以選擇"
-    sa: "वरणाय क्लिक् कुरुत"
-    pt: "Clique para selecionar"
-    hi: "चुनने के लिए क्लिक करें"
-    lzh: "按此而擇"
-    ojp: "押して選び給へ"
-    asl_gloss: "CLICK SELECT"
-    ang: "Select Old English"
-    non: "Select Old Norse"
-    got: "Select Gothic"
+    ja: 押して選択
+    en: Click to select
+    de: Zum Auswählen klicken
+    it: Clicca per selezionare
+    sv: Klicka för att välja
+    es: Haz clic para seleccionar
+    la: Preme ut eligas
+    is: Smelltu til að velja
+    fi: Valitse napsauttamalla
+    nl: Klik om te selecteren
+    fr: Cliquez pour sélectionner
+    ru: Нажмите, чтобы выбрать
+    ko: 클릭하여 선택
+    zh_tw: 點擊以選擇
+    sa: वरणाय क्लिक् कुरुत
+    pt: Clique para selecionar
+    hi: चुनने के लिए क्लिक करें
+    lzh: 按此而擇
+    ojp: 押して選び給へ
+    asl_gloss: CLICK SELECT
+    ang: Select Old English
+    non: Select Old Norse
+    got: Select Gothic
   rulesTitle:
-    ja: "TreasureRun ルール"
-    en: "TreasureRun Rules"
-    de: "TreasureRun Regeln"
-    it: "Regole di TreasureRun"
-    sv: "TreasureRun-regler"
-    es: "Reglas de TreasureRun"
-    la: "Regulae TreasureRun"
-    is: "TreasureRun reglur"
-    fi: "TreasureRun-säännöt"
-    nl: "TreasureRun-regels"
-    fr: "Règles de TreasureRun"
-    ru: "Правила TreasureRun"
-    ko: "TreasureRun 규칙"
-    zh_tw: "TreasureRun 規則"
-    sa: "TreasureRun नियमाः"
-    pt: "Regras do TreasureRun"
-    hi: "TreasureRun नियम"
-    lzh: "TreasureRun 規則"
-    ojp: "TreasureRun 御掟"
-    asl_gloss: "TREASURE-RUN RULES"
-    ang: "TreasureRun Rules"
-    non: "TreasureRun Rules"
-    got: "TreasureRun Rules"
+    ja: TreasureRun ルール
+    en: TreasureRun Rules
+    de: TreasureRun Regeln
+    it: Regole di TreasureRun
+    sv: TreasureRun-regler
+    es: Reglas de TreasureRun
+    la: Regulae TreasureRun
+    is: TreasureRun reglur
+    fi: TreasureRun-säännöt
+    nl: TreasureRun-regels
+    fr: Règles de TreasureRun
+    ru: Правила TreasureRun
+    ko: TreasureRun 규칙
+    zh_tw: TreasureRun 規則
+    sa: TreasureRun नियमाः
+    pt: Regras do TreasureRun
+    hi: TreasureRun नियम
+    lzh: TreasureRun 規則
+    ojp: TreasureRun 御掟
+    asl_gloss: TREASURE-RUN RULES
+    ang: TreasureRun Rules
+    non: TreasureRun Rules
+    got: TreasureRun Rules
   ruleBookTitle:
-    ja: "TreasureRun ルールブック"
-    en: "TreasureRun Rule Book"
-    de: "TreasureRun Regelbuch"
-    it: "Libro delle regole di TreasureRun"
-    sv: "TreasureRun regelbok"
-    es: "Libro de reglas de TreasureRun"
-    la: "Liber Regularum TreasureRun"
-    is: "TreasureRun reglubók"
-    fi: "TreasureRun-sääntökirja"
-    nl: "TreasureRun-regelboek"
-    fr: "Livre des règles de TreasureRun"
-    ru: "Книга правил TreasureRun"
-    ko: "TreasureRun 규칙 책"
-    zh_tw: "TreasureRun 規則書"
-    sa: "TreasureRun नियमपुस्तकम्"
-    pt: "Livro de regras do TreasureRun"
-    hi: "TreasureRun नियम पुस्तिका"
-    lzh: "TreasureRun 規則書"
-    ojp: "TreasureRun 御掟の巻"
-    asl_gloss: "TREASURE-RUN RULE BOOK"
-    ang: "TreasureRun Rule Book"
-    non: "TreasureRun Rule Book"
-    got: "TreasureRun Rule Book"
+    ja: TreasureRun ルールブック
+    en: TreasureRun Rule Book
+    de: TreasureRun Regelbuch
+    it: Libro delle regole di TreasureRun
+    sv: TreasureRun regelbok
+    es: Libro de reglas de TreasureRun
+    la: Liber Regularum TreasureRun
+    is: TreasureRun reglubók
+    fi: TreasureRun-sääntökirja
+    nl: TreasureRun-regelboek
+    fr: Livre des règles de TreasureRun
+    ru: Книга правил TreasureRun
+    ko: TreasureRun 규칙 책
+    zh_tw: TreasureRun 規則書
+    sa: TreasureRun नियमपुस्तकम्
+    pt: Livro de regras do TreasureRun
+    hi: TreasureRun नियम पुस्तिका
+    lzh: TreasureRun 規則書
+    ojp: TreasureRun 御掟の巻
+    asl_gloss: TREASURE-RUN RULE BOOK
+    ang: TreasureRun Rule Book
+    non: TreasureRun Rule Book
+    got: TreasureRun Rule Book
   loreDefault: Click to select
   lore:
     ja: クリックして選択
@@ -1932,28 +1932,28 @@ ruleBook:
     got: TreasureRun Rules
   author: TreasureRun
   displayName:
-    ja: "TreasureRun ルールブック"
-    en: "TreasureRun Rule Book"
-    de: "TreasureRun Regelbuch"
-    it: "Libro delle Regole TreasureRun"
-    sv: "TreasureRun Regelbok"
-    es: "Libro de Reglas de TreasureRun"
-    la: "Liber Regularum TreasureRun"
-    is: "TreasureRun Reglubók"
-    fi: "TreasureRun Sääntökirja"
-    nl: "TreasureRun Regelboek"
-    fr: "Livre des Règles TreasureRun"
-    ru: "Книга правил TreasureRun"
-    ko: "TreasureRun 규칙서"
-    zh_tw: "TreasureRun 規則書"
-    sa: "TreasureRun नियमपुस्तकः"
-    pt: "Livro de Regras do TreasureRun"
-    hi: "TreasureRun नियम पुस्तिका"
-    lzh: "TreasureRun 規則書"
-    ojp: "TreasureRun 御掟の巻"
-    asl_gloss: "TREASURE-RUN RULE BOOK"
-    ang: "TreasureRun Regolbōc"
-    non: "TreasureRun Reglubók"
+    ja: TreasureRun ルールブック
+    en: TreasureRun Rule Book
+    de: TreasureRun Regelbuch
+    it: Libro delle Regole TreasureRun
+    sv: TreasureRun Regelbok
+    es: Libro de Reglas de TreasureRun
+    la: Liber Regularum TreasureRun
+    is: TreasureRun Reglubók
+    fi: TreasureRun Sääntökirja
+    nl: TreasureRun Regelboek
+    fr: Livre des Règles TreasureRun
+    ru: Книга правил TreasureRun
+    ko: TreasureRun 규칙서
+    zh_tw: TreasureRun 規則書
+    sa: TreasureRun नियमपुस्तकः
+    pt: Livro de Regras do TreasureRun
+    hi: TreasureRun नियम पुस्तिका
+    lzh: TreasureRun 規則書
+    ojp: TreasureRun 御掟の巻
+    asl_gloss: TREASURE-RUN RULE BOOK
+    ang: TreasureRun Regolbōc
+    non: TreasureRun Reglubók
 chestSound:
   debug: false
   actionBarDebug: false
@@ -1976,126 +1976,92 @@ command:
       repositoryNotReady: MySQL / Repository not ready.
       bookOpenFailed: Failed to open book.
       openBookFailed: openBook() failed on this server.
-
-# Bukkit event-layer engine/system message localization.
-# Client-side/network/authentication messages are outside the plugin layer.
 systemMessages:
   enabled: true
   suppressVanillaAdvancements: true
-
-# ============================================================
-# ProtocolLib packet-level i18n
-# - Bukkitイベント層で拾えない標準文を、サーバー→プレイヤーのパケットで監査・置換する
-# - 最初は audit=true で「何が流れているか」をログ確認する
-# ============================================================
-
-# ============================================================
-# PacketI18n
-# ------------------------------------------------------------
-# MAX practical mode for Hybrid Minecraft i18n:
-# - audit=true collects observed vanilla translate keys
-# - replaceTranslatedComponents=true rewrites known translatable components
-# - unknown keys are logged, then translated through YAML/resource-pack expansion
-#
-# Honest limitation:
-# pre-login, authentication, settings, and purely client-local UI text are not
-# guaranteed to be controllable from a server plugin.
-# ============================================================
-
-# ============================================================
-# MAX practical mode for Hybrid Minecraft i18n.
-# Server-observable translatable packets are audited and known keys are replaced.
-# Unknown keys are collected as evidence for future YAML/resource-pack expansion.
-#
-# Honest limitation:
-# pre-login, authentication, settings, and purely client-local UI text are not
-# guaranteed to be controllable from a server plugin.
-# ============================================================
 packetMessages:
   enabled: true
   audit: true
   debug: false
   replaceTranslatedComponents: true
   auditAllJson: false
-
 resourcePack:
   enabled: true
   force: true
-  url: "https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip"
-  sha1: "12a9e7ea2df4785002855c7462033a5f3e5dd5c5"
-  prompt: "TreasureRun uses a multilingual Minecraft resource pack to localize Minecraft language keys. Please accept it for the full i18n experience."
-
+  url: https://raw.githubusercontent.com/flowmari/TreasureRun/main/resourcepacks/generated/treasurerun-i18n-pack.zip
+  sha1: 12a9e7ea2df4785002855c7462033a5f3e5dd5c5
+  prompt: TreasureRun uses a multilingual Minecraft resource pack to localize Minecraft language keys. Please accept it for the full i18n experience.
 resourcePackFallback:
   enabled: true
   force: false
-  prompt: "TreasureRun i18n"
+  prompt: TreasureRun i18n
   packs:
     ja:
-      url: "https://github.com/flowmari/TreasureRun/releases/download/v0.1.2-alpha-resourcepack-fallback/treasurerun-i18n-pack-ja.zip"
-      sha1: "6a4a03ee5ea3ac0e2140593719405b1aab6c1f9b"
+      url: https://github.com/flowmari/TreasureRun/releases/download/v0.1.2-alpha-resourcepack-fallback/treasurerun-i18n-pack-ja.zip
+      sha1: 6a4a03ee5ea3ac0e2140593719405b1aab6c1f9b
     en:
-      url: "https://github.com/flowmari/TreasureRun/releases/download/v0.1.2-alpha-resourcepack-fallback/treasurerun-i18n-pack-en.zip"
-      sha1: "308941a7ea3908d87e9737e82e7599454a38e4fa"
+      url: https://github.com/flowmari/TreasureRun/releases/download/v0.1.2-alpha-resourcepack-fallback/treasurerun-i18n-pack-en.zip
+      sha1: 308941a7ea3908d87e9737e82e7599454a38e4fa
     de:
-      url: "https://github.com/flowmari/TreasureRun/releases/download/v0.1.2-alpha-resourcepack-fallback/treasurerun-i18n-pack-de.zip"
-      sha1: "e63b204bf84c77dd4ced98dfe6f8acd72636c5e5"
+      url: https://github.com/flowmari/TreasureRun/releases/download/v0.1.2-alpha-resourcepack-fallback/treasurerun-i18n-pack-de.zip
+      sha1: e63b204bf84c77dd4ced98dfe6f8acd72636c5e5
     es:
-      url: "https://github.com/flowmari/TreasureRun/releases/download/v0.1.2-alpha-resourcepack-fallback/treasurerun-i18n-pack-es.zip"
-      sha1: "acf3d39fa992b297967971a7987924c5743219cf"
+      url: https://github.com/flowmari/TreasureRun/releases/download/v0.1.2-alpha-resourcepack-fallback/treasurerun-i18n-pack-es.zip
+      sha1: acf3d39fa992b297967971a7987924c5743219cf
     fr:
-      url: "https://github.com/flowmari/TreasureRun/releases/download/v0.1.2-alpha-resourcepack-fallback/treasurerun-i18n-pack-fr.zip"
-      sha1: "0100ecef4e2d0b8196c9f0d26ab4cd144feb002b"
+      url: https://github.com/flowmari/TreasureRun/releases/download/v0.1.2-alpha-resourcepack-fallback/treasurerun-i18n-pack-fr.zip
+      sha1: 0100ecef4e2d0b8196c9f0d26ab4cd144feb002b
     ko:
-      url: "https://github.com/flowmari/TreasureRun/releases/download/v0.1.2-alpha-resourcepack-fallback/treasurerun-i18n-pack-ko.zip"
-      sha1: "80d433a53ee66d65cb1269081953b0c4f53d10ae"
+      url: https://github.com/flowmari/TreasureRun/releases/download/v0.1.2-alpha-resourcepack-fallback/treasurerun-i18n-pack-ko.zip
+      sha1: 80d433a53ee66d65cb1269081953b0c4f53d10ae
     ru:
-      url: "https://github.com/flowmari/TreasureRun/releases/download/v0.1.2-alpha-resourcepack-fallback/treasurerun-i18n-pack-ru.zip"
-      sha1: "3aea4486d12cece1d75f534baa2330b26a82c90c"
+      url: https://github.com/flowmari/TreasureRun/releases/download/v0.1.2-alpha-resourcepack-fallback/treasurerun-i18n-pack-ru.zip
+      sha1: 3aea4486d12cece1d75f534baa2330b26a82c90c
     zh_tw:
-      url: "https://github.com/flowmari/TreasureRun/releases/download/v0.1.2-alpha-resourcepack-fallback/treasurerun-i18n-pack-zh_tw.zip"
-      sha1: "585e36f1a5285ef254f2574c0f4c766d8b653471"
+      url: https://github.com/flowmari/TreasureRun/releases/download/v0.1.2-alpha-resourcepack-fallback/treasurerun-i18n-pack-zh_tw.zip
+      sha1: 585e36f1a5285ef254f2574c0f4c766d8b653471
     fi:
-      url: "https://github.com/flowmari/TreasureRun/releases/download/v0.1.2-alpha-resourcepack-fallback/treasurerun-i18n-pack-fi.zip"
-      sha1: "82077d7583649d83407827bac37c4bd067ff4e03"
+      url: https://github.com/flowmari/TreasureRun/releases/download/v0.1.2-alpha-resourcepack-fallback/treasurerun-i18n-pack-fi.zip
+      sha1: 82077d7583649d83407827bac37c4bd067ff4e03
     it:
-      url: "https://github.com/flowmari/TreasureRun/releases/download/v0.1.2-alpha-resourcepack-fallback/treasurerun-i18n-pack-it.zip"
-      sha1: "34592687b1080b9b082ed732b5f06079dd4bfb4f"
+      url: https://github.com/flowmari/TreasureRun/releases/download/v0.1.2-alpha-resourcepack-fallback/treasurerun-i18n-pack-it.zip
+      sha1: 34592687b1080b9b082ed732b5f06079dd4bfb4f
     nl:
-      url: "https://github.com/flowmari/TreasureRun/releases/download/v0.1.2-alpha-resourcepack-fallback/treasurerun-i18n-pack-nl.zip"
-      sha1: "dabacf766c56a0599dd98f900ab30e1a62bcca32"
+      url: https://github.com/flowmari/TreasureRun/releases/download/v0.1.2-alpha-resourcepack-fallback/treasurerun-i18n-pack-nl.zip
+      sha1: dabacf766c56a0599dd98f900ab30e1a62bcca32
     pt:
-      url: "https://github.com/flowmari/TreasureRun/releases/download/v0.1.2-alpha-resourcepack-fallback/treasurerun-i18n-pack-pt.zip"
-      sha1: "48dcc7865fede1691a1f17ed4ff5b7dcfe520e5b"
+      url: https://github.com/flowmari/TreasureRun/releases/download/v0.1.2-alpha-resourcepack-fallback/treasurerun-i18n-pack-pt.zip
+      sha1: 48dcc7865fede1691a1f17ed4ff5b7dcfe520e5b
     hi:
-      url: "https://github.com/flowmari/TreasureRun/releases/download/v0.1.2-alpha-resourcepack-fallback/treasurerun-i18n-pack-hi.zip"
-      sha1: "e61ab375f01e1442284004cea28283fbd87ae80a"
+      url: https://github.com/flowmari/TreasureRun/releases/download/v0.1.2-alpha-resourcepack-fallback/treasurerun-i18n-pack-hi.zip
+      sha1: e61ab375f01e1442284004cea28283fbd87ae80a
     sv:
-      url: "https://github.com/flowmari/TreasureRun/releases/download/v0.1.2-alpha-resourcepack-fallback/treasurerun-i18n-pack-sv.zip"
-      sha1: "0ce250d475e138cc34e55264be7fba5ff156c958"
+      url: https://github.com/flowmari/TreasureRun/releases/download/v0.1.2-alpha-resourcepack-fallback/treasurerun-i18n-pack-sv.zip
+      sha1: 0ce250d475e138cc34e55264be7fba5ff156c958
     is:
-      url: "https://github.com/flowmari/TreasureRun/releases/download/v0.1.2-alpha-resourcepack-fallback/treasurerun-i18n-pack-is.zip"
-      sha1: "e01a3ff185fb7b31fe9ba2f7b374a90d1225d9e4"
+      url: https://github.com/flowmari/TreasureRun/releases/download/v0.1.2-alpha-resourcepack-fallback/treasurerun-i18n-pack-is.zip
+      sha1: e01a3ff185fb7b31fe9ba2f7b374a90d1225d9e4
     la:
-      url: "https://github.com/flowmari/TreasureRun/releases/download/v0.1.2-alpha-resourcepack-fallback/treasurerun-i18n-pack-la.zip"
-      sha1: "1c5a470514ba0b46db77929697f657c8ed9431b3"
+      url: https://github.com/flowmari/TreasureRun/releases/download/v0.1.2-alpha-resourcepack-fallback/treasurerun-i18n-pack-la.zip
+      sha1: 1c5a470514ba0b46db77929697f657c8ed9431b3
     sa:
-      url: "https://github.com/flowmari/TreasureRun/releases/download/v0.1.2-alpha-resourcepack-fallback/treasurerun-i18n-pack-sa.zip"
-      sha1: "0291b3880abb2219714a89da2d5d2c9a2f96ea49"
+      url: https://github.com/flowmari/TreasureRun/releases/download/v0.1.2-alpha-resourcepack-fallback/treasurerun-i18n-pack-sa.zip
+      sha1: 0291b3880abb2219714a89da2d5d2c9a2f96ea49
     lzh:
-      url: "https://github.com/flowmari/TreasureRun/releases/download/v0.1.2-alpha-resourcepack-fallback/treasurerun-i18n-pack-lzh.zip"
-      sha1: "1c5f44422984c62697935463988f439e6cdd723c"
+      url: https://github.com/flowmari/TreasureRun/releases/download/v0.1.2-alpha-resourcepack-fallback/treasurerun-i18n-pack-lzh.zip
+      sha1: 1c5f44422984c62697935463988f439e6cdd723c
     ojp:
-      url: "https://github.com/flowmari/TreasureRun/releases/download/v0.1.2-alpha-resourcepack-fallback/treasurerun-i18n-pack-ojp.zip"
-      sha1: "f2b32dfd384ea6138d2cc8c4097f1e0c37255c86"
+      url: https://github.com/flowmari/TreasureRun/releases/download/v0.1.2-alpha-resourcepack-fallback/treasurerun-i18n-pack-ojp.zip
+      sha1: f2b32dfd384ea6138d2cc8c4097f1e0c37255c86
     asl_gloss:
-      url: "https://github.com/flowmari/TreasureRun/releases/download/v0.1.2-alpha-resourcepack-fallback/treasurerun-i18n-pack-asl_gloss.zip"
-      sha1: "1701d75e0884c493bf03cc26a8007655edd729a9"
+      url: https://github.com/flowmari/TreasureRun/releases/download/v0.1.2-alpha-resourcepack-fallback/treasurerun-i18n-pack-asl_gloss.zip
+      sha1: 1701d75e0884c493bf03cc26a8007655edd729a9
     ang:
-      url: "https://github.com/flowmari/TreasureRun/releases/download/v0.1.2-alpha-resourcepack-fallback/treasurerun-i18n-pack-ang.zip"
-      sha1: "be6e73be3c51633b5f575f14465b004d6c053c27"
+      url: https://github.com/flowmari/TreasureRun/releases/download/v0.1.2-alpha-resourcepack-fallback/treasurerun-i18n-pack-ang.zip
+      sha1: be6e73be3c51633b5f575f14465b004d6c053c27
     non:
-      url: "https://github.com/flowmari/TreasureRun/releases/download/v0.1.2-alpha-resourcepack-fallback/treasurerun-i18n-pack-non.zip"
-      sha1: "a58f2fa3e25cccfd700de07200ca0a91fabc6530"
+      url: https://github.com/flowmari/TreasureRun/releases/download/v0.1.2-alpha-resourcepack-fallback/treasurerun-i18n-pack-non.zip
+      sha1: a58f2fa3e25cccfd700de07200ca0a91fabc6530
     got:
-      url: "https://github.com/flowmari/TreasureRun/releases/download/v0.1.2-alpha-resourcepack-fallback/treasurerun-i18n-pack-got.zip"
-      sha1: "ac0047916e4dcec2d036319e0f4b26c499173b2d"
+      url: https://github.com/flowmari/TreasureRun/releases/download/v0.1.2-alpha-resourcepack-fallback/treasurerun-i18n-pack-got.zip
+      sha1: ac0047916e4dcec2d036319e0f4b26c499173b2d
