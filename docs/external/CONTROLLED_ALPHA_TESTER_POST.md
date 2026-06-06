@@ -84,7 +84,7 @@ Known boundaries:
 
 Would you be willing to try the QuickStart and tell me where it works or breaks?
 
-## Recruiter-safe summary
+## Technical review summary
 
 TreasureRun is an open-source Java / Spigot Minecraft plugin that demonstrates platform-boundary i18n. A Spigot plugin alone cannot control every Minecraft UI surface, so the project separates plugin-owned YAML messages, ProtocolLib packet boundaries, ResourcePack language assets, optional Fabric runtime sync, and pure Java localization logic. The repository includes CI checks, Docker-based contributor startup, ResourcePack checksum verification, Fresh Clone QuickStart evidence, and beginner-friendly issues for external feedback.
 

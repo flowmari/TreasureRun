@@ -37,8 +37,8 @@ This PR does not:
 - claim Paper compatibility;
 - claim production/live-server readiness.
 
-## Career-facing value
+## Technical review value
 
 This is a feedback-response PR: an early first reader found the onboarding confusing, and the project improved the documentation in response.
 
-For career review, this demonstrates that TreasureRun is not only a technical implementation project, but also a contributor-facing OSS project that responds to human feedback.
+For external technical review, this demonstrates that TreasureRun is not only a technical implementation project, but also a contributor-facing OSS project that responds to human feedback.

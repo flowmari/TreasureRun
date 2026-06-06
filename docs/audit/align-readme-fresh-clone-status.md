@@ -28,6 +28,6 @@ This change does not:
 - claim Paper compatibility;
 - claim production/live-server readiness.
 
-## Career-facing value
+## Technical review value
 
 This keeps the public README consistent with the repository evidence before asking an independent external tester to try the project.

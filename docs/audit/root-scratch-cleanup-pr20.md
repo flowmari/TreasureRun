@@ -34,7 +34,7 @@ tmp_add_historical_germanic_locales.sh
 tmp_add_packet_i18n_boundary_verification_doc.sh
 tmp_add_packet_i18n_json_localizer_phase1.sh
 tmp_add_readme_runtime_evidence_link.sh
-tmp_add_recruiter_guide_and_fix_readme_i18n_counts.sh
+tmp_add_technical reviewer_guide_and_fix_readme_i18n_counts.sh
 tmp_add_resourcepack_artifact_integrity_test.sh
 tmp_add_standard_ui_i18n_demo_gif.sh
 tmp_ang_non_maturity_plugin_and_resourcepack.sh
@@ -57,13 +57,13 @@ tmp_create_github_release_v010_alpha.sh
 tmp_create_v010_alpha_tag_safely.sh
 tmp_create_v011_alpha_release.sh
 tmp_delete_latest_4_actions_only_confirm.sh
-tmp_delete_old_recruiter_actions_runs.sh
-tmp_delete_old_recruiter_actions_runs_fixed.sh
+tmp_delete_old_technical reviewer_actions_runs.sh
+tmp_delete_old_technical reviewer_actions_runs_fixed.sh
 tmp_deploy_fabric_gothic_client_final_no_math.sh
 tmp_deploy_fabric_gothic_safe.sh
 tmp_deploy_gothic_and_capture_runtime_evidence.sh
 tmp_diagnose_ang_non_client_language_boundary.sh
-tmp_diagnose_failed_ci_after_recruiter_guide.sh
+tmp_diagnose_failed_ci_after_technical reviewer_guide.sh
 tmp_diagnose_got_de_standard_ui_not_changing.sh
 tmp_diagnose_gothic_state_only.sh
 tmp_document_core_i18n_ranking_tests.sh
@@ -120,7 +120,7 @@ tmp_fix_remaining_readme_i18n_stale_words.sh
 tmp_fix_resourcepack_config_sha_consistency.sh
 tmp_fix_resourcepack_runtime_local_http_safe.sh
 tmp_fix_resourcepack_sha1_after_readme_rebase.sh
-tmp_fix_resourcepack_sha_after_recruiter_guide.sh
+tmp_fix_resourcepack_sha_after_technical reviewer_guide.sh
 tmp_fix_resourcepack_sha_mismatch_absolute.sh
 tmp_fix_runtime_gothic_docker_sync.sh
 tmp_fix_sha1_after_ang_non_gui_hints.sh
@@ -203,6 +203,6 @@ The PR was verified with:
 - suspect translation scan;
 - Gradle build.
 
-## Career-facing reason
+## Technical review reason
 
 For external reviewers, a clean repository root makes the project look intentional, contributor-ready, and easier to navigate. The technical evidence remains in docs and tests, while temporary local execution artifacts are removed from the public entrance.
