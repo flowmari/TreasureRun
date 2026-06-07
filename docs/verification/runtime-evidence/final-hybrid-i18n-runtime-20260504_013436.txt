@@ -26,7 +26,7 @@
 [22:52:22] [User Authenticator #1/INFO]: UUID of player flowmari is 470d7dc8-8ce4-48d7-a0e1-fa8a1acf30b5
 [22:52:22] [Server thread/INFO]: flowmari、TreasureRun の世に入り給ひぬ。
 [22:52:22] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT json={"extra":[{"text":"flowmari、TreasureRun の世に入り給ひぬ。"}],"text":""}
-[22:52:23] [Server thread/INFO]: flowmari[/150.171.110.137:36518] logged in with entity id 227 at ([world]-84.65044180271593, 42.0, 307.36073812684435)
+[22:52:23] [Server thread/INFO]: flowmari[/<REDACTED_IP>:36518] logged in with entity id 227 at ([world]-84.65044180271593, 42.0, 307.36073812684435)
 [22:52:38] [Server thread/INFO]: flowmari issued server command: /lang ojp
 [22:52:38] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT json={"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"green","text":"✅ 言の葉を改めたり: {古文} ({ojp})"}],"text":""}
 [22:53:54] [Async Chat Thread - #2/INFO]: <flowmari> test
@@ -36,7 +36,7 @@
 [22:59:07] [User Authenticator #2/INFO]: UUID of player flowmari is 470d7dc8-8ce4-48d7-a0e1-fa8a1acf30b5
 [22:59:07] [Server thread/INFO]: flowmari、TreasureRun の世に入り給ひぬ。
 [22:59:07] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT json={"extra":[{"text":"flowmari、TreasureRun の世に入り給ひぬ。"}],"text":""}
-[22:59:08] [Server thread/INFO]: flowmari[/150.171.110.137:24197] logged in with entity id 768 at ([world]-88.95094189454296, 74.0, 310.30409855384113)
+[22:59:08] [Server thread/INFO]: flowmari[/<REDACTED_IP>:24197] logged in with entity id 768 at ([world]-88.95094189454296, 74.0, 310.30409855384113)
 [23:13:03] [Server thread/INFO]: flowmariは命の緒、ここに絶えにけり。
 [23:13:03] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT json={"extra":[{"text":"flowmariは命の緒、ここに絶えにけり。"}],"text":""}
 [23:19:49] [Server thread/INFO]: flowmari lost connection: Disconnected
@@ -48,7 +48,7 @@
 [23:25:41] [User Authenticator #1/INFO]: UUID of player flowmari is 470d7dc8-8ce4-48d7-a0e1-fa8a1acf30b5
 [23:25:41] [Server thread/INFO]: flowmari、TreasureRun の世に入り給ひぬ。
 [23:25:41] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT json={"extra":[{"text":"flowmari、TreasureRun の世に入り給ひぬ。"}],"text":""}
-[23:25:41] [Server thread/INFO]: flowmari[/150.171.110.137:45640] logged in with entity id 238 at ([world]-86.55605004943132, 42.0, 310.18565248178254)
+[23:25:41] [Server thread/INFO]: flowmari[/<REDACTED_IP>:45640] logged in with entity id 238 at ([world]-86.55605004943132, 42.0, 310.18565248178254)
 [23:26:03] [Server thread/INFO]: flowmari issued server command: /lang ojp
 [23:26:03] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT json={"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"green","text":"✅ 言の葉を改めたり: {古文} ({ojp})"}],"text":""}
 [23:26:14] [Async Chat Thread - #0/INFO]: <flowmari> test
@@ -58,7 +58,7 @@
 [23:28:46] [User Authenticator #2/INFO]: UUID of player flowmari is 470d7dc8-8ce4-48d7-a0e1-fa8a1acf30b5
 [23:28:46] [Server thread/INFO]: flowmari、TreasureRun の世に入り給ひぬ。
 [23:28:46] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT json={"extra":[{"text":"flowmari、TreasureRun の世に入り給ひぬ。"}],"text":""}
-[23:28:47] [Server thread/INFO]: flowmari[/150.171.110.137:63009] logged in with entity id 342 at ([world]-85.5, 75.0, 315.5)
+[23:28:47] [Server thread/INFO]: flowmari[/<REDACTED_IP>:63009] logged in with entity id 342 at ([world]-85.5, 75.0, 315.5)
 [23:29:01] [Server thread/INFO]: flowmari issued server command: /lang ojp
 [23:29:01] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT json={"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"green","text":"✅ 言の葉を改めたり: {古文} ({ojp})"}],"text":""}
 [23:34:48] [Server thread/INFO]: flowmari lost connection: Server closed
@@ -82,7 +82,7 @@
 [06:34:25] [User Authenticator #1/INFO]: UUID of player flowmari is 470d7dc8-8ce4-48d7-a0e1-fa8a1acf30b5
 [06:34:26] [Server thread/INFO]: flowmari、TreasureRun の世に入り給ひぬ。
 [06:34:26] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT json={"extra":[{"text":"flowmari、TreasureRun の世に入り給ひぬ。"}],"text":""}
-[06:34:26] [Server thread/INFO]: flowmari[/150.171.110.137:34691] logged in with entity id 295 at ([world]-85.5, 75.0, 315.5)
+[06:34:26] [Server thread/INFO]: flowmari[/<REDACTED_IP>:34691] logged in with entity id 295 at ([world]-85.5, 75.0, 315.5)
 [06:34:41] [Server thread/INFO]: flowmari issued server command: /lang ojp
 [06:34:41] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT json={"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"green","text":"✅ 言の葉を改めたり: {古文} ({ojp})"}],"text":""}
 [06:34:55] [Async Chat Thread - #0/INFO]: <flowmari> test
@@ -92,7 +92,7 @@
 [06:46:47] [User Authenticator #2/INFO]: UUID of player flowmari is 470d7dc8-8ce4-48d7-a0e1-fa8a1acf30b5
 [06:46:47] [Server thread/INFO]: flowmari、TreasureRun の世に入り給ひぬ。
 [06:46:47] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT json={"extra":[{"text":"flowmari、TreasureRun の世に入り給ひぬ。"}],"text":""}
-[06:46:48] [Server thread/INFO]: flowmari[/150.171.110.137:28056] logged in with entity id 430 at ([world]-85.5, 75.0, 315.5)
+[06:46:48] [Server thread/INFO]: flowmari[/<REDACTED_IP>:28056] logged in with entity id 430 at ([world]-85.5, 75.0, 315.5)
 [06:46:57] [Server thread/INFO]: flowmari issued server command: /lang ojp
 [06:46:57] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT json={"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"green","text":"✅ 言の葉を改めたり: {古文} ({ojp})"}],"text":""}
 [06:47:05] [Server thread/INFO]: flowmari issued server command: /gamestart easy
@@ -563,7 +563,7 @@
 [06:59:08] [User Authenticator #3/INFO]: UUID of player flowmari is 470d7dc8-8ce4-48d7-a0e1-fa8a1acf30b5
 [06:59:08] [Server thread/INFO]: flowmari、TreasureRun の世に入り給ひぬ。
 [06:59:08] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT json={"extra":[{"text":"flowmari、TreasureRun の世に入り給ひぬ。"}],"text":""}
-[06:59:08] [Server thread/INFO]: flowmari[/150.171.110.137:16926] logged in with entity id 166964 at ([world]-85.5, 75.0, 315.5)
+[06:59:08] [Server thread/INFO]: flowmari[/<REDACTED_IP>:16926] logged in with entity id 166964 at ([world]-85.5, 75.0, 315.5)
 [06:59:23] [Async Chat Thread - #3/INFO]: <flowmari> test
 [06:59:23] [Server thread/INFO]: [TreasureRun] [PacketI18n][DEBUG] player=flowmari packet=CHAT json=NONE
 [06:59:44] [Server thread/INFO]: flowmari issued server command: /kill flowmari
@@ -591,7 +591,7 @@
 [07:44:14] [User Authenticator #1/INFO]: UUID of player flowmari is 470d7dc8-8ce4-48d7-a0e1-fa8a1acf30b5
 [07:44:14] [Server thread/INFO]: flowmari、TreasureRun の世に入り給ひぬ。
 [07:44:14] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT json={"extra":[{"text":"flowmari、TreasureRun の世に入り給ひぬ。"}],"text":""}
-[07:44:15] [Server thread/INFO]: flowmari[/150.171.110.137:42775] logged in with entity id 215 at ([world]-86.5, 75.0, 315.5)
+[07:44:15] [Server thread/INFO]: flowmari[/<REDACTED_IP>:42775] logged in with entity id 215 at ([world]-86.5, 75.0, 315.5)
 [07:44:54] [Server thread/INFO]: flowmari issued server command: /packetI18nProbe
 [07:44:54] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT json={"extra":[{"text":"/packeti18nprobe を行ふ権、汝にはまだ許されず。"}],"text":""}
 [07:53:46] [Server thread/INFO]: [TreasureRun] [PacketI18n][AUDIT] player=flowmari packet=SYSTEM_CHAT translate=chat.type.admin yaml=minecraft.packet.chat.type.admin
@@ -644,7 +644,7 @@
 [11:47:42] [User Authenticator #1/INFO]: UUID of player flowmari is 470d7dc8-8ce4-48d7-a0e1-fa8a1acf30b5
 [11:47:42] [Server thread/INFO]: [TreasureRun] [ResourcePack] sent multilingual pack to flowmari force=true sha1=17500006569f628a0dc5e18d2ca8135917c82a2d
 [11:47:42] [Server thread/INFO]: flowmari、TreasureRun の世に入り給ひぬ。
-[11:47:42] [Server thread/INFO]: flowmari[/150.171.110.137:50704] logged in with entity id 217 at ([world]-86.5, 75.0, 315.5)
+[11:47:42] [Server thread/INFO]: flowmari[/<REDACTED_IP>:50704] logged in with entity id 217 at ([world]-86.5, 75.0, 315.5)
 [11:50:24] [Server thread/INFO]: [TreasureRun] [ResourcePack][STATUS] player=flowmari uuid=470d7dc8-8ce4-48d7-a0e1-fa8a1acf30b5 status=ACCEPTED
 [11:50:26] [Server thread/INFO]: [TreasureRun] [ResourcePack][STATUS] player=flowmari uuid=470d7dc8-8ce4-48d7-a0e1-fa8a1acf30b5 status=SUCCESSFULLY_LOADED
 [11:51:25] [Server thread/INFO]: flowmari issued server command: /lang ojp
@@ -673,7 +673,7 @@
 [16:40:58] [User Authenticator #1/INFO]: UUID of player flowmari is 470d7dc8-8ce4-48d7-a0e1-fa8a1acf30b5
 [16:40:59] [Server thread/INFO]: [TreasureRun] [ResourcePack] sent multilingual pack to flowmari force=true sha1=17500006569f628a0dc5e18d2ca8135917c82a2d
 [16:40:59] [Server thread/INFO]: flowmari、TreasureRun の世に入り給ひぬ。
-[16:40:59] [Server thread/INFO]: flowmari[/150.171.110.137:58078] logged in with entity id 218 at ([world]-86.5, 75.0, 315.5)
+[16:40:59] [Server thread/INFO]: flowmari[/<REDACTED_IP>:58078] logged in with entity id 218 at ([world]-86.5, 75.0, 315.5)
 [16:42:54] [Server thread/INFO]: [TreasureRun] [ResourcePack][STATUS] player=flowmari uuid=470d7dc8-8ce4-48d7-a0e1-fa8a1acf30b5 status=ACCEPTED
 [16:42:57] [Server thread/INFO]: [TreasureRun] [ResourcePack][STATUS] player=flowmari uuid=470d7dc8-8ce4-48d7-a0e1-fa8a1acf30b5 status=SUCCESSFULLY_LOADED
 [16:44:04] [Server thread/INFO]: flowmari issued server command: /lang ojp

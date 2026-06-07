@@ -7,7 +7,7 @@
 [18:30:34] [User Authenticator #1/INFO]: UUID of player flowmari is 470d7dc8-8ce4-48d7-a0e1-fa8a1acf30b5
 [18:30:35] [Server thread/INFO]: [TreasureRun] [ResourcePack] sent multilingual pack to flowmari force=true sha1=17500006569f628a0dc5e18d2ca8135917c82a2d
 [18:30:35] [Server thread/INFO]: flowmari、TreasureRun の世に入り給ひぬ。
-[18:30:35] [Server thread/INFO]: flowmari[/150.171.110.137:22238] logged in with entity id 221 at ([world]-90.5, 75.0, 324.5)
+[18:30:35] [Server thread/INFO]: flowmari[/<REDACTED_IP>:22238] logged in with entity id 221 at ([world]-90.5, 75.0, 324.5)
 [18:30:44] [Server thread/INFO]: [TreasureRun] [ResourcePack][STATUS] player=flowmari uuid=470d7dc8-8ce4-48d7-a0e1-fa8a1acf30b5 status=ACCEPTED
 [18:30:46] [Server thread/INFO]: [TreasureRun] [ResourcePack][STATUS] player=flowmari uuid=470d7dc8-8ce4-48d7-a0e1-fa8a1acf30b5 status=SUCCESSFULLY_LOADED
 [18:31:02] [Server thread/INFO]: flowmari issued server command: /lang ojp
