@@ -28,12 +28,19 @@ public class TreasureRunGameEffectsPlugin implements Listener {
   // DJイベントが既に走っているかどうか（多重発火ロック）
   private boolean djRunning = false;
 
-  // MySQL 情報
-  private final String DB_HOST = "minecraft_mysql";
-  private final String DB_NAME = "treasureDB";
-  private final String DB_USER = "user";
-  private final String DB_PASSWORD = "password";
+  // MySQL information
+  // Local Docker defaults are kept as fallbacks so contributor setup still works.
+  // Real deployments can override these via environment variables.
+  private final String DB_HOST = envOrDefault("TREASURERUN_DB_HOST", "minecraft_mysql");
+  private final String DB_NAME = envOrDefault("TREASURERUN_DB_NAME", "treasureDB");
+  private final String DB_USER = envOrDefault("TREASURERUN_DB_USER", "user");
+  private final String DB_PASSWORD = envOrDefault("TREASURERUN_DB_PASSWORD", "password");
   private Connection connection;
+
+  private static String envOrDefault(String name, String fallback) {
+    String value = System.getenv(name);
+    return value == null || value.isBlank() ? fallback : value;
+  }
 
   // 内蔵曲リスト
   private final Sound[] djTracks = new Sound[]{
