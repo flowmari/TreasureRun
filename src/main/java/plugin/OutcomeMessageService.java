@@ -128,10 +128,17 @@ public class OutcomeMessageService {
     List<String> out = new ArrayList<>();
     for (String s : list) {
       if (s == null) continue;
+
       String t = s.trim();
-      if (!t.isEmpty() && !t.equals(key) && !t.startsWith("Translation missing:")) {
-        out.add(s);
-      }
+      if (t.isEmpty()) continue;
+
+      // Do not show missing optional outcome-pool keys to players.
+      // If a shared/common pool is missing, fall back to the existing difficulty-specific pools.
+      if (t.equals(key)) continue;
+      if (t.startsWith("Translation missing:")) continue;
+      if (t.contains("outcome.success.common.pool")) continue;
+
+      out.add(s);
     }
     return out;
   }
