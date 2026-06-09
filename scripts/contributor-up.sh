@@ -73,7 +73,15 @@ fi
 
 echo ""
 echo "=== 4) Install TreasureRun and restart the local server ==="
+echo "Removing stale TreasureRun plugin JARs from the active plugins directory..."
+docker exec "$SERVER_CID" sh -lc 'mkdir -p /data/plugins-disabled && for f in /data/plugins/TreasureRun*.jar; do if [ -f "$f" ]; then mv "$f" "/data/plugins-disabled/$(basename "$f").before-contributor-up"; fi; done'
+
+echo "Installing latest built plugin JAR as /data/plugins/TreasureRun.jar"
 docker cp "$JAR" "$SERVER_CID:/data/plugins/TreasureRun.jar"
+
+echo "Active TreasureRun plugin JARs:"
+docker exec "$SERVER_CID" sh -lc 'ls -lh /data/plugins | grep -E "TreasureRun.*\.jar" || true'
+
 docker compose -p "$PROJECT" -f "$COMPOSE_FILE" restart minecraft_spigot
 
 echo ""
