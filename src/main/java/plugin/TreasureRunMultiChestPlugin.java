@@ -306,11 +306,18 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     // ✅ i18n: localize Bukkit event-layer engine/system messages
     Bukkit.getPluginManager().registerEvents(new LocalizedSystemMessageListener(this), this);
 
-    // ✅ i18n: ProtocolLib packet-layer audit/translation for Minecraft engine messages
-    try {
-      new plugin.LocalizedPacketMessageProtocolListener(this).enable();
-    } catch (Throwable t) {
-      getLogger().warning("[PacketI18n] Could not enable ProtocolLib packet listener: " + t.getMessage());
+    // ✅ i18n: optional ProtocolLib packet-layer audit/translation for Minecraft engine messages
+    // The basic contributor runtime does not install ProtocolLib by default.
+    // Keep the ProtocolLib implementation unchanged, but only load it when the optional plugin is present.
+    org.bukkit.plugin.Plugin protocolLib = Bukkit.getPluginManager().getPlugin("ProtocolLib");
+    if (protocolLib == null || !protocolLib.isEnabled()) {
+      getLogger().info("[PacketI18n] ProtocolLib is not installed; skipping optional packet-boundary listener.");
+    } else {
+      try {
+        new plugin.LocalizedPacketMessageProtocolListener(this).enable();
+      } catch (Throwable t) {
+        getLogger().warning("[PacketI18n] Could not enable ProtocolLib packet listener: " + t.getMessage());
+      }
     }
 
     TreasureRunGameEffectsPlugin effects = new TreasureRunGameEffectsPlugin(this);
