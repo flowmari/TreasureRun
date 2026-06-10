@@ -2,6 +2,8 @@
 
 TreasureRun is an open-source treasure-hunt mini-game plugin for **Minecraft Spigot 1.20.1**. Players search for treasure chests, earn points, experience staged visual and audio effects, and compete through persistent rankings.
 
+Beyond the gameplay, TreasureRun is built around a platform-boundary i18n challenge: Minecraft standard UI text is split between server-controlled and client-controlled surfaces. The project makes that boundary explicit by separating localization responsibilities across server-side plugin logic, packet-boundary handling, ResourcePack language assets, and an optional client-side layer.
+
 
 ## Demo
 
@@ -103,9 +105,9 @@ These deeper tests are still part of the project. They are simply kept out of th
 
 ## Why TreasureRun Is Technically Interesting
 
-Minecraft standard UI text is divided across server-controlled and client-controlled paths. A Spigot plugin alone cannot completely control every standard UI surface.
+Minecraft standard UI text is split between server-controlled and client-controlled surfaces.
 
-TreasureRun expands the multilingual surface that can be reached safely through four cooperating layers:
+TreasureRun treats that boundary as an architecture problem and separates localization responsibilities across four cooperating layers:
 
 | Layer | Responsibility |
 | --- | --- |
