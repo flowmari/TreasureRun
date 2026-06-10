@@ -2,7 +2,23 @@
 
 TreasureRun is an open-source treasure-hunt mini-game plugin for **Minecraft Spigot 1.20.1**. Players search for treasure chests, earn points, experience staged visual and audio effects, and compete through persistent rankings.
 
+
+## Demo
+
+### Gameplay demo
+
+TreasureRun running locally on Minecraft Spigot 1.20.1. This short alpha demo shows the current gameplay loop: language selection, treasure hunting, score/ranking feedback, and visual reward effects.
+
+<video src="docs/assets/treasurerun-readme-hero-demo.mp4" controls width="720"></video>
+
+[Open the short gameplay demo](docs/assets/treasurerun-readme-hero-demo.mp4)
+
+### Platform-boundary i18n demo
+
+TreasureRun also demonstrates a platform-boundary i18n approach. The existing 23-language i18n GIF is kept here so reviewers can see the technical theme directly after the gameplay demo.
+
 ![TreasureRun standard UI i18n demo](docs/assets/treasurerun-standard-ui-i18n-demo.gif)
+
 
 ## Run the Game Locally
 
@@ -146,6 +162,7 @@ These tasks verify:
 ### Continuous Integration
 
 The Ranking API integration workflow remains visible on pull requests. Docker-backed verification runs when a pull request changes the relevant backend boundary.
+
 
 ## Documentation
 
