@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$ROOT"
+
 # If a local demo world has been prepared, sync it into the contributor runtime workspace.
 # The world data itself stays outside Git under .local/demo-world/.
 if [[ -x "./scripts/contributor-demo-world-sync.sh" ]]; then
   ./scripts/contributor-demo-world-sync.sh
 fi
-
-ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-cd "$ROOT"
 
 COMPOSE_FILE="compose.contributor.yml"
 PROJECT="treasurerun-contributor"

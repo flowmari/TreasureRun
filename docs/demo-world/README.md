@@ -74,11 +74,13 @@ The sync helper copies the ignored local demo world into:
 spigot-data/world
 ```
 
-If an existing runtime world is present, it is moved into a timestamped backup under:
+On the first sync, if an existing runtime world is present and was not created by the demo-world sync helper, it is moved into a timestamped safety backup under:
 
 ```text
 .local/demo-world/runtime-backups/
 ```
+
+After that, repeated runs refresh the synced demo world instead of creating a new backup every time.
 
 To skip demo-world sync for a fresh generated world, run:
 
