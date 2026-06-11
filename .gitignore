@@ -98,3 +98,6 @@ resourcepacks/generated/treasurerun-i18n-pack-*.zip.sha1
 
 # Local one-off scripts and scratch files; never publish.
 .local-scratch/
+
+# Local TreasureRun demo-world workspace
+.local/
