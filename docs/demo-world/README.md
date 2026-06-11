@@ -89,3 +89,13 @@ TREASURERUN_USE_DEMO_WORLD=0 TREASURERUN_OPS=YourMinecraftName ./scripts/contrib
 ```
 
 This keeps Minecraft world data out of Git while giving external testers a reproducible gameplay environment.
+
+## Verification evidence
+
+Maintainer-run runtime verification is recorded in:
+
+```text
+docs/demo-world/runtime-verification.md
+```
+
+That note documents local end-to-end verification only. Independent external tester validation should be recorded separately after a tester follows the setup path.
