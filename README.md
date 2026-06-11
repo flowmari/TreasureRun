@@ -9,7 +9,7 @@ Beyond the game itself, TreasureRun is also an i18n architecture project: Minecr
 
 ### Gameplay demo
 
-TreasureRun running locally on Minecraft Spigot 1.20.1. This short alpha demo shows the current gameplay loop: language selection, treasure hunting, score/ranking feedback, and visual reward effects.
+TreasureRun runs locally on Minecraft Spigot 1.20.1. This short gameplay demo shows the current gameplay loop: language selection, treasure hunting, score/ranking feedback, and visual reward effects. The prepared demo world also includes a wandering-trader bonus interaction: players can craft Special Emeralds from diamonds and use them in a custom trade.
 
 ![TreasureRun gameplay demo](docs/assets/treasurerun-readme-hero-demo.gif)
 
