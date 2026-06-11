@@ -64,8 +64,26 @@ When the demo world is connected to the local runtime, reviewers should be able 
 - multilingual/i18n behavior where applicable
 - a clear game loop without needing to build the scene manually
 
-## Current boundary
+## Contributor runtime integration
 
-This guide prepares a safe local demo-world workspace. It does not yet automatically mount the copied world into the Docker contributor runtime.
+When `.local/demo-world/world` exists, `scripts/contributor-up.sh` calls `scripts/contributor-demo-world-sync.sh` before starting the local contributor runtime.
 
-The next step is to connect `.local/demo-world/world` to the contributor runtime in a controlled way, after verifying the authored world locally.
+The sync helper copies the ignored local demo world into:
+
+```text
+spigot-data/world
+```
+
+If an existing runtime world is present, it is moved into a timestamped backup under:
+
+```text
+.local/demo-world/runtime-backups/
+```
+
+To skip demo-world sync for a fresh generated world, run:
+
+```bash
+TREASURERUN_USE_DEMO_WORLD=0 TREASURERUN_OPS=YourMinecraftName ./scripts/contributor-up.sh
+```
+
+This keeps Minecraft world data out of Git while giving external testers a reproducible gameplay environment.
