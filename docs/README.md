@@ -11,6 +11,7 @@ Start with the current-facing documents below. The large audit and batch folders
 | [`ARCHITECTURE_GUIDE.md`](ARCHITECTURE_GUIDE.md) | Current high-level architecture map for gameplay, i18n, ResourcePack, Fabric, and backend boundaries. |
 | [`ARCHITECTURE.md`](ARCHITECTURE.md) | More detailed architecture notes for the Spigot plugin and optional backend evidence. |
 | [`COMMANDS.md`](COMMANDS.md) | Player/admin command surface for the Spigot plugin. |
+| [`GAME_DESIGN.md`](GAME_DESIGN.md) | Creative vision, setting, worldbuilding, and gameplay atmosphere. |
 
 ## Key Engineering Evidence
 

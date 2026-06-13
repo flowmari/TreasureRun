@@ -179,6 +179,7 @@ Start with:
 
 - [`CONTRIBUTING.md`](CONTRIBUTING.md)
 - [`docs/`](docs/)
+- [`docs/GAME_DESIGN.md`](docs/GAME_DESIGN.md) — creative vision, setting, worldbuilding, and gameplay atmosphere.
 
 The full README that existed before this contributor-focused entrance was introduced is preserved at:
 
