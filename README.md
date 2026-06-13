@@ -15,6 +15,13 @@ TreasureRun runs locally on Minecraft Spigot 1.20.1. This short gameplay demo sh
 
 [High-quality 48-second gameplay demo (MP4 download)](https://raw.githubusercontent.com/flowmari/TreasureRun/main/docs/assets/treasurerun-readme-hero-demo.mp4)
 
+#### What makes the demo world fun
+
+The prepared demo world is more than a flat test map. It includes a UFO encounter, a wandering trader with two llamas, a moving safe zone around them, colder and more fragile terrain outside that zone, proximity-based heartbeat and cracking-ice cues, a yellow-to-amber trail like an ancient path through history, and 158 short encouragement quotes woven into each run.
+
+See [What to Look For in the Demo World](docs/demo-world/WHAT_TO_LOOK_FOR.md) for the full tester-facing guide.
+
+
 ### Platform-boundary i18n demo
 
 TreasureRun also demonstrates a platform-boundary i18n approach. The existing 23-language i18n GIF is kept here so reviewers can see the technical theme directly after the gameplay demo.
