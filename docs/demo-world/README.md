@@ -24,6 +24,51 @@ For that reason, TreasureRun keeps demo-world data outside Git and uses a local,
 
 This keeps the repository lightweight while still documenting how an external tester can reproduce the intended demo experience.
 
+## External tester quick path
+
+If you are testing the prepared demo world from the pre-release ZIP, use this path:
+
+1. Download the demo-world ZIP from the pre-release testing asset:
+
+   ```text
+   https://github.com/flowmari/TreasureRun/releases/download/demo-world-external-test-20260611/treasurerun-demo-world-for-external-tester-20260611_181531.zip
+   ```
+
+2. Extract it at the repository root.
+3. Confirm this file exists:
+
+   ```text
+   .local/demo-world/world/level.dat
+   ```
+
+4. Start the contributor runtime:
+
+   ```bash
+   TREASURERUN_OPS=YourMinecraftName ./scripts/contributor-up.sh
+   ```
+
+5. Join the local server from Minecraft Java Edition 1.20.1:
+
+   ```text
+   localhost:25575
+   ```
+
+6. Once you are in game, try `/lang`, `/gamestart normal`, and `/gameRank`.
+
+For the tester-facing highlights, see [`WHAT_TO_LOOK_FOR.md`](WHAT_TO_LOOK_FOR.md).
+
+ZIP filename:
+
+```text
+treasurerun-demo-world-for-external-tester-20260611_181531.zip
+```
+
+SHA256:
+
+```text
+0e86e9d5e7fd98f1fc6728d02e3cea2b85672189368991cc678f9b446b935b1a
+```
+
 ## Recommended workflow
 
 1. Prepare or verify the authored local demo world in Minecraft.

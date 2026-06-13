@@ -45,6 +45,27 @@ For the contributor runtime:
 - Git
 - Minecraft Java Edition 1.20.1
 
+## Optional: use the prepared demo world
+
+A freshly generated world is enough for a basic startup test. To test the same kind of gameplay environment shown in the README demo, use the prepared demo-world ZIP before starting the local server.
+
+1. Download the demo-world ZIP from the pre-release testing asset:
+
+   ```text
+   https://github.com/flowmari/TreasureRun/releases/download/demo-world-external-test-20260611/treasurerun-demo-world-for-external-tester-20260611_181531.zip
+   ```
+
+2. Extract it at the repository root.
+3. Confirm this file exists:
+
+   ```text
+   .local/demo-world/world/level.dat
+   ```
+
+4. Continue with the local server command below.
+
+The prepared demo world is intentionally kept out of Git. For the tester-facing highlights, see [`../demo-world/WHAT_TO_LOOK_FOR.md`](../demo-world/WHAT_TO_LOOK_FOR.md). For the creative vision and worldbuilding notes, see [`../GAME_DESIGN.md`](../GAME_DESIGN.md).
+
 ## Start a local test server
 
 This step starts a local Spigot server and installs the TreasureRun plugin into that server.
