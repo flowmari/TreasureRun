@@ -57,6 +57,16 @@ Then connect from Minecraft Java Edition 1.20.1:
 localhost:25575
 ```
 
+Once you are in the server, try the basic gameplay commands:
+
+```text
+/lang
+/gamestart normal
+/gameRank
+```
+
+The full command list is in [`docs/COMMANDS.md`](docs/COMMANDS.md).
+
 The startup script:
 
 1. runs the default Gradle build;
