@@ -63,6 +63,7 @@ When the demo world is connected to the local runtime, reviewers should be able 
 - score and ranking feedback
 - multilingual/i18n behavior where applicable
 - a clear game loop without needing to build the scene manually
+- tester-facing highlights documented in [`WHAT_TO_LOOK_FOR.md`](WHAT_TO_LOOK_FOR.md)
 
 ## Contributor runtime integration
 
