@@ -69,7 +69,7 @@ src/main/resources/plugin.yml
 The language GUI and `/lang` command are driven by `config.yml` and `src/main/resources/languages/*.yml`.
 
 ```text
-ja, en, de, fr, it, sv, es, fi, nl, ru, ko, zh_tw, pt, hi, la, lzh, is, sa, asl_gloss
+ja, en, de, it, sv, es, la, is, fi, nl, fr, ru, ko, zh_tw, sa, pt, hi, lzh, ojp, asl_gloss, ang, non, got
 ```
 
 ---
