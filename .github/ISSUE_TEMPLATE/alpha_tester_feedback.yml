@@ -57,7 +57,7 @@ body:
     id: observations
     attributes:
       label: First-impression feedback
-      description: You do not need to answer every possible question. Even 3–5 honest bullets are very helpful.
+      description: You do not need to answer every possible question. Even 3-5 honest bullets are very helpful.
       placeholder: |
         - What worked?
         - What was clear?
