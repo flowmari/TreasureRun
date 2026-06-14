@@ -3,7 +3,7 @@ set -euo pipefail
 
 JAR_GLOB="${1:-build/libs/*-all.jar}"
 CONTAINER="${2:-minecraft_spigot}"
-DEST="${3:-/data/plugins/TreasureRun-1.0-SNAPSHOT-all.jar}"
+DEST="${3:-/data/plugins/TreasureRun-0.1.2-alpha-all.jar}"
 
 TMP_JAR=/tmp/TreasureRun-latest.jar
 

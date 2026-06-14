@@ -4,7 +4,7 @@ plugins {
 }
 
 group = 'com.flowmari.treasurerun'
-version = '0.1.0-SNAPSHOT'
+version = '0.1.2-alpha'
 
 repositories {
     mavenCentral()
