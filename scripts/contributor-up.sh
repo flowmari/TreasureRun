@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 set -euo pipefail
+# First-time tester convenience:
+# Allow the Minecraft player name to be passed as the first argument:
+#   ./scripts/contributor-up.sh YourMinecraftName
+# The TREASURERUN_OPS environment variable still works and takes precedence.
+if [ "${1:-}" != "" ] && [ -z "${TREASURERUN_OPS:-}" ]; then
+  export TREASURERUN_OPS="$1"
+fi
+
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT"

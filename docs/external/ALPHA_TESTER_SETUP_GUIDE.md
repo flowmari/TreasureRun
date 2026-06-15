@@ -73,8 +73,10 @@ This step starts a local Spigot server and installs the TreasureRun plugin into 
 From the repository root:
 
 ```bash
-TREASURERUN_OPS=YourMinecraftName ./scripts/contributor-up.sh
+./scripts/contributor-up.sh YourMinecraftName
 ```
+
+If you prefer environment variables, `TREASURERUN_OPS=YourMinecraftName ./scripts/contributor-up.sh` still works.
 
 Example:
 

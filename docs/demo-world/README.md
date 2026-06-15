@@ -44,7 +44,7 @@ If you are testing the prepared demo world from the pre-release ZIP, use this pa
 4. Start the contributor runtime:
 
    ```bash
-   TREASURERUN_OPS=YourMinecraftName ./scripts/contributor-up.sh
+   ./scripts/contributor-up.sh YourMinecraftName
    ```
 
 5. Join the local server from Minecraft Java Edition 1.20.1:
@@ -131,8 +131,10 @@ After that, repeated runs refresh the synced demo world instead of creating a ne
 To skip demo-world sync for a fresh generated world, run:
 
 ```bash
-TREASURERUN_USE_DEMO_WORLD=0 TREASURERUN_OPS=YourMinecraftName ./scripts/contributor-up.sh
+TREASURERUN_USE_DEMO_WORLD=0 ./scripts/contributor-up.sh YourMinecraftName
 ```
+
+If you prefer environment variables, `TREASURERUN_OPS=YourMinecraftName ./scripts/contributor-up.sh` still works.
 
 This keeps Minecraft world data out of Git while giving external testers a reproducible gameplay environment.
 
