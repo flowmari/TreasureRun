@@ -5,6 +5,21 @@ TreasureRun is an open-source treasure-hunt mini-game plugin for **Minecraft Spi
 Beyond the game itself, TreasureRun is also an i18n architecture project: Minecraft's built-in UI text is split between server-controlled surfaces and client-side surfaces. TreasureRun makes that boundary explicit by separating localization responsibilities across Spigot plugin logic, packet-boundary handling, ResourcePack language assets, and an optional client-side sync layer.
 
 
+## What you actually play
+
+TreasureRun is a Spigot 1.20.1 treasure-hunt plugin.
+
+As a player, you join a local Minecraft server, start a treasure run, follow treasure-proximity cues, and explore a prepared demo world with a UFO encounter, a wandering trader scene, moving safe-zone effects, and bilingual outcome messages.
+
+The i18n/platform-boundary work is part of how the project is engineered, but the first-time experience should start with the game: what the player does, what the demo world shows, and how to try it locally.
+
+## Engineering highlight: localisation across Minecraft boundaries
+
+TreasureRun includes localisation work because Minecraft text is split across several boundaries: plugin messages, server-to-client packets, ResourcePack language assets, and optional client-side runtime sync.
+
+In practical terms, the project currently implements translated plugin messages, generated ResourcePack language files, packet-localisation support, and a pure Java localisation core that is tested separately from Bukkit, ProtocolLib, Fabric, and Minecraft runtime APIs.
+
+This means the localisation work is not a second gameplay plugin. It is an engineering layer that supports the treasure-hunt plugin while documenting where a Spigot plugin can and cannot control Minecraft UI text.
 ## Demo
 
 ### Gameplay demo
@@ -42,8 +57,10 @@ TreasureRun also demonstrates a platform-boundary i18n approach. The existing 23
 Set your Minecraft Java username so that the local development server can grant you permission to run game commands:
 
 ```bash
-TREASURERUN_OPS=YourMinecraftName ./scripts/contributor-up.sh
+./scripts/contributor-up.sh YourMinecraftName
 ```
+
+If you prefer environment variables, `TREASURERUN_OPS=YourMinecraftName ./scripts/contributor-up.sh` still works.
 
 For example:
 
