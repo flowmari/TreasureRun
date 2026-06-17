@@ -134,7 +134,7 @@ To skip demo-world sync for a fresh generated world, run:
 TREASURERUN_USE_DEMO_WORLD=0 ./scripts/contributor-up.sh YourMinecraftName
 ```
 
-If you prefer environment variables, `TREASURERUN_OPS=YourMinecraftName ./scripts/contributor-up.sh` still works.
+Use the argument-first command above for first-time contributor setup.
 
 This keeps Minecraft world data out of Git while giving external testers a reproducible gameplay environment.
 
