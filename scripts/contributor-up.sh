@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
 # First-time tester convenience:
-# Allow the Minecraft player name to be passed as the first argument:
+# Accept the Minecraft player name as the first script argument:
 #   ./scripts/contributor-up.sh YourMinecraftName
-# The TREASURERUN_OPS environment variable still works and takes precedence.
-if [ "${1:-}" != "" ] && [ -z "${TREASURERUN_OPS:-}" ]; then
+# Internally, the script passes that value to Docker Compose.
+if [ "${1:-}" != "" ]; then
   export TREASURERUN_OPS="$1"
 fi
 
@@ -25,7 +25,7 @@ MC_PORT="${TREASURERUN_MC_PORT:-25575}"
 if [[ -z "${TREASURERUN_OPS:-}" ]]; then
   echo "ERROR: Set your Minecraft Java username before starting the local game runtime."
   echo "Example:"
-  echo "  TREASURERUN_OPS=YourMinecraftName ./scripts/contributor-up.sh"
+  echo "  ./scripts/contributor-up.sh YourMinecraftName"
   exit 1
 fi
 

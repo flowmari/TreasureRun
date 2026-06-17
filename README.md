@@ -79,12 +79,12 @@ Set your Minecraft Java username so that the local development server can grant 
 ./scripts/contributor-up.sh YourMinecraftName
 ```
 
-If you prefer environment variables, `TREASURERUN_OPS=YourMinecraftName ./scripts/contributor-up.sh` still works.
+Use the argument-first command above for first-time contributor setup.
 
 For example:
 
 ```bash
-TREASURERUN_OPS=flowmari ./scripts/contributor-up.sh
+./scripts/contributor-up.sh flowmari
 ```
 
 Then connect from Minecraft Java Edition 1.20.1:

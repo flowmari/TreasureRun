@@ -49,7 +49,7 @@ Validate ordinary changes with:
 To start an isolated local Spigot server with MySQL provided automatically through Docker:
 
 ```bash
-TREASURERUN_OPS=YourMinecraftName ./scripts/contributor-up.sh
+./scripts/contributor-up.sh YourMinecraftName
 ```
 
 Then connect from Minecraft Java Edition 1.20.1:

@@ -76,12 +76,12 @@ From the repository root:
 ./scripts/contributor-up.sh YourMinecraftName
 ```
 
-If you prefer environment variables, `TREASURERUN_OPS=YourMinecraftName ./scripts/contributor-up.sh` still works.
+Use the argument-first command above for first-time contributor setup.
 
 Example:
 
 ```bash
-TREASURERUN_OPS=flowmari ./scripts/contributor-up.sh
+./scripts/contributor-up.sh flowmari
 ```
 
 The script builds the plugin and starts an isolated Docker-based local server.
