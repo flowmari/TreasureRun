@@ -43,7 +43,11 @@ TreasureRun runs locally on Minecraft Spigot 1.20.1. This short gameplay demo sh
 
 ![TreasureRun gameplay demo](docs/assets/treasurerun-readme-hero-demo.gif)
 
-[High-quality 48-second gameplay demo (MP4 download)](https://raw.githubusercontent.com/flowmari/TreasureRun/main/docs/assets/treasurerun-readme-hero-demo.mp4)
+Watch the 48-second gameplay demo:
+https://youtu.be/kIOhBeODh8k
+
+Optional fallback:
+[Download the MP4 demo](docs/assets/treasurerun-readme-hero-demo.mp4)
 
 #### What makes the demo world fun
 
