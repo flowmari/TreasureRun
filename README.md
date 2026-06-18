@@ -13,28 +13,6 @@ As a player, you join a local Minecraft server, start a treasure run, follow tre
 
 The i18n/platform-boundary work is part of how the project is engineered, but the first-time experience should start with the game: what the player does, what the demo world shows, and how to try it locally.
 
-## Engineering highlight: localisation across Minecraft boundaries
-
-TreasureRun includes localisation work because Minecraft text is split across several boundaries: plugin messages, server-to-client packets, ResourcePack language assets, and optional client-side runtime sync.
-
-In practical terms, the project currently implements translated plugin messages, generated ResourcePack language files, packet-localisation support, and a pure Java localisation core that is tested separately from Bukkit, ProtocolLib, Fabric, and Minecraft runtime APIs.
-
-This means the localisation work is not a second gameplay plugin. It is an engineering layer that supports the treasure-hunt plugin while documenting where a Spigot plugin can and cannot control Minecraft UI text.
-
-### How localisation is implemented
-
-TreasureRun handles localisation in several layers:
-
-1. Players choose a language in the in-game language GUI.
-2. The selected language is stored per player in `player_languages.yml`.
-3. Plugin-owned messages are loaded from `src/main/resources/languages/*.yml`.
-4. Minecraft locale codes are mapped through `src/main/resources/lang-map.yml`.
-5. ResourcePack language JSON files provide Minecraft translation-key assets.
-6. When ProtocolLib is available, reachable outgoing JSON text components are passed through `PacketI18nJsonLocalizer`.
-7. The pure Java localisation core is tested separately from Bukkit, ProtocolLib, Fabric, and Minecraft runtime APIs.
-8. The optional Fabric client mod can receive the selected language code and reload client-side language resources.
-
-This does not mean a Spigot plugin can control every Minecraft UI string. The project documents the boundary between plugin-owned messages, reachable packet text, ResourcePack assets, and client-only UI.
 ## Demo
 
 ### Gameplay demo
@@ -62,6 +40,28 @@ TreasureRun also demonstrates a platform-boundary i18n approach. The existing 23
 
 ![TreasureRun standard UI i18n demo](docs/assets/treasurerun-standard-ui-i18n-demo.gif)
 
+## Engineering highlight: localisation across Minecraft boundaries
+
+TreasureRun includes localisation work because Minecraft text is split across several boundaries: plugin messages, server-to-client packets, ResourcePack language assets, and optional client-side runtime sync.
+
+In practical terms, the project currently implements translated plugin messages, generated ResourcePack language files, packet-localisation support, and a pure Java localisation core that is tested separately from Bukkit, ProtocolLib, Fabric, and Minecraft runtime APIs.
+
+This means the localisation work is not a second gameplay plugin. It is an engineering layer that supports the treasure-hunt plugin while documenting where a Spigot plugin can and cannot control Minecraft UI text.
+
+### How localisation is implemented
+
+TreasureRun handles localisation in several layers:
+
+1. Players choose a language in the in-game language GUI.
+2. The selected language is stored per player in `player_languages.yml`.
+3. Plugin-owned messages are loaded from `src/main/resources/languages/*.yml`.
+4. Minecraft locale codes are mapped through `src/main/resources/lang-map.yml`.
+5. ResourcePack language JSON files provide Minecraft translation-key assets.
+6. When ProtocolLib is available, reachable outgoing JSON text components are passed through `PacketI18nJsonLocalizer`.
+7. The pure Java localisation core is tested separately from Bukkit, ProtocolLib, Fabric, and Minecraft runtime APIs.
+8. The optional Fabric client mod can receive the selected language code and reload client-side language resources.
+
+This does not mean a Spigot plugin can control every Minecraft UI string. The project documents the boundary between plugin-owned messages, reachable packet text, ResourcePack assets, and client-only UI.
 
 ## Run the Game Locally
 
