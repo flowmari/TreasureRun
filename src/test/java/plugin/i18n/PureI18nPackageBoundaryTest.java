@@ -12,12 +12,12 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 /**
  * Architectural fitness function for the pure i18n package.
  *
- * plugin.i18n must remain independent from Bukkit, ProtocolLib, Fabric, and Minecraft runtime APIs.
+ * treasurerun-i18n-core must remain independent from Bukkit, ProtocolLib, Fabric, and Minecraft runtime APIs.
  * Adapter classes may depend on platform APIs, but pure localization logic must not.
  */
 class PureI18nPackageBoundaryTest {
 
-  private static final Path PURE_I18N_DIR = Path.of("src/main/java/plugin/i18n");
+  private static final Path PURE_I18N_DIR = Path.of("treasurerun-i18n-core/src/main/java/com/treasurerun/i18n");
 
   private static final List<String> FORBIDDEN_IMPORT_PREFIXES = List.of(
       "import org.bukkit.",
@@ -38,7 +38,7 @@ class PureI18nPackageBoundaryTest {
 
     assertTrue(
         violations.isEmpty(),
-        "plugin.i18n must remain platform-free. Move platform access to adapter/boundary classes.\n"
+        "treasurerun-i18n-core must remain platform-free. Move platform access to adapter/boundary classes.\n"
             + violations
     );
   }

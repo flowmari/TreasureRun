@@ -1,4 +1,4 @@
-package plugin.i18n;
+package com.treasurerun.i18n;
 
 import org.junit.jupiter.api.Test;
 
