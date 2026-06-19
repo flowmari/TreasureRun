@@ -24,6 +24,7 @@ configurations {
 }
 
 dependencies {
+    implementation project(':treasurerun-i18n-core')
     // Spigot API（コンパイル時のみ）
     compileOnly 'org.spigotmc:spigot-api:1.20.1-R0.1-SNAPSHOT'
 

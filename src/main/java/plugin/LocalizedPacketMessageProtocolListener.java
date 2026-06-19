@@ -1,6 +1,6 @@
 package plugin;
 
-import plugin.i18n.PacketI18nJsonLocalizer;
+import com.treasurerun.i18n.PacketI18nJsonLocalizer;
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.ProtocolLibrary;
 import com.comphenix.protocol.events.ListenerPriority;

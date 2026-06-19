@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 /**
  * Boundary-level tests for LocalizedPacketMessageProtocolListener.
  *
- * The real translation logic belongs to plugin.i18n.PacketI18nJsonLocalizer,
+ * The real translation logic belongs to com.treasurerun.i18n.PacketI18nJsonLocalizer,
  * which is tested as pure Java.
  *
  * This test intentionally avoids mocking Bukkit/ProtocolLib internals.
