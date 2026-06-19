@@ -2,7 +2,9 @@
 
 TreasureRun is an open-source treasure-hunt mini-game plugin for **Minecraft Spigot 1.20.1**. Players search for treasure chests, earn points, experience staged visual and audio effects, and compete through persistent rankings.
 
-Beyond the game itself, TreasureRun is also an i18n architecture project: Minecraft's built-in UI text is split between server-controlled surfaces and client-side surfaces. TreasureRun makes that boundary explicit by separating localization responsibilities across Spigot plugin logic, packet-boundary handling, ResourcePack language assets, and an optional client-side sync layer.
+For the gameplay vision, worldbuilding, and atmosphere behind the demo world, see [Game Design](docs/GAME_DESIGN.md).
+
+TreasureRun also includes platform-boundary i18n work because Minecraft's built-in UI text is split between server-controlled surfaces and client-side surfaces. This i18n work is an internal supporting layer within the gameplay plugin, not a separate plugin, library, or competing project.
 
 
 ## What you actually play
@@ -46,7 +48,19 @@ TreasureRun includes localisation work because Minecraft text is split across se
 
 In practical terms, the project currently implements translated plugin messages, generated ResourcePack language files, packet-localisation support, and a pure Java localisation core that is tested separately from Bukkit, ProtocolLib, Fabric, and Minecraft runtime APIs.
 
-This means the localisation work is not a second gameplay plugin. It is an engineering layer that supports the treasure-hunt plugin while documenting where a Spigot plugin can and cannot control Minecraft UI text.
+The i18n system is not a separate plugin or library.
+It is an internal architectural layer within the gameplay plugin.
+
+This boundary keeps gameplay as the primary focus while still documenting where a Spigot plugin can and cannot control Minecraft UI text.
+
+### Architecture boundary
+
+TreasureRun is a gameplay plugin.
+
+The i18n system is not a separate plugin or library.
+It is an internal architectural layer within the gameplay plugin.
+
+In other words, gameplay remains the primary product experience, while localisation/platform-boundary handling is the supporting engineering layer behind it.
 
 ### How localisation is implemented
 
