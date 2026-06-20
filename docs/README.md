@@ -48,3 +48,10 @@ TreasureRun is currently best read as:
 - an evolving OSS portfolio where heavy generated artifacts should be delivered through GitHub Releases rather than kept in the source tree.
 
 Known follow-up work is intentionally tracked separately, including the Docker/MySQL V3 transactional-outbox migration warning and ProtocolLib packet-boundary verification.
+
+## Player and Tester Entry Points
+
+| Document | Purpose |
+|---|---|
+| [](playtest/PLAYER_QUICKSTART.md) | First-time player setup, gameplay path, and wandering-trader trade steps. |
+| [](external/EXTERNAL_FEEDBACK_PLAYBOOK.md) | Practical external playtest request templates and feedback boundaries. |

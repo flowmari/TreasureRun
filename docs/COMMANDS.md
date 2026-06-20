@@ -27,8 +27,8 @@ src/main/resources/plugin.yml
 | `/lang current` | `/lang current` | `treasure.lang` | true | Shows the current player language. |
 | `/lang gui` | `/lang gui` | `treasure.lang` | true | Opens the language selection GUI. |
 | `/lang reset` | `/lang reset` | `treasure.lang` | true | Resets the player's saved language. |
-| `/craftspecialemerald` | `/craftspecialemerald` | `treasure.craftspecialemerald` | true | Crafts a Treasure Emerald using 3 diamonds. |
-| `/checktreasureemerald` | `/checktreasureemerald` | `treasure.checktreasureemerald` | true | Checks whether the item in the player's main hand is a Treasure Emerald. |
+| `/craftspecialemerald` | `/craftspecialemerald` | `treasure.craftspecialemerald` | true | Crafts a Special Emerald using 3 diamonds. |
+| `/checktreasureemerald` | `/checktreasureemerald` | `treasure.checktreasureemerald` | true | Checks whether the item in the player's main hand is a TreasureRun Special Emerald. |
 | `/quoteFavorite` | `/quoteFavorite <latest\|list\|remove\|reread\|book>` | `treasure.quoteFavorite` | true | Manages favorite quotes/proverbs. |
 | `/qfav` | `/qfav <latest\|list\|remove\|reread\|book>` | `treasure.quoteFavorite` | true | Alias of `/quoteFavorite`. |
 | `/quotefav` | `/quotefav <latest\|list\|remove\|reread\|book>` | `treasure.quoteFavorite` | true | Alias of `/quoteFavorite`. |

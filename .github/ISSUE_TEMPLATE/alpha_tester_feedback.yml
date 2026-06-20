@@ -1,5 +1,5 @@
 name: Alpha tester feedback
-description: Share first-impression setup feedback for TreasureRun alpha testing
+description: Share first-impression setup, gameplay, or documentation feedback for TreasureRun alpha testing
 title: "[Alpha feedback]: "
 body:
   - type: markdown
@@ -7,9 +7,11 @@ body:
       value: |
         Thank you for testing TreasureRun.
 
-        This form is for short first-impression setup feedback. You do not need to do a deep code review or a production-readiness review.
+        This form is for short first-impression feedback. You do not need to do a deep code review or a production-readiness review.
 
-        If you were personally asked to comment on the shared alpha testing thread, you can comment on that issue instead. Use this form if you prefer to open a separate feedback issue.
+        Best starting point:
+
+        `docs/playtest/PLAYER_QUICKSTART.md`
 
         Please report only what you actually tried and observed.
 
@@ -21,8 +23,11 @@ body:
       options:
         - Fresh clone setup
         - Existing local checkout update
+        - Player Quickstart
         - Prepared demo world
-        - Gameplay commands
+        - Basic gameplay commands
+        - Treasure hunt gameplay flow
+        - Wandering-trader custom trade
         - README or tester guide clarity
         - Other / partial test
     validations:
@@ -37,6 +42,7 @@ body:
         OS:
         Minecraft Java Edition version:
         Java version, if known:
+        Docker version, if known:
         Fresh clone or existing checkout:
     validations:
       required: false
@@ -54,6 +60,22 @@ body:
       required: true
 
   - type: textarea
+    id: commands-tried
+    attributes:
+      label: Commands or steps tried
+      description: Paste the commands or steps you actually tried.
+      placeholder: |
+        Example:
+        - ./scripts/contributor-up.sh MyMinecraftName
+        - joined localhost:25575
+        - /lang en
+        - /gamestart normal
+        - /gameRank weekly
+        - tried the wandering-trader custom trade
+    validations:
+      required: false
+
+  - type: textarea
     id: observations
     attributes:
       label: First-impression feedback
@@ -62,24 +84,12 @@ body:
         - What worked?
         - What was clear?
         - What was confusing?
-        - Did the prepared demo world appear?
-        - Did the README or demo-world guide help?
+        - Did you understand what to do after /gamestart?
+        - Did the README explain the gameplay before the i18n architecture?
+        - Did the wandering-trader trade path make sense?
+        - Did the custom trade video help?
     validations:
       required: true
-
-  - type: textarea
-    id: setup-notes
-    attributes:
-      label: Setup notes
-      description: Mention any step that succeeded, failed, or felt unclear.
-      placeholder: |
-        Example:
-        - The ZIP extracted correctly.
-        - .local/demo-world/world/level.dat existed.
-        - ./scripts/contributor-up.sh started the runtime.
-        - I could / could not join localhost:25575.
-    validations:
-      required: false
 
   - type: textarea
     id: improvement
