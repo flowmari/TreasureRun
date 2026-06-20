@@ -1,10 +1,16 @@
-# TreasureRun — A Minecraft Treasure Hunt with Platform-Boundary i18n
+# TreasureRun — A Minecraft Treasure-Hunt Mini-Game
 
 TreasureRun is an open-source treasure-hunt mini-game plugin for **Minecraft Spigot 1.20.1**. Players search for treasure chests, earn points, experience staged visual and audio effects, and compete through persistent rankings.
 
 ### Game Design
 
-[Open the game design notes](docs/GAME_DESIGN.md) — See the creative vision, setting, worldbuilding, and gameplay atmosphere.
+[Open the game design notes](docs/GAME_DESIGN.md) — Explore the creative vision, setting, worldbuilding, and gameplay atmosphere.
+
+### Player Quickstart
+
+[Open the player quickstart](docs/playtest/PLAYER_QUICKSTART.md) — Start the local server, choose a language, run a treasure hunt, check rankings, and try the wandering-trader custom trade.
+
+[Open the command reference](docs/COMMANDS.md) — See every player and admin command without crowding the README.
 
 TreasureRun also includes platform-boundary i18n work because Minecraft's built-in UI text is split between server-controlled surfaces and client-side surfaces. This i18n work is an internal supporting layer within the gameplay plugin, not a separate plugin, library, or competing project.
 
@@ -27,6 +33,9 @@ TreasureRun runs locally on Minecraft Spigot 1.20.1. This short gameplay demo sh
 
 Watch the 48-second gameplay demo on YouTube:
 https://youtu.be/aJS5jMH3rwk
+
+Watch the wandering-trader custom trade demo on YouTube:
+https://youtu.be/OQbwYl85oRw
 
 #### What makes the demo world fun
 
@@ -106,13 +115,15 @@ Then connect from Minecraft Java Edition 1.20.1:
 localhost:25575
 ```
 
-Once you are in the server, try the basic gameplay commands:
+Once you are in the server, the fastest first gameplay path is:
 
 ```text
-/lang
+/lang en
 /gamestart normal
-/gameRank
+/gameRank weekly
 ```
+
+For the full player-facing route, including what to do after `/gamestart` and how to test the wandering-trader custom trade, see [`docs/playtest/PLAYER_QUICKSTART.md`](docs/playtest/PLAYER_QUICKSTART.md).
 
 The full command list is in [`docs/COMMANDS.md`](docs/COMMANDS.md).
 
@@ -236,6 +247,7 @@ The Ranking API integration workflow remains visible on pull requests. Docker-ba
 
 Start with:
 
+- [](docs/playtest/PLAYER_QUICKSTART.md) — first-time player setup, gameplay path, and wandering-trader trade steps.
 - [`CONTRIBUTING.md`](CONTRIBUTING.md)
 - [`docs/`](docs/)
 - [`docs/GAME_DESIGN.md`](docs/GAME_DESIGN.md) — creative vision, setting, worldbuilding, and gameplay atmosphere.
