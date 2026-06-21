@@ -35,7 +35,7 @@ Watch the 48-second gameplay demo on YouTube:
 https://youtu.be/9n6XdHfEqpM
 
 Watch the wandering-trader custom trade demo on YouTube:
-https://youtu.be/OQbwYl85oRw
+https://youtu.be/eARQ0AHZNoI
 
 #### What makes the demo world fun
 
