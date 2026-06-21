@@ -98,12 +98,12 @@ The prepared demo world includes a wandering-trader bonus interaction.
 
 Watch the wandering-trader custom trade demo on YouTube:
 
-https://youtu.be/OQbwYl85oRw
+https://youtu.be/eARQ0AHZNoI
 
 The clearest custom-trade path to test is:
 
 ```text
-5 Special Emeralds -> 1 Golden Apple
+5 Special Emeralds to 1 Golden Apple
 ```
 
 Important: test this while a run is active. If the game has already ended and you see a “Time is up” or “Game Over” message, start a new run before testing the trade.
@@ -187,20 +187,16 @@ Reset the local runtime completely:
 ./scripts/contributor-down.sh --volumes
 ```
 
-## 9. Good feedback from a first-time tester
+## 9. Share first-time feedback
 
 Useful alpha feedback does not need to be a deep code review.
 
-The most helpful notes are:
+After trying the quickstart, please report only what you actually tried and observed, especially:
 
-- whether the README made the game understandable before the i18n details;
 - whether the local server startup worked;
 - whether joining `localhost:25575` worked;
-- whether the start commands were clear;
-- whether the treasure hunt felt playable;
 - whether it was clear what to do after `/gamestart`;
-- whether the wandering-trader trade path was understandable;
-- whether the custom trade demo matched what happened in-game;
+- whether the treasure hunt and wandering-trader trade path were understandable;
 - what was confusing, missing, or too much.
 
-TreasureRun is currently an alpha project targeting Spigot 1.20.1. Please report only what you actually tried and observed.
+TreasureRun is currently an alpha project targeting Spigot 1.20.1.

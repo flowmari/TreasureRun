@@ -10,7 +10,15 @@ TreasureRun is an open-source treasure-hunt mini-game plugin for **Minecraft Spi
 
 [Open the player quickstart](docs/playtest/PLAYER_QUICKSTART.md) — Start the local server, choose a language, run a treasure hunt, check rankings, and try the wandering-trader custom trade.
 
+
+### Command Reference
 [Open the command reference](docs/COMMANDS.md) — See every player and admin command without crowding the README.
+
+### Demo Playlist on YouTube (Sound On)
+
+[Watch the TreasureRun demo playlist on YouTube (Sound On)](https://www.youtube.com/playlist?list=PLGD5ja_S37jmlir4qOALHjSXQ1PohVqq3) — See the actual gameplay flow, including the UFO encounter, the wandering trader with two llamas, the safe-zone boundary, and proximity-based heartbeat and cracking-ice cues.
+
+Sound on: these videos include audio.
 
 TreasureRun also includes platform-boundary i18n work because Minecraft's built-in UI text is split between server-controlled surfaces and client-side surfaces. This i18n work is an internal supporting layer within the gameplay plugin, not a separate plugin, library, or competing project.
 
@@ -32,10 +40,10 @@ TreasureRun runs locally on Minecraft Spigot 1.20.1. This short gameplay demo sh
 ![TreasureRun gameplay demo](docs/assets/treasurerun-readme-hero-demo.gif)
 
 Watch the 48-second gameplay demo on YouTube:
-https://youtu.be/aJS5jMH3rwk
+https://youtu.be/9n6XdHfEqpM
 
 Watch the wandering-trader custom trade demo on YouTube:
-https://youtu.be/OQbwYl85oRw
+https://youtu.be/eARQ0AHZNoI
 
 #### What makes the demo world fun
 
