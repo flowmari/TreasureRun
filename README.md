@@ -32,7 +32,7 @@ TreasureRun runs locally on Minecraft Spigot 1.20.1. This short gameplay demo sh
 ![TreasureRun gameplay demo](docs/assets/treasurerun-readme-hero-demo.gif)
 
 Watch the 48-second gameplay demo on YouTube:
-https://youtu.be/aJS5jMH3rwk
+https://youtu.be/9n6XdHfEqpM
 
 Watch the wandering-trader custom trade demo on YouTube:
 https://youtu.be/OQbwYl85oRw
