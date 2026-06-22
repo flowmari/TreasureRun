@@ -25,10 +25,16 @@ The following path was verified locally:
 11. The runtime world contained the demo-world sync marker file.
 12. No tracked files changed during the runtime verification.
 
-## Key command
+## Historical key command
 
 ```bash
 TREASURERUN_OPS=flowmari ./scripts/contributor-up.sh
+```
+
+This command is preserved as historical evidence from the original local verification. The current external-feedback follow-up setup path is argument-first:
+
+```bash
+./scripts/contributor-up.sh flowmari
 ```
 
 ## Observed result
