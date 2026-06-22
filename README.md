@@ -185,7 +185,7 @@ These deeper tests are still part of the project. They are simply kept out of th
 | Improve plugin-owned translations | `src/main/resources/languages/*.yml` |
 | Review language selection and mapping | `src/main/resources/lang-map.yml` |
 | Understand the packet-level i18n boundary | `src/main/java/plugin/LocalizedPacketMessageProtocolListener.java` |
-| Work on platform-independent JSON localization | `src/main/java/plugin/i18n/PacketI18nJsonLocalizer.java` |
+| Work on platform-independent JSON localization | `treasurerun-i18n-core/src/main/java/com/treasurerun/i18n/PacketI18nJsonLocalizer.java` |
 | Review the leaderboard read API | `ranking-api/` |
 
 ## Why TreasureRun Is Technically Interesting

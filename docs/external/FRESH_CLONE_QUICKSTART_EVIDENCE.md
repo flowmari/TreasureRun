@@ -17,7 +17,8 @@ This evidence was added after PR #18, because PR #18 intentionally created the e
 | Fresh clone commit | `e1151c408dab99bac0b717b3b2d6a3f4b8f131a9` |
 | Operator name used | `flowmari` |
 | Clone time | 30s |
-| Startup command | `TREASURERUN_OPS=flowmari ./scripts/contributor-up.sh` |
+| Historical startup command recorded at measurement time | `TREASURERUN_OPS=flowmari ./scripts/contributor-up.sh` |
+| Current external-feedback follow-up startup command | `./scripts/contributor-up.sh flowmari` |
 | Startup exit code | `0` |
 | Startup measured time | 39s |
 | Shutdown command | `./scripts/contributor-down.sh` |
@@ -26,6 +27,8 @@ This evidence was added after PR #18, because PR #18 intentionally created the e
 ## Result
 
 The documented fresh-clone contributor startup command completed successfully in this local measurement.
+
+The historical command above is preserved as evidence from the measurement date. The current tester-facing setup path is argument-first: `./scripts/contributor-up.sh YourMinecraftName`.
 
 ## Evidence procedure
 

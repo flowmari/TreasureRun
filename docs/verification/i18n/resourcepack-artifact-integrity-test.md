@@ -59,5 +59,5 @@ Display-level vanilla-client evidence is recorded separately after representativ
 - [`ResourcePackArtifactIntegrityTest`](../../../src/test/java/plugin/i18n/ResourcePackArtifactIntegrityTest.java)
 - [`scripts/check_fallback_resourcepack_generation.py`](../../../scripts/check_fallback_resourcepack_generation.py)
 - [`docs/I18N_RESOURCEPACK_ALIASING_FALLBACK.md`](../../I18N_RESOURCEPACK_ALIASING_FALLBACK.md)
-- [`PacketI18nJsonLocalizer`](../../../src/main/java/plugin/i18n/PacketI18nJsonLocalizer.java)
+- [`PacketI18nJsonLocalizer`](../../../treasurerun-i18n-core/src/main/java/com/treasurerun/i18n/PacketI18nJsonLocalizer.java)
 - [`ADR-001: Packet i18n Ports and Adapters`](../../adr/ADR-001-packet-i18n-ports-and-adapters.md)

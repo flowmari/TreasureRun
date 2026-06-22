@@ -18,6 +18,7 @@ Start with the current-facing documents below. The large audit and batch folders
 | Area | Evidence |
 |---|---|
 | Platform-boundary i18n | [`verification/resource-pack/server-side-resource-pack-i18n.md`](verification/resource-pack/server-side-resource-pack-i18n.md) |
+| External-feedback follow-up | [`external/EXTERNAL_FEEDBACK_FOLLOWUP_EVIDENCE.md`](external/EXTERNAL_FEEDBACK_FOLLOWUP_EVIDENCE.md) |
 | Release-hosted fallback ResourcePacks | [`verification/i18n/reproducible-fallback-resource-pack-builds.md`](verification/i18n/reproducible-fallback-resource-pack-builds.md) |
 | Gothic / historical locale expansion | [`verification/i18n/gothic-runtime-evidence.md`](verification/i18n/gothic-runtime-evidence.md), [`verification/i18n/historical-germanic-locales-final-evidence.md`](verification/i18n/historical-germanic-locales-final-evidence.md) |
 | Ranking backend boundary | [`adr/ADR-003-ranking-read-api-service-boundary.md`](adr/ADR-003-ranking-read-api-service-boundary.md) |
@@ -53,5 +54,5 @@ Known follow-up work is intentionally tracked separately, including the Docker/M
 
 | Document | Purpose |
 |---|---|
-| [](playtest/PLAYER_QUICKSTART.md) | First-time player setup, gameplay path, and wandering-trader trade steps. |
-| [](external/EXTERNAL_FEEDBACK_PLAYBOOK.md) | Practical external playtest request templates and feedback boundaries. |
+| [`playtest/PLAYER_QUICKSTART.md`](playtest/PLAYER_QUICKSTART.md) | First-time player setup, gameplay path, and wandering-trader trade steps. |
+| [`external/EXTERNAL_FEEDBACK_PLAYBOOK.md`](external/EXTERNAL_FEEDBACK_PLAYBOOK.md) | Practical external playtest request templates and feedback boundaries. |
