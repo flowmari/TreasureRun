@@ -1117,12 +1117,15 @@ public class GameStageManager implements Listener {
   private void setupTreasureShopRecipes(WanderingTrader trader) {
     java.util.List<MerchantRecipe> recipes = new java.util.ArrayList<>();
 
-    // 取引①：特製エメラルド 5 → 金リンゴ 1
-    ItemStack specialEmerald5 = plugin.getItemFactory().createTreasureEmerald(5);
+    // Trade 1: 5 emerald-compatible items -> 1 golden apple.
+    // Keep the merchant recipe material-compatible so Spigot can populate the result slot.
+    // The InventoryClickEvent handler still validates the TreasureRun PDC marker before
+    // allowing the secret-trade feedback.
+    ItemStack emeraldInput5 = new ItemStack(Material.EMERALD, 5);
 
     ItemStack result1 = new ItemStack(Material.GOLDEN_APPLE, 1);
     MerchantRecipe r1 = new MerchantRecipe(result1, 64);
-    r1.addIngredient(specialEmerald5);
+    r1.addIngredient(emeraldInput5);
     recipes.add(r1);
 
     // エメラルドブロック 1 → エンチャ金リンゴ 1
