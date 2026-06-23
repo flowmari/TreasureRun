@@ -968,6 +968,54 @@ public class GameStageManager implements Listener {
     return false;
   }
 
+
+  private void completeTreasureShopSecretTradeNow(Player player, MerchantInventory merchantInv, String source) {
+    if (merchantInv != null) {
+      merchantInv.setItem(0, null);
+      merchantInv.setItem(1, null);
+      merchantInv.setItem(2, null);
+    }
+
+    java.util.Map<Integer, ItemStack> overflow = player.getInventory().addItem(new ItemStack(Material.GOLDEN_APPLE, 1));
+    for (ItemStack leftover : overflow.values()) {
+      player.getWorld().dropItemNaturally(player.getLocation(), leftover);
+    }
+
+    player.updateInventory();
+
+    shopDebug("OK: completed immediate plugin-owned secret trade. source=" + source);
+
+    String shopLang = plugin.getConfig().getString("language.default", "ja");
+    try {
+      if (plugin.getPlayerLanguageStore() != null) {
+        String saved = plugin.getPlayerLanguageStore().getLang(player, shopLang);
+        if (saved != null && !saved.isBlank()) shopLang = saved;
+      }
+    } catch (Throwable ignored) {}
+
+    player.sendTitle(
+        ChatColor.GOLD + plugin.getI18n().tr(shopLang, "gameplay.shop.tradeCompleteTitle"),
+        ChatColor.AQUA + plugin.getI18n().tr(shopLang, "gameplay.shop.hiddenPowerAwakens"),
+        5,
+        40,
+        10
+    );
+
+    player.sendMessage(
+        ChatColor.AQUA + "??? " + ChatColor.GOLD + plugin.getI18n().tr(shopLang, "gameplay.shop.hiddenPowerChat")
+    );
+
+    player.playSound(player.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0f, 1.2f);
+    player.playSound(player.getLocation(), Sound.BLOCK_NOTE_BLOCK_PLING, 1.0f, 1.8f);
+
+    World w = player.getWorld();
+    Location loc = player.getEyeLocation().clone()
+        .add(player.getLocation().getDirection().multiply(0.8));
+    w.spawnParticle(Particle.TOTEM, loc, 40, 0.4, 0.4, 0.4, 0.01);
+    w.spawnParticle(Particle.END_ROD, loc, 120, 0.7, 0.7, 0.7, 0.02);
+    w.spawnParticle(Particle.ENCHANTMENT_TABLE, loc, 80, 0.7, 0.7, 0.7, 0.0);
+  }
+
   // =======================================================
   public void spawnTraderAndLlamas(Location center) {
     if (center == null) return;
@@ -1375,6 +1423,50 @@ public class GameStageManager implements Listener {
     if (event.getRawSlot() == 2) return;
 
     if (!isTreasureShopTitle(event.getView().getTitle())) return;
+
+    ItemStack cursorSnap = event.getCursor() == null ? null : event.getCursor().clone();
+    ItemStack currentSnap = event.getCurrentItem() == null ? null : event.getCurrentItem().clone();
+
+    boolean placingSpecialEmeraldIntoMerchantInput =
+        (event.getRawSlot() == 0 || event.getRawSlot() == 1)
+            && plugin.getItemFactory().isTreasureEmerald(cursorSnap)
+            && cursorSnap.getAmount() >= 5;
+
+    boolean shiftClickingSpecialEmeraldFromPlayerInventory =
+        event.isShiftClick()
+            && event.getRawSlot() >= event.getView().getTopInventory().getSize()
+            && plugin.getItemFactory().isTreasureEmerald(currentSnap)
+            && currentSnap.getAmount() >= 5;
+
+    if (placingSpecialEmeraldIntoMerchantInput || shiftClickingSpecialEmeraldFromPlayerInventory) {
+      event.setCancelled(true);
+
+      if (placingSpecialEmeraldIntoMerchantInput) {
+        ItemStack remaining = cursorSnap.clone();
+        int remainingAmount = remaining.getAmount() - 5;
+        if (remainingAmount > 0) {
+          remaining.setAmount(remainingAmount);
+          player.setItemOnCursor(remaining);
+        } else {
+          player.setItemOnCursor(null);
+        }
+        completeTreasureShopSecretTradeNow(player, (MerchantInventory) event.getView().getTopInventory(), "cursor-to-merchant-input");
+        return;
+      }
+
+      if (shiftClickingSpecialEmeraldFromPlayerInventory) {
+        ItemStack remaining = currentSnap.clone();
+        int remainingAmount = remaining.getAmount() - 5;
+        if (remainingAmount > 0) {
+          remaining.setAmount(remainingAmount);
+          event.setCurrentItem(remaining);
+        } else {
+          event.setCurrentItem(null);
+        }
+        completeTreasureShopSecretTradeNow(player, (MerchantInventory) event.getView().getTopInventory(), "shift-click-from-player-inventory");
+        return;
+      }
+    }
 
     Bukkit.getScheduler().runTaskLater(plugin, () -> {
       if (!player.isOnline()) return;
