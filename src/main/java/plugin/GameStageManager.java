@@ -948,6 +948,26 @@ public class GameStageManager implements Listener {
     return key;
   }
 
+  private boolean isTreasureShopTitle(String title) {
+    String plain = ChatColor.stripColor(title);
+    if (plain == null) plain = "";
+    String normalized = plain.toLowerCase(java.util.Locale.ROOT);
+
+    if (normalized.contains("treasure shop")) {
+      return true;
+    }
+
+    try {
+      String localized = ChatColor.stripColor(trStage("finalAudit.shop.treasureShop"));
+      if (localized != null && !localized.isBlank()
+          && normalized.contains(localized.toLowerCase(java.util.Locale.ROOT))) {
+        return true;
+      }
+    } catch (Throwable ignored) {}
+
+    return false;
+  }
+
   // =======================================================
   public void spawnTraderAndLlamas(Location center) {
     if (center == null) return;
@@ -1149,7 +1169,7 @@ public class GameStageManager implements Listener {
   //   - 「画面タイトルが Treasure Shop」かで判定する
   //   - 原材料はクリック瞬間にスナップショットして PDC 判定を確定
   // =======================================================
-  @EventHandler(ignoreCancelled = true)
+  @EventHandler(ignoreCancelled = false)
   public void onTraderResultClick(InventoryClickEvent event) {
 
     shopDebug("InventoryClickEvent fired"
@@ -1200,24 +1220,21 @@ public class GameStageManager implements Listener {
     String plainTitle = ChatColor.stripColor(title);
     if (plainTitle == null) plainTitle = "";
 
-    if (!plainTitle.toLowerCase().contains("treasure shop")) {
+    if (!isTreasureShopTitle(title)) {
       shopDebug("RETURN: not Treasure Shop title. plainTitle=" + plainTitle);
       return;
     }
 
-    // 結果アイテムが金リンゴか
+    // The result slot may be empty when the vanilla merchant engine refuses to match
+    // custom PDC-backed emeralds. Allow an empty result-slot click so the plugin can
+    // complete the validated secret trade itself.
     ItemStack current = event.getCurrentItem();
-    if (current == null) {
-      shopDebug("RETURN: current item is null");
-      return;
-    }
-    if (current.getType() == Material.AIR) {
-      shopDebug("RETURN: current item is AIR");
-      return;
-    }
-    if (current.getType() != Material.GOLDEN_APPLE) {
+    if (current != null && current.getType() != Material.AIR && current.getType() != Material.GOLDEN_APPLE) {
       shopDebug("RETURN: current item is not GOLDEN_APPLE. type=" + current.getType());
       return;
+    }
+    if (current == null || current.getType() == Material.AIR) {
+      shopDebug("result slot is empty; attempting plugin-owned secret trade from validated input");
     }
 
     // ゲーム中のみ
@@ -1249,7 +1266,30 @@ public class GameStageManager implements Listener {
       return;
     }
 
-    shopDebug("OK: passed all checks -> scheduling effect with runTaskLater");
+    // Plugin-owned manual transaction:
+    // do not rely on display text, lore, or vanilla merchant recipe matching
+    // for this custom PDC-backed item. TreasureRun validates its own item marker
+    // and completes the exchange directly.
+    event.setCancelled(true);
+
+    ItemStack remainingSpecialEmeralds = in0Snap.clone();
+    int remainingAmount = amount - 5;
+    if (remainingAmount > 0) {
+      remainingSpecialEmeralds.setAmount(remainingAmount);
+      merchantInv.setItem(0, remainingSpecialEmeralds);
+    } else {
+      merchantInv.setItem(0, null);
+    }
+    merchantInv.setItem(1, null);
+    merchantInv.setItem(2, null);
+
+    java.util.Map<Integer, ItemStack> overflow = player.getInventory().addItem(new ItemStack(Material.GOLDEN_APPLE, 1));
+    for (ItemStack leftover : overflow.values()) {
+      player.getWorld().dropItemNaturally(player.getLocation(), leftover);
+    }
+    player.updateInventory();
+
+    shopDebug("OK: completed plugin-owned secret trade -> scheduling effect with runTaskLater");
 
     Bukkit.getScheduler().runTaskLater(plugin, () -> {
       shopDebug("RUN: runTaskLater executed");
@@ -1314,6 +1354,53 @@ public class GameStageManager implements Listener {
       w.spawnParticle(Particle.TOTEM, loc, 40, 0.4, 0.4, 0.4, 0.01);
       w.spawnParticle(Particle.END_ROD, loc, 120, 0.7, 0.7, 0.7, 0.02);
       w.spawnParticle(Particle.ENCHANTMENT_TABLE, loc, 80, 0.7, 0.7, 0.7, 0.0);
+    }, 1L);
+  }
+
+  // =======================================================
+  // ✅ Treasure Shop manual result refresh
+  //   - Do not change language resources or i18n-core.
+  //   - Do not validate by display name or lore.
+  //   - Show a visible result only after the TreasureRun item marker is present.
+  //   - onTraderResultClick() still validates and completes the actual exchange.
+  // =======================================================
+  @EventHandler(ignoreCancelled = false)
+  public void onTreasureShopInputClickRefresh(InventoryClickEvent event) {
+    if (!(event.getWhoClicked() instanceof Player player)) return;
+    if (event.getView() == null || event.getView().getTopInventory() == null) return;
+    if (event.getView().getTopInventory().getType() != InventoryType.MERCHANT) return;
+    if (!(event.getView().getTopInventory() instanceof MerchantInventory)) return;
+
+    // Result-slot clicks are handled by onTraderResultClick().
+    if (event.getRawSlot() == 2) return;
+
+    if (!isTreasureShopTitle(event.getView().getTitle())) return;
+
+    Bukkit.getScheduler().runTaskLater(plugin, () -> {
+      if (!player.isOnline()) return;
+      if (player.getOpenInventory() == null || player.getOpenInventory().getTopInventory() == null) return;
+      if (player.getOpenInventory().getTopInventory().getType() != InventoryType.MERCHANT) return;
+      if (!(player.getOpenInventory().getTopInventory() instanceof MerchantInventory openMerchantInv)) return;
+      if (!isTreasureShopTitle(player.getOpenInventory().getTitle())) return;
+
+      ItemStack input0 = openMerchantInv.getItem(0);
+      ItemStack input1 = openMerchantInv.getItem(1);
+      boolean hasSpecialInput = plugin.getItemFactory().isTreasureEmerald(input0)
+          && input0.getAmount() >= 5
+          && (input1 == null || input1.getType() == Material.AIR);
+
+      if (hasSpecialInput) {
+        openMerchantInv.setItem(2, new ItemStack(Material.GOLDEN_APPLE, 1));
+        shopDebug("manual result refreshed for Treasure Shop secret trade");
+      } else {
+        ItemStack currentResult = openMerchantInv.getItem(2);
+        if (currentResult != null && currentResult.getType() == Material.GOLDEN_APPLE) {
+          openMerchantInv.setItem(2, null);
+          shopDebug("manual result cleared for Treasure Shop secret trade");
+        }
+      }
+
+      player.updateInventory();
     }, 1L);
   }
 
