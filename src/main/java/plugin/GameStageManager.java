@@ -51,6 +51,12 @@ public class GameStageManager implements Listener {
   private WanderingTrader stageTrader;
   private final java.util.List<TraderLlama> stageLlamas = new java.util.ArrayList<>();
 
+  // Treasure Shop secret-trade scanner:
+  // Keep this gameplay fix isolated from language files, ResourcePack assets, and i18n-core.
+  private BukkitTask treasureShopSecretTradeScannerHandle;
+  private final java.util.Map<java.util.UUID, Long> treasureShopAutoTradeCooldownUntilMs = new java.util.HashMap<>();
+
+
   // =======================================================
   // ★ ShopDebug 出力（②：クラス内に1個追加 / メンバーとして）
   // =======================================================
@@ -185,6 +191,7 @@ public class GameStageManager implements Listener {
   public GameStageManager(TreasureRunMultiChestPlugin plugin, Object ufo) {
     this.plugin = plugin;
     this.ufo = ufo;
+    startTreasureShopOpenViewSecretTradeScanner();
   }
 
   // ✅ 追加：difficultyKeys 用のキー生成
@@ -1014,6 +1021,100 @@ public class GameStageManager implements Listener {
     w.spawnParticle(Particle.TOTEM, loc, 40, 0.4, 0.4, 0.4, 0.01);
     w.spawnParticle(Particle.END_ROD, loc, 120, 0.7, 0.7, 0.7, 0.02);
     w.spawnParticle(Particle.ENCHANTMENT_TABLE, loc, 80, 0.7, 0.7, 0.7, 0.0);
+  }
+
+
+  private void startTreasureShopOpenViewSecretTradeScanner() {
+    if (treasureShopSecretTradeScannerHandle != null) return;
+
+    treasureShopSecretTradeScannerHandle = Bukkit.getScheduler().runTaskTimer(plugin, () -> {
+      try {
+        for (Player player : Bukkit.getOnlinePlayers()) {
+          if (player == null || !player.isOnline()) continue;
+
+          org.bukkit.inventory.InventoryView view = player.getOpenInventory();
+          if (view == null || view.getTopInventory() == null) continue;
+          if (view.getTopInventory().getType() != InventoryType.MERCHANT) continue;
+          if (!(view.getTopInventory() instanceof MerchantInventory merchantInv)) continue;
+          if (!isTreasureShopTitle(view.getTitle())) continue;
+
+          tryCompleteTreasureShopOpenViewSecretTrade(player, merchantInv, "open-view-scanner");
+        }
+      } catch (Throwable t) {
+        plugin.getLogger().warning("[ShopDebug] Treasure Shop open-view scanner failed: " + t.getMessage());
+      }
+    }, 20L, 5L);
+  }
+
+  private boolean tryCompleteTreasureShopOpenViewSecretTrade(Player player, MerchantInventory merchantInv, String source) {
+    if (player == null || merchantInv == null) return false;
+
+    long now = System.currentTimeMillis();
+    Long cooldownUntil = treasureShopAutoTradeCooldownUntilMs.get(player.getUniqueId());
+    if (cooldownUntil != null && now < cooldownUntil) {
+      return false;
+    }
+
+    ItemStack input0 = merchantInv.getItem(0);
+    ItemStack input1 = merchantInv.getItem(1);
+
+    boolean slot0Special = plugin.getItemFactory().isTreasureEmerald(input0)
+        && input0.getAmount() >= 5;
+    boolean slot1Special = plugin.getItemFactory().isTreasureEmerald(input1)
+        && input1.getAmount() >= 5;
+
+    boolean slot0Empty = input0 == null || input0.getType() == Material.AIR;
+    boolean slot1Empty = input1 == null || input1.getType() == Material.AIR;
+
+    if (slot0Special && slot1Empty) {
+      return completeTreasureShopSecretTradeFromMerchantSlot(player, merchantInv, 0, source + ":slot0");
+    }
+
+    if (slot1Special && slot0Empty) {
+      return completeTreasureShopSecretTradeFromMerchantSlot(player, merchantInv, 1, source + ":slot1");
+    }
+
+    return false;
+  }
+
+  private boolean completeTreasureShopSecretTradeFromMerchantSlot(
+      Player player,
+      MerchantInventory merchantInv,
+      int sourceSlot,
+      String source
+  ) {
+    ItemStack sourceStack = merchantInv.getItem(sourceSlot);
+    if (!plugin.getItemFactory().isTreasureEmerald(sourceStack) || sourceStack.getAmount() < 5) {
+      return false;
+    }
+
+    ItemStack fiveSpecialEmeralds = sourceStack.clone();
+    fiveSpecialEmeralds.setAmount(5);
+
+    ItemStack remainder = null;
+    int remainingAmount = sourceStack.getAmount() - 5;
+    if (remainingAmount > 0) {
+      remainder = sourceStack.clone();
+      remainder.setAmount(remainingAmount);
+    }
+
+    merchantInv.setItem(sourceSlot, fiveSpecialEmeralds);
+    merchantInv.setItem(sourceSlot == 0 ? 1 : 0, null);
+
+    treasureShopAutoTradeCooldownUntilMs.put(player.getUniqueId(), System.currentTimeMillis() + 1000L);
+
+    completeTreasureShopSecretTradeNow(player, merchantInv, source);
+
+    if (remainder != null) {
+      java.util.Map<Integer, ItemStack> overflow = player.getInventory().addItem(remainder);
+      for (ItemStack leftover : overflow.values()) {
+        player.getWorld().dropItemNaturally(player.getLocation(), leftover);
+      }
+    }
+
+    player.updateInventory();
+    shopDebug("OK: open-view scanner completed Treasure Shop secret trade. source=" + source);
+    return true;
   }
 
   // =======================================================
