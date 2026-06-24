@@ -1036,8 +1036,10 @@ public class GameStageManager implements Listener {
           if (view == null || view.getTopInventory() == null) continue;
           if (view.getTopInventory().getType() != InventoryType.MERCHANT) continue;
           if (!(view.getTopInventory() instanceof MerchantInventory merchantInv)) continue;
-          if (!isTreasureShopTitle(view.getTitle())) continue;
 
+          // Marker-first fallback:
+          // Do not gate this scanner on the GUI title. The TreasureRun item marker
+          // is the source of truth for this gameplay transaction.
           tryCompleteTreasureShopOpenViewSecretTrade(player, merchantInv, "open-view-scanner");
         }
       } catch (Throwable t) {
@@ -1065,6 +1067,22 @@ public class GameStageManager implements Listener {
 
     boolean slot0Empty = input0 == null || input0.getType() == Material.AIR;
     boolean slot1Empty = input1 == null || input1.getType() == Material.AIR;
+
+    if (slot0Special || slot1Special) {
+      String title = "";
+      try {
+        title = ChatColor.stripColor(player.getOpenInventory().getTitle());
+      } catch (Throwable ignored) {}
+
+      shopDebug("open-view scanner detected marker-backed Treasure Emerald input"
+          + " title=" + title
+          + " input0=" + (input0 == null ? "null" : input0.getType() + " x" + input0.getAmount())
+          + " input1=" + (input1 == null ? "null" : input1.getType() + " x" + input1.getAmount())
+          + " slot0Special=" + slot0Special
+          + " slot1Special=" + slot1Special
+          + " slot0Empty=" + slot0Empty
+          + " slot1Empty=" + slot1Empty);
+    }
 
     if (slot0Special && slot1Empty) {
       return completeTreasureShopSecretTradeFromMerchantSlot(player, merchantInv, 0, source + ":slot0");
