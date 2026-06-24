@@ -1040,7 +1040,7 @@ public class GameStageManager implements Listener {
           // Marker-first fallback:
           // Do not gate this scanner on the GUI title. The TreasureRun item marker
           // is the source of truth for this gameplay transaction.
-          tryCompleteTreasureShopOpenViewSecretTrade(player, merchantInv, "open-view-scanner");
+          tryCompleteTreasureShopOpenViewSecretTrade(player, merchantInv, view, "open-view-scanner");
         }
       } catch (Throwable t) {
         plugin.getLogger().warning("[ShopDebug] Treasure Shop open-view scanner failed: " + t.getMessage());
@@ -1048,7 +1048,19 @@ public class GameStageManager implements Listener {
     }, 20L, 5L);
   }
 
-  private boolean tryCompleteTreasureShopOpenViewSecretTrade(Player player, MerchantInventory merchantInv, String source) {
+  private ItemStack firstNonAir(ItemStack preferred, ItemStack fallback) {
+    if (preferred != null && preferred.getType() != Material.AIR) return preferred;
+    if (fallback != null && fallback.getType() != Material.AIR) return fallback;
+    return null;
+  }
+
+  private String describeItem(ItemStack item) {
+    if (item == null) return "null";
+    return item.getType() + " x" + item.getAmount()
+        + " special=" + plugin.getItemFactory().isTreasureEmerald(item);
+  }
+
+  private boolean tryCompleteTreasureShopOpenViewSecretTrade(Player player, MerchantInventory merchantInv, org.bukkit.inventory.InventoryView view, String source) {
     if (player == null || merchantInv == null) return false;
 
     long now = System.currentTimeMillis();
@@ -1057,8 +1069,22 @@ public class GameStageManager implements Listener {
       return false;
     }
 
-    ItemStack input0 = merchantInv.getItem(0);
-    ItemStack input1 = merchantInv.getItem(1);
+    ItemStack merchantInput0 = merchantInv.getItem(0);
+    ItemStack merchantInput1 = merchantInv.getItem(1);
+    ItemStack viewInput0 = null;
+    ItemStack viewInput1 = null;
+
+    try {
+      if (view != null) {
+        viewInput0 = view.getItem(0);
+        viewInput1 = view.getItem(1);
+      }
+    } catch (Throwable t) {
+      shopDebug("WARN: failed to read merchant raw slots from InventoryView: " + t.getMessage());
+    }
+
+    ItemStack input0 = firstNonAir(viewInput0, merchantInput0);
+    ItemStack input1 = firstNonAir(viewInput1, merchantInput1);
 
     boolean slot0Special = plugin.getItemFactory().isTreasureEmerald(input0)
         && input0.getAmount() >= 5;
@@ -1067,6 +1093,20 @@ public class GameStageManager implements Listener {
 
     boolean slot0Empty = input0 == null || input0.getType() == Material.AIR;
     boolean slot1Empty = input1 == null || input1.getType() == Material.AIR;
+
+    if (input0 != null || input1 != null || merchantInput0 != null || merchantInput1 != null) {
+      shopDebug("open-view scanner raw-slot snapshot"
+          + " view0=" + describeItem(viewInput0)
+          + " view1=" + describeItem(viewInput1)
+          + " merchant0=" + describeItem(merchantInput0)
+          + " merchant1=" + describeItem(merchantInput1)
+          + " resolved0=" + describeItem(input0)
+          + " resolved1=" + describeItem(input1)
+          + " slot0Special=" + slot0Special
+          + " slot1Special=" + slot1Special
+          + " slot0Empty=" + slot0Empty
+          + " slot1Empty=" + slot1Empty);
+    }
 
     if (slot0Special || slot1Special) {
       String title = "";
@@ -1085,11 +1125,11 @@ public class GameStageManager implements Listener {
     }
 
     if (slot0Special && slot1Empty) {
-      return completeTreasureShopSecretTradeFromMerchantSlot(player, merchantInv, 0, source + ":slot0");
+      return completeTreasureShopSecretTradeFromMerchantSlot(player, merchantInv, view, input0, 0, source + ":slot0");
     }
 
     if (slot1Special && slot0Empty) {
-      return completeTreasureShopSecretTradeFromMerchantSlot(player, merchantInv, 1, source + ":slot1");
+      return completeTreasureShopSecretTradeFromMerchantSlot(player, merchantInv, view, input1, 1, source + ":slot1");
     }
 
     return false;
@@ -1098,10 +1138,14 @@ public class GameStageManager implements Listener {
   private boolean completeTreasureShopSecretTradeFromMerchantSlot(
       Player player,
       MerchantInventory merchantInv,
+      org.bukkit.inventory.InventoryView view,
+      ItemStack observedSourceStack,
       int sourceSlot,
       String source
   ) {
-    ItemStack sourceStack = merchantInv.getItem(sourceSlot);
+    ItemStack sourceStack = observedSourceStack != null && observedSourceStack.getType() != Material.AIR
+        ? observedSourceStack.clone()
+        : merchantInv.getItem(sourceSlot);
     if (!plugin.getItemFactory().isTreasureEmerald(sourceStack) || sourceStack.getAmount() < 5) {
       return false;
     }
@@ -1119,9 +1163,29 @@ public class GameStageManager implements Listener {
     merchantInv.setItem(sourceSlot, fiveSpecialEmeralds);
     merchantInv.setItem(sourceSlot == 0 ? 1 : 0, null);
 
+    try {
+      if (view != null) {
+        view.setItem(sourceSlot, fiveSpecialEmeralds);
+        view.setItem(sourceSlot == 0 ? 1 : 0, null);
+        view.setItem(2, null);
+      }
+    } catch (Throwable t) {
+      shopDebug("WARN: failed to sync merchant raw slots before completion: " + t.getMessage());
+    }
+
     treasureShopAutoTradeCooldownUntilMs.put(player.getUniqueId(), System.currentTimeMillis() + 1000L);
 
     completeTreasureShopSecretTradeNow(player, merchantInv, source);
+
+    try {
+      if (view != null) {
+        view.setItem(0, null);
+        view.setItem(1, null);
+        view.setItem(2, null);
+      }
+    } catch (Throwable t) {
+      shopDebug("WARN: failed to clear merchant raw slots after completion: " + t.getMessage());
+    }
 
     if (remainder != null) {
       java.util.Map<Integer, ItemStack> overflow = player.getInventory().addItem(remainder);
