@@ -5,6 +5,12 @@ api-version: 1.20
 softdepend: [ProtocolLib]
 
 commands:
+  trsecret:
+    description: Completes the Treasure Shop secret trade fallback.
+    usage: /trsecret
+  treasuresecret:
+    description: Completes the Treasure Shop secret trade fallback.
+    usage: /treasuresecret
   packetI18nProbe:
     description: Send Minecraft translatable component samples for PacketI18n audit.
     usage: /packetI18nProbe

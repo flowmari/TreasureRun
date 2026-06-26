@@ -3,6 +3,10 @@ package plugin;
 import org.bukkit.Bukkit;
 
 import org.bukkit.*;
+import org.bukkit.inventory.EquipmentSlot;
+import org.bukkit.event.player.PlayerInteractEntityEvent;
+import org.bukkit.event.player.PlayerCommandPreprocessEvent;
+import org.bukkit.entity.Entity;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Merchant;
@@ -1034,13 +1038,22 @@ public class GameStageManager implements Listener {
 
           org.bukkit.inventory.InventoryView view = player.getOpenInventory();
           if (view == null || view.getTopInventory() == null) continue;
+
+          // Local emergency fallback:
+          // If the Treasure Shop view is open and the player has marker-backed
+          // Special Emeralds, complete the trade from the player's inventory.
+          // This avoids merchant-input ghost slots and client/server view mismatch.
+          if (tryCompleteTreasureShopOpenViewPlayerInventoryFallback(player, view, "open-view-player-inventory-fallback")) {
+            continue;
+          }
+
           if (view.getTopInventory().getType() != InventoryType.MERCHANT) continue;
           if (!(view.getTopInventory() instanceof MerchantInventory merchantInv)) continue;
 
           // Marker-first fallback:
           // Do not gate this scanner on the GUI title. The TreasureRun item marker
           // is the source of truth for this gameplay transaction.
-          tryCompleteTreasureShopOpenViewSecretTrade(player, merchantInv, "open-view-scanner");
+          tryCompleteTreasureShopOpenViewSecretTrade(player, merchantInv, view, "open-view-scanner");
         }
       } catch (Throwable t) {
         plugin.getLogger().warning("[ShopDebug] Treasure Shop open-view scanner failed: " + t.getMessage());
@@ -1048,7 +1061,383 @@ public class GameStageManager implements Listener {
     }, 20L, 5L);
   }
 
-  private boolean tryCompleteTreasureShopOpenViewSecretTrade(Player player, MerchantInventory merchantInv, String source) {
+  @EventHandler(ignoreCancelled = true)
+  public void onTreasureSecretCommandFallback(org.bukkit.event.player.PlayerCommandPreprocessEvent event) {
+    if (event == null || event.getPlayer() == null) return;
+
+    String message = event.getMessage();
+    if (message == null) return;
+
+    String normalized = message.trim().toLowerCase(java.util.Locale.ROOT);
+    if (!normalized.equals("/trsecret")
+        && !normalized.equals("/treasuresecret")
+        && !normalized.equals("/treasureshopsecret")) {
+      return;
+    }
+
+    event.setCancelled(true);
+
+    Player player = event.getPlayer();
+    shopDebug("command fallback invoked"
+        + " player=" + player.getName()
+        + " command=" + message
+        + " available=" + countTreasureShopTradeCandidates(player));
+
+    if (!tryCompleteTreasureShopServerSideFallback(player, "command-fallback:" + normalized)) {
+      player.sendMessage(ChatColor.YELLOW + "[TreasureRun] You need five Special Emeralds for the secret trade.");
+    }
+  }
+
+  private boolean tryCompleteTreasureShopServerSideFallback(Player player, String source) {
+    if (player == null) return false;
+
+    long now = System.currentTimeMillis();
+    Long cooldownUntil = treasureShopAutoTradeCooldownUntilMs.get(player.getUniqueId());
+    if (cooldownUntil != null && now < cooldownUntil) {
+      shopDebug("command fallback skipped by cooldown. source=" + source);
+      return false;
+    }
+
+    int available = countTreasureShopTradeCandidates(player);
+    if (available < 5) {
+      shopDebug("command fallback found too few Special Emeralds. available=" + available + " source=" + source);
+      return false;
+    }
+
+    if (!consumeTreasureShopTradeCandidates(player, 5)) {
+      shopDebug("WARN: command fallback found enough candidates but failed to consume five. source=" + source);
+      player.updateInventory();
+      return false;
+    }
+
+    treasureShopAutoTradeCooldownUntilMs.put(player.getUniqueId(), System.currentTimeMillis() + 1000L);
+
+    completeTreasureShopSecretTradeNow(player, null, source);
+    player.updateInventory();
+
+    shopDebug("OK: command fallback completed Treasure Shop secret trade. source=" + source);
+    return true;
+  }
+
+  @EventHandler(ignoreCancelled = true)
+  public void onTreasureShopTraderSecretTrade(org.bukkit.event.player.PlayerInteractEntityEvent event) {
+    if (event == null) return;
+    Player player = event.getPlayer();
+    if (player == null) return;
+    org.bukkit.entity.Entity clicked = event.getRightClicked();
+    if (!isTreasureShopInteractionTarget(clicked)) return;
+
+    long now = System.currentTimeMillis();
+    Long cooldownUntil = treasureShopAutoTradeCooldownUntilMs.get(player.getUniqueId());
+    if (cooldownUntil != null && now < cooldownUntil) {
+      return;
+    }
+
+    int available = countTreasureShopTradeCandidates(player);
+    shopDebug("trader-entity fallback checked"
+        + " player=" + player.getName()
+        + " clicked=" + (clicked == null ? "null" : clicked.getType())
+        + " available=" + available);
+
+    if (available < 5) {
+      player.sendMessage(ChatColor.YELLOW + "[TreasureRun] The Treasure Shop needs five Special Emeralds.");
+      return;
+    }
+
+    if (!consumeTreasureShopTradeCandidates(player, 5)) {
+      shopDebug("WARN: trader-entity fallback found enough candidates but failed to consume five.");
+      player.updateInventory();
+      return;
+    }
+
+    treasureShopAutoTradeCooldownUntilMs.put(player.getUniqueId(), System.currentTimeMillis() + 1000L);
+
+    event.setCancelled(true);
+    completeTreasureShopSecretTradeNow(player, null, "trader-entity-right-click-fallback");
+    player.updateInventory();
+
+    shopDebug("OK: trader-entity fallback completed Treasure Shop secret trade.");
+  }
+
+  private boolean isTreasureShopInteractionTarget(org.bukkit.entity.Entity entity) {
+    if (!(entity instanceof WanderingTrader)) return false;
+
+    try {
+      if (stageTrader != null
+          && stageTrader.isValid()
+          && stageTrader.getUniqueId().equals(entity.getUniqueId())) {
+        return true;
+      }
+    } catch (Throwable ignored) {}
+
+    String plainName = "";
+    try {
+      plainName = ChatColor.stripColor(entity.getCustomName());
+      if (plainName == null || plainName.isBlank()) {
+        plainName = ChatColor.stripColor(entity.getName());
+      }
+    } catch (Throwable ignored) {}
+
+    if (plainName == null) plainName = "";
+    String normalized = plainName.toLowerCase(java.util.Locale.ROOT);
+
+    if (normalized.contains("treasure shop")) return true;
+
+    try {
+      String localized = ChatColor.stripColor(trStage("finalAudit.shop.treasureShop"));
+      if (localized != null
+          && !localized.isBlank()
+          && normalized.contains(localized.toLowerCase(java.util.Locale.ROOT))) {
+        return true;
+      }
+    } catch (Throwable ignored) {}
+
+    return false;
+  }
+
+  private boolean isTreasureShopTradeCandidate(ItemStack item) {
+    if (item == null || item.getType() == Material.AIR) return false;
+
+    try {
+      if (plugin.getItemFactory().isTreasureEmerald(item)) return true;
+    } catch (Throwable ignored) {}
+
+    if (item.getType() != Material.EMERALD) return false;
+    if (!item.hasItemMeta()) return false;
+
+    try {
+      org.bukkit.inventory.meta.ItemMeta meta = item.getItemMeta();
+      if (meta == null) return false;
+
+      if (meta.hasDisplayName()) {
+        String name = ChatColor.stripColor(meta.getDisplayName());
+        if (name != null && name.toLowerCase(java.util.Locale.ROOT).contains("special emerald")) {
+          return true;
+        }
+      }
+
+      if (meta.hasLore() && meta.getLore() != null) {
+        for (String line : meta.getLore()) {
+          String plain = ChatColor.stripColor(line);
+          if (plain == null) continue;
+          String normalized = plain.toLowerCase(java.util.Locale.ROOT);
+          if (normalized.contains("crafted in treasurerun")
+              || normalized.contains("special emerald")) {
+            return true;
+          }
+        }
+      }
+    } catch (Throwable ignored) {}
+
+    return false;
+  }
+
+  private int countTreasureShopTradeCandidates(Player player) {
+    if (player == null) return 0;
+
+    int total = 0;
+
+    try {
+      ItemStack cursor = player.getItemOnCursor();
+      if (isTreasureShopTradeCandidate(cursor)) {
+        total += cursor.getAmount();
+      }
+    } catch (Throwable ignored) {}
+
+    for (ItemStack stack : player.getInventory().getContents()) {
+      if (isTreasureShopTradeCandidate(stack)) {
+        total += stack.getAmount();
+      }
+    }
+
+    return total;
+  }
+
+  private boolean consumeTreasureShopTradeCandidates(Player player, int amount) {
+    if (player == null || amount <= 0) return false;
+
+    int remaining = amount;
+
+    try {
+      ItemStack cursor = player.getItemOnCursor();
+      if (isTreasureShopTradeCandidate(cursor)) {
+        int take = Math.min(remaining, cursor.getAmount());
+        int left = cursor.getAmount() - take;
+
+        if (left > 0) {
+          ItemStack updated = cursor.clone();
+          updated.setAmount(left);
+          player.setItemOnCursor(updated);
+        } else {
+          player.setItemOnCursor(null);
+        }
+
+        remaining -= take;
+      }
+    } catch (Throwable t) {
+      shopDebug("WARN: failed to consume candidate from cursor: " + t.getMessage());
+    }
+
+    for (int slot = 0; slot < player.getInventory().getSize() && remaining > 0; slot++) {
+      ItemStack stack = player.getInventory().getItem(slot);
+      if (!isTreasureShopTradeCandidate(stack)) continue;
+
+      int take = Math.min(remaining, stack.getAmount());
+      int left = stack.getAmount() - take;
+
+      if (left > 0) {
+        ItemStack updated = stack.clone();
+        updated.setAmount(left);
+        player.getInventory().setItem(slot, updated);
+      } else {
+        player.getInventory().setItem(slot, null);
+      }
+
+      remaining -= take;
+    }
+
+    return remaining == 0;
+  }
+
+  private boolean tryCompleteTreasureShopOpenViewPlayerInventoryFallback(
+      Player player,
+      org.bukkit.inventory.InventoryView view,
+      String source
+  ) {
+    if (player == null || view == null) return false;
+
+    long now = System.currentTimeMillis();
+    Long cooldownUntil = treasureShopAutoTradeCooldownUntilMs.get(player.getUniqueId());
+    if (cooldownUntil != null && now < cooldownUntil) {
+      return false;
+    }
+
+    boolean titleMatches = false;
+    String plainTitle = "";
+    try {
+      plainTitle = ChatColor.stripColor(view.getTitle());
+      titleMatches = isTreasureShopTitle(view.getTitle());
+    } catch (Throwable ignored) {}
+
+    boolean nearStageTrader = false;
+    try {
+      nearStageTrader = stageTrader != null
+          && stageTrader.isValid()
+          && stageTrader.getWorld().equals(player.getWorld())
+          && stageTrader.getLocation().distanceSquared(player.getLocation()) <= 100.0;
+    } catch (Throwable ignored) {}
+
+    if (!titleMatches && !nearStageTrader) {
+      return false;
+    }
+
+    int available = 0;
+
+    ItemStack cursor = null;
+    try {
+      cursor = player.getItemOnCursor();
+      if (plugin.getItemFactory().isTreasureEmerald(cursor)) {
+        available += cursor.getAmount();
+      }
+    } catch (Throwable ignored) {}
+
+    for (ItemStack stack : player.getInventory().getContents()) {
+      if (plugin.getItemFactory().isTreasureEmerald(stack)) {
+        available += stack.getAmount();
+      }
+    }
+
+    if (available < 5) {
+      return false;
+    }
+
+    shopDebug("open-view player-inventory fallback detected marker-backed Treasure Emerald"
+        + " title=" + plainTitle
+        + " titleMatches=" + titleMatches
+        + " nearStageTrader=" + nearStageTrader
+        + " available=" + available
+        + " cursor=" + describeItem(cursor));
+
+    shopDebug("SKIP: open-view player-inventory fallback is disabled; use trader right-click or /trsecret instead.");
+
+    if (!java.lang.Boolean.getBoolean("treasurerun.enableOpenViewSecretTrade")) {
+      return false;
+    }
+
+
+    int remainingToConsume = 5;
+
+    try {
+      if (cursor != null && plugin.getItemFactory().isTreasureEmerald(cursor)) {
+        int take = Math.min(remainingToConsume, cursor.getAmount());
+        int left = cursor.getAmount() - take;
+        if (left > 0) {
+          ItemStack newCursor = cursor.clone();
+          newCursor.setAmount(left);
+          player.setItemOnCursor(newCursor);
+        } else {
+          player.setItemOnCursor(null);
+        }
+        remainingToConsume -= take;
+      }
+    } catch (Throwable t) {
+      shopDebug("WARN: failed to consume Special Emeralds from cursor: " + t.getMessage());
+    }
+
+    for (int slot = 0; slot < player.getInventory().getSize() && remainingToConsume > 0; slot++) {
+      ItemStack stack = player.getInventory().getItem(slot);
+      if (!plugin.getItemFactory().isTreasureEmerald(stack)) continue;
+
+      int take = Math.min(remainingToConsume, stack.getAmount());
+      int left = stack.getAmount() - take;
+
+      if (left > 0) {
+        ItemStack updated = stack.clone();
+        updated.setAmount(left);
+        player.getInventory().setItem(slot, updated);
+      } else {
+        player.getInventory().setItem(slot, null);
+      }
+
+      remainingToConsume -= take;
+    }
+
+    if (remainingToConsume > 0) {
+      shopDebug("WARN: fallback found enough Special Emeralds but failed to consume all five. remainingToConsume="
+          + remainingToConsume);
+      player.updateInventory();
+      return false;
+    }
+
+    try {
+      view.setItem(0, null);
+      view.setItem(1, null);
+      view.setItem(2, null);
+    } catch (Throwable ignored) {}
+
+    treasureShopAutoTradeCooldownUntilMs.put(player.getUniqueId(), System.currentTimeMillis() + 1000L);
+
+    completeTreasureShopSecretTradeNow(player, null, source);
+
+    player.updateInventory();
+
+    shopDebug("OK: open-view player-inventory fallback completed Treasure Shop secret trade. source=" + source);
+    return true;
+  }
+
+  private ItemStack firstNonAir(ItemStack preferred, ItemStack fallback) {
+    if (preferred != null && preferred.getType() != Material.AIR) return preferred;
+    if (fallback != null && fallback.getType() != Material.AIR) return fallback;
+    return null;
+  }
+
+  private String describeItem(ItemStack item) {
+    if (item == null) return "null";
+    return item.getType() + " x" + item.getAmount()
+        + " special=" + plugin.getItemFactory().isTreasureEmerald(item);
+  }
+
+  private boolean tryCompleteTreasureShopOpenViewSecretTrade(Player player, MerchantInventory merchantInv, org.bukkit.inventory.InventoryView view, String source) {
     if (player == null || merchantInv == null) return false;
 
     long now = System.currentTimeMillis();
@@ -1057,8 +1446,22 @@ public class GameStageManager implements Listener {
       return false;
     }
 
-    ItemStack input0 = merchantInv.getItem(0);
-    ItemStack input1 = merchantInv.getItem(1);
+    ItemStack merchantInput0 = merchantInv.getItem(0);
+    ItemStack merchantInput1 = merchantInv.getItem(1);
+    ItemStack viewInput0 = null;
+    ItemStack viewInput1 = null;
+
+    try {
+      if (view != null) {
+        viewInput0 = view.getItem(0);
+        viewInput1 = view.getItem(1);
+      }
+    } catch (Throwable t) {
+      shopDebug("WARN: failed to read merchant raw slots from InventoryView: " + t.getMessage());
+    }
+
+    ItemStack input0 = firstNonAir(viewInput0, merchantInput0);
+    ItemStack input1 = firstNonAir(viewInput1, merchantInput1);
 
     boolean slot0Special = plugin.getItemFactory().isTreasureEmerald(input0)
         && input0.getAmount() >= 5;
@@ -1067,6 +1470,20 @@ public class GameStageManager implements Listener {
 
     boolean slot0Empty = input0 == null || input0.getType() == Material.AIR;
     boolean slot1Empty = input1 == null || input1.getType() == Material.AIR;
+
+    if (input0 != null || input1 != null || merchantInput0 != null || merchantInput1 != null) {
+      shopDebug("open-view scanner raw-slot snapshot"
+          + " view0=" + describeItem(viewInput0)
+          + " view1=" + describeItem(viewInput1)
+          + " merchant0=" + describeItem(merchantInput0)
+          + " merchant1=" + describeItem(merchantInput1)
+          + " resolved0=" + describeItem(input0)
+          + " resolved1=" + describeItem(input1)
+          + " slot0Special=" + slot0Special
+          + " slot1Special=" + slot1Special
+          + " slot0Empty=" + slot0Empty
+          + " slot1Empty=" + slot1Empty);
+    }
 
     if (slot0Special || slot1Special) {
       String title = "";
@@ -1085,11 +1502,11 @@ public class GameStageManager implements Listener {
     }
 
     if (slot0Special && slot1Empty) {
-      return completeTreasureShopSecretTradeFromMerchantSlot(player, merchantInv, 0, source + ":slot0");
+      return completeTreasureShopSecretTradeFromMerchantSlot(player, merchantInv, view, input0, 0, source + ":slot0");
     }
 
     if (slot1Special && slot0Empty) {
-      return completeTreasureShopSecretTradeFromMerchantSlot(player, merchantInv, 1, source + ":slot1");
+      return completeTreasureShopSecretTradeFromMerchantSlot(player, merchantInv, view, input1, 1, source + ":slot1");
     }
 
     return false;
@@ -1098,10 +1515,14 @@ public class GameStageManager implements Listener {
   private boolean completeTreasureShopSecretTradeFromMerchantSlot(
       Player player,
       MerchantInventory merchantInv,
+      org.bukkit.inventory.InventoryView view,
+      ItemStack observedSourceStack,
       int sourceSlot,
       String source
   ) {
-    ItemStack sourceStack = merchantInv.getItem(sourceSlot);
+    ItemStack sourceStack = observedSourceStack != null && observedSourceStack.getType() != Material.AIR
+        ? observedSourceStack.clone()
+        : merchantInv.getItem(sourceSlot);
     if (!plugin.getItemFactory().isTreasureEmerald(sourceStack) || sourceStack.getAmount() < 5) {
       return false;
     }
@@ -1119,9 +1540,29 @@ public class GameStageManager implements Listener {
     merchantInv.setItem(sourceSlot, fiveSpecialEmeralds);
     merchantInv.setItem(sourceSlot == 0 ? 1 : 0, null);
 
+    try {
+      if (view != null) {
+        view.setItem(sourceSlot, fiveSpecialEmeralds);
+        view.setItem(sourceSlot == 0 ? 1 : 0, null);
+        view.setItem(2, null);
+      }
+    } catch (Throwable t) {
+      shopDebug("WARN: failed to sync merchant raw slots before completion: " + t.getMessage());
+    }
+
     treasureShopAutoTradeCooldownUntilMs.put(player.getUniqueId(), System.currentTimeMillis() + 1000L);
 
     completeTreasureShopSecretTradeNow(player, merchantInv, source);
+
+    try {
+      if (view != null) {
+        view.setItem(0, null);
+        view.setItem(1, null);
+        view.setItem(2, null);
+      }
+    } catch (Throwable t) {
+      shopDebug("WARN: failed to clear merchant raw slots after completion: " + t.getMessage());
+    }
 
     if (remainder != null) {
       java.util.Map<Integer, ItemStack> overflow = player.getInventory().addItem(remainder);
@@ -1132,6 +1573,175 @@ public class GameStageManager implements Listener {
 
     player.updateInventory();
     shopDebug("OK: open-view scanner completed Treasure Shop secret trade. source=" + source);
+    return true;
+  }
+
+
+  // =======================================================
+  // ✅ Guaranteed server-side fallback for Treasure Shop secret trade
+  //   - right-clicking the Treasure Shop trader with 5 Special Emeralds works
+  //   - /trsecret also works without plugin.yml command registration
+  //   - the transaction is based only on the TreasureRun PDC marker
+  // =======================================================
+  @EventHandler(priority = org.bukkit.event.EventPriority.HIGHEST, ignoreCancelled = false)
+  public void onTreasureSecretCommandGuaranteedFallback(PlayerCommandPreprocessEvent event) {
+    if (event == null || event.getPlayer() == null || event.getMessage() == null) return;
+    if (event.isCancelled()) return;
+
+    String normalized = event.getMessage().trim().toLowerCase(java.util.Locale.ROOT);
+    if (!(normalized.equals("/trsecret")
+        || normalized.startsWith("/trsecret ")
+        || normalized.equals("/treasuresecret")
+        || normalized.startsWith("/treasuresecret "))) {
+      return;
+    }
+
+    event.setCancelled(true);
+    Player player = event.getPlayer();
+    shopDebug("guaranteed command fallback invoked command=" + normalized
+        + " player=" + player.getName()
+        + " available=" + countGuaranteedSecretTradeEmeralds(player));
+
+    if (!tryCompleteGuaranteedSecretTrade(player, "guaranteed-command-fallback:" + normalized)) {
+      player.sendMessage(ChatColor.YELLOW + "[TreasureRun] You need five Special Emeralds for the secret trade.");
+    }
+  }
+
+  @EventHandler(priority = org.bukkit.event.EventPriority.HIGHEST, ignoreCancelled = false)
+  public void onTreasureShopTraderRightClickGuaranteedFallback(PlayerInteractEntityEvent event) {
+    if (event == null || event.getPlayer() == null) return;
+
+    try {
+      if (event.getHand() != null && event.getHand() != EquipmentSlot.HAND) return;
+    } catch (Throwable ignored) {}
+
+    Player player = event.getPlayer();
+    Entity clicked = event.getRightClicked();
+    if (!(clicked instanceof WanderingTrader)) return;
+    if (!isGuaranteedTreasureShopTrader(clicked)) return;
+
+    int available = countGuaranteedSecretTradeEmeralds(player);
+    String clickedName = clicked.getCustomName();
+
+    shopDebug("guaranteed trader right-click fallback checked"
+        + " player=" + player.getName()
+        + " entity=" + clicked.getType()
+        + " name=" + (clickedName == null ? "null" : ChatColor.stripColor(clickedName))
+        + " available=" + available);
+
+    // If the player has fewer than five Special Emeralds, do not block the normal shop GUI.
+    if (available < 5) return;
+
+    event.setCancelled(true);
+    if (!tryCompleteGuaranteedSecretTrade(player, "guaranteed-trader-right-click-fallback")) {
+      player.sendMessage(ChatColor.YELLOW + "[TreasureRun] The Treasure Shop needs five Special Emeralds.");
+    }
+  }
+
+  private boolean isGuaranteedTreasureShopTrader(Entity entity) {
+    if (entity == null) return false;
+
+    try {
+      if (stageTrader != null && entity.getUniqueId().equals(stageTrader.getUniqueId())) {
+        return true;
+      }
+    } catch (Throwable ignored) {}
+
+    String name = entity.getCustomName();
+    if (name != null && isTreasureShopTitle(name)) return true;
+
+    String plainName = ChatColor.stripColor(name);
+    return plainName != null && plainName.toLowerCase(java.util.Locale.ROOT).contains("treasure shop");
+  }
+
+  private int countGuaranteedSecretTradeEmeralds(Player player) {
+    if (player == null || plugin == null || plugin.getItemFactory() == null) return 0;
+
+    int total = 0;
+
+    ItemStack cursor = player.getItemOnCursor();
+    if (plugin.getItemFactory().isTreasureEmerald(cursor)) {
+      total += cursor.getAmount();
+    }
+
+    for (ItemStack item : player.getInventory().getContents()) {
+      if (plugin.getItemFactory().isTreasureEmerald(item)) {
+        total += item.getAmount();
+      }
+    }
+
+    return total;
+  }
+
+  private boolean consumeGuaranteedSecretTradeEmeralds(Player player, int amount) {
+    if (player == null || amount <= 0 || plugin == null || plugin.getItemFactory() == null) return false;
+    if (countGuaranteedSecretTradeEmeralds(player) < amount) return false;
+
+    int remaining = amount;
+
+    ItemStack cursor = player.getItemOnCursor();
+    if (plugin.getItemFactory().isTreasureEmerald(cursor)) {
+      int take = Math.min(remaining, cursor.getAmount());
+      int left = cursor.getAmount() - take;
+      if (left <= 0) {
+        player.setItemOnCursor(null);
+      } else {
+        cursor.setAmount(left);
+        player.setItemOnCursor(cursor);
+      }
+      remaining -= take;
+    }
+
+    org.bukkit.inventory.PlayerInventory inv = player.getInventory();
+    for (int slot = 0; slot < inv.getSize() && remaining > 0; slot++) {
+      ItemStack item = inv.getItem(slot);
+      if (!plugin.getItemFactory().isTreasureEmerald(item)) continue;
+
+      int take = Math.min(remaining, item.getAmount());
+      int left = item.getAmount() - take;
+      if (left <= 0) {
+        inv.setItem(slot, null);
+      } else {
+        item.setAmount(left);
+        inv.setItem(slot, item);
+      }
+      remaining -= take;
+    }
+
+    player.updateInventory();
+    return remaining == 0;
+  }
+
+
+  public boolean runRegisteredSecretTradeFallback(Player player, String source) {
+    String safeSource = (source == null || source.isBlank()) ? "registered-command" : source;
+    return tryCompleteGuaranteedSecretTrade(player, safeSource);
+  }
+
+  private boolean tryCompleteGuaranteedSecretTrade(Player player, String source) {
+    if (player == null) return false;
+
+    long now = System.currentTimeMillis();
+    Long cooldownUntil = treasureShopAutoTradeCooldownUntilMs.get(player.getUniqueId());
+    if (cooldownUntil != null && now < cooldownUntil) {
+      shopDebug("guaranteed fallback skipped by cooldown. source=" + source);
+      return true;
+    }
+
+    int available = countGuaranteedSecretTradeEmeralds(player);
+    if (available < 5) {
+      shopDebug("guaranteed fallback found too few Special Emeralds. available=" + available + " source=" + source);
+      return false;
+    }
+
+    if (!consumeGuaranteedSecretTradeEmeralds(player, 5)) {
+      shopDebug("WARN: guaranteed fallback found enough candidates but failed to consume five. source=" + source);
+      return false;
+    }
+
+    treasureShopAutoTradeCooldownUntilMs.put(player.getUniqueId(), System.currentTimeMillis() + 1000L);
+    completeTreasureShopSecretTradeNow(player, null, source);
+    shopDebug("OK: guaranteed fallback completed Treasure Shop secret trade. source=" + source);
     return true;
   }
 
@@ -1336,7 +1946,7 @@ public class GameStageManager implements Listener {
   //   - 「画面タイトルが Treasure Shop」かで判定する
   //   - 原材料はクリック瞬間にスナップショットして PDC 判定を確定
   // =======================================================
-  @EventHandler(ignoreCancelled = false)
+  @EventHandler(ignoreCancelled = true)
   public void onTraderResultClick(InventoryClickEvent event) {
 
     shopDebug("InventoryClickEvent fired"
@@ -1531,7 +2141,7 @@ public class GameStageManager implements Listener {
   //   - Show a visible result only after the TreasureRun item marker is present.
   //   - onTraderResultClick() still validates and completes the actual exchange.
   // =======================================================
-  @EventHandler(ignoreCancelled = false)
+  @EventHandler(ignoreCancelled = true)
   public void onTreasureShopInputClickRefresh(InventoryClickEvent event) {
     if (!(event.getWhoClicked() instanceof Player player)) return;
     if (event.getView() == null || event.getView().getTopInventory() == null) return;
