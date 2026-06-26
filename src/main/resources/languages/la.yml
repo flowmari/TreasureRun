@@ -574,8 +574,8 @@ command:
     guiNotReady: GUI linguae nondum initiata est.
   craftSpecialEmerald:
     playersOnly: '&cHoc mandato soli lusores uti possunt.'
-    needDiamonds: '&cTres adamantes tibi necessarii sunt ut Smaragdum Specialem conficias.'
-    success: '&bSmaragdum Specialem tribus adamantibus confecisti!'
+    needDiamonds: '&c{requiredDiamonds} adamantes tibi necessarii sunt ut Smaragdum Specialem conficias.'
+    success: '&bSmaragdum Specialem {requiredDiamonds} adamantibus confecisti!'
   quoteFavorite:
     latestSaved: Sententia novissima inter dilecta servata est.
     latestNotSaved: Sententia novissima servari non potuit. Aut nondum relatum est aut iam inter dilecta est.

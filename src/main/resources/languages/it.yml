@@ -566,8 +566,8 @@ command:
     guiNotReady: La GUI della lingua non è stata inizializzata.
   craftSpecialEmerald:
     playersOnly: '&cSolo i giocatori possono usare questo comando.'
-    needDiamonds: '&cTi servono 3 diamanti per creare uno Smeraldo Speciale.'
-    success: '&bHai creato uno Smeraldo Speciale usando 3 diamanti!'
+    needDiamonds: '&cTi servono {requiredDiamonds} diamanti per creare uno Smeraldo Speciale.'
+    success: '&bHai creato uno Smeraldo Speciale usando {requiredDiamonds} diamanti!'
   quoteFavorite:
     latestSaved: La citazione più recente è stata salvata nei Preferiti.
     latestNotSaved: Non è stato possibile salvare la citazione più recente. Potrebbe non esserci ancora alcun log, oppure potrebbe essere già nei Preferiti.

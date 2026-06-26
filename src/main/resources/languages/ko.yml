@@ -562,8 +562,8 @@ command:
     guiNotReady: 언어 GUI가 초기화되지 않았습니다.
   craftSpecialEmerald:
     playersOnly: '&c이 명령어는 플레이어만 사용할 수 있습니다.'
-    needDiamonds: '&c특제 에메랄드를 제작하려면 다이아몬드 3개가 필요합니다.'
-    success: '&b다이아몬드 3개로 특제 에메랄드를 제작했습니다!'
+    needDiamonds: '&c특제 에메랄드를 제작하려면 다이아몬드 {requiredDiamonds}개가 필요합니다.'
+    success: '&b다이아몬드 {requiredDiamonds}개로 특제 에메랄드를 제작했습니다!'
   quoteFavorite:
     latestSaved: 최신 명언이 즐겨찾기에 저장되었습니다.
     latestNotSaved: 최신 명언을 저장할 수 없습니다. 아직 기록이 없거나 이미 즐겨찾기에 등록되었을 수 있습니다.

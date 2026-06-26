@@ -562,8 +562,8 @@ command:
     guiNotReady: Språk-GUI:t har inte initialiserats.
   craftSpecialEmerald:
     playersOnly: '&cDet här kommandot kan bara användas av spelare.'
-    needDiamonds: '&cDu behöver 3 diamanter för att skapa en specialsmaragd.'
-    success: '&bDu skapade en specialsmaragd med 3 diamanter!'
+    needDiamonds: '&cDu behöver {requiredDiamonds} diamanter för att skapa en specialsmaragd.'
+    success: '&bDu skapade en specialsmaragd med {requiredDiamonds} diamanter!'
   quoteFavorite:
     latestSaved: Det senaste citatet sparades i Favoriter.
     latestNotSaved: Det gick inte att spara det senaste citatet. Antingen finns det ingen logg ännu, eller så finns det redan i Favoriter.

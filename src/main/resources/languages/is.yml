@@ -568,8 +568,8 @@ command:
     guiNotReady: Tungumálaviðmótið hefur ekki verið frumstillt.
   craftSpecialEmerald:
     playersOnly: '&cAðeins leikmenn geta notað þessa skipun.'
-    needDiamonds: '&cÞú þarft 3 demanta til að búa til sérstakan smaragð.'
-    success: '&bÞú bjóst til sérstakan smaragð með 3 demöntum!'
+    needDiamonds: '&cÞú þarft {requiredDiamonds} demanta til að búa til sérstakan smaragð.'
+    success: '&bÞú bjóst til sérstakan smaragð með {requiredDiamonds} demöntum!'
   quoteFavorite:
     latestSaved: Nýjasta tilvitnunin var vistuð í Uppáhald.
     latestNotSaved: Ekki tókst að vista nýjustu tilvitnunina. Annaðhvort er engin skráning enn eða hún er þegar í Uppáhaldi.

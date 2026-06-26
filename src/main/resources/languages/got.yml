@@ -556,8 +556,8 @@ command:
     guiNotReady: Language GUI is not initialized.
   craftSpecialEmerald:
     playersOnly: '&cOnly players can use this command.'
-    needDiamonds: '&cYou need 3 diamonds to craft a Special Emerald.'
-    success: '&bYou crafted a Special Emerald using 3 diamonds!'
+    needDiamonds: '&cYou need {requiredDiamonds} diamonds to craft a Special Emerald.'
+    success: '&bYou crafted a Special Emerald using {requiredDiamonds} diamonds!'
   quoteFavorite:
     latestSaved: The latest quote was saved to Favorites.
     latestNotSaved: The latest quote could not be saved. There may be no log yet, or it may already be in Favorites.
