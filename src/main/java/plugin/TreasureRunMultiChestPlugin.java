@@ -451,6 +451,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     this.gameStageManager = new GameStageManager(this, this.ufo);
     Bukkit.getPluginManager().registerEvents(this.gameStageManager, this);
     getLogger().info("[TreasureRun] GameStageManager event registered!");
+    registerSecretTradeCommandFallback();
 
     // ✅✅✅ 追加：サーバー起動直後に「Treasure Shop」残骸を全削除（再起動残り対策）
     this.gameStageManager.purgeTreasureShopEntitiesOnStartup();
@@ -504,6 +505,49 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     }
 
     getLogger().info("✅ TreasureRunMultiChestPlugin が正常に起動しました！");
+  }
+
+
+  private void registerSecretTradeCommandFallback() {
+    org.bukkit.command.CommandExecutor secretTradeExecutor = (sender, command, label, args) -> {
+      if (!(sender instanceof org.bukkit.entity.Player player)) {
+        sender.sendMessage("[TreasureRun] This command can only be used in-game.");
+        return true;
+      }
+
+      if (this.gameStageManager == null) {
+        player.sendMessage(org.bukkit.ChatColor.RED + "[TreasureRun] Secret trade is not ready yet. Please rejoin and try again.");
+        getLogger().warning("[TreasureRun] /" + label + " invoked before GameStageManager was ready.");
+        return true;
+      }
+
+      boolean completed = this.gameStageManager.runRegisteredSecretTradeFallback(
+          player,
+          "registered-command:/" + label
+      );
+
+      if (!completed) {
+        player.sendMessage(org.bukkit.ChatColor.YELLOW + "[TreasureRun] You need five Special Emeralds for the secret trade.");
+      }
+
+      return true;
+    };
+
+    org.bukkit.command.PluginCommand trsecret = getCommand("trsecret");
+    if (trsecret != null) {
+      trsecret.setExecutor(secretTradeExecutor);
+      getLogger().info("[TreasureRun] /trsecret executor registered");
+    } else {
+      getLogger().warning("[TreasureRun] /trsecret command missing from plugin.yml");
+    }
+
+    org.bukkit.command.PluginCommand treasuresecret = getCommand("treasuresecret");
+    if (treasuresecret != null) {
+      treasuresecret.setExecutor(secretTradeExecutor);
+      getLogger().info("[TreasureRun] /treasuresecret executor registered");
+    } else {
+      getLogger().warning("[TreasureRun] /treasuresecret command missing from plugin.yml");
+    }
   }
 
   @Override

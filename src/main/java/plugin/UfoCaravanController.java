@@ -1319,7 +1319,7 @@ public class UfoCaravanController {
     // Keep the merchant recipe material-compatible so Spigot can populate the result slot.
     // The InventoryClickEvent handler still validates the TreasureRun PDC marker before
     // allowing the secret-trade feedback.
-    ItemStack emeraldInput5 = new ItemStack(Material.EMERALD, 5);
+    ItemStack emeraldInput5 = treasurePluginOrNull.getItemFactory().createTreasureEmerald(5);
 
     ItemStack result1 = new ItemStack(Material.GOLDEN_APPLE, 1);
     MerchantRecipe r1 = new MerchantRecipe(result1, 64);
