@@ -33,7 +33,7 @@ public class CraftSpecialEmeraldCommand implements CommandExecutor {
       return true;
     }
 
-    int requiredDiamonds = config.getInt("craftSpecialEmerald.diamondsRequired", 3); // 3 diamonds as fallback.
+    int requiredDiamonds = config.getInt("craftSpecialEmerald.requiredDiamonds", 3); // 3 diamonds as fallback.
 
     int diamonds = countMaterial(player, Material.DIAMOND);
 
@@ -52,9 +52,10 @@ public class CraftSpecialEmeraldCommand implements CommandExecutor {
     ItemStack specialEmerald = plugin.getItemFactory().createTreasureEmerald(1, player);
     player.getInventory().addItem(specialEmerald);
 
-    player.sendMessage(i18n.tr(
+    player.sendMessage(i18n.trp(
         player,
         "command.craftSpecialEmerald.success",
+        Map.of("requiredDiamonds", String.valueOf(requiredDiamonds)),
         "&bYou crafted a Special Emerald using {requiredDiamonds} diamonds!"
     ));
 
