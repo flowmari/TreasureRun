@@ -92,23 +92,23 @@ For the tester-facing world guide, see:
 docs/demo-world/WHAT_TO_LOOK_FOR.md
 ```
 
-## 6. Try the wandering-trader custom trade
+## 6. Try the Treasure Shop secret trade
 
-The prepared demo world includes a wandering-trader bonus interaction.
+The prepared demo world includes a Treasure Shop wandering trader bonus interaction.
 
-Watch the wandering-trader custom trade demo on YouTube:
+Watch the Treasure Shop custom-trade demo on YouTube:
 
 https://youtu.be/eARQ0AHZNoI
 
-The clearest custom-trade path to test is:
+The clearest secret-trade path to test is:
 
 ```text
-5 Special Emeralds to 1 Golden Apple
+5 Special Emeralds -> 1 Golden Apple
 ```
 
 Important: test this while a run is active. If the game has already ended and you see a “Time is up” or “Game Over” message, start a new run before testing the trade.
 
-To prepare the trade items quickly, run:
+To prepare the trade items quickly with the default demo configuration, run:
 
 ```text
 /give @s diamond 15
@@ -119,32 +119,35 @@ To prepare the trade items quickly, run:
 /craftspecialemerald
 ```
 
-Each `/craftspecialemerald` command converts 3 diamonds into 1 Special Emerald. After five successful crafts, you should have 5 Special Emeralds.
+By default, each `/craftspecialemerald` command converts 3 diamonds into 1 Special Emerald. The required diamond amount is configurable through `craftSpecialEmerald.requiredDiamonds`.
 
-Before opening the trader UI, hold one of the Special Emeralds in your hand and run:
+After five successful crafts, you should have 5 Special Emeralds.
+
+Before testing the Treasure Shop interaction, hold one of the Special Emeralds in your hand and run:
 
 ```text
 /checktreasureemerald
 ```
 
-If the item is recognised, continue with the trade.
+If the item is recognised, continue with the secret trade.
 
 To complete the trade:
 
 1. make sure a treasure run is active;
-2. right-click the Treasure Shop wandering trader;
-3. select the trade that exchanges 5 Special Emeralds for 1 Golden Apple;
-4. place the 5 Special Emeralds into the left input slot;
-5. check whether the Golden Apple appears in the result slot;
-6. take the Golden Apple from the result slot;
-7. confirm that the trade triggers visible and audible feedback.
+2. make sure you have 5 TreasureRun Special Emeralds in your inventory;
+3. right-click the Treasure Shop wandering trader;
+4. confirm that 5 Special Emeralds are consumed;
+5. confirm that 1 Golden Apple is added to your inventory;
+6. confirm that the trade triggers visible and audible feedback.
 
-If the result slot stays empty, check these first:
+Do not manually place the Special Emeralds into the vanilla trader input slots. TreasureRun handles this secret trade directly when you interact with the Treasure Shop trader.
+
+If the Golden Apple is not added, check these first:
 
 - the run may have already ended;
 - you may have fewer than 5 Special Emeralds;
 - the item may not be recognised as a TreasureRun Special Emerald;
-- the selected trade may not match the item you placed in the input slot.
+- your inventory may be full.
 
 For normal playtesters, use `/craftspecialemerald`. The `/givespecialemerald` command is intended for operator/admin testing only.
 
