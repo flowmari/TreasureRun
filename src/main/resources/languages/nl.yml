@@ -572,8 +572,8 @@ command:
     guiNotReady: De taal-GUI is niet geïnitialiseerd.
   craftSpecialEmerald:
     playersOnly: '&cAlleen spelers kunnen dit commando gebruiken.'
-    needDiamonds: '&cJe hebt 3 diamanten nodig om een Speciale Smaragd te maken.'
-    success: '&bJe hebt met 3 diamanten een Speciale Smaragd gemaakt!'
+    needDiamonds: '&cJe hebt {requiredDiamonds} diamanten nodig om een Speciale Smaragd te maken.'
+    success: '&bJe hebt met {requiredDiamonds} diamanten een Speciale Smaragd gemaakt!'
   quoteFavorite:
     latestSaved: De nieuwste quote is opgeslagen bij Favorieten.
     latestNotSaved: De nieuwste quote kon niet worden opgeslagen. Er is mogelijk nog geen log, of hij staat al bij Favorieten.

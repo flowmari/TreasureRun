@@ -5,17 +5,22 @@ import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.Configuration;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+
+import java.util.Map;
 
 public class CraftSpecialEmeraldCommand implements CommandExecutor {
 
   private final TreasureRunMultiChestPlugin plugin;
   private final I18nHelper i18n;
+  private final Configuration config;
 
   public CraftSpecialEmeraldCommand(TreasureRunMultiChestPlugin plugin) {
     this.plugin = plugin;
     this.i18n = new I18nHelper(plugin);
+    this.config = plugin.getConfig();
   }
 
   @Override
@@ -28,14 +33,16 @@ public class CraftSpecialEmeraldCommand implements CommandExecutor {
       return true;
     }
 
-    int requiredDiamonds = 3;
+    int requiredDiamonds = config.getInt("craftSpecialEmerald.requiredDiamonds", 3); // 3 diamonds as fallback.
+
     int diamonds = countMaterial(player, Material.DIAMOND);
 
     if (diamonds < requiredDiamonds) {
-      player.sendMessage(i18n.tr(
+      player.sendMessage(i18n.trp(
           player,
           "command.craftSpecialEmerald.needDiamonds",
-          "&cYou need 3 diamonds to craft a Special Emerald."
+          Map.of("requiredDiamonds", String.valueOf(requiredDiamonds)),
+          "&cYou need {requiredDiamonds} diamonds to craft a Special Emerald."
       ));
       return true;
     }
@@ -45,10 +52,11 @@ public class CraftSpecialEmeraldCommand implements CommandExecutor {
     ItemStack specialEmerald = plugin.getItemFactory().createTreasureEmerald(1, player);
     player.getInventory().addItem(specialEmerald);
 
-    player.sendMessage(i18n.tr(
+    player.sendMessage(i18n.trp(
         player,
         "command.craftSpecialEmerald.success",
-        "&bYou crafted a Special Emerald using 3 diamonds!"
+        Map.of("requiredDiamonds", String.valueOf(requiredDiamonds)),
+        "&bYou crafted a Special Emerald using {requiredDiamonds} diamonds!"
     ));
 
     return true;

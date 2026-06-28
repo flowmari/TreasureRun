@@ -576,8 +576,8 @@ command:
     guiNotReady: L’interface de langue n’est pas initialisée.
   craftSpecialEmerald:
     playersOnly: '&cSeuls les joueurs peuvent utiliser cette commande.'
-    needDiamonds: '&cIl vous faut 3 diamants pour fabriquer une Émeraude spéciale.'
-    success: '&bVous avez fabriqué une Émeraude spéciale avec 3 diamants !'
+    needDiamonds: '&cIl vous faut {requiredDiamonds} diamants pour fabriquer une Émeraude spéciale.'
+    success: '&bVous avez fabriqué une Émeraude spéciale avec {requiredDiamonds} diamants !'
   quoteFavorite:
     latestSaved: La dernière citation a été enregistrée dans les Favoris.
     latestNotSaved: La dernière citation n'a pas pu être enregistrée. Il n'y a peut-être pas encore d'historique, ou elle est déjà dans les Favoris.

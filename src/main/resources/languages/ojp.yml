@@ -243,8 +243,8 @@ command:
     guiNotReady: 言の葉GUIがいまだ整はず。
   craftSpecialEmerald:
     playersOnly: '&cこの命は仕手のみ用ゐるべし。'
-    needDiamonds: '&c特製の翠玉の作成には金剛石が3個必要なり。'
-    success: '&b金剛石三つをもて、特製の翠玉を作り出だしぬ！'
+    needDiamonds: '&c特製の翠玉の作成には金剛石が{requiredDiamonds}個必要なり。'
+    success: '&b金剛石{requiredDiamonds}個をもて、特製の翠玉を作り出だしぬ！'
   quoteFavorite:
     latestSaved: 直近の言の葉を秘蔵に記し置きたり。
     latestNotSaved: 直近の言の葉は記し置かれざりき。いまだ記しなきか、すでに秘蔵に納まりしものならむ。

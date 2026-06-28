@@ -894,8 +894,8 @@ command:
     guiNotReady: 語言介面尚未備妥。
   craftSpecialEmerald:
     playersOnly: '&c唯玩家可用此令。'
-    needDiamonds: '&c欲製特製綠寶石，須鑽石三枚。'
-    success: '&b已用鑽石三枚製成特製綠寶石！'
+    needDiamonds: '&c欲製特製綠寶石，須鑽石{requiredDiamonds}枚。'
+    success: '&b已用鑽石{requiredDiamonds}枚製成特製綠寶石！'
   onlyPlayer: '&c此令唯玩家可用。'
   quoteFavorite:
     latestSaved: 最新格言已存入收藏。

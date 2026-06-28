@@ -45,6 +45,8 @@ treasureItems:
 - GOLD_BLOCK
 - EMERALD_BLOCK
 - IRON_BLOCK
+craftSpecialEmerald:
+  requiredDiamonds: 3
 messages:
   gameStart:
   - '&aゲーム開始！難易度: %difficulty%'

@@ -566,8 +566,8 @@ command:
     guiNotReady: LANGUAGE GUI NOT READY.
   craftSpecialEmerald:
     playersOnly: '&cONLY PLAYER CAN USE THIS COMMAND.'
-    needDiamonds: '&cNEED 3 DIAMOND TO CRAFT SPECIAL EMERALD.'
-    success: '&bSPECIAL EMERALD CRAFT FINISH USE 3 DIAMOND!'
+    needDiamonds: '&cNEED {requiredDiamonds} DIAMOND TO CRAFT SPECIAL EMERALD.'
+    success: '&bSPECIAL EMERALD CRAFT FINISH USE {requiredDiamonds} DIAMOND!'
   quoteFavorite:
     latestSaved: LATEST QUOTE SAVED FAVORITES.
     latestNotSaved: LATEST QUOTE SAVE FAIL. MAYBE NO LOG YET OR ALREADY FAVORITE.

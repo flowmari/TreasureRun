@@ -574,8 +574,8 @@ command:
     guiNotReady: Kielikäyttöliittymää ei ole alustettu.
   craftSpecialEmerald:
     playersOnly: '&cVain pelaajat voivat käyttää tätä komentoa.'
-    needDiamonds: '&cTarvitset 3 timanttia valmistaaksesi erikoissmaragdin.'
-    success: '&bValmistit erikoissmaragdin käyttämällä 3 timanttia!'
+    needDiamonds: '&cTarvitset {requiredDiamonds} timanttia valmistaaksesi erikoissmaragdin.'
+    success: '&bValmistit erikoissmaragdin käyttämällä {requiredDiamonds} timanttia!'
   quoteFavorite:
     latestSaved: Uusin sitaatti tallennettiin Suosikkeihin.
     latestNotSaved: Uusinta sitaattia ei voitu tallentaa. Lokia ei ehkä vielä ole tai se on jo Suosikeissa.

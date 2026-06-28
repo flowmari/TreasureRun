@@ -910,8 +910,8 @@ command:
     guiNotReady: भाषा GUI प्रारंभ नहीं हुई है।
   craftSpecialEmerald:
     playersOnly: '&cइस कमांड का उपयोग केवल खिलाड़ी कर सकते हैं।'
-    needDiamonds: '&cस्पेशल एमराल्ड बनाने के लिए 3 हीरे चाहिए।'
-    success: '&bआपने 3 हीरों से एक स्पेशल एमराल्ड बना लिया!'
+    needDiamonds: '&cस्पेशल एमराल्ड बनाने के लिए {requiredDiamonds} हीरे चाहिए।'
+    success: '&bआपने {requiredDiamonds} हीरों से एक स्पेशल एमराल्ड बना लिया!'
   onlyPlayer: '&cयह कमांड केवल खिलाड़ी ही चला सकता है।'
   quoteFavorite:
     latestSaved: नवीनतम उद्धरण पसंदीदा में सहेजा गया।

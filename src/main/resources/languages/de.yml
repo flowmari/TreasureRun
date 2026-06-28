@@ -553,8 +553,8 @@ command:
     guiNotReady: Die Sprach-GUI wurde nicht initialisiert.
   craftSpecialEmerald:
     playersOnly: '&cDiesen Befehl können nur Spieler verwenden.'
-    needDiamonds: '&cDu brauchst 3 Diamanten, um einen Spezial-Smaragd herzustellen.'
-    success: '&bDu hast mit 3 Diamanten einen Spezial-Smaragd hergestellt!'
+    needDiamonds: '&cDu brauchst {requiredDiamonds} Diamanten, um einen Spezial-Smaragd herzustellen.'
+    success: '&bDu hast mit {requiredDiamonds} Diamanten einen Spezial-Smaragd hergestellt!'
   quoteFavorite:
     latestSaved: Das neueste Zitat wurde zu den Favoriten hinzugefügt.
     latestNotSaved: Das neueste Zitat konnte nicht gespeichert werden. Entweder gibt es noch keinen Eintrag oder es ist bereits in den Favoriten.
