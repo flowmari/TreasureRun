@@ -99,6 +99,11 @@ commands:
     usage: /rank <1|2|3>
     permission: treasure.debug.rank
 
+  heartbeatTest:
+    description: Debug - play an audible heartbeat cue test.
+    usage: /heartbeatTest
+    permission: treasure.debug.heartbeat
+
 permissions:
   treasure.start:
     description: /gameStart コマンドを使用できる権限
@@ -150,5 +155,9 @@ permissions:
   # =============================
   treasure.debug.rank:
     description: /rank <1|2|3> を使用できる権限（撮影・動作確認用）
+    default: op
+
+  treasure.debug.heartbeat:
+    description: /heartbeatTest を使用できる権限（heartbeat cue 動作確認用）
     default: op
 

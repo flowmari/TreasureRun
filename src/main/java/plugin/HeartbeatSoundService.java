@@ -13,6 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 import java.util.function.BooleanSupplier;
+import java.util.function.DoubleSupplier;
 import java.util.function.IntSupplier;
 
 public class HeartbeatSoundService {
@@ -27,7 +28,10 @@ public class HeartbeatSoundService {
   private static final int GRID_TICKS = 3;                 // 16分グリッド
   // ★「ここから強くなる」閾値（以前は“ここから開始”だったが、今は開始から鳴らしつつ 15秒で加速）
   private static final int START_AT_SECONDS = 15;          // 残り15秒から“強化/加速”へ
-  private static final SoundCategory CAT = SoundCategory.RECORDS; // BGMと同じカテゴリで混ぜる
+  private static final SoundCategory DEFAULT_CATEGORY = SoundCategory.PLAYERS;
+  private static final float DEFAULT_MIN_VOLUME = 1.50f;
+  private static final float DEFAULT_MAX_VOLUME = 3.00f;
+  private static final float DEFAULT_VOLUME_MULTIPLIER = 1.00f;
 
   // 心拍の「ドクン」の2発目（lub-dub）の遅れ
   private static final long DUB_DELAY_TICKS = 2L; // 0.1秒（20tick=1秒）
@@ -46,9 +50,31 @@ public class HeartbeatSoundService {
       IntSupplier remainingSeconds,
       BooleanSupplier isRunning,
       IntSupplier bgmBarSupplier) {
+    start(player, remainingSeconds, isRunning, bgmBarSupplier, () -> 0.0);
+  }
+
+  public void start(Player player,
+      IntSupplier remainingSeconds,
+      BooleanSupplier isRunning,
+      IntSupplier bgmBarSupplier,
+      DoubleSupplier proximitySupplier) {
 
     stop(player);
+    if (!isEnabled()) {
+      if (isDebugEnabled()) {
+        plugin.getLogger().info("[Heartbeat] skipped because heartbeat.enabled=false");
+      }
+      return;
+    }
     UUID uuid = player.getUniqueId();
+
+    if (isDebugEnabled()) {
+      plugin.getLogger().info("[Heartbeat] started for " + player.getName()
+          + " category=" + configuredCategory()
+          + " minVolume=" + configuredMinVolume()
+          + " maxVolume=" + configuredMaxVolume()
+          + " multiplier=" + configuredVolumeMultiplier());
+    }
 
     // ✅ 追加：開始時点の「総制限時間」をここで確定（Easy/Normal/Hard の timeLimit を自然に拾える）
     // remainingSeconds は startGame() 直後は timeLimit を返す設計のため、ここでスナップショットすればOK
@@ -60,7 +86,7 @@ public class HeartbeatSoundService {
 
       @Override
       public void run() {
-        if (!player.isOnline() || !isRunning.getAsBoolean()) {
+        if (!player.isOnline() || !isRunning.getAsBoolean() || !isEnabled()) {
           stop(player);
           cancel();
           return;
@@ -89,7 +115,7 @@ public class HeartbeatSoundService {
           double eased = easeInPow(progress, 2.6);
 
           // 超薄い→薄い（最終15秒直前で 0.18 くらいまで）
-          volume = (float) lerp(0.06, 0.18, eased);
+          volume = (float) lerp(0.75, 0.90, eased);
 
           // 間隔：ゆっくり→少しだけ速い（最終15秒の 12→3 に繋ぐため、ここは 15→12）
           targetInterval = (int) Math.round(lerp(15, 12, eased));
@@ -108,21 +134,36 @@ public class HeartbeatSoundService {
             // 15..10
             double t = (START_AT_SECONDS - rr) / 5.0; // 15で0, 10で1
             t = clamp01(t);
-            volume = (float) lerp(0.18, 0.38, t);
+            volume = (float) lerp(0.78, 0.92, t);
             targetInterval = (int) Math.round(lerp(12, 9, t)); // 12→9
           } else if (rr > 5) {
             // 10..5
             double t = (10 - rr) / 5.0; // 10で0, 5で1
             t = clamp01(t);
-            volume = (float) lerp(0.38, 0.68, t);
+            volume = (float) lerp(0.88, 0.99, t);
             targetInterval = (int) Math.round(lerp(9, 6, t));  // 9→6
           } else {
             // 5..0
             double t = (5 - rr) / 5.0; // 5で0, 0で1
             t = clamp01(t);
-            volume = (float) lerp(0.68, 1.00, t);
+            volume = (float) lerp(0.96, 1.00, t);
             targetInterval = (int) Math.round(lerp(6, 3, t));  // 6→3
           }
+        }
+
+        // ✅ 宝箱との距離でも heartbeat 自体を強く・速くする
+        // proximity: 0.0 = 範囲外/遠い, 1.0 = 宝箱のすぐ近く
+        double proximity = clamp01(safeGet(proximitySupplier, 0.0));
+        if (proximity > 0.001) {
+          double proximityEased = easeInPow(proximity, 1.35);
+
+          // 近づくほど volume を底上げする。残り時間の緊張感より強い方を採用。
+          float proximityVolume = (float) lerp(0.98, 1.00, proximityEased);
+          volume = Math.max(volume, proximityVolume);
+
+          // 近づくほど interval を短くする。小さいほど heartbeat が速い。
+          int proximityInterval = (int) Math.round(lerp(15, 3, proximityEased));
+          targetInterval = Math.min(targetInterval, proximityInterval);
         }
 
         // ✅ グリッド(3tick)に量子化（BGMと位相がズレないように）
@@ -173,10 +214,13 @@ public class HeartbeatSoundService {
   // =========================================================
   private void playBeautifulHeartbeat(Player p, UUID uuid, BooleanSupplier isRunning,
       int remainingSec, int bar, float volume) {
-    float v = clamp01f(volume);
+    if (!isEnabled()) return;
+
+    float v = configuredVolume(volume);
+    SoundCategory category = configuredCategory();
 
     // 1) LUB（低いドクン）
-    p.playSound(p.getLocation(), Sound.BLOCK_NOTE_BLOCK_BASEDRUM, CAT, v * 0.90f, 0.80f);
+    p.playSound(p.getLocation(), Sound.BLOCK_NOTE_BLOCK_BASEDRUM, category, v * 0.90f, 0.80f);
 
     // 2) DUB（高い成分を少し足して心拍っぽさ）
     //    ※2tick遅れで「ドクン、ドッ」
@@ -186,8 +230,8 @@ public class HeartbeatSoundService {
       if (!isRunning.getAsBoolean()) return;
 
       // 高域のアタックを少し（うるさくしない）
-      p.playSound(p.getLocation(), Sound.BLOCK_NOTE_BLOCK_HAT,   CAT, v * 0.22f, 1.60f);
-      p.playSound(p.getLocation(), Sound.BLOCK_NOTE_BLOCK_SNARE, CAT, v * 0.18f, 1.15f);
+      p.playSound(p.getLocation(), Sound.BLOCK_NOTE_BLOCK_HAT,   category, v * 0.22f, 1.60f);
+      p.playSound(p.getLocation(), Sound.BLOCK_NOTE_BLOCK_SNARE, category, v * 0.18f, 1.15f);
     }, DUB_DELAY_TICKS);
 
     // 3) 薄い和音（StartThemePlayerの進行と同じ）
@@ -221,7 +265,7 @@ public class HeartbeatSoundService {
     p.playSound(
         p.getLocation(),
         Sound.BLOCK_NOTE_BLOCK_BELL,
-        CAT,
+        configuredCategory(),
         Math.min(1.0f, vol),
         pitchSemi(semitoneOffset)
     );
@@ -239,6 +283,55 @@ public class HeartbeatSoundService {
   }
 
   // =========================================================
+  // Config
+  // =========================================================
+  private boolean isEnabled() {
+    return plugin.getConfig().getBoolean("heartbeat.enabled", true);
+  }
+
+  private boolean isDebugEnabled() {
+    return plugin.getConfig().getBoolean("heartbeat.debug", false);
+  }
+
+  private SoundCategory configuredCategory() {
+    String raw = plugin.getConfig().getString("heartbeat.soundCategory", DEFAULT_CATEGORY.name());
+    if (raw == null || raw.isBlank()) return DEFAULT_CATEGORY;
+    try {
+      return SoundCategory.valueOf(raw.trim().toUpperCase(java.util.Locale.ROOT));
+    } catch (IllegalArgumentException ex) {
+      if (isDebugEnabled()) {
+        plugin.getLogger().warning("[Heartbeat] Invalid heartbeat.soundCategory='" + raw
+            + "'; falling back to " + DEFAULT_CATEGORY);
+      }
+      return DEFAULT_CATEGORY;
+    }
+  }
+
+  private float configuredVolume(float normalizedVolume) {
+    float min = configuredMinVolume();
+    float max = configuredMaxVolume();
+    if (max < min) {
+      float tmp = min;
+      min = max;
+      max = tmp;
+    }
+    float base = (float) lerp(min, max, clamp01f(normalizedVolume));
+    return clampVolume(base * configuredVolumeMultiplier());
+  }
+
+  private float configuredMinVolume() {
+    return Math.max(DEFAULT_MIN_VOLUME, clampVolume((float) plugin.getConfig().getDouble("heartbeat.minVolume", DEFAULT_MIN_VOLUME)));
+  }
+
+  private float configuredMaxVolume() {
+    return Math.max(DEFAULT_MAX_VOLUME, clampVolume((float) plugin.getConfig().getDouble("heartbeat.maxVolume", DEFAULT_MAX_VOLUME)));
+  }
+
+  private float configuredVolumeMultiplier() {
+    return Math.max(DEFAULT_VOLUME_MULTIPLIER, Math.max(0.0f, (float) plugin.getConfig().getDouble("heartbeat.volumeMultiplier", DEFAULT_VOLUME_MULTIPLIER)));
+  }
+
+  // =========================================================
   // utils
   // =========================================================
   private static int quantizeToGrid(int valueTicks, int gridTicks) {
@@ -253,12 +346,21 @@ public class HeartbeatSoundService {
     return Math.max(0.0, Math.min(1.0, x));
   }
 
+  private static float clampVolume(float x) {
+    if (Float.isNaN(x) || Float.isInfinite(x)) return 1.0f;
+    return Math.max(0.0f, Math.min(3.0f, x));
+  }
+
   private static float clamp01f(float x) {
     return Math.max(0.0f, Math.min(1.0f, x));
   }
 
   private static int safeGet(IntSupplier s, int fallback) {
     try { return s.getAsInt(); } catch (Throwable t) { return fallback; }
+  }
+
+  private static double safeGet(DoubleSupplier s, double fallback) {
+    try { return s.getAsDouble(); } catch (Throwable t) { return fallback; }
   }
 
   // ✅ 追加：序盤を“超薄く”して終盤だけ急に上げるためのイージング
