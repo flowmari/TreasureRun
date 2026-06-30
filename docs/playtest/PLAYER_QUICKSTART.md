@@ -58,6 +58,16 @@ You can also try:
 
 If no language has been saved yet, `/gamestart normal` may open the language selection GUI first. Choose a language, then continue into the run.
 
+## 3.1 Optional sound check
+
+Before the run, make sure Minecraft **Options > Music & Sounds > Players** is audible. If you are an operator, run:
+
+```text
+/heartbeatTest
+```
+
+You should hear a short heartbeat cue. This checks the same sound category used by the in-game heartbeat feedback.
+
 ## 4. What to do after `/gamestart`
 
 During a run, the player should:

@@ -12,6 +12,17 @@ totalChestCount:
   Hard: 40
 chestSpawnRadius: 20
 totalChests: 10
+
+# Heartbeat proximity cue settings.
+# Default category is PLAYERS so the cue is not buried under Minecraft music/records volume.
+heartbeat:
+  enabled: true
+  minVolume: 1.50
+  maxVolume: 3.00
+  proximityRange: 10.0
+  volumeMultiplier: 1.00
+  soundCategory: PLAYERS
+  debug: false
 difficultySettings:
   Easy:
     timeLimit: 300

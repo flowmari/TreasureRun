@@ -20,6 +20,8 @@ TreasureRun is an open-source treasure-hunt mini-game plugin for **Minecraft Spi
 
 Sound on: these videos include audio.
 
+Tester sound check: before a playtest, make sure **Options > Music & Sounds > Players** is audible. Operators can run `/heartbeatTest` to verify the heartbeat cue without starting a full run.
+
 TreasureRun also includes platform-boundary i18n work because Minecraft's built-in UI text is split between server-controlled surfaces and client-side surfaces. This i18n work is an internal supporting layer within the gameplay plugin, not a separate plugin, library, or competing project.
 
 

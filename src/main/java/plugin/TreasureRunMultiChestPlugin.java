@@ -486,6 +486,13 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
       getLogger().warning("⚠ /rank が plugin.yml に見つかりません（commands: rank を確認してください）");
     }
 
+    if (getCommand("heartbeatTest") != null) {
+      getCommand("heartbeatTest").setExecutor(new HeartbeatTestCommand(this));
+      getLogger().info("✅ /heartbeatTest executor registered");
+    } else {
+      getLogger().warning("⚠ /heartbeatTest が plugin.yml に見つかりません（commands: heartbeatTest を確認してください）");
+    }
+
     CustomRecipeLoader recipeLoader = new CustomRecipeLoader(this);
     recipeLoader.registerRecipes();
 
@@ -1904,7 +1911,9 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
             long remaining = Math.max(0L, (long) timeLimit - elapsed);
             return (int) Math.max(0L, remaining);
           },
-          () -> this.isRunning
+          () -> this.isRunning,
+          () -> 0,
+          () -> nearestTreasureProximity(player)
       );
     }
 
@@ -2216,6 +2225,34 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
           center.clone().add(0, 1.2, 0),
           0, vx, vy, vz, 1);
     }
+  }
+
+  private double nearestTreasureProximity(Player player) {
+    if (player == null || !player.isOnline()) return 0.0;
+    TreasureChestManager manager = this.treasureChestManager;
+    if (manager == null) return 0.0;
+
+    Collection<Location> chestLocations = manager.getTreasureLocations();
+    if (chestLocations == null || chestLocations.isEmpty()) return 0.0;
+
+    Location playerLocation = player.getLocation();
+    World playerWorld = playerLocation.getWorld();
+    if (playerWorld == null) return 0.0;
+
+    double bestD2 = Double.MAX_VALUE;
+    for (Location chestLocation : chestLocations) {
+      if (chestLocation == null || chestLocation.getWorld() == null) continue;
+      if (!chestLocation.getWorld().getUID().equals(playerWorld.getUID())) continue;
+
+      double d2 = playerLocation.distanceSquared(chestLocation);
+      if (d2 < bestD2) bestD2 = d2;
+    }
+
+    if (bestD2 == Double.MAX_VALUE) return 0.0;
+
+    double range = Math.max(1.0, getConfig().getDouble("heartbeat.proximityRange", 10.0));
+    double distance = Math.sqrt(bestD2);
+    return Math.max(0.0, Math.min(1.0, 1.0 - (distance / range)));
   }
 
   public GameStageManager getGameStageManager() { return gameStageManager; }
