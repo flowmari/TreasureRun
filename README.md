@@ -268,7 +268,7 @@ The full README that existed before this contributor-focused entrance was introd
 
 ## Project Status
 
-- Stage: alpha / portfolio open-source project
+- Stage: early alpha open-source project
 - Minecraft target: Spigot 1.20.1
 - Java version: 17
 - License: MIT

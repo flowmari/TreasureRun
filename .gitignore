@@ -101,3 +101,10 @@ resourcepacks/generated/treasurerun-i18n-pack-*.zip.sha1
 
 # Local TreasureRun demo-world workspace
 .local/
+
+# Local scratch artifacts
+# Keep one-off working scripts and temporary notes out of the public repo surface.
+/tmp_*
+/.local/
+/.local-scratch/
+/build 2/
