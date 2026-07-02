@@ -12,8 +12,9 @@ The goal is not to change gameplay, Java implementation, i18n behavior, language
 
 - Keep public README wording neutral and focused on the project status.
 - Reduce root-level scratch artifacts from the repository surface.
-- Review `_disabled/` and `attic/` separately before deciding whether to remove, archive, or document them.
-- Review large research-log style documentation areas separately, especially `docs/i18n_native_review/` and `docs/i18n_batch*`.
+- `_disabled/` and `attic/` were removed in PR #98 after a scoped deletion review.
+- The architecture tradeoff summary was moved under `docs/architecture/` in PR #99 without changing the file content.
+- Review large research-log style documentation areas separately, especially `docs/i18n_native_review/` and `docs/i18n_batch*`. The current plan is tracked in `docs/maintenance/I18N_DOCS_CURATION_PLAN.md`.
 - Keep external tester instructions focused on the basic Spigot 1.20.1 playtest path.
 
 ## Non-goals
