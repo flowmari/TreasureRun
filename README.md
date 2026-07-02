@@ -257,7 +257,7 @@ The Ranking API integration workflow remains visible on pull requests. Docker-ba
 
 Start with:
 
-- [](docs/playtest/PLAYER_QUICKSTART.md) — first-time player setup, gameplay path, and wandering-trader trade steps.
+- [`docs/playtest/PLAYER_QUICKSTART.md`](docs/playtest/PLAYER_QUICKSTART.md) — first-time player setup, gameplay path, and wandering-trader trade steps.
 - [`CONTRIBUTING.md`](CONTRIBUTING.md)
 - [`docs/`](docs/)
 - [`docs/GAME_DESIGN.md`](docs/GAME_DESIGN.md) — creative vision, setting, worldbuilding, and gameplay atmosphere.
