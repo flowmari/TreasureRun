@@ -223,6 +223,8 @@ For a one-page diagram of this boundary, see [`docs/architecture/RUNTIME_RANKING
 
 For a more precise architectural summary:
 
+See [`docs/architecture/ARCHITECTURE_TRADEOFF_SUMMARY.md`](docs/architecture/ARCHITECTURE_TRADEOFF_SUMMARY.md).
+
 > The Spigot plugin is the system of record for gameplay and ranking writes, including MySQL access, Flyway migrations, and score repositories. `ranking-api` exposes a separate read-only HTTP boundary over the same database through a versioned API and an OpenAPI-verified contract.
 
 ## Build and Verification
