@@ -237,6 +237,16 @@ See [`docs/architecture/ARCHITECTURE_TRADEOFF_SUMMARY.md`](docs/architecture/ARC
 
 This is the regular contributor workflow. It excludes integration tests that require Docker-backed MySQL execution.
 
+### Coverage visibility
+
+```bash
+./gradlew clean test jacocoTestReport
+```
+
+The JaCoCo HTML report is generated at `build/reports/jacoco/test/html/index.html`.
+
+See [`docs/verification/coverage-visibility.md`](docs/verification/coverage-visibility.md).
+
 ### Optional integration verification
 
 ```bash
