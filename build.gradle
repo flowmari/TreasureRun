@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'jacoco'
     id 'com.github.johnrengelman.shadow' version '8.1.1'
 }
 
@@ -87,6 +88,22 @@ build.dependsOn shadowJar
 test {
     useJUnitPlatform {
         excludeTags 'integration'
+    }
+
+    finalizedBy jacocoTestReport
+}
+
+jacoco {
+    toolVersion = '0.8.12'
+}
+
+jacocoTestReport {
+    dependsOn test
+
+    reports {
+        xml.required = true
+        html.required = true
+        csv.required = false
     }
 }
 
