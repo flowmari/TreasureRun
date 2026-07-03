@@ -41,15 +41,15 @@ Treat the following areas as research-log or historical working material:
 - `docs/i18n_batch08/`
 - `docs/i18n_batch09/`
 
-## Proposed next PR
+## Archive location
 
-Create one separate docs-only PR that moves the research-log style folders under an archive path, for example:
+The research-log style folders listed above are archived under:
 
 ```text
 docs/archive/i18n-research-logs/
 ```
 
-That future PR should preserve the files, avoid rewriting their contents, and update only the minimum maintenance references needed after the move.
+This preserves the files while keeping the main reader path focused on current setup, gameplay, architecture, verification, and contribution guidance.
 
 ## Non-goals
 
