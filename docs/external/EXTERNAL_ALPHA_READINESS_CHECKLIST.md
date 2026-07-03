@@ -1,6 +1,6 @@
 # External Alpha Readiness Checklist
 
-This checklist tracks what must be true before TreasureRun is promoted beyond portfolio/alpha repository status.
+This checklist tracks what must be true before TreasureRun is promoted beyond early-alpha repository status.
 
 ## Completed
 

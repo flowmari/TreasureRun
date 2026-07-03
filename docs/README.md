@@ -46,7 +46,7 @@ TreasureRun is currently best read as:
 - a Java/Spigot gameplay plugin;
 - a platform-boundary i18n project using YAML, ProtocolLib, ResourcePack assets, and optional Fabric runtime language sync;
 - a project with optional backend evidence for ranking read APIs, Flyway migrations, OpenAPI contract checks, MySQL, and Testcontainers;
-- an evolving OSS portfolio where heavy generated artifacts should be delivered through GitHub Releases rather than kept in the source tree.
+- an evolving open-source project where large generated artifacts should be delivered through GitHub Releases rather than kept in the source tree.
 
 Known follow-up work is intentionally tracked separately, including the Docker/MySQL V3 transactional-outbox migration warning and ProtocolLib packet-boundary verification.
 

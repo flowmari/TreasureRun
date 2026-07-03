@@ -96,7 +96,7 @@ The next validation step is independent external tester feedback:
 - Record their feedback in a GitHub issue or PR comment.
 - Do not rewrite that feedback into a stronger claim than what the tester actually confirms.
 
-## Career-facing interpretation
+## Project interpretation
 
 This verification demonstrates that TreasureRun is not only a game demo. It also has a reviewer-friendly runtime path:
 
