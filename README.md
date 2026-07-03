@@ -219,6 +219,8 @@ The current architecture is:
 
 In short, the plugin owns gameplay and writes, while `ranking-api/` provides a versioned read-only view of leaderboard data.
 
+For a one-page diagram of this boundary, see [`docs/architecture/RUNTIME_RANKING_FLOW.md`](docs/architecture/RUNTIME_RANKING_FLOW.md).
+
 For a more precise architectural summary:
 
 > The Spigot plugin is the system of record for gameplay and ranking writes, including MySQL access, Flyway migrations, and score repositories. `ranking-api` exposes a separate read-only HTTP boundary over the same database through a versioned API and an OpenAPI-verified contract.
