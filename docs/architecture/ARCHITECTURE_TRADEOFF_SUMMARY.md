@@ -53,7 +53,7 @@ TreasureRun does not claim:
 
 ## Concise technical-review explanation
 
-I built TreasureRun, an open-source Java / Spigot Minecraft plugin that demonstrates platform-boundary i18n. Minecraft standard UI text is split between server plugin messages, packet content, ResourcePack language assets, and client-side language state, so a Spigot plugin alone cannot control every surface. I separated the system into Spigot, ProtocolLib, ResourcePack, optional Fabric runtime sync, and a pure Java packet-localization core, then protected the design with CI, Docker runtime checks, ResourcePack checksum verification, and MySQL/Testcontainers evidence for the ranking boundary.
+TreasureRun is an open-source Java / Spigot Minecraft plugin that documents a platform-boundary i18n approach. Minecraft standard UI text is split between server plugin messages, packet content, ResourcePack language assets, and client-side language state, so a Spigot plugin alone cannot control every surface. The project separates this boundary into Spigot, ProtocolLib, ResourcePack, optional Fabric runtime sync, and a pure Java packet-localization core, with CI, Docker runtime checks, ResourcePack checksum verification, and MySQL/Testcontainers evidence for the ranking boundary.
 
 ## Verification and scope
 
