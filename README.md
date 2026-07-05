@@ -22,6 +22,19 @@ Sound on: these videos include audio.
 
 Tester sound check: before a playtest, make sure **Options > Music & Sounds > Players** is audible. Operators can run `/heartbeatTest` to verify the heartbeat cue without starting a full run.
 
+## Help wanted: first-time gameplay feedback
+
+TreasureRun is an early-alpha Spigot 1.20.1 treasure-hunt mini-game.
+
+The core playtest flow is: join the local test server, start a treasure run, follow the heartbeat cue, find treasure, check the ranking, and try the Treasure Shop.
+
+Small first-impression feedback is welcome, especially where the setup or gameplay goal becomes unclear. A comment is enough; this is not a broad code review.
+
+- [#106 — First-time setup and gameplay flow feedback](https://github.com/flowmari/TreasureRun/issues/106) — primary
+- [#107 — Optional small wording review for visible player messages](https://github.com/flowmari/TreasureRun/issues/107)
+
+A failed setup report is useful too.
+
 TreasureRun also includes platform-boundary i18n work because Minecraft's built-in UI text is split between server-controlled surfaces and client-side surfaces. This i18n work is an internal supporting layer within the gameplay plugin, not a separate plugin, library, or competing project.
 
 
