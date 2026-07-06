@@ -10,6 +10,20 @@ Can a first-time player start the local server, join the game, start a treasure 
 
 The localisation and platform-boundary architecture are documented separately. Start here if you want to experience the game first.
 
+## Before you start
+
+Make sure you have:
+
+- the TreasureRun repository on your computer;
+- a terminal opened in the TreasureRun folder;
+- Docker Desktop installed and running;
+- Minecraft Java Edition 1.20.1 available;
+- your exact Minecraft Java player name.
+
+The first run may take a few minutes while Gradle and Docker prepare the local runtime.
+
+If one of these is missing, the setup command may stop before the Minecraft server is ready.
+
 ## Visual checkpoints
 
 If screenshots or short visual notes are added later, the most useful checkpoints are:
