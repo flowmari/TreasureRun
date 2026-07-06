@@ -87,7 +87,7 @@ You can also try:
 
 If no language has been saved yet, `/gamestart normal` may open the language selection GUI first. Choose a language, then continue into the run.
 
-## 3.1 Optional sound check
+## 4. Optional sound check
 
 Before the run, make sure Minecraft **Options > Music & Sounds > Players** is audible. If you are an operator, run:
 
@@ -97,7 +97,7 @@ Before the run, make sure Minecraft **Options > Music & Sounds > Players** is au
 
 You should hear a short heartbeat cue. This checks the same sound category used by the in-game heartbeat feedback.
 
-## 4. What to do after `/gamestart`
+## 5. What to do after `/gamestart`
 
 During a run, the player should:
 
@@ -113,7 +113,7 @@ For a first playtest, do not try to review every system. The most useful questio
 Was it clear what the player should do next?
 ```
 
-## 5. Optional: use the prepared demo world
+## 6. Optional: use the prepared demo world
 
 A freshly generated local world is enough for a basic startup and command test.
 
@@ -131,7 +131,7 @@ For the tester-facing world guide, see:
 docs/demo-world/WHAT_TO_LOOK_FOR.md
 ```
 
-## 6. Try the Treasure Shop secret trade
+## 7. Try the Treasure Shop secret trade
 
 The prepared demo world includes a Treasure Shop wandering trader bonus interaction.
 
@@ -190,7 +190,7 @@ If the Golden Apple is not added, check these first:
 
 For normal playtesters, use `/craftspecialemerald`. The `/givespecialemerald` command is intended for operator/admin testing only.
 
-## 7. Useful player commands
+## 8. Useful player commands
 
 ```text
 /lang en
@@ -215,7 +215,7 @@ The full command reference is here:
 docs/COMMANDS.md
 ```
 
-## 8. Stop or reset the local runtime
+## 9. Stop or reset the local runtime
 
 Stop the local runtime while keeping its world and database volumes:
 
@@ -229,7 +229,7 @@ Reset the local runtime completely:
 ./scripts/contributor-down.sh --volumes
 ```
 
-## 9. Share first-time feedback
+## 10. Share first-time feedback
 
 Useful alpha feedback does not need to be a deep code review.
 
