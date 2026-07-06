@@ -10,6 +10,21 @@ Can a first-time player start the local server, join the game, start a treasure 
 
 The localisation and platform-boundary architecture are documented separately. Start here if you want to experience the game first.
 
+## Visual checkpoints
+
+If screenshots or short visual notes are added later, the most useful checkpoints are:
+
+- terminal output after `./scripts/contributor-up.sh YourMinecraftName` is ready;
+- Minecraft server list or direct connection using `localhost:25575`;
+- first successful join on Spigot 1.20.1;
+- `/heartbeatTest` after confirming **Options > Music & Sounds > Players** is audible;
+- `/lang en` or the language selection GUI;
+- `/gamestart normal` after the run starts;
+- `/gameRank weekly` after a short test run;
+- Treasure Shop / wandering trader interaction, if the prepared demo world is used.
+
+Keep screenshots small, current, and tied to this quickstart rather than to broad architecture notes.
+
 ## 1. Start the local test server
 
 From the repository root, run:
