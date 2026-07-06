@@ -2,7 +2,7 @@
 
 TreasureRun is an open-source treasure-hunt mini-game plugin for **Minecraft Spigot 1.20.1**. Players search for treasure chests, earn points, experience staged visual and audio effects, and compete through persistent rankings.
 
-## Choose your path
+## Where to start
 
 | I want to... | Start here |
 | --- | --- |
