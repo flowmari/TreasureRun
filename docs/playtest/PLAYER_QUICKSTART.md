@@ -26,18 +26,68 @@ If one of these is missing, the setup command may stop before the Minecraft serv
 
 ## Visual checkpoints
 
-If screenshots or short visual notes are added later, the most useful checkpoints are:
+These screenshots are optional checkpoints for first-time playtesters. They are not extra setup steps. Use them to compare your screen with a known-good local playtest flow.
 
-- terminal output after `./scripts/contributor-up.sh YourMinecraftName` is ready;
-- Minecraft server list or direct connection using `localhost:25575`;
-- first successful join on Spigot 1.20.1;
-- `/heartbeatTest` after confirming **Options > Music & Sounds > Players** is audible;
-- `/lang en` or the language selection GUI;
-- `/gamestart normal` after the run starts;
-- `/gameRank weekly` after a short test run;
-- Treasure Shop / wandering trader interaction, if the prepared demo world is used.
+### Prerequisite: Minecraft 1.20.1 installation
 
-Keep screenshots small, current, and tied to this quickstart rather than to broad architecture notes.
+<img src="assets/player-quickstart/00-prerequisite-minecraft-1201-installation.png" alt="Minecraft Launcher Installations page showing a Minecraft 1.20.1 profile" width="720">
+
+### 1. Terminal ready
+
+<img src="assets/player-quickstart/01-terminal-startup-ready.png" alt="Terminal output showing the local TreasureRun server is ready" width="720">
+
+The terminal should show that the local server is ready before you join from Minecraft.
+
+### 2. Add the local server and keep Resource Packs on Prompt
+
+<img src="assets/player-quickstart/02-localhost-25575-resource-pack-prompt.png" alt="Minecraft local server settings showing localhost 25575 and Resource Packs set to Prompt" width="720">
+
+Use `localhost:25575` and keep **Server Resource Packs** set to **Prompt**.
+
+### 3. First successful join
+
+<img src="assets/player-quickstart/03-first-join.png" alt="First successful join into the local TreasureRun world" width="720">
+
+You should be able to enter the local world and see the TreasureRun overlay.
+
+### 4. Heartbeat sound check
+
+<img src="assets/player-quickstart/04-heartbeat-test.png" alt="Heartbeat test command result shown in Minecraft chat" width="720">
+
+Use this only as a sound check before the run.
+
+### 5. Set the player language to English
+
+<img src="assets/player-quickstart/05-lang-en.png" alt="Minecraft chat showing the English player language confirmation" width="720">
+
+For a simple first test, use `/lang en`.
+
+### 6. Start a Normal run
+
+<img src="assets/player-quickstart/06-gamestart-normal.png" alt="TreasureRun normal mode started with timer and treasure effects visible" width="720">
+
+After `/gamestart normal`, the run should start and show the timer, effects, and player feedback.
+
+### 7. Check the weekly ranking
+
+<img src="assets/player-quickstart/07-gamerank-weekly.png" alt="Weekly TreasureRun ranking output shown in Minecraft" width="720">
+
+After a short test run, use `/gameRank weekly` to confirm ranking feedback appears.
+
+### 8. Try the Treasure Shop
+
+<img src="assets/player-quickstart/08-treasure-shop.png" alt="Treasure Shop trader interaction with visible trade feedback" width="720">
+
+If you use the prepared demo world, the Treasure Shop interaction gives a clear visual checkpoint for the bonus trade flow.
+
+### Optional: adventure message examples
+
+TreasureRun also shows small adventure-style messages when a route ends or the player needs to try another path.
+
+<img src="assets/player-quickstart/09-overcoming-adversity-retry-route.png" alt="TreasureRun retry hint after a failed route" width="720">
+
+<img src="assets/player-quickstart/10-overcoming-adversity-tide-returned.png" alt="TreasureRun tide message after an ending state" width="720">
+
 
 ## 1. Start the local test server
 
