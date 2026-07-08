@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'plugin'
-version = '0.1.5-alpha'
+version = '0.1.6-alpha'
 
 repositories {
     mavenCentral()
@@ -76,7 +76,7 @@ sourceSets {
 shadowJar {
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     archiveBaseName.set('TreasureRun')
-    archiveVersion.set('0.1.5-alpha')
+    archiveVersion.set('0.1.6-alpha')
     archiveClassifier.set('all')
 }
 
