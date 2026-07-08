@@ -80,9 +80,9 @@ After a short test run, use `/gameRank weekly` to confirm ranking feedback appea
 
 If you use the prepared demo world, the Treasure Shop interaction gives a clear visual checkpoint for the bonus trade flow.
 
-### Optional: adventure message examples
+### Optional: timeout and encouragement message examples
 
-TreasureRun also shows small adventure-style messages when a route ends or the player needs to try another path.
+These examples show timeout-related feedback. A retry hint can appear after any timeout, including the first one. After three consecutive timeouts, TreasureRun displays `OVERCOMING ADVERSITY` as a supportive encouragement sequence for the player. The smaller worldbuilding quote text is selected from a pool of more than 150 randomized outcome messages, so the exact line can vary from run to run.
 
 <img src="assets/player-quickstart/09-overcoming-adversity-retry-route.png" alt="TreasureRun retry hint after a failed route" width="720">
 
