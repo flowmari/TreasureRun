@@ -107,13 +107,13 @@ For a quick review:
 5. Check the latest GitHub Actions results.
 6. Inspect the `got -> got_de` mapping and ResourcePack JSON assets.
 
-## Resume wording
+## Technical summary wording
 
-A concise resume bullet:
+A concise project summary:
 
 > Built TreasureRun, an open-source Java / Spigot Minecraft plugin demonstrating platform-boundary i18n architecture across Spigot YAML messages, ProtocolLib packet boundaries, ResourcePack language assets, Fabric runtime language sync, Docker verification, MySQL persistence, and GitHub Actions quality gates.
 
-A stronger technical bullet:
+A more implementation-focused summary:
 
 > Designed a layered i18n system for Minecraft 1.20.1 that separates plugin-controlled messages, packet-boundary localization, ResourcePack translation assets, and client-side runtime language sync, with regression tests protecting language mapping, ResourcePack key coverage, and SHA1 integrity.
 
