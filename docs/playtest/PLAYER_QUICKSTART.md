@@ -27,7 +27,8 @@ The linked overview below shows the complete first-run flow before the detailed 
 Make sure you have:
 
 - the TreasureRun repository on your computer;
-- a terminal opened in the TreasureRun folder;
+- a Bash-compatible shell opened in the TreasureRun folder;
+- on Windows, WSL 2 with [Docker Desktop's WSL integration](https://docs.docker.com/desktop/features/wsl/use-wsl/) enabled;
 - Docker Desktop installed and running;
 - Minecraft Java Edition 1.20.1 available;
 - your exact Minecraft Java player name.
@@ -38,7 +39,7 @@ The first run may take a few minutes while Gradle and Docker prepare the local r
 
 ## 2. Start the local server and wait until the terminal is ready
 
-From the repository root, run:
+Run the following command from that Bash-compatible shell. On Windows, use WSL 2; native PowerShell and Command Prompt are not covered by this guide:
 
 ```bash
 ./scripts/contributor-up.sh YourMinecraftName
