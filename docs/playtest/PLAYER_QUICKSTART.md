@@ -10,6 +10,21 @@ Can a first-time player start the local server, join the game, start a treasure 
 
 The localisation and platform-boundary architecture are documented separately. Start here if you want to experience the game first.
 
+## Contents
+
+- [Before you start](#before-you-start)
+- [Visual checkpoints](#visual-checkpoints)
+- [1. Terminal ready: start the local test server](#1-start-the-local-test-server)
+- [2. Add the local server and join](#2-join-from-minecraft-java-edition-1201)
+- [3. Start a basic treasure run](#3-start-a-basic-treasure-run)
+- [4. Optional sound check](#4-optional-sound-check)
+- [5. Follow the gameplay flow](#5-what-to-do-after-gamestart)
+- [6. Optional: use the prepared demo world](#6-optional-use-the-prepared-demo-world)
+- [7. Try the Treasure Shop secret trade](#7-try-the-treasure-shop-secret-trade)
+- [8. Review useful player commands](#8-useful-player-commands)
+- [9. Stop or reset the local runtime](#9-stop-or-reset-the-local-runtime)
+- [10. Share first-time feedback](#10-share-first-time-feedback)
+
 ## Before you start
 
 Make sure you have:
