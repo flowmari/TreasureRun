@@ -7,6 +7,7 @@ TreasureRun is an open-source treasure-hunt mini-game plugin for **Minecraft Spi
 | I want to... | Start here |
 | --- | --- |
 | Playtest the game | [Player Quickstart](docs/playtest/PLAYER_QUICKSTART.md) |
+| Explore screenshots and optional checks | [Optional Playtest Features](docs/playtest/OPTIONAL_PLAYTEST_FEATURES.md) |
 | Give first-impression feedback | [#106 — First-time setup and gameplay flow feedback](https://github.com/flowmari/TreasureRun/issues/106) |
 | Review wording / translations | [#107 — Visible player-message wording review](https://github.com/flowmari/TreasureRun/issues/107) |
 | Read the technical architecture | [Runtime ranking flow](docs/architecture/RUNTIME_RANKING_FLOW.md) |
@@ -17,7 +18,11 @@ TreasureRun is an open-source treasure-hunt mini-game plugin for **Minecraft Spi
 
 ### Player Quickstart
 
-[Open the player quickstart](docs/playtest/PLAYER_QUICKSTART.md) — Start the local server, choose a language, run a treasure hunt, check rankings, and try the wandering-trader custom trade.
+[Open the player quickstart](docs/playtest/PLAYER_QUICKSTART.md) — Follow the short, numbered route from prerequisites through the first playtest and shutdown.
+
+### Optional Playtest Features
+
+[Open the optional playtest features](docs/playtest/OPTIONAL_PLAYTEST_FEATURES.md) — Compare screenshots or check heartbeat audio, the demo world, ranking, MySQL-related checks, and the Treasure Shop after the core route works.
 
 
 ### Command Reference
@@ -35,7 +40,7 @@ Tester sound check: before a playtest, make sure **Options > Music & Sounds > Pl
 
 TreasureRun is an early-alpha Spigot 1.20.1 treasure-hunt mini-game.
 
-The core playtest flow is: join the local test server, start a treasure run, follow the heartbeat cue, find treasure, check the ranking, and try the Treasure Shop.
+The core first-playtest flow is: start the local server, join from Minecraft, start a Normal run, follow the treasure cues, and report the first unclear step. Screenshots, ranking, and feature-specific checks are optional.
 
 Small first-impression feedback is welcome, especially where the setup or gameplay goal becomes unclear. A comment is enough; this is not a broad code review.
 
@@ -155,7 +160,9 @@ Once you are in the server, the fastest first gameplay path is:
 /gameRank weekly
 ```
 
-For the full player-facing route, including what to do after `/gamestart` and how to test the wandering-trader custom trade, see [`docs/playtest/PLAYER_QUICKSTART.md`](docs/playtest/PLAYER_QUICKSTART.md).
+For the short first-time route, see [`docs/playtest/PLAYER_QUICKSTART.md`](docs/playtest/PLAYER_QUICKSTART.md).
+
+For screenshots and feature-specific checks, see [`docs/playtest/OPTIONAL_PLAYTEST_FEATURES.md`](docs/playtest/OPTIONAL_PLAYTEST_FEATURES.md).
 
 The full command list is in [`docs/COMMANDS.md`](docs/COMMANDS.md).
 
@@ -293,7 +300,8 @@ The Ranking API integration workflow remains visible on pull requests. Docker-ba
 
 Start with:
 
-- [`docs/playtest/PLAYER_QUICKSTART.md`](docs/playtest/PLAYER_QUICKSTART.md) — first-time player setup, gameplay path, and wandering-trader trade steps.
+- [`docs/playtest/PLAYER_QUICKSTART.md`](docs/playtest/PLAYER_QUICKSTART.md) — short first-time setup and first-playtest route.
+- [`docs/playtest/OPTIONAL_PLAYTEST_FEATURES.md`](docs/playtest/OPTIONAL_PLAYTEST_FEATURES.md) — screenshots and feature-specific checks after the core route.
 - [`CONTRIBUTING.md`](CONTRIBUTING.md)
 - [`docs/`](docs/)
 - [`docs/GAME_DESIGN.md`](docs/GAME_DESIGN.md) — creative vision, setting, worldbuilding, and gameplay atmosphere.
