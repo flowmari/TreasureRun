@@ -19,7 +19,8 @@ The linked overview below shows the complete first-run flow before the detailed 
 3. [Add the local server and join](#3-add-the-local-server-and-join)
 4. [Run the first playtest](#4-run-the-first-playtest)
 5. [Stop or reset the runtime](#5-stop-or-reset-the-runtime)
-6. [Share first-time feedback](#6-share-first-time-feedback)
+
+**Optional follow-up:** [Share first-time feedback](#optional-follow-up-share-first-time-feedback)
 
 ## 1. Check the prerequisites
 
@@ -57,11 +58,13 @@ Local TreasureRun runtime started.
 
 ## 3. Add the local server and join
 
-In Minecraft Java Edition 1.20.1, add and join:
+In Minecraft Java Edition 1.20.1, add a local server and enter this address exactly as shown, including the colon:
 
 ```text
 localhost:25575
 ```
+
+This is the verified address for the local Docker setup documented in this guide.
 
 Keep **Server Resource Packs** set to **Prompt**, and accept the ResourcePack prompt if Minecraft shows one.
 
@@ -104,7 +107,7 @@ Reset the local runtime completely:
 ./scripts/contributor-down.sh --volumes
 ```
 
-## 6. Share first-time feedback
+## Optional follow-up: Share first-time feedback
 
 A short result is enough. Please report only what you actually tried and observed:
 
