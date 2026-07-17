@@ -169,10 +169,18 @@ The full command list is in [`docs/COMMANDS.md`](docs/COMMANDS.md).
 The startup script:
 
 1. runs the default Gradle build;
-2. starts isolated MySQL 8 and Spigot 1.20.1 containers;
+2. starts an isolated Spigot 1.20.1 container without MySQL;
 3. grants operator permissions to your local player;
-4. installs the newly built TreasureRun plugin JAR;
-5. restarts the local server with TreasureRun loaded.
+4. installs exactly one newly built TreasureRun plugin JAR;
+5. waits for both the Spigot `Done` log and the TreasureRun readiness log.
+
+MySQL-backed rankings and persistence are optional. To exercise that boundary explicitly, run:
+
+```bash
+./scripts/contributor-up.sh YourMinecraftName --with-db
+```
+
+The `--with-db` path also runs the Docker-backed MySQL integration tests before starting the playable server.
 
 Stop the local development runtime while keeping its world and database volumes:
 

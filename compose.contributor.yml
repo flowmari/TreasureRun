@@ -27,13 +27,16 @@ services:
       VERSION: "1.20.1"
       MEMORY: "${TREASURERUN_MEMORY:-2G}"
       OPS: "${TREASURERUN_OPS:-}"
+      TREASURERUN_DATABASE_ENABLED: "${TREASURERUN_DATABASE_ENABLED:-false}"
+      TREASURERUN_DB_HOST: "${TREASURERUN_DB_HOST:-minecraft_mysql}"
+      TREASURERUN_DB_PORT: "${TREASURERUN_DB_PORT:-3306}"
+      TREASURERUN_DB_NAME: "${TREASURERUN_DB_NAME:-treasureDB}"
+      TREASURERUN_DB_USER: "${TREASURERUN_DB_USER:-user}"
+      TREASURERUN_DB_PASSWORD: "${TREASURERUN_DB_PASSWORD:-password}"
     ports:
       - "${TREASURERUN_MC_PORT:-25575}:25565"
     volumes:
       - contributor_spigot_data:/data
-    depends_on:
-      minecraft_mysql:
-        condition: service_healthy
     networks:
       - contributor_network
 

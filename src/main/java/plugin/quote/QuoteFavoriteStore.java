@@ -2,6 +2,8 @@ package plugin.quote;
 
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
+import plugin.DatabaseRuntimeSettings;
+import plugin.TreasureRunMultiChestPlugin;
 
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
@@ -53,18 +55,23 @@ public class QuoteFavoriteStore {
 
   // ✅ /treasureReload で呼ぶ用
   public void reload(FileConfiguration config) {
-    // あなたの config.yml に合わせてキーを揃えてね
-    this.host = config.getString("mysql.host", "127.0.0.1");
-    this.port = config.getInt("mysql.port", 3307);
-    this.database = config.getString("mysql.database", "treasureDB");
-    this.user = config.getString("mysql.user", "user");
-    this.password = config.getString("mysql.password", "password");
+    DatabaseRuntimeSettings settings = DatabaseRuntimeSettings.load(config);
+    this.host = settings.host();
+    this.port = settings.port();
+    this.database = settings.database();
+    this.user = settings.user();
+    this.password = settings.password();
 
     // テーブル名を config で変えられるようにしてもOK
     this.favoritesTable = config.getString("favorites.table", "proverb_favorites");
 
     plugin.getLogger().info("[QuoteFavoriteStore] Reloaded DB: host=" + host + ":" + port
         + " db=" + database + " table=" + favoritesTable);
+  }
+
+  private boolean databaseEnabled() {
+    return !(plugin instanceof TreasureRunMultiChestPlugin treasureRun)
+        || treasureRun.isDatabaseEnabled();
   }
 
   private Connection getConn() throws SQLException {
@@ -95,6 +102,7 @@ public class QuoteFavoriteStore {
 
   // ✅ すでに同じお気に入りが存在するか（player_uuid + quote_hash）
   public boolean exists(UUID playerUuid, String quoteHash) {
+    if (!databaseEnabled()) return false;
     String sql = "SELECT 1 FROM " + favoritesTable + " WHERE player_uuid=? AND quote_hash=? LIMIT 1";
     try (Connection conn = getConn();
         PreparedStatement ps = conn.prepareStatement(sql)) {
@@ -111,6 +119,7 @@ public class QuoteFavoriteStore {
 
   // ✅ INSERT（Favorites保存）
   public boolean addFavorite(UUID playerUuid, String outcome, String difficulty, String lang, String quoteText) {
+    if (!databaseEnabled()) return false;
     String quoteHash = computeQuoteHash(quoteText, outcome, difficulty, lang);
 
     // 二重登録防止
@@ -141,6 +150,7 @@ public class QuoteFavoriteStore {
 
   // ✅ DELETE（player_uuid + quote_hash で削除）
   public boolean removeFavorite(UUID playerUuid, String quoteHash) {
+    if (!databaseEnabled()) return false;
     String sql = "DELETE FROM " + favoritesTable + " WHERE player_uuid=? AND quote_hash=?";
     try (Connection conn = getConn();
         PreparedStatement ps = conn.prepareStatement(sql)) {
@@ -159,6 +169,7 @@ public class QuoteFavoriteStore {
 
   // ✅ DELETE（idで削除）※図鑑UIにidを埋め込む場合に便利
   public boolean removeFavoriteById(UUID playerUuid, int id) {
+    if (!databaseEnabled()) return false;
     String sql = "DELETE FROM " + favoritesTable + " WHERE player_uuid=? AND id=?";
     try (Connection conn = getConn();
         PreparedStatement ps = conn.prepareStatement(sql)) {
@@ -177,6 +188,7 @@ public class QuoteFavoriteStore {
 
   // ✅ SELECT（一覧）
   public List<FavoriteRow> listFavorites(UUID playerUuid, int limit) {
+    if (!databaseEnabled()) return List.of();
     List<FavoriteRow> out = new ArrayList<>();
 
     String sql = "SELECT id, player_uuid, quote_hash, outcome, difficulty, lang, quote_text, created_at "
@@ -225,6 +237,7 @@ public class QuoteFavoriteStore {
 
   // ✅ SELECT（件数）
   public int countFavorites(UUID playerUuid) {
+    if (!databaseEnabled()) return 0;
     String sql = "SELECT COUNT(*) FROM " + favoritesTable + " WHERE player_uuid=?";
     try (Connection conn = getConn();
         PreparedStatement ps = conn.prepareStatement(sql)) {

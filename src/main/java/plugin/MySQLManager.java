@@ -31,24 +31,25 @@ public class MySQLManager implements CommandExecutor {
   }
 
   public boolean connect() {
-    String host = plugin.getConfig().getString("mysql.host");
-    int port = plugin.getConfig().getInt("mysql.port");
-    String database = plugin.getConfig().getString("mysql.database");
-    String user = plugin.getConfig().getString("mysql.user");
-    String password = plugin.getConfig().getString("mysql.password");
+    DatabaseRuntimeSettings settings = DatabaseRuntimeSettings.load(plugin.getConfig());
+    if (!settings.enabled()) {
+      plugin.getLogger().info("[Database] dbstatus connection skipped because database features are disabled.");
+      return false;
+    }
 
-    String url = "jdbc:mysql://" + host + ":" + port + "/" + database + "?useSSL=false&serverTimezone=UTC";
+    String url = "jdbc:mysql://" + settings.host() + ":" + settings.port() + "/"
+        + settings.database() + "?useSSL=false&serverTimezone=UTC";
 
     try {
       // JDBC接続（MyBatis外用）
-      connection = DriverManager.getConnection(url, user, password);
+      connection = DriverManager.getConnection(url, settings.user(), settings.password());
 
       // ✅ MyBatis用データソース
       PooledDataSource dataSource = new PooledDataSource();
       dataSource.setDriver("com.mysql.cj.jdbc.Driver");
       dataSource.setUrl(url);
-      dataSource.setUsername(user);
-      dataSource.setPassword(password);
+      dataSource.setUsername(settings.user());
+      dataSource.setPassword(settings.password());
 
       // ✅ MyBatisアノテーション設定とマッパー登録
       Configuration config = new Configuration();
