@@ -252,8 +252,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     reloadConfig();
     getServer().getMessenger().registerOutgoingPluginChannel(this, "treasurerun:lang");
     fabricModDetector = new FabricModDetector(this); fabricModDetector.register();
-    resourcePackFallbackService = new ResourcePackFallbackService(this);
-    try { getServer().getPluginManager().registerEvents(new ResourcePackFallbackJoinListener(this), this); getLogger().info("[ResourcePackFallback] join listener registered"); } catch (Throwable t) { getLogger().warning("[ResourcePackFallback] failed: " + t.getMessage()); }
+    resourcePackFallbackService = ResourcePackDeliveryRegistrar.register(this);
 
     // ✅ 安全設計：Join自動スタートはデフォルトOFF（必要時だけON）
     boolean autoStart = getConfig().getBoolean("debug.autoStartOnJoin", false);
@@ -476,15 +475,6 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
       if (getCommand("packetI18nProbe") != null) {
         getCommand("packetI18nProbe").setExecutor(new PacketI18nProbeCommand(this));
         getLogger().info("[PacketI18nProbe] /packetI18nProbe executor registered");
-
-      // Server-side resource pack delivery for hybrid Minecraft i18n.
-      try {
-        getServer().getPluginManager().registerEvents(new ResourcePackDeliveryListener(this), this);
-        getServer().getPluginManager().registerEvents(new ResourcePackStatusAuditListener(this), this);
-        getLogger().info("[ResourcePack] delivery listener registered");
-      } catch (Throwable t) {
-        getLogger().warning("[ResourcePack] delivery listener registration failed: " + t.getMessage());
-      }
 
       }
     } catch (Throwable t) {

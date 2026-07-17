@@ -46,7 +46,7 @@ public final class ResourcePackDeliveryListener implements Listener {
         "resourcePack.prompt",
         "TreasureRun uses a multilingual resource pack. Please accept it for the full i18n experience."
     );
-    boolean force = config.getBoolean("resourcePack.force", true);
+    boolean force = config.getBoolean("resourcePack.force", false);
 
     if (url.isEmpty() || sha1.isEmpty()) {
       plugin.getLogger().warning("[ResourcePack] skipped: resourcePack.url or resourcePack.sha1 is empty");
