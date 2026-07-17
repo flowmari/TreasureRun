@@ -58,6 +58,14 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
   // ================================
   private Connection connection;
 
+  public boolean isDatabaseEnabled() {
+    return DatabaseRuntimeSettings.load(getConfig()).enabled();
+  }
+
+  private DatabaseRuntimeSettings databaseSettings() {
+    return DatabaseRuntimeSettings.load(getConfig());
+  }
+
   // =======================================================
   // ✅ ✅ ✅ 追加：ProverbLogRepository（Favorites機能の橋渡し）
   // =======================================================
@@ -399,24 +407,29 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
       getLogger().warning("⚠ /treasureExportLang が plugin.yml に見つかりません");
     }
 
-    setupDatabase();
+    if (isDatabaseEnabled()) {
+      boolean databaseReady = setupDatabase();
 
-    // ✅ ここに追加（Weekly/All-time ranking repositories）
-    // ✅ DB migration: apply bundled SQL migrations before ranking repositories are used
-    try {
-      new MigrationRunner(this).runAll();
-    } catch (Throwable t) {
-      getLogger().warning("[Migration] startup migration failed: " + t.getMessage());
-      t.printStackTrace();
+      if (databaseReady) {
+        new MigrationRunner(this).runAll();
+        this.seasonRepository = new SeasonRepository(this);
+        this.seasonScoreRepository = new SeasonScoreRepository(this);
+        proverbLogRepository = new ProverbLogRepository(this);
+
+        if (treasureRunGameEffectsPlugin != null) {
+          treasureRunGameEffectsPlugin.initializeDatabaseStorage();
+        }
+      } else {
+        getLogger().warning(
+            "[Database] configured but unavailable; core gameplay will continue without "
+                + "rankings, score persistence, proverb history, or favorites."
+        );
+      }
+    } else {
+      getLogger().info(
+          "[Database] disabled; starting the standard Spigot runtime without MySQL-backed features."
+      );
     }
-
-    this.seasonRepository = new SeasonRepository(this);
-    this.seasonScoreRepository = new SeasonScoreRepository(this);
-
-    // =======================================================
-    // ✅ ✅ ✅ 追加：ProverbLogRepository 生成（Favorites橋渡し）
-    // =======================================================
-    proverbLogRepository = new ProverbLogRepository(this);
 
     // ✅ ✅ ✅ ✅ ✅ 追加：QuoteFavoriteBookClickListener を登録（Favoritesの本クリック対応）
     getServer().getPluginManager().registerEvents(new QuoteFavoriteBookClickListener(this), this);
@@ -496,11 +509,15 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     CustomRecipeLoader recipeLoader = new CustomRecipeLoader(this);
     recipeLoader.registerRecipes();
 
-    int rtInterval = getConfig().getInt("rankTicker.intervalSec", 10);
-    int rtTopN = getConfig().getInt("rankTicker.topN", 10);
-    int rtWidth = getConfig().getInt("rankTicker.tickerWidth", 32);
-    rankTicker = new RealtimeRankTicker(this, rtInterval, rtTopN, rtWidth);
-    rankTicker.start();
+    if (isDatabaseEnabled() && getConnection() != null) {
+      int rtInterval = getConfig().getInt("rankTicker.intervalSec", 10);
+      int rtTopN = getConfig().getInt("rankTicker.topN", 10);
+      int rtWidth = getConfig().getInt("rankTicker.tickerWidth", 32);
+      rankTicker = new RealtimeRankTicker(this, rtInterval, rtTopN, rtWidth);
+      rankTicker.start();
+    } else {
+      getLogger().info("[RankTicker] skipped because database-backed rankings are unavailable.");
+    }
 
     try {
       // ❌ MovingSafetyZoneTask は GameStageManager 側で「1箇所だけ」起動・停止・復元を管理する
@@ -511,6 +528,10 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
       getLogger().warning("[MSZ] schedule failed: " + t.getMessage());
     }
 
+    String databaseState = !isDatabaseEnabled()
+        ? "disabled"
+        : (connection == null ? "unavailable" : "connected");
+    getLogger().info("[TreasureRun] Core runtime ready; database=" + databaseState);
     getLogger().info("✅ TreasureRunMultiChestPlugin が正常に起動しました！");
   }
 
@@ -583,11 +604,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
       languageSelectGui = null;
     }
 
-    try {
-      if (connection != null) connection.close();
-    } catch (SQLException e) {
-      e.printStackTrace();
-    }
+    closeDatabaseConnection();
     if (rankTicker != null) rankTicker.stop();
     if (treasureChestManager != null) treasureChestManager.removeAllChests();
 
@@ -705,65 +722,66 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
   }
 
   // =======================================================
-  // MySQL 接続（自動再接続）
+  // Optional MySQL connection boundary
   // =======================================================
   public Connection getConnection() {
+    if (!isDatabaseEnabled()) {
+      return null;
+    }
+
     try {
       if (connection == null || connection.isClosed() || !connection.isValid(1)) {
-        getLogger().warning("⚠ MySQL 再接続を試みます…");
         reconnect();
       }
-    } catch (SQLException e) {
-      getLogger().warning("⚠ MySQL 接続チェック失敗: " + e.getMessage());
+    } catch (SQLException exception) {
+      getLogger().warning("[Database] connection check failed: " + exception.getMessage());
       reconnect();
     }
     return connection;
   }
 
-  // =======================================================
-  // ✅ ✅ ✅ 追加：QuoteFavoriteCommand が呼ぶ橋渡しメソッド
-  // =======================================================
   public Connection getMySQLConnection() {
     return getConnection();
   }
 
   private void reconnect() {
+    if (!isDatabaseEnabled()) {
+      connection = null;
+      return;
+    }
+
+    closeDatabaseConnection();
+    DatabaseRuntimeSettings settings = databaseSettings();
+
     try {
-      if (connection != null) {
-        try { connection.close(); } catch (SQLException ignored) {}
-      }
-
-      String host = getConfig().getString("database.host", "localhost");
-      String port = getConfig().getString("database.port", "3306");
-      String database = getConfig().getString("database.database", "treasureDB");
-      String username = getConfig().getString("database.user", "root");
-      String password = getConfig().getString("database.password", "");
-
       connection = DriverManager.getConnection(
-          "jdbc:mysql://" + host + ":" + port + "/" + database +
-              "?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC",
-          username, password
+          "jdbc:mysql://" + settings.host() + ":" + settings.port() + "/" + settings.database()
+              + "?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC",
+          settings.user(),
+          settings.password()
       );
-
-      getLogger().info("✅ MySQL 再接続成功！");
-    } catch (SQLException e) {
-      getLogger().severe("❌ MySQL 再接続失敗: " + e.getMessage());
+      getLogger().info("[Database] MySQL connection re-established.");
+    } catch (SQLException exception) {
+      connection = null;
+      getLogger().warning("[Database] reconnect failed: " + exception.getMessage());
     }
   }
 
-  private void setupDatabase() {
-    String host = getConfig().getString("database.host", "localhost");
-    String port = getConfig().getString("database.port", "3306");
-    String database = getConfig().getString("database.database", "treasureDB");
-    String username = getConfig().getString("database.user", "root");
-    String password = getConfig().getString("database.password", "");
+  private boolean setupDatabase() {
+    if (!isDatabaseEnabled()) {
+      connection = null;
+      return false;
+    }
+
+    DatabaseRuntimeSettings settings = databaseSettings();
 
     try {
       Class.forName("com.mysql.cj.jdbc.Driver");
       connection = DriverManager.getConnection(
-          "jdbc:mysql://" + host + ":" + port + "/" + database +
-              "?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC",
-          username, password
+          "jdbc:mysql://" + settings.host() + ":" + settings.port() + "/" + settings.database()
+              + "?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC",
+          settings.user(),
+          settings.password()
       );
 
       // =========================
@@ -812,10 +830,24 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
       }
 
       getLogger().info("✅ proverb_logs テーブル準備完了");
+      return true;
 
-    } catch (ClassNotFoundException | SQLException e) {
-      getLogger().severe("❌ DB 初期化失敗");
-      e.printStackTrace();
+    } catch (ClassNotFoundException | SQLException exception) {
+      closeDatabaseConnection();
+      getLogger().warning("[Database] initialization failed: " + exception.getMessage());
+      return false;
+    }
+  }
+
+  private void closeDatabaseConnection() {
+    if (connection == null) return;
+
+    try {
+      connection.close();
+    } catch (SQLException exception) {
+      getLogger().warning("[Database] close failed: " + exception.getMessage());
+    } finally {
+      connection = null;
     }
   }
 
@@ -855,6 +887,11 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
   }
 
   private void saveScore(String playerName, int score, long timeSec, String difficulty) {
+    if (!isDatabaseEnabled()) return;
+
+    Connection conn = getConnection();
+    if (conn == null) return;
+
     // Player名しか渡されない呼び出しもあるので、onlineから拾えるなら拾う
     Player p = Bukkit.getPlayerExact(playerName);
 
@@ -885,7 +922,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     if (langCode == null || langCode.isBlank()) langCode = "ja";
     langCode = langCode.toLowerCase(Locale.ROOT);
 
-    try (PreparedStatement ps = getConnection().prepareStatement(
+    try (PreparedStatement ps = conn.prepareStatement(
         "INSERT INTO scores (uuid, player_name, score, time, difficulty, lang_code, played_at) " +
             "VALUES (?, ?, ?, ?, ?, ?, NOW())"
     )) {
@@ -899,14 +936,17 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
 
       rankDirty = true;
 
-    } catch (SQLException e) {
-      e.printStackTrace();
+    } catch (SQLException exception) {
+      getLogger().warning("[Database] score persistence failed: " + exception.getMessage());
     }
   }
 
   // ✅ 追加：Player から確実に uuid/lang を取って scores に保存する版
   private void saveScore(Player player, int score, long timeSec, String difficulty) {
-    if (player == null) return;
+    if (player == null || !isDatabaseEnabled()) return;
+
+    Connection conn = getConnection();
+    if (conn == null) return;
 
     String lang = "ja";
     try {
@@ -918,7 +958,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     if (lang == null || lang.isBlank()) lang = "ja";
     lang = lang.toLowerCase(Locale.ROOT);
 
-    try (PreparedStatement ps = getConnection().prepareStatement(
+    try (PreparedStatement ps = conn.prepareStatement(
         "INSERT INTO scores (uuid, player_name, score, time, difficulty, lang_code, played_at) " +
             "VALUES (?, ?, ?, ?, ?, ?, NOW())"
     )) {
@@ -932,15 +972,14 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
       ps.executeUpdate();
       rankDirty = true;
 
-    } catch (SQLException e) {
-      e.printStackTrace();
+    } catch (SQLException exception) {
+      getLogger().warning("[Database] score persistence failed: " + exception.getMessage());
     }
   }
 
   private int getRunRank(String playerName, int score, long timeSec, String difficulty) {
     Connection conn = getConnection();
     if (conn == null) {
-      getLogger().severe("❌ getRunRank: DB接続が null です");
       return -1;
     }
 
@@ -977,16 +1016,21 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
           ", score=" + score +
           ", time=" + timeSec +
           ", difficulty=" + difficulty + ")");
-    } catch (SQLException e) {
-      getLogger().warning("⚠ ランキング計算中にエラー: " + e.getMessage());
-      e.printStackTrace();
+    } catch (SQLException exception) {
+      getLogger().warning("[Database] run-rank calculation failed: " + exception.getMessage());
     }
 
     return -1;
   }
 
   private void showRanking(Player player) {
-    try (PreparedStatement ps = getConnection().prepareStatement(
+    Connection conn = getConnection();
+    if (conn == null) {
+      player.sendMessage(ChatColor.RED + trPlayer(player, "rank.command.dbUnavailable"));
+      return;
+    }
+
+    try (PreparedStatement ps = conn.prepareStatement(
         "SELECT player_name, score, time, difficulty " +
             "FROM scores " +
             "ORDER BY time ASC, score DESC " +
@@ -1028,8 +1072,8 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
         player.sendMessage(ChatColor.GRAY + trPlayer(player, "gameplay.pickup.scoreNone"));
       }
 
-    } catch (SQLException e) {
-      e.printStackTrace();
+    } catch (SQLException exception) {
+      getLogger().warning("[Database] ranking load failed: " + exception.getMessage());
       player.sendMessage(ChatColor.RED + trPlayer(player, "rank.command.loadError"));
     }
   }
@@ -1083,8 +1127,8 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
         player.sendMessage(ChatColor.DARK_GRAY + trPlayer(player, "rank.command.weeklySwitch"));
       }
 
-    } catch (SQLException e) {
-      e.printStackTrace();
+    } catch (SQLException exception) {
+      getLogger().warning("[Database] ranking load failed: " + exception.getMessage());
       player.sendMessage(ChatColor.RED + trPlayer(player, "rank.command.loadError"));
     }
   }
@@ -1136,8 +1180,8 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
         player.sendMessage(ChatColor.DARK_GRAY + trPlayer(player, "rank.command.allTimeSwitch"));
       }
 
-    } catch (SQLException e) {
-      e.printStackTrace();
+    } catch (SQLException exception) {
+      getLogger().warning("[Database] ranking load failed: " + exception.getMessage());
       player.sendMessage(ChatColor.RED + trPlayer(player, "rank.command.loadError"));
     }
   }
@@ -1191,8 +1235,8 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
         player.sendMessage(ChatColor.DARK_GRAY + trPlayer(player, "rank.command.monthlySwitch"));
       }
 
-    } catch (SQLException e) {
-      e.printStackTrace();
+    } catch (SQLException exception) {
+      getLogger().warning("[Database] ranking load failed: " + exception.getMessage());
       player.sendMessage(ChatColor.RED + trPlayer(player, "rank.command.loadError"));
     }
   }
@@ -2639,9 +2683,8 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
       Long bestTimeMsOrNull,
       String outcome
   ) {
-    if (player == null) return;
+    if (player == null || !isDatabaseEnabled()) return;
     if (seasonRepository == null || seasonScoreRepository == null) {
-      getLogger().warning("[RANK] season repos not initialized");
       return;
     }
 
@@ -2685,7 +2728,6 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
       }
     } catch (Exception exception) {
       getLogger().warning("[RANK] addSeasonScore failed: " + exception.getMessage());
-      exception.printStackTrace();
     }
   }
 
@@ -2697,7 +2739,11 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
       String outcome, String difficulty,
       String lang, String quoteText) {
 
-    if (playerUuid == null) return;
+    if (playerUuid == null || !isDatabaseEnabled()) return;
+
+    Connection conn = getConnection();
+    if (conn == null) return;
+
     if (playerName == null) playerName = "unknown";
     if (outcome == null || outcome.isBlank()) outcome = "UNKNOWN";
     if (difficulty == null || difficulty.isBlank()) difficulty = "Normal";
@@ -2708,7 +2754,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
         "INSERT INTO proverb_logs (player_uuid, player_name, outcome, difficulty, lang, quote_text) " +
             "VALUES (?, ?, ?, ?, ?, ?)";
 
-    try (PreparedStatement ps = getConnection().prepareStatement(sql)) {
+    try (PreparedStatement ps = conn.prepareStatement(sql)) {
       ps.setString(1, playerUuid.toString());
       ps.setString(2, playerName);
       ps.setString(3, outcome);
@@ -2717,9 +2763,8 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
       ps.setString(6, quoteText);
       ps.executeUpdate();
 
-    } catch (SQLException e) {
-      getLogger().warning("⚠ proverb_logs 保存失敗: " + e.getMessage());
-      e.printStackTrace();
+    } catch (SQLException exception) {
+      getLogger().warning("[Database] proverb persistence failed: " + exception.getMessage());
     }
   }
 
@@ -2760,9 +2805,8 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
         }
       }
 
-    } catch (SQLException e) {
-      getLogger().warning("⚠ proverb_logs 取得失敗: " + e.getMessage());
-      e.printStackTrace();
+    } catch (SQLException exception) {
+      getLogger().warning("[Database] proverb load failed: " + exception.getMessage());
     }
 
     return list;

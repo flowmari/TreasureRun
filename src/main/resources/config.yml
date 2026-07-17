@@ -1683,12 +1683,12 @@ bossBar:
   style: PROGRESS
   title: 制限時間
 database:
-  enabled: true
-  host: minecraft_mysql
+  enabled: false
+  host: localhost
   port: 3306
   database: treasureDB
-  user: root
-  password: rootpassword
+  user: ""
+  password: ""
 restorePlayerStatus: true
 winningChestLocation:
   x: 0

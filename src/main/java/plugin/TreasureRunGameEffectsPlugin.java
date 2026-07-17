@@ -8,7 +8,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.block.Action;
 import org.bukkit.inventory.meta.FireworkMeta;
-import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.Bukkit; // ✅ 追加（runTaskLater用）
 
@@ -17,7 +16,7 @@ import java.util.*;
 
 public class TreasureRunGameEffectsPlugin implements Listener {
 
-  private final JavaPlugin plugin;
+  private final TreasureRunMultiChestPlugin plugin;
   private final Map<Player, Integer> playerTreasureCount = new HashMap<>();
   private final int totalTreasures = 10;
   private final Random random = new Random();
@@ -27,20 +26,6 @@ public class TreasureRunGameEffectsPlugin implements Listener {
 
   // DJイベントが既に走っているかどうか（多重発火ロック）
   private boolean djRunning = false;
-
-  // MySQL information
-  // Local Docker defaults are kept as fallbacks so contributor setup still works.
-  // Real deployments can override these via environment variables.
-  private final String DB_HOST = envOrDefault("TREASURERUN_DB_HOST", "minecraft_mysql");
-  private final String DB_NAME = envOrDefault("TREASURERUN_DB_NAME", "treasureDB");
-  private final String DB_USER = envOrDefault("TREASURERUN_DB_USER", "user");
-  private final String DB_PASSWORD = envOrDefault("TREASURERUN_DB_PASSWORD", "password");
-  private Connection connection;
-
-  private static String envOrDefault(String name, String fallback) {
-    String value = System.getenv(name);
-    return value == null || value.isBlank() ? fallback : value;
-  }
 
   // 内蔵曲リスト
   private final Sound[] djTracks = new Sound[]{
@@ -62,10 +47,17 @@ public class TreasureRunGameEffectsPlugin implements Listener {
   private final int bpm = 140;
   private final long interval = 20L * 60 / bpm; // tick間隔
 
-  public TreasureRunGameEffectsPlugin(JavaPlugin plugin) {
+  public TreasureRunGameEffectsPlugin(TreasureRunMultiChestPlugin plugin) {
     this.plugin = plugin;
-    connectMySQL();
-    createTableIfNotExists();
+  }
+
+  public void initializeDatabaseStorage() {
+    if (!plugin.isDatabaseEnabled()) return;
+
+    Connection connection = plugin.getConnection();
+    if (connection == null) return;
+
+    createTableIfNotExists(connection);
   }
 
   // ✅ DJイベント全体が何tick続くか（MultiChest側で終点を揃える用）
@@ -75,28 +67,14 @@ public class TreasureRunGameEffectsPlugin implements Listener {
     return loops * interval;
   }
 
-  private void connectMySQL() {
-    try {
-      connection = DriverManager.getConnection(
-          "jdbc:mysql://" + DB_HOST + ":3306/" + DB_NAME,
-          DB_USER,
-          DB_PASSWORD
-      );
-      plugin.getLogger().info("MySQL connection established successfully!");
-    } catch (SQLException e) {
-      plugin.getLogger().severe("Failed to connect to MySQL: " + e.getMessage());
-    }
-  }
-
-  private void createTableIfNotExists() {
-    if (connection == null) return;
+  private void createTableIfNotExists(Connection connection) {
     String sql = "CREATE TABLE IF NOT EXISTS player_treasure_count (" +
         "player_name VARCHAR(50) PRIMARY KEY," +
         "count INT NOT NULL)";
     try (PreparedStatement stmt = connection.prepareStatement(sql)) {
       stmt.executeUpdate();
     } catch (SQLException e) {
-      plugin.getLogger().severe("Failed to create table: " + e.getMessage());
+      plugin.getLogger().warning("[Database] player treasure table creation failed: " + e.getMessage());
     }
   }
 
@@ -137,7 +115,11 @@ public class TreasureRunGameEffectsPlugin implements Listener {
   }
 
   private void saveTreasureCountToDB(Player player, int count) {
+    if (!plugin.isDatabaseEnabled()) return;
+
+    Connection connection = plugin.getConnection();
     if (connection == null) return;
+
     String sql = "INSERT INTO player_treasure_count (player_name, count) VALUES (?, ?) " +
         "ON DUPLICATE KEY UPDATE count = ?";
     try (PreparedStatement stmt = connection.prepareStatement(sql)) {
@@ -146,7 +128,7 @@ public class TreasureRunGameEffectsPlugin implements Listener {
       stmt.setInt(3, count);
       stmt.executeUpdate();
     } catch (SQLException e) {
-      plugin.getLogger().severe("Failed to save treasure count: " + e.getMessage());
+      plugin.getLogger().warning("[Database] player treasure persistence failed: " + e.getMessage());
     }
   }
 

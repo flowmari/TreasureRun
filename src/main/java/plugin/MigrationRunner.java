@@ -41,8 +41,7 @@ public class MigrationRunner {
   }
 
   public void runAll() {
-    boolean databaseEnabled = plugin.getConfig().getBoolean("database.enabled", true);
-    if (!databaseEnabled) {
+    if (!plugin.isDatabaseEnabled()) {
       plugin.getLogger().info("[Migration] skipped: database.enabled=false");
       return;
     }
@@ -61,9 +60,8 @@ public class MigrationRunner {
       }
 
       plugin.getLogger().info("[Migration] completed.");
-    } catch (Exception e) {
-      plugin.getLogger().warning("[Migration] failed: " + e.getMessage());
-      e.printStackTrace();
+    } catch (Exception exception) {
+      plugin.getLogger().warning("[Migration] failed: " + exception.getMessage());
     }
   }
 
