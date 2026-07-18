@@ -1999,9 +1999,9 @@ packetMessages:
   replaceTranslatedComponents: true
   auditAllJson: false
 resourcePack:
-  enabled: false
+  enabled: true
   force: false
-  url: ""
+  url: https://github.com/flowmari/TreasureRun/releases/download/v0.1.9-alpha/treasurerun-i18n-pack.zip
   sha1: 5b9c43ae3e1281306b1c0eded2fb096c758b1035
   prompt: TreasureRun uses a multilingual Minecraft resource pack to localize Minecraft language keys. Please accept it for the full i18n experience.
 resourcePackFallback:
