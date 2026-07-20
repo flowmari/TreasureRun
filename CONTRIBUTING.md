@@ -46,11 +46,19 @@ Validate ordinary changes with:
 
 ## Optional Local Game Runtime
 
-To start an isolated local Spigot server with MySQL provided automatically through Docker:
+To start an isolated local Spigot server in the standard mode, without MySQL:
 
 ```bash
 ./scripts/contributor-up.sh YourMinecraftName
 ```
+
+When a change touches MySQL-backed rankings or persistence, enable the optional database path explicitly:
+
+```bash
+./scripts/contributor-up.sh YourMinecraftName --with-db
+```
+
+The `--with-db` mode starts the Docker-backed MySQL service and runs the plugin's MySQL integration tests before starting the playable server.
 
 Then connect from Minecraft Java Edition 1.20.1:
 

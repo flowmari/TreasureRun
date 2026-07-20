@@ -1,5 +1,8 @@
 # Controlled Alpha Tester Post
 
+> [!NOTE]
+> Historical pre-publication document. TreasureRun was subsequently published on SpigotMC with `v0.1.9-alpha`. This file is retained as process history and must not be used as the current project status.
+
 This document contains a small-scope alpha tester post for TreasureRun.
 
 It is intended for a controlled first round of feedback, such as:

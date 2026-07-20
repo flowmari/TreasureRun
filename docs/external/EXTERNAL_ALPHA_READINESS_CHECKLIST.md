@@ -1,5 +1,8 @@
 # External Alpha Readiness Checklist
 
+> [!NOTE]
+> Historical pre-publication document. TreasureRun was subsequently published on SpigotMC with `v0.1.9-alpha`. This file is retained as process history and must not be used as the current project status.
+
 This checklist tracks what must be true before TreasureRun is promoted beyond early-alpha repository status.
 
 ## Completed

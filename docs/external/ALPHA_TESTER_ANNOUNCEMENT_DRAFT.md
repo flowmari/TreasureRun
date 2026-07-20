@@ -1,5 +1,8 @@
 # Alpha Tester Announcement Draft
 
+> [!NOTE]
+> Historical pre-publication document. TreasureRun was subsequently published on SpigotMC with `v0.1.9-alpha`. This file is retained as process history and must not be used as the current project status.
+
 This is a draft for a small, careful alpha call-for-testers.
 
 It is intentionally kept as a repository draft first. Do not publish it to SpigotMC, PaperMC, Reddit, Discord, or other public communities until the maintainer has reviewed the packaging boundary, Paper compatibility status, and support capacity.
