@@ -15,32 +15,16 @@ commands:
     description: Send Minecraft translatable component samples for PacketI18n audit.
     usage: /packetI18nProbe
     permission: treasure.admin
-  gameReload:
+  treasureReload:
     description: Reload TreasureRun config.yml (including language settings)
     usage: /<command>
     permission: treasure.reload
-
-    aliases: [treasureReload]   # ✅ 追加：/treasureReload を /gameReload の別名として有効化
-
-  treasureReload:               # ✅ 追加：別名ではなく「独立コマンド」としても定義（どちらでも動く）
-    description: Reload TreasureRun config.yml (including language settings)
-    usage: /<command>
-    permission: treasure.reload
-
-  game:
-    description: TreasureRun game control
-    usage: /game start | /game end
-    permission: treasure.game
+    aliases: [gameReload]
 
   gameRank:
     description: Show the top 10 players.
     usage: /<command>
     permission: treasure.rank
-
-  givespecialemerald:
-    description: Give the player a special emerald.
-    usage: /<command>
-    permission: treasure.givespecialemerald
 
   craftspecialemerald:
     description: Craft a special emerald using 3 diamonds.
@@ -66,7 +50,6 @@ commands:
     description: Start TreasureRun game (official)
     usage: /gamestart [easy|normal|hard]
     permission: treasure.start
-    aliases: [ gameStart ]
 
   clearStageBlocks:
     description: Clear nearby difficulty blocks placed by TreasureRun.
@@ -105,25 +88,25 @@ commands:
     permission: treasure.debug.heartbeat
 
 permissions:
+  treasure.admin:
+    description: Administrative audit commands.
+    default: op
+
   treasure.start:
-    description: /gameStart コマンドを使用できる権限
+    description: /gamestart コマンドを使用できる権限
     default: true
 
   treasure.reload:
-    description: /gameReload または /treasureReload で config.yml を再読み込みできる権限
+    description: /treasureReload または /gameReload で config.yml を再読み込みできる権限
     default: op
 
   treasure.game:
-    description: /game start|end を使用できる権限
+    description: /gameEnd コマンドを使用できる権限
     default: op
 
   treasure.rank:
     description: /gameRank コマンドを使用できる権限
     default: true
-
-  treasure.givespecialemerald:
-    description: /givespecialemerald コマンドを使用できる権限
-    default: op
 
   treasure.craftspecialemerald:
     description: /craftspecialemerald コマンドを使用できる権限

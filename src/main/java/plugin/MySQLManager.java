@@ -27,7 +27,6 @@ public class MySQLManager implements CommandExecutor {
 
   public MySQLManager(JavaPlugin plugin) {
     this.plugin = plugin;
-    this.plugin.getCommand("dbstatus").setExecutor(this); // コマンド登録
   }
 
   public boolean connect() {
