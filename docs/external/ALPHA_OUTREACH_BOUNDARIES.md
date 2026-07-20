@@ -1,5 +1,8 @@
 # Alpha Outreach Boundaries
 
+> [!NOTE]
+> Historical pre-publication document. TreasureRun was subsequently published on SpigotMC with `v0.1.9-alpha`. This file is retained as process history and must not be used as the current project status.
+
 This document defines what TreasureRun may and may not claim during early alpha outreach.
 
 ## Allowed claims

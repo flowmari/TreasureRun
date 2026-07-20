@@ -320,9 +320,9 @@ The full README that existed before this contributor-focused entrance was introd
 
 ## Project Status
 
-- Stage: early alpha open-source project
+- Stage: public early alpha
+- Distribution: GitHub Releases and SpigotMC
+- Current milestone: define and validate the minimum server-hosted round lifecycle tracked in #136
 - Minecraft target: Spigot 1.20.1
 - Java version: 17
 - License: MIT
-
-Fresh-clone QuickStart PASS is documented, Good first issues are open, and controlled alpha feedback collection has started. The next milestone is to respond to real alpha feedback with a small follow-up PR before broader community publication.
