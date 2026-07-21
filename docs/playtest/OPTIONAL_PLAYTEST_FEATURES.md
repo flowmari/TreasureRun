@@ -195,8 +195,4 @@ Confirm that ranking feedback appears in chat. Deeper database and Ranking API v
 /checktreasureemerald
 ```
 
-The full command reference is here:
-
-```text
-docs/COMMANDS.md
-```
+See the [full command reference](../COMMANDS.md).
