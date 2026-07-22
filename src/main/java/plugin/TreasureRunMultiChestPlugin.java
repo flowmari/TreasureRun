@@ -2207,6 +2207,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
 
   private void restoreWorldAndPlayer(Player player) {
     UUID uuid = player.getUniqueId();
+    World gameplayWorld = player.getWorld();
 
     Location original = originalLocations.remove(uuid);
     if (original != null && player.isOnline()) {
@@ -2214,10 +2215,9 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     }
 
     if (previousWorldTime >= 0) {
-      World w = player.getWorld();
-      w.setTime(previousWorldTime);
-      w.setStorm(previousStorm);
-      w.setThundering(previousThundering);
+      gameplayWorld.setTime(previousWorldTime);
+      gameplayWorld.setStorm(previousStorm);
+      gameplayWorld.setThundering(previousThundering);
       previousWorldTime = -1;
     }
   }

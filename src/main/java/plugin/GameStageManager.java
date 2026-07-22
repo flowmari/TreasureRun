@@ -34,6 +34,10 @@ public class GameStageManager implements Listener {
 
   private final TreasureRunMultiChestPlugin plugin;
 
+  private final ArenaWorldManager arenaWorldManager;
+
+  private static final int ARENA_WATER_RADIUS = 64;
+
   // ✅ UFO（型が違っても壊れないように Object で保持）
   private final Object ufo;
 
@@ -69,102 +73,23 @@ public class GameStageManager implements Listener {
   }
 
   public GameStageManager(TreasureRunMultiChestPlugin plugin) {
-    this(plugin, null);
+    this(plugin, null, new ArenaWorldManager(plugin));
     // ❌ 起動時にMSZを常時起動しない
     // MSZは buildSeasideStageAndTeleport() のステージ生成後に startMovingSafetyZoneTask() する
   }
 
-  // =======================================================
-  // ✅ Seaside Ocean "確実に海上" 補助
-  //   - water上に 5x5 が「乗る」中心を選ぶ
-  //   - 海が見つからない場合は足元を海に変換してfallbackする
-  // =======================================================
-
-  // ✅ 中心(cx,cz)に対して「本当に開けた外洋ステージが乗る」か判定
-  // - radius 内の水面が十分多い
-  // - 周囲に土/砂/草/葉/丸太などの陸地・森素材が少ない
-  // - これで海岸・川・ジャングル横を避ける
-  private boolean isOpenOceanPlatform(World w, int cx, int y, int cz) {
-    int radius = 48; // 見た目に森が近くならない最低ライン
-    int waterLike = 0;
-    int landLike = 0;
-    int total = 0;
-
-    for (int dx = -radius; dx <= radius; dx += 4) {
-      for (int dz = -radius; dz <= radius; dz += 4) {
-        total++;
-
-        int x = cx + dx;
-        int z = cz + dz;
-        int topY = w.getHighestBlockYAt(x, z);
-        Material top = w.getBlockAt(x, topY, z).getType();
-
-        if (top == Material.WATER || top == Material.KELP || top == Material.SEAGRASS || top == Material.TALL_SEAGRASS) {
-          waterLike++;
-          continue;
-        }
-
-        // 海岸・森・ジャングル・陸地っぽいものを強く拒否
-        String name = top.name();
-        if (top.isSolid()
-            || name.contains("LEAVES")
-            || name.contains("LOG")
-            || name.contains("WOOD")
-            || name.contains("DIRT")
-            || name.contains("GRASS")
-            || name.contains("SAND")
-            || name.contains("STONE")
-            || name.contains("CLAY")
-            || name.contains("MUD")
-            || name.contains("VINE")) {
-          landLike++;
-        }
-      }
-    }
-
-    // ほぼ水で、陸地・森が少ない場所だけ採用
-    double waterRate = total == 0 ? 0.0 : (waterLike * 1.0 / total);
-    double landRate = total == 0 ? 1.0 : (landLike * 1.0 / total);
-
-    return waterRate >= 0.72 && landRate <= 0.08;
-  }
-
-  // ✅ 見つけた水地点(x,z,y)から、開けた外洋中心だけを返す
-  // 見つからない場合は null。海岸・川・ジャングル横は採用しない。
-  private Location pickBestWaterCenter(World w, int x, int y, int z) {
-    int[] offsets = {0, 32, -32, 64, -64, 96, -96, 128, -128};
-
-    for (int ox : offsets) {
-      for (int oz : offsets) {
-        int cx = x + ox;
-        int cz = z + oz;
-
-        if (isOpenOceanPlatform(w, cx, y, cz)) {
-          return new Location(w, cx, y, cz);
-        }
-      }
-    }
-
-    return null;
-  }
-
-
   // ✅ 海上ステージ用：周囲を強制的に「水面＋上空クリア」にする
   // これで海岸・砂浜・ジャングル横に寄っても、ステージ周囲だけは必ず海になる
-  private void createFallbackOceanPatch(Location origin, int radius) {
+  private void prepareOwnedArenaWater(Location origin, int radius) {
     if (origin == null || origin.getWorld() == null) return;
     World w = origin.getWorld();
+    arenaWorldManager.requireOwnedWorld(w);
 
     int cx = origin.getBlockX();
     int cz = origin.getBlockZ();
 
-    // origin が水ならそのYを水面にする。水でなければ現在地付近の最高地点を基準にする。
+    // The arena uses a fixed water level. It must not inherit terrain height from another world.
     int waterY = origin.getBlockY();
-    if (w.getBlockAt(cx, waterY, cz).getType() != Material.WATER) {
-      int topY = w.getHighestBlockYAt(origin);
-      Material topType = w.getBlockAt(cx, topY, cz).getType();
-      waterY = topType == Material.WATER ? topY : topY + 1;
-    }
 
     for (int dx = -radius; dx <= radius; dx++) {
       for (int dz = -radius; dz <= radius; dz++) {
@@ -193,8 +118,17 @@ public class GameStageManager implements Listener {
 
   // ✅ UFO を渡せる版（TreasureRunMultiChestPlugin 側で new GameStageManager(this, ufo) にできる）
   public GameStageManager(TreasureRunMultiChestPlugin plugin, Object ufo) {
+    this(plugin, ufo, new ArenaWorldManager(plugin));
+  }
+
+  GameStageManager(
+      TreasureRunMultiChestPlugin plugin,
+      Object ufo,
+      ArenaWorldManager arenaWorldManager
+  ) {
     this.plugin = plugin;
     this.ufo = ufo;
+    this.arenaWorldManager = arenaWorldManager;
     startTreasureShopOpenViewSecretTradeScanner();
   }
 
@@ -269,28 +203,17 @@ public class GameStageManager implements Listener {
         + " gsm=" + System.identityHashCode(this)
     );
 
-    // ✅ 本当の外洋ステージ固定：
-    // 近場の川・海岸・ジャングル横を拾わない。広域から「開けた海」だけを採用する。
-    Location base = forceFindOcean(player.getLocation());
-
-    if (base != null) {
-      plugin.getLogger().info("🌊 [OpenOcean] 開けた外洋を検出しました: x="
-          + base.getBlockX() + " y=" + base.getBlockY() + " z=" + base.getBlockZ());
-    }
-
-    // それでも見つからない場合は、プレイヤーから遠く離れた場所に人工外洋を作る
-    if (base == null) {
-      base = player.getLocation().clone().add(320, 0, 320);
-      plugin.getLogger().warning("⚠ [OpenOcean] 外洋が見つからなかったため、遠方に人工外洋ステージを生成します: x="
-          + base.getBlockX() + " z=" + base.getBlockZ());
-      createFallbackOceanPatch(base, 128);
-    }
-
+    // Server-safety boundary: stage construction is confined to the plugin-owned arena world.
+    // The initiating player's current world is never used as a mutable gameplay canvas.
+    Location base = arenaWorldManager.getArenaBase();
     World w = base.getWorld();
+    arenaWorldManager.requireOwnedWorld(w);
 
-    // ✅ 最重要：見つけた場所が海でも、周囲を必ず海に整える
-    // これで海岸・砂浜・ジャングル横に寄っても、ステージ周辺は海上になる
-    createFallbackOceanPatch(base, 128);
+    plugin.getLogger().info("[Arena] Preparing isolated stage in " + w.getName()
+        + " at x=" + base.getBlockX() + " y=" + base.getBlockY()
+        + " z=" + base.getBlockZ());
+
+    prepareOwnedArenaWater(base, ARENA_WATER_RADIUS);
 
     Location stageCenter = base.clone();
 
@@ -442,55 +365,6 @@ public class GameStageManager implements Listener {
       }
 
     }.runTaskTimer(plugin, 0L, 4L);
-  }
-
-  // =======================================================
-  // 海探索（元のロジック＋バックアップ版）
-  // =======================================================
-  private Location findNearbySeaLocation(Location origin, int radius) {
-    World w = origin.getWorld();
-
-    for (int dx = -radius; dx <= radius; dx += 8) {
-      for (int dz = -radius; dz <= radius; dz += 8) {
-        Location p = origin.clone().add(dx, 0, dz);
-        int py = w.getHighestBlockYAt(p);
-
-        for (int yy = py; yy >= py - 6 && yy >= 50; yy--) {
-          Material m = w.getBlockAt(p.getBlockX(), yy, p.getBlockZ()).getType();
-          if (m == Material.WATER) {
-            Location center = pickBestWaterCenter(w, p.getBlockX(), yy, p.getBlockZ());
-            if (center != null) return center;
-          }
-        }
-      }
-    }
-    return null;
-  }
-
-  /** 海を絶対に見つけるための広域スキャン（元のまま保持） */
-  private Location forceFindOcean(Location origin) {
-    World w = origin.getWorld();
-
-    // 半径を徐々に拡大して海を探索（最大256）
-    for (int r = 96; r <= 768; r += 32) {
-      for (int dx = -r; dx <= r; dx += 8) {
-        for (int dz = -r; dz <= r; dz += 8) {
-
-          Location p = origin.clone().add(dx, 0, dz);
-          int py = w.getHighestBlockYAt(p);
-
-          // 水面〜その少し下までを探索
-          for (int yy = py; yy >= py - 10 && yy >= 40; yy--) {
-            Material m = w.getBlockAt(p.getBlockX(), yy, p.getBlockZ()).getType();
-            if (m == Material.WATER) {
-              return pickBestWaterCenter(w, p.getBlockX(), yy, p.getBlockZ());
-            }
-          }
-        }
-      }
-    }
-
-    return null;
   }
 
   // =======================================================
@@ -815,9 +689,9 @@ public class GameStageManager implements Listener {
 
     java.util.List<Location> removedTraderLocs = new java.util.ArrayList<>();
 
-    for (World w : Bukkit.getWorlds()) {
-      for (org.bukkit.entity.Entity e : w.getEntities()) {
-        if (!(e instanceof WanderingTrader trader)) continue;
+    World arenaWorld = arenaWorldManager.getArenaWorld();
+    for (org.bukkit.entity.Entity e : arenaWorld.getEntities()) {
+      if (!(e instanceof WanderingTrader trader)) continue;
 
         String rawName = trader.getCustomName();
         if (rawName == null) continue;
@@ -833,13 +707,11 @@ public class GameStageManager implements Listener {
             removed++;
           }
         } catch (Exception ignored) {}
-      }
     }
 
     // 行商人の近くにいる TraderLlama も掃除
-    for (World w : Bukkit.getWorlds()) {
-      for (org.bukkit.entity.Entity e : w.getEntities()) {
-        if (!(e instanceof TraderLlama llama)) continue;
+    for (org.bukkit.entity.Entity e : arenaWorld.getEntities()) {
+      if (!(e instanceof TraderLlama llama)) continue;
 
         Location loc = llama.getLocation();
         boolean nearRemovedTrader = false;
@@ -863,7 +735,6 @@ public class GameStageManager implements Listener {
             removed++;
           }
         } catch (Exception ignored) {}
-      }
     }
 
     stageTrader = null;
