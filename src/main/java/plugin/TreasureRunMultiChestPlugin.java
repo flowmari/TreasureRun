@@ -30,6 +30,7 @@ import org.bukkit.event.HandlerList; // ✅ treasureReload: 古いListener解除
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryOpenEvent;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
+import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
@@ -82,7 +83,10 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
   // ================================
   // ゲーム状態
   // ================================
-  private boolean isRunning = false;
+  private final RoundLifecycle roundLifecycle = new RoundLifecycle();
+  private UUID activeRoundPlayerId;
+  private BukkitTask countdownDelayTask;
+  private BukkitTask countdownTask;
   private long startTime;
   private String difficulty = "Normal";
   private BossBar bossBar;
@@ -447,7 +451,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     this.chestSound = new ChestProximitySoundService(
         this,
         this.treasureChestManager,
-        () -> this.isRunning
+        this::isGameRunning
     );
 
     // ✅ Heartbeat: サービス生成（onEnableで生成）
@@ -568,25 +572,136 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     }
   }
 
-  @Override
-  public void onDisable() {
-    if (startThemePlayer != null) startThemePlayer.stopAll();
-    if (chestSound != null) chestSound.stopAll();
-    if (heartbeatSoundService != null) heartbeatSoundService.stopAll();
+  private enum CleanupReason {
+    SUCCESS,
+    TIME_UP,
+    MANUAL_STOP,
+    QUIT,
+    PREPARATION_FAILED,
+    PLUGIN_DISABLE
+  }
 
-    stopVanillaMusicSuppressAll();
+  private Player getActiveRoundPlayer() {
+    return activeRoundPlayerId == null ? null : Bukkit.getPlayer(activeRoundPlayerId);
+  }
 
-    if (bossBar != null) bossBar.removeAll();
+  private boolean isActiveRoundPlayer(Player player) {
+    return player != null
+        && activeRoundPlayerId != null
+        && activeRoundPlayerId.equals(player.getUniqueId());
+  }
 
+  private void cancelCountdownTasks() {
+    if (countdownDelayTask != null) {
+      countdownDelayTask.cancel();
+      countdownDelayTask = null;
+    }
+    if (countdownTask != null) {
+      countdownTask.cancel();
+      countdownTask = null;
+    }
+  }
+
+  private void stopRoundActivity(Player player) {
+    cancelCountdownTasks();
+
+    if (taskId != -1) {
+      Bukkit.getScheduler().cancelTask(taskId);
+      taskId = -1;
+    }
     if (finishTitleTaskId != -1) {
       Bukkit.getScheduler().cancelTask(finishTitleTaskId);
       finishTitleTaskId = -1;
     }
-
     if (timeUpTitleTaskId != -1) {
       Bukkit.getScheduler().cancelTask(timeUpTitleTaskId);
       timeUpTitleTaskId = -1;
     }
+
+    if (player != null) {
+      if (startThemePlayer != null) startThemePlayer.stop(player);
+      stopVanillaMusicSuppress(player);
+      if (heartbeatSoundService != null) heartbeatSoundService.stop(player);
+      if (treasureRunGameEffectsPlugin != null) {
+        treasureRunGameEffectsPlugin.stopFinalCountdownBeeps(player);
+      }
+      if (chestSound != null) chestSound.stop(player);
+    }
+
+    if (bossBar != null) {
+      bossBar.removeAll();
+      bossBar = null;
+    }
+  }
+
+  private void clearRoundArtifacts() {
+    if (treasureChestManager != null) treasureChestManager.removeAllChests();
+    if (gameStageManager != null) {
+      gameStageManager.clearDifficultyBlocks();
+      gameStageManager.clearShopEntities();
+    }
+  }
+
+  private boolean beginTerminalReset(Player player, CleanupReason reason) {
+    if (!roundLifecycle.beginReset()) return false;
+
+    stopRoundActivity(player);
+
+    if (gameStageManager != null) {
+      gameStageManager.clearDifficultyBlocks();
+      if (reason == CleanupReason.TIME_UP) {
+        gameStageManager.clearShopEntities();
+      }
+    }
+    return true;
+  }
+
+  private void finishRoundCleanup(Player player, CleanupReason reason, boolean restorePlayer) {
+    if (!roundLifecycle.isResetting() && !roundLifecycle.beginReset()) return;
+    if (!roundLifecycle.claimCleanup()) return;
+
+    UUID playerId = player != null ? player.getUniqueId() : activeRoundPlayerId;
+
+    try {
+      stopRoundActivity(player);
+      clearRoundArtifacts();
+
+      if (playerId != null) {
+        playerScores.remove(playerId);
+        if (reason != CleanupReason.SUCCESS && reason != CleanupReason.TIME_UP) {
+          activeGameResultIds.remove(playerId);
+        }
+        if (reason == CleanupReason.QUIT) {
+          consecutiveTimeUpCounts.remove(playerId);
+          playerLastLang.remove(playerId);
+        }
+      }
+
+      if (restorePlayer && player != null) {
+        restoreWorldAndPlayer(player);
+      }
+    } finally {
+      currentStageCenter = null;
+      totalChestsRemaining = 0;
+      activeRoundPlayerId = null;
+      roundLifecycle.completeReset();
+    }
+  }
+
+  @Override
+  public void onDisable() {
+    Player activePlayer = getActiveRoundPlayer();
+    if (roundLifecycle.isActive()) {
+      finishRoundCleanup(activePlayer, CleanupReason.PLUGIN_DISABLE, true);
+    } else {
+      stopRoundActivity(activePlayer);
+      clearRoundArtifacts();
+    }
+
+    if (startThemePlayer != null) startThemePlayer.stopAll();
+    if (chestSound != null) chestSound.stopAll();
+    if (heartbeatSoundService != null) heartbeatSoundService.stopAll();
+    stopVanillaMusicSuppressAll();
 
     // ✅ LanguageSelectGui の Listener 解除（停止時の後片付け）
     if (languageSelectGui != null) {
@@ -596,17 +711,6 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
 
     closeDatabaseConnection();
     if (rankTicker != null) rankTicker.stop();
-    if (treasureChestManager != null) treasureChestManager.removeAllChests();
-
-    if (gameStageManager != null) {
-      gameStageManager.clearDifficultyBlocks();
-      gameStageManager.clearShopEntities();
-    }
-
-    if (taskId != -1) {
-      Bukkit.getScheduler().cancelTask(taskId);
-      taskId = -1;
-    }
 
     // =======================================================
     // ✅ ✅ ✅ 追加：Repository参照を明示的に切る（安全）
@@ -638,77 +742,41 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     }
   }
 
+  @EventHandler
+  public void onPlayerJoin(PlayerJoinEvent event) {
+    Player player = event.getPlayer();
+    if (!roundLifecycle.isActive() && originalLocations.containsKey(player.getUniqueId())) {
+      Bukkit.getScheduler().runTask(this, () -> restoreWorldAndPlayer(player));
+    }
+  }
+
   // ✅ 追加：ゲーム中にプレイヤーが抜けても残骸が残らないように掃除
   @EventHandler
   public void onPlayerQuit(PlayerQuitEvent event) {
     Player player = event.getPlayer();
-    if (!isRunning) {
+    if (!roundLifecycle.isActive() || !isActiveRoundPlayer(player)) {
       activeGameResultIds.remove(player.getUniqueId());
       return;
     }
 
-    // ✅✅✅ 追加：落ちても保存（WIN扱いにしない）
-    try {
-      UUID uuid = player.getUniqueId();
-      int score = playerScores.getOrDefault(uuid, 0);
-      long elapsedSec = Math.max(0, (System.currentTimeMillis() - startTime) / 1000L);
+    if (roundLifecycle.isRunning()) {
+      // ✅✅✅ 追加：落ちても保存（WIN扱いにしない）
+      try {
+        UUID uuid = player.getUniqueId();
+        int score = playerScores.getOrDefault(uuid, 0);
+        long elapsedSec = Math.max(0, (System.currentTimeMillis() - startTime) / 1000L);
 
-      saveScore(player, score, elapsedSec, difficulty);
-      addSeasonScore(player, score, false, null, "QUIT");
+        saveScore(player, score, elapsedSec, difficulty);
+        addSeasonScore(player, score, false, null, "QUIT");
 
-      getLogger().info("[DB] saved on quit: player=" + player.getName()
-          + " score=" + score + " time=" + elapsedSec + " diff=" + difficulty);
-    } catch (Throwable t) {
-      getLogger().warning("⚠ onQuit save failed: " + t.getMessage());
+        getLogger().info("[DB] saved on quit: player=" + player.getName()
+            + " score=" + score + " time=" + elapsedSec + " diff=" + difficulty);
+      } catch (Throwable t) {
+        getLogger().warning("⚠ onQuit save failed: " + t.getMessage());
+      }
     }
 
-    if (startThemePlayer != null) startThemePlayer.stop(player);
-    stopVanillaMusicSuppress(player);
-    if (heartbeatSoundService != null) heartbeatSoundService.stop(player);
-    if (treasureRunGameEffectsPlugin != null) treasureRunGameEffectsPlugin.stopFinalCountdownBeeps(player);
-    if (chestSound != null) chestSound.stop(player);
-
-    if (taskId != -1) {
-      Bukkit.getScheduler().cancelTask(taskId);
-      taskId = -1;
-    }
-
-    if (finishTitleTaskId != -1) {
-      Bukkit.getScheduler().cancelTask(finishTitleTaskId);
-      finishTitleTaskId = -1;
-    }
-
-    if (timeUpTitleTaskId != -1) {
-      Bukkit.getScheduler().cancelTask(timeUpTitleTaskId);
-      timeUpTitleTaskId = -1;
-    }
-
-    if (bossBar != null) bossBar.removeAll();
-    if (treasureChestManager != null) treasureChestManager.removeAllChests();
-
-    if (gameStageManager != null) {
-      gameStageManager.clearDifficultyBlocks();
-      gameStageManager.clearShopEntities();
-    }
-
-    isRunning = false;
-    playerScores.remove(player.getUniqueId());
-    activeGameResultIds.remove(player.getUniqueId());
-    originalLocations.remove(player.getUniqueId());
-
-    // ✅ ログアウト時：連続TIME_UPカウントは切る（事故防止）
-    consecutiveTimeUpCounts.remove(player.getUniqueId());
-
-    // ✅ ✅ ✅ 追加：ログアウト時に言語保持も消す（事故防止）
-    playerLastLang.remove(player.getUniqueId());
-
-    if (previousWorldTime >= 0) {
-      World w = player.getWorld();
-      w.setTime(previousWorldTime);
-      w.setStorm(previousStorm);
-      w.setThundering(previousThundering);
-      previousWorldTime = -1;
-    }
+    finishRoundCleanup(player, CleanupReason.QUIT, true);
   }
 
   // =======================================================
@@ -1291,7 +1359,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
 
     // ✅ treasureReload
     if (cmd.getName().equalsIgnoreCase("treasureReload")) {
-      if (isRunning) {
+      if (roundLifecycle.isActive()) {
         player.sendMessage(ChatColor.RED + getI18n().tr(getPlayerLangOrDefault(player.getUniqueId()), "finalAudit.command.reloadBlockedRunning"));
         return true;
       }
@@ -1318,7 +1386,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
       this.chestSound = new ChestProximitySoundService(
           this,
           this.treasureChestManager,
-          () -> this.isRunning
+          this::isGameRunning
       );
 
       // 旧GUIが開いてる人がいたら閉じる（古いlistener/slot対応が残らないように）
@@ -1382,7 +1450,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     // ✅ /gameStart /gamestart は「GUIを出すだけ」
     if (cmd.getName().equalsIgnoreCase("gameStart") || cmd.getName().equalsIgnoreCase("gamestart")) {
 
-      if (isRunning) {
+      if (roundLifecycle.isActive()) {
         player.sendMessage(ChatColor.RED + getI18n().tr(getPlayerLangOrDefault(player.getUniqueId()), "finalAudit.command.gameAlreadyRunning"));
         return true;
       }
@@ -1454,56 +1522,28 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     }
 
     if (cmd.getName().equalsIgnoreCase("gameEnd")) {
+      if (!roundLifecycle.isActive() || !isActiveRoundPlayer(player)) {
+        return true;
+      }
+
       UUID uuid = player.getUniqueId();
       int score = playerScores.getOrDefault(uuid, 0);
-      long elapsedSec = Math.max(0, (System.currentTimeMillis() - startTime) / 1000L);
 
-      player.sendMessage(
-          ChatColor.GOLD + trPlayer(
-              player,
-              "gameplay.pickup.gameEndTotalScore",
-              I18n.Placeholder.of("{score}", String.valueOf(score))
-          )
-      );
-
-      saveScore(player, score, elapsedSec, difficulty);
-
-      if (treasureRunGameEffectsPlugin != null) treasureRunGameEffectsPlugin.stopFinalCountdownBeeps(player);
-      if (heartbeatSoundService != null) heartbeatSoundService.stop(player);
-      if (chestSound != null) chestSound.stop(player);
-
-      if (startThemePlayer != null) startThemePlayer.stop(player);
-      stopVanillaMusicSuppress(player);
-
-      if (taskId != -1) {
-        Bukkit.getScheduler().cancelTask(taskId);
-        taskId = -1;
+      if (roundLifecycle.isRunning()) {
+        long elapsedSec = Math.max(0, (System.currentTimeMillis() - startTime) / 1000L);
+        player.sendMessage(
+            ChatColor.GOLD + trPlayer(
+                player,
+                "gameplay.pickup.gameEndTotalScore",
+                I18n.Placeholder.of("{score}", String.valueOf(score))
+            )
+        );
+        saveScore(player, score, elapsedSec, difficulty);
       }
-
-      if (finishTitleTaskId != -1) {
-        Bukkit.getScheduler().cancelTask(finishTitleTaskId);
-        finishTitleTaskId = -1;
-      }
-
-      if (timeUpTitleTaskId != -1) {
-        Bukkit.getScheduler().cancelTask(timeUpTitleTaskId);
-        timeUpTitleTaskId = -1;
-      }
-
-      if (gameStageManager != null) {
-        gameStageManager.clearDifficultyBlocks();
-        gameStageManager.clearShopEntities();
-      }
-
-      isRunning = false;
-      if (bossBar != null) bossBar.removeAll();
-      if (treasureChestManager != null) treasureChestManager.removeAllChests();
-      playerScores.remove(uuid);
 
       // ✅ 手動終了は「TIME_UP連続」ではないのでリセット
       consecutiveTimeUpCounts.put(uuid, 0);
-
-      restoreWorldAndPlayer(player);
+      finishRoundCleanup(player, CleanupReason.MANUAL_STOP, true);
       return true;
     }
 
@@ -1549,7 +1589,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     event.setCancelled(true);
     Player player = event.getPlayer();
 
-    if (isRunning) {
+    if (roundLifecycle.isActive()) {
       player.sendMessage(ChatColor.RED + getI18n().tr(getPlayerLangOrDefault(player.getUniqueId()), "finalAudit.command.gameAlreadyRunning"));
       return;
     }
@@ -1596,7 +1636,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
   // =======================================================
   @EventHandler
   public void onInventoryOpen(InventoryOpenEvent event) {
-    if (!isRunning) return;
+    if (!roundLifecycle.isRunning()) return;
     if (!(event.getPlayer() instanceof Player player)) return;
     if (treasureChestManager == null) return;
 
@@ -1610,7 +1650,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
 
     if (!treasureChestManager.isOurChest(chestBlock)) return;
     if (chestBlock.getType() != Material.CHEST) return;
-    if (!isRunning) return;
+    if (!roundLifecycle.isRunning()) return;
 
     boolean hadAnyItem = false;
     boolean jackpot = false;
@@ -1692,35 +1732,12 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
       return;
     }
 
-    if (!isRunning) return;
-    isRunning = false;
+    if (!beginTerminalReset(player, CleanupReason.SUCCESS)) return;
+
+    final UUID terminalRoundId = activeGameResultIds.get(player.getUniqueId());
 
     // ✅ SUCCESS（完走）したら「TIME_UP連続」はリセット
     consecutiveTimeUpCounts.put(player.getUniqueId(), 0);
-
-    if (heartbeatSoundService != null) heartbeatSoundService.stop(player);
-    if (chestSound != null) chestSound.stop(player);
-    if (treasureRunGameEffectsPlugin != null) treasureRunGameEffectsPlugin.stopFinalCountdownBeeps(player);
-
-    if (startThemePlayer != null) startThemePlayer.stop(player);
-    stopVanillaMusicSuppress(player);
-
-    if (gameStageManager != null) gameStageManager.clearDifficultyBlocks();
-
-    if (taskId != -1) {
-      Bukkit.getScheduler().cancelTask(taskId);
-      taskId = -1;
-    }
-
-    if (finishTitleTaskId != -1) {
-      Bukkit.getScheduler().cancelTask(finishTitleTaskId);
-      finishTitleTaskId = -1;
-    }
-
-    if (timeUpTitleTaskId != -1) {
-      Bukkit.getScheduler().cancelTask(timeUpTitleTaskId);
-      timeUpTitleTaskId = -1;
-    }
 
     final int finalScore = playerScores.getOrDefault(player.getUniqueId(), 0);
 
@@ -1766,7 +1783,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     final long finishDelay = rewardStartDelay + djTotalTicksFinal;
 
     Bukkit.getScheduler().runTaskLater(TreasureRunMultiChestPlugin.this, () -> {
-      if (!player.isOnline()) return;
+      if (!player.isOnline() || !Objects.equals(activeGameResultIds.get(player.getUniqueId()), terminalRoundId)) return;
 
       if (rankRewardManager != null && rank > 0) {
         rankRewardManager.giveRankRewardWithEffect(player, rank, djTotalTicksFinal);
@@ -1780,7 +1797,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     final long titleStartDelay = rewardStartDelay + 1;
 
     Bukkit.getScheduler().runTaskLater(TreasureRunMultiChestPlugin.this, () -> {
-      if (!player.isOnline()) return;
+      if (!player.isOnline() || !Objects.equals(activeGameResultIds.get(player.getUniqueId()), terminalRoundId)) return;
 
       final long keepDuration = Math.max(0L, finishDelay - titleStartDelay);
       final long period = 10L;
@@ -1838,6 +1855,8 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
 
     Bukkit.getScheduler().runTaskLater(TreasureRunMultiChestPlugin.this, () -> {
 
+      if (!Objects.equals(activeGameResultIds.get(playerUuid), terminalRoundId)) return;
+
       if (finishTitleTaskId != -1) {
         Bukkit.getScheduler().cancelTask(finishTitleTaskId);
         finishTitleTaskId = -1;
@@ -1857,14 +1876,6 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
         // ✅ ここでは哲学文を出さない（位置を下に移動するため）
       }
 
-      if (gameStageManager != null) {
-        gameStageManager.clearDifficultyBlocks();
-        gameStageManager.clearShopEntities();
-      }
-
-      if (bossBar != null) bossBar.removeAll();
-      if (treasureChestManager != null) treasureChestManager.removeAllChests();
-      playerScores.remove(playerUuid);
 
       Bukkit.broadcastMessage(
           ChatColor.AQUA + getI18n().tr(
@@ -1895,7 +1906,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
         }
       }
 
-      restoreWorldAndPlayer(player);
+      finishRoundCleanup(player, CleanupReason.SUCCESS, true);
 
     }, finishDelay);
   }
@@ -1928,7 +1939,11 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
   private void startGame(Player player) {
     getLogger().info("[StartTheme] startGame called by " + player.getName());
 
-    isRunning = true;
+    countdownTask = null;
+    if (!isActiveRoundPlayer(player) || !roundLifecycle.beginRunning()) {
+      finishRoundCleanup(player, CleanupReason.PREPARATION_FAILED, true);
+      return;
+    }
     startTime = System.currentTimeMillis();
 
     if (heartbeatSoundService != null) {
@@ -1945,7 +1960,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
             long remaining = Math.max(0L, (long) timeLimit - elapsed);
             return (int) Math.max(0L, remaining);
           },
-          () -> this.isRunning,
+          this::isGameRunning,
           () -> 0,
           () -> nearestTreasureProximity(player)
       );
@@ -2007,15 +2022,8 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
       }
 
       if (remaining <= 0) {
-        if (taskId != -1) {
-          Bukkit.getScheduler().cancelTask(taskId);
-          taskId = -1;
-        }
-
-        if (gameStageManager != null) {
-          gameStageManager.clearDifficultyBlocks();
-          gameStageManager.clearShopEntities();
-        }
+        if (!beginTerminalReset(player, CleanupReason.TIME_UP)) return;
+        final UUID terminalRoundId = activeGameResultIds.get(player.getUniqueId());
 
         // ✅ TIME_UP：哲学文（固定位置で最後に出すため、ここでは「保持」だけ）
         final String timeUpLang = resolveCurrentLang(player);
@@ -2116,22 +2124,6 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
         // ✅ ここに追加（TIME_UP: scoreだけ加算 / wins・best_timeは無し）
         addSeasonScore(player, finalScore, false, null, "TIME_UP");
 
-        if (startThemePlayer != null) startThemePlayer.stop(player);
-        stopVanillaMusicSuppress(player);
-
-        if (heartbeatSoundService != null) heartbeatSoundService.stop(player);
-
-        if (treasureRunGameEffectsPlugin != null) {
-          treasureRunGameEffectsPlugin.stopFinalCountdownBeeps(player);
-        }
-
-        if (chestSound != null) chestSound.stop(player);
-
-        isRunning = false;
-        if (bossBar != null) bossBar.removeAll();
-        if (treasureChestManager != null) treasureChestManager.removeAllChests();
-        playerScores.remove(player.getUniqueId());
-
         // ✅ ✅ ✅ TIME_UP の表示順（完全版）：
         // 1) Title に Got: x/y を固定で見せる（keepTicks）
         // 2) 画面切替（restoreWorldAndPlayer）
@@ -2140,7 +2132,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
         // 5) ✅ 3回連続の時だけ：場面切替後に “サブタイトルの表示場所” に水色で OVERCOMING ADVERSITY を出す
         final String outcomeNoticeLangFinal = outcomeNoticeLang;
         Bukkit.getScheduler().runTaskLater(TreasureRunMultiChestPlugin.this, () -> {
-          if (!player.isOnline()) return;
+          if (!player.isOnline() || !Objects.equals(activeGameResultIds.get(player.getUniqueId()), terminalRoundId)) return;
 
           // ✅ 画面切替直前：日本語案内が次画面で上のほうに残りにくいように「空行で押し上げる」
           // （チャットを消さず、追加で流すだけ）
@@ -2149,7 +2141,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
           }
 
           // ✅ 画面切替を先に行う（次の画面で英語が来るようにする）
-          restoreWorldAndPlayer(player);
+          finishRoundCleanup(player, CleanupReason.TIME_UP, true);
 
           // ✅ ✅ ✅ 3回連続TIME_UPのときだけ：場面切替後に “サブタイトル位置” へ表示（TreasureRun TOPと同系の白寄り水色）
           if (showAdversityAfterScene) {
@@ -2202,19 +2194,23 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
   }
 
   public boolean isGameRunning() {
-    return isRunning;
+    return roundLifecycle.isRunning();
+  }
+
+  public RoundState getRoundState() {
+    return roundLifecycle.state();
   }
 
   private void restoreWorldAndPlayer(Player player) {
     UUID uuid = player.getUniqueId();
     World gameplayWorld = player.getWorld();
 
-    Location original = originalLocations.remove(uuid);
-    if (original != null && player.isOnline()) {
-      player.teleport(original);
+    Location original = originalLocations.get(uuid);
+    if (original != null && player.isOnline() && player.teleport(original)) {
+      originalLocations.remove(uuid);
     }
 
-    if (previousWorldTime >= 0) {
+    if (previousWorldTime >= 0 && gameplayWorld != null) {
       gameplayWorld.setTime(previousWorldTime);
       gameplayWorld.setStorm(previousStorm);
       gameplayWorld.setThundering(previousThundering);
@@ -2315,7 +2311,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     stopVanillaMusicSuppress(player);
 
     BukkitTask task = Bukkit.getScheduler().runTaskTimer(this, () -> {
-      if (!player.isOnline() || !isRunning) {
+      if (!player.isOnline() || !roundLifecycle.isRunning()) {
         stopVanillaMusicSuppress(player);
         return;
       }
@@ -2379,145 +2375,174 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
   // =======================================================
   public void beginGameStartAfterLanguageSelected(Player player, String selectedDifficulty, String lang) {
 
-    if (isRunning) {
+    if (!roundLifecycle.tryBeginPreparation()) {
       player.sendMessage(ChatColor.RED + getI18n().tr(getPlayerLangOrDefault(player.getUniqueId()), "finalAudit.command.gameAlreadyRunning"));
       return;
     }
 
-    if (treasureRunGameEffectsPlugin != null) {
-      treasureRunGameEffectsPlugin.stopFinalCountdownBeeps(player);
-    }
+    activeRoundPlayerId = player.getUniqueId();
 
-    if (gameStageManager != null) {
-      gameStageManager.clearDifficultyBlocks();
-      gameStageManager.clearShopEntities();
-    }
-    if (treasureChestManager != null) treasureChestManager.removeAllChests();
-
-    if (startThemePlayer != null) startThemePlayer.stop(player);
-    stopVanillaMusicSuppress(player);
-
-    if (heartbeatSoundService != null) heartbeatSoundService.stop(player);
-    if (chestSound != null) chestSound.stop(player);
-
-    // 念のため（前回TIME_UPの固定表示が残ってたら止める）
-    if (timeUpTitleTaskId != -1) {
-      Bukkit.getScheduler().cancelTask(timeUpTitleTaskId);
-      timeUpTitleTaskId = -1;
-    }
-
-    playerScores.put(player.getUniqueId(), 0);
-
-    // Allocate a fresh idempotency key for this live gameplay run.
-    activeGameResultIds.put(player.getUniqueId(), UUID.randomUUID());
-
-    if (treasureRunGameEffectsPlugin != null) {
-      for (Player p : Bukkit.getOnlinePlayers()) {
-        treasureRunGameEffectsPlugin.resetPlayerTreasureCount(p);
+    try {
+      if (treasureRunGameEffectsPlugin != null) {
+        treasureRunGameEffectsPlugin.stopFinalCountdownBeeps(player);
       }
-    }
 
-    if (selectedDifficulty == null || selectedDifficulty.isBlank()) {
-      difficulty = "Normal";
-    } else {
-      difficulty = selectedDifficulty;
-    }
+      clearRoundArtifacts();
 
-    // =======================================================
-    // ✅ ✅ ✅ 追加：このRunで選んだ言語を保持（格言ログ保存に使う）
-    // =======================================================
-    if (lang == null || lang.isBlank()) {
-      lang = getConfig().getString("language.default", "ja");
-    }
-    playerLastLang.put(player.getUniqueId(), lang);
+      if (startThemePlayer != null) startThemePlayer.stop(player);
+      stopVanillaMusicSuppress(player);
+      if (heartbeatSoundService != null) heartbeatSoundService.stop(player);
+      if (chestSound != null) chestSound.stop(player);
 
-    // ✅ ✅ ✅ 追加：Favorites図鑑側が参照する正式保存（永続）
-    if (playerLanguageStore != null) {
-      playerLanguageStore.set(player.getUniqueId(), lang);
-    }
+      // 念のため（前回TIME_UPの固定表示が残ってたら止める）
+      if (timeUpTitleTaskId != -1) {
+        Bukkit.getScheduler().cancelTask(timeUpTitleTaskId);
+        timeUpTitleTaskId = -1;
+      }
 
-    originalLocations.put(player.getUniqueId(), player.getLocation().clone());
+      playerScores.put(player.getUniqueId(), 0);
 
-    Location stage = gameStageManager.buildSeasideStageAndTeleport(player);
-    currentStageCenter = stage;
+      // Allocate a fresh idempotency key for this live gameplay run.
+      activeGameResultIds.put(player.getUniqueId(), UUID.randomUUID());
 
-    int currentTotalChests = totalChests;
-    treasureChestManager.spawnChests(player, difficulty, currentTotalChests);
-    totalChestsRemaining = currentTotalChests;
-    totalChestsAtStart = currentTotalChests;
-    TreasureChestManager m = getTreasureChestManager();
-    getLogger().info("[CHEST][SPAWN] after spawn"
-        + " now=" + (m != null ? m.getTreasureLocations().size() : -1)
-        + " instance=" + (m != null ? System.identityHashCode(m) : -1)
-    );
+      if (treasureRunGameEffectsPlugin != null) {
+        for (Player p : Bukkit.getOnlinePlayers()) {
+          treasureRunGameEffectsPlugin.resetPlayerTreasureCount(p);
+        }
+      }
 
-    player.sendMessage(ChatColor.GREEN + trPlayer(player, "gameplay.setup.chestsPlaced", I18n.Placeholder.of("{count}", String.valueOf(currentTotalChests))));
+      if (selectedDifficulty == null || selectedDifficulty.isBlank()) {
+        difficulty = "Normal";
+      } else {
+        difficulty = selectedDifficulty;
+      }
 
-    GameMenu.showGameMenu(player, difficulty, this, lang);
-    GameMenu.openRuleBookFromConfig(player, difficulty, this, lang);
+      // =======================================================
+      // ✅ ✅ ✅ 追加：このRunで選んだ言語を保持（格言ログ保存に使う）
+      // =======================================================
+      if (lang == null || lang.isBlank()) {
+        lang = getConfig().getString("language.default", "ja");
+      }
+      playerLastLang.put(player.getUniqueId(), lang);
 
-    new BukkitRunnable() {
-      @Override
-      public void run() {
-        new BukkitRunnable() {
-          int count = 3;
+      // ✅ ✅ ✅ 追加：Favorites図鑑側が参照する正式保存（永続）
+      if (playerLanguageStore != null) {
+        playerLanguageStore.set(player.getUniqueId(), lang);
+      }
 
-          @Override
-          public void run() {
-            if (count > 0) {
+      originalLocations.put(player.getUniqueId(), player.getLocation().clone());
 
-              // ✅ ✅ ✅ 数字の色切り替え（3=水色、2=翠、1=黄色）
-              ChatColor numColor = switch (count) {
-                case 3 -> ChatColor.AQUA;
-                case 2 -> ChatColor.GREEN;
-                case 1 -> ChatColor.YELLOW;
-                default -> ChatColor.GRAY;
-              };
+      Location stage = gameStageManager.buildSeasideStageAndTeleport(player);
+      if (stage == null || stage.getWorld() == null) {
+        throw new IllegalStateException("Arena stage preparation returned no usable location.");
+      }
+      currentStageCenter = stage;
 
-              // ✅ ✅ ✅ 最大サイズで見せる：Title行に数字だけ出す（これが一番デカい）
-              // Subtitleは「白に一番近いグレー」
-              String startLang = getPlayerLangOrDefault(player.getUniqueId());
+      int currentTotalChests = totalChests;
+      treasureChestManager.spawnChests(player, difficulty, currentTotalChests);
+      totalChestsRemaining = currentTotalChests;
+      totalChestsAtStart = currentTotalChests;
+      TreasureChestManager m = getTreasureChestManager();
+      getLogger().info("[CHEST][SPAWN] after spawn"
+          + " now=" + (m != null ? m.getTreasureLocations().size() : -1)
+          + " instance=" + (m != null ? System.identityHashCode(m) : -1)
+      );
 
-              player.sendTitle(
-                  numColor + "" + ChatColor.BOLD + count,
-                  ChatColor.GRAY + getI18n().tr(startLang, "gameplay.start.startingIn"),
-                  0, 20, 0
-              );
+      player.sendMessage(ChatColor.GREEN + trPlayer(player, "gameplay.setup.chestsPlaced", I18n.Placeholder.of("{count}", String.valueOf(currentTotalChests))));
 
-              // ✅ 追加（3/2/1の時）
-              startThemePlayer.playCountdownTick(player, count);
+      GameMenu.showGameMenu(player, difficulty, this, lang);
+      GameMenu.openRuleBookFromConfig(player, difficulty, this, lang);
 
-              count--;
-            } else {
+      if (!roundLifecycle.beginCountdown()) {
+        throw new IllegalStateException("Round state changed before countdown could begin.");
+      }
 
-              // ✅ 追加（GO!の時）
-              startThemePlayer.playGoActivate(player);
+      countdownDelayTask = new BukkitRunnable() {
+        @Override
+        public void run() {
+          countdownDelayTask = null;
 
-              // ✅ ✅ ✅ GO! の瞬間だけ「バブル→震え + 光 + 爆発風スパークル」
-              Bukkit.getScheduler().runTaskLater(TreasureRunMultiChestPlugin.this, () -> {
-                if (player != null && player.isOnline()) {
-                  playGoBubbleBurst(player);   // ✅ NEW：バブルが弾ける
-                  playGoSparkleShock(player);  // ✅ 既存：震え + 光 + スパークル
-                }
-              }, 1L);
-// ✅ ✅ ✅ 最大サイズで見せる：Title行に GO! だけ（太字）
-              // ✅ 色は「白に一番近いグレー」
-              String startLang = getPlayerLangOrDefault(player.getUniqueId());
-
-              player.sendTitle(
-                  ChatColor.GRAY + "" + ChatColor.BOLD + getI18n().tr(startLang, "gameplay.start.go"),
-                  "",
-                  0, 20, 10
-              );
-
-              TreasureRunMultiChestPlugin.this.startGame(player);
-              this.cancel();
-            }
+          if (!player.isOnline()
+              || !isActiveRoundPlayer(player)
+              || !roundLifecycle.is(RoundState.COUNTDOWN)) {
+            finishRoundCleanup(player, CleanupReason.PREPARATION_FAILED, true);
+            return;
           }
 
-        }.runTaskTimer(TreasureRunMultiChestPlugin.this, 0L, 20L);
-      }
-    }.runTaskLater(this, 20L);
+          countdownTask = new BukkitRunnable() {
+            int count = 3;
+
+            @Override
+            public void run() {
+              if (!player.isOnline()
+                  || !isActiveRoundPlayer(player)
+                  || !roundLifecycle.is(RoundState.COUNTDOWN)) {
+                countdownTask = null;
+                this.cancel();
+                finishRoundCleanup(player, CleanupReason.PREPARATION_FAILED, true);
+                return;
+              }
+
+              if (count > 0) {
+
+                // ✅ ✅ ✅ 数字の色切り替え（3=水色、2=翠、1=黄色）
+                ChatColor numColor = switch (count) {
+                  case 3 -> ChatColor.AQUA;
+                  case 2 -> ChatColor.GREEN;
+                  case 1 -> ChatColor.YELLOW;
+                  default -> ChatColor.GRAY;
+                };
+
+                // ✅ ✅ ✅ 最大サイズで見せる：Title行に数字だけ出す（これが一番デカい）
+                // Subtitleは「白に一番近いグレー」
+                String startLang = getPlayerLangOrDefault(player.getUniqueId());
+
+                player.sendTitle(
+                    numColor + "" + ChatColor.BOLD + count,
+                    ChatColor.GRAY + getI18n().tr(startLang, "gameplay.start.startingIn"),
+                    0, 20, 0
+                );
+
+                // ✅ 追加（3/2/1の時）
+                startThemePlayer.playCountdownTick(player, count);
+
+                count--;
+              } else {
+
+                // ✅ 追加（GO!の時）
+                startThemePlayer.playGoActivate(player);
+
+                // ✅ ✅ ✅ GO! の瞬間だけ「バブル→震え + 光 + 爆発風スパークル」
+                Bukkit.getScheduler().runTaskLater(TreasureRunMultiChestPlugin.this, () -> {
+                  if (player.isOnline() && isActiveRoundPlayer(player)) {
+                    playGoBubbleBurst(player);   // ✅ NEW：バブルが弾ける
+                    playGoSparkleShock(player);  // ✅ 既存：震え + 光 + スパークル
+                  }
+                }, 1L);
+
+                // ✅ ✅ ✅ 最大サイズで見せる：Title行に GO! だけ（太字）
+                // ✅ 色は「白に一番近いグレー」
+                String startLang = getPlayerLangOrDefault(player.getUniqueId());
+
+                player.sendTitle(
+                    ChatColor.GRAY + "" + ChatColor.BOLD + getI18n().tr(startLang, "gameplay.start.go"),
+                    "",
+                    0, 20, 10
+                );
+
+                countdownTask = null;
+                this.cancel();
+                TreasureRunMultiChestPlugin.this.startGame(player);
+              }
+            }
+
+          }.runTaskTimer(TreasureRunMultiChestPlugin.this, 0L, 20L);
+        }
+      }.runTaskLater(this, 20L);
+    } catch (Throwable failure) {
+      getLogger().warning("[RoundLifecycle] preparation failed: " + failure.getMessage());
+      finishRoundCleanup(player, CleanupReason.PREPARATION_FAILED, true);
+    }
   }
 
   // =======================================================
