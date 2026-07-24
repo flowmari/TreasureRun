@@ -32,6 +32,10 @@ public class TreasureChestManager {
    */
   private final Set<Location> chestLocations = new HashSet<>();
 
+  /** Original block data for every block changed during chest placement. */
+  private final Map<BlockKey, org.bukkit.block.data.BlockData> originalBlockData =
+      new LinkedHashMap<>();
+
   // ✅ 追加：再起動/リロード後に追跡を復元するためのタグ
   // chestのTileState(PDC)にこれを刻む
   private final NamespacedKey TREASURE_CHEST_TAG;
@@ -160,20 +164,48 @@ public class TreasureChestManager {
     return found;
   }
 
-  /** 現在配置したチェストを全部消す（ブロックを AIR に） */
+  /** Restore every block changed during the current chest-placement attempt. */
   public void removeAllChests() {
+    Set<BlockKey> restoredKeys = new HashSet<>(originalBlockData.keySet());
+    restoreChangedBlocks();
+
+    // A tagged chest recovered without an in-memory snapshot can only occur
+    // after an unclean process stop. Remove the plugin-owned chest itself
+    // rather than leaving a stale gameplay block behind.
     for (BlockKey key : placedChests) {
+      if (restoredKeys.contains(key)) continue;
       World w = Bukkit.getWorld(key.world);
       if (w == null) continue;
       Block b = w.getBlockAt(key.x, key.y, key.z);
       if (b.getType() == Material.CHEST) {
-        b.setType(Material.AIR);
+        b.setType(Material.AIR, false);
       }
     }
-    placedChests.clear();
 
-    // ✅ 追加：Location追跡もクリア（ここがズレると鳴らない原因）
+    placedChests.clear();
     chestLocations.clear();
+  }
+
+  private void rememberOriginalBlock(Block block) {
+    if (block == null || block.getWorld() == null) return;
+    BlockKey key = new BlockKey(block.getLocation());
+    originalBlockData.putIfAbsent(key, block.getBlockData().clone());
+  }
+
+  private void restoreChangedBlocks() {
+    List<Map.Entry<BlockKey, org.bukkit.block.data.BlockData>> entries =
+        new ArrayList<>(originalBlockData.entrySet());
+    Collections.reverse(entries);
+
+    for (Map.Entry<BlockKey, org.bukkit.block.data.BlockData> entry : entries) {
+      BlockKey key = entry.getKey();
+      World world = Bukkit.getWorld(key.world);
+      if (world == null) continue;
+      world.getBlockAt(key.x, key.y, key.z)
+          .setBlockData(entry.getValue().clone(), false);
+    }
+
+    originalBlockData.clear();
   }
 
   /** このブロックが自分がスポーンしたチェストかどうか */
@@ -188,102 +220,156 @@ public class TreasureChestManager {
   // =========================================================
   // ✅ 宝箱をスポーンして中身を詰める（新バージョン）
   // =========================================================
-  public void spawnChests(org.bukkit.entity.Player player, String difficulty, int count) {
-    World world = player.getWorld();
-    Random random = new Random();
+  static record ChestOffset(int dx, int dz) {}
 
-    // ★ 難易度ごとの床ブロック（Easy:紫, Normal:緑, Hard:青）
+  static List<ChestOffset> planUniqueChestOffsets(
+      int radius,
+      int count,
+      Random random
+  ) {
+    if (radius < 0 || count < 0 || random == null) return List.of();
+
+    List<ChestOffset> candidates = new ArrayList<>();
+    for (int dx = -radius; dx <= radius; dx++) {
+      for (int dz = -radius; dz <= radius; dz++) {
+        candidates.add(new ChestOffset(dx, dz));
+      }
+    }
+
+    if (count > candidates.size()) return List.of();
+
+    Collections.shuffle(candidates, random);
+    return new ArrayList<>(candidates.subList(0, count));
+  }
+
+  public boolean spawnChests(
+      org.bukkit.entity.Player player,
+      String difficulty,
+      int count
+  ) {
+    if (player == null || player.getWorld() == null || count < 0) {
+      return false;
+    }
+
+    World world = player.getWorld();
+    if (!ArenaWorldManager.WORLD_NAME.equals(world.getName())) {
+      plugin.getLogger().severe(
+          "[TreasureChestManager] Chest placement refused outside "
+              + ArenaWorldManager.WORLD_NAME + ": " + world.getName()
+      );
+      return false;
+    }
+
+    Random random = new Random();
+    List<ChestOffset> offsets =
+        planUniqueChestOffsets(chestSpawnRadius, count, random);
+
+    if (offsets.size() != count) {
+      plugin.getLogger().severe(
+          "[TreasureChestManager] Unable to reserve " + count
+              + " unique chest columns within radius " + chestSpawnRadius
+      );
+      return false;
+    }
+
     Material floorMaterial;
     switch (difficulty) {
       case "Easy":
-        floorMaterial = Material.PURPLE_CONCRETE;   // 紫
+        floorMaterial = Material.PURPLE_CONCRETE;
         break;
       case "Normal":
-        floorMaterial = Material.LIME_CONCRETE;     // 緑
+        floorMaterial = Material.LIME_CONCRETE;
         break;
       case "Hard":
-        floorMaterial = Material.BLUE_CONCRETE;     // 青
+        floorMaterial = Material.BLUE_CONCRETE;
         break;
       default:
-        floorMaterial = Material.WHITE_CONCRETE;    // 念のため
+        floorMaterial = Material.WHITE_CONCRETE;
         break;
     }
 
     int before = chestLocations.size();
 
-    for (int i = 0; i < count; i++) {
-      int dx = random.nextInt(chestSpawnRadius * 2) - chestSpawnRadius;
-      int dz = random.nextInt(chestSpawnRadius * 2) - chestSpawnRadius;
+    try {
+      for (ChestOffset offset : offsets) {
+        Location loc = player.getLocation().clone().add(offset.dx(), 0, offset.dz());
+        loc.setY(world.getHighestBlockYAt(loc) + 1);
 
-      Location loc = player.getLocation().clone().add(dx, 0, dz);
-      loc.setY(world.getHighestBlockYAt(loc) + 1);
+        Block block = world.getBlockAt(loc);
+        Block underBlock = block.getRelative(0, -1, 0);
 
-      Block block = world.getBlockAt(loc);
-      block.setType(Material.CHEST);
+        rememberOriginalBlock(underBlock);
+        rememberOriginalBlock(block);
 
-// ★ チェストの真下に難易度カラーのブロックを設置
-      Block underBlock = block.getRelative(0, -1, 0);
-      underBlock.setType(floorMaterial);
+        underBlock.setType(floorMaterial, false);
+        block.setType(Material.CHEST, false);
 
-// 💎 宝箱にランダムな宝物を入れる処理（中身→登録→update を1回に統一）
-      if (block.getState() instanceof Chest chest) {
+        if (!(block.getState() instanceof Chest chest)) {
+          throw new IllegalStateException(
+              "Placed block did not expose a chest state at "
+                  + block.getX() + "," + block.getY() + "," + block.getZ()
+          );
+        }
 
-        // ✅ ライブインベントリを掴む（BlockStateのスナップショットではない）
         org.bukkit.inventory.Inventory inv = chest.getBlockInventory();
 
-        // ✅ treasurePool が空ならログで即わかるようにする
-        int poolSize = (treasurePool == null ? 0 : treasurePool.size());
+        int poolSize = treasurePool == null ? 0 : treasurePool.size();
         plugin.getLogger().info("[CHEST][POOL] size=" + poolSize);
 
-        // ✅ 中身投入（ライブ在庫に直接追加）
         if (poolSize > 0) {
-          int kinds = 1 + random.nextInt(3); // 1〜3種類
+          int kinds = 1 + random.nextInt(3);
           for (int j = 0; j < kinds; j++) {
             Material itemMat = treasurePool.get(random.nextInt(poolSize));
-            int amount = 1 + random.nextInt(3); // 1〜3個
+            int amount = 1 + random.nextInt(3);
             inv.addItem(new ItemStack(itemMat, amount));
           }
         }
 
-        // ✅ ここが修正の核心：
-        //    古いスナップショット(chest)でupdateすると空に戻る
-        //    → アイテム投入後にフレッシュなstateを取り直してupdate
-        try {
-          if (block.getState() instanceof Chest fresh) {
-            fresh.getPersistentDataContainer()
-                .set(new org.bukkit.NamespacedKey(plugin, "treasure_run_chest"),
-                    org.bukkit.persistence.PersistentDataType.BYTE, (byte) 1);
-            fresh.update(true, false); // ✅ これは投入後のスナップショットなので中身が残る
-          }
-        } catch (Throwable ignored) {}
-
-        // ✅ 登録（座標トラッキング）
-        registerPlacedChest(block);
-
-        // ✅ 仕上げ：本当に中身が入ったか確認ログ
-        long c = 0;
-        for (ItemStack it : inv.getContents()) {
-          if (it == null) continue;
-          if (it.getType() == Material.AIR) continue;
-          c++;
+        if (block.getState() instanceof Chest fresh) {
+          fresh.getPersistentDataContainer()
+              .set(
+                  TREASURE_CHEST_TAG,
+                  PersistentDataType.BYTE,
+                  (byte) 1
+              );
+          fresh.update(true, false);
         }
-        plugin.getLogger().info("[CHEST][FILL] items=" + c);
 
-      } else {
-        // stateがChest取れないなら最低限トラッキングだけ
         registerPlacedChest(block);
+
+        long itemCount = 0;
+        for (ItemStack item : inv.getContents()) {
+          if (item == null || item.getType() == Material.AIR) continue;
+          itemCount++;
+        }
+        plugin.getLogger().info("[CHEST][FILL] items=" + itemCount);
       }
-    }
 
-    int after = chestLocations.size();
-    int added = after - before;
+      int added = chestLocations.size() - before;
+      if (added != count) {
+        throw new IllegalStateException(
+            "Expected " + count + " tracked chests but added " + added
+        );
+      }
 
-    plugin.getLogger().info("✅ " + count + " 個の宝箱をスポーンしました（中身付き）");
-    plugin.getLogger().info("[TreasureChestManager] chestLocations size before=" + before + " after=" + after + " added=" + added);
-
-    // ✅ 追加：もし added が 0 なら、絶対に異常（登録が失敗してる）
-    if (count > 0 && added <= 0) {
-      plugin.getLogger().severe("[TreasureChestManager] ❌ chestLocations did NOT increase! spawnCount=" + count);
+      plugin.getLogger().info(
+          "✅ " + count + " 個の宝箱をスポーンしました（中身付き）"
+      );
+      plugin.getLogger().info(
+          "[TreasureChestManager] chestLocations size before=" + before
+              + " after=" + chestLocations.size()
+              + " added=" + added
+      );
+      return true;
+    } catch (Throwable failure) {
+      plugin.getLogger().warning(
+          "[TreasureChestManager] Chest placement rolled back: "
+              + failure.getMessage()
+      );
+      restoreChangedBlocks();
+      placedChests.clear();
+      chestLocations.clear();
+      return false;
     }
   }
 
