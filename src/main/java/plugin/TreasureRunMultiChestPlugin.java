@@ -52,6 +52,8 @@ import java.time.Instant;
 
 public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener, TabExecutor {
 
+  private static final String ROUND_ADMIN_PERMISSION = "treasure.admin";
+
   // __MSZ_AUTO_START_ON_JOIN
   private final java.util.concurrent.atomic.AtomicBoolean __mszAutoStarted = new java.util.concurrent.atomic.AtomicBoolean(false);
   // ================================
@@ -1345,8 +1347,20 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
   // =======================================================
   // Commands
   // =======================================================
+  private boolean isRoundManagementCommand(Command command) {
+    if (command == null) return false;
+    String name = command.getName();
+    return name.equalsIgnoreCase("gamestart")
+        || name.equalsIgnoreCase("gameStart")
+        || name.equalsIgnoreCase("gameEnd");
+  }
+
   @Override
   public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+    if (isRoundManagementCommand(cmd) && !sender.hasPermission(ROUND_ADMIN_PERMISSION)) {
+      return true;
+    }
+
     // === AUTO PATCH v6.2: allow console/RCON ===
     Player player = null;
     if (sender instanceof Player) { player = (Player) sender; }
@@ -1586,8 +1600,12 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     mode = mode.toLowerCase(Locale.ROOT);
     if (!(mode.equals("easy") || mode.equals("normal") || mode.equals("hard"))) return;
 
-    event.setCancelled(true);
     Player player = event.getPlayer();
+    if (!player.hasPermission(ROUND_ADMIN_PERMISSION)) {
+      return;
+    }
+
+    event.setCancelled(true);
 
     if (roundLifecycle.isActive()) {
       player.sendMessage(ChatColor.RED + getI18n().tr(getPlayerLangOrDefault(player.getUniqueId()), "finalAudit.command.gameAlreadyRunning"));
@@ -2439,7 +2457,11 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
       currentStageCenter = stage;
 
       int currentTotalChests = totalChests;
-      treasureChestManager.spawnChests(player, difficulty, currentTotalChests);
+      if (!treasureChestManager.spawnChests(player, difficulty, currentTotalChests)) {
+        throw new IllegalStateException(
+            "Unable to place the configured number of unique treasure chests."
+        );
+      }
       totalChestsRemaining = currentTotalChests;
       totalChestsAtStart = currentTotalChests;
       TreasureChestManager m = getTreasureChestManager();

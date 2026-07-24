@@ -44,12 +44,12 @@ commands:
   gameEnd:
     description: End TreasureRun game
     usage: /gameEnd
-    permission: treasure.game
+    permission: treasure.admin
 
   gamestart:
     description: Start TreasureRun game (official)
     usage: /gamestart [easy|normal|hard]
-    permission: treasure.start
+    permission: treasure.admin
 
   clearStageBlocks:
     description: Clear nearby difficulty blocks placed by TreasureRun.
@@ -89,19 +89,19 @@ commands:
 
 permissions:
   treasure.admin:
-    description: Administrative audit commands.
+    description: Administrative TreasureRun commands.
     default: op
 
   treasure.start:
-    description: /gamestart コマンドを使用できる権限
-    default: true
+    description: Legacy /gamestart permission node; round management uses treasure.admin.
+    default: op
 
   treasure.reload:
     description: /treasureReload または /gameReload で config.yml を再読み込みできる権限
     default: op
 
   treasure.game:
-    description: /gameEnd コマンドを使用できる権限
+    description: Legacy /gameEnd permission node; round management uses treasure.admin.
     default: op
 
   treasure.rank:

@@ -38,6 +38,9 @@ class PluginCommandMetadataContractTest {
   private static final Pattern COMMAND_PERMISSION =
       Pattern.compile("^    permission:\\s*([^\\s#]+)");
 
+  private static final Pattern PERMISSION_DEFAULT =
+      Pattern.compile("^    default:\\s*([^\\s#]+)");
+
   private static final Pattern GET_COMMAND =
       Pattern.compile("getCommand\\(\\s*\"([^\"]+)\"\\s*\\)");
 
@@ -71,6 +74,9 @@ class PluginCommandMetadataContractTest {
         commands.get("treasureReload").aliases
     );
     assertTrue(commands.get("gamestart").aliases.isEmpty());
+    assertEquals("treasure.admin", commands.get("gamestart").permission);
+    assertEquals("treasure.admin", commands.get("gameEnd").permission);
+    assertEquals("op", parsePermissionDefaults(yaml).get("treasure.admin"));
 
     Set<String> declaredPermissions = parsePermissionKeys(yaml);
 
@@ -290,6 +296,45 @@ class PluginCommandMetadataContractTest {
     }
 
     return permissions;
+  }
+
+  private static Map<String, String> parsePermissionDefaults(String yaml) {
+    Map<String, String> defaults = new LinkedHashMap<>();
+    boolean inPermissions = false;
+    String current = null;
+
+    for (String line : yaml.lines().toList()) {
+      if (line.equals("permissions:")) {
+        inPermissions = true;
+        current = null;
+        continue;
+      }
+
+      if (!inPermissions) {
+        continue;
+      }
+
+      if (!line.isBlank() && !line.startsWith(" ")) {
+        break;
+      }
+
+      Matcher permissionMatcher = PERMISSION_KEY.matcher(line);
+      if (permissionMatcher.matches()) {
+        current = permissionMatcher.group(1);
+        continue;
+      }
+
+      if (current == null) {
+        continue;
+      }
+
+      Matcher defaultMatcher = PERMISSION_DEFAULT.matcher(line);
+      if (defaultMatcher.find()) {
+        defaults.put(current, defaultMatcher.group(1));
+      }
+    }
+
+    return defaults;
   }
 
   private static Set<String> lowerCaseSet(Set<String> values) {
