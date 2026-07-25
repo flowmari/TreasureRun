@@ -59,15 +59,24 @@ class TreasureChestPlacementSafetyTest {
         "finishRoundCleanup(player, CleanupReason.PREPARATION_FAILED, true);"
     ));
 
-    int permissionGuard = plugin.indexOf(
-        "if (!player.hasPermission(ROUND_ADMIN_PERMISSION))"
+    int preprocessHandler = plugin.indexOf(
+        "public void onGamestartStyleCommand(PlayerCommandPreprocessEvent event)"
     );
     int preprocessCancel = plugin.indexOf(
         "event.setCancelled(true);",
+        preprocessHandler
+    );
+    int permissionGuard = plugin.indexOf(
+        "if (!player.hasPermission(ROUND_ADMIN_PERMISSION))",
+        preprocessHandler
+    );
+    int permissionMessage = plugin.indexOf(
+        "\"finalAudit.command.noPermission\"",
         permissionGuard
     );
-
-    assertTrue(permissionGuard >= 0);
-    assertTrue(preprocessCancel > permissionGuard);
+    assertTrue(preprocessHandler >= 0);
+    assertTrue(preprocessCancel > preprocessHandler);
+    assertTrue(permissionGuard > preprocessCancel);
+    assertTrue(permissionMessage > permissionGuard);
   }
 }

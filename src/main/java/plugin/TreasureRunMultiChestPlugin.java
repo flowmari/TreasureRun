@@ -1601,11 +1601,16 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     if (!(mode.equals("easy") || mode.equals("normal") || mode.equals("hard"))) return;
 
     Player player = event.getPlayer();
+    event.setCancelled(true);
     if (!player.hasPermission(ROUND_ADMIN_PERMISSION)) {
+      player.sendMessage(
+          ChatColor.RED + getI18n().tr(
+              getPlayerLangOrDefault(player.getUniqueId()),
+              "finalAudit.command.noPermission"
+          )
+      );
       return;
     }
-
-    event.setCancelled(true);
 
     if (roundLifecycle.isActive()) {
       player.sendMessage(ChatColor.RED + getI18n().tr(getPlayerLangOrDefault(player.getUniqueId()), "finalAudit.command.gameAlreadyRunning"));
