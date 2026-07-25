@@ -1583,7 +1583,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
   }
 
   // /gamestart normal と /gamestart:normal 両対応
-  @EventHandler
+  @EventHandler(priority = org.bukkit.event.EventPriority.LOWEST)
   public void onGamestartStyleCommand(PlayerCommandPreprocessEvent event) {
     String raw = event.getMessage().trim();
     String lower = raw.toLowerCase(Locale.ROOT);

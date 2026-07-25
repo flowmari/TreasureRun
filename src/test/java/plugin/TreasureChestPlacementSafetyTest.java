@@ -78,5 +78,19 @@ class TreasureChestPlacementSafetyTest {
     assertTrue(preprocessCancel > preprocessHandler);
     assertTrue(permissionGuard > preprocessCancel);
     assertTrue(permissionMessage > permissionGuard);
+
+    int selfRegistration = plugin.indexOf(
+        "Bukkit.getPluginManager().registerEvents(this, this);"
+    );
+    int localizedRegistration = plugin.indexOf(
+        "new LocalizedSystemMessageListener(this)"
+    );
+
+    assertTrue(plugin.contains(
+        "@EventHandler(priority = org.bukkit.event.EventPriority.LOWEST)\n"
+            + "  public void onGamestartStyleCommand"
+    ));
+    assertTrue(selfRegistration >= 0);
+    assertTrue(localizedRegistration > selfRegistration);
   }
 }
