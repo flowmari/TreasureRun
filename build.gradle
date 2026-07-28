@@ -94,6 +94,8 @@ tasks.register('prepareLicensePackaging', Sync) {
 }
 
 shadowJar {
+    preserveFileTimestamps = false
+    reproducibleFileOrder = true
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     archiveBaseName.set('TreasureRun')
     archiveVersion.set('0.1.11-alpha')
