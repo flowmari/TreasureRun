@@ -73,11 +73,46 @@ sourceSets {
 }
 
 // ShadowJar 設定
+def licensePackagingDir = layout.buildDirectory.dir('generated/license-packaging')
+
+tasks.register('prepareLicensePackaging', Sync) {
+    into licensePackagingDir
+
+    from('LICENSE') {
+        into 'META-INF/licenses'
+        rename { 'TreasureRun-LICENSE.txt' }
+    }
+
+    from('THIRD_PARTY_NOTICES.md') {
+        into 'META-INF'
+        rename { 'THIRD_PARTY_NOTICES.txt' }
+    }
+
+    from('third-party-licenses') {
+        into 'META-INF/licenses'
+    }
+}
+
 shadowJar {
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     archiveBaseName.set('TreasureRun')
     archiveVersion.set('0.1.11-alpha')
     archiveClassifier.set('all')
+
+    // Generic dependency license names collide in a fat JAR. Exclude those
+    // ambiguous dependency paths, then add staged reviewed copies whose
+    // destination names do not match these exclusions.
+    exclude 'LICENSE'
+    exclude 'LICENSE.txt'
+    exclude 'NOTICE'
+    exclude 'NOTICE.txt'
+    exclude 'META-INF/LICENSE'
+    exclude 'META-INF/LICENSE.txt'
+    exclude 'META-INF/NOTICE'
+    exclude 'META-INF/NOTICE.txt'
+
+    dependsOn tasks.named('prepareLicensePackaging')
+    from(licensePackagingDir)
 }
 
 
