@@ -16,7 +16,6 @@ src/main/resources/plugin.yml
 
 | Command | Usage | Permission | Default | Purpose |
 |---|---|---|---|---|
-| `/gamestart` | `/gamestart [easy\|normal\|hard]` | `treasure.start` | true | Starts TreasureRun. If the player has no saved language, the language GUI is shown first. |
 | `/gameMenu` | `/gameMenu` | `treasure.menu` | true | Opens the TreasureRun rule/menu book. |
 | `/gameMenu gui` | `/gameMenu gui` | `treasure.menu` | true | Opens the language GUI before showing the game menu. |
 | `/gameRank` | `/gameRank [weekly\|monthly\|all]` | `treasure.rank` | true | Shows ranking data. Defaults to weekly ranking. |
@@ -39,12 +38,20 @@ src/main/resources/plugin.yml
 
 | Command | Usage | Permission | Default | Purpose |
 |---|---|---|---|---|
-| `/gameEnd` | `/gameEnd` | `treasure.game` | op | Ends the current TreasureRun game and performs cleanup. |
+| `/gamestart` | `/gamestart [easy\|normal\|hard]` | `treasure.admin` | op | Starts TreasureRun. If the player has no saved language, the language GUI is shown first. |
+| `/gameEnd` | `/gameEnd` | `treasure.admin` | op | Ends the current TreasureRun game and performs cleanup. |
 | `/gameReload` | `/gameReload` | `treasure.reload` | op | Alias of `/treasureReload`. |
 | `/treasureReload` | `/treasureReload` | `treasure.reload` | op | Reloads config, language files, GUI state, quote module, and runtime managers. |
 | `/clearStageBlocks` | `/clearStageBlocks` | `treasure.clearstage` | op | Clears generated difficulty/stage blocks. |
 | `/treasureExportLang` | `/treasureExportLang [overwrite]` | `treasure.reload` | op | Exports `messages.translation.*` from `config.yml` into `languages/*.yml`. |
 | `/rank` | `/rank <1\|2\|3\|demo>` | `treasure.debug.rank` | op | Debug/demo command for rank reward effects. Requires `rankDebug.enabled=true`. |
+
+---
+
+## Permission Compatibility
+
+- `/gamestart` and `/gameEnd` use the operator-only `treasure.admin` permission.
+- `treasure.start` and `treasure.game` remain declared as legacy operator-only nodes; neither is assigned to `/gamestart` or `/gameEnd` in `plugin.yml`.
 
 ---
 
