@@ -1,3 +1,5 @@
+> **V4 local-only ResourcePack contract:** TreasureRun does not store or publish Minecraft language payload JSON files or reconstructed full ResourcePack ZIP files. Client packs for the 17 reviewed official locale mappings are generated only from the operator's own installed Minecraft 1.20.1 assets. The six custom/missing mappings remain available to plugin-side i18n, while their client-pack generation remains held.
+
 # Project Overview: TreasureRun
 
 TreasureRun is a Java-based Minecraft Spigot 1.20.1 plugin that demonstrates backend/plugin engineering, i18n architecture, and platform-boundary problem solving under real Minecraft client/server constraints.
@@ -7,7 +9,7 @@ This project is not just a Minecraft mini-game. It is an engineering case study 
 To address that limitation, TreasureRun separates the problem into multiple layers:
 
 - a **ProtocolLib boundary adapter** for server-to-client packet access
-- a **ResourcePack language layer** for Minecraft standard translation-key assets
+- a **local-only ResourcePack generation layer** for eligible Minecraft client language packs
 - **Fabric runtime language sync support** for client-side language switching
 - a **pure Java packet JSON localizer** for testable packet-localization logic
 
@@ -23,11 +25,11 @@ TreasureRun demonstrates the following engineering skills:
 - Bukkit / Spigot plugin architecture
 - ProtocolLib-based packet boundary handling
 - JSON component localization for Minecraft packet messages
-- ResourcePack-based Minecraft standard UI localization
+- locally generated client-pack support for Minecraft standard UI localisation
 - Fabric-side runtime language synchronization support
 - separation of platform-dependent adapters from pure Java logic
 - CI-backed i18n verification
-- ResourcePack ZIP / SHA-1 consistency checks
+- local-only ResourcePack generation and repository-boundary checks
 - test-driven architectural boundary protection
 - OSS-ready project structure with contribution and security documents
 
@@ -50,7 +52,7 @@ The project separates the system into distinct responsibilities:
 | Spigot plugin layer | Game logic, commands, player state, server-side behavior |
 | ProtocolLib boundary layer | Intercepts and rewrites selected server-to-client packet JSON components |
 | Pure Java packet localizer | Parses Minecraft JSON components and converts translation keys into localized text |
-| ResourcePack layer | Provides Minecraft standard translation-key assets to the client |
+| Local-only ResourcePack generation | Builds eligible client language packs from the operator's own installed Minecraft 1.20.1 assets |
 | Fabric runtime sync support | Supports runtime client language switching without sending large language payloads |
 
 This makes the architecture easier to test, audit, explain, and maintain.
@@ -61,7 +63,7 @@ This makes the architecture easier to test, audit, explain, and maintain.
 
 TreasureRun can be described as follows:
 
-> TreasureRun separates a Minecraft standard UI boundary that cannot be fully controlled by Spigot alone into a ProtocolLib packet boundary, ResourcePack language assets, Fabric runtime sync support, and a pure Java packet localizer.  
+> TreasureRun separates a Minecraft standard UI boundary that cannot be fully controlled by Spigot alone into a ProtocolLib packet boundary, local-only ResourcePack generation, Fabric runtime sync support, and a pure Java packet localizer.
 > This turns a client/server platform limitation into a testable multi-layer i18n architecture.
 
 This is the main engineering story behind the project.
@@ -129,7 +131,7 @@ The forbidden imports include:
 
 This means the boundary is not just documented. It is checked automatically.
 
-The ResourcePack and locale-mapping tests also make the generated i18n assets reviewable. They verify ZIP/SHA-1 consistency, exact language JSON key-set consistency, internal language-code mapping to Minecraft locale files, and safe fallback behavior for packet JSON localization.
+The ResourcePack and locale-mapping checks make the local-generation contract reviewable. They verify that Minecraft payload JSON and reconstructed full ZIP artifacts are absent from the repository, eligible mappings generate deterministically from local assets, held mappings fail clearly, language-code mapping remains explicit, and packet JSON localisation fails safely.
 
 See `docs/verification/i18n/i18n-test-coverage.md` for the claim-to-test summary.
 
@@ -148,13 +150,13 @@ For a quick technical review, start with these files:
 | `treasurerun-i18n-core/src/main/java/com/treasurerun/i18n/PacketI18nJsonLocalizer.java` | Pure Java packet-localization core |
 | `src/test/java/plugin/i18n/PureI18nPackageBoundaryTest.java` | Test that protects the pure i18n package from platform imports |
 | `treasurerun-i18n-core/src/test/java/com/treasurerun/i18n/PacketI18nJsonLocalizerTest.java` | Unit tests for packet JSON localization |
-| `src/test/java/plugin/i18n/ResourcePackArtifactIntegrityTest.java` | Tests for generated ResourcePack ZIP, SHA-1, config, and 8039-key coverage |
-| `src/test/java/plugin/i18n/ResourcePackExactKeySetConsistencyTest.java` | Test that every ResourcePack language JSON has the exact same key set |
+| `tools/client-resourcepack/build-local-official-language-pack.py` and `scripts/check_local_resourcepack_contract.py` | Generate local-only packs, write `treasurerun-local-only.json` and `local-pack-manifest.tsv`, verify deterministic output, and reject held mappings clearly |
+| `docs/resourcepack-local-generator-v4.md` | Operator-facing repository and distribution boundary for local-only client-pack generation |
 | `src/test/java/plugin/i18n/LanguageCodeMappingIntegrityTest.java` | Test that TreasureRun internal language codes map to Minecraft locale files |
 | `treasurerun-i18n-core/src/test/java/com/treasurerun/i18n/PacketI18nSafeFallbackBehaviorTest.java` | Test that packet i18n fails safely when replacement is unsafe |
 | `docs/verification/i18n/i18n-test-coverage.md` | Claim-to-test summary for automated i18n verification |
 | `.github/workflows/i18n-expansion-ci.yml` | CI checks for i18n expansion and language mapping |
-| `.github/workflows/resourcepack-sha1.yml` | ResourcePack ZIP / SHA-1 verification workflow |
+| `.github/workflows/resourcepack-sha1.yml` | CI verification for the local-only ResourcePack repository boundary and generator contract |
 
 ---
 
@@ -192,7 +194,7 @@ The engineering focus was:
 
 - understanding where Spigot can and cannot control Minecraft text
 - separating Minecraft runtime access from pure localization logic
-- designing ResourcePack and Fabric support around Minecraft's client-side language model
+- designing local-only ResourcePack generation and Fabric runtime support around Minecraft's client-side language model
 - creating repeatable checks for i18n assets and key coverage
 - documenting the architecture so that the project can be reviewed by other engineers
 
@@ -208,7 +210,7 @@ It already includes:
 
 - working Spigot plugin code
 - multi-language resource files
-- ResourcePack generation and SHA-1 verification
+- deterministic local-only ResourcePack generation and repository-boundary verification
 - PacketI18n boundary separation
 - unit tests and architectural boundary tests
 - GitHub Actions workflows
@@ -216,8 +218,8 @@ It already includes:
 
 Areas for future improvement include:
 
-- reducing large generated artifacts in the repository
-- moving heavy generated ResourcePack ZIPs to GitHub Releases
+- improving local-generator diagnostics and Minecraft-version compatibility
+- expanding operator-facing verification for locally generated client packs
 - adding more demo GIFs or short videos
 - continuing to split large gameplay classes into smaller services
 - expanding contributor-facing documentation
@@ -228,7 +230,7 @@ Areas for future improvement include:
 
 TreasureRun is a Java Spigot plugin project that demonstrates how to solve a real Minecraft platform-boundary problem.
 
-A Spigot plugin alone cannot fully control Minecraft standard UI text, so the project separates the system into a ProtocolLib packet boundary, ResourcePack language assets, Fabric runtime sync support, and a pure Java packet localizer.
+A Spigot plugin alone cannot fully control Minecraft standard UI text, so the project separates the system into a ProtocolLib packet boundary, local-only ResourcePack generation, Fabric runtime sync support, and a pure Java packet localizer.
 
 The most important part is that the Minecraft-dependent boundary and the pure localization logic are separated and protected by tests.
 
@@ -240,4 +242,4 @@ This makes TreasureRun a strong engineering case study for Java, i18n architectu
 - `ang -> ang_gb`: Old English / Ænglisc
 - `non -> non_is`: Old Norse / Dǫnsk tunga
 
-These locales are intentionally marked experimental. They demonstrate that new non-standard Minecraft locale paths can be added through the same mapping, ResourcePack, Fabric language asset, SHA-1, config fallback, and JUnit verification path as existing locales. Full historical-language translation quality is tracked separately from architecture correctness.
+These locales are intentionally marked experimental. They demonstrate that non-standard language mappings can remain available to plugin-side i18n while client-pack generation is held until its source and distribution boundary are established. Full historical-language translation quality is tracked separately from architecture correctness.

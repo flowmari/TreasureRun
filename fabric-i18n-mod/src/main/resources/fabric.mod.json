@@ -3,7 +3,7 @@
   "id": "treasurerun_i18n",
   "version": "1.0.0",
   "name": "TreasureRun i18n Language Pack",
-  "description": "20-language translations for all 8039 Minecraft standard messages including client-side UI (options/subtitles/gui/key/selectWorld) unreachable by server plugins.",
+  "description": "Optional Fabric companion for TreasureRun language synchronisation. Minecraft language payloads are not bundled; supported client packs are generated locally from the user's own Minecraft 1.20.1 assets.",
   "authors": [
     "TreasureRun"
   ],

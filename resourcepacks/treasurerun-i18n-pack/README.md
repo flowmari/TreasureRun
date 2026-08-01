@@ -1,18 +1,20 @@
-# TreasureRun i18n Resource Pack
+# TreasureRun client ResourcePack source boundary
 
-This resource pack is part of TreasureRun's hybrid Minecraft i18n architecture.
+TreasureRun does not store Minecraft language payload JSON files or a reconstructed full ResourcePack ZIP in this directory.
 
-It contains `assets/minecraft/lang/*.json` files generated from the official Minecraft 1.20.1 vanilla `en_us.json`.
+Eligible client packs are generated locally with `tools/client-resourcepack/build-local-official-language-pack.py` from the server operator's own installed Minecraft 1.20.1 assets. Each generated pack contains `pack.mcmeta` and `treasurerun-local-only.json`; the generator also writes `local-pack-manifest.tsv`.
 
-## Strategy
+Generated client packs are local-only and must not be uploaded as GitHub Release or Modrinth artifacts. Automatic public ResourcePack delivery is disabled by default.
 
-- Include all vanilla Minecraft language keys as a complete fallback base.
-- Use English fallback for keys that have not yet been manually translated.
-- Overlay TreasureRun's observed `minecraft.packet.*` translations from `src/main/resources/languages/*.yml`.
-- Combine this with ProtocolLib PacketI18n replacement for server-observable translatable packet components.
+The 17 reviewed official locale mappings are eligible for local generation. The following six custom or missing mappings remain deliberately held:
 
-## Honest limitation
+- `ang -> ang_gb`
+- `asl_gloss -> asl_us`
+- `lzh -> lzh_hant`
+- `non -> non_is`
+- `ojp -> ojp_jp`
+- `sa -> sa_in`
 
-This pack can override client language keys only when the client accepts and applies the resource pack.
+TreasureRun does not silently fall back to English for held mappings and does not silently adopt `lzh -> lzh`.
 
-It should not be described as absolute control over pre-login, authentication, disconnect, settings, or every client-only UI string.
+This change does not delete or replace existing GitHub Release assets. Historical release and runtime evidence remain preserved as time-specific records rather than the active V4 distribution contract.

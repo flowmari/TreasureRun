@@ -1,78 +1,34 @@
-# Vanilla Client Resource Pack Fallback: Current Runtime Contract
+# Vanilla Client ResourcePack Fallback: V4 Runtime and Distribution Contract
 
-## Purpose
+> **V4 local-only ResourcePack contract:** TreasureRun does not store or publish Minecraft language payload JSON files or reconstructed full ResourcePack ZIP files. Client packs for the 17 reviewed official locale mappings are generated only from the operator's own installed Minecraft 1.20.1 assets. The six custom/missing mappings remain available to plugin-side i18n, while their client-pack generation remains held.
 
-TreasureRun uses several i18n layers because Minecraft text is split across plugin-owned messages, server-observable packet content, resource-pack language assets, and client-side language state.
+## Runtime boundary
 
-This document describes the configured vanilla-client Resource Pack fallback route after the per-language GitHub Release asset routing change.
+TreasureRun preserves the 23 plugin-side language sources, the language-selection GUI, per-player language storage, ProtocolLib packet localisation, the pure-Java i18n core, and Fabric Java runtime language synchronisation.
 
-## Configured Fallback Routing
+Automatic public ResourcePack delivery is disabled by default. TreasureRun does not select or publish per-language GitHub Release packs as the active V4 delivery contract.
 
-TreasureRun supports two relevant client paths:
+## Local generation
 
-- **Client with the optional Fabric companion mod**: the server can send the selected TreasureRun language code to the companion mod, which can apply the mapped Minecraft locale and reload client resources.
-- **Vanilla client without the optional Fabric companion mod**: the fallback service reads the player's stored TreasureRun language selection and sends the Resource Pack entry configured for that language.
+Eligible client packs are generated locally from the server operator's own installed Minecraft 1.20.1 assets by `tools/client-resourcepack/build-local-official-language-pack.py`. Generated packs are written outside the repository, contain `treasurerun-local-only.json`, and are listed in `local-pack-manifest.tsv`.
 
-The fallback configuration now maps each of the 23 supported TreasureRun language codes to its own published, versioned GitHub prerelease asset. Each configured route includes the SHA-1 value recorded in the published asset manifest.
+Generated client packs are local-only and must not be uploaded as GitHub Release or Modrinth artifacts.
 
-Representative routing entries are:
+## Held mappings
 
-```text
-/lang de  -> treasurerun-i18n-pack-de.zip
-/lang ja  -> treasurerun-i18n-pack-ja.zip
-/lang got -> treasurerun-i18n-pack-got.zip
-```
+The following custom or missing client-pack mappings remain deliberately held:
 
-The routed configuration is checked by `ResourcePackArtifactIntegrityTest`. Reproducible artifact generation is checked separately by `scripts/check_fallback_resourcepack_generation.py`.
+- `ang -> ang_gb`
+- `asl_gloss -> asl_us`
+- `lzh -> lzh_hant`
+- `non -> non_is`
+- `ojp -> ojp_jp`
+- `sa -> sa_in`
 
-## Important Boundary
+TreasureRun does not silently fall back to English for these mappings, and it does not silently adopt `lzh -> lzh`.
 
-A server-delivered Resource Pack does not, by itself, change a vanilla client's active language setting.
+## Existing release assets
 
-The configured routing establishes that TreasureRun can select a language-specific fallback pack for each stored language choice. It does **not** by itself establish that every selected-language display path has been observed in a vanilla Minecraft client.
+This contract does not delete or replace existing GitHub Release assets. Existing assets remain untouched until a replacement delivery contract and a later release have passed their own verification.
 
-The accurate claim at this stage is:
-
-> TreasureRun configures language-specific Resource Pack fallback routes for vanilla clients using published GitHub prerelease assets with SHA-1-verified routing metadata. Representative in-game behavior on vanilla clients has not yet been verified; it will be covered in dedicated runtime testing.
-
-## Layer Responsibilities
-
-| Text or behavior surface | Mechanism |
-| --- | --- |
-| TreasureRun-owned gameplay messages | YAML-backed plugin i18n |
-| Server-observable translatable packet content | ProtocolLib boundary adapter and pure Java packet localizer |
-| Minecraft translation-key assets sent to vanilla fallback clients | Versioned language-specific Resource Pack asset selected through `config.yml` |
-| Client-side selected-language application and resource reload | Optional Fabric companion mod |
-| Fully client-local or pre-login language surfaces | Outside the control of a Spigot plugin alone |
-
-## Artifact Contract
-
-The routed Resource Pack assets were published under the prerelease tag:
-
-```text
-v0.1.2-alpha-resourcepack-fallback
-```
-
-The repository stores a small SHA-1 manifest fixture for automated route verification:
-
-```text
-src/test/resources/i18n/release-assets/v0.1.2-alpha-resourcepack-fallback.sha1
-```
-
-This fixture records the published asset filenames and reviewed SHA-1 values. This routing change does not add new ZIP binaries to the repository.
-
-A retained shared multilingual ZIP remains in the repository for its existing local artifact-coverage contract. Historical binary cleanup and Git-history decisions are separate concerns.
-
-## Evidence Pointers
-
-The configured routing contract can be reviewed in:
-
-- `src/main/resources/config.yml`
-- `src/main/java/plugin/ResourcePackFallbackService.java`
-- `src/main/java/plugin/ResourcePackFallbackJoinListener.java`
-- `src/main/java/plugin/LangCommand.java`
-- `src/test/java/plugin/i18n/ResourcePackArtifactIntegrityTest.java`
-- `src/test/resources/i18n/release-assets/v0.1.2-alpha-resourcepack-fallback.sha1`
-- `scripts/check_fallback_resourcepack_generation.py`
-
-Historical notes describing the earlier shared-ZIP runtime remain preserved as time-specific evidence rather than being rewritten retroactively.
+Historical routing and release records remain preserved as time-specific evidence; they are not the active V4 distribution contract.

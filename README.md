@@ -1,3 +1,5 @@
+> **V4 local-only ResourcePack contract:** TreasureRun does not store or publish Minecraft language payload JSON files or reconstructed full ResourcePack ZIP files. Client packs for the 17 reviewed official locale mappings are generated only from the operator's own installed Minecraft 1.20.1 assets. The six custom/missing mappings remain available to plugin-side i18n, while their client-pack generation remains held.
+
 # TreasureRun — A Minecraft Treasure-Hunt Mini-Game
 
 TreasureRun is an open-source treasure-hunt mini-game plugin for **Minecraft Spigot 1.20.1**. Players search for treasure chests, earn points, experience staged visual and audio effects, and compete through persistent rankings.
@@ -89,9 +91,9 @@ TreasureRun also demonstrates a platform-boundary i18n approach. The existing 23
 
 ## Engineering highlight: localisation across Minecraft boundaries
 
-TreasureRun includes localisation work because Minecraft text is split across several boundaries: plugin messages, server-to-client packets, ResourcePack language assets, and optional client-side runtime sync.
+TreasureRun includes localisation work because Minecraft text is split across several boundaries: plugin messages, server-to-client packets, locally generated ResourcePack language assets, and optional client-side runtime sync.
 
-In practical terms, the project currently implements translated plugin messages, generated ResourcePack language files, packet-localisation support, and a pure Java localisation core that is tested separately from Bukkit, ProtocolLib, Fabric, and Minecraft runtime APIs.
+In practical terms, the project currently implements translated plugin messages, packet-localisation support, a local-only ResourcePack generator that builds client language packs from the operator's own installed Minecraft 1.20.1 assets, and a pure Java localisation core that is tested separately from Bukkit, ProtocolLib, Fabric, and Minecraft runtime APIs. Optional Fabric-side runtime language synchronisation is preserved.
 
 The i18n system is not a separate plugin or library.
 It is an internal architectural layer within the gameplay plugin.
@@ -115,12 +117,12 @@ TreasureRun handles localisation in several layers:
 2. The selected language is stored per player in `player_languages.yml`.
 3. Plugin-owned messages are loaded from `src/main/resources/languages/*.yml`.
 4. Minecraft locale codes are mapped through `src/main/resources/lang-map.yml`.
-5. ResourcePack language JSON files provide Minecraft translation-key assets.
+5. The local-only ResourcePack generator builds eligible client language packs from the operator's own installed Minecraft 1.20.1 assets.
 6. When ProtocolLib is available, reachable outgoing JSON text components are passed through `PacketI18nJsonLocalizer`.
 7. The pure Java localisation core is tested separately from Bukkit, ProtocolLib, Fabric, and Minecraft runtime APIs.
 8. The optional Fabric client mod can receive the selected language code and reload client-side language resources.
 
-This does not mean a Spigot plugin can control every Minecraft UI string. The project documents the boundary between plugin-owned messages, reachable packet text, ResourcePack assets, and client-only UI.
+This does not mean a Spigot plugin can control every Minecraft UI string. The project documents the boundary between plugin-owned messages, reachable packet text, locally generated client packs, and client-only UI.
 
 ## Run the Game Locally
 
@@ -236,7 +238,7 @@ TreasureRun treats that split as an architecture boundary rather than a string-r
 | Layer | Responsibility |
 | --- | --- |
 | ProtocolLib boundary adapter | Observes and rewrites reachable server-to-client translatable packet content |
-| ResourcePack language layer | Provides Minecraft standard translation-key assets |
+| Local-only ResourcePack generation | Builds eligible client language packs from the operator's own installed Minecraft 1.20.1 assets |
 | Fabric runtime language sync | Applies the selected client language and reloads resources without a restart |
 | Pure Java packet localizer | Keeps JSON localization behavior testable without platform-specific dependencies |
 

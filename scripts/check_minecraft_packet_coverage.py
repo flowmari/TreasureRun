@@ -1,40 +1,38 @@
 #!/usr/bin/env python3
-import json, sys, yaml
+"""Check packet-localisation coverage using TreasureRun-owned YAML, not tracked Minecraft payload JSON."""
+import sys
 from pathlib import Path
-ROOT = Path(__file__).parent.parent
-LANG_JSON = ROOT / "resourcepacks/treasurerun-i18n-pack/assets/minecraft/lang/en_us.json"
+import yaml
+ROOT = Path(__file__).resolve().parents[1]
 YAML_DIR = ROOT / "src/main/resources/languages"
-with open(ROOT / "src/main/resources/lang-map.yml") as f:
-    lang_map = yaml.safe_load(f).get("mappings", {})
-CLIENT_ONLY = {
-    'subtitles','mco','options','gui','key','selectWorld','createWorld','telemetry',
-    'debug','narrator','advMode','demo','narration','tutorial','selectServer','book',
-    'generator','flat_world_preset','optimizeWorld','addServer','lanServer',
-    'spectatorMenu','deathScreen','controls','telemetry_info','credits_and_attribution',
-    'quickplay','compliance','language','multiplayerWarning','sleep','accessibility',
-    'outOfMemory','permissions','realms','screenshot','symlink_warning','itemGroup',
-}
-LOW_COVERAGE_LANGS = {'asl_gloss', 'en', 'la', 'sa', 'ang', 'non', 'got'}
-en_keys = set(json.loads(LANG_JSON.read_text()).keys())
-server_keys = {k for k in en_keys if k.split('.')[0] not in CLIENT_ONLY}
-print(f"Server-sendable keys: {len(server_keys)}, Languages: {len(lang_map)}")
+
+def flatten(value, prefix=""):
+    keys = set()
+    if isinstance(value, dict):
+        for key, child in value.items():
+            keys |= flatten(child, f"{prefix}.{key}" if prefix else str(key))
+    else:
+        keys.add(prefix)
+    return keys
+with (ROOT / "src/main/resources/lang-map.yml").open() as stream:
+    mappings = yaml.safe_load(stream).get("mappings", {})
+with (YAML_DIR / "en.yml").open() as stream:
+    english = yaml.safe_load(stream) or {}
+reference = flatten(english.get("minecraft", {}).get("packet", {}))
+if not reference:
+    raise SystemExit("FAIL: English minecraft.packet reference keyset is empty")
+low = {"asl_gloss", "en", "la", "sa", "ang", "non", "got"}
 failures = []
-for tr_lang in sorted(lang_map.keys()):
-    yaml_path = YAML_DIR / f"{tr_lang}.yml"
-    if not yaml_path.exists(): failures.append(f"{tr_lang}: YAML missing"); continue
-    with open(yaml_path) as f: data = yaml.safe_load(f)
-    mc = data.get('minecraft', {}).get('packet', {})
-    def flatten(d, prefix=''):
-        keys = set()
-        if isinstance(d, dict):
-            for k, v in d.items(): keys |= flatten(v, f"{prefix}.{k}" if prefix else str(k))
-        else: keys.add(prefix)
-        return keys
-    covered = flatten(mc)
-    coverage = len(covered & server_keys) / len(server_keys)
-    threshold = 0.73 if tr_lang in LOW_COVERAGE_LANGS else 0.85
-    status = "✓" if coverage >= threshold else "✗"
-    print(f"  {status} {tr_lang}: {coverage:.1%} (threshold: {threshold:.0%})")
-    if coverage < threshold: failures.append(f"{tr_lang}: {coverage:.1%} < {threshold:.0%}")
-if failures: print(f"\nFAIL: {failures}"); sys.exit(1)
-else: print(f"\nPASS: No regression.")
+print(f"TreasureRun-owned English packet keys: {len(reference)}, Languages: {len(mappings)}")
+for language in sorted(mappings):
+    path = YAML_DIR / f"{language}.yml"
+    if not path.is_file(): failures.append(f"{language}: YAML missing"); continue
+    with path.open() as stream: data = yaml.safe_load(stream) or {}
+    covered = flatten(data.get("minecraft", {}).get("packet", {}))
+    coverage = len(covered & reference) / len(reference)
+    threshold = 0.73 if language in low else 0.85
+    print(f"  {'✓' if coverage >= threshold else '✗'} {language}: {coverage:.1%} (threshold: {threshold:.0%})")
+    if coverage < threshold: failures.append(f"{language}: {coverage:.1%} < {threshold:.0%}")
+if failures:
+    print(f"FAIL: {failures}"); sys.exit(1)
+print("PASS: packet-localisation YAML coverage has no regression.")

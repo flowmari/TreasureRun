@@ -1,71 +1,51 @@
-name: resourcepack-artifact-contract
+name: resourcepack-delivery-disabled-contract
 
 on:
   pull_request:
     paths:
       - '.github/workflows/resourcepack-sha1.yml'
       - '.gitignore'
+      - 'resourcepacks/local-generator-policy.json'
       - 'resourcepacks/treasurerun-i18n-pack/**'
-      - 'resourcepacks/generated/treasurerun-i18n-pack.zip'
-      - 'resourcepacks/generated/treasurerun-i18n-pack.zip.sha1'
-      - 'resourcepacks/generated/treasurerun-i18n-pack.zip.sha256'
-      - 'scripts/build_shared_resourcepack.py'
-      - 'src/main/java/plugin/ResourcePackDeliveryListener.java'
-      - 'src/main/java/plugin/ResourcePackDeliveryMode.java'
-      - 'src/main/java/plugin/ResourcePackDeliveryRegistrar.java'
-      - 'src/main/java/plugin/TreasureRunMultiChestPlugin.java'
+      - 'resourcepacks/client-custom-languages/**'
+      - 'fabric-i18n-mod/src/main/resources/assets/minecraft/lang/**'
+      - 'fabric-i18n-mod/src/main/resources/resourcepacks/treasurerun_langs/assets/minecraft/lang/**'
+      - 'scripts/check_local_resourcepack_contract.py'
+      - 'tools/client-resourcepack/build-local-official-language-pack.py'
       - 'src/main/resources/config.yml'
       - 'src/test/java/plugin/ResourcePackDeliveryBoundaryTest.java'
-      - 'src/test/java/plugin/ResourcePackDeliveryModeTest.java'
       - 'src/test/java/plugin/i18n/ResourcePackArtifactIntegrityTest.java'
+      - 'src/test/java/plugin/i18n/ResourcePackExactKeySetConsistencyTest.java'
+      - 'src/test/java/plugin/i18n/LanguageCodeMappingIntegrityTest.java'
   push:
-    branches:
-      - main
+    branches: [ main ]
     paths:
       - '.github/workflows/resourcepack-sha1.yml'
-      - '.gitignore'
-      - 'resourcepacks/treasurerun-i18n-pack/**'
-      - 'resourcepacks/generated/treasurerun-i18n-pack.zip'
-      - 'resourcepacks/generated/treasurerun-i18n-pack.zip.sha1'
-      - 'resourcepacks/generated/treasurerun-i18n-pack.zip.sha256'
-      - 'scripts/build_shared_resourcepack.py'
-      - 'src/main/java/plugin/ResourcePackDeliveryListener.java'
-      - 'src/main/java/plugin/ResourcePackDeliveryMode.java'
-      - 'src/main/java/plugin/ResourcePackDeliveryRegistrar.java'
-      - 'src/main/java/plugin/TreasureRunMultiChestPlugin.java'
+      - 'resourcepacks/local-generator-policy.json'
+      - 'scripts/check_local_resourcepack_contract.py'
       - 'src/main/resources/config.yml'
-      - 'src/test/java/plugin/ResourcePackDeliveryBoundaryTest.java'
-      - 'src/test/java/plugin/ResourcePackDeliveryModeTest.java'
-      - 'src/test/java/plugin/i18n/ResourcePackArtifactIntegrityTest.java'
 
 permissions:
   contents: read
 
 jobs:
-  verify-shared-resourcepack:
+  verify-disabled-delivery-boundary:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-
-      - name: Verify deterministic ZIP and checksums
-        run: python3 scripts/build_shared_resourcepack.py --check
-
-      - name: Set up Java 17
-        uses: actions/setup-java@v4
+      - uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: '17'
-
-      - name: Verify ResourcePack delivery boundary tests
+      - name: Verify local-only ResourcePack repository contract
+        run: python scripts/check_local_resourcepack_contract.py
+      - name: Verify Java delivery boundary tests
         run: |
           ./gradlew :test --no-daemon \
-            --tests plugin.ResourcePackDeliveryModeTest \
             --tests plugin.ResourcePackDeliveryBoundaryTest \
-            --tests plugin.i18n.ResourcePackArtifactIntegrityTest
+            --tests plugin.i18n.ResourcePackArtifactIntegrityTest \
+            --tests plugin.i18n.ResourcePackExactKeySetConsistencyTest \
+            --tests plugin.i18n.LanguageCodeMappingIntegrityTest
