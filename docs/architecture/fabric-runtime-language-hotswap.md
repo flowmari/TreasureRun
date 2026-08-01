@@ -1,3 +1,5 @@
+> **V4 local-only ResourcePack contract:** TreasureRun does not store or publish Minecraft language payload JSON files or reconstructed full ResourcePack ZIP files. Client packs for the 17 reviewed official locale mappings are generated only from the operator's own installed Minecraft 1.20.1 assets. The six custom/missing mappings remain available to plugin-side i18n, while their client-pack generation remains held.
+
 # Fabric Runtime Language Hot-Swap
 
 TreasureRun's Fabric i18n mod applies Minecraft standard-message language changes at runtime.
@@ -18,20 +20,17 @@ Instead, it uses Fabric client-side integration and Minecraft's resource reload 
    - `client.options.language`
    - Minecraft's `LanguageManager`
 5. The Fabric Mod calls `client.reloadResources()`.
-6. Minecraft reloads bundled language assets from the Fabric Mod / ResourcePack layer.
+6. Minecraft reloads language resources available from the player's installation and any locally generated client pack.
 
 ## Why not send every supported language at runtime?
 
-The Minecraft standard-message layer contains:
-
-- 8039 translation keys
-- 20+ locale JSON assets
+The Minecraft standard-message layer spans thousands of translation keys across many locale assets.
 
 Sending all of that data over the network would be wasteful.
 
 TreasureRun separates the design:
 
-- Heavy data: shipped statically in Fabric Mod / ResourcePack assets
+- Heavy data: resolved from the player's installation or a locally generated client pack
 - Runtime payload: selected language code only
 - Hot-swap: client-side resource reload without Minecraft restart
 
@@ -43,6 +42,6 @@ TreasureRun prefers the safer route:
 
 - update the selected language
 - use Minecraft's resource reload pipeline
-- let Minecraft rebuild translation storage from bundled assets
+- let Minecraft rebuild translation storage from installed locale resources and any locally generated client pack
 
 This keeps the design closer to Minecraft's own resource lifecycle while still working around platform boundaries.

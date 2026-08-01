@@ -1,32 +1,25 @@
 #!/usr/bin/env python3
-import re, sys, yaml
+"""Verify the 23-language server map and the 17/6 V4 client-pack policy partition."""
+import json
 from pathlib import Path
-ROOT = Path(__file__).parent.parent
-LANG_MAP_FILE = ROOT / "src/main/resources/lang-map.yml"
-YAML_DIR = ROOT / "src/main/resources/languages"
-RP_LANG_DIR = ROOT / "resourcepacks/treasurerun-i18n-pack/assets/minecraft/lang"
-MOD_LANG_DIR = ROOT / "fabric-i18n-mod/src/main/resources/assets/minecraft/lang"
-MOD_JAVA = ROOT / "fabric-i18n-mod/src/main/java/plugin/i18nmod/TreasureRunI18nMod.java"
-with open(LANG_MAP_FILE) as f:
-    mappings = yaml.safe_load(f).get("mappings", {})
-print(f"lang-map.yml: {len(mappings)} languages")
-failures = []
-for tr_lang, mc_lang in sorted(mappings.items()):
-    issues = []
-    if not (YAML_DIR / f"{tr_lang}.yml").exists(): issues.append(f"languages/{tr_lang}.yml MISSING")
-    if not (RP_LANG_DIR / f"{mc_lang}.json").exists(): issues.append(f"resourcepack/{mc_lang}.json MISSING")
-    if not (MOD_LANG_DIR / f"{mc_lang}.json").exists(): issues.append(f"fabric-mod/{mc_lang}.json MISSING")
-    status = "✓" if not issues else "✗"
-    print(f"  {status} {tr_lang} -> {mc_lang}")
-    for issue in issues: print(f"      FAIL: {issue}")
-    failures.extend(issues)
-if MOD_JAVA.exists():
-    jc = MOD_JAVA.read_text()
-    if "lang-map.yml" in jc or "langMap" in jc or "LANG_MAP" in jc:
-        print(f"\n  ✓ Fabric mod uses dynamic lang-map.yml lookup (zero-code scaling)")
-    elif "switch" in jc:
-        cases = set(re.findall(r'case\s+"([^"]+)"\s+->', jc))
-        missing = set(mappings.keys()) - cases
-        if missing: print(f"\n  WARN: Java switch missing: {sorted(missing)}")
-if failures: print(f"\nFAIL: {failures}"); sys.exit(1)
-else: print(f"\nPASS: All {len(mappings)} languages provisioned.")
+ROOT = Path(__file__).resolve().parents[1]
+
+def read_map(path):
+    result = {}; inside = False
+    for raw in path.read_text(encoding="utf-8").splitlines():
+        line = raw.split("#", 1)[0].rstrip()
+        if line.strip() == "mappings:": inside = True; continue
+        if not inside or not line.strip(): continue
+        if not line.startswith("  "): break
+        key, sep, value = line.strip().partition(":")
+        if sep and value.strip(): result[key.strip()] = value.strip()
+    return result
+src = read_map(ROOT / "src/main/resources/lang-map.yml")
+mod = read_map(ROOT / "fabric-i18n-mod/src/main/resources/lang-map.yml")
+policy = json.loads((ROOT / "resourcepacks/local-generator-policy.json").read_text(encoding="utf-8"))
+official = policy["official_mappings"]; held = policy["held_mappings"]
+assert src == mod, "server and Fabric lang-map.yml files differ"
+assert len(src) == 23 and len(official) == 17 and len(held) == 6
+assert {**official, **held} == src
+assert held.get("lzh") == "lzh_hant" and "lzh" not in official
+print("PASS: 23 plugin/Fabric mappings preserved; 17 official local-pack mappings and six held mappings are explicit.")

@@ -5,14 +5,14 @@ on:
     paths:
       - 'src/main/resources/lang-map.yml'
       - 'src/main/resources/languages/**'
-      - 'resourcepacks/treasurerun-i18n-pack/assets/minecraft/lang/**'
       - 'fabric-i18n-mod/**'
+      - 'resourcepacks/local-generator-policy.json'
       - 'scripts/check_minecraft_packet_coverage.py'
       - 'scripts/check_fabric_lang_mapping.py'
   pull_request:
 jobs:
   i18n-expansion:
-    name: i18n-asset-expansion-integrity
+    name: i18n-owned-source-and-local-pack-policy-integrity
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -20,52 +20,23 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install pyyaml
-      - name: "[SSOT] lang-map.yml exists and is valid"
-        run: |
-          python3 -c "
-          import yaml; from pathlib import Path
-          f = Path('src/main/resources/lang-map.yml')
-          assert f.exists(), 'lang-map.yml not found!'
-          m = yaml.safe_load(f.read_text()).get('mappings', {})
-          assert len(m) > 0, 'lang-map.yml has no mappings!'
-          print(f'PASS: {len(m)} languages defined: {sorted(m.keys())}')
-          "
-      - name: "[Gate 1] All 3 asset layers present for every lang in lang-map.yml"
+      - name: Verify 23-language map and V4 17/6 client-pack policy
         run: python3 scripts/check_fabric_lang_mapping.py
-      - name: "[Gate 2] minecraft.packet coverage regression guard"
+      - name: Verify TreasureRun-owned packet YAML coverage
         run: python3 scripts/check_minecraft_packet_coverage.py
-      - name: "[Gate 3] YAML syntax valid"
+      - name: Verify YAML syntax
         run: python3 scripts/check_i18n_yaml_syntax.py
-      - name: "[Gate 4] No duplicate keys"
+      - name: Verify no duplicate YAML keys
         run: python3 scripts/check_yaml_duplicate_keys.py
-      - name: "[Gate 5] lang-map.yml and config.yml allowedLanguages in sync"
+      - name: Verify lang-map.yml and allowedLanguages stay in sync
         run: |
-          python3 -c "
-          import yaml; from pathlib import Path
-          map_langs = set(yaml.safe_load(Path('src/main/resources/lang-map.yml').read_text()).get('mappings',{}).keys())
-          cfg_langs = set(yaml.safe_load(Path('src/main/resources/config.yml').read_text()).get('language',{}).get('allowedLanguages',[]))
-          a = map_langs - cfg_langs; b = cfg_langs - map_langs
-          if a or b: print(f'FAIL: map_only={sorted(a)} cfg_only={sorted(b)}'); exit(1)
-          print(f'PASS: {len(map_langs)} languages in sync.')
-          "
-      - name: "[Gate 6] fabric-i18n-mod lang-map.yml matches src"
-        run: |
-          python3 -c "
-          import yaml; from pathlib import Path
-          src = yaml.safe_load(Path('src/main/resources/lang-map.yml').read_text()).get('mappings',{})
-          mod = yaml.safe_load(Path('fabric-i18n-mod/src/main/resources/lang-map.yml').read_text()).get('mappings',{})
-          if src != mod: print(f'FAIL: out of sync'); exit(1)
-          print(f'PASS: in sync ({len(src)} entries).')
-          "
-      - name: "Summary"
-        if: always()
-        run: |
-          python3 -c "
-          import json, yaml; from pathlib import Path
-          m = yaml.safe_load(Path('src/main/resources/lang-map.yml').read_text()).get('mappings',{})
-          en = json.loads(Path('resourcepacks/treasurerun-i18n-pack/assets/minecraft/lang/en_us.json').read_text())
-          print('=== TreasureRun i18n ===')
-          print(f'Languages: {len(m)} (from lang-map.yml)')
-          print(f'ResourcePack keys: {len(en)}')
-          print(f'Scaling: add 1 line to lang-map.yml to support new language.')
-          "
+          python3 - <<'PY2'
+          import yaml
+          from pathlib import Path
+          mapped = set(yaml.safe_load(Path('src/main/resources/lang-map.yml').read_text()).get('mappings', {}))
+          allowed = set(yaml.safe_load(Path('src/main/resources/config.yml').read_text()).get('language', {}).get('allowedLanguages', []))
+          assert mapped == allowed, f'map_only={sorted(mapped-allowed)} config_only={sorted(allowed-mapped)}'
+          print(f'PASS: {len(mapped)} plugin-side languages remain in sync.')
+          PY2
+      - name: Verify no tracked Minecraft language payloads
+        run: python3 scripts/check_local_resourcepack_contract.py
