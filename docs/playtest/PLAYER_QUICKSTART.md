@@ -67,7 +67,7 @@ localhost:25575
 
 This is the verified address for the local Docker setup documented in this guide.
 
-Keep **Server Resource Packs** set to **Prompt**, and accept the ResourcePack prompt if Minecraft shows one.
+Keep **Server Resource Packs** set to **Prompt**. TreasureRun does not bundle a public ResourcePack, and automatic public ResourcePack delivery is disabled by default. Accept a prompt only if the server operator has generated and configured a local pack from their own Minecraft Java Edition 1.20.1 installation.
 
 Other client versions are not the verified target for this alpha setup.
 
