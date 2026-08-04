@@ -6449,3 +6449,27 @@ minecraft:
     upgrade:
       minecraft:
         netherite_upgrade: Netherite Upgrade
+serverHostedSession:
+  value:
+    state:
+      idle: 待機前
+      waiting: 参加受付中
+      locked: 開始準備済み
+    ready: 開始可能
+    notReady: 開始条件未達
+  command:
+    created: "&aサーバー運営型のTreasureRunセッションを作成しました。"
+    adminRequired: "&cセッションを作成できるのは管理者だけです。"
+    sessionAlreadyExists: "&eTreasureRunセッションはすでに存在します。"
+    joined: "&aTreasureRunセッションに参加しました。({players}/{max})"
+    alreadyJoined: "&eすでにTreasureRunセッションへ参加しています。"
+    sessionNotWaiting: "&e現在参加できるTreasureRunセッションはありません。"
+    sessionFull: "&cTreasureRunセッションは満員です。({players}/{max})"
+    left: "&eTreasureRunセッションから退出しました。({players}/{max})"
+    leftAndSessionReset: "&eTreasureRunセッションから退出しました。参加者がいないためセッションをリセットしました。"
+    notJoined: "&eTreasureRunセッションに参加していません。"
+    status: "&bTreasureRunセッション: {state}、参加者 {players}/{max}、開始最低人数 {min}、{ready}。"
+    playerRequired: "&cこのサブコマンドはプレイヤーが実行してください。"
+    missingSubcommand: "&e使用方法: /treasurerun <create|join|leave|status>"
+    unknownSubcommand: "&e不明なサブコマンドです。create、join、leave、statusのいずれかを指定してください。"
+    unexpectedArguments: "&eサブコマンドはcreate、join、leave、statusのいずれか一つだけ指定してください。"

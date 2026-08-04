@@ -3,6 +3,7 @@ package plugin;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.IOException;
@@ -50,6 +51,7 @@ class PluginCommandMetadataContractTest {
     Map<String, CommandSpec> commands = parseCommands(yaml);
 
     Set<String> expectedCommands = Set.of(
+        "treasurerun",
         "trsecret",
         "treasuresecret",
         "packetI18nProbe",
@@ -77,6 +79,7 @@ class PluginCommandMetadataContractTest {
     assertEquals("treasure.admin", commands.get("gamestart").permission);
     assertEquals("treasure.admin", commands.get("gameEnd").permission);
     assertEquals("op", parsePermissionDefaults(yaml).get("treasure.admin"));
+    assertNull(commands.get("treasurerun").permission);
 
     Set<String> declaredPermissions = parsePermissionKeys(yaml);
 
