@@ -5949,3 +5949,27 @@ minecraft:
     upgrade:
       minecraft:
         netherite_upgrade: Netherite Upgrade
+serverHostedSession:
+  value:
+    state:
+      idle: idle
+      waiting: waiting
+      locked: locked
+    ready: ready to start
+    notReady: not ready to start
+  command:
+    created: "&aCreated a server-hosted TreasureRun session."
+    adminRequired: "&cOnly an administrator can create a session."
+    sessionAlreadyExists: "&eA TreasureRun session already exists."
+    joined: "&aJoined the TreasureRun session. ({players}/{max})"
+    alreadyJoined: "&eYou have already joined the TreasureRun session."
+    sessionNotWaiting: "&eNo joinable TreasureRun session is waiting."
+    sessionFull: "&cThe TreasureRun session is full. ({players}/{max})"
+    left: "&eLeft the TreasureRun session. ({players}/{max})"
+    leftAndSessionReset: "&eLeft the TreasureRun session. The empty session was reset."
+    notJoined: "&eYou are not in the TreasureRun session."
+    status: "&bTreasureRun session: {state}; players {players}/{max}; minimum {min}; {ready}."
+    playerRequired: "&cThis subcommand must be run by a player."
+    missingSubcommand: "&eUsage: /treasurerun <create|join|leave|status>"
+    unknownSubcommand: "&eUnknown subcommand. Use create, join, leave, or status."
+    unexpectedArguments: "&eUse exactly one subcommand: create, join, leave, or status."
