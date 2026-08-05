@@ -86,6 +86,8 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
   // ゲーム状態
   // ================================
   private final RoundLifecycle roundLifecycle = new RoundLifecycle();
+  private final ServerHostedSessionLifecycle serverHostedSessionLifecycle =
+      new ServerHostedSessionLifecycle();
   private UUID activeRoundPlayerId;
   private BukkitTask countdownDelayTask;
   private BukkitTask countdownTask;
@@ -307,7 +309,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
 
     ServerHostedSessionCommandAdapter serverHostedSessionCommandAdapter =
         new ServerHostedSessionCommandAdapter(
-            new ServerHostedSessionCommandService(new ServerHostedSession()),
+            serverHostedSessionLifecycle.commandService(),
             sender -> sender instanceof Player player
                 ? resolveCurrentLang(player)
                 : getConfig().getString("language.default", "en"),
@@ -715,6 +717,8 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
 
   @Override
   public void onDisable() {
+    serverHostedSessionLifecycle.reset();
+
     Player activePlayer = getActiveRoundPlayer();
     if (roundLifecycle.isActive()) {
       finishRoundCleanup(activePlayer, CleanupReason.PLUGIN_DISABLE, true);
@@ -779,6 +783,8 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
   @EventHandler
   public void onPlayerQuit(PlayerQuitEvent event) {
     Player player = event.getPlayer();
+    serverHostedSessionLifecycle.handlePlayerQuit(player.getUniqueId());
+
     if (!roundLifecycle.isActive() || !isActiveRoundPlayer(player)) {
       activeGameResultIds.remove(player.getUniqueId());
       return;
