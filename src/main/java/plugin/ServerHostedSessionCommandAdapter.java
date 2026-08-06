@@ -16,8 +16,9 @@ import org.bukkit.entity.Player;
  * Connects the framework-independent server-hosted session command service to Bukkit and i18n.
  *
  * <p>This adapter starts no gameplay. It maps Bukkit senders to typed actors, delegates
- * create/join/leave/status to {@link ServerHostedSessionCommandService}, and translates the
- * returned result through the existing language boundary.</p>
+ * create/join/leave/status to {@link ServerHostedSessionCommandService}, delegates start/stop
+ * decisions to {@link ServerHostedSessionControlService}, and translates each typed result
+ * through the existing language boundary. It still starts no countdown or gameplay.</p>
  */
 public final class ServerHostedSessionCommandAdapter implements TabExecutor {
 
@@ -32,15 +33,21 @@ public final class ServerHostedSessionCommandAdapter implements TabExecutor {
       List.of("join", "leave", "status");
 
   private final ServerHostedSessionCommandService service;
+  private final ServerHostedSessionControlService controlService;
   private final Function<CommandSender, String> languageResolver;
   private final MessageResolver messageResolver;
 
   public ServerHostedSessionCommandAdapter(
       ServerHostedSessionCommandService service,
+      ServerHostedSessionControlService controlService,
       Function<CommandSender, String> languageResolver,
       MessageResolver messageResolver
   ) {
     this.service = Objects.requireNonNull(service, "service");
+    this.controlService = Objects.requireNonNull(
+        controlService,
+        "controlService"
+    );
     this.languageResolver = Objects.requireNonNull(
         languageResolver,
         "languageResolver"
@@ -60,9 +67,33 @@ public final class ServerHostedSessionCommandAdapter implements TabExecutor {
   ) {
     Objects.requireNonNull(sender, "sender");
 
+    List<String> copiedArguments = arguments == null
+        ? List.of()
+        : Arrays.asList(arguments);
+
+    if (copiedArguments.size() == 1) {
+      String subcommand = copiedArguments.get(0) == null
+          ? ""
+          : copiedArguments.get(0).toLowerCase(Locale.ROOT);
+
+      if (subcommand.equals("start")) {
+        ServerHostedSessionControlService.StartDecision decision =
+            controlService.requestStart(sender.hasPermission(ADMIN_PERMISSION));
+        sender.sendMessage(message(sender, decision));
+        return true;
+      }
+
+      if (subcommand.equals("stop")) {
+        ServerHostedSessionControlService.StopDecision decision =
+            controlService.requestStop(sender.hasPermission(ADMIN_PERMISSION));
+        sender.sendMessage(message(sender, decision));
+        return true;
+      }
+    }
+
     ServerHostedSessionCommandService.Result result = service.execute(
         actor(sender),
-        arguments == null ? List.of() : Arrays.asList(arguments)
+        copiedArguments
     );
 
     sender.sendMessage(message(sender, result));
@@ -86,7 +117,7 @@ public final class ServerHostedSessionCommandAdapter implements TabExecutor {
         ? ""
         : arguments[0].toLowerCase(Locale.ROOT);
     List<String> candidates = sender.hasPermission(ADMIN_PERMISSION)
-        ? List.of("create", "join", "leave", "status")
+        ? List.of("create", "join", "leave", "start", "stop", "status")
         : PLAYER_SUBCOMMANDS;
 
     return candidates.stream()
@@ -151,6 +182,76 @@ public final class ServerHostedSessionCommandAdapter implements TabExecutor {
         Map.copyOf(placeholders)
     );
   }
+
+  private String message(
+      CommandSender sender,
+      ServerHostedSessionControlService.StartDecision decision
+  ) {
+    return controlMessage(
+        sender,
+        startResultKey(decision.code())
+    );
+  }
+
+  private String message(
+      CommandSender sender,
+      ServerHostedSessionControlService.StopDecision decision
+  ) {
+    return controlMessage(
+        sender,
+        stopResultKey(decision.code())
+    );
+  }
+
+  private String controlMessage(CommandSender sender, String key) {
+    String language = languageResolver.apply(sender);
+    if (language == null || language.isBlank()) {
+      language = "en";
+    }
+
+    ServerHostedSessionCommandService.Snapshot snapshot = service.snapshot();
+    Map<String, String> placeholders = new LinkedHashMap<>();
+    placeholders.put("{players}", String.valueOf(snapshot.playerCount()));
+    placeholders.put("{min}", String.valueOf(snapshot.minimumPlayers()));
+    placeholders.put("{max}", String.valueOf(snapshot.maximumPlayers()));
+
+    return messageResolver.resolve(
+        language,
+        key,
+        Map.copyOf(placeholders)
+    );
+  }
+
+  private String startResultKey(
+      ServerHostedSessionControlService.StartCode code
+  ) {
+    return switch (code) {
+      case ROSTER_LOCKED ->
+          "serverHostedSession.command.startRosterLocked";
+      case ADMIN_REQUIRED ->
+          "serverHostedSession.command.startAdminRequired";
+      case TOO_FEW_PLAYERS ->
+          "serverHostedSession.command.startTooFewPlayers";
+      case SESSION_NOT_WAITING ->
+          "serverHostedSession.command.startSessionNotWaiting";
+    };
+  }
+
+  private String stopResultKey(
+      ServerHostedSessionControlService.StopCode code
+  ) {
+    return switch (code) {
+      case WAITING_RESET ->
+          "serverHostedSession.command.stopWaitingReset";
+      case CLEANUP_REQUIRED ->
+          "serverHostedSession.command.stopCleanupRequired";
+      case NO_ACTIVE_SESSION ->
+          "serverHostedSession.command.stopNoActiveSession";
+      case ADMIN_REQUIRED ->
+          "serverHostedSession.command.stopAdminRequired";
+    };
+  }
+
 
   private String stateKey(ServerHostedSession.State state) {
     return switch (state) {

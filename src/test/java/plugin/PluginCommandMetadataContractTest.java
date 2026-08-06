@@ -80,6 +80,11 @@ class PluginCommandMetadataContractTest {
     assertEquals("treasure.admin", commands.get("gameEnd").permission);
     assertEquals("op", parsePermissionDefaults(yaml).get("treasure.admin"));
     assertNull(commands.get("treasurerun").permission);
+    assertTrue(
+        yaml.contains(
+            "usage: /treasurerun <create|join|leave|start|stop|status>"
+        )
+    );
 
     Set<String> declaredPermissions = parsePermissionKeys(yaml);
 

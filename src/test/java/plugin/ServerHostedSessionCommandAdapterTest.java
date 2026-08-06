@@ -149,11 +149,17 @@ class ServerHostedSessionCommandAdapterTest {
     fixture.execute(console, "create", "extra");
     fixture.assertLastKey("serverHostedSession.command.unexpectedArguments");
 
+    fixture.execute(console, "start", "extra");
+    fixture.assertLastKey("serverHostedSession.command.unexpectedArguments");
+
+    fixture.execute(console, "stop", "extra");
+    fixture.assertLastKey("serverHostedSession.command.unexpectedArguments");
+
     assertEquals(ServerHostedSession.State.IDLE, fixture.session.state());
   }
 
   @Test
-  void tabCompletionExposesCreateOnlyToAdministratorsAndFiltersPrefixes() {
+  void tabCompletionExposesAdministrativeCommandsOnlyToAdministratorsAndFiltersPrefixes() {
     Fixture fixture = new Fixture();
     CommandSender player = fixture.console(false);
     CommandSender administrator = fixture.console(true);
@@ -164,9 +170,12 @@ class ServerHostedSessionCommandAdapterTest {
     );
     assertEquals(List.of("join"), fixture.complete(player, "j"));
     assertEquals(
-        List.of("create", "join", "leave", "status"),
+        List.of("create", "join", "leave", "start", "stop", "status"),
         fixture.complete(administrator, "")
     );
+    assertEquals(List.of("start", "stop", "status"), fixture.complete(administrator, "st"));
+    assertEquals(List.of("status"), fixture.complete(player, "st"));
+    assertEquals(List.of(), fixture.complete(player, "sto"));
     assertEquals(List.of(), fixture.complete(administrator, "x"));
     assertEquals(
         List.of(),
@@ -177,6 +186,140 @@ class ServerHostedSessionCommandAdapterTest {
             new String[]{"status", "extra"}
         )
     );
+  }
+
+
+  @Test
+  void administratorStartLocksTwoPlayerRosterWithoutStartingGameplay() {
+    Fixture fixture = new Fixture();
+    CommandSender administrator = fixture.console(true);
+    Player first = fixture.player(false);
+    Player second = fixture.player(false);
+
+    fixture.execute(administrator, "create");
+    fixture.execute(first, "join");
+    fixture.execute(second, "join");
+    fixture.execute(administrator, "start");
+
+    assertEquals(ServerHostedSession.State.LOCKED, fixture.session.state());
+    assertEquals(
+        List.of(first.getUniqueId(), second.getUniqueId()),
+        fixture.session.participants()
+    );
+    fixture.assertLastKey("serverHostedSession.command.startRosterLocked");
+    assertEquals("2", fixture.lastInvocation().placeholders().get("{players}"));
+    assertEquals("8", fixture.lastInvocation().placeholders().get("{max}"));
+  }
+
+  @Test
+  void nonAdministratorStartIsRejectedWithoutMutation() {
+    Fixture fixture = new Fixture();
+    CommandSender administrator = fixture.console(true);
+    Player participant = fixture.player(false);
+
+    fixture.execute(administrator, "create");
+    fixture.execute(participant, "join");
+    fixture.execute(participant, "start");
+
+    assertEquals(ServerHostedSession.State.WAITING, fixture.session.state());
+    assertEquals(List.of(participant.getUniqueId()), fixture.session.participants());
+    fixture.assertLastKey("serverHostedSession.command.startAdminRequired");
+  }
+
+  @Test
+  void onePlayerStartReportsTooFewPlayersAndRemainsWaiting() {
+    Fixture fixture = new Fixture();
+    CommandSender administrator = fixture.console(true);
+    Player participant = fixture.player(false);
+
+    fixture.execute(administrator, "create");
+    fixture.execute(participant, "join");
+    fixture.execute(administrator, "start");
+
+    assertEquals(ServerHostedSession.State.WAITING, fixture.session.state());
+    assertEquals(List.of(participant.getUniqueId()), fixture.session.participants());
+    fixture.assertLastKey("serverHostedSession.command.startTooFewPlayers");
+    assertEquals("2", fixture.lastInvocation().placeholders().get("{min}"));
+  }
+
+  @Test
+  void repeatedStartReportsSessionNotWaitingAndPreservesLockedRoster() {
+    Fixture fixture = new Fixture();
+    CommandSender administrator = fixture.console(true);
+    Player first = fixture.player(false);
+    Player second = fixture.player(false);
+
+    fixture.execute(administrator, "create");
+    fixture.execute(first, "join");
+    fixture.execute(second, "join");
+    fixture.execute(administrator, "start");
+    List<UUID> locked = fixture.session.participants();
+    fixture.execute(administrator, "start");
+
+    assertEquals(ServerHostedSession.State.LOCKED, fixture.session.state());
+    assertEquals(locked, fixture.session.participants());
+    fixture.assertLastKey("serverHostedSession.command.startSessionNotWaiting");
+  }
+
+  @Test
+  void administratorWaitingStopResetsDirectlyToIdle() {
+    Fixture fixture = new Fixture();
+    CommandSender administrator = fixture.console(true);
+    Player participant = fixture.player(false);
+
+    fixture.execute(administrator, "create");
+    fixture.execute(participant, "join");
+    fixture.execute(administrator, "stop");
+
+    assertEquals(ServerHostedSession.State.IDLE, fixture.session.state());
+    assertEquals(List.of(), fixture.session.participants());
+    fixture.assertLastKey("serverHostedSession.command.stopWaitingReset");
+  }
+
+  @Test
+  void administratorLockedStopRequiresCleanupAndPreservesRoster() {
+    Fixture fixture = new Fixture();
+    CommandSender administrator = fixture.console(true);
+    Player first = fixture.player(false);
+    Player second = fixture.player(false);
+
+    fixture.execute(administrator, "create");
+    fixture.execute(first, "join");
+    fixture.execute(second, "join");
+    fixture.execute(administrator, "start");
+    List<UUID> locked = fixture.session.participants();
+    fixture.execute(administrator, "stop");
+
+    assertEquals(ServerHostedSession.State.LOCKED, fixture.session.state());
+    assertEquals(locked, fixture.session.participants());
+    fixture.assertLastKey("serverHostedSession.command.stopCleanupRequired");
+  }
+
+  @Test
+  void nonAdministratorStopIsRejectedWithoutMutation() {
+    Fixture fixture = new Fixture();
+    CommandSender administrator = fixture.console(true);
+    Player participant = fixture.player(false);
+
+    fixture.execute(administrator, "create");
+    fixture.execute(participant, "join");
+    fixture.execute(participant, "stop");
+
+    assertEquals(ServerHostedSession.State.WAITING, fixture.session.state());
+    assertEquals(List.of(participant.getUniqueId()), fixture.session.participants());
+    fixture.assertLastKey("serverHostedSession.command.stopAdminRequired");
+  }
+
+  @Test
+  void idleStopReportsNoActiveSession() {
+    Fixture fixture = new Fixture();
+    CommandSender administrator = fixture.console(true);
+
+    fixture.execute(administrator, "stop");
+
+    assertEquals(ServerHostedSession.State.IDLE, fixture.session.state());
+    assertEquals(List.of(), fixture.session.participants());
+    fixture.assertLastKey("serverHostedSession.command.stopNoActiveSession");
   }
 
   @Test
@@ -211,6 +354,7 @@ class ServerHostedSessionCommandAdapterTest {
     ) {
       adapter = new ServerHostedSessionCommandAdapter(
           new ServerHostedSessionCommandService(session),
+          new ServerHostedSessionControlService(session),
           languageResolver,
           (language, key, placeholders) -> {
             invocations.add(new Invocation(language, key, placeholders));

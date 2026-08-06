@@ -310,6 +310,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     ServerHostedSessionCommandAdapter serverHostedSessionCommandAdapter =
         new ServerHostedSessionCommandAdapter(
             serverHostedSessionLifecycle.commandService(),
+            serverHostedSessionLifecycle.controlService(),
             sender -> sender instanceof Player player
                 ? resolveCurrentLang(player)
                 : getConfig().getString("language.default", "en"),
