@@ -5,19 +5,19 @@ import java.util.Objects;
 import java.util.UUID;
 
 /**
- * Owns one server-hosted session and its command services across Bukkit lifecycle callbacks.
+ * Keeps command handling and lifecycle callbacks attached to one coordinator-backed session facade.
  *
- * <p>This boundary does not start gameplay. It keeps command handling, start/stop decisions,
- * WAITING-player disconnect cleanup, and plugin-disable reset attached to the same session
- * instance.</p>
+ * <p>This boundary owns no lifecycle state and starts no gameplay.</p>
  */
 final class ServerHostedSessionLifecycle {
   private final ServerHostedSession session;
   private final ServerHostedSessionCommandService commandService;
   private final ServerHostedSessionControlService controlService;
 
-  ServerHostedSessionLifecycle() {
-    this(new ServerHostedSession());
+  ServerHostedSessionLifecycle() { this(new ServerHostedRoundCoordinator()); }
+
+  ServerHostedSessionLifecycle(ServerHostedRoundCoordinator coordinator) {
+    this(new ServerHostedSession(Objects.requireNonNull(coordinator, "coordinator")));
   }
 
   ServerHostedSessionLifecycle(ServerHostedSession session) {
@@ -26,25 +26,16 @@ final class ServerHostedSessionLifecycle {
     this.controlService = new ServerHostedSessionControlService(session);
   }
 
-  ServerHostedSessionCommandService commandService() {
-    return commandService;
-  }
-
-  ServerHostedSessionControlService controlService() {
-    return controlService;
-  }
+  ServerHostedSessionCommandService commandService() { return commandService; }
+  ServerHostedSessionControlService controlService() { return controlService; }
 
   ServerHostedSessionCommandService.Result handlePlayerQuit(UUID playerId) {
     return commandService.execute(
         ServerHostedSessionCommandService.Actor.player(
-            Objects.requireNonNull(playerId, "playerId"),
-            false
-        ),
+            Objects.requireNonNull(playerId, "playerId"), false),
         List.of("leave")
     );
   }
 
-  void reset() {
-    session.reset();
-  }
+  void reset() { session.reset(); }
 }
