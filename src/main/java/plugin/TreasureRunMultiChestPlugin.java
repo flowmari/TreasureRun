@@ -85,9 +85,12 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
   // ================================
   // ゲーム状態
   // ================================
-  private final RoundLifecycle roundLifecycle = new RoundLifecycle();
+  private final ServerHostedRoundCoordinator serverHostedRoundCoordinator =
+      new ServerHostedRoundCoordinator();
+  private final RoundLifecycle roundLifecycle =
+      new RoundLifecycle(serverHostedRoundCoordinator);
   private final ServerHostedSessionLifecycle serverHostedSessionLifecycle =
-      new ServerHostedSessionLifecycle();
+      new ServerHostedSessionLifecycle(serverHostedRoundCoordinator);
   private UUID activeRoundPlayerId;
   private BukkitTask countdownDelayTask;
   private BukkitTask countdownTask;
