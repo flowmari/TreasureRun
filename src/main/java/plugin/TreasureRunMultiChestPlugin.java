@@ -221,6 +221,8 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
   private final Map<UUID, Location> originalLocations = new HashMap<>();
   private PlayerReturnLedger playerReturnLedger;
   private PlayerReturnRecoveryService playerReturnRecoveryService;
+  private ServerHostedBukkitRoundRuntimeAdapter serverHostedBukkitRoundRuntimeAdapter;
+  private ServerHostedBukkitRoundOrchestrator<Location> serverHostedBukkitRoundOrchestrator;
   private long previousWorldTime = -1;
   private boolean previousStorm = false;
   private boolean previousThundering = false;
@@ -502,6 +504,22 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     this.gameStageManager = new GameStageManager(this, this.ufo);
     Bukkit.getPluginManager().registerEvents(this.gameStageManager, this);
     getLogger().info("[TreasureRun] GameStageManager event registered!");
+
+    this.serverHostedBukkitRoundRuntimeAdapter = new ServerHostedBukkitRoundRuntimeAdapter(
+        () -> gameStageManager,
+        () -> treasureChestManager,
+        playerReturnLedger,
+        playerReturnRecoveryService,
+        () -> difficulty,
+        () -> totalChests
+    );
+    this.serverHostedBukkitRoundOrchestrator = new ServerHostedBukkitRoundOrchestrator<>(
+        serverHostedRoundCoordinator,
+        new ServerHostedRoundPreparationService<>(serverHostedRoundCoordinator, playerReturnLedger),
+        serverHostedBukkitRoundRuntimeAdapter::resolveReturnDestination,
+        serverHostedBukkitRoundRuntimeAdapter::cleanup
+    );
+
     registerSecretTradeCommandFallback();
 
     // ✅✅✅ 追加：サーバー起動直後に「Treasure Shop」残骸を全削除（再起動残り対策）
@@ -729,7 +747,27 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
 
   @Override
   public void onDisable() {
-    serverHostedSessionLifecycle.reset();
+    if (serverHostedRoundCoordinator.ownershipMode()
+        == ServerHostedRoundCoordinator.OwnershipMode.SERVER_HOSTED
+        && serverHostedRoundCoordinator.state() != ServerHostedRoundState.IDLE) {
+      if (serverHostedBukkitRoundOrchestrator == null) {
+        getLogger().severe(
+            "[ServerHostedRuntime] Plugin disable found an active server-hosted round "
+                + "before the runtime orchestrator was available; the coordinator was not reset."
+        );
+      } else {
+        ServerHostedBukkitRoundOrchestrator.Result result =
+            serverHostedBukkitRoundOrchestrator.pluginDisabled();
+        if (result.code() == ServerHostedBukkitRoundOrchestrator.Code.CLEANUP_PENDING) {
+          getLogger().warning(
+              "[ServerHostedRuntime] Plugin-disable cleanup remains pending; durable return "
+                  + "records are preserved for restart recovery. " + result.detail()
+          );
+        }
+      }
+    } else {
+      serverHostedSessionLifecycle.reset();
+    }
 
     Player activePlayer = getActiveRoundPlayer();
     if (roundLifecycle.isActive()) {
@@ -814,7 +852,35 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
   @EventHandler
   public void onPlayerQuit(PlayerQuitEvent event) {
     Player player = event.getPlayer();
-    serverHostedSessionLifecycle.handlePlayerQuit(player.getUniqueId());
+    UUID playerId = player.getUniqueId();
+    ServerHostedRoundState serverHostedState = serverHostedRoundCoordinator.stateFor(
+        ServerHostedRoundCoordinator.OwnershipMode.SERVER_HOSTED
+    );
+    List<UUID> serverHostedParticipants = serverHostedRoundCoordinator.participantsFor(
+        ServerHostedRoundCoordinator.OwnershipMode.SERVER_HOSTED
+    );
+
+    if (serverHostedParticipants.contains(playerId)
+        && serverHostedState != ServerHostedRoundState.IDLE
+        && serverHostedState != ServerHostedRoundState.WAITING) {
+      if (serverHostedBukkitRoundOrchestrator == null) {
+        getLogger().severe(
+            "[ServerHostedRuntime] Locked participant quit before the runtime orchestrator "
+                + "was available; WAITING leave semantics were not applied."
+        );
+      } else {
+        ServerHostedBukkitRoundOrchestrator.Result result =
+            serverHostedBukkitRoundOrchestrator.participantDisconnected(playerId);
+        if (result.code() == ServerHostedBukkitRoundOrchestrator.Code.CLEANUP_PENDING) {
+          getLogger().warning(
+              "[ServerHostedRuntime] Disconnect cleanup remains pending; durable return "
+                  + "records are preserved. " + result.detail()
+          );
+        }
+      }
+    } else {
+      serverHostedSessionLifecycle.handlePlayerQuit(playerId);
+    }
 
     if (!roundLifecycle.isActive() || !isActiveRoundPlayer(player)) {
       activeGameResultIds.remove(player.getUniqueId());
