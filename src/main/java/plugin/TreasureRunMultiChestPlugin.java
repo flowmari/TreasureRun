@@ -92,7 +92,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
       new RoundLifecycle(serverHostedRoundCoordinator);
   private final ServerHostedSessionLifecycle serverHostedSessionLifecycle =
       new ServerHostedSessionLifecycle(serverHostedRoundCoordinator);
-  private UUID activeRoundPlayerId;
+  private RoundRuntimeContext activeRoundContext;
   private BukkitTask countdownDelayTask;
   private BukkitTask countdownTask;
   private long startTime;
@@ -617,13 +617,15 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
   }
 
   private Player getActiveRoundPlayer() {
-    return activeRoundPlayerId == null ? null : Bukkit.getPlayer(activeRoundPlayerId);
+    return activeRoundContext == null
+        ? null
+        : Bukkit.getPlayer(activeRoundContext.primaryParticipant());
   }
 
   private boolean isActiveRoundPlayer(Player player) {
     return player != null
-        && activeRoundPlayerId != null
-        && activeRoundPlayerId.equals(player.getUniqueId());
+        && activeRoundContext != null
+        && activeRoundContext.contains(player.getUniqueId());
   }
 
   private void cancelCountdownTasks() {
@@ -695,7 +697,9 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     if (!roundLifecycle.isResetting() && !roundLifecycle.beginReset()) return;
     if (!roundLifecycle.claimCleanup()) return;
 
-    UUID playerId = player != null ? player.getUniqueId() : activeRoundPlayerId;
+    UUID playerId = player != null
+        ? player.getUniqueId()
+        : activeRoundContext == null ? null : activeRoundContext.primaryParticipant();
 
     try {
       stopRoundActivity(player);
@@ -718,7 +722,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     } finally {
       currentStageCenter = null;
       totalChestsRemaining = 0;
-      activeRoundPlayerId = null;
+      activeRoundContext = null;
       roundLifecycle.completeReset();
     }
   }
@@ -2604,7 +2608,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
       return;
     }
 
-    activeRoundPlayerId = player.getUniqueId();
+    activeRoundContext = RoundRuntimeContext.legacy(player.getUniqueId());
 
     try {
       if (treasureRunGameEffectsPlugin != null) {

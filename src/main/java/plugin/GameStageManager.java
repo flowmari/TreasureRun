@@ -195,16 +195,20 @@ public class GameStageManager implements Listener {
     }
   }
 
-  /** 海辺ステージを作ってプレイヤーをテレポートする（ネオン床＋一発ドーン演出） */
-  public Location buildSeasideStageAndTeleport(Player player) {
+  /**
+   * Prepares one plugin-owned arena stage without teleporting any participant.
+   *
+   * <p>The caller may therefore complete all durable return obligations and chest preparation
+   * before the first participant changes worlds.</p>
+   */
+  public Location prepareSeasideStage(Player effectsAudience) {
+    if (effectsAudience == null) return null;
 
-    plugin.getLogger().info("[STAGE][DEBUG] buildSeasideStageAndTeleport entered"
-        + " player=" + (player != null ? player.getName() : "null")
+    plugin.getLogger().info("[STAGE][DEBUG] prepareSeasideStage entered"
+        + " effectsAudience=" + effectsAudience.getName()
         + " gsm=" + System.identityHashCode(this)
     );
 
-    // Server-safety boundary: stage construction is confined to the plugin-owned arena world.
-    // The initiating player's current world is never used as a mutable gameplay canvas.
     Location base = arenaWorldManager.getArenaBase();
     World w = base.getWorld();
     arenaWorldManager.requireOwnedWorld(w);
@@ -216,21 +220,11 @@ public class GameStageManager implements Listener {
     prepareOwnedArenaWater(base, ARENA_WATER_RADIUS);
 
     Location stageCenter = base.clone();
-
-    // base は水ブロックのY。ステージ床はその1つ上。
     stageCenter.setY(base.getBlockY() + 1);
-
-    // ✅ 追加：このステージ中心を記憶（後で難易度ブロックをスイープ掃除できる）
     rememberStageCenter(stageCenter);
-
-    // ✅ 追加：過去残骸の黄色床を先に掃除（今回のバグの本丸）
     sweepAllLemonGlass();
-
-    // ✨ ネオン床
     buildNeonFloor(stageCenter);
-    // ===============================
-    // [SeasideCheck] 海上100%判定ログ
-    // ===============================
+
     try {
       World ww = stageCenter.getWorld();
       int y = stageCenter.getBlockY();
@@ -247,10 +241,8 @@ public class GameStageManager implements Listener {
           Material under = ww.getBlockAt(cx + dx, y - 1, cz + dz).getType();
           if (under == Material.WATER) {
             waterCount++;
-          } else {
-            if (bad.length() < 280) {
-              bad.append(" (").append(dx).append(",").append(dz).append(")=").append(under);
-            }
+          } else if (bad.length() < 280) {
+            bad.append(" (").append(dx).append(",").append(dz).append(")=").append(under);
           }
         }
       }
@@ -264,36 +256,64 @@ public class GameStageManager implements Listener {
 
       Material feet = ww.getBlockAt(cx, y, cz).getType();
       Material below = ww.getBlockAt(cx, y - 1, cz).getType();
-      plugin.getLogger().info("[SeasideCheck] feetBlock(y)=" + feet + " | below(y-1)=" + below);
-
+      plugin.getLogger().info(
+          "[SeasideCheck] feetBlock(y)=" + feet + " | below(y-1)=" + below
+      );
     } catch (Exception e) {
       plugin.getLogger().warning("[SeasideCheck] ERROR " + e.getMessage());
     }
-    // 頭上の空間確保
+
     clearAbove(stageCenter, 3);
-    // 難易度ブロック（Easy/Normal/Hard）
     buildDifficultyBlocks(stageCenter);
-    // 環境音 & パーティクルふわふわ
-    playAmbient(stageCenter, player);
+    playAmbient(stageCenter, effectsAudience);
 
-    // 🔥 一発ドーンの演出（円形＆柱＆星の爆発）
-    spawnCircleParticles(stageCenter, Particle.END_ROD, 2.5, 40); // 外輪
-    spawnCircleParticles(stageCenter, Particle.END_ROD, 1.5, 40); // 内輪
-    spawnRisingPillars(stageCenter, Particle.END_ROD);            // 柱
-    plugin.burstStars(stageCenter);                               // 星の爆発（メインクラスのメソッド）
+    spawnCircleParticles(stageCenter, Particle.END_ROD, 2.5, 40);
+    spawnCircleParticles(stageCenter, Particle.END_ROD, 1.5, 40);
+    spawnRisingPillars(stageCenter, Particle.END_ROD);
+    plugin.burstStars(stageCenter);
 
-    // プレイヤーをステージ中央へテレポート
-    Location tp = stageCenter.clone().add(0.5, 1.1, 0.5);
-    player.teleport(tp);
+    return stageCenter.clone();
+  }
 
-    // ★ ネオン床ステージの上に行商人＋ラマ2頭をスポーン
+  /**
+   * Teleports one already-authorized participant to an already-prepared owned arena stage.
+   */
+  public boolean teleportPlayerToPreparedStage(Player player, Location stageCenter) {
+    if (player == null || stageCenter == null || stageCenter.getWorld() == null) return false;
+    arenaWorldManager.requireOwnedWorld(stageCenter.getWorld());
+    Location target = stageCenter.clone().add(0.5, 1.1, 0.5);
+    return player.teleport(target);
+  }
+
+  /**
+   * Activates stage-global entities and tasks once after participant teleports succeed.
+   */
+  public void activatePreparedStage(Location stageCenter) {
+    if (stageCenter == null || stageCenter.getWorld() == null) {
+      throw new IllegalArgumentException("stageCenter must have an owned world");
+    }
+    arenaWorldManager.requireOwnedWorld(stageCenter.getWorld());
     spawnTraderAndLlamas(stageCenter);
-
     startMovingSafetyZoneTask();
+  }
 
-    // ✅ UFO Arrival演出（商人はbind済みなのでUFOが持ち上げて降ろす）
+  /**
+   * Starts the player-specific arrival effect after the round-global stage is active.
+   */
+  public void startPreparedStageArrival(Player player, Location stageCenter) {
+    if (player == null || stageCenter == null || stageCenter.getWorld() == null) return;
+    arenaWorldManager.requireOwnedWorld(stageCenter.getWorld());
     startUfoIfAvailable(player, stageCenter);
+  }
 
+  /** Legacy one-player compatibility wrapper. */
+  public Location buildSeasideStageAndTeleport(Player player) {
+    Location stageCenter = prepareSeasideStage(player);
+    if (stageCenter == null || !teleportPlayerToPreparedStage(player, stageCenter)) {
+      return null;
+    }
+    activatePreparedStage(stageCenter);
+    startPreparedStageArrival(player, stageCenter);
     return stageCenter.clone();
   }
 

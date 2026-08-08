@@ -242,16 +242,30 @@ public class TreasureChestManager {
     return new ArrayList<>(candidates.subList(0, count));
   }
 
+  /**
+   * Legacy player-anchored compatibility overload.
+   */
   public boolean spawnChests(
       org.bukkit.entity.Player player,
       String difficulty,
       int count
   ) {
-    if (player == null || player.getWorld() == null || count < 0) {
+    return player != null && spawnChests(player.getLocation(), difficulty, count);
+  }
+
+  /**
+   * Places one round-owned chest plan around an explicit arena anchor.
+   */
+  public boolean spawnChests(
+      Location anchor,
+      String difficulty,
+      int count
+  ) {
+    if (anchor == null || anchor.getWorld() == null || count < 0) {
       return false;
     }
 
-    World world = player.getWorld();
+    World world = anchor.getWorld();
     if (!ArenaWorldManager.WORLD_NAME.equals(world.getName())) {
       plugin.getLogger().severe(
           "[TreasureChestManager] Chest placement refused outside "
@@ -292,7 +306,7 @@ public class TreasureChestManager {
 
     try {
       for (ChestOffset offset : offsets) {
-        Location loc = player.getLocation().clone().add(offset.dx(), 0, offset.dz());
+        Location loc = anchor.clone().add(offset.dx(), 0, offset.dz());
         loc.setY(world.getHighestBlockYAt(loc) + 1);
 
         Block block = world.getBlockAt(loc);
