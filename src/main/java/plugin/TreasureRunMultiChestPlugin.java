@@ -32,6 +32,7 @@ import org.bukkit.event.inventory.InventoryOpenEvent;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
+import org.bukkit.event.world.WorldLoadEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -218,6 +219,8 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
   private final Map<UUID, UUID> activeGameResultIds = new HashMap<>();
 
   private final Map<UUID, Location> originalLocations = new HashMap<>();
+  private PlayerReturnLedger playerReturnLedger;
+  private PlayerReturnRecoveryService playerReturnRecoveryService;
   private long previousWorldTime = -1;
   private boolean previousStorm = false;
   private boolean previousThundering = false;
@@ -261,6 +264,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
 
     saveDefaultConfig();
     reloadConfig();
+    initializePlayerReturnRecovery();
     getServer().getMessenger().registerOutgoingPluginChannel(this, "treasurerun:lang");
     fabricModDetector = new FabricModDetector(this); fabricModDetector.register();
     resourcePackFallbackService = ResourcePackDeliveryRegistrar.register(this);
@@ -778,8 +782,27 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
   @EventHandler
   public void onPlayerJoin(PlayerJoinEvent event) {
     Player player = event.getPlayer();
-    if (!roundLifecycle.isActive() && originalLocations.containsKey(player.getUniqueId())) {
+    boolean durableReturnPending = playerReturnLedger != null
+        && playerReturnLedger.pendingRecord(player.getUniqueId()).isPresent();
+    if (durableReturnPending
+        || (!roundLifecycle.isActive() && originalLocations.containsKey(player.getUniqueId()))) {
       Bukkit.getScheduler().runTask(this, () -> restoreWorldAndPlayer(player));
+    }
+  }
+
+  @EventHandler
+  public void onWorldLoad(WorldLoadEvent event) {
+    if (playerReturnLedger == null) return;
+    World loadedWorld = event.getWorld();
+    for (PlayerReturnRecord record : playerReturnLedger.pendingRecords()) {
+      if (!record.worldId().equals(loadedWorld.getUID())
+          && !record.worldName().equals(loadedWorld.getName())) {
+        continue;
+      }
+      Player player = Bukkit.getPlayer(record.playerId());
+      if (player != null && player.isOnline()) {
+        Bukkit.getScheduler().runTask(this, () -> restoreWorldAndPlayer(player));
+      }
     }
   }
 
@@ -2257,13 +2280,158 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     return roundLifecycle.state();
   }
 
+  private void initializePlayerReturnRecovery() {
+    java.nio.file.Path ledgerPath =
+        getDataFolder().toPath().resolve("pending-player-returns.ledger");
+    playerReturnLedger = new PlayerReturnLedger(ledgerPath);
+    PlayerReturnLedger.OpenResult openResult = playerReturnLedger.open();
+    playerReturnRecoveryService = new PlayerReturnRecoveryService(playerReturnLedger);
+
+    if (!openResult.available()) {
+      getLogger().severe(
+          "[PlayerReturn] Durable return storage is unavailable; new arena teleports are blocked. "
+              + openResult.detail()
+      );
+      openResult.quarantinePath().ifPresent(path ->
+          getLogger().severe("[PlayerReturn] Corrupt ledger preserved at " + path)
+      );
+      return;
+    }
+
+    if (!playerReturnLedger.pendingRecords().isEmpty()) {
+      getLogger().warning(
+          "[PlayerReturn] Loaded " + playerReturnLedger.pendingRecords().size()
+              + " pending return record(s); recovery will be retried for online players."
+      );
+      Bukkit.getScheduler().runTask(this, () -> {
+        for (Player online : Bukkit.getOnlinePlayers()) {
+          if (playerReturnLedger.pendingRecord(online.getUniqueId()).isPresent()) {
+            restoreWorldAndPlayer(online);
+          }
+        }
+      });
+    }
+  }
+
+  private void persistPlayerReturnBeforeArenaTeleport(Player player, Location originalReturnLocation) {
+    if (playerReturnLedger == null || playerReturnRecoveryService == null) {
+      throw new IllegalStateException("Player-return persistence was not initialized.");
+    }
+    if (!playerReturnLedger.isAvailable()) {
+      throw new IllegalStateException(
+          "Player-return persistence is unavailable: " + playerReturnLedger.unavailableDetail()
+      );
+    }
+
+    World returnWorld = originalReturnLocation.getWorld();
+    if (returnWorld == null) {
+      throw new IllegalStateException("The player's return world is unavailable before teleport.");
+    }
+
+    PlayerReturnRecord candidate = PlayerReturnRecord.create(
+        player.getUniqueId(),
+        returnWorld.getUID(),
+        returnWorld.getName(),
+        originalReturnLocation.getX(),
+        originalReturnLocation.getY(),
+        originalReturnLocation.getZ(),
+        originalReturnLocation.getYaw(),
+        originalReturnLocation.getPitch(),
+        Instant.now()
+    );
+    PlayerReturnLedger.PutResult stored = playerReturnLedger.putPending(candidate);
+    if (!stored.accepted()) {
+      throw new IllegalStateException(
+          "Unable to establish a durable player-return obligation: " + stored.detail()
+      );
+    }
+
+    originalLocations.put(player.getUniqueId(), originalReturnLocation.clone());
+  }
+
+  private PlayerReturnRecoveryService.AttemptCode attemptPendingPlayerReturn(
+      Player player,
+      PlayerReturnRecord record
+  ) {
+    if (player == null || !player.isOnline()) {
+      return PlayerReturnRecoveryService.AttemptCode.PLAYER_UNAVAILABLE;
+    }
+
+    World byId = Bukkit.getWorld(record.worldId());
+    World byName = Bukkit.getWorld(record.worldName());
+    if (byId == null && byName == null) {
+      return PlayerReturnRecoveryService.AttemptCode.DESTINATION_UNAVAILABLE;
+    }
+    if (byId == null || byName == null
+        || !byId.getUID().equals(record.worldId())
+        || !byName.getUID().equals(record.worldId())
+        || !byId.getName().equals(record.worldName())
+        || !byName.getName().equals(record.worldName())) {
+      return PlayerReturnRecoveryService.AttemptCode.DESTINATION_MISMATCH;
+    }
+
+    Location destination = new Location(
+        byId,
+        record.x(),
+        record.y(),
+        record.z(),
+        record.yaw(),
+        record.pitch()
+    );
+    return player.teleport(destination)
+        ? PlayerReturnRecoveryService.AttemptCode.RETURNED
+        : PlayerReturnRecoveryService.AttemptCode.TELEPORT_FAILED;
+  }
+
+  private PlayerReturnRecoveryService.RecoveryResult recoverPendingPlayerReturn(Player player) {
+    if (playerReturnRecoveryService == null) {
+      return new PlayerReturnRecoveryService.RecoveryResult(
+          PlayerReturnRecoveryService.RecoveryCode.NO_PENDING,
+          Optional.empty(),
+          "Player-return recovery service is not initialized."
+      );
+    }
+
+    PlayerReturnRecoveryService.RecoveryResult result = playerReturnRecoveryService.recover(
+        player.getUniqueId(),
+        record -> attemptPendingPlayerReturn(player, record)
+    );
+
+    switch (result.code()) {
+      case RETURNED_AND_CLEARED -> {
+        originalLocations.remove(player.getUniqueId());
+        getLogger().info("[PlayerReturn] Restored pending return for " + player.getUniqueId());
+      }
+      case RETURNED_RECORD_RETAINED -> getLogger().severe(
+          "[PlayerReturn] Player was returned but the durable record could not be cleared; "
+              + "the same destination will be retried safely. " + result.detail()
+      );
+      case DESTINATION_UNAVAILABLE, DESTINATION_MISMATCH, TELEPORT_FAILED, ATTEMPT_ERROR ->
+          getLogger().warning(
+              "[PlayerReturn] Return remains pending for " + player.getUniqueId() + ": "
+                  + result.code() + " - " + result.detail()
+          );
+      default -> { }
+    }
+    return result;
+  }
+
   private void restoreWorldAndPlayer(Player player) {
     UUID uuid = player.getUniqueId();
     World gameplayWorld = player.getWorld();
-
     Location original = originalLocations.get(uuid);
-    if (original != null && player.isOnline() && player.teleport(original)) {
-      originalLocations.remove(uuid);
+
+    PlayerReturnRecoveryService.RecoveryResult durableResult = recoverPendingPlayerReturn(player);
+    if (durableResult.code() == PlayerReturnRecoveryService.RecoveryCode.NO_PENDING
+        && original != null
+        && player.isOnline()) {
+      getLogger().severe(
+          "[PlayerReturn] In-memory return existed without a durable record; applying best-effort "
+              + "same-process recovery for " + uuid
+      );
+      if (player.teleport(original)) {
+        originalLocations.remove(uuid);
+      }
     }
 
     if (previousWorldTime >= 0 && gameplayWorld != null) {
@@ -2486,7 +2654,8 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
         playerLanguageStore.set(player.getUniqueId(), lang);
       }
 
-      originalLocations.put(player.getUniqueId(), player.getLocation().clone());
+      Location originalReturnLocation = player.getLocation().clone();
+      persistPlayerReturnBeforeArenaTeleport(player, originalReturnLocation);
 
       Location stage = gameStageManager.buildSeasideStageAndTeleport(player);
       if (stage == null || stage.getWorld() == null) {
