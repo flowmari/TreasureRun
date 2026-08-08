@@ -45,6 +45,16 @@ public final class PlayerReturnLedger {
     STORAGE_UNAVAILABLE
   }
 
+  public enum PutBatchCode {
+    SAVED,
+    ALREADY_PENDING,
+    CONFLICT,
+    DUPLICATE_PLAYER,
+    DUPLICATE_RECOVERY_ID,
+    EMPTY_BATCH,
+    STORAGE_UNAVAILABLE
+  }
+
   public enum CompleteCode {
     CLEARED,
     NO_PENDING,
@@ -73,6 +83,22 @@ public final class PlayerReturnLedger {
 
     public boolean accepted() {
       return code == PutCode.SAVED || code == PutCode.ALREADY_PENDING;
+    }
+  }
+
+  public record PutBatchResult(
+      PutBatchCode code,
+      List<PlayerReturnRecord> records,
+      String detail
+  ) {
+    public PutBatchResult {
+      code = Objects.requireNonNull(code, "code");
+      records = List.copyOf(Objects.requireNonNull(records, "records"));
+      detail = Objects.requireNonNull(detail, "detail");
+    }
+
+    public boolean accepted() {
+      return code == PutBatchCode.SAVED || code == PutBatchCode.ALREADY_PENDING;
     }
   }
 
@@ -190,6 +216,112 @@ public final class PlayerReturnLedger {
     } catch (IOException ioException) {
       markUnavailable("Unable to persist pending return: " + ioException.getMessage());
       return new PutResult(PutCode.STORAGE_UNAVAILABLE, Optional.empty(), unavailableDetail);
+    }
+  }
+
+  /**
+   * Atomically adds every participant return obligation in one durable snapshot.
+   *
+   * <p>No in-memory candidate becomes visible unless the complete snapshot write succeeds.
+   * Existing identical destinations are idempotent; any conflict rejects the whole batch.</p>
+   */
+  public synchronized PutBatchResult putPendingBatch(List<PlayerReturnRecord> candidates) {
+    Objects.requireNonNull(candidates, "candidates");
+    List<PlayerReturnRecord> copy = List.copyOf(candidates);
+    if (copy.isEmpty()) {
+      return new PutBatchResult(PutBatchCode.EMPTY_BATCH, List.of(), "No pending returns supplied.");
+    }
+    if (!available) {
+      return new PutBatchResult(
+          PutBatchCode.STORAGE_UNAVAILABLE,
+          List.of(),
+          unavailableDetail
+      );
+    }
+
+    Set<UUID> candidatePlayers = new HashSet<>();
+    Set<UUID> candidateRecoveryIds = new HashSet<>();
+    for (PlayerReturnRecord candidate : copy) {
+      Objects.requireNonNull(candidate, "candidate");
+      if (!candidatePlayers.add(candidate.playerId())) {
+        return new PutBatchResult(
+            PutBatchCode.DUPLICATE_PLAYER,
+            List.of(),
+            "The batch contains the same player more than once."
+        );
+      }
+      if (!candidateRecoveryIds.add(candidate.recoveryId())) {
+        return new PutBatchResult(
+            PutBatchCode.DUPLICATE_RECOVERY_ID,
+            List.of(),
+            "The batch contains the same recovery id more than once."
+        );
+      }
+    }
+
+    Set<UUID> existingRecoveryIds = new HashSet<>();
+    for (PlayerReturnRecord record : pending.values()) {
+      existingRecoveryIds.add(record.recoveryId());
+    }
+
+    Map<UUID, PlayerReturnRecord> next = new LinkedHashMap<>(pending);
+    List<PlayerReturnRecord> accepted = new java.util.ArrayList<>();
+    boolean added = false;
+
+    for (PlayerReturnRecord candidate : copy) {
+      PlayerReturnRecord existing = pending.get(candidate.playerId());
+      if (existing != null) {
+        if (!existing.hasSameDestination(candidate)) {
+          return new PutBatchResult(
+              PutBatchCode.CONFLICT,
+              List.of(),
+              "A different return destination is already pending for "
+                  + candidate.playerId() + "."
+          );
+        }
+        accepted.add(existing);
+        continue;
+      }
+
+      if (existingRecoveryIds.contains(candidate.recoveryId())) {
+        return new PutBatchResult(
+            PutBatchCode.DUPLICATE_RECOVERY_ID,
+            List.of(),
+            "A recovery id in the batch is already pending."
+        );
+      }
+
+      next.put(candidate.playerId(), candidate);
+      accepted.add(candidate);
+      added = true;
+    }
+
+    if (!added) {
+      return new PutBatchResult(
+          PutBatchCode.ALREADY_PENDING,
+          accepted,
+          "Every return destination is already pending."
+      );
+    }
+
+    try {
+      persist(next);
+      pending.clear();
+      pending.putAll(next);
+      return new PutBatchResult(
+          PutBatchCode.SAVED,
+          accepted,
+          "All participant returns were persisted in one durable snapshot."
+      );
+    } catch (IOException ioException) {
+      markUnavailable(
+          "Unable to persist participant return batch: " + ioException.getMessage()
+      );
+      return new PutBatchResult(
+          PutBatchCode.STORAGE_UNAVAILABLE,
+          List.of(),
+          unavailableDetail
+      );
     }
   }
 

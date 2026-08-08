@@ -21,13 +21,21 @@ class ArenaWorldIsolationBoundaryTest {
   void stageBuildUsesOnlyThePluginOwnedArenaWorld() throws Exception {
     String stage = read(STAGE_MANAGER);
     String arena = read(ARENA_MANAGER);
-    String buildMethod = methodBody(stage, "public Location buildSeasideStageAndTeleport");
+    String prepareMethod = methodBody(stage, "public Location prepareSeasideStage");
+    String compatibilityMethod = methodBody(
+        stage,
+        "public Location buildSeasideStageAndTeleport"
+    );
 
     assertTrue(arena.contains("WORLD_NAME = \"treasurerun_arena\""));
-    assertTrue(buildMethod.contains("arenaWorldManager.getArenaBase()"));
-    assertTrue(buildMethod.contains("arenaWorldManager.requireOwnedWorld(w)"));
-    assertFalse(buildMethod.contains("forceFindOcean(player.getLocation())"));
-    assertFalse(buildMethod.contains("player.getLocation().clone().add(320"));
+    assertTrue(prepareMethod.contains("arenaWorldManager.getArenaBase()"));
+    assertTrue(prepareMethod.contains("arenaWorldManager.requireOwnedWorld(w)"));
+    assertFalse(prepareMethod.contains("forceFindOcean("));
+    assertFalse(prepareMethod.contains("getLocation().clone().add(320"));
+    assertTrue(compatibilityMethod.contains("prepareSeasideStage(player)"));
+    assertTrue(compatibilityMethod.contains(
+        "teleportPlayerToPreparedStage(player, stageCenter)"
+    ));
     assertFalse(stage.contains("forceFindOcean("));
     assertFalse(stage.contains("findNearbySeaLocation("));
   }

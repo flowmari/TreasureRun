@@ -13,8 +13,10 @@ import java.nio.file.Path;
 import java.time.Clock;
 import java.time.Instant;
 import java.time.ZoneOffset;
+import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
 
@@ -145,6 +147,115 @@ class PlayerReturnLedgerTest {
 
     assertArrayEquals(PlayerReturnLedger.serialize(a), PlayerReturnLedger.serialize(b));
     assertNotEquals(0, PlayerReturnLedger.serialize(a).length);
+  }
+
+  @Test
+  void batchPersistsTwoParticipantsWithOneSnapshotWriteAndReloadsBoth() {
+    Path path = tempDir.resolve("pending-player-returns.ledger");
+    AtomicInteger writes = new AtomicInteger();
+    PlayerReturnLedger ledger = new PlayerReturnLedger(
+        path,
+        Clock.systemUTC(),
+        (target, bytes) -> {
+          writes.incrementAndGet();
+          Files.write(target, bytes);
+        }
+    );
+    ledger.open();
+
+    PlayerReturnRecord first =
+        record(UUID.randomUUID(), UUID.randomUUID(), "world", 1, 2, 3);
+    PlayerReturnRecord second =
+        record(UUID.randomUUID(), UUID.randomUUID(), "world", 4, 5, 6);
+
+    PlayerReturnLedger.PutBatchResult result =
+        ledger.putPendingBatch(List.of(first, second));
+
+    assertEquals(PlayerReturnLedger.PutBatchCode.SAVED, result.code());
+    assertEquals(1, writes.get());
+    assertEquals(2, result.records().size());
+
+    PlayerReturnLedger reopened = new PlayerReturnLedger(path);
+    assertTrue(reopened.open().available());
+    assertEquals(first, reopened.pendingRecord(first.playerId()).orElseThrow());
+    assertEquals(second, reopened.pendingRecord(second.playerId()).orElseThrow());
+  }
+
+  @Test
+  void conflictingBatchPublishesNoNewParticipant() {
+    Path path = tempDir.resolve("pending-player-returns.ledger");
+    PlayerReturnLedger ledger = new PlayerReturnLedger(path);
+    ledger.open();
+
+    UUID existingPlayer = UUID.randomUUID();
+    UUID world = UUID.randomUUID();
+    PlayerReturnRecord existing = record(existingPlayer, world, "world", 1, 2, 3);
+    ledger.putPending(existing);
+
+    PlayerReturnRecord newParticipant =
+        record(UUID.randomUUID(), world, "world", 4, 5, 6);
+    PlayerReturnRecord conflict =
+        record(existingPlayer, world, "world", 7, 8, 9);
+
+    PlayerReturnLedger.PutBatchResult result =
+        ledger.putPendingBatch(List.of(newParticipant, conflict));
+
+    assertEquals(PlayerReturnLedger.PutBatchCode.CONFLICT, result.code());
+    assertTrue(ledger.pendingRecord(newParticipant.playerId()).isEmpty());
+    assertEquals(existing, ledger.pendingRecord(existingPlayer).orElseThrow());
+  }
+
+  @Test
+  void failedBatchSnapshotPublishesNoParticipantAndFailsClosed() {
+    Path path = tempDir.resolve("pending-player-returns.ledger");
+    PlayerReturnLedger ledger = new PlayerReturnLedger(
+        path,
+        Clock.systemUTC(),
+        (target, bytes) -> {
+          throw new IOException("simulated batch write failure");
+        }
+    );
+    ledger.open();
+
+    PlayerReturnRecord first =
+        record(UUID.randomUUID(), UUID.randomUUID(), "world", 1, 2, 3);
+    PlayerReturnRecord second =
+        record(UUID.randomUUID(), UUID.randomUUID(), "world", 4, 5, 6);
+
+    PlayerReturnLedger.PutBatchResult result =
+        ledger.putPendingBatch(List.of(first, second));
+
+    assertEquals(PlayerReturnLedger.PutBatchCode.STORAGE_UNAVAILABLE, result.code());
+    assertFalse(ledger.isAvailable());
+    assertTrue(ledger.pendingRecord(first.playerId()).isEmpty());
+    assertTrue(ledger.pendingRecord(second.playerId()).isEmpty());
+  }
+
+  @Test
+  void batchRejectsDuplicatePlayersBeforeAnyWrite() {
+    Path path = tempDir.resolve("pending-player-returns.ledger");
+    AtomicInteger writes = new AtomicInteger();
+    PlayerReturnLedger ledger = new PlayerReturnLedger(
+        path,
+        Clock.systemUTC(),
+        (target, bytes) -> {
+          writes.incrementAndGet();
+          Files.write(target, bytes);
+        }
+    );
+    ledger.open();
+
+    UUID player = UUID.randomUUID();
+    UUID world = UUID.randomUUID();
+    PlayerReturnRecord first = record(player, world, "world", 1, 2, 3);
+    PlayerReturnRecord second = record(player, world, "world", 1, 2, 3);
+
+    PlayerReturnLedger.PutBatchResult result =
+        ledger.putPendingBatch(List.of(first, second));
+
+    assertEquals(PlayerReturnLedger.PutBatchCode.DUPLICATE_PLAYER, result.code());
+    assertEquals(0, writes.get());
+    assertTrue(ledger.pendingRecords().isEmpty());
   }
 
   private static PlayerReturnRecord record(
