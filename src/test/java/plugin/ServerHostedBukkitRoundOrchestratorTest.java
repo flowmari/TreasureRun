@@ -313,6 +313,29 @@ class ServerHostedBukkitRoundOrchestratorTest {
     assertEquals(ServerHostedRoundState.WAITING, coordinator.state());
   }
 
+
+  @Test
+  void runtimeActivationFailureUsesPreparationFailedCleanupCause() {
+    Fixture fixture = fixture();
+    List<String> events = new ArrayList<>();
+
+    ServerHostedBukkitRoundOrchestrator<String> orchestrator = orchestrator(
+        fixture,
+        ledger("runtime-activation-failure", events),
+        playerId -> Optional.of(fixture.recordFor(playerId)),
+        claim -> {
+          events.add("cleanup:" + claim.cause());
+          return true;
+        }
+    );
+
+    ServerHostedBukkitRoundOrchestrator.Result result = orchestrator.runtimeActivationFailed();
+
+    assertEquals(ServerHostedBukkitRoundOrchestrator.Code.CLEANUP_COMPLETED, result.code());
+    assertEquals(ServerHostedRoundState.IDLE, fixture.coordinator().state());
+    assertTrue(events.contains("cleanup:PREPARATION_FAILED"));
+  }
+
   private ServerHostedBukkitRoundOrchestrator<String> orchestrator(
       Fixture fixture,
       PlayerReturnLedger ledger,

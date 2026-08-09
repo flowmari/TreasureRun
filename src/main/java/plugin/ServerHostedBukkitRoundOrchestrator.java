@@ -167,6 +167,16 @@ public final class ServerHostedBukkitRoundOrchestrator<A> {
     );
   }
 
+  /**
+   * Fail-closed cleanup entry used when shared runtime construction fails after COUNTDOWN.
+   *
+   * <p>The lifecycle remains owned by the coordinator; this method only reuses the retained
+   * idempotent cleanup path with the semantically correct failure cause.</p>
+   */
+  public synchronized Result runtimeActivationFailed() {
+    return abort(ServerHostedRoundCoordinator.ResetCause.PREPARATION_FAILED);
+  }
+
   public synchronized Result stopRequested() {
     return abort(ServerHostedRoundCoordinator.ResetCause.STOP_REQUESTED);
   }
