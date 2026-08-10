@@ -223,6 +223,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
   private PlayerReturnRecoveryService playerReturnRecoveryService;
   private ServerHostedBukkitRoundRuntimeAdapter serverHostedBukkitRoundRuntimeAdapter;
   private ServerHostedBukkitRoundOrchestrator<Location> serverHostedBukkitRoundOrchestrator;
+  private ServerHostedBukkitRoundController<Location> serverHostedBukkitRoundController;
   private long previousWorldTime = -1;
   private boolean previousStorm = false;
   private boolean previousThundering = false;
@@ -519,6 +520,28 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
         serverHostedBukkitRoundRuntimeAdapter::resolveReturnDestination,
         serverHostedBukkitRoundRuntimeAdapter::cleanup
     );
+    ServerHostedRoundActivationService<Location> serverHostedRoundActivationService =
+        new ServerHostedRoundActivationService<>(
+            serverHostedRoundCoordinator,
+            serverHostedBukkitRoundOrchestrator,
+            serverHostedBukkitRoundRuntimeAdapter,
+            java.time.Duration.ofSeconds(Math.max(1, normalTimeLimit))
+        );
+    this.serverHostedBukkitRoundController = new ServerHostedBukkitRoundController<>(
+        serverHostedRoundCoordinator,
+        serverHostedRoundActivationService,
+        serverHostedBukkitRoundOrchestrator,
+        (initialDelayTicks, periodTicks, task) -> {
+          BukkitTask scheduled = Bukkit.getScheduler().runTaskTimer(
+              this,
+              task,
+              initialDelayTicks,
+              periodTicks
+          );
+          return scheduled::cancel;
+        },
+        ignoredRemaining -> { }
+    );
 
     registerSecretTradeCommandFallback();
 
@@ -750,15 +773,14 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     if (serverHostedRoundCoordinator.ownershipMode()
         == ServerHostedRoundCoordinator.OwnershipMode.SERVER_HOSTED
         && serverHostedRoundCoordinator.state() != ServerHostedRoundState.IDLE) {
-      if (serverHostedBukkitRoundOrchestrator == null) {
+      if (serverHostedBukkitRoundController == null) {
         getLogger().severe(
             "[ServerHostedRuntime] Plugin disable found an active server-hosted round "
-                + "before the runtime orchestrator was available; the coordinator was not reset."
+                + "before the runtime controller was available; the coordinator was not reset."
         );
       } else {
-        ServerHostedBukkitRoundOrchestrator.Result result =
-            serverHostedBukkitRoundOrchestrator.pluginDisabled();
-        if (result.code() == ServerHostedBukkitRoundOrchestrator.Code.CLEANUP_PENDING) {
+        var result = serverHostedBukkitRoundController.pluginDisabled();
+        if ("CLEANUP_PENDING".equals(result.code().name())) {
           getLogger().warning(
               "[ServerHostedRuntime] Plugin-disable cleanup remains pending; durable return "
                   + "records are preserved for restart recovery. " + result.detail()
@@ -863,15 +885,14 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     if (serverHostedParticipants.contains(playerId)
         && serverHostedState != ServerHostedRoundState.IDLE
         && serverHostedState != ServerHostedRoundState.WAITING) {
-      if (serverHostedBukkitRoundOrchestrator == null) {
+      if (serverHostedBukkitRoundController == null) {
         getLogger().severe(
-            "[ServerHostedRuntime] Locked participant quit before the runtime orchestrator "
+            "[ServerHostedRuntime] Locked participant quit before the runtime controller "
                 + "was available; WAITING leave semantics were not applied."
         );
       } else {
-        ServerHostedBukkitRoundOrchestrator.Result result =
-            serverHostedBukkitRoundOrchestrator.participantDisconnected(playerId);
-        if (result.code() == ServerHostedBukkitRoundOrchestrator.Code.CLEANUP_PENDING) {
+        var result = serverHostedBukkitRoundController.participantDisconnected(playerId);
+        if ("CLEANUP_PENDING".equals(result.code().name())) {
           getLogger().warning(
               "[ServerHostedRuntime] Disconnect cleanup remains pending; durable return "
                   + "records are preserved. " + result.detail()
