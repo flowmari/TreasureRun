@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test;
 class ServerHostedBukkitRoundProductionWiringBoundaryTest {
 
   @Test
-  void productionOwnsExactlyOneControllerWithoutCommandActivation() throws Exception {
+  void productionOwnsExactlyOneControllerAndCommandAdapterDelegatesAcceptedRuntimeWork() throws Exception {
     String plugin = read("src/main/java/plugin/TreasureRunMultiChestPlugin.java");
     String commandAdapter = read("src/main/java/plugin/ServerHostedSessionCommandAdapter.java");
     assertEquals(1, occurrences(plugin,
@@ -23,9 +23,12 @@ class ServerHostedBukkitRoundProductionWiringBoundaryTest {
     assertTrue(plugin.contains("new ServerHostedBukkitRoundRuntimeAdapter("));
     assertTrue(plugin.contains("new ServerHostedBukkitRoundOrchestrator<>("));
     assertTrue(plugin.contains("java.time.Duration.ofSeconds(Math.max(1, normalTimeLimit))"));
-    assertFalse(commandAdapter.contains("ServerHostedBukkitRoundController"));
-    assertTrue(commandAdapter.contains("This adapter starts no gameplay"));
-    assertFalse(plugin.contains("serverHostedBukkitRoundController.start("));
+    assertTrue(commandAdapter.contains("ServerHostedBukkitRoundController<?> roundController"));
+    assertTrue(commandAdapter.contains("roundController.start(decision)"));
+    assertTrue(commandAdapter.contains("roundController.stop(decision)"));
+    assertFalse(commandAdapter.contains("startGame("));
+    assertTrue(plugin.indexOf("new ServerHostedSessionCommandAdapter(")
+        > plugin.indexOf("new ServerHostedBukkitRoundController<>("));
   }
 
   @Test
@@ -79,7 +82,7 @@ class ServerHostedBukkitRoundProductionWiringBoundaryTest {
   }
 
   @Test
-  void commandActivationAndProtectedSubsystemsRemainOutOfScope() throws Exception {
+  void commandActivationUsesControllerWhileProtectedSubsystemsRemainOutOfScope() throws Exception {
     String plugin = read("src/main/java/plugin/TreasureRunMultiChestPlugin.java");
     String commandAdapter = read("src/main/java/plugin/ServerHostedSessionCommandAdapter.java");
     String orchestrator = read("src/main/java/plugin/ServerHostedBukkitRoundOrchestrator.java");
@@ -89,9 +92,44 @@ class ServerHostedBukkitRoundProductionWiringBoundaryTest {
     }
     assertEquals(23, languageFiles);
     assertTrue(orchestrator.contains("coordinator.beginCountdown()"));
-    assertFalse(commandAdapter.contains("ServerHostedBukkitRoundController"));
-    assertFalse(plugin.contains("serverHostedBukkitRoundController.start("));
+    assertTrue(commandAdapter.contains("roundController.start(decision)"));
+    assertTrue(commandAdapter.contains("roundController.stop(decision)"));
+    assertFalse(commandAdapter.contains("startGame("));
     assertFalse(plugin.contains("startGame(serverHosted"));
+  }
+
+
+  @Test
+  void activatedCommandMessagesDescribePostControllerRequestsTruthfully() throws Exception {
+    String adapter = read("src/main/java/plugin/ServerHostedSessionCommandAdapter.java");
+    String english = read("src/main/resources/languages/en.yml");
+    String japanese = read("src/main/resources/languages/ja.yml");
+
+    assertTrue(adapter.contains("ServerHostedBukkitRoundController"));
+    assertTrue(adapter.contains("roundController.start("));
+    assertTrue(adapter.contains("roundController.stop("));
+
+    assertTrue(english.contains(
+        "The participant roster was locked and server-hosted round preparation was requested."
+    ));
+    assertTrue(english.contains(
+        "Cleanup was requested for the locked server-hosted round."
+    ));
+    assertFalse(english.contains("Gameplay has not started yet."));
+    assertFalse(english.contains(
+        "Runtime cleanup is required. The locked roster was preserved."
+    ));
+
+    assertTrue(japanese.contains(
+        "参加者名簿を確定し、サーバー運営型ラウンドの開始準備を要求しました。"
+    ));
+    assertTrue(japanese.contains(
+        "確定済みのサーバー運営型ラウンドについて、後片付けを要求しました。"
+    ));
+    assertFalse(japanese.contains("ゲーム本体はまだ開始していません。"));
+    assertFalse(japanese.contains(
+        "ランタイムの後片付けが必要です。確定済みの参加者名簿は保持されています。"
+    ));
   }
 
   private static int occurrences(String source, String needle) {
