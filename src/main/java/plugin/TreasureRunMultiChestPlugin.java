@@ -317,30 +317,6 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     quoteModule = new plugin.quote.QuoteModule(this, playerLanguageStore, languageConfigStore, i18n);
     quoteModule.enable();
 
-    ServerHostedSessionCommandAdapter serverHostedSessionCommandAdapter =
-        new ServerHostedSessionCommandAdapter(
-            serverHostedSessionLifecycle.commandService(),
-            serverHostedSessionLifecycle.controlService(),
-            sender -> sender instanceof Player player
-                ? resolveCurrentLang(player)
-                : getConfig().getString("language.default", "en"),
-            (language, key, placeholders) ->
-                getI18n().tr(language, key, placeholders)
-        );
-
-    if (getCommand("treasurerun") != null) {
-      getCommand("treasurerun").setExecutor(
-          serverHostedSessionCommandAdapter
-      );
-      getCommand("treasurerun").setTabCompleter(
-          serverHostedSessionCommandAdapter
-      );
-    } else {
-      getLogger().warning(
-          "TreasureRun command metadata is missing: /treasurerun"
-      );
-    }
-
     // ✅ StartThemePlayer を生成して保持
     startThemePlayer = new StartThemePlayer(this);
 
@@ -542,6 +518,31 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
         },
         ignoredRemaining -> { }
     );
+
+    ServerHostedSessionCommandAdapter serverHostedSessionCommandAdapter =
+        new ServerHostedSessionCommandAdapter(
+            serverHostedSessionLifecycle.commandService(),
+            serverHostedSessionLifecycle.controlService(),
+            serverHostedBukkitRoundController,
+            sender -> sender instanceof Player player
+                ? resolveCurrentLang(player)
+                : getConfig().getString("language.default", "en"),
+            (language, key, placeholders) ->
+                getI18n().tr(language, key, placeholders)
+        );
+
+    if (getCommand("treasurerun") != null) {
+      getCommand("treasurerun").setExecutor(
+          serverHostedSessionCommandAdapter
+      );
+      getCommand("treasurerun").setTabCompleter(
+          serverHostedSessionCommandAdapter
+      );
+    } else {
+      getLogger().warning(
+          "TreasureRun command metadata is missing: /treasurerun"
+      );
+    }
 
     registerSecretTradeCommandFallback();
 

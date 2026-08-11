@@ -2,8 +2,10 @@ package plugin;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -190,7 +192,7 @@ class ServerHostedSessionCommandAdapterTest {
 
 
   @Test
-  void administratorStartLocksTwoPlayerRosterWithoutStartingGameplay() {
+  void administratorStartLocksTwoPlayerRosterAndDelegatesAcceptedDecisionToController() {
     Fixture fixture = new Fixture();
     CommandSender administrator = fixture.console(true);
     Player first = fixture.player(false);
@@ -207,6 +209,9 @@ class ServerHostedSessionCommandAdapterTest {
         fixture.session.participants()
     );
     fixture.assertLastKey("serverHostedSession.command.startRosterLocked");
+    verify(fixture.roundController).start(
+        any(ServerHostedSessionControlService.StartDecision.class)
+    );
     assertEquals("2", fixture.lastInvocation().placeholders().get("{players}"));
     assertEquals("8", fixture.lastInvocation().placeholders().get("{max}"));
   }
@@ -224,6 +229,7 @@ class ServerHostedSessionCommandAdapterTest {
     assertEquals(ServerHostedSession.State.WAITING, fixture.session.state());
     assertEquals(List.of(participant.getUniqueId()), fixture.session.participants());
     fixture.assertLastKey("serverHostedSession.command.startAdminRequired");
+    verify(fixture.roundController, never()).start(any());
   }
 
   @Test
@@ -239,6 +245,7 @@ class ServerHostedSessionCommandAdapterTest {
     assertEquals(ServerHostedSession.State.WAITING, fixture.session.state());
     assertEquals(List.of(participant.getUniqueId()), fixture.session.participants());
     fixture.assertLastKey("serverHostedSession.command.startTooFewPlayers");
+    verify(fixture.roundController, never()).start(any());
     assertEquals("2", fixture.lastInvocation().placeholders().get("{min}"));
   }
 
@@ -274,6 +281,7 @@ class ServerHostedSessionCommandAdapterTest {
     assertEquals(ServerHostedSession.State.IDLE, fixture.session.state());
     assertEquals(List.of(), fixture.session.participants());
     fixture.assertLastKey("serverHostedSession.command.stopWaitingReset");
+    verify(fixture.roundController, never()).stop(any());
   }
 
   @Test
@@ -293,6 +301,9 @@ class ServerHostedSessionCommandAdapterTest {
     assertEquals(ServerHostedSession.State.LOCKED, fixture.session.state());
     assertEquals(locked, fixture.session.participants());
     fixture.assertLastKey("serverHostedSession.command.stopCleanupRequired");
+    verify(fixture.roundController).stop(
+        any(ServerHostedSessionControlService.StopDecision.class)
+    );
   }
 
   @Test
@@ -308,6 +319,7 @@ class ServerHostedSessionCommandAdapterTest {
     assertEquals(ServerHostedSession.State.WAITING, fixture.session.state());
     assertEquals(List.of(participant.getUniqueId()), fixture.session.participants());
     fixture.assertLastKey("serverHostedSession.command.stopAdminRequired");
+    verify(fixture.roundController, never()).stop(any());
   }
 
   @Test
@@ -320,6 +332,7 @@ class ServerHostedSessionCommandAdapterTest {
     assertEquals(ServerHostedSession.State.IDLE, fixture.session.state());
     assertEquals(List.of(), fixture.session.participants());
     fixture.assertLastKey("serverHostedSession.command.stopNoActiveSession");
+    verify(fixture.roundController, never()).stop(any());
   }
 
   @Test
@@ -343,6 +356,9 @@ class ServerHostedSessionCommandAdapterTest {
     private final ServerHostedSession session = new ServerHostedSession();
     private final List<Invocation> invocations = new ArrayList<>();
     private final Command command = mock(Command.class);
+    @SuppressWarnings("unchecked")
+    private final ServerHostedBukkitRoundController<Object> roundController =
+        mock(ServerHostedBukkitRoundController.class);
     private final ServerHostedSessionCommandAdapter adapter;
 
     private Fixture() {
@@ -355,6 +371,7 @@ class ServerHostedSessionCommandAdapterTest {
       adapter = new ServerHostedSessionCommandAdapter(
           new ServerHostedSessionCommandService(session),
           new ServerHostedSessionControlService(session),
+          roundController,
           languageResolver,
           (language, key, placeholders) -> {
             invocations.add(new Invocation(language, key, placeholders));

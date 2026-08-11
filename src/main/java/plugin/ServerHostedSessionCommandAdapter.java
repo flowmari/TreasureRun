@@ -15,10 +15,11 @@ import org.bukkit.entity.Player;
 /**
  * Connects the framework-independent server-hosted session command service to Bukkit and i18n.
  *
- * <p>This adapter starts no gameplay. It maps Bukkit senders to typed actors, delegates
- * create/join/leave/status to {@link ServerHostedSessionCommandService}, delegates start/stop
- * decisions to {@link ServerHostedSessionControlService}, and translates each typed result
- * through the existing language boundary. It still starts no countdown or gameplay.</p>
+ * <p>This adapter maps Bukkit senders to typed actors, delegates create/join/leave/status to
+ * {@link ServerHostedSessionCommandService}, obtains typed start/stop decisions from
+ * {@link ServerHostedSessionControlService}, and forwards only accepted runtime work to the
+ * already-owned {@link ServerHostedBukkitRoundController}. Player-facing result wording remains
+ * intentionally unchanged in this preview and must be made truthful before a production write.</p>
  */
 public final class ServerHostedSessionCommandAdapter implements TabExecutor {
 
@@ -34,12 +35,14 @@ public final class ServerHostedSessionCommandAdapter implements TabExecutor {
 
   private final ServerHostedSessionCommandService service;
   private final ServerHostedSessionControlService controlService;
+  private final ServerHostedBukkitRoundController<?> roundController;
   private final Function<CommandSender, String> languageResolver;
   private final MessageResolver messageResolver;
 
   public ServerHostedSessionCommandAdapter(
       ServerHostedSessionCommandService service,
       ServerHostedSessionControlService controlService,
+      ServerHostedBukkitRoundController<?> roundController,
       Function<CommandSender, String> languageResolver,
       MessageResolver messageResolver
   ) {
@@ -47,6 +50,10 @@ public final class ServerHostedSessionCommandAdapter implements TabExecutor {
     this.controlService = Objects.requireNonNull(
         controlService,
         "controlService"
+    );
+    this.roundController = Objects.requireNonNull(
+        roundController,
+        "roundController"
     );
     this.languageResolver = Objects.requireNonNull(
         languageResolver,
@@ -79,6 +86,9 @@ public final class ServerHostedSessionCommandAdapter implements TabExecutor {
       if (subcommand.equals("start")) {
         ServerHostedSessionControlService.StartDecision decision =
             controlService.requestStart(sender.hasPermission(ADMIN_PERMISSION));
+        if (decision.code() == ServerHostedSessionControlService.StartCode.ROSTER_LOCKED) {
+          roundController.start(decision);
+        }
         sender.sendMessage(message(sender, decision));
         return true;
       }
@@ -86,6 +96,9 @@ public final class ServerHostedSessionCommandAdapter implements TabExecutor {
       if (subcommand.equals("stop")) {
         ServerHostedSessionControlService.StopDecision decision =
             controlService.requestStop(sender.hasPermission(ADMIN_PERMISSION));
+        if (decision.code() == ServerHostedSessionControlService.StopCode.CLEANUP_REQUIRED) {
+          roundController.stop(decision);
+        }
         sender.sendMessage(message(sender, decision));
         return true;
       }
