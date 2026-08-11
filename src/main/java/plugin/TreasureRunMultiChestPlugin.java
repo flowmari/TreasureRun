@@ -224,6 +224,8 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
   private ServerHostedBukkitRoundRuntimeAdapter serverHostedBukkitRoundRuntimeAdapter;
   private ServerHostedBukkitRoundOrchestrator<Location> serverHostedBukkitRoundOrchestrator;
   private ServerHostedBukkitRoundController<Location> serverHostedBukkitRoundController;
+  private BukkitTask serverHostedGameplayTask;
+  private final Map<UUID, BossBar> serverHostedBossBars = new HashMap<>();
   private long previousWorldTime = -1;
   private boolean previousStorm = false;
   private boolean previousThundering = false;
@@ -516,7 +518,9 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
           );
           return scheduled::cancel;
         },
-        ignoredRemaining -> { }
+        this::showServerHostedCountdown,
+        this::beginServerHostedGameplay,
+        this::stopServerHostedGameplayPresentation
     );
 
     ServerHostedSessionCommandAdapter serverHostedSessionCommandAdapter =
@@ -668,6 +672,289 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     return player != null
         && activeRoundContext != null
         && activeRoundContext.contains(player.getUniqueId());
+  }
+
+  private Optional<ServerHostedSharedRoundRuntime> activeServerHostedRuntime() {
+    return serverHostedBukkitRoundController == null
+        ? Optional.empty()
+        : serverHostedBukkitRoundController.activeRuntime();
+  }
+
+  private boolean isActiveServerHostedRuntime(ServerHostedSharedRoundRuntime runtime) {
+    return runtime != null
+        && activeServerHostedRuntime().map(current -> current == runtime).orElse(false)
+        && serverHostedRoundCoordinator.stateFor(
+            ServerHostedRoundCoordinator.OwnershipMode.SERVER_HOSTED
+        ) == ServerHostedRoundState.RUNNING;
+  }
+
+  private boolean isGameplayParticipant(Player player) {
+    if (player == null) return false;
+    Optional<ServerHostedSharedRoundRuntime> runtime = activeServerHostedRuntime();
+    if (runtime.isPresent()) {
+      return runtime.orElseThrow().participants().contains(player.getUniqueId());
+    }
+    return isActiveRoundPlayer(player);
+  }
+
+  private int recordGameplayScore(Player player, int delta) {
+    Optional<ServerHostedSharedRoundRuntime> runtime = activeServerHostedRuntime();
+    if (runtime.isPresent()) {
+      ServerHostedSharedRoundRuntime active = runtime.orElseThrow();
+      if (active.addScore(player.getUniqueId(), delta)
+          != ServerHostedSharedRoundRuntime.ScoreCode.RECORDED) {
+        return active.score(player.getUniqueId());
+      }
+      return active.score(player.getUniqueId());
+    }
+
+    int updated = playerScores.getOrDefault(player.getUniqueId(), 0) + delta;
+    playerScores.put(player.getUniqueId(), updated);
+    return updated;
+  }
+
+  private void showServerHostedCountdown(int remaining) {
+    if (remaining <= 0) return;
+    ChatColor numberColor = switch (remaining) {
+      case 3 -> ChatColor.AQUA;
+      case 2 -> ChatColor.GREEN;
+      case 1 -> ChatColor.YELLOW;
+      default -> ChatColor.GRAY;
+    };
+
+    for (UUID participantId : serverHostedRoundCoordinator.participantsFor(
+        ServerHostedRoundCoordinator.OwnershipMode.SERVER_HOSTED
+    )) {
+      Player player = Bukkit.getPlayer(participantId);
+      if (player == null || !player.isOnline()) continue;
+      String language = getPlayerLangOrDefault(participantId);
+      player.sendTitle(
+          numberColor + "" + ChatColor.BOLD + remaining,
+          ChatColor.GRAY + getI18n().tr(language, "gameplay.start.startingIn"),
+          0, 20, 0
+      );
+      if (startThemePlayer != null && remaining <= 3) {
+        startThemePlayer.playCountdownTick(player, remaining);
+      }
+    }
+  }
+
+  private void beginServerHostedGameplay(ServerHostedSharedRoundRuntime runtime) {
+    if (runtime == null || !isActiveServerHostedRuntime(runtime)) {
+      throw new IllegalStateException("Server-hosted runtime is not the active RUNNING runtime.");
+    }
+    if (treasureChestManager == null) {
+      throw new IllegalStateException("TreasureChestManager is unavailable.");
+    }
+
+    int placedChests = treasureChestManager.getTreasureLocations().size();
+    if (placedChests <= 0) {
+      throw new IllegalStateException("No server-hosted treasure chests are available at RUNNING.");
+    }
+
+    stopServerHostedGameplayPresentation();
+
+    activeRoundContext = runtime.context();
+    totalChestsRemaining = placedChests;
+    totalChestsAtStart = placedChests;
+
+    final long totalDurationMillis = Math.max(1L, runtime.remainingMillis());
+
+    for (UUID participantId : runtime.participants()) {
+      Player player = Bukkit.getPlayer(participantId);
+      if (player == null || !player.isOnline()) continue;
+
+      String language = getPlayerLangOrDefault(participantId);
+      if (startThemePlayer != null) {
+        startThemePlayer.playGoActivate(player);
+        startThemePlayer.startGameBgm(player);
+      }
+      player.sendTitle(
+          ChatColor.GRAY + "" + ChatColor.BOLD + getI18n().tr(language, "gameplay.start.go"),
+          "",
+          0, 20, 10
+      );
+
+      startVanillaMusicSuppress(player);
+      if (chestSound != null) chestSound.start(player);
+      if (heartbeatSoundService != null) {
+        heartbeatSoundService.start(
+            player,
+            () -> (int) Math.max(0L, (runtime.remainingMillis() + 999L) / 1000L),
+            () -> isActiveServerHostedRuntime(runtime),
+            () -> 0,
+            () -> nearestTreasureProximity(player)
+        );
+      }
+
+      BossBar participantBar = Bukkit.createBossBar(
+          ChatColor.GREEN + getI18n().tr(language, "gameplay.timer.remainingBossbar"),
+          BarColor.GREEN,
+          BarStyle.SOLID
+      );
+      participantBar.addPlayer(player);
+      serverHostedBossBars.put(participantId, participantBar);
+    }
+
+    serverHostedGameplayTask = Bukkit.getScheduler().runTaskTimer(this, new Runnable() {
+      long lastRemainingSeconds = -1L;
+
+      @Override
+      public void run() {
+        if (!isActiveServerHostedRuntime(runtime)) {
+          stopServerHostedGameplayPresentation();
+          return;
+        }
+
+        long remainingMillis = runtime.remainingMillis();
+        long remainingSeconds = Math.max(0L, (remainingMillis + 999L) / 1000L);
+        double progress = Math.max(
+            0.0,
+            Math.min(1.0, (double) remainingMillis / (double) totalDurationMillis)
+        );
+
+        for (UUID participantId : runtime.participants()) {
+          Player player = Bukkit.getPlayer(participantId);
+          if (player == null || !player.isOnline()) continue;
+
+          String language = getPlayerLangOrDefault(participantId);
+          BossBar participantBar = serverHostedBossBars.get(participantId);
+          if (participantBar != null) {
+            participantBar.setProgress(progress);
+            participantBar.setTitle(
+                ChatColor.GREEN + getI18n().tr(language, "gameplay.timer.remainingBossbar")
+            );
+          }
+
+          player.spigot().sendMessage(
+              ChatMessageType.ACTION_BAR,
+              new TextComponent(
+                  ChatColor.YELLOW + getI18n().tr(
+                      language,
+                      "gameplay.timer.remainingLine",
+                      I18n.Placeholder.of("{seconds}", String.valueOf(remainingSeconds))
+                  )
+              )
+          );
+
+          if (remainingSeconds == 5L
+              && lastRemainingSeconds != 5L
+              && treasureRunGameEffectsPlugin != null) {
+            treasureRunGameEffectsPlugin.startFinalCountdownBeeps(player);
+          }
+        }
+
+        lastRemainingSeconds = remainingSeconds;
+
+        if (runtime.timeExpired()) {
+          finishServerHostedRound(runtime, false);
+        }
+      }
+    }, 0L, 20L);
+  }
+
+  private void stopServerHostedGameplayPresentation() {
+    BukkitTask task = serverHostedGameplayTask;
+    serverHostedGameplayTask = null;
+    if (task != null) task.cancel();
+
+    RoundRuntimeContext context = activeRoundContext;
+    if (context != null && context.mode() == RoundRuntimeContext.Mode.SERVER_HOSTED) {
+      for (UUID participantId : context.participants()) {
+        Player player = Bukkit.getPlayer(participantId);
+        if (player == null) continue;
+        if (startThemePlayer != null) startThemePlayer.stop(player);
+        stopVanillaMusicSuppress(player);
+        if (heartbeatSoundService != null) heartbeatSoundService.stop(player);
+        if (chestSound != null) chestSound.stop(player);
+        if (treasureRunGameEffectsPlugin != null) {
+          treasureRunGameEffectsPlugin.stopFinalCountdownBeeps(player);
+        }
+      }
+    }
+
+    for (BossBar participantBar : serverHostedBossBars.values()) {
+      participantBar.removeAll();
+    }
+    serverHostedBossBars.clear();
+
+    if (context != null && context.mode() == RoundRuntimeContext.Mode.SERVER_HOSTED) {
+      activeRoundContext = null;
+    }
+  }
+
+  private void finishServerHostedRound(
+      ServerHostedSharedRoundRuntime runtime,
+      boolean completed
+  ) {
+    if (!isActiveServerHostedRuntime(runtime)) return;
+
+    ServerHostedSharedRoundRuntime.Snapshot snapshot = runtime.snapshot();
+    ServerHostedBukkitRoundController.Result result = completed
+        ? serverHostedBukkitRoundController.roundCompleted()
+        : serverHostedBukkitRoundController.timeExpired();
+
+    if (result.code() == ServerHostedBukkitRoundController.Code.CLEANUP_PENDING) {
+      getLogger().warning(
+          "[ServerHostedGameplay] terminal cleanup is still pending; result presentation is deferred."
+      );
+      return;
+    }
+    if (result.code() != ServerHostedBukkitRoundController.Code.CLEANUP_COMPLETED) {
+      getLogger().warning(
+          "[ServerHostedGameplay] terminal cleanup was rejected: " + result.detail()
+      );
+      return;
+    }
+
+    totalChestsRemaining = 0;
+    sendServerHostedResultSnapshot(snapshot, completed);
+  }
+
+  private void sendServerHostedResultSnapshot(
+      ServerHostedSharedRoundRuntime.Snapshot snapshot,
+      boolean completed
+  ) {
+    long elapsed = Math.max(0L, snapshot.elapsedMillis());
+    long totalSeconds = elapsed / 1000L;
+    String timeText = String.format(
+        "%d:%02d.%02d",
+        totalSeconds / 60L,
+        totalSeconds % 60L,
+        (elapsed % 1000L) / 10L
+    );
+
+    for (ServerHostedSharedRoundRuntime.ParticipantResult participantResult : snapshot.results()) {
+      Player player = Bukkit.getPlayer(participantResult.participantId());
+      if (player == null || !player.isOnline()) continue;
+
+      String language = getPlayerLangOrDefault(player.getUniqueId());
+      String titleKey = completed
+          ? "gameplay.result.runCompleteTitle"
+          : "gameplay.result.timeUpTitle";
+
+      player.sendTitle(
+          (completed ? ChatColor.AQUA : ChatColor.RED) + getI18n().tr(language, titleKey),
+          "",
+          10, 60, 10
+      );
+      player.sendMessage(
+          ChatColor.YELLOW + getI18n().tr(language, "gameplay.result.time") + ": " + timeText
+      );
+      player.sendMessage(
+          ChatColor.GOLD + getI18n().tr(
+              language,
+              "gameplay.pickup.gameEndTotalScore",
+              I18n.Placeholder.of("{score}", String.valueOf(participantResult.score()))
+          )
+      );
+
+      if (completed) {
+        player.sendMessage(
+            ChatColor.GOLD + getI18n().tr(language, "gameplay.success.allChestsOpened")
+        );
+      }
+    }
   }
 
   private void cancelCountdownTasks() {
@@ -1807,8 +2094,9 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
   // =======================================================
   @EventHandler
   public void onInventoryOpen(InventoryOpenEvent event) {
-    if (!roundLifecycle.isRunning()) return;
+    if (!isGameRunning()) return;
     if (!(event.getPlayer() instanceof Player player)) return;
+    if (!isGameplayParticipant(player)) return;
     if (treasureChestManager == null) return;
 
     Inventory inv = event.getInventory();
@@ -1821,7 +2109,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
 
     if (!treasureChestManager.isOurChest(chestBlock)) return;
     if (chestBlock.getType() != Material.CHEST) return;
-    if (!roundLifecycle.isRunning()) return;
+    if (!isGameRunning()) return;
 
     boolean hadAnyItem = false;
     boolean jackpot = false;
@@ -1868,8 +2156,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     if (jackpot) add += 200;
 
     if (add > 0) {
-      int newScore = playerScores.getOrDefault(player.getUniqueId(), 0) + add;
-      playerScores.put(player.getUniqueId(), newScore);
+      int newScore = recordGameplayScore(player, add);
       player.sendMessage(
           ChatColor.GREEN + trPlayer(
               player,
@@ -1900,6 +2187,12 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
               I18n.Placeholder.of("{count}", String.valueOf(totalChestsRemaining))
           )
       );
+      return;
+    }
+
+    Optional<ServerHostedSharedRoundRuntime> serverHostedRuntime = activeServerHostedRuntime();
+    if (serverHostedRuntime.isPresent()) {
+      finishServerHostedRound(serverHostedRuntime.orElseThrow(), true);
       return;
     }
 
@@ -2365,7 +2658,8 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
   }
 
   public boolean isGameRunning() {
-    return roundLifecycle.isRunning();
+    return roundLifecycle.isRunning()
+        || activeServerHostedRuntime().isPresent();
   }
 
   public RoundState getRoundState() {
@@ -2627,7 +2921,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     stopVanillaMusicSuppress(player);
 
     BukkitTask task = Bukkit.getScheduler().runTaskTimer(this, () -> {
-      if (!player.isOnline() || !roundLifecycle.isRunning()) {
+      if (!player.isOnline() || !isGameRunning()) {
         stopVanillaMusicSuppress(player);
         return;
       }

@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.UUID;
+import java.util.function.Consumer;
 import java.util.function.IntConsumer;
 
 /**
@@ -59,6 +60,8 @@ public final class ServerHostedBukkitRoundController<A> {
   private final ServerHostedBukkitRoundOrchestrator<A> orchestrator;
   private final SchedulerPort scheduler;
   private final IntConsumer countdownObserver;
+  private final Consumer<ServerHostedSharedRoundRuntime> runningObserver;
+  private final Runnable runtimeStoppedObserver;
 
   private ScheduledTask countdownTask;
   private int countdownRemaining;
@@ -71,11 +74,36 @@ public final class ServerHostedBukkitRoundController<A> {
       SchedulerPort scheduler,
       IntConsumer countdownObserver
   ) {
+    this(
+        coordinator,
+        activationService,
+        orchestrator,
+        scheduler,
+        countdownObserver,
+        ignoredRuntime -> { },
+        () -> { }
+    );
+  }
+
+  public ServerHostedBukkitRoundController(
+      ServerHostedRoundCoordinator coordinator,
+      ServerHostedRoundActivationService<A> activationService,
+      ServerHostedBukkitRoundOrchestrator<A> orchestrator,
+      SchedulerPort scheduler,
+      IntConsumer countdownObserver,
+      Consumer<ServerHostedSharedRoundRuntime> runningObserver,
+      Runnable runtimeStoppedObserver
+  ) {
     this.coordinator = Objects.requireNonNull(coordinator, "coordinator");
     this.activationService = Objects.requireNonNull(activationService, "activationService");
     this.orchestrator = Objects.requireNonNull(orchestrator, "orchestrator");
     this.scheduler = Objects.requireNonNull(scheduler, "scheduler");
     this.countdownObserver = Objects.requireNonNull(countdownObserver, "countdownObserver");
+    this.runningObserver = Objects.requireNonNull(runningObserver, "runningObserver");
+    this.runtimeStoppedObserver = Objects.requireNonNull(
+        runtimeStoppedObserver,
+        "runtimeStoppedObserver"
+    );
   }
 
   /**
@@ -200,6 +228,34 @@ public final class ServerHostedBukkitRoundController<A> {
     return mapCleanup(orchestrator.pluginDisabled(), "Server-hosted plugin disable processed.");
   }
 
+  /** Completes a RUNNING server-hosted round through the existing single cleanup owner. */
+  public synchronized Result roundCompleted() {
+    if (!hasActiveRunningRuntime()) {
+      return result(
+          Code.INVALID_STATE,
+          coordinator.participantsFor(ServerHostedRoundCoordinator.OwnershipMode.SERVER_HOSTED),
+          Optional.ofNullable(activeRuntime),
+          "No RUNNING server-hosted runtime can be completed."
+      );
+    }
+    cancelOwnedRuntimeState();
+    return mapCleanup(orchestrator.roundCompleted(), "Server-hosted round completion processed.");
+  }
+
+  /** Ends a RUNNING server-hosted round after the shared monotonic runtime expires. */
+  public synchronized Result timeExpired() {
+    if (!hasActiveRunningRuntime()) {
+      return result(
+          Code.INVALID_STATE,
+          coordinator.participantsFor(ServerHostedRoundCoordinator.OwnershipMode.SERVER_HOSTED),
+          Optional.ofNullable(activeRuntime),
+          "No RUNNING server-hosted runtime can expire."
+      );
+    }
+    cancelOwnedRuntimeState();
+    return mapCleanup(orchestrator.timeExpired(), "Server-hosted time expiry processed.");
+  }
+
   /** Retries only the orchestrator's already-retained cleanup claim; no new task is created. */
   public synchronized Result retryCleanup() {
     return mapCleanup(orchestrator.retryCleanup(), "Retried retained server-hosted cleanup.");
@@ -246,15 +302,37 @@ public final class ServerHostedBukkitRoundController<A> {
 
     if (activation.code() == ServerHostedRoundActivationService.Code.RUNNING) {
       activeRuntime = activation.runtime().orElseThrow();
+      try {
+        runningObserver.accept(activeRuntime);
+      } catch (RuntimeException observerFailure) {
+        cancelOwnedRuntimeState();
+        orchestrator.runtimeActivationFailed();
+      }
       return;
     }
 
     activeRuntime = null;
   }
 
+  private boolean hasActiveRunningRuntime() {
+    return activeRuntime != null
+        && coordinator.ownershipMode()
+            == ServerHostedRoundCoordinator.OwnershipMode.SERVER_HOSTED
+        && coordinator.stateFor(ServerHostedRoundCoordinator.OwnershipMode.SERVER_HOSTED)
+            == ServerHostedRoundState.RUNNING;
+  }
+
   private void cancelOwnedRuntimeState() {
     cancelCountdownOnly();
+    boolean hadRuntime = activeRuntime != null;
     activeRuntime = null;
+    if (hadRuntime) {
+      try {
+        runtimeStoppedObserver.run();
+      } catch (RuntimeException ignored) {
+        // Cleanup must not be blocked by presentation shutdown.
+      }
+    }
   }
 
   private void cancelCountdownOnly() {
