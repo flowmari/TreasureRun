@@ -50,7 +50,37 @@ class ServerHostedBukkitRoundProductionWiringBoundaryTest {
     assertTrue(plugin.contains("initialDelayTicks"));
     assertTrue(plugin.contains("periodTicks"));
     assertTrue(plugin.contains("return scheduled::cancel;"));
-    assertTrue(plugin.contains("ignoredRemaining -> { }"));
+    assertTrue(plugin.contains("this::showServerHostedCountdown"));
+    assertTrue(plugin.contains("this::beginServerHostedGameplay"));
+    assertTrue(plugin.contains("this::stopServerHostedGameplayPresentation"));
+  }
+
+  @Test
+  void productionGameplayConsumesTheControllerOwnedSharedRuntimeWithoutASecondStateOwner()
+      throws Exception {
+    String plugin = read("src/main/java/plugin/TreasureRunMultiChestPlugin.java");
+    String controller = read("src/main/java/plugin/ServerHostedBukkitRoundController.java");
+    String orchestrator = read("src/main/java/plugin/ServerHostedBukkitRoundOrchestrator.java");
+    String inventoryOpen = methodBody(plugin, "public void onInventoryOpen(InventoryOpenEvent event)");
+
+    assertTrue(plugin.contains("activeServerHostedRuntime()"));
+    assertTrue(plugin.contains("activeRoundContext = runtime.context();"));
+    assertTrue(plugin.contains("runtime.remainingMillis()"));
+    assertTrue(plugin.contains("runtime.timeExpired()"));
+    assertTrue(plugin.contains("serverHostedBukkitRoundController.roundCompleted()"));
+    assertTrue(plugin.contains("serverHostedBukkitRoundController.timeExpired()"));
+    assertTrue(inventoryOpen.contains("isGameplayParticipant(player)"));
+    assertTrue(inventoryOpen.contains("recordGameplayScore(player, add)"));
+    assertTrue(inventoryOpen.contains("finishServerHostedRound("));
+    assertFalse(inventoryOpen.contains("if (!roundLifecycle.isRunning()) return;"));
+    assertTrue(controller.contains("public synchronized Result roundCompleted()"));
+    assertTrue(controller.contains("public synchronized Result timeExpired()"));
+    assertTrue(orchestrator.contains(
+        "abort(ServerHostedRoundCoordinator.ResetCause.ROUND_COMPLETED)"
+    ));
+    assertTrue(orchestrator.contains(
+        "abort(ServerHostedRoundCoordinator.ResetCause.TIME_EXPIRED)"
+    ));
   }
 
   @Test

@@ -233,6 +233,48 @@ class ServerHostedBukkitRoundControllerTest {
     assertTrue(fixture.events.contains("cleanup:PREPARATION_FAILED"));
   }
 
+  @Test
+  void runningObserverReceivesTheExactSharedRuntimeAndStopObserverRunsOnCompletion() {
+    Fixture fixture = fixture();
+    List<ServerHostedSharedRoundRuntime> running = new ArrayList<>();
+    int[] stopped = {0};
+    fixture.controller = fixture.controllerWithRuntimeObservers(
+        fixture.countdownSeconds::add,
+        running::add,
+        () -> stopped[0]++
+    );
+
+    fixture.controller.start(fixture.lockedStart());
+    fixture.scheduler.tick(10);
+
+    assertEquals(1, running.size());
+    assertTrue(fixture.controller.activeRuntime().isPresent());
+    assertTrue(running.get(0) == fixture.controller.activeRuntime().orElseThrow());
+
+    ServerHostedBukkitRoundController.Result completed = fixture.controller.roundCompleted();
+
+    assertEquals(ServerHostedBukkitRoundController.Code.CLEANUP_COMPLETED, completed.code());
+    assertEquals(ServerHostedRoundState.IDLE, fixture.coordinator.state());
+    assertTrue(fixture.controller.activeRuntime().isEmpty());
+    assertEquals(1, stopped[0]);
+    assertTrue(fixture.events.contains("cleanup:ROUND_COMPLETED"));
+  }
+
+  @Test
+  void timeExpiryUsesTheSameCleanupOwnerAndClearsTheRuntime() {
+    Fixture fixture = fixture();
+    fixture.controller.start(fixture.lockedStart());
+    fixture.scheduler.tick(10);
+    assertTrue(fixture.controller.activeRuntime().isPresent());
+
+    ServerHostedBukkitRoundController.Result expired = fixture.controller.timeExpired();
+
+    assertEquals(ServerHostedBukkitRoundController.Code.CLEANUP_COMPLETED, expired.code());
+    assertEquals(ServerHostedRoundState.IDLE, fixture.coordinator.state());
+    assertTrue(fixture.controller.activeRuntime().isEmpty());
+    assertTrue(fixture.events.contains("cleanup:TIME_EXPIRED"));
+  }
+
   private Fixture fixture() {
     return fixture(false);
   }
@@ -314,6 +356,22 @@ class ServerHostedBukkitRoundControllerTest {
           orchestrator,
           scheduler,
           observer
+      );
+    }
+
+    private ServerHostedBukkitRoundController<String> controllerWithRuntimeObservers(
+        java.util.function.IntConsumer countdownObserver,
+        java.util.function.Consumer<ServerHostedSharedRoundRuntime> runningObserver,
+        Runnable stoppedObserver
+    ) {
+      return new ServerHostedBukkitRoundController<>(
+          coordinator,
+          activation,
+          orchestrator,
+          scheduler,
+          countdownObserver,
+          runningObserver,
+          stoppedObserver
       );
     }
 

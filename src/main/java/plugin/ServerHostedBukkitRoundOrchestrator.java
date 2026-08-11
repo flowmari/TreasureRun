@@ -181,6 +181,14 @@ public final class ServerHostedBukkitRoundOrchestrator<A> {
     return abort(ServerHostedRoundCoordinator.ResetCause.STOP_REQUESTED);
   }
 
+  public synchronized Result roundCompleted() {
+    return abort(ServerHostedRoundCoordinator.ResetCause.ROUND_COMPLETED);
+  }
+
+  public synchronized Result timeExpired() {
+    return abort(ServerHostedRoundCoordinator.ResetCause.TIME_EXPIRED);
+  }
+
   public synchronized Result participantDisconnected(UUID playerId) {
     Objects.requireNonNull(playerId, "playerId");
     List<UUID> participants = coordinator.participantsFor(
