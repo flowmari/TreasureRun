@@ -496,7 +496,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
         serverHostedRoundCoordinator,
         new ServerHostedRoundPreparationService<>(serverHostedRoundCoordinator, playerReturnLedger),
         serverHostedBukkitRoundRuntimeAdapter::resolveReturnDestination,
-        serverHostedBukkitRoundRuntimeAdapter::cleanup
+        serverHostedBukkitRoundRuntimeAdapter
     );
     ServerHostedRoundActivationService<Location> serverHostedRoundActivationService =
         new ServerHostedRoundActivationService<>(

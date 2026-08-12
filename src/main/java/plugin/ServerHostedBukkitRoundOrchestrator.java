@@ -1,9 +1,11 @@
 package plugin;
 
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.Set;
 import java.util.UUID;
 
 /**
@@ -63,6 +65,21 @@ public final class ServerHostedBukkitRoundOrchestrator<A> {
   @FunctionalInterface
   public interface CleanupPort {
     boolean cleanup(ServerHostedRoundCoordinator.CleanupClaim claim) throws Exception;
+
+    /**
+     * Cleanup with participants that are known to be unavailable for synchronous return.
+     *
+     * <p>The default preserves compatibility for cleanup ports that do not need this distinction.
+     * Bukkit production cleanup overrides it so PlayerQuitEvent identity remains authoritative
+     * even if the quitting Player is still observable during event dispatch.</p>
+     */
+    default boolean cleanup(
+        ServerHostedRoundCoordinator.CleanupClaim claim,
+        Set<UUID> unavailableParticipants
+    ) throws Exception {
+      Objects.requireNonNull(unavailableParticipants, "unavailableParticipants");
+      return cleanup(claim);
+    }
   }
 
   private final ServerHostedRoundCoordinator coordinator;
@@ -71,6 +88,7 @@ public final class ServerHostedBukkitRoundOrchestrator<A> {
   private final CleanupPort cleanupPort;
 
   private ServerHostedRoundCoordinator.CleanupClaim retainedCleanupClaim;
+  private Set<UUID> retainedUnavailableParticipants = Set.of();
 
   public ServerHostedBukkitRoundOrchestrator(
       ServerHostedRoundCoordinator coordinator,
@@ -210,7 +228,10 @@ public final class ServerHostedBukkitRoundOrchestrator<A> {
           "WAITING disconnects remain a roster-leave concern and do not require round cleanup."
       );
     }
-    return abort(ServerHostedRoundCoordinator.ResetCause.PARTICIPANT_DISCONNECTED);
+    return abort(
+        ServerHostedRoundCoordinator.ResetCause.PARTICIPANT_DISCONNECTED,
+        Set.of(playerId)
+    );
   }
 
   public synchronized Result pluginDisabled() {
@@ -251,7 +272,15 @@ public final class ServerHostedBukkitRoundOrchestrator<A> {
   }
 
   private Result abort(ServerHostedRoundCoordinator.ResetCause cause) {
+    return abort(cause, Set.of());
+  }
+
+  private Result abort(
+      ServerHostedRoundCoordinator.ResetCause cause,
+      Set<UUID> unavailableParticipants
+  ) {
     Objects.requireNonNull(cause, "cause");
+    Objects.requireNonNull(unavailableParticipants, "unavailableParticipants");
 
     if (coordinator.state() == ServerHostedRoundState.IDLE) {
       return result(
@@ -264,6 +293,16 @@ public final class ServerHostedBukkitRoundOrchestrator<A> {
 
     ServerHostedRoundCoordinator.ResetDecision reset = coordinator.requestReset(cause);
     List<UUID> participants = reset.participants();
+
+    if (!unavailableParticipants.isEmpty()) {
+      LinkedHashSet<UUID> combined = new LinkedHashSet<>(retainedUnavailableParticipants);
+      for (UUID unavailableParticipant : unavailableParticipants) {
+        if (participants.contains(unavailableParticipant)) {
+          combined.add(unavailableParticipant);
+        }
+      }
+      retainedUnavailableParticipants = Set.copyOf(combined);
+    }
 
     if (retainedCleanupClaim == null) {
       retainedCleanupClaim = coordinator.claimCleanup().orElse(null);
@@ -291,7 +330,7 @@ public final class ServerHostedBukkitRoundOrchestrator<A> {
     ServerHostedRoundCoordinator.CleanupClaim claim = retainedCleanupClaim;
     boolean completed;
     try {
-      completed = cleanupPort.cleanup(claim);
+      completed = cleanupPort.cleanup(claim, retainedUnavailableParticipants);
     } catch (Exception failure) {
       completed = false;
       detail = detail + " Runtime cleanup failed: " + messageOf(failure);
@@ -308,6 +347,7 @@ public final class ServerHostedBukkitRoundOrchestrator<A> {
 
     coordinator.completeReset();
     retainedCleanupClaim = null;
+    retainedUnavailableParticipants = Set.of();
     return result(
         Code.CLEANUP_COMPLETED,
         claim.participants(),

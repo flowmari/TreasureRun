@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -15,6 +16,7 @@ import java.time.Instant;
 import java.time.ZoneOffset;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 import java.util.UUID;
 import org.bukkit.Location;
 import org.bukkit.World;
@@ -167,6 +169,39 @@ class ServerHostedBukkitRoundRuntimeAdapterTest {
 
     assertTrue(completed);
     assertTrue(ledger.pendingRecord(playerId).isPresent());
+  }
+
+  @Test
+  void disconnectCleanupKeepsKnownUnavailableParticipantPendingEvenIfBukkitStillReportsOnline() {
+    UUID playerId = UUID.randomUUID();
+    UUID worldId = UUID.randomUUID();
+    PlayerReturnLedger ledger = ledger("quit-event-online-window");
+    PlayerReturnRecord record = record(playerId, worldId);
+    assertTrue(ledger.putPending(record).accepted());
+
+    Player player = mock(Player.class);
+    when(player.isOnline()).thenReturn(true);
+    when(player.teleport(any(Location.class))).thenReturn(true);
+
+    ServerHostedBukkitRoundRuntimeAdapter adapter = adapter(
+        ledger,
+        new PlayerReturnRecoveryService(ledger),
+        ignored -> player,
+        ignored -> null,
+        ignored -> null
+    );
+
+    boolean completed = adapter.cleanup(
+        new ServerHostedRoundCoordinator.CleanupClaim(
+            ServerHostedRoundCoordinator.ResetCause.PARTICIPANT_DISCONNECTED,
+            List.of(playerId)
+        ),
+        Set.of(playerId)
+    );
+
+    assertTrue(completed);
+    assertTrue(ledger.pendingRecord(playerId).isPresent());
+    verify(player, never()).teleport(any(Location.class));
   }
 
   @Test

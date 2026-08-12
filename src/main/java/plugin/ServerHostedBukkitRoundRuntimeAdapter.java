@@ -4,6 +4,7 @@ import java.time.Clock;
 import java.time.Instant;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.Set;
 import java.util.UUID;
 import java.util.function.Function;
 import java.util.function.IntSupplier;
@@ -25,7 +26,8 @@ import org.bukkit.entity.Player;
  * PlayerJoin/WorldLoad recovery.</p>
  */
 public final class ServerHostedBukkitRoundRuntimeAdapter
-    implements ServerHostedRoundPreparationService.RuntimePort<Location> {
+    implements ServerHostedRoundPreparationService.RuntimePort<Location>,
+        ServerHostedBukkitRoundOrchestrator.CleanupPort {
 
   private final Supplier<GameStageManager> stageManagerSupplier;
   private final Supplier<TreasureChestManager> chestManagerSupplier;
@@ -157,13 +159,24 @@ public final class ServerHostedBukkitRoundRuntimeAdapter
    * cleanup. An online participant whose return cannot be completed keeps the claim pending so the
    * same cleanup can be retried.</p>
    */
+  @Override
   public boolean cleanup(ServerHostedRoundCoordinator.CleanupClaim claim) {
+    return cleanup(claim, Set.of());
+  }
+
+  @Override
+  public boolean cleanup(
+      ServerHostedRoundCoordinator.CleanupClaim claim,
+      Set<UUID> unavailableParticipants
+  ) {
     Objects.requireNonNull(claim, "claim");
+    Objects.requireNonNull(unavailableParticipants, "unavailableParticipants");
     clearRoundArtifacts();
 
     boolean onlineReturnsComplete = true;
     for (UUID participant : claim.participants()) {
       if (ledger.pendingRecord(participant).isEmpty()) continue;
+      if (unavailableParticipants.contains(participant)) continue;
 
       Player player = onlinePlayer(participant);
       if (player == null) {

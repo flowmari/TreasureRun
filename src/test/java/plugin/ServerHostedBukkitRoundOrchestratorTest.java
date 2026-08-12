@@ -13,6 +13,7 @@ import java.time.ZoneOffset;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -162,6 +163,43 @@ class ServerHostedBukkitRoundOrchestratorTest {
   }
 
   @Test
+  void participantDisconnectMarksThatParticipantUnavailableForSynchronousCleanup() {
+    Fixture fixture = fixture();
+    PlayerReturnLedger ledger = ledger("disconnect-unavailable", new ArrayList<>());
+    List<Set<UUID>> unavailableSnapshots = new ArrayList<>();
+
+    ServerHostedBukkitRoundOrchestrator.CleanupPort cleanupPort =
+        new ServerHostedBukkitRoundOrchestrator.CleanupPort() {
+          @Override
+          public boolean cleanup(ServerHostedRoundCoordinator.CleanupClaim claim) {
+            throw new AssertionError("disconnect-aware cleanup overload was not used");
+          }
+
+          @Override
+          public boolean cleanup(
+              ServerHostedRoundCoordinator.CleanupClaim claim,
+              Set<UUID> unavailableParticipants
+          ) {
+            unavailableSnapshots.add(Set.copyOf(unavailableParticipants));
+            return true;
+          }
+        };
+
+    ServerHostedBukkitRoundOrchestrator<String> orchestrator = orchestrator(
+        fixture,
+        ledger,
+        playerId -> Optional.of(fixture.recordFor(playerId)),
+        cleanupPort
+    );
+
+    ServerHostedBukkitRoundOrchestrator.Result result =
+        orchestrator.participantDisconnected(fixture.second());
+
+    assertEquals(ServerHostedBukkitRoundOrchestrator.Code.CLEANUP_COMPLETED, result.code());
+    assertEquals(List.of(Set.of(fixture.second())), unavailableSnapshots);
+  }
+
+  @Test
   void waitingDisconnectRemainsRosterLeaveConcernAndDoesNotClaimRuntimeCleanup() {
     ServerHostedRoundCoordinator coordinator = new ServerHostedRoundCoordinator();
     assertEquals(ServerHostedRoundCoordinator.CreateCode.CREATED, coordinator.create());
@@ -219,6 +257,55 @@ class ServerHostedBukkitRoundOrchestratorTest {
         causes
     );
     assertEquals(ServerHostedRoundState.IDLE, fixture.coordinator().state());
+  }
+
+  @Test
+  void disconnectDuringRetainedStopCleanupAddsUnavailableParticipantWithoutReplacingFirstCause() {
+    Fixture fixture = fixture();
+    PlayerReturnLedger ledger = ledger("stop-disconnect-unavailable", new ArrayList<>());
+    List<ServerHostedRoundCoordinator.ResetCause> causes = new ArrayList<>();
+    List<Set<UUID>> unavailableSnapshots = new ArrayList<>();
+    AtomicInteger attempts = new AtomicInteger();
+
+    ServerHostedBukkitRoundOrchestrator.CleanupPort cleanupPort =
+        new ServerHostedBukkitRoundOrchestrator.CleanupPort() {
+          @Override
+          public boolean cleanup(ServerHostedRoundCoordinator.CleanupClaim claim) {
+            throw new AssertionError("disconnect-aware cleanup overload was not used");
+          }
+
+          @Override
+          public boolean cleanup(
+              ServerHostedRoundCoordinator.CleanupClaim claim,
+              Set<UUID> unavailableParticipants
+          ) {
+            causes.add(claim.cause());
+            unavailableSnapshots.add(Set.copyOf(unavailableParticipants));
+            return attempts.incrementAndGet() >= 2;
+          }
+        };
+
+    ServerHostedBukkitRoundOrchestrator<String> orchestrator = orchestrator(
+        fixture,
+        ledger,
+        playerId -> Optional.of(fixture.recordFor(playerId)),
+        cleanupPort
+    );
+
+    ServerHostedBukkitRoundOrchestrator.Result first = orchestrator.stopRequested();
+    ServerHostedBukkitRoundOrchestrator.Result second =
+        orchestrator.participantDisconnected(fixture.second());
+
+    assertEquals(ServerHostedBukkitRoundOrchestrator.Code.CLEANUP_PENDING, first.code());
+    assertEquals(ServerHostedBukkitRoundOrchestrator.Code.CLEANUP_COMPLETED, second.code());
+    assertEquals(
+        List.of(
+            ServerHostedRoundCoordinator.ResetCause.STOP_REQUESTED,
+            ServerHostedRoundCoordinator.ResetCause.STOP_REQUESTED
+        ),
+        causes
+    );
+    assertEquals(List.of(Set.of(), Set.of(fixture.second())), unavailableSnapshots);
   }
 
   @Test

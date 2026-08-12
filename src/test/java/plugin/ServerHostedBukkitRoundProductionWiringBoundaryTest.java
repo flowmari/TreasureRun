@@ -22,6 +22,11 @@ class ServerHostedBukkitRoundProductionWiringBoundaryTest {
     assertTrue(plugin.contains("private final ServerHostedRoundCoordinator serverHostedRoundCoordinator"));
     assertTrue(plugin.contains("new ServerHostedBukkitRoundRuntimeAdapter("));
     assertTrue(plugin.contains("new ServerHostedBukkitRoundOrchestrator<>("));
+    assertTrue(plugin.contains(
+        "serverHostedBukkitRoundRuntimeAdapter::resolveReturnDestination,\n"
+            + "        serverHostedBukkitRoundRuntimeAdapter\n"
+    ));
+    assertFalse(plugin.contains("serverHostedBukkitRoundRuntimeAdapter::cleanup"));
     assertTrue(plugin.contains("java.time.Duration.ofSeconds(Math.max(1, normalTimeLimit))"));
     assertTrue(commandAdapter.contains("ServerHostedBukkitRoundController<?> roundController"));
     assertTrue(commandAdapter.contains("roundController.start(decision)"));
