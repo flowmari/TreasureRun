@@ -4,6 +4,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.Recipe;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.ShapelessRecipe;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -23,6 +24,14 @@ public class CustomRecipeLoader {
     registerSpecialIronBlockRecipe();
   }
 
+
+
+  private void replaceRecipe(NamespacedKey key, Recipe recipe) {
+    Bukkit.removeRecipe(key);
+    if (!Bukkit.addRecipe(recipe)) {
+      throw new IllegalStateException("Failed to register TreasureRun recipe: " + key);
+    }
+  }
 
   private String trDefault(String key) {
     try {
@@ -46,7 +55,7 @@ public class CustomRecipeLoader {
     recipe.shape("DDD", " D ", "DDD");
     recipe.setIngredient('D', Material.DIAMOND);
 
-    Bukkit.addRecipe(recipe);
+    replaceRecipe(key, recipe);
     plugin.getLogger().info("[Recipe] special emerald recipe registered.");
   }
 
@@ -66,7 +75,7 @@ public class CustomRecipeLoader {
 
     recipe.addIngredient(3, Material.GOLD_INGOT);
 
-    Bukkit.addRecipe(recipe);
+    replaceRecipe(key, recipe);
     plugin.getLogger().info("[Recipe] special apple recipe registered.");
   }
 
@@ -87,7 +96,7 @@ public class CustomRecipeLoader {
     recipe.shape("III", "III", "III");
     recipe.setIngredient('I', Material.IRON_INGOT);
 
-    Bukkit.addRecipe(recipe);
+    replaceRecipe(key, recipe);
     plugin.getLogger().info("[Recipe] special iron block recipe registered.");
   }
 }
