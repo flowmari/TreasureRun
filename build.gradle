@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'plugin'
-version = '0.1.12-alpha'
+version = '0.2.0-alpha'
 
 repositories {
     mavenCentral()
@@ -98,7 +98,7 @@ shadowJar {
     reproducibleFileOrder = true
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     archiveBaseName.set('TreasureRun')
-    archiveVersion.set('0.1.12-alpha')
+    archiveVersion.set('0.2.0-alpha')
     archiveClassifier.set('all')
 
     // Generic dependency license names collide in a fat JAR. Exclude those

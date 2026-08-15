@@ -18,8 +18,8 @@ import org.bukkit.entity.Player;
  * <p>This adapter maps Bukkit senders to typed actors, delegates create/join/leave/status to
  * {@link ServerHostedSessionCommandService}, obtains typed start/stop decisions from
  * {@link ServerHostedSessionControlService}, and forwards only accepted runtime work to the
- * already-owned {@link ServerHostedBukkitRoundController}. Player-facing result wording remains
- * intentionally unchanged in this preview and must be made truthful before a production write.</p>
+ * already-owned {@link ServerHostedBukkitRoundController}. Player-facing results are resolved
+ * through the existing i18n boundary.</p>
  */
 public final class ServerHostedSessionCommandAdapter implements TabExecutor {
 
