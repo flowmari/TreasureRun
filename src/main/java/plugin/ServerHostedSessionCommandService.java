@@ -9,9 +9,10 @@ import java.util.UUID;
 /**
  * Applies the create, join, leave, and status command contract to one server-hosted session.
  *
- * <p>This service contains no Bukkit calls and no player-visible text. A later adapter can map a
- * Bukkit command sender to {@link Actor}, pass command arguments into this service, and translate
- * the returned result code through the existing i18n boundary.</p>
+ * <p>This service contains no Bukkit calls and no player-visible text.
+ * {@link ServerHostedSessionCommandAdapter} maps a Bukkit command sender to {@link Actor}, passes
+ * command arguments into this service, and translates the returned result code through the
+ * existing i18n boundary.</p>
  */
 public final class ServerHostedSessionCommandService {
 

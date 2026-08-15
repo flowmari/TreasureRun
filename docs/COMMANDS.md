@@ -12,6 +12,27 @@ src/main/resources/plugin.yml
 
 ---
 
+## Server-hosted Round Commands
+
+`/treasurerun` manages one server-hosted session with a minimum of 2 and a maximum of 8
+participants. Players can join or leave only while the session is waiting; the participant roster
+is fixed when an administrator starts the round.
+
+| Command | Who can run it | Permission | Purpose |
+|---|---|---|---|
+| `/treasurerun create` | Administrator / operator | `treasure.admin` | Creates the one server-hosted session and opens it for joins. |
+| `/treasurerun join` | Player | none | Joins the waiting session, up to 8 participants. |
+| `/treasurerun leave` | Player | none | Leaves the waiting session; an empty waiting session resets to idle. |
+| `/treasurerun start` | Administrator / operator | `treasure.admin` | Requires at least 2 participants, locks the roster, prepares the shared round, and starts the 10-second countdown. |
+| `/treasurerun stop` | Administrator / operator | `treasure.admin` | Resets a waiting session or requests the shared cleanup path for an active server-hosted round. |
+| `/treasurerun status` | Player or console | none | Reports the session state, participant count, minimum, maximum, and whether the waiting roster can start. |
+
+The existing `/gamestart` and `/gameEnd` commands remain available as the established
+single-run compatibility route. For the 2–8 player flow, use
+[`docs/playtest/SERVER_HOSTED_QUICKSTART.md`](playtest/SERVER_HOSTED_QUICKSTART.md).
+
+---
+
 ## Player Commands
 
 | Command | Usage | Permission | Default | Purpose |

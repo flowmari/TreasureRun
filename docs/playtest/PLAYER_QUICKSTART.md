@@ -10,6 +10,8 @@ Can a first-time player start the local server, join the game, start a treasure 
 
 The localisation and platform-boundary architecture are documented separately. Start here if you want to experience the game first.
 
+For the 2–8 player server-hosted `/treasurerun` flow, use [Server-hosted Quickstart](SERVER_HOSTED_QUICKSTART.md). The route below preserves the existing `/gamestart` first-playtest path.
+
 The linked overview below shows the complete first-run flow before the detailed instructions. Screenshots and feature-specific checks are kept on a separate page so this route stays focused.
 
 ## Contents

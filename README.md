@@ -1,5 +1,3 @@
-> **V4 local-only ResourcePack contract:** TreasureRun does not store or publish Minecraft language payload JSON files or reconstructed full ResourcePack ZIP files. Client packs for the 17 reviewed official locale mappings are generated only from the operator's own installed Minecraft 1.20.1 assets. The six custom/missing mappings remain available to plugin-side i18n, while their client-pack generation remains held.
-
 # TreasureRun — A Minecraft Treasure-Hunt Mini-Game
 
 TreasureRun is an open-source treasure-hunt mini-game plugin for **Minecraft Spigot 1.20.1**. Players search for treasure chests, earn points, experience staged visual and audio effects, and compete through persistent rankings.
@@ -99,6 +97,10 @@ The i18n system is not a separate plugin or library.
 It is an internal architectural layer within the gameplay plugin.
 
 This boundary keeps gameplay as the primary focus while still documenting where a Spigot plugin can and cannot control Minecraft UI text.
+
+### Local-only ResourcePack distribution boundary
+
+TreasureRun does not store or publish Minecraft language payload JSON files or reconstructed full ResourcePack ZIP files. Client packs for the 17 reviewed official locale mappings are generated only from the operator's own installed Minecraft 1.20.1 assets. The six custom/missing mappings remain available to plugin-side i18n, while their client-pack generation remains held.
 
 ### Architecture boundary
 
