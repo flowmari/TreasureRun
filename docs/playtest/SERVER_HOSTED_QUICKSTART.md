@@ -2,6 +2,12 @@
 
 This is the shortest smoke test for the v0.2.0-alpha server-hosted TreasureRun flow.
 
+Download the v0.2.0-alpha release JAR:
+[`TreasureRun-0.2.0-alpha-all.jar`](https://github.com/flowmari/TreasureRun/releases/download/v0.2.0-alpha/TreasureRun-0.2.0-alpha-all.jar)
+
+Expected SHA-256:
+`b3acc8f573c988fc48b32e1448e558d74d8add09d108f5f52460a81a3e8a52c1`
+
 Use a disposable or backed-up Spigot 1.20.1 test server with Java 17, one operator/admin, and
 2–8 test players. Database/ranking checks, ProtocolLib packet localisation, and a locally generated
 ResourcePack are outside this smoke test.
