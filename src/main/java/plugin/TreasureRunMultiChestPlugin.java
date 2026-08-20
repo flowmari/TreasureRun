@@ -54,6 +54,7 @@ import java.time.Instant;
 public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener, TabExecutor {
 
   private static final String ROUND_ADMIN_PERMISSION = "treasure.admin";
+  private plugin.update.UpdateCheckService updateCheckService;
 
   // __MSZ_AUTO_START_ON_JOIN
   private final java.util.concurrent.atomic.AtomicBoolean __mszAutoStarted = new java.util.concurrent.atomic.AtomicBoolean(false);
@@ -269,6 +270,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
 
     saveDefaultConfig();
     reloadConfig();
+    initializeUpdateNotifier();
     initializePlayerReturnRecovery();
     getServer().getMessenger().registerOutgoingPluginChannel(this, "treasurerun:lang");
     fabricModDetector = new FabricModDetector(this); fabricModDetector.register();
@@ -1056,8 +1058,106 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     }
   }
 
+  private void initializeUpdateNotifier() {
+    boolean enabled =
+        getConfig().getBoolean("updateNotifier.enabled", false);
+
+    if (!enabled) {
+      getLogger().info(
+          "[UpdateNotifier] disabled; no remote update lookup will run."
+      );
+      return;
+    }
+
+    long intervalMinutes = Math.min(
+        10080L,
+        Math.max(
+            5L,
+            getConfig().getLong(
+                "updateNotifier.checkIntervalMinutes",
+                360L
+            )
+        )
+    );
+
+    long connectTimeoutMillis = Math.min(
+        30000L,
+        Math.max(
+            500L,
+            getConfig().getLong(
+                "updateNotifier.connectTimeoutMillis",
+                3000L
+            )
+        )
+    );
+
+    long requestTimeoutMillis = Math.min(
+        60000L,
+        Math.max(
+            connectTimeoutMillis,
+            getConfig().getLong(
+                "updateNotifier.requestTimeoutMillis",
+                5000L
+            )
+        )
+    );
+
+    String link = java.util.Optional.ofNullable(
+        getConfig().getString(
+            "updateNotifier.link",
+            "https://github.com/flowmari/TreasureRun/releases"
+        )
+    ).orElse(
+        "https://github.com/flowmari/TreasureRun/releases"
+    );
+
+    String message = java.util.Optional.ofNullable(
+        getConfig().getString(
+            "updateNotifier.message",
+            "&e[TreasureRun] Update available: "
+                + "%current_version% -> %new_version% %link%"
+        )
+    ).orElse(
+        "&e[TreasureRun] Update available: "
+            + "%current_version% -> %new_version% %link%"
+    );
+
+    plugin.update.RemoteReleaseLookup releaseLookup =
+        new plugin.update.GitHubReleaseLookup(
+            java.time.Duration.ofMillis(connectTimeoutMillis),
+            java.time.Duration.ofMillis(requestTimeoutMillis)
+        );
+
+    updateCheckService = new plugin.update.UpdateCheckService(
+        true,
+        getDescription().getVersion(),
+        java.time.Duration.ofMinutes(intervalMinutes),
+        releaseLookup
+    );
+
+    Bukkit.getPluginManager().registerEvents(
+        new plugin.update.AdministratorUpdateNotificationListener(
+            this,
+            updateCheckService,
+            ROUND_ADMIN_PERMISSION,
+            message,
+            link
+        ),
+        this
+    );
+
+    getLogger().info(
+        "[UpdateNotifier] enabled; administrator checks are cached for "
+            + intervalMinutes + " minute(s)."
+    );
+  }
+
   @Override
   public void onDisable() {
+    if (updateCheckService != null) {
+      updateCheckService.close();
+      updateCheckService = null;
+    }
     if (serverHostedRoundCoordinator.ownershipMode()
         == ServerHostedRoundCoordinator.OwnershipMode.SERVER_HOSTED
         && serverHostedRoundCoordinator.state() != ServerHostedRoundState.IDLE) {

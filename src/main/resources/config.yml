@@ -13,6 +13,17 @@ totalChestCount:
 chestSpawnRadius: 20
 totalChests: 10
 
+# Optional administrator update notification.
+# Disabled by default so TreasureRun makes no outbound update request unless
+# the server operator explicitly enables it.
+updateNotifier:
+  enabled: false
+  checkIntervalMinutes: 360
+  connectTimeoutMillis: 3000
+  requestTimeoutMillis: 5000
+  link: "https://github.com/flowmari/TreasureRun/releases"
+  message: "&e[TreasureRun] Update available: %current_version% -> %new_version% %link%"
+
 # Heartbeat proximity cue settings.
 # Default category is PLAYERS so the cue is not buried under Minecraft music/records volume.
 heartbeat:
