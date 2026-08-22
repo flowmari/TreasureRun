@@ -336,6 +336,50 @@ class ServerHostedSessionCommandAdapterTest {
   }
 
   @Test
+  void playAgainIsAHiddenPlayerOnlyActionAndUsesTheNextWaitingSession() {
+    Fixture fixture = new Fixture();
+    Player participant = fixture.player(false);
+    Player outsider = fixture.player(false);
+
+    fixture.postRoundActionService.offer(List.of(participant.getUniqueId()));
+
+    fixture.execute(outsider, "playagain");
+    fixture.assertLastKey("serverHostedSession.command.playAgainNotAvailable");
+    assertEquals(ServerHostedSession.State.IDLE, fixture.session.state());
+
+    fixture.execute(participant, "playagain");
+    fixture.assertLastKey("serverHostedSession.command.joined");
+    assertEquals(ServerHostedSession.State.WAITING, fixture.session.state());
+    assertEquals(List.of(participant.getUniqueId()), fixture.session.participants());
+
+    assertEquals(List.of(), fixture.complete(participant, "p"));
+  }
+
+  @Test
+  void disabledPlayAgainRejectsTheHiddenEndpointWithoutCreatingASession() {
+    Fixture fixture = new Fixture(sender -> "en", () -> false);
+    Player participant = fixture.player(false);
+
+    fixture.postRoundActionService.offer(List.of(participant.getUniqueId()));
+    fixture.execute(participant, "playagain");
+
+    fixture.assertLastKey("serverHostedSession.command.playAgainNotAvailable");
+    assertEquals(ServerHostedSession.State.IDLE, fixture.session.state());
+    assertTrue(fixture.postRoundActionService.isEligible(participant.getUniqueId()));
+  }
+
+  @Test
+  void consoleCannotUsePlayAgain() {
+    Fixture fixture = new Fixture();
+    CommandSender console = fixture.console(true);
+
+    fixture.execute(console, "playagain");
+
+    fixture.assertLastKey("serverHostedSession.command.playerRequired");
+    assertEquals(ServerHostedSession.State.IDLE, fixture.session.state());
+  }
+
+  @Test
   void blankLanguageFallsBackToEnglishAndEachCommandSendsOneMessage() {
     Fixture fixture = new Fixture(sender -> " ");
     CommandSender console = fixture.console(true);
@@ -359,6 +403,8 @@ class ServerHostedSessionCommandAdapterTest {
     @SuppressWarnings("unchecked")
     private final ServerHostedBukkitRoundController<Object> roundController =
         mock(ServerHostedBukkitRoundController.class);
+    private final PostRoundActionService postRoundActionService =
+        new PostRoundActionService(session);
     private final ServerHostedSessionCommandAdapter adapter;
 
     private Fixture() {
@@ -368,10 +414,19 @@ class ServerHostedSessionCommandAdapterTest {
     private Fixture(
         java.util.function.Function<CommandSender, String> languageResolver
     ) {
+      this(languageResolver, () -> true);
+    }
+
+    private Fixture(
+        java.util.function.Function<CommandSender, String> languageResolver,
+        java.util.function.BooleanSupplier playAgainEnabled
+    ) {
       adapter = new ServerHostedSessionCommandAdapter(
           new ServerHostedSessionCommandService(session),
           new ServerHostedSessionControlService(session),
           roundController,
+          postRoundActionService,
+          playAgainEnabled,
           languageResolver,
           (language, key, placeholders) -> {
             invocations.add(new Invocation(language, key, placeholders));

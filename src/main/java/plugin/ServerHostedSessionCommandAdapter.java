@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.BooleanSupplier;
 import java.util.function.Function;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -36,6 +37,8 @@ public final class ServerHostedSessionCommandAdapter implements TabExecutor {
   private final ServerHostedSessionCommandService service;
   private final ServerHostedSessionControlService controlService;
   private final ServerHostedBukkitRoundController<?> roundController;
+  private final PostRoundActionService postRoundActionService;
+  private final BooleanSupplier playAgainEnabled;
   private final Function<CommandSender, String> languageResolver;
   private final MessageResolver messageResolver;
 
@@ -43,6 +46,8 @@ public final class ServerHostedSessionCommandAdapter implements TabExecutor {
       ServerHostedSessionCommandService service,
       ServerHostedSessionControlService controlService,
       ServerHostedBukkitRoundController<?> roundController,
+      PostRoundActionService postRoundActionService,
+      BooleanSupplier playAgainEnabled,
       Function<CommandSender, String> languageResolver,
       MessageResolver messageResolver
   ) {
@@ -54,6 +59,14 @@ public final class ServerHostedSessionCommandAdapter implements TabExecutor {
     this.roundController = Objects.requireNonNull(
         roundController,
         "roundController"
+    );
+    this.postRoundActionService = Objects.requireNonNull(
+        postRoundActionService,
+        "postRoundActionService"
+    );
+    this.playAgainEnabled = Objects.requireNonNull(
+        playAgainEnabled,
+        "playAgainEnabled"
     );
     this.languageResolver = Objects.requireNonNull(
         languageResolver,
@@ -82,6 +95,32 @@ public final class ServerHostedSessionCommandAdapter implements TabExecutor {
       String subcommand = copiedArguments.get(0) == null
           ? ""
           : copiedArguments.get(0).toLowerCase(Locale.ROOT);
+
+      if (subcommand.equals("playagain")) {
+        if (!(sender instanceof Player player)) {
+          sender.sendMessage(messageResolver.resolve(
+              language(sender),
+              "serverHostedSession.command.playerRequired",
+              Map.of()
+          ));
+          return true;
+        }
+
+        if (!playAgainEnabled.getAsBoolean()) {
+          sender.sendMessage(messageResolver.resolve(
+              language(sender),
+              "serverHostedSession.command.playAgainNotAvailable",
+              Map.of()
+          ));
+          return true;
+        }
+
+        PostRoundActionService.Result replay = postRoundActionService.playAgain(
+            player.getUniqueId()
+        );
+        sender.sendMessage(message(sender, replay));
+        return true;
+      }
 
       if (subcommand.equals("start")) {
         ServerHostedSessionControlService.StartDecision decision =
@@ -157,10 +196,7 @@ public final class ServerHostedSessionCommandAdapter implements TabExecutor {
       CommandSender sender,
       ServerHostedSessionCommandService.Result result
   ) {
-    String language = languageResolver.apply(sender);
-    if (language == null || language.isBlank()) {
-      language = "en";
-    }
+    String language = language(sender);
 
     ServerHostedSessionCommandService.Snapshot snapshot = result.snapshot();
     Map<String, String> placeholders = new LinkedHashMap<>();
@@ -198,6 +234,32 @@ public final class ServerHostedSessionCommandAdapter implements TabExecutor {
 
   private String message(
       CommandSender sender,
+      PostRoundActionService.Result result
+  ) {
+    return messageResolver.resolve(
+        language(sender),
+        switch (result.code()) {
+          case JOINED -> "serverHostedSession.command.joined";
+          case ALREADY_JOINED -> "serverHostedSession.command.alreadyJoined";
+          case NOT_ELIGIBLE -> "serverHostedSession.command.playAgainNotAvailable";
+          case SESSION_NOT_AVAILABLE -> "serverHostedSession.command.sessionNotWaiting";
+          case SESSION_FULL -> "serverHostedSession.command.sessionFull";
+        },
+        Map.of(
+            "{players}", String.valueOf(result.playerCount()),
+            "{min}", String.valueOf(ServerHostedSession.MIN_PLAYERS),
+            "{max}", String.valueOf(ServerHostedSession.MAX_PLAYERS)
+        )
+    );
+  }
+
+  private String language(CommandSender sender) {
+    String language = languageResolver.apply(sender);
+    return language == null || language.isBlank() ? "en" : language;
+  }
+
+  private String message(
+      CommandSender sender,
       ServerHostedSessionControlService.StartDecision decision
   ) {
     return controlMessage(
@@ -217,10 +279,7 @@ public final class ServerHostedSessionCommandAdapter implements TabExecutor {
   }
 
   private String controlMessage(CommandSender sender, String key) {
-    String language = languageResolver.apply(sender);
-    if (language == null || language.isBlank()) {
-      language = "en";
-    }
+    String language = language(sender);
 
     ServerHostedSessionCommandService.Snapshot snapshot = service.snapshot();
     Map<String, String> placeholders = new LinkedHashMap<>();

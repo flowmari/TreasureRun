@@ -2020,3 +2020,11 @@ resourcePackFallback:
   force: false
   prompt: TreasureRun i18n local generation only
   packs: {}
+
+postRound:
+  enabled: true
+  playAgain:
+    enabled: true
+  hub:
+    enabled: false
+    command: ""

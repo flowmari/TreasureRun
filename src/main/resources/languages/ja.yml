@@ -6481,3 +6481,7 @@ serverHostedSession:
     stopWaitingReset: "&e参加受付中のセッションをリセットしました。"
     stopCleanupRequired: "&e確定済みのサーバー運営型ラウンドについて、後片付けを要求しました。"
     stopNoActiveSession: "&e停止できるTreasureRunセッションはありません。"
+    playAgainNotAvailable: "&e「もう一度プレイ」は、参加していたサーバー運営型ラウンドの終了後にだけ利用できます。"
+  postRound:
+    playAgain: "もう一度プレイ"
+    hub: "Hub"
