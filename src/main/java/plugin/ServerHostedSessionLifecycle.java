@@ -13,6 +13,7 @@ final class ServerHostedSessionLifecycle {
   private final ServerHostedSession session;
   private final ServerHostedSessionCommandService commandService;
   private final ServerHostedSessionControlService controlService;
+  private final PostRoundActionService postRoundActionService;
 
   ServerHostedSessionLifecycle() { this(new ServerHostedRoundCoordinator()); }
 
@@ -24,10 +25,12 @@ final class ServerHostedSessionLifecycle {
     this.session = Objects.requireNonNull(session, "session");
     this.commandService = new ServerHostedSessionCommandService(session);
     this.controlService = new ServerHostedSessionControlService(session);
+    this.postRoundActionService = new PostRoundActionService(session);
   }
 
   ServerHostedSessionCommandService commandService() { return commandService; }
   ServerHostedSessionControlService controlService() { return controlService; }
+  PostRoundActionService postRoundActionService() { return postRoundActionService; }
 
   ServerHostedSessionCommandService.Result handlePlayerQuit(UUID playerId) {
     return commandService.execute(

@@ -5981,3 +5981,7 @@ serverHostedSession:
     stopWaitingReset: "&eThe waiting session was reset."
     stopCleanupRequired: "&eCleanup was requested for the locked server-hosted round."
     stopNoActiveSession: "&eThere is no active TreasureRun session to stop."
+    playAgainNotAvailable: "&ePlay Again is available only after your completed server-hosted round."
+  postRound:
+    playAgain: "Play Again"
+    hub: "Hub"

@@ -5,6 +5,7 @@ import plugin.MovingSafetyZoneTask;
 import plugin.RealtimeRankTicker;
 import plugin.LangCommand;
 import net.md_5.bungee.api.ChatMessageType;
+import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -225,6 +226,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
   private ServerHostedBukkitRoundRuntimeAdapter serverHostedBukkitRoundRuntimeAdapter;
   private ServerHostedBukkitRoundOrchestrator<Location> serverHostedBukkitRoundOrchestrator;
   private ServerHostedBukkitRoundController<Location> serverHostedBukkitRoundController;
+  private PostRoundActionService postRoundActionService;
   private BukkitTask serverHostedGameplayTask;
   private final Map<UUID, BossBar> serverHostedBossBars = new HashMap<>();
   private long previousWorldTime = -1;
@@ -525,11 +527,15 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
         this::stopServerHostedGameplayPresentation
     );
 
+    this.postRoundActionService = serverHostedSessionLifecycle.postRoundActionService();
+
     ServerHostedSessionCommandAdapter serverHostedSessionCommandAdapter =
         new ServerHostedSessionCommandAdapter(
             serverHostedSessionLifecycle.commandService(),
             serverHostedSessionLifecycle.controlService(),
             serverHostedBukkitRoundController,
+            postRoundActionService,
+            this::isPostRoundPlayAgainEnabled,
             sender -> sender instanceof Player player
                 ? resolveCurrentLang(player)
                 : getConfig().getString("language.default", "en"),
@@ -910,6 +916,15 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     }
 
     totalChestsRemaining = 0;
+    if (postRoundActionService != null) {
+      postRoundActionService.offer(
+          isPostRoundPlayAgainEnabled()
+              ? snapshot.results().stream()
+                  .map(ServerHostedSharedRoundRuntime.ParticipantResult::participantId)
+                  .toList()
+              : List.of()
+      );
+    }
     sendServerHostedResultSnapshot(snapshot, completed);
   }
 
@@ -956,6 +971,74 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
             ChatColor.GOLD + getI18n().tr(language, "gameplay.success.allChestsOpened")
         );
       }
+
+      sendServerHostedPostRoundActions(player, language);
+    }
+  }
+
+  private boolean isPostRoundPlayAgainEnabled() {
+    return getConfig().getBoolean("postRound.enabled", true)
+        && getConfig().getBoolean("postRound.playAgain.enabled", true);
+  }
+
+  private void sendServerHostedPostRoundActions(Player player, String language) {
+    if (player == null || !player.isOnline()) return;
+    if (!getConfig().getBoolean("postRound.enabled", true)) return;
+
+    TextComponent line = new TextComponent("");
+    boolean hasAction = false;
+
+    if (isPostRoundPlayAgainEnabled()) {
+      TextComponent playAgain = new TextComponent(
+          ChatColor.GREEN + "[" + getI18n().tr(
+              language,
+              "serverHostedSession.postRound.playAgain"
+          ) + "]"
+      );
+      playAgain.setClickEvent(new ClickEvent(
+          ClickEvent.Action.RUN_COMMAND,
+          "/treasurerun playagain"
+      ));
+      line.addExtra(playAgain);
+      hasAction = true;
+    }
+
+    String configuredHubCommand = getConfig().getString(
+        "postRound.hub.command",
+        ""
+    );
+    boolean hubEnabled = getConfig().getBoolean(
+        "postRound.hub.enabled",
+        false
+    );
+    if (hubEnabled && configuredHubCommand != null && !configuredHubCommand.isBlank()) {
+      if (hasAction) {
+        line.addExtra(new TextComponent("  "));
+      }
+
+      String command = configuredHubCommand.trim();
+      if (command.indexOf('\n') >= 0 || command.indexOf('\r') >= 0) {
+        getLogger().warning("[PostRound] Hub command contains a line break and was ignored.");
+      } else {
+        if (!command.startsWith("/")) command = "/" + command;
+
+        TextComponent hub = new TextComponent(
+            ChatColor.AQUA + "[" + getI18n().tr(
+                language,
+                "serverHostedSession.postRound.hub"
+            ) + "]"
+        );
+        hub.setClickEvent(new ClickEvent(
+            ClickEvent.Action.RUN_COMMAND,
+            command
+        ));
+        line.addExtra(hub);
+        hasAction = true;
+      }
+    }
+
+    if (hasAction) {
+      player.spigot().sendMessage(line);
     }
   }
 
