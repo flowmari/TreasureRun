@@ -53,6 +53,27 @@ class PostRoundActionProductionBoundaryTest {
   }
 
   @Test
+  void offlineParticipantsAreNotArmedAndQuitRevokesOutstandingEligibility()
+      throws Exception {
+    String plugin = read("src/main/java/plugin/TreasureRunMultiChestPlugin.java");
+    String lifecycle = read("src/main/java/plugin/ServerHostedSessionLifecycle.java");
+
+    assertTrue(plugin.contains(".filter(this::isOnlinePostRoundParticipant)"));
+    assertTrue(plugin.contains("Player player = Bukkit.getPlayer(playerId);"));
+    assertTrue(plugin.contains("return player != null && player.isOnline();"));
+
+    String quit = methodBody(
+        lifecycle,
+        "ServerHostedSessionCommandService.Result handlePlayerQuit("
+    );
+    int revoke = quit.indexOf("postRoundActionService.revoke(playerId);");
+    int sessionHandling = quit.indexOf("return commandService.execute(");
+
+    assertTrue(revoke >= 0);
+    assertTrue(sessionHandling > revoke);
+  }
+
+  @Test
   void playAgainConfigurationGatesEligibilityPresentationAndTheHiddenEndpoint()
       throws Exception {
     String plugin = read("src/main/java/plugin/TreasureRunMultiChestPlugin.java");

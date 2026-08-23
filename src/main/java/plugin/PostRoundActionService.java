@@ -82,6 +82,10 @@ public final class PostRoundActionService {
     return result(code);
   }
 
+  public synchronized void revoke(UUID playerId) {
+    replayEligiblePlayers.remove(Objects.requireNonNull(playerId, "playerId"));
+  }
+
   public synchronized boolean isEligible(UUID playerId) {
     return replayEligiblePlayers.contains(Objects.requireNonNull(playerId, "playerId"));
   }

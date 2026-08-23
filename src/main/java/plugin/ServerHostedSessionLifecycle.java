@@ -33,6 +33,7 @@ final class ServerHostedSessionLifecycle {
   PostRoundActionService postRoundActionService() { return postRoundActionService; }
 
   ServerHostedSessionCommandService.Result handlePlayerQuit(UUID playerId) {
+    postRoundActionService.revoke(playerId);
     return commandService.execute(
         ServerHostedSessionCommandService.Actor.player(
             Objects.requireNonNull(playerId, "playerId"), false),

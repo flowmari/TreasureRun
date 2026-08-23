@@ -921,6 +921,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
           isPostRoundPlayAgainEnabled()
               ? snapshot.results().stream()
                   .map(ServerHostedSharedRoundRuntime.ParticipantResult::participantId)
+                  .filter(this::isOnlinePostRoundParticipant)
                   .toList()
               : List.of()
       );
@@ -974,6 +975,11 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
 
       sendServerHostedPostRoundActions(player, language);
     }
+  }
+
+  private boolean isOnlinePostRoundParticipant(UUID playerId) {
+    Player player = Bukkit.getPlayer(playerId);
+    return player != null && player.isOnline();
   }
 
   private boolean isPostRoundPlayAgainEnabled() {

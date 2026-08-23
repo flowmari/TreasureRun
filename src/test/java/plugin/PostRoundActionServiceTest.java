@@ -30,6 +30,29 @@ class PostRoundActionServiceTest {
     assertEquals(ServerHostedSession.State.WAITING, session.state());
     assertEquals(List.of(offered), session.participants());
     assertFalse(service.isEligible(offered));
+    assertEquals(
+        PostRoundActionService.Code.NOT_ELIGIBLE,
+        service.playAgain(offered).code()
+    );
+  }
+
+  @Test
+  void revokedParticipantCannotUseStaleReplayEligibility() {
+    ServerHostedSession session = new ServerHostedSession();
+    PostRoundActionService service = new PostRoundActionService(session);
+    UUID participant = UUID.randomUUID();
+
+    service.offer(List.of(participant));
+    assertTrue(service.isEligible(participant));
+
+    service.revoke(participant);
+
+    assertFalse(service.isEligible(participant));
+    assertEquals(
+        PostRoundActionService.Code.NOT_ELIGIBLE,
+        service.playAgain(participant).code()
+    );
+    assertEquals(ServerHostedSession.State.IDLE, session.state());
   }
 
   @Test
