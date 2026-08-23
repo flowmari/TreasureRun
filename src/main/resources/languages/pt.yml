@@ -6875,3 +6875,8 @@ minecraft:
     upgrade:
       minecraft:
         netherite_upgrade: Melhoria de netherita
+
+serverHostedSession:
+  postRound:
+    playAgain: "Play Again"
+    hub: "Hub"

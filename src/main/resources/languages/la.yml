@@ -5993,3 +5993,8 @@ minecraft:
     upgrade:
       minecraft:
         netherite_upgrade: Netherite Upgrade
+
+serverHostedSession:
+  postRound:
+    playAgain: "Play Again"
+    hub: "Hub"
