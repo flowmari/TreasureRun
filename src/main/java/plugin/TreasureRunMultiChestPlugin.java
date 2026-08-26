@@ -1770,25 +1770,19 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
       return;
     }
 
-    String sql =
-        "SELECT player_name, score, time, difficulty, lang_code, played_at " +
-            "FROM scores " +
-            "WHERE played_at >= DATE_SUB(NOW(), INTERVAL 7 DAY) " +
-            "ORDER BY score DESC, time ASC, id DESC " +
-            "LIMIT 10";
-
     player.sendMessage(ChatColor.AQUA + trPlayer(player, "rank.command.playsTitleWeekly"));
 
-    try (PreparedStatement ps = conn.prepareStatement(sql);
-        ResultSet rs = ps.executeQuery()) {
+    try {
+      java.util.List<plugin.rank.RankingQueryService.RankingEntry> entries =
+          plugin.rank.RankingQueryService.loadWeekly(conn);
 
       int rank = 1;
-      while (rs.next()) {
-        String name = rs.getString("player_name");
-        int score = rs.getInt("score");
-        long time = rs.getLong("time");
-        String diff = rs.getString("difficulty");
-        String lang = rs.getString("lang_code");
+      for (plugin.rank.RankingQueryService.RankingEntry entry : entries) {
+        String name = entry.playerName();
+        int score = entry.score();
+        long time = entry.time();
+        String diff = entry.difficulty();
+        String lang = entry.languageCode();
 
         player.sendMessage(
             ChatColor.AQUA + trPlayer(
@@ -1824,24 +1818,19 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
       return;
     }
 
-    String sql =
-        "SELECT player_name, score, time, difficulty, lang_code, played_at " +
-            "FROM scores " +
-            "ORDER BY score DESC, time ASC, id DESC " +
-            "LIMIT 10";
-
     player.sendMessage(ChatColor.AQUA + trPlayer(player, "rank.command.playsTitleAllTime"));
 
-    try (PreparedStatement ps = conn.prepareStatement(sql);
-        ResultSet rs = ps.executeQuery()) {
+    try {
+      java.util.List<plugin.rank.RankingQueryService.RankingEntry> entries =
+          plugin.rank.RankingQueryService.loadAllTime(conn);
 
       int rank = 1;
-      while (rs.next()) {
-        String name = rs.getString("player_name");
-        int score = rs.getInt("score");
-        long time = rs.getLong("time");
-        String diff = rs.getString("difficulty");
-        String lang = rs.getString("lang_code");
+      for (plugin.rank.RankingQueryService.RankingEntry entry : entries) {
+        String name = entry.playerName();
+        int score = entry.score();
+        long time = entry.time();
+        String diff = entry.difficulty();
+        String lang = entry.languageCode();
 
         player.sendMessage(
             ChatColor.AQUA + trPlayer(
@@ -1877,26 +1866,19 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
       return;
     }
 
-    String sql =
-        "SELECT player_name, score, time, difficulty, lang_code, played_at " +
-            "FROM scores " +
-            "WHERE YEAR(played_at) = YEAR(NOW()) " +
-            "  AND MONTH(played_at) = MONTH(NOW()) " +
-            "ORDER BY score DESC, time ASC, id DESC " +
-            "LIMIT 10";
-
     player.sendMessage(ChatColor.AQUA + trPlayer(player, "rank.command.playsTitleMonthly"));
 
-    try (PreparedStatement ps = conn.prepareStatement(sql);
-        ResultSet rs = ps.executeQuery()) {
+    try {
+      java.util.List<plugin.rank.RankingQueryService.RankingEntry> entries =
+          plugin.rank.RankingQueryService.loadMonthly(conn);
 
       int rank = 1;
-      while (rs.next()) {
-        String name = rs.getString("player_name");
-        int score = rs.getInt("score");
-        long time = rs.getLong("time");
-        String diff = rs.getString("difficulty");
-        String lang = rs.getString("lang_code");
+      for (plugin.rank.RankingQueryService.RankingEntry entry : entries) {
+        String name = entry.playerName();
+        int score = entry.score();
+        long time = entry.time();
+        String diff = entry.difficulty();
+        String lang = entry.languageCode();
 
         player.sendMessage(
             ChatColor.AQUA + trPlayer(
