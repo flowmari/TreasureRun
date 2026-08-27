@@ -171,6 +171,42 @@ public final class ServerHostedBukkitRoundController<A> {
   }
 
   /**
+   * Uses the normal roster lock and durable preparation path, but bypasses only the scheduled
+   * ten-second wait before entering the same shared RUNNING runtime.
+   */
+  public synchronized Result forceStart(ServerHostedSessionControlService.StartDecision decision) {
+    Objects.requireNonNull(decision, "decision");
+
+    if (decision.code() != ServerHostedSessionControlService.StartCode.ROSTER_LOCKED) {
+      return result(
+          Code.IGNORED,
+          decision.participants(),
+          Optional.ofNullable(activeRuntime),
+          "The force-start decision did not lock a roster; no runtime action was taken."
+      );
+    }
+
+    if (countdownTask != null || activeRuntime != null) {
+      return result(
+          Code.INVALID_STATE,
+          decision.participants(),
+          Optional.ofNullable(activeRuntime),
+          "A server-hosted countdown or shared runtime is already owned by this controller."
+      );
+    }
+
+    ServerHostedRoundActivationService.Result preparation =
+        activationService.prepareLockedRound();
+
+    if (preparation.code()
+        != ServerHostedRoundActivationService.Code.PREPARED_FOR_COUNTDOWN) {
+      return mapActivation(preparation);
+    }
+
+    return activatePreparedRound();
+  }
+
+  /**
    * Consumes a typed stop decision. WAITING reset and rejected stop decisions need no runtime work;
    * a locked stop cancels the controller-owned countdown before claiming the existing cleanup path.
    */
@@ -297,21 +333,34 @@ public final class ServerHostedBukkitRoundController<A> {
     }
 
     cancelCountdownOnly();
+    activatePreparedRound();
+  }
+
+  private Result activatePreparedRound() {
     ServerHostedRoundActivationService.Result activation =
         activationService.beginRunningAfterCountdown();
 
-    if (activation.code() == ServerHostedRoundActivationService.Code.RUNNING) {
-      activeRuntime = activation.runtime().orElseThrow();
-      try {
-        runningObserver.accept(activeRuntime);
-      } catch (RuntimeException observerFailure) {
-        cancelOwnedRuntimeState();
-        orchestrator.runtimeActivationFailed();
-      }
-      return;
+    if (activation.code() != ServerHostedRoundActivationService.Code.RUNNING) {
+      activeRuntime = null;
+      return mapActivation(activation);
     }
 
-    activeRuntime = null;
+    activeRuntime = activation.runtime().orElseThrow();
+    try {
+      runningObserver.accept(activeRuntime);
+      return result(
+          Code.RUNNING,
+          activation.participants(),
+          Optional.of(activeRuntime),
+          activation.detail()
+      );
+    } catch (RuntimeException observerFailure) {
+      cancelOwnedRuntimeState();
+      return mapCleanup(
+          orchestrator.runtimeActivationFailed(),
+          "The server-hosted RUNNING observer failed: " + messageOf(observerFailure)
+      );
+    }
   }
 
   private boolean hasActiveRunningRuntime() {

@@ -269,6 +269,68 @@ class ServerHostedSessionCommandAdapterTest {
   }
 
   @Test
+  void administratorForceStartLocksTwoPlayerRosterAndDelegatesOnlyToForceStart() {
+    Fixture fixture = new Fixture();
+    CommandSender administrator = fixture.console(true);
+    Player first = fixture.player(false);
+    Player second = fixture.player(false);
+
+    fixture.execute(administrator, "create");
+    fixture.execute(first, "join");
+    fixture.execute(second, "join");
+    fixture.executeAdmin(administrator, "forcestart");
+
+    assertEquals(ServerHostedSession.State.LOCKED, fixture.session.state());
+    assertEquals(
+        List.of(first.getUniqueId(), second.getUniqueId()),
+        fixture.session.participants()
+    );
+    fixture.assertLastKey("serverHostedSession.command.startRosterLocked");
+    verify(fixture.roundController).forceStart(
+        any(ServerHostedSessionControlService.StartDecision.class)
+    );
+    verify(fixture.roundController, never()).start(any());
+  }
+
+  @Test
+  void forceStartCannotBypassAdministratorOrMinimumPlayerContract() {
+    Fixture fixture = new Fixture();
+    CommandSender administrator = fixture.console(true);
+    CommandSender nonAdministrator = fixture.console(false);
+    Player participant = fixture.player(false);
+
+    fixture.execute(administrator, "create");
+    fixture.execute(participant, "join");
+
+    fixture.executeAdmin(nonAdministrator, "forcestart");
+    fixture.assertLastKey("serverHostedSession.command.startAdminRequired");
+    assertEquals(ServerHostedSession.State.WAITING, fixture.session.state());
+    verify(fixture.roundController, never()).forceStart(any());
+
+    fixture.executeAdmin(administrator, "forcestart");
+    fixture.assertLastKey("serverHostedSession.command.startTooFewPlayers");
+    assertEquals(ServerHostedSession.State.WAITING, fixture.session.state());
+    verify(fixture.roundController, never()).forceStart(any());
+  }
+
+  @Test
+  void administratorCommandExposesOnlyForceStartAndRejectsOtherSubcommands() {
+    Fixture fixture = new Fixture();
+    CommandSender administrator = fixture.console(true);
+    CommandSender player = fixture.console(false);
+
+    assertEquals(List.of("forcestart"), fixture.completeAdmin(administrator, ""));
+    assertEquals(List.of("forcestart"), fixture.completeAdmin(administrator, "force"));
+    assertEquals(List.of(), fixture.completeAdmin(administrator, "x"));
+    assertEquals(List.of(), fixture.completeAdmin(player, ""));
+
+    fixture.executeAdmin(administrator, "stop");
+    fixture.assertLastKey("serverHostedSession.command.unknownSubcommand");
+    assertEquals(ServerHostedSession.State.IDLE, fixture.session.state());
+    verify(fixture.roundController, never()).forceStart(any());
+  }
+
+  @Test
   void administratorWaitingStopResetsDirectlyToIdle() {
     Fixture fixture = new Fixture();
     CommandSender administrator = fixture.console(true);
@@ -461,6 +523,15 @@ class ServerHostedSessionCommandAdapterTest {
       );
     }
 
+    private boolean executeAdmin(CommandSender sender, String... arguments) {
+      return adapter.onCommand(
+          sender,
+          command,
+          "treasurerunadmin",
+          arguments
+      );
+    }
+
     private boolean executeNullArguments(CommandSender sender) {
       return adapter.onCommand(
           sender,
@@ -475,6 +546,15 @@ class ServerHostedSessionCommandAdapterTest {
           sender,
           command,
           "treasurerun",
+          new String[]{prefix}
+      );
+    }
+
+    private List<String> completeAdmin(CommandSender sender, String prefix) {
+      return adapter.onTabComplete(
+          sender,
+          command,
+          "treasurerunadmin",
           new String[]{prefix}
       );
     }

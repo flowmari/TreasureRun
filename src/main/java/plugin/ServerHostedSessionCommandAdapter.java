@@ -91,6 +91,10 @@ public final class ServerHostedSessionCommandAdapter implements TabExecutor {
         ? List.of()
         : Arrays.asList(arguments);
 
+    if (isAdministratorCommand(command, label)) {
+      return handleAdministratorCommand(sender, copiedArguments);
+    }
+
     if (copiedArguments.size() == 1) {
       String subcommand = copiedArguments.get(0) == null
           ? ""
@@ -168,6 +172,11 @@ public final class ServerHostedSessionCommandAdapter implements TabExecutor {
     String prefix = arguments[0] == null
         ? ""
         : arguments[0].toLowerCase(Locale.ROOT);
+
+    if (isAdministratorCommand(command, alias)) {
+      if (!sender.hasPermission(ADMIN_PERMISSION)) return List.of();
+      return "forcestart".startsWith(prefix) ? List.of("forcestart") : List.of();
+    }
     List<String> candidates = sender.hasPermission(ADMIN_PERMISSION)
         ? List.of("create", "join", "leave", "start", "stop", "status")
         : PLAYER_SUBCOMMANDS;
@@ -175,6 +184,47 @@ public final class ServerHostedSessionCommandAdapter implements TabExecutor {
     return candidates.stream()
         .filter(value -> value.startsWith(prefix))
         .toList();
+  }
+
+  private boolean handleAdministratorCommand(
+      CommandSender sender,
+      List<String> arguments
+  ) {
+    if (arguments.size() != 1) {
+      sender.sendMessage(messageResolver.resolve(
+          language(sender),
+          arguments.isEmpty()
+              ? "serverHostedSession.command.missingSubcommand"
+              : "serverHostedSession.command.unexpectedArguments",
+          Map.of()
+      ));
+      return true;
+    }
+
+    String subcommand = arguments.get(0) == null
+        ? ""
+        : arguments.get(0).toLowerCase(Locale.ROOT);
+    if (!subcommand.equals("forcestart")) {
+      sender.sendMessage(messageResolver.resolve(
+          language(sender),
+          "serverHostedSession.command.unknownSubcommand",
+          Map.of()
+      ));
+      return true;
+    }
+
+    ServerHostedSessionControlService.StartDecision decision =
+        controlService.requestStart(sender.hasPermission(ADMIN_PERMISSION));
+    if (decision.code() == ServerHostedSessionControlService.StartCode.ROSTER_LOCKED) {
+      roundController.forceStart(decision);
+    }
+    sender.sendMessage(message(sender, decision));
+    return true;
+  }
+
+  private boolean isAdministratorCommand(Command command, String label) {
+    return (command != null && "treasurerunadmin".equalsIgnoreCase(command.getName()))
+        || "treasurerunadmin".equalsIgnoreCase(label);
   }
 
   private ServerHostedSessionCommandService.Actor actor(

@@ -30,10 +30,12 @@ class ServerHostedBukkitRoundProductionWiringBoundaryTest {
     assertTrue(plugin.contains("java.time.Duration.ofSeconds(Math.max(1, normalTimeLimit))"));
     assertTrue(commandAdapter.contains("ServerHostedBukkitRoundController<?> roundController"));
     assertTrue(commandAdapter.contains("roundController.start(decision)"));
+    assertTrue(commandAdapter.contains("roundController.forceStart(decision)"));
     assertTrue(commandAdapter.contains("roundController.stop(decision)"));
     assertFalse(commandAdapter.contains("startGame("));
     assertTrue(plugin.indexOf("new ServerHostedSessionCommandAdapter(")
         > plugin.indexOf("new ServerHostedBukkitRoundController<>("));
+    assertTrue(plugin.contains("getCommand(\"treasurerunadmin\")"));
   }
 
   @Test
@@ -128,6 +130,7 @@ class ServerHostedBukkitRoundProductionWiringBoundaryTest {
     assertEquals(23, languageFiles);
     assertTrue(orchestrator.contains("coordinator.beginCountdown()"));
     assertTrue(commandAdapter.contains("roundController.start(decision)"));
+    assertTrue(commandAdapter.contains("roundController.forceStart(decision)"));
     assertTrue(commandAdapter.contains("roundController.stop(decision)"));
     assertFalse(commandAdapter.contains("startGame("));
     assertFalse(plugin.contains("startGame(serverHosted"));
