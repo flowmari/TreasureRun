@@ -9,6 +9,11 @@ commands:
     description: Manage the server-hosted TreasureRun session.
     usage: /treasurerun <create|join|leave|start|stop|status>
 
+  treasurerunadmin:
+    description: Administrative server-hosted TreasureRun controls.
+    usage: /treasurerunadmin forcestart
+    permission: treasure.admin
+
   trsecret:
     description: Completes the Treasure Shop secret trade fallback.
     usage: /trsecret

@@ -556,6 +556,19 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
       );
     }
 
+    if (getCommand("treasurerunadmin") != null) {
+      getCommand("treasurerunadmin").setExecutor(
+          serverHostedSessionCommandAdapter
+      );
+      getCommand("treasurerunadmin").setTabCompleter(
+          serverHostedSessionCommandAdapter
+      );
+    } else {
+      getLogger().warning(
+          "TreasureRun command metadata is missing: /treasurerunadmin"
+      );
+    }
+
     registerSecretTradeCommandFallback();
 
     // ✅✅✅ 追加：サーバー起動直後に「Treasure Shop」残骸を全削除（再起動残り対策）

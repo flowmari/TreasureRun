@@ -52,6 +52,7 @@ class PluginCommandMetadataContractTest {
 
     Set<String> expectedCommands = Set.of(
         "treasurerun",
+        "treasurerunadmin",
         "trsecret",
         "treasuresecret",
         "packetI18nProbe",
@@ -80,11 +81,13 @@ class PluginCommandMetadataContractTest {
     assertEquals("treasure.admin", commands.get("gameEnd").permission);
     assertEquals("op", parsePermissionDefaults(yaml).get("treasure.admin"));
     assertNull(commands.get("treasurerun").permission);
+    assertEquals("treasure.admin", commands.get("treasurerunadmin").permission);
     assertTrue(
         yaml.contains(
             "usage: /treasurerun <create|join|leave|start|stop|status>"
         )
     );
+    assertTrue(yaml.contains("usage: /treasurerunadmin forcestart"));
 
     Set<String> declaredPermissions = parsePermissionKeys(yaml);
 

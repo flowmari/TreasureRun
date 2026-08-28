@@ -52,6 +52,69 @@ class ServerHostedBukkitRoundControllerTest {
   }
 
   @Test
+  void forceStartUsesTheSamePreparationAndEntersRunningWithoutSchedulingCountdown() {
+    Fixture fixture = fixture();
+
+    ServerHostedBukkitRoundController.Result result =
+        fixture.controller.forceStart(fixture.lockedStart());
+
+    assertEquals(ServerHostedBukkitRoundController.Code.RUNNING, result.code());
+    assertEquals(ServerHostedRoundState.RUNNING, fixture.coordinator.state());
+    assertFalse(fixture.controller.countdownScheduled());
+    assertEquals(0, fixture.controller.countdownRemaining());
+    assertTrue(fixture.scheduler.tasks.isEmpty());
+    assertTrue(fixture.countdownSeconds.isEmpty());
+    assertEquals(
+        List.of(
+            "prepare",
+            "chests",
+            "teleport:" + fixture.first,
+            "teleport:" + fixture.second,
+            "activate"
+        ),
+        fixture.events.subList(0, 5)
+    );
+    assertEquals(
+        List.of(fixture.first, fixture.second),
+        fixture.controller.activeRuntime().orElseThrow().participants()
+    );
+  }
+
+  @Test
+  void normalStartThenForceStartCannotCreateASecondRoundOrTask() {
+    Fixture fixture = fixture();
+    ServerHostedSessionControlService.StartDecision decision = fixture.lockedStart();
+
+    assertEquals(
+        ServerHostedBukkitRoundController.Code.COUNTDOWN_STARTED,
+        fixture.controller.start(decision).code()
+    );
+    ServerHostedBukkitRoundController.Result forced = fixture.controller.forceStart(decision);
+
+    assertEquals(ServerHostedBukkitRoundController.Code.INVALID_STATE, forced.code());
+    assertEquals(ServerHostedRoundState.COUNTDOWN, fixture.coordinator.state());
+    assertEquals(1, fixture.scheduler.tasks.size());
+    assertTrue(fixture.controller.activeRuntime().isEmpty());
+  }
+
+  @Test
+  void forceStartThenNormalStartCannotCreateASecondRuntime() {
+    Fixture fixture = fixture();
+    ServerHostedSessionControlService.StartDecision decision = fixture.lockedStart();
+
+    assertEquals(
+        ServerHostedBukkitRoundController.Code.RUNNING,
+        fixture.controller.forceStart(decision).code()
+    );
+    ServerHostedBukkitRoundController.Result normal = fixture.controller.start(decision);
+
+    assertEquals(ServerHostedBukkitRoundController.Code.INVALID_STATE, normal.code());
+    assertEquals(ServerHostedRoundState.RUNNING, fixture.coordinator.state());
+    assertTrue(fixture.scheduler.tasks.isEmpty());
+    assertTrue(fixture.controller.activeRuntime().isPresent());
+  }
+
+  @Test
   void rejectedStartDecisionDoesNotPrepareOrSchedule() {
     Fixture fixture = waitingFixture();
     ServerHostedSessionControlService.StartDecision decision =
