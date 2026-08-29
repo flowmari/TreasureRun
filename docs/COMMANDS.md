@@ -31,6 +31,20 @@ The existing `/gamestart` and `/gameEnd` commands remain available as the establ
 single-run compatibility route. For the 2–8 player flow, use
 [`docs/playtest/SERVER_HOSTED_QUICKSTART.md`](playtest/SERVER_HOSTED_QUICKSTART.md).
 
+### Server-hosted follow-up behavior
+
+- No external or DeathRun map is required for the current one-arena flow. TreasureRun uses its
+  dedicated `treasurerun_arena` world.
+- Post-round Play Again is enabled by default and becomes available only after authoritative cleanup
+  completes. It enters a new WAITING session rather than reopening the completed round.
+- The optional Hub action is disabled by default. When configured, TreasureRun presents the
+  operator-supplied command as a player-side clickable action; TreasureRun does not own the Hub
+  plugin's success/failure lifecycle.
+- The administrator update notifier is disabled by default. When enabled, it performs asynchronous,
+  cached checks against TreasureRun's GitHub Releases feed; the displayed message and destination
+  link remain operator-configurable. It does not scrape SpigotMC.
+- `/treasurerunadmin forcestart` is a countdown bypass, not a safety bypass.
+
 ---
 
 ## Player Commands
@@ -60,6 +74,7 @@ single-run compatibility route. For the 2–8 player flow, use
 | Command | Usage | Permission | Default | Purpose |
 |---|---|---|---|---|
 | `/gamestart` | `/gamestart [easy\|normal\|hard]` | `treasure.admin` | op | Starts TreasureRun. If the player has no saved language, the language GUI is shown first. |
+| `/treasurerunadmin forcestart` | `/treasurerunadmin forcestart` | `treasure.admin` | op | Uses the normal server-hosted start contract but skips only the scheduled 10-second wait before RUNNING. Minimum-player, roster, durable-return, preparation, and cleanup requirements are preserved. |
 | `/gameEnd` | `/gameEnd` | `treasure.admin` | op | Ends the current TreasureRun game and performs cleanup. |
 | `/gameReload` | `/gameReload` | `treasure.reload` | op | Alias of `/treasureReload`. |
 | `/treasureReload` | `/treasureReload` | `treasure.reload` | op | Reloads config, language files, GUI state, quote module, and runtime managers. |
