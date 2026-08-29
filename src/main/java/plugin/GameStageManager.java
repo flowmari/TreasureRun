@@ -48,13 +48,6 @@ public class GameStageManager implements Listener {
   // ✅ 追加：難易度ブロックを「座標キー」でも保持（Block参照が壊れても掃除できる）
   private final java.util.Set<String> difficultyKeys = new java.util.HashSet<>();
 
-  // ✅ 追加：最近作ったステージ中心（複数回ゲームしても掃除できる）
-  private final java.util.List<Location> recentStageCenters = new java.util.ArrayList<>();
-
-  // ✅ 追加：安全スイープ設定（“難易度素材だけ”を回収する）
-  private static final int DIFF_SWEEP_RADIUS = 96;   // 必要なら 64/96/128 で調整OK
-  private static final int DIFF_SWEEP_Y_RANGE = 8;   // 高さブレ対策（±）
-
   // ★ ステージ中央の行商人＆ラマを覚えておく（Glow 制御＆中央テレポート用）
   private WanderingTrader stageTrader;
   private final java.util.List<TraderLlama> stageLlamas = new java.util.ArrayList<>();
@@ -161,40 +154,6 @@ public class GameStageManager implements Listener {
     }
   }
 
-  // ✅ 追加：難易度素材かチェック（ここだけを掃除対象にする）
-  private boolean isDifficultyMaterial(Material m) {
-    return m == Material.PURPLE_CONCRETE ||
-        m == Material.LIME_CONCRETE ||
-        m == Material.BLUE_CONCRETE;
-  }
-
-  // ✅ 追加：ステージ中心を履歴に残す（同じ座標は重複登録しない）
-  private void rememberStageCenter(Location center) {
-    if (center == null || center.getWorld() == null) return;
-
-    Location c = center.clone();
-    c.setX(c.getBlockX());
-    c.setY(c.getBlockY());
-    c.setZ(c.getBlockZ());
-
-    for (Location old : recentStageCenters) {
-      if (old == null || old.getWorld() == null) continue;
-      if (old.getWorld().getName().equals(c.getWorld().getName())
-          && old.getBlockX() == c.getBlockX()
-          && old.getBlockY() == c.getBlockY()
-          && old.getBlockZ() == c.getBlockZ()) {
-        return;
-      }
-    }
-
-    recentStageCenters.add(c);
-
-    // 増えすぎ防止（最近10件だけ保持）
-    while (recentStageCenters.size() > 10) {
-      recentStageCenters.remove(0);
-    }
-  }
-
   /**
    * Prepares one plugin-owned arena stage without teleporting any participant.
    *
@@ -217,12 +176,18 @@ public class GameStageManager implements Listener {
         + " at x=" + base.getBlockX() + " y=" + base.getBlockY()
         + " z=" + base.getBlockZ());
 
-    prepareOwnedArenaWater(base, ARENA_WATER_RADIUS);
+    if (!arenaWorldManager.isBasePrepared(w, ARENA_WATER_RADIUS)) {
+      long preparationStartedAt = System.nanoTime();
+      prepareOwnedArenaWater(base, ARENA_WATER_RADIUS);
+      arenaWorldManager.markBasePrepared(w, ARENA_WATER_RADIUS);
+      long preparationMillis = (System.nanoTime() - preparationStartedAt) / 1_000_000L;
+      plugin.getLogger().info(
+          "[Arena] One-time base preparation completed in " + preparationMillis + " ms"
+      );
+    }
 
     Location stageCenter = base.clone();
     stageCenter.setY(base.getBlockY() + 1);
-    rememberStageCenter(stageCenter);
-    sweepAllLemonGlass();
     buildNeonFloor(stageCenter);
 
     try {
@@ -489,122 +454,6 @@ public class GameStageManager implements Listener {
     }
   }
 
-  // ✅ 追加：履歴中心の周辺をスキャンして「難易度素材だけ」回収する（登録漏れ・クラッシュ残骸対策）
-  private int sweepDifficultyBlocksAround(Location center, int radius, int yRange) {
-    if (center == null || center.getWorld() == null) return 0;
-
-    World w = center.getWorld();
-    int cx = center.getBlockX();
-    int cy = center.getBlockY();
-    int cz = center.getBlockZ();
-
-    int cleaned = 0;
-
-    for (int dx = -radius; dx <= radius; dx++) {
-      for (int dz = -radius; dz <= radius; dz++) {
-        for (int dy = -yRange; dy <= yRange; dy++) {
-          int x = cx + dx;
-          int y = cy + dy;
-          int z = cz + dz;
-
-          Block b = w.getBlockAt(x, y, z);
-          Material t = b.getType();
-
-          if (!isDifficultyMaterial(t)) continue;
-
-          // “難易度ブロックらしい状況” だけ掃除（海上ステージ想定の安全弁）
-          Block below = w.getBlockAt(x, y - 1, z);
-          Material belowType = below.getType();
-          boolean looksLikeOurStage =
-              belowType == Material.WATER ||
-                  belowType == Material.PRISMARINE ||
-                  belowType == Material.SEA_LANTERN ||
-                  belowType == Material.CYAN_STAINED_GLASS ||
-                  belowType == Material.MAGENTA_STAINED_GLASS;
-
-          if (!looksLikeOurStage) continue;
-
-          // 下が水なら WATER に戻す／それ以外なら AIR にする（元ロジック踏襲）
-          if (belowType == Material.WATER) {
-            b.setType(Material.WATER);
-          } else {
-            b.setType(Material.AIR);
-          }
-
-          cleaned++;
-        }
-      }
-    }
-
-    return cleaned;
-  }
-
-  // ✅ 追加：残骸の黄色ガラス（YELLOW_STAINED_GLASS）だけを回収する
-// - y==centerY（床面）→ CYAN/MAGENTA に戻す
-// - それ以外（縦に残った残骸）→ AIR にする（ステージ上空の残骸を確実除去）
-  private int sweepLemonGlassAround(Location center, int radius, int yRange) {
-    if (center == null || center.getWorld() == null) return 0;
-
-    World w = center.getWorld();
-    int cx = center.getBlockX();
-    int cy = center.getBlockY();
-    int cz = center.getBlockZ();
-
-    int cleaned = 0;
-
-    for (int dx = -radius; dx <= radius; dx++) {
-      for (int dz = -radius; dz <= radius; dz++) {
-        for (int dy = -yRange; dy <= yRange; dy++) {
-          int x = cx + dx;
-          int y = cy + dy;
-          int z = cz + dz;
-
-          Block b = w.getBlockAt(x, y, z);
-          if (b.getType() != Material.YELLOW_STAINED_GLASS) continue;
-
-          // 誤爆防止：近傍が“ステージっぽい素材”のときだけ処理
-          Material below = w.getBlockAt(x, y - 1, z).getType();
-          Material hereBelow2 = w.getBlockAt(x, y - 2, z).getType(); // 念のためもう1段
-
-          boolean looksLikeOurStage =
-              below == Material.WATER ||
-                  below == Material.PRISMARINE ||
-                  below == Material.SEA_LANTERN ||
-                  below == Material.CYAN_STAINED_GLASS ||
-                  below == Material.MAGENTA_STAINED_GLASS ||
-                  hereBelow2 == Material.WATER; // 縦残骸が浮いてても海上なら拾える
-
-          if (!looksLikeOurStage) continue;
-
-          if (y == cy) {
-            // ネオン床（上面）は CYAN/MAGENTA 市松へ戻す
-            Material restore = (((x - cx) + (z - cz)) % 2 == 0)
-                ? Material.CYAN_STAINED_GLASS
-                : Material.MAGENTA_STAINED_GLASS;
-            b.setType(restore, false);
-          } else {
-            // 縦に残った残骸は消す
-            b.setType(Material.AIR, false);
-          }
-
-          cleaned++;
-        }
-      }
-    }
-
-    return cleaned;
-  }
-
-  // ✅ 追加：最近のステージ周辺をまとめて掃除
-  private int sweepAllLemonGlass() {
-    int total = 0;
-    for (Location c : recentStageCenters) {
-      total += sweepLemonGlassAround(c, 128, 16); // ← 高さを16に上げて取りこぼし防止
-    }
-    if (total > 0) plugin.getLogger().info("[MSZ][CLEAN] lemon remnants cleaned=" + total);
-    return total;
-  }
-
   // ★ 難易度ブロックだけを全部消す（何個消したかを返す）
   public int clearDifficultyBlocks() {
     int cleaned = 0;
@@ -639,17 +488,12 @@ public class GameStageManager implements Listener {
       cleaned++;
     }
 
-    // ✅ 登録情報は消す（次のゲームで再登録される）
+    // Registered difficulty locations are the authoritative cleanup set for the fixed arena.
+    // Broad fallback scans are intentionally excluded from the normal main-thread cleanup path.
     difficultyBlocks.clear();
     difficultyKeys.clear();
 
-    // ✅ 追加：それでも取り残しがある（登録漏れ/落ちた/再起動等）対策で “中心周辺スイープ”
-    int sweptTotal = 0;
-    for (Location c : recentStageCenters) {
-      sweptTotal += sweepDifficultyBlocksAround(c, DIFF_SWEEP_RADIUS, DIFF_SWEEP_Y_RANGE);
-    }
-
-    return cleaned + sweptTotal;
+    return cleaned;
   }
 
   // =======================================================

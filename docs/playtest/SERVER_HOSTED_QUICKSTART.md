@@ -12,6 +12,15 @@ Use a disposable or backed-up Spigot 1.20.1 test server with Java 17, one operat
 2–8 test players. Database/ranking checks, ProtocolLib packet localisation, and a locally generated
 ResourcePack are outside this smoke test.
 
+## Arena / map requirement
+
+You do not need a DeathRun map or any other external map for this server-hosted smoke test.
+TreasureRun uses its dedicated `treasurerun_arena` world and builds the current test stage there.
+
+Use a disposable or backed-up test server, and do not use an unrelated existing world named
+`treasurerun_arena`. Custom/prebuilt arena maps are not part of the current one-arena flow; that
+belongs to the later ArenaRegistry / multi-arena work.
+
 ## Six-step smoke test
 
 1. Stop the test server.
