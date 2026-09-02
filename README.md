@@ -6,6 +6,7 @@ TreasureRun is an open-source treasure-hunt mini-game plugin for **Minecraft Spi
 
 | I want to... | Start here |
 | --- | --- |
+| Run the server-hosted 2–8 player alpha | [Server-hosted Quickstart](docs/playtest/SERVER_HOSTED_QUICKSTART.md) |
 | Playtest the game | [Player Quickstart](docs/playtest/PLAYER_QUICKSTART.md) |
 | Explore screenshots and optional checks | [Optional Playtest Features](docs/playtest/OPTIONAL_PLAYTEST_FEATURES.md) |
 | Give first-impression feedback | [#106 — First-time setup and gameplay flow feedback](https://github.com/flowmari/TreasureRun/issues/106) |
