@@ -326,7 +326,7 @@ The full README that existed before this contributor-focused entrance was introd
 
 - Stage: public early alpha
 - Distribution: GitHub Releases and SpigotMC
-- Current milestone: define and validate the minimum server-hosted round lifecycle tracked in #136
+- Current milestone: post-v0.2.1-alpha follow-up work, including `/treasurerun top`, optional leaderboard placeholders, and the later ArenaRegistry / multi-arena / Auto Mode work
 - Minecraft target: Spigot 1.20.1
 - Java version: 17
 - License: MIT

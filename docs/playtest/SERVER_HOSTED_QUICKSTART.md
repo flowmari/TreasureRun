@@ -1,12 +1,12 @@
 # Server-hosted Quickstart
 
-This is the shortest smoke test for the v0.2.0-alpha server-hosted TreasureRun flow.
+This is the shortest smoke test for the v0.2.1-alpha server-hosted TreasureRun flow.
 
-Download the v0.2.0-alpha release JAR:
-[`TreasureRun-0.2.0-alpha-all.jar`](https://github.com/flowmari/TreasureRun/releases/download/v0.2.0-alpha/TreasureRun-0.2.0-alpha-all.jar)
+Download the v0.2.1-alpha release JAR:
+[`TreasureRun-0.2.1-alpha-all.jar`](https://github.com/flowmari/TreasureRun/releases/download/v0.2.1-alpha/TreasureRun-0.2.1-alpha-all.jar)
 
 Expected SHA-256:
-`b3acc8f573c988fc48b32e1448e558d74d8add09d108f5f52460a81a3e8a52c1`
+`42f9045ad0a986b97193f75b2f1042384f770bdb27bb4f5b420de80dc2f6b3b7`
 
 Use a disposable or backed-up Spigot 1.20.1 test server with Java 17, one operator/admin, and
 2–8 test players. Database/ranking checks, ProtocolLib packet localisation, and a locally generated
@@ -21,10 +21,12 @@ Use a disposable or backed-up test server, and do not use an unrelated existing 
 `treasurerun_arena`. Custom/prebuilt arena maps are not part of the current one-arena flow; that
 belongs to the later ArenaRegistry / multi-arena work.
 
+If this test server already has a `treasurerun_arena` from v0.2.0-alpha, stop the server and back it up before upgrading. v0.2.1-alpha intentionally fails closed on an unmarked same-name arena; follow the [v0.2.1-alpha upgrade note](../release/v0.2.1-alpha.md#upgrade-note-from-v020-alpha) rather than deleting a world whose ownership is uncertain.
+
 ## Six-step smoke test
 
 1. Stop the test server.
-2. Put `TreasureRun-0.2.0-alpha-all.jar` in `plugins/` and remove any older TreasureRun JAR from
+2. Put `TreasureRun-0.2.1-alpha-all.jar` in `plugins/` and remove any older TreasureRun JAR from
    that test server.
 3. Start the server and join with 2–8 test players.
 4. As an operator/admin, run `/treasurerun create`.
