@@ -6,6 +6,7 @@ TreasureRun is an open-source treasure-hunt mini-game plugin for **Minecraft Spi
 
 | I want to... | Start here |
 | --- | --- |
+| Run the server-hosted 2–8 player alpha | [Server-hosted Quickstart](docs/playtest/SERVER_HOSTED_QUICKSTART.md) |
 | Playtest the game | [Player Quickstart](docs/playtest/PLAYER_QUICKSTART.md) |
 | Explore screenshots and optional checks | [Optional Playtest Features](docs/playtest/OPTIONAL_PLAYTEST_FEATURES.md) |
 | Give first-impression feedback | [#106 — First-time setup and gameplay flow feedback](https://github.com/flowmari/TreasureRun/issues/106) |
@@ -326,7 +327,7 @@ The full README that existed before this contributor-focused entrance was introd
 
 - Stage: public early alpha
 - Distribution: GitHub Releases and SpigotMC
-- Current milestone: define and validate the minimum server-hosted round lifecycle tracked in #136
+- Current milestone: post-v0.2.1-alpha follow-up work, including `/treasurerun top`, optional leaderboard placeholders, and the later ArenaRegistry / multi-arena / Auto Mode work
 - Minecraft target: Spigot 1.20.1
 - Java version: 17
 - License: MIT
