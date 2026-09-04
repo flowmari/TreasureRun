@@ -84,7 +84,7 @@ class PluginCommandMetadataContractTest {
     assertEquals("treasure.admin", commands.get("treasurerunadmin").permission);
     assertTrue(
         yaml.contains(
-            "usage: /treasurerun <create|join|leave|start|stop|status>"
+            "usage: /treasurerun <create|join|leave|start|stop|status|top>"
         )
     );
     assertTrue(yaml.contains("usage: /treasurerunadmin forcestart"));

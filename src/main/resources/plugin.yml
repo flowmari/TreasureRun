@@ -7,7 +7,7 @@ softdepend: [ProtocolLib]
 commands:
   treasurerun:
     description: Manage the server-hosted TreasureRun session.
-    usage: /treasurerun <create|join|leave|start|stop|status>
+    usage: /treasurerun <create|join|leave|start|stop|status|top>
 
   treasurerunadmin:
     description: Administrative server-hosted TreasureRun controls.

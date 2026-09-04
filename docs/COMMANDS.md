@@ -26,6 +26,7 @@ is fixed when an administrator starts the round.
 | `/treasurerun start` | Administrator / operator | `treasure.admin` | Requires at least 2 participants, locks the roster, prepares the shared round, and starts the 10-second countdown. |
 | `/treasurerun stop` | Administrator / operator | `treasure.admin` | Resets a waiting session or requests the shared cleanup path for an active server-hosted round. |
 | `/treasurerun status` | Player or console | none | Reports the session state, participant count, minimum, maximum, and whether the waiting roster can start. |
+| `/treasurerun top` | Player | none | Shows the all-time ranking in chat using the existing all-time ranking path. |
 
 The existing `/gamestart` and `/gameEnd` commands remain available as the established
 single-run compatibility route. For the 2–8 player flow, use
