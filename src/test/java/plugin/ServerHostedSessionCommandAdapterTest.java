@@ -161,23 +161,46 @@ class ServerHostedSessionCommandAdapterTest {
   }
 
   @Test
+  void playerTopDelegatesToAllTimeRankingPresenterWithoutMutatingSession() {
+    Fixture fixture = new Fixture();
+    Player player = fixture.player(false);
+
+    assertTrue(fixture.execute(player, "top"));
+
+    assertEquals(List.of(player), fixture.rankingRequests);
+    assertEquals(ServerHostedSession.State.IDLE, fixture.session.state());
+  }
+
+  @Test
+  void consoleTopUsesExistingPlayerRequiredBehavior() {
+    Fixture fixture = new Fixture();
+    CommandSender console = fixture.console(true);
+
+    assertTrue(fixture.execute(console, "top"));
+
+    fixture.assertLastKey("serverHostedSession.command.playerRequired");
+    assertTrue(fixture.rankingRequests.isEmpty());
+  }
+
+  @Test
   void tabCompletionExposesAdministrativeCommandsOnlyToAdministratorsAndFiltersPrefixes() {
     Fixture fixture = new Fixture();
     CommandSender player = fixture.console(false);
     CommandSender administrator = fixture.console(true);
 
     assertEquals(
-        List.of("join", "leave", "status"),
+        List.of("join", "leave", "status", "top"),
         fixture.complete(player, "")
     );
     assertEquals(List.of("join"), fixture.complete(player, "j"));
     assertEquals(
-        List.of("create", "join", "leave", "start", "stop", "status"),
+        List.of("create", "join", "leave", "start", "stop", "status", "top"),
         fixture.complete(administrator, "")
     );
     assertEquals(List.of("start", "stop", "status"), fixture.complete(administrator, "st"));
     assertEquals(List.of("status"), fixture.complete(player, "st"));
     assertEquals(List.of(), fixture.complete(player, "sto"));
+    assertEquals(List.of("top"), fixture.complete(player, "t"));
     assertEquals(List.of(), fixture.complete(administrator, "x"));
     assertEquals(
         List.of(),
@@ -461,6 +484,7 @@ class ServerHostedSessionCommandAdapterTest {
   private static final class Fixture {
     private final ServerHostedSession session = new ServerHostedSession();
     private final List<Invocation> invocations = new ArrayList<>();
+    private final List<Player> rankingRequests = new ArrayList<>();
     private final Command command = mock(Command.class);
     @SuppressWarnings("unchecked")
     private final ServerHostedBukkitRoundController<Object> roundController =
@@ -489,6 +513,7 @@ class ServerHostedSessionCommandAdapterTest {
           roundController,
           postRoundActionService,
           playAgainEnabled,
+          rankingRequests::add,
           languageResolver,
           (language, key, placeholders) -> {
             invocations.add(new Invocation(language, key, placeholders));

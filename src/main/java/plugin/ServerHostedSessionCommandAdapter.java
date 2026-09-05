@@ -7,6 +7,7 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.BooleanSupplier;
+import java.util.function.Consumer;
 import java.util.function.Function;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -32,13 +33,14 @@ public final class ServerHostedSessionCommandAdapter implements TabExecutor {
   }
 
   private static final List<String> PLAYER_SUBCOMMANDS =
-      List.of("join", "leave", "status");
+      List.of("join", "leave", "status", "top");
 
   private final ServerHostedSessionCommandService service;
   private final ServerHostedSessionControlService controlService;
   private final ServerHostedBukkitRoundController<?> roundController;
   private final PostRoundActionService postRoundActionService;
   private final BooleanSupplier playAgainEnabled;
+  private final Consumer<Player> allTimeRankingPresenter;
   private final Function<CommandSender, String> languageResolver;
   private final MessageResolver messageResolver;
 
@@ -48,6 +50,7 @@ public final class ServerHostedSessionCommandAdapter implements TabExecutor {
       ServerHostedBukkitRoundController<?> roundController,
       PostRoundActionService postRoundActionService,
       BooleanSupplier playAgainEnabled,
+      Consumer<Player> allTimeRankingPresenter,
       Function<CommandSender, String> languageResolver,
       MessageResolver messageResolver
   ) {
@@ -67,6 +70,10 @@ public final class ServerHostedSessionCommandAdapter implements TabExecutor {
     this.playAgainEnabled = Objects.requireNonNull(
         playAgainEnabled,
         "playAgainEnabled"
+    );
+    this.allTimeRankingPresenter = Objects.requireNonNull(
+        allTimeRankingPresenter,
+        "allTimeRankingPresenter"
     );
     this.languageResolver = Objects.requireNonNull(
         languageResolver,
@@ -99,6 +106,20 @@ public final class ServerHostedSessionCommandAdapter implements TabExecutor {
       String subcommand = copiedArguments.get(0) == null
           ? ""
           : copiedArguments.get(0).toLowerCase(Locale.ROOT);
+
+      if (subcommand.equals("top")) {
+        if (!(sender instanceof Player player)) {
+          sender.sendMessage(messageResolver.resolve(
+              language(sender),
+              "serverHostedSession.command.playerRequired",
+              Map.of()
+          ));
+          return true;
+        }
+
+        allTimeRankingPresenter.accept(player);
+        return true;
+      }
 
       if (subcommand.equals("playagain")) {
         if (!(sender instanceof Player player)) {
@@ -178,7 +199,7 @@ public final class ServerHostedSessionCommandAdapter implements TabExecutor {
       return "forcestart".startsWith(prefix) ? List.of("forcestart") : List.of();
     }
     List<String> candidates = sender.hasPermission(ADMIN_PERMISSION)
-        ? List.of("create", "join", "leave", "start", "stop", "status")
+        ? List.of("create", "join", "leave", "start", "stop", "status", "top")
         : PLAYER_SUBCOMMANDS;
 
     return candidates.stream()

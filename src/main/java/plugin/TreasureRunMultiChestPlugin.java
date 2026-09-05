@@ -536,6 +536,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
             serverHostedBukkitRoundController,
             postRoundActionService,
             this::isPostRoundPlayAgainEnabled,
+            this::showAllTimeRanking,
             sender -> sender instanceof Player player
                 ? resolveCurrentLang(player)
                 : getConfig().getString("language.default", "en"),
