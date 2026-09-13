@@ -49,28 +49,53 @@ public final class RankingQueryService {
     return query(connection, ALL_TIME_SQL);
   }
 
+  static List<RankingEntry> loadAllTime(
+      Connection connection,
+      int queryTimeoutSeconds
+  ) throws SQLException {
+    if (queryTimeoutSeconds <= 0) {
+      throw new IllegalArgumentException(
+          "queryTimeoutSeconds must be greater than zero"
+      );
+    }
+
+    return query(connection, ALL_TIME_SQL, queryTimeoutSeconds);
+  }
+
   public static List<RankingEntry> loadMonthly(Connection connection) throws SQLException {
     return query(connection, MONTHLY_SQL);
   }
 
   private static List<RankingEntry> query(Connection connection, String sql) throws SQLException {
+    return query(connection, sql, 0);
+  }
+
+  private static List<RankingEntry> query(
+      Connection connection,
+      String sql,
+      int queryTimeoutSeconds
+  ) throws SQLException {
     Objects.requireNonNull(connection, "connection");
 
     List<RankingEntry> entries = new ArrayList<>();
 
-    try (PreparedStatement statement = connection.prepareStatement(sql);
-         ResultSet resultSet = statement.executeQuery()) {
+    try (PreparedStatement statement = connection.prepareStatement(sql)) {
+      if (queryTimeoutSeconds > 0) {
+        statement.setQueryTimeout(queryTimeoutSeconds);
+      }
 
-      while (resultSet.next()) {
-        entries.add(
-            new RankingEntry(
-                resultSet.getString("player_name"),
-                resultSet.getInt("score"),
-                resultSet.getLong("time"),
-                resultSet.getString("difficulty"),
-                resultSet.getString("lang_code")
-            )
-        );
+      try (ResultSet resultSet = statement.executeQuery()) {
+        while (resultSet.next()) {
+          entries.add(
+              new RankingEntry(
+                  resultSet.getString("player_name"),
+                  resultSet.getInt("score"),
+                  resultSet.getLong("time"),
+                  resultSet.getString("difficulty"),
+                  resultSet.getString("lang_code")
+              )
+          );
+        }
       }
     }
 

@@ -46,6 +46,35 @@ single-run compatibility route. For the 2–8 player flow, use
   link remain operator-configurable. It does not scrape SpigotMC.
 - `/treasurerunadmin forcestart` is a countdown bypass, not a safety bypass.
 
+### Optional leaderboard placeholders
+
+PlaceholderAPI is optional. If it is not installed or enabled when TreasureRun starts, the core
+plugin continues normally and no TreasureRun expansion is registered.
+
+When PlaceholderAPI is available, TreasureRun registers the `treasurerun` expansion. Ranks 1
+through 10 are exposed with these placeholder forms:
+
+| Placeholder | Value |
+|---|---|
+| `%treasurerun_top_<rank>_player%` | Player name |
+| `%treasurerun_top_<rank>_score%` | Score |
+| `%treasurerun_top_<rank>_time%` | Stored time value |
+
+Examples include `%treasurerun_top_1_player%`, `%treasurerun_top_10_score%`, and
+`%treasurerun_top_3_time%`.
+
+- Ordering is the same all-time ordering used by `/treasurerun top`.
+- Placeholder callbacks read an immutable in-memory snapshot; they do not run SQL/JDBC queries.
+- With database integration enabled, the snapshot refreshes asynchronously about every 30 seconds.
+- Before the first successful refresh, or when a valid rank has no row, the placeholder returns an
+  empty string.
+- After at least one successful refresh, a transient database failure keeps the last successful
+  snapshot.
+- If PlaceholderAPI is present while `database.enabled=false`, the expansion remains registered and
+  valid leaderboard placeholders return neutral empty values.
+- Database settings for this integration are captured at TreasureRun startup; `/treasureReload`
+  does not recreate the integration.
+
 ---
 
 ## Player Commands
@@ -120,5 +149,8 @@ ja, en, de, it, sv, es, la, is, fi, nl, fr, ru, ko, zh_tw, sa, pt, hi, lzh, ojp,
 - Player-visible text is externalized into `languages/*.yml`.
 - Player language is persisted per player.
 - Reload behavior is designed for server operation.
+- For the optional leaderboard PlaceholderAPI integration, `/treasureReload` does not recreate the integration. Its database settings are captured when TreasureRun starts, so changes to `database.*` require a server restart before leaderboard placeholder refreshes use the new values.
+- Database environment overrides are `TREASURERUN_DATABASE_ENABLED`, `TREASURERUN_DB_HOST`, `TREASURERUN_DB_PORT`, `TREASURERUN_DB_NAME`, `TREASURERUN_DB_USER`, and `TREASURERUN_DB_PASSWORD`. After changing them, restart the server process/container before expecting leaderboard placeholders to use the new values.
+- This restart requirement is scoped to the optional leaderboard PlaceholderAPI integration; it does not redefine reload behavior for unrelated TreasureRun modules.
 - Debug/demo commands are protected by operator permission and config flags.
 - TreasureRun's core gameplay is exposed through Spigot commands. The optional ranking-api module is documented separately and includes OpenAPI contract verification for its read-only HTTP boundary.
