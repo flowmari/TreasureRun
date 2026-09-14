@@ -12,6 +12,9 @@ repositories {
     maven {
         url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots'
     }
+    maven {
+        url = 'https://repo.extendedclip.com/releases/'
+    }
 }
 
 // === resolutionStrategy を削除 ===
@@ -28,6 +31,9 @@ dependencies {
     implementation project(':treasurerun-i18n-core')
     // Spigot API（コンパイル時のみ）
     compileOnly 'org.spigotmc:spigot-api:1.20.1-R0.1-SNAPSHOT'
+
+    // PlaceholderAPI (optional; provided by the server when installed)
+    compileOnly 'me.clip:placeholderapi:2.12.3'
 
     // ProtocolLib（パケット監査・置換用 / サーバー側にはProtocolLib.jarを別途配置）
     compileOnly 'net.dmulloy2:ProtocolLib:5.4.0'

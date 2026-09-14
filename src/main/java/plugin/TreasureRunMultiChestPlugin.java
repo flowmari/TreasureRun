@@ -56,6 +56,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
 
   private static final String ROUND_ADMIN_PERMISSION = "treasure.admin";
   private plugin.update.UpdateCheckService updateCheckService;
+  private plugin.placeholder.OptionalPlaceholderIntegration optionalPlaceholderIntegration;
 
   // __MSZ_AUTO_START_ON_JOIN
   private final java.util.concurrent.atomic.AtomicBoolean __mszAutoStarted = new java.util.concurrent.atomic.AtomicBoolean(false);
@@ -272,6 +273,14 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
 
     saveDefaultConfig();
     reloadConfig();
+
+    // Optional PlaceholderAPI integration owns its own immutable snapshot and
+    // refresh-only JDBC connection. The provider-specific PAPI class is loaded
+    // only after PlaceholderAPI is confirmed present and enabled.
+    optionalPlaceholderIntegration =
+        new plugin.placeholder.OptionalPlaceholderIntegration(this, databaseSettings());
+    optionalPlaceholderIntegration.start();
+
     initializeUpdateNotifier();
     initializePlayerReturnRecovery();
     getServer().getMessenger().registerOutgoingPluginChannel(this, "treasurerun:lang");
@@ -1257,6 +1266,13 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
 
   @Override
   public void onDisable() {
+    // Stop publication before cancelling the scheduled task. An already-running
+    // JDBC query may return after cancellation; the refresher rejects that late result.
+    if (optionalPlaceholderIntegration != null) {
+      optionalPlaceholderIntegration.close();
+      optionalPlaceholderIntegration = null;
+    }
+
     if (updateCheckService != null) {
       updateCheckService.close();
       updateCheckService = null;

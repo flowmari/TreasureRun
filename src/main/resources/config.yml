@@ -1693,6 +1693,12 @@ bossBar:
   color: RED
   style: PROGRESS
   title: 制限時間
+# The optional leaderboard PlaceholderAPI integration snapshots the database settings below at TreasureRun startup.
+# /treasureReload does not recreate that integration. After changing database.* here,
+# restart the server before expecting leaderboard placeholders to use the new values.
+# Environment overrides are TREASURERUN_DATABASE_ENABLED plus TREASURERUN_DB_HOST,
+# TREASURERUN_DB_PORT, TREASURERUN_DB_NAME, TREASURERUN_DB_USER, and TREASURERUN_DB_PASSWORD.
+# After changing any of them, restart the server process/container.
 database:
   enabled: false
   host: localhost
