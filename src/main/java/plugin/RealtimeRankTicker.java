@@ -10,305 +10,614 @@ import org.bukkit.scoreboard.DisplaySlot;
 import org.bukkit.scoreboard.Objective;
 import org.bukkit.scoreboard.Scoreboard;
 import org.bukkit.scoreboard.ScoreboardManager;
+import plugin.rank.JdbcLeaderboardSnapshotLoader;
+import plugin.rank.RankingQueryService;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.EnumMap;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.Objects;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicLong;
 
 /**
- * RealtimeRankTicker (scoresテーブル版)
- * - Sidebar scoreboard に Weekly / All-time / Monthly TOP3 を表示
- * - 10秒ごとに Weekly / All-time / Monthly 切替（ゲーム中だけ）
- * - ランキング更新時はチャットで通知（ActionBar上書き回避）
+ * Realtime leaderboard sidebar.
+ *
+ * <p>Thread contract:
+ *
+ * <ul>
+ *   <li>Minecraft main thread: Bukkit/player/scoreboard state only.</li>
+ *   <li>Async worker: bounded JDBC read only.</li>
+ *   <li>No plugin shared JDBC Connection is used by this ticker.</li>
+ *   <li>Late results from a stopped/old lifecycle are rejected.</li>
+ * </ul>
  */
 public class RealtimeRankTicker {
 
   private final TreasureRunMultiChestPlugin plugin;
   private final int intervalSec;
+  private final DatabaseRuntimeSettings databaseSettings;
+
+  private final AtomicBoolean loadInFlight = new AtomicBoolean(false);
+  private final AtomicBoolean active = new AtomicBoolean(false);
+  private final AtomicLong lifecycleGeneration = new AtomicLong(0L);
+
+  private final Map<Mode, Integer> lastDigestByMode =
+      new EnumMap<>(Mode.class);
 
   private BukkitTask task;
+  // Main-thread-only failure transition flag: one warning per outage, one recovery log.
+  private boolean loadFailureActive = false;
 
-  // Modeごとに前回ランキング状態を保存する。
-  // これにより Weekly / All-time / Monthly の表示切替だけでは
-  // 「Leaderboard updated!」を出さない。
-  private final Map<Mode, Integer> lastDigestByMode = new EnumMap<>(Mode.class);
-
-  // 表示モード（デフォルト weekly）
   private Mode mode = Mode.WEEKLY;
-  private enum Mode { WEEKLY, ALLTIME, MONTHLY }
-
-  // 10秒ごと切替用
   private int toggleCounter = 0;
 
-  public RealtimeRankTicker(TreasureRunMultiChestPlugin plugin, int intervalSec, int topN, int tickerWidth) {
-    this.plugin = plugin;
+  private enum Mode {
+    WEEKLY,
+    ALLTIME,
+    MONTHLY
+  }
+
+  private record LoadResult(
+      Mode mode,
+      List<Row> rows,
+      Throwable failure
+  ) {
+    private LoadResult {
+      rows = List.copyOf(rows);
+    }
+  }
+
+  public RealtimeRankTicker(
+      TreasureRunMultiChestPlugin plugin,
+      int intervalSec,
+      int topN,
+      int tickerWidth
+  ) {
+    this.plugin = Objects.requireNonNull(plugin, "plugin");
     this.intervalSec = Math.max(2, intervalSec);
+
+    // Database settings are startup-scoped, matching the existing
+    // optional leaderboard integration contract.
+    this.databaseSettings =
+        DatabaseRuntimeSettings.load(plugin.getConfig());
   }
 
   public void start() {
-    plugin.getLogger().info("[RankTicker] started intervalSec=" + intervalSec);
     stop();
-    task = Bukkit.getScheduler().runTaskTimer(plugin, this::tick, 20L, intervalSec * 20L);
+
+    long generation = lifecycleGeneration.incrementAndGet();
+    active.set(true);
+    loadFailureActive = false;
+
+    plugin.getLogger().info(
+        "[RankTicker] started intervalSec="
+            + intervalSec
+            + " (DB reads off main thread)"
+    );
+
+    task =
+        Bukkit.getScheduler()
+            .runTaskTimer(
+                plugin,
+                () -> tick(generation),
+                20L,
+                intervalSec * 20L
+            );
   }
 
   public void stop() {
+    active.set(false);
+    lifecycleGeneration.incrementAndGet();
+
     if (task != null) {
       task.cancel();
       task = null;
     }
   }
 
-  private void tick() {
-    if (!plugin.isEnabled()) return;
-    if (Bukkit.getOnlinePlayers().isEmpty()) return;
-
-    Connection conn = plugin.getConnection();
-    if (conn == null) return;
-
-    List<Row> top;
-    try {
-      if (mode == Mode.WEEKLY) {
-        top = fetchWeeklyTopFromScores(conn, 3);
-      } else if (mode == Mode.ALLTIME) {
-        top = fetchAllTimeTopFromScores(conn, 3);
-      } else {
-        top = fetchMonthlyTopFromScores(conn, 3);
-      }
-    } catch (Throwable t) {
-      plugin.getLogger().warning("[RankTicker] fetch failed: " + t.getMessage());
+  /**
+   * Main-thread heartbeat only. No JDBC is allowed here.
+   */
+  private void tick(long generation) {
+    if (!isCurrentLifecycle(generation)) {
       return;
     }
 
-    int digest = digest(top, mode);
-    Integer previousDigest = lastDigestByMode.get(mode);
-
-    // 初回表示は「更新」ではないので通知しない。
-    // 2回目以降、同じmode内で順位・スコア・タイム・言語が変わった時だけ通知する。
-    boolean changed = (previousDigest != null && digest != previousDigest);
-
-    renderSidebar(top, mode);
-
-    lastDigestByMode.put(mode, digest);
-
-    if (changed) {
-      notifyLeaderboardUpdatedChat(mode);
+    if (Bukkit.getOnlinePlayers().isEmpty()) {
+      return;
     }
 
-    // ✅ 10秒ごとにモード切替（ゲーム中だけ）
+    Mode requestedMode = mode;
+
+    scheduleLoad(generation, requestedMode);
+    advanceModeForNextTick();
+  }
+
+  /**
+   * Schedules one coalesced off-thread DB read.
+   */
+  private void scheduleLoad(long generation, Mode requestedMode) {
+    if (!loadInFlight.compareAndSet(false, true)) {
+      return;
+    }
+
+    try {
+      Bukkit.getScheduler()
+          .runTaskAsynchronously(
+              plugin,
+              () -> {
+                LoadResult result;
+
+                try {
+                  List<RankingQueryService.RankingEntry> entries =
+                      new JdbcLeaderboardSnapshotLoader(databaseSettings)
+                          .loadEntries(toWindow(requestedMode));
+
+                  result =
+                      new LoadResult(
+                          requestedMode,
+                          toRows(entries, 3),
+                          null
+                      );
+                } catch (Throwable failure) {
+                  result =
+                      new LoadResult(
+                          requestedMode,
+                          List.of(),
+                          failure
+                      );
+                } finally {
+                  loadInFlight.set(false);
+                }
+
+                if (!isCurrentLifecycle(generation)) {
+                  return;
+                }
+
+                LoadResult completed = result;
+
+                try {
+                  Bukkit.getScheduler()
+                      .runTask(
+                          plugin,
+                          () ->
+                              finishLoad(
+                                  generation,
+                                  completed
+                              )
+                      );
+                } catch (RuntimeException schedulingFailure) {
+                  if (isCurrentLifecycle(generation)) {
+                    plugin
+                        .getLogger()
+                        .warning(
+                            "[RankTicker] could not schedule main-thread "
+                                + "ranking delivery: "
+                                + schedulingFailure.getMessage()
+                        );
+                  }
+                }
+              }
+          );
+    } catch (RuntimeException schedulingFailure) {
+      loadInFlight.set(false);
+
+      if (isCurrentLifecycle(generation)) {
+        plugin
+            .getLogger()
+            .warning(
+                "[RankTicker] could not schedule asynchronous ranking load: "
+                    + schedulingFailure.getMessage()
+            );
+      }
+    }
+  }
+
+  /**
+   * Main-thread publication/render boundary.
+   */
+  private void finishLoad(long generation, LoadResult result) {
+    if (!isCurrentLifecycle(generation)) {
+      return;
+    }
+
+    if (result.failure() != null) {
+      if (!loadFailureActive) {
+        String detail =
+            result.failure().getMessage() == null
+                ? result.failure().getClass().getSimpleName()
+                : result.failure().getMessage();
+
+        plugin
+            .getLogger()
+            .warning(
+                "[RankTicker] ranking DB unavailable; retaining the last rendered state: "
+                    + detail
+            );
+        loadFailureActive = true;
+      }
+
+      return;
+    }
+
+    if (loadFailureActive) {
+      plugin.getLogger().info("[RankTicker] ranking DB recovered.");
+      loadFailureActive = false;
+    }
+
+    int digest = digest(result.rows(), result.mode());
+    Integer previousDigest =
+        lastDigestByMode.get(result.mode());
+
+    boolean changed =
+        previousDigest != null
+            && digest != previousDigest;
+
+    renderSidebar(result.rows(), result.mode());
+
+    lastDigestByMode.put(
+        result.mode(),
+        digest
+    );
+
+    if (changed) {
+      notifyLeaderboardUpdatedChat(result.mode());
+    }
+  }
+
+  private boolean isCurrentLifecycle(long generation) {
+    // This method is called from both main and async threads, so keep it
+    // strictly Java-only. onDisable() revokes authority before teardown.
+    return active.get()
+        && lifecycleGeneration.get() == generation;
+  }
+
+  private void advanceModeForNextTick() {
     if (plugin.isGameRunning()) {
       toggleCounter += intervalSec;
+
       if (toggleCounter >= 10) {
         toggleCounter = 0;
 
-        // ✅ 2種類版の「三項演算子」風を崩さず、3種類に拡張
-        if (mode == Mode.WEEKLY) mode = Mode.ALLTIME;
-        else if (mode == Mode.ALLTIME) mode = Mode.MONTHLY;
-        else mode = Mode.WEEKLY;
-
+        if (mode == Mode.WEEKLY) {
+          mode = Mode.ALLTIME;
+        } else if (mode == Mode.ALLTIME) {
+          mode = Mode.MONTHLY;
+        } else {
+          mode = Mode.WEEKLY;
+        }
       }
     } else {
       toggleCounter = 0;
-      mode = Mode.WEEKLY; // ゲーム外は固定
+      mode = Mode.WEEKLY;
     }
   }
 
-
-  // =========================================================
-  // DB fetch (scoresテーブル)
-  // =========================================================
-
-  private List<Row> fetchWeeklyTopFromScores(Connection conn, int limit) throws SQLException {
-    String sql =
-        "SELECT player_name, score, time, lang_code, played_at " +
-            "FROM scores " +
-            "WHERE played_at >= NOW() - INTERVAL 7 DAY " +   // ✅ 直近7日
-            "ORDER BY score DESC, time ASC, id DESC " +
-            "LIMIT ?";
-
-    List<Row> list = new ArrayList<>();
-    try (PreparedStatement ps = conn.prepareStatement(sql)) {
-      ps.setInt(1, limit);
-      try (ResultSet rs = ps.executeQuery()) {
-        while (rs.next()) list.add(Row.fromScores(rs));
-      }
-    }
-    return list;
+  private RankingQueryService.Window toWindow(Mode requestedMode) {
+    return switch (requestedMode) {
+      case WEEKLY -> RankingQueryService.Window.WEEKLY;
+      case ALLTIME -> RankingQueryService.Window.ALL_TIME;
+      case MONTHLY -> RankingQueryService.Window.MONTHLY;
+    };
   }
 
-  private List<Row> fetchAllTimeTopFromScores(Connection conn, int limit) throws SQLException {
-    String sql =
-        "SELECT player_name, score, time, lang_code, played_at " +
-            "FROM scores " +
-            "ORDER BY score DESC, time ASC, id DESC " +
-            "LIMIT ?";
+  private List<Row> toRows(
+      List<RankingQueryService.RankingEntry> entries,
+      int limit
+  ) {
+    int size = Math.min(
+        Math.max(0, limit),
+        entries.size()
+    );
 
-    List<Row> list = new ArrayList<>();
-    try (PreparedStatement ps = conn.prepareStatement(sql)) {
-      ps.setInt(1, limit);
-      try (ResultSet rs = ps.executeQuery()) {
-        while (rs.next()) list.add(Row.fromScores(rs));
-      }
+    List<Row> rows = new ArrayList<>(size);
+
+    for (int i = 0; i < size; i++) {
+      RankingQueryService.RankingEntry entry =
+          entries.get(i);
+
+      rows.add(
+          new Row(
+              entry.playerName(),
+              entry.score(),
+              entry.time(),
+              entry.languageCode()
+          )
+      );
     }
-    return list;
+
+    return List.copyOf(rows);
   }
 
-  // ✅ 追加：今月TOP
-  private List<Row> fetchMonthlyTopFromScores(Connection conn, int limit) throws SQLException {
-    String sql =
-        "SELECT player_name, score, time, lang_code, played_at " +
-            "FROM scores " +
-            "WHERE YEAR(played_at) = YEAR(NOW()) " +
-            "  AND MONTH(played_at) = MONTH(NOW()) " +
-            "ORDER BY score DESC, time ASC, id DESC " +
-            "LIMIT ?";
+  private void renderSidebar(
+      List<Row> top,
+      Mode mode
+  ) {
+    ScoreboardManager mgr =
+        Bukkit.getScoreboardManager();
 
-    List<Row> list = new ArrayList<>();
-    try (PreparedStatement ps = conn.prepareStatement(sql)) {
-      ps.setInt(1, limit);
-      try (ResultSet rs = ps.executeQuery()) {
-        while (rs.next()) list.add(Row.fromScores(rs));
-      }
+    if (mgr == null) {
+      return;
     }
-    return list;
-  }
-
-  // =========================================================
-  // Sidebar render
-  // =========================================================
-
-  private void renderSidebar(List<Row> top, Mode mode) {
-    ScoreboardManager mgr = Bukkit.getScoreboardManager();
-    if (mgr == null) return;
 
     for (Player p : Bukkit.getOnlinePlayers()) {
       String lang = "ja";
+
       try {
         if (plugin.getPlayerLanguageStore() != null) {
-          lang = plugin.getPlayerLanguageStore().getLang(
-              p,
-              plugin.getConfig().getString("language.default", "ja")
-          );
+          lang =
+              plugin
+                  .getPlayerLanguageStore()
+                  .getLang(
+                      p,
+                      plugin
+                          .getConfig()
+                          .getString(
+                              "language.default",
+                              "ja"
+                          )
+                  );
         } else {
-          lang = plugin.getConfig().getString("language.default", "ja");
+          lang =
+              plugin
+                  .getConfig()
+                  .getString(
+                      "language.default",
+                      "ja"
+                  );
         }
-      } catch (Throwable ignored) {}
+      } catch (Throwable ignored) {
+      }
 
       String title =
           (mode == Mode.WEEKLY)
-              ? (ChatColor.GOLD + plugin.getI18n().tr(lang, "rankTicker.weeklyTitle"))
+              ? ChatColor.GOLD
+                  + plugin
+                      .getI18n()
+                      .tr(
+                          lang,
+                          "rankTicker.weeklyTitle"
+                      )
               : (mode == Mode.ALLTIME)
-                  ? (ChatColor.GOLD + plugin.getI18n().tr(lang, "rankTicker.allTimeTitle"))
-                  : (ChatColor.GOLD + plugin.getI18n().tr(lang, "rankTicker.monthlyTitle"));
+                  ? ChatColor.GOLD
+                      + plugin
+                          .getI18n()
+                          .tr(
+                              lang,
+                              "rankTicker.allTimeTitle"
+                          )
+                  : ChatColor.GOLD
+                      + plugin
+                          .getI18n()
+                          .tr(
+                              lang,
+                              "rankTicker.monthlyTitle"
+                          );
 
-      Scoreboard sb = mgr.getNewScoreboard();
-      Objective obj = sb.registerNewObjective("tr_rank", "dummy", title);
-      obj.setDisplaySlot(DisplaySlot.SIDEBAR);
+      Scoreboard sb =
+          mgr.getNewScoreboard();
+
+      Objective obj =
+          sb.registerNewObjective(
+              "tr_rank",
+              "dummy",
+              title
+          );
+
+      obj.setDisplaySlot(
+          DisplaySlot.SIDEBAR
+      );
 
       int scoreLine = 15;
 
-      // 空行
-      obj.getScore(ChatColor.DARK_GRAY + " ").setScore(scoreLine--);
+      obj.getScore(
+              ChatColor.DARK_GRAY + " "
+          )
+          .setScore(scoreLine--);
 
-      // 1〜3位
       int rank = 1;
+
       for (Row r : top) {
-        String rowLang = (r.langCode == null || r.langCode.isBlank())
-            ? "JA"
-            : r.langCode.toUpperCase(Locale.ROOT);
+        String rowLang =
+            r.langCode() == null
+                    || r.langCode().isBlank()
+                ? "JA"
+                : r.langCode()
+                    .toUpperCase(Locale.ROOT);
 
         String line =
-            ChatColor.AQUA + "#" + rank + " " +
-                ChatColor.WHITE + trim(r.name, 12) + " " +
-                ChatColor.DARK_GRAY + "- " +
-                ChatColor.GOLD + r.score + " " +
-                ChatColor.GRAY + "(" + rowLang + ")";
+            ChatColor.AQUA
+                + "#"
+                + rank
+                + " "
+                + ChatColor.WHITE
+                + trim(r.name(), 12)
+                + " "
+                + ChatColor.DARK_GRAY
+                + "- "
+                + ChatColor.GOLD
+                + r.score()
+                + " "
+                + ChatColor.GRAY
+                + "("
+                + rowLang
+                + ")";
 
-        // 同一文字列があるとスコアボードが壊れるのでユニーク化
         line = makeUnique(line, rank);
-        obj.getScore(line).setScore(scoreLine--);
+
+        obj.getScore(line)
+            .setScore(scoreLine--);
 
         rank++;
-        if (rank > 3) break;
-        if (scoreLine <= 1) break;
+
+        if (rank > 3 || scoreLine <= 1) {
+          break;
+        }
       }
 
-      // 空行
-      obj.getScore(ChatColor.DARK_GRAY + "  ").setScore(scoreLine--);
+      obj.getScore(
+              ChatColor.DARK_GRAY + "  "
+          )
+          .setScore(scoreLine--);
 
-      // フッター
-      String footer = plugin.getI18n().tr(lang, "rankTicker.footerHint");
-      obj.getScore(ChatColor.GRAY + footer).setScore(1);
+      String footer =
+          plugin
+              .getI18n()
+              .tr(
+                  lang,
+                  "rankTicker.footerHint"
+              );
+
+      obj.getScore(
+              ChatColor.GRAY + footer
+          )
+          .setScore(1);
 
       p.setScoreboard(sb);
     }
   }
 
-  private String makeUnique(String s, int rank) {
-    ChatColor[] u = new ChatColor[]{ChatColor.BLACK, ChatColor.DARK_BLUE, ChatColor.DARK_GREEN, ChatColor.DARK_AQUA};
-    return s + u[Math.min(rank, u.length - 1)];
-  }
-
-  private String trim(String s, int max) {
-    if (s == null) return "unknown";
-    if (s.length() <= max) return s;
-    return s.substring(0, max);
-  }
-
-  // =========================================================
-  // Notify (ActionBarではなくチャット)
-  // =========================================================
-
-    private void notifyLeaderboardUpdatedChat(Mode mode) {
+  private void notifyLeaderboardUpdatedChat(
+      Mode mode
+  ) {
     for (Player p : Bukkit.getOnlinePlayers()) {
-      plugin.getServer().getScheduler().runTask(plugin, () -> {
-        String lang = plugin.getConfig().getString("language.default", "ja");
-        try {
-          if (plugin.getPlayerLanguageStore() != null) {
-            String saved = plugin.getPlayerLanguageStore().getLang(p, lang);
-            if (saved != null && !saved.isBlank()) lang = saved;
+      String lang =
+          plugin
+              .getConfig()
+              .getString(
+                  "language.default",
+                  "ja"
+              );
+
+      try {
+        if (plugin.getPlayerLanguageStore() != null) {
+          String saved =
+              plugin
+                  .getPlayerLanguageStore()
+                  .getLang(p, lang);
+
+          if (saved != null
+              && !saved.isBlank()) {
+            lang = saved;
           }
-        } catch (Throwable ignored) {}
+        }
+      } catch (Throwable ignored) {
+      }
 
-        String which =
-            (mode == Mode.WEEKLY)
-                ? plugin.getI18n().tr(lang, "ui.rankTicker.mode.weekly")
-                : (mode == Mode.ALLTIME)
-                    ? plugin.getI18n().tr(lang, "ui.rankTicker.mode.allTime")
-                    : plugin.getI18n().tr(lang, "ui.rankTicker.mode.monthly");
+      String which =
+          (mode == Mode.WEEKLY)
+              ? plugin
+                  .getI18n()
+                  .tr(
+                      lang,
+                      "ui.rankTicker.mode.weekly"
+                  )
+              : (mode == Mode.ALLTIME)
+                  ? plugin
+                      .getI18n()
+                      .tr(
+                          lang,
+                          "ui.rankTicker.mode.allTime"
+                      )
+                  : plugin
+                      .getI18n()
+                      .tr(
+                          lang,
+                          "ui.rankTicker.mode.monthly"
+                      );
 
-        p.sendMessage(
-            ChatColor.AQUA + plugin.getI18n().tr(lang, "ui.rankTicker.updated").replace("{which}", which)
-        );
-      });
-      p.playSound(p.getLocation(), Sound.UI_TOAST_IN, SoundCategory.PLAYERS, 0.25f, 1.3f);
+      p.sendMessage(
+          ChatColor.AQUA
+              + plugin
+                  .getI18n()
+                  .tr(
+                      lang,
+                      "ui.rankTicker.updated"
+                  )
+                  .replace(
+                      "{which}",
+                      which
+                  )
+      );
+
+      p.playSound(
+          p.getLocation(),
+          Sound.UI_TOAST_IN,
+          SoundCategory.PLAYERS,
+          0.25f,
+          1.3f
+      );
     }
   }
 
-  private int digest(List<Row> rows, Mode mode) {
+  private int digest(
+      List<Row> rows,
+      Mode mode
+  ) {
     int h = Objects.hash(mode);
+
     for (Row r : rows) {
-      h = 31 * h + Objects.hash(r.name, r.score, r.time, safe(r.langCode));
+      h =
+          31 * h
+              + Objects.hash(
+                  r.name(),
+                  r.score(),
+                  r.time(),
+                  safe(r.langCode())
+              );
     }
+
     return h;
   }
 
-  private String safe(String s) { return (s == null) ? "" : s; }
+  private String makeUnique(
+      String value,
+      int rank
+  ) {
+    ChatColor[] uniqueSuffixes =
+        new ChatColor[] {
+          ChatColor.BLACK,
+          ChatColor.DARK_BLUE,
+          ChatColor.DARK_GREEN,
+          ChatColor.DARK_AQUA
+        };
 
-  private static class Row {
-    String name;
-    int score;
-    long time;
-    String langCode;
+    return value
+        + uniqueSuffixes[
+            Math.min(
+                rank,
+                uniqueSuffixes.length - 1
+            )
+        ];
+  }
 
-    static Row fromScores(ResultSet rs) throws SQLException {
-      Row r = new Row();
-      r.name = rs.getString("player_name");
-      r.score = rs.getInt("score");
-      r.time = rs.getLong("time");
-      r.langCode = rs.getString("lang_code");
-      return r;
+  private String trim(
+      String value,
+      int max
+  ) {
+    if (value == null) {
+      return "unknown";
     }
+
+    if (value.length() <= max) {
+      return value;
+    }
+
+    return value.substring(0, max);
+  }
+
+  private String safe(String value) {
+    return value == null ? "" : value;
+  }
+
+  private record Row(
+      String name,
+      int score,
+      long time,
+      String langCode
+  ) {
   }
 }

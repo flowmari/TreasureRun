@@ -58,6 +58,36 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
   private plugin.update.UpdateCheckService updateCheckService;
   private plugin.placeholder.OptionalPlaceholderIntegration optionalPlaceholderIntegration;
 
+  // Ranking commands: one coalesced off-thread DB flight per ranking window.
+  private final plugin.rank.RankingRequestCoordinator weeklyRankingRequests =
+      new plugin.rank.RankingRequestCoordinator();
+  private final plugin.rank.RankingRequestCoordinator allTimeRankingRequests =
+      new plugin.rank.RankingRequestCoordinator();
+  private final plugin.rank.RankingRequestCoordinator monthlyRankingRequests =
+      new plugin.rank.RankingRequestCoordinator();
+
+  // Async ranking reads that are not command-window coalesced (for example run-rank
+  // resolution) use this lifecycle generation so a late result from a disabled/old
+  // plugin lifecycle can never publish into a newer lifecycle.
+  private final java.util.concurrent.atomic.AtomicBoolean rankingReadCallbacksActive =
+      new java.util.concurrent.atomic.AtomicBoolean(false);
+  private final java.util.concurrent.atomic.AtomicLong rankingReadGeneration =
+      new java.util.concurrent.atomic.AtomicLong(0L);
+
+  private record RankingLoadResult(
+      plugin.rank.RankingQueryService.Window window,
+      java.util.List<plugin.rank.RankingQueryService.RankingEntry> entries,
+      Exception failure) {
+
+    private RankingLoadResult {
+      java.util.Objects.requireNonNull(window, "window");
+      entries = java.util.List.copyOf(entries);
+    }
+  }
+
+  private record RunRankLoadResult(int rank, Exception failure) {
+  }
+
   // __MSZ_AUTO_START_ON_JOIN
   private final java.util.concurrent.atomic.AtomicBoolean __mszAutoStarted = new java.util.concurrent.atomic.AtomicBoolean(false);
   // ================================
@@ -268,6 +298,11 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
 
   @Override
   public void onEnable() {
+    weeklyRankingRequests.activate();
+    allTimeRankingRequests.activate();
+    monthlyRankingRequests.activate();
+    rankingReadGeneration.incrementAndGet();
+    rankingReadCallbacksActive.set(true);
 
     getLogger().info("🌈 TreasureRunMultiChestPlugin: 起動 🌈");
 
@@ -615,14 +650,14 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     CustomRecipeLoader recipeLoader = new CustomRecipeLoader(this);
     recipeLoader.registerRecipes();
 
-    if (isDatabaseEnabled() && getConnection() != null) {
+    if (isDatabaseEnabled()) {
       int rtInterval = getConfig().getInt("rankTicker.intervalSec", 10);
       int rtTopN = getConfig().getInt("rankTicker.topN", 10);
       int rtWidth = getConfig().getInt("rankTicker.tickerWidth", 32);
       rankTicker = new RealtimeRankTicker(this, rtInterval, rtTopN, rtWidth);
       rankTicker.start();
     } else {
-      getLogger().info("[RankTicker] skipped because database-backed rankings are unavailable.");
+      getLogger().info("[RankTicker] skipped because database-backed rankings are disabled.");
     }
 
     try {
@@ -1266,6 +1301,19 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
 
   @Override
   public void onDisable() {
+    // Revoke ranking publication authority before any already-running JDBC flight can return.
+    rankingReadCallbacksActive.set(false);
+    rankingReadGeneration.incrementAndGet();
+    weeklyRankingRequests.deactivate();
+    allTimeRankingRequests.deactivate();
+    monthlyRankingRequests.deactivate();
+
+    // RealtimeRankTicker owns an async JDBC flight plus main-thread rendering.
+    // Stop its lifecycle before database/plugin teardown so late results cannot publish.
+    if (rankTicker != null) {
+      rankTicker.stop();
+      rankTicker = null;
+    }
     // Stop publication before cancelling the scheduled task. An already-running
     // JDBC query may return after cancellation; the refresher rejects that late result.
     if (optionalPlaceholderIntegration != null) {
@@ -1691,219 +1739,274 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     }
   }
 
-  private int getRunRank(String playerName, int score, long timeSec, String difficulty) {
-    Connection conn = getConnection();
-    if (conn == null) {
-      return -1;
-    }
+  /**
+   * Starts a bounded off-thread run-rank lookup, then resumes the success sequence
+   * on the main thread. The async side never touches Bukkit/player/world state.
+   */
+  private void resolveRunRankAsync(
+      Player player,
+      java.util.UUID terminalRoundId,
+      int finalScore,
+      long elapsedSec,
+      String timeText,
+      String runDifficulty) {
+    DatabaseRuntimeSettings settings = databaseSettings();
 
-    String sql =
-        "SELECT player_name, score, time, difficulty " +
-            "FROM scores " +
-            "WHERE UPPER(difficulty) = UPPER(?) " +
-            "ORDER BY time ASC, score DESC";
-
-    try (PreparedStatement ps = conn.prepareStatement(sql)) {
-      ps.setString(1, difficulty);
-
-      try (ResultSet rs = ps.executeQuery()) {
-        int rank = 0;
-        while (rs.next()) {
-          rank++;
-
-          String name = rs.getString("player_name");
-          int s       = rs.getInt("score");
-          long t      = rs.getLong("time");
-          String diff = rs.getString("difficulty");
-
-          if (s == score &&
-              t == timeSec &&
-              diff != null && diff.equalsIgnoreCase(difficulty) &&
-              name != null && name.equalsIgnoreCase(playerName)) {
-            return rank;
-          }
-        }
-      }
-
-      getLogger().warning("⚠ getRunRank: 該当行が見つかりませんでした " +
-          "(player=" + playerName +
-          ", score=" + score +
-          ", time=" + timeSec +
-          ", difficulty=" + difficulty + ")");
-    } catch (SQLException exception) {
-      getLogger().warning("[Database] run-rank calculation failed: " + exception.getMessage());
-    }
-
-    return -1;
-  }
-
-  private void showRanking(Player player) {
-    Connection conn = getConnection();
-    if (conn == null) {
-      player.sendMessage(ChatColor.RED + trPlayer(player, "rank.command.dbUnavailable"));
+    if (!settings.enabled()) {
+      finishSuccessfulRunAfterRank(
+          player,
+          terminalRoundId,
+          finalScore,
+          timeText,
+          runDifficulty,
+          -1);
       return;
     }
 
-    try (PreparedStatement ps = conn.prepareStatement(
-        "SELECT player_name, score, time, difficulty " +
-            "FROM scores " +
-            "ORDER BY time ASC, score DESC " +
-            "LIMIT 10");
-        ResultSet rs = ps.executeQuery()) {
-
-      player.sendMessage(ChatColor.GOLD + trPlayer(player, "rank.command.timeTop10Title"));
-
-      int rank = 1;
-      while (rs.next()) {
-        String name = rs.getString("player_name");
-        int score = rs.getInt("score");
-        long time = rs.getLong("time");
-        String diff = rs.getString("difficulty");
-
-        ChatColor diffColor = switch (diff) {
-          case "Easy" -> ChatColor.GREEN;
-          case "Normal" -> ChatColor.YELLOW;
-          case "Hard" -> ChatColor.RED;
-          default -> ChatColor.WHITE;
-        };
-
-        player.sendMessage(
-            ChatColor.AQUA + trPlayer(
-                player,
-                "rank.command.timeTop10Line",
-                I18n.Placeholder.of("{rank}", String.valueOf(rank)),
-                I18n.Placeholder.of("{player}", String.valueOf(name)),
-                I18n.Placeholder.of("{time}", String.valueOf(time)),
-                I18n.Placeholder.of("{score}", String.valueOf(score)),
-                I18n.Placeholder.of("{difficulty}", String.valueOf(diff))
-            )
-        );
-
-        rank++;
-      }
-
-      if (rank == 1) {
-        player.sendMessage(ChatColor.GRAY + trPlayer(player, "gameplay.pickup.scoreNone"));
-      }
-
-    } catch (SQLException exception) {
-      getLogger().warning("[Database] ranking load failed: " + exception.getMessage());
-      player.sendMessage(ChatColor.RED + trPlayer(player, "rank.command.loadError"));
-    }
-  }
-
-  // ✅ weekly を「直近7日（plays）」TOP10 にする版
-  private void showWeeklyRanking(Player player) {
-    Connection conn = getConnection();
-    if (conn == null) {
-      player.sendMessage(ChatColor.RED + trPlayer(player, "rank.command.dbUnavailable"));
-      return;
-    }
-
-    player.sendMessage(ChatColor.AQUA + trPlayer(player, "rank.command.playsTitleWeekly"));
+    long generation = rankingReadGeneration.get();
+    String playerName = player.getName();
 
     try {
-      java.util.List<plugin.rank.RankingQueryService.RankingEntry> entries =
-          plugin.rank.RankingQueryService.loadWeekly(conn);
+      getServer().getScheduler().runTaskAsynchronously(
+          this,
+          () -> {
+            RunRankLoadResult result;
 
-      int rank = 1;
-      for (plugin.rank.RankingQueryService.RankingEntry entry : entries) {
-        String name = entry.playerName();
-        int score = entry.score();
-        long time = entry.time();
-        String diff = entry.difficulty();
-        String lang = entry.languageCode();
+            try {
+              int rank =
+                  new plugin.rank.JdbcLeaderboardSnapshotLoader(settings)
+                      .loadRunRank(playerName, finalScore, elapsedSec, runDifficulty);
+              result = new RunRankLoadResult(rank, null);
+            } catch (Exception exception) {
+              result = new RunRankLoadResult(-1, exception);
+            }
 
-        player.sendMessage(
-            ChatColor.AQUA + trPlayer(
-                player,
-                "rank.command.playsLine",
-                I18n.Placeholder.of("{rank}", String.valueOf(rank)),
-                I18n.Placeholder.of("{player}", String.valueOf(name == null ? "unknown" : name)),
-                I18n.Placeholder.of("{score}", String.valueOf(score)),
-                I18n.Placeholder.of("{time}", String.valueOf(time)),
-                I18n.Placeholder.of("{difficulty}", String.valueOf(diff == null ? "-" : diff)),
-                I18n.Placeholder.of("{lang}", String.valueOf(lang == null ? "ja" : lang))
-            )
-        );
-        rank++;
-      }
+            if (!isRankingReadGenerationCurrent(generation)) {
+              return;
+            }
 
-      if (rank == 1) {
-        player.sendMessage(ChatColor.GRAY + trPlayer(player, "rank.command.weeklyEmpty"));
-      } else {
-        player.sendMessage(ChatColor.DARK_GRAY + trPlayer(player, "rank.command.weeklySwitch"));
-      }
+            RunRankLoadResult completed = result;
 
-    } catch (SQLException exception) {
-      getLogger().warning("[Database] ranking load failed: " + exception.getMessage());
-      player.sendMessage(ChatColor.RED + trPlayer(player, "rank.command.loadError"));
+            try {
+              getServer().getScheduler().runTask(
+                  this,
+                  () -> {
+                    if (!isRankingReadGenerationCurrent(generation)) {
+                      return;
+                    }
+                    if (!java.util.Objects.equals(
+                        activeGameResultIds.get(player.getUniqueId()), terminalRoundId)) {
+                      return;
+                    }
+
+                    if (completed.failure() != null) {
+                      String detail =
+                          completed.failure().getMessage() == null
+                              ? completed.failure().getClass().getSimpleName()
+                              : completed.failure().getMessage();
+                      getLogger().warning("[Database] run-rank calculation failed: " + detail);
+                    } else if (completed.rank() < 0) {
+                      getLogger().warning(
+                          "[Database] run-rank row was not found for player="
+                              + playerName
+                              + ", score="
+                              + finalScore
+                              + ", time="
+                              + elapsedSec
+                              + ", difficulty="
+                              + runDifficulty);
+                    }
+
+                    finishSuccessfulRunAfterRank(
+                        player,
+                        terminalRoundId,
+                        finalScore,
+                        timeText,
+                        runDifficulty,
+                        completed.rank());
+                  });
+            } catch (RuntimeException schedulingFailure) {
+              // The plugin lifecycle is normally shutting down here. The atomic
+              // generation guard prevents this old result from publishing later.
+              if (isRankingReadGenerationCurrent(generation)) {
+                getLogger().warning(
+                    "[Database] could not schedule run-rank result delivery: "
+                        + schedulingFailure.getMessage());
+              }
+            }
+          });
+    } catch (RuntimeException schedulingFailure) {
+      getLogger().warning(
+          "[Database] could not schedule asynchronous run-rank lookup: "
+              + schedulingFailure.getMessage());
+
+      finishSuccessfulRunAfterRank(
+          player,
+          terminalRoundId,
+          finalScore,
+          timeText,
+          runDifficulty,
+          -1);
     }
+  }
+
+  private boolean isRankingReadGenerationCurrent(long generation) {
+    return rankingReadCallbacksActive.get()
+        && rankingReadGeneration.get() == generation;
+  }
+
+  private void showWeeklyRanking(Player player) {
+    showRankingWindow(player, plugin.rank.RankingQueryService.Window.WEEKLY);
   }
 
   private void showAllTimeRanking(Player player) {
-    Connection conn = getConnection();
-    if (conn == null) {
-      player.sendMessage(ChatColor.RED + trPlayer(player, "rank.command.dbUnavailable"));
-      return;
-    }
-
-    player.sendMessage(ChatColor.AQUA + trPlayer(player, "rank.command.playsTitleAllTime"));
-
-    try {
-      java.util.List<plugin.rank.RankingQueryService.RankingEntry> entries =
-          plugin.rank.RankingQueryService.loadAllTime(conn);
-
-      int rank = 1;
-      for (plugin.rank.RankingQueryService.RankingEntry entry : entries) {
-        String name = entry.playerName();
-        int score = entry.score();
-        long time = entry.time();
-        String diff = entry.difficulty();
-        String lang = entry.languageCode();
-
-        player.sendMessage(
-            ChatColor.AQUA + trPlayer(
-                player,
-                "rank.command.playsLine",
-                I18n.Placeholder.of("{rank}", String.valueOf(rank)),
-                I18n.Placeholder.of("{player}", String.valueOf(name == null ? "unknown" : name)),
-                I18n.Placeholder.of("{score}", String.valueOf(score)),
-                I18n.Placeholder.of("{time}", String.valueOf(time)),
-                I18n.Placeholder.of("{difficulty}", String.valueOf(diff == null ? "-" : diff)),
-                I18n.Placeholder.of("{lang}", String.valueOf(lang == null ? "ja" : lang))
-            )
-        );
-        rank++;
-      }
-
-      if (rank == 1) {
-        player.sendMessage(ChatColor.GRAY + trPlayer(player, "rank.command.allTimeEmpty"));
-      } else {
-        player.sendMessage(ChatColor.DARK_GRAY + trPlayer(player, "rank.command.allTimeSwitch"));
-      }
-
-    } catch (SQLException exception) {
-      getLogger().warning("[Database] ranking load failed: " + exception.getMessage());
-      player.sendMessage(ChatColor.RED + trPlayer(player, "rank.command.loadError"));
-    }
+    showRankingWindow(player, plugin.rank.RankingQueryService.Window.ALL_TIME);
   }
 
   private void showMonthlyRanking(Player player) {
-    Connection conn = getConnection();
-    if (conn == null) {
+    showRankingWindow(player, plugin.rank.RankingQueryService.Window.MONTHLY);
+  }
+
+  /**
+   * Main-thread command entrypoint for weekly/all-time/monthly ranking views.
+   *
+   * <p>No JDBC is allowed in this method. Each ranking window coalesces concurrent
+   * requests into one bounded off-thread JDBC flight; Bukkit/player rendering is
+   * deferred back to the authoritative main-thread completion boundary.</p>
+   */
+  private void showRankingWindow(
+      Player player,
+      plugin.rank.RankingQueryService.Window window) {
+    DatabaseRuntimeSettings settings = databaseSettings();
+    if (!settings.enabled()) {
       player.sendMessage(ChatColor.RED + trPlayer(player, "rank.command.dbUnavailable"));
       return;
     }
 
-    player.sendMessage(ChatColor.AQUA + trPlayer(player, "rank.command.playsTitleMonthly"));
+    java.util.UUID playerId = player.getUniqueId();
+    plugin.rank.RankingRequestCoordinator coordinator = rankingRequestsFor(window);
+    plugin.rank.RankingRequestCoordinator.RequestDecision request =
+        coordinator.request(playerId);
+
+    // Inactive lifecycle or same-player spam must not create duplicate messages or DB reads.
+    if (!request.waiterAdded()) {
+      return;
+    }
+
+    player.sendMessage(ChatColor.AQUA + trPlayer(player, rankingTitleKey(window)));
+
+    plugin.rank.RankingRequestCoordinator.FlightToken flight =
+        request.flightToStart();
+
+    // Another requester already owns this window's DB flight; this player is now a waiter.
+    if (flight == null) {
+      return;
+    }
 
     try {
+      getServer().getScheduler().runTaskAsynchronously(
+          this,
+          () -> {
+            RankingLoadResult result = loadRankingWindow(settings, window);
+
+            // Fast stale-flight check. The main-thread completion validates authority again.
+            if (!coordinator.isAuthoritative(flight)) {
+              return;
+            }
+
+            try {
+              getServer().getScheduler().runTask(
+                  this,
+                  () -> finishRankingLoad(coordinator, flight, result));
+            } catch (RuntimeException schedulingFailure) {
+              plugin.rank.RankingRequestCoordinator.Resolution aborted =
+                  coordinator.abort(flight);
+
+              if (aborted.authoritative()) {
+                getLogger().warning(
+                    "[Database] could not schedule ranking result delivery: "
+                        + schedulingFailure.getMessage());
+              }
+            }
+          });
+    } catch (RuntimeException schedulingFailure) {
+      plugin.rank.RankingRequestCoordinator.Resolution aborted =
+          coordinator.abort(flight);
+
+      if (!aborted.authoritative()) {
+        return;
+      }
+
+      getLogger().warning(
+          "[Database] could not schedule asynchronous ranking load: "
+              + schedulingFailure.getMessage());
+
+      for (java.util.UUID waitingPlayerId : aborted.waiters()) {
+        Player waitingPlayer = getServer().getPlayer(waitingPlayerId);
+        if (waitingPlayer != null && waitingPlayer.isOnline()) {
+          waitingPlayer.sendMessage(
+              ChatColor.RED + trPlayer(waitingPlayer, "rank.command.loadError"));
+        }
+      }
+    }
+  }
+
+  private plugin.rank.RankingRequestCoordinator rankingRequestsFor(
+      plugin.rank.RankingQueryService.Window window) {
+    return switch (window) {
+      case WEEKLY -> weeklyRankingRequests;
+      case ALL_TIME -> allTimeRankingRequests;
+      case MONTHLY -> monthlyRankingRequests;
+    };
+  }
+
+  /** Blocking JDBC boundary for ranking command reads. Async scheduler only. */
+  private RankingLoadResult loadRankingWindow(
+      DatabaseRuntimeSettings settings,
+      plugin.rank.RankingQueryService.Window window) {
+    try {
       java.util.List<plugin.rank.RankingQueryService.RankingEntry> entries =
-          plugin.rank.RankingQueryService.loadMonthly(conn);
+          new plugin.rank.JdbcLeaderboardSnapshotLoader(settings).loadEntries(window);
+      return new RankingLoadResult(window, entries, null);
+    } catch (Exception exception) {
+      return new RankingLoadResult(window, java.util.List.of(), exception);
+    }
+  }
+
+  /** Main-thread publication/render boundary for one completed ranking command read. */
+  private void finishRankingLoad(
+      plugin.rank.RankingRequestCoordinator coordinator,
+      plugin.rank.RankingRequestCoordinator.FlightToken flight,
+      RankingLoadResult result) {
+    plugin.rank.RankingRequestCoordinator.Resolution completion =
+        coordinator.complete(flight);
+
+    if (!completion.authoritative()) {
+      return;
+    }
+
+    if (result.failure() != null) {
+      String detail =
+          result.failure().getMessage() == null
+              ? result.failure().getClass().getSimpleName()
+              : result.failure().getMessage();
+      getLogger().warning("[Database] ranking load failed: " + detail);
+    }
+
+    for (java.util.UUID playerId : completion.waiters()) {
+      Player player = getServer().getPlayer(playerId);
+
+      if (player == null || !player.isOnline()) {
+        continue;
+      }
+
+      if (result.failure() != null) {
+        player.sendMessage(ChatColor.RED + trPlayer(player, "rank.command.loadError"));
+        continue;
+      }
 
       int rank = 1;
-      for (plugin.rank.RankingQueryService.RankingEntry entry : entries) {
+      for (plugin.rank.RankingQueryService.RankingEntry entry : result.entries()) {
         String name = entry.playerName();
         int score = entry.score();
         long time = entry.time();
@@ -1915,26 +2018,54 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
                 player,
                 "rank.command.playsLine",
                 I18n.Placeholder.of("{rank}", String.valueOf(rank)),
-                I18n.Placeholder.of("{player}", String.valueOf(name == null ? "unknown" : name)),
+                I18n.Placeholder.of(
+                    "{player}",
+                    String.valueOf(name == null ? "unknown" : name)),
                 I18n.Placeholder.of("{score}", String.valueOf(score)),
                 I18n.Placeholder.of("{time}", String.valueOf(time)),
-                I18n.Placeholder.of("{difficulty}", String.valueOf(diff == null ? "-" : diff)),
-                I18n.Placeholder.of("{lang}", String.valueOf(lang == null ? "ja" : lang))
+                I18n.Placeholder.of(
+                    "{difficulty}",
+                    String.valueOf(diff == null ? "-" : diff)),
+                I18n.Placeholder.of(
+                    "{lang}",
+                    String.valueOf(lang == null ? "ja" : lang))
             )
         );
         rank++;
       }
 
       if (rank == 1) {
-        player.sendMessage(ChatColor.GRAY + trPlayer(player, "rank.command.monthlyEmpty"));
+        player.sendMessage(
+            ChatColor.GRAY + trPlayer(player, rankingEmptyKey(result.window())));
       } else {
-        player.sendMessage(ChatColor.DARK_GRAY + trPlayer(player, "rank.command.monthlySwitch"));
+        player.sendMessage(
+            ChatColor.DARK_GRAY + trPlayer(player, rankingSwitchKey(result.window())));
       }
-
-    } catch (SQLException exception) {
-      getLogger().warning("[Database] ranking load failed: " + exception.getMessage());
-      player.sendMessage(ChatColor.RED + trPlayer(player, "rank.command.loadError"));
     }
+  }
+
+  private String rankingTitleKey(plugin.rank.RankingQueryService.Window window) {
+    return switch (window) {
+      case WEEKLY -> "rank.command.playsTitleWeekly";
+      case ALL_TIME -> "rank.command.playsTitleAllTime";
+      case MONTHLY -> "rank.command.playsTitleMonthly";
+    };
+  }
+
+  private String rankingEmptyKey(plugin.rank.RankingQueryService.Window window) {
+    return switch (window) {
+      case WEEKLY -> "rank.command.weeklyEmpty";
+      case ALL_TIME -> "rank.command.allTimeEmpty";
+      case MONTHLY -> "rank.command.monthlyEmpty";
+    };
+  }
+
+  private String rankingSwitchKey(plugin.rank.RankingQueryService.Window window) {
+    return switch (window) {
+      case WEEKLY -> "rank.command.weeklySwitch";
+      case ALL_TIME -> "rank.command.allTimeSwitch";
+      case MONTHLY -> "rank.command.monthlySwitch";
+    };
   }
 
   private void loadConfigValues() {
@@ -2414,24 +2545,41 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
 
     final String timeText = String.format("%d:%02d.%02d", minutes, seconds, hundredths);
     final long elapsedSec = totalSeconds;
+    final String runDifficulty = difficulty;
 
-    saveScore(player, finalScore, elapsedSec, difficulty);
+    saveScore(player, finalScore, elapsedSec, runDifficulty);
 
     // ✅ ここに追加（SUCCESS: weekly + alltime 加算）
     addSeasonScore(player, finalScore, true, elapsedMs, "SUCCESS");
 
-    final int rank = getRunRank(player.getName(), finalScore, elapsedSec, difficulty);
+    resolveRunRankAsync(
+        player,
+        terminalRoundId,
+        finalScore,
+        elapsedSec,
+        timeText,
+        runDifficulty);
+  }
+
+  /** Main-thread continuation after the bounded run-rank read completes. */
+  private void finishSuccessfulRunAfterRank(
+      Player player,
+      java.util.UUID terminalRoundId,
+      int finalScore,
+      String timeText,
+      String runDifficulty,
+      int rank) {
     final String rankLabel = (rank > 0) ? ("#" + rank) : "-";
 
     // ✅ SUCCESS用：このRunで表示する哲学SUBTITLEを1回だけ決めて保持する（チカチカ防止）
     final String successLang = getPlayerLangOrDefault(player.getUniqueId());
-    final String successPhiloSub = outcomeMessageService.sanitizeVisibleText(GameOutcome.SUCCESS, successLang, outcomeMessageService.pickSubtitle(GameOutcome.SUCCESS, difficulty, successLang));
+    final String successPhiloSub = outcomeMessageService.sanitizeVisibleText(GameOutcome.SUCCESS, successLang, outcomeMessageService.pickSubtitle(GameOutcome.SUCCESS, runDifficulty, successLang));
 
     // =======================================================
     // ✅ ✅ ✅ 追加：SUCCESS の格言ログを MySQL に保存（proverb_logs）
     // =======================================================
     if (successPhiloSub != null && !successPhiloSub.isBlank()) {
-      saveProverbLog(player.getUniqueId(), player.getName(), "SUCCESS", difficulty, successLang, successPhiloSub);
+      saveProverbLog(player.getUniqueId(), player.getName(), "SUCCESS", runDifficulty, successLang, successPhiloSub);
     }
 
     long djTotalTicksWork = (treasureRunGameEffectsPlugin != null)
@@ -2491,10 +2639,6 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
                   I18n.Placeholder.of("{score}", String.valueOf(finalScore)),
                   I18n.Placeholder.of("{rank}", rankLabel)
               );
-
-          String philoPart = (successPhiloSub == null || successPhiloSub.isBlank())
-              ? ""
-              : (ChatColor.DARK_GRAY + "" + ChatColor.ITALIC + "  — " + successPhiloSub);
 
           // ✅ DJ演出中ずっと「スコア行」だけを同じsubtitleで出し続ける（文言は出さない）
           player.sendTitle(

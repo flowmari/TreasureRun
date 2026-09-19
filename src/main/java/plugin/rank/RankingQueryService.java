@@ -11,11 +11,16 @@ import java.util.Objects;
 /**
  * Shared read boundary for the existing in-plugin leaderboard views.
  *
- * <p>This extraction deliberately preserves the current {@code /gameRank}
- * query semantics. It does not choose a new ranking model, change schema,
- * or introduce a new command.</p>
+ * <p>Ranking SQL ordering is owned here so command, placeholder, and ticker
+ * paths cannot silently drift apart.</p>
  */
 public final class RankingQueryService {
+
+  public enum Window {
+    WEEKLY,
+    ALL_TIME,
+    MONTHLY
+  }
 
   private static final String WEEKLY_SQL =
       "SELECT player_name, score, time, difficulty, lang_code, played_at " +
@@ -38,11 +43,25 @@ public final class RankingQueryService {
           "ORDER BY score DESC, time ASC, id DESC " +
           "LIMIT 10";
 
+  private static final String RUN_RANK_SQL =
+      "SELECT player_name, score, time, difficulty " +
+          "FROM scores " +
+          "WHERE UPPER(difficulty) = UPPER(?) " +
+          "ORDER BY time ASC, score DESC";
+
   private RankingQueryService() {
   }
 
   public static List<RankingEntry> loadWeekly(Connection connection) throws SQLException {
     return query(connection, WEEKLY_SQL);
+  }
+
+  static List<RankingEntry> loadWeekly(
+      Connection connection,
+      int queryTimeoutSeconds
+  ) throws SQLException {
+    requirePositiveTimeout(queryTimeoutSeconds);
+    return query(connection, WEEKLY_SQL, queryTimeoutSeconds);
   }
 
   public static List<RankingEntry> loadAllTime(Connection connection) throws SQLException {
@@ -53,12 +72,7 @@ public final class RankingQueryService {
       Connection connection,
       int queryTimeoutSeconds
   ) throws SQLException {
-    if (queryTimeoutSeconds <= 0) {
-      throw new IllegalArgumentException(
-          "queryTimeoutSeconds must be greater than zero"
-      );
-    }
-
+    requirePositiveTimeout(queryTimeoutSeconds);
     return query(connection, ALL_TIME_SQL, queryTimeoutSeconds);
   }
 
@@ -66,7 +80,80 @@ public final class RankingQueryService {
     return query(connection, MONTHLY_SQL);
   }
 
-  private static List<RankingEntry> query(Connection connection, String sql) throws SQLException {
+  static List<RankingEntry> loadMonthly(
+      Connection connection,
+      int queryTimeoutSeconds
+  ) throws SQLException {
+    requirePositiveTimeout(queryTimeoutSeconds);
+    return query(connection, MONTHLY_SQL, queryTimeoutSeconds);
+  }
+
+  static List<RankingEntry> load(
+      Connection connection,
+      Window window,
+      int queryTimeoutSeconds
+  ) throws SQLException {
+    Objects.requireNonNull(window, "window");
+
+    return switch (window) {
+      case WEEKLY -> loadWeekly(connection, queryTimeoutSeconds);
+      case ALL_TIME -> loadAllTime(connection, queryTimeoutSeconds);
+      case MONTHLY -> loadMonthly(connection, queryTimeoutSeconds);
+    };
+  }
+
+  static int findRunRank(
+      Connection connection,
+      String playerName,
+      int score,
+      long timeSec,
+      String difficulty,
+      int queryTimeoutSeconds
+  ) throws SQLException {
+    Objects.requireNonNull(connection, "connection");
+    Objects.requireNonNull(playerName, "playerName");
+    Objects.requireNonNull(difficulty, "difficulty");
+    requirePositiveTimeout(queryTimeoutSeconds);
+
+    try (PreparedStatement statement = connection.prepareStatement(RUN_RANK_SQL)) {
+      statement.setQueryTimeout(queryTimeoutSeconds);
+      statement.setString(1, difficulty);
+
+      try (ResultSet resultSet = statement.executeQuery()) {
+        int rank = 0;
+        while (resultSet.next()) {
+          rank++;
+
+          String name = resultSet.getString("player_name");
+          int rowScore = resultSet.getInt("score");
+          long rowTime = resultSet.getLong("time");
+          String rowDifficulty = resultSet.getString("difficulty");
+
+          if (rowScore == score
+              && rowTime == timeSec
+              && rowDifficulty != null
+              && rowDifficulty.equalsIgnoreCase(difficulty)
+              && name != null
+              && name.equalsIgnoreCase(playerName)) {
+            return rank;
+          }
+        }
+      }
+    }
+
+    return -1;
+  }
+
+  private static void requirePositiveTimeout(int queryTimeoutSeconds) {
+    if (queryTimeoutSeconds <= 0) {
+      throw new IllegalArgumentException(
+          "queryTimeoutSeconds must be greater than zero"
+      );
+    }
+  }
+
+  private static List<RankingEntry> query(Connection connection, String sql)
+      throws SQLException {
     return query(connection, sql, 0);
   }
 
