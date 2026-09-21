@@ -11,13 +11,11 @@ import org.bukkit.inventory.meta.FireworkMeta;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.Bukkit; // ✅ 追加（runTaskLater用）
 
-import java.sql.*;
 import java.util.*;
 
 public class TreasureRunGameEffectsPlugin implements Listener {
 
   private final TreasureRunMultiChestPlugin plugin;
-  private final Map<Player, Integer> playerTreasureCount = new HashMap<>();
   private final int totalTreasures = 10;
   private final Random random = new Random();
 
@@ -51,39 +49,11 @@ public class TreasureRunGameEffectsPlugin implements Listener {
     this.plugin = plugin;
   }
 
-  public void initializeDatabaseStorage() {
-    if (!plugin.isDatabaseEnabled()) return;
-
-    Connection connection = plugin.getConnection();
-    if (connection == null) return;
-
-    createTableIfNotExists(connection);
-  }
-
   // ✅ DJイベント全体が何tick続くか（MultiChest側で終点を揃える用）
   public long getDjTotalTicks() {
     // DJ runnable は「毎 interval tick」で tickCount を 1 ずつ進め、(tracks*16) 回で終了
     long loops = (long) djTracks.length * 16L;
     return loops * interval;
-  }
-
-  private void createTableIfNotExists(Connection connection) {
-    String sql = "CREATE TABLE IF NOT EXISTS player_treasure_count (" +
-        "player_name VARCHAR(50) PRIMARY KEY," +
-        "count INT NOT NULL)";
-    try (PreparedStatement stmt = connection.prepareStatement(sql)) {
-      stmt.executeUpdate();
-    } catch (SQLException e) {
-      plugin.getLogger().warning("[Database] player treasure table creation failed: " + e.getMessage());
-    }
-  }
-
-  // ======================
-  // ゲーム開始時にプレイヤーカウントをリセット
-  // ======================
-  public void resetPlayerTreasureCount(Player player) {
-    playerTreasureCount.put(player, 0);
-    plugin.getLogger().info("Reset treasure count for player: " + player.getName());
   }
 
   // 互換：昔 MultiChestPlugin から呼んでいたメソッド
@@ -97,7 +67,7 @@ public class TreasureRunGameEffectsPlugin implements Listener {
   }
 
   // ======================
-  // チェスト取得時（カウントとミニ演出のみ）
+  // チェスト取得時（ミニ演出のみ）
   // ======================
   public void onTreasureFound(Player player, Block block) {
     if (block != null && block.getType() == Material.CHEST) {
@@ -105,30 +75,7 @@ public class TreasureRunGameEffectsPlugin implements Listener {
       // ミニ演出のみ（ゲーム終了判定は MultiChestPlugin 側）
       playMiniDJEffect(player);
 
-      int count = playerTreasureCount.getOrDefault(player, 0) + 1;
-      playerTreasureCount.put(player, count);
-
-      saveTreasureCountToDB(player, count);
-
       // ★ここではゲーム終了判定はしない
-    }
-  }
-
-  private void saveTreasureCountToDB(Player player, int count) {
-    if (!plugin.isDatabaseEnabled()) return;
-
-    Connection connection = plugin.getConnection();
-    if (connection == null) return;
-
-    String sql = "INSERT INTO player_treasure_count (player_name, count) VALUES (?, ?) " +
-        "ON DUPLICATE KEY UPDATE count = ?";
-    try (PreparedStatement stmt = connection.prepareStatement(sql)) {
-      stmt.setString(1, player.getName());
-      stmt.setInt(2, count);
-      stmt.setInt(3, count);
-      stmt.executeUpdate();
-    } catch (SQLException e) {
-      plugin.getLogger().warning("[Database] player treasure persistence failed: " + e.getMessage());
     }
   }
 
