@@ -483,9 +483,6 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
         this.seasonScoreRepository = new SeasonScoreRepository(this);
         proverbLogRepository = new ProverbLogRepository(this);
 
-        if (treasureRunGameEffectsPlugin != null) {
-          treasureRunGameEffectsPlugin.initializeDatabaseStorage();
-        }
       } else {
         getLogger().warning(
             "[Database] configured but unavailable; core gameplay will continue without "
@@ -3360,11 +3357,6 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
       // Allocate a fresh idempotency key for this live gameplay run.
       activeGameResultIds.put(player.getUniqueId(), UUID.randomUUID());
 
-      if (treasureRunGameEffectsPlugin != null) {
-        for (Player p : Bukkit.getOnlinePlayers()) {
-          treasureRunGameEffectsPlugin.resetPlayerTreasureCount(p);
-        }
-      }
 
       if (selectedDifficulty == null || selectedDifficulty.isBlank()) {
         difficulty = "Normal";
