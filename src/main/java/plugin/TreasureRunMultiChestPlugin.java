@@ -95,6 +95,9 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
   // ================================
   private Connection connection;
 
+  // DB-H3A: bounded operation-owned terminal persistence.
+  private plugin.rank.TerminalPersistenceService terminalPersistenceService;
+
   public boolean isDatabaseEnabled() {
     return DatabaseRuntimeSettings.load(getConfig()).enabled();
   }
@@ -308,6 +311,12 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
 
     saveDefaultConfig();
     reloadConfig();
+
+    terminalPersistenceService =
+        new plugin.rank.TerminalPersistenceService(
+            databaseSettings(),
+            getLogger()
+        );
 
     // Optional PlaceholderAPI integration owns its own immutable snapshot and
     // refresh-only JDBC connection. The provider-specific PAPI class is loaded
@@ -1298,6 +1307,12 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
 
   @Override
   public void onDisable() {
+    // DB-H3A: revoke new persistence submissions without waiting for JDBC.
+    if (terminalPersistenceService != null) {
+      terminalPersistenceService.close();
+      terminalPersistenceService = null;
+    }
+
     // Revoke ranking publication authority before any already-running JDBC flight can return.
     rankingReadCallbacksActive.set(false);
     rankingReadGeneration.incrementAndGet();
@@ -1461,20 +1476,35 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     }
 
     if (roundLifecycle.isRunning()) {
-      // ✅✅✅ 追加：落ちても保存（WIN扱いにしない）
-      try {
-        UUID uuid = player.getUniqueId();
-        int score = playerScores.getOrDefault(uuid, 0);
-        long elapsedSec = Math.max(0, (System.currentTimeMillis() - startTime) / 1000L);
+      UUID uuid = player.getUniqueId();
+      int score = playerScores.getOrDefault(uuid, 0);
+      long elapsedSec =
+          Math.max(0, (System.currentTimeMillis() - startTime) / 1000L);
 
-        saveScore(player, score, elapsedSec, difficulty);
-        addSeasonScore(player, score, false, null, "QUIT");
+      submitTerminalPersistence(
+          player,
+          score,
+          elapsedSec,
+          difficulty,
+          "QUIT",
+          true,
+          false,
+          null,
+          activeGameResultIds.get(uuid),
+          null,
+          null
+      );
 
-        getLogger().info("[DB] saved on quit: player=" + player.getName()
-            + " score=" + score + " time=" + elapsedSec + " diff=" + difficulty);
-      } catch (Throwable t) {
-        getLogger().warning("⚠ onQuit save failed: " + t.getMessage());
-      }
+      getLogger().info(
+          "[DB] terminal persistence submitted on quit: player="
+              + player.getName()
+              + " score="
+              + score
+              + " time="
+              + elapsedSec
+              + " diff="
+              + difficulty
+      );
     }
 
     finishRoundCleanup(player, CleanupReason.QUIT, true);
@@ -1643,6 +1673,192 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     }
 
     getLogger().info("✅ scores migration check done");
+  }
+
+
+  /**
+   * Captures every Bukkit-owned terminal value on the Minecraft thread, then
+   * hands only immutable values to DB-H3A.
+   */
+  private java.util.concurrent.CompletionStage<
+      plugin.rank.TerminalPersistenceService.PersistenceResult>
+  submitTerminalPersistence(
+      Player player,
+      int score,
+      long elapsedSeconds,
+      String runDifficulty,
+      String outcome,
+      boolean updateRankingAggregates,
+      boolean win,
+      Long bestTimeMs,
+      UUID eventId,
+      String languageOverride,
+      String proverbText
+  ) {
+    if (player == null) {
+      return java.util.concurrent.CompletableFuture.completedFuture(
+          new plugin.rank.TerminalPersistenceService.PersistenceResult(
+              plugin.rank.TerminalPersistenceService.Status.REJECTED,
+              "player unavailable at terminal capture"
+          )
+      );
+    }
+
+    plugin.rank.TerminalPersistenceService service = terminalPersistenceService;
+    if (service == null) {
+      return java.util.concurrent.CompletableFuture.completedFuture(
+          new plugin.rank.TerminalPersistenceService.PersistenceResult(
+              plugin.rank.TerminalPersistenceService.Status.REJECTED,
+              "terminal persistence service unavailable"
+          )
+      );
+    }
+
+    UUID playerUuid = player.getUniqueId();
+    UUID stableEventId = eventId;
+    if (stableEventId == null) {
+      stableEventId = activeGameResultIds.computeIfAbsent(
+          playerUuid,
+          ignored -> UUID.randomUUID()
+      );
+    }
+
+    String language = languageOverride;
+    if (language == null || language.isBlank()) {
+      language = getPlayerLangOrDefault(playerUuid);
+    }
+    if (language == null || language.isBlank()) {
+      language = "ja";
+    }
+
+    plugin.rank.TerminalPersistenceService.TerminalWrite write =
+        new plugin.rank.TerminalPersistenceService.TerminalWrite(
+            stableEventId,
+            Instant.now(),
+            playerUuid,
+            player.getName(),
+            language,
+            score,
+            elapsedSeconds,
+            runDifficulty,
+            outcome,
+            updateRankingAggregates,
+            win,
+            bestTimeMs,
+            proverbText
+        );
+
+    return service.submit(write);
+  }
+
+  /**
+   * SUCCESS must not race the run-rank SELECT ahead of the raw score INSERT.
+   * Poll completion from the Minecraft thread; never let the DB worker call
+   * Bukkit APIs or schedule Bukkit work.
+   */
+  private void continueRunRankAfterTerminalPersistence(
+      UUID playerUuid,
+      UUID terminalRoundId,
+      int finalScore,
+      long elapsedSec,
+      String timeText,
+      String runDifficulty,
+      java.util.concurrent.CompletionStage<
+          plugin.rank.TerminalPersistenceService.PersistenceResult> completion
+  ) {
+    java.util.concurrent.CompletableFuture<
+        plugin.rank.TerminalPersistenceService.PersistenceResult> future =
+        completion.toCompletableFuture();
+
+    new BukkitRunnable() {
+      @Override
+      public void run() {
+        if (!future.isDone()) {
+          return;
+        }
+
+        cancel();
+
+        plugin.rank.TerminalPersistenceService.PersistenceResult result;
+        try {
+          result = future.join();
+        } catch (RuntimeException exception) {
+          getLogger().warning(
+              "[Database][TerminalPersistence] completion failed before run-rank: "
+                  + exception.getMessage()
+          );
+          result = null;
+        }
+
+        Player current = Bukkit.getPlayer(playerUuid);
+        if (current == null || !current.isOnline()) {
+          return;
+        }
+
+        if (!Objects.equals(activeGameResultIds.get(playerUuid), terminalRoundId)) {
+          return;
+        }
+
+        if (result == null || !result.persisted()) {
+          String detail = result == null
+              ? "terminal persistence completion unavailable"
+              : result.status() + ": " + result.detail();
+
+          getLogger().warning(
+              "[Database][TerminalPersistence] SUCCESS rank unavailable because "
+                  + "the terminal write was not durably persisted: "
+                  + detail
+          );
+
+          finishSuccessfulRunAfterRank(
+              current,
+              terminalRoundId,
+              finalScore,
+              timeText,
+              runDifficulty,
+              -1
+          );
+          return;
+        }
+
+        rankDirty = true;
+
+        resolveRunRankAsync(
+            current,
+            terminalRoundId,
+            finalScore,
+            elapsedSec,
+            timeText,
+            runDifficulty
+        );
+      }
+    }.runTaskTimer(this, 1L, 1L);
+  }
+
+  private void submitTerminalProverb(
+      UUID playerUuid,
+      String playerName,
+      String outcome,
+      String runDifficulty,
+      String language,
+      String quoteText
+  ) {
+    plugin.rank.TerminalPersistenceService service = terminalPersistenceService;
+    if (service == null || playerUuid == null
+        || quoteText == null || quoteText.isBlank()) {
+      return;
+    }
+
+    service.submitProverb(
+        new plugin.rank.TerminalPersistenceService.ProverbWrite(
+            playerUuid,
+            playerName,
+            outcome,
+            runDifficulty,
+            language,
+            quoteText
+        )
+    );
   }
 
   private void saveScore(String playerName, int score, long timeSec, String difficulty) {
@@ -2316,7 +2532,19 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
                 I18n.Placeholder.of("{score}", String.valueOf(score))
             )
         );
-        saveScore(player, score, elapsedSec, difficulty);
+        submitTerminalPersistence(
+            player,
+            score,
+            elapsedSec,
+            difficulty,
+            "MANUAL_STOP",
+            false,
+            false,
+            null,
+            activeGameResultIds.get(uuid),
+            null,
+            null
+        );
       }
 
       // ✅ 手動終了は「TIME_UP連続」ではないのでリセット
@@ -2544,18 +2772,32 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     final long elapsedSec = totalSeconds;
     final String runDifficulty = difficulty;
 
-    saveScore(player, finalScore, elapsedSec, runDifficulty);
+    java.util.concurrent.CompletionStage<
+        plugin.rank.TerminalPersistenceService.PersistenceResult>
+        terminalPersistence =
+            submitTerminalPersistence(
+                player,
+                finalScore,
+                elapsedSec,
+                runDifficulty,
+                "SUCCESS",
+                true,
+                true,
+                elapsedMs,
+                terminalRoundId,
+                null,
+                null
+            );
 
-    // ✅ ここに追加（SUCCESS: weekly + alltime 加算）
-    addSeasonScore(player, finalScore, true, elapsedMs, "SUCCESS");
-
-    resolveRunRankAsync(
-        player,
+    continueRunRankAfterTerminalPersistence(
+        player.getUniqueId(),
         terminalRoundId,
         finalScore,
         elapsedSec,
         timeText,
-        runDifficulty);
+        runDifficulty,
+        terminalPersistence
+    );
   }
 
   /** Main-thread continuation after the bounded run-rank read completes. */
@@ -2576,7 +2818,14 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     // ✅ ✅ ✅ 追加：SUCCESS の格言ログを MySQL に保存（proverb_logs）
     // =======================================================
     if (successPhiloSub != null && !successPhiloSub.isBlank()) {
-      saveProverbLog(player.getUniqueId(), player.getName(), "SUCCESS", runDifficulty, successLang, successPhiloSub);
+      submitTerminalProverb(
+          player.getUniqueId(),
+          player.getName(),
+          "SUCCESS",
+          runDifficulty,
+          successLang,
+          successPhiloSub
+      );
     }
 
     long djTotalTicksWork = (treasureRunGameEffectsPlugin != null)
@@ -2901,13 +3150,6 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
           }
         }, 0L, period);
 
-        // =======================================================
-        // ✅ ✅ ✅ 追加：TIME_UP の格言ログを MySQL に保存（proverb_logs）
-        // =======================================================
-        if (timeUpPhiloSub != null && !timeUpPhiloSub.isBlank()) {
-          saveProverbLog(player.getUniqueId(), player.getName(), "TIME_UP", difficulty, timeUpLang, timeUpPhiloSub);
-        }
-
         String outcomeNoticeLang = getConfig().getString("language.default", "en");
         try {
           if (getPlayerLanguageStore() != null) {
@@ -2925,10 +3167,20 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
 
         int finalScore = playerScores.getOrDefault(player.getUniqueId(), 0);
         long elapsedSec = (System.currentTimeMillis() - startTime) / 1000L;
-        saveScore(player, finalScore, elapsedSec, difficulty);
 
-        // ✅ ここに追加（TIME_UP: scoreだけ加算 / wins・best_timeは無し）
-        addSeasonScore(player, finalScore, false, null, "TIME_UP");
+        submitTerminalPersistence(
+            player,
+            finalScore,
+            elapsedSec,
+            difficulty,
+            "TIME_UP",
+            true,
+            false,
+            null,
+            terminalRoundId,
+            timeUpLang,
+            timeUpPhiloSub
+        );
 
         // ✅ ✅ ✅ TIME_UP の表示順（完全版）：
         // 1) Title に Got: x/y を固定で見せる（keepTicks）

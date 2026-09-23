@@ -5,7 +5,6 @@ import plugin.TreasureRunMultiChestPlugin;
 import java.sql.*;
 import java.time.*;
 import java.time.temporal.WeekFields;
-import java.util.Locale;
 
 /**
  * seasons テーブルから「今週のWEEKLY season_id」を取得/なければ作成
@@ -18,71 +17,126 @@ public class SeasonRepository {
     this.plugin = plugin;
   }
 
-  /** 今週の weekly season_id を返す（なければ INSERT して返す） */
+  /**
+   * Existing shared-connection compatibility boundary.
+   * New asynchronous terminal persistence must use the explicit Connection overload.
+   */
   public long getOrCreateCurrentWeeklySeasonId() throws SQLException {
-    // 週の定義：ISO週（月曜開始）
-    ZonedDateTime now = ZonedDateTime.now(ZoneId.of("Asia/Tokyo"));
-    WeekFields wf = WeekFields.ISO;
-    int year = now.get(wf.weekBasedYear());
-    int week = now.get(wf.weekOfWeekBasedYear());
+    Connection connection = plugin.getConnection();
+    if (connection == null) {
+      throw new SQLException("MySQL connection is null");
+    }
 
-    LocalDate monday = now.toLocalDate().with(wf.dayOfWeek(), 1); // Monday
+    return getOrCreateCurrentWeeklySeasonId(
+        connection,
+        Instant.now(),
+        0
+    );
+  }
+
+  /**
+   * Operation-owned JDBC boundary used by DB-H3A.
+   */
+  public static long getOrCreateCurrentWeeklySeasonId(
+      Connection connection,
+      Instant occurredAt,
+      int queryTimeoutSeconds
+  ) throws SQLException {
+    if (connection == null) {
+      throw new SQLException("MySQL connection is null");
+    }
+
+    ZonedDateTime now =
+        ZonedDateTime.ofInstant(
+            occurredAt == null ? Instant.now() : occurredAt,
+            ZoneId.of("Asia/Tokyo")
+        );
+
+    WeekFields fields = WeekFields.ISO;
+    int year = now.get(fields.weekBasedYear());
+    int week = now.get(fields.weekOfWeekBasedYear());
+
+    LocalDate monday = now.toLocalDate().with(fields.dayOfWeek(), 1);
     LocalDate nextMonday = monday.plusDays(7);
 
     Timestamp startsAt = Timestamp.valueOf(monday.atStartOfDay());
     Timestamp endsAt = Timestamp.valueOf(nextMonday.atStartOfDay());
 
-    Connection con = plugin.getConnection();
-    if (con == null) throw new SQLException("MySQL connection is null");
+    final String selectSql =
+        "SELECT id FROM seasons "
+            + "WHERE season_type=? AND year=? AND week=? "
+            + "LIMIT 1";
 
-    // 1) 既存取得
-    String selectSql =
-        "SELECT id FROM seasons " +
-        "WHERE season_type=? AND year=? AND week=? " +
-        "LIMIT 1";
+    try (PreparedStatement statement = connection.prepareStatement(selectSql)) {
+      applyTimeout(statement, queryTimeoutSeconds);
+      statement.setString(1, "WEEKLY");
+      statement.setInt(2, year);
+      statement.setInt(3, week);
 
-    try (PreparedStatement ps = con.prepareStatement(selectSql)) {
-      ps.setString(1, "WEEKLY");
-      ps.setInt(2, year);
-      ps.setInt(3, week);
-      try (ResultSet rs = ps.executeQuery()) {
-        if (rs.next()) return rs.getLong("id");
+      try (ResultSet resultSet = statement.executeQuery()) {
+        if (resultSet.next()) {
+          return resultSet.getLong("id");
+        }
       }
     }
 
-    // 2) なければ作成（並行実行でも安全にする）
-    String insertSql =
-        "INSERT INTO seasons (season_type, year, week, starts_at, ends_at) " +
-        "VALUES (?, ?, ?, ?, ?)";
+    final String insertSql =
+        "INSERT INTO seasons "
+            + "(season_type, year, week, starts_at, ends_at) "
+            + "VALUES (?, ?, ?, ?, ?)";
 
-    try (PreparedStatement ps = con.prepareStatement(insertSql, Statement.RETURN_GENERATED_KEYS)) {
-      ps.setString(1, "WEEKLY");
-      ps.setInt(2, year);
-      ps.setInt(3, week);
-      ps.setTimestamp(4, startsAt);
-      ps.setTimestamp(5, endsAt);
+    try (PreparedStatement statement =
+             connection.prepareStatement(
+                 insertSql,
+                 Statement.RETURN_GENERATED_KEYS
+             )) {
+      applyTimeout(statement, queryTimeoutSeconds);
+      statement.setString(1, "WEEKLY");
+      statement.setInt(2, year);
+      statement.setInt(3, week);
+      statement.setTimestamp(4, startsAt);
+      statement.setTimestamp(5, endsAt);
 
       try {
-        ps.executeUpdate();
-      } catch (SQLException e) {
-        // すでに別スレッド/別鯖が作った可能性 → 取り直す
+        statement.executeUpdate();
+      } catch (SQLException ignored) {
+        // Another server/thread may have created the same weekly season.
       }
 
-      try (ResultSet keys = ps.getGeneratedKeys()) {
-        if (keys.next()) return keys.getLong(1);
-      }
-    }
-
-    // 3) 最終的に取り直し
-    try (PreparedStatement ps = con.prepareStatement(selectSql)) {
-      ps.setString(1, "WEEKLY");
-      ps.setInt(2, year);
-      ps.setInt(3, week);
-      try (ResultSet rs = ps.executeQuery()) {
-        if (rs.next()) return rs.getLong("id");
+      try (ResultSet keys = statement.getGeneratedKeys()) {
+        if (keys.next()) {
+          return keys.getLong(1);
+        }
       }
     }
 
-    throw new SQLException("Failed to getOrCreate season_id for WEEKLY " + year + "-W" + week);
+    try (PreparedStatement statement = connection.prepareStatement(selectSql)) {
+      applyTimeout(statement, queryTimeoutSeconds);
+      statement.setString(1, "WEEKLY");
+      statement.setInt(2, year);
+      statement.setInt(3, week);
+
+      try (ResultSet resultSet = statement.executeQuery()) {
+        if (resultSet.next()) {
+          return resultSet.getLong("id");
+        }
+      }
+    }
+
+    throw new SQLException(
+        "Failed to getOrCreate season_id for WEEKLY "
+            + year
+            + "-W"
+            + week
+    );
+  }
+
+  private static void applyTimeout(
+      PreparedStatement statement,
+      int queryTimeoutSeconds
+  ) throws SQLException {
+    if (queryTimeoutSeconds > 0) {
+      statement.setQueryTimeout(queryTimeoutSeconds);
+    }
   }
 }
