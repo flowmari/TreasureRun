@@ -69,6 +69,13 @@ class SeasonRepositoryTest {
         when(firstSelect.executeQuery()).thenReturn(firstResult);
         when(firstResult.next()).thenReturn(false);
 
+        /*
+         * SeasonRepository now requires a successful INSERT to affect exactly
+         * one row before generated keys are considered valid. Mockito returns
+         * 0 for an unstubbed int method, so model the real successful INSERT
+         * contract explicitly.
+         */
+        when(insertStatement.executeUpdate()).thenReturn(1);
         when(insertStatement.getGeneratedKeys()).thenReturn(generatedKeys);
         when(generatedKeys.next()).thenReturn(true);
         when(generatedKeys.getLong(1)).thenReturn(999L);
@@ -80,6 +87,10 @@ class SeasonRepositoryTest {
         assertEquals(999L, seasonId);
 
         verify(insertStatement).setString(1, "WEEKLY");
+        verify(insertStatement).setString(
+            org.mockito.ArgumentMatchers.eq(4),
+            org.mockito.ArgumentMatchers.anyString()
+        );
         verify(insertStatement).executeUpdate();
         verify(connection).prepareStatement(anyString(), org.mockito.ArgumentMatchers.eq(Statement.RETURN_GENERATED_KEYS));
     }
