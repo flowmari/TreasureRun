@@ -236,6 +236,100 @@ class TerminalPersistenceServiceMySqlIntegrationTest {
     }
   }
 
+  @Test
+  void weeklySeasonCreationRecoversAfterConcurrentCommitPastRepeatableReadSnapshot()
+      throws Exception {
+
+    Instant occurredAt =
+        Instant.parse("2026-09-23T00:00:00Z");
+
+    try (Connection staleSnapshot = openConnection();
+         Connection winner = openConnection()) {
+
+      staleSnapshot.setTransactionIsolation(
+          Connection.TRANSACTION_REPEATABLE_READ
+      );
+      staleSnapshot.setAutoCommit(false);
+      winner.setAutoCommit(false);
+
+      /*
+       * Establish an empty consistent snapshot in connection A before
+       * connection B creates the weekly season.
+       */
+      try (Statement statement = staleSnapshot.createStatement();
+           ResultSet resultSet =
+               statement.executeQuery("SELECT COUNT(*) FROM seasons")) {
+
+        assertTrue(resultSet.next());
+        assertEquals(
+            0,
+            resultSet.getInt(1),
+            "precondition: seasons must be empty before the race proof"
+        );
+      }
+
+      long winningSeasonId =
+          SeasonRepository.getOrCreateCurrentWeeklySeasonId(
+              winner,
+              occurredAt,
+              4
+          );
+
+      winner.commit();
+
+      /*
+       * The first plain SELECT inside this call still sees A's older
+       * REPEATABLE READ snapshot. Its INSERT therefore reaches the real
+       * duplicate-key race. The post-race current read must recover B's id.
+       */
+      long recoveredSeasonId =
+          SeasonRepository.getOrCreateCurrentWeeklySeasonId(
+              staleSnapshot,
+              occurredAt,
+              4
+          );
+
+      assertEquals(
+          winningSeasonId,
+          recoveredSeasonId,
+          "losing transaction must resolve the concurrently committed season"
+      );
+
+      staleSnapshot.rollback();
+
+      /*
+       * Verify from a fresh transaction that the race produced exactly one
+       * WEEKLY row and that the row carries the canonical V2 season identity.
+       * 2026-09-23 in Asia/Tokyo is ISO week 39.
+       */
+      try (Connection verifier = openConnection();
+           Statement statement = verifier.createStatement();
+           ResultSet resultSet =
+               statement.executeQuery(
+                   "SELECT COUNT(*) AS row_count, "
+                       + "MIN(season_key) AS season_key "
+                       + "FROM seasons "
+                       + "WHERE season_type='WEEKLY' "
+                       + "AND year=2026 AND week=39"
+               )) {
+
+        assertTrue(resultSet.next());
+
+        assertEquals(
+            1,
+            resultSet.getInt("row_count"),
+            "the weekly creation race must leave exactly one committed season"
+        );
+
+        assertEquals(
+            "2026-W39",
+            resultSet.getString("season_key"),
+            "new weekly seasons must use the canonical V2 season_key"
+        );
+      }
+    }
+  }
+
   private static void assertTerminalRows(
       UUID eventId,
       UUID playerId,
