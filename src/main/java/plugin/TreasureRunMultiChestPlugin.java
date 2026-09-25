@@ -110,6 +110,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
   // ✅ ✅ ✅ 追加：ProverbLogRepository（Favorites機能の橋渡し）
   // =======================================================
   private ProverbLogRepository proverbLogRepository;
+  private plugin.quote.InteractiveProverbService interactiveProverbService;
 
   // =======================================================
   // ✅ ✅ ✅ Favorites図鑑 + I18n + 19言語 完全対応セット
@@ -504,13 +505,18 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
       );
     }
 
+    if (proverbLogRepository != null) {
+      DatabaseRuntimeSettings settings = databaseSettings();
+      interactiveProverbService = new plugin.quote.InteractiveProverbService(
+          settings,
+          new plugin.quote.JdbcInteractiveProverbBackend(settings, proverbLogRepository),
+          getLogger()
+      );
+    }
+
     // ✅ ✅ ✅ ✅ ✅ 追加：QuoteFavoriteBookClickListener を登録（Favoritesの本クリック対応）
     getServer().getPluginManager().registerEvents(new QuoteFavoriteBookClickListener(this), this);
 
-    // ✅ ✅ ✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅
-    // ✅ Hybrid Listener register（Sneak+RightClick shortcut）
-    getServer().getPluginManager().registerEvents(new plugin.quote.QuoteFavoriteShortcutListener(this), this);
-    // ✅ ✅ ✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅
 
     loadConfigValues();
 
@@ -1307,6 +1313,13 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
 
   @Override
   public void onDisable() {
+    // DB-H3B: revoke interactive DB submissions first. close() never waits for JDBC;
+    // an already-running bounded call may return later, but its result is rejected.
+    if (interactiveProverbService != null) {
+      interactiveProverbService.close();
+      interactiveProverbService = null;
+    }
+
     // DB-H3A: revoke new persistence submissions without waiting for JDBC.
     if (terminalPersistenceService != null) {
       terminalPersistenceService.close();
@@ -1861,101 +1874,10 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     );
   }
 
-  private void saveScore(String playerName, int score, long timeSec, String difficulty) {
-    if (!isDatabaseEnabled()) return;
+  // Legacy synchronous saveScore overloads were removed by DB-H3B.
+  // Terminal score persistence is owned by TerminalPersistenceService.
 
-    Connection conn = getConnection();
-    if (conn == null) return;
 
-    // Player名しか渡されない呼び出しもあるので、onlineから拾えるなら拾う
-    Player p = Bukkit.getPlayerExact(playerName);
-
-    String uuidStr = null;
-    String langCode = "ja";
-
-    // uuid
-    if (p != null) {
-      uuidStr = p.getUniqueId().toString();
-    }
-
-    // lang_code（あなたの環境は playerLanguageStore があるのでそれ優先）
-    try {
-      if (p != null && playerLanguageStore != null) {
-        // ここはあなたの addSeasonScore と同じ取り方
-        langCode = playerLanguageStore.getLang(p, "ja");
-      }
-    } catch (Throwable ignored) {}
-
-    // フォールバック：beginGameStartAfterLanguageSelected で入れてる playerLastLang
-    try {
-      if ((langCode == null || langCode.isBlank()) && p != null) {
-        String v = playerLastLang.get(p.getUniqueId());
-        if (v != null && !v.isBlank()) langCode = v;
-      }
-    } catch (Throwable ignored) {}
-
-    if (langCode == null || langCode.isBlank()) langCode = "ja";
-    langCode = langCode.toLowerCase(Locale.ROOT);
-
-    try (PreparedStatement ps = conn.prepareStatement(
-        "INSERT INTO scores (uuid, player_name, score, time, difficulty, lang_code, played_at) " +
-            "VALUES (?, ?, ?, ?, ?, ?, NOW())"
-    )) {
-      ps.setString(1, uuidStr);
-      ps.setString(2, playerName);
-      ps.setInt(3, score);
-      ps.setLong(4, timeSec);
-      ps.setString(5, difficulty);
-      ps.setString(6, langCode);
-      ps.executeUpdate();
-
-      rankDirty = true;
-
-    } catch (SQLException exception) {
-      getLogger().warning("[Database] score persistence failed: " + exception.getMessage());
-    }
-  }
-
-  // ✅ 追加：Player から確実に uuid/lang を取って scores に保存する版
-  private void saveScore(Player player, int score, long timeSec, String difficulty) {
-    if (player == null || !isDatabaseEnabled()) return;
-
-    Connection conn = getConnection();
-    if (conn == null) return;
-
-    String lang = "ja";
-    try {
-      if (playerLanguageStore != null) {
-        lang = playerLanguageStore.getLang(player, "ja");
-      }
-    } catch (Throwable ignored) {}
-
-    if (lang == null || lang.isBlank()) lang = "ja";
-    lang = lang.toLowerCase(Locale.ROOT);
-
-    try (PreparedStatement ps = conn.prepareStatement(
-        "INSERT INTO scores (uuid, player_name, score, time, difficulty, lang_code, played_at) " +
-            "VALUES (?, ?, ?, ?, ?, ?, NOW())"
-    )) {
-      ps.setString(1, player.getUniqueId().toString());
-      ps.setString(2, player.getName());
-      ps.setInt(3, score);
-      ps.setLong(4, timeSec);
-      ps.setString(5, difficulty);
-      ps.setString(6, lang);
-
-      ps.executeUpdate();
-      rankDirty = true;
-
-    } catch (SQLException exception) {
-      getLogger().warning("[Database] score persistence failed: " + exception.getMessage());
-    }
-  }
-
-  /**
-   * Starts a bounded off-thread run-rank lookup, then resumes the success sequence
-   * on the main thread. The async side never touches Bukkit/player/world state.
-   */
   private void resolveRunRankAsync(
       Player player,
       java.util.UUID terminalRoundId,
@@ -2322,6 +2244,10 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
   // =======================================================
   public ProverbLogRepository getProverbLogRepository() {
     return proverbLogRepository;
+  }
+
+  public plugin.quote.InteractiveProverbService getInteractiveProverbService() {
+    return interactiveProverbService;
   }
 
   // =======================================================
@@ -3895,60 +3821,8 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
   // ✅ Weekly + All-time スコア加算（共通）
   // - SUCCESS / TIME_UP の両方から呼べる
   // =======================================================
-  private void addSeasonScore(
-      Player player,
-      int addScore,
-      boolean isWin,
-      Long bestTimeMsOrNull,
-      String outcome
-  ) {
-    if (player == null || !isDatabaseEnabled()) return;
-    if (seasonRepository == null || seasonScoreRepository == null) {
-      return;
-    }
-
-    try {
-      long seasonId = seasonRepository.getOrCreateCurrentWeeklySeasonId();
-
-      String langCode = "ja";
-      try {
-        if (playerLanguageStore != null) {
-          langCode = playerLanguageStore.getLang(player, "ja");
-        }
-      } catch (Throwable ignored) {}
-
-      UUID eventId = activeGameResultIds.computeIfAbsent(
-          player.getUniqueId(),
-          ignored -> UUID.randomUUID()
-      );
-
-      GameResultRecorded event = GameResultRecorded.create(
-          eventId,
-          Instant.now(),
-          seasonId,
-          player.getUniqueId(),
-          player.getName(),
-          outcome,
-          addScore,
-          isWin ? 1 : 0,
-          bestTimeMsOrNull,
-          langCode
-      );
-
-      boolean applied = seasonScoreRepository.addWeeklyAndAllTime(event);
-
-      if (applied) {
-        rankDirty = true;
-      } else {
-        getLogger().info(
-            "[RANK][IDEMPOTENCY] duplicate terminal callback ignored for ranking aggregates: eventId="
-                + eventId
-        );
-      }
-    } catch (Exception exception) {
-      getLogger().warning("[RANK] addSeasonScore failed: " + exception.getMessage());
-    }
-  }
+  // Legacy synchronous addSeasonScore was removed by DB-H3B.
+  // Weekly/all-time terminal persistence is owned by TerminalPersistenceService.
 
   // =======================================================
   // ✅ ✅ ✅ 追加：proverb_logs 保存（MySQL）
@@ -3957,78 +3831,31 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
   public void saveProverbLog(UUID playerUuid, String playerName,
       String outcome, String difficulty,
       String lang, String quoteText) {
-
-    if (playerUuid == null || !isDatabaseEnabled()) return;
-
-    Connection conn = getConnection();
-    if (conn == null) return;
-
-    if (playerName == null) playerName = "unknown";
-    if (outcome == null || outcome.isBlank()) outcome = "UNKNOWN";
-    if (difficulty == null || difficulty.isBlank()) difficulty = "Normal";
-    if (lang == null || lang.isBlank()) lang = getConfig().getString("language.default", "ja");
-    if (quoteText == null || quoteText.isBlank()) return;
-
-    String sql =
-        "INSERT INTO proverb_logs (player_uuid, player_name, outcome, difficulty, lang, quote_text) " +
-            "VALUES (?, ?, ?, ?, ?, ?)";
-
-    try (PreparedStatement ps = conn.prepareStatement(sql)) {
-      ps.setString(1, playerUuid.toString());
-      ps.setString(2, playerName);
-      ps.setString(3, outcome);
-      ps.setString(4, difficulty);
-      ps.setString(5, lang);
-      ps.setString(6, quoteText);
-      ps.executeUpdate();
-
-    } catch (SQLException exception) {
-      getLogger().warning("[Database] proverb persistence failed: " + exception.getMessage());
-    }
+    // Compatibility entrypoint: operation-owned async persistence only.
+    submitTerminalProverb(
+        playerUuid,
+        playerName,
+        outcome,
+        difficulty,
+        lang,
+        quoteText
+    );
   }
 
   // =======================================================
   // ✅ 格言ログ取得（MySQL）
   // - プレイヤーごとの最新ログを返す
   // =======================================================
+  /**
+   * Memory-only compatibility view for already-refreshed recent proverb rows.
+   *
+   * <p>DB-H3B forbids this public helper from acquiring JDBC on a Bukkit request path.
+   * Interactive callers use InteractiveProverbService to refresh asynchronously.</p>
+   */
   public List<String> getRecentProverbs(UUID playerUuid, int limit) {
-    List<String> list = new ArrayList<>();
-    if (playerUuid == null) return list;
-
-    // ✅ ✅ ✅ ここ追加（安全）
-    Connection conn = getConnection();
-    if (conn == null) return list;
-
-    String sql =
-        "SELECT outcome, difficulty, lang, quote_text, created_at " +
-            "FROM proverb_logs " +
-            "WHERE player_uuid = ? " +
-            "ORDER BY created_at DESC " +
-            "LIMIT ?";
-
-    // ✅ conn を使う
-    try (PreparedStatement ps = conn.prepareStatement(sql)) {
-      ps.setString(1, playerUuid.toString());
-      ps.setInt(2, Math.max(1, limit));
-
-      try (ResultSet rs = ps.executeQuery()) {
-        while (rs.next()) {
-          String outcome = rs.getString("outcome");
-          String diff = rs.getString("difficulty");
-          String lang = rs.getString("lang");
-          String quote = rs.getString("quote_text");
-
-          // ✅ 1行表示用フォーマット（本のページで見やすい）
-          String row = "【" + outcome + " / " + diff + " / " + lang + "】\n" + quote;
-          list.add(row);
-        }
-      }
-
-    } catch (SQLException exception) {
-      getLogger().warning("[Database] proverb load failed: " + exception.getMessage());
-    }
-
-    return list;
+    plugin.quote.InteractiveProverbService service = interactiveProverbService;
+    if (service == null || playerUuid == null) return List.of();
+    return service.recentSnapshot(playerUuid, limit);
   }
 
   // =======================================================

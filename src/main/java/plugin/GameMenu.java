@@ -12,7 +12,6 @@ import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.inventory.meta.BookMeta;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -171,37 +170,77 @@ public class GameMenu {
   // =========================================================
   public static void openRuleBookFromConfig(Player player, String difficulty,
       TreasureRunMultiChestPlugin plugin, String lang) {
+    if (player == null || plugin == null) return;
 
     var cfg = plugin.getConfig();
-
-    // ✅ default
     String defaultLang = cfg.getString("language.default", "ja");
-
-    // ✅ “本当に保存されている言語” を最優先（/lang がここに入る）
-    // ※ getLang() は未保存でも locale を返すので使わない
     String actualLang = null;
+
     if (plugin.getPlayerLanguageStore() != null) {
-      // ✅ 未保存なら "" を返す（=保存有無判定に使える）
       actualLang = plugin.getPlayerLanguageStore().getLang(player.getUniqueId(), "");
     }
-
-    // ✅ 保存が無い場合だけ、引数 lang（GUI選択）を採用
     if ((actualLang == null || actualLang.isBlank()) && lang != null && !lang.isBlank()) {
       actualLang = lang;
     }
-
     if (actualLang == null || actualLang.isBlank()) actualLang = defaultLang;
 
-    // フォールバック（その言語が無いときはja）
+    String resolvedLang = actualLang;
+    UUID playerId = player.getUniqueId();
+    plugin.quote.InteractiveProverbService service = plugin.getInteractiveProverbService();
+
+    if (service == null) {
+      renderRuleBookFromConfig(
+          player, difficulty, plugin, resolvedLang, List.of(), List.of());
+      return;
+    }
+
+    service.loadBookData(playerId, 20, 20).whenComplete((result, failure) -> {
+      List<String> recent = List.of();
+      List<String> favorites = List.of();
+      if (failure == null && result != null && result.successful() && result.value() != null) {
+        recent = result.value().recent();
+        favorites = result.value().favorites();
+      }
+
+      List<String> completedRecent = recent;
+      List<String> completedFavorites = favorites;
+      try {
+        plugin.getServer().getScheduler().runTask(plugin, () -> {
+          if (!plugin.isEnabled()) return;
+          Player current = plugin.getServer().getPlayer(playerId);
+          if (current == null || !current.isOnline()) return;
+          renderRuleBookFromConfig(
+              current,
+              difficulty,
+              plugin,
+              resolvedLang,
+              completedRecent,
+              completedFavorites
+          );
+        });
+      } catch (RuntimeException ignored) {
+        // Plugin lifecycle is shutting down. Late DB results are intentionally dropped.
+      }
+    });
+  }
+
+  private static void renderRuleBookFromConfig(
+      Player player,
+      String difficulty,
+      TreasureRunMultiChestPlugin plugin,
+      String actualLang,
+      List<String> recentRows,
+      List<String> favoriteRows
+  ) {
+    var cfg = plugin.getConfig();
+
     String title = cfg.getString("ruleBook.title." + actualLang,
         plugin.getI18n().tr(actualLang, GameMenuKeys.UI_MENU_BOOK_FALLBACK_TITLE));
     String author = cfg.getString("ruleBook.author", GameMenuFallbackTexts.BRAND_TITLE);
     String displayNameRaw = cfg.getString("ruleBook.displayName." + actualLang,
         plugin.getI18n().tr(actualLang, GameMenuKeys.UI_MENU_BOOK_FALLBACK_DISPLAY_NAME));
-
     String displayName = colorize(displayNameRaw);
 
-    // %diffLabel% 差し込み
     String diffLabel = cfg.getString(
         "ruleBook.difficultyLabel." + actualLang + "." + difficulty,
         difficulty
@@ -214,15 +253,12 @@ public class GameMenu {
 
     List<String> replaced = new ArrayList<>();
     if (pages != null) {
-      for (String p : pages) {
-        if (p == null) continue;
-        replaced.add(p.replace("%diffLabel%", diffLabel));
+      for (String page : pages) {
+        if (page == null) continue;
+        replaced.add(page.replace("%diffLabel%", diffLabel));
       }
     }
 
-    // =========================================================
-    // ✅ ✅ ✅ 作品導線：本の“最初の方”に Contents（目次ページ）を追加
-    // =========================================================
     String contentsPage = buildContentsPage(plugin, actualLang, difficulty, diffLabel);
     if (replaced.size() >= 1) {
       replaced.add(1, contentsPage);
@@ -230,16 +266,14 @@ public class GameMenu {
       replaced.add(contentsPage);
     }
 
-    // =========================================================
-    // ✅ ✅ ✅ Quote Collection（完全進化：タブ風 + Page 1/3 + Latest固定）
-    // =========================================================
-    replaced.addAll(buildQuoteTabsPages(player, plugin, actualLang));
+    replaced.addAll(buildQuoteTabsPages(
+        player, plugin, actualLang, recentRows, favoriteRows));
 
-    // 本作成
     ItemStack book = new ItemStack(Material.WRITTEN_BOOK);
     BookMeta meta = (BookMeta) book.getItemMeta();
     if (meta == null) {
-      player.sendMessage(colorize(plugin.getI18n().tr(actualLang, GameMenuKeys.UI_MENU_BOOK_OPEN_FAILED)));
+      player.sendMessage(colorize(plugin.getI18n().tr(
+          actualLang, GameMenuKeys.UI_MENU_BOOK_OPEN_FAILED)));
       return;
     }
 
@@ -248,7 +282,6 @@ public class GameMenu {
     meta.setPages(replaced);
     book.setItemMeta(meta);
 
-    // 表示名（ホットバー用）
     ItemMeta displayMeta = book.getItemMeta();
     if (displayMeta != null) {
       displayMeta.setDisplayName(displayName);
@@ -256,36 +289,29 @@ public class GameMenu {
     }
 
     PlayerInventory inv = player.getInventory();
-
-    // 既存の「TreasureRunルール本」系を消す（重複防止）
     List<String> allNames = new ArrayList<>();
-
     ConfigurationSection dnSec = cfg.getConfigurationSection("ruleBook.displayName");
     if (dnSec != null) {
       for (String code : dnSec.getKeys(false)) {
-        String n = dnSec.getString(code);
-        if (n != null && !n.isBlank()) allNames.add(n);
+        String name = dnSec.getString(code);
+        if (name != null && !name.isBlank()) allNames.add(name);
       }
     }
-
     if (allNames.isEmpty()) {
-      allNames.add(plugin.getI18n().tr("ja", GameMenuKeys.UI_MENU_BOOK_FALLBACK_DISPLAY_NAME));
-      allNames.add(plugin.getI18n().tr("en", GameMenuKeys.UI_MENU_BOOK_FALLBACK_DISPLAY_NAME));
+      allNames.add(plugin.getI18n().tr(
+          "ja", GameMenuKeys.UI_MENU_BOOK_FALLBACK_DISPLAY_NAME));
+      allNames.add(plugin.getI18n().tr(
+          "en", GameMenuKeys.UI_MENU_BOOK_FALLBACK_DISPLAY_NAME));
     }
 
     for (int i = 0; i < inv.getSize(); i++) {
       ItemStack item = inv.getItem(i);
-      if (item == null) continue;
-      if (item.getType() != Material.WRITTEN_BOOK) continue;
-      if (!item.hasItemMeta()) continue;
-
-      ItemMeta im = item.getItemMeta();
-      if (im == null || !im.hasDisplayName()) continue;
-
-      String name = normalizeName(im.getDisplayName());
+      if (item == null || item.getType() != Material.WRITTEN_BOOK || !item.hasItemMeta()) continue;
+      ItemMeta itemMeta = item.getItemMeta();
+      if (itemMeta == null || !itemMeta.hasDisplayName()) continue;
+      String name = normalizeName(itemMeta.getDisplayName());
       for (String candidate : allNames) {
-        if (candidate == null) continue;
-        if (name.equals(normalizeName(candidate))) {
+        if (candidate != null && name.equals(normalizeName(candidate))) {
           inv.clear(i);
           break;
         }
@@ -297,18 +323,17 @@ public class GameMenu {
     player.getInventory().setHeldItemSlot(0);
     player.openBook(book);
 
-    // ✅ メッセージ i18n 化（languages/*.yml の ui.menu.book.*）
-    player.sendMessage(colorize(plugin.getI18n().tr(actualLang, GameMenuKeys.UI_MENU_BOOK_HOTBAR_GIVEN)));
-    player.sendMessage(colorize(plugin.getI18n().tr(actualLang, GameMenuKeys.UI_MENU_BOOK_HOTBAR_HINT)));
+    player.sendMessage(colorize(plugin.getI18n().tr(
+        actualLang, GameMenuKeys.UI_MENU_BOOK_HOTBAR_GIVEN)));
+    player.sendMessage(colorize(plugin.getI18n().tr(
+        actualLang, GameMenuKeys.UI_MENU_BOOK_HOTBAR_HINT)));
 
-    // ✅ latestHint（右クリック保存のヒント）{latestLabel} を各言語のラベルで置換
     String latestLabel = plugin.getI18n().tr(actualLang, GameMenuKeys.UI_LABEL_LATEST);
     player.sendMessage(colorize(plugin.getI18n().tr(
         actualLang,
         GameMenuKeys.UI_MENU_BOOK_LATEST_HINT,
         I18n.Placeholder.of("{latestLabel}", latestLabel)
     )));
-
   }
 
   // =========================================================
@@ -361,23 +386,23 @@ public class GameMenu {
   // =========================================================
   // ✅ ✅ ✅ Quote Collection（複数ページ）
   // =========================================================
-  private static List<String> buildProverbCollectionPages(
+  private static List<String> buildQuoteTabsPages(
       Player player,
       TreasureRunMultiChestPlugin plugin,
-      String actualLang
+      String actualLang,
+      List<String> recentRows,
+      List<String> favoriteRows
   ) {
-    return buildProverbCollectionPages(player, plugin, actualLang, QuoteTab.ALL, true);
-  }
-
-  private static List<String> buildQuoteTabsPages(Player player, TreasureRunMultiChestPlugin plugin, String actualLang) {
     List<String> pages = new ArrayList<>();
-
     pages.add(buildQuoteTabsIntroPage(plugin, actualLang));
-    pages.addAll(buildProverbCollectionPages(player, plugin, actualLang, QuoteTab.ALL, true));
-    pages.addAll(buildProverbCollectionPages(player, plugin, actualLang, QuoteTab.SUCCESS, true));
-    pages.addAll(buildProverbCollectionPages(player, plugin, actualLang, QuoteTab.TIME_UP, true));
-    pages.addAll(buildFavoritesPages(player, plugin, actualLang, true));
-
+    pages.addAll(buildProverbCollectionPages(
+        player, plugin, actualLang, QuoteTab.ALL, true, recentRows));
+    pages.addAll(buildProverbCollectionPages(
+        player, plugin, actualLang, QuoteTab.SUCCESS, true, recentRows));
+    pages.addAll(buildProverbCollectionPages(
+        player, plugin, actualLang, QuoteTab.TIME_UP, true, recentRows));
+    pages.addAll(buildFavoritesPages(
+        player, plugin, actualLang, true, favoriteRows));
     return pages;
   }
 
@@ -448,7 +473,8 @@ public class GameMenu {
       TreasureRunMultiChestPlugin plugin,
       String actualLang,
       QuoteTab tab,
-      boolean showPageNumber
+      boolean showPageNumber,
+      List<String> recentRows
   ) {
     List<String> pages = new ArrayList<>();
 
@@ -459,15 +485,9 @@ public class GameMenu {
       return pages;
     }
 
-    UUID uuid = player.getUniqueId();
-
-    List<String> logs = new ArrayList<>();
-    try {
-      logs = plugin.getRecentProverbs(uuid, 20);
-    } catch (Exception e) {
-      plugin.getLogger().severe("[GameMenu] Failed to load Quote Collection from DB: " + e.getMessage());
-      logs = new ArrayList<>();
-    }
+    List<String> logs = new ArrayList<>(
+        recentRows == null ? List.of() : recentRows
+    );
 
     // ✅ i18n化：直書きをYAMLキーから取得（19言語対応）
     String quoteTitle = plugin.getI18n().tr(actualLang, GameMenuKeys.UI_QUOTE_TITLE);
@@ -585,7 +605,8 @@ public class GameMenu {
       Player player,
       TreasureRunMultiChestPlugin plugin,
       String actualLang,
-      boolean showPageNumber
+      boolean showPageNumber,
+      List<String> favoriteRows
   ) {
     List<String> pages = new ArrayList<>();
 
@@ -596,18 +617,9 @@ public class GameMenu {
       return pages;
     }
 
-    UUID uuid = player.getUniqueId();
-
-    List<String> favorites = new ArrayList<>();
-    try {
-      Connection conn = plugin.getMySQLConnection();
-      if (conn != null && plugin.getProverbLogRepository() != null) {
-        favorites = plugin.getProverbLogRepository().loadFavorites(conn, uuid, 20);
-      }
-    } catch (Exception e) {
-      plugin.getLogger().severe("[GameMenu] Failed to load Favorites from DB: " + e.getMessage());
-      favorites = new ArrayList<>();
-    }
+    List<String> favorites = new ArrayList<>(
+        favoriteRows == null ? List.of() : favoriteRows
+    );
 
     // ✅ i18n化：直書きをYAMLキーから取得（19言語対応）
     String favoritesTitle = plugin.getI18n().tr(actualLang, GameMenuKeys.UI_FAVORITES_TITLE);

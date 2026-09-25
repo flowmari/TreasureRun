@@ -9,7 +9,6 @@ import org.bukkit.inventory.ItemStack;
 import plugin.I18n;
 import plugin.TreasureRunMultiChestPlugin;
 
-import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -38,18 +37,10 @@ public class QuoteFavoriteCommand implements CommandExecutor {
 
   @Override
   public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-
     if (!(sender instanceof Player player)) {
       sender.sendMessage(trRaw("command.quoteFavorite.playersOnly"));
       return true;
     }
-
-    UUID uuid = player.getUniqueId();
-
-    Connection conn = null;
-    try {
-      conn = plugin.getMySQLConnection();
-    } catch (Throwable ignored) {}
 
     if (args.length == 0) {
       showHelp(player);
@@ -57,69 +48,67 @@ public class QuoteFavoriteCommand implements CommandExecutor {
     }
 
     String sub = args[0].toLowerCase(Locale.ROOT);
-
-    // ---------------------------------------------------
-    // help
-    // ---------------------------------------------------
     if (sub.equals("help")) {
       showHelp(player);
       return true;
     }
 
-    // ---------------------------------------------------
-    // latest
-    // ---------------------------------------------------
+    UUID playerId = player.getUniqueId();
+    InteractiveProverbService service = plugin.getInteractiveProverbService();
+
     if (sub.equals("latest")) {
-      if (conn == null || plugin.getProverbLogRepository() == null) {
-        player.sendMessage(ChatColor.RED + tr("command.quoteFavorite.repositoryNotReady"));
+      if (service == null) {
+        player.sendMessage(ChatColor.RED + tr(player, "command.quoteFavorite.repositoryNotReady"));
         return true;
       }
 
-      boolean ok = plugin.getProverbLogRepository().favoriteLatestLog(conn, uuid);
-
-      if (ok) {
-        player.sendMessage(ChatColor.GREEN + tr("command.quoteFavorite.latestSaved"));
-      } else {
-        player.sendMessage(ChatColor.RED + tr("command.quoteFavorite.latestNotSaved"));
-      }
+      service.favoriteLatest(playerId).whenComplete((result, failure) ->
+          deliver(playerId, current -> {
+            if (failure != null || result == null || !result.successful()) {
+              current.sendMessage(ChatColor.RED + tr(current, "command.quoteFavorite.repositoryNotReady"));
+            } else if (Boolean.TRUE.equals(result.value())) {
+              current.sendMessage(ChatColor.GREEN + tr(current, "command.quoteFavorite.latestSaved"));
+            } else {
+              current.sendMessage(ChatColor.RED + tr(current, "command.quoteFavorite.latestNotSaved"));
+            }
+          })
+      );
       return true;
     }
 
-    // ---------------------------------------------------
-    // list
-    // ---------------------------------------------------
     if (sub.equals("list")) {
-      if (conn == null || plugin.getProverbLogRepository() == null) {
-        player.sendMessage(ChatColor.RED + tr("command.quoteFavorite.repositoryNotReady"));
+      if (service == null) {
+        player.sendMessage(ChatColor.RED + tr(player, "command.quoteFavorite.repositoryNotReady"));
         return true;
       }
 
-      List<String> favs = plugin.getProverbLogRepository().loadFavorites(conn, uuid, 20);
+      service.loadFavorites(playerId, 20).whenComplete((result, failure) ->
+          deliver(playerId, current -> {
+            if (failure != null || result == null || !result.successful()) {
+              current.sendMessage(ChatColor.RED + tr(current, "command.quoteFavorite.repositoryNotReady"));
+              return;
+            }
 
-      player.sendMessage(ChatColor.AQUA + trp("command.quoteFavorite.listHeader", "count", String.valueOf(favs.size())));
-      for (String row : favs) {
-        String safeRow = sanitizeFavoriteRow(row);
-        if (safeRow.isBlank()) continue;
-        player.sendMessage(ChatColor.GRAY + tr("command.quoteFavorite.listSeparator"));
-        for (String line : safeRow.split("\n")) {
-          if (line == null || line.isBlank()) continue;
-          player.sendMessage(ChatColor.WHITE + line);
-        }
-      }
+            List<String> favs = result.value() == null ? List.of() : result.value();
+            current.sendMessage(ChatColor.AQUA + trp(
+                current, "command.quoteFavorite.listHeader", "count", String.valueOf(favs.size())));
+            for (String row : favs) {
+              String safeRow = sanitizeFavoriteRow(row);
+              if (safeRow.isBlank()) continue;
+              current.sendMessage(ChatColor.GRAY + tr(current, "command.quoteFavorite.listSeparator"));
+              for (String line : safeRow.split("\\n")) {
+                if (line == null || line.isBlank()) continue;
+                current.sendMessage(ChatColor.WHITE + line);
+              }
+            }
+          })
+      );
       return true;
     }
 
-    // ---------------------------------------------------
-    // remove <id>
-    // ---------------------------------------------------
     if (sub.equals("remove")) {
       if (args.length < 2) {
-        player.sendMessage(ChatColor.RED + tr("command.quoteFavorite.removeUsage"));
-        return true;
-      }
-
-      if (conn == null || plugin.getProverbLogRepository() == null) {
-        player.sendMessage(ChatColor.RED + tr("command.quoteFavorite.repositoryNotReady"));
+        player.sendMessage(ChatColor.RED + tr(player, "command.quoteFavorite.removeUsage"));
         return true;
       }
 
@@ -127,119 +116,115 @@ public class QuoteFavoriteCommand implements CommandExecutor {
       try {
         id = Integer.parseInt(args[1]);
       } catch (NumberFormatException e) {
-        player.sendMessage(ChatColor.RED + tr("command.quoteFavorite.removeIdNumber"));
+        player.sendMessage(ChatColor.RED + tr(player, "command.quoteFavorite.removeIdNumber"));
         return true;
       }
 
-      boolean ok = plugin.getProverbLogRepository().deleteFavoriteById(conn, uuid, id);
-
-      if (ok) {
-        player.sendMessage(ChatColor.GREEN + trp("command.quoteFavorite.removeSuccess", "id", String.valueOf(id)));
-      } else {
-        player.sendMessage(ChatColor.RED + tr("command.quoteFavorite.removeNotFound"));
+      if (service == null) {
+        player.sendMessage(ChatColor.RED + tr(player, "command.quoteFavorite.repositoryNotReady"));
+        return true;
       }
+
+      service.deleteFavorite(playerId, id).whenComplete((result, failure) ->
+          deliver(playerId, current -> {
+            if (failure != null || result == null || !result.successful()) {
+              current.sendMessage(ChatColor.RED + tr(current, "command.quoteFavorite.repositoryNotReady"));
+            } else if (Boolean.TRUE.equals(result.value())) {
+              current.sendMessage(ChatColor.GREEN + trp(
+                  current, "command.quoteFavorite.removeSuccess", "id", String.valueOf(id)));
+            } else {
+              current.sendMessage(ChatColor.RED + tr(current, "command.quoteFavorite.removeNotFound"));
+            }
+          })
+      );
       return true;
     }
 
-    // ---------------------------------------------------
-    // reread [chat|title|book]
-    // ---------------------------------------------------
     if (sub.equals("reread")) {
       String mode = (args.length >= 2) ? args[1].toLowerCase(Locale.ROOT) : "chat";
-
       QuoteRereadService.OutputMode outMode = QuoteRereadService.OutputMode.CHAT;
       if (mode.equals("title")) outMode = QuoteRereadService.OutputMode.TITLE;
       if (mode.equals("book")) outMode = QuoteRereadService.OutputMode.BOOK;
-
-      boolean ok = rereadService.rereadRandom(player, outMode);
-      if (!ok) {
-        player.sendMessage(ChatColor.YELLOW + tr("command.quoteFavorite.rereadNoQuotes"));
-      }
+      rereadService.rereadRandom(player, outMode);
       return true;
     }
 
-    // ---------------------------------------------------
-    // book [toc|success|timeup|other|full]
-    // ---------------------------------------------------
     if (sub.equals("book")) {
+      if (service == null) {
+        player.sendMessage(ChatColor.RED + tr(player, "command.quoteFavorite.repositoryNotReady"));
+        return true;
+      }
+
       String mode = (args.length >= 2) ? args[1].toLowerCase(Locale.ROOT) : "full";
-
-      // ✅ プレイヤー言語（PlayerLanguageStoreがある前提）
       String lang = resolvePlayerLang(player);
-
-      // ✅ お気に入り取得
-      List<String> rawRows = new ArrayList<>();
-      try {
-        if (conn != null && plugin.getProverbLogRepository() != null) {
-          rawRows = plugin.getProverbLogRepository().loadFavorites(conn, uuid, 200);
-        }
-      } catch (Throwable ignored) {}
-
-      // ✅ repositoryは List<String> を返すので、図鑑Builderが読める形に変換する
-      List<Object> rows = rawRows.stream()
-          .map(QuoteFavoriteCommand::toRowObject)
-          .collect(Collectors.toList());
-
       QuoteFavoritesBookBuilder.ViewMode view = QuoteFavoritesBookBuilder.ViewMode.FULL;
       if (mode.equals("toc")) view = QuoteFavoritesBookBuilder.ViewMode.TOC_ONLY;
       if (mode.equals("success")) view = QuoteFavoritesBookBuilder.ViewMode.SUCCESS_ONLY;
       if (mode.equals("timeup")) view = QuoteFavoritesBookBuilder.ViewMode.TIME_UP_ONLY;
       if (mode.equals("other")) view = QuoteFavoritesBookBuilder.ViewMode.OTHER_ONLY;
-      if (mode.equals("full")) view = QuoteFavoritesBookBuilder.ViewMode.FULL;
+      QuoteFavoritesBookBuilder.ViewMode requestedView = view;
 
-      // ✅ count は “お気に入り総数”
-      int count = (rows == null) ? 0 : rows.size();
+      service.loadFavorites(playerId, 200).whenComplete((result, failure) ->
+          deliver(playerId, current -> {
+            if (failure != null || result == null || !result.successful()) {
+              current.sendMessage(ChatColor.RED + tr(current, "command.quoteFavorite.repositoryNotReady"));
+              return;
+            }
 
-      ItemStack book = bookBuilder.buildFavoritesBook(lang, uuid, count, rows, view);
-      if (book == null) {
-        player.sendMessage(ChatColor.RED + tr("command.quoteFavorite.bookOpenFailed"));
-        return true;
-      }
+            List<String> rawRows = result.value() == null ? List.of() : result.value();
+            List<Object> rows = rawRows.stream()
+                .map(QuoteFavoriteCommand::toRowObject)
+                .collect(Collectors.toList());
 
-      try {
-        player.openBook(book);
-      } catch (Throwable t) {
-        player.sendMessage(ChatColor.RED + tr("command.quoteFavorite.openBookFailed"));
-      }
+            ItemStack book = bookBuilder.buildFavoritesBook(
+                lang, playerId, rows.size(), rows, requestedView);
+            if (book == null) {
+              current.sendMessage(ChatColor.RED + tr(current, "command.quoteFavorite.bookOpenFailed"));
+              return;
+            }
+
+            try {
+              current.openBook(book);
+            } catch (Throwable t) {
+              current.sendMessage(ChatColor.RED + tr(current, "command.quoteFavorite.openBookFailed"));
+            }
+          })
+      );
       return true;
     }
 
-    player.sendMessage(ChatColor.RED + tr("command.quoteFavorite.unknownSubcommand"));
+    player.sendMessage(ChatColor.RED + tr(player, "command.quoteFavorite.unknownSubcommand"));
     return true;
   }
 
+  private void deliver(UUID playerId, java.util.function.Consumer<Player> action) {
+    try {
+      plugin.getServer().getScheduler().runTask(plugin, () -> {
+        if (!plugin.isEnabled()) return;
+        Player current = plugin.getServer().getPlayer(playerId);
+        if (current == null || !current.isOnline()) return;
+        action.accept(current);
+      });
+    } catch (RuntimeException ignored) {
+      // Plugin lifecycle is shutting down. Late DB results are intentionally dropped.
+    }
+  }
+
   private void showHelp(Player player) {
-    player.sendMessage(ChatColor.AQUA + tr("command.quoteFavorite.help.title"));
-    player.sendMessage(ChatColor.GRAY + tr("command.quoteFavorite.help.latest"));
-    player.sendMessage(ChatColor.GRAY + tr("command.quoteFavorite.help.list"));
-    player.sendMessage(ChatColor.GRAY + tr("command.quoteFavorite.help.remove"));
-    player.sendMessage(ChatColor.GRAY + tr("command.quoteFavorite.help.reread"));
-    player.sendMessage(ChatColor.GRAY + tr("command.quoteFavorite.help.rereadTitle"));
-    player.sendMessage(ChatColor.GRAY + tr("command.quoteFavorite.help.rereadBook"));
-    player.sendMessage(ChatColor.GRAY + tr("command.quoteFavorite.help.book"));
-    player.sendMessage(ChatColor.GRAY + tr("command.quoteFavorite.help.bookToc"));
-    player.sendMessage(ChatColor.GRAY + tr("command.quoteFavorite.help.bookSuccess"));
-    player.sendMessage(ChatColor.GRAY + tr("command.quoteFavorite.help.bookTimeup"));
-    player.sendMessage(ChatColor.GRAY + tr("command.quoteFavorite.help.bookOther"));
+    player.sendMessage(ChatColor.AQUA + tr(player, "command.quoteFavorite.help.title"));
+    player.sendMessage(ChatColor.GRAY + tr(player, "command.quoteFavorite.help.latest"));
+    player.sendMessage(ChatColor.GRAY + tr(player, "command.quoteFavorite.help.list"));
+    player.sendMessage(ChatColor.GRAY + tr(player, "command.quoteFavorite.help.remove"));
+    player.sendMessage(ChatColor.GRAY + tr(player, "command.quoteFavorite.help.reread"));
+    player.sendMessage(ChatColor.GRAY + tr(player, "command.quoteFavorite.help.rereadTitle"));
+    player.sendMessage(ChatColor.GRAY + tr(player, "command.quoteFavorite.help.rereadBook"));
+    player.sendMessage(ChatColor.GRAY + tr(player, "command.quoteFavorite.help.book"));
+    player.sendMessage(ChatColor.GRAY + tr(player, "command.quoteFavorite.help.bookToc"));
+    player.sendMessage(ChatColor.GRAY + tr(player, "command.quoteFavorite.help.bookSuccess"));
+    player.sendMessage(ChatColor.GRAY + tr(player, "command.quoteFavorite.help.bookTimeup"));
+    player.sendMessage(ChatColor.GRAY + tr(player, "command.quoteFavorite.help.bookOther"));
   }
 
-
-
-  private String currentLang() {
-    try {
-      return resolvePlayerLang(playerForLangFallback());
-    } catch (Throwable ignored) {
-      return plugin.getConfig().getString("language.default", "ja");
-    }
-  }
-
-  private Player playerForLangFallback() {
-    try {
-      return org.bukkit.Bukkit.getOnlinePlayers().stream().findFirst().orElse(null);
-    } catch (Throwable ignored) {
-      return null;
-    }
-  }
 
 
   private String sanitizeFavoriteRow(String row) {
@@ -256,25 +241,31 @@ public class QuoteFavoriteCommand implements CommandExecutor {
     return out.toString().trim();
   }
 
-  private String tr(String key) {
-    String lang = currentLang();
+  private String tr(Player player, String key) {
+    String lang = resolvePlayerLang(player);
     try {
       if (i18n != null) {
-        String s = i18n.tr(lang, key);
-        if (s != null && !s.isBlank() && !s.equals(key) && !s.startsWith("Translation missing:")) return s;
+        String value = i18n.tr(lang, key);
+        if (value != null && !value.isBlank() && !value.equals(key)
+            && !value.startsWith("Translation missing:")) {
+          return value;
+        }
       }
-    } catch (Throwable ignored) {}
+    } catch (Throwable ignored) { }
     return key;
   }
 
-  private String trp(String key, String name, String value) {
-    String lang = currentLang();
+  private String trp(Player player, String key, String name, String value) {
+    String lang = resolvePlayerLang(player);
     try {
       if (i18n != null) {
-        String s = i18n.tr(lang, key, java.util.Map.of(name, value));
-        if (s != null && !s.isBlank() && !s.equals(key) && !s.startsWith("Translation missing:")) return s;
+        String translated = i18n.tr(lang, key, java.util.Map.of(name, value));
+        if (translated != null && !translated.isBlank() && !translated.equals(key)
+            && !translated.startsWith("Translation missing:")) {
+          return translated;
+        }
       }
-    } catch (Throwable ignored) {}
+    } catch (Throwable ignored) { }
     return key.replace("{" + name + "}", value);
   }
 

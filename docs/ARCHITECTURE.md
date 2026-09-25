@@ -30,7 +30,7 @@ flowchart TD
     Effects --> Heartbeat[HeartbeatSoundService]
 
     DB --> Scores[SeasonScoreRepository]
-    DB --> Quotes[ProverbLogRepository / QuoteFavoriteStore]
+    DB --> Quotes[ProverbLogRepository / InteractiveProverbService]
 
     I18N --> LangFiles[src/main/resources/languages/*.yml]
     I18N --> PlayerLang[player_languages.yml]
@@ -87,14 +87,16 @@ TreasureRun
 │   ├── SeasonRepository
 │   ├── SeasonScoreRepository
 │   ├── ProverbLogRepository
-│   └── QuoteFavoriteStore
+│   ├── JdbcInteractiveProverbBackend
+│   └── TerminalPersistenceService
 │
 ├── Quote / Favorites
 │   ├── QuoteModule
 │   ├── QuoteFavoriteCommand
+│   ├── QuoteFavoriteBookClickListener
 │   ├── QuoteFavoritesBookBuilder
 │   ├── QuoteRereadService
-│   └── QuoteFavoriteShortcutListener
+│   └── InteractiveProverbService
 │
 └── Quality Gates
     ├── scripts/check_i18n_yaml_syntax.py
@@ -112,6 +114,7 @@ TreasureRun
 
 - Uses Bukkit scheduler tasks for time-based gameplay, countdowns, effects, and delayed demo sequences.
 - Separates long-running visual/audio effects from core command handling.
+- Interactive quote/favorites JDBC uses bounded off-thread operation-owned connections; Bukkit UI rendering returns to the main thread.
 - Cancels scheduled tasks during game end and cleanup to avoid stale runtime state.
 
 ### Security / Permissions

@@ -6,7 +6,6 @@ import org.bukkit.inventory.ItemStack;
 import plugin.I18n;
 import plugin.TreasureRunMultiChestPlugin;
 
-import java.sql.Connection;
 import java.util.List;
 import java.util.Locale;
 import java.util.Random;
@@ -34,41 +33,67 @@ public class QuoteRereadService {
     this.bookBuilder = new QuoteFavoritesBookBuilder(this.i18n);
   }
 
-  public boolean rereadRandom(Player player, OutputMode mode) {
-    UUID uuid = player.getUniqueId();
+  public void rereadRandom(Player player, OutputMode mode) {
+    if (player == null) return;
 
-    // ✅ プレイヤー言語（PlayerLanguageStore優先 → default）
+    UUID playerId = player.getUniqueId();
     String lang = resolvePlayerLang(player);
+    InteractiveProverbService service = plugin.getInteractiveProverbService();
 
-    Connection conn = null;
-    try {
-      conn = plugin.getMySQLConnection();
-    } catch (Throwable ignored) {}
-
-    if (conn == null || plugin.getProverbLogRepository() == null) {
-      player.sendMessage(ChatColor.RED + trOrFallback(lang, "command.quoteReread.repositoryNotReady", "The favorites repository is not ready yet."));
-      return false;
+    if (service == null) {
+      player.sendMessage(ChatColor.RED + trOrFallback(
+          lang,
+          "command.quoteReread.repositoryNotReady",
+          "The favorites repository is not ready yet."
+      ));
+      return;
     }
 
-    // ✅ favorites からランダム（なければ false）
-    List<String> favs = plugin.getProverbLogRepository().loadFavorites(conn, uuid, 200);
-    if (favs == null || favs.isEmpty()) return false;
+    service.loadFavorites(playerId, 200).whenComplete((result, failure) ->
+        deliver(playerId, current -> {
+          if (failure != null || result == null || !result.successful()) {
+            current.sendMessage(ChatColor.RED + trOrFallback(
+                lang,
+                "command.quoteReread.repositoryNotReady",
+                "The favorites repository is not ready yet."
+            ));
+            return;
+          }
 
-    String pick = favs.get(random.nextInt(favs.size()));
+          List<String> favs = result.value() == null ? List.of() : result.value();
+          if (favs.isEmpty()) {
+            current.sendMessage(ChatColor.YELLOW + trOrFallback(
+                lang,
+                "command.quoteFavorite.rereadNoQuotes",
+                "No saved favorites are available yet."
+            ));
+            return;
+          }
 
-    // ✅ あなたの既存Parserをそのまま活かす
+          String pick = favs.get(random.nextInt(favs.size()));
+          render(current, lang, pick, mode);
+        })
+    );
+  }
+
+  private void render(Player player, String lang, String pick, OutputMode mode) {
     QuoteFavoriteRow row = QuoteFavoriteRowParser.parse(pick);
     String quoteText = (row == null || row.quote == null) ? "" : row.quote.trim();
-    if (quoteText.isBlank()) return false;
+    if (quoteText.isBlank()) {
+      player.sendMessage(ChatColor.YELLOW + trOrFallback(
+          lang,
+          "command.quoteFavorite.rereadNoQuotes",
+          "No saved favorites are available yet."
+      ));
+      return;
+    }
 
-    // ✅ messages.yml（I18n）で表示文を取得（無ければ英語にフォールバック）
     String head = trOrFallback(lang, "favorites.reread.head", "favorites.reread.head");
-    String noQuotes = trOrFallback(lang, "favorites.reread.noQuotes", "favorites.reread.noQuotes"); // reserved for future empty-state UI parity
 
     if (mode == OutputMode.CHAT) {
       player.sendMessage(ChatColor.AQUA + head);
       player.sendMessage(ChatColor.WHITE + quoteText);
-      return true;
+      return;
     }
 
     if (mode == OutputMode.TITLE) {
@@ -78,30 +103,43 @@ public class QuoteRereadService {
             ChatColor.WHITE + trimForTitle(quoteText),
             10, 60, 10
         );
-      } catch (Throwable ignored) {}
-      return true;
+      } catch (Throwable ignored) { }
+      return;
     }
 
-    // ✅ BOOK（OneShot）
     try {
-      // Builderが reflection で読める Row に変換して渡す（壊れない）
       Object objRow = new SimpleRow(extractKindFromRaw(pick), quoteText);
-
       ItemStack book = bookBuilder.buildRereadOneShotBook(player, objRow);
       if (book == null) {
-        player.sendMessage(ChatColor.RED + trOrFallback(lang, "command.quoteReread.bookOpenFailed", "Could not open the favorites book."));
-        return false;
+        player.sendMessage(ChatColor.RED + trOrFallback(
+            lang,
+            "command.quoteReread.bookOpenFailed",
+            "Could not open the favorites book."
+        ));
+        return;
       }
-
       player.openBook(book);
-      return true;
-
     } catch (Throwable t) {
-      player.sendMessage(ChatColor.RED + trOrFallback(lang, "command.quoteReread.openBookFailed", "Could not open the book."));
-      // 念のため CHAT で出す（完全に無言にならない）
+      player.sendMessage(ChatColor.RED + trOrFallback(
+          lang,
+          "command.quoteReread.openBookFailed",
+          "Could not open the book."
+      ));
       player.sendMessage(ChatColor.AQUA + head);
       player.sendMessage(ChatColor.WHITE + quoteText);
-      return true;
+    }
+  }
+
+  private void deliver(UUID playerId, java.util.function.Consumer<Player> action) {
+    try {
+      plugin.getServer().getScheduler().runTask(plugin, () -> {
+        if (!plugin.isEnabled()) return;
+        Player current = plugin.getServer().getPlayer(playerId);
+        if (current == null || !current.isOnline()) return;
+        action.accept(current);
+      });
+    } catch (RuntimeException ignored) {
+      // Plugin lifecycle is shutting down. Late DB results are intentionally dropped.
     }
   }
 
