@@ -32,6 +32,8 @@ import java.security.NoSuchAlgorithmException;
  */
 public class ProverbLogRepository {
 
+  private static final int QUERY_TIMEOUT_SECONDS = 4;
+
   private final TreasureRunMultiChestPlugin plugin;
 
   // =======================================================
@@ -70,6 +72,7 @@ public class ProverbLogRepository {
             ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4";
 
     try (PreparedStatement ps = conn.prepareStatement(sql)) {
+      ps.setQueryTimeout(QUERY_TIMEOUT_SECONDS);
       ps.executeUpdate();
       plugin.getLogger().info("[ProverbLog] CREATE TABLE IF NOT EXISTS success: proverb_logs");
     } catch (SQLException e) {
@@ -114,6 +117,7 @@ public class ProverbLogRepository {
     if (safePlayerName.isBlank()) safePlayerName = "unknown";
 
     try (PreparedStatement ps = conn.prepareStatement(sql)) {
+      ps.setQueryTimeout(QUERY_TIMEOUT_SECONDS);
 
       ps.setString(1, uuid.toString());
       ps.setString(2, safePlayerName);
@@ -161,17 +165,11 @@ public class ProverbLogRepository {
   // =======================================================
   // ✅ SELECT（proverb_logs 取得）
   // =======================================================
-  public List<String> loadRecentProverbs(Connection conn, UUID uuid, int limit) {
+  public List<String> loadRecentProverbs(Connection conn, UUID uuid, int limit) throws SQLException {
     List<String> list = new ArrayList<>();
 
-    if (conn == null) {
-      plugin.getLogger().warning("[ProverbLog] Failed to load: MySQL connection is null.");
-      return list;
-    }
-    if (uuid == null) {
-      plugin.getLogger().warning("[ProverbLog] Failed to load: UUID is null.");
-      return list;
-    }
+    if (conn == null) throw new SQLException("MySQL connection is null");
+    if (uuid == null) throw new SQLException("UUID is null");
 
     createTableIfNotExists(conn);
 
@@ -183,6 +181,7 @@ public class ProverbLogRepository {
             "LIMIT ?";
 
     try (PreparedStatement ps = conn.prepareStatement(sql)) {
+      ps.setQueryTimeout(QUERY_TIMEOUT_SECONDS);
       ps.setString(1, uuid.toString());
       ps.setInt(2, Math.max(1, limit));
 
@@ -197,18 +196,6 @@ public class ProverbLogRepository {
           list.add(row);
         }
       }
-
-      plugin.getLogger().info(
-          "Loaded proverb logs from MySQL: proverb_logs" +
-              " (uuid=" + uuid + ", count=" + list.size() + ")"
-      );
-
-    } catch (SQLException e) {
-      plugin.getLogger().severe(
-          "[ProverbLog] Failed to load proverb logs from MySQL: proverb_logs" +
-              " (uuid=" + uuid + ")\n" +
-              e.getMessage()
-      );
     }
 
     return list;
@@ -241,6 +228,7 @@ public class ProverbLogRepository {
             ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4";
 
     try (PreparedStatement ps = conn.prepareStatement(sql)) {
+      ps.setQueryTimeout(QUERY_TIMEOUT_SECONDS);
       ps.executeUpdate();
       plugin.getLogger().info("[ProverbFav] CREATE TABLE IF NOT EXISTS success: " + FAVORITES_TABLE_PRIMARY);
     } catch (SQLException e) {
@@ -279,6 +267,7 @@ public class ProverbLogRepository {
             ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4";
 
     try (PreparedStatement ps = conn.prepareStatement(sql)) {
+      ps.setQueryTimeout(QUERY_TIMEOUT_SECONDS);
       ps.executeUpdate();
       plugin.getLogger().info("[ProverbFav] (legacy) Table ready: " + FAVORITES_TABLE_LEGACY);
     } catch (SQLException ignored) {
@@ -296,62 +285,36 @@ public class ProverbLogRepository {
       String outcome,
       String difficulty,
       String lang,
-      String quoteText) {
+      String quoteText) throws SQLException {
 
-    if (conn == null) {
-      plugin.getLogger().warning("[ProverbFav] Favorite not saved: MySQL connection is null.");
-      return false;
-    }
-    if (uuid == null) {
-      plugin.getLogger().warning("[ProverbFav] Favorite not saved: UUID is null.");
-      return false;
-    }
-    if (quoteText == null || quoteText.isBlank()) {
-      plugin.getLogger().warning("[ProverbFav] Favorite not saved: quoteText is empty.");
-      return false;
-    }
+    if (conn == null) throw new SQLException("MySQL connection is null");
+    if (uuid == null) throw new SQLException("UUID is null");
+    if (quoteText == null || quoteText.isBlank()) return false;
 
     createFavoritesTableIfNotExists(conn);
 
     String hash = sha256Hex(quoteText);
-    if (hash.isBlank()) {
-      plugin.getLogger().warning("[ProverbFav] Favorite not saved: quote_hash is empty.");
-      return false;
-    }
+    if (hash.isBlank()) return false;
 
-    // ✅ 本命：favorite_quotes
     final String sql =
         "INSERT INTO " + FAVORITES_TABLE_PRIMARY + " (player_uuid, quote_hash, outcome, difficulty, lang, quote_text) " +
             "VALUES (?, ?, ?, ?, ?, ?)";
 
     try (PreparedStatement ps = conn.prepareStatement(sql)) {
+      ps.setQueryTimeout(QUERY_TIMEOUT_SECONDS);
       ps.setString(1, uuid.toString());
       ps.setString(2, hash);
       ps.setString(3, safe(outcome, "UNKNOWN"));
       ps.setString(4, safe(difficulty, "Normal"));
       ps.setString(5, safe(lang, "ja"));
       ps.setString(6, safeQuote(quoteText));
-
       ps.executeUpdate();
-
-      plugin.getLogger().info(
-          "Favorite saved to MySQL: " + FAVORITES_TABLE_PRIMARY +
-              " (uuid=" + uuid +
-              ", outcome=" + safe(outcome, "UNKNOWN") +
-              ", difficulty=" + safe(difficulty, "Normal") +
-              ", lang=" + safe(lang, "ja") +
-              ")"
-      );
       return true;
-
     } catch (SQLException e) {
-      // ✅ だいたいここは「すでに登録済み」の時に起きる（UNIQUE制約）
-      plugin.getLogger().warning(
-          "[ProverbFav] Favorite not saved (maybe duplicate): " + FAVORITES_TABLE_PRIMARY +
-              " (uuid=" + uuid + ")\n" +
-              e.getMessage()
-      );
-      return false;
+      if (e.getErrorCode() == 1062) {
+        return false;
+      }
+      throw e;
     }
   }
 
@@ -359,19 +322,10 @@ public class ProverbLogRepository {
   // ✅ 追加：お気に入り削除（Favorites DELETE）
   // - 本命：favorite_quotes から削除
   // =======================================================
-  public boolean deleteFavoriteById(Connection conn, UUID uuid, int favoriteId) {
-    if (conn == null) {
-      plugin.getLogger().warning("[ProverbFav] Favorite not removed: MySQL connection is null.");
-      return false;
-    }
-    if (uuid == null) {
-      plugin.getLogger().warning("[ProverbFav] Favorite not removed: UUID is null.");
-      return false;
-    }
-    if (favoriteId <= 0) {
-      plugin.getLogger().warning("[ProverbFav] Favorite not removed: favoriteId is invalid.");
-      return false;
-    }
+  public boolean deleteFavoriteById(Connection conn, UUID uuid, int favoriteId) throws SQLException {
+    if (conn == null) throw new SQLException("MySQL connection is null");
+    if (uuid == null) throw new SQLException("UUID is null");
+    if (favoriteId <= 0) return false;
 
     createFavoritesTableIfNotExists(conn);
 
@@ -380,24 +334,10 @@ public class ProverbLogRepository {
             "WHERE player_uuid = ? AND id = ?";
 
     try (PreparedStatement ps = conn.prepareStatement(sql)) {
+      ps.setQueryTimeout(QUERY_TIMEOUT_SECONDS);
       ps.setString(1, uuid.toString());
       ps.setInt(2, favoriteId);
-
-      int rows = ps.executeUpdate();
-
-      plugin.getLogger().info(
-          "Favorite removed from MySQL: " + FAVORITES_TABLE_PRIMARY +
-              " (uuid=" + uuid + ", id=" + favoriteId + ", rows=" + rows + ")"
-      );
-      return rows > 0;
-
-    } catch (SQLException e) {
-      plugin.getLogger().severe(
-          "[ProverbFav] Failed to remove favorite: " + FAVORITES_TABLE_PRIMARY +
-              " (uuid=" + uuid + ", id=" + favoriteId + ")\n" +
-              e.getMessage()
-      );
-      return false;
+      return ps.executeUpdate() > 0;
     }
   }
 
@@ -405,17 +345,11 @@ public class ProverbLogRepository {
   // ✅ 追加：お気に入り一覧（Favorites SELECT）
   // - 本命：favorite_quotes から読む
   // =======================================================
-  public List<String> loadFavorites(Connection conn, UUID uuid, int limit) {
+  public List<String> loadFavorites(Connection conn, UUID uuid, int limit) throws SQLException {
     List<String> list = new ArrayList<>();
 
-    if (conn == null) {
-      plugin.getLogger().warning("[ProverbFav] Failed to load: MySQL connection is null.");
-      return list;
-    }
-    if (uuid == null) {
-      plugin.getLogger().warning("[ProverbFav] Failed to load: UUID is null.");
-      return list;
-    }
+    if (conn == null) throw new SQLException("MySQL connection is null");
+    if (uuid == null) throw new SQLException("UUID is null");
 
     createFavoritesTableIfNotExists(conn);
 
@@ -427,6 +361,7 @@ public class ProverbLogRepository {
             "LIMIT ?";
 
     try (PreparedStatement ps = conn.prepareStatement(sql)) {
+      ps.setQueryTimeout(QUERY_TIMEOUT_SECONDS);
       ps.setString(1, uuid.toString());
       ps.setInt(2, Math.max(1, limit));
 
@@ -438,31 +373,13 @@ public class ProverbLogRepository {
           String lang    = rs.getString("lang");
           String quote   = rs.getString("quote_text");
 
-          // ✅ Book表示用：IDも出す（削除コマンドで使える）
           String row =
               "★#" + id + "\n" +
                   "【" + outcome + " / " + diff + " / " + lang + "】\n" +
                   quote;
-
           list.add(row);
         }
       }
-
-      plugin.getLogger().info(
-          "Loaded favorites from MySQL: " + FAVORITES_TABLE_PRIMARY +
-              " (uuid=" + uuid + ", count=" + list.size() + ")"
-      );
-
-    } catch (SQLException e) {
-      plugin.getLogger().severe(
-          "[ProverbFav] Failed to load favorites: " + FAVORITES_TABLE_PRIMARY +
-              " (uuid=" + uuid + ")\n" +
-              e.getMessage()
-      );
-
-      // ✅ 万一 favorite_quotes が無い環境でも壊れない：旧テーブルから読む fallback
-      List<String> fallback = loadFavoritesLegacy(conn, uuid, limit);
-      if (!fallback.isEmpty()) return fallback;
     }
 
     return list;
@@ -484,6 +401,7 @@ public class ProverbLogRepository {
             "LIMIT ?";
 
     try (PreparedStatement ps = conn.prepareStatement(sql)) {
+      ps.setQueryTimeout(QUERY_TIMEOUT_SECONDS);
       ps.setString(1, uuid.toString());
       ps.setInt(2, Math.max(1, limit));
 
@@ -520,22 +438,16 @@ public class ProverbLogRepository {
   // - あなたが欲しかった「本命」API
   // - 内部的には loadFavorites を呼ぶ（= favorite_quotes を読む）
   // =======================================================
-  public List<String> getFavorites(Connection conn, UUID uuid, int limit) {
+  public List<String> getFavorites(Connection conn, UUID uuid, int limit) throws SQLException {
     return loadFavorites(conn, uuid, limit);
   }
 
   // =======================================================
   // ✅ 追加：直近1件（logsの最新）を取得 → お気に入り登録に使う
   // =======================================================
-  public boolean favoriteLatestLog(Connection conn, UUID uuid) {
-    if (conn == null) {
-      plugin.getLogger().warning("[ProverbFav] Favorite latest failed: MySQL connection is null.");
-      return false;
-    }
-    if (uuid == null) {
-      plugin.getLogger().warning("[ProverbFav] Favorite latest failed: UUID is null.");
-      return false;
-    }
+  public boolean favoriteLatestLog(Connection conn, UUID uuid) throws SQLException {
+    if (conn == null) throw new SQLException("MySQL connection is null");
+    if (uuid == null) throw new SQLException("UUID is null");
 
     createTableIfNotExists(conn);
 
@@ -547,13 +459,11 @@ public class ProverbLogRepository {
             "LIMIT 1";
 
     try (PreparedStatement ps = conn.prepareStatement(sql)) {
+      ps.setQueryTimeout(QUERY_TIMEOUT_SECONDS);
       ps.setString(1, uuid.toString());
 
       try (ResultSet rs = ps.executeQuery()) {
-        if (!rs.next()) {
-          plugin.getLogger().warning("[ProverbFav] Favorite latest failed: no logs found.");
-          return false;
-        }
+        if (!rs.next()) return false;
 
         String outcome = rs.getString("outcome");
         String diff    = rs.getString("difficulty");
@@ -562,12 +472,6 @@ public class ProverbLogRepository {
 
         return insertFavorite(conn, uuid, outcome, diff, lang, quote);
       }
-
-    } catch (SQLException e) {
-      plugin.getLogger().severe(
-          "[ProverbFav] Favorite latest failed\n" + e.getMessage()
-      );
-      return false;
     }
   }
 

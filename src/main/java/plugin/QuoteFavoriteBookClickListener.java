@@ -13,7 +13,6 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.BookMeta;
 import plugin.I18n;
 
-import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -39,7 +38,6 @@ public class QuoteFavoriteBookClickListener implements Listener {
   public void onRightClick(PlayerInteractEvent e) {
     if (e.getItem() == null) return;
 
-    // ✅ 右クリック以外は無視（壊れないように安全に）
     Action act = e.getAction();
     if (!(act == Action.RIGHT_CLICK_AIR || act == Action.RIGHT_CLICK_BLOCK)) return;
 
@@ -50,103 +48,68 @@ public class QuoteFavoriteBookClickListener implements Listener {
     if (meta == null || !meta.hasDisplayName()) return;
 
     Player player = e.getPlayer();
+    UUID playerId = player.getUniqueId();
 
-    // ✅ 右クリック連打対策
     long now = System.currentTimeMillis();
-    long last = lastClickMs.getOrDefault(player.getUniqueId(), 0L);
+    long last = lastClickMs.getOrDefault(playerId, 0L);
     if (now - last < COOLDOWN_MS) return;
-    lastClickMs.put(player.getUniqueId(), now);
+    lastClickMs.put(playerId, now);
 
-    // ✅ この本が TreasureRun のルールブックか判定
     if (!isTreasureRunRuleBook(meta.getDisplayName())) return;
-
-    // ✅ TreasureRunルールブックに反応した場合は、原作の本表示を止める（二重挙動防止）
     e.setCancelled(true);
 
-    // =======================================================
-    // ✅ 操作仕様（壊れない + 理想形）
-    //  - 通常右クリック：最新格言を Favorite 保存
-    //  - Shift + 右クリック：Favorites 図鑑を表示（本で開く）
-    // =======================================================
-    if (player.isSneaking()) {
-      boolean shown = showFavoritesBookHybrid(player);
-      if (!shown) {
-        // ✅ ここまで来て false の場合も、最低限メッセージ
-        player.sendMessage(ChatColor.YELLOW + tr(player, "favorites.empty.noFav"));
-      }
+    plugin.quote.InteractiveProverbService service = plugin.getInteractiveProverbService();
+    if (service == null) {
+      player.sendMessage(ChatColor.YELLOW + tr(player, "command.quoteFavorite.repositoryNotReady"));
       return;
     }
 
-    boolean ok = favoriteLatest(player);
+    // One canonical interaction contract:
+    // normal right-click = save latest; sneak + right-click = open Favorites archive.
+    if (player.isSneaking()) {
+      service.loadBookData(playerId, 30, 200).whenComplete((result, failure) ->
+          deliver(playerId, current -> {
+            if (failure != null || result == null || !result.successful()) {
+              current.sendMessage(ChatColor.YELLOW + tr(current, "favorites.empty.noFav"));
+              return;
+            }
 
-    if (ok) {
-      player.sendMessage(ChatColor.GREEN + tr(player, "command.quoteFavorite.latestSaved"));
-    } else {
-      player.sendMessage(ChatColor.YELLOW + tr(player, "command.quoteFavorite.latestNotSaved"));
+            List<String> rows = new ArrayList<>(result.value().favorites());
+            if (rows.isEmpty()) {
+              rows.addAll(result.value().recent());
+            }
+
+            boolean shown = showFavoritesBookHybrid(current, rows);
+            if (!shown) {
+              current.sendMessage(ChatColor.YELLOW + tr(current, "favorites.empty.noFav"));
+            }
+          })
+      );
+      return;
     }
+
+    service.favoriteLatest(playerId).whenComplete((result, failure) ->
+        deliver(playerId, current -> {
+          if (failure != null || result == null || !result.successful()) {
+            current.sendMessage(ChatColor.YELLOW + tr(current, "command.quoteFavorite.repositoryNotReady"));
+          } else if (Boolean.TRUE.equals(result.value())) {
+            current.sendMessage(ChatColor.GREEN + tr(current, "command.quoteFavorite.latestSaved"));
+          } else {
+            current.sendMessage(ChatColor.YELLOW + tr(current, "command.quoteFavorite.latestNotSaved"));
+          }
+        })
+    );
   }
 
-  private boolean favoriteLatest(Player player) {
+  private boolean showFavoritesBookHybrid(Player player, List<String> rows) {
     if (player == null) return false;
+    List<String> safeRows = rows == null ? List.of() : List.copyOf(rows);
 
-    UUID uuid = player.getUniqueId();
-
-    try {
-      Connection conn = plugin.getMySQLConnection();
-      if (conn == null) return false;
-      if (plugin.getProverbLogRepository() == null) return false;
-
-      return plugin.getProverbLogRepository().favoriteLatestLog(conn, uuid);
-
-    } catch (Exception ex) {
-      plugin.getLogger().severe("[QuoteFavoriteBook] Favorite failed: " + ex.getMessage());
-      return false;
-    }
-  }
-
-  // =======================================================
-  // ✅ Favorites一覧を「本」で表示する（最強ハイブリッド）
-  // - ① 反射でFavorites取得を試す（壊れない）
-  // - ② 取れなければ recent へフォールバック（壊れない）
-  // - ③ 0件なら空状態の本を表示（B路線完成）
-  // - ④ Builderで図鑑生成（理想形）
-  // - ⑤ Builderが失敗したら buildBookPages で最低限表示（壊れない）
-  // =======================================================
-  private boolean showFavoritesBookHybrid(Player player) {
-    if (player == null) return false;
-
-    UUID uuid = player.getUniqueId();
-    List<String> rows = new ArrayList<>();
-
-    Connection conn = null;
-    try {
-      conn = plugin.getMySQLConnection();
-    } catch (Throwable ignored) {}
-
-    // ✅ ① Favorites取得（反射で壊れない）
-    try {
-      if (conn != null && plugin.getProverbLogRepository() != null) {
-        List<String> fav = tryGetFavoritesFromRepository(conn, uuid, 200);
-        if (fav != null && !fav.isEmpty()) {
-          rows.addAll(fav);
-        }
-      }
-    } catch (Throwable ignored) {}
-
-    // ✅ ② フォールバック：recent（Favoritesが無い/取れない時）
-    if (rows.isEmpty()) {
-      List<String> recent = tryGetRecentProverbsFromPlugin(uuid, 30);
-      if (recent != null && !recent.isEmpty()) {
-        rows.addAll(recent);
-      }
-    }
-
-    // ✅ ③ 0件なら空状態メッセージ本を表示（ここがB路線の完成）
-    if (rows.isEmpty()) {
+    if (safeRows.isEmpty()) {
       ItemStack empty = null;
       try {
         empty = bookBuilder.buildEmptyFavoritesBook(player);
-      } catch (Throwable ignored) {}
+      } catch (Throwable ignored) { }
 
       if (empty != null) {
         try {
@@ -160,100 +123,40 @@ public class QuoteFavoriteBookClickListener implements Listener {
       return false;
     }
 
-    // ✅ ④ 近未来UI（Builderで図鑑を作る）
     ItemStack archive = null;
     try {
-      archive = bookBuilder.buildFavoritesBook(player, rows);
-    } catch (Throwable ignored) {}
+      archive = bookBuilder.buildFavoritesBook(player, safeRows);
+    } catch (Throwable ignored) { }
 
-    // ✅ ⑤ Builderが失敗した場合の最後の保険：最低限本表示
     if (archive == null) {
-      archive = buildSimpleFallbackBook(player, rows);
+      archive = buildSimpleFallbackBook(player, safeRows);
     }
-
     if (archive == null) return false;
 
-    // ✅ その場で本を開く（インベントリに入れずに開ける）
     try {
       player.openBook(archive);
       return true;
     } catch (Throwable t) {
-      // openBookが環境差で失敗する可能性があるので、最悪チャットに出す
       player.sendMessage(ChatColor.YELLOW + tr(player, "favorites.title") + ":");
-      for (String r : rows) {
-        if (r == null) continue;
-        String trimmed = r.trim();
-        if (trimmed.isEmpty()) continue;
-        player.sendMessage(ChatColor.WHITE + trimmed);
+      for (String row : safeRows) {
+        if (row == null || row.isBlank()) continue;
+        player.sendMessage(ChatColor.WHITE + row.trim());
       }
       return true;
     }
   }
 
-  // =======================================================
-  // ✅ RepositoryからFavoritesを取る（反射で壊れない）
-  // ありがちな候補メソッド名：
-  // - getFavoriteQuotes(Connection, UUID, int)
-  // - getFavorites(Connection, UUID, int)
-  // - getFavoriteLogs(Connection, UUID, int)
-  // - loadFavorites(Connection, UUID, int)
-  // =======================================================
-  @SuppressWarnings("unchecked")
-  private List<String> tryGetFavoritesFromRepository(Connection conn, UUID uuid, int limit) {
-    if (conn == null) return null;
-    if (uuid == null) return null;
-    if (plugin.getProverbLogRepository() == null) return null;
-
-    Object repo = plugin.getProverbLogRepository();
-
-    String[] candidates = new String[]{
-        "getFavoriteQuotes",
-        "getFavorites",
-        "getFavoriteLogs",
-        "getFavoriteProverbs",
-        "loadFavorites"
-    };
-
-    for (String name : candidates) {
-      try {
-        java.lang.reflect.Method m =
-            repo.getClass().getMethod(name, Connection.class, UUID.class, int.class);
-        Object ret = m.invoke(repo, conn, uuid, Math.max(1, limit));
-        if (ret instanceof List) {
-          return (List<String>) ret;
-        }
-      } catch (NoSuchMethodException ignore) {
-        // 次の候補へ
-      } catch (Throwable ignored) {
-        // 何が起きても落とさない
-      }
-    }
-
-    return null;
-  }
-
-  // =======================================================
-  // ✅ recent取得：plugin.getRecentProverbs(uuid, limit) があるなら反射で使う
-  // なくてもコンパイルが壊れない
-  // =======================================================
-  @SuppressWarnings("unchecked")
-  private List<String> tryGetRecentProverbsFromPlugin(UUID uuid, int limit) {
-    if (uuid == null) return null;
-
+  private void deliver(UUID playerId, java.util.function.Consumer<Player> action) {
     try {
-      java.lang.reflect.Method m =
-          plugin.getClass().getMethod("getRecentProverbs", UUID.class, int.class);
-      Object ret = m.invoke(plugin, uuid, Math.max(1, limit));
-      if (ret instanceof List) {
-        return (List<String>) ret;
-      }
-    } catch (NoSuchMethodException ignore) {
-      // plugin側に無いなら無視
-    } catch (Throwable ignored) {
-      // 何が起きても落とさない
+      plugin.getServer().getScheduler().runTask(plugin, () -> {
+        if (!plugin.isEnabled()) return;
+        Player current = plugin.getServer().getPlayer(playerId);
+        if (current == null || !current.isOnline()) return;
+        action.accept(current);
+      });
+    } catch (RuntimeException ignored) {
+      // Plugin lifecycle is shutting down. Late DB results are intentionally dropped.
     }
-
-    return null;
   }
 
   // =======================================================

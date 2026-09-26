@@ -1,7 +1,7 @@
 # QuoteFavorite live path visible surface
 
 ## Scope
-- QuoteFavoriteBookClickListener / QuoteFavoriteCommand / QuoteFavoriteShortcutListener の live path だけを見る
+- QuoteFavoriteBookClickListener / QuoteFavoriteCommand / QuoteRereadService / GameMenu の live path だけを見る
 - player-facing の source-of-truth を確認する
 - internal/debug/SQL はここでは触らない
 
