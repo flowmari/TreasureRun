@@ -93,17 +93,37 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
   // ================================
   // DB接続
   // ================================
+  private static final int SHARED_DB_CONNECT_TIMEOUT_MILLIS = 3_000;
+  private static final int SHARED_DB_SOCKET_TIMEOUT_MILLIS = 5_000;
+
   private Connection connection;
+  private DatabaseRuntimeSettings startupDatabaseSettings;
+  private volatile boolean databaseSchemaReady;
 
   // DB-H3A: bounded operation-owned terminal persistence.
   private plugin.rank.TerminalPersistenceService terminalPersistenceService;
 
   public boolean isDatabaseEnabled() {
-    return DatabaseRuntimeSettings.load(getConfig()).enabled();
+    DatabaseRuntimeSettings settings = startupDatabaseSettings;
+    return settings != null
+        ? settings.enabled()
+        : DatabaseRuntimeSettings.load(getConfig()).enabled();
   }
 
   private DatabaseRuntimeSettings databaseSettings() {
-    return DatabaseRuntimeSettings.load(getConfig());
+    DatabaseRuntimeSettings settings = startupDatabaseSettings;
+    return settings != null
+        ? settings
+        : DatabaseRuntimeSettings.load(getConfig());
+  }
+
+  private static DatabaseRuntimeSettings disabledDatabaseSettings(
+      DatabaseRuntimeSettings settings
+  ) {
+    return new DatabaseRuntimeSettings(
+        false, settings.host(), settings.port(), settings.database(),
+        settings.user(), settings.password()
+    );
   }
 
   // =======================================================
@@ -313,18 +333,10 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     saveDefaultConfig();
     reloadConfig();
 
-    terminalPersistenceService =
-        new plugin.rank.TerminalPersistenceService(
-            databaseSettings(),
-            getLogger()
-        );
-
-    // Optional PlaceholderAPI integration owns its own immutable snapshot and
-    // refresh-only JDBC connection. The provider-specific PAPI class is loaded
-    // only after PlaceholderAPI is confirmed present and enabled.
-    optionalPlaceholderIntegration =
-        new plugin.placeholder.OptionalPlaceholderIntegration(this, databaseSettings());
-    optionalPlaceholderIntegration.start();
+    // DB-H3C: database topology is startup-scoped. /treasureReload may reload
+    // non-DB configuration, but DB services keep this immutable snapshot until restart.
+    startupDatabaseSettings = DatabaseRuntimeSettings.load(getConfig());
+    databaseSchemaReady = false;
 
     initializeUpdateNotifier();
     initializePlayerReturnRecovery();
@@ -485,18 +497,21 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     }
 
     if (isDatabaseEnabled()) {
-      boolean databaseReady = setupDatabase();
+      boolean connectionReady = setupDatabase();
+      boolean schemaReady =
+          connectionReady && new MigrationRunner(this).runAll(connection);
 
-      if (databaseReady) {
-        new MigrationRunner(this).runAll();
+      if (schemaReady) {
+        databaseSchemaReady = true;
         this.seasonRepository = new SeasonRepository(this);
         this.seasonScoreRepository = new SeasonScoreRepository(this);
         proverbLogRepository = new ProverbLogRepository(this);
-
       } else {
+        databaseSchemaReady = false;
+        closeDatabaseConnection();
         getLogger().warning(
-            "[Database] configured but unavailable; core gameplay will continue without "
-                + "rankings, score persistence, proverb history, or favorites."
+            "[Database] configured but unavailable or schema migration failed; "
+                + "core gameplay will continue without MySQL-backed features."
         );
       }
     } else {
@@ -504,6 +519,18 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
           "[Database] disabled; starting the standard Spigot runtime without MySQL-backed features."
       );
     }
+
+    // DB-H3C: DB-backed workers become live only after the schema gate.
+    // In degraded mode they keep their public contracts but cannot touch JDBC.
+    DatabaseRuntimeSettings effectiveDatabaseSettings =
+        databaseSchemaReady ? databaseSettings() : disabledDatabaseSettings(databaseSettings());
+
+    terminalPersistenceService =
+        new plugin.rank.TerminalPersistenceService(effectiveDatabaseSettings, getLogger());
+
+    optionalPlaceholderIntegration =
+        new plugin.placeholder.OptionalPlaceholderIntegration(this, effectiveDatabaseSettings);
+    optionalPlaceholderIntegration.start();
 
     if (proverbLogRepository != null) {
       DatabaseRuntimeSettings settings = databaseSettings();
@@ -1390,8 +1417,8 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
       languageSelectGui = null;
     }
 
+    databaseSchemaReady = false;
     closeDatabaseConnection();
-    if (rankTicker != null) rankTicker.stop();
 
     // =======================================================
     // ✅ ✅ ✅ 追加：Repository参照を明示的に切る（安全）
@@ -1527,14 +1554,10 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
   // Optional MySQL connection boundary
   // =======================================================
   public Connection getConnection() {
-    if (!isDatabaseEnabled()) {
-      return null;
-    }
+    if (!isDatabaseEnabled() || !databaseSchemaReady) return null;
 
     try {
-      if (connection == null || connection.isClosed() || !connection.isValid(1)) {
-        reconnect();
-      }
+      if (connection == null || connection.isClosed() || !connection.isValid(1)) reconnect();
     } catch (SQLException exception) {
       getLogger().warning("[Database] connection check failed: " + exception.getMessage());
       reconnect();
@@ -1546,22 +1569,24 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     return getConnection();
   }
 
+  private Connection openSharedDatabaseConnection(DatabaseRuntimeSettings settings)
+      throws SQLException {
+    String url =
+        "jdbc:mysql://" + settings.host() + ":" + settings.port() + "/" + settings.database()
+            + "?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC"
+            + "&connectTimeout=" + SHARED_DB_CONNECT_TIMEOUT_MILLIS
+            + "&socketTimeout=" + SHARED_DB_SOCKET_TIMEOUT_MILLIS;
+    return DriverManager.getConnection(url, settings.user(), settings.password());
+  }
+
   private void reconnect() {
-    if (!isDatabaseEnabled()) {
+    if (!isDatabaseEnabled() || !databaseSchemaReady) {
       connection = null;
       return;
     }
-
     closeDatabaseConnection();
-    DatabaseRuntimeSettings settings = databaseSettings();
-
     try {
-      connection = DriverManager.getConnection(
-          "jdbc:mysql://" + settings.host() + ":" + settings.port() + "/" + settings.database()
-              + "?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC",
-          settings.user(),
-          settings.password()
-      );
+      connection = openSharedDatabaseConnection(databaseSettings());
       getLogger().info("[Database] MySQL connection re-established.");
     } catch (SQLException exception) {
       connection = null;
@@ -1570,70 +1595,16 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
   }
 
   private boolean setupDatabase() {
+    databaseSchemaReady = false;
     if (!isDatabaseEnabled()) {
       connection = null;
       return false;
     }
-
-    DatabaseRuntimeSettings settings = databaseSettings();
-
     try {
       Class.forName("com.mysql.cj.jdbc.Driver");
-      connection = DriverManager.getConnection(
-          "jdbc:mysql://" + settings.host() + ":" + settings.port() + "/" + settings.database()
-              + "?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC",
-          settings.user(),
-          settings.password()
-      );
-
-      // =========================
-      // ✅ scores (new schema)
-      // =========================
-      try (Statement stmt = connection.createStatement()) {
-        stmt.executeUpdate(
-            "CREATE TABLE IF NOT EXISTS scores (" +
-                "id INT AUTO_INCREMENT PRIMARY KEY," +
-                "uuid VARCHAR(36) NULL," +
-                "player_name VARCHAR(50) NOT NULL," +
-                "score INT NOT NULL," +
-                "time BIGINT NOT NULL," +
-                "difficulty VARCHAR(10) NOT NULL," +
-                "lang_code VARCHAR(10) NOT NULL DEFAULT 'ja'," +
-                "played_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP," +
-                "INDEX idx_scores_played_at (played_at)," +
-                "INDEX idx_scores_diff_time (difficulty, time)," +
-                "INDEX idx_scores_uuid_played (uuid, played_at)" +
-                ");"
-        );
-      }
-
-      // ✅ 既存DB（旧scores）向け migrate（列が無ければ追加）
-      migrateScoresTable(connection);
-
-      getLogger().info("✅ scores テーブル準備完了");
-
-      // =========================
-      // ✅ proverb_logs
-      // =========================
-      try (Statement ps = connection.createStatement()) {
-        ps.executeUpdate(
-            "CREATE TABLE IF NOT EXISTS proverb_logs (" +
-                "id INT AUTO_INCREMENT PRIMARY KEY," +
-                "player_uuid VARCHAR(36) NOT NULL," +
-                "player_name VARCHAR(50) NOT NULL," +
-                "outcome VARCHAR(20) NOT NULL," +
-                "difficulty VARCHAR(10) NOT NULL," +
-                "lang VARCHAR(10) NOT NULL," +
-                "quote_text TEXT NOT NULL," +
-                "created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP," +
-                "INDEX idx_player_uuid_created_at (player_uuid, created_at)" +
-                ");"
-        );
-      }
-
-      getLogger().info("✅ proverb_logs テーブル準備完了");
+      connection = openSharedDatabaseConnection(databaseSettings());
+      getLogger().info("[Database] bounded MySQL bootstrap connection established.");
       return true;
-
     } catch (ClassNotFoundException | SQLException exception) {
       closeDatabaseConnection();
       getLogger().warning("[Database] initialization failed: " + exception.getMessage());
@@ -1643,7 +1614,6 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
 
   private void closeDatabaseConnection() {
     if (connection == null) return;
-
     try {
       connection.close();
     } catch (SQLException exception) {
@@ -1651,41 +1621,6 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     } finally {
       connection = null;
     }
-  }
-
-  private void migrateScoresTable(Connection conn) throws SQLException {
-    if (conn == null) return;
-
-    String existsSql =
-        "SELECT COUNT(*) " +
-            "FROM INFORMATION_SCHEMA.COLUMNS " +
-            "WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'scores' AND COLUMN_NAME = ?";
-
-    java.util.function.Predicate<String> hasColumn = (String col) -> {
-      try (PreparedStatement ps = conn.prepareStatement(existsSql)) {
-        ps.setString(1, col);
-        try (ResultSet rs = ps.executeQuery()) {
-          return rs.next() && rs.getInt(1) > 0;
-        }
-      } catch (SQLException e) {
-        getLogger().warning("⚠ migrateScoresTable column check failed: " + col + " " + e.getMessage());
-        return false;
-      }
-    };
-
-    try (Statement st = conn.createStatement()) {
-      if (!hasColumn.test("uuid")) {
-        st.executeUpdate("ALTER TABLE scores ADD COLUMN uuid VARCHAR(36) NULL");
-      }
-      if (!hasColumn.test("lang_code")) {
-        st.executeUpdate("ALTER TABLE scores ADD COLUMN lang_code VARCHAR(10) NOT NULL DEFAULT 'ja'");
-      }
-      if (!hasColumn.test("played_at")) {
-        st.executeUpdate("ALTER TABLE scores ADD COLUMN played_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP");
-      }
-    }
-
-    getLogger().info("✅ scores migration check done");
   }
 
 
@@ -2286,6 +2221,18 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
 
       // 1) config再読込
       reloadConfig();
+
+      // DB-H3C: changing database topology via /treasureReload is intentionally
+      // unsupported. Existing DB services keep startup settings until restart.
+      DatabaseRuntimeSettings reloadedDatabaseSettings =
+          DatabaseRuntimeSettings.load(getConfig());
+      if (startupDatabaseSettings != null
+          && !startupDatabaseSettings.equals(reloadedDatabaseSettings)) {
+        getLogger().warning(
+            "[Database] database topology is restart-required; "
+                + "current DB services keep startup settings until restart."
+        );
+      }
 
       // ✅ messages.yml / config / allowedLanguages を再読込
       if (languageConfigStore != null) languageConfigStore.reloadFromConfig(getConfig());

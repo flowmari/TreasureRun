@@ -14,245 +14,157 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-/**
- * Lightweight MySQL migration runner for TreasureRun.
- *
- * Purpose:
- * - Apply bundled SQL migrations automatically at plugin startup
- * - Record applied migrations in schema_migrations
- * - Keep migration SQL under src/main/resources/db/migration/
- *
- * This is intentionally small and dependency-free.
- * It is not a full Flyway replacement, but follows the same basic idea:
- * versioned SQL files + applied-migration tracking.
- */
-public class MigrationRunner {
-
-  private final TreasureRunMultiChestPlugin plugin;
-
+public final class MigrationRunner {
+  private static final int QUERY_TIMEOUT_SECONDS = 10;
   private static final List<String> MIGRATIONS = List.of(
       "V1__create_ranking_tables.sql",
       "V2__support_monthly_seasons.sql",
-      "V3__create_transactional_outbox.sql"
+      "V3__create_transactional_outbox.sql",
+      "V4__adopt_legacy_runtime_schema.sql"
   );
 
-  public MigrationRunner(TreasureRunMultiChestPlugin plugin) {
-    this.plugin = plugin;
-  }
+  private final TreasureRunMultiChestPlugin plugin;
 
-  public void runAll() {
+  public MigrationRunner(TreasureRunMultiChestPlugin plugin) { this.plugin = plugin; }
+
+  public boolean runAll(Connection connection) {
     if (!plugin.isDatabaseEnabled()) {
-      plugin.getLogger().info("[Migration] skipped: database.enabled=false");
-      return;
+      plugin.getLogger().info("[Migration] skipped: database disabled at startup.");
+      return false;
     }
-
-    Connection con = plugin.getConnection();
-    if (con == null) {
-      plugin.getLogger().warning("[Migration] skipped: MySQL connection is null.");
-      return;
+    if (connection == null) {
+      plugin.getLogger().warning("[Migration] failed closed: bootstrap connection is null.");
+      return false;
     }
-
     try {
-      ensureSchemaMigrationsTable(con);
-
-      for (String fileName : MIGRATIONS) {
-        runOne(con, fileName);
-      }
-
+      ensureSchemaMigrationsTable(connection);
+      for (String fileName : MIGRATIONS) runOne(connection, fileName);
       plugin.getLogger().info("[Migration] completed.");
+      return true;
     } catch (Exception exception) {
-      plugin.getLogger().warning("[Migration] failed: " + exception.getMessage());
+      plugin.getLogger().warning("[Migration] failed closed: " + detail(exception));
+      return false;
     }
   }
 
-  private void ensureSchemaMigrationsTable(Connection con) throws Exception {
-    String sql = ""
-        + "CREATE TABLE IF NOT EXISTS schema_migrations ("
-        + "  version VARCHAR(64) NOT NULL PRIMARY KEY,"
-        + "  description VARCHAR(255) NULL,"
-        + "  script VARCHAR(255) NOT NULL,"
-        + "  checksum CHAR(64) NOT NULL,"
-        + "  applied_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP"
+  private void ensureSchemaMigrationsTable(Connection connection) throws Exception {
+    String sql = "CREATE TABLE IF NOT EXISTS schema_migrations ("
+        + "version VARCHAR(64) NOT NULL PRIMARY KEY,"
+        + "description VARCHAR(255) NULL,"
+        + "script VARCHAR(255) NOT NULL,"
+        + "checksum CHAR(64) NOT NULL,"
+        + "applied_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP"
         + ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci";
-
-    try (Statement st = con.createStatement()) {
-      st.execute(sql);
+    try (Statement statement = connection.createStatement()) {
+      statement.setQueryTimeout(QUERY_TIMEOUT_SECONDS);
+      statement.execute(sql);
     }
   }
 
-  private void runOne(Connection con, String fileName) throws Exception {
+  private void runOne(Connection connection, String fileName) throws Exception {
     String version = versionOf(fileName);
     String description = descriptionOf(fileName);
-    String resourcePath = "db/migration/" + fileName;
-
-    String sql = readResource(resourcePath);
+    String sql = readResource("db/migration/" + fileName);
     String checksum = sha256(sql);
 
-    if (isAlreadyApplied(con, version, checksum)) {
+    AppliedVersion applied = loadAppliedVersion(connection, version);
+    if (applied != null) {
+      if (!checksum.equalsIgnoreCase(applied.checksum())) {
+        throw new IllegalStateException("Migration checksum mismatch for " + fileName
+            + ". Applied script=" + applied.script());
+      }
       plugin.getLogger().info("[Migration] already applied: " + fileName);
       return;
     }
 
-    if (isVersionAppliedWithDifferentChecksum(con, version, checksum)) {
-      throw new IllegalStateException(
-          "Migration checksum mismatch for " + fileName
-              + ". The same version was already applied with different SQL."
-      );
-    }
-
     plugin.getLogger().info("[Migration] applying: " + fileName);
-
-    boolean originalAutoCommit = con.getAutoCommit();
-    con.setAutoCommit(false);
-
-    try {
-      for (String statement : splitSqlStatements(sql)) {
-        String trimmed = statement.trim();
-        if (trimmed.isEmpty()) continue;
-        try (Statement st = con.createStatement()) {
-          st.execute(trimmed);
-        }
+    // MySQL DDL is not treated as a rollbackable multi-statement transaction.
+    // Migration SQL must therefore be rerunnable/recoverable by construction.
+    for (String raw : splitSqlStatements(sql)) {
+      String statementSql = raw.trim();
+      if (statementSql.isEmpty()) continue;
+      try (Statement statement = connection.createStatement()) {
+        statement.setQueryTimeout(QUERY_TIMEOUT_SECONDS);
+        statement.execute(statementSql);
       }
-
-      recordApplied(con, version, description, fileName, checksum);
-      con.commit();
-
-      plugin.getLogger().info("[Migration] applied: " + fileName);
-    } catch (Exception e) {
-      con.rollback();
-      throw e;
-    } finally {
-      con.setAutoCommit(originalAutoCommit);
     }
+    recordApplied(connection, version, description, fileName, checksum);
+    plugin.getLogger().info("[Migration] applied: " + fileName);
   }
 
-  private boolean isAlreadyApplied(Connection con, String version, String checksum) throws Exception {
-    String sql = "SELECT checksum FROM schema_migrations WHERE version=? LIMIT 1";
-    try (PreparedStatement ps = con.prepareStatement(sql)) {
-      ps.setString(1, version);
-      try (ResultSet rs = ps.executeQuery()) {
-        return rs.next() && checksum.equalsIgnoreCase(rs.getString("checksum"));
+  private AppliedVersion loadAppliedVersion(Connection connection, String version) throws Exception {
+    String sql = "SELECT script, checksum FROM schema_migrations WHERE version=? LIMIT 1";
+    try (PreparedStatement statement = connection.prepareStatement(sql)) {
+      statement.setQueryTimeout(QUERY_TIMEOUT_SECONDS);
+      statement.setString(1, version);
+      try (ResultSet resultSet = statement.executeQuery()) {
+        if (!resultSet.next()) return null;
+        return new AppliedVersion(resultSet.getString("script"), resultSet.getString("checksum"));
       }
     }
   }
 
-  private boolean isVersionAppliedWithDifferentChecksum(Connection con, String version, String checksum) throws Exception {
-    String sql = "SELECT checksum FROM schema_migrations WHERE version=? LIMIT 1";
-    try (PreparedStatement ps = con.prepareStatement(sql)) {
-      ps.setString(1, version);
-      try (ResultSet rs = ps.executeQuery()) {
-        return rs.next() && !checksum.equalsIgnoreCase(rs.getString("checksum"));
-      }
-    }
-  }
-
-  private void recordApplied(Connection con, String version, String description, String script, String checksum) throws Exception {
-    String sql = ""
-        + "INSERT INTO schema_migrations (version, description, script, checksum, applied_at) "
-        + "VALUES (?, ?, ?, ?, ?)";
-
-    try (PreparedStatement ps = con.prepareStatement(sql)) {
-      ps.setString(1, version);
-      ps.setString(2, description);
-      ps.setString(3, script);
-      ps.setString(4, checksum);
-      ps.setTimestamp(5, java.sql.Timestamp.from(Instant.now()));
-      ps.executeUpdate();
+  private void recordApplied(Connection connection, String version, String description,
+      String script, String checksum) throws Exception {
+    String sql = "INSERT INTO schema_migrations "
+        + "(version, description, script, checksum, applied_at) VALUES (?, ?, ?, ?, ?)";
+    try (PreparedStatement statement = connection.prepareStatement(sql)) {
+      statement.setQueryTimeout(QUERY_TIMEOUT_SECONDS);
+      statement.setString(1, version);
+      statement.setString(2, description);
+      statement.setString(3, script);
+      statement.setString(4, checksum);
+      statement.setTimestamp(5, java.sql.Timestamp.from(Instant.now()));
+      statement.executeUpdate();
     }
   }
 
   private String readResource(String resourcePath) throws Exception {
-    ClassLoader cl = plugin.getClass().getClassLoader();
-
-    try (InputStream in = cl.getResourceAsStream(resourcePath)) {
-      if (in == null) {
-        throw new IllegalStateException("Migration resource not found: " + resourcePath);
-      }
-
-      StringBuilder sb = new StringBuilder();
-      try (BufferedReader br = new BufferedReader(new InputStreamReader(in, StandardCharsets.UTF_8))) {
+    try (InputStream input = plugin.getClass().getClassLoader().getResourceAsStream(resourcePath)) {
+      if (input == null) throw new IllegalStateException("Migration resource not found: " + resourcePath);
+      StringBuilder output = new StringBuilder();
+      try (BufferedReader reader = new BufferedReader(new InputStreamReader(input, StandardCharsets.UTF_8))) {
         String line;
-        while ((line = br.readLine()) != null) {
-          sb.append(line).append('\n');
-        }
+        while ((line = reader.readLine()) != null) output.append(line).append('\n');
       }
-      return sb.toString();
+      return output.toString();
     }
   }
 
   private List<String> splitSqlStatements(String sql) {
     List<String> statements = new ArrayList<>();
     StringBuilder current = new StringBuilder();
-
-    boolean inSingleQuote = false;
-    boolean inDoubleQuote = false;
-    boolean inLineComment = false;
-
-    for (int i = 0; i < sql.length(); i++) {
-      char c = sql.charAt(i);
-      char next = (i + 1 < sql.length()) ? sql.charAt(i + 1) : '\0';
-
-      if (inLineComment) {
-        current.append(c);
-        if (c == '\n') inLineComment = false;
-        continue;
-      }
-
-      if (!inSingleQuote && !inDoubleQuote && c == '-' && next == '-') {
-        inLineComment = true;
-        current.append(c);
-        continue;
-      }
-
-      if (c == '\'' && !inDoubleQuote) {
-        inSingleQuote = !inSingleQuote;
-        current.append(c);
-        continue;
-      }
-
-      if (c == '"' && !inSingleQuote) {
-        inDoubleQuote = !inDoubleQuote;
-        current.append(c);
-        continue;
-      }
-
-      if (c == ';' && !inSingleQuote && !inDoubleQuote) {
-        statements.add(current.toString());
-        current.setLength(0);
-        continue;
-      }
-
+    boolean single=false, dbl=false, lineComment=false;
+    for (int i=0;i<sql.length();i++) {
+      char c=sql.charAt(i), n=i+1<sql.length()?sql.charAt(i+1):'\0';
+      if (lineComment) { current.append(c); if (c=='\n') lineComment=false; continue; }
+      if (!single && !dbl && c=='-' && n=='-') { lineComment=true; current.append(c); continue; }
+      if (c=='\'' && !dbl) { single=!single; current.append(c); continue; }
+      if (c=='"' && !single) { dbl=!dbl; current.append(c); continue; }
+      if (c==';' && !single && !dbl) { statements.add(current.toString()); current.setLength(0); continue; }
       current.append(c);
     }
-
-    if (current.length() > 0) {
-      statements.add(current.toString());
-    }
-
+    if (current.length()>0) statements.add(current.toString());
     return statements;
   }
 
   private String versionOf(String fileName) {
-    int idx = fileName.indexOf("__");
-    if (idx <= 0) return fileName.replace(".sql", "");
-    return fileName.substring(0, idx).toUpperCase(Locale.ROOT);
+    int p=fileName.indexOf("__");
+    return (p<=0?fileName.replace(".sql",""):fileName.substring(0,p)).toUpperCase(Locale.ROOT);
   }
-
   private String descriptionOf(String fileName) {
-    int start = fileName.indexOf("__");
-    String raw = start >= 0 ? fileName.substring(start + 2) : fileName;
-    raw = raw.replace(".sql", "");
-    return raw.replace('_', ' ');
+    int p=fileName.indexOf("__");
+    String raw=p>=0?fileName.substring(p+2):fileName;
+    return raw.replace(".sql","").replace('_',' ');
   }
-
   private String sha256(String text) throws Exception {
-    MessageDigest digest = MessageDigest.getInstance("SHA-256");
-    byte[] hash = digest.digest(text.getBytes(StandardCharsets.UTF_8));
-
-    StringBuilder sb = new StringBuilder();
-    for (byte b : hash) {
-      sb.append(String.format("%02x", b));
-    }
-    return sb.toString();
+    byte[] hash=MessageDigest.getInstance("SHA-256").digest(text.getBytes(StandardCharsets.UTF_8));
+    StringBuilder out=new StringBuilder();
+    for (byte b:hash) out.append(String.format("%02x",b));
+    return out.toString();
   }
+  private static String detail(Exception e) {
+    String m=e.getMessage(); return m==null||m.isBlank()?e.getClass().getSimpleName():m;
+  }
+  private record AppliedVersion(String script, String checksum) {}
 }
