@@ -99,8 +99,8 @@ class RankingReadApiMySqlIntegrationTest {
         .map(info -> info.getVersion().getVersion())
         .toList();
 
-    assertEquals(List.of("1", "2", "3"), appliedVersions);
-    assertEquals(3, intQuery("SELECT COUNT(*) FROM flyway_schema_history WHERE success = 1"));
+    assertEquals(List.of("1", "2", "3", "4"), appliedVersions);
+    assertEquals(4, intQuery("SELECT COUNT(*) FROM flyway_schema_history WHERE success = 1"));
     assertEquals(3, intQuery("""
         SELECT COUNT(*)
         FROM information_schema.tables
