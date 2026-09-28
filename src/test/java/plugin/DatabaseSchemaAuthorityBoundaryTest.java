@@ -51,6 +51,46 @@ class DatabaseSchemaAuthorityBoundaryTest {
     assertTrue(p.contains("database topology is restart-required"));
   }
 
+  @Test void SchemaDependentRankingReadsStayBehindSchemaGate() throws Exception {
+    String p =
+        Files.readString(ROOT.resolve("src/main/java/plugin/TreasureRunMultiChestPlugin.java"));
+
+    int tickerArea = p.indexOf("CustomRecipeLoader recipeLoader");
+    int tickerGate = p.indexOf("if (databaseSchemaReady) {", tickerArea);
+    int tickerConstruction = p.indexOf("rankTicker = new RealtimeRankTicker", tickerArea);
+    int schemaNotReadyLog =
+        p.indexOf("[RankTicker] skipped because database schema is not ready.", tickerArea);
+
+    assertTrue(tickerArea >= 0);
+    assertTrue(tickerGate > tickerArea);
+    assertTrue(tickerConstruction > tickerGate);
+    assertTrue(tickerConstruction - tickerGate < 1_000);
+    assertTrue(schemaNotReadyLog > tickerConstruction);
+    assertTrue(schemaNotReadyLog - tickerConstruction < 1_000);
+
+    int runRankMethod = p.indexOf("private void resolveRunRankAsync(");
+    int runRankGate = p.indexOf("if (!databaseSchemaReady) {", runRankMethod);
+    int runRankSettings =
+        p.indexOf("DatabaseRuntimeSettings settings = databaseSettings();", runRankMethod);
+
+    assertTrue(runRankMethod >= 0);
+    assertTrue(runRankGate > runRankMethod);
+    assertTrue(runRankSettings > runRankGate);
+
+    int rankingCommandMethod = p.indexOf("private void showRankingWindow(");
+    int rankingCommandGate =
+        p.indexOf("if (!databaseSchemaReady) {", rankingCommandMethod);
+    int rankingCommandSettings =
+        p.indexOf(
+            "DatabaseRuntimeSettings settings = databaseSettings();",
+            rankingCommandMethod
+        );
+
+    assertTrue(rankingCommandMethod >= 0);
+    assertTrue(rankingCommandGate > rankingCommandMethod);
+    assertTrue(rankingCommandSettings > rankingCommandGate);
+  }
+
   @Test void DeadLegacyAuthorityStaysRemoved() {
     assertTrue(Files.notExists(ROOT.resolve("src/main/java/plugin/MySQLManager.java")));
   }

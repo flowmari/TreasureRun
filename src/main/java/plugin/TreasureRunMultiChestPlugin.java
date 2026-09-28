@@ -689,12 +689,14 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
     CustomRecipeLoader recipeLoader = new CustomRecipeLoader(this);
     recipeLoader.registerRecipes();
 
-    if (isDatabaseEnabled()) {
+    if (databaseSchemaReady) {
       int rtInterval = getConfig().getInt("rankTicker.intervalSec", 10);
       int rtTopN = getConfig().getInt("rankTicker.topN", 10);
       int rtWidth = getConfig().getInt("rankTicker.tickerWidth", 32);
       rankTicker = new RealtimeRankTicker(this, rtInterval, rtTopN, rtWidth);
       rankTicker.start();
+    } else if (isDatabaseEnabled()) {
+      getLogger().warning("[RankTicker] skipped because database schema is not ready.");
     } else {
       getLogger().info("[RankTicker] skipped because database-backed rankings are disabled.");
     }
@@ -1820,6 +1822,17 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
       long elapsedSec,
       String timeText,
       String runDifficulty) {
+    if (!databaseSchemaReady) {
+      finishSuccessfulRunAfterRank(
+          player,
+          terminalRoundId,
+          finalScore,
+          timeText,
+          runDifficulty,
+          -1);
+      return;
+    }
+
     DatabaseRuntimeSettings settings = databaseSettings();
 
     if (!settings.enabled()) {
@@ -1947,6 +1960,11 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
   private void showRankingWindow(
       Player player,
       plugin.rank.RankingQueryService.Window window) {
+    if (!databaseSchemaReady) {
+      player.sendMessage(ChatColor.RED + trPlayer(player, "rank.command.dbUnavailable"));
+      return;
+    }
+
     DatabaseRuntimeSettings settings = databaseSettings();
     if (!settings.enabled()) {
       player.sendMessage(ChatColor.RED + trPlayer(player, "rank.command.dbUnavailable"));
