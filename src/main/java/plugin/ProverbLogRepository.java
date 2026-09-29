@@ -49,41 +49,6 @@ public class ProverbLogRepository {
   }
 
   // =======================================================
-  // ✅ CREATE TABLE（proverb_logs）
-  // =======================================================
-  public void createTableIfNotExists(Connection conn) {
-    if (conn == null) {
-      plugin.getLogger().warning("[ProverbLog] Table not created: MySQL connection is null.");
-      return;
-    }
-
-    final String sql =
-        "CREATE TABLE IF NOT EXISTS proverb_logs (" +
-            "id INT NOT NULL AUTO_INCREMENT, " +
-            "player_uuid VARCHAR(36) NOT NULL, " +
-            "player_name VARCHAR(64) NOT NULL, " +
-            "outcome VARCHAR(32) NOT NULL, " +
-            "difficulty VARCHAR(16) NOT NULL, " +
-            "lang VARCHAR(16) NOT NULL, " +
-            "quote_text TEXT NOT NULL, " +
-            "created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, " +
-            "PRIMARY KEY (id), " +
-            "INDEX idx_player_uuid_created_at (player_uuid, created_at)" +
-            ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4";
-
-    try (PreparedStatement ps = conn.prepareStatement(sql)) {
-      ps.setQueryTimeout(QUERY_TIMEOUT_SECONDS);
-      ps.executeUpdate();
-      plugin.getLogger().info("[ProverbLog] CREATE TABLE IF NOT EXISTS success: proverb_logs");
-    } catch (SQLException e) {
-      plugin.getLogger().severe(
-          "[ProverbLog] CREATE TABLE IF NOT EXISTS failed: proverb_logs\n" +
-              e.getMessage()
-      );
-    }
-  }
-
-  // =======================================================
   // ✅ INSERT（proverb_logs 保存）
   // =======================================================
   public void insertProverbLog(Connection conn,
@@ -106,8 +71,6 @@ public class ProverbLogRepository {
       plugin.getLogger().warning("[ProverbLog] Proverb not logged: quoteText is empty.");
       return;
     }
-
-    createTableIfNotExists(conn);
 
     final String sql =
         "INSERT INTO proverb_logs (player_uuid, player_name, outcome, difficulty, lang, quote_text) " +
@@ -171,8 +134,6 @@ public class ProverbLogRepository {
     if (conn == null) throw new SQLException("MySQL connection is null");
     if (uuid == null) throw new SQLException("UUID is null");
 
-    createTableIfNotExists(conn);
-
     final String sql =
         "SELECT outcome, difficulty, lang, quote_text, created_at " +
             "FROM proverb_logs " +
@@ -203,77 +164,8 @@ public class ProverbLogRepository {
 
   // =======================================================
   // ✅ 追加：Favorites 用テーブル作成（方式A：favorite_quotes）
+  // DB-H3C: schema creation moved to versioned migrations.
   // =======================================================
-  public void createFavoritesTableIfNotExists(Connection conn) {
-    if (conn == null) {
-      plugin.getLogger().warning("[ProverbFav] Table not created: MySQL connection is null.");
-      return;
-    }
-
-    // ✅ quote_hash を UNIQUE にして「同じ格言を何回もお気に入り登録」できないようにする
-    // ✅ 方式A：favorite_quotes（本命）
-    final String sql =
-        "CREATE TABLE IF NOT EXISTS " + FAVORITES_TABLE_PRIMARY + " (" +
-            "id INT NOT NULL AUTO_INCREMENT, " +
-            "player_uuid VARCHAR(36) NOT NULL, " +
-            "quote_hash VARCHAR(64) NOT NULL, " +
-            "outcome VARCHAR(32) NOT NULL, " +
-            "difficulty VARCHAR(16) NOT NULL, " +
-            "lang VARCHAR(16) NOT NULL, " +
-            "quote_text TEXT NOT NULL, " +
-            "created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, " +
-            "PRIMARY KEY (id), " +
-            "UNIQUE KEY uk_player_quote (player_uuid, quote_hash), " +
-            "INDEX idx_player_uuid_created_at (player_uuid, created_at)" +
-            ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4";
-
-    try (PreparedStatement ps = conn.prepareStatement(sql)) {
-      ps.setQueryTimeout(QUERY_TIMEOUT_SECONDS);
-      ps.executeUpdate();
-      plugin.getLogger().info("[ProverbFav] CREATE TABLE IF NOT EXISTS success: " + FAVORITES_TABLE_PRIMARY);
-    } catch (SQLException e) {
-      plugin.getLogger().severe(
-          "[ProverbFav] CREATE TABLE IF NOT EXISTS failed: " + FAVORITES_TABLE_PRIMARY + "\n" +
-              e.getMessage()
-      );
-    }
-
-    // ✅ 互換：昔の proverb_favorites が残ってても邪魔しない
-    // （環境によっては既に存在しているので、あってもOK）
-    createLegacyFavoritesTableIfNotExists(conn);
-  }
-
-  // =======================================================
-  // ✅ 互換：旧 favorites テーブル（proverb_favorites）も残したい場合
-  // - 既存のデータが消えない
-  // - 既存コードが壊れない
-  // =======================================================
-  private void createLegacyFavoritesTableIfNotExists(Connection conn) {
-    if (conn == null) return;
-
-    final String sql =
-        "CREATE TABLE IF NOT EXISTS " + FAVORITES_TABLE_LEGACY + " (" +
-            "id INT NOT NULL AUTO_INCREMENT, " +
-            "player_uuid VARCHAR(36) NOT NULL, " +
-            "quote_hash VARCHAR(64) NOT NULL, " +
-            "outcome VARCHAR(32) NOT NULL, " +
-            "difficulty VARCHAR(16) NOT NULL, " +
-            "lang VARCHAR(16) NOT NULL, " +
-            "quote_text TEXT NOT NULL, " +
-            "created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, " +
-            "PRIMARY KEY (id), " +
-            "UNIQUE KEY uk_player_quote (player_uuid, quote_hash), " +
-            "INDEX idx_player_uuid_created_at (player_uuid, created_at)" +
-            ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4";
-
-    try (PreparedStatement ps = conn.prepareStatement(sql)) {
-      ps.setQueryTimeout(QUERY_TIMEOUT_SECONDS);
-      ps.executeUpdate();
-      plugin.getLogger().info("[ProverbFav] (legacy) Table ready: " + FAVORITES_TABLE_LEGACY);
-    } catch (SQLException ignored) {
-      // 互換側は失敗しても致命的ではないので黙る（壊れないため）
-    }
-  }
 
   // =======================================================
   // ✅ 追加：お気に入り登録（Favorites INSERT）
@@ -290,8 +182,6 @@ public class ProverbLogRepository {
     if (conn == null) throw new SQLException("MySQL connection is null");
     if (uuid == null) throw new SQLException("UUID is null");
     if (quoteText == null || quoteText.isBlank()) return false;
-
-    createFavoritesTableIfNotExists(conn);
 
     String hash = sha256Hex(quoteText);
     if (hash.isBlank()) return false;
@@ -327,8 +217,6 @@ public class ProverbLogRepository {
     if (uuid == null) throw new SQLException("UUID is null");
     if (favoriteId <= 0) return false;
 
-    createFavoritesTableIfNotExists(conn);
-
     final String sql =
         "DELETE FROM " + FAVORITES_TABLE_PRIMARY + " " +
             "WHERE player_uuid = ? AND id = ?";
@@ -350,8 +238,6 @@ public class ProverbLogRepository {
 
     if (conn == null) throw new SQLException("MySQL connection is null");
     if (uuid == null) throw new SQLException("UUID is null");
-
-    createFavoritesTableIfNotExists(conn);
 
     final String sql =
         "SELECT id, outcome, difficulty, lang, quote_text, created_at " +
@@ -448,8 +334,6 @@ public class ProverbLogRepository {
   public boolean favoriteLatestLog(Connection conn, UUID uuid) throws SQLException {
     if (conn == null) throw new SQLException("MySQL connection is null");
     if (uuid == null) throw new SQLException("UUID is null");
-
-    createTableIfNotExists(conn);
 
     final String sql =
         "SELECT outcome, difficulty, lang, quote_text " +

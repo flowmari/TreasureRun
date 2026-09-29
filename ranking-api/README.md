@@ -33,7 +33,7 @@ successful/error responses, and a public DTO schema without UUID exposure.
 ## Flyway verification boundary
 
 The API does not introduce a second production migration source of truth.
-Instead, integration tests place the plugin-owned `V1` to `V3` SQL migrations
+Instead, integration tests place all plugin-owned SQL migrations (currently `V1` to `V4`)
 on the test classpath and let Flyway apply and validate them against disposable
 MySQL 8 before the HTTP request path is exercised.
 

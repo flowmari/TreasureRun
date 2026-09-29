@@ -195,12 +195,8 @@ class PluginCommandMetadataContractTest {
     assertFalse(commands.containsKey("givespecialemerald"));
     assertFalse(commands.containsKey("dbstatus"));
 
-    String mysqlManager = Files.readString(
-        ROOT.resolve("src/main/java/plugin/MySQLManager.java")
-    );
-
-    assertFalse(
-        mysqlManager.contains("getCommand(\"dbstatus\")")
+    assertTrue(
+        Files.notExists(ROOT.resolve("src/main/java/plugin/MySQLManager.java"))
     );
 
     String commandReference =
