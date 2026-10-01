@@ -12,7 +12,7 @@ on:
       - 'src/test/java/plugin/rank/**'
       - 'src/main/java/plugin/TreasureRunMultiChestPlugin.java'
       - 'src/main/java/plugin/MigrationRunner.java'
-      - 'src/main/java/plugin/MySQLManager.java'
+      - 'src/main/java/plugin/ProverbLogRepository.java'
       - 'build.gradle'
       - '.github/workflows/ranking-api-ci.yml'
 
@@ -48,7 +48,7 @@ jobs:
           echo "Files changed in this pull request:"
           cat /tmp/treasurerun_changed_files.txt
 
-          if grep -Eq '^(ranking-api/|src/main/resources/db/migration/|src/main/java/plugin/rank/|src/test/java/plugin/rank/|src/main/java/plugin/(TreasureRunMultiChestPlugin|MigrationRunner|MySQLManager)\.java$|build\.gradle$|\.github/workflows/ranking-api-ci\.yml$)' /tmp/treasurerun_changed_files.txt; then
+          if grep -Eq '^(ranking-api/|src/main/resources/db/migration/|src/main/java/plugin/rank/|src/test/java/plugin/rank/|src/main/java/plugin/(TreasureRunMultiChestPlugin|MigrationRunner|ProverbLogRepository)\.java$|build\.gradle$|\.github/workflows/ranking-api-ci\.yml$)' /tmp/treasurerun_changed_files.txt; then
             echo "run=true" >> "$GITHUB_OUTPUT"
             echo "Backend boundary changed: run Docker-backed evidence."
           else

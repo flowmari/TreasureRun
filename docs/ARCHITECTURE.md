@@ -82,7 +82,7 @@ TreasureRun
 │   └── src/main/resources/languages/*.yml
 │
 ├── Persistence
-│   ├── MySQLManager
+│   ├── MigrationRunner
 │   ├── DBUtils
 │   ├── SeasonRepository
 │   ├── SeasonScoreRepository
