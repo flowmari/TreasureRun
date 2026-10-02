@@ -179,7 +179,7 @@ public class GameStageManager implements Listener {
     if (!arenaWorldManager.isBasePrepared(w, ARENA_WATER_RADIUS)) {
       long preparationStartedAt = System.nanoTime();
       prepareOwnedArenaWater(base, ARENA_WATER_RADIUS);
-      arenaWorldManager.markBasePrepared(w, ARENA_WATER_RADIUS);
+      arenaWorldManager.commitBasePreparation(w, ARENA_WATER_RADIUS);
       long preparationMillis = (System.nanoTime() - preparationStartedAt) / 1_000_000L;
       plugin.getLogger().info(
           "[Arena] One-time base preparation completed in " + preparationMillis + " ms"

@@ -20,10 +20,10 @@ class ArenaPreparationHotPathBoundaryTest {
 
     assertTrue(prepare.contains("isBasePrepared(w, ARENA_WATER_RADIUS)"));
     assertTrue(prepare.contains("prepareOwnedArenaWater(base, ARENA_WATER_RADIUS)"));
-    assertTrue(prepare.contains("markBasePrepared(w, ARENA_WATER_RADIUS)"));
+    assertTrue(prepare.contains("commitBasePreparation(w, ARENA_WATER_RADIUS)"));
     assertTrue(
         prepare.indexOf("prepareOwnedArenaWater(base, ARENA_WATER_RADIUS)")
-            < prepare.indexOf("markBasePrepared(w, ARENA_WATER_RADIUS)")
+            < prepare.indexOf("commitBasePreparation(w, ARENA_WATER_RADIUS)")
     );
   }
 
