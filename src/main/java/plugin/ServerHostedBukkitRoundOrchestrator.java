@@ -186,6 +186,101 @@ public final class ServerHostedBukkitRoundOrchestrator<A> {
   }
 
   /**
+   * Asynchronous production preparation boundary. STARTING remains authoritative until the
+   * tick-batched arena preparation, chest plan, participant teleports, and activation all finish.
+   * COUNTDOWN is entered only after the complete durable preparation transaction succeeds.
+   */
+  public synchronized void prepareLockedRoundAsync(
+      ServerHostedRoundPreparationService.RuntimePort<A> runtime,
+      java.util.function.Consumer<Result> completion
+  ) {
+    Objects.requireNonNull(runtime, "runtime");
+    Objects.requireNonNull(completion, "completion");
+
+    if (coordinator.ownershipMode()
+        != ServerHostedRoundCoordinator.OwnershipMode.SERVER_HOSTED
+        || coordinator.stateFor(ServerHostedRoundCoordinator.OwnershipMode.SERVER_HOSTED)
+            != ServerHostedRoundState.STARTING) {
+      completion.accept(result(
+          Code.INVALID_STATE,
+          coordinator.participantsFor(ServerHostedRoundCoordinator.OwnershipMode.SERVER_HOSTED),
+          Optional.empty(),
+          "The authoritative server-hosted coordinator is not in STARTING."
+      ));
+      return;
+    }
+
+    List<UUID> participants = coordinator.participantsFor(
+        ServerHostedRoundCoordinator.OwnershipMode.SERVER_HOSTED);
+    List<PlayerReturnRecord> records = new ArrayList<>(participants.size());
+
+    for (UUID participant : participants) {
+      Optional<PlayerReturnRecord> resolved;
+      try {
+        resolved = Objects.requireNonNull(
+            returnDestinationResolver.resolve(participant),
+            "returnDestinationResolver result"
+        );
+      } catch (Exception failure) {
+        completion.accept(abortAfterPreparationProblem(
+            Code.RETURN_DESTINATION_UNAVAILABLE,
+            Optional.empty(),
+            "Return destination resolution failed for " + participant + ": " + messageOf(failure)
+        ));
+        return;
+      }
+
+      if (resolved.isEmpty() || !participant.equals(resolved.orElseThrow().playerId())) {
+        completion.accept(abortAfterPreparationProblem(
+            Code.RETURN_DESTINATION_UNAVAILABLE,
+            Optional.empty(),
+            "A complete return destination was not resolved for " + participant + "."
+        ));
+        return;
+      }
+      records.add(resolved.orElseThrow());
+    }
+
+    RoundRuntimeContext context = RoundRuntimeContext.serverHosted(participants);
+    preparationService.prepareAsync(context, records, runtime, preparation -> {
+      Result finalResult;
+      synchronized (ServerHostedBukkitRoundOrchestrator.this) {
+        if (!preparation.prepared()) {
+          finalResult = abortAfterPreparationProblem(
+              Code.PREPARATION_FAILED,
+              Optional.of(preparation.code()),
+              preparation.detail()
+          );
+        } else if (coordinator.ownershipMode()
+            != ServerHostedRoundCoordinator.OwnershipMode.SERVER_HOSTED
+            || coordinator.stateFor(ServerHostedRoundCoordinator.OwnershipMode.SERVER_HOSTED)
+                != ServerHostedRoundState.STARTING) {
+          finalResult = abortAfterPreparationProblem(
+              Code.PREPARATION_FAILED,
+              Optional.of(preparation.code()),
+              "Preparation completed after the authoritative round left STARTING."
+          );
+        } else if (coordinator.beginCountdown()
+            != ServerHostedRoundCoordinator.TransitionCode.TRANSITIONED) {
+          finalResult = abortAfterPreparationProblem(
+              Code.PREPARATION_FAILED,
+              Optional.of(preparation.code()),
+              "Preparation succeeded but the authoritative coordinator could not enter COUNTDOWN."
+          );
+        } else {
+          finalResult = result(
+              Code.PREPARED_FOR_COUNTDOWN,
+              participants,
+              Optional.of(preparation.code()),
+              "All return obligations are durable and the shared round is ready for COUNTDOWN."
+          );
+        }
+      }
+      completion.accept(finalResult);
+    });
+  }
+
+  /**
    * Fail-closed cleanup entry used when shared runtime construction fails after COUNTDOWN.
    *
    * <p>The lifecycle remains owned by the coordinator; this method only reuses the retained

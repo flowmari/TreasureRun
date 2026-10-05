@@ -72,70 +72,31 @@ public class RankDebugCommand implements CommandExecutor {
     // ✅ /rank demo（README動画用：宝物→1位 まで自動）
     // =========================
     if (args[0].equalsIgnoreCase("demo")) {
+      GameStageManager stageManager = plugin.getGameStageManager();
+      if (stageManager == null) return true;
 
-      // 1) 海上ステージへワープ（ゲーム開始はしない）
-      Location center = null;
-      if (plugin.getGameStageManager() != null) {
-        plugin.getGameStageManager().clearDifficultyBlocks();
-        plugin.getGameStageManager().clearShopEntities();
-        center = plugin.getGameStageManager().buildSeasideStageAndTeleport(player);
-        if (center != null) plugin.getGameStageManager().startLoopEffects(center);
-      }
-
-      // ✅ ラムダ用に final 変数へコピー（これがポイント）
-      final Location centerFinal = center;
-
-      // ✅ 行商人に被らない「撮影スポット」へ移動して、中心を見る
-      if (centerFinal != null) {
-        Bukkit.getScheduler().runTaskLater(plugin, () -> {
-          if (!player.isOnline()) return;
-
-          // 中心から6ブロック離れた位置（被り防止）
-          Location demoSpot = centerFinal.clone().add(4.0, 1.2, 4.0);
-
-          // その場所から中心方向を向かせる（宝物が“前に出る”ようになる）
-          demoSpot.setDirection(centerFinal.toVector().subtract(demoSpot.toVector()));
-
-          player.teleport(demoSpot);
-        }, 1L);
-      }
-
-      // 2) すぐ「宝物が出る演出」（見た目：アイテムがポンと出る）
-      Bukkit.getScheduler().runTaskLater(plugin, () -> {
-        if (!player.isOnline()) return;
-
-        Location base = player.getLocation().clone()
-            .add(player.getLocation().getDirection().normalize().multiply(1.3))
-            .add(0, 1.0, 0);
-
-        // READMEに映したい宝物（見た目用。必要なら変更OK）
-        ItemStack treasure = new ItemStack(Material.DIAMOND, 1);
-
-        // チェスト開く音（それっぽく）
-        base.getWorld().playSound(base, Sound.BLOCK_CHEST_OPEN, 1.0f, 1.0f);
-
-        // アイテムが出る
-        Item drop = base.getWorld().dropItem(base, treasure);
-        drop.setPickupDelay(Integer.MAX_VALUE); // 取れないようにする（動画用）
-        drop.setVelocity(new Vector(0, 0.35, 0)); // 上にふわっと
-
-        // 3) 宝物取得時の「音楽（ミニDJ）」を鳴らす（DBは触らない）
-        if (plugin.getTreasureRunGameEffectsPlugin() != null) {
-          plugin.getTreasureRunGameEffectsPlugin().playMiniDJEffect(player);
-        }
-
-        // 4) 少し待ってから「1位演出」
-        Bukkit.getScheduler().runTaskLater(plugin, () -> {
-          if (!player.isOnline()) return;
-          plugin.getRankRewardManager().giveRankRewardWithEffect(player, 1);
-        }, 25L);
-
-        // 動画用アイテムはあとで消す
-        Bukkit.getScheduler().runTaskLater(plugin, drop::remove, 60L);
-
-      }, 10L);
-
-      // ✅ READMEにデバッグ文字を一切出さない（何もsendMessageしない）
+      stageManager.clearDifficultyBlocks();
+      stageManager.clearShopEntities();
+      stageManager.prepareSeasideStageAsync(
+          player,
+          center -> {
+            if (!player.isOnline()) return;
+            try {
+              if (!stageManager.teleportPlayerToPreparedStage(player, center)) return;
+              stageManager.activatePreparedStage(center);
+              stageManager.startPreparedStageArrival(player, center);
+              stageManager.startLoopEffects(center);
+              runDemoEffects(player, center);
+            } catch (Throwable failure) {
+              plugin.getLogger().warning(
+                  "[RankDebug] demo stage continuation failed: " + failure.getMessage()
+              );
+            }
+          },
+          failure -> plugin.getLogger().warning(
+              "[RankDebug] demo arena preparation failed: " + failure.getMessage()
+          )
+      );
       return true;
     }
 
@@ -162,4 +123,36 @@ public class RankDebugCommand implements CommandExecutor {
 
     return true;
   }
+  private void runDemoEffects(Player player, Location center) {
+    Bukkit.getScheduler().runTaskLater(plugin, () -> {
+      if (!player.isOnline()) return;
+      Location demoSpot = center.clone().add(4.0, 1.2, 4.0);
+      demoSpot.setDirection(center.toVector().subtract(demoSpot.toVector()));
+      player.teleport(demoSpot);
+    }, 1L);
+
+    Bukkit.getScheduler().runTaskLater(plugin, () -> {
+      if (!player.isOnline()) return;
+
+      Location base = player.getLocation().clone()
+          .add(player.getLocation().getDirection().normalize().multiply(1.3))
+          .add(0, 1.0, 0);
+      ItemStack treasure = new ItemStack(Material.DIAMOND, 1);
+      base.getWorld().playSound(base, Sound.BLOCK_CHEST_OPEN, 1.0f, 1.0f);
+      Item drop = base.getWorld().dropItem(base, treasure);
+      drop.setPickupDelay(Integer.MAX_VALUE);
+      drop.setVelocity(new Vector(0, 0.35, 0));
+
+      if (plugin.getTreasureRunGameEffectsPlugin() != null) {
+        plugin.getTreasureRunGameEffectsPlugin().playMiniDJEffect(player);
+      }
+
+      Bukkit.getScheduler().runTaskLater(plugin, () -> {
+        if (!player.isOnline()) return;
+        plugin.getRankRewardManager().giveRankRewardWithEffect(player, 1);
+      }, 25L);
+      Bukkit.getScheduler().runTaskLater(plugin, drop::remove, 60L);
+    }, 10L);
+  }
+
 }

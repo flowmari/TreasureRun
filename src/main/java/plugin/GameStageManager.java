@@ -37,6 +37,11 @@ public class GameStageManager implements Listener {
   private final ArenaWorldManager arenaWorldManager;
 
   private static final int ARENA_WATER_RADIUS = 64;
+  private static final int ARENA_PREPARATION_COLUMNS_PER_TICK = 192;
+  private static final long ARENA_PREPARATION_BUDGET_NANOS = 4_000_000L;
+
+  private BukkitTask arenaPreparationHandle;
+  private long arenaPreparationGeneration;
 
   // ✅ UFO（型が違っても壊れないように Object で保持）
   private final Object ufo;
@@ -69,44 +74,6 @@ public class GameStageManager implements Listener {
     this(plugin, null, new ArenaWorldManager(plugin));
     // ❌ 起動時にMSZを常時起動しない
     // MSZは buildSeasideStageAndTeleport() のステージ生成後に startMovingSafetyZoneTask() する
-  }
-
-  // ✅ 海上ステージ用：周囲を強制的に「水面＋上空クリア」にする
-  // これで海岸・砂浜・ジャングル横に寄っても、ステージ周囲だけは必ず海になる
-  private void prepareOwnedArenaWater(Location origin, int radius) {
-    if (origin == null || origin.getWorld() == null) return;
-    World w = origin.getWorld();
-    arenaWorldManager.requireOwnedWorld(w);
-
-    int cx = origin.getBlockX();
-    int cz = origin.getBlockZ();
-
-    // The arena uses a fixed water level. It must not inherit terrain height from another world.
-    int waterY = origin.getBlockY();
-
-    for (int dx = -radius; dx <= radius; dx++) {
-      for (int dz = -radius; dz <= radius; dz++) {
-        int x = cx + dx;
-        int z = cz + dz;
-
-        // 水面そのもの
-        w.getBlockAt(x, waterY, z).setType(Material.WATER, false);
-
-        // 水面より上を空気にして、砂丘・木・葉・土・草を消す
-        for (int y = waterY + 1; y <= waterY + 10; y++) {
-          Block b = w.getBlockAt(x, y, z);
-          if (!b.getType().isAir()) {
-            b.setType(Material.AIR, false);
-          }
-        }
-
-        // 水面直下が空洞だと変なので、1段下も水にする
-        w.getBlockAt(x, waterY - 1, z).setType(Material.WATER, false);
-      }
-    }
-
-    // base は「水ブロックのY」を持つ
-    origin.setY(waterY);
   }
 
   // ✅ UFO を渡せる版（TreasureRunMultiChestPlugin 側で new GameStageManager(this, ufo) にできる）
@@ -157,34 +124,169 @@ public class GameStageManager implements Listener {
   /**
    * Prepares one plugin-owned arena stage without teleporting any participant.
    *
-   * <p>The caller may therefore complete all durable return obligations and chest preparation
-   * before the first participant changes worlds.</p>
+   * <p>The synchronous method is intentionally warm-path only. Cold base preparation must use
+   * {@link #prepareSeasideStageAsync(Player, java.util.function.Consumer,
+   * java.util.function.Consumer)} so the 129x129 mutation is bounded across server ticks.</p>
    */
   public Location prepareSeasideStage(Player effectsAudience) {
     if (effectsAudience == null) return null;
 
-    plugin.getLogger().info("[STAGE][DEBUG] prepareSeasideStage entered"
-        + " effectsAudience=" + effectsAudience.getName()
-        + " gsm=" + System.identityHashCode(this)
-    );
-
     Location base = arenaWorldManager.getArenaBase();
+    World world = base.getWorld();
+    arenaWorldManager.requireOwnedWorld(world);
+    if (!arenaWorldManager.isBasePrepared(world, ARENA_WATER_RADIUS)) {
+      throw new IllegalStateException(
+          "Cold arena base preparation requires the tick-batched asynchronous path."
+      );
+    }
+    return finishSeasideStagePreparation(base, effectsAudience);
+  }
+
+  /**
+   * Tick-batched cold preparation boundary shared by legacy and server-hosted gameplay.
+   *
+   * <p>All Bukkit world access remains on the primary server thread. A generation token and task
+   * identity reject stale callbacks after stop/disable/cancel. The durable prepared marker is
+   * published only after every base column is complete and {@code world.save()} succeeds.</p>
+   */
+  public void prepareSeasideStageAsync(
+      Player effectsAudience,
+      java.util.function.Consumer<Location> success,
+      java.util.function.Consumer<Throwable> failure
+  ) {
+    java.util.Objects.requireNonNull(success, "success");
+    java.util.Objects.requireNonNull(failure, "failure");
+
+    if (effectsAudience == null) {
+      failure.accept(new IllegalArgumentException("effectsAudience must not be null"));
+      return;
+    }
+
+    final Location base;
+    final World world;
+    try {
+      base = arenaWorldManager.getArenaBase();
+      world = base.getWorld();
+      arenaWorldManager.requireOwnedWorld(world);
+    } catch (Throwable setupFailure) {
+      failure.accept(setupFailure);
+      return;
+    }
+
+    plugin.getLogger().info("[STAGE][DEBUG] prepareSeasideStageAsync entered"
+        + " effectsAudience=" + effectsAudience.getName()
+        + " gsm=" + System.identityHashCode(this));
+
+    if (arenaWorldManager.isBasePrepared(world, ARENA_WATER_RADIUS)) {
+      try {
+        success.accept(finishSeasideStagePreparation(base, effectsAudience));
+      } catch (Throwable warmFailure) {
+        failure.accept(warmFailure);
+      }
+      return;
+    }
+
+    if (arenaPreparationHandle != null) {
+      failure.accept(new IllegalStateException("Arena base preparation is already in progress."));
+      return;
+    }
+
+    final long generation = ++arenaPreparationGeneration;
+    final int diameter = ARENA_WATER_RADIUS * 2 + 1;
+    final int totalColumns = diameter * diameter;
+    final int[] nextColumn = {0};
+    final long preparationStartedAt = System.nanoTime();
+
+    Runnable batch = () -> {
+      if (generation != arenaPreparationGeneration || arenaPreparationHandle == null) return;
+
+      try {
+        long batchStartedAt = System.nanoTime();
+        int processed = 0;
+
+        while (nextColumn[0] < totalColumns
+            && processed < ARENA_PREPARATION_COLUMNS_PER_TICK
+            && (System.nanoTime() - batchStartedAt) < ARENA_PREPARATION_BUDGET_NANOS) {
+          int index = nextColumn[0]++;
+          int dx = index / diameter - ARENA_WATER_RADIUS;
+          int dz = index % diameter - ARENA_WATER_RADIUS;
+          prepareOwnedArenaWaterColumn(base, dx, dz);
+          processed++;
+        }
+
+        if (nextColumn[0] < totalColumns) return;
+
+        arenaWorldManager.commitBasePreparation(world, ARENA_WATER_RADIUS);
+        long preparationMillis = (System.nanoTime() - preparationStartedAt) / 1_000_000L;
+        plugin.getLogger().info(
+            "[Arena] Tick-batched one-time base preparation completed in "
+                + preparationMillis + " ms wall time"
+        );
+
+        BukkitTask completedTask = arenaPreparationHandle;
+        arenaPreparationHandle = null;
+        if (completedTask != null) completedTask.cancel();
+
+        if (generation != arenaPreparationGeneration) return;
+        success.accept(finishSeasideStagePreparation(base, effectsAudience));
+      } catch (Throwable preparationFailure) {
+        BukkitTask failedTask = arenaPreparationHandle;
+        arenaPreparationHandle = null;
+        if (failedTask != null) failedTask.cancel();
+        if (generation == arenaPreparationGeneration) {
+          arenaPreparationGeneration++;
+          failure.accept(preparationFailure);
+        }
+      }
+    };
+
+    try {
+      arenaPreparationHandle = Bukkit.getScheduler().runTaskTimer(plugin, batch, 0L, 1L);
+    } catch (Throwable schedulingFailure) {
+      arenaPreparationHandle = null;
+      if (generation == arenaPreparationGeneration) arenaPreparationGeneration++;
+      failure.accept(schedulingFailure);
+    }
+  }
+
+  /** Cancels an unfinished cold-preparation job and invalidates every callback from that job. */
+  public void cancelArenaPreparation() {
+    arenaPreparationGeneration++;
+    BukkitTask task = arenaPreparationHandle;
+    arenaPreparationHandle = null;
+    if (task != null) task.cancel();
+  }
+
+  public boolean isArenaPreparationInProgress() {
+    return arenaPreparationHandle != null;
+  }
+
+  private void prepareOwnedArenaWaterColumn(Location origin, int dx, int dz) {
+    World world = origin.getWorld();
+    if (world == null) throw new IllegalStateException("Arena base has no world.");
+    // Ownership is authenticated once before the tick-batched job starts.
+    // commitBasePreparation() authenticates it again before durable publication.
+
+    int x = origin.getBlockX() + dx;
+    int z = origin.getBlockZ() + dz;
+    int waterY = origin.getBlockY();
+
+    world.getBlockAt(x, waterY, z).setType(Material.WATER, false);
+    for (int y = waterY + 1; y <= waterY + 10; y++) {
+      Block block = world.getBlockAt(x, y, z);
+      if (!block.getType().isAir()) block.setType(Material.AIR, false);
+    }
+    world.getBlockAt(x, waterY - 1, z).setType(Material.WATER, false);
+  }
+
+  private Location finishSeasideStagePreparation(Location base, Player effectsAudience) {
     World w = base.getWorld();
+    if (w == null) throw new IllegalStateException("Arena base has no world.");
     arenaWorldManager.requireOwnedWorld(w);
 
     plugin.getLogger().info("[Arena] Preparing isolated stage in " + w.getName()
         + " at x=" + base.getBlockX() + " y=" + base.getBlockY()
         + " z=" + base.getBlockZ());
-
-    if (!arenaWorldManager.isBasePrepared(w, ARENA_WATER_RADIUS)) {
-      long preparationStartedAt = System.nanoTime();
-      prepareOwnedArenaWater(base, ARENA_WATER_RADIUS);
-      arenaWorldManager.commitBasePreparation(w, ARENA_WATER_RADIUS);
-      long preparationMillis = (System.nanoTime() - preparationStartedAt) / 1_000_000L;
-      plugin.getLogger().info(
-          "[Arena] One-time base preparation completed in " + preparationMillis + " ms"
-      );
-    }
 
     Location stageCenter = base.clone();
     stageCenter.setY(base.getBlockY() + 1);
@@ -218,12 +320,6 @@ public class GameStageManager implements Listener {
               + " | underWater=" + waterCount + "/" + total
               + (bad.length() > 0 ? " | notWater:" + bad : "")
       );
-
-      Material feet = ww.getBlockAt(cx, y, cz).getType();
-      Material below = ww.getBlockAt(cx, y - 1, cz).getType();
-      plugin.getLogger().info(
-          "[SeasideCheck] feetBlock(y)=" + feet + " | below(y-1)=" + below
-      );
     } catch (Exception e) {
       plugin.getLogger().warning("[SeasideCheck] ERROR " + e.getMessage());
     }
@@ -231,7 +327,6 @@ public class GameStageManager implements Listener {
     clearAbove(stageCenter, 3);
     buildDifficultyBlocks(stageCenter);
     playAmbient(stageCenter, effectsAudience);
-
     spawnCircleParticles(stageCenter, Particle.END_ROD, 2.5, 40);
     spawnCircleParticles(stageCenter, Particle.END_ROD, 1.5, 40);
     spawnRisingPillars(stageCenter, Particle.END_ROD);
@@ -262,21 +357,17 @@ public class GameStageManager implements Listener {
     startMovingSafetyZoneTask();
   }
 
-  /**
-   * Starts the player-specific arrival effect after the round-global stage is active.
-   */
+  /** Starts the player-specific arrival effect after the round-global stage is active. */
   public void startPreparedStageArrival(Player player, Location stageCenter) {
     if (player == null || stageCenter == null || stageCenter.getWorld() == null) return;
     arenaWorldManager.requireOwnedWorld(stageCenter.getWorld());
     startUfoIfAvailable(player, stageCenter);
   }
 
-  /** Legacy one-player compatibility wrapper. */
+  /** Warm-path legacy/debug compatibility wrapper. */
   public Location buildSeasideStageAndTeleport(Player player) {
     Location stageCenter = prepareSeasideStage(player);
-    if (stageCenter == null || !teleportPlayerToPreparedStage(player, stageCenter)) {
-      return null;
-    }
+    if (stageCenter == null || !teleportPlayerToPreparedStage(player, stageCenter)) return null;
     activatePreparedStage(stageCenter);
     startPreparedStageArrival(player, stageCenter);
     return stageCenter.clone();

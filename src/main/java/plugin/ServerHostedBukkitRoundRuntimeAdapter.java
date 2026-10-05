@@ -119,6 +119,27 @@ public final class ServerHostedBukkitRoundRuntimeAdapter
   }
 
   @Override
+  public void prepareArenaAsync(
+      UUID effectsAudienceId,
+      java.util.function.Consumer<Location> success,
+      java.util.function.Consumer<Throwable> failure
+  ) {
+    Player effectsAudience = onlinePlayer(effectsAudienceId);
+    if (effectsAudience == null) {
+      failure.accept(new IllegalStateException(
+          "The effects audience is not online during arena preparation."
+      ));
+      return;
+    }
+    stageManager().prepareSeasideStageAsync(effectsAudience, success, failure);
+  }
+
+  @Override
+  public void cancelArenaPreparation() {
+    stageManager().cancelArenaPreparation();
+  }
+
+  @Override
   public boolean placeChests(Location arena) {
     String difficulty = difficultySupplier.get();
     if (difficulty == null || difficulty.isBlank()) difficulty = "Normal";
@@ -252,6 +273,7 @@ public final class ServerHostedBukkitRoundRuntimeAdapter
   }
 
   private void clearRoundArtifacts() {
+    stageManager().cancelArenaPreparation();
     chestManager().removeAllChests();
     stageManager().clearDifficultyBlocks();
     stageManager().clearShopEntities();

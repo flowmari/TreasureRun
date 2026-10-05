@@ -49,6 +49,9 @@ class ServerHostedBukkitRoundProductionWiringBoundaryTest {
         "scheduler.scheduleRepeating(\n              TICKS_PER_SECOND,\n"
             + "              TICKS_PER_SECOND,\n              this::countdownTick"
     ));
+    assertTrue(controller.contains("activationService.prepareLockedRoundAsync("));
+    assertTrue(controller.contains("preparationPending"));
+    assertTrue(controller.contains("activationService.cancelArenaPreparation()"));
     assertTrue(controller.contains("20L"));
     assertTrue(plugin.contains(
         "(initialDelayTicks, periodTicks, task) -> {"

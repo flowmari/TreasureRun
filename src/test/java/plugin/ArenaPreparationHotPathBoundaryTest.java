@@ -16,21 +16,23 @@ class ArenaPreparationHotPathBoundaryTest {
   @Test
   void expensiveBaseWaterPreparationIsPersistentlyGuarded() throws Exception {
     String source = read(STAGE_MANAGER);
-    String prepare = methodBody(source, "public Location prepareSeasideStage");
+    String prepare = methodBody(source, "public void prepareSeasideStageAsync");
 
-    assertTrue(prepare.contains("isBasePrepared(w, ARENA_WATER_RADIUS)"));
-    assertTrue(prepare.contains("prepareOwnedArenaWater(base, ARENA_WATER_RADIUS)"));
-    assertTrue(prepare.contains("commitBasePreparation(w, ARENA_WATER_RADIUS)"));
+    assertTrue(prepare.contains("isBasePrepared(world, ARENA_WATER_RADIUS)"));
+    assertTrue(prepare.contains("prepareOwnedArenaWaterColumn(base, dx, dz)"));
+    assertTrue(prepare.contains("commitBasePreparation(world, ARENA_WATER_RADIUS)"));
+    assertTrue(prepare.contains("ARENA_PREPARATION_BUDGET_NANOS"));
+    assertTrue(prepare.contains("ARENA_PREPARATION_COLUMNS_PER_TICK"));
     assertTrue(
-        prepare.indexOf("prepareOwnedArenaWater(base, ARENA_WATER_RADIUS)")
-            < prepare.indexOf("commitBasePreparation(w, ARENA_WATER_RADIUS)")
+        prepare.indexOf("prepareOwnedArenaWaterColumn(base, dx, dz)")
+            < prepare.indexOf("commitBasePreparation(world, ARENA_WATER_RADIUS)")
     );
   }
 
   @Test
   void normalRoundPathHasNoLargeFallbackAreaSweeps() throws Exception {
     String source = read(STAGE_MANAGER);
-    String prepare = methodBody(source, "public Location prepareSeasideStage");
+    String prepare = methodBody(source, "public void prepareSeasideStageAsync");
     String cleanup = methodBody(source, "public int clearDifficultyBlocks");
 
     assertFalse(prepare.contains("sweepAllLemonGlass"));

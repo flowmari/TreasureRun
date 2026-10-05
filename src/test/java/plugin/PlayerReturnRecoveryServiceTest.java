@@ -130,9 +130,11 @@ class PlayerReturnRecoveryServiceTest {
     );
 
     int durableWrite = plugin.indexOf("persistPlayerReturnBeforeArenaTeleport(player, originalReturnLocation)");
-    int stageTeleport = plugin.indexOf("gameStageManager.buildSeasideStageAndTeleport(player)");
+    int asyncPreparation = plugin.indexOf("gameStageManager.prepareSeasideStageAsync(");
+    int stageTeleport = plugin.indexOf("gameStageManager.teleportPlayerToPreparedStage(player, stage)");
     assertTrue(durableWrite >= 0);
-    assertTrue(stageTeleport > durableWrite);
+    assertTrue(asyncPreparation > durableWrite);
+    assertTrue(stageTeleport > asyncPreparation);
     assertTrue(plugin.contains("pending-player-returns.ledger"));
     assertTrue(plugin.contains("playerReturnRecoveryService.recover"));
     assertTrue(plugin.contains("Bukkit.getWorld(record.worldId())"));

@@ -122,6 +122,48 @@ public final class ServerHostedRoundActivationService<A> {
   }
 
   /**
+   * Asynchronous production form that preserves STARTING until durable preparation is complete.
+   */
+  public synchronized void prepareLockedRoundAsync(
+      java.util.function.Consumer<Result> completion
+  ) {
+    Objects.requireNonNull(completion, "completion");
+    orchestrator.prepareLockedRoundAsync(runtimePort, preparation -> completion.accept(
+        switch (preparation.code()) {
+          case PREPARED_FOR_COUNTDOWN -> result(
+              Code.PREPARED_FOR_COUNTDOWN,
+              preparation.participants(),
+              Optional.empty(),
+              preparation.detail()
+          );
+          case CLEANUP_PENDING -> result(
+              Code.CLEANUP_PENDING,
+              preparation.participants(),
+              Optional.empty(),
+              preparation.detail()
+          );
+          case INVALID_STATE, NO_ACTIVE_ROUND -> result(
+              Code.INVALID_STATE,
+              preparation.participants(),
+              Optional.empty(),
+              preparation.detail()
+          );
+          case RETURN_DESTINATION_UNAVAILABLE, PREPARATION_FAILED, CLEANUP_COMPLETED -> result(
+              Code.PREPARATION_FAILED,
+              preparation.participants(),
+              Optional.empty(),
+              preparation.detail()
+          );
+        }
+    ));
+  }
+
+  /** Cancels only the runtime-owned in-progress arena preparation job. */
+  public synchronized void cancelArenaPreparation() {
+    runtimePort.cancelArenaPreparation();
+  }
+
+  /**
    * Completes the countdown boundary and returns a shared runtime for the exact locked roster.
    *
    * <p>The Bukkit countdown task is intentionally outside this service. A future production adapter
