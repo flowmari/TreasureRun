@@ -81,6 +81,198 @@ class ServerHostedBukkitRoundControllerTest {
   }
 
   @Test
+  void deferredStartStaysInStartingUntilPreparationCompletesThenSchedulesCountdown() {
+    Fixture fixture = fixture();
+    fixture.runtime.deferArenaPreparation = true;
+
+    ServerHostedBukkitRoundController.Result start =
+        fixture.controller.start(fixture.lockedStart());
+
+    assertEquals(ServerHostedBukkitRoundController.Code.PREPARING, start.code());
+    assertEquals(ServerHostedRoundState.STARTING, fixture.coordinator.state());
+    assertTrue(fixture.controller.preparationPending());
+    assertFalse(fixture.controller.countdownScheduled());
+    assertTrue(fixture.scheduler.tasks.isEmpty());
+    assertTrue(fixture.countdownSeconds.isEmpty());
+    assertTrue(fixture.controller.activeRuntime().isEmpty());
+
+    fixture.runtime.completeDeferredPreparation();
+
+    assertEquals(ServerHostedRoundState.COUNTDOWN, fixture.coordinator.state());
+    assertFalse(fixture.controller.preparationPending());
+    assertTrue(fixture.controller.countdownScheduled());
+    assertEquals(10, fixture.controller.countdownRemaining());
+    assertEquals(List.of(10), fixture.countdownSeconds);
+    assertEquals(1, fixture.scheduler.tasks.size());
+  }
+
+  @Test
+  void startAndForceStartAreRejectedWhileDeferredPreparationOwnsTheRound() {
+    Fixture fixture = fixture();
+    fixture.runtime.deferArenaPreparation = true;
+    ServerHostedSessionControlService.StartDecision decision = fixture.lockedStart();
+
+    assertEquals(
+        ServerHostedBukkitRoundController.Code.PREPARING,
+        fixture.controller.start(decision).code()
+    );
+
+    assertEquals(
+        ServerHostedBukkitRoundController.Code.INVALID_STATE,
+        fixture.controller.forceStart(decision).code()
+    );
+    assertEquals(
+        ServerHostedBukkitRoundController.Code.INVALID_STATE,
+        fixture.controller.start(decision).code()
+    );
+
+    assertEquals(ServerHostedRoundState.STARTING, fixture.coordinator.state());
+    assertTrue(fixture.controller.preparationPending());
+    assertFalse(fixture.controller.countdownScheduled());
+    assertTrue(fixture.scheduler.tasks.isEmpty());
+    assertTrue(fixture.controller.activeRuntime().isEmpty());
+  }
+
+  @Test
+  void deferredForceStartWaitsForPreparationThenEntersRunningWithoutCountdown() {
+    Fixture fixture = fixture();
+    fixture.runtime.deferArenaPreparation = true;
+
+    ServerHostedBukkitRoundController.Result forced =
+        fixture.controller.forceStart(fixture.lockedStart());
+
+    assertEquals(ServerHostedBukkitRoundController.Code.PREPARING, forced.code());
+    assertEquals(ServerHostedRoundState.STARTING, fixture.coordinator.state());
+    assertTrue(fixture.controller.preparationPending());
+    assertFalse(fixture.controller.countdownScheduled());
+    assertTrue(fixture.scheduler.tasks.isEmpty());
+    assertTrue(fixture.countdownSeconds.isEmpty());
+    assertTrue(fixture.controller.activeRuntime().isEmpty());
+
+    fixture.runtime.completeDeferredPreparation();
+
+    assertEquals(ServerHostedRoundState.RUNNING, fixture.coordinator.state());
+    assertFalse(fixture.controller.preparationPending());
+    assertFalse(fixture.controller.countdownScheduled());
+    assertTrue(fixture.scheduler.tasks.isEmpty());
+    assertTrue(fixture.countdownSeconds.isEmpty());
+    assertTrue(fixture.controller.activeRuntime().isPresent());
+  }
+
+  @Test
+  void deferredPreparationFailureFailsClosedWithoutCountdownOrRuntime() {
+    Fixture fixture = fixture();
+    fixture.runtime.deferArenaPreparation = true;
+
+    assertEquals(
+        ServerHostedBukkitRoundController.Code.PREPARING,
+        fixture.controller.start(fixture.lockedStart()).code()
+    );
+
+    fixture.runtime.failDeferredPreparation(
+        new IllegalStateException("simulated cold preparation failure")
+    );
+
+    assertEquals(ServerHostedRoundState.IDLE, fixture.coordinator.state());
+    assertFalse(fixture.controller.preparationPending());
+    assertFalse(fixture.controller.countdownScheduled());
+    assertTrue(fixture.scheduler.tasks.isEmpty());
+    assertTrue(fixture.controller.activeRuntime().isEmpty());
+    assertTrue(fixture.events.contains("cleanup:PREPARATION_FAILED"));
+  }
+
+  @Test
+  void stopDuringDeferredPreparationCancelsAndRejectsLateCompletion() {
+    Fixture fixture = fixture();
+    fixture.runtime.deferArenaPreparation = true;
+
+    assertEquals(
+        ServerHostedBukkitRoundController.Code.PREPARING,
+        fixture.controller.start(fixture.lockedStart()).code()
+    );
+
+    ServerHostedSessionControlService.StopDecision stop =
+        fixture.control.requestStop(true);
+    ServerHostedBukkitRoundController.Result stopped =
+        fixture.controller.stop(stop);
+
+    assertEquals(ServerHostedSessionControlService.StopCode.CLEANUP_REQUIRED, stop.code());
+    assertEquals(ServerHostedBukkitRoundController.Code.CLEANUP_COMPLETED, stopped.code());
+    assertEquals(1, fixture.runtime.cancelArenaPreparationCalls);
+    assertFalse(fixture.controller.preparationPending());
+    assertEquals(ServerHostedRoundState.IDLE, fixture.coordinator.state());
+    assertTrue(fixture.scheduler.tasks.isEmpty());
+
+    fixture.runtime.completeDeferredPreparation();
+
+    assertEquals(ServerHostedRoundState.IDLE, fixture.coordinator.state());
+    assertFalse(fixture.controller.preparationPending());
+    assertFalse(fixture.controller.countdownScheduled());
+    assertTrue(fixture.scheduler.tasks.isEmpty());
+    assertTrue(fixture.countdownSeconds.isEmpty());
+    assertTrue(fixture.controller.activeRuntime().isEmpty());
+  }
+
+  @Test
+  void participantDisconnectDuringDeferredPreparationCancelsAndRejectsLateCompletion() {
+    Fixture fixture = fixture();
+    fixture.runtime.deferArenaPreparation = true;
+
+    assertEquals(
+        ServerHostedBukkitRoundController.Code.PREPARING,
+        fixture.controller.start(fixture.lockedStart()).code()
+    );
+
+    ServerHostedBukkitRoundController.Result disconnected =
+        fixture.controller.participantDisconnected(fixture.first);
+
+    assertEquals(
+        ServerHostedBukkitRoundController.Code.CLEANUP_COMPLETED,
+        disconnected.code()
+    );
+    assertEquals(1, fixture.runtime.cancelArenaPreparationCalls);
+    assertFalse(fixture.controller.preparationPending());
+    assertEquals(ServerHostedRoundState.IDLE, fixture.coordinator.state());
+    assertTrue(fixture.scheduler.tasks.isEmpty());
+
+    fixture.runtime.completeDeferredPreparation();
+
+    assertEquals(ServerHostedRoundState.IDLE, fixture.coordinator.state());
+    assertFalse(fixture.controller.countdownScheduled());
+    assertTrue(fixture.scheduler.tasks.isEmpty());
+    assertTrue(fixture.countdownSeconds.isEmpty());
+    assertTrue(fixture.controller.activeRuntime().isEmpty());
+  }
+
+  @Test
+  void pluginDisableDuringDeferredPreparationCancelsAndRejectsLateCompletion() {
+    Fixture fixture = fixture();
+    fixture.runtime.deferArenaPreparation = true;
+
+    assertEquals(
+        ServerHostedBukkitRoundController.Code.PREPARING,
+        fixture.controller.start(fixture.lockedStart()).code()
+    );
+
+    ServerHostedBukkitRoundController.Result disabled =
+        fixture.controller.pluginDisabled();
+
+    assertEquals(ServerHostedBukkitRoundController.Code.CLEANUP_COMPLETED, disabled.code());
+    assertEquals(1, fixture.runtime.cancelArenaPreparationCalls);
+    assertFalse(fixture.controller.preparationPending());
+    assertEquals(ServerHostedRoundState.IDLE, fixture.coordinator.state());
+    assertTrue(fixture.scheduler.tasks.isEmpty());
+
+    fixture.runtime.completeDeferredPreparation();
+
+    assertEquals(ServerHostedRoundState.IDLE, fixture.coordinator.state());
+    assertFalse(fixture.controller.countdownScheduled());
+    assertTrue(fixture.scheduler.tasks.isEmpty());
+    assertTrue(fixture.countdownSeconds.isEmpty());
+    assertTrue(fixture.controller.activeRuntime().isEmpty());
+  }
+
+  @Test
   void normalStartThenForceStartCannotCreateASecondRoundOrTask() {
     Fixture fixture = fixture();
     ServerHostedSessionControlService.StartDecision decision = fixture.lockedStart();
@@ -363,6 +555,7 @@ class ServerHostedBukkitRoundControllerTest {
     private final List<String> events = new ArrayList<>();
     private final List<Integer> countdownSeconds = new ArrayList<>();
     private final FakeScheduler scheduler = new FakeScheduler();
+    private final FakeRuntime runtime = new FakeRuntime(events);
     private boolean cleanupSucceeds = true;
     private final ServerHostedBukkitRoundOrchestrator<String> orchestrator;
     private final ServerHostedRoundActivationService<String> activation;
@@ -377,7 +570,6 @@ class ServerHostedBukkitRoundControllerTest {
 
       ServerHostedRoundPreparationService<String> preparation =
           new ServerHostedRoundPreparationService<>(coordinator, ledger);
-      FakeRuntime runtime = new FakeRuntime(events);
 
       orchestrator = new ServerHostedBukkitRoundOrchestrator<>(
           coordinator,
@@ -519,8 +711,70 @@ class ServerHostedBukkitRoundControllerTest {
       implements ServerHostedRoundPreparationService.RuntimePort<String> {
     private final List<String> events;
 
+    private boolean deferArenaPreparation;
+    private java.util.function.Consumer<String> deferredSuccess;
+    private java.util.function.Consumer<Throwable> deferredFailure;
+    private int cancelArenaPreparationCalls;
+
     FakeRuntime(List<String> events) {
       this.events = events;
+    }
+
+    @Override
+    public void prepareArenaAsync(
+        UUID effectsAudienceId,
+        java.util.function.Consumer<String> success,
+        java.util.function.Consumer<Throwable> failure
+    ) {
+      if (!deferArenaPreparation) {
+        try {
+          success.accept(prepareArena(effectsAudienceId));
+        } catch (Throwable preparationFailure) {
+          failure.accept(preparationFailure);
+        }
+        return;
+      }
+
+      if (deferredSuccess != null || deferredFailure != null) {
+        throw new IllegalStateException("A deferred arena preparation is already pending.");
+      }
+
+      events.add("prepare-pending");
+      deferredSuccess = success;
+      deferredFailure = failure;
+    }
+
+    @Override
+    public void cancelArenaPreparation() {
+      cancelArenaPreparationCalls++;
+      events.add("cancel-prepare");
+      // Intentionally retain the captured callback so tests can simulate a stale
+      // completion arriving after cancellation. Production cancellation should
+      // normally prevent that delivery; the controller generation guard must
+      // still reject it if it ever arrives.
+    }
+
+    void completeDeferredPreparation() {
+      java.util.function.Consumer<String> success = deferredSuccess;
+      if (success == null) {
+        throw new IllegalStateException("No deferred arena preparation success callback exists.");
+      }
+
+      deferredSuccess = null;
+      deferredFailure = null;
+      events.add("prepare");
+      success.accept("arena");
+    }
+
+    void failDeferredPreparation(Throwable preparationFailure) {
+      java.util.function.Consumer<Throwable> failure = deferredFailure;
+      if (failure == null) {
+        throw new IllegalStateException("No deferred arena preparation failure callback exists.");
+      }
+
+      deferredSuccess = null;
+      deferredFailure = null;
+      failure.accept(preparationFailure);
     }
 
     @Override

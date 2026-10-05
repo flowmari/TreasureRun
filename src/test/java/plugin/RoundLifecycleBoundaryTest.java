@@ -19,14 +19,16 @@ class RoundLifecycleBoundaryTest {
     String method = methodBody(source, "public void beginGameStartAfterLanguageSelected");
 
     int preparation = method.indexOf("roundLifecycle.tryBeginPreparation()");
-    int stageBuild = method.indexOf("gameStageManager.buildSeasideStageAndTeleport(player)");
-    int countdown = method.indexOf("roundLifecycle.beginCountdown()");
+    int stageBuild = method.indexOf("gameStageManager.prepareSeasideStageAsync(");
+    String continuation = methodBody(source, "private void continueLegacyPreparedRound");
+    int countdown = continuation.indexOf("roundLifecycle.beginCountdown()");
 
     assertTrue(preparation >= 0);
     assertTrue(stageBuild > preparation);
-    assertTrue(countdown > stageBuild);
-    assertTrue(method.contains("countdownDelayTask ="));
-    assertTrue(method.contains("countdownTask ="));
+    assertTrue(countdown >= 0);
+    assertTrue(continuation.contains("roundLifecycle.is(RoundState.PREPARING)"));
+    assertTrue(continuation.contains("countdownDelayTask ="));
+    assertTrue(continuation.contains("countdownTask ="));
   }
 
   @Test

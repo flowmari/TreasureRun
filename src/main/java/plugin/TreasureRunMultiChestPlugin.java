@@ -1193,6 +1193,7 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
   private void clearRoundArtifacts() {
     if (treasureChestManager != null) treasureChestManager.removeAllChests();
     if (gameStageManager != null) {
+      gameStageManager.cancelArenaPreparation();
       gameStageManager.clearDifficultyBlocks();
       gameStageManager.clearShopEntities();
     }
@@ -3523,27 +3524,60 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
       Location originalReturnLocation = player.getLocation().clone();
       persistPlayerReturnBeforeArenaTeleport(player, originalReturnLocation);
 
-      Location stage = gameStageManager.buildSeasideStageAndTeleport(player);
-      if (stage == null || stage.getWorld() == null) {
-        throw new IllegalStateException("Arena stage preparation returned no usable location.");
-      }
-      currentStageCenter = stage;
+      final String runLang = lang;
+      gameStageManager.prepareSeasideStageAsync(
+          player,
+          stage -> continueLegacyPreparedRound(player, runLang, stage),
+          failure -> {
+            getLogger().warning(
+                "[RoundLifecycle] tick-batched arena preparation failed: " + failure.getMessage()
+            );
+            finishRoundCleanup(player, CleanupReason.PREPARATION_FAILED, true);
+          }
+      );
+    } catch (Throwable failure) {
+      getLogger().warning("[RoundLifecycle] preparation failed: " + failure.getMessage());
+      finishRoundCleanup(player, CleanupReason.PREPARATION_FAILED, true);
+    }
+  }
 
+  private void continueLegacyPreparedRound(Player player, String lang, Location stage) {
+    try {
+      if (!player.isOnline()
+          || !isActiveRoundPlayer(player)
+          || !roundLifecycle.is(RoundState.PREPARING)
+          || stage == null
+          || stage.getWorld() == null) {
+        finishRoundCleanup(player, CleanupReason.PREPARATION_FAILED, true);
+        return;
+      }
+
+      currentStageCenter = stage;
       int currentTotalChests = totalChests;
-      if (!treasureChestManager.spawnChests(player, difficulty, currentTotalChests)) {
+      if (!treasureChestManager.spawnChests(stage, difficulty, currentTotalChests)) {
         throw new IllegalStateException(
             "Unable to place the configured number of unique treasure chests."
         );
       }
+
+      if (!gameStageManager.teleportPlayerToPreparedStage(player, stage)) {
+        throw new IllegalStateException("Participant teleport to the prepared arena was rejected.");
+      }
+      gameStageManager.activatePreparedStage(stage);
+      gameStageManager.startPreparedStageArrival(player, stage);
+
       totalChestsRemaining = currentTotalChests;
       totalChestsAtStart = currentTotalChests;
-      TreasureChestManager m = getTreasureChestManager();
+      TreasureChestManager manager = getTreasureChestManager();
       getLogger().info("[CHEST][SPAWN] after spawn"
-          + " now=" + (m != null ? m.getTreasureLocations().size() : -1)
-          + " instance=" + (m != null ? System.identityHashCode(m) : -1)
-      );
+          + " now=" + (manager != null ? manager.getTreasureLocations().size() : -1)
+          + " instance=" + (manager != null ? System.identityHashCode(manager) : -1));
 
-      player.sendMessage(ChatColor.GREEN + trPlayer(player, "gameplay.setup.chestsPlaced", I18n.Placeholder.of("{count}", String.valueOf(currentTotalChests))));
+      player.sendMessage(ChatColor.GREEN + trPlayer(
+          player,
+          "gameplay.setup.chestsPlaced",
+          I18n.Placeholder.of("{count}", String.valueOf(currentTotalChests))
+      ));
 
       GameMenu.showGameMenu(player, difficulty, this, lang);
       GameMenu.openRuleBookFromConfig(player, difficulty, this, lang);
@@ -3579,48 +3613,33 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
               }
 
               if (count > 0) {
-
-                // ✅ ✅ ✅ 数字の色切り替え（3=水色、2=翠、1=黄色）
                 ChatColor numColor = switch (count) {
                   case 3 -> ChatColor.AQUA;
                   case 2 -> ChatColor.GREEN;
                   case 1 -> ChatColor.YELLOW;
                   default -> ChatColor.GRAY;
                 };
-
-                // ✅ ✅ ✅ 最大サイズで見せる：Title行に数字だけ出す（これが一番デカい）
-                // Subtitleは「白に一番近いグレー」
                 String startLang = getPlayerLangOrDefault(player.getUniqueId());
-
                 player.sendTitle(
                     numColor + "" + ChatColor.BOLD + count,
                     ChatColor.GRAY + getI18n().tr(startLang, "gameplay.start.startingIn"),
                     0, 20, 0
                 );
-
-                // ✅ 追加（3/2/1の時）
                 startThemePlayer.playCountdownTick(player, count);
-
                 count--;
               } else {
-
-                // ✅ 追加（GO!の時）
                 startThemePlayer.playGoActivate(player);
-
-                // ✅ ✅ ✅ GO! の瞬間だけ「バブル→震え + 光 + 爆発風スパークル」
                 Bukkit.getScheduler().runTaskLater(TreasureRunMultiChestPlugin.this, () -> {
                   if (player.isOnline() && isActiveRoundPlayer(player)) {
-                    playGoBubbleBurst(player);   // ✅ NEW：バブルが弾ける
-                    playGoSparkleShock(player);  // ✅ 既存：震え + 光 + スパークル
+                    playGoBubbleBurst(player);
+                    playGoSparkleShock(player);
                   }
                 }, 1L);
 
-                // ✅ ✅ ✅ 最大サイズで見せる：Title行に GO! だけ（太字）
-                // ✅ 色は「白に一番近いグレー」
                 String startLang = getPlayerLangOrDefault(player.getUniqueId());
-
                 player.sendTitle(
-                    ChatColor.GRAY + "" + ChatColor.BOLD + getI18n().tr(startLang, "gameplay.start.go"),
+                    ChatColor.GRAY + "" + ChatColor.BOLD
+                        + getI18n().tr(startLang, "gameplay.start.go"),
                     "",
                     0, 20, 10
                 );
@@ -3630,12 +3649,11 @@ public class TreasureRunMultiChestPlugin extends JavaPlugin implements Listener,
                 TreasureRunMultiChestPlugin.this.startGame(player);
               }
             }
-
           }.runTaskTimer(TreasureRunMultiChestPlugin.this, 0L, 20L);
         }
       }.runTaskLater(this, 20L);
     } catch (Throwable failure) {
-      getLogger().warning("[RoundLifecycle] preparation failed: " + failure.getMessage());
+      getLogger().warning("[RoundLifecycle] prepared-round continuation failed: " + failure.getMessage());
       finishRoundCleanup(player, CleanupReason.PREPARATION_FAILED, true);
     }
   }

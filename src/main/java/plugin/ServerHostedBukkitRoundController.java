@@ -23,6 +23,7 @@ public final class ServerHostedBukkitRoundController<A> {
 
   public enum Code {
     IGNORED,
+    PREPARING,
     COUNTDOWN_STARTED,
     RUNNING,
     INVALID_STATE,
@@ -66,6 +67,8 @@ public final class ServerHostedBukkitRoundController<A> {
   private ScheduledTask countdownTask;
   private int countdownRemaining;
   private ServerHostedSharedRoundRuntime activeRuntime;
+  private boolean preparationPending;
+  private long preparationGeneration;
 
   public ServerHostedBukkitRoundController(
       ServerHostedRoundCoordinator coordinator,
@@ -111,6 +114,21 @@ public final class ServerHostedBukkitRoundController<A> {
    * and ten-second countdown path. Non-successful start decisions are left untouched.
    */
   public synchronized Result start(ServerHostedSessionControlService.StartDecision decision) {
+    return beginPreparation(decision, false);
+  }
+
+  /**
+   * Uses the normal roster lock and durable preparation path, but bypasses only the scheduled
+   * ten-second wait before entering the same shared RUNNING runtime.
+   */
+  public synchronized Result forceStart(ServerHostedSessionControlService.StartDecision decision) {
+    return beginPreparation(decision, true);
+  }
+
+  private Result beginPreparation(
+      ServerHostedSessionControlService.StartDecision decision,
+      boolean forceStart
+  ) {
     Objects.requireNonNull(decision, "decision");
 
     if (decision.code() != ServerHostedSessionControlService.StartCode.ROSTER_LOCKED) {
@@ -118,29 +136,76 @@ public final class ServerHostedBukkitRoundController<A> {
           Code.IGNORED,
           decision.participants(),
           Optional.ofNullable(activeRuntime),
-          "The start decision did not lock a roster; no runtime action was taken."
+          forceStart
+              ? "The force-start decision did not lock a roster; no runtime action was taken."
+              : "The start decision did not lock a roster; no runtime action was taken."
       );
     }
 
-    if (countdownTask != null || activeRuntime != null) {
+    if (preparationPending || countdownTask != null || activeRuntime != null) {
       return result(
           Code.INVALID_STATE,
           decision.participants(),
           Optional.ofNullable(activeRuntime),
-          "A server-hosted countdown or shared runtime is already owned by this controller."
+          "A server-hosted preparation, countdown, or shared runtime is already owned by this controller."
       );
     }
 
-    ServerHostedRoundActivationService.Result preparation =
-        activationService.prepareLockedRound();
+    preparationPending = true;
+    long generation = ++preparationGeneration;
+    Result[] immediate = new Result[1];
 
+    try {
+      activationService.prepareLockedRoundAsync(preparation -> {
+        Result completed;
+        synchronized (ServerHostedBukkitRoundController.this) {
+          completed = completePreparation(generation, forceStart, preparation);
+        }
+        immediate[0] = completed;
+      });
+    } catch (RuntimeException preparationFailure) {
+      if (generation == preparationGeneration) {
+        preparationPending = false;
+      }
+      ServerHostedBukkitRoundOrchestrator.Result cleanup = orchestrator.runtimeActivationFailed();
+      return mapCleanup(
+          cleanup,
+          "The server-hosted preparation could not be started: " + messageOf(preparationFailure)
+      );
+    }
+
+    if (immediate[0] != null) return immediate[0];
+    return result(
+        Code.PREPARING,
+        decision.participants(),
+        Optional.empty(),
+        "The locked roster is in tick-batched server-hosted preparation."
+    );
+  }
+
+  private Result completePreparation(
+      long generation,
+      boolean forceStart,
+      ServerHostedRoundActivationService.Result preparation
+  ) {
+    if (generation != preparationGeneration || !preparationPending) {
+      return result(
+          Code.INVALID_STATE,
+          preparation.participants(),
+          Optional.ofNullable(activeRuntime),
+          "A stale server-hosted preparation completion was ignored."
+      );
+    }
+
+    preparationPending = false;
     if (preparation.code()
         != ServerHostedRoundActivationService.Code.PREPARED_FOR_COUNTDOWN) {
       return mapActivation(preparation);
     }
 
-    countdownRemaining = COUNTDOWN_SECONDS;
+    if (forceStart) return activatePreparedRound();
 
+    countdownRemaining = COUNTDOWN_SECONDS;
     try {
       countdownObserver.accept(COUNTDOWN_SECONDS);
       countdownTask = Objects.requireNonNull(
@@ -168,42 +233,6 @@ public final class ServerHostedBukkitRoundController<A> {
         Optional.empty(),
         "The locked roster is prepared and the ten-second server-hosted countdown is scheduled."
     );
-  }
-
-  /**
-   * Uses the normal roster lock and durable preparation path, but bypasses only the scheduled
-   * ten-second wait before entering the same shared RUNNING runtime.
-   */
-  public synchronized Result forceStart(ServerHostedSessionControlService.StartDecision decision) {
-    Objects.requireNonNull(decision, "decision");
-
-    if (decision.code() != ServerHostedSessionControlService.StartCode.ROSTER_LOCKED) {
-      return result(
-          Code.IGNORED,
-          decision.participants(),
-          Optional.ofNullable(activeRuntime),
-          "The force-start decision did not lock a roster; no runtime action was taken."
-      );
-    }
-
-    if (countdownTask != null || activeRuntime != null) {
-      return result(
-          Code.INVALID_STATE,
-          decision.participants(),
-          Optional.ofNullable(activeRuntime),
-          "A server-hosted countdown or shared runtime is already owned by this controller."
-      );
-    }
-
-    ServerHostedRoundActivationService.Result preparation =
-        activationService.prepareLockedRound();
-
-    if (preparation.code()
-        != ServerHostedRoundActivationService.Code.PREPARED_FOR_COUNTDOWN) {
-      return mapActivation(preparation);
-    }
-
-    return activatePreparedRound();
   }
 
   /**
@@ -301,6 +330,10 @@ public final class ServerHostedBukkitRoundController<A> {
     return countdownTask != null;
   }
 
+  public synchronized boolean preparationPending() {
+    return preparationPending;
+  }
+
   public synchronized int countdownRemaining() {
     return countdownRemaining;
   }
@@ -372,6 +405,11 @@ public final class ServerHostedBukkitRoundController<A> {
   }
 
   private void cancelOwnedRuntimeState() {
+    if (preparationPending) {
+      preparationPending = false;
+      preparationGeneration++;
+      activationService.cancelArenaPreparation();
+    }
     cancelCountdownOnly();
     boolean hadRuntime = activeRuntime != null;
     activeRuntime = null;

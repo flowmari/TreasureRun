@@ -29,7 +29,7 @@ class ArenaWorldIsolationBoundaryTest {
 
     assertTrue(arena.contains("WORLD_NAME = \"treasurerun_arena\""));
     assertTrue(prepareMethod.contains("arenaWorldManager.getArenaBase()"));
-    assertTrue(prepareMethod.contains("arenaWorldManager.requireOwnedWorld(w)"));
+    assertTrue(prepareMethod.contains("arenaWorldManager.requireOwnedWorld(world)"));
     assertFalse(prepareMethod.contains("forceFindOcean("));
     assertFalse(prepareMethod.contains("getLocation().clone().add(320"));
     assertTrue(compatibilityMethod.contains("prepareSeasideStage(player)"));
@@ -41,12 +41,14 @@ class ArenaWorldIsolationBoundaryTest {
   }
 
   @Test
-  void everyArenaWaterPreparationHasAnOwnedWorldGuard() throws Exception {
+  void arenaWaterPreparationAuthenticatesOutsideThePerColumnHotLoop() throws Exception {
     String stage = read(STAGE_MANAGER);
-    String patchMethod = methodBody(stage, "private void prepareOwnedArenaWater");
+    String asyncPrepare = methodBody(stage, "public void prepareSeasideStageAsync");
+    String patchMethod = methodBody(stage, "private void prepareOwnedArenaWaterColumn");
 
-    assertTrue(patchMethod.contains("arenaWorldManager.requireOwnedWorld(w)"));
-    assertTrue(stage.contains("prepareOwnedArenaWater(base, ARENA_WATER_RADIUS)"));
+    assertTrue(asyncPrepare.contains("arenaWorldManager.requireOwnedWorld(world)"));
+    assertFalse(patchMethod.contains("arenaWorldManager.requireOwnedWorld(world)"));
+    assertTrue(stage.contains("prepareOwnedArenaWaterColumn(base, dx, dz)"));
     assertFalse(stage.contains("prepareOwnedArenaWater(base, 128)"));
   }
 
