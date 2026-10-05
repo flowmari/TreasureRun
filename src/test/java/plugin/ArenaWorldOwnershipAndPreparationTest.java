@@ -3,7 +3,9 @@ package plugin;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import java.nio.charset.StandardCharsets;
@@ -55,9 +57,26 @@ class ArenaWorldOwnershipAndPreparationTest {
     writeOwnershipMarker(tempDir, worldId);
 
     assertFalse(manager.isBasePrepared(world, 64));
-    manager.markBasePrepared(world, 64);
+    manager.commitBasePreparation(world, 64);
+    verify(world).save();
     assertTrue(manager.isBasePrepared(world, 64));
     assertFalse(manager.isBasePrepared(world, 32));
+  }
+
+  @Test
+  void failedWorldSaveCannotPublishPreparedMarker() throws Exception {
+    TreasureRunMultiChestPlugin plugin = mock(TreasureRunMultiChestPlugin.class);
+    ArenaWorldManager manager = new ArenaWorldManager(plugin);
+    UUID worldId = UUID.randomUUID();
+    World world = arenaWorld(tempDir, worldId);
+    writeOwnershipMarker(tempDir, worldId);
+    doThrow(new IllegalStateException("synthetic world-save failure")).when(world).save();
+
+    assertThrows(
+        IllegalStateException.class,
+        () -> manager.commitBasePreparation(world, 64)
+    );
+    assertFalse(Files.exists(tempDir.resolve(ArenaWorldManager.BASE_PREPARED_MARKER)));
   }
 
   @Test

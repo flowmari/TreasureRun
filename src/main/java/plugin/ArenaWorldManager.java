@@ -82,8 +82,15 @@ final class ArenaWorldManager {
         && Integer.toString(waterRadius).equals(marker.get("waterRadius"));
   }
 
-  void markBasePrepared(World world, int waterRadius) {
+  /**
+   * Commits one completed base preparation in fail-closed order.
+   *
+   * <p>The owned world is saved before the prepared marker is published. If the save fails, the
+   * marker is not written, so the next preparation attempt treats the base as unprepared.</p>
+   */
+  void commitBasePreparation(World world, int waterRadius) {
     requireOwnedWorld(world);
+    world.save();
     writeMarkerAtomically(
         basePreparedMarker(world),
         List.of(
