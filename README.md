@@ -328,7 +328,7 @@ The full README that existed before this contributor-focused entrance was introd
 ## Project Status
 
 - Stage: public early alpha
-- Distribution: GitHub Releases and SpigotMC
+- Distribution: GitHub Releases, SpigotMC, and Modrinth
 - Current milestone: post-v0.2.1-alpha follow-up work, including `/treasurerun top`, optional leaderboard placeholders, and the later ArenaRegistry / multi-arena / Auto Mode work
 - Minecraft target: Spigot 1.20.1
 - Java version: 17
